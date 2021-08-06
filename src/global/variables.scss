@@ -1,0 +1,39 @@
+:root {
+  /**
+   * Colors
+   * FOR NOW, colors are based on http://outils.oceanie.local/maquette/design-guidelines/services-ux/design-system/page-color.html
+   */
+
+  // Product
+  --color-product-primary: #3a9742;
+  --color-product-primary-light: #b5cb31;
+  --color-product-secondary: #005e9c;
+  --color-product-secondary-light: #3fa1d0;
+
+  // Greys
+  --color-black: #000;
+  --color-gray-darker: #15282e;
+  --color-gray-dark: #2b515d;
+  --color-gray: #6d777c;
+  --color-gray-light: #b5c2c9;
+  --color-gray-lighter: #dde3e6;
+  --color-white: #fff;
+
+  // Usefull
+  --color-danger: #df242c;
+  --color-warning: #f78f2e;
+  --color-product: #005e9c;
+  --color-info: #5bc0de;
+  --color-success: #00af69;
+
+  // Font
+  --font-size-base: 1.3rem;
+
+  /**
+   * Added variable from PDA9
+   */
+  // Button
+  --color-button-secondary-disabled-color: #ced7db;
+  --color-button-secondary-background: #eceff1;
+  --color-button-secondary-border: #d3dbde;
+}

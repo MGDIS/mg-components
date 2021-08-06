@@ -1,0 +1,49 @@
+{
+  "name": "design-system",
+  "version": "0.0.1",
+  "description": "Stencil Component Starter",
+  "main": "dist/index.cjs.js",
+  "module": "dist/custom-elements/index.js",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/custom-elements/index.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/design-system/design-system.esm.js",
+  "files": [
+    "dist/",
+    "loader/"
+  ],
+  "scripts": {
+    "build": "stencil build --docs",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "generate": "stencil generate",
+    "storybook": "start-storybook -s dist -p 6006",
+    "build-storybook": "build-storybook",
+    "dev": "npm-run-all --parallel start storybook"
+  },
+  "dependencies": {
+    "@stencil/core": "^2.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@stencil/eslint-plugin": "^0.3.1",
+    "@stencil/sass": "^1.4.1",
+    "@storybook/addon-actions": "^6.3.6",
+    "@storybook/addon-essentials": "^6.3.6",
+    "@storybook/addon-links": "^6.3.6",
+    "@storybook/html": "^6.3.6",
+    "@types/jest": "^26.0.24",
+    "@types/puppeteer": "^5.4.3",
+    "babel-loader": "^8.2.2",
+    "css-vars-ponyfill": "^2.4.6",
+    "jest": "^26.6.3",
+    "jest-cli": "^26.6.3",
+    "normalize.css": "^8.0.1",
+    "npm-run-all": "^4.1.5",
+    "puppeteer": "^5.5.0"
+  },
+  "license": "MIT"
+}

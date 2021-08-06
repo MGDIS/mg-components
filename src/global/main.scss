@@ -1,0 +1,14 @@
+/**
+ * We set html font size to 62.5% to get 10px in most of the case.
+ * This is a common use for an easiest calculation : 1rem = 10px
+ * Default font size will be defined in body element.
+ */
+
+html {
+  font-size: 62.5%;
+  font-size: calc(1em * 0.625); /* IE fix */
+}
+
+body {
+  font-size: var(--font-size-base);
+}

@@ -1,0 +1,45 @@
+.mg-button {
+  // Display
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  vertical-align: middle;
+  // decoration
+  border-radius: 0.3rem;
+  cursor: pointer;
+  background-image: none;
+  border: 0.1rem solid transparent;
+  // Font
+  font-weight: normal;
+  text-align: center;
+  white-space: nowrap;
+  // other
+  touch-action: manipulation;
+
+  &[disabled],
+  &.disabled {
+    cursor: not-allowed;
+  }
+
+  &.mg-button-primary {
+    // decoration
+    background: linear-gradient(to top, var(--color-gray-darker) 10%, #23424c 100%);
+    border-color: var(--color-gray-darker);
+    // Font
+    color: var(--color-white);
+
+    &[disabled],
+    &.disabled {
+      background: var(--color-gray-darker);
+      color: var(--color-button-secondary-disabled-color);
+      border-color: var(--color-gray-darker);
+    }
+  }
+
+  &.mg-button-secondary {
+    // decoration
+    background: linear-gradient(to top, var(--color-button-secondary-background) 10%, var(--color-white) 100%);
+    border-color: var(--color-button-secondary-border);
+    // Font
+    color: var(--color-gray-darker);
+  }
+}

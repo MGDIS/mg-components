@@ -1,0 +1,22 @@
+/**
+ * Here we building the CSS for the design sytem
+ */
+
+// Normalize CSS : https://necolas.github.io/normalize.css/
+@import '~normalize.css/normalize.css';
+
+// Variables
+@import './variables.scss';
+
+// Utilities
+@import './utilities.scss';
+
+// Main style
+@import './main.scss';
+
+/**
+ * Components style
+ */
+
+// mg-button
+@import '../components/mg-button/mg-button.scss';
