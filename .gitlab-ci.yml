@@ -13,6 +13,7 @@ stages:
   - dist
   - artifact
   - release
+  - deploy
 
 
 # lint:
