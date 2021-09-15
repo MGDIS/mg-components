@@ -1,0 +1,121 @@
+{
+  "timestamp": "2021-09-15T15:14:32",
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "2.6.0",
+    "typescriptVersion": "4.2.3"
+  },
+  "components": [
+    {
+      "filePath": "./src/components/mg-button/mg-button.tsx",
+      "encapsulation": "shadow",
+      "tag": "mg-button",
+      "readme": "# mg-button\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Disable button",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "aria-label\nIn case button text is not explicit enougth",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "variant",
+          "type": "string",
+          "mutable": false,
+          "attr": "variant",
+          "reflectToAttr": false,
+          "docs": "Define button style",
+          "docsTags": [],
+          "default": "\"primary\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/mg-icon/mg-icon.tsx",
+      "encapsulation": "shadow",
+      "tag": "mg-icon",
+      "readme": "# mg-icon\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "icon",
+          "type": "\"cancel\" | \"save\"",
+          "mutable": false,
+          "attr": "icon",
+          "reflectToAttr": false,
+          "docs": "Icon to display\nPossible icons must be listed",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "cancel",
+              "type": "string"
+            },
+            {
+              "value": "save",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    }
+  ]
+}

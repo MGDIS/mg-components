@@ -1,0 +1,19 @@
+{
+  "plugins": [
+    "@babel/plugin-syntax-jsx",
+    [
+      "@babel/plugin-transform-react-jsx",
+      {
+        "pragma": "h"
+      }
+    ],
+    [
+      "babel-plugin-jsx-pragmatic",
+      {
+        "export": "h",
+        "import": "h",
+        "module": "jsx-dom"
+      }
+    ]
+  ]
+}

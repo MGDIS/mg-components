@@ -21,6 +21,10 @@ export const config: Config = {
       type: 'dist-custom-elements-bundle',
     },
     {
+      type: 'docs-json',
+      file: '.storybook/docs/components.json'
+    },
+    {
       type: 'docs-readme',
     },
     {
