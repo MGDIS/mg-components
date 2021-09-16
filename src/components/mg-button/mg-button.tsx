@@ -10,18 +10,9 @@ export class MgButton {
   /**
    * Internal
    */
-  class = ['mg-button'];
+  classes = ['mg-button'];
   variants = ["primary" , "secondary" , "info" , "alert" , "link"];
 
-  /**
-   * Disable button
-   */
-  @Prop() disabled: boolean = false;
-  /**
-   * aria-label
-   * In case button text is not explicit enougth
-   */
-  @Prop() label: string;
   /**
    * Define button style
    */
@@ -31,8 +22,19 @@ export class MgButton {
     if(!this.variants.includes(newValue)) {
       throw new Error(`<mg-button> props "variant" must be one of : ${this.variants.join(', ')}`);
     }
-    this.class.push(`mg-button-${this.variant}`);
+    this.classes.push(`mg-button-${this.variant}`);
   }
+
+  /**
+   * aria-label
+   * In case button text is not explicit enougth
+   */
+   @Prop() label: string;
+
+  /**
+   * Disable button
+   */
+   @Prop() disabled: boolean = false;
 
   /**
    * Check if props are well configured on init
@@ -47,7 +49,7 @@ export class MgButton {
   render() {
     return (
       <Host>
-        <button class={this.class.join(' ')} aria-label={this.label} disabled={this.disabled}><slot></slot></button>
+        <button class={this.classes.join(' ')} aria-label={this.label} disabled={this.disabled}><slot></slot></button>
       </Host>
     );
   }

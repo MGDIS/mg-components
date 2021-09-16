@@ -36,4 +36,14 @@
   --color-button-secondary-disabled-color: #ced7db;
   --color-button-secondary-background: #eceff1;
   --color-button-secondary-border: #d3dbde;
+
+  /**
+   * Fonts
+   */
+
+  // Open Sans is used for the body (mostly all texts)
+  --font-family-body: 'Open Sans', sans-serif;
+
+  // Poppins is used for the headings (h1 to h6)
+  --font-family-heading: 'Poppins', sans-serif;
 }

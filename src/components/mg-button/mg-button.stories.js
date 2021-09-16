@@ -1,6 +1,6 @@
 export default {
   component: 'mg-button',
-  title: 'MgButton',
+  title: 'Components/MgButton',
   argTypes: {
     variant: {
       options: ['primary', 'secondary'],

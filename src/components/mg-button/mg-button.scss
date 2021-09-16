@@ -3,7 +3,7 @@
   display: inline-block;
   padding: 0.6rem 1.2rem;
   vertical-align: middle;
-  // decoration
+  // Decoration
   border-radius: 0.3rem;
   cursor: pointer;
   background-image: none;
@@ -12,8 +12,12 @@
   font-weight: normal;
   text-align: center;
   white-space: nowrap;
-  // other
+  // Other
   touch-action: manipulation;
+
+  & + .mg-button {
+    margin-left: 1rem;
+  }
 
   &[disabled],
   &.disabled {

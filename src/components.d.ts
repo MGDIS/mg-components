@@ -22,9 +22,13 @@ export namespace Components {
     }
     interface MgIcon {
         /**
-          * Icon to display Possible icons must be listed
+          * Icon to display
          */
-        "icon": "save" | "cancel";
+        "icon": string;
+        /**
+          * Define icon size
+         */
+        "size": string;
     }
 }
 declare global {
@@ -62,9 +66,13 @@ declare namespace LocalJSX {
     }
     interface MgIcon {
         /**
-          * Icon to display Possible icons must be listed
+          * Icon to display
          */
-        "icon"?: "save" | "cancel";
+        "icon"?: string;
+        /**
+          * Define icon size
+         */
+        "size"?: string;
     }
     interface IntrinsicElements {
         "mg-button": MgButton;
