@@ -1,5 +1,5 @@
 {
-  "name": "design-system",
+  "name": "@mgdis/design-system",
   "version": "0.0.1",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
@@ -22,6 +22,9 @@
     "generate": "stencil generate",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
+  },
+  "publishConfig": {
+    "@mgdis:registry": "http://artifactory.mgdis.fr/artifactory/api/npm/npm-local/"
   },
   "dependencies": {
     "@stencil/core": "^2.0.1"
