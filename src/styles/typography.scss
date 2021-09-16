@@ -1,0 +1,57 @@
+/**
+ * Paragraph
+ */
+
+p {
+}
+
+/**
+ * Headings
+ *
+ * Classes can also be used on element to match attending, for exemples :
+ * <h4 class="h3">blu</h4>
+ * <div role="heading" aria-level="4" class="h4">blu</div>
+ */
+
+@for $i from 1 through 6 {
+  h#{$i},
+  .h#{$i} {
+    font-family: var(--font-family-heading);
+  }
+}
+
+//h1
+h1,
+.h1 {
+  font-size: calc(var(--font-size-base) * 1.85);
+}
+
+//h2
+h2,
+.h2 {
+  font-size: calc(var(--font-size-base) * 1.65);
+}
+
+//h3
+h3,
+.h3 {
+  font-size: calc(var(--font-size-base) * 1.35);
+}
+
+//h4
+h4,
+.h4 {
+  font-size: calc(var(--font-size-base) * 1.2);
+}
+
+//h5
+h5,
+.h5 {
+  font-size: calc(var(--font-size-base) * 1.1);
+}
+
+//h6
+h6,
+.h6 {
+  font-size: calc(var(--font-size-base) * 0.8);
+}

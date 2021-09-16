@@ -1,7 +1,7 @@
 import { extractArgTypes, extractComponentDescription, setStencilDocJson } from '@pxtrn/storybook-addon-docs-stencil';
 import { defineCustomElements } from '../dist/esm/loader';
 import docJson from './docs/components.json';
-import '!style-loader!css-loader!sass-loader!../src/global/variables.scss';
+import '!style-loader!css-loader!sass-loader!../src/styles/global.scss';
 
 defineCustomElements();
 setStencilDocJson(docJson);

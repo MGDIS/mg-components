@@ -5,6 +5,9 @@
 // Normalize CSS : https://necolas.github.io/normalize.css/
 @import '~normalize.css/normalize.css';
 
+// Fonts
+@import './fonts.scss';
+
 // Variables
 @import './variables.scss';
 
@@ -13,6 +16,9 @@
 
 // Main style
 @import './main.scss';
+
+// Typography style
+@import './typography.scss';
 
 /**
  * Components style
