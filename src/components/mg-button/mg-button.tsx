@@ -11,7 +11,7 @@ export class MgButton {
    * Internal
    */
   class = ['mg-button'];
-  types = ["primary" , "secondary" , "info" , "alert" , "link"];
+  variants = ["primary" , "secondary" , "info" , "alert" , "link"];
 
   /**
    * Disable button
@@ -23,23 +23,22 @@ export class MgButton {
    */
   @Prop() label: string;
   /**
-   * Define button type style
-   * TODO: find better props name, "style" is reserved
+   * Define button style
    */
-  @Prop() type: string = "primary";
-  @Watch('type')
-  validateType(newValue: string) {
-    if(!this.types.includes(newValue)) {
-      throw new Error(`<mg-button> props "type" must be one of : ${this.types.join(', ')}`);
+  @Prop() variant: string = "primary";
+  @Watch('variant')
+  validateVariant(newValue: string) {
+    if(!this.variants.includes(newValue)) {
+      throw new Error(`<mg-button> props "variant" must be one of : ${this.variants.join(', ')}`);
     }
-    this.class.push(`mg-button-${this.type}`);
+    this.class.push(`mg-button-${this.variant}`);
   }
 
   /**
    * Check if props are well configured on init
    */
   componentWillLoad() {
-    this.validateType(this.type);
+    this.validateVariant(this.variant);
   }
 
   /**

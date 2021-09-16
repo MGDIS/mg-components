@@ -16,9 +16,9 @@ export namespace Components {
          */
         "label": string;
         /**
-          * Define button type style TODO: find better props name, "style" is reserved
+          * Define button style
          */
-        "type": string;
+        "variant": string;
     }
     interface MgIcon {
         /**
@@ -56,9 +56,9 @@ declare namespace LocalJSX {
          */
         "label"?: string;
         /**
-          * Define button type style TODO: find better props name, "style" is reserved
+          * Define button style
          */
-        "type"?: string;
+        "variant"?: string;
     }
     interface MgIcon {
         /**
