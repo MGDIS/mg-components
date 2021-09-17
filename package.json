@@ -17,17 +17,17 @@
   "scripts": {
     "build": "stencil build --docs",
     "start": "stencil build --dev --watch --serve",
-    "test": "stencil test --spec --e2e",
+    "test": "stencil test --spec --e2e --config ./jest.config.ts",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6006 -s www/build",
     "build-storybook": "build-storybook"
   },
   "publishConfig": {
     "@mgdis:registry": "http://artifactory.mgdis.fr/artifactory/api/npm/npm-local/"
   },
   "dependencies": {
-    "@stencil/core": "^2.0.1"
+    "@stencil/core": "^2.8.1"
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",
@@ -49,7 +49,7 @@
     "jest-cli": "^26.6.3",
     "jsx-dom": "^8.0.1-beta.1",
     "normalize.css": "^8.0.1",
-    "puppeteer": "^5.5.0",
+    "puppeteer": "^10.2.0",
     "sass": "^1.41.0",
     "sass-loader": "^10.2.0",
     "style-loader": "^2.0.0"

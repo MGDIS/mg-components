@@ -1,6 +1,44 @@
+@mixin button-state($variant, $state: '') {
+  @if $state != '' {
+    $state: -#{$state};
+  }
+  // Decoration
+  border-color: var(--button-#{$variant}#{$state}-border-color);
+  // Font
+  color: var(--button-#{$variant}#{$state}-color);
+}
+
+@mixin button-variant($variant) {
+  @include button-state($variant);
+  background: linear-gradient(to bottom, var(--button-#{$variant}-background-from), var(--button-#{$variant}-background-to));
+
+  // Hover
+  &:hover {
+    @include button-state($variant, 'hover');
+    background: var(--button-#{$variant}-hover-background);
+  }
+
+  // Disabled
+  &[disabled],
+  &.disabled {
+    @include button-state($variant, 'disabled');
+    background: linear-gradient(to bottom, var(--button-#{$variant}-disabled-background-from), var(--button-#{$variant}-disabled-background-to));
+    opacity: var(--button-#{$variant}-disabled-opacity);
+  }
+}
+
+@mixin button-variants($variants...) {
+  @each $variant in $variants {
+    &.mg-button-#{$variant} {
+      @include button-variant($variant);
+    }
+  }
+}
+
 .mg-button {
   // Display
   display: inline-block;
+  min-height: 3.5rem;
   padding: 0.6rem 1.2rem;
   vertical-align: middle;
   // Decoration
@@ -15,35 +53,19 @@
   // Other
   touch-action: manipulation;
 
-  & + .mg-button {
-    margin-left: 1rem;
-  }
-
   &[disabled],
   &.disabled {
     cursor: not-allowed;
   }
 
-  &.mg-button-primary {
-    // decoration
-    background: linear-gradient(to top, var(--color-gray-darker) 10%, #23424c 100%);
-    border-color: var(--color-gray-darker);
-    // Font
-    color: var(--color-white);
+  @include button-variants('primary', 'secondary', 'alert', 'alert-alt', 'info');
+}
 
-    &[disabled],
-    &.disabled {
-      background: var(--color-gray-darker);
-      color: var(--color-button-secondary-disabled-color);
-      border-color: var(--color-gray-darker);
-    }
+mg-button {
+  mg-icon {
+    margin-right: 0.5rem;
   }
-
-  &.mg-button-secondary {
-    // decoration
-    background: linear-gradient(to top, var(--color-button-secondary-background) 10%, var(--color-white) 100%);
-    border-color: var(--color-button-secondary-border);
-    // Font
-    color: var(--color-gray-darker);
+  & + mg-button {
+    margin-left: 1rem;
   }
 }

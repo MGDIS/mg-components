@@ -15,7 +15,6 @@ stages:
   - release
   - deploy
 
-
 # lint:
 #   stage: test
 #   rules:
@@ -44,14 +43,14 @@ outdated:
     # break-build not yet
     - gitlabci-npm-outdated
 
-# test:
-#   stage: test
-#   rules:
-#   # except tags
-#     - if: $CI_COMMIT_TAG == null
-#   script:
-#    - npm ci
-#    - npm test
+test:
+  stage: test
+  rules:
+    # except tags
+    - if: $CI_COMMIT_TAG == null
+  script:
+    - npm ci
+    - npm test
 
 # sonar:
 #   stage: sonar
@@ -94,12 +93,12 @@ artifact:
 deploy:
   stage: deploy
   rules:
-    - if: $CI_COMMIT_BRANCH == 'chore/add-ci'
+    - if: $CI_COMMIT_BRANCH == 'init'
   before_script:
     - npm ci
     - apk add sshpass
   script:
-    - npm run build-storybook
+    - npm run build-storybook -s www/build
     - cd storybook-static/
     - export SSHPASS=$SSH_PASS_OUTILS
     - sshpass -e scp -o stricthostkeychecking=no -r . $USER@$SERVER:/usr/share/nginx/html/ux-ui/design-system/

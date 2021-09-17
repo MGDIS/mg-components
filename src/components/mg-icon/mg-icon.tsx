@@ -1,9 +1,10 @@
 import { Component, Host, h, Prop, Watch, getAssetPath } from '@stencil/core';
 
+// TODO : Work on Accessible SVGs
 @Component({
   tag: 'mg-icon',
-  styleUrl: 'mg-icon.css',
-  assetsDirs: ['svgs'],
+  styleUrl: 'mg-icon.scss',
+  assetsDirs: ['assets'],
   shadow: true,
 })
 export class MgIcon {
@@ -12,8 +13,8 @@ export class MgIcon {
    * Internal
    */
    classes = ['mg-icon'];
-   icons = ["user-cadenas"];
-   sizes = ["small", "regular", "large"];
+   icons = ["user-cadenas", "editable"];
+   sizes = ["regular", "large"];
 
   /**
    * Icon to display
@@ -22,7 +23,7 @@ export class MgIcon {
   @Watch('icon')
   validateIcon(newValue: string) {
     if(!this.icons.includes(newValue)) {
-      throw new Error(`<mg-icon> props "icon" must be one of : ${this.icons.join(', ')}`);
+      throw new Error(`<mg-icon> prop "icon" must be one of : ${this.icons.join(', ')}`);
     }
     this.classes.push(`mg-icon-${this.icon}`);
   }
@@ -34,7 +35,7 @@ export class MgIcon {
   @Watch('size')
   validateSize(newValue: string) {
     if(!this.sizes.includes(newValue)) {
-      throw new Error(`<mg-icon> props "size" must be one of : ${this.sizes.join(', ')}`);
+      throw new Error(`<mg-icon> prop "size" must be one of : ${this.sizes.join(', ')}`);
     }
     this.classes.push(`mg-icon-${this.size}`);
   }
@@ -53,8 +54,8 @@ export class MgIcon {
   render() {
     return (
       <Host>
-        <svg class={this.classes.join(' ')}>
-          <use xlinkHref={getAssetPath(`./svgs/${this.icon}.svg`) + `#${this.icon}`}></use>
+        <svg class={this.classes.join(' ')} >
+          <use xlinkHref={getAssetPath('./assets/icons.svg') + `#${this.icon}`}></use>
         </svg>
       </Host>
     );

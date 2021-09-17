@@ -7,9 +7,10 @@
 
 ## Properties
 
-| Property | Attribute | Description                                   | Type                 | Default     |
-| -------- | --------- | --------------------------------------------- | -------------------- | ----------- |
-| `icon`   | `icon`    | Icon to display Possible icons must be listed | `"cancel" \| "save"` | `undefined` |
+| Property | Attribute | Description      | Type     | Default     |
+| -------- | --------- | ---------------- | -------- | ----------- |
+| `icon`   | `icon`    | Icon to display  | `string` | `undefined` |
+| `size`   | `size`    | Define icon size | `string` | `"regular"` |
 
 
 ----------------------------------------------

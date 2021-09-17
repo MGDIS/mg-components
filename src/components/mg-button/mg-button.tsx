@@ -11,7 +11,7 @@ export class MgButton {
    * Internal
    */
   classes = ['mg-button'];
-  variants = ["primary" , "secondary" , "info" , "alert" , "link"];
+  variants = ["primary" , "secondary" , "alert", "alert-alt",  "info"]; // TODO : should we have a link styled button ?
 
   /**
    * Define button style
@@ -20,7 +20,7 @@ export class MgButton {
   @Watch('variant')
   validateVariant(newValue: string) {
     if(!this.variants.includes(newValue)) {
-      throw new Error(`<mg-button> props "variant" must be one of : ${this.variants.join(', ')}`);
+      throw new Error(`<mg-button> prop "variant" must be one of : ${this.variants.join(', ')}`);
     }
     this.classes.push(`mg-button-${this.variant}`);
   }

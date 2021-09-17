@@ -1,0 +1,22 @@
+:host {
+  display: inline-block;
+  font-size: inherit;
+  color: inherit;
+  vertical-align: middle;
+}
+.mg-icon {
+  display: inline-block;
+  vertical-align: middle;
+  &.mg-icon-small {
+    width: 1rem;
+    height: 1rem;
+  }
+  &.mg-icon-regular {
+    width: 1.55rem;
+    height: 1.55rem;
+  }
+  &.mg-icon-large {
+    width: 2rem;
+    height: 2rem;
+  }
+}

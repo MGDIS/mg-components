@@ -1,6 +1,9 @@
 dist/
 www/
 loader/
+storybook-static/
+coverage/
+screenshots/
 
 *~
 *.sw[mnpcod]
@@ -24,5 +27,3 @@ $RECYCLE.BIN/
 Thumbs.db
 UserInterfaceState.xcuserstate
 .env
-
-storybook-static

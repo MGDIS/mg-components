@@ -3,7 +3,7 @@ export default {
   title: 'Components/MgButton',
   argTypes: {
     variant: {
-      options: ['primary', 'secondary'],
+      options: ['primary', 'secondary', 'alert', 'alert-alt', 'info'],
       control: { type: 'select' },
     },
   },

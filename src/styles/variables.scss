@@ -30,12 +30,90 @@
   --font-size-base: 1.3rem;
 
   /**
-   * Added variable from PDA9
+   * Buttons
+   * TODO: set colors as variables
+   * TODO: disabled seems to be the same style for all button, group then after confirmation
    */
-  // Button
-  --color-button-secondary-disabled-color: #ced7db;
-  --color-button-secondary-background: #eceff1;
-  --color-button-secondary-border: #d3dbde;
+
+  // Primary
+  --button-primary-background-from: #22404a;
+  --button-primary-background-to: #000;
+  --button-primary-color: #ebebeb;
+  --button-primary-border-color: #15282e;
+
+  --button-primary-hover-background: #0e1b1f;
+  --button-primary-hover-color: #fff;
+  --button-primary-hover-border-color: #15282e;
+
+  --button-primary-disabled-background-from: #fff;
+  --button-primary-disabled-background-to: #ebebeb;
+  --button-primary-disabled-color: #011b21;
+  --button-primary-disabled-opacity: 0.45;
+  --button-primary-disabled-border-color: #d4dbde;
+
+  // secondary
+  --button-secondary-background-from: #fefefe;
+  --button-secondary-background-to: #ebebeb;
+  --button-secondary-color: #15282e;
+  --button-secondary-border-color: #d4dbde;
+
+  --button-secondary-hover-background: #f1f1f1;
+  --button-secondary-hover-color: #000000;
+  --button-secondary-hover-border-color: #d4dbde;
+
+  --button-secondary-disabled-background-from: #fff;
+  --button-secondary-disabled-background-to: #ebebeb;
+  --button-secondary-disabled-color: #011b21;
+  --button-secondary-disabled-opacity: 0.45;
+  --button-secondary-disabled-border-color: #d4dbde;
+
+  // alert
+  --button-alert-background-from: #df242c;
+  --button-alert-background-to: #bc050d;
+  --button-alert-color: #ebebeb;
+  --button-alert-border-color: #df242c;
+
+  --button-alert-hover-background: #cb131b;
+  --button-alert-hover-color: #ffffff;
+  --button-alert-hover-border-color: #df242c;
+
+  --button-alert-disabled-background-from: #fff;
+  --button-alert-disabled-background-to: #ebebeb;
+  --button-alert-disabled-color: #011b21;
+  --button-alert-disabled-opacity: 0.45;
+  --button-alert-disabled-border-color: #d4dbde;
+
+  // alert-alt
+  --button-alert-alt-background-from: #fefefe;
+  --button-alert-alt-background-to: #ebebeb;
+  --button-alert-alt-color: #df0e17;
+  --button-alert-alt-border-color: #d8d8d8;
+
+  --button-alert-alt-hover-background: #f1f1f1;
+  --button-alert-alt-hover-color: #c6333a;
+  --button-alert-alt-hover-border-color: #d8d8d8;
+
+  --button-alert-alt-disabled-background-from: #fff;
+  --button-alert-alt-disabled-background-to: #ebebeb;
+  --button-alert-alt-disabled-color: #011b21;
+  --button-alert-alt-disabled-opacity: 0.45;
+  --button-alert-alt-disabled-border-color: #d4dbde;
+
+  // info
+  --button-info-background-from: #0074be;
+  --button-info-background-to: #005e9c;
+  --button-info-color: #ebebeb;
+  --button-info-border-color: #005e9c;
+
+  --button-info-hover-background: #0068ac;
+  --button-info-hover-color: #fff;
+  --button-info-hover-border-color: #005e9c;
+
+  --button-info-disabled-background-from: #fff;
+  --button-info-disabled-background-to: #ebebeb;
+  --button-info-disabled-color: #011b21;
+  --button-info-disabled-opacity: 0.45;
+  --button-info-disabled-border-color: #d4dbde;
 
   /**
    * Fonts

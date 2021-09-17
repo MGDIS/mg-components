@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-09-15T16:31:21",
+  "timestamp": "2021-09-17T14:45:27",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.6.0",
@@ -87,19 +87,31 @@
       "props": [
         {
           "name": "icon",
-          "type": "\"cancel\" | \"save\"",
+          "type": "string",
           "mutable": false,
           "attr": "icon",
           "reflectToAttr": false,
-          "docs": "Icon to display\nPossible icons must be listed",
+          "docs": "Icon to display",
           "docsTags": [],
           "values": [
             {
-              "value": "cancel",
               "type": "string"
-            },
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "string",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "Define icon size",
+          "docsTags": [],
+          "default": "\"regular\"",
+          "values": [
             {
-              "value": "save",
               "type": "string"
             }
           ],
