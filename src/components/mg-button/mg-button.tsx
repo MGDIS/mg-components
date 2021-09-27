@@ -10,8 +10,8 @@ export class MgButton {
   /**
    * Internal
    */
-  classes = ['mg-button'];
-  variants = ["primary" , "secondary" , "alert", "alert-alt",  "info"]; // TODO : should we have a link styled button ?
+  private classes = ['mg-button'];
+  private variants = ["primary" , "secondary" , "alert", "alert-alt",  "info"]; // TODO : should we have a link styled button ?
 
   /**
    * Define button style

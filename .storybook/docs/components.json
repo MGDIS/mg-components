@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-09-17T14:45:27",
+  "timestamp": "2021-09-24T10:23:45",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.6.0",
@@ -121,6 +121,167 @@
       ],
       "methods": [],
       "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/mg-input-text/mg-input-text.tsx",
+      "encapsulation": "shadow",
+      "tag": "mg-input-text",
+      "readme": "# mg-input-text\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Define if input is desabled",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "Input label\nRequired",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "maxlength",
+          "type": "number",
+          "mutable": false,
+          "attr": "maxlength",
+          "reflectToAttr": false,
+          "docs": "Input max length",
+          "docsTags": [],
+          "default": "400",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "Input name\nIf not set the value equals the reference",
+          "docsTags": [],
+          "default": "this.reference",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "mutable": false,
+          "attr": "placeholder",
+          "reflectToAttr": false,
+          "docs": "Input placeholder",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "reference",
+          "type": "string",
+          "mutable": false,
+          "attr": "reference",
+          "reflectToAttr": false,
+          "docs": "Input reference used for the input ID (id is a reserved prop in Stencil.js)\nIf not set, an ID will be created",
+          "docsTags": [],
+          "default": "createID('mg-input-text')",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "required",
+          "reflectToAttr": false,
+          "docs": "Define if input is required\nAlso add an asterisk at the end of the label",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "changed",
+          "detail": "string",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
       "listeners": [],
       "styles": [],
       "slots": [],

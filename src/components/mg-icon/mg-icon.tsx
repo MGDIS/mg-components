@@ -12,9 +12,9 @@ export class MgIcon {
   /**
    * Internal
    */
-   classes = ['mg-icon'];
-   icons = ["user-cadenas", "editable"];
-   sizes = ["regular", "large"];
+   private classes = ['mg-icon'];
+   private icons = ["user-cadenas", "editable"];
+   private sizes = ["regular", "large"];
 
   /**
    * Icon to display

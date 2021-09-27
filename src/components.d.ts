@@ -20,6 +20,20 @@ export namespace Components {
          */
         "variant": string;
     }
+    interface MgCharacterLeft {
+        /**
+          * Characters to count
+         */
+        "characters": string;
+        /**
+          * Character max length
+         */
+        "maxlength": number;
+        /**
+          * Reference Element ID for a11y link
+         */
+        "reference": string;
+    }
     interface MgIcon {
         /**
           * Icon to display
@@ -30,6 +44,47 @@ export namespace Components {
          */
         "size": string;
     }
+    interface MgInputText {
+        /**
+          * Define if input is desabled
+         */
+        "disabled": boolean;
+        /**
+          * Input label Required
+         */
+        "label": string;
+        /**
+          * Input max length
+         */
+        "maxlength": number;
+        /**
+          * Input name If not set the value equals the reference
+         */
+        "name"?: string;
+        /**
+          * Input placeholder
+         */
+        "placeholder": string;
+        /**
+          * Input reference used for the input ID (id is a reserved prop in Stencil.js) If not set, an ID will be created
+         */
+        "reference"?: string;
+        /**
+          * Define if input is required
+         */
+        "required": boolean;
+        "value": string;
+    }
+    interface MgLabel {
+        /**
+          * Label input reference To match for/id
+         */
+        "reference": string;
+        /**
+          * If input is required an asterisk is added at the end of the label
+         */
+        "required": boolean;
+    }
 }
 declare global {
     interface HTMLMgButtonElement extends Components.MgButton, HTMLStencilElement {
@@ -38,15 +93,36 @@ declare global {
         prototype: HTMLMgButtonElement;
         new (): HTMLMgButtonElement;
     };
+    interface HTMLMgCharacterLeftElement extends Components.MgCharacterLeft, HTMLStencilElement {
+    }
+    var HTMLMgCharacterLeftElement: {
+        prototype: HTMLMgCharacterLeftElement;
+        new (): HTMLMgCharacterLeftElement;
+    };
     interface HTMLMgIconElement extends Components.MgIcon, HTMLStencilElement {
     }
     var HTMLMgIconElement: {
         prototype: HTMLMgIconElement;
         new (): HTMLMgIconElement;
     };
+    interface HTMLMgInputTextElement extends Components.MgInputText, HTMLStencilElement {
+    }
+    var HTMLMgInputTextElement: {
+        prototype: HTMLMgInputTextElement;
+        new (): HTMLMgInputTextElement;
+    };
+    interface HTMLMgLabelElement extends Components.MgLabel, HTMLStencilElement {
+    }
+    var HTMLMgLabelElement: {
+        prototype: HTMLMgLabelElement;
+        new (): HTMLMgLabelElement;
+    };
     interface HTMLElementTagNameMap {
         "mg-button": HTMLMgButtonElement;
+        "mg-character-left": HTMLMgCharacterLeftElement;
         "mg-icon": HTMLMgIconElement;
+        "mg-input-text": HTMLMgInputTextElement;
+        "mg-label": HTMLMgLabelElement;
     }
 }
 declare namespace LocalJSX {
@@ -64,6 +140,20 @@ declare namespace LocalJSX {
          */
         "variant"?: string;
     }
+    interface MgCharacterLeft {
+        /**
+          * Characters to count
+         */
+        "characters": string;
+        /**
+          * Character max length
+         */
+        "maxlength": number;
+        /**
+          * Reference Element ID for a11y link
+         */
+        "reference"?: string;
+    }
     interface MgIcon {
         /**
           * Icon to display
@@ -74,9 +164,54 @@ declare namespace LocalJSX {
          */
         "size"?: string;
     }
+    interface MgInputText {
+        /**
+          * Define if input is desabled
+         */
+        "disabled"?: boolean;
+        /**
+          * Input label Required
+         */
+        "label": string;
+        /**
+          * Input max length
+         */
+        "maxlength"?: number;
+        /**
+          * Input name If not set the value equals the reference
+         */
+        "name"?: string;
+        "onChanged"?: (event: CustomEvent<string>) => void;
+        /**
+          * Input placeholder
+         */
+        "placeholder"?: string;
+        /**
+          * Input reference used for the input ID (id is a reserved prop in Stencil.js) If not set, an ID will be created
+         */
+        "reference"?: string;
+        /**
+          * Define if input is required
+         */
+        "required"?: boolean;
+        "value"?: string;
+    }
+    interface MgLabel {
+        /**
+          * Label input reference To match for/id
+         */
+        "reference"?: string;
+        /**
+          * If input is required an asterisk is added at the end of the label
+         */
+        "required"?: boolean;
+    }
     interface IntrinsicElements {
         "mg-button": MgButton;
+        "mg-character-left": MgCharacterLeft;
         "mg-icon": MgIcon;
+        "mg-input-text": MgInputText;
+        "mg-label": MgLabel;
     }
 }
 export { LocalJSX as JSX };
@@ -84,7 +219,10 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "mg-button": LocalJSX.MgButton & JSXBase.HTMLAttributes<HTMLMgButtonElement>;
+            "mg-character-left": LocalJSX.MgCharacterLeft & JSXBase.HTMLAttributes<HTMLMgCharacterLeftElement>;
             "mg-icon": LocalJSX.MgIcon & JSXBase.HTMLAttributes<HTMLMgIconElement>;
+            "mg-input-text": LocalJSX.MgInputText & JSXBase.HTMLAttributes<HTMLMgInputTextElement>;
+            "mg-label": LocalJSX.MgLabel & JSXBase.HTMLAttributes<HTMLMgLabelElement>;
         }
     }
 }

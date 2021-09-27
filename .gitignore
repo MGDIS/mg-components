@@ -3,7 +3,8 @@ www/
 loader/
 storybook-static/
 coverage/
-screenshots/
+screenshot/
+mgdis-design-system-*.tgz
 
 *~
 *.sw[mnpcod]
