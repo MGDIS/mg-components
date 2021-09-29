@@ -23,7 +23,7 @@ describe('mg-button', () => {
 
   test.each(["", "blu", undefined])('Should not render', async (variant) => {
     try {
-      await getPage(variant);
+      await getPage({variant});
     }
     catch (err){
       expect(err.message).toContain('<mg-button> prop "variant" must be one of : ')

@@ -27,7 +27,7 @@ export class MgButton {
 
   /**
    * aria-label
-   * In case button text is not explicit enougth
+   * In case button text is not explicit enough
    */
    @Prop() label: string;
 

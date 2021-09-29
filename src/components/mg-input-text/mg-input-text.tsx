@@ -1,4 +1,4 @@
-import { Component, Event, Host, h, Prop, Watch, EventEmitter, State, Element } from '@stencil/core';
+import { Component, Event, Host, h, Prop, Watch, EventEmitter, State } from '@stencil/core';
 import { createID } from '../../utils/utils';
 
 @Component({
@@ -8,7 +8,15 @@ import { createID } from '../../utils/utils';
 })
 export class MgInputText {
 
-  displayCharacterLeftReference ='';
+  /**
+   * Internal
+   */
+  private displayCharacterLeftReference = '';
+
+  /**
+   * Component value
+   */
+   @Prop({ mutable: true, reflect: true }) value: string;
 
   /**
    * Input reference used for the input ID (id is a reserved prop in Stencil.js)
@@ -50,44 +58,55 @@ export class MgInputText {
    @Prop() required: boolean;
 
    /**
-   * Define if input is desabled
+   * Define if input is disabled
    */
   @Prop() disabled: boolean;
 
   /**
-   *
+   * Define if component should display character left
    */
-  @Prop({ mutable: true, reflect: true }) value: string;
+   @Prop() displayCharacterLeft: boolean = true;
 
   /**
-   *
+   * Template to use for characters left sentence
    */
-  @State() displayCharacterLeft: boolean = false;
+   @Prop() characterLeftTemplate: string;
 
   /**
-   *
+   * Aria attributes that need to be added to the input :
+   * - nbCharLeft
+   * - help text
+   * - tooltip ?
+   * (label is already linked throught for/id)
    */
   @State() ariaDescribedby: string[] = [this.displayCharacterLeftReference];
 
   /**
-   * Check if props are well configured on init
+   * Emmited event when value change
    */
-   componentWillLoad() {
-    this.validateLabel(this.label);
-    this.displayCharacterLeftReference = `${this.reference}-character-left`;
-  }
+  @Event() changed: EventEmitter<string>
 
+
+  /**
+   *
+   * @param event
+   */
   handleChange(event) {
     this.value = event?.target?.value;
     this.changed.emit(this.value)
   }
 
-  setDisplayCharacterLeft(isDisplayed) {
-    this.displayCharacterLeft = isDisplayed;
+  /**
+   * Check if props are well configured on init
+   */
+  componentWillLoad() {
+    this.validateLabel(this.label);
+    this.displayCharacterLeftReference = `${this.reference}-character-left`;
   }
 
-  @Event() changed: EventEmitter<string>
-
+  /**
+   * Render
+   */
   render() {
     return (
       <Host>
@@ -103,10 +122,13 @@ export class MgInputText {
           required={this.required}
           aria-describedby={this.ariaDescribedby.join(' ')}
           onInput={(e) => this.handleChange(e)}
-          onFocus={() => this.setDisplayCharacterLeft(true)}
-          onBlur={() => this.setDisplayCharacterLeft(false)}
         />
-        { this.displayCharacterLeft && <mg-character-left reference={this.displayCharacterLeftReference} characters={this.value} maxlength={this.maxlength}></mg-character-left> }
+        { this.displayCharacterLeft && <mg-character-left
+          reference={this.displayCharacterLeftReference}
+          characters={this.value}
+          maxlength={this.maxlength}
+          template={this.characterLeftTemplate}
+        ></mg-character-left> }
       </Host>
     );
   }

@@ -12,7 +12,7 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
-          * aria-label In case button text is not explicit enougth
+          * aria-label In case button text is not explicit enough
          */
         "label": string;
         /**
@@ -33,6 +33,10 @@ export namespace Components {
           * Reference Element ID for a11y link
          */
         "reference": string;
+        /**
+          * Template This sentence MUST contain {counter} in place of characters number left
+         */
+        "template": string;
     }
     interface MgIcon {
         /**
@@ -46,9 +50,17 @@ export namespace Components {
     }
     interface MgInputText {
         /**
-          * Define if input is desabled
+          * Template to use for characters left sentence
+         */
+        "characterLeftTemplate": string;
+        /**
+          * Define if input is disabled
          */
         "disabled": boolean;
+        /**
+          * Define if component should display character left
+         */
+        "displayCharacterLeft": boolean;
         /**
           * Input label Required
          */
@@ -73,6 +85,9 @@ export namespace Components {
           * Define if input is required
          */
         "required": boolean;
+        /**
+          * Component value
+         */
         "value": string;
     }
     interface MgLabel {
@@ -132,7 +147,7 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
-          * aria-label In case button text is not explicit enougth
+          * aria-label In case button text is not explicit enough
          */
         "label"?: string;
         /**
@@ -153,6 +168,10 @@ declare namespace LocalJSX {
           * Reference Element ID for a11y link
          */
         "reference"?: string;
+        /**
+          * Template This sentence MUST contain {counter} in place of characters number left
+         */
+        "template"?: string;
     }
     interface MgIcon {
         /**
@@ -166,9 +185,17 @@ declare namespace LocalJSX {
     }
     interface MgInputText {
         /**
-          * Define if input is desabled
+          * Template to use for characters left sentence
+         */
+        "characterLeftTemplate"?: string;
+        /**
+          * Define if input is disabled
          */
         "disabled"?: boolean;
+        /**
+          * Define if component should display character left
+         */
+        "displayCharacterLeft"?: boolean;
         /**
           * Input label Required
          */
@@ -181,6 +208,9 @@ declare namespace LocalJSX {
           * Input name If not set the value equals the reference
          */
         "name"?: string;
+        /**
+          * Emmited event when value change
+         */
         "onChanged"?: (event: CustomEvent<string>) => void;
         /**
           * Input placeholder
@@ -194,6 +224,9 @@ declare namespace LocalJSX {
           * Define if input is required
          */
         "required"?: boolean;
+        /**
+          * Component value
+         */
         "value"?: string;
     }
     interface MgLabel {
