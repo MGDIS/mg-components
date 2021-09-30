@@ -159,7 +159,7 @@ declare namespace LocalJSX {
         /**
           * Characters to count
          */
-        "characters": string;
+        "characters"?: string;
         /**
           * Character max length
          */

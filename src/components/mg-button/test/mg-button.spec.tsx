@@ -28,6 +28,5 @@ describe('mg-button', () => {
     catch (err){
       expect(err.message).toContain('<mg-button> prop "variant" must be one of : ')
     }
-
   });
 });

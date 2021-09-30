@@ -33,7 +33,7 @@ export class MgCharacterLeft {
   /**
    * Characters to count
    */
-  @Prop() characters!: string;
+  @Prop() characters: string = '';
   @Watch('characters')
   watchPropHandler() {
     this.message = this.getMessage();
@@ -42,6 +42,12 @@ export class MgCharacterLeft {
    * Character max length
    */
    @Prop() maxlength!: number;
+   @Watch('characters')
+   validateMaxlength(newValue: number) {
+    if (typeof newValue !== 'number') {
+      throw new Error('<mg-character-left> prop "maxlength" is required')
+    };
+  }
 
   /**
    * Character left
@@ -61,13 +67,13 @@ export class MgCharacterLeft {
    */
    componentWillLoad() {
     this.validateTemplate(this.template);
+    this.validateMaxlength(this.maxlength);
   }
 
   /**
    * Render
    */
   render() {
-
     return (
       <Host>
         <p id={this.reference} innerHTML={this.message}></p>
