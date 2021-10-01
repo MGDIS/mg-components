@@ -116,6 +116,7 @@ export class MgInputText {
           id={this.reference}
           name={this.name}
           placeholder={this.placeholder}
+          title={this.placeholder}
           value={this.value}
           maxlength={this.maxlength}
           disabled={this.disabled}

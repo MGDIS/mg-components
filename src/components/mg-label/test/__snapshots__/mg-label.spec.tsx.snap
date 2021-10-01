@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mg-label Should render label with required false 1`] = `
+<mg-label>
+  <!---->
+  <label htmlfor="blu">
+    mg-label
+  </label>
+</mg-label>
+`;
+
+exports[`mg-label Should render label with required true 1`] = `
+<mg-label>
+  <!---->
+  <label htmlfor="blu">
+    mg-label
+    <span aria-hidden="true">
+      *
+    </span>
+  </label>
+</mg-label>
+`;

@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mg-character-left Should render nb char left for blu blu blu blu blu renders 1`] = `
+<mg-character-left>
+  <p>
+    <strong>
+      104
+    </strong>
+    caractères disponibles.
+  </p>
+</mg-character-left>
+`;
+
+exports[`mg-character-left Should render nb char left for blu blu blu blu blu renders 2`] = `
+<mg-character-left>
+  <p>
+    <strong>
+      215
+    </strong>
+    caractères disponibles.
+  </p>
+</mg-character-left>
+`;
+
+exports[`mg-character-left Should render nb char left for blu blu blu blu blu renders 3`] = `
+<mg-character-left>
+  <p>
+    <strong>
+      181
+    </strong>
+    caractères disponibles.
+  </p>
+</mg-character-left>
+`;
+
+exports[`mg-character-left Should render nb char left for blu renders 1`] = `
+<mg-character-left>
+  <p>
+    <strong>
+      120
+    </strong>
+    caractères disponibles.
+  </p>
+</mg-character-left>
+`;
+
+exports[`mg-character-left Should render nb char left for blu renders 2`] = `
+<mg-character-left>
+  <p>
+    <strong>
+      231
+    </strong>
+    caractères disponibles.
+  </p>
+</mg-character-left>
+`;
+
+exports[`mg-character-left Should render nb char left for blu renders 3`] = `
+<mg-character-left>
+  <p>
+    <strong>
+      197
+    </strong>
+    caractères disponibles.
+  </p>
+</mg-character-left>
+`;
+
+exports[`mg-character-left Should render nb char left for blublu renders 1`] = `
+<mg-character-left>
+  <p>
+    <strong>
+      117
+    </strong>
+    caractères disponibles.
+  </p>
+</mg-character-left>
+`;
+
+exports[`mg-character-left Should render nb char left for blublu renders 2`] = `
+<mg-character-left>
+  <p>
+    <strong>
+      228
+    </strong>
+    caractères disponibles.
+  </p>
+</mg-character-left>
+`;
+
+exports[`mg-character-left Should render nb char left for blublu renders 3`] = `
+<mg-character-left>
+  <p>
+    <strong>
+      194
+    </strong>
+    caractères disponibles.
+  </p>
+</mg-character-left>
+`;

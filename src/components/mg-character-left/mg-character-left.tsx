@@ -16,7 +16,7 @@ export class MgCharacterLeft {
    * Reference
    * Element ID for a11y link
    */
-   @Prop() reference: string;
+  @Prop() reference: string;
 
    /**
    * Template
@@ -41,9 +41,9 @@ export class MgCharacterLeft {
   /**
    * Character max length
    */
-   @Prop() maxlength!: number;
-   @Watch('characters')
-   validateMaxlength(newValue: number) {
+  @Prop() maxlength!: number;
+  @Watch('maxlength')
+  validateMaxlength(newValue: number) {
     if (typeof newValue !== 'number') {
       throw new Error('<mg-character-left> prop "maxlength" is required')
     };
@@ -58,14 +58,14 @@ export class MgCharacterLeft {
    * Calculate number character left
    * @returns {string}
    */
-   getMessage() {
+  getMessage() {
     return this.template.replace(this.mustacheCounter, `<strong>${this.maxlength - this.characters.length}</strong>`)
   }
 
   /**
    * Check if props are well configured on init
    */
-   componentWillLoad() {
+  componentWillLoad() {
     this.validateTemplate(this.template);
     this.validateMaxlength(this.maxlength);
   }

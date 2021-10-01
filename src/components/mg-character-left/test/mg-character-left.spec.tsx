@@ -11,13 +11,8 @@ describe('mg-character-left',()=> {
 
   describe.each(['blu', 'blublu', 'blu blu blu blu blu'])('Should render nb char left for %s', (characters) => {
     test.each([123, 234, 200])('renders', async (maxlength) => {
-      const expected = maxlength - characters.length;
       const { root } = await getPage({characters, maxlength});
-      expect(root).toEqualHtml(`
-        <mg-character-left>
-        <p><strong>${expected}</strong> caractères disponibles.</p>
-        </mg-character-left>
-      `);
+      expect(root).toMatchSnapshot();
     });
   });
 
@@ -48,19 +43,18 @@ describe('mg-character-left',()=> {
     }
   });
 
-  // test('Sould update character left counter', async ()=> {
-  //   const maxlength = 400;
-  //   const characters = "blu blu";
-  //   const { root } = await getPage({maxlength});
+  test('Sould update character left counter', async ()=> {
+    const maxlength = 400;
+    const characters = "blu blu";
+    const page = await getPage({characters : "", maxlength});
 
-  //   expect(root).toEqualHtml(`
-  //       <mg-character-left>
-  //       <p><strong>${maxlength}</strong> caractères disponibles.</p>
-  //       </mg-character-left>
-  //     `);
-  // })
+    const element = await page.doc.querySelector('mg-character-left');
+    expect(element.textContent).toEqual(`${maxlength} caractères disponibles.`);
 
-
+    element.setAttribute('characters', characters);
+    await page.waitForChanges();
+    expect(element.textContent).toEqual(`${maxlength - characters.length} caractères disponibles.`);
+  })
 
 });
 
