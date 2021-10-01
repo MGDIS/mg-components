@@ -4,7 +4,7 @@ export default {
   parameters: {
     docs: {
       source: {
-        code: `<mg-label required colon></mg-label>`,
+        code: `<mg-label required colon>Label</mg-label>`,
       },
     },
   },
