@@ -13,14 +13,14 @@ export class MgCharacterLeft {
   private mustacheCounter = '{counter}';
 
   /**
-   * Reference
-   * Element ID for a11y link
+   * Sets an `id` element.
+   * Needed by the input for accessibility `arai-decribedby`.
    */
   @Prop() reference: string;
 
    /**
-   * Template
-   * This sentence MUST contain {counter} in place of characters number left
+   * Template to display remaining characters.
+   * Must have {counter} inside
    */
   @Prop() template: string = '{counter} caractères disponibles.';
   @Watch('template')
@@ -31,15 +31,16 @@ export class MgCharacterLeft {
   }
 
   /**
-   * Characters to count
+   * Sets the characters to count
    */
   @Prop() characters: string = '';
   @Watch('characters')
   watchPropHandler() {
     this.message = this.getMessage();
   }
+
   /**
-   * Character max length
+   * Add maximum length
    */
   @Prop() maxlength!: number;
   @Watch('maxlength')

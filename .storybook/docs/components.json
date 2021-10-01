@@ -1,8 +1,8 @@
 {
-  "timestamp": "2021-09-24T10:23:45",
+  "timestamp": "2021-10-01T14:23:08",
   "compiler": {
     "name": "@stencil/core",
-    "version": "2.6.0",
+    "version": "2.8.1",
     "typescriptVersion": "4.2.3"
   },
   "components": [
@@ -38,7 +38,7 @@
           "mutable": false,
           "attr": "label",
           "reflectToAttr": false,
-          "docs": "aria-label\nIn case button text is not explicit enougth",
+          "docs": "aria-label\nIn case button text is not explicit enough",
           "docsTags": [],
           "values": [
             {
@@ -75,6 +75,98 @@
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/mg-character-left/mg-character-left.tsx",
+      "encapsulation": "scoped",
+      "tag": "mg-character-left",
+      "readme": "# mg-character-left\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "characters",
+          "type": "string",
+          "mutable": false,
+          "attr": "characters",
+          "reflectToAttr": false,
+          "docs": "Sets the characters to count",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "maxlength",
+          "type": "number",
+          "mutable": false,
+          "attr": "maxlength",
+          "reflectToAttr": false,
+          "docs": "Add maximum length",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "reference",
+          "type": "string",
+          "mutable": false,
+          "attr": "reference",
+          "reflectToAttr": false,
+          "docs": "Sets an `id` element.\nNeeded by the input for accessibility `arai-decribedby`.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "template",
+          "type": "string",
+          "mutable": false,
+          "attr": "template",
+          "reflectToAttr": false,
+          "docs": "Template to display remaining characters.\nMust have {counter} inside",
+          "docsTags": [],
+          "default": "'{counter} caractères disponibles.'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "mg-input-text"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "mg-input-text": [
+          "mg-character-left"
+        ]
+      }
     },
     {
       "filePath": "./src/components/mg-icon/mg-icon.tsx",
@@ -139,13 +231,46 @@
       "usage": {},
       "props": [
         {
+          "name": "characterLeftTemplate",
+          "type": "string",
+          "mutable": false,
+          "attr": "character-left-template",
+          "reflectToAttr": false,
+          "docs": "Template to use for characters left sentence",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "disabled",
           "type": "boolean",
           "mutable": false,
           "attr": "disabled",
           "reflectToAttr": false,
-          "docs": "Define if input is desabled",
+          "docs": "Define if input is disabled",
           "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "displayCharacterLeft",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "display-character-left",
+          "reflectToAttr": false,
+          "docs": "Define if component should display character left",
+          "docsTags": [],
+          "default": "true",
           "values": [
             {
               "type": "boolean"
@@ -243,7 +368,7 @@
           "mutable": false,
           "attr": "required",
           "reflectToAttr": false,
-          "docs": "Define if input is required\nAlso add an asterisk at the end of the label",
+          "docs": "Define if input is required",
           "docsTags": [],
           "values": [
             {
@@ -259,7 +384,7 @@
           "mutable": true,
           "attr": "value",
           "reflectToAttr": true,
-          "docs": "",
+          "docs": "Component value",
           "docsTags": [],
           "values": [
             {
@@ -278,7 +403,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "",
+          "docs": "Emmited event when value change",
           "docsTags": []
         }
       ],
@@ -287,8 +412,74 @@
       "slots": [],
       "parts": [],
       "dependents": [],
+      "dependencies": [
+        "mg-label",
+        "mg-character-left"
+      ],
+      "dependencyGraph": {
+        "mg-input-text": [
+          "mg-label",
+          "mg-character-left"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/mg-label/mg-label.tsx",
+      "encapsulation": "scoped",
+      "tag": "mg-label",
+      "readme": "# mg-label\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "reference",
+          "type": "string",
+          "mutable": false,
+          "attr": "reference",
+          "reflectToAttr": false,
+          "docs": "Label input reference\nTo match for/id",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "required",
+          "reflectToAttr": false,
+          "docs": "If input is required an asterisk is added at the end of the label",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "mg-input-text"
+      ],
       "dependencies": [],
-      "dependencyGraph": {}
+      "dependencyGraph": {
+        "mg-input-text": [
+          "mg-label"
+        ]
+      }
     }
   ]
 }

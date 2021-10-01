@@ -22,19 +22,19 @@ export namespace Components {
     }
     interface MgCharacterLeft {
         /**
-          * Characters to count
+          * Sets the characters to count
          */
         "characters": string;
         /**
-          * Character max length
+          * Add maximum length
          */
         "maxlength": number;
         /**
-          * Reference Element ID for a11y link
+          * Sets an `id` element. Needed by the input for accessibility `arai-decribedby`.
          */
         "reference": string;
         /**
-          * Template This sentence MUST contain {counter} in place of characters number left
+          * Template to display remaining characters. Must have {counter} inside
          */
         "template": string;
     }
@@ -157,19 +157,19 @@ declare namespace LocalJSX {
     }
     interface MgCharacterLeft {
         /**
-          * Characters to count
+          * Sets the characters to count
          */
         "characters"?: string;
         /**
-          * Character max length
+          * Add maximum length
          */
         "maxlength": number;
         /**
-          * Reference Element ID for a11y link
+          * Sets an `id` element. Needed by the input for accessibility `arai-decribedby`.
          */
         "reference"?: string;
         /**
-          * Template This sentence MUST contain {counter} in place of characters number left
+          * Template to display remaining characters. Must have {counter} inside
          */
         "template"?: string;
     }
