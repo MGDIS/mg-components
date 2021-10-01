@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop, State, Watch } from '@stencil/core';
+import { Component, Host, h, Prop, Watch } from '@stencil/core';
 
 @Component({
   tag: 'mg-character-left',
@@ -34,10 +34,6 @@ export class MgCharacterLeft {
    * Sets the characters to count
    */
   @Prop() characters: string = '';
-  @Watch('characters')
-  watchPropHandler() {
-    this.message = this.getMessage();
-  }
 
   /**
    * Add maximum length
@@ -49,11 +45,6 @@ export class MgCharacterLeft {
       throw new Error('<mg-character-left> prop "maxlength" is required')
     };
   }
-
-  /**
-   * Character left
-   */
-  @State() message: string = this.getMessage();
 
   /**
    * Calculate number character left
@@ -77,7 +68,7 @@ export class MgCharacterLeft {
   render() {
     return (
       <Host>
-        <p id={this.reference} innerHTML={this.message}></p>
+        <p id={this.reference} innerHTML={this.getMessage()}></p>
       </Host>
     );
   }
