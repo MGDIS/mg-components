@@ -92,6 +92,10 @@ export namespace Components {
     }
     interface MgLabel {
         /**
+          * Add a colon punctuation after label text
+         */
+        "colon": boolean;
+        /**
           * Label input reference To match for/id
          */
         "reference": string;
@@ -230,6 +234,10 @@ declare namespace LocalJSX {
         "value"?: string;
     }
     interface MgLabel {
+        /**
+          * Add a colon punctuation after label text
+         */
+        "colon"?: boolean;
         /**
           * Label input reference To match for/id
          */

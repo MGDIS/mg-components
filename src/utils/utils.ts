@@ -3,5 +3,5 @@ const nanoid = customAlphabet('abcdefghijklmnopqrstuvwxyz', 10)
 
 
 export function createID(prefix?: string): string {
-  return (prefix !== undefined ? `${prefix}-` : '' ) + nanoid();
+  return (typeof prefix === 'string' && prefix !== '' ? `${prefix}-` : '' ) + nanoid();
 }

@@ -19,6 +19,11 @@ export class MgLabel {
   @Prop() required: boolean;
 
   /**
+   * Add a colon punctuation after label text
+   */
+   @Prop() colon: boolean;
+
+  /**
    * Render
    */
   render() {
@@ -27,6 +32,7 @@ export class MgLabel {
         <label htmlFor={this.reference}>
         <slot></slot>
           { this.required && <span aria-hidden="true">&nbsp;*</span> }
+          { this.colon && `\u00A0:` /* represent a &nbsp; */ }
         </label>
       </Host>
     );

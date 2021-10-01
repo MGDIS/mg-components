@@ -1,6 +1,6 @@
 export default {
   component: 'mg-icon',
-  title: 'Components/MgIcon',
+  title: 'Atoms/mg-icon',
   argTypes: {
     icon: {
       options: ['user-cadenas', 'editable'],
