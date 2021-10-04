@@ -38,6 +38,12 @@ export namespace Components {
          */
         "template": string;
     }
+    interface MgHelpText {
+        /**
+          * Sets an `id` element. Needed by the input for accessibility `arai-decribedby`.
+         */
+        "reference": string;
+    }
     interface MgIcon {
         /**
           * Icon to display
@@ -61,6 +67,10 @@ export namespace Components {
           * Define if component should display character left
          */
         "displayCharacterLeft": boolean;
+        /**
+          * Template to use for characters left sentence
+         */
+        "helpText": string;
         /**
           * Input label Required
          */
@@ -118,6 +128,12 @@ declare global {
         prototype: HTMLMgCharacterLeftElement;
         new (): HTMLMgCharacterLeftElement;
     };
+    interface HTMLMgHelpTextElement extends Components.MgHelpText, HTMLStencilElement {
+    }
+    var HTMLMgHelpTextElement: {
+        prototype: HTMLMgHelpTextElement;
+        new (): HTMLMgHelpTextElement;
+    };
     interface HTMLMgIconElement extends Components.MgIcon, HTMLStencilElement {
     }
     var HTMLMgIconElement: {
@@ -139,6 +155,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "mg-button": HTMLMgButtonElement;
         "mg-character-left": HTMLMgCharacterLeftElement;
+        "mg-help-text": HTMLMgHelpTextElement;
         "mg-icon": HTMLMgIconElement;
         "mg-input-text": HTMLMgInputTextElement;
         "mg-label": HTMLMgLabelElement;
@@ -177,6 +194,12 @@ declare namespace LocalJSX {
          */
         "template"?: string;
     }
+    interface MgHelpText {
+        /**
+          * Sets an `id` element. Needed by the input for accessibility `arai-decribedby`.
+         */
+        "reference"?: string;
+    }
     interface MgIcon {
         /**
           * Icon to display
@@ -200,6 +223,10 @@ declare namespace LocalJSX {
           * Define if component should display character left
          */
         "displayCharacterLeft"?: boolean;
+        /**
+          * Template to use for characters left sentence
+         */
+        "helpText"?: string;
         /**
           * Input label Required
          */
@@ -250,6 +277,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "mg-button": MgButton;
         "mg-character-left": MgCharacterLeft;
+        "mg-help-text": MgHelpText;
         "mg-icon": MgIcon;
         "mg-input-text": MgInputText;
         "mg-label": MgLabel;
@@ -261,6 +289,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "mg-button": LocalJSX.MgButton & JSXBase.HTMLAttributes<HTMLMgButtonElement>;
             "mg-character-left": LocalJSX.MgCharacterLeft & JSXBase.HTMLAttributes<HTMLMgCharacterLeftElement>;
+            "mg-help-text": LocalJSX.MgHelpText & JSXBase.HTMLAttributes<HTMLMgHelpTextElement>;
             "mg-icon": LocalJSX.MgIcon & JSXBase.HTMLAttributes<HTMLMgIconElement>;
             "mg-input-text": LocalJSX.MgInputText & JSXBase.HTMLAttributes<HTMLMgInputTextElement>;
             "mg-label": LocalJSX.MgLabel & JSXBase.HTMLAttributes<HTMLMgLabelElement>;

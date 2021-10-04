@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mg-input-text renders 1`] = `
+<mg-input-text>
+  <mock:shadow-root>
+    <mg-label reference="reference">
+      label
+    </mg-label>
+    <input aria-describedby="reference-character-left" id="reference" maxlength="400" name="reference" type="text">
+    <mg-character-left maxlength="400" reference="reference-character-left"></mg-character-left>
+  </mock:shadow-root>
+</mg-input-text>
+`;

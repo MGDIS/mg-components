@@ -1,10 +1,12 @@
 :host {
   // An other way to display / hide characters left
   // Need to be improved using sr-only class exemple for accessibility
-  mg-character-left {
+  mg-character-left,
+  mg-help-text {
     display: none;
   }
-  input:focus ~ mg-character-left {
+  input:focus ~ mg-character-left,
+  input:focus ~ mg-help-text {
     display: inline;
   }
 }

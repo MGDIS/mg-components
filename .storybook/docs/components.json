@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-10-01T16:25:54",
+  "timestamp": "2021-10-04T08:17:16",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.8.1",
@@ -169,6 +169,47 @@
       }
     },
     {
+      "filePath": "./src/components/mg-help-text/mg-help-text.tsx",
+      "encapsulation": "shadow",
+      "tag": "mg-help-text",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "reference",
+          "type": "string",
+          "mutable": false,
+          "attr": "reference",
+          "reflectToAttr": false,
+          "docs": "Sets an `id` element.\nNeeded by the input for accessibility `arai-decribedby`.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "mg-input-text"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "mg-input-text": [
+          "mg-help-text"
+        ]
+      }
+    },
+    {
       "filePath": "./src/components/mg-icon/mg-icon.tsx",
       "encapsulation": "shadow",
       "tag": "mg-icon",
@@ -274,6 +315,22 @@
           "values": [
             {
               "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "helpText",
+          "type": "string",
+          "mutable": false,
+          "attr": "help-text",
+          "reflectToAttr": false,
+          "docs": "Template to use for characters left sentence",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
             }
           ],
           "optional": false,
@@ -414,12 +471,14 @@
       "dependents": [],
       "dependencies": [
         "mg-label",
-        "mg-character-left"
+        "mg-character-left",
+        "mg-help-text"
       ],
       "dependencyGraph": {
         "mg-input-text": [
           "mg-label",
-          "mg-character-left"
+          "mg-character-left",
+          "mg-help-text"
         ]
       }
     },

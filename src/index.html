@@ -36,13 +36,18 @@
       <mg-button variant="info">Info</mg-button>
     </div>
     <div>
-      <mg-input-text label="coucou" placeholder="placeholder" value="tutu" character-left-template="blu {counter} blublu"></mg-input-text>
-      <mg-input-text label="coucou" display-character-left="false"></mg-input-text>
-      <mg-character-left maxlength="400"></mg-character-left>
       <mg-label colon required
         >Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label
         Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Lsas</mg-label
       >
+      <mg-character-left maxlength="400"></mg-character-left>
+      <mg-help-text>Texte d'aide avec <a href="https://www.exemple.com">un lien</a> du text <strong>gras</strong> ou en <em>italic</em> !</mg-help-text>
+      <mg-input-text label="coucou" placeholder="placeholder" value="tutu" character-left-template="blu {counter} blublu"></mg-input-text>
+      <mg-input-text label="coucou" display-character-left="false"></mg-input-text>
+      <mg-input-text
+        label="coucou"
+        help-text="Texte d'aide avec <a href='https://www.exemple.com'>un lien</a> du text <strong>gras</strong> ou en <em>italic</em> !"
+      ></mg-input-text>
     </div>
   </body>
 </html>

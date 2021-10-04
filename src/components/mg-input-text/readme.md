@@ -12,6 +12,7 @@
 | `characterLeftTemplate` | `character-left-template` | Template to use for characters left sentence                                                                  | `string`  | `undefined`                 |
 | `disabled`              | `disabled`                | Define if input is disabled                                                                                   | `boolean` | `undefined`                 |
 | `displayCharacterLeft`  | `display-character-left`  | Define if component should display character left                                                             | `boolean` | `true`                      |
+| `helpText`              | `help-text`               | Template to use for characters left sentence                                                                  | `string`  | `undefined`                 |
 | `label` _(required)_    | `label`                   | Input label Required                                                                                          | `string`  | `undefined`                 |
 | `maxlength`             | `maxlength`               | Input max length                                                                                              | `number`  | `400`                       |
 | `name`                  | `name`                    | Input name If not set the value equals the reference                                                          | `string`  | `this.reference`            |
@@ -34,12 +35,14 @@
 
 - [mg-label](../mg-label)
 - [mg-character-left](../mg-character-left)
+- [mg-help-text](../mg-help-text)
 
 ### Graph
 ```mermaid
 graph TD;
   mg-input-text --> mg-label
   mg-input-text --> mg-character-left
+  mg-input-text --> mg-help-text
   style mg-input-text fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

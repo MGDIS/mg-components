@@ -11,7 +11,8 @@ export class MgInputText {
   /**
    * Internal
    */
-  private displayCharacterLeftReference = '';
+  private characterLeftReference = '';
+  private helpTextReference = '';
 
   /**
    * Component value
@@ -72,6 +73,11 @@ export class MgInputText {
    */
    @Prop() characterLeftTemplate: string;
 
+   /**
+   * Template to use for characters left sentence
+   */
+    @Prop() helpText: string;
+
   /**
    * Aria attributes that need to be added to the input :
    * - nbCharLeft
@@ -79,7 +85,7 @@ export class MgInputText {
    * - tooltip ?
    * (label is already linked throught for/id)
    */
-  @State() ariaDescribedby: string[] = [this.displayCharacterLeftReference];
+  @State() ariaDescribedby: string[] = [];
 
   /**
    * Emmited event when value change
@@ -98,10 +104,19 @@ export class MgInputText {
 
   /**
    * Check if props are well configured on init
+   * Add required aria attributes
    */
   componentWillLoad() {
     this.validateLabel(this.label);
-    this.displayCharacterLeftReference = `${this.reference}-character-left`;
+    if(this.displayCharacterLeft) {
+      this.characterLeftReference = `${this.reference}-character-left`;
+      this.ariaDescribedby.push(this.characterLeftReference);
+    }
+    if(this.helpText) {
+      this.helpTextReference = `${this.reference}-help-text`;
+      this.ariaDescribedby.push(this.helpTextReference);
+
+    }
   }
 
   /**
@@ -125,11 +140,12 @@ export class MgInputText {
           onInput={(e) => this.handleChange(e)}
         />
         { this.displayCharacterLeft && <mg-character-left
-          reference={this.displayCharacterLeftReference}
+          reference={this.characterLeftReference}
           characters={this.value}
           maxlength={this.maxlength}
           template={this.characterLeftTemplate}
         ></mg-character-left> }
+        { this.helpText && <mg-help-text reference={this.helpTextReference} innerHTML={this.helpText}></mg-help-text> }
       </Host>
     );
   }
