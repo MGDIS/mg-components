@@ -15,14 +15,14 @@ stages:
   - release
   - deploy
 
-# lint:
-#   stage: test
-#   rules:
-#     - if: $CI_COMMIT_TAG == null
-#   before_script:
-#     - npm ci
-#   script:
-#     - npm run lint
+lint:
+  stage: test
+  rules:
+    - if: $CI_COMMIT_TAG == null
+  before_script:
+    - npm ci
+  script:
+    - npm run lint
 
 audit:
   stage: test

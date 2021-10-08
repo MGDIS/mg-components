@@ -5,7 +5,7 @@ describe('utils', ()=>{
     test.each([undefined, '', 'blu'])('Should generate a prefixed ID if defined : %s', (prefix)=>{
       const id = createID(prefix);
       let regexp = /^[a-z]{10}$/;
-      if(prefix) {
+      if(prefix !== undefined && prefix !== '') {
         regexp = new RegExp(`^${prefix}-[a-z]{10}$`);
       }
       expect(id).toMatch(regexp);
