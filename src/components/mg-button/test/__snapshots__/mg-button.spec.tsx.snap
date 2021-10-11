@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mg-button Should render an alert button 1`] = `
+<mg-button>
+  <mock:shadow-root>
+    <button class="mg-button mg-button--alert">
+      <slot></slot>
+    </button>
+  </mock:shadow-root>
+</mg-button>
+`;
+
+exports[`mg-button Should render an alert-alt button 1`] = `
+<mg-button>
+  <mock:shadow-root>
+    <button class="mg-button mg-button--alert-alt">
+      <slot></slot>
+    </button>
+  </mock:shadow-root>
+</mg-button>
+`;
+
+exports[`mg-button Should render an info button 1`] = `
+<mg-button>
+  <mock:shadow-root>
+    <button class="mg-button mg-button--info">
+      <slot></slot>
+    </button>
+  </mock:shadow-root>
+</mg-button>
+`;
+
+exports[`mg-button Should render an primary button 1`] = `
+<mg-button>
+  <mock:shadow-root>
+    <button class="mg-button mg-button--primary">
+      <slot></slot>
+    </button>
+  </mock:shadow-root>
+</mg-button>
+`;
+
+exports[`mg-button Should render an secondary button 1`] = `
+<mg-button>
+  <mock:shadow-root>
+    <button class="mg-button mg-button--secondary">
+      <slot></slot>
+    </button>
+  </mock:shadow-root>
+</mg-button>
+`;

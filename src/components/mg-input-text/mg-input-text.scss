@@ -1,12 +1,45 @@
-:host {
-  // An other way to display / hide characters left
-  // Need to be improved using sr-only class exemple for accessibility
+.mg-input {
+  // Display
+  display: flex;
+  align-items: baseline;
+
+  .mg-input__input-container {
+    input {
+      min-height: var(--input-height);
+      box-sizing: border-box;
+    }
+  }
+
+  /**
+   * Display label on top
+   */
+
+  &.label-on-top {
+    flex-direction: column;
+  }
+
+  /**
+   * Show hide nb char left ans help text on focus
+   */
   mg-character-left,
-  mg-help-text {
+  mg-help-text:not(.error) {
     display: none;
   }
-  input:focus ~ mg-character-left,
-  input:focus ~ mg-help-text {
-    display: inline;
+
+  &.focus {
+    mg-character-left,
+    mg-help-text:not(.error) {
+      display: initial;
+    }
+  }
+
+  /**
+   * Style when input is invalid
+   */
+  &.invalid {
+    color: red;
+    input {
+      border: 1px solid red;
+    }
   }
 }

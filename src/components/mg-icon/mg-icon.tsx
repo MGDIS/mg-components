@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop, Watch, getAssetPath } from '@stencil/core';
+import { Component, h, Prop, Watch, getAssetPath } from '@stencil/core';
 
 // TODO : Work on Accessible SVGs
 @Component({
@@ -25,7 +25,7 @@ export class MgIcon {
     if(!this.icons.includes(newValue)) {
       throw new Error(`<mg-icon> prop "icon" must be one of : ${this.icons.join(', ')}`);
     }
-    this.classes.push(`mg-icon-${this.icon}`);
+    this.classes.push(`mg-icon--${this.icon}`);
   }
 
   /**
@@ -37,7 +37,7 @@ export class MgIcon {
     if(!this.sizes.includes(newValue)) {
       throw new Error(`<mg-icon> prop "size" must be one of : ${this.sizes.join(', ')}`);
     }
-    this.classes.push(`mg-icon-${this.size}`);
+    this.classes.push(`mg-icon--${this.size}`);
   }
 
   /**
@@ -53,11 +53,9 @@ export class MgIcon {
   */
   render() {
     return (
-      <Host>
         <svg class={this.classes.join(' ')} >
           <use xlinkHref={getAssetPath('./assets/icons.svg') + `#${this.icon}`}></use>
         </svg>
-      </Host>
     );
   }
 

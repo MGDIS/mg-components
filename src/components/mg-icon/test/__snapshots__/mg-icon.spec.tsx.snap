@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mg-icon Should render editable icon in large size 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg class="mg-icon mg-icon--editable mg-icon--large">
+      <use xlink:href="/assets/icons.svg#editable"></use>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render editable icon in regular size 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg class="mg-icon mg-icon--editable mg-icon--regular">
+      <use xlink:href="/assets/icons.svg#editable"></use>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render user-cadenas icon in large size 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg class="mg-icon mg-icon--large mg-icon--user-cadenas">
+      <use xlink:href="/assets/icons.svg#user-cadenas"></use>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render user-cadenas icon in regular size 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg class="mg-icon mg-icon--regular mg-icon--user-cadenas">
+      <use xlink:href="/assets/icons.svg#user-cadenas"></use>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;

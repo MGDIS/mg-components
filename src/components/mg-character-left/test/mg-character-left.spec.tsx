@@ -43,7 +43,7 @@ describe('mg-character-left',()=> {
     }
   });
 
-  test('Sould update character left counter', async ()=> {
+  test('Should update character left counter', async ()=> {
     const maxlength = 400;
     const characters = "blu blu";
     const page = await getPage({characters : "", maxlength});

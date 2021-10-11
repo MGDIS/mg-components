@@ -3,51 +3,65 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-    <title>Stencil Component Starter</title>
+    <title>Système de design</title>
     <link rel="stylesheet" href="/build/design-system.css" />
     <script type="module" src="/build/design-system.esm.js"></script>
     <script nomodule src="/build/design-system.js"></script>
   </head>
   <body>
-    <div>
-      <h1><mg-icon icon="editable"></mg-icon> The h1 heading element</h1>
-      <h2><mg-icon icon="editable"></mg-icon> The h2 heading element</h2>
-      <h3><mg-icon icon="editable"></mg-icon> The h3 heading element</h3>
-      <h4><mg-icon icon="editable"></mg-icon> The h4 heading element</h4>
-      <h5><mg-icon icon="editable"></mg-icon> The h5 heading element</h5>
-      <h6><mg-icon icon="editable"></mg-icon> The h6 heading element</h6>
-      <p>The Paragraph element</p>
-      <p><strong>The Strong Importance element</strong></p>
-      <p><small>The side comment element</small></p>
+    <div style="display: none">
+      <div>
+        <h1><mg-icon icon="editable"></mg-icon> The h1 heading element</h1>
+        <h2><mg-icon icon="editable"></mg-icon> The h2 heading element</h2>
+        <h3><mg-icon icon="editable"></mg-icon> The h3 heading element</h3>
+        <h4><mg-icon icon="editable"></mg-icon> The h4 heading element</h4>
+        <h5><mg-icon icon="editable"></mg-icon> The h5 heading element</h5>
+        <h6><mg-icon icon="editable"></mg-icon> The h6 heading element</h6>
+        <p>The Paragraph element</p>
+        <p><strong>The Strong Importance element</strong></p>
+        <p><small>The side comment element</small></p>
+      </div>
+      <div style="color: #bada55" style="display: none">
+        <mg-icon icon="user-cadenas"></mg-icon>
+      </div>
+      <div style="display: none">
+        <mg-button><mg-icon icon="editable"></mg-icon>Primary</mg-button>
+        <mg-button label="aria-label for explicit button action" variant="secondary"><mg-icon icon="user-cadenas"></mg-icon>Secondary (aria-label)</mg-button>
+        <mg-button disabled>Disabled</mg-button>
+      </div>
+      <div style="display: none">
+        <mg-button variant="primary">Primary</mg-button>
+        <mg-button variant="secondary">Secondary</mg-button>
+        <mg-button variant="alert">Alert</mg-button>
+        <mg-button variant="alert-alt">Alert-alt</mg-button>
+        <mg-button variant="info">Info</mg-button>
+      </div>
+      <div>
+        <mg-label colon required
+          >Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Le
+          label Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Lsas</mg-label
+        >
+        <mg-character-left maxlength="400"></mg-character-left>
+        <mg-help-text>Texte d'aide avec <a href="https://www.exemple.com">un lien</a> du text <strong>gras</strong> ou en <em>italic</em> !</mg-help-text>
+        <mg-input-text label="coucou" placeholder="placeholder" value="tutu" character-left-template="blu {counter} blublu"></mg-input-text>
+        <mg-input-text label="coucou" display-character-left="false"></mg-input-text>
+      </div>
+
+      <div>
+        <mg-tooltip message="my tooltip message"><span>coucou</span></mg-tooltip>
+        <mg-tooltip message="my tooltip message"><mg-icon icon="user-cadenas"></mg-icon></mg-tooltip>
+        <mg-tooltip message="blublu"><mg-button onclick="console.log('click')">Supprimer</mg-button></mg-tooltip>
+        <mg-tooltip message="blublu"><button class="mg-button mg-button-primary">Test</button></mg-tooltip>
+      </div>
     </div>
-    <div style="color: #bada55">
-      <mg-icon icon="user-cadenas"></mg-icon>
-    </div>
-    <div>
-      <mg-button><mg-icon icon="editable"></mg-icon>Primary</mg-button>
-      <mg-button label="aria-label for explicit button action" variant="secondary"><mg-icon icon="user-cadenas"></mg-icon>Secondary (aria-label)</mg-button>
-      <mg-button disabled>Disabled</mg-button>
-    </div>
-    <div>
-      <mg-button variant="primary">Primary</mg-button>
-      <mg-button variant="secondary">Secondary</mg-button>
-      <mg-button variant="alert">Alert</mg-button>
-      <mg-button variant="alert-alt">Alert-alt</mg-button>
-      <mg-button variant="info">Info</mg-button>
-    </div>
-    <div>
-      <mg-label colon required
-        >Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label
-        Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Lsas</mg-label
-      >
-      <mg-character-left maxlength="400"></mg-character-left>
-      <mg-help-text>Texte d'aide avec <a href="https://www.exemple.com">un lien</a> du text <strong>gras</strong> ou en <em>italic</em> !</mg-help-text>
-      <mg-input-text label="coucou" placeholder="placeholder" value="tutu" character-left-template="blu {counter} blublu"></mg-input-text>
-      <mg-input-text label="coucou" display-character-left="false"></mg-input-text>
-      <mg-input-text
-        label="coucou"
-        help-text="Texte d'aide avec <a href='https://www.exemple.com'>un lien</a> du text <strong>gras</strong> ou en <em>italic</em> !"
-      ></mg-input-text>
-    </div>
+    <mg-input-text
+      label-on-top
+      required
+      pattern="[a-z]*"
+      pattern-error-message="Le pattern n'est pas bon !"
+      label="coucou"
+      tooltip="tooltip message"
+      help-text="Texte d'aide avec <a href='https://www.exemple.com'>un lien</a> du text <strong>gras</strong> ou en <em>italic</em> !"
+    ></mg-input-text>
   </body>
 </html>

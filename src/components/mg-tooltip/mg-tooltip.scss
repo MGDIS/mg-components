@@ -1,0 +1,19 @@
+.mg-tooltip {
+  position: relative;
+  display: inline-block;
+
+  // TODO ! CAN MAKE THIS WORK WITH CSS ?! BUT MUST BE DONE IN COMPONENT, A11Y REQUIRE TO TRIGGER ESCAPE EVENT TO HIDE THE TOOLTIP
+  ::slotted(*):hover,
+  ::slotted(*):focus,
+  ::slotted(*):active {
+    & + [role='tooltip'] {
+      display: initial;
+    }
+  }
+
+  & > [role='tooltip'] {
+    position: absolute;
+    bottom: 0;
+    display: none;
+  }
+}

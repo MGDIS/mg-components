@@ -12,15 +12,7 @@ describe('mg-icon', () => {
 
     test.each(["regular", "large"])('in %s size', async (size) => {
       const { root } = await getPage({icon, size});
-      expect(root).toEqualHtml(`
-        <mg-icon>
-          <mock:shadow-root>
-            <svg class="mg-icon mg-icon-${icon} mg-icon-${size}">
-              <use xlink:href="/assets/icons.svg#${icon}"></use>
-            </svg>
-          </mock:shadow-root>
-        </mg-icon>
-      `);
+      expect(root).toMatchSnapshot();
     });
 
   });

@@ -60,6 +60,10 @@ export namespace Components {
          */
         "characterLeftTemplate": string;
         /**
+          * Check input validity TODO : I EXPOSED THIS METHOD, THE IDEA IS TO VALIDATE A FORM USING IT
+         */
+        "checkValidity": () => Promise<boolean>;
+        /**
           * Define if input is disabled
          */
         "disabled": boolean;
@@ -72,9 +76,21 @@ export namespace Components {
          */
         "helpText": string;
         /**
+          * Define input pattern error message
+         */
+        "invalid": boolean;
+        /**
           * Input label Required
          */
         "label": string;
+        /**
+          * Define if label has colon
+         */
+        "labelColon": boolean;
+        /**
+          * Define if label has colon
+         */
+        "labelOnTop": boolean;
         /**
           * Input max length
          */
@@ -84,9 +100,21 @@ export namespace Components {
          */
         "name"?: string;
         /**
+          * Define input pattern to validate
+         */
+        "pattern": string;
+        /**
+          * Define input pattern error message
+         */
+        "patternErrorMessage": string;
+        /**
           * Input placeholder
          */
         "placeholder": string;
+        /**
+          * Define if input is readonly
+         */
+        "readonly": boolean;
         /**
           * Input reference used for the input ID (id is a reserved prop in Stencil.js) If not set, an ID will be created
          */
@@ -95,6 +123,14 @@ export namespace Components {
           * Define if input is required
          */
         "required": boolean;
+        /**
+          * Add a tooltip message next to the input
+         */
+        "tooltip": string;
+        /**
+          * Define input pattern to validate
+         */
+        "valid": boolean;
         /**
           * Component value
          */
@@ -113,6 +149,16 @@ export namespace Components {
           * If input is required an asterisk is added at the end of the label
          */
         "required": boolean;
+    }
+    interface MgTooltip {
+        /**
+          * Displayed message in the tooltip
+         */
+        "message": string;
+        /**
+          * Sets an `id` element. Needed by the input for accessibility `arai-decribedby`.
+         */
+        "reference"?: string;
     }
 }
 declare global {
@@ -152,6 +198,12 @@ declare global {
         prototype: HTMLMgLabelElement;
         new (): HTMLMgLabelElement;
     };
+    interface HTMLMgTooltipElement extends Components.MgTooltip, HTMLStencilElement {
+    }
+    var HTMLMgTooltipElement: {
+        prototype: HTMLMgTooltipElement;
+        new (): HTMLMgTooltipElement;
+    };
     interface HTMLElementTagNameMap {
         "mg-button": HTMLMgButtonElement;
         "mg-character-left": HTMLMgCharacterLeftElement;
@@ -159,6 +211,7 @@ declare global {
         "mg-icon": HTMLMgIconElement;
         "mg-input-text": HTMLMgInputTextElement;
         "mg-label": HTMLMgLabelElement;
+        "mg-tooltip": HTMLMgTooltipElement;
     }
 }
 declare namespace LocalJSX {
@@ -228,9 +281,21 @@ declare namespace LocalJSX {
          */
         "helpText"?: string;
         /**
+          * Define input pattern error message
+         */
+        "invalid"?: boolean;
+        /**
           * Input label Required
          */
         "label": string;
+        /**
+          * Define if label has colon
+         */
+        "labelColon"?: boolean;
+        /**
+          * Define if label has colon
+         */
+        "labelOnTop"?: boolean;
         /**
           * Input max length
          */
@@ -244,9 +309,21 @@ declare namespace LocalJSX {
          */
         "onChanged"?: (event: CustomEvent<string>) => void;
         /**
+          * Define input pattern to validate
+         */
+        "pattern"?: string;
+        /**
+          * Define input pattern error message
+         */
+        "patternErrorMessage"?: string;
+        /**
           * Input placeholder
          */
         "placeholder"?: string;
+        /**
+          * Define if input is readonly
+         */
+        "readonly"?: boolean;
         /**
           * Input reference used for the input ID (id is a reserved prop in Stencil.js) If not set, an ID will be created
          */
@@ -255,6 +332,14 @@ declare namespace LocalJSX {
           * Define if input is required
          */
         "required"?: boolean;
+        /**
+          * Add a tooltip message next to the input
+         */
+        "tooltip"?: string;
+        /**
+          * Define input pattern to validate
+         */
+        "valid"?: boolean;
         /**
           * Component value
          */
@@ -274,6 +359,16 @@ declare namespace LocalJSX {
          */
         "required"?: boolean;
     }
+    interface MgTooltip {
+        /**
+          * Displayed message in the tooltip
+         */
+        "message"?: string;
+        /**
+          * Sets an `id` element. Needed by the input for accessibility `arai-decribedby`.
+         */
+        "reference"?: string;
+    }
     interface IntrinsicElements {
         "mg-button": MgButton;
         "mg-character-left": MgCharacterLeft;
@@ -281,6 +376,7 @@ declare namespace LocalJSX {
         "mg-icon": MgIcon;
         "mg-input-text": MgInputText;
         "mg-label": MgLabel;
+        "mg-tooltip": MgTooltip;
     }
 }
 export { LocalJSX as JSX };
@@ -293,6 +389,7 @@ declare module "@stencil/core" {
             "mg-icon": LocalJSX.MgIcon & JSXBase.HTMLAttributes<HTMLMgIconElement>;
             "mg-input-text": LocalJSX.MgInputText & JSXBase.HTMLAttributes<HTMLMgInputTextElement>;
             "mg-label": LocalJSX.MgLabel & JSXBase.HTMLAttributes<HTMLMgLabelElement>;
+            "mg-tooltip": LocalJSX.MgTooltip & JSXBase.HTMLAttributes<HTMLMgTooltipElement>;
         }
     }
 }

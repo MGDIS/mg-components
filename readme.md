@@ -70,3 +70,68 @@ The first step for all three of these strategies is to [publish to NPM](https://
 - Run `npm install @mgdis/mg-button --save`
 - Add an import to the npm packages `import @mgdis/mg-button;`
 - Then you can use the element anywhere in your template, JSX, html etc
+
+## Style
+
+### Naming methodology
+
+MGDIS Design System is using [BEM](https://en.bem.info/) (Block, Element, Modifier) methodology.
+
+### Declaration organisation
+
+When a selector contains too many declaration it is recommended to organize them by theme : Display, Decoration, Font, Others.
+
+```CSS
+.mg-button {
+  // Display
+  display: inline-block;
+  vertical-align: middle;
+  min-height: 3.5rem;
+  padding: 0.6rem 1.2rem;
+  // Decoration
+  background-image: none;
+  border-radius: 0.3rem;
+  border: 0.1rem solid transparent;
+  cursor: pointer;
+  // Font
+  font-weight: normal;
+  text-align: center;
+  white-space: nowrap;
+  // Others
+  touch-action: manipulation;
+}
+```
+
+### Accessibility
+
+A good pratice is to manage hover, focus and active state at the same place.
+
+```SCSS
+/* SCSS */
+div {
+  &:hover, &:focus, &:active {
+    text-decoration: underline;
+  }
+}
+
+/* CSS */
+div:hover, div:focus, div:active {
+  text-decoration: underline;
+}
+```
+
+## Storybook
+
+The plugin [storybook-addon-docs-stencil
+](https://github.com/pixtron/storybook-addon-docs-stencil) is used to generate the doc. **To be up to date on local it needs a fresh build**.
+
+### run
+
+```bash
+npm run storybook
+```
+
+### Notes
+
+- camelCase arguments must be written in the template, for exemple labelOnTop must be placed in the template as label-on-top={args.labelOnTop}
+- Boolean arguments with a default true value must be added like display-character-left={args.displayCharacterLeft ? 'true' : 'false'}

@@ -3,7 +3,7 @@ import { Component, Host, h, Prop } from '@stencil/core';
 @Component({
   tag: 'mg-help-text',
   styleUrl: 'mg-help-text.scss',
-  shadow: true,
+  scoped: true,
 })
 export class MgHelpText {
 

@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop, Watch } from '@stencil/core';
+import { Component, h, Prop, Watch } from '@stencil/core';
 
 @Component({
   tag: 'mg-button',
@@ -16,13 +16,13 @@ export class MgButton {
   /**
    * Define button style
    */
-  @Prop() variant: string = "primary";
+  @Prop() variant: string = this.variants[0];
   @Watch('variant')
   validateVariant(newValue: string) {
     if(!this.variants.includes(newValue)) {
       throw new Error(`<mg-button> prop "variant" must be one of : ${this.variants.join(', ')}`);
     }
-    this.classes.push(`mg-button-${this.variant}`);
+    this.classes.push(`mg-button--${this.variant}`);
   }
 
   /**
@@ -48,9 +48,7 @@ export class MgButton {
   */
   render() {
     return (
-      <Host>
         <button class={this.classes.join(' ')} aria-label={this.label} disabled={this.disabled}><slot></slot></button>
-      </Host>
     );
   }
 

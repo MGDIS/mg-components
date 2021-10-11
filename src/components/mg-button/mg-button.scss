@@ -13,7 +13,9 @@
   background: linear-gradient(to bottom, var(--button-#{$variant}-background-from), var(--button-#{$variant}-background-to));
 
   // Hover
-  &:hover {
+  &:hover,
+  &:focus,
+  &:active {
     @include button-state($variant, 'hover');
     background: var(--button-#{$variant}-hover-background);
   }

@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'mg-label',
@@ -6,6 +6,11 @@ import { Component, Host, h, Prop } from '@stencil/core';
   scoped: true,
 })
 export class MgLabel {
+
+  /**
+   * Internal
+   */
+  private classes = ['mg-label'];
 
   /**
    * Label input reference
@@ -28,13 +33,11 @@ export class MgLabel {
    */
   render() {
     return (
-      <Host>
-        <label htmlFor={this.reference}>
+      <label class={this.classes.join(' ')} htmlFor={this.reference}>
         <slot></slot>
-          { this.required && <span aria-hidden="true">&nbsp;*</span> }
-          { this.colon && `\u00A0:` /* represent a &nbsp; */ }
-        </label>
-      </Host>
+        { this.required && <span aria-hidden="true">&nbsp;*</span> }
+        { this.colon && `\u00A0:` /* represent a &nbsp; */ }
+      </label>
     );
   }
 

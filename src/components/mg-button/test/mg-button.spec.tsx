@@ -10,15 +10,7 @@ const getPage = (args) => newSpecPage({
 describe('mg-button', () => {
   test.each(["primary" , "secondary" , "alert", "alert-alt",  "info"])('Should render an %s button', async (variant) => {
     const {root} = await getPage({variant});
-    expect(root).toEqualHtml(`
-      <mg-button>
-        <mock:shadow-root>
-          <button class="mg-button mg-button-${variant}">
-            <slot></slot>
-          </button>
-        </mock:shadow-root>
-      </mg-button>
-    `);
+    expect(root).toMatchSnapshot();
   });
 
   test.each(["", "blu", undefined])('Should not render', async (variant) => {
