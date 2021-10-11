@@ -11,7 +11,7 @@
 | ---------- | ---------- | ----------------------------------------------------- | --------- | ------------------ |
 | `disabled` | `disabled` | Disable button                                        | `boolean` | `false`            |
 | `label`    | `label`    | aria-label In case button text is not explicit enough | `string`  | `undefined`        |
-| `variant`  | `variant`  | Define button style                                   | `string`  | `this.variants[0]` |
+| `variant`  | `variant`  | Define button variant                                 | `string`  | `this.variants[0]` |
 
 
 ----------------------------------------------

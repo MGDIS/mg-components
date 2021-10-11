@@ -1,0 +1,27 @@
+@mixin tag-variant($variant) {
+  background-color: var(--tag-#{$variant}-background-color);
+  color: var(--tag-#{$variant}-font-color);
+}
+
+@mixin tag-variants($variants...) {
+  @each $variant in $variants {
+    &.mg-tag--#{$variant} {
+      @include tag-variant($variant);
+    }
+  }
+}
+
+.mg-tag {
+  // Display
+  padding: 0.3rem 0.7rem;
+  // Decoration
+  border-radius: 0.5rem;
+  border: none;
+  // Font
+  font-family: 'Open sans';
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.8rem;
+
+  @include tag-variants('product', 'success', 'warning', 'danger', 'draft');
+}

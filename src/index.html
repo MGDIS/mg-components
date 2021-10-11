@@ -53,15 +53,16 @@
         <mg-tooltip message="blublu"><mg-button onclick="console.log('click')">Supprimer</mg-button></mg-tooltip>
         <mg-tooltip message="blublu"><button class="mg-button mg-button-primary">Test</button></mg-tooltip>
       </div>
+      <mg-input-text
+        label-on-top
+        required
+        pattern="[a-z]*"
+        pattern-error-message="Le pattern n'est pas bon !"
+        label="coucou"
+        tooltip="tooltip message"
+        help-text="Texte d'aide avec <a href='https://www.exemple.com'>un lien</a> du text <strong>gras</strong> ou en <em>italic</em> !"
+      ></mg-input-text>
     </div>
-    <mg-input-text
-      label-on-top
-      required
-      pattern="[a-z]*"
-      pattern-error-message="Le pattern n'est pas bon !"
-      label="coucou"
-      tooltip="tooltip message"
-      help-text="Texte d'aide avec <a href='https://www.exemple.com'>un lien</a> du text <strong>gras</strong> ou en <em>italic</em> !"
-    ></mg-input-text>
+    <mg-tag variant="warning">ueule</mg-tag>
   </body>
 </html>

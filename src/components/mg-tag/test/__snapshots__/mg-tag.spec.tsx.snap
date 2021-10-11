@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mg-tag Should render a danger tag 1`] = `
+<mg-tag>
+  <mock:shadow-root>
+    <span class="mg-tag mg-tag--danger">
+      <slot></slot>
+    </span>
+  </mock:shadow-root>
+  danger
+</mg-tag>
+`;
+
+exports[`mg-tag Should render a draft tag 1`] = `
+<mg-tag>
+  <mock:shadow-root>
+    <span class="mg-tag mg-tag--draft">
+      <slot></slot>
+    </span>
+  </mock:shadow-root>
+  draft
+</mg-tag>
+`;
+
+exports[`mg-tag Should render a product tag 1`] = `
+<mg-tag>
+  <mock:shadow-root>
+    <span class="mg-tag mg-tag--product">
+      <slot></slot>
+    </span>
+  </mock:shadow-root>
+  product
+</mg-tag>
+`;
+
+exports[`mg-tag Should render a success tag 1`] = `
+<mg-tag>
+  <mock:shadow-root>
+    <span class="mg-tag mg-tag--success">
+      <slot></slot>
+    </span>
+  </mock:shadow-root>
+  success
+</mg-tag>
+`;
+
+exports[`mg-tag Should render a warning tag 1`] = `
+<mg-tag>
+  <mock:shadow-root>
+    <span class="mg-tag mg-tag--warning">
+      <slot></slot>
+    </span>
+  </mock:shadow-root>
+  warning
+</mg-tag>
+`;

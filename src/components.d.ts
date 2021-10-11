@@ -16,7 +16,7 @@ export namespace Components {
          */
         "label": string;
         /**
-          * Define button style
+          * Define button variant
          */
         "variant": string;
     }
@@ -150,6 +150,12 @@ export namespace Components {
          */
         "required": boolean;
     }
+    interface MgTag {
+        /**
+          * Define button variant
+         */
+        "variant": string;
+    }
     interface MgTooltip {
         /**
           * Displayed message in the tooltip
@@ -198,6 +204,12 @@ declare global {
         prototype: HTMLMgLabelElement;
         new (): HTMLMgLabelElement;
     };
+    interface HTMLMgTagElement extends Components.MgTag, HTMLStencilElement {
+    }
+    var HTMLMgTagElement: {
+        prototype: HTMLMgTagElement;
+        new (): HTMLMgTagElement;
+    };
     interface HTMLMgTooltipElement extends Components.MgTooltip, HTMLStencilElement {
     }
     var HTMLMgTooltipElement: {
@@ -211,6 +223,7 @@ declare global {
         "mg-icon": HTMLMgIconElement;
         "mg-input-text": HTMLMgInputTextElement;
         "mg-label": HTMLMgLabelElement;
+        "mg-tag": HTMLMgTagElement;
         "mg-tooltip": HTMLMgTooltipElement;
     }
 }
@@ -225,7 +238,7 @@ declare namespace LocalJSX {
          */
         "label"?: string;
         /**
-          * Define button style
+          * Define button variant
          */
         "variant"?: string;
     }
@@ -359,6 +372,12 @@ declare namespace LocalJSX {
          */
         "required"?: boolean;
     }
+    interface MgTag {
+        /**
+          * Define button variant
+         */
+        "variant"?: string;
+    }
     interface MgTooltip {
         /**
           * Displayed message in the tooltip
@@ -376,6 +395,7 @@ declare namespace LocalJSX {
         "mg-icon": MgIcon;
         "mg-input-text": MgInputText;
         "mg-label": MgLabel;
+        "mg-tag": MgTag;
         "mg-tooltip": MgTooltip;
     }
 }
@@ -389,6 +409,7 @@ declare module "@stencil/core" {
             "mg-icon": LocalJSX.MgIcon & JSXBase.HTMLAttributes<HTMLMgIconElement>;
             "mg-input-text": LocalJSX.MgInputText & JSXBase.HTMLAttributes<HTMLMgInputTextElement>;
             "mg-label": LocalJSX.MgLabel & JSXBase.HTMLAttributes<HTMLMgLabelElement>;
+            "mg-tag": LocalJSX.MgTag & JSXBase.HTMLAttributes<HTMLMgTagElement>;
             "mg-tooltip": LocalJSX.MgTooltip & JSXBase.HTMLAttributes<HTMLMgTooltipElement>;
         }
     }

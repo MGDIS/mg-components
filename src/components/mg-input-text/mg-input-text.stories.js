@@ -1,5 +1,4 @@
 export default {
-  name: 'blu',
   component: 'mg-input-text',
   title: 'Components/mg-input-text',
   parameters: {

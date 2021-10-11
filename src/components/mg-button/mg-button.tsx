@@ -14,7 +14,7 @@ export class MgButton {
   private variants = ["primary" , "secondary" , "alert", "alert-alt",  "info"]; // TODO : should we have a link styled button ?
 
   /**
-   * Define button style
+   * Define button variant
    */
   @Prop() variant: string = this.variants[0];
   @Watch('variant')

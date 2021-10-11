@@ -31,7 +31,7 @@
 
 @mixin button-variants($variants...) {
   @each $variant in $variants {
-    &.mg-button-#{$variant} {
+    &.mg-button--#{$variant} {
       @include button-variant($variant);
     }
   }

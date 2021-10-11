@@ -1,15 +1,12 @@
 import { newE2EPage } from '@stencil/core/testing';
 
-describe.each(["primary" , "secondary" , "alert", "alert-alt",  "info"])('mg-button %s', (variant) => {
+describe.each(["product" , "success" , "warning", "danger",  "draft"])('mg-tag %s', (variant) => {
   test('Should render', async () => {
 
     const page = await newE2EPage();
-    await page.setContent(`
-      <link rel="stylesheet" href="http://localhost:3333/build/design-system.css" />
-      <mg-button variant="${variant}">${variant}</mg-button>
-    `);
+    await page.setContent(`<link rel="stylesheet" href="http://localhost:3333/build/design-system.css" /><mg-tag variant="${variant}">${variant}</mg-tag>`);
 
-    const element = await page.find('mg-button');
+    const element = await page.find('mg-tag');
     expect(element).toHaveClass('hydrated');
 
     const results = await page.compareScreenshot();
