@@ -31,7 +31,7 @@ export class MgTooltip {
 
   render() {
     return (
-      <div className={this.classes.join(' ')}>
+      <div class={this.classes.join(' ')}>
         <slot></slot>
         <div role="tooltip" id={this.reference} innerHTML={this.message}></div>
       </div>

@@ -158,7 +158,7 @@ export class MgInputText {
    * Handle input event
    * @param event
    */
-  private handleOnInput(event) {
+  private handleOnInput = (event) => {
     this.value = event.target.value;
     this.changed.emit(this.value)
   }
@@ -166,7 +166,7 @@ export class MgInputText {
   /**
    * Handle blur event
    */
-  private handleOnBlur() {
+  private handleOnBlur = () => {
     this.focus = false;
     this.classes.delete(this.classFocus);
     this.checkValidity();
@@ -175,7 +175,7 @@ export class MgInputText {
   /**
    * Handle focus event
    */
-  private handleOnFocus() {
+  private handleOnFocus = () => {
     this.focus = true;
     this.classes.add(this.classFocus);
   }
@@ -302,9 +302,9 @@ export class MgInputText {
                   readonly={this.readonly}
                   pattern={this.pattern}
                   aria-describedby={this.ariaDescribedby.join(' ')}
-                  onInput={(e) => this.handleOnInput(e)}
-                  onFocus={() => this.handleOnFocus()}
-                  onBlur={() => this.handleOnBlur()}
+                  onInput={this.handleOnInput}
+                  onFocus={this.handleOnFocus}
+                  onBlur={this.handleOnBlur}
                 />
                 { this.tooltip && <mg-tooltip message={this.tooltip}><mg-icon icon="user-cadenas"></mg-icon></mg-tooltip>}
               </div>
