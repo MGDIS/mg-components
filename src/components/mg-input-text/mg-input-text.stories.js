@@ -1,6 +1,6 @@
 export default {
   component: 'mg-input-text',
-  title: 'Components/mg-input-text',
+  title: 'Molecules/mg-input-text',
   parameters: {
     docs: {
       source: {

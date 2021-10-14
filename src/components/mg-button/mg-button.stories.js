@@ -1,6 +1,6 @@
 export default {
   component: 'mg-button',
-  title: 'Atoms/MgButton',
+  title: 'Atoms/mg-button',
   argTypes: {
     variant: {
       options: ['primary', 'secondary', 'alert', 'alert-alt', 'info'],
