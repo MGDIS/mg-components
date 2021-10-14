@@ -14,6 +14,9 @@
 // Utilities
 @import './utilities.scss';
 
+// Accessibility
+@import './a11y.scss';
+
 // Main style
 @import './main.scss';
 
@@ -25,7 +28,7 @@
  */
 
 // mg-input
-@import '../components/mg-input-text/mg-input-text.scss';
+@import '../components/molecules/inputs/mg-input.scss';
 
 // mg-label
 @import '../components/mg-label/mg-label.scss';

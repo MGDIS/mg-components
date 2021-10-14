@@ -1,7 +1,6 @@
 import { Component, Element, Event, h, Prop, Watch, EventEmitter, State, Method } from '@stencil/core';
 import { createID } from '../../utils/utils';
 
-
 @Component({
   tag: 'mg-input-text',
   styleUrl: 'mg-input-text.scss',
@@ -30,13 +29,13 @@ export class MgInputText {
    * Input reference used for the input ID (id is a reserved prop in Stencil.js)
    * If not set, an ID will be created
    */
-  @Prop() reference?: string = createID('mg-input-text');
+  @Prop() identifier?: string = createID('mg-input-text');
 
   /**
    * Input name
    * If not set the value equals the reference
    */
-  @Prop() name?: string = this.reference;
+  @Prop() name?: string = this.identifier;
 
   /**
    * Input label
@@ -61,6 +60,12 @@ export class MgInputText {
   @Prop() labelColon: boolean = false;
 
   /**
+   * Set the input text as multiline
+   * Switch to textarea if true
+   */
+  @Prop() multiline: boolean = false;
+
+  /**
    * Input placeholder
    */
   @Prop() placeholder: string;
@@ -68,7 +73,7 @@ export class MgInputText {
   /**
    * Input max length
    */
-  @Prop() maxlength: number = 400;
+  @Prop() maxlength: number = this.multiline ? 4000 : 400;
 
   /**
    * Define if input is required
@@ -124,6 +129,12 @@ export class MgInputText {
    * Template to use for characters left sentence
    */
   @Prop() helpText: string;
+
+  /**
+   * Define textaera number of lines
+   * Only works with multiline activated
+   */
+   @Prop() rows: number = 3;
 
   /**
    * Aria attributes that need to be added to the input :
@@ -184,7 +195,10 @@ export class MgInputText {
    * Validate patern configuration
    */
   private validatePattern() {
-    if(
+    if(this.multiline) {
+      console.warn('<mg-input-text> prop "pattern" does not work with textarea: https://developer.mozilla.org/fr/docs/Web/HTML/Element/Textarea')
+    }
+    else if(
       this.pattern && typeof this.pattern === 'string' && this.pattern !== '' &&
       (this.patternErrorMessage === undefined || typeof this.patternErrorMessage !== 'string' || this.patternErrorMessage === '')
     ) {
@@ -199,15 +213,9 @@ export class MgInputText {
   @Method()
   async checkValidity(): Promise<boolean> {
     // get input validity
-    const input = this.element.shadowRoot.querySelector('input');
+    const querySelector = this.multiline ? 'textarea' : 'input';
+    const input = this.element.shadowRoot.querySelector(querySelector);
     const validity = input.checkValidity();
-    // This code has been replaced by native check input.checkValidity();
-    // Required
-    // const requiredValidity = !this.required || this.value !== '';
-    // Pattern
-    // const patternValidity = this.pattern === undefined || new RegExp(`^${this.pattern}$`, 'u').test(this.value)
-    // Set validity
-    // validity = requiredValidity && patternValidity;
 
     // Set error message
     this.errorMessage = '';
@@ -244,19 +252,19 @@ export class MgInputText {
 
     // Add required aria attributes
     if(this.displayCharacterLeft) {
-      this.characterLeftReference = `${this.reference}-character-left`;
+      this.characterLeftReference = `${this.identifier}-character-left`;
       this.ariaDescribedby.push(this.characterLeftReference);
     }
     if(this.helpText !== undefined && this.helpText !== '') {
-      this.helpTextReference = `${this.reference}-help-text`;
+      this.helpTextReference = `${this.identifier}-help-text`;
       this.ariaDescribedby.push(this.helpTextReference);
     }
     if(this.tooltip !== undefined && this.tooltip !== '') {
-      this.tooltipReference = `${this.reference}-tooltip`;
+      this.tooltipReference = `${this.identifier}-tooltip`;
       this.ariaDescribedby.push(this.tooltipReference);
     }
 
-    this.helpTextErrorReference = `${this.reference}-error`;
+    this.helpTextErrorReference = `${this.identifier}-error`;
 
     // Add position label
     if(this.labelOnTop) {
@@ -282,16 +290,32 @@ export class MgInputText {
   render() {
     return (
       <div class={[...this.classes].join(' ')}>
-        <mg-label reference={this.reference} required={this.required} colon={this.labelColon}>{this.label}</mg-label>
+        <mg-label identifier={this.identifier} required={this.required} colon={this.labelColon}>{this.label}</mg-label>
         { this.readonly
           ? <div class="mg-input__input-container">
               <strong>{this.value}</strong>
             </div>
           : <div class="mg-input__input-container">
               <div class="mg-input__input-container__input">
-                <input
+                { this.multiline
+                ? <textarea
+                    id={this.identifier}
+                    name={this.name}
+                    placeholder={this.placeholder}
+                    title={this.placeholder}
+                    rows={this.rows}
+                    maxlength={this.maxlength}
+                    disabled={this.disabled}
+                    required={this.required}
+                    readonly={this.readonly}
+                    aria-describedby={this.ariaDescribedby.join(' ')}
+                    onInput={this.handleOnInput}
+                    onFocus={this.handleOnFocus}
+                    onBlur={this.handleOnBlur}
+                  >{this.value}</textarea>
+                : <input
                   type="text"
-                  id={this.reference}
+                  id={this.identifier}
                   name={this.name}
                   placeholder={this.placeholder}
                   title={this.placeholder}
@@ -305,17 +329,17 @@ export class MgInputText {
                   onInput={this.handleOnInput}
                   onFocus={this.handleOnFocus}
                   onBlur={this.handleOnBlur}
-                />
+                /> }
                 { this.tooltip && <mg-tooltip message={this.tooltip}><mg-icon icon="user-cadenas"></mg-icon></mg-tooltip>}
               </div>
               { this.displayCharacterLeft && <mg-character-left
-                reference={this.characterLeftReference}
+                identifier={this.characterLeftReference}
                 characters={this.value}
                 maxlength={this.maxlength}
                 template={this.characterLeftTemplate}
               ></mg-character-left> }
-              { this.helpText && <mg-help-text reference={this.helpTextReference} innerHTML={this.helpText}></mg-help-text> }
-              { this.errorMessage && <mg-help-text class="error" reference={this.helpTextErrorReference} innerHTML={this.errorMessage}></mg-help-text> }
+              { this.helpText && <mg-help-text identifier={this.helpTextReference} innerHTML={this.helpText}></mg-help-text> }
+              { this.errorMessage && <mg-help-text class="error" identifier={this.helpTextErrorReference} innerHTML={this.errorMessage}></mg-help-text> }
             </div>
         }
       </div>

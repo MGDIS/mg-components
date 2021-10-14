@@ -5,7 +5,7 @@ export default {
   parameters: {
     docs: {
       source: {
-        code: `<mg-tag variant="brand">Label</mg-tag>`,
+        code: `<mg-tag variant="product">Label</mg-tag>`,
       },
     },
   },
@@ -19,8 +19,8 @@ export default {
 
 const Template = args => <mg-tag {...args}>{args.slot}</mg-tag>;
 
-export const MgInputText = Template.bind({});
-MgInputText.args = {
+export const MgTag = Template.bind({});
+MgTag.args = {
   slot: 'Label',
   variant: 'product',
 };

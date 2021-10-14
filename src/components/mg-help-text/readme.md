@@ -7,20 +7,22 @@
 
 ## Properties
 
-| Property    | Attribute   | Description                                                                    | Type     | Default     |
-| ----------- | ----------- | ------------------------------------------------------------------------------ | -------- | ----------- |
-| `reference` | `reference` | Sets an `id` element. Needed by the input for accessibility `arai-decribedby`. | `string` | `undefined` |
+| Property     | Attribute    | Description                                                                    | Type     | Default     |
+| ------------ | ------------ | ------------------------------------------------------------------------------ | -------- | ----------- |
+| `identifier` | `identifier` | Sets an `id` element. Needed by the input for accessibility `arai-decribedby`. | `string` | `undefined` |
 
 
 ## Dependencies
 
 ### Used by
 
+ - [mg-input-date](../molecules/inputs/mg-input-date)
  - [mg-input-text](../mg-input-text)
 
 ### Graph
 ```mermaid
 graph TD;
+  mg-input-date --> mg-help-text
   mg-input-text --> mg-help-text
   style mg-help-text fill:#f9f,stroke:#333,stroke-width:4px
 ```

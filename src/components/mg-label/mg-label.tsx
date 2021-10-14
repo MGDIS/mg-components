@@ -13,10 +13,9 @@ export class MgLabel {
   private classes = ['mg-label'];
 
   /**
-   * Label input reference
-   * To match for/id
+   * Label input id
    */
-  @Prop() reference: string;
+  @Prop() identifier: string;
 
   /**
    * If input is required an asterisk is added at the end of the label
@@ -33,7 +32,7 @@ export class MgLabel {
    */
   render() {
     return (
-      <label class={this.classes.join(' ')} htmlFor={this.reference}>
+      <label class={this.classes.join(' ')} htmlFor={this.identifier}>
         <slot></slot>
         { this.required && <span aria-hidden="true">&nbsp;*</span> }
         { this.colon && `\u00A0:` /* represent a &nbsp; */ }

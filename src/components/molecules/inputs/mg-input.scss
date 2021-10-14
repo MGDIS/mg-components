@@ -1,0 +1,42 @@
+/**
+ * Common style for MGDIS inputs
+ */
+
+.mg-input {
+  // Display
+  display: flex;
+  align-items: baseline;
+
+  /**
+   * Display label on top
+   */
+  &.is-label-on-top {
+    flex-direction: column;
+  }
+
+  /**
+   * Show hide nb char left ans help text on focus
+   */
+  mg-character-left,
+  mg-help-text:not(.error) {
+    display: none;
+  }
+
+  &.is-focused {
+    mg-character-left,
+    mg-help-text:not(.error) {
+      display: initial;
+    }
+  }
+
+  /**
+   * Style when input is not valid
+   * TODO USE THE RIGHT PRODUCT COLOR
+   */
+  &.is-not-valid {
+    color: red;
+    input {
+      border: 1px solid red;
+    }
+  }
+}

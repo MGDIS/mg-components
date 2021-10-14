@@ -15,6 +15,7 @@ describe('mg-input-text', () => {
     {label: 'label', helpText: "My Help Text", reference: "reference"},
     {label: 'label', displayCharacterLeft: false, reference: "reference"},
     {label: 'label', readOnly: true, reference: "reference"},
+    {label: 'label', multilne: true, reference: "reference"},
   ])('Should render with args %s:', async (args) => {
     const { root } = await getPage(args);
     expect(root).toMatchSnapshot();
@@ -37,6 +38,15 @@ describe('mg-input-text', () => {
     catch (err) {
       expect(err.message).toMatch('<mg-input-text> prop "pattern" must be paired with the prop "patternErrorMessage"')
     }
+  });
+
+  test('Should warn if pattern is configured with multiline input', async ()=>{
+    jest.spyOn(global.console, 'warn');
+
+    const args = {label: 'label', multiline: true, pattern: "[a-z]*"};
+    await getPage(args);
+
+    expect(console.warn).toBeCalledWith('<mg-input-text> prop "pattern" does not work with textarea: https://developer.mozilla.org/fr/docs/Web/HTML/Element/Textarea');
   });
 
   test('Should trigger events', async ()=> {
@@ -63,40 +73,43 @@ describe('mg-input-text', () => {
     expect(page.rootInstance.focus).toBeFalsy();
   });
 
-  test.each([
-    {validity: true, valueMissing: false, patternMismatch: false},
-    {validity: false, valueMissing: true, patternMismatch: false},
-    {validity: false, valueMissing: false, patternMismatch: true},
-  ])('Should manage validity (%s), valueMissing (%s), patternMismatch (%s)', async ({validity, valueMissing, patternMismatch})=> {
-    const args = {label: 'label', helpText: "My Help Text", reference: "reference", patternErrorMessage: "Non"};
-    const page = await getPage(args);
+  describe.each([false, true])('Sould manage validity with multiline: %s', (multiline)=>{
+    test.each([
+      {validity: true, valueMissing: false, patternMismatch: false},
+      {validity: false, valueMissing: true, patternMismatch: false},
+      {validity: false, valueMissing: false, patternMismatch: true},
+    ])('validity (%s), valueMissing (%s), patternMismatch (%s)', async ({validity, valueMissing, patternMismatch})=> {
+      const args = {label: 'label', helpText: "My Help Text", reference: "reference", patternErrorMessage: "Non", multiline};
+      const page = await getPage(args);
 
-    const element = await page.doc.querySelector('mg-input-text');
-    const input = element.shadowRoot.querySelector('input');
+      const element = await page.doc.querySelector('mg-input-text');
+      const querySelector = multiline ? 'textarea' : 'input';
+      const input = element.shadowRoot.querySelector(querySelector);
 
-    //mock validity
-    input.checkValidity = jest.fn(()=> validity);
-    Object.defineProperty(input, 'validity', { get: jest.fn(()=> ({
-      valueMissing,
-      patternMismatch
-    }))});
+      //mock validity
+      input.checkValidity = jest.fn(()=> validity);
+      Object.defineProperty(input, 'validity', { get: jest.fn(()=> ({
+        valueMissing,
+        patternMismatch
+      }))});
 
-    input.dispatchEvent(new CustomEvent('blur', { bubbles: true }));
-    await page.waitForChanges();
+      input.dispatchEvent(new CustomEvent('blur', { bubbles: true }));
+      await page.waitForChanges();
 
-    if(validity) {
-      expect(page.rootInstance.errorMessage).toEqual('');
-    }
-    else if (valueMissing){
-      expect(page.rootInstance.errorMessage).toEqual('Ce champs est obligatoire.');
-    }
-    else if(patternMismatch) {
-      expect(page.rootInstance.errorMessage).toEqual(args.patternErrorMessage);
-    }
-    expect(page.rootInstance.valid).toEqual(validity);
-    expect(page.rootInstance.invalid).toEqual(!validity);
+      if(validity) {
+        expect(page.rootInstance.errorMessage).toEqual('');
+      }
+      else if (valueMissing){
+        expect(page.rootInstance.errorMessage).toEqual('Ce champs est obligatoire.');
+      }
+      else if(patternMismatch) {
+        expect(page.rootInstance.errorMessage).toEqual(args.patternErrorMessage);
+      }
+      expect(page.rootInstance.valid).toEqual(validity);
+      expect(page.rootInstance.invalid).toEqual(!validity);
+    });
+  })
 
-  });
 
 });
 

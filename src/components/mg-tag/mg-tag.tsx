@@ -19,7 +19,6 @@ export class MgTag {
    @Prop() variant: string = this.variants[0];
    @Watch('variant')
    validateVariant(newValue: string) {
-     console.log(newValue)
      if(!this.variants.includes(newValue)) {
        throw new Error(`<mg-tag> prop "variant" must be one of : ${this.variants.join(', ')}`);
      }

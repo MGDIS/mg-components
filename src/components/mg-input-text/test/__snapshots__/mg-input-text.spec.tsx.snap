@@ -5,20 +5,20 @@ exports[`mg-input-text Should render with args {
   tooltip: 'My Tooltip Message',
   reference: 'reference'
 }: 1`] = `
-<mg-input-text>
+<mg-input-text reference="reference">
   <mock:shadow-root>
     <div class="mg-input mg-input--text">
-      <mg-label reference="reference">
+      <mg-label identifier="mg-input-text-vmzpejtpyq">
         label
       </mg-label>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
-          <input aria-describedby="reference-character-left reference-tooltip" id="reference" maxlength="400" name="reference" type="text">
+          <input aria-describedby="mg-input-text-vmzpejtpyq-character-left mg-input-text-vmzpejtpyq-tooltip" id="mg-input-text-vmzpejtpyq" maxlength="400" name="mg-input-text-vmzpejtpyq" type="text">
           <mg-tooltip message="My Tooltip Message">
             <mg-icon icon="user-cadenas"></mg-icon>
           </mg-tooltip>
         </div>
-        <mg-character-left maxlength="400" reference="reference-character-left"></mg-character-left>
+        <mg-character-left identifier="mg-input-text-vmzpejtpyq-character-left" maxlength="400"></mg-character-left>
       </div>
     </div>
   </mock:shadow-root>
@@ -26,15 +26,15 @@ exports[`mg-input-text Should render with args {
 `;
 
 exports[`mg-input-text Should render with args { label: 'label', displayCharacterLeft: false, reference: 'reference' }: 1`] = `
-<mg-input-text>
+<mg-input-text reference="reference">
   <mock:shadow-root>
     <div class="mg-input mg-input--text">
-      <mg-label reference="reference">
+      <mg-label identifier="mg-input-text-bodaqqilwg">
         label
       </mg-label>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
-          <input aria-describedby="" id="reference" maxlength="400" name="reference" type="text">
+          <input aria-describedby="" id="mg-input-text-bodaqqilwg" maxlength="400" name="mg-input-text-bodaqqilwg" type="text">
         </div>
       </div>
     </div>
@@ -43,18 +43,18 @@ exports[`mg-input-text Should render with args { label: 'label', displayCharacte
 `;
 
 exports[`mg-input-text Should render with args { label: 'label', helpText: 'My Help Text', reference: 'reference' }: 1`] = `
-<mg-input-text>
+<mg-input-text reference="reference">
   <mock:shadow-root>
     <div class="mg-input mg-input--text">
-      <mg-label reference="reference">
+      <mg-label identifier="mg-input-text-anejucpoqu">
         label
       </mg-label>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
-          <input aria-describedby="reference-character-left reference-help-text" id="reference" maxlength="400" name="reference" type="text">
+          <input aria-describedby="mg-input-text-anejucpoqu-character-left mg-input-text-anejucpoqu-help-text" id="mg-input-text-anejucpoqu" maxlength="400" name="mg-input-text-anejucpoqu" type="text">
         </div>
-        <mg-character-left maxlength="400" reference="reference-character-left"></mg-character-left>
-        <mg-help-text reference="reference-help-text">
+        <mg-character-left identifier="mg-input-text-anejucpoqu-character-left" maxlength="400"></mg-character-left>
+        <mg-help-text identifier="mg-input-text-anejucpoqu-help-text">
           My Help Text
         </mg-help-text>
       </div>
@@ -64,17 +64,35 @@ exports[`mg-input-text Should render with args { label: 'label', helpText: 'My H
 `;
 
 exports[`mg-input-text Should render with args { label: 'label', labelOnTop: true, reference: 'reference' }: 1`] = `
-<mg-input-text>
+<mg-input-text reference="reference">
   <mock:shadow-root>
     <div class="label-on-top mg-input mg-input--text">
-      <mg-label reference="reference">
+      <mg-label identifier="mg-input-text-vzcwvjhcul">
         label
       </mg-label>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
-          <input aria-describedby="reference-character-left" id="reference" maxlength="400" name="reference" type="text">
+          <input aria-describedby="mg-input-text-vzcwvjhcul-character-left" id="mg-input-text-vzcwvjhcul" maxlength="400" name="mg-input-text-vzcwvjhcul" type="text">
         </div>
-        <mg-character-left maxlength="400" reference="reference-character-left"></mg-character-left>
+        <mg-character-left identifier="mg-input-text-vzcwvjhcul-character-left" maxlength="400"></mg-character-left>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-text>
+`;
+
+exports[`mg-input-text Should render with args { label: 'label', multilne: true, reference: 'reference' }: 1`] = `
+<mg-input-text multilne="" reference="reference">
+  <mock:shadow-root>
+    <div class="mg-input mg-input--text">
+      <mg-label identifier="mg-input-text-sfqcknfnfi">
+        label
+      </mg-label>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input-container__input">
+          <input aria-describedby="mg-input-text-sfqcknfnfi-character-left" id="mg-input-text-sfqcknfnfi" maxlength="400" name="mg-input-text-sfqcknfnfi" type="text">
+        </div>
+        <mg-character-left identifier="mg-input-text-sfqcknfnfi-character-left" maxlength="400"></mg-character-left>
       </div>
     </div>
   </mock:shadow-root>
@@ -82,10 +100,10 @@ exports[`mg-input-text Should render with args { label: 'label', labelOnTop: tru
 `;
 
 exports[`mg-input-text Should render with args { label: 'label', readOnly: true, reference: 'reference' }: 1`] = `
-<mg-input-text readonly="">
+<mg-input-text readonly="" reference="reference">
   <mock:shadow-root>
     <div class="mg-input mg-input--text">
-      <mg-label reference="reference">
+      <mg-label identifier="mg-input-text-zkllvkhqja">
         label
       </mg-label>
       <div class="mg-input__input-container">
@@ -97,17 +115,17 @@ exports[`mg-input-text Should render with args { label: 'label', readOnly: true,
 `;
 
 exports[`mg-input-text Should render with args { label: 'label', reference: 'reference' }: 1`] = `
-<mg-input-text>
+<mg-input-text reference="reference">
   <mock:shadow-root>
     <div class="mg-input mg-input--text">
-      <mg-label reference="reference">
+      <mg-label identifier="mg-input-text-gqmvsnrmai">
         label
       </mg-label>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
-          <input aria-describedby="reference-character-left" id="reference" maxlength="400" name="reference" type="text">
+          <input aria-describedby="mg-input-text-gqmvsnrmai-character-left" id="mg-input-text-gqmvsnrmai" maxlength="400" name="mg-input-text-gqmvsnrmai" type="text">
         </div>
-        <mg-character-left maxlength="400" reference="reference-character-left"></mg-character-left>
+        <mg-character-left identifier="mg-input-text-gqmvsnrmai-character-left" maxlength="400"></mg-character-left>
       </div>
     </div>
   </mock:shadow-root>
@@ -115,18 +133,18 @@ exports[`mg-input-text Should render with args { label: 'label', reference: 'ref
 `;
 
 exports[`mg-input-text Should trigger events 1`] = `
-<mg-input-text>
+<mg-input-text reference="reference">
   <mock:shadow-root>
     <div class="focus mg-input mg-input--text">
-      <mg-label reference="reference" required="">
+      <mg-label identifier="mg-input-text-bmdrpkdrib" required="">
         label
       </mg-label>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
-          <input aria-describedby="reference-character-left reference-help-text" id="reference" maxlength="400" name="reference" required="" type="text">
+          <input aria-describedby="mg-input-text-bmdrpkdrib-character-left mg-input-text-bmdrpkdrib-help-text" id="mg-input-text-bmdrpkdrib" maxlength="400" name="mg-input-text-bmdrpkdrib" required="" type="text">
         </div>
-        <mg-character-left maxlength="400" reference="reference-character-left"></mg-character-left>
-        <mg-help-text reference="reference-help-text">
+        <mg-character-left identifier="mg-input-text-bmdrpkdrib-character-left" maxlength="400"></mg-character-left>
+        <mg-help-text identifier="mg-input-text-bmdrpkdrib-help-text">
           My Help Text
         </mg-help-text>
       </div>

@@ -26,13 +26,13 @@ export namespace Components {
          */
         "characters": string;
         /**
+          * Sets an `id` element. Needed by the input for accessibility `arai-decribedby`.
+         */
+        "identifier": string;
+        /**
           * Add maximum length
          */
         "maxlength": number;
-        /**
-          * Sets an `id` element. Needed by the input for accessibility `arai-decribedby`.
-         */
-        "reference": string;
         /**
           * Template to display remaining characters. Must have {counter} inside
          */
@@ -42,7 +42,7 @@ export namespace Components {
         /**
           * Sets an `id` element. Needed by the input for accessibility `arai-decribedby`.
          */
-        "reference": string;
+        "identifier": string;
     }
     interface MgIcon {
         /**
@@ -53,6 +53,60 @@ export namespace Components {
           * Define icon size
          */
         "size": string;
+    }
+    interface MgInputDate {
+        /**
+          * Define if input is disabled
+         */
+        "disabled": boolean;
+        /**
+          * Template to use for characters left sentence
+         */
+        "helpText": string;
+        /**
+          * Identifier used for the input ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+         */
+        "identifier"?: string;
+        /**
+          * Define input pattern error message
+         */
+        "invalid": boolean;
+        /**
+          * Input label Required
+         */
+        "label": string;
+        /**
+          * Define if label has colon
+         */
+        "labelColon": boolean;
+        /**
+          * Define if label has colon
+         */
+        "labelOnTop": boolean;
+        /**
+          * Input name If not set the value equals the identifier
+         */
+        "name"?: string;
+        /**
+          * Define if input is readonly
+         */
+        "readonly": boolean;
+        /**
+          * Define if input is required
+         */
+        "required": boolean;
+        /**
+          * Add a tooltip message next to the input
+         */
+        "tooltip": string;
+        /**
+          * Define input pattern to validate
+         */
+        "valid": boolean;
+        /**
+          * Component value
+         */
+        "value": string;
     }
     interface MgInputText {
         /**
@@ -76,6 +130,10 @@ export namespace Components {
          */
         "helpText": string;
         /**
+          * Input reference used for the input ID (id is a reserved prop in Stencil.js) If not set, an ID will be created
+         */
+        "identifier"?: string;
+        /**
           * Define input pattern error message
          */
         "invalid": boolean;
@@ -95,6 +153,10 @@ export namespace Components {
           * Input max length
          */
         "maxlength": number;
+        /**
+          * Set the input text as multiline Switch to textarea if true
+         */
+        "multiline": boolean;
         /**
           * Input name If not set the value equals the reference
          */
@@ -116,13 +178,13 @@ export namespace Components {
          */
         "readonly": boolean;
         /**
-          * Input reference used for the input ID (id is a reserved prop in Stencil.js) If not set, an ID will be created
-         */
-        "reference"?: string;
-        /**
           * Define if input is required
          */
         "required": boolean;
+        /**
+          * Define textaera number of lines Only works with multiline activated
+         */
+        "rows": number;
         /**
           * Add a tooltip message next to the input
          */
@@ -142,9 +204,9 @@ export namespace Components {
          */
         "colon": boolean;
         /**
-          * Label input reference To match for/id
+          * Label input id
          */
-        "reference": string;
+        "identifier": string;
         /**
           * If input is required an asterisk is added at the end of the label
          */
@@ -158,13 +220,13 @@ export namespace Components {
     }
     interface MgTooltip {
         /**
+          * Sets an `id` element. Needed by the input for accessibility `arai-decribedby`.
+         */
+        "identifier"?: string;
+        /**
           * Displayed message in the tooltip
          */
         "message": string;
-        /**
-          * Sets an `id` element. Needed by the input for accessibility `arai-decribedby`.
-         */
-        "reference"?: string;
     }
 }
 declare global {
@@ -191,6 +253,12 @@ declare global {
     var HTMLMgIconElement: {
         prototype: HTMLMgIconElement;
         new (): HTMLMgIconElement;
+    };
+    interface HTMLMgInputDateElement extends Components.MgInputDate, HTMLStencilElement {
+    }
+    var HTMLMgInputDateElement: {
+        prototype: HTMLMgInputDateElement;
+        new (): HTMLMgInputDateElement;
     };
     interface HTMLMgInputTextElement extends Components.MgInputText, HTMLStencilElement {
     }
@@ -221,6 +289,7 @@ declare global {
         "mg-character-left": HTMLMgCharacterLeftElement;
         "mg-help-text": HTMLMgHelpTextElement;
         "mg-icon": HTMLMgIconElement;
+        "mg-input-date": HTMLMgInputDateElement;
         "mg-input-text": HTMLMgInputTextElement;
         "mg-label": HTMLMgLabelElement;
         "mg-tag": HTMLMgTagElement;
@@ -248,13 +317,13 @@ declare namespace LocalJSX {
          */
         "characters"?: string;
         /**
+          * Sets an `id` element. Needed by the input for accessibility `arai-decribedby`.
+         */
+        "identifier"?: string;
+        /**
           * Add maximum length
          */
         "maxlength": number;
-        /**
-          * Sets an `id` element. Needed by the input for accessibility `arai-decribedby`.
-         */
-        "reference"?: string;
         /**
           * Template to display remaining characters. Must have {counter} inside
          */
@@ -264,7 +333,7 @@ declare namespace LocalJSX {
         /**
           * Sets an `id` element. Needed by the input for accessibility `arai-decribedby`.
          */
-        "reference"?: string;
+        "identifier"?: string;
     }
     interface MgIcon {
         /**
@@ -275,6 +344,64 @@ declare namespace LocalJSX {
           * Define icon size
          */
         "size"?: string;
+    }
+    interface MgInputDate {
+        /**
+          * Define if input is disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * Template to use for characters left sentence
+         */
+        "helpText"?: string;
+        /**
+          * Identifier used for the input ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+         */
+        "identifier"?: string;
+        /**
+          * Define input pattern error message
+         */
+        "invalid"?: boolean;
+        /**
+          * Input label Required
+         */
+        "label": string;
+        /**
+          * Define if label has colon
+         */
+        "labelColon"?: boolean;
+        /**
+          * Define if label has colon
+         */
+        "labelOnTop"?: boolean;
+        /**
+          * Input name If not set the value equals the identifier
+         */
+        "name"?: string;
+        /**
+          * Emmited event when value change
+         */
+        "onInputChange"?: (event: CustomEvent<string>) => void;
+        /**
+          * Define if input is readonly
+         */
+        "readonly"?: boolean;
+        /**
+          * Define if input is required
+         */
+        "required"?: boolean;
+        /**
+          * Add a tooltip message next to the input
+         */
+        "tooltip"?: string;
+        /**
+          * Define input pattern to validate
+         */
+        "valid"?: boolean;
+        /**
+          * Component value
+         */
+        "value"?: string;
     }
     interface MgInputText {
         /**
@@ -293,6 +420,10 @@ declare namespace LocalJSX {
           * Template to use for characters left sentence
          */
         "helpText"?: string;
+        /**
+          * Input reference used for the input ID (id is a reserved prop in Stencil.js) If not set, an ID will be created
+         */
+        "identifier"?: string;
         /**
           * Define input pattern error message
          */
@@ -313,6 +444,10 @@ declare namespace LocalJSX {
           * Input max length
          */
         "maxlength"?: number;
+        /**
+          * Set the input text as multiline Switch to textarea if true
+         */
+        "multiline"?: boolean;
         /**
           * Input name If not set the value equals the reference
          */
@@ -338,13 +473,13 @@ declare namespace LocalJSX {
          */
         "readonly"?: boolean;
         /**
-          * Input reference used for the input ID (id is a reserved prop in Stencil.js) If not set, an ID will be created
-         */
-        "reference"?: string;
-        /**
           * Define if input is required
          */
         "required"?: boolean;
+        /**
+          * Define textaera number of lines Only works with multiline activated
+         */
+        "rows"?: number;
         /**
           * Add a tooltip message next to the input
          */
@@ -364,9 +499,9 @@ declare namespace LocalJSX {
          */
         "colon"?: boolean;
         /**
-          * Label input reference To match for/id
+          * Label input id
          */
-        "reference"?: string;
+        "identifier"?: string;
         /**
           * If input is required an asterisk is added at the end of the label
          */
@@ -380,19 +515,20 @@ declare namespace LocalJSX {
     }
     interface MgTooltip {
         /**
+          * Sets an `id` element. Needed by the input for accessibility `arai-decribedby`.
+         */
+        "identifier"?: string;
+        /**
           * Displayed message in the tooltip
          */
         "message"?: string;
-        /**
-          * Sets an `id` element. Needed by the input for accessibility `arai-decribedby`.
-         */
-        "reference"?: string;
     }
     interface IntrinsicElements {
         "mg-button": MgButton;
         "mg-character-left": MgCharacterLeft;
         "mg-help-text": MgHelpText;
         "mg-icon": MgIcon;
+        "mg-input-date": MgInputDate;
         "mg-input-text": MgInputText;
         "mg-label": MgLabel;
         "mg-tag": MgTag;
@@ -407,6 +543,7 @@ declare module "@stencil/core" {
             "mg-character-left": LocalJSX.MgCharacterLeft & JSXBase.HTMLAttributes<HTMLMgCharacterLeftElement>;
             "mg-help-text": LocalJSX.MgHelpText & JSXBase.HTMLAttributes<HTMLMgHelpTextElement>;
             "mg-icon": LocalJSX.MgIcon & JSXBase.HTMLAttributes<HTMLMgIconElement>;
+            "mg-input-date": LocalJSX.MgInputDate & JSXBase.HTMLAttributes<HTMLMgInputDateElement>;
             "mg-input-text": LocalJSX.MgInputText & JSXBase.HTMLAttributes<HTMLMgInputTextElement>;
             "mg-label": LocalJSX.MgLabel & JSXBase.HTMLAttributes<HTMLMgLabelElement>;
             "mg-tag": LocalJSX.MgTag & JSXBase.HTMLAttributes<HTMLMgTagElement>;

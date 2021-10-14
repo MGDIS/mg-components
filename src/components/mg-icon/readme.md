@@ -17,11 +17,13 @@
 
 ### Used by
 
+ - [mg-input-date](../molecules/inputs/mg-input-date)
  - [mg-input-text](../mg-input-text)
 
 ### Graph
 ```mermaid
 graph TD;
+  mg-input-date --> mg-icon
   mg-input-text --> mg-icon
   style mg-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```

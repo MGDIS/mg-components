@@ -16,7 +16,7 @@ export class MgCharacterLeft {
    * Sets an `id` element.
    * Needed by the input for accessibility `arai-decribedby`.
    */
-  @Prop() reference: string;
+  @Prop() identifier: string;
 
    /**
    * Template to display remaining characters.
@@ -68,7 +68,7 @@ export class MgCharacterLeft {
   render() {
     return (
       <Host>
-        <p id={this.reference} innerHTML={this.getMessage()}></p>
+        <p id={this.identifier} innerHTML={this.getMessage()}></p>
       </Host>
     );
   }

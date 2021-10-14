@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`mg-tooltip Should render: 1`] = `
-<mg-tooltip>
+<mg-tooltip reference="reference">
   <!---->
   <div class="mg-tooltip" tabindex="0" title="blu">
-    <div id="reference" role="tooltip">
+    <div id="mg-tooltip-pdzwysrupa" role="tooltip">
       blu
     </div>
   </div>

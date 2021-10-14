@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mg-input-date Should render with args { label: 'label', identifier: 'identifier' }: 1`] = `
+<mg-input-date>
+  <mock:shadow-root>
+    <div class="mg-input mg-input--date">
+      <mg-label identifier="identifier">
+        label
+      </mg-label>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input-container__input">
+          <input aria-describedby="" id="identifier" name="identifier" type="date">
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-date>
+`;
+
+exports[`mg-input-date Should render with args { label: 'label', identifier: 'identifier', labelOnTop: true }: 1`] = `
+<mg-input-date>
+  <mock:shadow-root>
+    <div class="is-label-on-top mg-input mg-input--date">
+      <mg-label identifier="identifier">
+        label
+      </mg-label>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input-container__input">
+          <input aria-describedby="" id="identifier" name="identifier" type="date">
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-date>
+`;
+
+exports[`mg-input-date Should throw an error when pattern is used with patternErrorMessage:  1`] = `
+<mg-input-date pattern="[a-z]*" patternerrormessage="">
+  <mock:shadow-root>
+    <div class="mg-input mg-input--date">
+      <mg-label identifier="mg-input-date-vfsuwxvtua">
+        blu
+      </mg-label>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input-container__input">
+          <input aria-describedby="" id="mg-input-date-vfsuwxvtua" name="mg-input-date-vfsuwxvtua" type="date">
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-date>
+`;
+
+exports[`mg-input-date Should throw an error when pattern is used with patternErrorMessage: undefined 1`] = `
+<mg-input-date pattern="[a-z]*">
+  <mock:shadow-root>
+    <div class="mg-input mg-input--date">
+      <mg-label identifier="mg-input-date-uicwhugvoy">
+        blu
+      </mg-label>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input-container__input">
+          <input aria-describedby="" id="mg-input-date-uicwhugvoy" name="mg-input-date-uicwhugvoy" type="date">
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-date>
+`;
+
+exports[`mg-input-date Should trigger events 1`] = `
+<mg-input-date>
+  <mock:shadow-root>
+    <div class="is-focused mg-input mg-input--date">
+      <mg-label identifier="identifier" required="">
+        label
+      </mg-label>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input-container__input">
+          <input aria-describedby="identifier-help-text" id="identifier" name="identifier" required="" type="date">
+        </div>
+        <mg-help-text identifier="identifier-help-text">
+          My Help Text
+        </mg-help-text>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-date>
+`;

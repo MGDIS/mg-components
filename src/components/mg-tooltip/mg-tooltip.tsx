@@ -17,7 +17,7 @@ export class MgTooltip {
    * Sets an `id` element.
    * Needed by the input for accessibility `arai-decribedby`.
    */
-  @Prop() reference?: string = createID('mg-tooltip');
+  @Prop() identifier?: string = createID('mg-tooltip');
 
   /**
    * Displayed message in the tooltip
@@ -33,7 +33,7 @@ export class MgTooltip {
     return (
       <div class={this.classes.join(' ')}>
         <slot></slot>
-        <div role="tooltip" id={this.reference} innerHTML={this.message}></div>
+        <div role="tooltip" id={this.identifier} innerHTML={this.message}></div>
       </div>
     );
   }

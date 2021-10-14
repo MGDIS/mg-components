@@ -13,12 +13,12 @@ export class MgHelpText {
    * Sets an `id` element.
    * Needed by the input for accessibility `arai-decribedby`.
    */
-  @Prop() reference: string;
+  @Prop() identifier: string;
 
   render() {
     return (
       <Host>
-        <p id={this.reference}><slot></slot></p>
+        <p id={this.identifier}><slot></slot></p>
       </Host>
     );
   }
