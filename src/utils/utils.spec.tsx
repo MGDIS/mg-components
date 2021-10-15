@@ -1,4 +1,4 @@
-import { createID } from './utils';
+import { createID, formatDate } from './utils';
 
 describe('utils', ()=>{
   describe('createID', ()=>{
@@ -10,5 +10,18 @@ describe('utils', ()=>{
       }
       expect(id).toMatch(regexp);
     })
+  })
+
+  describe('formatDate', ()=>{
+    test.each([undefined, '', 'blu'])('Should return empty string : %s', (date)=>{
+      const formatedDate = formatDate(date);
+      expect(formatedDate).toEqual('');
+    });
+
+    test('Should return formated date', ()=> {
+      const formatedDate = formatDate("2021-10-14");
+      expect(formatedDate).toEqual('14/10/2021');
+    })
+
   })
 })

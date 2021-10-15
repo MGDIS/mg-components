@@ -13,6 +13,7 @@ interface MgInputProps {
   labelColon: boolean;
   // Input
   value: string;
+  readonlyValue: string;
   required: boolean;
   readonly: boolean;
   // Tooltip
@@ -114,7 +115,7 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
       </mg-label>
       { props.readonly
       ? <div class="mg-input__input-container">
-          <strong>{props.value}</strong>
+          <strong>{props.readonlyValue || props.readonly}</strong>
         </div>
       : <div class="mg-input__input-container">
           <div class="mg-input__input-container__input">

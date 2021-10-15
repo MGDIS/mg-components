@@ -31,13 +31,14 @@
 @import '../components/molecules/inputs/mg-input.scss';
 
 // mg-label
-@import '../components/mg-label/mg-label.scss';
+// TODO EMPTY FOR NOW
+// @import '../components/mg-label/mg-label.scss';
 
 // mg-button
-@import '../components/mg-button/mg-button.scss';
+@import '../components/atoms/mg-button/mg-button.scss';
 
 // mg-icon
-@import '../components/mg-icon/mg-icon.scss';
+@import '../components/atoms/mg-icon/mg-icon.scss';
 
 // mg-tag
-@import '../components/mg-tag/mg-tag.scss';
+@import '../components/atoms/mg-tag/mg-tag.scss';

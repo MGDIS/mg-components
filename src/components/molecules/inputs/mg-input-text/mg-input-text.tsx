@@ -1,25 +1,25 @@
-import { Component, Event, EventEmitter, h, Prop, State } from '@stencil/core';
+import { Component, Event, h, Prop, EventEmitter, State } from '@stencil/core';
 import { MgInput } from '../MgInput';
-import { createID, formatDate } from '../../../../utils/utils';
+import { createID } from '../../../../utils/utils';
 import locale from '../../../../locales';
 
 @Component({
-  tag: 'mg-input-date',
-  styleUrl: './mg-input-date.scss',
+  tag: 'mg-input-text',
+  styleUrl: 'mg-input-text.scss',
   shadow: true,
 })
-export class MgInputDate {
+export class MgInputText {
 
   /************
    * Internal *
    ************/
 
-  private classFocus = 'is-focused';
-  private classError = 'is-not-valid';
+   private classFocus = 'is-focused';
+   private classError = 'is-not-valid';
 
   /**************
-   * Decorators *
-   **************/
+  * Decorators *
+  **************/
 
   /**
    * Component value
@@ -30,7 +30,7 @@ export class MgInputDate {
    * Identifier used for the input ID (id is a reserved prop in Stencil.js)
    * If not set, it will be created.
    */
-  @Prop() identifier?: string = createID('mg-input-date');
+  @Prop() identifier?: string = createID('mg-input-text');
 
   /**
    * Input name
@@ -55,6 +55,16 @@ export class MgInputDate {
   @Prop() labelColon: boolean = false;
 
   /**
+   * Input placeholder
+   */
+  @Prop() placeholder: string;
+
+  /**
+   * Input max length
+   */
+  @Prop() maxlength: number = 400;
+
+  /**
    * Define if input is required
    */
   @Prop() required: boolean = false;
@@ -70,9 +80,29 @@ export class MgInputDate {
   @Prop() disabled: boolean = false;
 
   /**
+   * Define input pattern to validate
+   */
+  @Prop() pattern: string;
+
+  /**
+   * Define input pattern error message
+   */
+  @Prop() patternErrorMessage: string;
+
+  /**
    * Add a tooltip message next to the input
    */
-  @Prop() tooltip: string;
+   @Prop() tooltip: string;
+
+  /**
+   * Define if component should display character left
+   */
+  @Prop() displayCharacterLeft: boolean = true;
+
+  /**
+   * Template to use for characters left sentence
+   */
+  @Prop() characterLeftTemplate: string;
 
   /**
    * Template to use for characters left sentence
@@ -85,14 +115,14 @@ export class MgInputDate {
   @Prop({ mutable: true, reflect: true }) valid: boolean;
 
   /**
-   * Define input pattern error message
-   */
+  * Define input pattern error message
+  */
   @Prop({ mutable: true, reflect: true }) invalid: boolean;
 
   /**
    * Component classes
    */
-  @State() classes: Set<string> = new Set(['mg-input--date']);
+  @State() classes: Set<string> = new Set(['mg-input--text']);
 
   /**
    * Error message to display
@@ -108,7 +138,7 @@ export class MgInputDate {
    * Handle input event
    * @param event
    */
-  private handleInput = (event:InputEvent & { target: HTMLInputElement }) => {
+   private handleInput = (event:InputEvent & { target: HTMLInputElement }) => {
     this.value = event.target.value;
     this.inputChange.emit(this.value);
   }
@@ -142,8 +172,8 @@ export class MgInputDate {
     // Set error message
     this.errorMessage = undefined;
     // wrong date format
-    if(!validity && element.validity.badInput){
-      this.errorMessage = locale.errors.date.badInput;
+    if(!validity && element.validity.patternMismatch){
+      this.errorMessage = this.patternErrorMessage;
     }
     // required
     else if(!validity && element.validity.valueMissing) {
@@ -165,9 +195,28 @@ export class MgInputDate {
     }
   }
 
+  /**
+   * Validate patern configuration
+   */
+  private validatePattern() {
+    if(
+      this.pattern && typeof this.pattern === 'string' && this.pattern !== '' &&
+      (this.patternErrorMessage === undefined || typeof this.patternErrorMessage !== 'string' || this.patternErrorMessage === '')
+    ) {
+      throw new Error('<mg-input-text> prop "pattern" must be paired with the prop "patternErrorMessage"')
+    }
+  }
+
   /***************
    * Life Cycles *
    ***************/
+
+  /**
+   * Check if component props are well configured on init
+   */
+  componentWillLoad() {
+    this.validatePattern();
+  }
 
   render() {
     return (
@@ -180,22 +229,26 @@ export class MgInputDate {
         required={this.required}
         readonly={this.readonly}
         value={this.value}
-        readonlyValue={formatDate(this.value)}
+        readonlyValue={undefined}
         tooltip={this.tooltip}
-        displayCharacterLeft={undefined}
-        characterLeftTemplate={undefined}
-        maxlength={undefined}
+        displayCharacterLeft={this.displayCharacterLeft}
+        characterLeftTemplate={this.characterLeftTemplate}
+        maxlength={this.maxlength}
         helpText={this.helpText}
         errorMessage={this.errorMessage}
       >
         <input
-          type="date"
+          type="text"
           value={this.value}
           id={this.identifier}
           name={this.name}
+          placeholder={this.placeholder}
+          title={this.placeholder}
+          maxlength={this.maxlength}
           disabled={this.disabled}
           required={this.required}
           readonly={this.readonly}
+          pattern={this.pattern}
           onInput={this.handleInput}
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
@@ -203,5 +256,4 @@ export class MgInputDate {
       </MgInput>
     );
   }
-
 }

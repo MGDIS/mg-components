@@ -14,8 +14,8 @@
 | `identifier`         | `identifier`   | Identifier used for the input ID (id is a reserved prop in Stencil.js) If not set, it will be created. | `string`  | `createID('mg-input-date')` |
 | `invalid`            | `invalid`      | Define input pattern error message                                                                     | `boolean` | `undefined`                 |
 | `label` _(required)_ | `label`        | Input label Required                                                                                   | `string`  | `undefined`                 |
-| `labelColon`         | `label-colon`  | Define if label has colon                                                                              | `boolean` | `false`                     |
-| `labelOnTop`         | `label-on-top` | Define if label has colon                                                                              | `boolean` | `undefined`                 |
+| `labelColon`         | `label-colon`  | Define if label has colon ":"                                                                          | `boolean` | `false`                     |
+| `labelOnTop`         | `label-on-top` | Define if label is displayed on top                                                                    | `boolean` | `undefined`                 |
 | `name`               | `name`         | Input name If not set the value equals the identifier                                                  | `string`  | `this.identifier`           |
 | `readonly`           | `readonly`     | Define if input is readonly                                                                            | `boolean` | `false`                     |
 | `required`           | `required`     | Define if input is required                                                                            | `boolean` | `false`                     |
@@ -35,11 +35,11 @@
 
 ### Depends on
 
-- [mg-label](../../../mg-label)
-- [mg-tooltip](../../../mg-tooltip)
-- [mg-icon](../../../mg-icon)
-- [mg-character-left](../../../mg-character-left)
-- [mg-help-text](../../../mg-help-text)
+- [mg-label](../../../atoms/mg-label)
+- [mg-tooltip](../../../atoms/mg-tooltip)
+- [mg-icon](../../../atoms/mg-icon)
+- [mg-character-left](../../../atoms/mg-character-left)
+- [mg-help-text](../../../atoms/mg-help-text)
 
 ### Graph
 ```mermaid

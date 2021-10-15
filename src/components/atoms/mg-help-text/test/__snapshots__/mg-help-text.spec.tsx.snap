@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mg-help-text Should render text : Help text with html <strong>bold</strong>, <em>italic</em>. renders 1`] = `
+<mg-help-text>
+  <!---->
+  <p>
+    Help text with html &lt;strong&gt;bold&lt;/strong&gt;, &lt;em&gt;italic&lt;/em&gt;.
+  </p>
+</mg-help-text>
+`;
+
+exports[`mg-help-text Should render text : Help text with html <strong>bold</strong>, <em>italic</em>. renders 2`] = `
+<mg-help-text>
+  <!---->
+  <p id="blu">
+    Help text with html &lt;strong&gt;bold&lt;/strong&gt;, &lt;em&gt;italic&lt;/em&gt;.
+  </p>
+</mg-help-text>
+`;
+
+exports[`mg-help-text Should render text : Simple help text. renders 1`] = `
+<mg-help-text>
+  <!---->
+  <p>
+    Simple help text.
+  </p>
+</mg-help-text>
+`;
+
+exports[`mg-help-text Should render text : Simple help text. renders 2`] = `
+<mg-help-text>
+  <!---->
+  <p id="blu">
+    Simple help text.
+  </p>
+</mg-help-text>
+`;
