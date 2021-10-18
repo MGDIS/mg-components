@@ -3,4 +3,7 @@ module.exports = {
     project: './tsconfig.json',
   },
   extends: ['plugin:@stencil/recommended'],
+  rules: {
+    '@stencil/strict-mutable': 'off',
+  },
 };

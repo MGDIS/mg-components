@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mg-label Should render label with required false and colon false 1`] = `
+<mg-label>
+  <!---->
+  <label class="mg-label">
+    mg-label
+  </label>
+</mg-label>
+`;
+
+exports[`mg-label Should render label with required false and colon true 1`] = `
+<mg-label>
+  <!---->
+  <label class="mg-label">
+    mg-label
+    :
+  </label>
+</mg-label>
+`;
+
+exports[`mg-label Should render label with required true and colon false 1`] = `
+<mg-label>
+  <!---->
+  <label class="mg-label">
+    mg-label
+    <span class="is-asterisk">
+      *
+    </span>
+  </label>
+</mg-label>
+`;
+
+exports[`mg-label Should render label with required true and colon true 1`] = `
+<mg-label>
+  <!---->
+  <label class="mg-label">
+    mg-label
+    <span class="is-asterisk">
+      *
+    </span>
+    :
+  </label>
+</mg-label>
+`;

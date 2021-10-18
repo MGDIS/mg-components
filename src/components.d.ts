@@ -76,11 +76,11 @@ export namespace Components {
          */
         "label": string;
         /**
-          * Define if label has colon
+          * Define if label has colon ":"
          */
         "labelColon": boolean;
         /**
-          * Define if label has colon
+          * Define if label is displayed on top
          */
         "labelOnTop": boolean;
         /**
@@ -114,10 +114,6 @@ export namespace Components {
          */
         "characterLeftTemplate": string;
         /**
-          * Check input validity TODO : I EXPOSED THIS METHOD, THE IDEA IS TO VALIDATE A FORM USING IT
-         */
-        "checkValidity": () => Promise<boolean>;
-        /**
           * Define if input is disabled
          */
         "disabled": boolean;
@@ -130,7 +126,7 @@ export namespace Components {
          */
         "helpText": string;
         /**
-          * Input reference used for the input ID (id is a reserved prop in Stencil.js) If not set, an ID will be created
+          * Identifier used for the input ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
         "identifier"?: string;
         /**
@@ -142,11 +138,11 @@ export namespace Components {
          */
         "label": string;
         /**
-          * Define if label has colon
+          * Define if label has colon ":"
          */
         "labelColon": boolean;
         /**
-          * Define if label has colon
+          * Define if label is displayed on top
          */
         "labelOnTop": boolean;
         /**
@@ -154,11 +150,7 @@ export namespace Components {
          */
         "maxlength": number;
         /**
-          * Set the input text as multiline Switch to textarea if true
-         */
-        "multiline": boolean;
-        /**
-          * Input name If not set the value equals the reference
+          * Input name If not set the value equals the identifier
          */
         "name"?: string;
         /**
@@ -181,10 +173,6 @@ export namespace Components {
           * Define if input is required
          */
         "required": boolean;
-        /**
-          * Define textaera number of lines Only works with multiline activated
-         */
-        "rows": number;
         /**
           * Add a tooltip message next to the input
          */
@@ -367,11 +355,11 @@ declare namespace LocalJSX {
          */
         "label": string;
         /**
-          * Define if label has colon
+          * Define if label has colon ":"
          */
         "labelColon"?: boolean;
         /**
-          * Define if label has colon
+          * Define if label is displayed on top
          */
         "labelOnTop"?: boolean;
         /**
@@ -421,7 +409,7 @@ declare namespace LocalJSX {
          */
         "helpText"?: string;
         /**
-          * Input reference used for the input ID (id is a reserved prop in Stencil.js) If not set, an ID will be created
+          * Identifier used for the input ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
         "identifier"?: string;
         /**
@@ -433,11 +421,11 @@ declare namespace LocalJSX {
          */
         "label": string;
         /**
-          * Define if label has colon
+          * Define if label has colon ":"
          */
         "labelColon"?: boolean;
         /**
-          * Define if label has colon
+          * Define if label is displayed on top
          */
         "labelOnTop"?: boolean;
         /**
@@ -445,17 +433,13 @@ declare namespace LocalJSX {
          */
         "maxlength"?: number;
         /**
-          * Set the input text as multiline Switch to textarea if true
-         */
-        "multiline"?: boolean;
-        /**
-          * Input name If not set the value equals the reference
+          * Input name If not set the value equals the identifier
          */
         "name"?: string;
         /**
           * Emmited event when value change
          */
-        "onChanged"?: (event: CustomEvent<string>) => void;
+        "onInputChange"?: (event: CustomEvent<string>) => void;
         /**
           * Define input pattern to validate
          */
@@ -476,10 +460,6 @@ declare namespace LocalJSX {
           * Define if input is required
          */
         "required"?: boolean;
-        /**
-          * Define textaera number of lines Only works with multiline activated
-         */
-        "rows"?: number;
         /**
           * Add a tooltip message next to the input
          */

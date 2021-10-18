@@ -1,12 +1,12 @@
 import { h } from "@stencil/core";
 
 export default {
-  component: 'mg-input-date',
-  title: 'Molecules/mg-input-date',
+  component: 'mg-input-text',
+  title: 'Molecules/mg-input-text',
   parameters: {
     docs: {
       source: {
-        code: `<mg-input-date label="Label" required has-colon></mg-input-date>`,
+        code: `<mg-input-text label="Label" required has-colon></mg-input-text>`,
       },
     },
   },
@@ -17,18 +17,21 @@ export default {
  * 2. boolean arguments with a default true value must be added like display-character-left={args.displayCharacterLeft ? 'true' : 'false'}
  */
 const Template = args => (
-  <mg-input-date
+  <mg-input-text
     {...args}
     label-on-top={args.labelOnTop}
     label-colon={args.labelColon}
+    pattern-error-message={args.patternErrorMessage}
+    display-character-left={args.displayCharacterLeft ? 'true' : 'false'}
+    character-left-template={args.characterLeftTemplate}
     help-text={args.helpText}
-  ></mg-input-date>
+  ></mg-input-text>
 );
 
-export const MgInputDate = Template.bind({});
-MgInputDate.args = {
+export const MgInputText = Template.bind({});
+MgInputText.args = {
   // Global
-  value: '2021-10-14',
+  value: '',
   identifier: 'identifier',
   name: 'input-name',
   // Label
@@ -36,11 +39,18 @@ MgInputDate.args = {
   labelOnTop: false,
   labelColon: true,
   // Input
+  placeholder: 'placeholder',
+  maxlength: 400,
   required: true,
-  readonly: false,
   disabled: false,
+  readonly: false,
+  pattern: undefined,
+  patternErrorMessage: undefined,
   // Tooltip
   tooltip: 'This is a tooltip',
+  // Nb Char Left
+  displayCharacterLeft: true,
+  characterLeftTemplate: '{counter} characters left.',
   // Help Text
   helpText: 'Help text with html <strong>bold</strong>, <em>italic</em>.',
 };

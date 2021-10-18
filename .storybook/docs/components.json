@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-10-14T16:32:50",
+  "timestamp": "2021-10-15T16:03:29",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.8.1",
@@ -7,7 +7,7 @@
   },
   "components": [
     {
-      "filePath": "./src/components/mg-button/mg-button.tsx",
+      "filePath": "./src/components/atoms/mg-button/mg-button.tsx",
       "encapsulation": "shadow",
       "tag": "mg-button",
       "readme": "# mg-button\n\n\n",
@@ -77,7 +77,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/mg-character-left/mg-character-left.tsx",
+      "filePath": "./src/components/atoms/mg-character-left/mg-character-left.tsx",
       "encapsulation": "scoped",
       "tag": "mg-character-left",
       "readme": "# mg-character-left\n\n\n",
@@ -142,7 +142,7 @@
           "reflectToAttr": false,
           "docs": "Template to display remaining characters.\nMust have {counter} inside",
           "docsTags": [],
-          "default": "'{counter} caractères disponibles.'",
+          "default": "locale.nbCharLeft",
           "values": [
             {
               "type": "string"
@@ -173,7 +173,7 @@
       }
     },
     {
-      "filePath": "./src/components/mg-help-text/mg-help-text.tsx",
+      "filePath": "./src/components/atoms/mg-help-text/mg-help-text.tsx",
       "encapsulation": "scoped",
       "tag": "mg-help-text",
       "readme": "# mg-help-text\n\n\n",
@@ -219,7 +219,7 @@
       }
     },
     {
-      "filePath": "./src/components/mg-icon/mg-icon.tsx",
+      "filePath": "./src/components/atoms/mg-icon/mg-icon.tsx",
       "encapsulation": "shadow",
       "tag": "mg-icon",
       "readme": "# mg-icon\n\n\n",
@@ -378,7 +378,7 @@
           "mutable": false,
           "attr": "label-colon",
           "reflectToAttr": false,
-          "docs": "Define if label has colon",
+          "docs": "Define if label has colon \":\"",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -395,7 +395,7 @@
           "mutable": false,
           "attr": "label-on-top",
           "reflectToAttr": false,
-          "docs": "Define if label has colon",
+          "docs": "Define if label is displayed on top",
           "docsTags": [],
           "values": [
             {
@@ -491,7 +491,7 @@
         {
           "name": "value",
           "type": "string",
-          "mutable": false,
+          "mutable": true,
           "attr": "value",
           "reflectToAttr": true,
           "docs": "Component value",
@@ -540,7 +540,7 @@
       }
     },
     {
-      "filePath": "./src/components/mg-input-text/mg-input-text.tsx",
+      "filePath": "./src/components/molecules/inputs/mg-input-text/mg-input-text.tsx",
       "encapsulation": "shadow",
       "tag": "mg-input-text",
       "readme": "# mg-input-text\n\n\n",
@@ -620,7 +620,7 @@
           "mutable": false,
           "attr": "identifier",
           "reflectToAttr": false,
-          "docs": "Input reference used for the input ID (id is a reserved prop in Stencil.js)\nIf not set, an ID will be created",
+          "docs": "Identifier used for the input ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
           "docsTags": [],
           "default": "createID('mg-input-text')",
           "values": [
@@ -669,7 +669,7 @@
           "mutable": false,
           "attr": "label-colon",
           "reflectToAttr": false,
-          "docs": "Define if label has colon",
+          "docs": "Define if label has colon \":\"",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -686,7 +686,7 @@
           "mutable": false,
           "attr": "label-on-top",
           "reflectToAttr": false,
-          "docs": "Define if label has colon",
+          "docs": "Define if label is displayed on top",
           "docsTags": [],
           "values": [
             {
@@ -704,27 +704,10 @@
           "reflectToAttr": false,
           "docs": "Input max length",
           "docsTags": [],
-          "default": "this.multiline ? 4000 : 400",
+          "default": "400",
           "values": [
             {
               "type": "number"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "multiline",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "multiline",
-          "reflectToAttr": false,
-          "docs": "Set the input text as multiline\nSwitch to textarea if true",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
             }
           ],
           "optional": false,
@@ -736,7 +719,7 @@
           "mutable": false,
           "attr": "name",
           "reflectToAttr": false,
-          "docs": "Input name\nIf not set the value equals the reference",
+          "docs": "Input name\nIf not set the value equals the identifier",
           "docsTags": [],
           "default": "this.identifier",
           "values": [
@@ -830,23 +813,6 @@
           "required": false
         },
         {
-          "name": "rows",
-          "type": "number",
-          "mutable": false,
-          "attr": "rows",
-          "reflectToAttr": false,
-          "docs": "Define textaera number of lines\nOnly works with multiline activated",
-          "docsTags": [],
-          "default": "3",
-          "values": [
-            {
-              "type": "number"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
           "name": "tooltip",
           "type": "string",
           "mutable": false,
@@ -895,22 +861,10 @@
           "required": false
         }
       ],
-      "methods": [
-        {
-          "name": "checkValidity",
-          "returns": {
-            "type": "Promise<boolean>",
-            "docs": ""
-          },
-          "signature": "checkValidity() => Promise<boolean>",
-          "parameters": [],
-          "docs": "Check input validity\nTODO : I EXPOSED THIS METHOD, THE IDEA IS TO VALIDATE A FORM USING IT",
-          "docsTags": []
-        }
-      ],
+      "methods": [],
       "events": [
         {
-          "event": "changed",
+          "event": "inputChange",
           "detail": "string",
           "bubbles": true,
           "cancelable": true,
@@ -942,7 +896,7 @@
       }
     },
     {
-      "filePath": "./src/components/mg-label/mg-label.tsx",
+      "filePath": "./src/components/atoms/mg-label/mg-label.tsx",
       "encapsulation": "scoped",
       "tag": "mg-label",
       "readme": "# mg-label\n\n\n",
@@ -1020,7 +974,7 @@
       }
     },
     {
-      "filePath": "./src/components/mg-tag/mg-tag.tsx",
+      "filePath": "./src/components/atoms/mg-tag/mg-tag.tsx",
       "encapsulation": "shadow",
       "tag": "mg-tag",
       "readme": "# mg-tag\n\n\n",
@@ -1057,7 +1011,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/mg-tooltip/mg-tooltip.tsx",
+      "filePath": "./src/components/atoms/mg-tooltip/mg-tooltip.tsx",
       "encapsulation": "scoped",
       "tag": "mg-tooltip",
       "readme": "# mg-tooltip\n\n\n",

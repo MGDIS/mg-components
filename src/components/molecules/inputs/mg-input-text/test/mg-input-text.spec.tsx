@@ -1,34 +1,26 @@
 import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
-import { MgInputDate } from '../mg-input-date';
+import { MgInputText } from '../mg-input-text';
 import locale from '../../../../../locales';
 
 const getPage = (args) => newSpecPage({
-  components: [MgInputDate],
-  template: () => (<mg-input-date {...args}></mg-input-date>)
+  components: [MgInputText],
+  template: () => (<mg-input-text {...args}></mg-input-text>)
 });
 
-describe('mg-input-date', () => {
-
-  /**
-   * Snapshots
-   */
+describe('mg-input-text', () => {
   test.each([
     {label: 'label', identifier: "identifier"},
     {label: 'label', identifier: "identifier", labelOnTop: true},
     {label: 'label', identifier: "identifier", readonly: true},
-    {label: 'label', identifier: "identifier", readonly: true, value: "2021-10-15"},
+    {label: 'label', identifier: "identifier", readonly: true, value: "blu"},
     {label: 'label', identifier: "identifier", tooltip: "My Tooltip Message"},
   ])('Should render with args %s:', async (args) => {
     const { root } = await getPage(args);
     expect(root).toMatchSnapshot();
   });
 
-  /**
-   * Test
-   */
-
-   test.each(["", undefined])('Should throw an error with invalid label property : %s', async (value) => {
+  test.each(["", undefined])('Should not render with invalid label property : %s', async (value) => {
     try {
       await getPage({label:value});
     }
@@ -37,12 +29,22 @@ describe('mg-input-date', () => {
     }
   });
 
-   test('Should trigger events', async ()=> {
-    const inputValue = '2021-10-14';
+  test.each(["", undefined])('Should throw an error when pattern is used with patternErrorMessage: %s', async (value) => {
+    try {
+      const { root } = await getPage({label: "blu", pattern:'[a-z]*', patternErrorMessage: value});
+      expect(root).toMatchSnapshot();
+    }
+    catch (err) {
+      expect(err.message).toMatch('<mg-input-text> prop "pattern" must be paired with the prop "patternErrorMessage"')
+    }
+  });
+
+  test('Should trigger events', async ()=> {
+    const inputValue = 'Blu';
     const args = {label: 'label', identifier: "identifier", helpText: "My help text"};
     const page = await getPage(args);
 
-    const element = await page.doc.querySelector('mg-input-date');
+    const element = await page.doc.querySelector('mg-input-text');
     const input = element.shadowRoot.querySelector('input');
 
     jest.spyOn(page.rootInstance.inputChange, 'emit');
@@ -64,21 +66,21 @@ describe('mg-input-date', () => {
   });
 
   test.each([
-    {validity: true, valueMissing: false, badInput: false},
-    {validity: false, valueMissing: true, badInput: false},
-    {validity: false, valueMissing: false, badInput: true},
-  ])('validity (%s), valueMissing (%s), badInput (%s)', async ({validity, valueMissing, badInput})=> {
-    const args = {label: 'label', identifier: "identifier"};
+    {validity: true, valueMissing: false, patternMismatch: false},
+    {validity: false, valueMissing: true, patternMismatch: false},
+    {validity: false, valueMissing: false, patternMismatch: true},
+  ])('validity (%s), valueMissing (%s), patternMismatch (%s)', async ({validity, valueMissing, patternMismatch})=> {
+    const args = {label: 'label', identifier: "identifier", patternErrorMessage: "Non"};
     const page = await getPage(args);
 
-    const element = await page.doc.querySelector('mg-input-date');
+    const element = await page.doc.querySelector('mg-input-text');
     const input = element.shadowRoot.querySelector('input');
 
     //mock validity
     input.checkValidity = jest.fn(()=> validity);
     Object.defineProperty(input, 'validity', { get: jest.fn(()=> ({
       valueMissing,
-      badInput
+      patternMismatch
     }))});
 
     input.dispatchEvent(new CustomEvent('blur', { bubbles: true }));
@@ -90,10 +92,12 @@ describe('mg-input-date', () => {
     else if (valueMissing){
       expect(page.rootInstance.errorMessage).toEqual(locale.errors.required);
     }
-    else if(badInput) {
-      expect(page.rootInstance.errorMessage).toEqual(locale.errors.date.badInput);
+    else if(patternMismatch) {
+      expect(page.rootInstance.errorMessage).toEqual(args.patternErrorMessage);
     }
     expect(page.rootInstance.valid).toEqual(validity);
     expect(page.rootInstance.invalid).toEqual(!validity);
   });
+
 });
+
