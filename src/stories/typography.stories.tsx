@@ -1,3 +1,5 @@
+import { h } from "@stencil/core";
+
 export default {
   title: 'Style/Typography',
 };

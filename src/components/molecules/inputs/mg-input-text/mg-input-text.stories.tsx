@@ -6,7 +6,13 @@ export default {
   parameters: {
     docs: {
       source: {
-        code: `<mg-input-text label="Label" required has-colon></mg-input-text>`,
+        code: `<mg-input-text
+  value=""
+  label="Label"
+  tooltip="This is a tooltip"
+  help-text="Help text with html <strong>bold</strong>, <em>italic</em>."
+  required
+  has-colon></mg-input-text>`,
       },
     },
   },

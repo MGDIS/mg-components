@@ -19,12 +19,14 @@
 
  - [mg-input-date](../../molecules/inputs/mg-input-date)
  - [mg-input-text](../../molecules/inputs/mg-input-text)
+ - [mg-input-textarea](../../molecules/inputs/mg-input-textarea)
 
 ### Graph
 ```mermaid
 graph TD;
   mg-input-date --> mg-icon
   mg-input-text --> mg-icon
+  mg-input-textarea --> mg-icon
   style mg-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

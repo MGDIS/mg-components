@@ -1,18 +1,18 @@
 import { h } from "@stencil/core";
 
 export default {
-  component: 'mg-input-date',
-  title: 'Molecules/mg-input-date',
+  component: 'mg-input-textarea',
+  title: 'Molecules/mg-input-textarea',
   parameters: {
     docs: {
       source: {
-        code: `<mg-input-date
-  value="2021-10-14"
+        code: `<mg-input-textarea
+  value=""
   label="Label"
   tooltip="This is a tooltip"
   help-text="Help text with html <strong>bold</strong>, <em>italic</em>."
   required
-  has-colon></mg-input-date>`,
+  has-colon></mg-input-text>`,
       },
     },
   },
@@ -23,18 +23,21 @@ export default {
  * 2. boolean arguments with a default true value must be added like display-character-left={args.displayCharacterLeft ? 'true' : 'false'}
  */
 const Template = args => (
-  <mg-input-date
+  <mg-input-textarea
     {...args}
     label-on-top={args.labelOnTop}
     label-colon={args.labelColon}
+    pattern-error-message={args.patternErrorMessage}
+    display-character-left={args.displayCharacterLeft ? 'true' : 'false'}
+    character-left-template={args.characterLeftTemplate}
     help-text={args.helpText}
-  ></mg-input-date>
+  ></mg-input-textarea>
 );
 
-export const MgInputDate = Template.bind({});
-MgInputDate.args = {
+export const MgInputTextarea = Template.bind({});
+MgInputTextarea.args = {
   // Global
-  value: '2021-10-14',
+  value: '',
   identifier: 'identifier',
   name: 'input-name',
   // Label
@@ -42,11 +45,19 @@ MgInputDate.args = {
   labelOnTop: false,
   labelColon: true,
   // Input
+  placeholder: 'placeholder',
+  maxlength: 4000,
   required: true,
-  readonly: false,
   disabled: false,
+  readonly: false,
+  pattern: undefined,
+  patternErrorMessage: undefined,
+  rows: 3,
   // Tooltip
   tooltip: 'This is a tooltip',
+  // Nb Char Left
+  displayCharacterLeft: true,
+  characterLeftTemplate: '{counter} characters left.',
   // Help Text
   helpText: 'Help text with html <strong>bold</strong>, <em>italic</em>.',
 };
