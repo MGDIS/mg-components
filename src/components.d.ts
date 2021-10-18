@@ -54,6 +54,60 @@ export namespace Components {
          */
         "size": string;
     }
+    interface MgInputCheckbox {
+        /**
+          * Define if input is disabled
+         */
+        "disabled": boolean;
+        /**
+          * Template to use for characters left sentence
+         */
+        "helpText": string;
+        /**
+          * Identifier used for the input ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+         */
+        "identifier"?: string;
+        /**
+          * Define input pattern error message
+         */
+        "invalid": boolean;
+        /**
+          * Input label Required
+         */
+        "label": string;
+        /**
+          * Define if label has colon ":"
+         */
+        "labelColon": boolean;
+        /**
+          * Define if label is displayed on top
+         */
+        "labelOnTop": boolean;
+        /**
+          * Input name If not set the value equals the identifier
+         */
+        "name"?: string;
+        /**
+          * Define if input is readonly
+         */
+        "readonly": boolean;
+        /**
+          * Define if input is required
+         */
+        "required": boolean;
+        /**
+          * Add a tooltip message next to the input
+         */
+        "tooltip": string;
+        /**
+          * Define input pattern to validate
+         */
+        "valid": boolean;
+        /**
+          * Component value If not set, checkbox will be indeterminate by default
+         */
+        "value"?: boolean;
+    }
     interface MgInputDate {
         /**
           * Define if input is disabled
@@ -324,6 +378,12 @@ declare global {
         prototype: HTMLMgIconElement;
         new (): HTMLMgIconElement;
     };
+    interface HTMLMgInputCheckboxElement extends Components.MgInputCheckbox, HTMLStencilElement {
+    }
+    var HTMLMgInputCheckboxElement: {
+        prototype: HTMLMgInputCheckboxElement;
+        new (): HTMLMgInputCheckboxElement;
+    };
     interface HTMLMgInputDateElement extends Components.MgInputDate, HTMLStencilElement {
     }
     var HTMLMgInputDateElement: {
@@ -365,6 +425,7 @@ declare global {
         "mg-character-left": HTMLMgCharacterLeftElement;
         "mg-help-text": HTMLMgHelpTextElement;
         "mg-icon": HTMLMgIconElement;
+        "mg-input-checkbox": HTMLMgInputCheckboxElement;
         "mg-input-date": HTMLMgInputDateElement;
         "mg-input-text": HTMLMgInputTextElement;
         "mg-input-textarea": HTMLMgInputTextareaElement;
@@ -421,6 +482,64 @@ declare namespace LocalJSX {
           * Define icon size
          */
         "size"?: string;
+    }
+    interface MgInputCheckbox {
+        /**
+          * Define if input is disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * Template to use for characters left sentence
+         */
+        "helpText"?: string;
+        /**
+          * Identifier used for the input ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+         */
+        "identifier"?: string;
+        /**
+          * Define input pattern error message
+         */
+        "invalid"?: boolean;
+        /**
+          * Input label Required
+         */
+        "label": string;
+        /**
+          * Define if label has colon ":"
+         */
+        "labelColon"?: boolean;
+        /**
+          * Define if label is displayed on top
+         */
+        "labelOnTop"?: boolean;
+        /**
+          * Input name If not set the value equals the identifier
+         */
+        "name"?: string;
+        /**
+          * Emmited event when value change
+         */
+        "onInputChange"?: (event: CustomEvent<boolean>) => void;
+        /**
+          * Define if input is readonly
+         */
+        "readonly"?: boolean;
+        /**
+          * Define if input is required
+         */
+        "required"?: boolean;
+        /**
+          * Add a tooltip message next to the input
+         */
+        "tooltip"?: string;
+        /**
+          * Define input pattern to validate
+         */
+        "valid"?: boolean;
+        /**
+          * Component value If not set, checkbox will be indeterminate by default
+         */
+        "value"?: boolean;
     }
     interface MgInputDate {
         /**
@@ -683,6 +802,7 @@ declare namespace LocalJSX {
         "mg-character-left": MgCharacterLeft;
         "mg-help-text": MgHelpText;
         "mg-icon": MgIcon;
+        "mg-input-checkbox": MgInputCheckbox;
         "mg-input-date": MgInputDate;
         "mg-input-text": MgInputText;
         "mg-input-textarea": MgInputTextarea;
@@ -699,6 +819,7 @@ declare module "@stencil/core" {
             "mg-character-left": LocalJSX.MgCharacterLeft & JSXBase.HTMLAttributes<HTMLMgCharacterLeftElement>;
             "mg-help-text": LocalJSX.MgHelpText & JSXBase.HTMLAttributes<HTMLMgHelpTextElement>;
             "mg-icon": LocalJSX.MgIcon & JSXBase.HTMLAttributes<HTMLMgIconElement>;
+            "mg-input-checkbox": LocalJSX.MgInputCheckbox & JSXBase.HTMLAttributes<HTMLMgInputCheckboxElement>;
             "mg-input-date": LocalJSX.MgInputDate & JSXBase.HTMLAttributes<HTMLMgInputDateElement>;
             "mg-input-text": LocalJSX.MgInputText & JSXBase.HTMLAttributes<HTMLMgInputTextElement>;
             "mg-input-textarea": LocalJSX.MgInputTextarea & JSXBase.HTMLAttributes<HTMLMgInputTextareaElement>;
