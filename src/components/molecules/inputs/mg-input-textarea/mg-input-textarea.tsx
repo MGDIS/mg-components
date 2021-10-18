@@ -4,11 +4,11 @@ import { createID } from '../../../../utils/utils';
 import locale from '../../../../locales';
 
 @Component({
-  tag: 'mg-input-text',
-  styleUrl: 'mg-input-text.scss',
+  tag: 'mg-input-textarea',
+  styleUrl: 'mg-input-textarea.scss',
   shadow: true,
 })
-export class MgInputText {
+export class MgInputTextarea {
 
   /************
    * Internal *
@@ -30,7 +30,7 @@ export class MgInputText {
    * Identifier used for the input ID (id is a reserved prop in Stencil.js)
    * If not set, it will be created.
    */
-  @Prop() identifier?: string = createID('mg-input-text');
+  @Prop() identifier?: string = createID('mg-input-textarea');
 
   /**
    * Input name
@@ -62,7 +62,7 @@ export class MgInputText {
   /**
    * Input max length
    */
-  @Prop() maxlength: number = 400;
+  @Prop() maxlength: number = 4000;
 
   /**
    * Define if input is required
@@ -88,6 +88,11 @@ export class MgInputText {
    * Define input pattern error message
    */
   @Prop() patternErrorMessage: string;
+
+  /**
+   * Define input pattern error message
+   */
+   @Prop() rows: number = 3;
 
   /**
    * Add a tooltip message next to the input
@@ -122,7 +127,7 @@ export class MgInputText {
   /**
    * Component classes
    */
-  @State() classes: Set<string> = new Set(['mg-input--text']);
+  @State() classes: Set<string> = new Set(['mg-input--textarea']);
 
   /**
    * Error message to display
@@ -168,11 +173,12 @@ export class MgInputText {
    * @param element
    */
   private checkValidity(element) {
-    const validity = element.checkValidity();
+    // Pattern is not defined on textarea field : https://developer.mozilla.org/fr/docs/Web/HTML/Element/Textarea
+    const patternValidity = this.pattern === undefined || new RegExp(`^${this.pattern}$`, 'u').test(this.value);
+    const validity = element.checkValidity() && patternValidity;
     // Set error message
     this.errorMessage = undefined;
-    // Does not match pattern
-    if(!validity && element.validity.patternMismatch){
+    if(!validity && !patternValidity){
       this.errorMessage = this.patternErrorMessage;
     }
     // required
@@ -203,7 +209,7 @@ export class MgInputText {
       this.pattern && typeof this.pattern === 'string' && this.pattern !== '' &&
       (this.patternErrorMessage === undefined || typeof this.patternErrorMessage !== 'string' || this.patternErrorMessage === '')
     ) {
-      throw new Error('<mg-input-text> prop "pattern" must be paired with the prop "patternErrorMessage"')
+      throw new Error('<mg-input-textarea> prop "pattern" must be paired with the prop "patternErrorMessage"')
     }
   }
 
@@ -237,22 +243,20 @@ export class MgInputText {
         helpText={this.helpText}
         errorMessage={this.errorMessage}
       >
-        <input
-          type="text"
-          value={this.value}
+        <textarea
           id={this.identifier}
           name={this.name}
           placeholder={this.placeholder}
           title={this.placeholder}
+          rows={this.rows}
           maxlength={this.maxlength}
           disabled={this.disabled}
           required={this.required}
           readonly={this.readonly}
-          pattern={this.pattern}
           onInput={this.handleInput}
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
-        />
+        >{this.value}</textarea>
       </MgInput>
     );
   }

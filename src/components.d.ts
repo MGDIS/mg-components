@@ -186,6 +186,88 @@ export namespace Components {
          */
         "value": string;
     }
+    interface MgInputTextarea {
+        /**
+          * Template to use for characters left sentence
+         */
+        "characterLeftTemplate": string;
+        /**
+          * Define if input is disabled
+         */
+        "disabled": boolean;
+        /**
+          * Define if component should display character left
+         */
+        "displayCharacterLeft": boolean;
+        /**
+          * Template to use for characters left sentence
+         */
+        "helpText": string;
+        /**
+          * Identifier used for the input ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+         */
+        "identifier"?: string;
+        /**
+          * Define input pattern error message
+         */
+        "invalid": boolean;
+        /**
+          * Input label Required
+         */
+        "label": string;
+        /**
+          * Define if label has colon ":"
+         */
+        "labelColon": boolean;
+        /**
+          * Define if label is displayed on top
+         */
+        "labelOnTop": boolean;
+        /**
+          * Input max length
+         */
+        "maxlength": number;
+        /**
+          * Input name If not set the value equals the identifier
+         */
+        "name"?: string;
+        /**
+          * Define input pattern to validate
+         */
+        "pattern": string;
+        /**
+          * Define input pattern error message
+         */
+        "patternErrorMessage": string;
+        /**
+          * Input placeholder
+         */
+        "placeholder": string;
+        /**
+          * Define if input is readonly
+         */
+        "readonly": boolean;
+        /**
+          * Define if input is required
+         */
+        "required": boolean;
+        /**
+          * Define input pattern error message
+         */
+        "rows": number;
+        /**
+          * Add a tooltip message next to the input
+         */
+        "tooltip": string;
+        /**
+          * Define input pattern to validate
+         */
+        "valid": boolean;
+        /**
+          * Component value
+         */
+        "value": string;
+    }
     interface MgLabel {
         /**
           * Add a colon punctuation after label text
@@ -254,6 +336,12 @@ declare global {
         prototype: HTMLMgInputTextElement;
         new (): HTMLMgInputTextElement;
     };
+    interface HTMLMgInputTextareaElement extends Components.MgInputTextarea, HTMLStencilElement {
+    }
+    var HTMLMgInputTextareaElement: {
+        prototype: HTMLMgInputTextareaElement;
+        new (): HTMLMgInputTextareaElement;
+    };
     interface HTMLMgLabelElement extends Components.MgLabel, HTMLStencilElement {
     }
     var HTMLMgLabelElement: {
@@ -279,6 +367,7 @@ declare global {
         "mg-icon": HTMLMgIconElement;
         "mg-input-date": HTMLMgInputDateElement;
         "mg-input-text": HTMLMgInputTextElement;
+        "mg-input-textarea": HTMLMgInputTextareaElement;
         "mg-label": HTMLMgLabelElement;
         "mg-tag": HTMLMgTagElement;
         "mg-tooltip": HTMLMgTooltipElement;
@@ -473,6 +562,92 @@ declare namespace LocalJSX {
          */
         "value"?: string;
     }
+    interface MgInputTextarea {
+        /**
+          * Template to use for characters left sentence
+         */
+        "characterLeftTemplate"?: string;
+        /**
+          * Define if input is disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * Define if component should display character left
+         */
+        "displayCharacterLeft"?: boolean;
+        /**
+          * Template to use for characters left sentence
+         */
+        "helpText"?: string;
+        /**
+          * Identifier used for the input ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+         */
+        "identifier"?: string;
+        /**
+          * Define input pattern error message
+         */
+        "invalid"?: boolean;
+        /**
+          * Input label Required
+         */
+        "label": string;
+        /**
+          * Define if label has colon ":"
+         */
+        "labelColon"?: boolean;
+        /**
+          * Define if label is displayed on top
+         */
+        "labelOnTop"?: boolean;
+        /**
+          * Input max length
+         */
+        "maxlength"?: number;
+        /**
+          * Input name If not set the value equals the identifier
+         */
+        "name"?: string;
+        /**
+          * Emmited event when value change
+         */
+        "onInputChange"?: (event: CustomEvent<string>) => void;
+        /**
+          * Define input pattern to validate
+         */
+        "pattern"?: string;
+        /**
+          * Define input pattern error message
+         */
+        "patternErrorMessage"?: string;
+        /**
+          * Input placeholder
+         */
+        "placeholder"?: string;
+        /**
+          * Define if input is readonly
+         */
+        "readonly"?: boolean;
+        /**
+          * Define if input is required
+         */
+        "required"?: boolean;
+        /**
+          * Define input pattern error message
+         */
+        "rows"?: number;
+        /**
+          * Add a tooltip message next to the input
+         */
+        "tooltip"?: string;
+        /**
+          * Define input pattern to validate
+         */
+        "valid"?: boolean;
+        /**
+          * Component value
+         */
+        "value"?: string;
+    }
     interface MgLabel {
         /**
           * Add a colon punctuation after label text
@@ -510,6 +685,7 @@ declare namespace LocalJSX {
         "mg-icon": MgIcon;
         "mg-input-date": MgInputDate;
         "mg-input-text": MgInputText;
+        "mg-input-textarea": MgInputTextarea;
         "mg-label": MgLabel;
         "mg-tag": MgTag;
         "mg-tooltip": MgTooltip;
@@ -525,6 +701,7 @@ declare module "@stencil/core" {
             "mg-icon": LocalJSX.MgIcon & JSXBase.HTMLAttributes<HTMLMgIconElement>;
             "mg-input-date": LocalJSX.MgInputDate & JSXBase.HTMLAttributes<HTMLMgInputDateElement>;
             "mg-input-text": LocalJSX.MgInputText & JSXBase.HTMLAttributes<HTMLMgInputTextElement>;
+            "mg-input-textarea": LocalJSX.MgInputTextarea & JSXBase.HTMLAttributes<HTMLMgInputTextareaElement>;
             "mg-label": LocalJSX.MgLabel & JSXBase.HTMLAttributes<HTMLMgLabelElement>;
             "mg-tag": LocalJSX.MgTag & JSXBase.HTMLAttributes<HTMLMgTagElement>;
             "mg-tooltip": LocalJSX.MgTooltip & JSXBase.HTMLAttributes<HTMLMgTooltipElement>;

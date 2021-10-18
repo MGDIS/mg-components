@@ -13,7 +13,9 @@ exports[`mg-input-text Should render with args {
         label
       </mg-label>
       <div class="mg-input__input-container">
-        <strong></strong>
+        <strong>
+          blu
+        </strong>
       </div>
     </div>
   </mock:shadow-root>

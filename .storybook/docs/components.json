@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-10-15T16:03:29",
+  "timestamp": "2021-10-18T08:21:20",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.8.1",
@@ -160,7 +160,8 @@
       "parts": [],
       "dependents": [
         "mg-input-date",
-        "mg-input-text"
+        "mg-input-text",
+        "mg-input-textarea"
       ],
       "dependencies": [],
       "dependencyGraph": {
@@ -168,6 +169,9 @@
           "mg-character-left"
         ],
         "mg-input-text": [
+          "mg-character-left"
+        ],
+        "mg-input-textarea": [
           "mg-character-left"
         ]
       }
@@ -206,7 +210,8 @@
       "parts": [],
       "dependents": [
         "mg-input-date",
-        "mg-input-text"
+        "mg-input-text",
+        "mg-input-textarea"
       ],
       "dependencies": [],
       "dependencyGraph": {
@@ -214,6 +219,9 @@
           "mg-help-text"
         ],
         "mg-input-text": [
+          "mg-help-text"
+        ],
+        "mg-input-textarea": [
           "mg-help-text"
         ]
       }
@@ -269,7 +277,8 @@
       "parts": [],
       "dependents": [
         "mg-input-date",
-        "mg-input-text"
+        "mg-input-text",
+        "mg-input-textarea"
       ],
       "dependencies": [],
       "dependencyGraph": {
@@ -277,6 +286,9 @@
           "mg-icon"
         ],
         "mg-input-text": [
+          "mg-icon"
+        ],
+        "mg-input-textarea": [
           "mg-icon"
         ]
       }
@@ -896,6 +908,379 @@
       }
     },
     {
+      "filePath": "./src/components/molecules/inputs/mg-input-textarea/mg-input-textarea.tsx",
+      "encapsulation": "shadow",
+      "tag": "mg-input-textarea",
+      "readme": "# mg-input-textarea\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "characterLeftTemplate",
+          "type": "string",
+          "mutable": false,
+          "attr": "character-left-template",
+          "reflectToAttr": false,
+          "docs": "Template to use for characters left sentence",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Define if input is disabled",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "displayCharacterLeft",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "display-character-left",
+          "reflectToAttr": false,
+          "docs": "Define if component should display character left",
+          "docsTags": [],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "helpText",
+          "type": "string",
+          "mutable": false,
+          "attr": "help-text",
+          "reflectToAttr": false,
+          "docs": "Template to use for characters left sentence",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "identifier",
+          "type": "string",
+          "mutable": false,
+          "attr": "identifier",
+          "reflectToAttr": false,
+          "docs": "Identifier used for the input ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
+          "docsTags": [],
+          "default": "createID('mg-input-textarea')",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "invalid",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "invalid",
+          "reflectToAttr": true,
+          "docs": "Define input pattern error message",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "Input label\nRequired",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "labelColon",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "label-colon",
+          "reflectToAttr": false,
+          "docs": "Define if label has colon \":\"",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "labelOnTop",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "label-on-top",
+          "reflectToAttr": false,
+          "docs": "Define if label is displayed on top",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "maxlength",
+          "type": "number",
+          "mutable": false,
+          "attr": "maxlength",
+          "reflectToAttr": false,
+          "docs": "Input max length",
+          "docsTags": [],
+          "default": "4000",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "Input name\nIf not set the value equals the identifier",
+          "docsTags": [],
+          "default": "this.identifier",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "pattern",
+          "type": "string",
+          "mutable": false,
+          "attr": "pattern",
+          "reflectToAttr": false,
+          "docs": "Define input pattern to validate",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "patternErrorMessage",
+          "type": "string",
+          "mutable": false,
+          "attr": "pattern-error-message",
+          "reflectToAttr": false,
+          "docs": "Define input pattern error message",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "mutable": false,
+          "attr": "placeholder",
+          "reflectToAttr": false,
+          "docs": "Input placeholder",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "readonly",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "readonly",
+          "reflectToAttr": false,
+          "docs": "Define if input is readonly",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "required",
+          "reflectToAttr": false,
+          "docs": "Define if input is required",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "rows",
+          "type": "number",
+          "mutable": false,
+          "attr": "rows",
+          "reflectToAttr": false,
+          "docs": "Define input pattern error message",
+          "docsTags": [],
+          "default": "3",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "tooltip",
+          "type": "string",
+          "mutable": false,
+          "attr": "tooltip",
+          "reflectToAttr": false,
+          "docs": "Add a tooltip message next to the input",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "valid",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "valid",
+          "reflectToAttr": true,
+          "docs": "Define input pattern to validate",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": true,
+          "docs": "Component value",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "inputChange",
+          "detail": "string",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emmited event when value change",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "mg-label",
+        "mg-tooltip",
+        "mg-icon",
+        "mg-character-left",
+        "mg-help-text"
+      ],
+      "dependencyGraph": {
+        "mg-input-textarea": [
+          "mg-label",
+          "mg-tooltip",
+          "mg-icon",
+          "mg-character-left",
+          "mg-help-text"
+        ]
+      }
+    },
+    {
       "filePath": "./src/components/atoms/mg-label/mg-label.tsx",
       "encapsulation": "scoped",
       "tag": "mg-label",
@@ -961,7 +1346,8 @@
       "parts": [],
       "dependents": [
         "mg-input-date",
-        "mg-input-text"
+        "mg-input-text",
+        "mg-input-textarea"
       ],
       "dependencies": [],
       "dependencyGraph": {
@@ -969,6 +1355,9 @@
           "mg-label"
         ],
         "mg-input-text": [
+          "mg-label"
+        ],
+        "mg-input-textarea": [
           "mg-label"
         ]
       }
@@ -1061,7 +1450,8 @@
       "parts": [],
       "dependents": [
         "mg-input-date",
-        "mg-input-text"
+        "mg-input-text",
+        "mg-input-textarea"
       ],
       "dependencies": [],
       "dependencyGraph": {
@@ -1069,6 +1459,9 @@
           "mg-tooltip"
         ],
         "mg-input-text": [
+          "mg-tooltip"
+        ],
+        "mg-input-textarea": [
           "mg-tooltip"
         ]
       }

@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mg-input-textarea Should render with args {
+  label: 'label',
+  identifier: 'identifier',
+  readonly: true,
+  value: 'blu'
+}: 1`] = `
+<mg-input-textarea value="blu">
+  <mock:shadow-root>
+    <div class="mg-input mg-input--textarea">
+      <mg-label identifier="identifier">
+        label
+      </mg-label>
+      <div class="mg-input__input-container">
+        <strong>
+          blu
+        </strong>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-textarea>
+`;
+
+exports[`mg-input-textarea Should render with args {
+  label: 'label',
+  identifier: 'identifier',
+  tooltip: 'My Tooltip Message'
+}: 1`] = `
+<mg-input-textarea>
+  <mock:shadow-root>
+    <div class="mg-input mg-input--textarea">
+      <mg-label identifier="identifier">
+        label
+      </mg-label>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input-container__input"><textarea aria-describedby="" id="identifier" maxlength="4000" name="identifier" rows="3"></textarea>
+          <mg-tooltip identifier="identifier-tooltip" message="My Tooltip Message">
+            <mg-icon icon="user-cadenas"></mg-icon>
+          </mg-tooltip>
+        </div>
+        <mg-character-left identifier="identifier-character-left" maxlength="4000"></mg-character-left>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-textarea>
+`;
+
+exports[`mg-input-textarea Should render with args { label: 'label', identifier: 'identifier' }: 1`] = `
+<mg-input-textarea>
+  <mock:shadow-root>
+    <div class="mg-input mg-input--textarea">
+      <mg-label identifier="identifier">
+        label
+      </mg-label>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input-container__input"><textarea aria-describedby="" id="identifier" maxlength="4000" name="identifier" rows="3"></textarea>
+        </div>
+        <mg-character-left identifier="identifier-character-left" maxlength="4000"></mg-character-left>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-textarea>
+`;
+
+exports[`mg-input-textarea Should render with args { label: 'label', identifier: 'identifier', labelOnTop: true }: 1`] = `
+<mg-input-textarea>
+  <mock:shadow-root>
+    <div class="is-label-on-top mg-input mg-input--textarea">
+      <mg-label identifier="identifier">
+        label
+      </mg-label>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input-container__input"><textarea aria-describedby="" id="identifier" maxlength="4000" name="identifier" rows="3"></textarea>
+        </div>
+        <mg-character-left identifier="identifier-character-left" maxlength="4000"></mg-character-left>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-textarea>
+`;
+
+exports[`mg-input-textarea Should render with args { label: 'label', identifier: 'identifier', readonly: true }: 1`] = `
+<mg-input-textarea>
+  <mock:shadow-root>
+    <div class="mg-input mg-input--textarea">
+      <mg-label identifier="identifier">
+        label
+      </mg-label>
+      <div class="mg-input__input-container">
+        <strong></strong>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-textarea>
+`;
+
+exports[`mg-input-textarea Should trigger events 1`] = `
+<mg-input-textarea>
+  <mock:shadow-root>
+    <div class="is-focused mg-input mg-input--textarea">
+      <mg-label identifier="identifier">
+        label
+      </mg-label>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input-container__input"><textarea aria-describedby="identifier-character-left identifier-help-text" id="identifier" maxlength="4000" name="identifier" rows="3"></textarea>
+        </div>
+        <mg-character-left identifier="identifier-character-left" maxlength="4000"></mg-character-left>
+        <mg-help-text identifier="identifier-help-text">
+          My help text
+        </mg-help-text>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-textarea>
+`;
