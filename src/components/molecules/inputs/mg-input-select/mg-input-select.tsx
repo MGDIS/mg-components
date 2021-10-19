@@ -1,21 +1,26 @@
-import { Component, Event, h, Prop, EventEmitter, State } from '@stencil/core';
+import { Component, Event, h, Prop, State, EventEmitter, Watch } from '@stencil/core';
 import { MgInput } from '../MgInput';
 import { createID } from '../../../../utils/utils';
 import locale from '../../../../locales';
 
+export type Option = {
+  title: string,
+  value: string
+};
+
 @Component({
-  tag: 'mg-input-text',
-  styleUrl: 'mg-input-text.scss',
+  tag: 'mg-input-select',
+  styleUrl: 'mg-input-select.scss',
   shadow: true,
 })
-export class MgInputText {
+export class MgInputSelect {
 
   /************
    * Internal *
    ************/
 
-   private classFocus = 'is-focused';
-   private classError = 'is-not-valid';
+  private classFocus = 'is-focused';
+  private classError = 'is-not-valid';
 
   /**************
   * Decorators *
@@ -27,10 +32,27 @@ export class MgInputText {
   @Prop({ mutable:true, reflect: true }) value: string;
 
   /**
+   * Items are the possible options to select
+   */
+  @Prop() items!: string[] | Option[];
+  @Watch('items')
+  validateItems(newValue){
+    if(newValue && (newValue as Array<string>).every((item) => typeof item === 'string')) {
+      this.options = newValue.map(item=>({ title:item, value:item }));
+    }
+    else if(newValue && (newValue as Array<Option>).every((item) => (typeof item === 'object' && typeof item.title === 'string' && item.value !== undefined ))) {
+      this.options = newValue;
+    }
+    else {
+      throw new Error('<mg-input-select> prop "items" is required and all items must be the same type, string or Option.')
+    }
+  }
+
+  /**
    * Identifier used for the input ID (id is a reserved prop in Stencil.js)
    * If not set, it will be created.
    */
-  @Prop() identifier?: string = createID('mg-input-text');
+  @Prop() identifier?: string = createID('mg-input-select');
 
   /**
    * Input name
@@ -47,7 +69,7 @@ export class MgInputText {
   /**
    * Define if label is displayed on top
    */
-   @Prop() labelOnTop: boolean;
+  @Prop() labelOnTop: boolean;
 
   /**
    * Define if label has colon ":"
@@ -57,14 +79,8 @@ export class MgInputText {
   /**
    * Input placeholder.
    * It should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text.
-   *
    */
-  @Prop() placeholder: string;
-
-  /**
-   * Input max length
-   */
-  @Prop() maxlength: number = 400;
+  @Prop() placeholder: string = locale.input.select.placeholder;
 
   /**
    * Define if input is required
@@ -72,8 +88,8 @@ export class MgInputText {
   @Prop() required: boolean = false;
 
   /**
-   * Define if input is readonly
-   */
+  * Define if input is readonly
+  */
   @Prop() readonly: boolean = false;
 
   /**
@@ -82,29 +98,9 @@ export class MgInputText {
   @Prop() disabled: boolean = false;
 
   /**
-   * Define input pattern to validate
-   */
-  @Prop() pattern: string;
-
-  /**
-   * Define input pattern error message
-   */
-  @Prop() patternErrorMessage: string;
-
-  /**
    * Add a tooltip message next to the input
    */
-   @Prop() tooltip: string;
-
-  /**
-   * Define if component should display character left
-   */
-  @Prop() displayCharacterLeft: boolean = true;
-
-  /**
-   * Template to use for characters left sentence
-   */
-  @Prop() characterLeftTemplate: string;
+  @Prop() tooltip: string;
 
   /**
    * Template to use for characters left sentence
@@ -112,24 +108,30 @@ export class MgInputText {
   @Prop() helpText: string;
 
   /**
-   * Define input pattern to validate
+   * Define input valid state
    */
   @Prop({ mutable: true, reflect: true }) valid: boolean;
 
   /**
-  * Define input pattern error message
-  */
+   * Define input invalid state
+   */
   @Prop({ mutable: true, reflect: true }) invalid: boolean;
 
   /**
    * Component classes
    */
-  @State() classes: Set<string> = new Set(['mg-input--text']);
+  @State() classes: Set<string> = new Set(['mg-input--select']);
 
   /**
    * Error message to display
    */
   @State() errorMessage: string;
+
+  /**
+   * Formated items for display
+   */
+
+  @State() options: Array<Option>;
 
   /**
    * Emmited event when value change
@@ -140,10 +142,10 @@ export class MgInputText {
    * Handle input event
    * @param event
    */
-   private handleInput = (event:InputEvent & { target: HTMLInputElement }) => {
+  private handleInput = (event:InputEvent & { target: HTMLInputElement }) => {
     this.value = event.target.value;
     this.valueChange.emit(this.value);
-  }
+   }
 
   /**
    * Handle focus event
@@ -151,7 +153,7 @@ export class MgInputText {
   private handleFocus = () => {
     this.classes.add(this.classFocus)
     this.classes = new Set(this.classes);
-  }
+   }
 
   /**
    * Handle blur event
@@ -163,22 +165,18 @@ export class MgInputText {
     this.classes = new Set(this.classes);
     // Check validity
     this.checkValidity(event.target);
-  }
+   }
 
   /**
-   * Check if input is valid
-   * @param element
-   */
+    * Check if input is valid
+    * @param element
+    */
   private checkValidity(element) {
     const validity = element.checkValidity();
     // Set error message
     this.errorMessage = undefined;
-    // Does not match pattern
-    if(!validity && element.validity.patternMismatch){
-      this.errorMessage = this.patternErrorMessage;
-    }
     // required
-    else if(!validity && element.validity.valueMissing) {
+    if(!validity && element.validity.valueMissing) {
       this.errorMessage = locale.errors.required;
     }
 
@@ -197,27 +195,13 @@ export class MgInputText {
     }
   }
 
-  /**
-   * Validate patern configuration
-   */
-  private validatePattern() {
-    if(
-      this.pattern && typeof this.pattern === 'string' && this.pattern !== '' &&
-      (this.patternErrorMessage === undefined || typeof this.patternErrorMessage !== 'string' || this.patternErrorMessage === '')
-    ) {
-      throw new Error('<mg-input-text> prop "pattern" must be paired with the prop "patternErrorMessage"')
-    }
-  }
-
   /*************
    * Lifecycle *
    *************/
 
-  /**
-   * Check if component props are well configured on init
-   */
   componentWillLoad() {
-    this.validatePattern();
+    // Check items format
+    this.validateItems(this.items);
   }
 
   render() {
@@ -233,27 +217,28 @@ export class MgInputText {
         value={this.value}
         readonlyValue={undefined}
         tooltip={this.tooltip}
-        displayCharacterLeft={this.displayCharacterLeft}
-        characterLeftTemplate={this.characterLeftTemplate}
-        maxlength={this.maxlength}
+        displayCharacterLeft={undefined}
+        characterLeftTemplate={undefined}
+        maxlength={undefined}
         helpText={this.helpText}
         errorMessage={this.errorMessage}
       >
-        <input
-          type="text"
-          value={this.value}
+        <select
           id={this.identifier}
           name={this.name}
-          placeholder={this.placeholder}
           title={this.placeholder}
-          maxlength={this.maxlength}
           disabled={this.disabled}
           required={this.required}
-          pattern={this.pattern}
           onInput={this.handleInput}
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
-        />
+        >
+          <option value="">{this.placeholder}</option>
+          { this.options.map(option=>
+            <option value={option.value} selected={this.value===option.value}>{option.title}</option>
+            )
+          }
+        </select>
       </MgInput>
     );
   }

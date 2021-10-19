@@ -17,7 +17,7 @@ describe('mg-icon', () => {
 
   });
 
-  test.each(["", "blu", undefined])('Should not render with invalid icon property : %s', async (value) => {
+  test.each(["", "blu", undefined])('Should throw error with invalid icon property : %s', async (value) => {
     try {
       await getPage({icon:value});
     }
@@ -26,7 +26,7 @@ describe('mg-icon', () => {
     }
   });
 
-  test.each(["", "blu", undefined])('Should not render with invalid size property : %s', async (value) => {
+  test.each(["", "blu", undefined])('Should throw error with invalid size property : %s', async (value) => {
     try {
       await getPage({icon:"user-cadenas", size: value});
     }

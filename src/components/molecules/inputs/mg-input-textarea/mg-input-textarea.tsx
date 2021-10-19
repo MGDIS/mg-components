@@ -55,7 +55,8 @@ export class MgInputTextarea {
   @Prop() labelColon: boolean = false;
 
   /**
-   * Input placeholder
+   * Input placeholder.
+   * It should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text.
    */
   @Prop() placeholder: string;
 
@@ -137,7 +138,7 @@ export class MgInputTextarea {
   /**
    * Emmited event when value change
    */
-  @Event() inputChange: EventEmitter<string>
+  @Event() valueChange: EventEmitter<string>
 
   /**
    * Handle input event
@@ -145,7 +146,7 @@ export class MgInputTextarea {
    */
    private handleInput = (event:InputEvent & { target: HTMLInputElement }) => {
     this.value = event.target.value;
-    this.inputChange.emit(this.value);
+    this.valueChange.emit(this.value);
   }
 
   /**
@@ -213,9 +214,9 @@ export class MgInputTextarea {
     }
   }
 
-  /***************
-   * Life Cycles *
-   ***************/
+  /*************
+   * Lifecycle *
+   *************/
 
   /**
    * Check if component props are well configured on init
@@ -252,7 +253,6 @@ export class MgInputTextarea {
           maxlength={this.maxlength}
           disabled={this.disabled}
           required={this.required}
-          readonly={this.readonly}
           onInput={this.handleInput}
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}

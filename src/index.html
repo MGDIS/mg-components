@@ -54,19 +54,28 @@
         <mg-tooltip message="blublu"><button class="mg-button mg-button-primary">Test</button></mg-tooltip>
       </div>
       <mg-tag variant="warning">ueule</mg-tag>
+      <mg-input-textarea
+        value="blu"
+        multiline="false"
+        label-on-top="false"
+        required
+        pattern="[a-z]*"
+        placeholder="coucou"
+        pattern-error-message="Le pattern n'est pas bon !"
+        label="coucou"
+        tooltip="tooltip message"
+        help-text="Texte d'aide avec du text <strong>gras</strong> ou en <em>italic</em> !"
+      ></mg-input-textarea>
+      <mg-input-date help-text="A l'aide !" label="Label" tooltip="Bonjour" label-colon required value="2021-06-02"></mg-input-date>
     </div>
-    <mg-input-textarea
-      value="blu"
-      multiline="false"
-      label-on-top="false"
-      required
-      pattern="[a-z]*"
-      placeholder="coucou"
-      pattern-error-message="Le pattern n'est pas bon !"
-      label="coucou"
-      tooltip="tooltip message"
-      help-text="Texte d'aide avec du text <strong>gras</strong> ou en <em>italic</em> !"
-    ></mg-input-text>
-    <mg-input-date help-text="A l'aide !" label="Label" tooltip="Bonjour" label-colon required value="2021-06-02"></mg-input-date>
+    <mg-input-select value="blublu" label="Libellé"></mg-input-select>
+    <script>
+      const mgSelect = document.querySelector('mg-input-select');
+      mgSelect.items = [
+        { title: 'blu', value: 'blublu' },
+        { title: 'bli', value: 'blibli' },
+        { title: 'blo', value: 'bloblo' },
+      ];
+    </script>
   </body>
 </html>
