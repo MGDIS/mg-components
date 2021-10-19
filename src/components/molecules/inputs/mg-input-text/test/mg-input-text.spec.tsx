@@ -47,7 +47,7 @@ describe('mg-input-text', () => {
     const element = await page.doc.querySelector('mg-input-text');
     const input = element.shadowRoot.querySelector('input');
 
-    jest.spyOn(page.rootInstance.inputChange, 'emit');
+    jest.spyOn(page.rootInstance.valueChange, 'emit');
 
     input.dispatchEvent(new CustomEvent('focus', { bubbles: true }));
     await page.waitForChanges();
@@ -58,7 +58,7 @@ describe('mg-input-text', () => {
     input.value = inputValue;
     input.dispatchEvent(new CustomEvent('input', { bubbles: true }));
     await page.waitForChanges();
-    expect(page.rootInstance.inputChange.emit).toHaveBeenCalledWith(inputValue);
+    expect(page.rootInstance.valueChange.emit).toHaveBeenCalledWith(inputValue);
 
     input.dispatchEvent(new CustomEvent('blur', { bubbles: true }));
     await page.waitForChanges();

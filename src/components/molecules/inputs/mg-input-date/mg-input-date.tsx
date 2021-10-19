@@ -102,7 +102,7 @@ export class MgInputDate {
   /**
    * Emmited event when value change
    */
-  @Event() inputChange: EventEmitter<string>
+  @Event() valueChange: EventEmitter<string>
 
   /**
    * Handle input event
@@ -110,7 +110,7 @@ export class MgInputDate {
    */
   private handleInput = (event:InputEvent & { target: HTMLInputElement }) => {
     this.value = event.target.value;
-    this.inputChange.emit(this.value);
+    this.valueChange.emit(this.value);
   }
 
   /**

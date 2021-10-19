@@ -1,7 +1,5 @@
 # mg-input-text
 
-
-
 <!-- Auto Generated Below -->
 
 
@@ -34,7 +32,7 @@
 
 | Event         | Description                     | Type                  |
 | ------------- | ------------------------------- | --------------------- |
-| `inputChange` | Emmited event when value change | `CustomEvent<string>` |
+| `valueChange` | Emmited event when value change | `CustomEvent<string>` |
 
 
 ## Dependencies

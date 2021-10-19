@@ -528,7 +528,7 @@ declare namespace LocalJSX {
         /**
           * Emmited event when value change
          */
-        "onInputChange"?: (event: CustomEvent<string>) => void;
+        "onValueChange"?: (event: CustomEvent<string>) => void;
         /**
           * Define if input is readonly
          */
@@ -570,7 +570,7 @@ declare namespace LocalJSX {
         /**
           * Items are the possible options to select
          */
-        "items"?: string[] | Option[];
+        "items": string[] | Option[];
         /**
           * Input label Required
          */
@@ -590,7 +590,7 @@ declare namespace LocalJSX {
         /**
           * Emmited event when value change
          */
-        "onInputChange"?: (event: CustomEvent<string>) => void;
+        "onValueChange"?: (event: CustomEvent<string>) => void;
         /**
           * Input placeholder. It should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text.
          */
@@ -664,7 +664,7 @@ declare namespace LocalJSX {
         /**
           * Emmited event when value change
          */
-        "onInputChange"?: (event: CustomEvent<string>) => void;
+        "onValueChange"?: (event: CustomEvent<string>) => void;
         /**
           * Define input pattern to validate
          */
@@ -746,7 +746,7 @@ declare namespace LocalJSX {
         /**
           * Emmited event when value change
          */
-        "onInputChange"?: (event: CustomEvent<string>) => void;
+        "onValueChange"?: (event: CustomEvent<string>) => void;
         /**
           * Define input pattern to validate
          */
