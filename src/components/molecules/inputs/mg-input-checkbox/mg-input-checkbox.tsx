@@ -31,7 +31,7 @@ export class MgInputCheckbox {
     * Identifier used for the input ID (id is a reserved prop in Stencil.js)
     * If not set, it will be created.
     */
-   @Prop() identifier?: string = createID('mg-input-textarea');
+   @Prop() identifier?: string = createID('mg-input-checkbox');
  
    /**
     * Input name
