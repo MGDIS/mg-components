@@ -34,17 +34,17 @@ export class MgInputSelect {
   /**
    * Items are the possible options to select
    */
-  @Prop() items: string[] | Option[] = [];
+  @Prop() items!: string[] | Option[];
   @Watch('items')
   validateItems(newValue){
-    if((newValue as Array<string>).every((item) => typeof item === 'string')) {
+    if(newValue && (newValue as Array<string>).every((item) => typeof item === 'string')) {
       this.options = newValue.map(item=>({ title:item, value:item }));
     }
-    else if((newValue as Array<Option>).every((item) => (typeof item === 'object' && typeof item.title === 'string' && item.value !== undefined ))) {
+    else if(newValue && (newValue as Array<Option>).every((item) => (typeof item === 'object' && typeof item.title === 'string' && item.value !== undefined ))) {
       this.options = newValue;
     }
     else {
-      throw new Error('<mg-input-select> prop "items" all items must be the same type, string or Option.')
+      throw new Error('<mg-input-select> prop "items" is required and all items must be the same type, string or Option.')
     }
   }
 
@@ -120,7 +120,7 @@ export class MgInputSelect {
   /**
    * Component classes
    */
-  @State() classes: Set<string> = new Set(['mg-input--textarea']);
+  @State() classes: Set<string> = new Set(['mg-input--select']);
 
   /**
    * Error message to display
@@ -136,7 +136,7 @@ export class MgInputSelect {
   /**
    * Emmited event when value change
    */
-  @Event() inputChange: EventEmitter<string>
+  @Event() valueChange: EventEmitter<string>
 
   /**
    * Handle input event
@@ -144,7 +144,7 @@ export class MgInputSelect {
    */
   private handleInput = (event:InputEvent & { target: HTMLInputElement }) => {
     this.value = event.target.value;
-    this.inputChange.emit(this.value);
+    this.valueChange.emit(this.value);
    }
 
   /**

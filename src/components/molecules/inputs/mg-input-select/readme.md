@@ -13,7 +13,7 @@
 | `helpText`           | `help-text`    | Template to use for characters left sentence                                                                                                   | `string`               | `undefined`                       |
 | `identifier`         | `identifier`   | Identifier used for the input ID (id is a reserved prop in Stencil.js) If not set, it will be created.                                         | `string`               | `createID('mg-input-select')`     |
 | `invalid`            | `invalid`      | Define input invalid state                                                                                                                     | `boolean`              | `undefined`                       |
-| `items`              | --             | Items are the possible options to select                                                                                                       | `Option[] \| string[]` | `[]`                              |
+| `items` _(required)_ | --             | Items are the possible options to select                                                                                                       | `Option[] \| string[]` | `undefined`                       |
 | `label` _(required)_ | `label`        | Input label Required                                                                                                                           | `string`               | `undefined`                       |
 | `labelColon`         | `label-colon`  | Define if label has colon ":"                                                                                                                  | `boolean`              | `false`                           |
 | `labelOnTop`         | `label-on-top` | Define if label is displayed on top                                                                                                            | `boolean`              | `undefined`                       |
@@ -30,7 +30,7 @@
 
 | Event         | Description                     | Type                  |
 | ------------- | ------------------------------- | --------------------- |
-| `inputChange` | Emmited event when value change | `CustomEvent<string>` |
+| `valueChange` | Emmited event when value change | `CustomEvent<string>` |
 
 
 ## Dependencies

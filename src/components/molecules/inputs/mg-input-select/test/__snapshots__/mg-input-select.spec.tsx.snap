@@ -8,7 +8,7 @@ exports[`mg-input-select Should render with args {
 }: 1`] = `
 <mg-input-select>
   <mock:shadow-root>
-    <div class="is-label-on-top mg-input mg-input--textarea">
+    <div class="is-label-on-top mg-input mg-input--select">
       <mg-label identifier="identifier">
         label
       </mg-label>
@@ -41,11 +41,32 @@ exports[`mg-input-select Should render with args {
 exports[`mg-input-select Should render with args {
   label: 'label',
   identifier: 'identifier',
+  items: [Array],
+  readonly: true
+}: 1`] = `
+<mg-input-select>
+  <mock:shadow-root>
+    <div class="mg-input mg-input--select">
+      <mg-label identifier="identifier">
+        label
+      </mg-label>
+      <div class="mg-input__input-container">
+        <strong></strong>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-select>
+`;
+
+exports[`mg-input-select Should render with args {
+  label: 'label',
+  identifier: 'identifier',
+  items: [Array],
   tooltip: 'My Tooltip Message'
 }: 1`] = `
 <mg-input-select>
   <mock:shadow-root>
-    <div class="mg-input mg-input--textarea">
+    <div class="mg-input mg-input--select">
       <mg-label identifier="identifier">
         label
       </mg-label>
@@ -54,6 +75,18 @@ exports[`mg-input-select Should render with args {
           <select aria-describedby="" id="identifier" name="identifier" title="Veuillez sélectionner une valeur">
             <option value="">
               Veuillez sélectionner une valeur
+            </option>
+            <option value="blu">
+              blu
+            </option>
+            <option value="bli">
+              bli
+            </option>
+            <option value="blo">
+              blo
+            </option>
+            <option value="bla">
+              bla
             </option>
           </select>
           <mg-tooltip identifier="identifier-tooltip" message="My Tooltip Message">
@@ -66,31 +99,10 @@ exports[`mg-input-select Should render with args {
 </mg-input-select>
 `;
 
-exports[`mg-input-select Should render with args { label: 'label', identifier: 'identifier' }: 1`] = `
-<mg-input-select>
-  <mock:shadow-root>
-    <div class="mg-input mg-input--textarea">
-      <mg-label identifier="identifier">
-        label
-      </mg-label>
-      <div class="mg-input__input-container">
-        <div class="mg-input__input-container__input">
-          <select aria-describedby="" id="identifier" name="identifier" title="Veuillez sélectionner une valeur">
-            <option value="">
-              Veuillez sélectionner une valeur
-            </option>
-          </select>
-        </div>
-      </div>
-    </div>
-  </mock:shadow-root>
-</mg-input-select>
-`;
-
 exports[`mg-input-select Should render with args { label: 'label', identifier: 'identifier', items: [Array] }: 1`] = `
 <mg-input-select>
   <mock:shadow-root>
-    <div class="mg-input mg-input--textarea">
+    <div class="mg-input mg-input--select">
       <mg-label identifier="identifier">
         label
       </mg-label>
@@ -123,7 +135,7 @@ exports[`mg-input-select Should render with args { label: 'label', identifier: '
 exports[`mg-input-select Should render with args { label: 'label', identifier: 'identifier', items: [Array] }: 2`] = `
 <mg-input-select>
   <mock:shadow-root>
-    <div class="mg-input mg-input--textarea">
+    <div class="mg-input mg-input--select">
       <mg-label identifier="identifier">
         label
       </mg-label>
@@ -153,25 +165,10 @@ exports[`mg-input-select Should render with args { label: 'label', identifier: '
 </mg-input-select>
 `;
 
-exports[`mg-input-select Should render with args { label: 'label', identifier: 'identifier', readonly: true }: 1`] = `
-<mg-input-select>
-  <mock:shadow-root>
-    <div class="mg-input mg-input--textarea">
-      <mg-label identifier="identifier">
-        label
-      </mg-label>
-      <div class="mg-input__input-container">
-        <strong></strong>
-      </div>
-    </div>
-  </mock:shadow-root>
-</mg-input-select>
-`;
-
 exports[`mg-input-select Should trigger events 1`] = `
 <mg-input-select>
   <mock:shadow-root>
-    <div class="is-focused mg-input mg-input--textarea">
+    <div class="is-focused mg-input mg-input--select">
       <mg-label identifier="identifier">
         label
       </mg-label>
@@ -180,6 +177,18 @@ exports[`mg-input-select Should trigger events 1`] = `
           <select aria-describedby="identifier-help-text" id="identifier" name="identifier" title="Veuillez sélectionner une valeur">
             <option value="">
               Veuillez sélectionner une valeur
+            </option>
+            <option value="blu">
+              blu
+            </option>
+            <option value="bli">
+              bli
+            </option>
+            <option value="blo">
+              blo
+            </option>
+            <option value="bla">
+              bla
             </option>
           </select>
         </div>
