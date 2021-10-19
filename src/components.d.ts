@@ -5,6 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { Option } from "./components/molecules/inputs/mg-input-select/mg-input-select";
 export namespace Components {
     interface MgButton {
         /**
@@ -108,6 +109,68 @@ export namespace Components {
          */
         "value": string;
     }
+    interface MgInputSelect {
+        /**
+          * Define if input is disabled
+         */
+        "disabled": boolean;
+        /**
+          * Template to use for characters left sentence
+         */
+        "helpText": string;
+        /**
+          * Identifier used for the input ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+         */
+        "identifier"?: string;
+        /**
+          * Define input invalid state
+         */
+        "invalid": boolean;
+        /**
+          * Items are the possible options to select
+         */
+        "items": string[] | Option[];
+        /**
+          * Input label Required
+         */
+        "label": string;
+        /**
+          * Define if label has colon ":"
+         */
+        "labelColon": boolean;
+        /**
+          * Define if label is displayed on top
+         */
+        "labelOnTop": boolean;
+        /**
+          * Input name If not set the value equals the identifier
+         */
+        "name"?: string;
+        /**
+          * Input placeholder. It should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text.
+         */
+        "placeholder": string;
+        /**
+          * Define if input is readonly
+         */
+        "readonly": boolean;
+        /**
+          * Define if input is required
+         */
+        "required": boolean;
+        /**
+          * Add a tooltip message next to the input
+         */
+        "tooltip": string;
+        /**
+          * Define input valid state
+         */
+        "valid": boolean;
+        /**
+          * Component value
+         */
+        "value": string;
+    }
     interface MgInputText {
         /**
           * Template to use for characters left sentence
@@ -162,7 +225,7 @@ export namespace Components {
          */
         "patternErrorMessage": string;
         /**
-          * Input placeholder
+          * Input placeholder. It should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text.
          */
         "placeholder": string;
         /**
@@ -240,7 +303,7 @@ export namespace Components {
          */
         "patternErrorMessage": string;
         /**
-          * Input placeholder
+          * Input placeholder. It should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text.
          */
         "placeholder": string;
         /**
@@ -330,6 +393,12 @@ declare global {
         prototype: HTMLMgInputDateElement;
         new (): HTMLMgInputDateElement;
     };
+    interface HTMLMgInputSelectElement extends Components.MgInputSelect, HTMLStencilElement {
+    }
+    var HTMLMgInputSelectElement: {
+        prototype: HTMLMgInputSelectElement;
+        new (): HTMLMgInputSelectElement;
+    };
     interface HTMLMgInputTextElement extends Components.MgInputText, HTMLStencilElement {
     }
     var HTMLMgInputTextElement: {
@@ -366,6 +435,7 @@ declare global {
         "mg-help-text": HTMLMgHelpTextElement;
         "mg-icon": HTMLMgIconElement;
         "mg-input-date": HTMLMgInputDateElement;
+        "mg-input-select": HTMLMgInputSelectElement;
         "mg-input-text": HTMLMgInputTextElement;
         "mg-input-textarea": HTMLMgInputTextareaElement;
         "mg-label": HTMLMgLabelElement;
@@ -480,6 +550,72 @@ declare namespace LocalJSX {
          */
         "value"?: string;
     }
+    interface MgInputSelect {
+        /**
+          * Define if input is disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * Template to use for characters left sentence
+         */
+        "helpText"?: string;
+        /**
+          * Identifier used for the input ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+         */
+        "identifier"?: string;
+        /**
+          * Define input invalid state
+         */
+        "invalid"?: boolean;
+        /**
+          * Items are the possible options to select
+         */
+        "items"?: string[] | Option[];
+        /**
+          * Input label Required
+         */
+        "label": string;
+        /**
+          * Define if label has colon ":"
+         */
+        "labelColon"?: boolean;
+        /**
+          * Define if label is displayed on top
+         */
+        "labelOnTop"?: boolean;
+        /**
+          * Input name If not set the value equals the identifier
+         */
+        "name"?: string;
+        /**
+          * Emmited event when value change
+         */
+        "onInputChange"?: (event: CustomEvent<string>) => void;
+        /**
+          * Input placeholder. It should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text.
+         */
+        "placeholder"?: string;
+        /**
+          * Define if input is readonly
+         */
+        "readonly"?: boolean;
+        /**
+          * Define if input is required
+         */
+        "required"?: boolean;
+        /**
+          * Add a tooltip message next to the input
+         */
+        "tooltip"?: string;
+        /**
+          * Define input valid state
+         */
+        "valid"?: boolean;
+        /**
+          * Component value
+         */
+        "value"?: string;
+    }
     interface MgInputText {
         /**
           * Template to use for characters left sentence
@@ -538,7 +674,7 @@ declare namespace LocalJSX {
          */
         "patternErrorMessage"?: string;
         /**
-          * Input placeholder
+          * Input placeholder. It should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text.
          */
         "placeholder"?: string;
         /**
@@ -620,7 +756,7 @@ declare namespace LocalJSX {
          */
         "patternErrorMessage"?: string;
         /**
-          * Input placeholder
+          * Input placeholder. It should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text.
          */
         "placeholder"?: string;
         /**
@@ -684,6 +820,7 @@ declare namespace LocalJSX {
         "mg-help-text": MgHelpText;
         "mg-icon": MgIcon;
         "mg-input-date": MgInputDate;
+        "mg-input-select": MgInputSelect;
         "mg-input-text": MgInputText;
         "mg-input-textarea": MgInputTextarea;
         "mg-label": MgLabel;
@@ -700,6 +837,7 @@ declare module "@stencil/core" {
             "mg-help-text": LocalJSX.MgHelpText & JSXBase.HTMLAttributes<HTMLMgHelpTextElement>;
             "mg-icon": LocalJSX.MgIcon & JSXBase.HTMLAttributes<HTMLMgIconElement>;
             "mg-input-date": LocalJSX.MgInputDate & JSXBase.HTMLAttributes<HTMLMgInputDateElement>;
+            "mg-input-select": LocalJSX.MgInputSelect & JSXBase.HTMLAttributes<HTMLMgInputSelectElement>;
             "mg-input-text": LocalJSX.MgInputText & JSXBase.HTMLAttributes<HTMLMgInputTextElement>;
             "mg-input-textarea": LocalJSX.MgInputTextarea & JSXBase.HTMLAttributes<HTMLMgInputTextareaElement>;
             "mg-label": LocalJSX.MgLabel & JSXBase.HTMLAttributes<HTMLMgLabelElement>;

@@ -18,6 +18,7 @@
 ### Used by
 
  - [mg-input-date](../../molecules/inputs/mg-input-date)
+ - [mg-input-select](../../molecules/inputs/mg-input-select)
  - [mg-input-text](../../molecules/inputs/mg-input-text)
  - [mg-input-textarea](../../molecules/inputs/mg-input-textarea)
 
@@ -25,6 +26,7 @@
 ```mermaid
 graph TD;
   mg-input-date --> mg-tooltip
+  mg-input-select --> mg-tooltip
   mg-input-text --> mg-tooltip
   mg-input-textarea --> mg-tooltip
   style mg-tooltip fill:#f9f,stroke:#333,stroke-width:4px

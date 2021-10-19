@@ -20,7 +20,7 @@ describe('mg-input-text', () => {
     expect(root).toMatchSnapshot();
   });
 
-  test.each(["", undefined])('Should not render with invalid label property : %s', async (value) => {
+  test.each(["", undefined])('Should throw error with invalid label property : %s', async (value) => {
     try {
       await getPage({label:value});
     }

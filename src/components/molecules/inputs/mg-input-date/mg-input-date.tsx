@@ -165,9 +165,9 @@ export class MgInputDate {
     }
   }
 
-  /***************
-   * Life Cycles *
-   ***************/
+  /*************
+   * Lifecycle *
+   *************/
 
   render() {
     return (
@@ -195,7 +195,6 @@ export class MgInputDate {
           name={this.name}
           disabled={this.disabled}
           required={this.required}
-          readonly={this.readonly}
           onInput={this.handleInput}
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}

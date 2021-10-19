@@ -55,7 +55,9 @@ export class MgInputText {
   @Prop() labelColon: boolean = false;
 
   /**
-   * Input placeholder
+   * Input placeholder.
+   * It should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text.
+   *
    */
   @Prop() placeholder: string;
 
@@ -207,9 +209,9 @@ export class MgInputText {
     }
   }
 
-  /***************
-   * Life Cycles *
-   ***************/
+  /*************
+   * Lifecycle *
+   *************/
 
   /**
    * Check if component props are well configured on init
@@ -247,7 +249,6 @@ export class MgInputText {
           maxlength={this.maxlength}
           disabled={this.disabled}
           required={this.required}
-          readonly={this.readonly}
           pattern={this.pattern}
           onInput={this.handleInput}
           onFocus={this.handleFocus}
