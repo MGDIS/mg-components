@@ -81,25 +81,30 @@ export class MgInputCheckbox {
    @Prop() helpText: string;
 
    /**
-    * Define input pattern to validate
+    * Force valid component
     */
    @Prop({ mutable: true, reflect: true }) valid: boolean;
- 
+
    /**
-   * Define input pattern error message
+   * Force invalid component
    */
    @Prop({ mutable: true, reflect: true }) invalid: boolean;
- 
+
+   /**
+   * Manage indeterminate state
+   */
+    @Prop() indeterminate: boolean = false;
+
    /**
     * Component classes
     */
    @State() classes: Set<string> = new Set(['mg-input--checkbox']);
- 
+
    /**
     * Error message to display
     */
    @State() errorMessage: string;
- 
+
    /**
     * Emmited event when value change
     */
@@ -162,17 +167,6 @@ export class MgInputCheckbox {
   }
 
   render() {
-    let indeterminate = true;
-    let checked = undefined;
-    if (this.value === false) {
-      checked = false;
-      indeterminate = false;
-    }
-    if (this.value === true) {
-      checked = true;
-      indeterminate = false;
-    }
-    console.log(`indeterminate:${indeterminate}, checked:${checked}`);
     return (
       <MgInput
         identifier={this.identifier}
@@ -202,7 +196,7 @@ export class MgInputCheckbox {
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
           value={this.label}
-          indeterminate={indeterminate}
+          indeterminate={this.indeterminate && (this.value === undefined || this.value === null)}
           checked={this.value}
         />
       </MgInput>

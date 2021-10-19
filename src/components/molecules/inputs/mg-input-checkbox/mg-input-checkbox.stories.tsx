@@ -48,4 +48,6 @@ MgInputCheckBox.args = {
   tooltip: 'This is a tooltip',
   // Help Text
   helpText: 'Help text with html <strong>bold</strong>, <em>italic</em>.',
+  // Checkbox
+  indeterminate: false,
 };

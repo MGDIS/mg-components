@@ -68,7 +68,11 @@ export namespace Components {
          */
         "identifier"?: string;
         /**
-          * Define input pattern error message
+          * Manage indeterminate state
+         */
+        "indeterminate": boolean;
+        /**
+          * Force invalid component
          */
         "invalid": boolean;
         /**
@@ -100,7 +104,7 @@ export namespace Components {
          */
         "tooltip": string;
         /**
-          * Define input pattern to validate
+          * Force valid component
          */
         "valid": boolean;
         /**
@@ -497,7 +501,11 @@ declare namespace LocalJSX {
          */
         "identifier"?: string;
         /**
-          * Define input pattern error message
+          * Manage indeterminate state
+         */
+        "indeterminate"?: boolean;
+        /**
+          * Force invalid component
          */
         "invalid"?: boolean;
         /**
@@ -533,7 +541,7 @@ declare namespace LocalJSX {
          */
         "tooltip"?: string;
         /**
-          * Define input pattern to validate
+          * Force valid component
          */
         "valid"?: boolean;
         /**
