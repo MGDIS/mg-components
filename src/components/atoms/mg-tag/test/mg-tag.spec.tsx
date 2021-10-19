@@ -13,7 +13,7 @@ describe('mg-tag', () => {
     expect(root).toMatchSnapshot();
   });
 
-  test.each(["", "blu", undefined])('Should not render', async (variant) => {
+  test.each(["", "blu", undefined])('Should throw error', async (variant) => {
     try {
       await getPage({variant}, "wrong variant");
     }
