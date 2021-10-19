@@ -204,7 +204,7 @@ export class MgInputCheckbox {
           value={this.label}
           indeterminate={indeterminate}
           checked={checked}
-        >{this.value}</input>
+        />
       </MgInput>
     );
   }
