@@ -1,0 +1,140 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mg-input-checkbox Should render with args {
+  label: 'label',
+  identifier: 'identifier',
+  readonly: true,
+  value: false
+}: 1`] = `
+<mg-input-checkbox>
+  <mock:shadow-root>
+    <div class="mg-input mg-input--checkbox">
+      <mg-label identifier="identifier">
+        label
+      </mg-label>
+      <div class="mg-input__input-container">
+        <strong>
+          label
+        </strong>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-checkbox>
+`;
+
+exports[`mg-input-checkbox Should render with args {
+  label: 'label',
+  identifier: 'identifier',
+  readonly: true,
+  value: true
+}: 1`] = `
+<mg-input-checkbox value="">
+  <mock:shadow-root>
+    <div class="mg-input mg-input--checkbox">
+      <mg-label identifier="identifier">
+        label
+      </mg-label>
+      <div class="mg-input__input-container">
+        <strong>
+          label
+        </strong>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-checkbox>
+`;
+
+exports[`mg-input-checkbox Should render with args {
+  label: 'label',
+  identifier: 'identifier',
+  tooltip: 'My Tooltip Message'
+}: 1`] = `
+<mg-input-checkbox>
+  <mock:shadow-root>
+    <div class="mg-input mg-input--checkbox">
+      <mg-label identifier="identifier">
+        label
+      </mg-label>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input-container__input">
+          <input aria-describedby="" id="identifier" indeterminate="" name="identifier" type="checkbox" value="label">
+          <mg-tooltip identifier="identifier-tooltip" message="My Tooltip Message">
+            <mg-icon icon="user-cadenas"></mg-icon>
+          </mg-tooltip>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-checkbox>
+`;
+
+exports[`mg-input-checkbox Should render with args { label: 'label', identifier: 'identifier' }: 1`] = `
+<mg-input-checkbox>
+  <mock:shadow-root>
+    <div class="mg-input mg-input--checkbox">
+      <mg-label identifier="identifier">
+        label
+      </mg-label>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input-container__input">
+          <input aria-describedby="" id="identifier" indeterminate="" name="identifier" type="checkbox" value="label">
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-checkbox>
+`;
+
+exports[`mg-input-checkbox Should render with args { label: 'label', identifier: 'identifier', labelOnTop: true }: 1`] = `
+<mg-input-checkbox>
+  <mock:shadow-root>
+    <div class="is-label-on-top mg-input mg-input--checkbox">
+      <mg-label identifier="identifier">
+        label
+      </mg-label>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input-container__input">
+          <input aria-describedby="" id="identifier" indeterminate="" name="identifier" type="checkbox" value="label">
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-checkbox>
+`;
+
+exports[`mg-input-checkbox Should render with args { label: 'label', identifier: 'identifier', readonly: true }: 1`] = `
+<mg-input-checkbox>
+  <mock:shadow-root>
+    <div class="mg-input mg-input--checkbox">
+      <mg-label identifier="identifier">
+        label
+      </mg-label>
+      <div class="mg-input__input-container">
+        <strong>
+          label
+        </strong>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-checkbox>
+`;
+
+exports[`mg-input-checkbox Should trigger events 1`] = `
+<mg-input-checkbox>
+  <mock:shadow-root>
+    <div class="is-focused mg-input mg-input--checkbox">
+      <mg-label identifier="identifier">
+        label
+      </mg-label>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input-container__input">
+          <input aria-describedby="identifier-help-text" id="identifier" indeterminate="" name="identifier" type="checkbox" value="label">
+        </div>
+        <mg-help-text identifier="identifier-help-text">
+          My help text
+        </mg-help-text>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-checkbox>
+`;
