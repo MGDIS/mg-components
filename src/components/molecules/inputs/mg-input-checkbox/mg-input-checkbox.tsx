@@ -203,7 +203,7 @@ export class MgInputCheckbox {
           onBlur={this.handleBlur}
           value={this.label}
           indeterminate={indeterminate}
-          checked={checked}
+          checked={this.value}
         />
       </MgInput>
     );
