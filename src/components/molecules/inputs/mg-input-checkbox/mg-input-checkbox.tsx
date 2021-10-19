@@ -196,7 +196,7 @@ export class MgInputCheckbox {
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
           value={this.label}
-          indeterminate={this.indeterminate && (this.value === undefined || this.value === null)}
+          indeterminate={this.indeterminate && typeof this.value !== 'boolean'}
           checked={this.value}
         />
       </MgInput>
