@@ -109,7 +109,7 @@ export class MgInputCheckbox {
    /**
     * Emitted event when value change
     */
-   @Event() inputChange: EventEmitter<boolean>
+   @Event() valueChange: EventEmitter<boolean>
 
    /**
    * Handle input event
@@ -117,7 +117,7 @@ export class MgInputCheckbox {
    */
     private handleInput = (event:InputEvent & { target: HTMLInputElement }) => {
       this.value = event.target.checked;
-      this.inputChange.emit(this.value);
+      this.valueChange.emit(this.value);
     }
 
     /**
@@ -167,7 +167,7 @@ export class MgInputCheckbox {
     }
   }
 
-  render() {
+  private getReadOnlyValue() {
     let readonlyValue = undefined;
     if (this.readonly && this.value === true) {
       readonlyValue = locale.input.checkbox.true;
@@ -176,6 +176,10 @@ export class MgInputCheckbox {
     } else if (this.readonly && this.indeterminate) {
       readonlyValue = locale.input.checkbox.indeterminate;
     }
+    return readonlyValue;
+  }
+
+  render() {
     return (
       <MgInput
         identifier={this.identifier}
@@ -186,7 +190,7 @@ export class MgInputCheckbox {
         required={this.required}
         readonly={this.readonly}
         value={this.value && this.value.toString()}
-        readonlyValue={readonlyValue}
+        readonlyValue={this.getReadOnlyValue()}
         tooltip={this.tooltip}
         displayCharacterLeft={undefined}
         characterLeftTemplate={undefined}
@@ -200,7 +204,6 @@ export class MgInputCheckbox {
           name={this.name}
           disabled={this.disabled}
           required={this.required}
-          readonly={this.readonly}
           onInput={this.handleInput}
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}

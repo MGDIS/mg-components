@@ -14,7 +14,7 @@ exports[`mg-input-checkbox Should render with args {
       </mg-label>
       <div class="mg-input__input-container">
         <strong>
-          Faux
+          Non
         </strong>
       </div>
     </div>
@@ -36,7 +36,7 @@ exports[`mg-input-checkbox Should render with args {
       </mg-label>
       <div class="mg-input__input-container">
         <strong>
-          Vrai
+          Oui
         </strong>
       </div>
     </div>

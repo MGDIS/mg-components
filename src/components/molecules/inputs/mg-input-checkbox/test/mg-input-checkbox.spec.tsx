@@ -41,7 +41,13 @@ describe('mg-input-checkbox', () => {
     const element = await page.doc.querySelector('mg-input-checkbox');
     const input = element.shadowRoot.querySelector('input');
 
-    jest.spyOn(page.rootInstance.inputChange, 'emit');
+    //mock validity
+    input.checkValidity = jest.fn(()=> true);
+    Object.defineProperty(input, 'validity', { get: jest.fn(()=> ({
+      valueMissing: false
+    }))});
+
+    jest.spyOn(page.rootInstance.valueChange, 'emit');
 
     input.dispatchEvent(new CustomEvent('focus', { bubbles: true }));
     await page.waitForChanges();
@@ -52,7 +58,7 @@ describe('mg-input-checkbox', () => {
     input.value = inputValue.toString();
     input.dispatchEvent(new CustomEvent('input', { bubbles: true }));
     await page.waitForChanges();
-    expect(page.rootInstance.inputChange.emit).toHaveBeenCalledWith(inputValue);
+    expect(page.rootInstance.valueChange.emit).toHaveBeenCalledWith(inputValue);
 
     input.dispatchEvent(new CustomEvent('blur', { bubbles: true }));
     await page.waitForChanges();

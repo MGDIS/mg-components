@@ -11,8 +11,8 @@ const locale = {
       "placeholder": "Veuillez sélectionner une valeur"
     },
     "checkbox": {
-      "true": "Vrai",
-      "false": "Faux",
+      "true": "Oui",
+      "false": "Non",
       "indeterminate": "Indéterminé",
     }
   }
