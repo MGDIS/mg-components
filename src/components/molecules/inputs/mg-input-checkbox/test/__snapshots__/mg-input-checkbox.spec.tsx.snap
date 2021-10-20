@@ -14,7 +14,7 @@ exports[`mg-input-checkbox Should render with args {
       </mg-label>
       <div class="mg-input__input-container">
         <strong>
-          label
+          Faux
         </strong>
       </div>
     </div>
@@ -36,7 +36,7 @@ exports[`mg-input-checkbox Should render with args {
       </mg-label>
       <div class="mg-input__input-container">
         <strong>
-          label
+          Vrai
         </strong>
       </div>
     </div>
@@ -57,7 +57,7 @@ exports[`mg-input-checkbox Should render with args {
       </mg-label>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
-          <input aria-describedby="" id="identifier" name="identifier" type="checkbox" value="label">
+          <input aria-describedby="" id="identifier" name="identifier" type="checkbox">
           <mg-tooltip identifier="identifier-tooltip" message="My Tooltip Message">
             <mg-icon icon="user-cadenas"></mg-icon>
           </mg-tooltip>
@@ -82,11 +82,34 @@ exports[`mg-input-checkbox Should render with args {
       </mg-label>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
-          <input aria-describedby="" id="identifier" indeterminate="" name="identifier" type="checkbox" value="label">
+          <input aria-describedby="" id="identifier" indeterminate="" name="identifier" type="checkbox">
           <mg-tooltip identifier="identifier-tooltip" message="My Tooltip Message">
             <mg-icon icon="user-cadenas"></mg-icon>
           </mg-tooltip>
         </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-checkbox>
+`;
+
+exports[`mg-input-checkbox Should render with args {
+  label: 'label',
+  identifier: 'identifier',
+  tooltip: 'My Tooltip Message',
+  indeterminate: true,
+  readonly: true
+}: 1`] = `
+<mg-input-checkbox>
+  <mock:shadow-root>
+    <div class="mg-input mg-input--checkbox">
+      <mg-label identifier="identifier">
+        label
+      </mg-label>
+      <div class="mg-input__input-container">
+        <strong>
+          Indéterminé
+        </strong>
       </div>
     </div>
   </mock:shadow-root>
@@ -108,7 +131,7 @@ exports[`mg-input-checkbox Should render with args {
       </mg-label>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
-          <input aria-describedby="" id="identifier" indeterminate="" name="identifier" type="checkbox" value="label">
+          <input aria-describedby="" id="identifier" indeterminate="" name="identifier" type="checkbox">
           <mg-tooltip identifier="identifier-tooltip" message="My Tooltip Message">
             <mg-icon icon="user-cadenas"></mg-icon>
           </mg-tooltip>
@@ -128,7 +151,7 @@ exports[`mg-input-checkbox Should render with args { label: 'label', identifier:
       </mg-label>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
-          <input aria-describedby="" id="identifier" name="identifier" type="checkbox" value="label">
+          <input aria-describedby="" id="identifier" name="identifier" type="checkbox">
         </div>
       </div>
     </div>
@@ -145,7 +168,7 @@ exports[`mg-input-checkbox Should render with args { label: 'label', identifier:
       </mg-label>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
-          <input aria-describedby="" id="identifier" name="identifier" type="checkbox" value="label">
+          <input aria-describedby="" id="identifier" name="identifier" type="checkbox">
         </div>
       </div>
     </div>
@@ -161,9 +184,7 @@ exports[`mg-input-checkbox Should render with args { label: 'label', identifier:
         label
       </mg-label>
       <div class="mg-input__input-container">
-        <strong>
-          label
-        </strong>
+        <strong></strong>
       </div>
     </div>
   </mock:shadow-root>
@@ -179,7 +200,7 @@ exports[`mg-input-checkbox Should trigger events 1`] = `
       </mg-label>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
-          <input aria-describedby="identifier-help-text" id="identifier" name="identifier" type="checkbox" value="label">
+          <input aria-describedby="identifier-help-text" id="identifier" name="identifier" type="checkbox">
         </div>
         <mg-help-text identifier="identifier-help-text">
           My help text

@@ -92,6 +92,7 @@ export class MgInputCheckbox {
 
    /**
    * Manage indeterminate state
+   * @see https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input/checkbox#g%C3%A9rer_un_%C3%A9tat_ind%C3%A9termin%C3%A9
    */
     @Prop() indeterminate: boolean = false;
 
@@ -106,7 +107,7 @@ export class MgInputCheckbox {
    @State() errorMessage: string;
 
    /**
-    * Emmited event when value change
+    * Emitted event when value change
     */
    @Event() inputChange: EventEmitter<boolean>
 
@@ -167,6 +168,14 @@ export class MgInputCheckbox {
   }
 
   render() {
+    let readonlyValue = undefined;
+    if (this.readonly && this.value === true) {
+      readonlyValue = locale.true;
+    } else if (this.readonly && this.value === false) {
+      readonlyValue = locale.false;
+    } else if (this.readonly && this.indeterminate) {
+      readonlyValue = locale.indeterminate;
+    }
     return (
       <MgInput
         identifier={this.identifier}
@@ -176,8 +185,8 @@ export class MgInputCheckbox {
         labelColon={this.labelColon}
         required={this.required}
         readonly={this.readonly}
-        value={this.label}
-        readonlyValue={undefined}
+        value={this.value && this.value.toString()}
+        readonlyValue={readonlyValue}
         tooltip={this.tooltip}
         displayCharacterLeft={undefined}
         characterLeftTemplate={undefined}
@@ -195,7 +204,7 @@ export class MgInputCheckbox {
           onInput={this.handleInput}
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
-          value={this.label}
+          value={this.value && this.value.toString()}
           indeterminate={this.indeterminate && typeof this.value !== 'boolean'}
           checked={this.value}
         />

@@ -15,6 +15,12 @@ export default {
       },
     },
   },
+  argTypes: {
+    value: {
+      options: [true, 'false', null],
+      control: { type: 'radio' }
+    }
+  }
 };
 
 /**

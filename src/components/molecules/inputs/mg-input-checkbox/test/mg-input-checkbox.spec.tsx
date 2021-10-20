@@ -17,6 +17,7 @@ describe('mg-input-checkbox', () => {
     {label: 'label', identifier: "identifier", readonly: true, value: false},
     {label: 'label', identifier: "identifier", tooltip: "My Tooltip Message"},
     {label: 'label', identifier: "identifier", tooltip: "My Tooltip Message", indeterminate: true},
+    {label: 'label', identifier: "identifier", tooltip: "My Tooltip Message", indeterminate: true, readonly: true},
     {label: 'label', identifier: "identifier", tooltip: "My Tooltip Message", indeterminate: true, value: null},
   ])('Should render with args %s:', async (args) => {
     const { root } = await getPage(args);
