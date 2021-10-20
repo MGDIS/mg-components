@@ -47,6 +47,13 @@ describe('mg-input-text', () => {
     const element = await page.doc.querySelector('mg-input-text');
     const input = element.shadowRoot.querySelector('input');
 
+    //mock validity
+    input.checkValidity = jest.fn(()=> true);
+    Object.defineProperty(input, 'validity', { get: jest.fn(()=> ({
+      valueMissing: false,
+      patternMismatch: false
+    }))});
+
     jest.spyOn(page.rootInstance.valueChange, 'emit');
 
     input.dispatchEvent(new CustomEvent('focus', { bubbles: true }));

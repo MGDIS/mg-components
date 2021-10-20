@@ -47,6 +47,12 @@ describe('mg-input-textarea', () => {
     const element = await page.doc.querySelector('mg-input-textarea');
     const input = element.shadowRoot.querySelector('textarea');
 
+    //mock validity
+    input.checkValidity = jest.fn(()=> true);
+    Object.defineProperty(input, 'validity', { get: jest.fn(()=> ({
+      valueMissing: false
+    }))});
+
     jest.spyOn(page.rootInstance.valueChange, 'emit');
 
     input.dispatchEvent(new CustomEvent('focus', { bubbles: true }));

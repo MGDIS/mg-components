@@ -45,6 +45,13 @@ describe('mg-input-date', () => {
     const element = await page.doc.querySelector('mg-input-date');
     const input = element.shadowRoot.querySelector('input');
 
+    //mock validity
+    input.checkValidity = jest.fn(()=> true);
+    Object.defineProperty(input, 'validity', { get: jest.fn(()=> ({
+      valueMissing: false,
+      badInput: false
+    }))});
+
     jest.spyOn(page.rootInstance.valueChange, 'emit');
 
     input.dispatchEvent(new CustomEvent('focus', { bubbles: true }));
