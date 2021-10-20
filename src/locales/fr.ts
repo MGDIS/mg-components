@@ -9,6 +9,11 @@ const locale = {
   "input": {
     "select" : {
       "placeholder": "Veuillez sélectionner une valeur"
+    },
+    "checkbox": {
+      "true": "Oui",
+      "false": "Non",
+      "indeterminate": "Indéterminé",
     }
   }
 }
