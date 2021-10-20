@@ -51,3 +51,25 @@ MgInputSelect.args = {
   // Help Text
   helpText: 'Help text with html <strong>bold</strong>, <em>italic</em>.',
 };
+
+export const WithObjectItems = Template.bind({});
+WithObjectItems.args = {
+  ...MgInputSelect.args,
+  items: [
+    { title: 'blu', value: 'blublu' },
+    { title: 'bli', value: 'blibli' },
+    { title: 'blo', value: 'bloblo' },
+    { title: 'bla', value: 'blabla' },
+  ],
+};
+
+export const WithGroups = Template.bind({});
+WithGroups.args = {
+  ...MgInputSelect.args,
+  items: [
+    { title: 'blu', value: 'blublu', group: '1st group' },
+    { title: 'bli', value: 'blibli', group: '2nd group' },
+    { title: 'blo', value: 'bloblo', group: '1st group' },
+    { title: 'bla', value: 'blabla' },
+  ],
+};
