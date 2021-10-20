@@ -1,5 +1,5 @@
 import { Component, Host, h, Prop, Watch } from '@stencil/core';
-import locale from '../../../locales'
+import locale from '../../../locales';
 
 @Component({
   tag: 'mg-character-left',

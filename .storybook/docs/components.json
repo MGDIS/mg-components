@@ -158,26 +158,14 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "mg-input-date",
-        "mg-input-select",
-        "mg-input-text",
-        "mg-input-textarea"
-      ],
+      "dependents": ["mg-input-checkbox", "mg-input-date", "mg-input-select", "mg-input-text", "mg-input-textarea"],
       "dependencies": [],
       "dependencyGraph": {
-        "mg-input-date": [
-          "mg-character-left"
-        ],
-        "mg-input-select": [
-          "mg-character-left"
-        ],
-        "mg-input-text": [
-          "mg-character-left"
-        ],
-        "mg-input-textarea": [
-          "mg-character-left"
-        ]
+        "mg-input-checkbox": ["mg-character-left"],
+        "mg-input-date": ["mg-character-left"],
+        "mg-input-select": ["mg-character-left"],
+        "mg-input-text": ["mg-character-left"],
+        "mg-input-textarea": ["mg-character-left"]
       }
     },
     {
@@ -212,26 +200,14 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "mg-input-date",
-        "mg-input-select",
-        "mg-input-text",
-        "mg-input-textarea"
-      ],
+      "dependents": ["mg-input-checkbox", "mg-input-date", "mg-input-select", "mg-input-text", "mg-input-textarea"],
       "dependencies": [],
       "dependencyGraph": {
-        "mg-input-date": [
-          "mg-help-text"
-        ],
-        "mg-input-select": [
-          "mg-help-text"
-        ],
-        "mg-input-text": [
-          "mg-help-text"
-        ],
-        "mg-input-textarea": [
-          "mg-help-text"
-        ]
+        "mg-input-checkbox": ["mg-help-text"],
+        "mg-input-date": ["mg-help-text"],
+        "mg-input-select": ["mg-help-text"],
+        "mg-input-text": ["mg-help-text"],
+        "mg-input-textarea": ["mg-help-text"]
       }
     },
     {
@@ -283,26 +259,282 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "mg-input-date",
-        "mg-input-select",
-        "mg-input-text",
-        "mg-input-textarea"
-      ],
+      "dependents": ["mg-input-checkbox", "mg-input-date", "mg-input-select", "mg-input-text", "mg-input-textarea"],
       "dependencies": [],
       "dependencyGraph": {
-        "mg-input-date": [
-          "mg-icon"
-        ],
-        "mg-input-select": [
-          "mg-icon"
-        ],
-        "mg-input-text": [
-          "mg-icon"
-        ],
-        "mg-input-textarea": [
-          "mg-icon"
-        ]
+        "mg-input-checkbox": ["mg-icon"],
+        "mg-input-date": ["mg-icon"],
+        "mg-input-select": ["mg-icon"],
+        "mg-input-text": ["mg-icon"],
+        "mg-input-textarea": ["mg-icon"]
+      }
+    },
+    {
+      "filePath": "./src/components/molecules/inputs/mg-input-checkbox/mg-input-checkbox.tsx",
+      "encapsulation": "shadow",
+      "tag": "mg-input-checkbox",
+      "readme": "# mg-input-checkbox\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Define if input is disabled",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "helpText",
+          "type": "string",
+          "mutable": false,
+          "attr": "help-text",
+          "reflectToAttr": false,
+          "docs": "Template to use for characters left sentence",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "identifier",
+          "type": "string",
+          "mutable": false,
+          "attr": "identifier",
+          "reflectToAttr": false,
+          "docs": "Identifier used for the input ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
+          "docsTags": [],
+          "default": "createID('mg-input-checkbox')",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "indeterminate",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "indeterminate",
+          "reflectToAttr": false,
+          "docs": "Manage indeterminate state",
+          "docsTags": [
+            {
+              "text": "https ://developer.mozilla.org/fr/docs/Web/HTML/Element/Input/checkbox#g%C3%A9rer_un_%C3%A9tat_ind%C3%A9termin%C3%A9",
+              "name": "see"
+            }
+          ],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "invalid",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "invalid",
+          "reflectToAttr": true,
+          "docs": "Force invalid component",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "Input label\nRequired",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "labelColon",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "label-colon",
+          "reflectToAttr": false,
+          "docs": "Define if label has colon \":\"",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "labelOnTop",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "label-on-top",
+          "reflectToAttr": false,
+          "docs": "Define if label is displayed on top",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "Input name\nIf not set the value equals the identifier",
+          "docsTags": [],
+          "default": "this.identifier",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "readonly",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "readonly",
+          "reflectToAttr": false,
+          "docs": "Define if input is readonly",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "required",
+          "reflectToAttr": false,
+          "docs": "Define if input is required",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "tooltip",
+          "type": "string",
+          "mutable": false,
+          "attr": "tooltip",
+          "reflectToAttr": false,
+          "docs": "Add a tooltip message next to the input",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "valid",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "valid",
+          "reflectToAttr": true,
+          "docs": "Force valid component",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": true,
+          "docs": "Component value\nIf not set, checkbox will be indeterminate by default",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "inputChange",
+          "detail": "boolean",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted event when value change",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left", "mg-help-text"],
+      "dependencyGraph": {
+        "mg-input-checkbox": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left", "mg-help-text"]
       }
     },
     {
@@ -546,21 +778,9 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "mg-label",
-        "mg-tooltip",
-        "mg-icon",
-        "mg-character-left",
-        "mg-help-text"
-      ],
+      "dependencies": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left", "mg-help-text"],
       "dependencyGraph": {
-        "mg-input-date": [
-          "mg-label",
-          "mg-tooltip",
-          "mg-icon",
-          "mg-character-left",
-          "mg-help-text"
-        ]
+        "mg-input-date": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left", "mg-help-text"]
       }
     },
     {
@@ -839,21 +1059,9 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "mg-label",
-        "mg-tooltip",
-        "mg-icon",
-        "mg-character-left",
-        "mg-help-text"
-      ],
+      "dependencies": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left", "mg-help-text"],
       "dependencyGraph": {
-        "mg-input-select": [
-          "mg-label",
-          "mg-tooltip",
-          "mg-icon",
-          "mg-character-left",
-          "mg-help-text"
-        ]
+        "mg-input-select": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left", "mg-help-text"]
       }
     },
     {
@@ -1195,21 +1403,9 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "mg-label",
-        "mg-tooltip",
-        "mg-icon",
-        "mg-character-left",
-        "mg-help-text"
-      ],
+      "dependencies": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left", "mg-help-text"],
       "dependencyGraph": {
-        "mg-input-text": [
-          "mg-label",
-          "mg-tooltip",
-          "mg-icon",
-          "mg-character-left",
-          "mg-help-text"
-        ]
+        "mg-input-text": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left", "mg-help-text"]
       }
     },
     {
@@ -1568,21 +1764,9 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "mg-label",
-        "mg-tooltip",
-        "mg-icon",
-        "mg-character-left",
-        "mg-help-text"
-      ],
+      "dependencies": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left", "mg-help-text"],
       "dependencyGraph": {
-        "mg-input-textarea": [
-          "mg-label",
-          "mg-tooltip",
-          "mg-icon",
-          "mg-character-left",
-          "mg-help-text"
-        ]
+        "mg-input-textarea": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left", "mg-help-text"]
       }
     },
     {
@@ -1649,26 +1833,14 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "mg-input-date",
-        "mg-input-select",
-        "mg-input-text",
-        "mg-input-textarea"
-      ],
+      "dependents": ["mg-input-checkbox", "mg-input-date", "mg-input-select", "mg-input-text", "mg-input-textarea"],
       "dependencies": [],
       "dependencyGraph": {
-        "mg-input-date": [
-          "mg-label"
-        ],
-        "mg-input-select": [
-          "mg-label"
-        ],
-        "mg-input-text": [
-          "mg-label"
-        ],
-        "mg-input-textarea": [
-          "mg-label"
-        ]
+        "mg-input-checkbox": ["mg-label"],
+        "mg-input-date": ["mg-label"],
+        "mg-input-select": ["mg-label"],
+        "mg-input-text": ["mg-label"],
+        "mg-input-textarea": ["mg-label"]
       }
     },
     {
@@ -1757,26 +1929,14 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "mg-input-date",
-        "mg-input-select",
-        "mg-input-text",
-        "mg-input-textarea"
-      ],
+      "dependents": ["mg-input-checkbox", "mg-input-date", "mg-input-select", "mg-input-text", "mg-input-textarea"],
       "dependencies": [],
       "dependencyGraph": {
-        "mg-input-date": [
-          "mg-tooltip"
-        ],
-        "mg-input-select": [
-          "mg-tooltip"
-        ],
-        "mg-input-text": [
-          "mg-tooltip"
-        ],
-        "mg-input-textarea": [
-          "mg-tooltip"
-        ]
+        "mg-input-checkbox": ["mg-tooltip"],
+        "mg-input-date": ["mg-tooltip"],
+        "mg-input-select": ["mg-tooltip"],
+        "mg-input-text": ["mg-tooltip"],
+        "mg-input-textarea": ["mg-tooltip"]
       }
     }
   ]

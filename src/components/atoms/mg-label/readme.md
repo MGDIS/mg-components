@@ -18,6 +18,7 @@
 
 ### Used by
 
+ - [mg-input-checkbox](../../molecules/inputs/mg-input-checkbox)
  - [mg-input-date](../../molecules/inputs/mg-input-date)
  - [mg-input-select](../../molecules/inputs/mg-input-select)
  - [mg-input-text](../../molecules/inputs/mg-input-text)
@@ -26,6 +27,7 @@
 ### Graph
 ```mermaid
 graph TD;
+  mg-input-checkbox --> mg-label
   mg-input-date --> mg-label
   mg-input-select --> mg-label
   mg-input-text --> mg-label
