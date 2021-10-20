@@ -12,6 +12,7 @@ describe('mg-input-select', () => {
   test.each([
     {label: 'label', identifier: "identifier", items: ['blu', 'bli', 'blo', 'bla']},
     {label: 'label', identifier: "identifier", items: [{ title: 'blu', value: 'u' },{ title: 'bli', value: 'i' }, { title: 'blo', value: 'o' }, { title: 'bla', value: 'a' }]},
+    {label: 'label', identifier: "identifier", items: [{ title: 'blu', value: 'u', group:'blu' },{ title: 'bli', value: 'i', group: 'blu' }, { title: 'blo', value: 'o', group: 'blo' }, { title: 'bla', value: 'a' }]},
     {label: 'label', identifier: "identifier", items: ['blu', 'bli', 'blo', 'bla'], labelOnTop: true},
     {label: 'label', identifier: "identifier", items: ['blu', 'bli', 'blo', 'bla'], readonly: true},
     {label: 'label', identifier: "identifier", items: ['blu', 'bli', 'blo', 'bla'], tooltip: "My Tooltip Message"},
