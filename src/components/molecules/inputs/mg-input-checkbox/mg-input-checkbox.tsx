@@ -170,11 +170,11 @@ export class MgInputCheckbox {
   render() {
     let readonlyValue = undefined;
     if (this.readonly && this.value === true) {
-      readonlyValue = locale.true;
+      readonlyValue = locale.input.checkbox.true;
     } else if (this.readonly && this.value === false) {
-      readonlyValue = locale.false;
+      readonlyValue = locale.input.checkbox.false;
     } else if (this.readonly && this.indeterminate) {
-      readonlyValue = locale.indeterminate;
+      readonlyValue = locale.input.checkbox.indeterminate;
     }
     return (
       <MgInput
