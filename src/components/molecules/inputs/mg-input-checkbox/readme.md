@@ -29,7 +29,7 @@
 
 | Event         | Description                     | Type                   |
 | ------------- | ------------------------------- | ---------------------- |
-| `inputChange` | Emitted event when value change | `CustomEvent<boolean>` |
+| `valueChange` | Emitted event when value change | `CustomEvent<boolean>` |
 
 
 ## Dependencies
