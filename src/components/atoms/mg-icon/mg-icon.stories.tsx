@@ -21,8 +21,8 @@ const Template = args => (
   </div>
 );
 
-export const MgIconT = Template.bind({});
-MgIconT.args = {
+export const MgIcon = Template.bind({});
+MgIcon.args = {
   color: '',
   icon: 'user-cadenas',
   size: 'regular',

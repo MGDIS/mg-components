@@ -36,8 +36,8 @@ const Template = args => (
   ></mg-input-checkbox>
 );
 
-export const MgInputCheckBox = Template.bind({});
-MgInputCheckBox.args = {
+export const MgInputCheckbox = Template.bind({});
+MgInputCheckbox.args = {
   // Global
   value: null,
   identifier: 'identifier',
