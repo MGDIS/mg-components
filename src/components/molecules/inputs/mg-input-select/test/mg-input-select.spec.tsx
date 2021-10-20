@@ -1,20 +1,20 @@
 import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
-import { MgInputTextarea } from '../mg-input-textarea';
+import { MgInputSelect } from '../mg-input-select';
 import locale from '../../../../../locales';
 
 const getPage = (args) => newSpecPage({
-  components: [MgInputTextarea],
-  template: () => (<mg-input-textarea {...args}></mg-input-textarea>)
+  components: [MgInputSelect],
+  template: () => (<mg-input-select {...args}></mg-input-select>)
 });
 
-describe('mg-input-textarea', () => {
+describe('mg-input-select', () => {
   test.each([
-    {label: 'label', identifier: "identifier"},
-    {label: 'label', identifier: "identifier", labelOnTop: true},
-    {label: 'label', identifier: "identifier", readonly: true},
-    {label: 'label', identifier: "identifier", readonly: true, value: "blu"},
-    {label: 'label', identifier: "identifier", tooltip: "My Tooltip Message"},
+    {label: 'label', identifier: "identifier", items: ['blu', 'bli', 'blo', 'bla']},
+    {label: 'label', identifier: "identifier", items: [{ title: 'blu', value: 'u' },{ title: 'bli', value: 'i' }, { title: 'blo', value: 'o' }, { title: 'bla', value: 'a' }]},
+    {label: 'label', identifier: "identifier", items: ['blu', 'bli', 'blo', 'bla'], labelOnTop: true},
+    {label: 'label', identifier: "identifier", items: ['blu', 'bli', 'blo', 'bla'], readonly: true},
+    {label: 'label', identifier: "identifier", items: ['blu', 'bli', 'blo', 'bla'], tooltip: "My Tooltip Message"},
   ])('Should render with args %s:', async (args) => {
     const { root } = await getPage(args);
     expect(root).toMatchSnapshot();
@@ -22,30 +22,33 @@ describe('mg-input-textarea', () => {
 
   test.each(["", undefined])('Should throw error with invalid label property : %s', async (value) => {
     try {
-      await getPage({label:value});
+      await getPage({label:value, items: ['blu', 'bli', 'blo', 'bla']});
     }
     catch (err) {
       expect(err.message).toMatch('prop "label" is required')
     }
   });
 
-  test.each(["", undefined])('Should throw an error when pattern is used with patternErrorMessage: %s', async (value) => {
+  test.each([
+    [['blu', {title:'blu', value:'blu'}]],
+    [['blu', {blu:'blu'}]],
+    [[{title:'blu', value:'blu'}, {blu:'blu'}]],
+  ])('Should throw error with invalid items property : %s', async (items) => {
     try {
-      const { root } = await getPage({label: "blu", pattern:'[a-z]*', patternErrorMessage: value});
-      expect(root).toMatchSnapshot();
+      await getPage({label:'Label', items});
     }
     catch (err) {
-      expect(err.message).toMatch('<mg-input-textarea> prop "pattern" must be paired with the prop "patternErrorMessage"')
+      expect(err.message).toMatch('<mg-input-select> prop "items" is required and all items must be the same type, string or Option.')
     }
   });
 
   test('Should trigger events', async ()=> {
     const inputValue = 'Blu';
-    const args = {label: 'label', identifier: "identifier", helpText: "My help text"};
+    const args = {label: 'label', items: ['blu', 'bli', 'blo', 'bla'], identifier: "identifier", helpText: "My help text"};
     const page = await getPage(args);
 
-    const element = await page.doc.querySelector('mg-input-textarea');
-    const input = element.shadowRoot.querySelector('textarea');
+    const element = await page.doc.querySelector('mg-input-select');
+    const input = element.shadowRoot.querySelector('select');
 
     jest.spyOn(page.rootInstance.valueChange, 'emit');
 
@@ -68,13 +71,12 @@ describe('mg-input-textarea', () => {
   test.each([
     {validity: true, valueMissing: false},
     {validity: false, valueMissing: true},
-    {validity: false, valueMissing: false, value:"Blu", pattern:"[a-z]*", patternErrorMessage: "Non"},
-  ])('validity (%s), valueMissing (%s)', async ({validity, valueMissing, value, pattern, patternErrorMessage})=> {
-    const args = {label: 'label', identifier: "identifier", value, pattern, patternErrorMessage};
+  ])('validity (%s), valueMissing (%s)', async ({validity, valueMissing})=> {
+    const args = {label: 'label', items: ['blu', 'bli', 'blo', 'bla'], identifier: "identifier", patternErrorMessage: "Non"};
     const page = await getPage(args);
 
-    const element = await page.doc.querySelector('mg-input-textarea');
-    const input = element.shadowRoot.querySelector('textarea');
+    const element = await page.doc.querySelector('mg-input-select');
+    const input = element.shadowRoot.querySelector('select');
 
     //mock validity
     input.checkValidity = jest.fn(()=> validity);
@@ -91,12 +93,8 @@ describe('mg-input-textarea', () => {
     else if (valueMissing){
       expect(page.rootInstance.errorMessage).toEqual(locale.errors.required);
     }
-    else if(pattern !== undefined) {
-      expect(page.rootInstance.errorMessage).toEqual(patternErrorMessage);
-    }
     expect(page.rootInstance.valid).toEqual(validity);
     expect(page.rootInstance.invalid).toEqual(!validity);
   });
 
 });
-

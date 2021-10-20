@@ -18,7 +18,7 @@ describe('mg-character-left',()=> {
     });
   });
 
-  test('Should not render without maxlength', async () => {
+  test('Should throw error without maxlength', async () => {
     try {
       await getPage({});
     }
@@ -36,7 +36,7 @@ describe('mg-character-left',()=> {
     }
   });
 
-  test('Should not render without maxlength', async () => {
+  test('Should throw error without maxlength', async () => {
     try {
       await getPage({});
     }

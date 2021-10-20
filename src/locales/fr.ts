@@ -6,9 +6,16 @@ const locale = {
     }
   },
   "nbCharLeft" : "{counter} caractères disponibles.",
-  "true": "Vrai",
-  "false": "Faux",
-  "indeterminate": "Indéterminé",
+  "input": {
+    "select" : {
+      "placeholder": "Veuillez sélectionner une valeur"
+    },
+    "checkbox": {
+      "true": "Vrai",
+      "false": "Faux",
+      "indeterminate": "Indéterminé",
+    }
+  }
 }
 
 export default locale;

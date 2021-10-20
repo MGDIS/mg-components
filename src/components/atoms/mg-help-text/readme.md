@@ -18,6 +18,7 @@
 
  - [mg-input-checkbox](../../molecules/inputs/mg-input-checkbox)
  - [mg-input-date](../../molecules/inputs/mg-input-date)
+ - [mg-input-select](../../molecules/inputs/mg-input-select)
  - [mg-input-text](../../molecules/inputs/mg-input-text)
  - [mg-input-textarea](../../molecules/inputs/mg-input-textarea)
 
@@ -26,6 +27,7 @@
 graph TD;
   mg-input-checkbox --> mg-help-text
   mg-input-date --> mg-help-text
+  mg-input-select --> mg-help-text
   mg-input-text --> mg-help-text
   mg-input-textarea --> mg-help-text
   style mg-help-text fill:#f9f,stroke:#333,stroke-width:4px
