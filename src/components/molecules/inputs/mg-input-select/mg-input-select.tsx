@@ -5,7 +5,13 @@ import locale from '../../../../locales';
 
 export type Option = {
   title: string,
-  value: string
+  value: string,
+  group?: string
+};
+
+export type OptGroup = {
+  group: string,
+  options: Option[]
 };
 
 @Component({
@@ -37,11 +43,37 @@ export class MgInputSelect {
   @Prop() items!: string[] | Option[];
   @Watch('items')
   validateItems(newValue){
+    // String array
     if(newValue && (newValue as Array<string>).every((item) => typeof item === 'string')) {
       this.options = newValue.map(item=>({ title:item, value:item }));
     }
+    // Object array
     else if(newValue && (newValue as Array<Option>).every((item) => (typeof item === 'object' && typeof item.title === 'string' && item.value !== undefined ))) {
-      this.options = newValue;
+      // Grouped object options
+      if(newValue.some((item)=>(item.group !== undefined))) {
+        this.options = newValue.reduce((acc, {group, title, value})=>{
+          if(group) {
+            // Check if group is already created
+            const optgroup = acc.find(grp=>grp.group===group);
+            // Add to group
+            if(optgroup) {
+              optgroup.options.push({title,value})
+            }
+            // Create group
+            else {
+              acc.push({group, options:[{title, value}]});
+            }
+          }
+          else {
+            acc.push({title, value});
+          }
+          return acc;
+        }, []);
+      }
+      // Standart object options
+      else {
+        this.options = newValue;
+      }
     }
     else {
       throw new Error('<mg-input-select> prop "items" is required and all items must be the same type, string or Option.')
@@ -131,7 +163,7 @@ export class MgInputSelect {
    * Formated items for display
    */
 
-  @State() options: Array<Option>;
+  @State() options: (Option|OptGroup)[];
 
   /**
    * Emmited event when value change
@@ -235,9 +267,14 @@ export class MgInputSelect {
         >
           <option value="">{this.placeholder}</option>
           { this.options.map(option=>
-            <option value={option.value} selected={this.value===option.value}>{option.title}</option>
-            )
-          }
+            option.group !== undefined
+            ? <optgroup label={option.group}>
+                {(option as OptGroup).options.map(optgroup=>
+                  <option value={optgroup.value} selected={this.value===optgroup.value}>{optgroup.title}</option>
+                )}
+              </optgroup>
+            : <option value={(option as Option).value} selected={this.value===(option as Option).value}>{(option as Option).title}</option>
+          )}
         </select>
       </MgInput>
     );
