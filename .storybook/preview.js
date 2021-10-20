@@ -7,7 +7,6 @@ defineCustomElements();
 setStencilDocJson(docJson);
 
 export const parameters = {
-  actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
     matchers: {
       color: /(background|color)$/i,
@@ -17,5 +16,10 @@ export const parameters = {
   docs: {
     extractArgTypes,
     extractComponentDescription,
+  },
+  options: {
+    storySort: {
+      order: ['Intro'],
+    },
   },
 };
