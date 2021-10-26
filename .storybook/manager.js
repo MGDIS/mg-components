@@ -1,7 +1,12 @@
 import { addons } from '@storybook/addons';
-import customTheme from './custom-theme';
+import { create } from '@storybook/theming';
+import brandImage from './logo.png';
 
 addons.setConfig({
-  theme: customTheme,
+  theme: create({
+    base: 'light',
+    brandTitle: 'MGDIS Design System',
+    brandImage,
+  }),
   panelPosition: 'right',
 });
