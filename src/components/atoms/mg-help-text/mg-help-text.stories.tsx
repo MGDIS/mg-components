@@ -1,3 +1,5 @@
+import { h } from "@stencil/core";
+
 export default {
   component: 'mg-help-text',
   title: 'Atoms/mg-help-text',

@@ -3,19 +3,6 @@ import { h } from "@stencil/core";
 export default {
   component: 'mg-input-select',
   title: 'Molecules/mg-input-select',
-  parameters: {
-    docs: {
-      source: {
-        code: `<mg-input-select
-  value=""
-  label="Label"
-  tooltip="This is a tooltip"
-  help-text="Help text with html <strong>bold</strong>, <em>italic</em>."
-  required
-  has-colon></mg-input-select>`,
-      },
-    },
-  },
 };
 
 /**
@@ -52,9 +39,36 @@ MgInputSelect.args = {
   helpText: 'Help text with html <strong>bold</strong>, <em>italic</em>.',
 };
 
+// Set exemple code for component
+MgInputSelect.parameters = {
+  docs: {
+    source: {
+      code: `<mg-input-select
+  value="${MgInputSelect.args.value}"
+  items="${MgInputSelect.args.items}"
+  label="${MgInputSelect.args.label}"
+  tooltip="${MgInputSelect.args.tooltip}"
+  help-text="${MgInputSelect.args.helpText}"
+  required
+  has-colon
+></mg-input-select>`
+    },
+  },
+};
+
+/**
+ * Using object
+ */
+
 export const WithObjectItems = Template.bind({});
 WithObjectItems.args = {
   ...MgInputSelect.args,
+  // remove feature to focus on pattern
+  tooltip: '',
+  helpText: '',
+  required: false,
+  labelColon: false,
+  //
   items: [
     { title: 'blu', value: 'blublu' },
     { title: 'bli', value: 'blibli' },
@@ -63,13 +77,44 @@ WithObjectItems.args = {
   ],
 };
 
+// Set exemple code for component
+WithObjectItems.parameters = {
+  docs: {
+    source: {
+      code: `<mg-input-select
+  value="${WithObjectItems.args.value}"
+  items='${JSON.stringify(WithObjectItems.args.items)}'
+  label="${WithObjectItems.args.label}"
+  tooltip="${WithObjectItems.args.tooltip}"
+  help-text="${WithObjectItems.args.helpText}"
+></mg-input-select>`
+    },
+  },
+};
+
+/**
+ * Using group object
+ */
+
 export const WithGroups = Template.bind({});
 WithGroups.args = {
-  ...MgInputSelect.args,
+  ...WithObjectItems.args,
   items: [
     { title: 'blu', value: 'blublu', group: '1st group' },
     { title: 'bli', value: 'blibli', group: '2nd group' },
     { title: 'blo', value: 'bloblo', group: '1st group' },
     { title: 'bla', value: 'blabla' },
   ],
+};
+
+WithGroups.parameters = {
+  docs: {
+    source: {
+      code: `<mg-input-select
+  value="${WithGroups.args.value}"
+  items='${JSON.stringify(WithGroups.args.items)}'
+  label="${WithGroups.args.label}"
+></mg-input-select>`
+    },
+  },
 };
