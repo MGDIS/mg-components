@@ -1,9 +1,5 @@
-import { customAlphabet } from 'nanoid'
-const nanoid = customAlphabet('abcdefghijklmnopqrstuvwxyz', 10)
-
-
 export function createID(prefix?: string): string {
-  return (typeof prefix === 'string' && prefix !== '' ? `${prefix}-` : '' ) + nanoid();
+  return (typeof prefix === 'string' && prefix !== '' ? `${prefix}-` : '' ) + Math.random().toString(36).substr(2, 10);
 }
 
 export function formatDate(date: string): string {
