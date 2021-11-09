@@ -1,15 +1,16 @@
 import { h } from "@stencil/core";
+import { icons, sizes } from "./mg-icon.conf";
 
 export default {
   component: 'mg-icon',
   title: 'Atoms/mg-icon',
   argTypes: {
     icon: {
-      options: ['user-cadenas', 'editable'],
+      options: icons,
       control: { type: 'select' },
     },
     size: {
-      options: ['small', 'regular', 'large'],
+      options: sizes,
       control: { type: 'select' },
     },
   },
@@ -24,6 +25,6 @@ const Template = args => (
 export const MgIcon = Template.bind({});
 MgIcon.args = {
   color: '',
-  icon: 'user-cadenas',
-  size: 'regular',
+  icon: icons[0],
+  size: sizes[1], // regular
 };

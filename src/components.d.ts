@@ -13,6 +13,14 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
+          * Define if button is flat.
+         */
+        "flat": boolean;
+        /**
+          * Define if button is round. Used for icon button.
+         */
+        "isIcon": boolean;
+        /**
           * aria-label In case button text is not explicit enough
          */
         "label": string;
@@ -65,7 +73,7 @@ export namespace Components {
          */
         "helpText": string;
         /**
-          * Identifier used for the input ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
         "identifier"?: string;
         /**
@@ -124,7 +132,7 @@ export namespace Components {
          */
         "helpText": string;
         /**
-          * Identifier used for the input ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
         "identifier"?: string;
         /**
@@ -178,7 +186,7 @@ export namespace Components {
          */
         "helpText": string;
         /**
-          * Identifier used for the input ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
         "identifier"?: string;
         /**
@@ -248,7 +256,7 @@ export namespace Components {
          */
         "helpText": string;
         /**
-          * Identifier used for the input ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
         "identifier"?: string;
         /**
@@ -326,7 +334,7 @@ export namespace Components {
          */
         "helpText": string;
         /**
-          * Identifier used for the input ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
         "identifier"?: string;
         /**
@@ -403,6 +411,20 @@ export namespace Components {
           * If input is required an asterisk is added at the end of the label
          */
         "required": boolean;
+    }
+    interface MgMessage {
+        /**
+          * Define if message has a cross button RG 01: https://jira.mgdis.fr/browse/PDA9-140
+         */
+        "closeButton"?: boolean;
+        /**
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+         */
+        "identifier"?: string;
+        /**
+          * Message type
+         */
+        "type"?: string;
     }
     interface MgTag {
         /**
@@ -482,6 +504,12 @@ declare global {
         prototype: HTMLMgLabelElement;
         new (): HTMLMgLabelElement;
     };
+    interface HTMLMgMessageElement extends Components.MgMessage, HTMLStencilElement {
+    }
+    var HTMLMgMessageElement: {
+        prototype: HTMLMgMessageElement;
+        new (): HTMLMgMessageElement;
+    };
     interface HTMLMgTagElement extends Components.MgTag, HTMLStencilElement {
     }
     var HTMLMgTagElement: {
@@ -505,6 +533,7 @@ declare global {
         "mg-input-text": HTMLMgInputTextElement;
         "mg-input-textarea": HTMLMgInputTextareaElement;
         "mg-label": HTMLMgLabelElement;
+        "mg-message": HTMLMgMessageElement;
         "mg-tag": HTMLMgTagElement;
         "mg-tooltip": HTMLMgTooltipElement;
     }
@@ -515,6 +544,14 @@ declare namespace LocalJSX {
           * Disable button
          */
         "disabled"?: boolean;
+        /**
+          * Define if button is flat.
+         */
+        "flat"?: boolean;
+        /**
+          * Define if button is round. Used for icon button.
+         */
+        "isIcon"?: boolean;
         /**
           * aria-label In case button text is not explicit enough
          */
@@ -568,7 +605,7 @@ declare namespace LocalJSX {
          */
         "helpText"?: string;
         /**
-          * Identifier used for the input ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
         "identifier"?: string;
         /**
@@ -631,7 +668,7 @@ declare namespace LocalJSX {
          */
         "helpText"?: string;
         /**
-          * Identifier used for the input ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
         "identifier"?: string;
         /**
@@ -689,7 +726,7 @@ declare namespace LocalJSX {
          */
         "helpText"?: string;
         /**
-          * Identifier used for the input ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
         "identifier"?: string;
         /**
@@ -763,7 +800,7 @@ declare namespace LocalJSX {
          */
         "helpText"?: string;
         /**
-          * Identifier used for the input ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
         "identifier"?: string;
         /**
@@ -845,7 +882,7 @@ declare namespace LocalJSX {
          */
         "helpText"?: string;
         /**
-          * Identifier used for the input ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
         "identifier"?: string;
         /**
@@ -927,6 +964,20 @@ declare namespace LocalJSX {
          */
         "required"?: boolean;
     }
+    interface MgMessage {
+        /**
+          * Define if message has a cross button RG 01: https://jira.mgdis.fr/browse/PDA9-140
+         */
+        "closeButton"?: boolean;
+        /**
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+         */
+        "identifier"?: string;
+        /**
+          * Message type
+         */
+        "type"?: string;
+    }
     interface MgTag {
         /**
           * Define button variant
@@ -954,6 +1005,7 @@ declare namespace LocalJSX {
         "mg-input-text": MgInputText;
         "mg-input-textarea": MgInputTextarea;
         "mg-label": MgLabel;
+        "mg-message": MgMessage;
         "mg-tag": MgTag;
         "mg-tooltip": MgTooltip;
     }
@@ -972,6 +1024,7 @@ declare module "@stencil/core" {
             "mg-input-text": LocalJSX.MgInputText & JSXBase.HTMLAttributes<HTMLMgInputTextElement>;
             "mg-input-textarea": LocalJSX.MgInputTextarea & JSXBase.HTMLAttributes<HTMLMgInputTextareaElement>;
             "mg-label": LocalJSX.MgLabel & JSXBase.HTMLAttributes<HTMLMgLabelElement>;
+            "mg-message": LocalJSX.MgMessage & JSXBase.HTMLAttributes<HTMLMgMessageElement>;
             "mg-tag": LocalJSX.MgTag & JSXBase.HTMLAttributes<HTMLMgTagElement>;
             "mg-tooltip": LocalJSX.MgTooltip & JSXBase.HTMLAttributes<HTMLMgTooltipElement>;
         }

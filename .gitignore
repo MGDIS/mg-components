@@ -3,7 +3,6 @@ www/
 loader/
 storybook-static/
 coverage/
-screenshot/
 mgdis-design-system-*.tgz
 
 *~

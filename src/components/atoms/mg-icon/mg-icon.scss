@@ -1,18 +1,20 @@
+mg-icon,
 .mg-icon {
   display: inline-block;
   vertical-align: middle;
-  color: inherit;
-  font-size: inherit;
+  &[size='small'],
   &.mg-icon--small {
-    width: 1rem;
-    height: 1rem;
+    width: var(--mg-icon-small-size);
+    height: var(--mg-icon-small-size);
   }
+  &[size='regular'],
   &.mg-icon--regular {
-    width: 1.55rem;
-    height: 1.55rem;
+    width: var(--mg-icon-regular-size);
+    height: var(--mg-icon-regular-size);
   }
+  &[size='large'],
   &.mg-icon--large {
-    width: 2rem;
-    height: 2rem;
+    width: var(--mg-icon-large-size);
+    height: var(--mg-icon-large-size);
   }
 }

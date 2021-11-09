@@ -1,6 +1,6 @@
-import { Component, h, Prop, Watch, getAssetPath } from '@stencil/core';
+import { Component, h, Prop, Watch, getAssetPath, State } from '@stencil/core';
+import { icons, sizes } from './mg-icon.conf';
 
-// TODO : Work on Accessible SVGs
 @Component({
   tag: 'mg-icon',
   styleUrl: 'mg-icon.scss',
@@ -10,22 +10,15 @@ import { Component, h, Prop, Watch, getAssetPath } from '@stencil/core';
 export class MgIcon {
 
   /**
-   * Internal
-   */
-   private classes = ['mg-icon'];
-   private icons = ["user-cadenas", "editable"];
-   private sizes = ["regular", "large"];
-
-  /**
    * Icon to display
    */
-  @Prop() icon: string
+  @Prop() icon: string;
   @Watch('icon')
   validateIcon(newValue: string) {
-    if(!this.icons.includes(newValue)) {
-      throw new Error(`<mg-icon> prop "icon" must be one of : ${this.icons.join(', ')}`);
+    if(!icons.includes(newValue)) {
+      throw new Error(`<mg-icon> prop "icon" must be one of : ${icons.join(', ')}`);
     }
-    this.classes.push(`mg-icon--${this.icon}`);
+    this.classes.add(`mg-icon--${this.icon}`);
   }
 
   /**
@@ -34,11 +27,16 @@ export class MgIcon {
   @Prop() size: string = "regular"
   @Watch('size')
   validateSize(newValue: string) {
-    if(!this.sizes.includes(newValue)) {
-      throw new Error(`<mg-icon> prop "size" must be one of : ${this.sizes.join(', ')}`);
+    if(!sizes.includes(newValue)) {
+      throw new Error(`<mg-icon> prop "size" must be one of : ${sizes.join(', ')}`);
     }
-    this.classes.push(`mg-icon--${this.size}`);
+    this.classes.add(`mg-icon--${this.size}`);
   }
+
+  /**
+   * Component classes
+   */
+   @State() classes: Set<string> = new Set(['mg-icon']);
 
   /**
    * Check if props are well configured on init
@@ -53,9 +51,9 @@ export class MgIcon {
   */
   render() {
     return (
-        <svg class={this.classes.join(' ')} >
-          <use xlinkHref={`${getAssetPath('./assets/icons.svg')}#${this.icon}`}></use>
-        </svg>
+      <svg class={[...this.classes].join(' ')} aria-hidden="true" focusable="false" >
+        <use xlinkHref={`${getAssetPath('./assets/icons.svg')}#${this.icon}`}></use>
+      </svg>
     );
   }
 

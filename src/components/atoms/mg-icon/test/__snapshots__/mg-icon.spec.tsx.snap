@@ -1,40 +1,150 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`mg-icon Should render editable icon in large size 1`] = `
+exports[`mg-icon Should render cross icon in large size 1`] = `
 <mg-icon>
   <mock:shadow-root>
-    <svg class="mg-icon mg-icon--editable mg-icon--large">
-      <use xlink:href="/assets/icons.svg#editable"></use>
+    <svg aria-hidden="true" class="mg-icon mg-icon--cross mg-icon--large" focusable="false">
+      <use xlink:href="/assets/icons.svg#cross"></use>
     </svg>
   </mock:shadow-root>
 </mg-icon>
 `;
 
-exports[`mg-icon Should render editable icon in regular size 1`] = `
+exports[`mg-icon Should render cross icon in regular size 1`] = `
 <mg-icon>
   <mock:shadow-root>
-    <svg class="mg-icon mg-icon--editable mg-icon--regular">
-      <use xlink:href="/assets/icons.svg#editable"></use>
+    <svg aria-hidden="true" class="mg-icon mg-icon--cross mg-icon--regular" focusable="false">
+      <use xlink:href="/assets/icons.svg#cross"></use>
     </svg>
   </mock:shadow-root>
 </mg-icon>
 `;
 
-exports[`mg-icon Should render user-cadenas icon in large size 1`] = `
+exports[`mg-icon Should render cross icon in small size 1`] = `
 <mg-icon>
   <mock:shadow-root>
-    <svg class="mg-icon mg-icon--large mg-icon--user-cadenas">
-      <use xlink:href="/assets/icons.svg#user-cadenas"></use>
+    <svg aria-hidden="true" class="mg-icon mg-icon--cross mg-icon--small" focusable="false">
+      <use xlink:href="/assets/icons.svg#cross"></use>
     </svg>
   </mock:shadow-root>
 </mg-icon>
 `;
 
-exports[`mg-icon Should render user-cadenas icon in regular size 1`] = `
+exports[`mg-icon Should render danger icon in large size 1`] = `
 <mg-icon>
   <mock:shadow-root>
-    <svg class="mg-icon mg-icon--regular mg-icon--user-cadenas">
-      <use xlink:href="/assets/icons.svg#user-cadenas"></use>
+    <svg aria-hidden="true" class="mg-icon mg-icon--danger mg-icon--large" focusable="false">
+      <use xlink:href="/assets/icons.svg#danger"></use>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render danger icon in regular size 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--danger mg-icon--regular" focusable="false">
+      <use xlink:href="/assets/icons.svg#danger"></use>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render danger icon in small size 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--danger mg-icon--small" focusable="false">
+      <use xlink:href="/assets/icons.svg#danger"></use>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render info icon in large size 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--info mg-icon--large" focusable="false">
+      <use xlink:href="/assets/icons.svg#info"></use>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render info icon in regular size 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--info mg-icon--regular" focusable="false">
+      <use xlink:href="/assets/icons.svg#info"></use>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render info icon in small size 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--info mg-icon--small" focusable="false">
+      <use xlink:href="/assets/icons.svg#info"></use>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render success icon in large size 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--large mg-icon--success" focusable="false">
+      <use xlink:href="/assets/icons.svg#success"></use>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render success icon in regular size 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--regular mg-icon--success" focusable="false">
+      <use xlink:href="/assets/icons.svg#success"></use>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render success icon in small size 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--small mg-icon--success" focusable="false">
+      <use xlink:href="/assets/icons.svg#success"></use>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render warning icon in large size 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--large mg-icon--warning" focusable="false">
+      <use xlink:href="/assets/icons.svg#warning"></use>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render warning icon in regular size 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--regular mg-icon--warning" focusable="false">
+      <use xlink:href="/assets/icons.svg#warning"></use>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render warning icon in small size 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--small mg-icon--warning" focusable="false">
+      <use xlink:href="/assets/icons.svg#warning"></use>
     </svg>
   </mock:shadow-root>
 </mg-icon>

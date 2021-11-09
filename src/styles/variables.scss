@@ -1,124 +1,119 @@
 :root {
   /**
    * Colors
-   * FOR NOW, colors are based on http://outils.oceanie.local/maquette/design-guidelines/services-ux/design-system/page-color.html
+   * https://jira.mgdis.fr/browse/PDA9-690
    */
 
-  // Product
-  --color-product-primary: #3a9742;
-  --color-product-primary-light: #b5cb31;
-  --color-product-secondary: #005e9c;
-  --color-product-secondary-light: #3fa1d0;
+  // Dark
+  // #fefefe;
+  // rgb(254, 254, 254);
+  --color-neutral-h: 0;
+  --color-neutral-s: 0%;
+  --color-neutral-l: 99.6%;
+  --color-neutral: var(--color-neutral-h), var(--color-neutral-s), var(--color-neutral-l);
 
-  // Greys
-  --color-black: #000;
-  --color-gray-darker: #15282e;
-  --color-gray-dark: #2b515d;
-  --color-gray: #6d777c;
-  --color-gray-light: #b5c2c9;
-  --color-gray-lighter: #dde3e6;
-  --color-white: #fff;
+  // Warning
+  --color-warning: 41, 100%, 62.2%; // 255, 195, 62; // #ffc33e
 
-  // Usefull
-  --color-danger: #df242c;
-  --color-warning: #f78f2e;
-  --color-product: #005e9c;
-  --color-info: #5bc0de;
-  --color-success: #00af69;
+  // Success
+  --color-success: 159, 66%, 51.6%; // 50, 213, 156; // #32d59c
 
-  // Font
+  // Info
+  // #005e9c;
+  // rgb(0, 94, 156);
+  --color-info-h: 204;
+  --color-info-s: 100%;
+  --color-info-l: 30.6%;
+  --color-info: var(--color-info-h), var(--color-info-s), var(--color-info-l);
+
+  // Danger
+  // #df242c;
+  // rgb(223, 36, 44);
+  --color-danger-h: 357;
+  --color-danger-s: 74.5%;
+  --color-danger-l: 50.8%;
+  --color-danger: var(--color-danger-h), var(--color-danger-s), var(--color-danger-l);
+
+  // Dark
+  // #15282e;
+  // rgb(21, 40, 46);
+  --color-dark-h: 194;
+  --color-dark-s: 37.3%;
+  --color-dark-l: 13.1%;
+  --color-dark: var(--color-dark-h), var(--color-dark-s), var(--color-dark-l);
+
+  // Font colors
+
+  --color-font-light: 0, 0%, 100%; //255, 255, 255; // white
+  --color-font-dark: var(--color-dark);
+
+  /**
+   * Fonts
+   */
   --font-size-base: 1.3rem;
+  --line-height: 1.4;
 
   /**
    * Inputs
    */
-  --input-height: 3.5rem;
+  --default-size: 3.5rem;
 
   /**
-   * Buttons
-   * TODO: set colors as variables
-   * TODO: disabled seems to be the same style for all button, group then after confirmation
+   * <mg-icon>
+   */
+  --mg-icon-small-size: 1rem;
+  --mg-icon-regular-size: 1.5rem;
+  --mg-icon-large-size: 2rem;
+
+  /**
+   * <mg-button>
    */
 
+  --mg-button-disabled-opacity: 0.6;
+
   // Primary
-  --button-primary-background-from: #22404a;
-  --button-primary-background-to: #000;
-  --button-primary-color: #ebebeb;
-  --button-primary-border-color: #15282e;
+  --mg-button-primary-background-color: var(--color-dark);
+  --mg-button-primary-background-second-color: var(--color-dark-h), var(--color-dark-s), calc(var(--color-dark-l) + 10%);
+  --mg-button-primary-font-color: var(--color-neutral);
+  --mg-button-primary-border-color: var(--color-dark);
+  --mg-button-primary-hover-color: var(--color-dark);
 
-  --button-primary-hover-background: #0e1b1f;
-  --button-primary-hover-color: #fff;
-  --button-primary-hover-border-color: #15282e;
+  // Secondary
+  --mg-button-secondary-background-color: var(--color-neutral-h), var(--color-neutral-s), calc(var(--color-neutral-l) - 10%);
+  --mg-button-secondary-background-second-color: var(--color-neutral);
+  --mg-button-secondary-font-color: var(--color-dark);
+  --mg-button-secondary-border-color: var(--mg-button-secondary-background-color);
+  --mg-button-secondary-hover-color: var(--color-neutral);
 
-  --button-primary-disabled-background-from: #fff;
-  --button-primary-disabled-background-to: #ebebeb;
-  --button-primary-disabled-color: #011b21;
-  --button-primary-disabled-opacity: 0.45;
-  --button-primary-disabled-border-color: #d4dbde;
+  // Danger
+  --mg-button-danger-background-color: var(--color-danger-h), var(--color-danger-s), calc(var(--color-danger-l) - 10%);
+  --mg-button-danger-background-second-color: var(--color-danger);
+  --mg-button-danger-font-color: var(--color-neutral);
+  --mg-button-danger-border-color: var(--mg-button-danger-background-color);
+  --mg-button-danger-hover-color: var(--color-danger);
 
-  // secondary
-  --button-secondary-background-from: #fefefe;
-  --button-secondary-background-to: #ebebeb;
-  --button-secondary-color: #15282e;
-  --button-secondary-border-color: #d4dbde;
+  // Danger Alt
+  --mg-button-danger-alt-background-color: var(--mg-button-secondary-background-color);
+  --mg-button-danger-alt-background-second-color: var(--mg-button-secondary-background-second-color);
+  --mg-button-danger-alt-font-color: var(--color-danger);
+  --mg-button-danger-alt-border-color: var(--mg-button-secondary-border-color);
+  --mg-button-danger-alt-hover-color: var(--mg-button-secondary-background-second-color);
 
-  --button-secondary-hover-background: #f1f1f1;
-  --button-secondary-hover-color: #000000;
-  --button-secondary-hover-border-color: #d4dbde;
+  // Info
+  --mg-button-info-background-color: var(--color-info);
+  --mg-button-info-background-second-color: var(--color-info-h), var(--color-info-s), calc(var(--color-info-l) + 10%);
+  --mg-button-info-font-color: var(--color-neutral);
+  --mg-button-info-border-color: var(--color-info);
+  --mg-button-info-hover-color: var(--color-info);
 
-  --button-secondary-disabled-background-from: #fff;
-  --button-secondary-disabled-background-to: #ebebeb;
-  --button-secondary-disabled-color: #011b21;
-  --button-secondary-disabled-opacity: 0.45;
-  --button-secondary-disabled-border-color: #d4dbde;
+  /**
+   * <mg-message>
+   */
+  --mg-message-border-radius: 0.3rem;
 
-  // alert
-  --button-alert-background-from: #df242c;
-  --button-alert-background-to: #bc050d;
-  --button-alert-color: #ebebeb;
-  --button-alert-border-color: #df242c;
-
-  --button-alert-hover-background: #cb131b;
-  --button-alert-hover-color: #ffffff;
-  --button-alert-hover-border-color: #df242c;
-
-  --button-alert-disabled-background-from: #fff;
-  --button-alert-disabled-background-to: #ebebeb;
-  --button-alert-disabled-color: #011b21;
-  --button-alert-disabled-opacity: 0.45;
-  --button-alert-disabled-border-color: #d4dbde;
-
-  // alert-alt
-  --button-alert-alt-background-from: #fefefe;
-  --button-alert-alt-background-to: #ebebeb;
-  --button-alert-alt-color: #df0e17;
-  --button-alert-alt-border-color: #d8d8d8;
-
-  --button-alert-alt-hover-background: #f1f1f1;
-  --button-alert-alt-hover-color: #c6333a;
-  --button-alert-alt-hover-border-color: #d8d8d8;
-
-  --button-alert-alt-disabled-background-from: #fff;
-  --button-alert-alt-disabled-background-to: #ebebeb;
-  --button-alert-alt-disabled-color: #011b21;
-  --button-alert-alt-disabled-opacity: 0.45;
-  --button-alert-alt-disabled-border-color: #d4dbde;
-
-  // info
-  --button-info-background-from: #0074be;
-  --button-info-background-to: #005e9c;
-  --button-info-color: #ebebeb;
-  --button-info-border-color: #005e9c;
-
-  --button-info-hover-background: #0068ac;
-  --button-info-hover-color: #fff;
-  --button-info-hover-border-color: #005e9c;
-
-  --button-info-disabled-background-from: #fff;
-  --button-info-disabled-background-to: #ebebeb;
-  --button-info-disabled-color: #011b21;
-  --button-info-disabled-opacity: 0.45;
-  --button-info-disabled-border-color: #d4dbde;
+  /****************************************************************************************************
+   * ! NEEDS TO BE CHANGED AFTER THIS LINE
+   ****************************************************************************************************/
 
   /**
    * Tags

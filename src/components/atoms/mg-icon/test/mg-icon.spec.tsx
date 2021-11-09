@@ -1,6 +1,7 @@
 import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
 import { MgIcon } from '../mg-icon';
+import { icons, sizes } from '../mg-icon.conf';
 
 const getPage = (args) => newSpecPage({
   components: [MgIcon],
@@ -8,9 +9,9 @@ const getPage = (args) => newSpecPage({
 });
 
 describe('mg-icon', () => {
-  describe.each(["user-cadenas", "editable"])('Should render %s icon', (icon) => {
+  describe.each(icons)('Should render %s icon', (icon) => {
 
-    test.each(["regular", "large"])('in %s size', async (size) => {
+    test.each(sizes)('in %s size', async (size) => {
       const { root } = await getPage({icon, size});
       expect(root).toMatchSnapshot();
     });
@@ -28,7 +29,7 @@ describe('mg-icon', () => {
 
   test.each(["", "blu", undefined])('Should throw error with invalid size property : %s', async (value) => {
     try {
-      await getPage({icon:"user-cadenas", size: value});
+      await getPage({icon:"success", size: value});
     }
     catch (err) {
       expect(err.message).toMatch('<mg-icon> prop "size" must be one of : ')
