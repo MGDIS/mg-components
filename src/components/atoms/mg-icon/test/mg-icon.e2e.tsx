@@ -1,6 +1,6 @@
 import { createPage } from "../../../../utils/test-utils"
 import { icons, sizes } from '../mg-icon.conf';
-const { toMatchImageSnapshot } = require('jest-image-snapshot');
+import { toMatchImageSnapshot } from 'jest-image-snapshot';
 expect.extend({ toMatchImageSnapshot });
 
 describe.each(icons)('mg-icon %s', (icon) => {
@@ -12,7 +12,7 @@ describe.each(icons)('mg-icon %s', (icon) => {
       expect(element).toHaveClass('hydrated');
 
       const screenshot = await page.screenshot();
-      expect(screenshot).toMatchImageSnapshot();
+      expect(screenshot).toMatchImageSnapshot({allowSizeMismatch:true});
 
     });
   });
