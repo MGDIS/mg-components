@@ -12,7 +12,7 @@ describe.each(icons)('mg-icon %s', (icon) => {
       expect(element).toHaveClass('hydrated');
 
       const screenshot = await page.screenshot();
-      expect(screenshot).toMatchImageSnapshot({allowSizeMismatch:true});
+      expect(screenshot).toMatchImageSnapshot();
 
     });
   });
