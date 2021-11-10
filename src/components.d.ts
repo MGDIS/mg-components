@@ -13,10 +13,6 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
-          * Define if button is flat.
-         */
-        "flat": boolean;
-        /**
           * Define if button is round. Used for icon button.
          */
         "isIcon": boolean;
@@ -544,10 +540,6 @@ declare namespace LocalJSX {
           * Disable button
          */
         "disabled"?: boolean;
-        /**
-          * Define if button is flat.
-         */
-        "flat"?: boolean;
         /**
           * Define if button is round. Used for icon button.
          */

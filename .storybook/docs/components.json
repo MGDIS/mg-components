@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-11-09T16:47:59",
+  "timestamp": "2021-11-10T18:15:54",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.9.0",
@@ -22,23 +22,6 @@
           "attr": "disabled",
           "reflectToAttr": false,
           "docs": "Disable button",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "flat",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "flat",
-          "reflectToAttr": false,
-          "docs": "Define if button is flat.",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -90,7 +73,7 @@
           "reflectToAttr": false,
           "docs": "Define button variant",
           "docsTags": [],
-          "default": "this.variants[0]",
+          "default": "variants[0]",
           "values": [
             {
               "type": "string"
