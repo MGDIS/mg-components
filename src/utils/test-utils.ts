@@ -13,7 +13,6 @@ export async function createPage(optionsOrHtml?: string | DesignSystemE2EPageOpt
   const viewport = Object.assign({ height: page.viewport().height }, { width: options.viewportWidth });
   await page.setViewport(viewport);
   await page.setContent(options.html, { waitUntil: "networkidle0" });
-  await page.evaluateHandle(() => (document as any).fonts.ready);
 
   // monkey patch screenshot function to add some extra features
   const screenshot = page.screenshot;
