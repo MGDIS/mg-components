@@ -20,16 +20,16 @@ export async function createPage(optionsOrHtml?: string | DesignSystemE2EPageOpt
   page.screenshot = async function() {
     // get the element's height, and set viewport to that height
     // this enables us to get full page, clipped screenshots
-    const htmlElement = await page.$("html")
-    const { width, height } = await htmlElement.boundingBox()
-    await page.setViewport({ width: page.viewport().width, height: Math.round(height) })
+    // const htmlElement = await page.$("html")
+    // const { width, height } = await htmlElement.boundingBox()
+    // await page.setViewport({ width: page.viewport().width, height: Math.round(height) })
 
     return screenshot.call(page, {
       clip: {
         x: 0,
         y: 0,
-        width: Math.round(width),
-        height: Math.round(height),
+        width: page.viewport().width,
+        height: page.viewport().height,
       },
     })
   }
