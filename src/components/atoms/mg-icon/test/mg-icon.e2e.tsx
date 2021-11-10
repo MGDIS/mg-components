@@ -18,7 +18,7 @@ describe.each(icons)('mg-icon %s', (icon) => {
         failureThreshold: 0.01,
         failureThresholdType: 'percent',
         // dumpInlineDiffToConsole:true,
-        // allowSizeMismatch: true
+        allowSizeMismatch: true
       });
 
     });
