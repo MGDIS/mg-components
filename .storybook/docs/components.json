@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-10-26T16:58:05",
+  "timestamp": "2021-11-09T16:47:59",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.9.0",
@@ -8,7 +8,7 @@
   "components": [
     {
       "filePath": "./src/components/atoms/mg-button/mg-button.tsx",
-      "encapsulation": "shadow",
+      "encapsulation": "scoped",
       "tag": "mg-button",
       "readme": "# mg-button\n\n\n",
       "docs": "",
@@ -22,6 +22,40 @@
           "attr": "disabled",
           "reflectToAttr": false,
           "docs": "Disable button",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "flat",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "flat",
+          "reflectToAttr": false,
+          "docs": "Define if button is flat.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "isIcon",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "is-icon",
+          "reflectToAttr": false,
+          "docs": "Define if button is round.\nUsed for icon button.",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -72,9 +106,15 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [],
+      "dependents": [
+        "mg-message"
+      ],
       "dependencies": [],
-      "dependencyGraph": {}
+      "dependencyGraph": {
+        "mg-message": [
+          "mg-button"
+        ]
+      }
     },
     {
       "filePath": "./src/components/atoms/mg-character-left/mg-character-left.tsx",
@@ -296,7 +336,8 @@
         "mg-input-date",
         "mg-input-select",
         "mg-input-text",
-        "mg-input-textarea"
+        "mg-input-textarea",
+        "mg-message"
       ],
       "dependencies": [],
       "dependencyGraph": {
@@ -314,6 +355,9 @@
         ],
         "mg-input-textarea": [
           "mg-icon"
+        ],
+        "mg-message": [
+          "mg-icon"
         ]
       }
     },
@@ -321,7 +365,7 @@
       "filePath": "./src/components/molecules/inputs/mg-input-checkbox/mg-input-checkbox.tsx",
       "encapsulation": "shadow",
       "tag": "mg-input-checkbox",
-      "readme": "# mg-input-checkbox\n\n\n",
+      "readme": "# mg-input-checkbox\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -365,7 +409,7 @@
           "mutable": false,
           "attr": "identifier",
           "reflectToAttr": false,
-          "docs": "Identifier used for the input ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
+          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
           "docsTags": [],
           "default": "createID('mg-input-checkbox')",
           "values": [
@@ -645,7 +689,7 @@
           "mutable": false,
           "attr": "identifier",
           "reflectToAttr": false,
-          "docs": "Identifier used for the input ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
+          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
           "docsTags": [],
           "default": "createID('mg-input-date')",
           "values": [
@@ -859,7 +903,7 @@
       "filePath": "./src/components/molecules/inputs/mg-input-select/mg-input-select.tsx",
       "encapsulation": "shadow",
       "tag": "mg-input-select",
-      "readme": "# mg-input-select\n\n\n",
+      "readme": "# mg-input-select\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -903,7 +947,7 @@
           "mutable": false,
           "attr": "identifier",
           "reflectToAttr": false,
-          "docs": "Identifier used for the input ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
+          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
           "docsTags": [],
           "default": "createID('mg-input-select')",
           "values": [
@@ -1229,7 +1273,7 @@
           "mutable": false,
           "attr": "identifier",
           "reflectToAttr": false,
-          "docs": "Identifier used for the input ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
+          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
           "docsTags": [],
           "default": "createID('mg-input-text')",
           "values": [
@@ -1585,7 +1629,7 @@
           "mutable": false,
           "attr": "identifier",
           "reflectToAttr": false,
-          "docs": "Identifier used for the input ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
+          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
           "docsTags": [],
           "default": "createID('mg-input-textarea')",
           "values": [
@@ -1964,6 +2008,85 @@
         ],
         "mg-input-textarea": [
           "mg-label"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/molecules/mg-message/mg-message.tsx",
+      "encapsulation": "shadow",
+      "tag": "mg-message",
+      "readme": "# mg-message\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "closeButton",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "close-button",
+          "reflectToAttr": false,
+          "docs": "Define if message has a cross button\nRG 01: https://jira.mgdis.fr/browse/PDA9-140",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "identifier",
+          "type": "string",
+          "mutable": false,
+          "attr": "identifier",
+          "reflectToAttr": false,
+          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
+          "docsTags": [],
+          "default": "createID('mg-message')",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "mutable": false,
+          "attr": "type",
+          "reflectToAttr": false,
+          "docs": "Message type",
+          "docsTags": [],
+          "default": "this.types[0]",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "mg-icon",
+        "mg-button"
+      ],
+      "dependencyGraph": {
+        "mg-message": [
+          "mg-icon",
+          "mg-button"
         ]
       }
     },

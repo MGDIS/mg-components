@@ -22,6 +22,7 @@
  - [mg-input-select](../../molecules/inputs/mg-input-select)
  - [mg-input-text](../../molecules/inputs/mg-input-text)
  - [mg-input-textarea](../../molecules/inputs/mg-input-textarea)
+ - [mg-message](../../molecules/mg-message)
 
 ### Graph
 ```mermaid
@@ -31,6 +32,7 @@ graph TD;
   mg-input-select --> mg-icon
   mg-input-text --> mg-icon
   mg-input-textarea --> mg-icon
+  mg-message --> mg-icon
   style mg-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
