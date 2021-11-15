@@ -1,51 +1,109 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`mg-button Should render an alert button 1`] = `
+exports[`mg-button Should render an danger button isIcon false 1`] = `
 <mg-button>
-  <mock:shadow-root>
-    <button class="mg-button mg-button--alert">
-      <slot></slot>
-    </button>
-  </mock:shadow-root>
+  <!---->
+  <button aria-label="label" class="mg-button mg-button--danger">
+    Text button
+  </button>
 </mg-button>
 `;
 
-exports[`mg-button Should render an alert-alt button 1`] = `
+exports[`mg-button Should render an danger button isIcon true 1`] = `
 <mg-button>
-  <mock:shadow-root>
-    <button class="mg-button mg-button--alert-alt">
-      <slot></slot>
-    </button>
-  </mock:shadow-root>
+  <!---->
+  <button aria-label="label" class="mg-button mg-button--danger mg-button--icon">
+    Text button
+  </button>
 </mg-button>
 `;
 
-exports[`mg-button Should render an info button 1`] = `
+exports[`mg-button Should render an danger-alt button isIcon false 1`] = `
 <mg-button>
-  <mock:shadow-root>
-    <button class="mg-button mg-button--info">
-      <slot></slot>
-    </button>
-  </mock:shadow-root>
+  <!---->
+  <button aria-label="label" class="mg-button mg-button--danger-alt">
+    Text button
+  </button>
 </mg-button>
 `;
 
-exports[`mg-button Should render an primary button 1`] = `
+exports[`mg-button Should render an danger-alt button isIcon true 1`] = `
 <mg-button>
-  <mock:shadow-root>
-    <button class="mg-button mg-button--primary">
-      <slot></slot>
-    </button>
-  </mock:shadow-root>
+  <!---->
+  <button aria-label="label" class="mg-button mg-button--danger-alt mg-button--icon">
+    Text button
+  </button>
 </mg-button>
 `;
 
-exports[`mg-button Should render an secondary button 1`] = `
+exports[`mg-button Should render an flat button isIcon false 1`] = `
 <mg-button>
-  <mock:shadow-root>
-    <button class="mg-button mg-button--secondary">
-      <slot></slot>
-    </button>
-  </mock:shadow-root>
+  <!---->
+  <button aria-label="label" class="mg-button mg-button--flat">
+    Text button
+  </button>
+</mg-button>
+`;
+
+exports[`mg-button Should render an flat button isIcon true 1`] = `
+<mg-button>
+  <!---->
+  <button aria-label="label" class="mg-button mg-button--flat mg-button--icon">
+    Text button
+  </button>
+</mg-button>
+`;
+
+exports[`mg-button Should render an info button isIcon false 1`] = `
+<mg-button>
+  <!---->
+  <button aria-label="label" class="mg-button mg-button--info">
+    Text button
+  </button>
+</mg-button>
+`;
+
+exports[`mg-button Should render an info button isIcon true 1`] = `
+<mg-button>
+  <!---->
+  <button aria-label="label" class="mg-button mg-button--icon mg-button--info">
+    Text button
+  </button>
+</mg-button>
+`;
+
+exports[`mg-button Should render an primary button isIcon false 1`] = `
+<mg-button>
+  <!---->
+  <button aria-label="label" class="mg-button mg-button--primary">
+    Text button
+  </button>
+</mg-button>
+`;
+
+exports[`mg-button Should render an primary button isIcon true 1`] = `
+<mg-button>
+  <!---->
+  <button aria-label="label" class="mg-button mg-button--icon mg-button--primary">
+    Text button
+  </button>
+</mg-button>
+`;
+
+exports[`mg-button Should render an secondary button isIcon false 1`] = `
+<mg-button>
+  <!---->
+  <button aria-label="label" class="mg-button mg-button--secondary">
+    Text button
+  </button>
+</mg-button>
+`;
+
+exports[`mg-button Should render an secondary button isIcon true 1`] = `
+<mg-button>
+  <!---->
+  <button aria-label="label" class="mg-button mg-button--icon mg-button--secondary">
+    Text button
+  </button>
 </mg-button>
 `;

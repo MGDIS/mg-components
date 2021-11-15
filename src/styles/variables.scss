@@ -4,7 +4,7 @@
    * https://jira.mgdis.fr/browse/PDA9-690
    */
 
-  // Dark
+  // Neutral
   // #fefefe;
   // rgb(254, 254, 254);
   --color-neutral-h: 0;
@@ -69,42 +69,21 @@
    * <mg-button>
    */
 
+  --mg-button-border-radius: 0.3rem;
+  --mg-button-icon-border-radius: var(--default-size);
   --mg-button-disabled-opacity: 0.6;
 
   // Primary
-  --mg-button-primary-background-color: var(--color-dark);
-  --mg-button-primary-background-second-color: var(--color-dark-h), var(--color-dark-s), calc(var(--color-dark-l) + 10%);
+  --mg-button-primary-color-h: var(--color-dark-h);
+  --mg-button-primary-color-s: var(--color-dark-s);
+  --mg-button-primary-color-l: var(--color-dark-l);
   --mg-button-primary-font-color: var(--color-neutral);
-  --mg-button-primary-border-color: var(--color-dark);
-  --mg-button-primary-hover-color: var(--color-dark);
 
   // Secondary
-  --mg-button-secondary-background-color: var(--color-neutral-h), var(--color-neutral-s), calc(var(--color-neutral-l) - 10%);
-  --mg-button-secondary-background-second-color: var(--color-neutral);
+  --mg-button-secondary-color-h: var(--color-neutral-h);
+  --mg-button-secondary-color-s: var(--color-neutral-s);
+  --mg-button-secondary-color-l: var(--color-neutral-l);
   --mg-button-secondary-font-color: var(--color-dark);
-  --mg-button-secondary-border-color: var(--mg-button-secondary-background-color);
-  --mg-button-secondary-hover-color: var(--color-neutral);
-
-  // Danger
-  --mg-button-danger-background-color: var(--color-danger-h), var(--color-danger-s), calc(var(--color-danger-l) - 10%);
-  --mg-button-danger-background-second-color: var(--color-danger);
-  --mg-button-danger-font-color: var(--color-neutral);
-  --mg-button-danger-border-color: var(--mg-button-danger-background-color);
-  --mg-button-danger-hover-color: var(--color-danger);
-
-  // Danger Alt
-  --mg-button-danger-alt-background-color: var(--mg-button-secondary-background-color);
-  --mg-button-danger-alt-background-second-color: var(--mg-button-secondary-background-second-color);
-  --mg-button-danger-alt-font-color: var(--color-danger);
-  --mg-button-danger-alt-border-color: var(--mg-button-secondary-border-color);
-  --mg-button-danger-alt-hover-color: var(--mg-button-secondary-background-second-color);
-
-  // Info
-  --mg-button-info-background-color: var(--color-info);
-  --mg-button-info-background-second-color: var(--color-info-h), var(--color-info-s), calc(var(--color-info-l) + 10%);
-  --mg-button-info-font-color: var(--color-neutral);
-  --mg-button-info-border-color: var(--color-info);
-  --mg-button-info-hover-color: var(--color-info);
 
   /**
    * <mg-message>

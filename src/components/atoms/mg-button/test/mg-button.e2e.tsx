@@ -1,19 +1,21 @@
-import { newE2EPage } from '@stencil/core/testing';
+import { createPage } from "../../../../utils/test-utils"
+import { variants } from '../mg-button.conf';
+import { toMatchImageSnapshot } from 'jest-image-snapshot';
+expect.extend({ toMatchImageSnapshot });
 
-describe.each(["primary" , "secondary" , "alert", "alert-alt",  "info"])('mg-button %s', (variant) => {
+describe.each(variants)('mg-button %s', (variant) => {
   test('Should render', async () => {
 
-    const page = await newE2EPage();
-    await page.setContent(`
-      <link rel="stylesheet" href="http://localhost:3333/build/design-system.css" />
-      <mg-button variant="${variant}">${variant}</mg-button>
-    `);
+    const page = await createPage(`<mg-button variant="${variant}">${variant}</mg-button>`);
 
     const element = await page.find('mg-button');
     expect(element).toHaveClass('hydrated');
 
-    const results = await page.compareScreenshot();
-    expect(results).toMatchScreenshot({ allowableMismatchedPixels: 100 })
-    expect(results).toMatchScreenshot({ allowableMismatchedRatio: 0.1 })
+    const screenshot = await page.screenshot();
+    expect(screenshot).toMatchImageSnapshot({
+      failureThreshold: 0.01,
+      failureThresholdType: 'percent',
+    });
+
   });
 });

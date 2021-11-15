@@ -1,73 +1,115 @@
-@mixin button-state($variant, $state: '') {
-  @if $state != '' {
-    $state: -#{$state};
+@mixin style-gradient($name, $backgroundColor, $fontColor, $hasVariable: false) {
+  @if $hasVariable {
+    $backgroundColor: --mg-button-#{$name}-color;
+    $fontColor: --mg-button-#{$name}-font-color;
+  } @else {
+    $backgroundColor: --color-#{$backgroundColor};
+    $fontColor: --color-#{$fontColor};
   }
-  // Decoration
-  border-color: var(--button-#{$variant}#{$state}-border-color);
-  // Font
-  color: var(--button-#{$variant}#{$state}-color);
-}
+  &.mg-button--#{$name} {
+    // Decoration
+    border-color: hsl(var(#{$backgroundColor}-h), var(#{$backgroundColor}-s), calc(var(#{$backgroundColor}-l) - 10%));
+    // Font
+    color: hsl(var(#{$fontColor}));
+    // Background
+    background: linear-gradient(
+      to bottom,
+      hsl(var(#{$backgroundColor}-h), var(#{$backgroundColor}-s), calc(var(#{$backgroundColor}-l))),
+      hsl(var(#{$backgroundColor}-h), var(#{$backgroundColor}-s), calc(var(#{$backgroundColor}-l) - 10%))
+    );
 
-@mixin button-variant($variant) {
-  @include button-state($variant);
-  background: linear-gradient(to bottom, var(--button-#{$variant}-background-from), var(--button-#{$variant}-background-to));
-
-  // Hover
-  &:hover,
-  &:focus,
-  &:active {
-    @include button-state($variant, 'hover');
-    background: var(--button-#{$variant}-hover-background);
-  }
-
-  // Disabled
-  &[disabled],
-  &.disabled {
-    @include button-state($variant, 'disabled');
-    background: linear-gradient(to bottom, var(--button-#{$variant}-disabled-background-from), var(--button-#{$variant}-disabled-background-to));
-    opacity: var(--button-#{$variant}-disabled-opacity);
-  }
-}
-
-@mixin button-variants($variants...) {
-  @each $variant in $variants {
-    &.mg-button--#{$variant} {
-      @include button-variant($variant);
+    // Hover
+    // Only apply if not disabled
+    &:hover:not([disabled], .disabled),
+    &:focus:not([disabled], .disabled),
+    &:active:not([disabled], .disabled) {
+      background: hsl(var(#{$backgroundColor}-h), var(#{$backgroundColor}-s), calc(var(#{$backgroundColor}-l)));
     }
   }
 }
 
 .mg-button {
   // Display
-  display: inline-block;
-  min-height: 3.5rem;
-  padding: 0.6rem 1.2rem;
+  display: inline-flex;
+  align-items: center;
   vertical-align: middle;
+  min-height: var(--default-size);
+  box-sizing: border-box;
+  padding: 0.7435rem 1.1rem;
   // Decoration
-  border-radius: 0.3rem;
+  border-radius: var(--mg-button-border-radius);
   cursor: pointer;
   background-image: none;
-  border: 0.1rem solid transparent;
+  border: 0.1rem solid;
   // Font
   font-weight: normal;
-  text-align: center;
-  white-space: nowrap;
+  text-align: left;
+  line-height: var(--line-height);
   // Other
   touch-action: manipulation;
 
+  // Disabled style
   &[disabled],
   &.disabled {
     cursor: not-allowed;
+    opacity: var(--mg-button-disabled-opacity);
   }
 
-  @include button-variants('primary', 'secondary', 'alert', 'alert-alt', 'info');
+  // Icon only button
+  &.mg-button--icon {
+    // Display
+    justify-content: center;
+    width: var(--default-size);
+    height: var(--default-size);
+    // Decoration
+    border-radius: var(--mg-button-icon-border-radius);
+  }
+
+  // Gradient style
+  @include style-gradient('primary', null, null, true);
+  @include style-gradient('secondary', null, null, true);
+  @include style-gradient('danger', 'danger', 'neutral');
+  @include style-gradient('danger-alt', 'neutral', 'danger');
+  @include style-gradient('info', 'info', 'neutral');
+
+  // Flat style
+  &.mg-button--flat {
+    background: none;
+    border: none;
+
+    // Hover
+    // Only apply if not disabled
+    &:hover:not([disabled], .disabled),
+    &:focus:not([disabled], .disabled),
+    &:active:not([disabled], .disabled) {
+      background: hsla(var(--color-dark), 0.1);
+    }
+  }
+
+  // Space between two buttons
+  &:not(:last-child) {
+    margin-right: 1rem;
+  }
 }
 
 mg-button {
-  mg-icon {
-    margin-right: 0.5rem;
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: var(--mg-button-margin-bottom, 0); // this way it can be changed in another component
+
+  &:not([is-icon]) mg-icon {
+    margin-right: 0.6rem;
   }
-  & + mg-button {
-    margin-left: 1rem;
+
+  &:not(:last-child) {
+    margin-right: 1rem;
+  }
+}
+
+.mg-button,
+mg-button {
+  mg-icon {
+    display: inline-flex;
+    line-height: 1;
   }
 }
