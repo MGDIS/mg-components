@@ -10,7 +10,7 @@ export class MgHelpText {
   // TODO : CHECK IF THIS COMPONENT IS REALLY USEFULL
 
   /**
-   * Sets an `id` element.
+   * Sets an `id` attribute.
    * Needed by the input for accessibility `arai-decribedby`.
    */
   @Prop() identifier: string;

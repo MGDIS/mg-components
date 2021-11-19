@@ -120,7 +120,7 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
       : <div class="mg-input__input-container">
           <div class="mg-input__input-container__input">
             { children }
-            { props.tooltip && <mg-tooltip identifier={`${props.identifier}-tooltip`} message={props.tooltip}><mg-icon icon="user-cadenas"></mg-icon></mg-tooltip>}
+            { props.tooltip && <mg-tooltip identifier={`${props.identifier}-tooltip`} message={props.tooltip}><mg-icon icon="info"></mg-icon></mg-tooltip>}
           </div>
           { props.displayCharacterLeft && props.maxlength && <mg-character-left
             identifier={characterLeftId}

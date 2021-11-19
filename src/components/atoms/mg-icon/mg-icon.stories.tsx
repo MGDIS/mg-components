@@ -6,7 +6,7 @@ export default {
   title: 'Atoms/mg-icon',
   argTypes: {
     icon: {
-      options: icons,
+      options: Object.keys(icons),
       control: { type: 'select' },
     },
     size: {
@@ -25,6 +25,6 @@ const Template = args => (
 export const MgIcon = Template.bind({});
 MgIcon.args = {
   color: '',
-  icon: icons[0],
+  icon: Object.keys(icons)[0],
   size: sizes[1], // regular
 };

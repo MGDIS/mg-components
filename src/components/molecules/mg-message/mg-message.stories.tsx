@@ -6,8 +6,8 @@ export default {
   title: 'Molecules/mg-message',
   argTypes: {
     variant: {
-      type: variants,
-      control: { variant: 'select' },
+      options: variants,
+      control: { type: 'select' },
     },
   },
 };
@@ -33,6 +33,7 @@ MgMessage.args = {
   identifier: 'identifier',
   variant: variants[0], // info
   closeButton: false,
+  hide: false,
 };
 
 // Set exemple code for component
@@ -50,15 +51,15 @@ MgMessage.parameters = {
   },
 };
 
-export const WithCloseIcon = Template.bind({});
+export const WithCloseButton = Template.bind({});
 
-WithCloseIcon.args = {
+WithCloseButton.args = {
   ...MgMessage.args,
   variant: 'danger',
   closeButton: true,
 }
 
-WithCloseIcon.parameters = {
+WithCloseButton.parameters = {
   docs: {
     source: {
       code: `<mg-message

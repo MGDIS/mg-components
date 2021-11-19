@@ -14,7 +14,7 @@ export class MgTooltip {
    private classes = ['mg-tooltip'];
 
   /**
-   * Sets an `id` element.
+   * Sets an `id` attribute.
    * Needed by the input for accessibility `arai-decribedby`.
    */
   @Prop() identifier?: string = createID('mg-tooltip');

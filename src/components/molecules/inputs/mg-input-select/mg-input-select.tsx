@@ -81,7 +81,7 @@ export class MgInputSelect {
   }
 
   /**
-   * Identifier used for the input ID (id is a reserved prop in Stencil.js)
+   * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
    * If not set, it will be created.
    */
   @Prop() identifier?: string = createID('mg-input-select');

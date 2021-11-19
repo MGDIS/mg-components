@@ -59,7 +59,7 @@ exports[`mg-input-checkbox Should render with args {
         <div class="mg-input__input-container__input">
           <input aria-describedby="" id="identifier" name="identifier" type="checkbox">
           <mg-tooltip identifier="identifier-tooltip" message="My Tooltip Message">
-            <mg-icon icon="user-cadenas"></mg-icon>
+            <mg-icon icon="info"></mg-icon>
           </mg-tooltip>
         </div>
       </div>
@@ -84,7 +84,7 @@ exports[`mg-input-checkbox Should render with args {
         <div class="mg-input__input-container__input">
           <input aria-describedby="" id="identifier" indeterminate="" name="identifier" type="checkbox">
           <mg-tooltip identifier="identifier-tooltip" message="My Tooltip Message">
-            <mg-icon icon="user-cadenas"></mg-icon>
+            <mg-icon icon="info"></mg-icon>
           </mg-tooltip>
         </div>
       </div>
@@ -133,7 +133,7 @@ exports[`mg-input-checkbox Should render with args {
         <div class="mg-input__input-container__input">
           <input aria-describedby="" id="identifier" indeterminate="" name="identifier" type="checkbox">
           <mg-tooltip identifier="identifier-tooltip" message="My Tooltip Message">
-            <mg-icon icon="user-cadenas"></mg-icon>
+            <mg-icon icon="info"></mg-icon>
           </mg-tooltip>
         </div>
       </div>

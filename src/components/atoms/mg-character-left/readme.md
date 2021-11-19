@@ -7,12 +7,12 @@
 
 ## Properties
 
-| Property                 | Attribute    | Description                                                                    | Type     | Default             |
-| ------------------------ | ------------ | ------------------------------------------------------------------------------ | -------- | ------------------- |
-| `characters`             | `characters` | Sets the characters to count                                                   | `string` | `''`                |
-| `identifier`             | `identifier` | Sets an `id` element. Needed by the input for accessibility `arai-decribedby`. | `string` | `undefined`         |
-| `maxlength` _(required)_ | `maxlength`  | Add maximum length                                                             | `number` | `undefined`         |
-| `template`               | `template`   | Template to display remaining characters. Must have {counter} inside           | `string` | `locale.nbCharLeft` |
+| Property                 | Attribute    | Description                                                                      | Type     | Default             |
+| ------------------------ | ------------ | -------------------------------------------------------------------------------- | -------- | ------------------- |
+| `characters`             | `characters` | Sets the characters to count                                                     | `string` | `''`                |
+| `identifier`             | `identifier` | Sets an `id` attribute. Needed by the input for accessibility `arai-decribedby`. | `string` | `undefined`         |
+| `maxlength` _(required)_ | `maxlength`  | Add maximum length                                                               | `number` | `undefined`         |
+| `template`               | `template`   | Template to display remaining characters. Must have {counter} inside             | `string` | `locale.nbCharLeft` |
 
 
 ## Dependencies

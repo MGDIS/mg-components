@@ -90,7 +90,7 @@ exports[`mg-input-select Should render with args {
             </option>
           </select>
           <mg-tooltip identifier="identifier-tooltip" message="My Tooltip Message">
-            <mg-icon icon="user-cadenas"></mg-icon>
+            <mg-icon icon="info"></mg-icon>
           </mg-tooltip>
         </div>
       </div>

@@ -28,28 +28,28 @@ export class MgInputCheckbox {
    @Prop({ mutable:true, reflect: true }) value?: boolean;
 
    /**
-    * Identifier used for the input ID (id is a reserved prop in Stencil.js)
+    * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
     * If not set, it will be created.
     */
    @Prop() identifier?: string = createID('mg-input-checkbox');
- 
+
    /**
     * Input name
     * If not set the value equals the identifier
     */
    @Prop() name?: string = this.identifier;
- 
+
    /**
     * Input label
     * Required
     */
    @Prop() label!: string;
- 
+
    /**
     * Define if label is displayed on top
     */
     @Prop() labelOnTop: boolean;
- 
+
    /**
     * Define if label has colon ":"
     */

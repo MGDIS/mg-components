@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-11-19T11:16:12",
+  "timestamp": "2021-11-19T14:10:49",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.9.0",
@@ -106,14 +106,10 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "mg-message"
-      ],
+      "dependents": ["mg-message"],
       "dependencies": [],
       "dependencyGraph": {
-        "mg-message": [
-          "mg-button"
-        ]
+        "mg-message": ["mg-button"]
       }
     },
     {
@@ -198,30 +194,14 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "mg-input-checkbox",
-        "mg-input-date",
-        "mg-input-select",
-        "mg-input-text",
-        "mg-input-textarea"
-      ],
+      "dependents": ["mg-input-checkbox", "mg-input-date", "mg-input-select", "mg-input-text", "mg-input-textarea"],
       "dependencies": [],
       "dependencyGraph": {
-        "mg-input-checkbox": [
-          "mg-character-left"
-        ],
-        "mg-input-date": [
-          "mg-character-left"
-        ],
-        "mg-input-select": [
-          "mg-character-left"
-        ],
-        "mg-input-text": [
-          "mg-character-left"
-        ],
-        "mg-input-textarea": [
-          "mg-character-left"
-        ]
+        "mg-input-checkbox": ["mg-character-left"],
+        "mg-input-date": ["mg-character-left"],
+        "mg-input-select": ["mg-character-left"],
+        "mg-input-text": ["mg-character-left"],
+        "mg-input-textarea": ["mg-character-left"]
       }
     },
     {
@@ -256,30 +236,14 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "mg-input-checkbox",
-        "mg-input-date",
-        "mg-input-select",
-        "mg-input-text",
-        "mg-input-textarea"
-      ],
+      "dependents": ["mg-input-checkbox", "mg-input-date", "mg-input-select", "mg-input-text", "mg-input-textarea"],
       "dependencies": [],
       "dependencyGraph": {
-        "mg-input-checkbox": [
-          "mg-help-text"
-        ],
-        "mg-input-date": [
-          "mg-help-text"
-        ],
-        "mg-input-select": [
-          "mg-help-text"
-        ],
-        "mg-input-text": [
-          "mg-help-text"
-        ],
-        "mg-input-textarea": [
-          "mg-help-text"
-        ]
+        "mg-input-checkbox": ["mg-help-text"],
+        "mg-input-date": ["mg-help-text"],
+        "mg-input-select": ["mg-help-text"],
+        "mg-input-text": ["mg-help-text"],
+        "mg-input-textarea": ["mg-help-text"]
       }
     },
     {
@@ -331,34 +295,14 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "mg-input-checkbox",
-        "mg-input-date",
-        "mg-input-select",
-        "mg-input-text",
-        "mg-input-textarea",
-        "mg-message"
-      ],
+      "dependents": ["mg-input-checkbox", "mg-input-date", "mg-input-select", "mg-input-text", "mg-input-textarea"],
       "dependencies": [],
       "dependencyGraph": {
-        "mg-input-checkbox": [
-          "mg-icon"
-        ],
-        "mg-input-date": [
-          "mg-icon"
-        ],
-        "mg-input-select": [
-          "mg-icon"
-        ],
-        "mg-input-text": [
-          "mg-icon"
-        ],
-        "mg-input-textarea": [
-          "mg-icon"
-        ],
-        "mg-message": [
-          "mg-icon"
-        ]
+        "mg-input-checkbox": ["mg-icon"],
+        "mg-input-date": ["mg-icon"],
+        "mg-input-select": ["mg-icon"],
+        "mg-input-text": ["mg-icon"],
+        "mg-input-textarea": ["mg-icon"]
       }
     },
     {
@@ -624,21 +568,9 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "mg-label",
-        "mg-tooltip",
-        "mg-icon",
-        "mg-character-left",
-        "mg-help-text"
-      ],
+      "dependencies": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left", "mg-help-text"],
       "dependencyGraph": {
-        "mg-input-checkbox": [
-          "mg-label",
-          "mg-tooltip",
-          "mg-icon",
-          "mg-character-left",
-          "mg-help-text"
-        ]
+        "mg-input-checkbox": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left", "mg-help-text"]
       }
     },
     {
@@ -882,21 +814,9 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "mg-label",
-        "mg-tooltip",
-        "mg-icon",
-        "mg-character-left",
-        "mg-help-text"
-      ],
+      "dependencies": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left", "mg-help-text"],
       "dependencyGraph": {
-        "mg-input-date": [
-          "mg-label",
-          "mg-tooltip",
-          "mg-icon",
-          "mg-character-left",
-          "mg-help-text"
-        ]
+        "mg-input-date": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left", "mg-help-text"]
       }
     },
     {
@@ -1175,21 +1095,9 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "mg-label",
-        "mg-tooltip",
-        "mg-icon",
-        "mg-character-left",
-        "mg-help-text"
-      ],
+      "dependencies": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left", "mg-help-text"],
       "dependencyGraph": {
-        "mg-input-select": [
-          "mg-label",
-          "mg-tooltip",
-          "mg-icon",
-          "mg-character-left",
-          "mg-help-text"
-        ]
+        "mg-input-select": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left", "mg-help-text"]
       }
     },
     {
@@ -1531,21 +1439,9 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "mg-label",
-        "mg-tooltip",
-        "mg-icon",
-        "mg-character-left",
-        "mg-help-text"
-      ],
+      "dependencies": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left", "mg-help-text"],
       "dependencyGraph": {
-        "mg-input-text": [
-          "mg-label",
-          "mg-tooltip",
-          "mg-icon",
-          "mg-character-left",
-          "mg-help-text"
-        ]
+        "mg-input-text": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left", "mg-help-text"]
       }
     },
     {
@@ -1904,21 +1800,9 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "mg-label",
-        "mg-tooltip",
-        "mg-icon",
-        "mg-character-left",
-        "mg-help-text"
-      ],
+      "dependencies": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left", "mg-help-text"],
       "dependencyGraph": {
-        "mg-input-textarea": [
-          "mg-label",
-          "mg-tooltip",
-          "mg-icon",
-          "mg-character-left",
-          "mg-help-text"
-        ]
+        "mg-input-textarea": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left", "mg-help-text"]
       }
     },
     {
@@ -1985,30 +1869,14 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "mg-input-checkbox",
-        "mg-input-date",
-        "mg-input-select",
-        "mg-input-text",
-        "mg-input-textarea"
-      ],
+      "dependents": ["mg-input-checkbox", "mg-input-date", "mg-input-select", "mg-input-text", "mg-input-textarea"],
       "dependencies": [],
       "dependencyGraph": {
-        "mg-input-checkbox": [
-          "mg-label"
-        ],
-        "mg-input-date": [
-          "mg-label"
-        ],
-        "mg-input-select": [
-          "mg-label"
-        ],
-        "mg-input-text": [
-          "mg-label"
-        ],
-        "mg-input-textarea": [
-          "mg-label"
-        ]
+        "mg-input-checkbox": ["mg-label"],
+        "mg-input-date": ["mg-label"],
+        "mg-input-select": ["mg-label"],
+        "mg-input-text": ["mg-label"],
+        "mg-input-textarea": ["mg-label"]
       }
     },
     {
@@ -2096,15 +1964,9 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "mg-icon",
-        "mg-button"
-      ],
+      "dependencies": ["mg-icon", "mg-button"],
       "dependencyGraph": {
-        "mg-message": [
-          "mg-icon",
-          "mg-button"
-        ]
+        "mg-message": ["mg-icon", "mg-button"]
       }
     },
     {
@@ -2193,30 +2055,14 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "mg-input-checkbox",
-        "mg-input-date",
-        "mg-input-select",
-        "mg-input-text",
-        "mg-input-textarea"
-      ],
+      "dependents": ["mg-input-checkbox", "mg-input-date", "mg-input-select", "mg-input-text", "mg-input-textarea"],
       "dependencies": [],
       "dependencyGraph": {
-        "mg-input-checkbox": [
-          "mg-tooltip"
-        ],
-        "mg-input-date": [
-          "mg-tooltip"
-        ],
-        "mg-input-select": [
-          "mg-tooltip"
-        ],
-        "mg-input-text": [
-          "mg-tooltip"
-        ],
-        "mg-input-textarea": [
-          "mg-tooltip"
-        ]
+        "mg-input-checkbox": ["mg-tooltip"],
+        "mg-input-date": ["mg-tooltip"],
+        "mg-input-select": ["mg-tooltip"],
+        "mg-input-text": ["mg-tooltip"],
+        "mg-input-textarea": ["mg-tooltip"]
       }
     }
   ]

@@ -7,9 +7,9 @@
 
 ## Properties
 
-| Property     | Attribute    | Description                                                                    | Type     | Default     |
-| ------------ | ------------ | ------------------------------------------------------------------------------ | -------- | ----------- |
-| `identifier` | `identifier` | Sets an `id` element. Needed by the input for accessibility `arai-decribedby`. | `string` | `undefined` |
+| Property     | Attribute    | Description                                                                      | Type     | Default     |
+| ------------ | ------------ | -------------------------------------------------------------------------------- | -------- | ----------- |
+| `identifier` | `identifier` | Sets an `id` attribute. Needed by the input for accessibility `arai-decribedby`. | `string` | `undefined` |
 
 
 ## Dependencies

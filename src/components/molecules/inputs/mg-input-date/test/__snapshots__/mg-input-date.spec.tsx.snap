@@ -37,7 +37,7 @@ exports[`mg-input-date Should render with args {
         <div class="mg-input__input-container__input">
           <input aria-describedby="" id="identifier" name="identifier" type="date">
           <mg-tooltip identifier="identifier-tooltip" message="My Tooltip Message">
-            <mg-icon icon="user-cadenas"></mg-icon>
+            <mg-icon icon="info"></mg-icon>
           </mg-tooltip>
         </div>
       </div>
