@@ -1,5 +1,6 @@
 import { Component, h, Prop, State, Watch } from '@stencil/core';
 import { variants } from './mg-button.conf';
+import { ClassList, createID } from '../../../utils/utils';
 
 @Component({
   tag: 'mg-button',
@@ -21,6 +22,12 @@ export class MgButton {
   }
 
   /**
+   * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
+   * If not set, it will be created.
+   */
+   @Prop() identifier?: string = createID('mg-button');
+
+  /**
    * aria-label
    * In case button text is not explicit enough
    */
@@ -40,7 +47,7 @@ export class MgButton {
   /**
    * Component classes
    */
-  @State() classes: Set<string> = new Set(['mg-button']);
+  @State() classes: ClassList = new ClassList(['mg-button']);
 
   /**
    * Check if props are well configured on init
@@ -60,7 +67,14 @@ export class MgButton {
   */
   render() {
     return (
-        <button class={[...this.classes].join(' ')} aria-label={this.label} disabled={this.disabled}><slot></slot></button>
+        <button
+          id={this.identifier}
+          class={this.classes.join()}
+          aria-label={this.label}
+          disabled={this.disabled}
+        >
+          <slot></slot>
+        </button>
     );
   }
 

@@ -95,7 +95,6 @@
 mg-button {
   display: inline-block;
   vertical-align: middle;
-  margin-bottom: var(--mg-button-margin-bottom, 0); // this way it can be changed in another component
 
   &:not([is-icon]) mg-icon {
     margin-right: 0.6rem;
@@ -111,5 +110,23 @@ mg-button {
   mg-icon {
     display: inline-flex;
     line-height: 1;
+  }
+}
+
+// Helper to manage space between buttons
+.mg-button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  // remove default margin
+  .mg-button,
+  mg-button {
+    margin: 0;
+  }
+
+  // Align button on right side
+  &.mg-button-group--align-right {
+    justify-content: flex-end;
   }
 }

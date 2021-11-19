@@ -1,10 +1,10 @@
-import { Component, h, Prop, Watch, getAssetPath, State } from '@stencil/core';
+import { Component, h, Prop, Watch, State } from '@stencil/core';
 import { icons, sizes } from './mg-icon.conf';
+import { ClassList } from '../../../utils/utils';
 
 @Component({
   tag: 'mg-icon',
   styleUrl: 'mg-icon.scss',
-  assetsDirs: ['assets'],
   shadow: true,
 })
 export class MgIcon {
@@ -15,8 +15,8 @@ export class MgIcon {
   @Prop() icon: string;
   @Watch('icon')
   validateIcon(newValue: string) {
-    if(!icons.includes(newValue)) {
-      throw new Error(`<mg-icon> prop "icon" must be one of : ${icons.join(', ')}`);
+    if(!Object.keys(icons).includes(newValue)) {
+      throw new Error(`<mg-icon> prop "icon" must be one of : ${Object.keys(icons).join(', ')}`);
     }
     this.classes.add(`mg-icon--${this.icon}`);
   }
@@ -36,7 +36,7 @@ export class MgIcon {
   /**
    * Component classes
    */
-   @State() classes: Set<string> = new Set(['mg-icon']);
+   @State() classes: ClassList = new ClassList(['mg-icon']);
 
   /**
    * Check if props are well configured on init
@@ -51,9 +51,11 @@ export class MgIcon {
   */
   render() {
     return (
-      <svg class={[...this.classes].join(' ')} aria-hidden="true" focusable="false" >
-        <use xlinkHref={`${getAssetPath('./assets/icons.svg')}#${this.icon}`}></use>
-      </svg>
+      <svg
+        class={this.classes.join()}
+        aria-hidden="true"
+        focusable="false"
+        viewBox="0 0 512 512">{icons[this.icon]()}</svg>
     );
   }
 

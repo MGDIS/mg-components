@@ -9,7 +9,7 @@ const getPage = (args) => newSpecPage({
 });
 
 describe('mg-icon', () => {
-  describe.each(icons)('Should render %s icon', (icon) => {
+  describe.each(Object.keys(icons))('Should render %s icon', (icon) => {
 
     test.each(sizes)('in %s size', async (size) => {
       const { root } = await getPage({icon, size});

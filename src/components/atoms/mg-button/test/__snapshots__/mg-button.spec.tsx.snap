@@ -3,7 +3,7 @@
 exports[`mg-button Should render an danger button isIcon false 1`] = `
 <mg-button>
   <!---->
-  <button aria-label="label" class="mg-button mg-button--danger">
+  <button aria-label="label" class="mg-button mg-button--danger" id="identifier">
     Text button
   </button>
 </mg-button>
@@ -12,7 +12,7 @@ exports[`mg-button Should render an danger button isIcon false 1`] = `
 exports[`mg-button Should render an danger button isIcon true 1`] = `
 <mg-button>
   <!---->
-  <button aria-label="label" class="mg-button mg-button--danger mg-button--icon">
+  <button aria-label="label" class="mg-button mg-button--danger mg-button--icon" id="identifier">
     Text button
   </button>
 </mg-button>
@@ -21,7 +21,7 @@ exports[`mg-button Should render an danger button isIcon true 1`] = `
 exports[`mg-button Should render an danger-alt button isIcon false 1`] = `
 <mg-button>
   <!---->
-  <button aria-label="label" class="mg-button mg-button--danger-alt">
+  <button aria-label="label" class="mg-button mg-button--danger-alt" id="identifier">
     Text button
   </button>
 </mg-button>
@@ -30,7 +30,7 @@ exports[`mg-button Should render an danger-alt button isIcon false 1`] = `
 exports[`mg-button Should render an danger-alt button isIcon true 1`] = `
 <mg-button>
   <!---->
-  <button aria-label="label" class="mg-button mg-button--danger-alt mg-button--icon">
+  <button aria-label="label" class="mg-button mg-button--danger-alt mg-button--icon" id="identifier">
     Text button
   </button>
 </mg-button>
@@ -39,7 +39,7 @@ exports[`mg-button Should render an danger-alt button isIcon true 1`] = `
 exports[`mg-button Should render an flat button isIcon false 1`] = `
 <mg-button>
   <!---->
-  <button aria-label="label" class="mg-button mg-button--flat">
+  <button aria-label="label" class="mg-button mg-button--flat" id="identifier">
     Text button
   </button>
 </mg-button>
@@ -48,7 +48,7 @@ exports[`mg-button Should render an flat button isIcon false 1`] = `
 exports[`mg-button Should render an flat button isIcon true 1`] = `
 <mg-button>
   <!---->
-  <button aria-label="label" class="mg-button mg-button--flat mg-button--icon">
+  <button aria-label="label" class="mg-button mg-button--flat mg-button--icon" id="identifier">
     Text button
   </button>
 </mg-button>
@@ -57,7 +57,7 @@ exports[`mg-button Should render an flat button isIcon true 1`] = `
 exports[`mg-button Should render an info button isIcon false 1`] = `
 <mg-button>
   <!---->
-  <button aria-label="label" class="mg-button mg-button--info">
+  <button aria-label="label" class="mg-button mg-button--info" id="identifier">
     Text button
   </button>
 </mg-button>
@@ -66,7 +66,7 @@ exports[`mg-button Should render an info button isIcon false 1`] = `
 exports[`mg-button Should render an info button isIcon true 1`] = `
 <mg-button>
   <!---->
-  <button aria-label="label" class="mg-button mg-button--icon mg-button--info">
+  <button aria-label="label" class="mg-button mg-button--icon mg-button--info" id="identifier">
     Text button
   </button>
 </mg-button>
@@ -75,7 +75,7 @@ exports[`mg-button Should render an info button isIcon true 1`] = `
 exports[`mg-button Should render an primary button isIcon false 1`] = `
 <mg-button>
   <!---->
-  <button aria-label="label" class="mg-button mg-button--primary">
+  <button aria-label="label" class="mg-button mg-button--primary" id="identifier">
     Text button
   </button>
 </mg-button>
@@ -84,7 +84,7 @@ exports[`mg-button Should render an primary button isIcon false 1`] = `
 exports[`mg-button Should render an primary button isIcon true 1`] = `
 <mg-button>
   <!---->
-  <button aria-label="label" class="mg-button mg-button--icon mg-button--primary">
+  <button aria-label="label" class="mg-button mg-button--icon mg-button--primary" id="identifier">
     Text button
   </button>
 </mg-button>
@@ -93,7 +93,7 @@ exports[`mg-button Should render an primary button isIcon true 1`] = `
 exports[`mg-button Should render an secondary button isIcon false 1`] = `
 <mg-button>
   <!---->
-  <button aria-label="label" class="mg-button mg-button--secondary">
+  <button aria-label="label" class="mg-button mg-button--secondary" id="identifier">
     Text button
   </button>
 </mg-button>
@@ -102,7 +102,7 @@ exports[`mg-button Should render an secondary button isIcon false 1`] = `
 exports[`mg-button Should render an secondary button isIcon true 1`] = `
 <mg-button>
   <!---->
-  <button aria-label="label" class="mg-button mg-button--icon mg-button--secondary">
+  <button aria-label="label" class="mg-button mg-button--icon mg-button--secondary" id="identifier">
     Text button
   </button>
 </mg-button>

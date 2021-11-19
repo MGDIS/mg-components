@@ -47,7 +47,7 @@ const TemplateIsIcon = args => <mg-button
 export const isIcon = TemplateIsIcon.bind({});
 
 isIcon.args = {
-  icon: icons[0],
+  icon: Object.keys(icons)[0],
   variant: variants[0],
   label: 'Explicit aria label',
   disabled: false,
@@ -55,7 +55,7 @@ isIcon.args = {
 
 isIcon.argTypes = {
   icon: {
-    options: icons,
+    options: Object.keys(icons),
     control: { type: 'select' },
   },
 };

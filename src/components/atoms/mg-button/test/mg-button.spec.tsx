@@ -9,9 +9,9 @@ const getPage = (args) => newSpecPage({
 });
 
 describe('mg-button', () => {
-  describe.each(variants)('Should render an %s button', async (variant) => {
+  describe.each(variants)('Should render an %s button', (variant) => {
     test.each([false, true])('isIcon %s', async (isIcon) => {
-      const {root} = await getPage({variant, isIcon, label:'label'});
+      const {root} = await getPage({identifier: 'identifier', variant, isIcon, label:'label'});
       expect(root).toMatchSnapshot();
     });
   });

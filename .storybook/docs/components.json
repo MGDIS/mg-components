@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-11-10T18:15:54",
+  "timestamp": "2021-11-19T11:16:12",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.9.0",
@@ -30,6 +30,23 @@
             }
           ],
           "optional": false,
+          "required": false
+        },
+        {
+          "name": "identifier",
+          "type": "string",
+          "mutable": false,
+          "attr": "identifier",
+          "reflectToAttr": false,
+          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
+          "docsTags": [],
+          "default": "createID('mg-button')",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
           "required": false
         },
         {
@@ -131,7 +148,7 @@
           "mutable": false,
           "attr": "identifier",
           "reflectToAttr": false,
-          "docs": "Sets an `id` element.\nNeeded by the input for accessibility `arai-decribedby`.",
+          "docs": "Sets an `id` attribute.\nNeeded by the input for accessibility `arai-decribedby`.",
           "docsTags": [],
           "values": [
             {
@@ -222,7 +239,7 @@
           "mutable": false,
           "attr": "identifier",
           "reflectToAttr": false,
-          "docs": "Sets an `id` element.\nNeeded by the input for accessibility `arai-decribedby`.",
+          "docs": "Sets an `id` attribute.\nNeeded by the input for accessibility `arai-decribedby`.",
           "docsTags": [],
           "values": [
             {
@@ -2021,6 +2038,23 @@
           "required": false
         },
         {
+          "name": "hide",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "hide",
+          "reflectToAttr": true,
+          "docs": "Define if message is hidden",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "identifier",
           "type": "string",
           "mutable": false,
@@ -2038,14 +2072,14 @@
           "required": false
         },
         {
-          "name": "type",
+          "name": "variant",
           "type": "string",
           "mutable": false,
-          "attr": "type",
+          "attr": "variant",
           "reflectToAttr": false,
-          "docs": "Message type",
+          "docs": "Message variant",
           "docsTags": [],
-          "default": "this.types[0]",
+          "default": "variants[0]",
           "values": [
             {
               "type": "string"
@@ -2125,7 +2159,7 @@
           "mutable": false,
           "attr": "identifier",
           "reflectToAttr": false,
-          "docs": "Sets an `id` element.\nNeeded by the input for accessibility `arai-decribedby`.",
+          "docs": "Sets an `id` attribute.\nNeeded by the input for accessibility `arai-decribedby`.",
           "docsTags": [],
           "default": "createID('mg-tooltip')",
           "values": [
