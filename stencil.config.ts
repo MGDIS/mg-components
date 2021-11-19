@@ -14,10 +14,10 @@ export const config: Config = {
       type: 'dist',
       esmLoaderPath: '../loader',
       copy: [{
-        src:'styles/variables.scss', // export variable in a seperate file for component inside another framework
+        src:'styles/variables.scss', dest: 'variables.scss' // export variable in a seperate file for component inside another framework
       },
       {
-        src:'styles/fonts', // export fonts
+        src:'styles/fonts', dest: 'fonts' // export fonts
       }]
     },
     {
@@ -48,6 +48,7 @@ export const config: Config = {
      * before it can run your tests
      */
     browserArgs: ['--no-sandbox', '--disable-setuid-sandbox'],
+    setupFilesAfterEnv: ['./jest.setup.ts'],
     // browserHeadless: false
   }
 };

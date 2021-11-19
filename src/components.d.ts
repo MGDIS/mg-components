@@ -13,6 +13,10 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+         */
+        "identifier"?: string;
+        /**
           * Define if button is round. Used for icon button.
          */
         "isIcon": boolean;
@@ -31,7 +35,7 @@ export namespace Components {
          */
         "characters": string;
         /**
-          * Sets an `id` element. Needed by the input for accessibility `arai-decribedby`.
+          * Sets an `id` attribute. Needed by the input for accessibility `arai-decribedby`.
          */
         "identifier": string;
         /**
@@ -45,7 +49,7 @@ export namespace Components {
     }
     interface MgHelpText {
         /**
-          * Sets an `id` element. Needed by the input for accessibility `arai-decribedby`.
+          * Sets an `id` attribute. Needed by the input for accessibility `arai-decribedby`.
          */
         "identifier": string;
     }
@@ -414,13 +418,17 @@ export namespace Components {
          */
         "closeButton"?: boolean;
         /**
+          * Define if message is hidden
+         */
+        "hide"?: boolean;
+        /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
         "identifier"?: string;
         /**
-          * Message type
+          * Message variant
          */
-        "type"?: string;
+        "variant"?: string;
     }
     interface MgTag {
         /**
@@ -430,7 +438,7 @@ export namespace Components {
     }
     interface MgTooltip {
         /**
-          * Sets an `id` element. Needed by the input for accessibility `arai-decribedby`.
+          * Sets an `id` attribute. Needed by the input for accessibility `arai-decribedby`.
          */
         "identifier"?: string;
         /**
@@ -541,6 +549,10 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+         */
+        "identifier"?: string;
+        /**
           * Define if button is round. Used for icon button.
          */
         "isIcon"?: boolean;
@@ -559,7 +571,7 @@ declare namespace LocalJSX {
          */
         "characters"?: string;
         /**
-          * Sets an `id` element. Needed by the input for accessibility `arai-decribedby`.
+          * Sets an `id` attribute. Needed by the input for accessibility `arai-decribedby`.
          */
         "identifier"?: string;
         /**
@@ -573,7 +585,7 @@ declare namespace LocalJSX {
     }
     interface MgHelpText {
         /**
-          * Sets an `id` element. Needed by the input for accessibility `arai-decribedby`.
+          * Sets an `id` attribute. Needed by the input for accessibility `arai-decribedby`.
          */
         "identifier"?: string;
     }
@@ -962,13 +974,17 @@ declare namespace LocalJSX {
          */
         "closeButton"?: boolean;
         /**
+          * Define if message is hidden
+         */
+        "hide"?: boolean;
+        /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
         "identifier"?: string;
         /**
-          * Message type
+          * Message variant
          */
-        "type"?: string;
+        "variant"?: string;
     }
     interface MgTag {
         /**
@@ -978,7 +994,7 @@ declare namespace LocalJSX {
     }
     interface MgTooltip {
         /**
-          * Sets an `id` element. Needed by the input for accessibility `arai-decribedby`.
+          * Sets an `id` attribute. Needed by the input for accessibility `arai-decribedby`.
          */
         "identifier"?: string;
         /**

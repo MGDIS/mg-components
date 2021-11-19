@@ -15,6 +15,9 @@ const locale = {
       "false": "Non",
       "indeterminate": "Indéterminé",
     }
+  },
+  "message": {
+    "closeButton": "Fermer le message"
   }
 }
 

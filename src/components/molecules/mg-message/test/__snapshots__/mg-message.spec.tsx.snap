@@ -1,0 +1,205 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mg-message Should render a danger message with args { identifier: 'identifier' } 1`] = `
+<mg-message>
+  <mock:shadow-root>
+    <div class="mg-message mg-message--danger" id="identifier" role="alert">
+      <span class="mg-message__icon">
+        <mg-icon icon="danger"></mg-icon>
+      </span>
+      <div class="mg-message__content">
+        <span class="mg-message__content__slot">
+          <slot></slot>
+        </span>
+      </div>
+    </div>
+  </mock:shadow-root>
+  <p>
+    <strong>
+      Strong
+    </strong>
+    content!
+  </p>
+</mg-message>
+`;
+
+exports[`mg-message Should render a danger message with args { identifier: 'identifier', closeButton: true } 1`] = `
+<mg-message>
+  <mock:shadow-root>
+    <div class="mg-message mg-message--close-button mg-message--danger" id="identifier" role="alert">
+      <span class="mg-message__icon">
+        <mg-icon icon="danger"></mg-icon>
+      </span>
+      <div class="mg-message__content">
+        <span class="mg-message__content__slot">
+          <slot></slot>
+        </span>
+      </div>
+      <span class="mg-message__close-button">
+        <mg-button identifier="identifier-close-button" is-icon="" label="Fermer le message" variant="flat">
+          <mg-icon icon="cross" size="small"></mg-icon>
+        </mg-button>
+      </span>
+    </div>
+  </mock:shadow-root>
+  <p>
+    <strong>
+      Strong
+    </strong>
+    content!
+  </p>
+</mg-message>
+`;
+
+exports[`mg-message Should render a info message with args { identifier: 'identifier' } 1`] = `
+<mg-message>
+  <mock:shadow-root>
+    <div class="mg-message mg-message--info" id="identifier" role="status">
+      <span class="mg-message__icon">
+        <mg-icon icon="info"></mg-icon>
+      </span>
+      <div class="mg-message__content">
+        <span class="mg-message__content__slot">
+          <slot></slot>
+        </span>
+      </div>
+    </div>
+  </mock:shadow-root>
+  <p>
+    <strong>
+      Strong
+    </strong>
+    content!
+  </p>
+</mg-message>
+`;
+
+exports[`mg-message Should render a info message with args { identifier: 'identifier', closeButton: true } 1`] = `
+<mg-message>
+  <mock:shadow-root>
+    <div class="mg-message mg-message--close-button mg-message--info" id="identifier" role="status">
+      <span class="mg-message__icon">
+        <mg-icon icon="info"></mg-icon>
+      </span>
+      <div class="mg-message__content">
+        <span class="mg-message__content__slot">
+          <slot></slot>
+        </span>
+      </div>
+      <span class="mg-message__close-button">
+        <mg-button identifier="identifier-close-button" is-icon="" label="Fermer le message" variant="flat">
+          <mg-icon icon="cross" size="small"></mg-icon>
+        </mg-button>
+      </span>
+    </div>
+  </mock:shadow-root>
+  <p>
+    <strong>
+      Strong
+    </strong>
+    content!
+  </p>
+</mg-message>
+`;
+
+exports[`mg-message Should render a success message with args { identifier: 'identifier' } 1`] = `
+<mg-message>
+  <mock:shadow-root>
+    <div class="mg-message mg-message--success" id="identifier" role="alert">
+      <span class="mg-message__icon">
+        <mg-icon icon="success"></mg-icon>
+      </span>
+      <div class="mg-message__content">
+        <span class="mg-message__content__slot">
+          <slot></slot>
+        </span>
+      </div>
+    </div>
+  </mock:shadow-root>
+  <p>
+    <strong>
+      Strong
+    </strong>
+    content!
+  </p>
+</mg-message>
+`;
+
+exports[`mg-message Should render a success message with args { identifier: 'identifier', closeButton: true } 1`] = `
+<mg-message>
+  <mock:shadow-root>
+    <div class="mg-message mg-message--close-button mg-message--success" id="identifier" role="alert">
+      <span class="mg-message__icon">
+        <mg-icon icon="success"></mg-icon>
+      </span>
+      <div class="mg-message__content">
+        <span class="mg-message__content__slot">
+          <slot></slot>
+        </span>
+      </div>
+      <span class="mg-message__close-button">
+        <mg-button identifier="identifier-close-button" is-icon="" label="Fermer le message" variant="flat">
+          <mg-icon icon="cross" size="small"></mg-icon>
+        </mg-button>
+      </span>
+    </div>
+  </mock:shadow-root>
+  <p>
+    <strong>
+      Strong
+    </strong>
+    content!
+  </p>
+</mg-message>
+`;
+
+exports[`mg-message Should render a warning message with args { identifier: 'identifier' } 1`] = `
+<mg-message>
+  <mock:shadow-root>
+    <div class="mg-message mg-message--warning" id="identifier" role="alert">
+      <span class="mg-message__icon">
+        <mg-icon icon="warning"></mg-icon>
+      </span>
+      <div class="mg-message__content">
+        <span class="mg-message__content__slot">
+          <slot></slot>
+        </span>
+      </div>
+    </div>
+  </mock:shadow-root>
+  <p>
+    <strong>
+      Strong
+    </strong>
+    content!
+  </p>
+</mg-message>
+`;
+
+exports[`mg-message Should render a warning message with args { identifier: 'identifier', closeButton: true } 1`] = `
+<mg-message>
+  <mock:shadow-root>
+    <div class="mg-message mg-message--close-button mg-message--warning" id="identifier" role="alert">
+      <span class="mg-message__icon">
+        <mg-icon icon="warning"></mg-icon>
+      </span>
+      <div class="mg-message__content">
+        <span class="mg-message__content__slot">
+          <slot></slot>
+        </span>
+      </div>
+      <span class="mg-message__close-button">
+        <mg-button identifier="identifier-close-button" is-icon="" label="Fermer le message" variant="flat">
+          <mg-icon icon="cross" size="small"></mg-icon>
+        </mg-button>
+      </span>
+    </div>
+  </mock:shadow-root>
+  <p>
+    <strong>
+      Strong
+    </strong>
+    content!
+  </p>
+</mg-message>
+`;

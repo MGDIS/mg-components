@@ -1,4 +1,4 @@
-import { createID, formatDate } from './utils';
+import { createID, formatDate, ClassList } from './utils';
 
 describe('utils', ()=>{
   describe('createID', ()=>{
@@ -24,4 +24,32 @@ describe('utils', ()=>{
     })
 
   })
+
+  describe('ClassList', ()=>{
+    test('add', ()=>{
+      const classList = new ClassList();
+      expect(classList.classes).toEqual([]);
+      classList.add('blu');
+      expect(classList.classes).toEqual(['blu']);
+      classList.add('bli');
+      expect(classList.classes).toEqual(['blu', 'bli']);
+      // Should not add classes if already in list
+      classList.add('blu');
+      expect(classList.classes).toEqual(['blu', 'bli']);
+    });
+
+    test('Should delete classes from list', ()=>{
+      const classList = new ClassList(['blu', 'bli']);
+      classList.delete('blu');
+      expect(classList.classes).toEqual(['bli']);
+      // List doesn't change if class name doesn't existe in list
+      classList.delete('bla');
+      expect(classList.classes).toEqual(['bli']);
+    });
+
+    test('Should return seperated space classes list', ()=>{
+      const classList = new ClassList(['blu', 'bli']);
+      expect(classList.join()).toEqual('blu bli');
+    });
+  });
 })

@@ -3,16 +3,19 @@ import { Page as PuppeteerPage } from "puppeteer";
 
 export type DesignSystemE2EPage = E2EPage & Pick<PuppeteerPage, "screenshot" | "viewport">;
 
-type DesignSystemE2EPageOptions = { html: string; viewportWidth: number };
-
-export async function createPage(optionsOrHtml?: string | DesignSystemE2EPageOptions) {
-  const options: DesignSystemE2EPageOptions =
-    typeof optionsOrHtml === "string" ? { html: `<link rel="stylesheet" href="http://localhost:3333/build/design-system.css" />${optionsOrHtml}`, viewportWidth: 600 } : optionsOrHtml;
+export async function createPage(htmlString?: string) {
+  const options = {
+    html: `<link rel="stylesheet" href="http://localhost:3333/build/design-system.css" />${htmlString}`,
+    viewportWidth: 600
+  };
 
   const page = (await newE2EPage()) as DesignSystemE2EPage;
   const viewport = Object.assign({ height: page.viewport().height }, { width: options.viewportWidth });
   await page.setViewport(viewport);
   await page.setContent(options.html, { waitUntil: "networkidle0" });
+  await page.evaluateHandle('document.fonts.ready');
+
+
 
   // monkey patch screenshot function to add some extra features
   const screenshot = page.screenshot;

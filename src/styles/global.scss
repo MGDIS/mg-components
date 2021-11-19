@@ -1,5 +1,5 @@
 /**
- * Here we building the CSS for the design sytem
+ * Here we building the CSS for the design system
  */
 
 // Normalize CSS : https://necolas.github.io/normalize.css/
@@ -27,18 +27,13 @@
  * Components style
  */
 
-// mg-input
-@import '../components/molecules/inputs/mg-input.scss';
+@import './components.scss';
 
-// mg-label
-// TODO EMPTY FOR NOW
-// @import '../components/mg-label/mg-label.scss';
-
-// mg-button
-@import '../components/atoms/mg-button/mg-button.scss';
-
-// mg-icon
+// <mg-icon>
 @import '../components/atoms/mg-icon/mg-icon.scss';
 
-// mg-tag
-@import '../components/atoms/mg-tag/mg-tag.scss';
+// <mg-button>
+@import '../components/atoms/mg-button/mg-button.scss';
+
+// <mg-message>
+@import '../components/molecules/mg-message/mg-message.scss';
