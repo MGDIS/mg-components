@@ -1,5 +1,15 @@
 :root {
   /**
+   * Fonts
+   */
+
+  // Open Sans is used for the body (mostly all texts)
+  --font-family-body: 'Open Sans', sans-serif;
+
+  // Poppins is used for the headings (h1 to h6)
+  --font-family-heading: 'Poppins', sans-serif;
+
+  /**
    * Colors
    * https://jira.mgdis.fr/browse/PDA9-690
    */
@@ -42,9 +52,17 @@
   --color-dark-l: 13.1%;
   --color-dark: var(--color-dark-h), var(--color-dark-s), var(--color-dark-l);
 
+  // Light
+  // white; (#ffffff)
+  // rgb(255, 255, 255);
+  --color-light-h: 0;
+  --color-light-s: 0%;
+  --color-light-l: 100%;
+  --color-light: var(--color-light-h), var(--color-light-s), var(--color-light-l);
+
   // Font colors
 
-  --color-font-light: 0, 0%, 100%; //255, 255, 255; // white
+  --color-font-light: var(--color-light);
   --color-font-dark: var(--color-dark);
 
   /**
@@ -86,36 +104,13 @@
   --mg-button-secondary-font-color: var(--color-dark);
 
   /**
+   * <mg-tag>
+   */
+  --mg-tag-border-radius: 0.5rem;
+  --mg-tag-font-size: 1.2rem;
+
+  /**
    * <mg-message>
    */
   --mg-message-border-radius: 0.3rem;
-
-  /****************************************************************************************************
-   * ! NEEDS TO BE CHANGED AFTER THIS LINE
-   ****************************************************************************************************/
-
-  /**
-   * Tags
-   */
-
-  --tag-product-background-color: #005e9c;
-  --tag-product-font-color: #fff;
-  --tag-success-background-color: #8aea78;
-  --tag-success-font-color: #152126;
-  --tag-warning-background-color: #ffc33e;
-  --tag-warning-font-color: #152126;
-  --tag-danger-background-color: #df242c;
-  --tag-danger-font-color: #fff;
-  --tag-draft-background-color: #fff;
-  --tag-draft-font-color: #152126;
-
-  /**
-   * Fonts
-   */
-
-  // Open Sans is used for the body (mostly all texts)
-  --font-family-body: 'Open Sans', sans-serif;
-
-  // Poppins is used for the headings (h1 to h6)
-  --font-family-heading: 'Poppins', sans-serif;
 }

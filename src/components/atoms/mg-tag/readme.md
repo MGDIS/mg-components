@@ -7,9 +7,10 @@
 
 ## Properties
 
-| Property  | Attribute | Description           | Type     | Default            |
-| --------- | --------- | --------------------- | -------- | ------------------ |
-| `variant` | `variant` | Define button variant | `string` | `this.variants[0]` |
+| Property  | Attribute | Description                             | Type      | Default       |
+| --------- | --------- | --------------------------------------- | --------- | ------------- |
+| `outline` | `outline` | Define if button is using outline style | `boolean` | `undefined`   |
+| `variant` | `variant` | Define button variant                   | `string`  | `variants[0]` |
 
 
 ----------------------------------------------

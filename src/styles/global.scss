@@ -25,6 +25,8 @@
 
 /**
  * Components style
+ * atoms
+ * molecules
  */
 
 @import './components.scss';
@@ -34,6 +36,9 @@
 
 // <mg-button>
 @import '../components/atoms/mg-button/mg-button.scss';
+
+// <mg-tag>
+@import '../components/atoms/mg-tag/mg-tag.scss';
 
 // <mg-message>
 @import '../components/molecules/mg-message/mg-message.scss';
