@@ -1,16 +1,32 @@
-import { newE2EPage } from '@stencil/core/testing';
+import { createPage } from "../../../../utils/test-utils"
+import { variants } from '../mg-tag.conf';
 
-describe.each(["product" , "success" , "warning", "danger",  "draft"])('mg-tag %s', (variant) => {
-  test('Should render', async () => {
+describe.each(variants)('mg-tag %s', (variant) => {
+  describe.each([true, false])('outline %s', (outline) => {
+    test('Should render', async () => {
 
-    const page = await newE2EPage();
-    await page.setContent(`<link rel="stylesheet" href="http://localhost:3333/build/design-system.css" /><mg-tag variant="${variant}">${variant}</mg-tag>`);
+      const page = await createPage(`${ variant === 'secondary' ? "<style>body{background:#999;}</style>" : ""}<mg-tag variant="${variant}" outline="${outline}">${variant}</mg-tag>`);
 
-    const element = await page.find('mg-tag');
-    expect(element).toHaveClass('hydrated');
+      const element = await page.find('mg-tag');
+      expect(element).toHaveClass('hydrated');
 
-    const results = await page.compareScreenshot();
-    expect(results).toMatchScreenshot({ allowableMismatchedPixels: 100 })
-    expect(results).toMatchScreenshot({ allowableMismatchedRatio: 0.1 })
+      const screenshot = await page.screenshot();
+      expect(screenshot).toMatchImageSnapshot();
+
+    });
   });
 });
+
+test('Should render a 2 lines tag', async ()=>{
+  const page = await createPage(`<mg-tag>Tag with a<br> two lines text</mg-tag>`);
+
+  const screenshot = await page.screenshot();
+  expect(screenshot).toMatchImageSnapshot();
+})
+
+test('Should render a tag in a paragraph', async ()=>{
+  const page = await createPage(`<p>This is a <mg-tag>tag</mg-tag> in a paragraph.</p>`);
+
+  const screenshot = await page.screenshot();
+  expect(screenshot).toMatchImageSnapshot();
+})
