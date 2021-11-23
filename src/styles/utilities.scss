@@ -1,0 +1,16 @@
+// Helper to manage space between elements
+.mg-group-elements {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  // remove default margin
+  & > * {
+    margin: 0 !important; // I would say important is allowed in utility classes ?
+  }
+
+  // Align button on right side
+  &.mg-group-elements--align-right {
+    justify-content: flex-end;
+  }
+}

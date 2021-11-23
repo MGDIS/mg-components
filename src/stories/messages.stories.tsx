@@ -50,7 +50,7 @@ const Template = args => (
         <span class="mg-message__content__slot" innerHTML={args.content}></span>
         <span class="mg-message__content__separator"></span>
         <span class="mg-message__content__actions-slot">
-          <span class="mg-button-group mg-button-group--align-right">
+          <span class="mg-group-elements mg-group-elements--align-right">
             <button class="mg-button mg-button--primary">Primary</button>
             <button class="mg-button mg-button--secondary">Secondary</button>
           </span>

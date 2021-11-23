@@ -1,19 +1,12 @@
 import { h } from "@stencil/core";
+import { variants } from "./mg-tag.conf";
 
 export default {
-  name: 'blu',
   component: 'mg-tag',
   title: 'Atoms/mg-tag',
-  parameters: {
-    docs: {
-      source: {
-        code: `<mg-tag variant="product">Label</mg-tag>`,
-      },
-    },
-  },
   argTypes: {
     variant: {
-      options: ['product', 'success', 'warning', 'danger', 'draft'],
+      options: variants,
       control: { type: 'select' },
     },
   },
@@ -24,5 +17,16 @@ const Template = args => <mg-tag {...args}>{args.slot}</mg-tag>;
 export const MgTag = Template.bind({});
 MgTag.args = {
   slot: 'Label',
-  variant: 'product',
+  variant: variants[0],
+  outline: false
+};
+
+MgTag.parameters = {
+  docs: {
+    source: {
+      code: `<mg-tag
+  variant="${MgTag.args.variant}"
+>${MgTag.args.slot}</mg-tag>`,
+    },
+  },
 };

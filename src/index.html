@@ -48,6 +48,7 @@
         <mg-tooltip message="blublu"><button class="mg-button mg-button-primary">Test</button></mg-tooltip>
       </div>
       <mg-tag variant="warning">ueule</mg-tag>
+
       <mg-input-textarea
         value="blu"
         multiline="false"
@@ -148,7 +149,7 @@
     <div style="padding: 1rem 0">
       <p>Coucou, ceci est un <mg-button variant="primary">bouton</mg-button> dans un paragraphe.</p>
     </div> -->
-    <div style="padding: 1rem 0">
+    <!-- <div style="padding: 1rem 0">
       <mg-message variant="info"
         ><p><strong>Coucou</strong> toi !</p>
       </mg-message>
@@ -157,7 +158,7 @@
       </mg-message>
       <mg-message variant="success"
         ><p><strong>Coucou</strong> toi !</p>
-        <div slot="actions" class="mg-button-group mg-button-group--align-right">
+        <div slot="actions" class="mg-group-elements mg-group-elements--align-right">
           <mg-button>Primary</mg-button>
           <mg-button variant="secondary">Secondary</mg-button>
         </div>
@@ -175,7 +176,7 @@
             dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           </p>
         </div>
-        <div slot="actions" class="mg-button-group mg-button-group--align-right">
+        <div slot="actions" class="mg-group-elements mg-group-elements--align-right">
           <mg-button>Primary</mg-button>
           <mg-button variant="secondary">Secondary</mg-button>
         </div>
@@ -187,6 +188,20 @@
           fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </p>
       </mg-message>
+    </div> -->
+    <div class="mg-group-elements" style="padding-bottom: 1rem">
+      <mg-tag variant="primary">primary</mg-tag>
+      <mg-tag variant="secondary">secondary</mg-tag>
+      <mg-tag variant="danger"> danger</mg-tag>
+      <mg-tag variant="success">success</mg-tag>
+      <mg-tag variant="info">info</mg-tag>
+    </div>
+    <div class="mg-group-elements">
+      <mg-tag outline variant="primary">primary</mg-tag>
+      <mg-tag outline variant="secondary">secondary</mg-tag>
+      <mg-tag outline variant="danger"> danger</mg-tag>
+      <mg-tag outline variant="success">success</mg-tag>
+      <mg-tag outline variant="info">info</mg-tag>
     </div>
   </body>
 </html>

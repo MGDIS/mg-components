@@ -34,7 +34,7 @@ MgButton.parameters = {
       code: `<mg-button
   variant="${MgButton.args.variant}"
   label="${MgButton.args.label}"
->${MgButton.args.slot}</mg-input-text>`,
+>${MgButton.args.slot}</mg-button>`,
     },
   },
 };
@@ -68,7 +68,7 @@ isIcon.parameters = {
   label="${isIcon.args.label}"
 >
   <mg-icon icon="${isIcon.args.icon}"></mg-icon>
-</mg-input-text>`,
+</mg-button>`,
     },
   },
 };

@@ -112,21 +112,3 @@ mg-button {
     line-height: 1;
   }
 }
-
-// Helper to manage space between buttons
-.mg-button-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-
-  // remove default margin
-  .mg-button,
-  mg-button {
-    margin: 0;
-  }
-
-  // Align button on right side
-  &.mg-button-group--align-right {
-    justify-content: flex-end;
-  }
-}
