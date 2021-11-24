@@ -61,7 +61,6 @@
         tooltip="tooltip message"
         help-text="Texte d'aide avec du text <strong>gras</strong> ou en <em>italic</em> !"
       ></mg-input-textarea>
-      <mg-input-date help-text="A l'aide !" label="Label" tooltip="Bonjour" label-colon required value="2021-06-02"></mg-input-date>
       <mg-input-select value="blublu" label="Libellé"></mg-input-select>
       <mg-input-search value="" label="Libellé" required placeholder="coucou"></mg-input-search>
       <script>
@@ -189,19 +188,33 @@
         </p>
       </mg-message>
     </div> -->
-    <div class="mg-group-elements" style="padding-bottom: 1rem">
-      <mg-tag variant="primary">primary</mg-tag>
-      <mg-tag variant="secondary">secondary</mg-tag>
-      <mg-tag variant="danger"> danger</mg-tag>
-      <mg-tag variant="success">success</mg-tag>
-      <mg-tag variant="info">info</mg-tag>
+    <!-- <div style="padding: 1rem 0">
+      <div class="mg-group-elements" style="padding-bottom: 1rem">
+        <mg-tag variant="primary">primary</mg-tag>
+        <mg-tag variant="secondary">secondary</mg-tag>
+        <mg-tag variant="danger"> danger</mg-tag>
+        <mg-tag variant="success">success</mg-tag>
+        <mg-tag variant="info">info</mg-tag>
+      </div>
+      <div class="mg-group-elements">
+        <mg-tag outline variant="primary">primary</mg-tag>
+        <mg-tag outline variant="secondary">secondary</mg-tag>
+        <mg-tag outline variant="danger"> danger</mg-tag>
+        <mg-tag outline variant="success">success</mg-tag>
+        <mg-tag outline variant="info">info</mg-tag>
+      </div>
+    </div> -->
+    <div style="padding: 1rem 0">
+      <mg-input-currency label="Blu" help-text="coucou" max="120"></mg-input-currency>
     </div>
-    <div class="mg-group-elements">
-      <mg-tag outline variant="primary">primary</mg-tag>
-      <mg-tag outline variant="secondary">secondary</mg-tag>
-      <mg-tag outline variant="danger"> danger</mg-tag>
-      <mg-tag outline variant="success">success</mg-tag>
-      <mg-tag outline variant="info">info</mg-tag>
+    <div style="padding: 1rem 0">
+      <mg-input-date help-text="A l'aide !" label="Label" tooltip="Bonjour" label-colon required readonly value=""></mg-input-date>
+    </div>
+    <div style="padding: 1rem 0">
+      <mg-input-text label="coucou" placeholder="placeholder" value="tutu" character-left-template="blu {counter} blublu" help-text="Message d'aide."></mg-input-text>
+    </div>
+    <div style="padding: 1rem 0">
+      <mg-input-textarea label="coucou" placeholder="placeholder" help-text="Message d'aide."></mg-input-text>
     </div>
   </body>
 </html>
