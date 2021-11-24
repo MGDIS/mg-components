@@ -1,4 +1,4 @@
-import { createPage } from "../../../../utils/test-utils"
+import { createPage } from "../../../../utils/test.utils"
 import { icons, sizes } from '../mg-icon.conf';
 
 describe.each(Object.keys(icons))('mg-icon %s', (icon) => {

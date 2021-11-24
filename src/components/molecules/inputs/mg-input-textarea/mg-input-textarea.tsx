@@ -1,7 +1,7 @@
 import { Component, Event, h, Prop, EventEmitter, State } from '@stencil/core';
 import { MgInput } from '../MgInput';
-import { createID } from '../../../../utils/utils';
-import locale from '../../../../locales';
+import { createID, ClassList } from '../../../../utils/components.utils';
+import { messages } from '../../../../locales';
 
 @Component({
   tag: 'mg-input-textarea',
@@ -128,7 +128,7 @@ export class MgInputTextarea {
   /**
    * Component classes
    */
-  @State() classes: Set<string> = new Set(['mg-input--textarea']);
+  @State() classList: ClassList = new ClassList(['mg-input--textarea']);
 
   /**
    * Error message to display
@@ -153,8 +153,8 @@ export class MgInputTextarea {
    * Handle focus event
    */
   private handleFocus = () => {
-    this.classes.add(this.classFocus)
-    this.classes = new Set(this.classes);
+    this.classList.add(this.classFocus);
+    this.classList = new ClassList(this.classList.classes);
   }
 
   /**
@@ -163,8 +163,8 @@ export class MgInputTextarea {
    */
   private handleBlur = (event:FocusEvent) => {
     // Manage focus
-    this.classes.delete(this.classFocus);
-    this.classes = new Set(this.classes);
+    this.classList.delete(this.classFocus);
+    this.classList = new ClassList(this.classList.classes);
     // Check validity
     this.checkValidity(event.target);
   }
@@ -184,7 +184,7 @@ export class MgInputTextarea {
     }
     // required
     else if(!validity && element.validity.valueMissing) {
-      this.errorMessage = locale.errors.required;
+      this.errorMessage = messages.errors.required;
     }
 
     // Set validity
@@ -193,12 +193,10 @@ export class MgInputTextarea {
 
     // Update class
     if(validity) {
-      this.classes.delete(this.classError);
-      this.classes = new Set(this.classes);
+      this.classList.delete(this.classError);
     }
     else {
-      this.classes.add(this.classError);
-      this.classes = new Set(this.classes);
+      this.classList.add(this.classError);
     }
   }
 
@@ -229,7 +227,7 @@ export class MgInputTextarea {
     return (
       <MgInput
         identifier={this.identifier}
-        classes={this.classes}
+        classList={this.classList}
         label={this.label}
         labelOnTop={this.labelOnTop}
         labelColon={this.labelColon}

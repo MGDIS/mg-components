@@ -1,4 +1,4 @@
-import { createPage } from "../../../../utils/test-utils"
+import { createPage } from "../../../../utils/test.utils"
 import { variants } from '../mg-button.conf';
 
 describe.each(variants)('mg-button %s', (variant) => {

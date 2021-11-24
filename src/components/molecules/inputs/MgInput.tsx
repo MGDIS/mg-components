@@ -1,4 +1,5 @@
 import { FunctionalComponent, h } from '@stencil/core';
+import { ClassList } from '../../../utils/components.utils';
 
 /**
  * MgInput Interface
@@ -6,7 +7,7 @@ import { FunctionalComponent, h } from '@stencil/core';
 interface MgInputProps {
   // Global
   identifier: string;
-  classes: Set<string>;
+  classList: ClassList;
   // Label
   label: string;
   labelOnTop: boolean;
@@ -50,10 +51,11 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
    * Component classes
    */
 
+  props.classList.add('mg-input');
+
   if(props.labelOnTop) {
-    props.classes.add('is-label-on-top');
+    props.classList.add('is-label-on-top');
   }
-  const classes = ['mg-input', ...props.classes];
 
   /**
    * a11y IDs
@@ -63,13 +65,13 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
 
   // Character Left
   const characterLeftId = `${props.identifier}-character-left`;
-  if(props.classes.has('is-focused') && props.displayCharacterLeft){
+  if(props.classList.has('is-focused') && props.displayCharacterLeft){
     ariaDescribedbyIDs.add(characterLeftId);
   }
 
   // Help text
   const helpTextId = `${props.identifier}-help-text`;
-  if(props.classes.has('is-focused') && typeof props.helpText === 'string' && props.helpText !== ''){
+  if(props.classList.has('is-focused') && typeof props.helpText === 'string' && props.helpText !== ''){
     ariaDescribedbyIDs.add(helpTextId);
   }
 
@@ -105,7 +107,7 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
    * +--------+------------------------+
    */
   return (
-    <div class={classes.join(' ')}>
+    <div class={props.classList.join()}>
       <mg-label
         identifier={props.identifier}
         colon={props.labelColon}

@@ -1,6 +1,6 @@
 import { Component, h, Prop, State, Watch } from '@stencil/core';
 import { variants } from './mg-button.conf';
-import { ClassList, createID } from '../../../utils/utils';
+import { ClassList, createID } from '../../../utils/components.utils';
 
 @Component({
   tag: 'mg-button',
@@ -18,7 +18,7 @@ export class MgButton {
     if(!variants.includes(newValue)) {
       throw new Error(`<mg-button> prop "variant" must be one of : ${variants.join(', ')}`);
     }
-    this.classes.add(`mg-button--${this.variant}`);
+    this.classList.add(`mg-button--${this.variant}`);
   }
 
   /**
@@ -47,7 +47,7 @@ export class MgButton {
   /**
    * Component classes
    */
-  @State() classes: ClassList = new ClassList(['mg-button']);
+  @State() classList: ClassList = new ClassList(['mg-button']);
 
   /**
    * Check if props are well configured on init
@@ -55,7 +55,7 @@ export class MgButton {
   componentWillLoad() {
     this.validateVariant(this.variant);
     if(this.isIcon) {
-      this.classes.add(`mg-button--icon`);
+      this.classList.add(`mg-button--icon`);
       if(typeof this.label !== 'string' || this.label === '') {
         throw new Error(`<mg-button> prop "label" is mandatory when prop "isIcon" is set to true.`);
       }
@@ -69,7 +69,7 @@ export class MgButton {
     return (
         <button
           id={this.identifier}
-          class={this.classes.join()}
+          class={this.classList.join()}
           aria-label={this.label}
           disabled={this.disabled}
         >

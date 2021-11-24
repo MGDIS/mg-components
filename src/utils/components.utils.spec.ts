@@ -1,6 +1,6 @@
-import { createID, formatDate, ClassList } from './utils';
+import { createID, ClassList } from './components.utils';
 
-describe('utils', ()=>{
+describe('components.utils', ()=>{
   describe('createID', ()=>{
     test.each([undefined, '', 'blu'])('Should generate a prefixed ID if defined : %s', (prefix)=>{
       const id = createID(prefix);
@@ -10,20 +10,7 @@ describe('utils', ()=>{
       }
       expect(id).toMatch(regexp);
     })
-  })
-
-  describe('formatDate', ()=>{
-    test.each([undefined, '', 'blu'])('Should return empty string : %s', (date)=>{
-      const formatedDate = formatDate(date);
-      expect(formatedDate).toEqual('');
-    });
-
-    test('Should return formated date', ()=> {
-      const formatedDate = formatDate("2021-10-14");
-      expect(formatedDate).toEqual('14/10/2021');
-    })
-
-  })
+  });
 
   describe('ClassList', ()=>{
     test('add', ()=>{
@@ -45,6 +32,12 @@ describe('utils', ()=>{
       // List doesn't change if class name doesn't existe in list
       classList.delete('bla');
       expect(classList.classes).toEqual(['bli']);
+    });
+
+    test('Should check if class already in list', ()=>{
+      const classList = new ClassList(['blu']);
+      expect(classList.has('blu')).toBeTruthy();
+      expect(classList.has('bli')).toBeFalsy();
     });
 
     test('Should return seperated space classes list', ()=>{

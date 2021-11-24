@@ -1,6 +1,6 @@
 import { Component, h, Prop, Watch, State } from '@stencil/core';
 import { icons, sizes } from './mg-icon.conf';
-import { ClassList } from '../../../utils/utils';
+import { ClassList } from '../../../utils/components.utils';
 
 @Component({
   tag: 'mg-icon',
@@ -18,7 +18,7 @@ export class MgIcon {
     if(!Object.keys(icons).includes(newValue)) {
       throw new Error(`<mg-icon> prop "icon" must be one of : ${Object.keys(icons).join(', ')}`);
     }
-    this.classes.add(`mg-icon--${this.icon}`);
+    this.classList.add(`mg-icon--${this.icon}`);
   }
 
   /**
@@ -30,13 +30,13 @@ export class MgIcon {
     if(!sizes.includes(newValue)) {
       throw new Error(`<mg-icon> prop "size" must be one of : ${sizes.join(', ')}`);
     }
-    this.classes.add(`mg-icon--${this.size}`);
+    this.classList.add(`mg-icon--${this.size}`);
   }
 
   /**
    * Component classes
    */
-   @State() classes: ClassList = new ClassList(['mg-icon']);
+   @State() classList: ClassList = new ClassList(['mg-icon']);
 
   /**
    * Check if props are well configured on init
@@ -52,7 +52,7 @@ export class MgIcon {
   render() {
     return (
       <svg
-        class={this.classes.join()}
+        class={this.classList.join()}
         aria-hidden="true"
         focusable="false"
         viewBox="0 0 512 512">{icons[this.icon]()}</svg>

@@ -1,7 +1,7 @@
 import { Component, Event, h, Prop, EventEmitter, State } from '@stencil/core';
 import { MgInput } from '../MgInput';
-import { createID } from '../../../../utils/utils';
-import locale from '../../../../locales';
+import { createID, ClassList } from '../../../../utils/components.utils';
+import { messages } from '../../../../locales';
 
 @Component({
   tag: 'mg-input-text',
@@ -124,7 +124,7 @@ export class MgInputText {
   /**
    * Component classes
    */
-  @State() classes: Set<string> = new Set(['mg-input--text']);
+  @State() classList: ClassList = new ClassList(['mg-input--text']);
 
   /**
    * Error message to display
@@ -149,8 +149,8 @@ export class MgInputText {
    * Handle focus event
    */
   private handleFocus = () => {
-    this.classes.add(this.classFocus)
-    this.classes = new Set(this.classes);
+    this.classList.add(this.classFocus);
+    this.classList = new ClassList(this.classList.classes);
   }
 
   /**
@@ -159,8 +159,8 @@ export class MgInputText {
    */
   private handleBlur = (event:FocusEvent) => {
     // Manage focus
-    this.classes.delete(this.classFocus);
-    this.classes = new Set(this.classes);
+    this.classList.delete(this.classFocus);
+    this.classList = new ClassList(this.classList.classes);
     // Check validity
     this.checkValidity(event.target);
   }
@@ -179,7 +179,7 @@ export class MgInputText {
     }
     // required
     else if(!validity && element.validity.valueMissing) {
-      this.errorMessage = locale.errors.required;
+      this.errorMessage = messages.errors.required;
     }
 
     // Set validity
@@ -188,12 +188,10 @@ export class MgInputText {
 
     // Update class
     if(validity) {
-      this.classes.delete(this.classError);
-      this.classes = new Set(this.classes);
+      this.classList.delete(this.classError);
     }
     else {
-      this.classes.add(this.classError);
-      this.classes = new Set(this.classes);
+      this.classList.add(this.classError);
     }
   }
 
@@ -224,7 +222,7 @@ export class MgInputText {
     return (
       <MgInput
         identifier={this.identifier}
-        classes={this.classes}
+        classList={this.classList}
         label={this.label}
         labelOnTop={this.labelOnTop}
         labelColon={this.labelColon}
