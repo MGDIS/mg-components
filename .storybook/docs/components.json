@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-11-24T15:46:13",
+  "timestamp": "2021-11-24T16:19:38",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.9.0",
@@ -657,6 +657,7 @@
       "filePath": "./src/components/molecules/inputs/mg-input-currency/mg-input-currency.tsx",
       "encapsulation": "shadow",
       "tag": "mg-input-currency",
+      "readme": "# mg-input-currency\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -2438,6 +2439,22 @@
       "usage": {},
       "props": [
         {
+          "name": "outline",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "outline",
+          "reflectToAttr": false,
+          "docs": "Define if button is using outline style",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "variant",
           "type": "string",
           "mutable": false,
@@ -2445,13 +2462,13 @@
           "reflectToAttr": false,
           "docs": "Define button variant",
           "docsTags": [],
-          "default": "this.variants[0]",
+          "default": "variants[0]",
           "values": [
             {
               "type": "string"
             }
           ],
-          "optional": false,
+          "optional": true,
           "required": false
         }
       ],

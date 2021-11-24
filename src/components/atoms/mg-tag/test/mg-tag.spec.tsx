@@ -1,6 +1,7 @@
 import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
 import { MgTag } from '../mg-tag';
+import { variants } from '../mg-tag.conf';
 
 const getPage = (args, slot) => newSpecPage({
   components: [MgTag],
@@ -8,9 +9,11 @@ const getPage = (args, slot) => newSpecPage({
 });
 
 describe('mg-tag', () => {
-  test.each(["product" , "success" , "warning", "danger",  "draft"])('Should render a %s tag', async (variant) => {
-    const { root } = await getPage({variant}, variant);
-    expect(root).toMatchSnapshot();
+  describe.each(variants)('variant %s', (variant) => {
+    test.each([true, false])('outiline %s', async (outline) => {
+      const { root } = await getPage({variant, outline}, variant);
+      expect(root).toMatchSnapshot();
+    })
   });
 
   test.each(["", "blu", undefined])('Should throw error', async (variant) => {

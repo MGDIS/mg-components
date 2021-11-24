@@ -498,9 +498,13 @@ export namespace Components {
     }
     interface MgTag {
         /**
+          * Define if button is using outline style
+         */
+        "outline"?: boolean;
+        /**
           * Define button variant
          */
-        "variant": string;
+        "variant"?: string;
     }
     interface MgTooltip {
         /**
@@ -1130,6 +1134,10 @@ declare namespace LocalJSX {
         "variant"?: string;
     }
     interface MgTag {
+        /**
+          * Define if button is using outline style
+         */
+        "outline"?: boolean;
         /**
           * Define button variant
          */

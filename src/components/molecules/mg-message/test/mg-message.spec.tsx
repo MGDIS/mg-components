@@ -33,7 +33,7 @@ describe('mg-message', () => {
 
   test('Should throw error when using prop "close-button" with an action slot', async () => {
     try {
-      await getPage({ identifier: "identifier", closeButton: true }, [getDefaultContent(), <div slot="actions" class="mg-button-group mg-button-group--align-right"><mg-button>Primary</mg-button><mg-button variant="secondary">Secondary</mg-button></div>]);
+      await getPage({ identifier: "identifier", closeButton: true }, [getDefaultContent(), <div slot="actions" class="mg-group-elements mg-group-elements--align-right"><mg-button>Primary</mg-button><mg-button variant="secondary">Secondary</mg-button></div>]);
     }
     catch (err) {
       expect(err.message).toMatch('<mg-message> prop "close-button" can\'t be used with the actions slot.')
