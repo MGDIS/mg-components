@@ -78,7 +78,7 @@ export namespace Components {
         "identifier"?: string;
         /**
           * Manage indeterminate state
-          * @see https ://developer.mozilla.org/fr/docs/Web/HTML/Element/Input/checkbox#g%C3%A9rer_un_%C3%A9tat_ind%C3%A9termin%C3%A9
+          * @see https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input/checkbox#g%C3%A9rer_un_%C3%A9tat_ind%C3%A9termin%C3%A9
          */
         "indeterminate": boolean;
         /**
@@ -618,7 +618,7 @@ declare namespace LocalJSX {
         "identifier"?: string;
         /**
           * Manage indeterminate state
-          * @see https ://developer.mozilla.org/fr/docs/Web/HTML/Element/Input/checkbox#g%C3%A9rer_un_%C3%A9tat_ind%C3%A9termin%C3%A9
+          * @see https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input/checkbox#g%C3%A9rer_un_%C3%A9tat_ind%C3%A9termin%C3%A9
          */
         "indeterminate"?: boolean;
         /**
