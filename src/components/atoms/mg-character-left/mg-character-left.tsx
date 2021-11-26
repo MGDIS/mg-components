@@ -1,5 +1,5 @@
 import { Component, Host, h, Prop, Watch } from '@stencil/core';
-import locale from '../../../locales';
+import { messages } from '../../../locales';
 
 @Component({
   tag: 'mg-character-left',
@@ -23,7 +23,7 @@ export class MgCharacterLeft {
    * Template to display remaining characters.
    * Must have {counter} inside
    */
-  @Prop() template: string = locale.nbCharLeft;
+  @Prop() template: string = messages.nbCharLeft;
   @Watch('template')
   validateTemplate(newValue: string) {
     if (typeof newValue !== 'string' || newValue === '' || newValue.indexOf(this.mustacheCounter) === -1) {

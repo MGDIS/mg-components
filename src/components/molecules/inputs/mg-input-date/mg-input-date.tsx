@@ -1,7 +1,8 @@
 import { Component, Event, EventEmitter, h, Prop, State } from '@stencil/core';
 import { MgInput } from '../MgInput';
-import { createID, formatDate } from '../../../../utils/utils';
-import locale from '../../../../locales';
+import { createID, ClassList } from '../../../../utils/components.utils';
+import { localeDate } from '../../../../utils/locale.utils';
+import { messages } from '../../../../locales';
 
 @Component({
   tag: 'mg-input-date',
@@ -92,7 +93,7 @@ export class MgInputDate {
   /**
    * Component classes
    */
-  @State() classes: Set<string> = new Set(['mg-input--date']);
+  @State() classList: ClassList = new ClassList(['mg-input--date']);
 
   /**
    * Error message to display
@@ -117,8 +118,8 @@ export class MgInputDate {
    * Handle focus event
    */
   private handleFocus = () => {
-    this.classes.add(this.classFocus)
-    this.classes = new Set(this.classes);
+    this.classList.add(this.classFocus);
+    this.classList = new ClassList(this.classList.classes);
   }
 
   /**
@@ -127,8 +128,8 @@ export class MgInputDate {
    */
   private handleBlur = (event:FocusEvent) => {
     // Manage focus
-    this.classes.delete(this.classFocus);
-    this.classes = new Set(this.classes);
+    this.classList.delete(this.classFocus);
+    this.classList = new ClassList(this.classList.classes);
     // Check validity
     this.checkValidity(event.target);
   }
@@ -143,11 +144,11 @@ export class MgInputDate {
     this.errorMessage = undefined;
     // wrong date format
     if(!validity && element.validity.badInput){
-      this.errorMessage = locale.errors.date.badInput;
+      this.errorMessage = messages.errors.date.badInput;
     }
     // required
     else if(!validity && element.validity.valueMissing) {
-      this.errorMessage = locale.errors.required;
+      this.errorMessage = messages.errors.required;
     }
 
     // Set validity
@@ -156,12 +157,10 @@ export class MgInputDate {
 
     // Update class
     if(validity) {
-      this.classes.delete(this.classError);
-      this.classes = new Set(this.classes);
+      this.classList.delete(this.classError);
     }
     else {
-      this.classes.add(this.classError);
-      this.classes = new Set(this.classes);
+      this.classList.add(this.classError);
     }
   }
 
@@ -173,14 +172,14 @@ export class MgInputDate {
     return (
       <MgInput
         identifier={this.identifier}
-        classes={this.classes}
+        classList={this.classList}
         label={this.label}
         labelOnTop={this.labelOnTop}
         labelColon={this.labelColon}
         required={this.required}
         readonly={this.readonly}
         value={this.value}
-        readonlyValue={formatDate(this.value)}
+        readonlyValue={localeDate(this.value)}
         tooltip={this.tooltip}
         displayCharacterLeft={undefined}
         characterLeftTemplate={undefined}

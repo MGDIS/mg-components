@@ -1,7 +1,7 @@
 import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
 import { MgInputSelect } from '../mg-input-select';
-import locale from '../../../../../locales';
+import { messages } from '../../../../../locales';
 
 const getPage = (args) => newSpecPage({
   components: [MgInputSelect],
@@ -48,7 +48,7 @@ describe('mg-input-select', () => {
     const args = {label: 'label', items: ['blu', 'bli', 'blo', 'bla'], identifier: "identifier", helpText: "My help text"};
     const page = await getPage(args);
 
-    const element = await page.doc.querySelector('mg-input-select');
+    const element = page.doc.querySelector('mg-input-select');
     const input = element.shadowRoot.querySelector('select');
 
     //mock validity
@@ -61,7 +61,7 @@ describe('mg-input-select', () => {
 
     input.dispatchEvent(new CustomEvent('focus', { bubbles: true }));
     await page.waitForChanges();
-    expect(page.rootInstance.classes.has('is-focused')).toBeTruthy();
+    expect(page.rootInstance.classList.has('is-focused')).toBeTruthy();
 
     expect(page.root).toMatchSnapshot(); //Snapshot on focus
 
@@ -72,7 +72,7 @@ describe('mg-input-select', () => {
 
     input.dispatchEvent(new CustomEvent('blur', { bubbles: true }));
     await page.waitForChanges();
-    expect(page.rootInstance.classes.has('is-focused')).toBeFalsy();
+    expect(page.rootInstance.classList.has('is-focused')).toBeFalsy();
   });
 
   test.each([
@@ -82,7 +82,7 @@ describe('mg-input-select', () => {
     const args = {label: 'label', items: ['blu', 'bli', 'blo', 'bla'], identifier: "identifier", patternErrorMessage: "Non"};
     const page = await getPage(args);
 
-    const element = await page.doc.querySelector('mg-input-select');
+    const element = page.doc.querySelector('mg-input-select');
     const input = element.shadowRoot.querySelector('select');
 
     //mock validity
@@ -98,7 +98,7 @@ describe('mg-input-select', () => {
       expect(page.rootInstance.errorMessage).toBeUndefined();
     }
     else if (valueMissing){
-      expect(page.rootInstance.errorMessage).toEqual(locale.errors.required);
+      expect(page.rootInstance.errorMessage).toEqual(messages.errors.required);
     }
     expect(page.rootInstance.valid).toEqual(validity);
     expect(page.rootInstance.invalid).toEqual(!validity);

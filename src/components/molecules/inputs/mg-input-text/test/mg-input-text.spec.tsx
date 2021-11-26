@@ -1,7 +1,7 @@
 import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
 import { MgInputText } from '../mg-input-text';
-import locale from '../../../../../locales';
+import { messages } from '../../../../../locales';
 
 const getPage = (args) => newSpecPage({
   components: [MgInputText],
@@ -44,7 +44,7 @@ describe('mg-input-text', () => {
     const args = {label: 'label', identifier: "identifier", helpText: "My help text"};
     const page = await getPage(args);
 
-    const element = await page.doc.querySelector('mg-input-text');
+    const element = page.doc.querySelector('mg-input-text');
     const input = element.shadowRoot.querySelector('input');
 
     //mock validity
@@ -58,7 +58,7 @@ describe('mg-input-text', () => {
 
     input.dispatchEvent(new CustomEvent('focus', { bubbles: true }));
     await page.waitForChanges();
-    expect(page.rootInstance.classes.has('is-focused')).toBeTruthy();
+    expect(page.rootInstance.classList.has('is-focused')).toBeTruthy();
 
     expect(page.root).toMatchSnapshot(); //Snapshot on focus
 
@@ -69,7 +69,7 @@ describe('mg-input-text', () => {
 
     input.dispatchEvent(new CustomEvent('blur', { bubbles: true }));
     await page.waitForChanges();
-    expect(page.rootInstance.classes.has('is-focused')).toBeFalsy();
+    expect(page.rootInstance.classList.has('is-focused')).toBeFalsy();
   });
 
   test.each([
@@ -80,7 +80,7 @@ describe('mg-input-text', () => {
     const args = {label: 'label', identifier: "identifier", patternErrorMessage: "Non"};
     const page = await getPage(args);
 
-    const element = await page.doc.querySelector('mg-input-text');
+    const element = page.doc.querySelector('mg-input-text');
     const input = element.shadowRoot.querySelector('input');
 
     //mock validity
@@ -97,7 +97,7 @@ describe('mg-input-text', () => {
       expect(page.rootInstance.errorMessage).toBeUndefined();
     }
     else if (valueMissing){
-      expect(page.rootInstance.errorMessage).toEqual(locale.errors.required);
+      expect(page.rootInstance.errorMessage).toEqual(messages.errors.required);
     }
     else if(patternMismatch) {
       expect(page.rootInstance.errorMessage).toEqual(args.patternErrorMessage);

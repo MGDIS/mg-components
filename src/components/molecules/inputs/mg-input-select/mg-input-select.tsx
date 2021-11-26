@@ -1,7 +1,7 @@
 import { Component, Event, h, Prop, State, EventEmitter, Watch } from '@stencil/core';
 import { MgInput } from '../MgInput';
-import { createID } from '../../../../utils/utils';
-import locale from '../../../../locales';
+import { createID, ClassList } from '../../../../utils/components.utils';
+import { messages } from '../../../../locales';
 
 export type Option = {
   title: string,
@@ -112,7 +112,7 @@ export class MgInputSelect {
    * Input placeholder.
    * It should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text.
    */
-  @Prop() placeholder: string = locale.input.select.placeholder;
+  @Prop() placeholder: string = messages.input.select.placeholder;
 
   /**
    * Define if input is required
@@ -152,7 +152,7 @@ export class MgInputSelect {
   /**
    * Component classes
    */
-  @State() classes: Set<string> = new Set(['mg-input--select']);
+  @State() classList: ClassList = new ClassList(['mg-input--select']);
 
   /**
    * Error message to display
@@ -183,9 +183,9 @@ export class MgInputSelect {
    * Handle focus event
    */
   private handleFocus = () => {
-    this.classes.add(this.classFocus)
-    this.classes = new Set(this.classes);
-   }
+    this.classList.add(this.classFocus);
+    this.classList = new ClassList(this.classList.classes);
+  }
 
   /**
    * Handle blur event
@@ -193,11 +193,11 @@ export class MgInputSelect {
    */
   private handleBlur = (event:FocusEvent) => {
     // Manage focus
-    this.classes.delete(this.classFocus);
-    this.classes = new Set(this.classes);
+    this.classList.delete(this.classFocus);
+    this.classList = new ClassList(this.classList.classes);
     // Check validity
     this.checkValidity(event.target);
-   }
+  }
 
   /**
     * Check if input is valid
@@ -209,7 +209,7 @@ export class MgInputSelect {
     this.errorMessage = undefined;
     // required
     if(!validity && element.validity.valueMissing) {
-      this.errorMessage = locale.errors.required;
+      this.errorMessage = messages.errors.required;
     }
 
     // Set validity
@@ -218,12 +218,10 @@ export class MgInputSelect {
 
     // Update class
     if(validity) {
-      this.classes.delete(this.classError);
-      this.classes = new Set(this.classes);
+      this.classList.delete(this.classError);
     }
     else {
-      this.classes.add(this.classError);
-      this.classes = new Set(this.classes);
+      this.classList.add(this.classError);
     }
   }
 
@@ -240,7 +238,7 @@ export class MgInputSelect {
     return (
       <MgInput
         identifier={this.identifier}
-        classes={this.classes}
+        classList={this.classList}
         label={this.label}
         labelOnTop={this.labelOnTop}
         labelColon={this.labelColon}

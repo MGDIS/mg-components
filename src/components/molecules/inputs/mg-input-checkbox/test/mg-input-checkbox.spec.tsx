@@ -1,7 +1,7 @@
 import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
 import { MgInputCheckbox } from '../mg-input-checkbox';
-import locale from '../../../../../locales';
+import { messages } from '../../../../../locales';
 
 const getPage = (args) => newSpecPage({
   components: [MgInputCheckbox],
@@ -38,7 +38,7 @@ describe('mg-input-checkbox', () => {
     const args = {label: 'label', identifier: "identifier", helpText: "My help text"};
     const page = await getPage(args);
 
-    const element = await page.doc.querySelector('mg-input-checkbox');
+    const element = page.doc.querySelector('mg-input-checkbox');
     const input = element.shadowRoot.querySelector('input');
 
     //mock validity
@@ -51,7 +51,7 @@ describe('mg-input-checkbox', () => {
 
     input.dispatchEvent(new CustomEvent('focus', { bubbles: true }));
     await page.waitForChanges();
-    expect(page.rootInstance.classes.has('is-focused')).toBeTruthy();
+    expect(page.rootInstance.classList.has('is-focused')).toBeTruthy();
 
     expect(page.root).toMatchSnapshot(); //Snapshot on focus
 
@@ -62,7 +62,7 @@ describe('mg-input-checkbox', () => {
 
     input.dispatchEvent(new CustomEvent('blur', { bubbles: true }));
     await page.waitForChanges();
-    expect(page.rootInstance.classes.has('is-focused')).toBeFalsy();
+    expect(page.rootInstance.classList.has('is-focused')).toBeFalsy();
   });
 
   test.each([
@@ -73,7 +73,7 @@ describe('mg-input-checkbox', () => {
     const args = {label: 'label', identifier: "identifier", value};
     const page = await getPage(args);
 
-    const element = await page.doc.querySelector('mg-input-checkbox');
+    const element = page.doc.querySelector('mg-input-checkbox');
     const input = element.shadowRoot.querySelector('input');
 
     //mock validity
@@ -89,7 +89,7 @@ describe('mg-input-checkbox', () => {
       expect(page.rootInstance.errorMessage).toBeUndefined();
     }
     else if (valueMissing){
-      expect(page.rootInstance.errorMessage).toEqual(locale.errors.required);
+      expect(page.rootInstance.errorMessage).toEqual(messages.errors.required);
     }
     expect(page.rootInstance.valid).toEqual(validity);
     expect(page.rootInstance.invalid).toEqual(!validity);

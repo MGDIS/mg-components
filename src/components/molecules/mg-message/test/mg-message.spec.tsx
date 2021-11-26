@@ -44,13 +44,13 @@ describe('mg-message', () => {
     const args = {identifier: "identifier", closeButton: true};
     const page = await getPage(args, getDefaultContent());
 
-    const element = await page.doc.querySelector('mg-message');
+    const element = page.doc.querySelector('mg-message');
     const button = element.shadowRoot.querySelector('mg-button');
 
     button.dispatchEvent(new CustomEvent('click', { bubbles: true }));
     await page.waitForChanges();
 
-    expect(page.rootInstance.classes.join()).toContain('mg-message--hide');
+    expect(page.rootInstance.classList.join()).toContain('mg-message--hide');
 
   });
 });

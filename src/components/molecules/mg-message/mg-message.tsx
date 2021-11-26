@@ -1,7 +1,7 @@
 import { Component, Element, h, Prop, State, Watch } from '@stencil/core';
-import { createID, ClassList } from '../../../utils/utils';
+import { createID, ClassList } from '../../../utils/components.utils';
 import { variants } from './mg-message.conf';
-import locale from '../../../locales';
+import { messages } from '../../../locales';
 
 @Component({
   tag: 'mg-message',
@@ -37,7 +37,7 @@ export class MgMessage {
     if(!variants.includes(newValue)) {
       throw new Error(`<mg-message> prop "variant" must be one of : ${variants.join(', ')}`);
     }
-    this.classes.add(`mg-message--${this.variant}`);
+    this.classList.add(`mg-message--${this.variant}`);
   }
 
   /**
@@ -59,14 +59,14 @@ export class MgMessage {
    @Prop({ mutable: true, reflect: true }) hide?: boolean = false;
    @Watch('hide')
    validateHide(newValue: boolean) {
-     if(newValue) this.classes.add('mg-message--hide')
-     else this.classes.delete('mg-message--hide')
+     if(newValue) this.classList.add('mg-message--hide')
+     else this.classList.delete('mg-message--hide')
    }
 
   /**
    * Component classes
    */
-  @State() classes: ClassList = new ClassList(['mg-message']);
+  @State() classList: ClassList = new ClassList(['mg-message']);
 
   /**
    * Define if component is using actions slot
@@ -94,7 +94,7 @@ export class MgMessage {
     this.hasActions = this.element.querySelector('[slot="actions"]') !== null;
     this.validateCloseButton(this.closeButton);
     if(this.closeButton) {
-      this.classes.add('mg-message--close-button');
+      this.classList.add('mg-message--close-button');
       this.closeButtonId = `${this.identifier}-close-button`;
     }
     this.validateHide(this.hide);
@@ -102,7 +102,7 @@ export class MgMessage {
 
   render() {
     return (
-      <div id={this.identifier} class={this.classes.join()} role={this.variant === "info" ? "status" : "alert"}>
+      <div id={this.identifier} class={this.classList.join()} role={this.variant === "info" ? "status" : "alert"}>
         <span class="mg-message__icon">
           <mg-icon icon={this.variant}></mg-icon>
         </span>
@@ -117,7 +117,7 @@ export class MgMessage {
           }
         </div>
         { this.closeButton && <span class="mg-message__close-button">
-            <mg-button identifier={this.closeButtonId} is-icon variant="flat" label={locale.message.closeButton} onClick={this.handleClose}>
+            <mg-button identifier={this.closeButtonId} is-icon variant="flat" label={messages.message.closeButton} onClick={this.handleClose}>
               <mg-icon icon="cross" size="small"></mg-icon>
             </mg-button>
           </span>

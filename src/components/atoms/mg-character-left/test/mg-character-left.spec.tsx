@@ -1,7 +1,7 @@
 import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
 import { MgCharacterLeft } from '../mg-character-left';
-import locale from '../../../../locales'
+import { messages } from '../../../../locales'
 
 
 const getPage = (args) => newSpecPage({
@@ -50,12 +50,12 @@ describe('mg-character-left',()=> {
     const characters = "blu blu";
     const page = await getPage({characters: '', maxlength});
 
-    const element = await page.doc.querySelector('mg-character-left');
-    expect(element.textContent).toEqual(locale.nbCharLeft.replace('{counter}', `${maxlength}`));
+    const element = page.doc.querySelector('mg-character-left');
+    expect(element.textContent).toEqual(messages.nbCharLeft.replace('{counter}', `${maxlength}`));
 
     element.setAttribute('characters', characters);
     await page.waitForChanges();
-    expect(element.textContent).toEqual(locale.nbCharLeft.replace('{counter}', `${maxlength - characters.length}`));
+    expect(element.textContent).toEqual(messages.nbCharLeft.replace('{counter}', `${maxlength - characters.length}`));
   })
 
 });

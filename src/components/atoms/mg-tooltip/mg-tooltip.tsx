@@ -1,5 +1,5 @@
 import { Component, Element, h, Prop } from '@stencil/core';
-import { createID } from '../../../utils/utils';
+import { createID } from '../../../utils/components.utils';
 
 @Component({
   tag: 'mg-tooltip',

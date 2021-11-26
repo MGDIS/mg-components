@@ -1,4 +1,4 @@
-import { createPage } from "../../../../utils/test-utils"
+import { createPage } from "../../../../utils/test.utils"
 import { variants } from '../mg-message.conf';
 
 const getContent = (contentSize, withAction) => {

@@ -1,6 +1,6 @@
 import { Component, h, Prop, State, Watch } from '@stencil/core';
 import { variants } from './mg-tag.conf';
-import { ClassList } from '../../../utils/utils';
+import { ClassList } from '../../../utils/components.utils';
 @Component({
   tag: 'mg-tag',
   styleUrl: 'mg-tag.scss',
@@ -17,7 +17,7 @@ export class MgTag {
     if(!variants.includes(newValue)) {
       throw new Error(`<mg-tag> prop "variant" must be one of : ${variants.join(', ')}.`);
     }
-    this.classes.add(`mg-tag--${this.variant}`);
+    this.classList.add(`mg-tag--${this.variant}`);
   }
 
   /**
@@ -26,13 +26,13 @@ export class MgTag {
    @Prop() outline?: boolean;
    @Watch('outline')
    validateOutline(newValue: boolean) {
-     if(newValue) this.classes.add(`mg-tag--outline`);
+     if(newValue) this.classList.add(`mg-tag--outline`);
    }
 
   /**
    * Component classes
    */
-  @State() classes: ClassList = new ClassList(['mg-tag']);
+  @State() classList: ClassList = new ClassList(['mg-tag']);
 
   /**
    * Check if props are well configured on init
@@ -48,7 +48,7 @@ export class MgTag {
 
   render() {
     return (
-        <span class={this.classes.join()}><slot></slot></span>
+        <span class={this.classList.join()}><slot></slot></span>
     );
   }
 

@@ -8,20 +8,6 @@ export function createID(prefix?: string): string {
 }
 
 /**
- * Change date format
- * @param date {string} date with format yyyy-mm-dd
- * @returns {string} date with format dd/mm/yyyy
- */
-export function formatDate(date: string): string {
-  const dateRegexp = /\d{4}-\d{2}-\d{2}/;
-  if(typeof date !== 'string' || date === '' || !dateRegexp.test(date)) {
-    return '';
-  }
-  const d:Date = new Date(date);
-  return `${d.getDate()}/${d.getMonth()+1}/${d.getFullYear()}`;
-}
-
-/**
  * Class to manage component classlist
  * Set() are not working when imported in project
  */
@@ -38,7 +24,7 @@ export class ClassList {
    * @returns {void}
    */
   add = (className:string) => {
-    if(!this.classes.includes(className)) {
+    if(!this.has(className)) {
       this.classes.push(className);
     }
   }
@@ -53,6 +39,15 @@ export class ClassList {
     if(index > -1) {
       this.classes.splice(index, 1);
     }
+  }
+
+  /**
+   * Check if class exist in list
+   * @param className
+   * @returns {boolean}
+   */
+  has = (className:string) => {
+    return this.classes.includes(className);
   }
 
   /**
