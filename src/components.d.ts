@@ -1109,7 +1109,7 @@ declare namespace LocalJSX {
         /**
           * Label input id
          */
-        "identifier"?: string;
+        "identifier": string;
         /**
           * If input is required an asterisk is added at the end of the label
          */
