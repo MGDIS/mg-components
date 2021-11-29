@@ -1,4 +1,4 @@
-# mg-input-currency
+# mg-input-numeric
 
 
 

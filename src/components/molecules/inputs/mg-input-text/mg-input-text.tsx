@@ -57,7 +57,6 @@ export class MgInputText {
   /**
    * Input placeholder.
    * It should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text.
-   *
    */
   @Prop() placeholder: string;
 
