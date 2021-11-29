@@ -15,7 +15,6 @@
     "noUnusedParameters": true,
     "jsx": "react",
     "jsxFactory": "h",
-    "resolveJsonModule": true,
   },
   "include": [
     "src"

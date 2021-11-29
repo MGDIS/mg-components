@@ -1,9 +1,9 @@
 // TODO ADD POSSIBILITY TO CHANGE LOCALE
-import fr from './fr-FR/messages';
+const availableLocales = ['fr-FR'];
 
-export const messages = fr;
+export const locale = availableLocales[0];
 
-export const locale = 'fr-FR';
+export const messages = require(`./${locale}/messages.json`);
 
 export const currency = 'EUR';
 

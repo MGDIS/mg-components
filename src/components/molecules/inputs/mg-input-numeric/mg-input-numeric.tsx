@@ -267,6 +267,7 @@ export class MgInputNumeric {
     this.validateValue(this.value);
     // Set displayed value
     this.displayValue = this.readonlyValue;
+    this.validateType(this.type);
   }
 
   /**
