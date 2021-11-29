@@ -9,6 +9,11 @@ export function localeCurrency(number:number):string {
   return new Intl.NumberFormat(locale, {style: "currency", currency}).format(number);
 };
 
+/**
+ * Format number to locale
+ * @param number {number}
+ * @returns {string} formatted number
+ */
 export function localeNumber(number:number):string {
   return new Intl.NumberFormat(locale).format(number);
 };

@@ -1,10 +1,17 @@
-import { localeCurrency, localeDate } from "./locale.utils";
+import { localeCurrency, localeNumber, localeDate } from "./locale.utils";
 
 describe('locale.utils', ()=>{
   describe('localeCurrency', ()=>{
     test('Should Format number to the locale currency', ()=> {
       const formatedCurrency = localeCurrency(1234567890.12);
       expect(formatedCurrency).toEqual("1 234 567 890,12\xa0€");
+    });
+  });
+
+  describe('localeNumber', ()=>{
+    test('Should Format number to the locale', ()=> {
+      const formatedCurrency = localeNumber(1234567890.12);
+      expect(formatedCurrency).toEqual("1 234 567 890,12");
     });
   });
   describe('localeDate', ()=>{
