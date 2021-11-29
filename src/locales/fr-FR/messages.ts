@@ -4,7 +4,7 @@ const messages = {
     "date": {
       "badInput": "Le format de la date doit être du type <span aria-hidden=\"true\">jj/mm/aaaa</span><span class=\"sr-only\">j j / m m / a a a a</span> et supérieure au 01/01/1900",
     },
-    "currency": {
+    "numeric": {
       "min": "La valeur ne peut pas être inférieure à {min}",
       "max": "La valeur ne peut pas être supérieure à {max}",
       "minMax": "La valeur doit être comprise entre {min} et {max}",

@@ -227,15 +227,15 @@ export class MgInputNumeric {
     if (this.min !== undefined && this.numericValue < this.min && this.max === undefined) {
       // Only a min value is set
       validity = false;
-      this.errorMessage = messages.errors.currency.min.replace('{min}', `${this.formatValue(this.min)}`);
+      this.errorMessage = messages.errors.numeric.min.replace('{min}', `${this.formatValue(this.min)}`);
     } else if (this.max !== undefined && this.numericValue > this.max && this.min === undefined) {
       // Only a max value is set
       validity = false;
-      this.errorMessage = messages.errors.currency.max.replace('{max}', `${this.formatValue(this.max)}`);
+      this.errorMessage = messages.errors.numeric.max.replace('{max}', `${this.formatValue(this.max)}`);
     } else if ((this.min !== undefined && this.numericValue < this.min) || (this.max !== undefined && this.numericValue > this.max)) {
       // both min and max values are set
       validity = false;
-      this.errorMessage = messages.errors.currency.minMax.replace('{min}', `${this.formatValue(this.min)}`).replace('{max}', `${this.formatValue(this.max)}`);
+      this.errorMessage = messages.errors.numeric.minMax.replace('{min}', `${this.formatValue(this.min)}`).replace('{max}', `${this.formatValue(this.max)}`);
     }
 
     // Set validity

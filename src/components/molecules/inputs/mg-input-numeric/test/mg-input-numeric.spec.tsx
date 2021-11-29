@@ -112,7 +112,7 @@ describe('mg-input-numeric', () => {
 
       if(args.min !== undefined && args.max === undefined) {
         expect(page.rootInstance.errorMessage).toEqual(
-          messages.errors.currency.min.replace('{min}', `${
+          messages.errors.numeric.min.replace('{min}', `${
             type === 'currency' ?
               localeCurrency(args.min) :
               localeNumber(args.min)}`
@@ -124,7 +124,7 @@ describe('mg-input-numeric', () => {
       }
       else if(args.min === undefined && args.max !== undefined) {
         expect(page.rootInstance.errorMessage).toEqual(
-          messages.errors.currency.max.replace('{min}', `${
+          messages.errors.numeric.max.replace('{min}', `${
             type === 'currency' ?
               localeCurrency(args.min) :
               localeNumber(args.min)}`
@@ -136,7 +136,7 @@ describe('mg-input-numeric', () => {
       }
       else if(args.min !== undefined && args.max !== undefined) {
         expect(page.rootInstance.errorMessage).toEqual(
-          messages.errors.currency.minMax.replace('{min}', `${
+          messages.errors.numeric.minMax.replace('{min}', `${
             type === 'currency' ?
               localeCurrency(args.min) :
               localeNumber(args.min)}`
