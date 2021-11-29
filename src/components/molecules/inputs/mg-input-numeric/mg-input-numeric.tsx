@@ -1,15 +1,16 @@
 import { Component, Element, Event, h, Prop, EventEmitter, State, Watch } from '@stencil/core';
 import { MgInput } from '../MgInput';
+import { types } from './mg-input-numeric.conf';
 import { createID, ClassList } from '../../../../utils/components.utils';
 import { messages } from '../../../../locales';
-import { localeCurrency } from '../../../../utils/locale.utils';
+import { localeCurrency, localeNumber } from '../../../../utils/locale.utils';
 
 @Component({
-  tag: 'mg-input-currency',
-  styleUrl: 'mg-input-currency.scss',
+  tag: 'mg-input-numeric',
+  styleUrl: 'mg-input-numeric.scss',
   shadow: true,
 })
-export class MgInputCurrency {
+export class MgInputNumeric {
   /************
    * Internal *
    ************/
@@ -26,7 +27,7 @@ export class MgInputCurrency {
    * Decorators *
    **************/
 
-  @Element() element: HTMLMgInputCurrencyElement;
+  @Element() element: HTMLMgInputNumericElement;
 
   /**
    * Component value
@@ -35,9 +36,12 @@ export class MgInputCurrency {
   @Watch('value')
   validateValue(newValue: string) {
     if (newValue !== undefined && newValue !== null) {
-      // Filter input
+      // Split number and decimal
       const [number, decimal = ''] = newValue.replace('-', '').split(/[\.,]/);
-      if (newValue === '' || (newValue.match(/^[\-]?\d+[.,]?\d*$/) && number.length <= 13 && decimal.length <= 2)) {
+      // Regex
+      const regex = this.type === "integer" ? /^[\-]?\d+$/ : /^[\-]?\d+[.,]?\d*$/ ;
+      // Filter input
+      if (newValue === '' || (newValue.match(regex) && number.length <= 13 && decimal.length <= (this.type === "integer" ? 0 : 2 ))) {
         this.storedValue = newValue;
       } else if (this.storedValue !== undefined) {
         newValue = this.storedValue;
@@ -53,7 +57,7 @@ export class MgInputCurrency {
       this.numericValue = this.value !== '' && this.value !== null ? parseFloat(this.value.replace(',', '.')) : null;
       this.valueChange.emit(this.numericValue);
       // Set readOnlyValue
-      this.readonlyValue = localeCurrency(this.numericValue);
+      this.readonlyValue = this.numericValue !== null ? this.formatValue(this.numericValue) : '';
     }
   }
 
@@ -61,7 +65,7 @@ export class MgInputCurrency {
    * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
    * If not set, it will be created.
    */
-  @Prop() identifier?: string = createID('mg-input-currency');
+  @Prop() identifier?: string = createID('mg-input-numeric');
 
   /**
    * Input name
@@ -118,6 +122,23 @@ export class MgInputCurrency {
   @Prop() helpText: string;
 
   /**
+   * Define numeric type
+   */
+  @Prop() type: string = types[0];
+  @Watch('type')
+  validateType(newValue: string) {
+    if(!types.includes(newValue)) {
+      throw new Error(`<mg-input-numeric> prop "type" must be one of : ${types.join(', ')}`);
+    }
+    this.classList.add(`mg-input--numeric--${this.type}`);
+  }
+
+  /**
+   * Add a custom unit
+   */
+  @Prop() unit: string;
+
+  /**
    * Maximum value
    */
   @Prop() max: number;
@@ -140,7 +161,7 @@ export class MgInputCurrency {
   /**
    * Component classes
    */
-  @State() classList: ClassList = new ClassList(['mg-input--currency']);
+  @State() classList: ClassList = new ClassList(['mg-input--numeric']);
 
   /**
    * Error message to display
@@ -206,15 +227,15 @@ export class MgInputCurrency {
     if (this.min !== undefined && this.numericValue < this.min && this.max === undefined) {
       // Only a min value is set
       validity = false;
-      this.errorMessage = messages.errors.currency.min.replace('{min}', `${localeCurrency(this.min)}`);
+      this.errorMessage = messages.errors.currency.min.replace('{min}', `${this.formatValue(this.min)}`);
     } else if (this.max !== undefined && this.numericValue > this.max && this.min === undefined) {
       // Only a max value is set
       validity = false;
-      this.errorMessage = messages.errors.currency.max.replace('{max}', `${localeCurrency(this.max)}`);
+      this.errorMessage = messages.errors.currency.max.replace('{max}', `${this.formatValue(this.max)}`);
     } else if ((this.min !== undefined && this.numericValue < this.min) || (this.max !== undefined && this.numericValue > this.max)) {
       // both min and max values are set
       validity = false;
-      this.errorMessage = messages.errors.currency.minMax.replace('{min}', `${localeCurrency(this.min)}`).replace('{max}', `${localeCurrency(this.max)}`);
+      this.errorMessage = messages.errors.currency.minMax.replace('{min}', `${this.formatValue(this.min)}`).replace('{max}', `${this.formatValue(this.max)}`);
     }
 
     // Set validity
@@ -227,6 +248,15 @@ export class MgInputCurrency {
     } else {
       this.classList.add(this.classError);
     }
+  }
+
+  /**
+   * Format value based on type
+   * @param value {number}
+   * @returns {string} formated local value
+   */
+  private formatValue(value:number):string {
+    return this.type === "currency" ? localeCurrency(value) : localeNumber(value);
   }
 
   /*************
