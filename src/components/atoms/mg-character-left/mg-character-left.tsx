@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop, Watch } from '@stencil/core';
+import { Component, h, Prop, Watch } from '@stencil/core';
 import { messages } from '../../../locales';
 
 @Component({
@@ -68,9 +68,7 @@ export class MgCharacterLeft {
    */
   render() {
     return (
-      <Host>
-        <p id={this.identifier} innerHTML={this.getMessage()}></p>
-      </Host>
+      <span id={this.identifier} innerHTML={this.getMessage()} aria-live="polite"></span>
     );
   }
 

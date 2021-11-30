@@ -16,3 +16,8 @@
   width: 1px !important;
   white-space: nowrap !important;
 }
+
+// Remove outline for non-keyboard :focus
+*:focus:not(:focus-visible) {
+  outline: none;
+}

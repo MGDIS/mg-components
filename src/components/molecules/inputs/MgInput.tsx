@@ -105,6 +105,8 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
    * |        +------------------------+
    * |        | Error                  |
    * +--------+------------------------+
+   *
+   * Error message is based on this aria method: https://www.w3.org/WAI/tutorials/forms/notifications/#on-focus-change
    */
   return (
     <div class={props.classList.join()}>
@@ -130,8 +132,8 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
             maxlength={props.maxlength}
             template={props.characterLeftTemplate}
           ></mg-character-left> }
-          { props.helpText && <mg-help-text identifier={helpTextId} innerHTML={props.helpText}></mg-help-text> }
-          { props.errorMessage && <mg-help-text class="error" identifier={helpTextErrorId} innerHTML={props.errorMessage}></mg-help-text> }
+          { props.helpText && <div id={helpTextId} class="mg-input__input-container__help-text" innerHTML={props.helpText}></div> }
+          { props.errorMessage && <div id={helpTextErrorId} class="mg-input__input-container__error" innerHTML={props.errorMessage} aria-live="assertive"></div> }
         </div>
       }
     </div>

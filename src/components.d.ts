@@ -47,12 +47,6 @@ export namespace Components {
          */
         "template": string;
     }
-    interface MgHelpText {
-        /**
-          * Sets an `id` attribute. Needed by the input for accessibility `arai-decribedby`.
-         */
-        "identifier": string;
-    }
     interface MgIcon {
         /**
           * Icon to display
@@ -78,7 +72,7 @@ export namespace Components {
         "identifier"?: string;
         /**
           * Manage indeterminate state
-          * @see https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input/checkbox#g%C3%A9rer_un_%C3%A9tat_ind%C3%A9termin%C3%A9
+          * @see https ://developer.mozilla.org/fr/docs/Web/HTML/Element/Input/checkbox#g%C3%A9rer_un_%C3%A9tat_ind%C3%A9termin%C3%A9
          */
         "indeterminate": boolean;
         /**
@@ -538,12 +532,6 @@ declare global {
         prototype: HTMLMgCharacterLeftElement;
         new (): HTMLMgCharacterLeftElement;
     };
-    interface HTMLMgHelpTextElement extends Components.MgHelpText, HTMLStencilElement {
-    }
-    var HTMLMgHelpTextElement: {
-        prototype: HTMLMgHelpTextElement;
-        new (): HTMLMgHelpTextElement;
-    };
     interface HTMLMgIconElement extends Components.MgIcon, HTMLStencilElement {
     }
     var HTMLMgIconElement: {
@@ -613,7 +601,6 @@ declare global {
     interface HTMLElementTagNameMap {
         "mg-button": HTMLMgButtonElement;
         "mg-character-left": HTMLMgCharacterLeftElement;
-        "mg-help-text": HTMLMgHelpTextElement;
         "mg-icon": HTMLMgIconElement;
         "mg-input-checkbox": HTMLMgInputCheckboxElement;
         "mg-input-date": HTMLMgInputDateElement;
@@ -668,12 +655,6 @@ declare namespace LocalJSX {
          */
         "template"?: string;
     }
-    interface MgHelpText {
-        /**
-          * Sets an `id` attribute. Needed by the input for accessibility `arai-decribedby`.
-         */
-        "identifier"?: string;
-    }
     interface MgIcon {
         /**
           * Icon to display
@@ -699,7 +680,7 @@ declare namespace LocalJSX {
         "identifier"?: string;
         /**
           * Manage indeterminate state
-          * @see https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input/checkbox#g%C3%A9rer_un_%C3%A9tat_ind%C3%A9termin%C3%A9
+          * @see https ://developer.mozilla.org/fr/docs/Web/HTML/Element/Input/checkbox#g%C3%A9rer_un_%C3%A9tat_ind%C3%A9termin%C3%A9
          */
         "indeterminate"?: boolean;
         /**
@@ -1172,7 +1153,6 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "mg-button": MgButton;
         "mg-character-left": MgCharacterLeft;
-        "mg-help-text": MgHelpText;
         "mg-icon": MgIcon;
         "mg-input-checkbox": MgInputCheckbox;
         "mg-input-date": MgInputDate;
@@ -1192,7 +1172,6 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "mg-button": LocalJSX.MgButton & JSXBase.HTMLAttributes<HTMLMgButtonElement>;
             "mg-character-left": LocalJSX.MgCharacterLeft & JSXBase.HTMLAttributes<HTMLMgCharacterLeftElement>;
-            "mg-help-text": LocalJSX.MgHelpText & JSXBase.HTMLAttributes<HTMLMgHelpTextElement>;
             "mg-icon": LocalJSX.MgIcon & JSXBase.HTMLAttributes<HTMLMgIconElement>;
             "mg-input-checkbox": LocalJSX.MgInputCheckbox & JSXBase.HTMLAttributes<HTMLMgInputCheckboxElement>;
             "mg-input-date": LocalJSX.MgInputDate & JSXBase.HTMLAttributes<HTMLMgInputDateElement>;

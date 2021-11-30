@@ -44,7 +44,6 @@
 - [mg-tooltip](../../../atoms/mg-tooltip)
 - [mg-icon](../../../atoms/mg-icon)
 - [mg-character-left](../../../atoms/mg-character-left)
-- [mg-help-text](../../../atoms/mg-help-text)
 
 ### Graph
 ```mermaid
@@ -53,7 +52,6 @@ graph TD;
   mg-input-textarea --> mg-tooltip
   mg-input-textarea --> mg-icon
   mg-input-textarea --> mg-character-left
-  mg-input-textarea --> mg-help-text
   style mg-input-textarea fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

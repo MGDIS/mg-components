@@ -37,7 +37,6 @@
 - [mg-tooltip](../../../atoms/mg-tooltip)
 - [mg-icon](../../../atoms/mg-icon)
 - [mg-character-left](../../../atoms/mg-character-left)
-- [mg-help-text](../../../atoms/mg-help-text)
 
 ### Graph
 ```mermaid
@@ -46,7 +45,6 @@ graph TD;
   mg-input-date --> mg-tooltip
   mg-input-date --> mg-icon
   mg-input-date --> mg-character-left
-  mg-input-date --> mg-help-text
   style mg-input-date fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
