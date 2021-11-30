@@ -24,8 +24,7 @@
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
     "storybook": "start-storybook -p 6006 -s www/build",
-    "build-storybook": "build-storybook",
-    "prepare": "husky install"
+    "build-storybook": "build-storybook"
   },
   "publishConfig": {
     "@mgdis:registry": "http://artifactory.mgdis.fr/artifactory/api/npm/npm-local/"
