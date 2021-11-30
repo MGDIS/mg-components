@@ -122,7 +122,61 @@ export namespace Components {
          */
         "value"?: boolean;
     }
-    interface MgInputCurrency {
+    interface MgInputDate {
+        /**
+          * Define if input is disabled
+         */
+        "disabled": boolean;
+        /**
+          * Template to use for characters left sentence
+         */
+        "helpText": string;
+        /**
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+         */
+        "identifier"?: string;
+        /**
+          * Define input pattern error message
+         */
+        "invalid": boolean;
+        /**
+          * Input label Required
+         */
+        "label": string;
+        /**
+          * Define if label has colon ":"
+         */
+        "labelColon": boolean;
+        /**
+          * Define if label is displayed on top
+         */
+        "labelOnTop": boolean;
+        /**
+          * Input name If not set the value equals the identifier
+         */
+        "name"?: string;
+        /**
+          * Define if input is readonly
+         */
+        "readonly": boolean;
+        /**
+          * Define if input is required
+         */
+        "required": boolean;
+        /**
+          * Add a tooltip message next to the input
+         */
+        "tooltip": string;
+        /**
+          * Define input pattern to validate
+         */
+        "valid": boolean;
+        /**
+          * Component value
+         */
+        "value": string;
+    }
+    interface MgInputNumeric {
         /**
           * Define if input is disabled
          */
@@ -180,59 +234,9 @@ export namespace Components {
          */
         "tooltip": string;
         /**
-          * Define input pattern to validate
+          * Define numeric type
          */
-        "valid": boolean;
-        /**
-          * Component value
-         */
-        "value": string;
-    }
-    interface MgInputDate {
-        /**
-          * Define if input is disabled
-         */
-        "disabled": boolean;
-        /**
-          * Template to use for characters left sentence
-         */
-        "helpText": string;
-        /**
-          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
-         */
-        "identifier"?: string;
-        /**
-          * Define input pattern error message
-         */
-        "invalid": boolean;
-        /**
-          * Input label Required
-         */
-        "label": string;
-        /**
-          * Define if label has colon ":"
-         */
-        "labelColon": boolean;
-        /**
-          * Define if label is displayed on top
-         */
-        "labelOnTop": boolean;
-        /**
-          * Input name If not set the value equals the identifier
-         */
-        "name"?: string;
-        /**
-          * Define if input is readonly
-         */
-        "readonly": boolean;
-        /**
-          * Define if input is required
-         */
-        "required": boolean;
-        /**
-          * Add a tooltip message next to the input
-         */
-        "tooltip": string;
+        "type": string;
         /**
           * Define input pattern to validate
          */
@@ -548,17 +552,17 @@ declare global {
         prototype: HTMLMgInputCheckboxElement;
         new (): HTMLMgInputCheckboxElement;
     };
-    interface HTMLMgInputCurrencyElement extends Components.MgInputCurrency, HTMLStencilElement {
-    }
-    var HTMLMgInputCurrencyElement: {
-        prototype: HTMLMgInputCurrencyElement;
-        new (): HTMLMgInputCurrencyElement;
-    };
     interface HTMLMgInputDateElement extends Components.MgInputDate, HTMLStencilElement {
     }
     var HTMLMgInputDateElement: {
         prototype: HTMLMgInputDateElement;
         new (): HTMLMgInputDateElement;
+    };
+    interface HTMLMgInputNumericElement extends Components.MgInputNumeric, HTMLStencilElement {
+    }
+    var HTMLMgInputNumericElement: {
+        prototype: HTMLMgInputNumericElement;
+        new (): HTMLMgInputNumericElement;
     };
     interface HTMLMgInputSelectElement extends Components.MgInputSelect, HTMLStencilElement {
     }
@@ -608,8 +612,8 @@ declare global {
         "mg-help-text": HTMLMgHelpTextElement;
         "mg-icon": HTMLMgIconElement;
         "mg-input-checkbox": HTMLMgInputCheckboxElement;
-        "mg-input-currency": HTMLMgInputCurrencyElement;
         "mg-input-date": HTMLMgInputDateElement;
+        "mg-input-numeric": HTMLMgInputNumericElement;
         "mg-input-select": HTMLMgInputSelectElement;
         "mg-input-text": HTMLMgInputTextElement;
         "mg-input-textarea": HTMLMgInputTextareaElement;
@@ -739,7 +743,65 @@ declare namespace LocalJSX {
          */
         "value"?: boolean;
     }
-    interface MgInputCurrency {
+    interface MgInputDate {
+        /**
+          * Define if input is disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * Template to use for characters left sentence
+         */
+        "helpText"?: string;
+        /**
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+         */
+        "identifier"?: string;
+        /**
+          * Define input pattern error message
+         */
+        "invalid"?: boolean;
+        /**
+          * Input label Required
+         */
+        "label": string;
+        /**
+          * Define if label has colon ":"
+         */
+        "labelColon"?: boolean;
+        /**
+          * Define if label is displayed on top
+         */
+        "labelOnTop"?: boolean;
+        /**
+          * Input name If not set the value equals the identifier
+         */
+        "name"?: string;
+        /**
+          * Emmited event when value change
+         */
+        "onValueChange"?: (event: CustomEvent<string>) => void;
+        /**
+          * Define if input is readonly
+         */
+        "readonly"?: boolean;
+        /**
+          * Define if input is required
+         */
+        "required"?: boolean;
+        /**
+          * Add a tooltip message next to the input
+         */
+        "tooltip"?: string;
+        /**
+          * Define input pattern to validate
+         */
+        "valid"?: boolean;
+        /**
+          * Component value
+         */
+        "value"?: string;
+    }
+    interface MgInputNumeric {
         /**
           * Define if input is disabled
          */
@@ -801,63 +863,9 @@ declare namespace LocalJSX {
          */
         "tooltip"?: string;
         /**
-          * Define input pattern to validate
+          * Define numeric type
          */
-        "valid"?: boolean;
-        /**
-          * Component value
-         */
-        "value"?: string;
-    }
-    interface MgInputDate {
-        /**
-          * Define if input is disabled
-         */
-        "disabled"?: boolean;
-        /**
-          * Template to use for characters left sentence
-         */
-        "helpText"?: string;
-        /**
-          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
-         */
-        "identifier"?: string;
-        /**
-          * Define input pattern error message
-         */
-        "invalid"?: boolean;
-        /**
-          * Input label Required
-         */
-        "label": string;
-        /**
-          * Define if label has colon ":"
-         */
-        "labelColon"?: boolean;
-        /**
-          * Define if label is displayed on top
-         */
-        "labelOnTop"?: boolean;
-        /**
-          * Input name If not set the value equals the identifier
-         */
-        "name"?: string;
-        /**
-          * Emmited event when value change
-         */
-        "onValueChange"?: (event: CustomEvent<string>) => void;
-        /**
-          * Define if input is readonly
-         */
-        "readonly"?: boolean;
-        /**
-          * Define if input is required
-         */
-        "required"?: boolean;
-        /**
-          * Add a tooltip message next to the input
-         */
-        "tooltip"?: string;
+        "type"?: string;
         /**
           * Define input pattern to validate
          */
@@ -1109,7 +1117,7 @@ declare namespace LocalJSX {
         /**
           * Label input id
          */
-        "identifier"?: string;
+        "identifier": string;
         /**
           * If input is required an asterisk is added at the end of the label
          */
@@ -1159,8 +1167,8 @@ declare namespace LocalJSX {
         "mg-help-text": MgHelpText;
         "mg-icon": MgIcon;
         "mg-input-checkbox": MgInputCheckbox;
-        "mg-input-currency": MgInputCurrency;
         "mg-input-date": MgInputDate;
+        "mg-input-numeric": MgInputNumeric;
         "mg-input-select": MgInputSelect;
         "mg-input-text": MgInputText;
         "mg-input-textarea": MgInputTextarea;
@@ -1179,8 +1187,8 @@ declare module "@stencil/core" {
             "mg-help-text": LocalJSX.MgHelpText & JSXBase.HTMLAttributes<HTMLMgHelpTextElement>;
             "mg-icon": LocalJSX.MgIcon & JSXBase.HTMLAttributes<HTMLMgIconElement>;
             "mg-input-checkbox": LocalJSX.MgInputCheckbox & JSXBase.HTMLAttributes<HTMLMgInputCheckboxElement>;
-            "mg-input-currency": LocalJSX.MgInputCurrency & JSXBase.HTMLAttributes<HTMLMgInputCurrencyElement>;
             "mg-input-date": LocalJSX.MgInputDate & JSXBase.HTMLAttributes<HTMLMgInputDateElement>;
+            "mg-input-numeric": LocalJSX.MgInputNumeric & JSXBase.HTMLAttributes<HTMLMgInputNumericElement>;
             "mg-input-select": LocalJSX.MgInputSelect & JSXBase.HTMLAttributes<HTMLMgInputSelectElement>;
             "mg-input-text": LocalJSX.MgInputText & JSXBase.HTMLAttributes<HTMLMgInputTextElement>;
             "mg-input-textarea": LocalJSX.MgInputTextarea & JSXBase.HTMLAttributes<HTMLMgInputTextareaElement>;

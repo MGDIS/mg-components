@@ -9,212 +9,224 @@
     <script nomodule src="/build/design-system.js"></script>
   </head>
   <body style="padding: 1rem; background: #bada55">
-    <div style="display: none">
-      <div>
-        <h1><mg-icon icon="success"></mg-icon> The h1 heading element</h1>
-        <h2><mg-icon icon="success"></mg-icon> The h2 heading element</h2>
-        <h3><mg-icon icon="success"></mg-icon> The h3 heading element</h3>
-        <h4><mg-icon icon="success"></mg-icon> The h4 heading element</h4>
-        <h5><mg-icon icon="success"></mg-icon> The h5 heading element</h5>
-        <h6><mg-icon icon="success"></mg-icon> The h6 heading element</h6>
+    <main>
+      <!-- <h1>Design System</h1> -->
+      <!-- <section>
+        <h2>Typography</h2>
+        <h1>The h1 heading element</h1>
+        <h2>The h2 heading element</h2>
+        <h3>The h3 heading element</h3>
+        <h4>The h4 heading element</h4>
+        <h5>The h5 heading element</h5>
+        <h6>The h6 heading element</h6>
         <p>The Paragraph element</p>
         <p><strong>The Strong Importance element</strong></p>
         <p><small>The side comment element</small></p>
-      </div>
-      <div style="color: #bada55" style="display: none">
+      </section> -->
+      <!-- <section>
+        <h2>Icons</h2>
+        <mg-icon icon="info" size="large"></mg-icon>
+        <mg-icon icon="info"></mg-icon>
+        <mg-icon icon="info" size="small"></mg-icon>
+        <mg-icon icon="warning" size="large"></mg-icon>
+        <mg-icon icon="warning"></mg-icon>
+        <mg-icon icon="warning" size="small"></mg-icon>
+        <mg-icon icon="success" size="large"></mg-icon>
         <mg-icon icon="success"></mg-icon>
-      </div>
-      <div style="display: none">
-        <mg-button> <mg-icon icon="success"></mg-icon>Primary</mg-button>
-        <mg-button label="aria-label for explicit button action" variant="secondary"> <mg-icon icon="success"></mg-icon>Secondary (aria-label)</mg-button>
-        <mg-button disabled>Disabled</mg-button>
-      </div>
-
-      <div>
-        <mg-label colon required
-          >Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Le
-          label Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Le label Lsas</mg-label
-        >
-        <mg-character-left maxlength="400"></mg-character-left>
-        <mg-help-text>Texte d'aide avec <a href="https://www.exemple.com">un lien</a> du text <strong>gras</strong> ou en <em>italic</em> !</mg-help-text>
-        <mg-input-text label="coucou" placeholder="placeholder" value="tutu" character-left-template="blu {counter} blublu"></mg-input-text>
-        <mg-input-text label="coucou" display-character-left="false"></mg-input-text>
-      </div>
-
-      <div>
+        <mg-icon icon="success" size="small"></mg-icon>
+        <mg-icon icon="danger" size="large"></mg-icon>
+        <mg-icon icon="danger"></mg-icon>
+        <mg-icon icon="danger" size="small"></mg-icon>
+        <mg-icon icon="cross" size="large"></mg-icon>
+        <mg-icon icon="cross"></mg-icon>
+        <mg-icon icon="cross" size="small"></mg-icon>
+        <h1><mg-icon icon="info" size="large"></mg-icon>Titre</h1>
+        <h2><mg-icon icon="warning"></mg-icon>Titre</h2>
+        <h3><mg-icon icon="success" size="small"></mg-icon>Titre</h3>
+      </section> -->
+      <!-- <section>
+        <h2>Buttons</h2>
+        <div style="padding: 0 0 1rem">
+          <mg-button variant="primary">Primary</mg-button><mg-button variant="secondary"> <mg-icon icon="success"></mg-icon>Secondary</mg-button
+          ><mg-button variant="danger"> <mg-icon icon="danger"></mg-icon>Alert</mg-button><mg-button variant="danger-alt"> <mg-icon icon="warning"></mg-icon>Alert-alt</mg-button
+          ><mg-button variant="info"> <mg-icon icon="info"></mg-icon>Info</mg-button><mg-button variant="flat"> <mg-icon icon="info"></mg-icon>flat</mg-button>
+        </div>
+        <div style="padding: 0 0 1rem">
+          <mg-button disabled variant="primary">Primary</mg-button><mg-button disabled variant="secondary"> <mg-icon icon="success"></mg-icon>Secondary</mg-button
+          ><mg-button disabled variant="danger"> <mg-icon icon="danger"></mg-icon>Alert</mg-button
+          ><mg-button disabled variant="danger-alt"> <mg-icon icon="warning"></mg-icon>Alert-alt</mg-button
+          ><mg-button disabled variant="info"> <mg-icon icon="info"></mg-icon>Info</mg-button><mg-button disabled variant="flat"> <mg-icon icon="info"></mg-icon>flat</mg-button>
+        </div>
+        <div style="padding: 0 0 1rem">
+          <mg-button variant="primary" is-icon> <mg-icon icon="success"></mg-icon></mg-button><mg-button variant="secondary" is-icon> <mg-icon icon="success"></mg-icon></mg-button
+          ><mg-button variant="danger" is-icon> <mg-icon icon="success"></mg-icon></mg-button><mg-button variant="danger-alt" is-icon> <mg-icon icon="success"></mg-icon></mg-button
+          ><mg-button variant="info" is-icon> <mg-icon icon="success"></mg-icon></mg-button><mg-button variant="flat" is-icon> <mg-icon icon="cross"></mg-icon></mg-button>
+        </div>
+        <div style="padding: 0 0 1rem">
+          <mg-button variant="primary" is-icon> <mg-icon size="small" icon="success"></mg-icon></mg-button
+          ><mg-button variant="secondary" is-icon> <mg-icon size="small" icon="success"></mg-icon></mg-button
+          ><mg-button variant="danger" is-icon> <mg-icon size="small" icon="success"></mg-icon></mg-button
+          ><mg-button variant="danger-alt" is-icon> <mg-icon size="small" icon="success"></mg-icon></mg-button
+          ><mg-button variant="info" is-icon> <mg-icon size="small" icon="success"></mg-icon></mg-button
+          ><mg-button variant="flat" is-icon> <mg-icon size="small" icon="cross"></mg-icon></mg-button>
+        </div>
+        <div style="padding: 0 0 1rem">
+          <mg-button variant="primary" is-icon> <mg-icon size="large" icon="success"></mg-icon></mg-button
+          ><mg-button variant="secondary" is-icon> <mg-icon size="large" icon="success"></mg-icon></mg-button
+          ><mg-button variant="danger" is-icon> <mg-icon size="large" icon="success"></mg-icon></mg-button
+          ><mg-button variant="danger-alt" is-icon> <mg-icon size="large" icon="success"></mg-icon></mg-button
+          ><mg-button variant="info" is-icon> <mg-icon size="large" icon="success"></mg-icon></mg-button
+          ><mg-button variant="flat" is-icon> <mg-icon size="large" icon="cross"></mg-icon></mg-button>
+        </div>
+        <div style="padding: 0 0 1rem">
+          <mg-button variant="primary"> <mg-icon icon="success"></mg-icon>Court Texte <br />avec br</mg-button>
+        </div>
+        <div style="padding: 0 0 1rem">
+          <mg-button variant="primary">
+            <mg-icon icon="success"></mg-icon>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+            minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+            dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</mg-button
+          >
+        </div>
+        <div style="padding: 0 0 1rem">
+          <p>Coucou, ceci est un <mg-button variant="primary">bouton</mg-button> dans un paragraphe.</p>
+        </div>
+      </section> -->
+      <!-- <section>
+        <h2>Messages</h2>
+        <mg-message variant="info"
+          ><p><strong>Coucou</strong> toi !</p>
+        </mg-message>
+        <mg-message variant="warning" close-button
+          ><p><strong>Coucou</strong> toi !</p>
+        </mg-message>
+        <mg-message variant="success"
+          ><p><strong>Coucou</strong> toi !</p>
+          <div slot="actions" class="mg-group-elements mg-group-elements--align-right">
+            <mg-button>Primary</mg-button>
+            <mg-button variant="secondary">Secondary</mg-button>
+          </div>
+        </mg-message>
+        <mg-message variant="danger"
+          ><div>
+            <p>
+              <strong>Coucou</strong> toi ! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+              minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+              dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <p>
+              <strong>Coucou</strong> toi ! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+              minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+              dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </div>
+          <div slot="actions" class="mg-group-elements mg-group-elements--align-right">
+            <mg-button>Primary</mg-button>
+            <mg-button variant="secondary">Secondary</mg-button>
+          </div>
+        </mg-message>
+        <mg-message variant="info" close-button
+          ><p>
+            <strong>Coucou</strong> toi ! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </mg-message>
+      </section> -->
+      <!-- <section>
+        <h2>Tags</h2>
+        <div class="mg-group-elements" style="padding: 0 0 1rem">
+          <mg-tag variant="primary">primary</mg-tag>
+          <mg-tag variant="secondary">secondary</mg-tag>
+          <mg-tag variant="danger"> danger</mg-tag>
+          <mg-tag variant="success">success</mg-tag>
+          <mg-tag variant="info">info</mg-tag>
+        </div>
+        <div class="mg-group-elements">
+          <mg-tag outline variant="primary">primary</mg-tag>
+          <mg-tag outline variant="secondary">secondary</mg-tag>
+          <mg-tag outline variant="danger"> danger</mg-tag>
+          <mg-tag outline variant="success">success</mg-tag>
+          <mg-tag outline variant="info">info</mg-tag>
+        </div>
+      </section> -->
+      <section>
+        <h2>Inputs</h2>
+        <!-- <h3>Atoms</h3>
+        <h4>Labels</h4>
+        <div>
+          <mg-label>Label</mg-label>
+        </div>
+        <div>
+          <mg-label colon>Label with colon</mg-label>
+        </div>
+        <div>
+          <mg-label required>Label when required</mg-label>
+        </div>
+        <div>
+          <mg-label colon required>Label when required with colon</mg-label>
+        </div>
+        <h4>Tooltips</h4>
         <mg-tooltip message="my tooltip message"><span>coucou</span></mg-tooltip>
-        <mg-tooltip message="my tooltip message"> <mg-icon icon="success"></mg-icon></mg-tooltip>
-        <mg-tooltip message="blublu"><mg-button onclick="console.log('click')">Supprimer</mg-button></mg-tooltip>
-        <mg-tooltip message="blublu"><button class="mg-button mg-button-primary">Test</button></mg-tooltip>
-      </div>
-      <mg-tag variant="warning">ueule</mg-tag>
-
-      <mg-input-textarea
-        value="blu"
-        multiline="false"
-        label-on-top="false"
-        required
-        pattern="[a-z]*"
-        placeholder="coucou"
-        pattern-error-message="Le pattern n'est pas bon !"
-        label="coucou"
-        tooltip="tooltip message"
-        help-text="Texte d'aide avec du text <strong>gras</strong> ou en <em>italic</em> !"
-      ></mg-input-textarea>
-      <mg-input-select value="blublu" label="Libellé"></mg-input-select>
-      <mg-input-search value="" label="Libellé" required placeholder="coucou"></mg-input-search>
-      <script>
-        const mgInputSelect = document.querySelector('mg-input-select');
-        const mgInput = document.querySelector('mg-input-search');
-        mgInputSelect.items = ['blu', 'bli', 'bla', 'blo'];
-        // mgInput.items = ['blu', 'bli', 'bla', 'blo'];
-        mgInput.items = [
-          { title: 'blu', value: 'blublu' },
-          { title: 'bli', value: 'blibli' },
-          { title: 'bla', value: 'blabla' },
-          { title: 'blo', value: 'bloblo' },
-        ];
-        // mgInput.items = [
-        //   { title: 'blu', value: 'blu', group: 'Le groupe A' },
-        //   { title: 'blu', value: 'blublu', group: 'Le groupe B' },
-        //   { title: 'bli', value: 'bli', group: 'Le groupe A' },
-        //   { title: 'bli', value: 'blibli', group: 'Le groupe B' },
-        //   { title: 'bla', value: 'blabla' },
-        //   { title: 'blo', value: 'bloblo' },
-        // ];
-      </script>
-    </div>
-
-    <!-- <mg-icon icon="info" size="large"></mg-icon>
-    <mg-icon icon="info"></mg-icon>
-    <mg-icon icon="info" size="small"></mg-icon>
-    <mg-icon icon="warning" size="large"></mg-icon>
-    <mg-icon icon="warning"></mg-icon>
-    <mg-icon icon="warning" size="small"></mg-icon> <mg-icon icon="success" size="large"></mg-icon>
-    <mg-icon icon="success"></mg-icon>
-    <mg-icon icon="success" size="small"></mg-icon> <mg-icon icon="danger" size="large"></mg-icon>
-    <mg-icon icon="danger"></mg-icon>
-    <mg-icon icon="danger" size="small"></mg-icon>
-    <mg-icon icon="cross" size="large"></mg-icon>
-    <mg-icon icon="cross"></mg-icon>
-    <mg-icon icon="cross" size="small"></mg-icon> -->
-    <!-- <h1 style="background-color: rgba(0, 0, 167, 0.5)"><mg-icon icon="info" size="small"></mg-icon>Titre</h1>
-    <h1 style="background-color: rgba(0, 0, 167, 0.5)"><mg-icon icon="warning"></mg-icon>Titre</h1>
-    <h1 style="background-color: rgba(0, 0, 167, 0.5)"><mg-icon icon="success" size="large"></mg-icon>Titre</h1> -->
-    <!-- <div style="padding: 1rem 0">
-      <div style="background-color: rgba(255, 255, 0, 0.5)">
-        <mg-button variant="primary">Primary</mg-button><mg-button variant="secondary"> <mg-icon icon="success"></mg-icon>Secondary</mg-button
-        ><mg-button variant="danger"> <mg-icon icon="danger"></mg-icon>Alert</mg-button><mg-button variant="danger-alt"> <mg-icon icon="warning"></mg-icon>Alert-alt</mg-button
-        ><mg-button variant="info"> <mg-icon icon="info"></mg-icon>Info</mg-button><mg-button variant="flat"> <mg-icon icon="info"></mg-icon>flat</mg-button>
-      </div>
-    </div>
-    <div style="padding: 1rem 0">
-      <mg-button disabled variant="primary">Primary</mg-button><mg-button disabled variant="secondary"> <mg-icon icon="success"></mg-icon>Secondary</mg-button
-      ><mg-button disabled variant="danger"> <mg-icon icon="danger"></mg-icon>Alert</mg-button
-      ><mg-button disabled variant="danger-alt"> <mg-icon icon="warning"></mg-icon>Alert-alt</mg-button
-      ><mg-button disabled variant="info"> <mg-icon icon="info"></mg-icon>Info</mg-button><mg-button disabled variant="flat"> <mg-icon icon="info"></mg-icon>flat</mg-button>
-    </div>
-    <div style="padding: 1rem 0">
-      <mg-button variant="primary" is-icon> <mg-icon icon="success"></mg-icon></mg-button><mg-button variant="secondary" is-icon> <mg-icon icon="success"></mg-icon></mg-button
-      ><mg-button variant="danger" is-icon> <mg-icon icon="success"></mg-icon></mg-button><mg-button variant="danger-alt" is-icon> <mg-icon icon="success"></mg-icon></mg-button
-      ><mg-button variant="info" is-icon> <mg-icon icon="success"></mg-icon></mg-button><mg-button variant="flat" is-icon> <mg-icon icon="cross"></mg-icon></mg-button>
-    </div>
-    <div style="padding: 1rem 0">
-      <mg-button variant="primary" is-icon> <mg-icon size="small" icon="success"></mg-icon></mg-button
-      ><mg-button variant="secondary" is-icon> <mg-icon size="small" icon="success"></mg-icon></mg-button
-      ><mg-button variant="danger" is-icon> <mg-icon size="small" icon="success"></mg-icon></mg-button
-      ><mg-button variant="danger-alt" is-icon> <mg-icon size="small" icon="success"></mg-icon></mg-button
-      ><mg-button variant="info" is-icon> <mg-icon size="small" icon="success"></mg-icon></mg-button
-      ><mg-button variant="flat" is-icon> <mg-icon size="small" icon="cross"></mg-icon></mg-button>
-    </div>
-    <div style="padding: 1rem 0">
-      <mg-button variant="primary" is-icon> <mg-icon size="large" icon="success"></mg-icon></mg-button
-      ><mg-button variant="secondary" is-icon> <mg-icon size="large" icon="success"></mg-icon></mg-button
-      ><mg-button variant="danger" is-icon> <mg-icon size="large" icon="success"></mg-icon></mg-button
-      ><mg-button variant="danger-alt" is-icon> <mg-icon size="large" icon="success"></mg-icon></mg-button
-      ><mg-button variant="info" is-icon> <mg-icon size="large" icon="success"></mg-icon></mg-button
-      ><mg-button variant="flat" is-icon> <mg-icon size="large" icon="cross"></mg-icon></mg-button>
-    </div>
-    <div style="padding: 1rem 0">
-      <mg-button variant="primary"> <mg-icon icon="success"></mg-icon>Court Texte <br />avec br</mg-button>
-    </div>
-    <div style="padding: 1rem 0">
-      <mg-button variant="primary">
-        <mg-icon icon="success"></mg-icon>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</mg-button
-      >
-    </div>
-    <div style="padding: 1rem 0">
-      <p>Coucou, ceci est un <mg-button variant="primary">bouton</mg-button> dans un paragraphe.</p>
-    </div> -->
-    <!-- <div style="padding: 1rem 0">
-      <mg-message variant="info"
-        ><p><strong>Coucou</strong> toi !</p>
-      </mg-message>
-      <mg-message variant="warning" close-button
-        ><p><strong>Coucou</strong> toi !</p>
-      </mg-message>
-      <mg-message variant="success"
-        ><p><strong>Coucou</strong> toi !</p>
-        <div slot="actions" class="mg-group-elements mg-group-elements--align-right">
-          <mg-button>Primary</mg-button>
-          <mg-button variant="secondary">Secondary</mg-button>
-        </div>
-      </mg-message>
-      <mg-message variant="danger"
-        ><div>
-          <p>
-            <strong>Coucou</strong> toi ! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-            minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-            dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-          <p>
-            <strong>Coucou</strong> toi ! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-            minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-            dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-        </div>
-        <div slot="actions" class="mg-group-elements mg-group-elements--align-right">
-          <mg-button>Primary</mg-button>
-          <mg-button variant="secondary">Secondary</mg-button>
-        </div>
-      </mg-message>
-      <mg-message variant="info" close-button
-        ><p>
-          <strong>Coucou</strong> toi ! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-          veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-          fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-      </mg-message>
-    </div> -->
-    <!-- <div style="padding: 1rem 0">
-      <div class="mg-group-elements" style="padding-bottom: 1rem">
-        <mg-tag variant="primary">primary</mg-tag>
-        <mg-tag variant="secondary">secondary</mg-tag>
-        <mg-tag variant="danger"> danger</mg-tag>
-        <mg-tag variant="success">success</mg-tag>
-        <mg-tag variant="info">info</mg-tag>
-      </div>
-      <div class="mg-group-elements">
-        <mg-tag outline variant="primary">primary</mg-tag>
-        <mg-tag outline variant="secondary">secondary</mg-tag>
-        <mg-tag outline variant="danger"> danger</mg-tag>
-        <mg-tag outline variant="success">success</mg-tag>
-        <mg-tag outline variant="info">info</mg-tag>
-      </div>
-    </div> -->
-    <div style="padding: 1rem 0">
-      <mg-input-currency label="Blu" help-text="coucou" max="120"></mg-input-currency>
-    </div>
-    <div style="padding: 1rem 0">
-      <mg-input-date help-text="A l'aide !" label="Label" tooltip="Bonjour" label-colon required readonly value=""></mg-input-date>
-    </div>
-    <div style="padding: 1rem 0">
-      <mg-input-text label="coucou" placeholder="placeholder" value="tutu" character-left-template="blu {counter} blublu" help-text="Message d'aide."></mg-input-text>
-    </div>
-    <div style="padding: 1rem 0">
-      <mg-input-textarea label="coucou" placeholder="placeholder" help-text="Message d'aide."></mg-input-text>
-    </div>
+        <mg-tooltip message="my tooltip message"><mg-icon icon="success"></mg-icon></mg-tooltip>
+        <mg-tooltip message="blublu"><mg-button>Supprimer</mg-button></mg-tooltip>
+        <mg-tooltip message="blublu"><button class="mg-button mg-button--primary">Test</button></mg-tooltip>
+        <h4>Character left</h4>
+        <mg-character-left maxlength="400"></mg-character-left>
+        <mg-character-left maxlength="100" template="Template custom qui te dit qu'il ne reste plus que {counter} lettres!"></mg-character-left>
+        <h4>Help text</h4>
+        <mg-help-text>Texte d'aide avec <a href="https://www.exemple.com">un lien</a> du text <strong>gras</strong> ou en <em>italic</em> !</mg-help-text> -->
+        <!-- <h3>Input Text</h3>
+        <mg-input-text placeholder="placeholder" label="Libellé"></mg-input-text>
+        <h3>Input Textarea</h3>
+        <mg-input-textarea placeholder="placeholder" label="Libellé"></mg-input-textarea>
+        <h3>Input Select</h3>
+        <mg-input-select placeholder="placeholder" label="Libellé"></mg-input-select>
+        <script>
+          const mgInputSelect = document.querySelector('mg-input-select');
+          // mgInputSelect.items = ['blu', 'bli', 'bla', 'blo'];
+          // mgInputSelect.items = [
+          //   { title: 'blu', value: 'blublu' },
+          //   { title: 'bli', value: 'blibli' },
+          //   { title: 'bla', value: 'blabla' },
+          //   { title: 'blo', value: 'bloblo' },
+          // ];
+          mgInputSelect.items = [
+            { title: 'blu', value: 'blu', group: 'Le groupe A' },
+            { title: 'blu', value: 'blublu', group: 'Le groupe B' },
+            { title: 'bli', value: 'bli', group: 'Le groupe A' },
+            { title: 'bli', value: 'blibli', group: 'Le groupe B' },
+            { title: 'bla', value: 'blabla' },
+            { title: 'blo', value: 'bloblo' },
+          ];
+        </script>
+        <h3>Input Date</h3>
+        <mg-input-date placeholder="placeholder" label="Libellé"></mg-input-date>
+        <h3>Input Checkbox</h3>
+        <mg-input-checkbox label="Libellé"></mg-input-checkbox> -->
+        <h3>Input Numeric</h3>
+        <mg-input-numeric label="Libellé" max="1000" placeholder="placeholder" disabled></mg-input-numeric>
+        <!-- <h3>Input Search</h3>
+        <mg-input-search placeholder="placeholder" label="Libellé"></mg-input-search>
+        <script>
+          const mgInputSearch = document.querySelector('mg-input-search');
+          // mgInputSearch.items = ['blu', 'bli', 'bla', 'blo'];
+          // mgInputSearch.items = [
+          //   { title: 'blu', value: 'blublu' },
+          //   { title: 'bli', value: 'blibli' },
+          //   { title: 'bla', value: 'blabla' },
+          //   { title: 'blo', value: 'bloblo' },
+          // ];
+          mgInputSearch.items = [
+            { title: 'blu', value: 'blu', group: 'Le groupe A' },
+            { title: 'blu', value: 'blublu', group: 'Le groupe B' },
+            { title: 'bli', value: 'bli', group: 'Le groupe A' },
+            { title: 'bli', value: 'blibli', group: 'Le groupe B' },
+            { title: 'bla', value: 'blabla' },
+            { title: 'blo', value: 'bloblo' },
+          ];
+        </script> -->
+      </section>
+    </main>
   </body>
 </html>
