@@ -83,11 +83,11 @@ export class MgButton {
   private handleClick = () => this.startLoading();
 
   /**
-   * Trigger actions on onKeyUp 'enter' event
+   * Trigger actions on onKeyUp 'enter' or 'space' event
    * @param event
    */
   private handleKeyUp = (event:KeyboardEvent) => {
-    if( event.key !== 'enter') return;
+    if(!['enter', 'space'].includes(event.key)) return;
     this.startLoading();
   }
 

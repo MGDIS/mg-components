@@ -50,6 +50,5 @@ export const config: Config = {
     browserArgs: ['--no-sandbox', '--disable-setuid-sandbox'],
     setupFilesAfterEnv: ['./jest.setup.ts'],
     // browserHeadless: false
-  },
-  sourceMap: true
+  }
 };

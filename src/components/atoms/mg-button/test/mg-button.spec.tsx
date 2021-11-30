@@ -47,12 +47,12 @@ describe('mg-button', () => {
       expect(element.loading).toBeTruthy();
     })
 
-    test('should disable button after keyUp "enter"', async () => {
+    test.each(['enter', 'space'])('should disable button after keyUp "%s"', async (key) => {
       const page = await getPage({isIcon:true, label: 'test'});
       const element = page.doc.querySelector('mg-button');
       const button = element.shadowRoot.querySelector('button');
 
-      button.dispatchEvent(new KeyboardEvent('keyup', { bubbles: true, key: 'enter' }));
+      button.dispatchEvent(new KeyboardEvent('keyup', { bubbles: true, key }));
       await page.waitForChanges();
 
       expect(button).toHaveAttribute('disabled')
