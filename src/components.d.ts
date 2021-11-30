@@ -25,6 +25,10 @@ export namespace Components {
          */
         "label": string;
         /**
+          * Define if button is loading. Used to prevent double-click. Trigger when button is clicked or key-up 'enter', then value change to true. Must be set to false by parent at the process end.
+         */
+        "loading": boolean;
+        /**
           * Define button variant
          */
         "variant": string;
@@ -637,6 +641,10 @@ declare namespace LocalJSX {
           * aria-label In case button text is not explicit enough
          */
         "label"?: string;
+        /**
+          * Define if button is loading. Used to prevent double-click. Trigger when button is clicked or key-up 'enter', then value change to true. Must be set to false by parent at the process end.
+         */
+        "loading"?: boolean;
         /**
           * Define button variant
          */

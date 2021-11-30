@@ -5,7 +5,7 @@ import { ClassList, createID } from '../../../utils/components.utils';
 @Component({
   tag: 'mg-button',
   styleUrl: 'mg-button.scss',
-  scoped: true,
+  shadow: true,
 })
 export class MgButton {
 
@@ -45,6 +45,14 @@ export class MgButton {
   @Prop() isIcon: boolean = false;
 
   /**
+  * Define if button is loading.
+  * Used to prevent double-click.
+  * Trigger when button is clicked or key-up 'enter', then value change to true.
+  * Must be set to false by parent at the process end.
+  */
+  @Prop({ mutable: true, reflect: true }) loading: boolean = false;
+
+  /**
    * Component classes
    */
   @State() classList: ClassList = new ClassList(['mg-button']);
@@ -63,6 +71,27 @@ export class MgButton {
   }
 
   /**
+   * Set loading props to 'true'
+   */
+  private startLoading() {
+    this.loading = true;
+  }
+
+  /**
+   * Trigger actions onClick event
+   */
+  private handleClick = () => this.startLoading();
+
+  /**
+   * Trigger actions on onKeyUp 'enter' event
+   * @param event
+   */
+  private handleKeyUp = (event:KeyboardEvent) => {
+    if( event.key !== 'enter') return;
+    this.startLoading();
+  }
+
+  /**
   * Render component
   */
   render() {
@@ -71,7 +100,9 @@ export class MgButton {
           id={this.identifier}
           class={this.classList.join()}
           aria-label={this.label}
-          disabled={this.disabled}
+          disabled={this.disabled || this.loading}
+          onClick={this.handleClick}
+          onKeyUp={this.handleKeyUp}
         >
           <slot></slot>
         </button>

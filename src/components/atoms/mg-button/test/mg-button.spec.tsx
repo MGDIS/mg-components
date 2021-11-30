@@ -33,4 +33,42 @@ describe('mg-button', () => {
       expect(err.message).toContain('<mg-button> prop "label" is mandatory when prop "isIcon" is set to true.')
     }
   })
+
+  describe('prevent double click', () => {
+    test('should disable button after click', async () => {
+      const page = await getPage({isIcon:true, label: 'test'});
+      const element = page.doc.querySelector('mg-button');
+      const button = element.shadowRoot.querySelector('button');
+
+      button.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+      await page.waitForChanges();
+
+      expect(button).toHaveAttribute('disabled')
+      expect(element.loading).toBeTruthy();
+    })
+
+    test('should disable button after keyUp "enter"', async () => {
+      const page = await getPage({isIcon:true, label: 'test'});
+      const element = page.doc.querySelector('mg-button');
+      const button = element.shadowRoot.querySelector('button');
+
+      button.dispatchEvent(new KeyboardEvent('keyup', { bubbles: true, key: 'enter' }));
+      await page.waitForChanges();
+
+      expect(button).toHaveAttribute('disabled')
+      expect(element.loading).toBeTruthy();
+    })
+
+    test('should NOT disable button after keyUp "tab"', async () => {
+      const page = await getPage({isIcon:true, label: 'test'});
+      const element = page.doc.querySelector('mg-button');
+      const button = element.shadowRoot.querySelector('button');
+
+      button.dispatchEvent(new KeyboardEvent('keyup', { bubbles: true, key: 'tab' }));
+      await page.waitForChanges();
+
+      expect(button).not.toHaveAttribute('disabled')
+      expect(element.loading).toBeFalsy();
+    })
+  })
 });
