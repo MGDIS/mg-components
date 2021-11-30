@@ -2,99 +2,99 @@
 
 exports[`mg-character-left Should render nb char left for blu blu blu blu blu renders 1`] = `
 <mg-character-left>
-  <p>
+  <span aria-live="polite">
     <strong>
       104
     </strong>
     caractères disponibles.
-  </p>
+  </span>
 </mg-character-left>
 `;
 
 exports[`mg-character-left Should render nb char left for blu blu blu blu blu renders 2`] = `
 <mg-character-left>
-  <p>
+  <span aria-live="polite">
     <strong>
       215
     </strong>
     caractères disponibles.
-  </p>
+  </span>
 </mg-character-left>
 `;
 
 exports[`mg-character-left Should render nb char left for blu blu blu blu blu renders 3`] = `
 <mg-character-left>
-  <p>
+  <span aria-live="polite">
     <strong>
       181
     </strong>
     caractères disponibles.
-  </p>
+  </span>
 </mg-character-left>
 `;
 
 exports[`mg-character-left Should render nb char left for blu renders 1`] = `
 <mg-character-left>
-  <p>
+  <span aria-live="polite">
     <strong>
       120
     </strong>
     caractères disponibles.
-  </p>
+  </span>
 </mg-character-left>
 `;
 
 exports[`mg-character-left Should render nb char left for blu renders 2`] = `
 <mg-character-left>
-  <p>
+  <span aria-live="polite">
     <strong>
       231
     </strong>
     caractères disponibles.
-  </p>
+  </span>
 </mg-character-left>
 `;
 
 exports[`mg-character-left Should render nb char left for blu renders 3`] = `
 <mg-character-left>
-  <p>
+  <span aria-live="polite">
     <strong>
       197
     </strong>
     caractères disponibles.
-  </p>
+  </span>
 </mg-character-left>
 `;
 
 exports[`mg-character-left Should render nb char left for blublu renders 1`] = `
 <mg-character-left>
-  <p>
+  <span aria-live="polite">
     <strong>
       117
     </strong>
     caractères disponibles.
-  </p>
+  </span>
 </mg-character-left>
 `;
 
 exports[`mg-character-left Should render nb char left for blublu renders 2`] = `
 <mg-character-left>
-  <p>
+  <span aria-live="polite">
     <strong>
       228
     </strong>
     caractères disponibles.
-  </p>
+  </span>
 </mg-character-left>
 `;
 
 exports[`mg-character-left Should render nb char left for blublu renders 3`] = `
 <mg-character-left>
-  <p>
+  <span aria-live="polite">
     <strong>
       194
     </strong>
     caractères disponibles.
-  </p>
+  </span>
 </mg-character-left>
 `;

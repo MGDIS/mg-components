@@ -229,9 +229,9 @@ exports[`mg-input-select Should trigger events 1`] = `
             </option>
           </select>
         </div>
-        <mg-help-text identifier="identifier-help-text">
+        <div class="mg-input__input-container__help-text" id="identifier-help-text">
           My help text
-        </mg-help-text>
+        </div>
       </div>
     </div>
   </mock:shadow-root>

@@ -106,9 +106,9 @@ exports[`mg-input-textarea Should trigger events 1`] = `
         <div class="mg-input__input-container__input"><textarea aria-describedby="identifier-character-left identifier-help-text" id="identifier" maxlength="4000" name="identifier" rows="3"></textarea>
         </div>
         <mg-character-left identifier="identifier-character-left" maxlength="4000"></mg-character-left>
-        <mg-help-text identifier="identifier-help-text">
+        <div class="mg-input__input-container__help-text" id="identifier-help-text">
           My help text
-        </mg-help-text>
+        </div>
       </div>
     </div>
   </mock:shadow-root>
