@@ -55,6 +55,11 @@ export class MgInputText {
   @Prop() labelColon: boolean = false;
 
   /**
+   * Define if label is visible
+   */
+   @Prop() labelHide: boolean = false;
+
+  /**
    * Input placeholder.
    * It should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text.
    */
@@ -225,6 +230,7 @@ export class MgInputText {
         label={this.label}
         labelOnTop={this.labelOnTop}
         labelColon={this.labelColon}
+        labelHide={this.labelHide}
         required={this.required}
         readonly={this.readonly}
         value={this.value}
