@@ -44,7 +44,6 @@ describe('mg-button', () => {
       await page.waitForChanges();
 
       expect(button).toHaveAttribute('disabled')
-      expect(element.loading).toBeTruthy();
     })
 
     test.each(['enter', 'space'])('should disable button after keyUp "%s"', async (key) => {
@@ -56,7 +55,6 @@ describe('mg-button', () => {
       await page.waitForChanges();
 
       expect(button).toHaveAttribute('disabled')
-      expect(element.loading).toBeTruthy();
     })
 
     test('should NOT disable button after keyUp "tab"', async () => {
@@ -68,7 +66,6 @@ describe('mg-button', () => {
       await page.waitForChanges();
 
       expect(button).not.toHaveAttribute('disabled')
-      expect(element.loading).toBeFalsy();
     })
   })
 });

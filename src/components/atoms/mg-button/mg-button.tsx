@@ -36,7 +36,7 @@ export class MgButton {
   /**
    * Disable button
    */
-   @Prop() disabled: boolean = false;
+   @Prop({mutable: true, reflect: true}) disabled: boolean = false;
 
    /**
    * Define if button is round.
@@ -45,12 +45,22 @@ export class MgButton {
   @Prop() isIcon: boolean = false;
 
   /**
+   * Setup to enable double-click prevention
+   * when true button will be disabled after the first click.
+   * Parent component have to set to false at the process end.
+   */
+  @Prop({mutable: true, reflect: true}) loader: boolean = true;
+
+  /**
   * Define if button is loading.
   * Used to prevent double-click.
-  * Trigger when button is clicked or key-up 'enter', then value change to true.
-  * Must be set to false by parent at the process end.
+  * Trigger when button is clicked or key-up ['enter', 'space], then value change to true.
   */
-  @Prop({ mutable: true, reflect: true }) loading: boolean = false;
+  @State() loading: boolean = false;
+  @Watch('loading')
+  loadingHandler(newValue: boolean) {
+    this.disabled = newValue;
+  }
 
   /**
    * Component classes
@@ -100,7 +110,7 @@ export class MgButton {
           id={this.identifier}
           class={this.classList.join()}
           aria-label={this.label}
-          disabled={this.disabled || this.loading}
+          disabled={this.disabled}
           onClick={this.handleClick}
           onKeyUp={this.handleKeyUp}
         >
