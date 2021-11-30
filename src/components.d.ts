@@ -250,10 +250,6 @@ export namespace Components {
          */
         "type": string;
         /**
-          * Add a custom unit
-         */
-        "unit": string;
-        /**
           * Define input pattern to validate
          */
         "valid": boolean;
@@ -906,10 +902,6 @@ declare namespace LocalJSX {
           * Define numeric type
          */
         "type"?: string;
-        /**
-          * Add a custom unit
-         */
-        "unit"?: string;
         /**
           * Define input pattern to validate
          */

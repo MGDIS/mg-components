@@ -139,11 +139,6 @@ export class MgInputNumeric {
   }
 
   /**
-   * Add a custom unit
-   */
-  @Prop() unit: string;
-
-  /**
    * Maximum value
    */
   @Prop() max: number;
