@@ -24,7 +24,8 @@
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
     "storybook": "start-storybook -p 6006 -s www/build",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "prepare": "husky install"
   },
   "publishConfig": {
     "@mgdis:registry": "http://artifactory.mgdis.fr/artifactory/api/npm/npm-local/"
@@ -54,6 +55,7 @@
     "css-loader": "^5.2.7",
     "eslint": "^7.32.0",
     "eslint-plugin-react": "^7.26.1",
+    "husky": "^7.0.4",
     "jest": "^26.6.3",
     "jest-cli": "^26.6.3",
     "jest-image-snapshot": "^4.5.1",
