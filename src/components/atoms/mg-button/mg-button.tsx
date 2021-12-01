@@ -45,20 +45,20 @@ export class MgButton {
   @Prop() isIcon: boolean = false;
 
   /**
-   * Setup to enable double-click prevention
-   * when true button will be disabled after the first click.
-   * Parent component have to set to false at the process end.
+   * Option to set input disable on click, in order to prevent multi-click.
+   * Parent component have to set @prop 'disabled' to 'true' at the process end process.
    */
-  @Prop({mutable: true, reflect: true}) loader: boolean = true;
+  @Prop() disableOnClick: boolean = false;
 
   /**
   * Define if button is loading.
-  * Used to prevent double-click.
+  * Used to prevent multi-click.
   * Trigger when button is clicked or key-up ['enter', 'space], then value change to true.
   */
   @State() loading: boolean = false;
   @Watch('loading')
   loadingHandler(newValue: boolean) {
+    if(!this.disableOnClick) return;
     this.disabled = newValue;
   }
 

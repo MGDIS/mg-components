@@ -9,6 +9,10 @@ import { Option } from "./components/molecules/inputs/mg-input-select/mg-input-s
 export namespace Components {
     interface MgButton {
         /**
+          * Option to set input disable on click, in order to prevent multi-click. Parent component have to set @prop 'disabled' to 'true' at the process end process.
+         */
+        "disableOnClick": boolean;
+        /**
           * Disable button
          */
         "disabled": boolean;
@@ -24,10 +28,6 @@ export namespace Components {
           * aria-label In case button text is not explicit enough
          */
         "label": string;
-        /**
-          * Define if button is loading. Used to prevent double-click. Trigger when button is clicked or key-up 'enter', then value change to true. Must be set to false by parent at the process end.
-         */
-        "loading": boolean;
         /**
           * Define button variant
          */
@@ -630,6 +630,10 @@ declare global {
 declare namespace LocalJSX {
     interface MgButton {
         /**
+          * Option to set input disable on click, in order to prevent multi-click. Parent component have to set @prop 'disabled' to 'true' at the process end process.
+         */
+        "disableOnClick"?: boolean;
+        /**
           * Disable button
          */
         "disabled"?: boolean;
@@ -645,10 +649,6 @@ declare namespace LocalJSX {
           * aria-label In case button text is not explicit enough
          */
         "label"?: string;
-        /**
-          * Define if button is loading. Used to prevent double-click. Trigger when button is clicked or key-up 'enter', then value change to true. Must be set to false by parent at the process end.
-         */
-        "loading"?: boolean;
         /**
           * Define button variant
          */

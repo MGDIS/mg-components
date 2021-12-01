@@ -72,3 +72,27 @@ isIcon.parameters = {
     },
   },
 };
+
+const TemplateDisableOnClick = args => <mg-button
+  {...args}
+  disable-on-click={args.disableOnClick}>{args.slot}
+</mg-button>;
+export const DisableOnClick = TemplateDisableOnClick.bind({});
+
+DisableOnClick.args = {
+  ...MgButton.args,
+  disableOnClick: true,
+};
+
+// Set exemple code for component
+DisableOnClick.parameters = {
+  docs: {
+    source: {
+      code: `<mg-button
+  variant="${DisableOnClick.args.variant}"
+  label="${DisableOnClick.args.label}"
+  disable-on-click="${DisableOnClick.args.disableOnClick}"
+>${DisableOnClick.args.slot}</mg-button>`,
+    },
+  },
+};

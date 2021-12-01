@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-12-01T11:09:10",
+  "timestamp": "2021-12-01T14:43:23",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.11.0",
@@ -15,6 +15,23 @@
       "docsTags": [],
       "usage": {},
       "props": [
+        {
+          "name": "disableOnClick",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disable-on-click",
+          "reflectToAttr": false,
+          "docs": "Option to set input disable on click, in order to prevent multi-click.\nParent component have to set @prop 'disabled' to 'true' at the process end process.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
         {
           "name": "disabled",
           "type": "boolean",
@@ -77,23 +94,6 @@
           "values": [
             {
               "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "loader",
-          "type": "boolean",
-          "mutable": true,
-          "attr": "loader",
-          "reflectToAttr": true,
-          "docs": "Setup to enable double-click prevention\nwhen true button will be disabled after the first click.\nParent component have to set to false at the process end.",
-          "docsTags": [],
-          "default": "true",
-          "values": [
-            {
-              "type": "boolean"
             }
           ],
           "optional": false,

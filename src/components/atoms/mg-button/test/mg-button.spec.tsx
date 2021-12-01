@@ -35,8 +35,19 @@ describe('mg-button', () => {
   })
 
   describe('prevent double click', () => {
+    test('should NOT disable button after click', async () => {
+      const page = await getPage({label: 'test'});
+      const element = page.doc.querySelector('mg-button');
+      const button = element.shadowRoot.querySelector('button');
+
+      button.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+      await page.waitForChanges();
+
+      expect(button).not.toHaveAttribute('disabled')
+    })
+
     test('should disable button after click', async () => {
-      const page = await getPage({isIcon:true, label: 'test'});
+      const page = await getPage({label: 'test', disableOnClick: true});
       const element = page.doc.querySelector('mg-button');
       const button = element.shadowRoot.querySelector('button');
 
@@ -44,10 +55,15 @@ describe('mg-button', () => {
       await page.waitForChanges();
 
       expect(button).toHaveAttribute('disabled')
+
+      page.rootInstance.disabled = false;
+      await page.waitForChanges();
+
+      expect(button).not.toHaveAttribute('disabled')
     })
 
     test.each(['enter', 'space'])('should disable button after keyUp "%s"', async (key) => {
-      const page = await getPage({isIcon:true, label: 'test'});
+      const page = await getPage({label: 'test', disableOnClick: true});
       const element = page.doc.querySelector('mg-button');
       const button = element.shadowRoot.querySelector('button');
 
@@ -55,14 +71,24 @@ describe('mg-button', () => {
       await page.waitForChanges();
 
       expect(button).toHaveAttribute('disabled')
+
+      page.rootInstance.disabled = false;
+      await page.waitForChanges();
+
+      expect(button).not.toHaveAttribute('disabled')
     })
 
     test('should NOT disable button after keyUp "tab"', async () => {
-      const page = await getPage({isIcon:true, label: 'test'});
+      const page = await getPage({label: 'test', disableOnClick: true});
       const element = page.doc.querySelector('mg-button');
       const button = element.shadowRoot.querySelector('button');
 
       button.dispatchEvent(new KeyboardEvent('keyup', { bubbles: true, key: 'tab' }));
+      await page.waitForChanges();
+
+      expect(button).not.toHaveAttribute('disabled')
+
+      page.rootInstance.disabled = false;
       await page.waitForChanges();
 
       expect(button).not.toHaveAttribute('disabled')
