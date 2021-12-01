@@ -8,14 +8,9 @@ import { Component, h, Prop } from '@stencil/core';
 export class MgLabel {
 
   /**
-   * Internal
-   */
-  private classes = ['mg-label'];
-
-  /**
    * Label input id
    */
-  @Prop() identifier: string;
+  @Prop() identifier!: string;
 
   /**
    * If input is required an asterisk is added at the end of the label
@@ -33,7 +28,7 @@ export class MgLabel {
    */
   render() {
     return (
-      <label class={this.classes.join(' ')} htmlFor={this.identifier}>
+      <label class="mg-label" htmlFor={this.identifier}>
         <slot></slot>
         { this.required && [`\u00A0`, <span class="is-asterisk">*</span>] }
         { this.colon && `\u00A0:` }

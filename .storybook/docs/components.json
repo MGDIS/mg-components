@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-11-30T09:04:26",
+  "timestamp": "2021-12-01T11:09:10",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.11.0",
@@ -18,9 +18,9 @@
         {
           "name": "disabled",
           "type": "boolean",
-          "mutable": false,
+          "mutable": true,
           "attr": "disabled",
-          "reflectToAttr": false,
+          "reflectToAttr": true,
           "docs": "Disable button",
           "docsTags": [],
           "default": "false",
@@ -83,14 +83,14 @@
           "required": false
         },
         {
-          "name": "loading",
+          "name": "loader",
           "type": "boolean",
           "mutable": true,
-          "attr": "loading",
+          "attr": "loader",
           "reflectToAttr": true,
-          "docs": "Define if button is loading.\nUsed to prevent double-click.\nTrigger when button is clicked or key-up 'enter', then value change to true.\nMust be set to false by parent at the process end.",
+          "docs": "Setup to enable double-click prevention\nwhen true button will be disabled after the first click.\nParent component have to set to false at the process end.",
           "docsTags": [],
-          "default": "false",
+          "default": "true",
           "values": [
             {
               "type": "boolean"
@@ -217,8 +217,8 @@
       "parts": [],
       "dependents": [
         "mg-input-checkbox",
-        "mg-input-currency",
         "mg-input-date",
+        "mg-input-numeric",
         "mg-input-select",
         "mg-input-text",
         "mg-input-textarea"
@@ -228,10 +228,10 @@
         "mg-input-checkbox": [
           "mg-character-left"
         ],
-        "mg-input-currency": [
+        "mg-input-date": [
           "mg-character-left"
         ],
-        "mg-input-date": [
+        "mg-input-numeric": [
           "mg-character-left"
         ],
         "mg-input-select": [
@@ -279,8 +279,8 @@
       "parts": [],
       "dependents": [
         "mg-input-checkbox",
-        "mg-input-currency",
         "mg-input-date",
+        "mg-input-numeric",
         "mg-input-select",
         "mg-input-text",
         "mg-input-textarea"
@@ -290,10 +290,10 @@
         "mg-input-checkbox": [
           "mg-help-text"
         ],
-        "mg-input-currency": [
+        "mg-input-date": [
           "mg-help-text"
         ],
-        "mg-input-date": [
+        "mg-input-numeric": [
           "mg-help-text"
         ],
         "mg-input-select": [
@@ -358,8 +358,8 @@
       "parts": [],
       "dependents": [
         "mg-input-checkbox",
-        "mg-input-currency",
         "mg-input-date",
+        "mg-input-numeric",
         "mg-input-select",
         "mg-input-text",
         "mg-input-textarea",
@@ -370,10 +370,10 @@
         "mg-input-checkbox": [
           "mg-icon"
         ],
-        "mg-input-currency": [
+        "mg-input-date": [
           "mg-icon"
         ],
-        "mg-input-date": [
+        "mg-input-numeric": [
           "mg-icon"
         ],
         "mg-input-select": [
@@ -671,312 +671,6 @@
       }
     },
     {
-      "filePath": "./src/components/molecules/inputs/mg-input-currency/mg-input-currency.tsx",
-      "encapsulation": "shadow",
-      "tag": "mg-input-currency",
-      "readme": "# mg-input-currency\n\n\n",
-      "docs": "",
-      "docsTags": [],
-      "usage": {},
-      "props": [
-        {
-          "name": "disabled",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "disabled",
-          "reflectToAttr": false,
-          "docs": "Define if input is disabled",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "helpText",
-          "type": "string",
-          "mutable": false,
-          "attr": "help-text",
-          "reflectToAttr": false,
-          "docs": "Template to use for characters left sentence",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "identifier",
-          "type": "string",
-          "mutable": false,
-          "attr": "identifier",
-          "reflectToAttr": false,
-          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
-          "docsTags": [],
-          "default": "createID('mg-input-currency')",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "invalid",
-          "type": "boolean",
-          "mutable": true,
-          "attr": "invalid",
-          "reflectToAttr": true,
-          "docs": "Define input pattern error message",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "label",
-          "type": "string",
-          "mutable": false,
-          "attr": "label",
-          "reflectToAttr": false,
-          "docs": "Input label\nRequired",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": true
-        },
-        {
-          "name": "labelColon",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "label-colon",
-          "reflectToAttr": false,
-          "docs": "Define if label has colon \":\"",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "labelOnTop",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "label-on-top",
-          "reflectToAttr": false,
-          "docs": "Define if label is displayed on top",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "max",
-          "type": "number",
-          "mutable": false,
-          "attr": "max",
-          "reflectToAttr": false,
-          "docs": "Maximum value",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "number"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "min",
-          "type": "number",
-          "mutable": false,
-          "attr": "min",
-          "reflectToAttr": false,
-          "docs": "Minimum value",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "number"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "name",
-          "type": "string",
-          "mutable": false,
-          "attr": "name",
-          "reflectToAttr": false,
-          "docs": "Input name\nIf not set the value equals the identifier",
-          "docsTags": [],
-          "default": "this.identifier",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "placeholder",
-          "type": "string",
-          "mutable": false,
-          "attr": "placeholder",
-          "reflectToAttr": false,
-          "docs": "Input placeholder.\nIt should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text.",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "readonly",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "readonly",
-          "reflectToAttr": false,
-          "docs": "Define if input is readonly",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "required",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "required",
-          "reflectToAttr": false,
-          "docs": "Define if input is required",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "tooltip",
-          "type": "string",
-          "mutable": false,
-          "attr": "tooltip",
-          "reflectToAttr": false,
-          "docs": "Add a tooltip message next to the input",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "valid",
-          "type": "boolean",
-          "mutable": true,
-          "attr": "valid",
-          "reflectToAttr": true,
-          "docs": "Define input pattern to validate",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "value",
-          "type": "string",
-          "mutable": true,
-          "attr": "value",
-          "reflectToAttr": true,
-          "docs": "Component value",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        }
-      ],
-      "methods": [],
-      "events": [
-        {
-          "event": "valueChange",
-          "detail": "number",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "Emmited event when value change",
-          "docsTags": []
-        }
-      ],
-      "listeners": [],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [
-        "mg-label",
-        "mg-tooltip",
-        "mg-icon",
-        "mg-character-left",
-        "mg-help-text"
-      ],
-      "dependencyGraph": {
-        "mg-input-currency": [
-          "mg-label",
-          "mg-tooltip",
-          "mg-icon",
-          "mg-character-left",
-          "mg-help-text"
-        ]
-      }
-    },
-    {
       "filePath": "./src/components/molecules/inputs/mg-input-date/mg-input-date.tsx",
       "encapsulation": "shadow",
       "tag": "mg-input-date",
@@ -1226,6 +920,329 @@
       ],
       "dependencyGraph": {
         "mg-input-date": [
+          "mg-label",
+          "mg-tooltip",
+          "mg-icon",
+          "mg-character-left",
+          "mg-help-text"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/molecules/inputs/mg-input-numeric/mg-input-numeric.tsx",
+      "encapsulation": "shadow",
+      "tag": "mg-input-numeric",
+      "readme": "# mg-input-numeric\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Define if input is disabled",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "helpText",
+          "type": "string",
+          "mutable": false,
+          "attr": "help-text",
+          "reflectToAttr": false,
+          "docs": "Template to use for characters left sentence",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "identifier",
+          "type": "string",
+          "mutable": false,
+          "attr": "identifier",
+          "reflectToAttr": false,
+          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
+          "docsTags": [],
+          "default": "createID('mg-input-numeric')",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "invalid",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "invalid",
+          "reflectToAttr": true,
+          "docs": "Define input pattern error message",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "Input label\nRequired",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "labelColon",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "label-colon",
+          "reflectToAttr": false,
+          "docs": "Define if label has colon \":\"",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "labelOnTop",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "label-on-top",
+          "reflectToAttr": false,
+          "docs": "Define if label is displayed on top",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "number",
+          "mutable": false,
+          "attr": "max",
+          "reflectToAttr": false,
+          "docs": "Maximum value",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "number",
+          "mutable": false,
+          "attr": "min",
+          "reflectToAttr": false,
+          "docs": "Minimum value",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "Input name\nIf not set the value equals the identifier",
+          "docsTags": [],
+          "default": "this.identifier",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "mutable": false,
+          "attr": "placeholder",
+          "reflectToAttr": false,
+          "docs": "Input placeholder.\nIt should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "readonly",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "readonly",
+          "reflectToAttr": false,
+          "docs": "Define if input is readonly",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "required",
+          "reflectToAttr": false,
+          "docs": "Define if input is required",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "tooltip",
+          "type": "string",
+          "mutable": false,
+          "attr": "tooltip",
+          "reflectToAttr": false,
+          "docs": "Add a tooltip message next to the input",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "mutable": false,
+          "attr": "type",
+          "reflectToAttr": false,
+          "docs": "Define numeric type",
+          "docsTags": [],
+          "default": "types[0]",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "valid",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "valid",
+          "reflectToAttr": true,
+          "docs": "Define input pattern to validate",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": true,
+          "docs": "Component value",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "valueChange",
+          "detail": "number",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emmited event when value change",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "mg-label",
+        "mg-tooltip",
+        "mg-icon",
+        "mg-character-left",
+        "mg-help-text"
+      ],
+      "dependencyGraph": {
+        "mg-input-numeric": [
           "mg-label",
           "mg-tooltip",
           "mg-icon",
@@ -2295,7 +2312,7 @@
             }
           ],
           "optional": false,
-          "required": false
+          "required": true
         },
         {
           "name": "required",
@@ -2322,8 +2339,8 @@
       "parts": [],
       "dependents": [
         "mg-input-checkbox",
-        "mg-input-currency",
         "mg-input-date",
+        "mg-input-numeric",
         "mg-input-select",
         "mg-input-text",
         "mg-input-textarea"
@@ -2333,10 +2350,10 @@
         "mg-input-checkbox": [
           "mg-label"
         ],
-        "mg-input-currency": [
+        "mg-input-date": [
           "mg-label"
         ],
-        "mg-input-date": [
+        "mg-input-numeric": [
           "mg-label"
         ],
         "mg-input-select": [
@@ -2550,8 +2567,8 @@
       "parts": [],
       "dependents": [
         "mg-input-checkbox",
-        "mg-input-currency",
         "mg-input-date",
+        "mg-input-numeric",
         "mg-input-select",
         "mg-input-text",
         "mg-input-textarea"
@@ -2561,10 +2578,10 @@
         "mg-input-checkbox": [
           "mg-tooltip"
         ],
-        "mg-input-currency": [
+        "mg-input-date": [
           "mg-tooltip"
         ],
-        "mg-input-date": [
+        "mg-input-numeric": [
           "mg-tooltip"
         ],
         "mg-input-select": [

@@ -1,0 +1,8 @@
+/**
+ * Not scoped into `mg-label` because it could be used outside of an input
+ * (ex: All imput with a * are required)
+ */
+.is-asterisk {
+  color: hsl(var(--color-danger));
+  font-weight: 600;
+}
