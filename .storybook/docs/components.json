@@ -1,9 +1,9 @@
 {
-  "timestamp": "2021-11-30T09:24:10",
+  "timestamp": "2021-12-01T10:58:23",
   "compiler": {
     "name": "@stencil/core",
-    "version": "2.9.0",
-    "typescriptVersion": "4.2.3"
+    "version": "2.11.0",
+    "typescriptVersion": "4.3.5"
   },
   "components": [
     {
@@ -441,8 +441,8 @@
           "docs": "Manage indeterminate state",
           "docsTags": [
             {
-              "text": "https ://developer.mozilla.org/fr/docs/Web/HTML/Element/Input/checkbox#g%C3%A9rer_un_%C3%A9tat_ind%C3%A9termin%C3%A9",
-              "name": "see"
+              "name": "see",
+              "text": "https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input/checkbox#g%C3%A9rer_un_%C3%A9tat_ind%C3%A9termin%C3%A9"
             }
           ],
           "default": "false",
