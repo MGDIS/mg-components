@@ -14,6 +14,31 @@
     flex-direction: column;
   }
 
+  input[type='text'],
+  input[type='date'],
+  textarea,
+  select {
+    // Display
+    padding: calc((var(--default-size) - var(--font-size-base) * var(--line-height)) / 2) 1rem;
+    height: var(--default-size);
+    box-sizing: border-box;
+    // Decoration
+    border-width: var(--mg-inputs-border-width);
+    border-style: solid;
+    border-color: var(--mg-inputs-color);
+    border-radius: var(--mg-inputs-border-radius);
+    // Font
+    font-family: var(--font-family-body);
+    color: hsl(var(--color-dark));
+    font-size: var(--font-size-base);
+
+    &::placeholder {
+      // font-family: var(--font-family-body);
+      color: var(--mg-inputs-color);
+      font-style: italic;
+    }
+  }
+
   /**
    * Show hide nb char left ans help text on focus
    */
@@ -34,9 +59,22 @@
    * TODO USE THE RIGHT PRODUCT COLOR
    */
   &.is-not-valid {
-    color: red;
+    color: hsl(var(--color-danger));
     input {
-      border: 1px solid red;
+      border: 0.1rem solid;
+    }
+  }
+
+  /**
+   * Workaround to baseline align label with textarea
+   */
+  &.mg-input--textarea {
+    align-items: flex-start;
+    mg-label {
+      margin-top: calc((2 * var(--mg-inputs-border-width) + var(--default-size) - var(--font-size-base) * var(--line-height)) / 2);
+    }
+    textarea {
+      height: auto;
     }
   }
 }

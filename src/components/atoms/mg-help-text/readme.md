@@ -17,8 +17,8 @@
 ### Used by
 
  - [mg-input-checkbox](../../molecules/inputs/mg-input-checkbox)
- - [mg-input-currency](../../molecules/inputs/mg-input-currency)
  - [mg-input-date](../../molecules/inputs/mg-input-date)
+ - [mg-input-numeric](../../molecules/inputs/mg-input-numeric)
  - [mg-input-select](../../molecules/inputs/mg-input-select)
  - [mg-input-text](../../molecules/inputs/mg-input-text)
  - [mg-input-textarea](../../molecules/inputs/mg-input-textarea)
@@ -27,8 +27,8 @@
 ```mermaid
 graph TD;
   mg-input-checkbox --> mg-help-text
-  mg-input-currency --> mg-help-text
   mg-input-date --> mg-help-text
+  mg-input-numeric --> mg-help-text
   mg-input-select --> mg-help-text
   mg-input-text --> mg-help-text
   mg-input-textarea --> mg-help-text

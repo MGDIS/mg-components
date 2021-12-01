@@ -1,9 +1,8 @@
 // TODO ADD POSSIBILITY TO CHANGE LOCALE
-import fr from './fr-FR/messages';
+export const locale = 'fr-FR';
+
+import fr from './fr-FR/messages.json'
 
 export const messages = fr;
 
-export const locale = 'fr-FR';
-
 export const currency = 'EUR';
-

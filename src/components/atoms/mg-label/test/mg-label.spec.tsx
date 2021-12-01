@@ -9,12 +9,12 @@ const getPage = (args) => newSpecPage({
 
 describe('mg-label', () => {
   test.each([
-    [false, false],
-    [false, true],
-    [true, false],
-    [true, true]
-  ])('Should render label with required %s and colon %s', async (required, colon) => {
-    const args = {required, colon};
+    [false, false, 'identifier'],
+    [false, true, 'identifier'],
+    [true, false, 'identifier'],
+    [true, true, 'identifier']
+  ])('Should render label with required %s and colon %s', async (required, colon, identifier) => {
+    const args = {required, colon, identifier};
     const { root } = await getPage(args);
     expect(root).toMatchSnapshot();
   });
