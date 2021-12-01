@@ -24,7 +24,6 @@
 | `required`           | `required`     | Define if input is required                                                                                                                    | `boolean` | `false`                        |
 | `tooltip`            | `tooltip`      | Add a tooltip message next to the input                                                                                                        | `string`  | `undefined`                    |
 | `type`               | `type`         | Define numeric type                                                                                                                            | `string`  | `types[0]`                     |
-| `unit`               | `unit`         | Add a custom unit                                                                                                                              | `string`  | `undefined`                    |
 | `valid`              | `valid`        | Define input pattern to validate                                                                                                               | `boolean` | `undefined`                    |
 | `value`              | `value`        | Component value                                                                                                                                | `string`  | `undefined`                    |
 
