@@ -3,10 +3,13 @@ mg-tooltip {
 }
 
 [role='tooltip'] {
+  // Display
   display: none;
   padding: 0.5rem;
+  // Decoration
   border-radius: 0.3rem;
   background-color: hsl(var(--mg-tooltip-background-color));
+  // Font
   color: hsl(var(--mg-tooltip-font-color));
 
   &[data-show] {
@@ -15,9 +18,11 @@ mg-tooltip {
 
   .mg-tooltip__arrow,
   .mg-tooltip__arrow:before {
+    // Display
     position: absolute;
-    width: 8px;
-    height: 8px;
+    width: 0.8rem;
+    height: 0.8rem;
+    // Decoration
     background: inherit;
   }
 

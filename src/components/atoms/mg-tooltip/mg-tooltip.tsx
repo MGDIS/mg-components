@@ -98,24 +98,20 @@ export class MgTooltip {
   componentDidLoad() {
     // get slotted element
     const slotElement = this.element.firstElementChild as HTMLElement;
-
     // Get interactive element
-    const interactiveTagSelector = 'a, button, input, textarea'; // Might needs updates
-    const interactiveElement = slotElement.querySelector(interactiveTagSelector);
+    const interactiveElements = ['a', 'button', 'input', 'textarea', 'select']; //! Might needs updates
+    const interactiveElement = this.element.querySelector(interactiveElements.join(',')) || slotElement.shadowRoot?.querySelector(interactiveElements.join(','));
 
     // Add tabindex to slotted element if we can't find any interactive element
-    if (interactiveElement === null) slotElement.tabIndex = 0
-
-    // Define element with tooltip
-    const a11yElement = interactiveElement !== null ? interactiveElement : slotElement;
+    if (interactiveElement === null || interactiveElement === undefined) slotElement.tabIndex = 0;
 
     // Set aria-describedby
-    const ariaDescribedby = a11yElement.getAttribute('aria-describedby');
+    const ariaDescribedby = slotElement.getAttribute('aria-describedby');
     if(ariaDescribedby === null) {
-      a11yElement.setAttribute('aria-describedby', this.identifier)
+      slotElement.setAttribute('aria-describedby', this.identifier)
     }
     else {
-      a11yElement.setAttribute('aria-describedby', `${ariaDescribedby} ${this.identifier}`);
+      slotElement.setAttribute('aria-describedby', `${ariaDescribedby} ${this.identifier}`);
     }
 
     // Get tooltip element
@@ -136,11 +132,11 @@ export class MgTooltip {
 
     // Add events
     ['mouseenter', 'focus'].forEach((event) => {
-      a11yElement.addEventListener(event, this.show);
+      slotElement.addEventListener(event, this.show);
     });
 
     ['mouseleave', 'blur'].forEach((event) => {
-      a11yElement.addEventListener(event, this.hide);
+      slotElement.addEventListener(event, this.hide);
     });
   }
 

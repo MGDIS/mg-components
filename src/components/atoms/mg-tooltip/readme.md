@@ -7,10 +7,11 @@
 
 ## Properties
 
-| Property     | Attribute    | Description                                                                      | Type     | Default                  |
-| ------------ | ------------ | -------------------------------------------------------------------------------- | -------- | ------------------------ |
-| `identifier` | `identifier` | Sets an `id` attribute. Needed by the input for accessibility `arai-decribedby`. | `string` | `createID('mg-tooltip')` |
-| `message`    | `message`    | Displayed message in the tooltip                                                 | `string` | `undefined`              |
+| Property               | Attribute    | Description                                                                      | Type                                                                                                                                                                                                         | Default                  |
+| ---------------------- | ------------ | -------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------ |
+| `identifier`           | `identifier` | Sets an `id` attribute. Needed by the input for accessibility `arai-decribedby`. | `string`                                                                                                                                                                                                     | `createID('mg-tooltip')` |
+| `message` _(required)_ | `message`    | Displayed message in the tooltip                                                 | `string`                                                                                                                                                                                                     | `undefined`              |
+| `placement`            | `placement`  | Tooltip placement                                                                | `"auto" \| "auto-end" \| "auto-start" \| "bottom" \| "bottom-end" \| "bottom-start" \| "left" \| "left-end" \| "left-start" \| "right" \| "right-end" \| "right-start" \| "top" \| "top-end" \| "top-start"` | `'bottom'`               |
 
 
 ## Dependencies

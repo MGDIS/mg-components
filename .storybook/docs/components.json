@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-12-01T10:58:23",
+  "timestamp": "2021-12-02T13:46:11",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.9.0",
@@ -106,10 +106,14 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mg-message"],
+      "dependents": [
+        "mg-message"
+      ],
       "dependencies": [],
       "dependencyGraph": {
-        "mg-message": ["mg-button"]
+        "mg-message": [
+          "mg-button"
+        ]
       }
     },
     {
@@ -194,15 +198,34 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mg-input-checkbox", "mg-input-date", "mg-input-numeric", "mg-input-select", "mg-input-text", "mg-input-textarea"],
+      "dependents": [
+        "mg-input-checkbox",
+        "mg-input-date",
+        "mg-input-numeric",
+        "mg-input-select",
+        "mg-input-text",
+        "mg-input-textarea"
+      ],
       "dependencies": [],
       "dependencyGraph": {
-        "mg-input-checkbox": ["mg-character-left"],
-        "mg-input-date": ["mg-character-left"],
-        "mg-input-numeric": ["mg-character-left"],
-        "mg-input-select": ["mg-character-left"],
-        "mg-input-text": ["mg-character-left"],
-        "mg-input-textarea": ["mg-character-left"]
+        "mg-input-checkbox": [
+          "mg-character-left"
+        ],
+        "mg-input-date": [
+          "mg-character-left"
+        ],
+        "mg-input-numeric": [
+          "mg-character-left"
+        ],
+        "mg-input-select": [
+          "mg-character-left"
+        ],
+        "mg-input-text": [
+          "mg-character-left"
+        ],
+        "mg-input-textarea": [
+          "mg-character-left"
+        ]
       }
     },
     {
@@ -254,16 +277,38 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mg-input-checkbox", "mg-input-date", "mg-input-numeric", "mg-input-select", "mg-input-text", "mg-input-textarea", "mg-message"],
+      "dependents": [
+        "mg-input-checkbox",
+        "mg-input-date",
+        "mg-input-numeric",
+        "mg-input-select",
+        "mg-input-text",
+        "mg-input-textarea",
+        "mg-message"
+      ],
       "dependencies": [],
       "dependencyGraph": {
-        "mg-input-checkbox": ["mg-icon"],
-        "mg-input-date": ["mg-icon"],
-        "mg-input-numeric": ["mg-icon"],
-        "mg-input-select": ["mg-icon"],
-        "mg-input-text": ["mg-icon"],
-        "mg-input-textarea": ["mg-icon"],
-        "mg-message": ["mg-icon"]
+        "mg-input-checkbox": [
+          "mg-icon"
+        ],
+        "mg-input-date": [
+          "mg-icon"
+        ],
+        "mg-input-numeric": [
+          "mg-icon"
+        ],
+        "mg-input-select": [
+          "mg-icon"
+        ],
+        "mg-input-text": [
+          "mg-icon"
+        ],
+        "mg-input-textarea": [
+          "mg-icon"
+        ],
+        "mg-message": [
+          "mg-icon"
+        ]
       }
     },
     {
@@ -529,9 +574,19 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left"],
+      "dependencies": [
+        "mg-label",
+        "mg-tooltip",
+        "mg-icon",
+        "mg-character-left"
+      ],
       "dependencyGraph": {
-        "mg-input-checkbox": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left"]
+        "mg-input-checkbox": [
+          "mg-label",
+          "mg-tooltip",
+          "mg-icon",
+          "mg-character-left"
+        ]
       }
     },
     {
@@ -775,9 +830,19 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left"],
+      "dependencies": [
+        "mg-label",
+        "mg-tooltip",
+        "mg-icon",
+        "mg-character-left"
+      ],
       "dependencyGraph": {
-        "mg-input-date": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left"]
+        "mg-input-date": [
+          "mg-label",
+          "mg-tooltip",
+          "mg-icon",
+          "mg-character-left"
+        ]
       }
     },
     {
@@ -1086,9 +1151,19 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left"],
+      "dependencies": [
+        "mg-label",
+        "mg-tooltip",
+        "mg-icon",
+        "mg-character-left"
+      ],
       "dependencyGraph": {
-        "mg-input-numeric": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left"]
+        "mg-input-numeric": [
+          "mg-label",
+          "mg-tooltip",
+          "mg-icon",
+          "mg-character-left"
+        ]
       }
     },
     {
@@ -1367,9 +1442,19 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left"],
+      "dependencies": [
+        "mg-label",
+        "mg-tooltip",
+        "mg-icon",
+        "mg-character-left"
+      ],
       "dependencyGraph": {
-        "mg-input-select": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left"]
+        "mg-input-select": [
+          "mg-label",
+          "mg-tooltip",
+          "mg-icon",
+          "mg-character-left"
+        ]
       }
     },
     {
@@ -1711,9 +1796,19 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left"],
+      "dependencies": [
+        "mg-label",
+        "mg-tooltip",
+        "mg-icon",
+        "mg-character-left"
+      ],
       "dependencyGraph": {
-        "mg-input-text": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left"]
+        "mg-input-text": [
+          "mg-label",
+          "mg-tooltip",
+          "mg-icon",
+          "mg-character-left"
+        ]
       }
     },
     {
@@ -2072,9 +2167,19 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left"],
+      "dependencies": [
+        "mg-label",
+        "mg-tooltip",
+        "mg-icon",
+        "mg-character-left"
+      ],
       "dependencyGraph": {
-        "mg-input-textarea": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left"]
+        "mg-input-textarea": [
+          "mg-label",
+          "mg-tooltip",
+          "mg-icon",
+          "mg-character-left"
+        ]
       }
     },
     {
@@ -2141,15 +2246,34 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mg-input-checkbox", "mg-input-date", "mg-input-numeric", "mg-input-select", "mg-input-text", "mg-input-textarea"],
+      "dependents": [
+        "mg-input-checkbox",
+        "mg-input-date",
+        "mg-input-numeric",
+        "mg-input-select",
+        "mg-input-text",
+        "mg-input-textarea"
+      ],
       "dependencies": [],
       "dependencyGraph": {
-        "mg-input-checkbox": ["mg-label"],
-        "mg-input-date": ["mg-label"],
-        "mg-input-numeric": ["mg-label"],
-        "mg-input-select": ["mg-label"],
-        "mg-input-text": ["mg-label"],
-        "mg-input-textarea": ["mg-label"]
+        "mg-input-checkbox": [
+          "mg-label"
+        ],
+        "mg-input-date": [
+          "mg-label"
+        ],
+        "mg-input-numeric": [
+          "mg-label"
+        ],
+        "mg-input-select": [
+          "mg-label"
+        ],
+        "mg-input-text": [
+          "mg-label"
+        ],
+        "mg-input-textarea": [
+          "mg-label"
+        ]
       }
     },
     {
@@ -2237,9 +2361,15 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": ["mg-icon", "mg-button"],
+      "dependencies": [
+        "mg-icon",
+        "mg-button"
+      ],
       "dependencyGraph": {
-        "mg-message": ["mg-icon", "mg-button"]
+        "mg-message": [
+          "mg-icon",
+          "mg-button"
+        ]
       }
     },
     {
@@ -2318,7 +2448,7 @@
               "type": "string"
             }
           ],
-          "optional": true,
+          "optional": false,
           "required": false
         },
         {
@@ -2335,6 +2465,80 @@
             }
           ],
           "optional": false,
+          "required": true
+        },
+        {
+          "name": "placement",
+          "type": "\"auto\" | \"auto-end\" | \"auto-start\" | \"bottom\" | \"bottom-end\" | \"bottom-start\" | \"left\" | \"left-end\" | \"left-start\" | \"right\" | \"right-end\" | \"right-start\" | \"top\" | \"top-end\" | \"top-start\"",
+          "mutable": false,
+          "attr": "placement",
+          "reflectToAttr": false,
+          "docs": "Tooltip placement",
+          "docsTags": [],
+          "default": "'bottom'",
+          "values": [
+            {
+              "value": "auto",
+              "type": "string"
+            },
+            {
+              "value": "auto-end",
+              "type": "string"
+            },
+            {
+              "value": "auto-start",
+              "type": "string"
+            },
+            {
+              "value": "bottom",
+              "type": "string"
+            },
+            {
+              "value": "bottom-end",
+              "type": "string"
+            },
+            {
+              "value": "bottom-start",
+              "type": "string"
+            },
+            {
+              "value": "left",
+              "type": "string"
+            },
+            {
+              "value": "left-end",
+              "type": "string"
+            },
+            {
+              "value": "left-start",
+              "type": "string"
+            },
+            {
+              "value": "right",
+              "type": "string"
+            },
+            {
+              "value": "right-end",
+              "type": "string"
+            },
+            {
+              "value": "right-start",
+              "type": "string"
+            },
+            {
+              "value": "top",
+              "type": "string"
+            },
+            {
+              "value": "top-end",
+              "type": "string"
+            },
+            {
+              "value": "top-start",
+              "type": "string"
+            }
+          ],
+          "optional": false,
           "required": false
         }
       ],
@@ -2344,15 +2548,34 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mg-input-checkbox", "mg-input-date", "mg-input-numeric", "mg-input-select", "mg-input-text", "mg-input-textarea"],
+      "dependents": [
+        "mg-input-checkbox",
+        "mg-input-date",
+        "mg-input-numeric",
+        "mg-input-select",
+        "mg-input-text",
+        "mg-input-textarea"
+      ],
       "dependencies": [],
       "dependencyGraph": {
-        "mg-input-checkbox": ["mg-tooltip"],
-        "mg-input-date": ["mg-tooltip"],
-        "mg-input-numeric": ["mg-tooltip"],
-        "mg-input-select": ["mg-tooltip"],
-        "mg-input-text": ["mg-tooltip"],
-        "mg-input-textarea": ["mg-tooltip"]
+        "mg-input-checkbox": [
+          "mg-tooltip"
+        ],
+        "mg-input-date": [
+          "mg-tooltip"
+        ],
+        "mg-input-numeric": [
+          "mg-tooltip"
+        ],
+        "mg-input-select": [
+          "mg-tooltip"
+        ],
+        "mg-input-text": [
+          "mg-tooltip"
+        ],
+        "mg-input-textarea": [
+          "mg-tooltip"
+        ]
       }
     }
   ]
