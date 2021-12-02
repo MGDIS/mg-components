@@ -508,11 +508,15 @@ export namespace Components {
         /**
           * Sets an `id` attribute. Needed by the input for accessibility `arai-decribedby`.
          */
-        "identifier"?: string;
+        "identifier": string;
         /**
           * Displayed message in the tooltip
          */
         "message": string;
+        /**
+          * Tooltip placement
+         */
+        "placement": 'auto'|'auto-start'|'auto-end'|'top'|'top-start'|'top-end'|'bottom'|'bottom-start'|'bottom-end'|'right'|'right-start'|'right-end'|'left'|'left-start'|'left-end';
     }
 }
 declare global {
@@ -1140,7 +1144,11 @@ declare namespace LocalJSX {
         /**
           * Displayed message in the tooltip
          */
-        "message"?: string;
+        "message": string;
+        /**
+          * Tooltip placement
+         */
+        "placement"?: 'auto'|'auto-start'|'auto-end'|'top'|'top-start'|'top-end'|'bottom'|'bottom-start'|'bottom-end'|'right'|'right-start'|'right-end'|'left'|'left-start'|'left-end';
     }
     interface IntrinsicElements {
         "mg-button": MgButton;

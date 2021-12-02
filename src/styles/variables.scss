@@ -106,6 +106,12 @@
   --mg-tag-font-size: 1.2rem;
 
   /**
+   * <mg-tooltip>
+   */
+  --mg-tooltip-background-color: var(--color-dark);
+  --mg-tooltip-font-color: var(--color-font-light);
+
+  /**
    * <mg-message>
    */
   --mg-message-border-radius: 0.3rem;

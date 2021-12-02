@@ -14,12 +14,12 @@ export class MgInputText {
    * Internal *
    ************/
 
-   private classFocus = 'is-focused';
-   private classError = 'is-not-valid';
+  private classFocus = 'is-focused';
+  private classError = 'is-not-valid';
 
   /**************
-  * Decorators *
-  **************/
+   * Decorators *
+   **************/
 
   /**
    * Component value
