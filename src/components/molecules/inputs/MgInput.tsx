@@ -12,6 +12,7 @@ interface MgInputProps {
   label: string;
   labelOnTop: boolean;
   labelColon: boolean;
+  labelHide: boolean;
   // Input
   value: string;
   readonlyValue: string;
@@ -110,9 +111,10 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
     <div class={props.classList.join()}>
       <mg-label
         identifier={props.identifier}
+        class={props.labelHide ? "sr-only" : undefined}
         colon={props.labelColon}
         required={props.required}
-        >
+      >
         {props.label}
       </mg-label>
       { props.readonly

@@ -78,7 +78,7 @@ export namespace Components {
         "identifier"?: string;
         /**
           * Manage indeterminate state
-          * @see https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input/checkbox#g%C3%A9rer_un_%C3%A9tat_ind%C3%A9termin%C3%A9
+          * @see https ://developer.mozilla.org/fr/docs/Web/HTML/Element/Input/checkbox#g%C3%A9rer_un_%C3%A9tat_ind%C3%A9termin%C3%A9
          */
         "indeterminate": boolean;
         /**
@@ -93,6 +93,10 @@ export namespace Components {
           * Define if label has colon ":"
          */
         "labelColon": boolean;
+        /**
+          * Define if label is visible
+         */
+        "labelHide": boolean;
         /**
           * Define if label is displayed on top
          */
@@ -148,6 +152,10 @@ export namespace Components {
          */
         "labelColon": boolean;
         /**
+          * Define if label is visible
+         */
+        "labelHide": boolean;
+        /**
           * Define if label is displayed on top
          */
         "labelOnTop": boolean;
@@ -201,6 +209,10 @@ export namespace Components {
           * Define if label has colon ":"
          */
         "labelColon": boolean;
+        /**
+          * Define if label is visible
+         */
+        "labelHide": boolean;
         /**
           * Define if label is displayed on top
          */
@@ -276,6 +288,10 @@ export namespace Components {
          */
         "labelColon": boolean;
         /**
+          * Define if label is visible
+         */
+        "labelHide": boolean;
+        /**
           * Define if label is displayed on top
          */
         "labelOnTop": boolean;
@@ -341,6 +357,10 @@ export namespace Components {
           * Define if label has colon ":"
          */
         "labelColon": boolean;
+        /**
+          * Define if label is visible
+         */
+        "labelHide": boolean;
         /**
           * Define if label is displayed on top
          */
@@ -419,6 +439,10 @@ export namespace Components {
           * Define if label has colon ":"
          */
         "labelColon": boolean;
+        /**
+          * Define if label is visible
+         */
+        "labelHide": boolean;
         /**
           * Define if label is displayed on top
          */
@@ -695,7 +719,7 @@ declare namespace LocalJSX {
         "identifier"?: string;
         /**
           * Manage indeterminate state
-          * @see https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input/checkbox#g%C3%A9rer_un_%C3%A9tat_ind%C3%A9termin%C3%A9
+          * @see https ://developer.mozilla.org/fr/docs/Web/HTML/Element/Input/checkbox#g%C3%A9rer_un_%C3%A9tat_ind%C3%A9termin%C3%A9
          */
         "indeterminate"?: boolean;
         /**
@@ -710,6 +734,10 @@ declare namespace LocalJSX {
           * Define if label has colon ":"
          */
         "labelColon"?: boolean;
+        /**
+          * Define if label is visible
+         */
+        "labelHide"?: boolean;
         /**
           * Define if label is displayed on top
          */
@@ -769,6 +797,10 @@ declare namespace LocalJSX {
          */
         "labelColon"?: boolean;
         /**
+          * Define if label is visible
+         */
+        "labelHide"?: boolean;
+        /**
           * Define if label is displayed on top
          */
         "labelOnTop"?: boolean;
@@ -826,6 +858,10 @@ declare namespace LocalJSX {
           * Define if label has colon ":"
          */
         "labelColon"?: boolean;
+        /**
+          * Define if label is visible
+         */
+        "labelHide"?: boolean;
         /**
           * Define if label is displayed on top
          */
@@ -905,6 +941,10 @@ declare namespace LocalJSX {
          */
         "labelColon"?: boolean;
         /**
+          * Define if label is visible
+         */
+        "labelHide"?: boolean;
+        /**
           * Define if label is displayed on top
          */
         "labelOnTop"?: boolean;
@@ -974,6 +1014,10 @@ declare namespace LocalJSX {
           * Define if label has colon ":"
          */
         "labelColon"?: boolean;
+        /**
+          * Define if label is visible
+         */
+        "labelHide"?: boolean;
         /**
           * Define if label is displayed on top
          */
@@ -1056,6 +1100,10 @@ declare namespace LocalJSX {
           * Define if label has colon ":"
          */
         "labelColon"?: boolean;
+        /**
+          * Define if label is visible
+         */
+        "labelHide"?: boolean;
         /**
           * Define if label is displayed on top
          */

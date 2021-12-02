@@ -3,7 +3,7 @@ import { Component, h, Prop } from '@stencil/core';
 @Component({
   tag: 'mg-label',
   styleUrl: 'mg-label.scss',
-  scoped: true,
+  shadow: true,
 })
 export class MgLabel {
 
@@ -22,10 +22,11 @@ export class MgLabel {
    */
   @Prop() colon: boolean;
 
-  /**
-   * Render
-   * \u00A0 represent a &nbsp;
-   */
+  /*************
+   * Lifecycle *
+   *************/
+
+  // \u00A0 represent a &nbsp;
   render() {
     return (
       <label class="mg-label" htmlFor={this.identifier}>
