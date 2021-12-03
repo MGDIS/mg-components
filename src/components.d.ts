@@ -9,6 +9,10 @@ import { Option } from "./components/molecules/inputs/mg-input-select/mg-input-s
 export namespace Components {
     interface MgButton {
         /**
+          * Option to set input disable on click, in order to prevent multi-click. Parent component have to remove the attribute 'disabled' when the process ends.
+         */
+        "disableOnClick": boolean;
+        /**
           * Disable button
          */
         "disabled": boolean;
@@ -88,6 +92,10 @@ export namespace Components {
          */
         "labelColon": boolean;
         /**
+          * Define if label is visible
+         */
+        "labelHide": boolean;
+        /**
           * Define if label is displayed on top
          */
         "labelOnTop": boolean;
@@ -142,6 +150,10 @@ export namespace Components {
          */
         "labelColon": boolean;
         /**
+          * Define if label is visible
+         */
+        "labelHide": boolean;
+        /**
           * Define if label is displayed on top
          */
         "labelOnTop": boolean;
@@ -195,6 +207,10 @@ export namespace Components {
           * Define if label has colon ":"
          */
         "labelColon": boolean;
+        /**
+          * Define if label is visible
+         */
+        "labelHide": boolean;
         /**
           * Define if label is displayed on top
          */
@@ -270,6 +286,10 @@ export namespace Components {
          */
         "labelColon": boolean;
         /**
+          * Define if label is visible
+         */
+        "labelHide": boolean;
+        /**
           * Define if label is displayed on top
          */
         "labelOnTop": boolean;
@@ -335,6 +355,10 @@ export namespace Components {
           * Define if label has colon ":"
          */
         "labelColon": boolean;
+        /**
+          * Define if label is visible
+         */
+        "labelHide": boolean;
         /**
           * Define if label is displayed on top
          */
@@ -413,6 +437,10 @@ export namespace Components {
           * Define if label has colon ":"
          */
         "labelColon": boolean;
+        /**
+          * Define if label is visible
+         */
+        "labelHide": boolean;
         /**
           * Define if label is displayed on top
          */
@@ -617,6 +645,10 @@ declare global {
 declare namespace LocalJSX {
     interface MgButton {
         /**
+          * Option to set input disable on click, in order to prevent multi-click. Parent component have to remove the attribute 'disabled' when the process ends.
+         */
+        "disableOnClick"?: boolean;
+        /**
           * Disable button
          */
         "disabled"?: boolean;
@@ -696,6 +728,10 @@ declare namespace LocalJSX {
          */
         "labelColon"?: boolean;
         /**
+          * Define if label is visible
+         */
+        "labelHide"?: boolean;
+        /**
           * Define if label is displayed on top
          */
         "labelOnTop"?: boolean;
@@ -754,6 +790,10 @@ declare namespace LocalJSX {
          */
         "labelColon"?: boolean;
         /**
+          * Define if label is visible
+         */
+        "labelHide"?: boolean;
+        /**
           * Define if label is displayed on top
          */
         "labelOnTop"?: boolean;
@@ -811,6 +851,10 @@ declare namespace LocalJSX {
           * Define if label has colon ":"
          */
         "labelColon"?: boolean;
+        /**
+          * Define if label is visible
+         */
+        "labelHide"?: boolean;
         /**
           * Define if label is displayed on top
          */
@@ -890,6 +934,10 @@ declare namespace LocalJSX {
          */
         "labelColon"?: boolean;
         /**
+          * Define if label is visible
+         */
+        "labelHide"?: boolean;
+        /**
           * Define if label is displayed on top
          */
         "labelOnTop"?: boolean;
@@ -959,6 +1007,10 @@ declare namespace LocalJSX {
           * Define if label has colon ":"
          */
         "labelColon"?: boolean;
+        /**
+          * Define if label is visible
+         */
+        "labelHide"?: boolean;
         /**
           * Define if label is displayed on top
          */
@@ -1041,6 +1093,10 @@ declare namespace LocalJSX {
           * Define if label has colon ":"
          */
         "labelColon"?: boolean;
+        /**
+          * Define if label is visible
+         */
+        "labelHide"?: boolean;
         /**
           * Define if label is displayed on top
          */

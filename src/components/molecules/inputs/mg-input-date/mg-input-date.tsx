@@ -56,6 +56,11 @@ export class MgInputDate {
   @Prop() labelColon: boolean = false;
 
   /**
+   * Define if label is visible
+   */
+  @Prop() labelHide: boolean = false;
+
+  /**
    * Define if input is required
    */
   @Prop() required: boolean = false;
@@ -176,6 +181,7 @@ export class MgInputDate {
         label={this.label}
         labelOnTop={this.labelOnTop}
         labelColon={this.labelColon}
+        labelHide={this.labelHide}
         required={this.required}
         readonly={this.readonly}
         value={this.value}

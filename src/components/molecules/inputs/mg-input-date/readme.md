@@ -13,6 +13,7 @@
 | `invalid`            | `invalid`      | Define input pattern error message                                                                          | `boolean` | `undefined`                 |
 | `label` _(required)_ | `label`        | Input label Required                                                                                        | `string`  | `undefined`                 |
 | `labelColon`         | `label-colon`  | Define if label has colon ":"                                                                               | `boolean` | `false`                     |
+| `labelHide`          | `label-hide`   | Define if label is visible                                                                                  | `boolean` | `false`                     |
 | `labelOnTop`         | `label-on-top` | Define if label is displayed on top                                                                         | `boolean` | `undefined`                 |
 | `name`               | `name`         | Input name If not set the value equals the identifier                                                       | `string`  | `this.identifier`           |
 | `readonly`           | `readonly`     | Define if input is readonly                                                                                 | `boolean` | `false`                     |
