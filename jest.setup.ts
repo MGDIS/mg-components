@@ -5,7 +5,7 @@ import { configureToMatchImageSnapshot } from 'jest-image-snapshot';
  */
 const toMatchImageSnapshot = configureToMatchImageSnapshot({
   customDiffConfig: { threshold: 0.3 },
-  failureThreshold: 0.02,
+  failureThreshold: 0.025,
   failureThresholdType: 'percent',
   dumpInlineDiffToConsole: true,
 })

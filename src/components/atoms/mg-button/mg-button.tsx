@@ -5,7 +5,7 @@ import { ClassList, createID } from '../../../utils/components.utils';
 @Component({
   tag: 'mg-button',
   styleUrl: 'mg-button.scss',
-  scoped: true,
+  shadow: true,
 })
 export class MgButton {
 
@@ -36,13 +36,31 @@ export class MgButton {
   /**
    * Disable button
    */
-   @Prop() disabled: boolean = false;
+   @Prop({mutable: true, reflect: true}) disabled: boolean = false;
 
    /**
    * Define if button is round.
    * Used for icon button.
    */
   @Prop() isIcon: boolean = false;
+
+  /**
+   * Option to set input disable on click, in order to prevent multi-click.
+   * Parent component have to remove the attribute 'disabled' when the process ends.
+   */
+  @Prop() disableOnClick: boolean = false;
+
+  /**
+  * Define if button is loading.
+  * Used to prevent multi-click.
+  * Trigger when button is clicked or key-up ['enter', 'space], then value change to true.
+  */
+  @State() loading: boolean = false;
+  @Watch('loading')
+  loadingHandler(newValue: boolean) {
+    if(!this.disableOnClick) return;
+    this.disabled = newValue;
+  }
 
   /**
    * Component classes
@@ -63,6 +81,13 @@ export class MgButton {
   }
 
   /**
+   * Trigger actions onClick event
+   */
+  private handleClick = () => {
+    this.loading = true;
+  }
+
+  /**
   * Render component
   */
   render() {
@@ -72,6 +97,7 @@ export class MgButton {
           class={this.classList.join()}
           aria-label={this.label}
           disabled={this.disabled}
+          onClick={this.handleClick}
         >
           <slot></slot>
         </button>

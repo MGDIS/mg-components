@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-12-01T10:58:23",
+  "timestamp": "2021-12-02T07:19:48",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.11.0",
@@ -8,7 +8,7 @@
   "components": [
     {
       "filePath": "./src/components/atoms/mg-button/mg-button.tsx",
-      "encapsulation": "scoped",
+      "encapsulation": "shadow",
       "tag": "mg-button",
       "readme": "# mg-button\n\n\n",
       "docs": "",
@@ -16,11 +16,28 @@
       "usage": {},
       "props": [
         {
-          "name": "disabled",
+          "name": "disableOnClick",
           "type": "boolean",
           "mutable": false,
-          "attr": "disabled",
+          "attr": "disable-on-click",
           "reflectToAttr": false,
+          "docs": "Option to set input disable on click, in order to prevent multi-click.\nParent component have to remove the attribute 'disabled' when the process ends.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "disabled",
+          "reflectToAttr": true,
           "docs": "Disable button",
           "docsTags": [],
           "default": "false",
