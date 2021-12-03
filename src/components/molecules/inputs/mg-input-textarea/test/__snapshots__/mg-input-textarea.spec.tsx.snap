@@ -39,7 +39,6 @@ exports[`mg-input-textarea Should render with args {
             <mg-icon icon="info"></mg-icon>
           </mg-tooltip>
         </div>
-        <mg-character-left identifier="identifier-character-left" maxlength="4000"></mg-character-left>
       </div>
     </div>
   </mock:shadow-root>
@@ -56,7 +55,6 @@ exports[`mg-input-textarea Should render with args { label: 'label', identifier:
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input"><textarea aria-describedby="" id="identifier" maxlength="4000" name="identifier" rows="3"></textarea>
         </div>
-        <mg-character-left identifier="identifier-character-left" maxlength="4000"></mg-character-left>
       </div>
     </div>
   </mock:shadow-root>
@@ -73,7 +71,6 @@ exports[`mg-input-textarea Should render with args { label: 'label', identifier:
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input"><textarea aria-describedby="" id="identifier" maxlength="4000" name="identifier" rows="3"></textarea>
         </div>
-        <mg-character-left identifier="identifier-character-left" maxlength="4000"></mg-character-left>
       </div>
     </div>
   </mock:shadow-root>

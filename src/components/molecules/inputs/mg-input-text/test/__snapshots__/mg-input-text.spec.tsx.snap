@@ -40,7 +40,6 @@ exports[`mg-input-text Should render with args {
             <mg-icon icon="info"></mg-icon>
           </mg-tooltip>
         </div>
-        <mg-character-left identifier="identifier-character-left" maxlength="400"></mg-character-left>
       </div>
     </div>
   </mock:shadow-root>
@@ -58,7 +57,6 @@ exports[`mg-input-text Should render with args { label: 'label', identifier: 'id
         <div class="mg-input__input-container__input">
           <input aria-describedby="" id="identifier" maxlength="400" name="identifier" type="text">
         </div>
-        <mg-character-left identifier="identifier-character-left" maxlength="400"></mg-character-left>
       </div>
     </div>
   </mock:shadow-root>
@@ -76,7 +74,6 @@ exports[`mg-input-text Should render with args { label: 'label', identifier: 'id
         <div class="mg-input__input-container__input">
           <input aria-describedby="" id="identifier" maxlength="400" name="identifier" type="text">
         </div>
-        <mg-character-left identifier="identifier-character-left" maxlength="400"></mg-character-left>
       </div>
     </div>
   </mock:shadow-root>
