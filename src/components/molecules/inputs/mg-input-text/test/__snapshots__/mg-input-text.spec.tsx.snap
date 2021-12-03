@@ -63,6 +63,23 @@ exports[`mg-input-text Should render with args { label: 'label', identifier: 'id
 </mg-input-text>
 `;
 
+exports[`mg-input-text Should render with args { label: 'label', identifier: 'identifier', labelHide: true }: 1`] = `
+<mg-input-text>
+  <mock:shadow-root>
+    <div class="mg-input mg-input--text">
+      <mg-label class="sr-only" identifier="identifier">
+        label
+      </mg-label>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input-container__input">
+          <input aria-describedby="" id="identifier" maxlength="400" name="identifier" type="text">
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-text>
+`;
+
 exports[`mg-input-text Should render with args { label: 'label', identifier: 'identifier', labelOnTop: true }: 1`] = `
 <mg-input-text>
   <mock:shadow-root>
