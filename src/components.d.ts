@@ -9,7 +9,7 @@ import { Option } from "./components/molecules/inputs/mg-input-select/mg-input-s
 export namespace Components {
     interface MgButton {
         /**
-          * Option to set input disable on click, in order to prevent multi-click. Parent component have to set @prop 'disabled' to 'true' at the process end process.
+          * Option to set input disable on click, in order to prevent multi-click. Parent component have to remove the attribute 'disabled' when the process ends.
          */
         "disableOnClick": boolean;
         /**
@@ -630,7 +630,7 @@ declare global {
 declare namespace LocalJSX {
     interface MgButton {
         /**
-          * Option to set input disable on click, in order to prevent multi-click. Parent component have to set @prop 'disabled' to 'true' at the process end process.
+          * Option to set input disable on click, in order to prevent multi-click. Parent component have to remove the attribute 'disabled' when the process ends.
          */
         "disableOnClick"?: boolean;
         /**

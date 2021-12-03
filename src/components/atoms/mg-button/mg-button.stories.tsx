@@ -91,7 +91,7 @@ DisableOnClick.parameters = {
       code: `<mg-button
   variant="${DisableOnClick.args.variant}"
   label="${DisableOnClick.args.label}"
-  disable-on-click="${DisableOnClick.args.disableOnClick}"
+  disable-on-click
 >${DisableOnClick.args.slot}</mg-button>`,
     },
   },

@@ -28,3 +28,21 @@ test('Should render a button in a paragraph', async ()=>{
   const screenshot = await page.screenshot();
   expect(screenshot).toMatchImageSnapshot();
 })
+
+test('should disable button after keyUp "Enter"', async () => {
+  const page = await createPage(`<mg-button label="test" disable-on-click>test</mg-button>`);
+  const button = await page.find('mg-button >>> button');
+
+  await button.press('Enter');
+
+  expect(button).toHaveAttribute('disabled');
+})
+
+test('should disable button after keyUp "Enter"', async () => {
+  const page = await createPage(`<mg-button label="test" disable-on-click>test</mg-button>`);
+  const button = await page.find('mg-button >>> button');
+
+  await button.press('Space');
+
+  expect(button).toHaveAttribute('disabled');
+})

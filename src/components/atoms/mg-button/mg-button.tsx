@@ -46,7 +46,7 @@ export class MgButton {
 
   /**
    * Option to set input disable on click, in order to prevent multi-click.
-   * Parent component have to set @prop 'disabled' to 'true' at the process end process.
+   * Parent component have to remove the attribute 'disabled' when the process ends.
    */
   @Prop() disableOnClick: boolean = false;
 
@@ -81,24 +81,10 @@ export class MgButton {
   }
 
   /**
-   * Set loading props to 'true'
-   */
-  private startLoading() {
-    this.loading = true;
-  }
-
-  /**
    * Trigger actions onClick event
    */
-  private handleClick = () => this.startLoading();
-
-  /**
-   * Trigger actions on onKeyUp 'enter' or 'space' event
-   * @param event
-   */
-  private handleKeyUp = (event:KeyboardEvent) => {
-    if(!['enter', 'space'].includes(event.key)) return;
-    this.startLoading();
+  private handleClick = () => {
+    this.loading = true;
   }
 
   /**
@@ -112,7 +98,6 @@ export class MgButton {
           aria-label={this.label}
           disabled={this.disabled}
           onClick={this.handleClick}
-          onKeyUp={this.handleKeyUp}
         >
           <slot></slot>
         </button>
