@@ -8,10 +8,15 @@ import { messages } from '../../../locales';
 })
 export class MgCharacterLeft {
 
-  /**
-   * Internal
-   */
+  /************
+   * Internal *
+   ************/
+
   private mustacheCounter = '{counter}';
+
+  /**************
+   * Decorators *
+   **************/
 
   /**
    * Sets an `id` attribute.
@@ -55,17 +60,15 @@ export class MgCharacterLeft {
     return this.template.replace(this.mustacheCounter, `<strong>${this.maxlength - this.characters.length}</strong>`)
   }
 
-  /**
-   * Check if props are well configured on init
-   */
+  /*************
+   * Lifecycle *
+   *************/
+
   componentWillLoad() {
     this.validateTemplate(this.template);
     this.validateMaxlength(this.maxlength);
   }
 
-  /**
-   * Render
-   */
   render() {
     return (
       <span id={this.identifier} innerHTML={this.getMessage()} aria-live="polite"></span>
