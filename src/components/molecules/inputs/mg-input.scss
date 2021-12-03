@@ -22,6 +22,7 @@
 
     mg-label {
       margin-right: 0;
+      margin-bottom: 0.3rem;
       text-align: start;
     }
   }
@@ -70,17 +71,22 @@
   }
 
   /**
-   * Character left
-   * Help Message
-   * Error Message
+   * Manage space between input and first message
    */
-  mg-character-left,
-  mg-help-text {
-    margin-top: var(--mg-inputs-spacer);
+  .mg-input__input-container__input {
+    & + mg-character-left,
+    & + .mg-input__input-container__help-text,
+    & + .mg-input__input-container__error {
+      margin-top: 0.5rem;
+    }
   }
 
+  /**
+   * Character left
+   */
   mg-character-left {
     display: none;
+    margin-top: 0.5rem;
   }
 
   &.is-focused {
@@ -115,9 +121,4 @@
       }
     }
   }
-}
-
-.mg-input__input-container__help-text,
-.mg-input__input-container__error {
-  margin-top: var(--mg-inputs-spacer);
 }

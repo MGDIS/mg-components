@@ -126,7 +126,7 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
             { children }
             { props.tooltip && <mg-tooltip identifier={`${props.identifier}-tooltip`} message={props.tooltip}><mg-icon icon="info"></mg-icon></mg-tooltip>}
           </div>
-          { props.displayCharacterLeft && props.maxlength && <mg-character-left
+          { props.displayCharacterLeft && props.maxlength && props.classList.has('is-focused') && <mg-character-left
             identifier={characterLeftId}
             characters={props.value}
             maxlength={props.maxlength}
