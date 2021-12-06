@@ -14,6 +14,7 @@ const Template = args => (
     {...args}
     label-on-top={args.labelOnTop}
     label-colon={args.labelColon}
+    label-hide={args.labelHide}
     pattern-error-message={args.patternErrorMessage}
     display-character-left={args.displayCharacterLeft ? 'true' : 'false'}
     character-left-template={args.characterLeftTemplate}
@@ -36,6 +37,7 @@ MgInputText.args = {
   label: 'Label',
   labelOnTop: false,
   labelColon: true,
+  labelHide: false,
   // Input
   placeholder: 'placeholder',
   maxlength: 400,

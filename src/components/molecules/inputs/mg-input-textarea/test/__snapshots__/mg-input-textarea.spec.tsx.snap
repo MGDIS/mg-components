@@ -8,7 +8,7 @@ exports[`mg-input-textarea Should render with args {
 }: 1`] = `
 <mg-input-textarea value="blu">
   <mock:shadow-root>
-    <div class="mg-input mg-input--textarea">
+    <div class="mg-input mg-input--readonly mg-input--textarea">
       <mg-label identifier="identifier">
         label
       </mg-label>
@@ -61,10 +61,26 @@ exports[`mg-input-textarea Should render with args { label: 'label', identifier:
 </mg-input-textarea>
 `;
 
+exports[`mg-input-textarea Should render with args { label: 'label', identifier: 'identifier', labelHide: true }: 1`] = `
+<mg-input-textarea>
+  <mock:shadow-root>
+    <div class="mg-input mg-input--textarea">
+      <mg-label class="sr-only" identifier="identifier">
+        label
+      </mg-label>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input-container__input"><textarea aria-describedby="" id="identifier" maxlength="4000" name="identifier" rows="3"></textarea>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-textarea>
+`;
+
 exports[`mg-input-textarea Should render with args { label: 'label', identifier: 'identifier', labelOnTop: true }: 1`] = `
 <mg-input-textarea>
   <mock:shadow-root>
-    <div class="is-label-on-top mg-input mg-input--textarea">
+    <div class="mg-input mg-input--label-on-top mg-input--textarea">
       <mg-label identifier="identifier">
         label
       </mg-label>
@@ -80,7 +96,7 @@ exports[`mg-input-textarea Should render with args { label: 'label', identifier:
 exports[`mg-input-textarea Should render with args { label: 'label', identifier: 'identifier', readonly: true }: 1`] = `
 <mg-input-textarea>
   <mock:shadow-root>
-    <div class="mg-input mg-input--textarea">
+    <div class="mg-input mg-input--readonly mg-input--textarea">
       <mg-label identifier="identifier">
         label
       </mg-label>
