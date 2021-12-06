@@ -3,8 +3,14 @@
  * @param prefix {string} add prefix to created ID
  * @returns {string} ID
  */
-export function createID(prefix?: string): string {
-  return (typeof prefix === 'string' && prefix !== '' ? `${prefix}-` : '' ) + Math.random().toString(36).substr(2, 10);
+export function createID(prefix: string = '', length: number = 10): string {
+  let ID = '';
+  const chars = 'abcdefghijklmnopqrstuvwxyz0123456789'
+  const charsLength = chars.length;
+  for ( var i = 0; i < length; i++ ) {
+    ID += chars.charAt(Math.floor(Math.random() * charsLength));
+ }
+ return (prefix !== '' ? `${prefix}-` : '' ) + ID;
 }
 
 /**
