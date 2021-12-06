@@ -84,7 +84,7 @@ describe('mg-input-textarea', () => {
   });
 
   test('Should render error when leaving input with a non matching pattern value', async () => {
-    const page = await createPage(`<mg-input-textarea label="label" pattern="[a-z]*" pattern-error-message="Vous ne pouvez saisir que des les lettres minuscules."></mg-input-textarea>`);
+    const page = await createPage(`<mg-input-textarea label="label" pattern="[a-z]*" pattern-error-message="Vous ne pouvez saisir que des lettres minuscules."></mg-input-textarea>`);
 
     const element = await page.find('mg-input-textarea');
     const input = await page.find('mg-input-textarea >>> textarea');

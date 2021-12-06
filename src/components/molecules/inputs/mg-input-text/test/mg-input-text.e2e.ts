@@ -83,7 +83,7 @@ describe('mg-input-text', () => {
   });
 
   test('Should render error when leaving input with a non matching pattern value', async () => {
-    const page = await createPage(`<mg-input-text label="label" pattern="[a-z]*" pattern-error-message="Vous ne pouvez saisir que des les lettres minuscules."></mg-input-text>`);
+    const page = await createPage(`<mg-input-text label="label" pattern="[a-z]*" pattern-error-message="Vous ne pouvez saisir que des lettres minuscules."></mg-input-text>`);
 
     const element = await page.find('mg-input-text');
     const input = await page.find('mg-input-text >>> input');
