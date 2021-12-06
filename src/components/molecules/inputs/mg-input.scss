@@ -17,7 +17,7 @@
   }
 
   // Display label on top
-  &.is-label-on-top {
+  &.mg-input--label-on-top {
     flex-direction: column;
 
     mg-label {
@@ -63,6 +63,13 @@
     padding: 0 var(--mg-inputs-spacer);
   }
 
+  // Ensure to keed input size on redonly
+  .mg-input__input-container > strong {
+    display: flex;
+    align-items: center;
+    min-height: var(--default-size);
+  }
+
   /**
    * Tooltip
    */
@@ -100,15 +107,19 @@
    */
   &.is-not-valid {
     color: hsl(var(--color-danger));
-    input {
+    input[type='text'],
+    input[type='date'],
+    textarea,
+    select {
       border-color: hsl(var(--color-danger));
     }
   }
 
   /**
    * Workaround to baseline align label with textarea
+   * Not needed in readonly mode
    */
-  &.mg-input--textarea {
+  &.mg-input--textarea:not(.mg-input--readonly) {
     align-items: flex-start;
     mg-label {
       margin-top: calc((2 * var(--mg-inputs-border-width) + var(--default-size) - var(--font-size-base) * var(--line-height)) / 2);

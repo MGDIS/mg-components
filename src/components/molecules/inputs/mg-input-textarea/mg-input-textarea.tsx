@@ -206,7 +206,7 @@ export class MgInputTextarea {
   }
 
   /**
-   * Validate patern configuration
+   * Validate pattern configuration
    */
   private validatePattern() {
     if(
@@ -221,9 +221,6 @@ export class MgInputTextarea {
    * Lifecycle *
    *************/
 
-  /**
-   * Check if component props are well configured on init
-   */
   componentWillLoad() {
     this.validatePattern();
   }

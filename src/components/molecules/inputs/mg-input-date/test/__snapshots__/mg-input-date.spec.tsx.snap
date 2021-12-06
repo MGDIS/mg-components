@@ -8,7 +8,7 @@ exports[`mg-input-date Should render with args {
 }: 1`] = `
 <mg-input-date value="2021-10-15">
   <mock:shadow-root>
-    <div class="mg-input mg-input--date">
+    <div class="mg-input mg-input--date mg-input--readonly">
       <mg-label identifier="identifier">
         label
       </mg-label>
@@ -66,7 +66,7 @@ exports[`mg-input-date Should render with args { label: 'label', identifier: 'id
 exports[`mg-input-date Should render with args { label: 'label', identifier: 'identifier', labelOnTop: true }: 1`] = `
 <mg-input-date>
   <mock:shadow-root>
-    <div class="is-label-on-top mg-input mg-input--date">
+    <div class="mg-input mg-input--date mg-input--label-on-top">
       <mg-label identifier="identifier">
         label
       </mg-label>
@@ -83,7 +83,7 @@ exports[`mg-input-date Should render with args { label: 'label', identifier: 'id
 exports[`mg-input-date Should render with args { label: 'label', identifier: 'identifier', readonly: true }: 1`] = `
 <mg-input-date>
   <mock:shadow-root>
-    <div class="mg-input mg-input--date">
+    <div class="mg-input mg-input--date mg-input--readonly">
       <mg-label identifier="identifier">
         label
       </mg-label>

@@ -8,7 +8,7 @@ exports[`mg-input-checkbox Should render with args {
 }: 1`] = `
 <mg-input-checkbox>
   <mock:shadow-root>
-    <div class="mg-input mg-input--checkbox">
+    <div class="mg-input mg-input--checkbox mg-input--readonly">
       <mg-label identifier="identifier">
         label
       </mg-label>
@@ -30,7 +30,7 @@ exports[`mg-input-checkbox Should render with args {
 }: 1`] = `
 <mg-input-checkbox value="">
   <mock:shadow-root>
-    <div class="mg-input mg-input--checkbox">
+    <div class="mg-input mg-input--checkbox mg-input--readonly">
       <mg-label identifier="identifier">
         label
       </mg-label>
@@ -102,7 +102,7 @@ exports[`mg-input-checkbox Should render with args {
 }: 1`] = `
 <mg-input-checkbox>
   <mock:shadow-root>
-    <div class="mg-input mg-input--checkbox">
+    <div class="mg-input mg-input--checkbox mg-input--readonly">
       <mg-label identifier="identifier">
         label
       </mg-label>
@@ -162,7 +162,7 @@ exports[`mg-input-checkbox Should render with args { label: 'label', identifier:
 exports[`mg-input-checkbox Should render with args { label: 'label', identifier: 'identifier', labelOnTop: true }: 1`] = `
 <mg-input-checkbox>
   <mock:shadow-root>
-    <div class="is-label-on-top mg-input mg-input--checkbox">
+    <div class="mg-input mg-input--checkbox mg-input--label-on-top">
       <mg-label identifier="identifier">
         label
       </mg-label>
@@ -179,7 +179,7 @@ exports[`mg-input-checkbox Should render with args { label: 'label', identifier:
 exports[`mg-input-checkbox Should render with args { label: 'label', identifier: 'identifier', readonly: true }: 1`] = `
 <mg-input-checkbox>
   <mock:shadow-root>
-    <div class="mg-input mg-input--checkbox">
+    <div class="mg-input mg-input--checkbox mg-input--readonly">
       <mg-label identifier="identifier">
         label
       </mg-label>
