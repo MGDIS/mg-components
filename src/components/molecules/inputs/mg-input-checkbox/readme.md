@@ -39,7 +39,6 @@
 - [mg-tooltip](../../../atoms/mg-tooltip)
 - [mg-icon](../../../atoms/mg-icon)
 - [mg-character-left](../../../atoms/mg-character-left)
-- [mg-help-text](../../../atoms/mg-help-text)
 
 ### Graph
 ```mermaid
@@ -48,7 +47,6 @@ graph TD;
   mg-input-checkbox --> mg-tooltip
   mg-input-checkbox --> mg-icon
   mg-input-checkbox --> mg-character-left
-  mg-input-checkbox --> mg-help-text
   style mg-input-checkbox fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

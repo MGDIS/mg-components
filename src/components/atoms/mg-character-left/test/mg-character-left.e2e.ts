@@ -1,19 +1,19 @@
-import { newE2EPage } from '@stencil/core/testing';
+import { createPage } from "../../../../utils/test.utils"
 
-describe('mg-character-left', ()=>{
+describe.each([
+  `<mg-character-left characters="" maxlength="100"></mg-character-left>`,
+  `<mg-character-left characters="blu" maxlength="100"></mg-character-left>`,
+  `<mg-character-left characters="blu blu blu blu" maxlength="100"></mg-character-left>`,
+  `<mg-character-left characters="blu blu blu blu" maxlength="100" template="Il te reste {counter} lettres."></mg-character-left>`,
+])('without tooltip', (html)=>{
+  test('render', async () => {
+    const page = await createPage(html);
 
-  describe.each([400, 4000, 36])('Screenshot with %s characters', (maxlength) => {
-    test('renders', async () => {
-      const page = await newE2EPage();
-      await page.setContent(`<mg-character-left maxlength="${maxlength}"></mg-character-left>`);
+    const element = await page.find('mg-character-left');
 
-      const element = await page.find('mg-character-left');
-      expect(element).toHaveClass('hydrated');
+    expect(element).toHaveClass('hydrated');
 
-      const results = await page.compareScreenshot();
-      expect(results).toMatchScreenshot({ allowableMismatchedPixels: 100 })
-      expect(results).toMatchScreenshot({ allowableMismatchedRatio: 0.1 })
-    });
-  });
-
-});
+    const screenshot = await page.screenshot();
+    expect(screenshot).toMatchImageSnapshot();
+   });
+})

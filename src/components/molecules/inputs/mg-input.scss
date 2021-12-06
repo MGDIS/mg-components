@@ -8,18 +8,34 @@
   align-items: baseline;
 
   /**
-   * Display label on top
-   */
-  &.is-label-on-top {
-    flex-direction: column;
+  * Label
+  */
+
+  mg-label {
+    margin-right: var(--mg-inputs-spacer);
+    text-align: end;
   }
 
+  // Display label on top
+  &.is-label-on-top {
+    flex-direction: column;
+
+    mg-label {
+      margin-right: 0;
+      margin-bottom: 0.3rem;
+      text-align: start;
+    }
+  }
+
+  /**
+   * Input style
+   */
   input[type='text'],
   input[type='date'],
   textarea,
   select {
     // Display
-    padding: calc((var(--default-size) - var(--font-size-base) * var(--line-height)) / 2) 1rem;
+    padding: calc((var(--default-size) - var(--font-size-base) * var(--line-height)) / 2) var(--mg-inputs-spacer);
     height: var(--default-size);
     box-sizing: border-box;
     // Decoration
@@ -32,36 +48,60 @@
     color: hsl(var(--color-dark));
     font-size: var(--font-size-base);
 
+    // placeholder
     &::placeholder {
-      // font-family: var(--font-family-body);
       color: var(--mg-inputs-color);
       font-style: italic;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0.6rem hsla(var(--mg-inputs-color-shadow-focus-hsl), 0.5);
+    }
+  }
+
+  select {
+    padding: 0 var(--mg-inputs-spacer);
+  }
+
+  /**
+   * Tooltip
+   */
+  mg-tooltip {
+    margin-left: var(--mg-inputs-spacer);
+  }
+
+  /**
+   * Manage space between input and first message
+   */
+  .mg-input__input-container__input {
+    & + mg-character-left,
+    & + .mg-input__input-container__help-text,
+    & + .mg-input__input-container__error {
+      margin-top: 0.5rem;
     }
   }
 
   /**
-   * Show hide nb char left ans help text on focus
+   * Character left
    */
-  mg-character-left,
-  mg-help-text:not(.error) {
+  mg-character-left {
     display: none;
+    margin-top: 0.5rem;
   }
 
   &.is-focused {
-    mg-character-left,
-    mg-help-text:not(.error) {
-      display: initial;
+    mg-character-left {
+      display: block;
     }
   }
 
   /**
    * Style when input is not valid
-   * TODO USE THE RIGHT PRODUCT COLOR
    */
   &.is-not-valid {
     color: hsl(var(--color-danger));
     input {
-      border: 0.1rem solid;
+      border-color: hsl(var(--color-danger));
     }
   }
 
@@ -75,6 +115,10 @@
     }
     textarea {
       height: auto;
+      & + mg-tooltip {
+        margin-top: calc((2 * var(--mg-inputs-border-width) + var(--default-size) - var(--font-size-base) * var(--line-height)) / 2);
+        vertical-align: top;
+      }
     }
   }
 }

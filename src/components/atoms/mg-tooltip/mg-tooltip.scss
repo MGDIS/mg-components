@@ -1,19 +1,54 @@
-.mg-tooltip {
-  position: relative;
-  display: inline-block;
+mg-tooltip {
+  display: contents;
+}
 
-  // TODO ! CAN MAKE THIS WORK WITH CSS ?! BUT MUST BE DONE IN COMPONENT, A11Y REQUIRE TO TRIGGER ESCAPE EVENT TO HIDE THE TOOLTIP
-  ::slotted(*):hover,
-  ::slotted(*):focus,
-  ::slotted(*):active {
-    & + [role='tooltip'] {
-      display: initial;
-    }
+[role='tooltip'] {
+  // Display
+  display: none;
+  padding: 0.5rem;
+  // Decoration
+  border-radius: 0.3rem;
+  background-color: hsl(var(--mg-tooltip-background-color));
+  // Font
+  color: hsl(var(--mg-tooltip-font-color));
+
+  &[data-show] {
+    display: block;
   }
 
-  & > [role='tooltip'] {
+  .mg-tooltip__arrow,
+  .mg-tooltip__arrow:before {
+    // Display
     position: absolute;
-    bottom: 0;
-    display: none;
+    width: 0.8rem;
+    height: 0.8rem;
+    // Decoration
+    background: inherit;
+  }
+
+  .mg-tooltip__arrow {
+    visibility: hidden;
+  }
+
+  .mg-tooltip__arrow:before {
+    visibility: visible;
+    content: '';
+    transform: rotate(45deg);
+  }
+
+  &[data-popper-placement^='top'] > .mg-tooltip__arrow {
+    bottom: -4px;
+  }
+
+  &[data-popper-placement^='bottom'] > .mg-tooltip__arrow {
+    top: -4px;
+  }
+
+  &[data-popper-placement^='left'] > .mg-tooltip__arrow {
+    right: -4px;
+  }
+
+  &[data-popper-placement^='right'] > .mg-tooltip__arrow {
+    left: -4px;
   }
 }

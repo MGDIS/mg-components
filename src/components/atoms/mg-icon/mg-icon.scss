@@ -1,8 +1,4 @@
 .mg-icon {
-  display: inline-block;
-  vertical-align: middle;
-  line-height: 1;
-
   &[size='small'],
   &.mg-icon--small {
     width: var(--mg-icon-small-size);
@@ -20,4 +16,11 @@
     width: var(--mg-icon-large-size);
     height: var(--mg-icon-large-size);
   }
+}
+
+mg-icon,
+.mg-icon {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
 }

@@ -41,8 +41,4 @@
 mg-tag {
   display: inline-block;
   vertical-align: middle;
-
-  &:not(:last-child) {
-    margin-right: 1rem;
-  }
 }

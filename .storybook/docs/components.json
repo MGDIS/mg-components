@@ -1,9 +1,9 @@
 {
-  "timestamp": "2021-12-02T07:19:48",
+  "timestamp": "2021-12-02T13:46:11",
   "compiler": {
     "name": "@stencil/core",
-    "version": "2.11.0",
-    "typescriptVersion": "4.3.5"
+    "version": "2.9.0",
+    "typescriptVersion": "4.2.3"
   },
   "components": [
     {
@@ -223,49 +223,6 @@
       }
     },
     {
-      "filePath": "./src/components/atoms/mg-help-text/mg-help-text.tsx",
-      "encapsulation": "scoped",
-      "tag": "mg-help-text",
-      "readme": "# mg-help-text\n\n\n",
-      "docs": "",
-      "docsTags": [],
-      "usage": {},
-      "props": [
-        {
-          "name": "identifier",
-          "type": "string",
-          "mutable": false,
-          "attr": "identifier",
-          "reflectToAttr": false,
-          "docs": "Sets an `id` attribute.\nNeeded by the input for accessibility `arai-decribedby`.",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        }
-      ],
-      "methods": [],
-      "events": [],
-      "listeners": [],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": ["mg-input-checkbox", "mg-input-date", "mg-input-numeric", "mg-input-select", "mg-input-text", "mg-input-textarea"],
-      "dependencies": [],
-      "dependencyGraph": {
-        "mg-input-checkbox": ["mg-help-text"],
-        "mg-input-date": ["mg-help-text"],
-        "mg-input-numeric": ["mg-help-text"],
-        "mg-input-select": ["mg-help-text"],
-        "mg-input-text": ["mg-help-text"],
-        "mg-input-textarea": ["mg-help-text"]
-      }
-    },
-    {
       "filePath": "./src/components/atoms/mg-icon/mg-icon.tsx",
       "encapsulation": "shadow",
       "tag": "mg-icon",
@@ -394,8 +351,8 @@
           "docs": "Manage indeterminate state",
           "docsTags": [
             {
-              "name": "see",
-              "text": "https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input/checkbox#g%C3%A9rer_un_%C3%A9tat_ind%C3%A9termin%C3%A9"
+              "text": "https ://developer.mozilla.org/fr/docs/Web/HTML/Element/Input/checkbox#g%C3%A9rer_un_%C3%A9tat_ind%C3%A9termin%C3%A9",
+              "name": "see"
             }
           ],
           "default": "false",
@@ -606,9 +563,9 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left", "mg-help-text"],
+      "dependencies": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left"],
       "dependencyGraph": {
-        "mg-input-checkbox": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left", "mg-help-text"]
+        "mg-input-checkbox": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left"]
       }
     },
     {
@@ -869,9 +826,9 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left", "mg-help-text"],
+      "dependencies": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left"],
       "dependencyGraph": {
-        "mg-input-date": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left", "mg-help-text"]
+        "mg-input-date": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left"]
       }
     },
     {
@@ -1197,9 +1154,9 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left", "mg-help-text"],
+      "dependencies": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left"],
       "dependencyGraph": {
-        "mg-input-numeric": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left", "mg-help-text"]
+        "mg-input-numeric": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left"]
       }
     },
     {
@@ -1495,9 +1452,9 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left", "mg-help-text"],
+      "dependencies": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left"],
       "dependencyGraph": {
-        "mg-input-select": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left", "mg-help-text"]
+        "mg-input-select": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left"]
       }
     },
     {
@@ -1856,9 +1813,9 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left", "mg-help-text"],
+      "dependencies": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left"],
       "dependencyGraph": {
-        "mg-input-text": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left", "mg-help-text"]
+        "mg-input-text": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left"]
       }
     },
     {
@@ -2234,9 +2191,9 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left", "mg-help-text"],
+      "dependencies": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left"],
       "dependencyGraph": {
-        "mg-input-textarea": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left", "mg-help-text"]
+        "mg-input-textarea": ["mg-label", "mg-tooltip", "mg-icon", "mg-character-left"]
       }
     },
     {
@@ -2480,7 +2437,7 @@
               "type": "string"
             }
           ],
-          "optional": true,
+          "optional": false,
           "required": false
         },
         {
@@ -2493,6 +2450,80 @@
           "docsTags": [],
           "values": [
             {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "placement",
+          "type": "\"auto\" | \"auto-end\" | \"auto-start\" | \"bottom\" | \"bottom-end\" | \"bottom-start\" | \"left\" | \"left-end\" | \"left-start\" | \"right\" | \"right-end\" | \"right-start\" | \"top\" | \"top-end\" | \"top-start\"",
+          "mutable": false,
+          "attr": "placement",
+          "reflectToAttr": false,
+          "docs": "Tooltip placement",
+          "docsTags": [],
+          "default": "'bottom'",
+          "values": [
+            {
+              "value": "auto",
+              "type": "string"
+            },
+            {
+              "value": "auto-end",
+              "type": "string"
+            },
+            {
+              "value": "auto-start",
+              "type": "string"
+            },
+            {
+              "value": "bottom",
+              "type": "string"
+            },
+            {
+              "value": "bottom-end",
+              "type": "string"
+            },
+            {
+              "value": "bottom-start",
+              "type": "string"
+            },
+            {
+              "value": "left",
+              "type": "string"
+            },
+            {
+              "value": "left-end",
+              "type": "string"
+            },
+            {
+              "value": "left-start",
+              "type": "string"
+            },
+            {
+              "value": "right",
+              "type": "string"
+            },
+            {
+              "value": "right-end",
+              "type": "string"
+            },
+            {
+              "value": "right-start",
+              "type": "string"
+            },
+            {
+              "value": "top",
+              "type": "string"
+            },
+            {
+              "value": "top-end",
+              "type": "string"
+            },
+            {
+              "value": "top-start",
               "type": "string"
             }
           ],

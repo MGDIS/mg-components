@@ -85,11 +85,6 @@
       background: hsla(var(--color-dark), 0.1);
     }
   }
-
-  // Space between two buttons
-  &:not(:last-child) {
-    margin-right: 1rem;
-  }
 }
 
 mg-button {
@@ -98,10 +93,6 @@ mg-button {
 
   &:not([is-icon]) mg-icon {
     margin-right: 0.6rem;
-  }
-
-  &:not(:last-child) {
-    margin-right: 1rem;
   }
 }
 

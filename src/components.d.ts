@@ -51,12 +51,6 @@ export namespace Components {
          */
         "template": string;
     }
-    interface MgHelpText {
-        /**
-          * Sets an `id` attribute. Needed by the input for accessibility `arai-decribedby`.
-         */
-        "identifier": string;
-    }
     interface MgIcon {
         /**
           * Icon to display
@@ -542,11 +536,15 @@ export namespace Components {
         /**
           * Sets an `id` attribute. Needed by the input for accessibility `arai-decribedby`.
          */
-        "identifier"?: string;
+        "identifier": string;
         /**
           * Displayed message in the tooltip
          */
         "message": string;
+        /**
+          * Tooltip placement
+         */
+        "placement": 'auto'|'auto-start'|'auto-end'|'top'|'top-start'|'top-end'|'bottom'|'bottom-start'|'bottom-end'|'right'|'right-start'|'right-end'|'left'|'left-start'|'left-end';
     }
 }
 declare global {
@@ -561,12 +559,6 @@ declare global {
     var HTMLMgCharacterLeftElement: {
         prototype: HTMLMgCharacterLeftElement;
         new (): HTMLMgCharacterLeftElement;
-    };
-    interface HTMLMgHelpTextElement extends Components.MgHelpText, HTMLStencilElement {
-    }
-    var HTMLMgHelpTextElement: {
-        prototype: HTMLMgHelpTextElement;
-        new (): HTMLMgHelpTextElement;
     };
     interface HTMLMgIconElement extends Components.MgIcon, HTMLStencilElement {
     }
@@ -637,7 +629,6 @@ declare global {
     interface HTMLElementTagNameMap {
         "mg-button": HTMLMgButtonElement;
         "mg-character-left": HTMLMgCharacterLeftElement;
-        "mg-help-text": HTMLMgHelpTextElement;
         "mg-icon": HTMLMgIconElement;
         "mg-input-checkbox": HTMLMgInputCheckboxElement;
         "mg-input-date": HTMLMgInputDateElement;
@@ -695,12 +686,6 @@ declare namespace LocalJSX {
           * Template to display remaining characters. Must have {counter} inside
          */
         "template"?: string;
-    }
-    interface MgHelpText {
-        /**
-          * Sets an `id` attribute. Needed by the input for accessibility `arai-decribedby`.
-         */
-        "identifier"?: string;
     }
     interface MgIcon {
         /**
@@ -1215,12 +1200,15 @@ declare namespace LocalJSX {
         /**
           * Displayed message in the tooltip
          */
-        "message"?: string;
+        "message": string;
+        /**
+          * Tooltip placement
+         */
+        "placement"?: 'auto'|'auto-start'|'auto-end'|'top'|'top-start'|'top-end'|'bottom'|'bottom-start'|'bottom-end'|'right'|'right-start'|'right-end'|'left'|'left-start'|'left-end';
     }
     interface IntrinsicElements {
         "mg-button": MgButton;
         "mg-character-left": MgCharacterLeft;
-        "mg-help-text": MgHelpText;
         "mg-icon": MgIcon;
         "mg-input-checkbox": MgInputCheckbox;
         "mg-input-date": MgInputDate;
@@ -1240,7 +1228,6 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "mg-button": LocalJSX.MgButton & JSXBase.HTMLAttributes<HTMLMgButtonElement>;
             "mg-character-left": LocalJSX.MgCharacterLeft & JSXBase.HTMLAttributes<HTMLMgCharacterLeftElement>;
-            "mg-help-text": LocalJSX.MgHelpText & JSXBase.HTMLAttributes<HTMLMgHelpTextElement>;
             "mg-icon": LocalJSX.MgIcon & JSXBase.HTMLAttributes<HTMLMgIconElement>;
             "mg-input-checkbox": LocalJSX.MgInputCheckbox & JSXBase.HTMLAttributes<HTMLMgInputCheckboxElement>;
             "mg-input-date": LocalJSX.MgInputDate & JSXBase.HTMLAttributes<HTMLMgInputDateElement>;

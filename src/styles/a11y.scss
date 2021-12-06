@@ -1,7 +1,8 @@
 /**
  * A11Y
  */
-// TODO MAYBE INCLUDE ALL SR-ONLY FILE
+
+// Make content available only for screen reader
 // https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034
 .sr-only {
   border: 0 !important;
@@ -15,4 +16,10 @@
   position: absolute !important;
   width: 1px !important;
   white-space: nowrap !important;
+}
+
+// Remove outline for non-keyboard :focus
+// https://www.tpgi.com/focus-visible-and-backwards-compatibility/
+*:focus:not(:focus-visible) {
+  outline: none;
 }

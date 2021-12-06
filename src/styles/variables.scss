@@ -1,15 +1,5 @@
 :root {
   /**
-   * Fonts
-   */
-
-  // Open Sans is used for the body (mostly all texts)
-  --font-family-body: 'Open Sans', sans-serif;
-
-  // Poppins is used for the headings (h1 to h6)
-  --font-family-heading: 'Poppins', sans-serif;
-
-  /**
    * Colors
    * https://jira.mgdis.fr/browse/PDA9-690
    */
@@ -60,19 +50,25 @@
   --color-light-l: 100%;
   --color-light: var(--color-light-h), var(--color-light-s), var(--color-light-l);
 
-  // Font colors
+  /**
+   * Fonts
+   */
 
+  --font-size-base: 1.3rem;
+  --line-height: 1.4;
+
+  // Open Sans is used for the body (mostly all texts)
+  --font-family-body: 'Open Sans', sans-serif;
+
+  // Poppins is used for the headings (h1 to h6)
+  --font-family-heading: 'Poppins', sans-serif;
+
+  // Font colors
   --color-font-light: var(--color-light);
   --color-font-dark: var(--color-dark);
 
   /**
-   * Fonts
-   */
-  --font-size-base: 1.3rem;
-  --line-height: 1.4;
-
-  /**
-   * Inputs
+   * Global
    */
   --default-size: 3.5rem;
 
@@ -110,6 +106,12 @@
   --mg-tag-font-size: 1.2rem;
 
   /**
+   * <mg-tooltip>
+   */
+  --mg-tooltip-background-color: var(--color-dark);
+  --mg-tooltip-font-color: var(--color-font-light);
+
+  /**
    * <mg-message>
    */
   --mg-message-border-radius: 0.3rem;
@@ -120,4 +122,11 @@
   --mg-inputs-border-width: 0.1rem;
   --mg-inputs-border-radius: 0.3rem;
   --mg-inputs-color: #b5c2c9;
+  --mg-inputs-spacer: 1rem;
+
+  // Input focus shadow
+  // #b5c2c9
+  // rgb(0, 221, 255);
+  // hsl(188, 100%, 50%);
+  --mg-inputs-color-shadow-focus-hsl: 188, 100%, 50%;
 }

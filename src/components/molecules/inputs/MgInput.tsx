@@ -106,6 +106,8 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
    * |        +------------------------+
    * |        | Error                  |
    * +--------+------------------------+
+   *
+   * Error message is based on this aria method: https://www.w3.org/WAI/tutorials/forms/notifications/#on-focus-change
    */
   return (
     <div class={props.classList.join()}>
@@ -126,14 +128,14 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
             { children }
             { props.tooltip && <mg-tooltip identifier={`${props.identifier}-tooltip`} message={props.tooltip}><mg-icon icon="info"></mg-icon></mg-tooltip>}
           </div>
-          { props.displayCharacterLeft && props.maxlength && <mg-character-left
+          { props.displayCharacterLeft && props.maxlength && props.classList.has('is-focused') && <mg-character-left
             identifier={characterLeftId}
             characters={props.value}
             maxlength={props.maxlength}
             template={props.characterLeftTemplate}
           ></mg-character-left> }
-          { props.helpText && <mg-help-text identifier={helpTextId} innerHTML={props.helpText}></mg-help-text> }
-          { props.errorMessage && <mg-help-text class="error" identifier={helpTextErrorId} innerHTML={props.errorMessage}></mg-help-text> }
+          { props.helpText && <div id={helpTextId} class="mg-input__input-container__help-text" innerHTML={props.helpText}></div> }
+          { props.errorMessage && <div id={helpTextErrorId} class="mg-input__input-container__error" innerHTML={props.errorMessage} aria-live="assertive"></div> }
         </div>
       }
     </div>

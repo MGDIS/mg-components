@@ -1,12 +1,184 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`mg-tooltip Should render: 1`] = `
+exports[`mg-tooltip Should manage display on events enter with { eventIn: 'focus', eventOut: 'blur' }, leave with %s element 1`] = `
 <mg-tooltip>
   <!---->
-  <div class="mg-tooltip" tabindex="0" title="blu">
-    <div id="identifier" role="tooltip">
-      blu
-    </div>
+  <span aria-describedby="identifier" tabindex="0">
+    span
+  </span>
+  <div data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+    blu
+    <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
+  </div>
+</mg-tooltip>
+`;
+
+exports[`mg-tooltip Should manage display on events enter with { eventIn: 'focus', eventOut: 'blur' }, leave with %s element 2`] = `
+<mg-tooltip>
+  <!---->
+  <button aria-describedby="blu identifier">
+    button
+  </button>
+  <div data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+    blu
+    <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
+  </div>
+</mg-tooltip>
+`;
+
+exports[`mg-tooltip Should manage display on events enter with { eventIn: 'focus', eventOut: 'blur' }, leave with %s element 3`] = `
+<mg-tooltip>
+  <!---->
+  <mg-icon aria-describedby="identifier" tabindex="0">
+    <mock:shadow-root>
+      <svg aria-hidden="true" class="mg-icon mg-icon--regular mg-icon--success" focusable="false" viewBox="0 0 512 512">
+        <path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z" fill="currentColor"></path>
+      </svg>
+    </mock:shadow-root>
+  </mg-icon>
+  <div data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+    blu
+    <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
+  </div>
+</mg-tooltip>
+`;
+
+exports[`mg-tooltip Should manage display on events enter with { eventIn: 'focus', eventOut: 'blur' }, leave with %s element 4`] = `
+<mg-tooltip>
+  <!---->
+  <mg-button aria-describedby="identifier">
+    <mock:shadow-root>
+      <button class="mg-button mg-button--primary" id="identifier">
+        <slot></slot>
+      </button>
+    </mock:shadow-root>
+    mg-button
+  </mg-button>
+  <div data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+    blu
+    <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
+  </div>
+</mg-tooltip>
+`;
+
+exports[`mg-tooltip Should manage display on events enter with { eventIn: 'mouseenter', eventOut: 'mouseleave' }, leave with %s element 1`] = `
+<mg-tooltip>
+  <!---->
+  <span aria-describedby="identifier" tabindex="0">
+    span
+  </span>
+  <div data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+    blu
+    <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
+  </div>
+</mg-tooltip>
+`;
+
+exports[`mg-tooltip Should manage display on events enter with { eventIn: 'mouseenter', eventOut: 'mouseleave' }, leave with %s element 2`] = `
+<mg-tooltip>
+  <!---->
+  <button aria-describedby="blu identifier">
+    button
+  </button>
+  <div data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+    blu
+    <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
+  </div>
+</mg-tooltip>
+`;
+
+exports[`mg-tooltip Should manage display on events enter with { eventIn: 'mouseenter', eventOut: 'mouseleave' }, leave with %s element 3`] = `
+<mg-tooltip>
+  <!---->
+  <mg-icon aria-describedby="identifier" tabindex="0">
+    <mock:shadow-root>
+      <svg aria-hidden="true" class="mg-icon mg-icon--regular mg-icon--success" focusable="false" viewBox="0 0 512 512">
+        <path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z" fill="currentColor"></path>
+      </svg>
+    </mock:shadow-root>
+  </mg-icon>
+  <div data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+    blu
+    <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
+  </div>
+</mg-tooltip>
+`;
+
+exports[`mg-tooltip Should manage display on events enter with { eventIn: 'mouseenter', eventOut: 'mouseleave' }, leave with %s element 4`] = `
+<mg-tooltip>
+  <!---->
+  <mg-button aria-describedby="identifier">
+    <mock:shadow-root>
+      <button class="mg-button mg-button--primary" id="identifier">
+        <slot></slot>
+      </button>
+    </mock:shadow-root>
+    mg-button
+  </mg-button>
+  <div data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+    blu
+    <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
+  </div>
+</mg-tooltip>
+`;
+
+exports[`mg-tooltip Should render with element 1`] = `
+<mg-tooltip>
+  <!---->
+  <span aria-describedby="identifier" tabindex="0">
+    span
+  </span>
+  <div id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+    My tooltip message
+    <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
+  </div>
+</mg-tooltip>
+`;
+
+exports[`mg-tooltip Should render with element 2`] = `
+<mg-tooltip>
+  <!---->
+  <button aria-describedby="blu identifier">
+    button
+  </button>
+  <div id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+    My tooltip message
+    <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
+  </div>
+</mg-tooltip>
+`;
+
+exports[`mg-tooltip Should render with element 3`] = `
+<mg-tooltip>
+  <!---->
+  <mg-icon aria-describedby="identifier" tabindex="0">
+    <mock:shadow-root>
+      <svg aria-hidden="true" class="mg-icon mg-icon--regular mg-icon--success" focusable="false" viewBox="0 0 512 512">
+        <path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z" fill="currentColor"></path>
+      </svg>
+    </mock:shadow-root>
+  </mg-icon>
+  <div id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+    My tooltip message
+    <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
+  </div>
+</mg-tooltip>
+`;
+
+exports[`mg-tooltip Should render with element 4`] = `
+<mg-tooltip>
+  <!---->
+  <mg-button aria-describedby="identifier">
+    <mock:shadow-root>
+      <button class="mg-button mg-button--primary" id="identifier">
+        <slot></slot>
+      </button>
+    </mock:shadow-root>
+    mg-button
+  </mg-button>
+  <div id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+    My tooltip message
+    <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
   </div>
 </mg-tooltip>
 `;
