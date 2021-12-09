@@ -5,7 +5,7 @@ import brandImage from './logo.png';
 addons.setConfig({
   theme: create({
     base: 'light',
-    brandTitle: 'MGDIS Design System',
+    brandTitle: 'MG Components',
     brandImage,
   }),
   panelPosition: 'right',

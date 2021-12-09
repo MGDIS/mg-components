@@ -1,9 +1,9 @@
 module.exports = {
   parserOptions: {
-    project: './tsconfig.json',
+    project: './tsconfig.json'
   },
-  extends: ['plugin:@stencil/recommended'],
+  extends: ["plugin:@stencil/recommended", "plugin:storybook/recommended"],
   rules: {
-    '@stencil/strict-mutable': 'off',
-  },
+    '@stencil/strict-mutable': 'off'
+  }
 };

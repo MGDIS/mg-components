@@ -12,21 +12,16 @@ export default {
   },
 };
 
-const Template = args => <mg-tag {...args}>{args.slot}</mg-tag>;
+const Template = args => {
+  // Extract slot so it won't be render as an attribute
+  const slot = args.slot;
+  delete args.slot;
+  // return element
+  return <mg-tag {...args}>{slot}</mg-tag>};
 
 export const MgTag = Template.bind({});
 MgTag.args = {
   slot: 'Label',
   variant: variants[0],
   outline: false
-};
-
-MgTag.parameters = {
-  docs: {
-    source: {
-      code: `<mg-tag
-  variant="${MgTag.args.variant}"
->${MgTag.args.slot}</mg-tag>`,
-    },
-  },
 };

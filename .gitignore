@@ -3,7 +3,8 @@ www/
 loader/
 storybook-static/
 coverage/
-mgdis-design-system-*.tgz
+__diff_output__/
+mgdis-mg-components-*.tgz
 
 *~
 *.sw[mnpcod]
