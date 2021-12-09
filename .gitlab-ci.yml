@@ -103,7 +103,7 @@ pages:
   extends:
     - .install
   script:
-    - npm run build-storybook -s www/build
+    - npm run build-storybook
     - mv storybook-static public
   artifacts:
     paths:
