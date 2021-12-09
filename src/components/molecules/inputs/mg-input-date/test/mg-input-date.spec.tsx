@@ -15,6 +15,7 @@ describe('mg-input-date', () => {
    */
   test.each([
     {label: 'label', identifier: "identifier"},
+    {label: 'label', identifier: "identifier", labelHide: true},
     {label: 'label', identifier: "identifier", labelOnTop: true},
     {label: 'label', identifier: "identifier", readonly: true},
     {label: 'label', identifier: "identifier", readonly: true, value: "2021-10-15"},

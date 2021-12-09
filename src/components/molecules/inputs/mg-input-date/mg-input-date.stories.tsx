@@ -27,6 +27,7 @@ const Template = args => (
     {...args}
     label-on-top={args.labelOnTop}
     label-colon={args.labelColon}
+    label-hide={args.labelHide}
     help-text={args.helpText}
   ></mg-input-date>
 );
@@ -41,6 +42,7 @@ MgInputDate.args = {
   label: 'Label',
   labelOnTop: false,
   labelColon: true,
+  labelHide: false,
   // Input
   required: true,
   readonly: false,

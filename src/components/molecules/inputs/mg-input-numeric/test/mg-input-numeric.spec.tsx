@@ -14,6 +14,7 @@ describe('mg-input-numeric', () => {
   describe.each(types)('type %s', (type) => {
     test.each([
       {label: 'label', identifier: "identifier", type},
+      {label: 'label', identifier: "identifier", type, labelHide: true},
       {label: 'label', identifier: "identifier", type, labelOnTop: true},
       {label: 'label', identifier: "identifier", type, readonly: true},
       {label: 'label', identifier: "identifier", type, readonly: true, value: "1234567890"},
