@@ -2,17 +2,16 @@ import { h } from "@stencil/core";
 
 export default {
   component: 'mg-label',
-  title: 'Atoms/mg-label',
-  parameters: {
-    docs: {
-      source: {
-        code: `<mg-label required colon>Label</mg-label>`,
-      },
-    },
-  },
+  title: 'Atoms/mg-label'
 };
 
-const Template = args => <mg-label {...args}>{args.slot}</mg-label>;
+const Template = args => {
+  // Extract slot so it won't be render as an attribute
+  const slot = args.slot;
+  delete args.slot;
+  // return element
+  return <mg-label {...args}>{slot}</mg-label>
+};
 
 export const MgLabel = Template.bind({});
 MgLabel.args = {

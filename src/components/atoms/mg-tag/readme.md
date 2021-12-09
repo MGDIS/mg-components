@@ -1,6 +1,4 @@
-# mg-tag
-
-
+This atom refers to the Jira [PDA9-637](https://jira.mgdis.fr/browse/PDA9-637).
 
 <!-- Auto Generated Below -->
 
