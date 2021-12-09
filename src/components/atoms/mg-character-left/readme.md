@@ -1,6 +1,4 @@
-## PDA9
-
-This atom is a reference of the Jiras [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64), [PDA9-723](https://jira.mgdis.fr/browse/PDA9-723).
+This atom refers to the Jiras [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64), [PDA9-723](https://jira.mgdis.fr/browse/PDA9-723).
 
 <!-- Auto Generated Below -->
 
