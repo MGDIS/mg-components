@@ -91,17 +91,27 @@ artifact:
   needs:
     - dist
 
-deploy:
+pages:
   stage: deploy
   rules:
     - if: $CI_COMMIT_BRANCH == 'init'
-  before_script:
-    - npm ci
-    - apk add sshpass
   script:
     - npm run build-storybook -s www/build
-    - cd storybook-static/
-    - export SSHPASS=$SSH_PASS_OUTILS
-    - sshpass -e scp -o stricthostkeychecking=no -r . $USER@$SERVER:/usr/share/nginx/html/ux-ui/design-system/
-  tags:
-    - internal
+    - mv storybook-static public
+  artifacts:
+    paths:
+      - public
+# deploy:
+#   stage: deploy
+#   rules:
+#     - if: $CI_COMMIT_BRANCH == 'init'
+#   before_script:
+#     - npm ci
+#     - apk add sshpass
+#   script:
+#     - npm run build-storybook -s www/build
+#     - cd storybook-static/
+#     - export SSHPASS=$SSH_PASS_OUTILS
+#     - sshpass -e scp -o stricthostkeychecking=no -r . $USER@$SERVER:/usr/share/nginx/html/ux-ui/design-system/
+#   tags:
+#     - internal
