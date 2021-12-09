@@ -5,13 +5,14 @@
 .mg-input {
   // Display
   display: flex;
-  align-items: baseline;
+  align-items: flex-start;
 
   /**
   * Label
   */
 
   mg-label {
+    margin-top: calc((var(--default-size) - var(--font-size-base) * var(--line-height)) / 2);
     margin-right: var(--mg-inputs-spacer);
     text-align: end;
   }
@@ -21,6 +22,7 @@
     flex-direction: column;
 
     mg-label {
+      margin-top: 0;
       margin-right: 0;
       margin-bottom: 0.3rem;
       text-align: start;
@@ -59,8 +61,13 @@
     }
   }
 
+  textarea {
+    height: auto;
+  }
+
   select {
-    padding: 0 var(--mg-inputs-spacer);
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   // Ensure to keed input size on redonly
@@ -74,6 +81,10 @@
    * Tooltip
    */
   mg-tooltip {
+    display: inline-flex;
+    width: var(--mg-icon-regular-size);
+    height: var(--mg-icon-regular-size);
+    margin-top: calc((var(--default-size) - var(--mg-icon-regular-size)) / 2);
     margin-left: var(--mg-inputs-spacer);
   }
 
@@ -81,6 +92,8 @@
    * Manage space between input and first message
    */
   .mg-input__input-container__input {
+    display: flex;
+
     & + mg-character-left,
     & + .mg-input__input-container__help-text,
     & + .mg-input__input-container__error {
@@ -112,24 +125,6 @@
     textarea,
     select {
       border-color: hsl(var(--color-danger));
-    }
-  }
-
-  /**
-   * Workaround to baseline align label with textarea
-   * Not needed in readonly mode
-   */
-  &.mg-input--textarea:not(.mg-input--readonly) {
-    align-items: flex-start;
-    mg-label {
-      margin-top: calc((2 * var(--mg-inputs-border-width) + var(--default-size) - var(--font-size-base) * var(--line-height)) / 2);
-    }
-    textarea {
-      height: auto;
-      & + mg-tooltip {
-        margin-top: calc((2 * var(--mg-inputs-border-width) + var(--default-size) - var(--font-size-base) * var(--line-height)) / 2);
-        vertical-align: top;
-      }
     }
   }
 }
