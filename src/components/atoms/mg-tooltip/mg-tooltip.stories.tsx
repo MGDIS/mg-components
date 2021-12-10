@@ -17,3 +17,19 @@ MgTooltip.args = {
   message: 'This is a tooltip message',
   placement: 'bottom',
 };
+
+const TemplateButton = args => <mg-tooltip {...args}><mg-button>Action</mg-button></mg-tooltip>;
+
+export const MgTooltipOnButton = TemplateButton.bind({});
+
+MgTooltipOnButton.args = {
+  ...MgTooltip.args
+};
+
+const TemplateSpan = args => <mg-tooltip {...args}><span>any text</span></mg-tooltip>;
+
+export const MgTooltipOnSpan = TemplateSpan.bind({});
+
+MgTooltipOnSpan.args = {
+  ...MgTooltip.args
+};

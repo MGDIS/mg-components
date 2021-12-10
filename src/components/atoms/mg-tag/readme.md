@@ -1,4 +1,4 @@
-This atom refers to the Jira [PDA9-637](https://jira.mgdis.fr/browse/PDA9-637).
+This atom refers to the [PDA9-637](https://jira.mgdis.fr/browse/PDA9-637).
 
 <!-- Auto Generated Below -->
 

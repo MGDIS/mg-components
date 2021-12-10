@@ -17,13 +17,23 @@ export default {
  * 2. boolean arguments with a default true value must be added like display-character-left={args.displayCharacterLeft ? 'true' : 'false'}
  */
 
-const Template = args => <mg-message
-  {...args}
-  close-button={args.closeButton}
->
-  { args.slotContent && <span innerHTML={args.slotContent}></span> }
-  { args.slotActions && <span slot="actions" innerHTML={args.slotActions}></span> }
-</mg-message>;
+const Template = args => {
+  // Extract slot so it won't be render as an attribute
+  const slotContent = args.slotContent;
+  delete args.slotContent;
+  const slotActions = args.slotActions;
+  delete args.slotActions;
+  const closeButton = args.closeButton;
+  delete args.closeButton;
+  // return element
+  return <mg-message
+    {...args}
+    close-button={closeButton}
+    >
+    { slotContent && <span innerHTML={slotContent}></span> }
+    { slotActions && <span slot="actions" innerHTML={slotActions}></span> }
+  </mg-message>
+}
 
 export const MgMessage = Template.bind({});
 
@@ -36,21 +46,6 @@ MgMessage.args = {
   hide: false,
 };
 
-// Set exemple code for component
-MgMessage.parameters = {
-  docs: {
-    source: {
-      code: `<mg-message
-  variant="${MgMessage.args.variant}"
-  close-button="${MgMessage.args.closeButton}"
->
-  ${MgMessage.args.slotContent}
-  ${MgMessage.args.slotActions}
-</mg-input-text>`,
-    },
-  },
-};
-
 export const WithCloseButton = Template.bind({});
 
 WithCloseButton.args = {
@@ -59,19 +54,6 @@ WithCloseButton.args = {
   closeButton: true,
 }
 
-WithCloseButton.parameters = {
-  docs: {
-    source: {
-      code: `<mg-message
-  variant="${MgMessage.args.variant}"
-  close-button
->
-  ${MgMessage.args.slotContent}
-</mg-input-text>`,
-    },
-  },
-};
-
 export const WithActions = Template.bind({});
 
 WithActions.args = {
@@ -79,15 +61,3 @@ WithActions.args = {
   variant: 'warning',
   slotActions: `<div slot="actions" class="mg-group-elements mg-group-elements--align-right"><mg-button>Primary</mg-button><mg-button variant="secondary">Secondary</mg-button></div>`,
 }
-
-WithActions.parameters = {
-  docs: {
-    source: {
-      code: `<mg-message
-  variant="${MgMessage.args.variant}"
->
-  ${MgMessage.args.slotContent}
-</mg-input-text>`,
-    },
-  },
-};

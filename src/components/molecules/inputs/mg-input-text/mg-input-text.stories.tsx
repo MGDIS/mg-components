@@ -2,25 +2,41 @@ import { h } from "@stencil/core";
 
 export default {
   component: 'mg-input-text',
-  title: 'Molecules/mg-input-text',
+  title: 'Molecules/Inputs/mg-input-text',
 };
 
 /**
  * 1. camelCase arguments must be written in the template, for exemple labelOnTop must be placed in the template as label-on-top={args.labelOnTop}
  * 2. boolean arguments with a default true value must be added like display-character-left={args.displayCharacterLeft ? 'true' : 'false'}
  */
-const Template = args => (
-  <mg-input-text
+const Template = args => {
+  // Extract slot so it won't be render as an attribute
+  const labelOnTop = args.labelOnTop;
+  delete args.labelOnTop;
+  const labelColon = args.labelColon;
+  delete args.labelColon;
+  const labelHide = args.labelHide;
+  delete args.labelHide;
+  const patternErrorMessage = args.patternErrorMessage;
+  delete args.patternErrorMessage;
+  const displayCharacterLeft = args.displayCharacterLeft;
+  delete args.displayCharacterLeft;
+  const characterLeftTemplate = args.characterLeftTemplate;
+  delete args.characterLeftTemplate;
+  const helpText = args.helpText;
+  delete args.helpText;
+  // return element
+  return <mg-input-text
     {...args}
-    label-on-top={args.labelOnTop}
-    label-colon={args.labelColon}
-    label-hide={args.labelHide}
-    pattern-error-message={args.patternErrorMessage}
-    display-character-left={args.displayCharacterLeft ? 'true' : 'false'}
-    character-left-template={args.characterLeftTemplate}
-    help-text={args.helpText}
+    label-on-top={labelOnTop}
+    label-colon={labelColon}
+    label-hide={labelHide}
+    pattern-error-message={patternErrorMessage}
+    display-character-left={displayCharacterLeft}
+    character-left-template={characterLeftTemplate}
+    help-text={helpText}
   ></mg-input-text>
-);
+};
 
 /**
  * Global use
@@ -55,22 +71,6 @@ MgInputText.args = {
   helpText: 'Help text with html <strong>bold</strong>, <em>italic</em>.',
 };
 
-// Set exemple code for component
-MgInputText.parameters = {
-  docs: {
-    source: {
-      code: `<mg-input-text
-  value="${MgInputText.args.value}"
-  label="${MgInputText.args.label}"
-  tooltip="${MgInputText.args.tooltip}"
-  help-text="${MgInputText.args.helpText}"
-  required
-  has-colon
-></mg-input-text>`,
-    },
-  },
-};
-
 /**
  * Email
  */
@@ -92,22 +92,6 @@ Email.args = {
   helpText: 'exemple : prenom.nom@exemple.fr',
 }
 
-// Set exemple code for component
-Email.parameters = {
-  docs: {
-    source: {
-      code: `<mg-input-text
-  value="${Email.args.value}"
-  label="${Email.args.label}"
-  maxlength="${Email.args.maxlength}"
-  pattern="${Email.args.pattern}"
-  pattern-error-message="${Email.args.patternErrorMessage}"
-  help-text="${Email.args.helpText}"
-></mg-input-text>`,
-    },
-  },
-};
-
 /**
  * Emails
  */
@@ -125,22 +109,6 @@ Emails.args = {
   helpText: 'exemple : prenom.nom@exemple.fr;prenom.nom.2@exemple.fr',
 }
 
-// Set exemple code for component
-Emails.parameters = {
-  docs: {
-    source: {
-      code: `<mg-input-text
-  value="${Emails.args.value}"
-  label="${Emails.args.label}"
-  maxlength="${Emails.args.maxlength}"
-  pattern="${Emails.args.pattern}"
-  pattern-error-message="${Emails.args.patternErrorMessage}"
-  help-text="${Emails.args.helpText}"
-></mg-input-text>`,
-    },
-  },
-};
-
 /**
  * RNA
  */
@@ -156,22 +124,6 @@ RNA.args = {
   // Help Text
   helpText: 'exemple : W123456789',
 }
-
-// Set exemple code for component
-RNA.parameters = {
-  docs: {
-    source: {
-      code: `<mg-input-text
-  value="${RNA.args.value}"
-  label="${RNA.args.label}"
-  maxlength="${RNA.args.maxlength}"
-  pattern="${RNA.args.pattern}"
-  pattern-error-message="${RNA.args.patternErrorMessage}"
-  help-text="${RNA.args.helpText}"
-></mg-input-text>`,
-    },
-  },
-};
 
 /**
  * URL
@@ -189,18 +141,3 @@ RNA.parameters = {
    helpText: 'Exemple: https://www.exemple.fr',
  }
 
- // Set exemple code for component
- URL.parameters = {
-   docs: {
-     source: {
-       code: `<mg-input-text
-   value="${URL.args.value}"
-   label="${URL.args.label}"
-   maxlength="${URL.args.maxlength}"
-   pattern="${URL.args.pattern}"
-   pattern-error-message="${URL.args.patternErrorMessage}"
-   help-text="${URL.args.helpText}"
- ></mg-input-text>`,
-     },
-   },
- };
