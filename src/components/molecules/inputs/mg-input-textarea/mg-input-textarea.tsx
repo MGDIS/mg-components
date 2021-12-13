@@ -247,6 +247,8 @@ export class MgInputTextarea {
         maxlength={this.maxlength}
         helpText={this.helpText}
         errorMessage={this.errorMessage}
+        isFieldset={false}
+        isVerticalList={false}
       >
         <textarea
           id={this.identifier}

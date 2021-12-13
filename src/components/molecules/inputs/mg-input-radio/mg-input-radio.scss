@@ -1,0 +1,66 @@
+@import '../mg-input.scss';
+@import '../../../atoms/mg-label/mg-label.scss';
+@import '../../../../styles/a11y.scss';
+
+.mg-input{
+  &__input-radio {
+    margin-left: 2.5rem;
+    margin-right: 0.6rem;
+    margin-top: -1px;
+    vertical-align: middle;
+    &:first-child {
+      margin-left: 1.9rem;
+    }
+  }
+
+  &__input-container__input {
+    display: flex;
+  }
+
+  /**
+  /* vertical alignement
+  /* case: for label on top
+  **/
+  &.is-label-on-top{
+    & mg-label {
+      margin-left: -0.2rem;
+      margin-bottom: 1.1rem;
+    }
+    & input:first-child {
+      margin-left: 0;
+    }
+  }
+
+  /**
+  /* vertical alignement
+  /* case: list style
+  **/
+  &.is-vertical-list{
+    & mg-label {
+      margin-right: 2.8rem;
+    }
+    // line-break
+    & label:not(:last-of-type):after {
+      content: "\A";
+      white-space: pre;
+      height: 1.1rem;
+      display: block;
+    }
+    & .mg-input__input-radio {
+      margin-left: 0rem;
+      &:first-child {
+        margin-left: 0rem;
+      }
+    }
+  }
+
+  // help-text radio margin
+  & .mg-input__input-container__help-text {
+    margin-left: 1.9rem;
+  }
+  &.is-label-on-top, &.is-vertical-list {
+    & .mg-input__input-container__help-text {
+      margin-left: 0rem;
+    }
+  }
+}

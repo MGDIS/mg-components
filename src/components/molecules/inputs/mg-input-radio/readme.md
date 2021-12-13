@@ -1,0 +1,59 @@
+# mg-input-radio
+
+
+
+<!-- Auto Generated Below -->
+
+
+## Properties
+
+| Property              | Attribute             | Description                                                                                                 | Type                   | Default                      |
+| --------------------- | --------------------- | ----------------------------------------------------------------------------------------------------------- | ---------------------- | ---------------------------- |
+| `disabled`            | `disabled`            | Define if input is disabled                                                                                 | `boolean`              | `false`                      |
+| `helpText`            | `help-text`           | Template to use for characters left sentence                                                                | `string`               | `undefined`                  |
+| `identifier`          | `identifier`          | Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created. | `string`               | `createID('mg-input-radio')` |
+| `inputVerticalList`   | `input-vertical-list` | Define if inputs are display verticaly                                                                      | `boolean`              | `false`                      |
+| `invalid`             | `invalid`             | Force invalid component                                                                                     | `boolean`              | `undefined`                  |
+| `items` _(required)_  | --                    | Items are the possible options to select Required                                                           | `Option[] \| string[]` | `undefined`                  |
+| `label` _(required)_  | `label`               | Input label Required                                                                                        | `string`               | `undefined`                  |
+| `labelColon`          | `label-colon`         | Define if label has colon ":"                                                                               | `boolean`              | `false`                      |
+| `labelHide`           | `label-hide`          | Define if label is visible                                                                                  | `boolean`              | `false`                      |
+| `labelOnTop`          | `label-on-top`        | Define if label is displayed on top                                                                         | `boolean`              | `false`                      |
+| `legend` _(required)_ | `legend`              | Fieldset legend required                                                                                    | `string`               | `undefined`                  |
+| `name`                | `name`                | Input name If not set the value equals the identifier                                                       | `string`               | `this.identifier`            |
+| `readonly`            | `readonly`            | Define if input is readonly                                                                                 | `boolean`              | `false`                      |
+| `required`            | `required`            | Define if input is required                                                                                 | `boolean`              | `false`                      |
+| `tooltip`             | `tooltip`             | Add a tooltip message next to the input                                                                     | `string`               | `undefined`                  |
+| `valid`               | `valid`               | Force valid component                                                                                       | `boolean`              | `undefined`                  |
+| `value`               | `value`               | Component value                                                                                             | `string`               | `undefined`                  |
+
+
+## Events
+
+| Event         | Description                     | Type                  |
+| ------------- | ------------------------------- | --------------------- |
+| `valueChange` | Emitted event when value change | `CustomEvent<string>` |
+
+
+## Dependencies
+
+### Depends on
+
+- [mg-label](../../../atoms/mg-label)
+- [mg-tooltip](../../../atoms/mg-tooltip)
+- [mg-icon](../../../atoms/mg-icon)
+- [mg-character-left](../../../atoms/mg-character-left)
+
+### Graph
+```mermaid
+graph TD;
+  mg-input-radio --> mg-label
+  mg-input-radio --> mg-tooltip
+  mg-input-radio --> mg-icon
+  mg-input-radio --> mg-character-left
+  style mg-input-radio fill:#f9f,stroke:#333,stroke-width:4px
+```
+
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*

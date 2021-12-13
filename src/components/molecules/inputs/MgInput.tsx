@@ -1,5 +1,31 @@
-import { FunctionalComponent, h } from '@stencil/core';
+import { FunctionalComponent, h, VNode, FunctionalUtilities } from '@stencil/core';
 import { ClassList } from '../../../utils/components.utils';
+
+/**
+ * Apply in all input child node the aria-describedby attribute
+ * @param children
+ * @param ariaDescribedbyIDs
+ * @param utils
+ * @returns {VNode[]}
+ */
+const applyAriadescribedBy = (children :VNode[], ariaDescribedbyIDs: Set<unknown>, utils: FunctionalUtilities): VNode[] =>  utils.map(children, child => {
+  if(child.vtag === 'input') {
+    return {
+      ...child,
+      vattrs: {
+        ...child.vattrs,
+        'aria-describedby': [...ariaDescribedbyIDs].join(' '),
+      }
+    }
+  }
+
+  // we recursively apply ariadescribedBy attributes to child input nodes if exists
+  if(child.vchildren === null) return {...child};
+  return {
+    ...child,
+    vchildren: applyAriadescribedBy(child.vchildren, ariaDescribedbyIDs, utils)
+  };
+});
 
 /**
  * MgInput Interface
@@ -13,6 +39,8 @@ interface MgInputProps {
   labelOnTop: boolean;
   labelColon: boolean;
   labelHide: boolean;
+  isFieldset: boolean;
+  isVerticalList: boolean;
   // Input
   value: string;
   readonlyValue: string;
@@ -58,6 +86,10 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
     props.classList.add('is-label-on-top');
   }
 
+  if(props.isVerticalList) {
+    props.classList.add('is-vertical-list')
+  }
+
   /**
    * a11y IDs
    */
@@ -83,16 +115,10 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
   }
 
   /**
-   * Update children
+   * Update input(s) in children
    */
+  children = applyAriadescribedBy(children, ariaDescribedbyIDs, utils);
 
-  children = utils.map(children, child => ({
-    ...child,
-    vattrs: {
-      ...child.vattrs,
-      'aria-describedby': [...ariaDescribedbyIDs].join(' '),
-    }
-  }))
 
   /**
    * Return template
@@ -109,13 +135,17 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
    *
    * Error message is based on this aria method: https://www.w3.org/WAI/tutorials/forms/notifications/#on-focus-change
    */
+
+  const TagName = props.isFieldset ? 'fieldset' : 'label';
+
   return (
-    <div class={props.classList.join()}>
+    <TagName class={props.classList.join()}>
       <mg-label
         identifier={props.identifier}
         class={props.labelHide ? "sr-only" : undefined}
         colon={props.labelColon}
         required={props.required}
+        is-legend={props.isFieldset}
       >
         {props.label}
       </mg-label>
@@ -138,6 +168,6 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
           { props.errorMessage && <div id={helpTextErrorId} class="mg-input__input-container__error" innerHTML={props.errorMessage} aria-live="assertive"></div> }
         </div>
       }
-    </div>
+    </TagName>
   );
 }

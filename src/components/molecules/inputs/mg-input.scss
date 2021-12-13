@@ -69,6 +69,12 @@
   mg-tooltip {
     margin-left: var(--mg-inputs-spacer);
   }
+  // specifics spacers for checkbox and radio
+  &--radio, --checkbox {
+    & mg-tooltip {
+      margin-left: var(--mg-inputs-spacer-lg);
+    }
+  }
 
   /**
    * Manage space between input and first message
@@ -121,4 +127,10 @@
       }
     }
   }
+}
+
+fieldset.mg-input {
+  border: 0;
+  margin: 0;
+  padding: 0;
 }

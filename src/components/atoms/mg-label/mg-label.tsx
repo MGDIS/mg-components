@@ -22,18 +22,25 @@ export class MgLabel {
    */
   @Prop() colon: boolean;
 
+  /**
+   * Switch from label to fieldset sementic
+   */
+  @Prop() isLegend: boolean = false;
+
   /*************
    * Lifecycle *
    *************/
 
   // \u00A0 represent a &nbsp;
   render() {
+    const TagName = this.isLegend ? 'legend' : 'label';
+
     return (
-      <label class="mg-label" htmlFor={this.identifier}>
+      <TagName class="mg-label" htmlFor={this.identifier}>
         <slot></slot>
         { this.required && [`\u00A0`, <span class="is-asterisk">*</span>] }
         { this.colon && `\u00A0:` }
-      </label>
+      </TagName>
     );
   }
 

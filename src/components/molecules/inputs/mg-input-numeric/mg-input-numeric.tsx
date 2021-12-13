@@ -293,6 +293,8 @@ export class MgInputNumeric {
         maxlength={undefined}
         helpText={this.helpText}
         errorMessage={this.errorMessage}
+        isFieldset={false}
+        isVerticalList={false}
       >
         <input
           type="text"

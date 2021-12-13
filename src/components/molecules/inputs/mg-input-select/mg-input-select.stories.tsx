@@ -73,7 +73,7 @@ WithObjectItems.args = {
     { title: 'blu', value: 'blublu' },
     { title: 'bli', value: 'blibli' },
     { title: 'blo', value: 'bloblo' },
-    { title: 'bla', value: 'blabla' },
+    { title: 'bla', value: 'blabla', disabled: true },
   ],
 };
 
