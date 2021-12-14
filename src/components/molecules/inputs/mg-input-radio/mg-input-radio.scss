@@ -3,7 +3,7 @@
 @import '../../../../styles/a11y.scss';
 
 .mg-input{
-  &__input-radio {
+  &.mg-input--radio input[type="radio"] {
     margin-left: 2.5rem;
     margin-right: 0.6rem;
     margin-top: -1px;
@@ -46,7 +46,7 @@
       height: 1.1rem;
       display: block;
     }
-    & .mg-input__input-radio {
+    & input[type="radio"] {
       margin-left: 0rem;
       &:first-child {
         margin-left: 0rem;

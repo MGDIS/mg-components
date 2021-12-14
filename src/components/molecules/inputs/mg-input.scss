@@ -70,7 +70,7 @@
     margin-left: var(--mg-inputs-spacer);
   }
   // specifics spacers for checkbox and radio
-  &--radio, --checkbox {
+  &--radio, &--checkbox {
     & mg-tooltip {
       margin-left: var(--mg-inputs-spacer-lg);
     }

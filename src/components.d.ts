@@ -298,10 +298,6 @@ export namespace Components {
          */
         "labelOnTop": boolean;
         /**
-          * Fieldset legend required
-         */
-        "legend": string;
-        /**
           * Input name If not set the value equals the identifier
          */
         "name"?: string;
@@ -1026,10 +1022,6 @@ declare namespace LocalJSX {
           * Define if label is displayed on top
          */
         "labelOnTop"?: boolean;
-        /**
-          * Fieldset legend required
-         */
-        "legend": string;
         /**
           * Input name If not set the value equals the identifier
          */

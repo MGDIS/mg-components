@@ -15,7 +15,7 @@ const isOption = (option: Option): boolean => typeof option === 'object' && type
 @Component({
   tag: 'mg-input-radio',
   styleUrl: 'mg-input-radio.scss',
-  shadow: true,
+  scoped: true,
 })
 export class MgInputRadio {
 
@@ -66,12 +66,6 @@ export class MgInputRadio {
   * If not set the value equals the identifier
   */
   @Prop() name?: string = this.identifier;
-
-  /**
-  * Fieldset legend
-  * required
-  */
-  @Prop() legend!: string;
 
   /**
   * Input label
@@ -244,7 +238,6 @@ export class MgInputRadio {
           {this.options.map((input, index) => [
             <input
               type="radio"
-              class="mg-input__input-radio"
               id={this.identifier + '_' + index}
               name={this.identifier}
               value={input.value && input.value.toString()}

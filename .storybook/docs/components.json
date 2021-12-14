@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-12-13T16:51:31",
+  "timestamp": "2021-12-14T10:19:55",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.11.0",
@@ -1244,10 +1244,10 @@
     },
     {
       "filePath": "./src/components/molecules/inputs/mg-input-radio/mg-input-radio.tsx",
-      "encapsulation": "shadow",
+      "encapsulation": "scoped",
       "tag": "mg-input-radio",
-      "readme": "# mg-input-radio\n\n\n",
-      "docs": "",
+      "readme": "# mg-input-radio\n\nThis atom refers to the [PDA9-745](https://jira.mgdis.fr/browse/PDA9-745)\n",
+      "docs": "This atom refers to the [PDA9-745](https://jira.mgdis.fr/browse/PDA9-745)",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -1418,22 +1418,6 @@
           ],
           "optional": false,
           "required": false
-        },
-        {
-          "name": "legend",
-          "type": "string",
-          "mutable": false,
-          "attr": "legend",
-          "reflectToAttr": false,
-          "docs": "Fieldset legend\nrequired",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": true
         },
         {
           "name": "name",

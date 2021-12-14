@@ -8,8 +8,8 @@ import { ClassList } from '../../../utils/components.utils';
  * @param utils
  * @returns {VNode[]}
  */
-const applyAriadescribedBy = (children :VNode[], ariaDescribedbyIDs: Set<unknown>, utils: FunctionalUtilities): VNode[] =>  utils.map(children, child => {
-  if(child.vtag === 'input') {
+const applyAriadescribedBy = (children :VNode[], ariaDescribedbyIDs: Set<String>, utils: FunctionalUtilities): VNode[] =>  utils.map(children, child => {
+  if(['input', 'select', 'textarea'].includes(child.vtag as string)) {
     return {
       ...child,
       vattrs: {
@@ -94,7 +94,7 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
    * a11y IDs
    */
 
-  const ariaDescribedbyIDs = new Set();
+  const ariaDescribedbyIDs: Set<String> = new Set();
 
   // Character Left
   const characterLeftId = `${props.identifier}-character-left`;
@@ -136,7 +136,7 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
    * Error message is based on this aria method: https://www.w3.org/WAI/tutorials/forms/notifications/#on-focus-change
    */
 
-  const TagName = props.isFieldset ? 'fieldset' : 'label';
+  const TagName = props.isFieldset ? 'fieldset' : 'div';
 
   return (
     <TagName class={props.classList.join()}>
