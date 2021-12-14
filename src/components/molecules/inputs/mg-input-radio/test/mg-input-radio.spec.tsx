@@ -54,7 +54,7 @@ describe('mg-input-radio', () => {
     const page = await getPage(args);
 
     const element = page.doc.querySelector('mg-input-radio');
-    const input = element.querySelector('input');
+    const input = element.shadowRoot.querySelector('input');
 
     //mock validity
     input.checkValidity = jest.fn(()=> true);
@@ -88,7 +88,7 @@ describe('mg-input-radio', () => {
     const page = await getPage(args);
 
     const element = page.doc.querySelector('mg-input-radio');
-    const input = element.querySelector('input');
+    const input = element.shadowRoot.querySelector('input');
 
     //mock validity
     input.checkValidity = jest.fn(()=> validity);

@@ -91,7 +91,7 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
   }
 
   if(props.isVerticalList) {
-    props.classList.add('is-vertical-list')
+    props.classList.add('mg-input--vertical-list')
   }
 
   /**

@@ -7,33 +7,35 @@ exports[`mg-input-radio Should render with args {
   disabled: true
 }: 1`] = `
 <mg-input-radio>
-  <fieldset class="mg-input mg-input--radio">
-    <mg-label identifier="identifier" is-legend="">
-      label
-    </mg-label>
-    <div class="mg-input__input-container">
-      <div class="mg-input__input-container__input">
-        <div>
-          <input aria-describedby="" class="mg-input__input-radio" id="identifier_0" name="identifier" type="radio" value="batman">
-          <label htmlfor="identifier_0">
-            batman
-          </label>
-          <input aria-describedby="" class="mg-input__input-radio" id="identifier_1" name="identifier" type="radio" value="robin">
-          <label htmlfor="identifier_1">
-            robin
-          </label>
-          <input aria-describedby="" class="mg-input__input-radio" id="identifier_2" name="identifier" type="radio" value="jocker">
-          <label htmlfor="identifier_2">
-            jocker
-          </label>
-          <input aria-describedby="" class="mg-input__input-radio" id="identifier_3" name="identifier" type="radio" value="bane">
-          <label htmlfor="identifier_3">
-            bane
-          </label>
+  <mock:shadow-root>
+    <fieldset class="mg-input mg-input--radio">
+      <mg-label identifier="identifier" is-legend="">
+        label
+      </mg-label>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input-container__input">
+          <div>
+            <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="batman">
+            <label htmlfor="identifier_0">
+              batman
+            </label>
+            <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="robin">
+            <label htmlfor="identifier_1">
+              robin
+            </label>
+            <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="jocker">
+            <label htmlfor="identifier_2">
+              jocker
+            </label>
+            <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="bane">
+            <label htmlfor="identifier_3">
+              bane
+            </label>
+          </div>
         </div>
       </div>
-    </div>
-  </fieldset>
+    </fieldset>
+  </mock:shadow-root>
 </mg-input-radio>
 `;
 
@@ -44,36 +46,38 @@ exports[`mg-input-radio Should render with args {
   helpText: 'Hello jocker'
 }: 1`] = `
 <mg-input-radio>
-  <fieldset class="mg-input mg-input--radio">
-    <mg-label identifier="identifier" is-legend="">
-      label
-    </mg-label>
-    <div class="mg-input__input-container">
-      <div class="mg-input__input-container__input">
-        <div>
-          <input aria-describedby="" class="mg-input__input-radio" id="identifier_0" name="identifier" type="radio" value="batman">
-          <label htmlfor="identifier_0">
-            batman
-          </label>
-          <input aria-describedby="" class="mg-input__input-radio" id="identifier_1" name="identifier" type="radio" value="robin">
-          <label htmlfor="identifier_1">
-            robin
-          </label>
-          <input aria-describedby="" class="mg-input__input-radio" id="identifier_2" name="identifier" type="radio" value="jocker">
-          <label htmlfor="identifier_2">
-            jocker
-          </label>
-          <input aria-describedby="" class="mg-input__input-radio" id="identifier_3" name="identifier" type="radio" value="bane">
-          <label htmlfor="identifier_3">
-            bane
-          </label>
+  <mock:shadow-root>
+    <fieldset class="mg-input mg-input--radio">
+      <mg-label identifier="identifier" is-legend="">
+        label
+      </mg-label>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input-container__input">
+          <div>
+            <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="batman">
+            <label htmlfor="identifier_0">
+              batman
+            </label>
+            <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="robin">
+            <label htmlfor="identifier_1">
+              robin
+            </label>
+            <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="jocker">
+            <label htmlfor="identifier_2">
+              jocker
+            </label>
+            <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="bane">
+            <label htmlfor="identifier_3">
+              bane
+            </label>
+          </div>
+        </div>
+        <div class="mg-input__input-container__help-text" id="identifier-help-text">
+          Hello jocker
         </div>
       </div>
-      <div class="mg-input__input-container__help-text" id="identifier-help-text">
-        Hello jocker
-      </div>
-    </div>
-  </fieldset>
+    </fieldset>
+  </mock:shadow-root>
 </mg-input-radio>
 `;
 
@@ -84,33 +88,35 @@ exports[`mg-input-radio Should render with args {
   inputVerticalList: true
 }: 1`] = `
 <mg-input-radio>
-  <fieldset class="is-vertical-list mg-input mg-input--radio">
-    <mg-label identifier="identifier" is-legend="">
-      label
-    </mg-label>
-    <div class="mg-input__input-container">
-      <div class="mg-input__input-container__input">
-        <div>
-          <input aria-describedby="" class="mg-input__input-radio" id="identifier_0" name="identifier" type="radio" value="batman">
-          <label htmlfor="identifier_0">
-            batman
-          </label>
-          <input aria-describedby="" class="mg-input__input-radio" id="identifier_1" name="identifier" type="radio" value="robin">
-          <label htmlfor="identifier_1">
-            robin
-          </label>
-          <input aria-describedby="" class="mg-input__input-radio" id="identifier_2" name="identifier" type="radio" value="jocker">
-          <label htmlfor="identifier_2">
-            jocker
-          </label>
-          <input aria-describedby="" class="mg-input__input-radio" id="identifier_3" name="identifier" type="radio" value="bane">
-          <label htmlfor="identifier_3">
-            bane
-          </label>
+  <mock:shadow-root>
+    <fieldset class="mg-input mg-input--radio mg-input--vertical-list">
+      <mg-label identifier="identifier" is-legend="">
+        label
+      </mg-label>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input-container__input">
+          <div>
+            <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="batman">
+            <label htmlfor="identifier_0">
+              batman
+            </label>
+            <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="robin">
+            <label htmlfor="identifier_1">
+              robin
+            </label>
+            <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="jocker">
+            <label htmlfor="identifier_2">
+              jocker
+            </label>
+            <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="bane">
+            <label htmlfor="identifier_3">
+              bane
+            </label>
+          </div>
         </div>
       </div>
-    </div>
-  </fieldset>
+    </fieldset>
+  </mock:shadow-root>
 </mg-input-radio>
 `;
 
@@ -121,33 +127,35 @@ exports[`mg-input-radio Should render with args {
   labelColon: true
 }: 1`] = `
 <mg-input-radio>
-  <fieldset class="mg-input mg-input--radio">
-    <mg-label colon="" identifier="identifier" is-legend="">
-      label
-    </mg-label>
-    <div class="mg-input__input-container">
-      <div class="mg-input__input-container__input">
-        <div>
-          <input aria-describedby="" class="mg-input__input-radio" id="identifier_0" name="identifier" type="radio" value="batman">
-          <label htmlfor="identifier_0">
-            batman
-          </label>
-          <input aria-describedby="" class="mg-input__input-radio" id="identifier_1" name="identifier" type="radio" value="robin">
-          <label htmlfor="identifier_1">
-            robin
-          </label>
-          <input aria-describedby="" class="mg-input__input-radio" id="identifier_2" name="identifier" type="radio" value="jocker">
-          <label htmlfor="identifier_2">
-            jocker
-          </label>
-          <input aria-describedby="" class="mg-input__input-radio" id="identifier_3" name="identifier" type="radio" value="bane">
-          <label htmlfor="identifier_3">
-            bane
-          </label>
+  <mock:shadow-root>
+    <fieldset class="mg-input mg-input--radio">
+      <mg-label colon="" identifier="identifier" is-legend="">
+        label
+      </mg-label>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input-container__input">
+          <div>
+            <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="batman">
+            <label htmlfor="identifier_0">
+              batman
+            </label>
+            <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="robin">
+            <label htmlfor="identifier_1">
+              robin
+            </label>
+            <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="jocker">
+            <label htmlfor="identifier_2">
+              jocker
+            </label>
+            <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="bane">
+            <label htmlfor="identifier_3">
+              bane
+            </label>
+          </div>
         </div>
       </div>
-    </div>
-  </fieldset>
+    </fieldset>
+  </mock:shadow-root>
 </mg-input-radio>
 `;
 
@@ -158,33 +166,35 @@ exports[`mg-input-radio Should render with args {
   labelHide: true
 }: 1`] = `
 <mg-input-radio>
-  <fieldset class="mg-input mg-input--radio">
-    <mg-label class="sr-only" identifier="identifier" is-legend="">
-      label
-    </mg-label>
-    <div class="mg-input__input-container">
-      <div class="mg-input__input-container__input">
-        <div>
-          <input aria-describedby="" class="mg-input__input-radio" id="identifier_0" name="identifier" type="radio" value="batman">
-          <label htmlfor="identifier_0">
-            batman
-          </label>
-          <input aria-describedby="" class="mg-input__input-radio" id="identifier_1" name="identifier" type="radio" value="robin">
-          <label htmlfor="identifier_1">
-            robin
-          </label>
-          <input aria-describedby="" class="mg-input__input-radio" id="identifier_2" name="identifier" type="radio" value="jocker">
-          <label htmlfor="identifier_2">
-            jocker
-          </label>
-          <input aria-describedby="" class="mg-input__input-radio" id="identifier_3" name="identifier" type="radio" value="bane">
-          <label htmlfor="identifier_3">
-            bane
-          </label>
+  <mock:shadow-root>
+    <fieldset class="mg-input mg-input--radio">
+      <mg-label class="sr-only" identifier="identifier" is-legend="">
+        label
+      </mg-label>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input-container__input">
+          <div>
+            <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="batman">
+            <label htmlfor="identifier_0">
+              batman
+            </label>
+            <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="robin">
+            <label htmlfor="identifier_1">
+              robin
+            </label>
+            <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="jocker">
+            <label htmlfor="identifier_2">
+              jocker
+            </label>
+            <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="bane">
+            <label htmlfor="identifier_3">
+              bane
+            </label>
+          </div>
         </div>
       </div>
-    </div>
-  </fieldset>
+    </fieldset>
+  </mock:shadow-root>
 </mg-input-radio>
 `;
 
@@ -195,33 +205,35 @@ exports[`mg-input-radio Should render with args {
   labelOnTop: true
 }: 1`] = `
 <mg-input-radio>
-  <fieldset class="is-label-on-top mg-input mg-input--radio">
-    <mg-label identifier="identifier" is-legend="">
-      label
-    </mg-label>
-    <div class="mg-input__input-container">
-      <div class="mg-input__input-container__input">
-        <div>
-          <input aria-describedby="" class="mg-input__input-radio" id="identifier_0" name="identifier" type="radio" value="batman">
-          <label htmlfor="identifier_0">
-            batman
-          </label>
-          <input aria-describedby="" class="mg-input__input-radio" id="identifier_1" name="identifier" type="radio" value="robin">
-          <label htmlfor="identifier_1">
-            robin
-          </label>
-          <input aria-describedby="" class="mg-input__input-radio" id="identifier_2" name="identifier" type="radio" value="jocker">
-          <label htmlfor="identifier_2">
-            jocker
-          </label>
-          <input aria-describedby="" class="mg-input__input-radio" id="identifier_3" name="identifier" type="radio" value="bane">
-          <label htmlfor="identifier_3">
-            bane
-          </label>
+  <mock:shadow-root>
+    <fieldset class="mg-input mg-input--label-on-top mg-input--radio">
+      <mg-label identifier="identifier" is-legend="">
+        label
+      </mg-label>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input-container__input">
+          <div>
+            <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="batman">
+            <label htmlfor="identifier_0">
+              batman
+            </label>
+            <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="robin">
+            <label htmlfor="identifier_1">
+              robin
+            </label>
+            <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="jocker">
+            <label htmlfor="identifier_2">
+              jocker
+            </label>
+            <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="bane">
+            <label htmlfor="identifier_3">
+              bane
+            </label>
+          </div>
         </div>
       </div>
-    </div>
-  </fieldset>
+    </fieldset>
+  </mock:shadow-root>
 </mg-input-radio>
 `;
 
@@ -232,14 +244,16 @@ exports[`mg-input-radio Should render with args {
   readonly: true
 }: 1`] = `
 <mg-input-radio>
-  <fieldset class="mg-input mg-input--radio">
-    <mg-label identifier="identifier" is-legend="">
-      label
-    </mg-label>
-    <div class="mg-input__input-container">
-      <strong></strong>
-    </div>
-  </fieldset>
+  <mock:shadow-root>
+    <fieldset class="mg-input mg-input--radio mg-input--readonly">
+      <mg-label identifier="identifier" is-legend="">
+        label
+      </mg-label>
+      <div class="mg-input__input-container">
+        <strong></strong>
+      </div>
+    </fieldset>
+  </mock:shadow-root>
 </mg-input-radio>
 `;
 
@@ -250,33 +264,35 @@ exports[`mg-input-radio Should render with args {
   required: true
 }: 1`] = `
 <mg-input-radio>
-  <fieldset class="mg-input mg-input--radio">
-    <mg-label identifier="identifier" is-legend="" required="">
-      label
-    </mg-label>
-    <div class="mg-input__input-container">
-      <div class="mg-input__input-container__input">
-        <div>
-          <input aria-describedby="" class="mg-input__input-radio" id="identifier_0" name="identifier" required="" type="radio" value="batman">
-          <label htmlfor="identifier_0">
-            batman
-          </label>
-          <input aria-describedby="" class="mg-input__input-radio" id="identifier_1" name="identifier" required="" type="radio" value="robin">
-          <label htmlfor="identifier_1">
-            robin
-          </label>
-          <input aria-describedby="" class="mg-input__input-radio" id="identifier_2" name="identifier" required="" type="radio" value="jocker">
-          <label htmlfor="identifier_2">
-            jocker
-          </label>
-          <input aria-describedby="" class="mg-input__input-radio" id="identifier_3" name="identifier" required="" type="radio" value="bane">
-          <label htmlfor="identifier_3">
-            bane
-          </label>
+  <mock:shadow-root>
+    <fieldset class="mg-input mg-input--radio">
+      <mg-label identifier="identifier" is-legend="" required="">
+        label
+      </mg-label>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input-container__input">
+          <div>
+            <input aria-describedby="" id="identifier_0" name="identifier" required="" type="radio" value="batman">
+            <label htmlfor="identifier_0">
+              batman
+            </label>
+            <input aria-describedby="" id="identifier_1" name="identifier" required="" type="radio" value="robin">
+            <label htmlfor="identifier_1">
+              robin
+            </label>
+            <input aria-describedby="" id="identifier_2" name="identifier" required="" type="radio" value="jocker">
+            <label htmlfor="identifier_2">
+              jocker
+            </label>
+            <input aria-describedby="" id="identifier_3" name="identifier" required="" type="radio" value="bane">
+            <label htmlfor="identifier_3">
+              bane
+            </label>
+          </div>
         </div>
       </div>
-    </div>
-  </fieldset>
+    </fieldset>
+  </mock:shadow-root>
 </mg-input-radio>
 `;
 
@@ -287,134 +303,142 @@ exports[`mg-input-radio Should render with args {
   tooltip: 'My Tooltip Message'
 }: 1`] = `
 <mg-input-radio>
-  <fieldset class="mg-input mg-input--radio">
-    <mg-label identifier="identifier" is-legend="">
-      label
-    </mg-label>
-    <div class="mg-input__input-container">
-      <div class="mg-input__input-container__input">
-        <div>
-          <input aria-describedby="" class="mg-input__input-radio" id="identifier_0" name="identifier" type="radio" value="batman">
-          <label htmlfor="identifier_0">
-            batman
-          </label>
-          <input aria-describedby="" class="mg-input__input-radio" id="identifier_1" name="identifier" type="radio" value="robin">
-          <label htmlfor="identifier_1">
-            robin
-          </label>
-          <input aria-describedby="" class="mg-input__input-radio" id="identifier_2" name="identifier" type="radio" value="jocker">
-          <label htmlfor="identifier_2">
-            jocker
-          </label>
-          <input aria-describedby="" class="mg-input__input-radio" id="identifier_3" name="identifier" type="radio" value="bane">
-          <label htmlfor="identifier_3">
-            bane
-          </label>
+  <mock:shadow-root>
+    <fieldset class="mg-input mg-input--radio">
+      <mg-label identifier="identifier" is-legend="">
+        label
+      </mg-label>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input-container__input">
+          <div>
+            <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="batman">
+            <label htmlfor="identifier_0">
+              batman
+            </label>
+            <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="robin">
+            <label htmlfor="identifier_1">
+              robin
+            </label>
+            <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="jocker">
+            <label htmlfor="identifier_2">
+              jocker
+            </label>
+            <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="bane">
+            <label htmlfor="identifier_3">
+              bane
+            </label>
+          </div>
+          <mg-tooltip identifier="identifier-tooltip" message="My Tooltip Message">
+            <mg-icon icon="info"></mg-icon>
+          </mg-tooltip>
         </div>
-        <mg-tooltip identifier="identifier-tooltip" message="My Tooltip Message">
-          <mg-icon icon="info"></mg-icon>
-        </mg-tooltip>
       </div>
-    </div>
-  </fieldset>
+    </fieldset>
+  </mock:shadow-root>
 </mg-input-radio>
 `;
 
 exports[`mg-input-radio Should render with args { label: 'label', identifier: 'identifier', items: [Array] }: 1`] = `
 <mg-input-radio>
-  <fieldset class="mg-input mg-input--radio">
-    <mg-label identifier="identifier" is-legend="">
-      label
-    </mg-label>
-    <div class="mg-input__input-container">
-      <div class="mg-input__input-container__input">
-        <div>
-          <input aria-describedby="" class="mg-input__input-radio" id="identifier_0" name="identifier" type="radio" value="batman">
-          <label htmlfor="identifier_0">
-            batman
-          </label>
-          <input aria-describedby="" class="mg-input__input-radio" id="identifier_1" name="identifier" type="radio" value="robin">
-          <label htmlfor="identifier_1">
-            robin
-          </label>
-          <input aria-describedby="" class="mg-input__input-radio" id="identifier_2" name="identifier" type="radio" value="jocker">
-          <label htmlfor="identifier_2">
-            jocker
-          </label>
-          <input aria-describedby="" class="mg-input__input-radio" id="identifier_3" name="identifier" type="radio" value="bane">
-          <label htmlfor="identifier_3">
-            bane
-          </label>
+  <mock:shadow-root>
+    <fieldset class="mg-input mg-input--radio">
+      <mg-label identifier="identifier" is-legend="">
+        label
+      </mg-label>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input-container__input">
+          <div>
+            <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="batman">
+            <label htmlfor="identifier_0">
+              batman
+            </label>
+            <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="robin">
+            <label htmlfor="identifier_1">
+              robin
+            </label>
+            <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="jocker">
+            <label htmlfor="identifier_2">
+              jocker
+            </label>
+            <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="bane">
+            <label htmlfor="identifier_3">
+              bane
+            </label>
+          </div>
         </div>
       </div>
-    </div>
-  </fieldset>
+    </fieldset>
+  </mock:shadow-root>
 </mg-input-radio>
 `;
 
 exports[`mg-input-radio Should render with args { label: 'label', identifier: 'identifier', items: [Array] }: 2`] = `
 <mg-input-radio>
-  <fieldset class="mg-input mg-input--radio">
-    <mg-label identifier="identifier" is-legend="">
-      label
-    </mg-label>
-    <div class="mg-input__input-container">
-      <div class="mg-input__input-container__input">
-        <div>
-          <input aria-describedby="" class="mg-input__input-radio" id="identifier_0" name="identifier" type="radio" value="u">
-          <label htmlfor="identifier_0">
-            u
-          </label>
-          <input aria-describedby="" class="mg-input__input-radio" id="identifier_1" name="identifier" type="radio" value="i">
-          <label htmlfor="identifier_1">
-            i
-          </label>
-          <input aria-describedby="" class="mg-input__input-radio" id="identifier_2" name="identifier" type="radio" value="o">
-          <label htmlfor="identifier_2">
-            o
-          </label>
-          <input aria-describedby="" class="mg-input__input-radio" id="identifier_3" name="identifier" type="radio" value="a">
-          <label htmlfor="identifier_3">
-            a
-          </label>
+  <mock:shadow-root>
+    <fieldset class="mg-input mg-input--radio">
+      <mg-label identifier="identifier" is-legend="">
+        label
+      </mg-label>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input-container__input">
+          <div>
+            <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="u">
+            <label htmlfor="identifier_0">
+              u
+            </label>
+            <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="i">
+            <label htmlfor="identifier_1">
+              i
+            </label>
+            <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="o">
+            <label htmlfor="identifier_2">
+              o
+            </label>
+            <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="a">
+            <label htmlfor="identifier_3">
+              a
+            </label>
+          </div>
         </div>
       </div>
-    </div>
-  </fieldset>
+    </fieldset>
+  </mock:shadow-root>
 </mg-input-radio>
 `;
 
 exports[`mg-input-radio Should trigger events 1`] = `
 <mg-input-radio>
-  <fieldset class="is-focused mg-input mg-input--radio">
-    <mg-label identifier="identifier" is-legend="">
-      label
-    </mg-label>
-    <div class="mg-input__input-container">
-      <div class="mg-input__input-container__input">
-        <div>
-          <input aria-describedby="identifier-help-text" class="mg-input__input-radio" id="identifier_0" name="identifier" type="radio" value="batman">
-          <label htmlfor="identifier_0">
-            batman
-          </label>
-          <input aria-describedby="identifier-help-text" class="mg-input__input-radio" id="identifier_1" name="identifier" type="radio" value="robin">
-          <label htmlfor="identifier_1">
-            robin
-          </label>
-          <input aria-describedby="identifier-help-text" class="mg-input__input-radio" id="identifier_2" name="identifier" type="radio" value="jocker">
-          <label htmlfor="identifier_2">
-            jocker
-          </label>
-          <input aria-describedby="identifier-help-text" class="mg-input__input-radio" id="identifier_3" name="identifier" type="radio" value="bane">
-          <label htmlfor="identifier_3">
-            bane
-          </label>
+  <mock:shadow-root>
+    <fieldset class="is-focused mg-input mg-input--radio">
+      <mg-label identifier="identifier" is-legend="">
+        label
+      </mg-label>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input-container__input">
+          <div>
+            <input aria-describedby="identifier-help-text" id="identifier_0" name="identifier" type="radio" value="batman">
+            <label htmlfor="identifier_0">
+              batman
+            </label>
+            <input aria-describedby="identifier-help-text" id="identifier_1" name="identifier" type="radio" value="robin">
+            <label htmlfor="identifier_1">
+              robin
+            </label>
+            <input aria-describedby="identifier-help-text" id="identifier_2" name="identifier" type="radio" value="jocker">
+            <label htmlfor="identifier_2">
+              jocker
+            </label>
+            <input aria-describedby="identifier-help-text" id="identifier_3" name="identifier" type="radio" value="bane">
+            <label htmlfor="identifier_3">
+              bane
+            </label>
+          </div>
+        </div>
+        <div class="mg-input__input-container__help-text" id="identifier-help-text">
+          My help text
         </div>
       </div>
-      <div class="mg-input__input-container__help-text" id="identifier-help-text">
-        My help text
-      </div>
-    </div>
-  </fieldset>
+    </fieldset>
+  </mock:shadow-root>
 </mg-input-radio>
 `;

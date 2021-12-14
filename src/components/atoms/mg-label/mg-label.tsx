@@ -1,9 +1,9 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, h, Prop, State } from '@stencil/core';
 
 @Component({
   tag: 'mg-label',
   styleUrl: 'mg-label.scss',
-  shadow: true,
+  scoped: true,
 })
 export class MgLabel {
 
@@ -27,13 +27,27 @@ export class MgLabel {
    */
   @Prop() isLegend: boolean = false;
 
-  /*************
-   * Lifecycle *
-   *************/
+  /**
+   * Component parent tagname
+   */
+  @State() tagName: string = 'label';
+
+  private getTagName () {
+    this.tagName = this.isLegend ? 'legend' : 'label';
+  }
+
+    /*************
+  * Lifecycle *
+  *************/
+
+  componentWillLoad() {
+    // Check items format
+    this.getTagName();
+  }
 
   // \u00A0 represent a &nbsp;
   render() {
-    const TagName = this.isLegend ? 'legend' : 'label';
+    const TagName = this.tagName;
 
     return (
       <TagName class="mg-label" htmlFor={this.identifier}>

@@ -15,7 +15,7 @@ const isOption = (option: Option): boolean => typeof option === 'object' && type
 @Component({
   tag: 'mg-input-radio',
   styleUrl: 'mg-input-radio.scss',
-  scoped: true,
+  shadow: true,
 })
 export class MgInputRadio {
 

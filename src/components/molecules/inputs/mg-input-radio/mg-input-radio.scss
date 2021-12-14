@@ -3,39 +3,46 @@
 @import '../../../../styles/a11y.scss';
 
 .mg-input{
-  &.mg-input--radio input[type="radio"] {
-    margin-left: 2.5rem;
-    margin-right: 0.6rem;
-    margin-top: -1px;
-    vertical-align: middle;
-    &:first-child {
-      margin-left: 1.9rem;
+  /**
+  * global placements
+  */
+  &.mg-input--radio {
+    & mg-label {
+      margin-top: 0;
+    }
+    & mg-tooltip {
+      margin-top: 0rem;
+    }
+    & input[type="radio"] {
+      margin-left: 2.5rem;
+      margin-right: 0.6rem;
+      margin-top: -0.1rem;
+      vertical-align: middle;
+      &:first-child {
+        margin-left: 1.9rem;
+      }
     }
   }
 
-  &__input-container__input {
-    display: flex;
-  }
-
   /**
-  /* vertical alignement
-  /* case: for label on top
-  **/
-  &.is-label-on-top{
+  * vertical alignement
+  * case: for label on top
+  */
+  &.mg-input--label-on-top{
     & mg-label {
       margin-left: -0.2rem;
       margin-bottom: 1.1rem;
     }
-    & input:first-child {
+    & input[type="radio"]:first-child {
       margin-left: 0;
     }
   }
 
   /**
-  /* vertical alignement
-  /* case: list style
-  **/
-  &.is-vertical-list{
+  * vertical alignement
+  * case: list style
+  */
+  &.mg-input--vertical-list{
     & mg-label {
       margin-right: 2.8rem;
     }
@@ -54,11 +61,13 @@
     }
   }
 
-  // help-text radio margin
+  /**
+  * help-text
+  */
   & .mg-input__input-container__help-text {
     margin-left: 1.9rem;
   }
-  &.is-label-on-top, &.is-vertical-list {
+  &.mg-input--label-on-top, &.mg-input--vertical-list {
     & .mg-input__input-container__help-text {
       margin-left: 0rem;
     }

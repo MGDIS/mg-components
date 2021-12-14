@@ -5,7 +5,7 @@ export default {
 };
 
 const Template = (args) => (
-  <div class={`mg-input${args.labelOnTop ? ' is-label-on-top' : ''}`}>
+  <div class={`mg-input${args.labelOnTop ? ' mg-input--label-on-top' : ''}`}>
     <label htmlFor="mg-input-text-blu">Libellé&nbsp;<span class="is-asterisk">*</span>&nbsp;:</label>
     <div class="mg-input__input-container">
       <div class="mg-input__input-container__input">
