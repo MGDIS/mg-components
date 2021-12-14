@@ -2,21 +2,32 @@ import { h } from "@stencil/core";
 
 export default {
   component: 'mg-input-select',
-  title: 'Molecules/mg-input-select',
+  title: 'Molecules/Inputs/mg-input-select',
 };
 
 /**
  * 1. camelCase arguments must be written in the template, for exemple labelOnTop must be placed in the template as label-on-top={args.labelOnTop}
  * 2. boolean arguments with a default true value must be added like display-character-left={args.displayCharacterLeft ? 'true' : 'false'}
  */
-const Template = args => (
-  <mg-input-select
+ const Template = args => {
+  // Extract slot so it won't be render as an attribute
+  const labelOnTop = args.labelOnTop;
+  delete args.labelOnTop;
+  const labelColon = args.labelColon;
+  delete args.labelColon;
+  const labelHide = args.labelHide;
+  delete args.labelHide;
+  const helpText = args.helpText;
+  delete args.helpText;
+  // return element
+  return <mg-input-select
     {...args}
-    label-on-top={args.labelOnTop}
-    label-colon={args.labelColon}
-    help-text={args.helpText}
+    label-on-top={labelOnTop}
+    label-colon={labelColon}
+    label-hide={labelHide}
+    help-text={helpText}
   ></mg-input-select>
-);
+}
 
 export const MgInputSelect = Template.bind({});
 MgInputSelect.args = {
@@ -28,6 +39,7 @@ MgInputSelect.args = {
   label: 'Label',
   labelOnTop: false,
   labelColon: true,
+  labelHide: false,
   // Input
   required: true,
   readonly: false,
@@ -37,23 +49,6 @@ MgInputSelect.args = {
   tooltip: 'This is a tooltip',
   // Help Text
   helpText: 'Help text with html <strong>bold</strong>, <em>italic</em>.',
-};
-
-// Set exemple code for component
-MgInputSelect.parameters = {
-  docs: {
-    source: {
-      code: `<mg-input-select
-  value="${MgInputSelect.args.value}"
-  items="${MgInputSelect.args.items}"
-  label="${MgInputSelect.args.label}"
-  tooltip="${MgInputSelect.args.tooltip}"
-  help-text="${MgInputSelect.args.helpText}"
-  required
-  has-colon
-></mg-input-select>`
-    },
-  },
 };
 
 /**
@@ -77,21 +72,6 @@ WithObjectItems.args = {
   ],
 };
 
-// Set exemple code for component
-WithObjectItems.parameters = {
-  docs: {
-    source: {
-      code: `<mg-input-select
-  value="${WithObjectItems.args.value}"
-  items='${JSON.stringify(WithObjectItems.args.items)}'
-  label="${WithObjectItems.args.label}"
-  tooltip="${WithObjectItems.args.tooltip}"
-  help-text="${WithObjectItems.args.helpText}"
-></mg-input-select>`
-    },
-  },
-};
-
 /**
  * Using group object
  */
@@ -105,16 +85,4 @@ WithGroups.args = {
     { title: 'blo', value: 'bloblo', group: '1st group' },
     { title: 'bla', value: 'blabla' },
   ],
-};
-
-WithGroups.parameters = {
-  docs: {
-    source: {
-      code: `<mg-input-select
-  value="${WithGroups.args.value}"
-  items='${JSON.stringify(WithGroups.args.items)}'
-  label="${WithGroups.args.label}"
-></mg-input-select>`
-    },
-  },
 };

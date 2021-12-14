@@ -83,7 +83,11 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
   props.classList.add('mg-input');
 
   if(props.labelOnTop) {
-    props.classList.add('is-label-on-top');
+    props.classList.add('mg-input--label-on-top');
+  }
+
+  if(props.readonly) {
+    props.classList.add('mg-input--readonly');
   }
 
   if(props.isVerticalList) {

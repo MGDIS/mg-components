@@ -15,12 +15,16 @@ stages:
   - release
   - deploy
 
+.install:
+  before_script:
+    - npm ci
+
 lint:
   stage: test
   rules:
     - if: $CI_COMMIT_TAG == null
-  before_script:
-    - npm ci
+  extends:
+    - .install
   script:
     - npm run lint
 
@@ -49,8 +53,9 @@ test:
   rules:
     # except tags
     - if: $CI_COMMIT_TAG == null
+  extends:
+    - .install
   script:
-    - npm ci
     - npm test
 
 # sonar:
@@ -68,12 +73,12 @@ dist:
   stage: dist
   rules:
     - when: always
-  before_script:
+  extends:
+    - .install
+  script:
     # bump version with feature branch name
     - export version=`cat package.json | jq -r '.version'`
     - if [ -z $CI_COMMIT_TAG ]; then version=$version-$CI_COMMIT_REF_SLUG-$CI_PIPELINE_ID && npm version --no-git-tag-version $version; fi;
-    - npm ci
-  script:
     - npm run build
   artifacts:
     expire_in: 1 week
@@ -91,17 +96,15 @@ artifact:
   needs:
     - dist
 
-deploy:
+pages:
   stage: deploy
   rules:
     - if: $CI_COMMIT_BRANCH == 'init'
-  before_script:
-    - npm ci
-    - apk add sshpass
+  extends:
+    - .install
   script:
-    - npm run build-storybook -s www/build
-    - cd storybook-static/
-    - export SSHPASS=$SSH_PASS_OUTILS
-    - sshpass -e scp -o stricthostkeychecking=no -r . $USER@$SERVER:/usr/share/nginx/html/ux-ui/design-system/
-  tags:
-    - internal
+    - npm run build-storybook
+    - mv storybook-static public
+  artifacts:
+    paths:
+      - public

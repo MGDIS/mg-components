@@ -2,7 +2,7 @@ import { Config } from '@stencil/core';
 import { sass } from '@stencil/sass';
 
 export const config: Config = {
-  namespace: 'design-system',
+  namespace: 'mg-components',
   globalStyle: 'src/styles/global.scss',
   buildEs5: true,
   extras: {

@@ -5,22 +5,24 @@
 .mg-input {
   // Display
   display: flex;
-  align-items: baseline;
+  align-items: flex-start;
 
   /**
   * Label
   */
 
   mg-label {
+    margin-top: calc((var(--default-size) - var(--font-size-base) * var(--line-height)) / 2);
     margin-right: var(--mg-inputs-spacer);
     text-align: end;
   }
 
   // Display label on top
-  &.is-label-on-top {
+  &.mg-input--label-on-top {
     flex-direction: column;
 
     mg-label {
+      margin-top: 0;
       margin-right: 0;
       margin-bottom: 0.3rem;
       text-align: start;
@@ -59,14 +61,30 @@
     }
   }
 
+  textarea {
+    height: auto;
+  }
+
   select {
-    padding: 0 var(--mg-inputs-spacer);
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  // Ensure to keed input size on redonly
+  .mg-input__input-container > strong {
+    display: flex;
+    align-items: center;
+    min-height: var(--default-size);
   }
 
   /**
    * Tooltip
    */
   mg-tooltip {
+    display: inline-flex;
+    width: var(--mg-icon-regular-size);
+    height: var(--mg-icon-regular-size);
+    margin-top: calc((var(--default-size) - var(--mg-icon-regular-size)) / 2);
     margin-left: var(--mg-inputs-spacer);
   }
   // specifics spacers for checkbox and radio
@@ -80,6 +98,8 @@
    * Manage space between input and first message
    */
   .mg-input__input-container__input {
+    display: flex;
+
     & + mg-character-left,
     & + .mg-input__input-container__help-text,
     & + .mg-input__input-container__error {
@@ -106,25 +126,11 @@
    */
   &.is-not-valid {
     color: hsl(var(--color-danger));
-    input {
+    input[type='text'],
+    input[type='date'],
+    textarea,
+    select {
       border-color: hsl(var(--color-danger));
-    }
-  }
-
-  /**
-   * Workaround to baseline align label with textarea
-   */
-  &.mg-input--textarea {
-    align-items: flex-start;
-    mg-label {
-      margin-top: calc((2 * var(--mg-inputs-border-width) + var(--default-size) - var(--font-size-base) * var(--line-height)) / 2);
-    }
-    textarea {
-      height: auto;
-      & + mg-tooltip {
-        margin-top: calc((2 * var(--mg-inputs-border-width) + var(--default-size) - var(--font-size-base) * var(--line-height)) / 2);
-        vertical-align: top;
-      }
     }
   }
 }

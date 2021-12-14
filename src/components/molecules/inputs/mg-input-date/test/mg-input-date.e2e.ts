@@ -1,11 +1,113 @@
-import { newE2EPage } from '@stencil/core/testing';
+import { createPage } from "../../../../../utils/test.utils"
 
 describe('mg-input-date', () => {
-  it('renders', async () => {
-    const page = await newE2EPage();
-    await page.setContent('<mg-input-date></mg-input-date>');
+
+  describe.each([
+    `<mg-input-date label="label"></mg-input-date>`,
+    `<mg-input-date label="label" label-on-top></mg-input-date>`,
+    `<mg-input-date label="label" label-hide></mg-input-date>`,
+    `<mg-input-date label="label" label-colon placeholder="placeholder" help-text="HelpText Message"></mg-input-date>`
+  ])('without tooltip', (html)=>{
+    test('render', async () => {
+      const page = await createPage(html);
+
+      const element = await page.find('mg-input-date');
+
+      expect(element).toHaveClass('hydrated');
+
+      const screenshot = await page.screenshot();
+      expect(screenshot).toMatchImageSnapshot();
+
+      await page.keyboard.down('Tab');
+
+      const screenshotFocus = await page.screenshot();
+      expect(screenshotFocus).toMatchImageSnapshot();
+
+      await page.keyboard.down("0");
+      await page.keyboard.down("2");
+      await page.keyboard.down("0");
+      await page.keyboard.down("6");
+      await page.keyboard.down("1");
+      await page.keyboard.down("9");
+      await page.keyboard.down("8");
+      await page.keyboard.down("2");
+
+      const screenshotType = await page.screenshot();
+      expect(screenshotType).toMatchImageSnapshot();
+    });
+  })
+
+  test('render with tooltip', async () => {
+    const page = await createPage(`<mg-input-date label="label" tooltip="Tooltip message"></mg-input-date>`);
 
     const element = await page.find('mg-input-date');
+
     expect(element).toHaveClass('hydrated');
+
+    const screenshot = await page.screenshot();
+    expect(screenshot).toMatchImageSnapshot();
+
+    await page.keyboard.down('Tab');
+    await page.keyboard.down('Tab');
+    await page.keyboard.down('Tab');
+    await page.keyboard.down('Tab');
+
+    const screenshotTooltip = await page.screenshot();
+    expect(screenshotTooltip).toMatchImageSnapshot();
   });
+
+  describe.each([
+    `<mg-input-date label="label" readonly></mg-input-date>`,
+    `<mg-input-date label="label" value="1982-06-02"></mg-input-date>`,
+    `<mg-input-date label="label" value="1982-06-02" readonly></mg-input-date>`,
+    `<mg-input-date label="label" disabled></mg-input-date>`,
+  ])('Should render with template', (html)=>{
+    test('render', async () => {
+      const page = await createPage(html);
+
+      const element = await page.find('mg-input-date');
+
+      expect(element).toHaveClass('hydrated');
+
+      const screenshot = await page.screenshot();
+      expect(screenshot).toMatchImageSnapshot();
+    });
+  })
+
+  test('Should render error when leaving an empty required input', async () => {
+    const page = await createPage(`<mg-input-date label="label" required></mg-input-date>`);
+
+    const element = await page.find('mg-input-date');
+
+    expect(element).toHaveClass('hydrated');
+
+    await page.keyboard.down('Tab');
+    await page.keyboard.down('Tab');
+    await page.keyboard.down('Tab');
+    await page.keyboard.down('Tab');
+
+    const screenshot = await page.screenshot();
+    expect(screenshot).toMatchImageSnapshot();
+  });
+
+  test('Should render error when leaving input with a wrong date', async () => {
+    const page = await createPage(`<mg-input-date label="label"></mg-input-date>`);
+
+    const element = await page.find('mg-input-date');
+
+    expect(element).toHaveClass('hydrated');
+
+    await page.keyboard.down('Tab');
+
+    await page.keyboard.down("0");
+    await page.keyboard.down("2");
+    await page.keyboard.down("0");
+    await page.keyboard.down("6");
+
+    await page.keyboard.down('Tab');
+
+    const screenshot = await page.screenshot();
+    expect(screenshot).toMatchImageSnapshot();
+  });
+
 });

@@ -13,10 +13,23 @@ export default {
   },
 };
 
-const Template = args => <mg-button
-  {...args}>
-    {args.slot}
-</mg-button>;
+const Template = args => {
+  // Extract slot so it won't be render as an attribute
+  const slot = args.slot;
+  delete args.slot;
+  const disableOnClick = args.disableOnClick;
+  delete args.disableOnClick;
+  const isIcon = args.isIcon;
+  delete args.isIcon;
+  // return element
+  return <mg-button
+    {...args}
+    disable-on-click={disableOnClick}
+    is-icon={isIcon}
+    >
+      {slot}
+  </mg-button>
+};
 
 export const MgButton = Template.bind({});
 
@@ -24,75 +37,23 @@ MgButton.args = {
   slot: 'Text button',
   variant: variants[0],
   label: 'Explicit aria label',
+  identifier: undefined,
   disabled: false,
+  disableOnClick: false,
+  isIcon: false,
 };
 
-// Set exemple code for component
-MgButton.parameters = {
-  docs: {
-    source: {
-      code: `<mg-button
-  variant="${MgButton.args.variant}"
-  label="${MgButton.args.label}"
->${MgButton.args.slot}</mg-button>`,
-    },
-  },
+export const IsIcon = Template.bind({});
+
+IsIcon.args = {
+  ...MgButton.args,
+  isIcon: true,
+  slot: <mg-icon icon={Object.keys(icons)[0]}></mg-icon>
 };
 
-const TemplateIsIcon = args => <mg-button
-  {...args}
-  is-icon><mg-icon icon={args.icon}></mg-icon>
-</mg-button>;
-
-export const isIcon = TemplateIsIcon.bind({});
-
-isIcon.args = {
-  icon: Object.keys(icons)[0],
-  variant: variants[0],
-  label: 'Explicit aria label',
-  disabled: false,
-};
-
-isIcon.argTypes = {
-  icon: {
-    options: Object.keys(icons),
-    control: { type: 'select' },
-  },
-};
-
-isIcon.parameters = {
-  docs: {
-    source: {
-      code: `<mg-button
-  variant="${isIcon.args.variant}"
-  label="${isIcon.args.label}"
->
-  <mg-icon icon="${isIcon.args.icon}"></mg-icon>
-</mg-button>`,
-    },
-  },
-};
-
-const TemplateDisableOnClick = args => <mg-button
-  {...args}
-  disable-on-click={args.disableOnClick}>{args.slot}
-</mg-button>;
-export const DisableOnClick = TemplateDisableOnClick.bind({});
+export const DisableOnClick = Template.bind({});
 
 DisableOnClick.args = {
   ...MgButton.args,
   disableOnClick: true,
-};
-
-// Set exemple code for component
-DisableOnClick.parameters = {
-  docs: {
-    source: {
-      code: `<mg-button
-  variant="${DisableOnClick.args.variant}"
-  label="${DisableOnClick.args.label}"
-  disable-on-click
->${DisableOnClick.args.slot}</mg-button>`,
-    },
-  },
 };

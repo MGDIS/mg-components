@@ -2,7 +2,7 @@ import { h } from "@stencil/core";
 
 export default {
   component: 'mg-input-checkbox',
-  title: 'Molecules/mg-input-checkbox',
+  title: 'Molecules/Inputs/mg-input-checkbox',
   parameters: {
     docs: {
       source: {

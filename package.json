@@ -1,5 +1,5 @@
 {
-  "name": "@mgdis/design-system",
+  "name": "@mgdis/mg-components",
   "version": "0.0.1",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
@@ -9,7 +9,7 @@
   "types": "dist/custom-elements/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/design-system/design-system.esm.js",
+  "unpkg": "dist/mg-components/mg-components.esm.js",
   "files": [
     "dist/",
     "loader/"
@@ -30,7 +30,7 @@
     "@mgdis:registry": "http://artifactory.mgdis.fr/artifactory/api/npm/npm-local/"
   },
   "dependencies": {
-    "@stencil/core": "^2.9.0"
+    "@stencil/core": "^2.12.0"
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",
@@ -39,12 +39,12 @@
     "@pxtrn/storybook-addon-docs-stencil": "^1.0.0",
     "@stencil/eslint-plugin": "^0.4.0",
     "@stencil/sass": "^1.5.2",
-    "@storybook/addon-a11y": "^6.3.9",
-    "@storybook/addon-actions": "^6.3.8",
-    "@storybook/addon-docs": "6.1",
-    "@storybook/addon-essentials": "^6.3.8",
-    "@storybook/addon-links": "^6.3.8",
-    "@storybook/html": "^6.3.12",
+    "@storybook/addon-a11y": "^6.4.8",
+    "@storybook/addon-actions": "^6.4.8",
+    "@storybook/addon-docs": "6.4",
+    "@storybook/addon-essentials": "^6.4.8",
+    "@storybook/addon-links": "^6.4.8",
+    "@storybook/html": "^6.4.8",
     "@storybook/preset-scss": "^1.0.3",
     "@types/jest": "^26.0.24",
     "@types/jest-image-snapshot": "^4.3.1",
@@ -55,6 +55,7 @@
     "css-loader": "^5.2.7",
     "eslint": "^7.32.0",
     "eslint-plugin-react": "^7.26.1",
+    "eslint-plugin-storybook": "^0.5.3",
     "husky": "^7.0.4",
     "jest": "^26.6.3",
     "jest-cli": "^26.6.3",

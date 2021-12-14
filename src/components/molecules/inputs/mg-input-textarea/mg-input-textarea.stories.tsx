@@ -2,37 +2,41 @@ import { h } from "@stencil/core";
 
 export default {
   component: 'mg-input-textarea',
-  title: 'Molecules/mg-input-textarea',
-  parameters: {
-    docs: {
-      source: {
-        code: `<mg-input-textarea
-  value=""
-  label="Label"
-  tooltip="This is a tooltip"
-  help-text="Help text with html <strong>bold</strong>, <em>italic</em>."
-  required
-  has-colon></mg-input-text>`,
-      },
-    },
-  },
+  title: 'Molecules/Inputs/mg-input-textarea',
 };
 
 /**
  * 1. camelCase arguments must be written in the template, for exemple labelOnTop must be placed in the template as label-on-top={args.labelOnTop}
  * 2. boolean arguments with a default true value must be added like display-character-left={args.displayCharacterLeft ? 'true' : 'false'}
  */
-const Template = args => (
-  <mg-input-textarea
+ const Template = args => {
+  // Extract slot so it won't be render as an attribute
+  const labelOnTop = args.labelOnTop;
+  delete args.labelOnTop;
+  const labelColon = args.labelColon;
+  delete args.labelColon;
+  const labelHide = args.labelHide;
+  delete args.labelHide;
+  const patternErrorMessage = args.patternErrorMessage;
+  delete args.patternErrorMessage;
+  const displayCharacterLeft = args.displayCharacterLeft;
+  delete args.displayCharacterLeft;
+  const characterLeftTemplate = args.characterLeftTemplate;
+  delete args.characterLeftTemplate;
+  const helpText = args.helpText;
+  delete args.helpText;
+  // return element
+  return <mg-input-textarea
     {...args}
-    label-on-top={args.labelOnTop}
-    label-colon={args.labelColon}
-    pattern-error-message={args.patternErrorMessage}
-    display-character-left={args.displayCharacterLeft ? 'true' : 'false'}
-    character-left-template={args.characterLeftTemplate}
-    help-text={args.helpText}
+    label-on-top={labelOnTop}
+    label-colon={labelColon}
+    label-hide={labelHide}
+    pattern-error-message={patternErrorMessage}
+    display-character-left={displayCharacterLeft}
+    character-left-template={characterLeftTemplate}
+    help-text={helpText}
   ></mg-input-textarea>
-);
+};
 
 export const MgInputTextarea = Template.bind({});
 MgInputTextarea.args = {
@@ -44,6 +48,7 @@ MgInputTextarea.args = {
   label: 'Label',
   labelOnTop: false,
   labelColon: true,
+  labelHide: false,
   // Input
   placeholder: 'placeholder',
   maxlength: 4000,

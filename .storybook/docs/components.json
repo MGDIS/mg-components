@@ -1,8 +1,8 @@
 {
-  "timestamp": "2021-12-14T10:19:55",
+  "timestamp": "2021-12-14T11:03:11",
   "compiler": {
     "name": "@stencil/core",
-    "version": "2.11.0",
+    "version": "2.12.0",
     "typescriptVersion": "4.3.5"
   },
   "components": [
@@ -10,8 +10,8 @@
       "filePath": "./src/components/atoms/mg-button/mg-button.tsx",
       "encapsulation": "shadow",
       "tag": "mg-button",
-      "readme": "# mg-button\n\n\n",
-      "docs": "",
+      "readme": "This atom refers to the [PDA9-67](https://jira.mgdis.fr/browse/PDA9-67).\n",
+      "docs": "This atom refers to the [PDA9-67](https://jira.mgdis.fr/browse/PDA9-67).",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -137,8 +137,8 @@
       "filePath": "./src/components/atoms/mg-character-left/mg-character-left.tsx",
       "encapsulation": "scoped",
       "tag": "mg-character-left",
-      "readme": "# mg-character-left\n\n\n",
-      "docs": "",
+      "readme": "This atom refers to thes [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64), [PDA9-723](https://jira.mgdis.fr/browse/PDA9-723).\n",
+      "docs": "This atom refers to thes [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64), [PDA9-723](https://jira.mgdis.fr/browse/PDA9-723).",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -253,8 +253,8 @@
       "filePath": "./src/components/atoms/mg-icon/mg-icon.tsx",
       "encapsulation": "shadow",
       "tag": "mg-icon",
-      "readme": "# mg-icon\n\n\n",
-      "docs": "",
+      "readme": "This atom refers to the [PDA9-744](https://jira.mgdis.fr/browse/PDA9-744).\n",
+      "docs": "This atom refers to the [PDA9-744](https://jira.mgdis.fr/browse/PDA9-744).",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -635,8 +635,8 @@
       "filePath": "./src/components/molecules/inputs/mg-input-date/mg-input-date.tsx",
       "encapsulation": "shadow",
       "tag": "mg-input-date",
-      "readme": "# mg-input-date\n",
-      "docs": "",
+      "readme": "This atom refers to the [PDA9-65](https://jira.mgdis.fr/browse/PDA9-65).\n",
+      "docs": "This atom refers to the [PDA9-65](https://jira.mgdis.fr/browse/PDA9-65).",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -908,8 +908,8 @@
       "filePath": "./src/components/molecules/inputs/mg-input-numeric/mg-input-numeric.tsx",
       "encapsulation": "shadow",
       "tag": "mg-input-numeric",
-      "readme": "# mg-input-numeric\n\n\n",
-      "docs": "",
+      "readme": "This atom refers to the [PDA9-181](https://jira.mgdis.fr/browse/PDA9-181).\n",
+      "docs": "This atom refers to the [PDA9-181](https://jira.mgdis.fr/browse/PDA9-181).",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -1555,8 +1555,8 @@
       "filePath": "./src/components/molecules/inputs/mg-input-select/mg-input-select.tsx",
       "encapsulation": "shadow",
       "tag": "mg-input-select",
-      "readme": "# mg-input-select\n",
-      "docs": "",
+      "readme": "This atom refers to the [PDA9-72](https://jira.mgdis.fr/browse/PDA9-72).\n",
+      "docs": "This atom refers to the [PDA9-72](https://jira.mgdis.fr/browse/PDA9-72).",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -1863,8 +1863,8 @@
       "filePath": "./src/components/molecules/inputs/mg-input-text/mg-input-text.tsx",
       "encapsulation": "shadow",
       "tag": "mg-input-text",
-      "readme": "# mg-input-text\n",
-      "docs": "",
+      "readme": "This atom refers to the [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64).\n",
+      "docs": "This atom refers to the [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64).",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -2234,8 +2234,8 @@
       "filePath": "./src/components/molecules/inputs/mg-input-textarea/mg-input-textarea.tsx",
       "encapsulation": "shadow",
       "tag": "mg-input-textarea",
-      "readme": "# mg-input-textarea\n",
-      "docs": "",
+      "readme": "This atom refers to the [PDA9-683](https://jira.mgdis.fr/browse/PDA9-683).\n",
+      "docs": "This atom refers to the [PDA9-683](https://jira.mgdis.fr/browse/PDA9-683).",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -2622,8 +2622,8 @@
       "filePath": "./src/components/atoms/mg-label/mg-label.tsx",
       "encapsulation": "shadow",
       "tag": "mg-label",
-      "readme": "# mg-label\n\n\n",
-      "docs": "",
+      "readme": "This atom refers to thes [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64), [PDA9-723](https://jira.mgdis.fr/browse/PDA9-723).\n",
+      "docs": "This atom refers to thes [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64), [PDA9-723](https://jira.mgdis.fr/browse/PDA9-723).",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -2737,8 +2737,8 @@
       "filePath": "./src/components/molecules/mg-message/mg-message.tsx",
       "encapsulation": "shadow",
       "tag": "mg-message",
-      "readme": "# mg-message\n\n\n",
-      "docs": "",
+      "readme": "This molecule refers to the [PDA9-140](https://jira.mgdis.fr/browse/PDA9-140).\n",
+      "docs": "This molecule refers to the [PDA9-140](https://jira.mgdis.fr/browse/PDA9-140).",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -2833,8 +2833,8 @@
       "filePath": "./src/components/atoms/mg-tag/mg-tag.tsx",
       "encapsulation": "shadow",
       "tag": "mg-tag",
-      "readme": "# mg-tag\n\n\n",
-      "docs": "",
+      "readme": "This atom refers to the [PDA9-637](https://jira.mgdis.fr/browse/PDA9-637).\n",
+      "docs": "This atom refers to the [PDA9-637](https://jira.mgdis.fr/browse/PDA9-637).",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -2886,8 +2886,8 @@
       "filePath": "./src/components/atoms/mg-tooltip/mg-tooltip.tsx",
       "encapsulation": "scoped",
       "tag": "mg-tooltip",
-      "readme": "# mg-tooltip\n\n\n",
-      "docs": "",
+      "readme": "This atom refers to the [PDA9-313](https://jira.mgdis.fr/browse/PDA9-313).\n",
+      "docs": "This atom refers to the [PDA9-313](https://jira.mgdis.fr/browse/PDA9-313).",
       "docsTags": [],
       "usage": {},
       "props": [

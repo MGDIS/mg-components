@@ -4,7 +4,7 @@ Please read this!
 Before opening a new issue, make sure to search for keywords in the issues
 filtered by the "regression" or "bug" label:
 
-- https://gitlab.mgdis.fr/core/core-ui/design-system/-/issues?label_name%5B%5D=bug
+- https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues?label_name%5B%5D=bug
 
 and verify the issue you're about to submit isn't a duplicate.
 --->

@@ -1,6 +1,4 @@
-# mg-tooltip
-
-
+This atom refers to the [PDA9-313](https://jira.mgdis.fr/browse/PDA9-313).
 
 <!-- Auto Generated Below -->
 

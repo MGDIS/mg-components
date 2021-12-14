@@ -1,6 +1,4 @@
-# mg-message
-
-
+This molecule refers to the [PDA9-140](https://jira.mgdis.fr/browse/PDA9-140).
 
 <!-- Auto Generated Below -->
 
