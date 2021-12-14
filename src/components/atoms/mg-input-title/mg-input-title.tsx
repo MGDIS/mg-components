@@ -1,11 +1,11 @@
 import { Component, h, Prop, State } from '@stencil/core';
 
 @Component({
-  tag: 'mg-label',
-  styleUrl: 'mg-label.scss',
+  tag: 'mg-input-title',
+  styleUrl: 'mg-input-title.scss',
   scoped: true,
 })
-export class MgLabel {
+export class MgInputTitle {
 
   /**
    * Label input id
@@ -50,7 +50,7 @@ export class MgLabel {
     const TagName = this.tagName;
 
     return (
-      <TagName class="mg-label" htmlFor={this.identifier}>
+      <TagName class="mg-input-title" htmlFor={this.identifier}>
         <slot></slot>
         { this.required && [`\u00A0`, <span class="is-asterisk">*</span>] }
         { this.colon && `\u00A0:` }

@@ -9,9 +9,9 @@ exports[`mg-input-radio Should render with args {
 <mg-input-radio>
   <mock:shadow-root>
     <fieldset class="mg-input mg-input--radio">
-      <mg-label identifier="identifier" is-legend="">
+      <mg-input-title identifier="identifier" is-legend="">
         label
-      </mg-label>
+      </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
           <div>
@@ -48,9 +48,9 @@ exports[`mg-input-radio Should render with args {
 <mg-input-radio>
   <mock:shadow-root>
     <fieldset class="mg-input mg-input--radio">
-      <mg-label identifier="identifier" is-legend="">
+      <mg-input-title identifier="identifier" is-legend="">
         label
-      </mg-label>
+      </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
           <div>
@@ -90,9 +90,9 @@ exports[`mg-input-radio Should render with args {
 <mg-input-radio>
   <mock:shadow-root>
     <fieldset class="mg-input mg-input--radio mg-input--vertical-list">
-      <mg-label identifier="identifier" is-legend="">
+      <mg-input-title identifier="identifier" is-legend="">
         label
-      </mg-label>
+      </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
           <div>
@@ -129,9 +129,9 @@ exports[`mg-input-radio Should render with args {
 <mg-input-radio>
   <mock:shadow-root>
     <fieldset class="mg-input mg-input--radio">
-      <mg-label colon="" identifier="identifier" is-legend="">
+      <mg-input-title colon="" identifier="identifier" is-legend="">
         label
-      </mg-label>
+      </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
           <div>
@@ -168,9 +168,9 @@ exports[`mg-input-radio Should render with args {
 <mg-input-radio>
   <mock:shadow-root>
     <fieldset class="mg-input mg-input--radio">
-      <mg-label class="sr-only" identifier="identifier" is-legend="">
+      <mg-input-title class="sr-only" identifier="identifier" is-legend="">
         label
-      </mg-label>
+      </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
           <div>
@@ -207,9 +207,9 @@ exports[`mg-input-radio Should render with args {
 <mg-input-radio>
   <mock:shadow-root>
     <fieldset class="mg-input mg-input--label-on-top mg-input--radio">
-      <mg-label identifier="identifier" is-legend="">
+      <mg-input-title identifier="identifier" is-legend="">
         label
-      </mg-label>
+      </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
           <div>
@@ -246,9 +246,9 @@ exports[`mg-input-radio Should render with args {
 <mg-input-radio>
   <mock:shadow-root>
     <fieldset class="mg-input mg-input--radio mg-input--readonly">
-      <mg-label identifier="identifier" is-legend="">
+      <mg-input-title identifier="identifier" is-legend="">
         label
-      </mg-label>
+      </mg-input-title>
       <div class="mg-input__input-container">
         <strong></strong>
       </div>
@@ -266,9 +266,9 @@ exports[`mg-input-radio Should render with args {
 <mg-input-radio>
   <mock:shadow-root>
     <fieldset class="mg-input mg-input--radio">
-      <mg-label identifier="identifier" is-legend="" required="">
+      <mg-input-title identifier="identifier" is-legend="" required="">
         label
-      </mg-label>
+      </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
           <div>
@@ -305,9 +305,9 @@ exports[`mg-input-radio Should render with args {
 <mg-input-radio>
   <mock:shadow-root>
     <fieldset class="mg-input mg-input--radio">
-      <mg-label identifier="identifier" is-legend="">
+      <mg-input-title identifier="identifier" is-legend="">
         label
-      </mg-label>
+      </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
           <div>
@@ -342,9 +342,9 @@ exports[`mg-input-radio Should render with args { label: 'label', identifier: 'i
 <mg-input-radio>
   <mock:shadow-root>
     <fieldset class="mg-input mg-input--radio">
-      <mg-label identifier="identifier" is-legend="">
+      <mg-input-title identifier="identifier" is-legend="">
         label
-      </mg-label>
+      </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
           <div>
@@ -376,9 +376,9 @@ exports[`mg-input-radio Should render with args { label: 'label', identifier: 'i
 <mg-input-radio>
   <mock:shadow-root>
     <fieldset class="mg-input mg-input--radio">
-      <mg-label identifier="identifier" is-legend="">
+      <mg-input-title identifier="identifier" is-legend="">
         label
-      </mg-label>
+      </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
           <div>
@@ -410,9 +410,9 @@ exports[`mg-input-radio Should trigger events 1`] = `
 <mg-input-radio>
   <mock:shadow-root>
     <fieldset class="is-focused mg-input mg-input--radio">
-      <mg-label identifier="identifier" is-legend="">
+      <mg-input-title identifier="identifier" is-legend="">
         label
-      </mg-label>
+      </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
           <div>

@@ -144,7 +144,7 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
 
   return (
     <TagName class={props.classList.join()}>
-      <mg-label
+      <mg-input-title
         identifier={props.identifier}
         class={props.labelHide ? "sr-only" : undefined}
         colon={props.labelColon}
@@ -152,7 +152,7 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
         is-legend={props.isFieldset}
       >
         {props.label}
-      </mg-label>
+      </mg-input-title>
       { props.readonly
       ? <div class="mg-input__input-container">
           <strong>{props.readonlyValue || props.value}</strong>

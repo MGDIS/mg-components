@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mg-input-title Should render label with args { required: false, colon: false, identifier: 'identifier' } 1`] = `
+<mg-input-title>
+  <!---->
+  <label class="mg-input-title" htmlfor="identifier">
+    mg-input-title
+  </label>
+</mg-input-title>
+`;
+
+exports[`mg-input-title Should render label with args { required: false, colon: true, identifier: 'identifier' } 1`] = `
+<mg-input-title>
+  <!---->
+  <label class="mg-input-title" htmlfor="identifier">
+    mg-input-title
+    :
+  </label>
+</mg-input-title>
+`;
+
+exports[`mg-input-title Should render label with args { required: true, colon: false, identifier: 'identifier' } 1`] = `
+<mg-input-title>
+  <!---->
+  <label class="mg-input-title" htmlfor="identifier">
+    mg-input-title
+    <span class="is-asterisk">
+      *
+    </span>
+  </label>
+</mg-input-title>
+`;
+
+exports[`mg-input-title Should render label with args { required: true, colon: true, identifier: 'identifier' } 1`] = `
+<mg-input-title>
+  <!---->
+  <label class="mg-input-title" htmlfor="identifier">
+    mg-input-title
+    <span class="is-asterisk">
+      *
+    </span>
+    :
+  </label>
+</mg-input-title>
+`;

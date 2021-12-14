@@ -11,7 +11,7 @@
   * Label
   */
 
-  mg-label {
+  mg-input-title {
     margin-top: calc((var(--default-size) - var(--font-size-base) * var(--line-height)) / 2);
     margin-right: var(--mg-inputs-spacer);
     text-align: end;
@@ -21,7 +21,7 @@
   &.mg-input--label-on-top {
     flex-direction: column;
 
-    mg-label {
+    mg-input-title {
       margin-top: 0;
       margin-right: 0;
       margin-bottom: 0.3rem;

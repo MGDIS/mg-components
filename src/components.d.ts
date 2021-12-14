@@ -556,7 +556,7 @@ export namespace Components {
          */
         "value": string;
     }
-    interface MgLabel {
+    interface MgInputTitle {
         /**
           * Add a colon punctuation after label text
          */
@@ -678,11 +678,11 @@ declare global {
         prototype: HTMLMgInputTextareaElement;
         new (): HTMLMgInputTextareaElement;
     };
-    interface HTMLMgLabelElement extends Components.MgLabel, HTMLStencilElement {
+    interface HTMLMgInputTitleElement extends Components.MgInputTitle, HTMLStencilElement {
     }
-    var HTMLMgLabelElement: {
-        prototype: HTMLMgLabelElement;
-        new (): HTMLMgLabelElement;
+    var HTMLMgInputTitleElement: {
+        prototype: HTMLMgInputTitleElement;
+        new (): HTMLMgInputTitleElement;
     };
     interface HTMLMgMessageElement extends Components.MgMessage, HTMLStencilElement {
     }
@@ -713,7 +713,7 @@ declare global {
         "mg-input-select": HTMLMgInputSelectElement;
         "mg-input-text": HTMLMgInputTextElement;
         "mg-input-textarea": HTMLMgInputTextareaElement;
-        "mg-label": HTMLMgLabelElement;
+        "mg-input-title": HTMLMgInputTitleElement;
         "mg-message": HTMLMgMessageElement;
         "mg-tag": HTMLMgTagElement;
         "mg-tooltip": HTMLMgTooltipElement;
@@ -1297,7 +1297,7 @@ declare namespace LocalJSX {
          */
         "value"?: string;
     }
-    interface MgLabel {
+    interface MgInputTitle {
         /**
           * Add a colon punctuation after label text
          */
@@ -1368,7 +1368,7 @@ declare namespace LocalJSX {
         "mg-input-select": MgInputSelect;
         "mg-input-text": MgInputText;
         "mg-input-textarea": MgInputTextarea;
-        "mg-label": MgLabel;
+        "mg-input-title": MgInputTitle;
         "mg-message": MgMessage;
         "mg-tag": MgTag;
         "mg-tooltip": MgTooltip;
@@ -1388,7 +1388,7 @@ declare module "@stencil/core" {
             "mg-input-select": LocalJSX.MgInputSelect & JSXBase.HTMLAttributes<HTMLMgInputSelectElement>;
             "mg-input-text": LocalJSX.MgInputText & JSXBase.HTMLAttributes<HTMLMgInputTextElement>;
             "mg-input-textarea": LocalJSX.MgInputTextarea & JSXBase.HTMLAttributes<HTMLMgInputTextareaElement>;
-            "mg-label": LocalJSX.MgLabel & JSXBase.HTMLAttributes<HTMLMgLabelElement>;
+            "mg-input-title": LocalJSX.MgInputTitle & JSXBase.HTMLAttributes<HTMLMgInputTitleElement>;
             "mg-message": LocalJSX.MgMessage & JSXBase.HTMLAttributes<HTMLMgMessageElement>;
             "mg-tag": LocalJSX.MgTag & JSXBase.HTMLAttributes<HTMLMgTagElement>;
             "mg-tooltip": LocalJSX.MgTooltip & JSXBase.HTMLAttributes<HTMLMgTooltipElement>;

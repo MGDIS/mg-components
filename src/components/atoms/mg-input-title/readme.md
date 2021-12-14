@@ -28,14 +28,14 @@ This atom refers to thes [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64), [PDA9-
 ### Graph
 ```mermaid
 graph TD;
-  mg-input-checkbox --> mg-label
-  mg-input-date --> mg-label
-  mg-input-numeric --> mg-label
-  mg-input-radio --> mg-label
-  mg-input-select --> mg-label
-  mg-input-text --> mg-label
-  mg-input-textarea --> mg-label
-  style mg-label fill:#f9f,stroke:#333,stroke-width:4px
+  mg-input-checkbox --> mg-input-title
+  mg-input-date --> mg-input-title
+  mg-input-numeric --> mg-input-title
+  mg-input-radio --> mg-input-title
+  mg-input-select --> mg-input-title
+  mg-input-text --> mg-input-title
+  mg-input-textarea --> mg-input-title
+  style mg-input-title fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

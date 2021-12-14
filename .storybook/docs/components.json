@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-12-14T16:21:09",
+  "timestamp": "2021-12-14T17:27:37",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.12.0",
@@ -617,14 +617,14 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "mg-label",
+        "mg-input-title",
         "mg-tooltip",
         "mg-icon",
         "mg-character-left"
       ],
       "dependencyGraph": {
         "mg-input-checkbox": [
-          "mg-label",
+          "mg-input-title",
           "mg-tooltip",
           "mg-icon",
           "mg-character-left"
@@ -890,14 +890,14 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "mg-label",
+        "mg-input-title",
         "mg-tooltip",
         "mg-icon",
         "mg-character-left"
       ],
       "dependencyGraph": {
         "mg-input-date": [
-          "mg-label",
+          "mg-input-title",
           "mg-tooltip",
           "mg-icon",
           "mg-character-left"
@@ -1228,14 +1228,14 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "mg-label",
+        "mg-input-title",
         "mg-tooltip",
         "mg-icon",
         "mg-character-left"
       ],
       "dependencyGraph": {
         "mg-input-numeric": [
-          "mg-label",
+          "mg-input-title",
           "mg-tooltip",
           "mg-icon",
           "mg-character-left"
@@ -1537,14 +1537,14 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "mg-label",
+        "mg-input-title",
         "mg-tooltip",
         "mg-icon",
         "mg-character-left"
       ],
       "dependencyGraph": {
         "mg-input-radio": [
-          "mg-label",
+          "mg-input-title",
           "mg-tooltip",
           "mg-icon",
           "mg-character-left"
@@ -1845,14 +1845,14 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "mg-label",
+        "mg-input-title",
         "mg-tooltip",
         "mg-icon",
         "mg-character-left"
       ],
       "dependencyGraph": {
         "mg-input-select": [
-          "mg-label",
+          "mg-input-title",
           "mg-tooltip",
           "mg-icon",
           "mg-character-left"
@@ -2216,14 +2216,14 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "mg-label",
+        "mg-input-title",
         "mg-tooltip",
         "mg-icon",
         "mg-character-left"
       ],
       "dependencyGraph": {
         "mg-input-text": [
-          "mg-label",
+          "mg-input-title",
           "mg-tooltip",
           "mg-icon",
           "mg-character-left"
@@ -2604,14 +2604,14 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "mg-label",
+        "mg-input-title",
         "mg-tooltip",
         "mg-icon",
         "mg-character-left"
       ],
       "dependencyGraph": {
         "mg-input-textarea": [
-          "mg-label",
+          "mg-input-title",
           "mg-tooltip",
           "mg-icon",
           "mg-character-left"
@@ -2619,9 +2619,9 @@
       }
     },
     {
-      "filePath": "./src/components/atoms/mg-label/mg-label.tsx",
+      "filePath": "./src/components/atoms/mg-input-title/mg-input-title.tsx",
       "encapsulation": "scoped",
-      "tag": "mg-label",
+      "tag": "mg-input-title",
       "readme": "This atom refers to thes [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64), [PDA9-723](https://jira.mgdis.fr/browse/PDA9-723).\n",
       "docs": "This atom refers to thes [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64), [PDA9-723](https://jira.mgdis.fr/browse/PDA9-723).",
       "docsTags": [],
@@ -2711,25 +2711,25 @@
       "dependencies": [],
       "dependencyGraph": {
         "mg-input-checkbox": [
-          "mg-label"
+          "mg-input-title"
         ],
         "mg-input-date": [
-          "mg-label"
+          "mg-input-title"
         ],
         "mg-input-numeric": [
-          "mg-label"
+          "mg-input-title"
         ],
         "mg-input-radio": [
-          "mg-label"
+          "mg-input-title"
         ],
         "mg-input-select": [
-          "mg-label"
+          "mg-input-title"
         ],
         "mg-input-text": [
-          "mg-label"
+          "mg-input-title"
         ],
         "mg-input-textarea": [
-          "mg-label"
+          "mg-input-title"
         ]
       }
     },

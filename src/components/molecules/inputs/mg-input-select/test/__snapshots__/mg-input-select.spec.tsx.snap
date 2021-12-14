@@ -9,9 +9,9 @@ exports[`mg-input-select Should render with args {
 <mg-input-select>
   <mock:shadow-root>
     <div class="mg-input mg-input--select">
-      <mg-label class="sr-only" identifier="identifier">
+      <mg-input-title class="sr-only" identifier="identifier">
         label
-      </mg-label>
+      </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
           <select aria-describedby="" id="identifier" name="identifier" title="Veuillez sélectionner une valeur">
@@ -47,9 +47,9 @@ exports[`mg-input-select Should render with args {
 <mg-input-select>
   <mock:shadow-root>
     <div class="mg-input mg-input--label-on-top mg-input--select">
-      <mg-label identifier="identifier">
+      <mg-input-title identifier="identifier">
         label
-      </mg-label>
+      </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
           <select aria-describedby="" id="identifier" name="identifier" title="Veuillez sélectionner une valeur">
@@ -85,9 +85,9 @@ exports[`mg-input-select Should render with args {
 <mg-input-select>
   <mock:shadow-root>
     <div class="mg-input mg-input--readonly mg-input--select">
-      <mg-label identifier="identifier">
+      <mg-input-title identifier="identifier">
         label
-      </mg-label>
+      </mg-input-title>
       <div class="mg-input__input-container">
         <strong></strong>
       </div>
@@ -105,9 +105,9 @@ exports[`mg-input-select Should render with args {
 <mg-input-select>
   <mock:shadow-root>
     <div class="mg-input mg-input--select">
-      <mg-label identifier="identifier">
+      <mg-input-title identifier="identifier">
         label
-      </mg-label>
+      </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
           <select aria-describedby="" id="identifier" name="identifier" title="Veuillez sélectionner une valeur">
@@ -141,9 +141,9 @@ exports[`mg-input-select Should render with args { label: 'label', identifier: '
 <mg-input-select>
   <mock:shadow-root>
     <div class="mg-input mg-input--select">
-      <mg-label identifier="identifier">
+      <mg-input-title identifier="identifier">
         label
-      </mg-label>
+      </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
           <select aria-describedby="" id="identifier" name="identifier" title="Veuillez sélectionner une valeur">
@@ -174,9 +174,9 @@ exports[`mg-input-select Should render with args { label: 'label', identifier: '
 <mg-input-select>
   <mock:shadow-root>
     <div class="mg-input mg-input--select">
-      <mg-label identifier="identifier">
+      <mg-input-title identifier="identifier">
         label
-      </mg-label>
+      </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
           <select aria-describedby="" id="identifier" name="identifier" title="Veuillez sélectionner une valeur">
@@ -207,9 +207,9 @@ exports[`mg-input-select Should render with args { label: 'label', identifier: '
 <mg-input-select>
   <mock:shadow-root>
     <div class="mg-input mg-input--select">
-      <mg-label identifier="identifier">
+      <mg-input-title identifier="identifier">
         label
-      </mg-label>
+      </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
           <select aria-describedby="" id="identifier" name="identifier" title="Veuillez sélectionner une valeur">
@@ -244,9 +244,9 @@ exports[`mg-input-select Should trigger events 1`] = `
 <mg-input-select>
   <mock:shadow-root>
     <div class="is-focused mg-input mg-input--select">
-      <mg-label identifier="identifier">
+      <mg-input-title identifier="identifier">
         label
-      </mg-label>
+      </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
           <select aria-describedby="identifier-help-text" id="identifier" name="identifier" title="Veuillez sélectionner une valeur">
