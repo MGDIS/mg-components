@@ -41,7 +41,7 @@ export class MgInputTitle {
   *************/
 
   componentWillLoad() {
-    // Check items format
+    // Init tag name
     this.getTagName();
   }
 

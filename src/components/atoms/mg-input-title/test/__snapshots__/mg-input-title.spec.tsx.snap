@@ -1,5 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`mg-input-title Should render label with args { isLegend: true, identifier: 'identifier' } 1`] = `
+<mg-input-title>
+  <!---->
+  <legend class="mg-input-title" htmlfor="identifier">
+    mg-input-title
+  </legend>
+</mg-input-title>
+`;
+
 exports[`mg-input-title Should render label with args { required: false, colon: false, identifier: 'identifier' } 1`] = `
 <mg-input-title>
   <!---->

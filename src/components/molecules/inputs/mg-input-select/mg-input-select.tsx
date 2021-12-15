@@ -249,7 +249,6 @@ export class MgInputSelect {
         helpText={this.helpText}
         errorMessage={this.errorMessage}
         isFieldset={false}
-        isVerticalList={false}
       >
         <select
           id={this.identifier}

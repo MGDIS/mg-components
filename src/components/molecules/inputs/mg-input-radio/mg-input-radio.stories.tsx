@@ -25,11 +25,14 @@ const Template = args => {
     delete args.helpText;
     const inputVerticalList = args.inputVerticalList;
     delete args.inputVerticalList;
+    const labelHide = args.labelHide;
+    delete args.labelHide;
     // return element
     return   <mg-input-radio
     {...args}
     label-on-top={labelOnTop}
     label-colon={labelColon}
+    label-hide={labelHide}
     help-text={helpText}
     input-vertical-list={inputVerticalList}
   ></mg-input-radio>

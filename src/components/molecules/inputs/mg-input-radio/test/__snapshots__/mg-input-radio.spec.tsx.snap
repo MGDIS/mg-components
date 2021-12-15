@@ -14,23 +14,31 @@ exports[`mg-input-radio Should render with args {
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
-          <div>
-            <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="batman">
-            <label htmlfor="identifier_0">
-              batman
-            </label>
-            <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="robin">
-            <label htmlfor="identifier_1">
-              robin
-            </label>
-            <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="jocker">
-            <label htmlfor="identifier_2">
-              jocker
-            </label>
-            <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="bane">
-            <label htmlfor="identifier_3">
-              bane
-            </label>
+          <div class="mg-input__input-group-container--radio">
+            <div class="mg-input__input-group">
+              <input aria-describedby="" disabled="" id="identifier_0" name="identifier" type="radio" value="batman">
+              <label htmlfor="identifier_0">
+                batman
+              </label>
+            </div>
+            <div class="mg-input__input-group">
+              <input aria-describedby="" disabled="" id="identifier_1" name="identifier" type="radio" value="robin">
+              <label htmlfor="identifier_1">
+                robin
+              </label>
+            </div>
+            <div class="mg-input__input-group">
+              <input aria-describedby="" disabled="" id="identifier_2" name="identifier" type="radio" value="jocker">
+              <label htmlfor="identifier_2">
+                jocker
+              </label>
+            </div>
+            <div class="mg-input__input-group">
+              <input aria-describedby="" disabled="" id="identifier_3" name="identifier" type="radio" value="bane">
+              <label htmlfor="identifier_3">
+                bane
+              </label>
+            </div>
           </div>
         </div>
       </div>
@@ -53,23 +61,31 @@ exports[`mg-input-radio Should render with args {
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
-          <div>
-            <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="batman">
-            <label htmlfor="identifier_0">
-              batman
-            </label>
-            <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="robin">
-            <label htmlfor="identifier_1">
-              robin
-            </label>
-            <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="jocker">
-            <label htmlfor="identifier_2">
-              jocker
-            </label>
-            <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="bane">
-            <label htmlfor="identifier_3">
-              bane
-            </label>
+          <div class="mg-input__input-group-container--radio">
+            <div class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="batman">
+              <label htmlfor="identifier_0">
+                batman
+              </label>
+            </div>
+            <div class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="robin">
+              <label htmlfor="identifier_1">
+                robin
+              </label>
+            </div>
+            <div class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="jocker">
+              <label htmlfor="identifier_2">
+                jocker
+              </label>
+            </div>
+            <div class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="bane">
+              <label htmlfor="identifier_3">
+                bane
+              </label>
+            </div>
           </div>
         </div>
         <div class="mg-input__input-container__help-text" id="identifier-help-text">
@@ -89,29 +105,37 @@ exports[`mg-input-radio Should render with args {
 }: 1`] = `
 <mg-input-radio>
   <mock:shadow-root>
-    <fieldset class="mg-input mg-input--radio mg-input--vertical-list">
+    <fieldset class="mg-input mg-input--radio">
       <mg-input-title identifier="identifier" is-legend="">
         label
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
-          <div>
-            <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="batman">
-            <label htmlfor="identifier_0">
-              batman
-            </label>
-            <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="robin">
-            <label htmlfor="identifier_1">
-              robin
-            </label>
-            <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="jocker">
-            <label htmlfor="identifier_2">
-              jocker
-            </label>
-            <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="bane">
-            <label htmlfor="identifier_3">
-              bane
-            </label>
+          <div class="mg-input__input-group-container--radio mg-input__input-group-container--vertical">
+            <div class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="batman">
+              <label htmlfor="identifier_0">
+                batman
+              </label>
+            </div>
+            <div class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="robin">
+              <label htmlfor="identifier_1">
+                robin
+              </label>
+            </div>
+            <div class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="jocker">
+              <label htmlfor="identifier_2">
+                jocker
+              </label>
+            </div>
+            <div class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="bane">
+              <label htmlfor="identifier_3">
+                bane
+              </label>
+            </div>
           </div>
         </div>
       </div>
@@ -134,23 +158,31 @@ exports[`mg-input-radio Should render with args {
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
-          <div>
-            <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="batman">
-            <label htmlfor="identifier_0">
-              batman
-            </label>
-            <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="robin">
-            <label htmlfor="identifier_1">
-              robin
-            </label>
-            <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="jocker">
-            <label htmlfor="identifier_2">
-              jocker
-            </label>
-            <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="bane">
-            <label htmlfor="identifier_3">
-              bane
-            </label>
+          <div class="mg-input__input-group-container--radio">
+            <div class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="batman">
+              <label htmlfor="identifier_0">
+                batman
+              </label>
+            </div>
+            <div class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="robin">
+              <label htmlfor="identifier_1">
+                robin
+              </label>
+            </div>
+            <div class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="jocker">
+              <label htmlfor="identifier_2">
+                jocker
+              </label>
+            </div>
+            <div class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="bane">
+              <label htmlfor="identifier_3">
+                bane
+              </label>
+            </div>
           </div>
         </div>
       </div>
@@ -173,23 +205,31 @@ exports[`mg-input-radio Should render with args {
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
-          <div>
-            <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="batman">
-            <label htmlfor="identifier_0">
-              batman
-            </label>
-            <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="robin">
-            <label htmlfor="identifier_1">
-              robin
-            </label>
-            <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="jocker">
-            <label htmlfor="identifier_2">
-              jocker
-            </label>
-            <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="bane">
-            <label htmlfor="identifier_3">
-              bane
-            </label>
+          <div class="mg-input__input-group-container--radio">
+            <div class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="batman">
+              <label htmlfor="identifier_0">
+                batman
+              </label>
+            </div>
+            <div class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="robin">
+              <label htmlfor="identifier_1">
+                robin
+              </label>
+            </div>
+            <div class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="jocker">
+              <label htmlfor="identifier_2">
+                jocker
+              </label>
+            </div>
+            <div class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="bane">
+              <label htmlfor="identifier_3">
+                bane
+              </label>
+            </div>
           </div>
         </div>
       </div>
@@ -212,23 +252,31 @@ exports[`mg-input-radio Should render with args {
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
-          <div>
-            <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="batman">
-            <label htmlfor="identifier_0">
-              batman
-            </label>
-            <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="robin">
-            <label htmlfor="identifier_1">
-              robin
-            </label>
-            <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="jocker">
-            <label htmlfor="identifier_2">
-              jocker
-            </label>
-            <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="bane">
-            <label htmlfor="identifier_3">
-              bane
-            </label>
+          <div class="mg-input__input-group-container--radio">
+            <div class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="batman">
+              <label htmlfor="identifier_0">
+                batman
+              </label>
+            </div>
+            <div class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="robin">
+              <label htmlfor="identifier_1">
+                robin
+              </label>
+            </div>
+            <div class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="jocker">
+              <label htmlfor="identifier_2">
+                jocker
+              </label>
+            </div>
+            <div class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="bane">
+              <label htmlfor="identifier_3">
+                bane
+              </label>
+            </div>
           </div>
         </div>
       </div>
@@ -271,23 +319,31 @@ exports[`mg-input-radio Should render with args {
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
-          <div>
-            <input aria-describedby="" id="identifier_0" name="identifier" required="" type="radio" value="batman">
-            <label htmlfor="identifier_0">
-              batman
-            </label>
-            <input aria-describedby="" id="identifier_1" name="identifier" required="" type="radio" value="robin">
-            <label htmlfor="identifier_1">
-              robin
-            </label>
-            <input aria-describedby="" id="identifier_2" name="identifier" required="" type="radio" value="jocker">
-            <label htmlfor="identifier_2">
-              jocker
-            </label>
-            <input aria-describedby="" id="identifier_3" name="identifier" required="" type="radio" value="bane">
-            <label htmlfor="identifier_3">
-              bane
-            </label>
+          <div class="mg-input__input-group-container--radio">
+            <div class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_0" name="identifier" required="" type="radio" value="batman">
+              <label htmlfor="identifier_0">
+                batman
+              </label>
+            </div>
+            <div class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_1" name="identifier" required="" type="radio" value="robin">
+              <label htmlfor="identifier_1">
+                robin
+              </label>
+            </div>
+            <div class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_2" name="identifier" required="" type="radio" value="jocker">
+              <label htmlfor="identifier_2">
+                jocker
+              </label>
+            </div>
+            <div class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_3" name="identifier" required="" type="radio" value="bane">
+              <label htmlfor="identifier_3">
+                bane
+              </label>
+            </div>
           </div>
         </div>
       </div>
@@ -310,23 +366,31 @@ exports[`mg-input-radio Should render with args {
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
-          <div>
-            <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="batman">
-            <label htmlfor="identifier_0">
-              batman
-            </label>
-            <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="robin">
-            <label htmlfor="identifier_1">
-              robin
-            </label>
-            <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="jocker">
-            <label htmlfor="identifier_2">
-              jocker
-            </label>
-            <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="bane">
-            <label htmlfor="identifier_3">
-              bane
-            </label>
+          <div class="mg-input__input-group-container--radio">
+            <div class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="batman">
+              <label htmlfor="identifier_0">
+                batman
+              </label>
+            </div>
+            <div class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="robin">
+              <label htmlfor="identifier_1">
+                robin
+              </label>
+            </div>
+            <div class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="jocker">
+              <label htmlfor="identifier_2">
+                jocker
+              </label>
+            </div>
+            <div class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="bane">
+              <label htmlfor="identifier_3">
+                bane
+              </label>
+            </div>
           </div>
           <mg-tooltip identifier="identifier-tooltip" message="My Tooltip Message">
             <mg-icon icon="info"></mg-icon>
@@ -347,23 +411,31 @@ exports[`mg-input-radio Should render with args { label: 'label', identifier: 'i
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
-          <div>
-            <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="batman">
-            <label htmlfor="identifier_0">
-              batman
-            </label>
-            <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="robin">
-            <label htmlfor="identifier_1">
-              robin
-            </label>
-            <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="jocker">
-            <label htmlfor="identifier_2">
-              jocker
-            </label>
-            <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="bane">
-            <label htmlfor="identifier_3">
-              bane
-            </label>
+          <div class="mg-input__input-group-container--radio">
+            <div class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="batman">
+              <label htmlfor="identifier_0">
+                batman
+              </label>
+            </div>
+            <div class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="robin">
+              <label htmlfor="identifier_1">
+                robin
+              </label>
+            </div>
+            <div class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="jocker">
+              <label htmlfor="identifier_2">
+                jocker
+              </label>
+            </div>
+            <div class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="bane">
+              <label htmlfor="identifier_3">
+                bane
+              </label>
+            </div>
           </div>
         </div>
       </div>
@@ -381,23 +453,31 @@ exports[`mg-input-radio Should render with args { label: 'label', identifier: 'i
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
-          <div>
-            <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="u">
-            <label htmlfor="identifier_0">
-              u
-            </label>
-            <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="i">
-            <label htmlfor="identifier_1">
-              i
-            </label>
-            <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="o">
-            <label htmlfor="identifier_2">
-              o
-            </label>
-            <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="a">
-            <label htmlfor="identifier_3">
-              a
-            </label>
+          <div class="mg-input__input-group-container--radio">
+            <div class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="u">
+              <label htmlfor="identifier_0">
+                u
+              </label>
+            </div>
+            <div class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="i">
+              <label htmlfor="identifier_1">
+                i
+              </label>
+            </div>
+            <div class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="o">
+              <label htmlfor="identifier_2">
+                o
+              </label>
+            </div>
+            <div class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="a">
+              <label htmlfor="identifier_3">
+                a
+              </label>
+            </div>
           </div>
         </div>
       </div>
@@ -415,23 +495,31 @@ exports[`mg-input-radio Should trigger events 1`] = `
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
-          <div>
-            <input aria-describedby="identifier-help-text" id="identifier_0" name="identifier" type="radio" value="batman">
-            <label htmlfor="identifier_0">
-              batman
-            </label>
-            <input aria-describedby="identifier-help-text" id="identifier_1" name="identifier" type="radio" value="robin">
-            <label htmlfor="identifier_1">
-              robin
-            </label>
-            <input aria-describedby="identifier-help-text" id="identifier_2" name="identifier" type="radio" value="jocker">
-            <label htmlfor="identifier_2">
-              jocker
-            </label>
-            <input aria-describedby="identifier-help-text" id="identifier_3" name="identifier" type="radio" value="bane">
-            <label htmlfor="identifier_3">
-              bane
-            </label>
+          <div class="mg-input__input-group-container--radio">
+            <div class="mg-input__input-group">
+              <input aria-describedby="identifier-help-text" id="identifier_0" name="identifier" type="radio" value="batman">
+              <label htmlfor="identifier_0">
+                batman
+              </label>
+            </div>
+            <div class="mg-input__input-group">
+              <input aria-describedby="identifier-help-text" id="identifier_1" name="identifier" type="radio" value="robin">
+              <label htmlfor="identifier_1">
+                robin
+              </label>
+            </div>
+            <div class="mg-input__input-group">
+              <input aria-describedby="identifier-help-text" id="identifier_2" name="identifier" type="radio" value="jocker">
+              <label htmlfor="identifier_2">
+                jocker
+              </label>
+            </div>
+            <div class="mg-input__input-group">
+              <input aria-describedby="identifier-help-text" id="identifier_3" name="identifier" type="radio" value="bane">
+              <label htmlfor="identifier_3">
+                bane
+              </label>
+            </div>
           </div>
         </div>
         <div class="mg-input__input-container__help-text" id="identifier-help-text">

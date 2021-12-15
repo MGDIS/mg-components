@@ -40,7 +40,6 @@ interface MgInputProps {
   labelColon: boolean;
   labelHide: boolean;
   isFieldset: boolean;
-  isVerticalList: boolean;
   // Input
   value: string;
   readonlyValue: string;
@@ -88,10 +87,6 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
 
   if(props.readonly) {
     props.classList.add('mg-input--readonly');
-  }
-
-  if(props.isVerticalList) {
-    props.classList.add('mg-input--vertical-list')
   }
 
   /**

@@ -82,6 +82,21 @@ describe('mg-input-radio', () => {
     expect(screenshotTooltip).toMatchImageSnapshot();
   });
 
+  test('render longer intems list inline', async () => {
+    const page = await createPage(`<mg-input-radio label="legend"></mg-input-radio>
+      <script>
+      const mgInputRadio = document.querySelector('mg-input-radio');
+      mgInputRadio.items = ['batman', 'robin', 'jocker', 'bane', 'ironman', 'spiderman', 'captain america', 'thor', 'vision', 'antman', 'black widow', 'black panther'];
+      </script>`);
+
+    const element = await page.find('mg-input-radio');
+
+    expect(element).toHaveClass('hydrated');
+
+    const screenshot = await page.screenshot();
+    expect(screenshot).toMatchImageSnapshot();
+  });
+
   describe.each([
     `<mg-input-radio label="legend" readonly></mg-input-radio>`,
     `<mg-input-radio label="legend" value="batman"></mg-input-radio>`,
