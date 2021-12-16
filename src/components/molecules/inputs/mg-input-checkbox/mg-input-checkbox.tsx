@@ -203,7 +203,6 @@ export class MgInputCheckbox {
         helpText={this.helpText}
         errorMessage={this.errorMessage}
         isFieldset={false}
-        isVerticalList={false}
       >
         <input
           type="checkbox"

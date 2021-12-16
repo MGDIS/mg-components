@@ -13,23 +13,9 @@ describe('mg-input-title', () => {
     {required: true, colon: false, identifier: 'identifier'},
     {required: false, colon: true, identifier: 'identifier'},
     {required: true, colon: true, identifier: 'identifier'},
+    {isLegend: true, identifier: 'identifier'},
   ])('Should render label with args %s', async (args) => {
     const { root } = await getPage(args);
     expect(root).toMatchSnapshot();
-  });
-
-  test.each([
-    {isLegend: true, element: 'LEGEND'},
-    {isLegend: false, element: 'LABEL'},
-  ])('validity (%s), isLabel (%s)', async ({isLegend, element})=> {
-    const args = { identifier: "identifier", isLegend};
-    const page = await getPage(args);
-
-    const component = page.doc.querySelector('mg-input-title');
-    const input = component.querySelector('.mg-input-title');
-
-    console.log(input)
-
-    expect(input.tagName).toEqual(element)
   });
 });

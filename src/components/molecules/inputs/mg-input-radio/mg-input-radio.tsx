@@ -44,7 +44,7 @@ export class MgInputRadio {
   validateItems(newValue){
     // String array
     if(newValue && (newValue as Array<string>).every(item => typeof item === 'string')) {
-      this.options = newValue.map(item => ({ title:item, value:item, disabled: false }));
+      this.options = newValue.map(item => ({ title:item, value:item, disabled: this.disabled }));
     }
     // Object array
     else if(newValue && (newValue as Array<Option>).every(item => isOption(item))) {
@@ -232,24 +232,25 @@ export class MgInputRadio {
         helpText={this.helpText}
         errorMessage={this.errorMessage}
         isFieldset={true}
-        isVerticalList={this.inputVerticalList}
       >
-        <div>
-          {this.options.map((input, index) => [
-            <input
-              type="radio"
-              id={this.identifier + '_' + index}
-              name={this.identifier}
-              value={input.value && input.value.toString()}
-              checked={input.value === this.value}
-              disabled={input.disabled}
-              required={this.required}
-              onFocus={this.handleFocus}
-              onBlur={this.handleBlur}
-              onInput={this.handleInput}
-            />,
-            <label htmlFor={this.identifier + '_' + index}>{input.value}</label>
-          ])}
+        <div class={"mg-input__input-group-container--radio " + (this.inputVerticalList ? 'mg-input__input-group-container--vertical' : '')}>
+          {this.options.map((input, index) => (
+            <div class="mg-input__input-group">
+              <input
+                type="radio"
+                id={this.identifier + '_' + index}
+                name={this.identifier}
+                value={input.value && input.value.toString()}
+                checked={input.value === this.value}
+                disabled={this.disabled || input.disabled}
+                required={this.required}
+                onFocus={this.handleFocus}
+                onBlur={this.handleBlur}
+                onInput={this.handleInput}
+              />
+              <label htmlFor={this.identifier + '_' + index}>{input.value}</label>
+            </div>
+          ))}
         </div>
       </MgInput>
     )
