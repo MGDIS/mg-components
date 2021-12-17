@@ -1,0 +1,33 @@
+@use 'sass:math';
+
+// Number of column
+$grid-columns: 12;
+
+// Calculate width
+@function round-width($i) {
+  $width: math.div(math.div(100 * $i * 100, $grid-columns), 100);
+  @return #{$width}#{'%'};
+}
+
+.mg-grid {
+  display: flex;
+  flex-wrap: wrap;
+
+  // Apply to all column sizes
+  [class*='mg-grid__col'] {
+    flex: 0 0 auto;
+    padding: 0 var(--mg-grid-spacing);
+  }
+
+  // Those columns will equaly share space
+  .mg-grid__col {
+    flex: 1 0 0%;
+  }
+
+  // Building columns
+  @for $i from 1 through $grid-columns {
+    .mg-grid__col-#{$i} {
+      width: round-width($i);
+    }
+  }
+}

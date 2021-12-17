@@ -1,0 +1,10 @@
+/**
+ * When inputs are wrapped into a <div class="mg-form-group">
+ * This will define the label width and the verticale spacing between them
+ */
+
+.mg-form-group {
+  margin-bottom: var(--mg-form-group-vertical-space);
+  --mg-inputs-title-horizontal-space: 3rem;
+  --mg-inputs-title-width: 15rem;
+}
