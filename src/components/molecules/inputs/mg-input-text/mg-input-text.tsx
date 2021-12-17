@@ -241,6 +241,7 @@ export class MgInputText {
         maxlength={this.maxlength}
         helpText={this.helpText}
         errorMessage={this.errorMessage}
+        isFieldset={false}
       >
         <input
           type="text"

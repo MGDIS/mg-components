@@ -38,7 +38,7 @@ This atom refers to the [PDA9-181](https://jira.mgdis.fr/browse/PDA9-181).
 
 ### Depends on
 
-- [mg-label](../../../atoms/mg-label)
+- [mg-input-title](../../../atoms/mg-input-title)
 - [mg-tooltip](../../../atoms/mg-tooltip)
 - [mg-icon](../../../atoms/mg-icon)
 - [mg-character-left](../../../atoms/mg-character-left)
@@ -46,7 +46,7 @@ This atom refers to the [PDA9-181](https://jira.mgdis.fr/browse/PDA9-181).
 ### Graph
 ```mermaid
 graph TD;
-  mg-input-numeric --> mg-label
+  mg-input-numeric --> mg-input-title
   mg-input-numeric --> mg-tooltip
   mg-input-numeric --> mg-icon
   mg-input-numeric --> mg-character-left

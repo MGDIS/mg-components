@@ -9,9 +9,9 @@ exports[`mg-input-text Should render with args {
 <mg-input-text value="blu">
   <mock:shadow-root>
     <div class="mg-input mg-input--readonly mg-input--text">
-      <mg-label identifier="identifier">
+      <mg-input-title identifier="identifier">
         label
-      </mg-label>
+      </mg-input-title>
       <div class="mg-input__input-container">
         <strong>
           blu
@@ -30,9 +30,9 @@ exports[`mg-input-text Should render with args {
 <mg-input-text>
   <mock:shadow-root>
     <div class="mg-input mg-input--text">
-      <mg-label identifier="identifier">
+      <mg-input-title identifier="identifier">
         label
-      </mg-label>
+      </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
           <input aria-describedby="" id="identifier" maxlength="400" name="identifier" type="text">
@@ -50,9 +50,9 @@ exports[`mg-input-text Should render with args { label: 'label', identifier: 'id
 <mg-input-text>
   <mock:shadow-root>
     <div class="mg-input mg-input--text">
-      <mg-label identifier="identifier">
+      <mg-input-title identifier="identifier">
         label
-      </mg-label>
+      </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
           <input aria-describedby="" id="identifier" maxlength="400" name="identifier" type="text">
@@ -67,9 +67,9 @@ exports[`mg-input-text Should render with args { label: 'label', identifier: 'id
 <mg-input-text>
   <mock:shadow-root>
     <div class="mg-input mg-input--text">
-      <mg-label class="sr-only" identifier="identifier">
+      <mg-input-title class="sr-only" identifier="identifier">
         label
-      </mg-label>
+      </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
           <input aria-describedby="" id="identifier" maxlength="400" name="identifier" type="text">
@@ -84,9 +84,9 @@ exports[`mg-input-text Should render with args { label: 'label', identifier: 'id
 <mg-input-text>
   <mock:shadow-root>
     <div class="mg-input mg-input--label-on-top mg-input--text">
-      <mg-label identifier="identifier">
+      <mg-input-title identifier="identifier">
         label
-      </mg-label>
+      </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
           <input aria-describedby="" id="identifier" maxlength="400" name="identifier" type="text">
@@ -101,9 +101,9 @@ exports[`mg-input-text Should render with args { label: 'label', identifier: 'id
 <mg-input-text>
   <mock:shadow-root>
     <div class="mg-input mg-input--readonly mg-input--text">
-      <mg-label identifier="identifier">
+      <mg-input-title identifier="identifier">
         label
-      </mg-label>
+      </mg-input-title>
       <div class="mg-input__input-container">
         <strong></strong>
       </div>
@@ -116,9 +116,9 @@ exports[`mg-input-text Should trigger events 1`] = `
 <mg-input-text>
   <mock:shadow-root>
     <div class="is-focused mg-input mg-input--text">
-      <mg-label identifier="identifier">
+      <mg-input-title identifier="identifier">
         label
-      </mg-label>
+      </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">
           <input aria-describedby="identifier-character-left identifier-help-text" id="identifier" maxlength="400" name="identifier" type="text">

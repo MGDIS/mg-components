@@ -6,14 +6,15 @@
   // Display
   display: flex;
   align-items: flex-start;
+  min-height: var(--default-size);
 
   /**
   * Label
   */
 
-  mg-label {
+  mg-input-title {
     margin-top: calc((var(--default-size) - var(--font-size-base) * var(--line-height)) / 2);
-    margin-right: var(--mg-inputs-spacer);
+    margin-right: calc(var(--mg-inputs-spacer) * 3);
     text-align: end;
   }
 
@@ -21,11 +22,15 @@
   &.mg-input--label-on-top {
     flex-direction: column;
 
-    mg-label {
+    mg-input-title {
       margin-top: 0;
       margin-right: 0;
-      margin-bottom: 0.3rem;
+      margin-bottom: calc(var(--mg-inputs-spacer) * 0.3);
       text-align: start;
+    }
+
+    .mg-input__input-group-container--radio {
+      margin-top: calc(var(--mg-inputs-spacer) * 0.7);
     }
   }
 
@@ -70,6 +75,18 @@
     padding-bottom: 0;
   }
 
+  legend {
+    padding-inline-start: 0;
+    padding-inline-end: 0;
+  }
+
+  input[type="radio"] {
+    margin-top: 0;
+    margin-right: calc(var(--mg-inputs-spacer) * 0.6);
+    margin-bottom: 0;
+    margin-left: 0;
+  }
+
   // Ensure to keed input size on redonly
   .mg-input__input-container > strong {
     display: flex;
@@ -86,6 +103,12 @@
     height: var(--mg-icon-regular-size);
     margin-top: calc((var(--default-size) - var(--mg-icon-regular-size)) / 2);
     margin-left: var(--mg-inputs-spacer);
+  }
+  // specifics spacers for checkbox and radio
+  &--radio, &--checkbox {
+    & mg-tooltip {
+      margin-left: calc(var(--mg-inputs-spacer) * 2);
+    }
   }
 
   /**
@@ -127,4 +150,33 @@
       border-color: hsl(var(--color-danger));
     }
   }
+
+  /**
+  * input group container
+  */
+  &__input-group-container--radio {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc((var(--default-size) - var(--font-size-base) * var(--line-height)) / 2);
+    column-gap: calc(var(--mg-inputs-spacer) * 2.5);
+    row-gap: var(--mg-inputs-spacer);
+  }
+
+  &__input-group-container--vertical {
+    flex-direction: column;
+  }
+
+  /**
+  * input group
+  */
+  &__input-group {
+    display: flex;
+    align-items: center;
+  }
+}
+
+fieldset.mg-input {
+  border: 0;
+  margin: 0;
+  padding: 0;
 }

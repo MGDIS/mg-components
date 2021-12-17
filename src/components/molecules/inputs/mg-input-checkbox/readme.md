@@ -35,7 +35,7 @@
 
 ### Depends on
 
-- [mg-label](../../../atoms/mg-label)
+- [mg-input-title](../../../atoms/mg-input-title)
 - [mg-tooltip](../../../atoms/mg-tooltip)
 - [mg-icon](../../../atoms/mg-icon)
 - [mg-character-left](../../../atoms/mg-character-left)
@@ -43,7 +43,7 @@
 ### Graph
 ```mermaid
 graph TD;
-  mg-input-checkbox --> mg-label
+  mg-input-checkbox --> mg-input-title
   mg-input-checkbox --> mg-tooltip
   mg-input-checkbox --> mg-icon
   mg-input-checkbox --> mg-character-left

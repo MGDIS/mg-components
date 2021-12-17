@@ -36,7 +36,7 @@ This atom refers to the [PDA9-72](https://jira.mgdis.fr/browse/PDA9-72).
 
 ### Depends on
 
-- [mg-label](../../../atoms/mg-label)
+- [mg-input-title](../../../atoms/mg-input-title)
 - [mg-tooltip](../../../atoms/mg-tooltip)
 - [mg-icon](../../../atoms/mg-icon)
 - [mg-character-left](../../../atoms/mg-character-left)
@@ -44,7 +44,7 @@ This atom refers to the [PDA9-72](https://jira.mgdis.fr/browse/PDA9-72).
 ### Graph
 ```mermaid
 graph TD;
-  mg-input-select --> mg-label
+  mg-input-select --> mg-input-title
   mg-input-select --> mg-tooltip
   mg-input-select --> mg-icon
   mg-input-select --> mg-character-left

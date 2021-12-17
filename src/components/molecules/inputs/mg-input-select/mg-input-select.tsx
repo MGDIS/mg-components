@@ -2,17 +2,7 @@ import { Component, Event, h, Prop, State, EventEmitter, Watch } from '@stencil/
 import { MgInput } from '../MgInput';
 import { createID, ClassList } from '../../../../utils/components.utils';
 import { messages } from '../../../../locales';
-
-export type Option = {
-  title: string,
-  value: string,
-  group?: string
-};
-
-export type OptGroup = {
-  group: string,
-  options: Option[]
-};
+import { Option, OptGroup }from '../../../../types/components.types';
 
 @Component({
   tag: 'mg-input-select',
@@ -51,21 +41,21 @@ export class MgInputSelect {
     else if(newValue && (newValue as Array<Option>).every((item) => (typeof item === 'object' && typeof item.title === 'string' && item.value !== undefined ))) {
       // Grouped object options
       if(newValue.some((item)=>(item.group !== undefined))) {
-        this.options = newValue.reduce((acc, {group, title, value})=>{
+        this.options = newValue.reduce((acc, {group, title, value, disabled})=>{
           if(group) {
             // Check if group is already created
             const optgroup = acc.find(grp=>grp.group===group);
             // Add to group
             if(optgroup) {
-              optgroup.options.push({title,value})
+              optgroup.options.push({title,value, disabled})
             }
             // Create group
             else {
-              acc.push({group, options:[{title, value}]});
+              acc.push({group, options:[{title, value, disabled}]});
             }
           }
           else {
-            acc.push({title, value});
+            acc.push({title, value, disabled});
           }
           return acc;
         }, []);
@@ -258,6 +248,7 @@ export class MgInputSelect {
         maxlength={undefined}
         helpText={this.helpText}
         errorMessage={this.errorMessage}
+        isFieldset={false}
       >
         <select
           id={this.identifier}
@@ -274,10 +265,12 @@ export class MgInputSelect {
             option.group !== undefined
             ? <optgroup label={option.group}>
                 {(option as OptGroup).options.map(optgroup=>
-                  <option value={optgroup.value} selected={this.value===optgroup.value}>{optgroup.title}</option>
+                  <option value={optgroup.value} selected={this.value===optgroup.value} disabled={optgroup.disabled}>{optgroup.title}</option>
                 )}
               </optgroup>
-            : <option value={(option as Option).value} selected={this.value===(option as Option).value}>{(option as Option).title}</option>
+            : <option value={(option as Option).value} selected={this.value===(option as Option).value} disabled={(option as Option).disabled}>
+                {(option as Option).title}
+              </option>
           )}
         </select>
       </MgInput>

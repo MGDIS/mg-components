@@ -202,6 +202,7 @@ export class MgInputCheckbox {
         maxlength={undefined}
         helpText={this.helpText}
         errorMessage={this.errorMessage}
+        isFieldset={false}
       >
         <input
           type="checkbox"
