@@ -154,16 +154,20 @@
   /**
   * input group container
   */
-  &__input-group-container--radio {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: calc((var(--default-size) - var(--font-size-base) * var(--line-height)) / 2);
-    column-gap: calc(var(--mg-inputs-spacer) * 2.5);
-    row-gap: var(--mg-inputs-spacer);
-  }
-
-  &__input-group-container--vertical {
-    flex-direction: column;
+  &__input-group-container {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    &.mg-input__input-group-container--radio {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: calc((var(--default-size) - var(--font-size-base) * var(--line-height)) / 2);
+      column-gap: calc(var(--mg-inputs-spacer) * 2.5);
+      row-gap: var(--mg-inputs-spacer);
+    }
+    &.mg-input__input-group-container--vertical {
+      flex-direction: column;
+    }
   }
 
   /**
