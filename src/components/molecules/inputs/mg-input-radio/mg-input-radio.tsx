@@ -11,7 +11,6 @@ import { Option }from '../../../../types/components.types';
 */
 const isOption = (option: Option): boolean => typeof option === 'object' && typeof option.title === 'string' && typeof option.value === 'string' && option.value !== undefined;
 
-
 @Component({
   tag: 'mg-input-radio',
   styleUrl: 'mg-input-radio.scss',
@@ -233,9 +232,9 @@ export class MgInputRadio {
         errorMessage={this.errorMessage}
         isFieldset={true}
       >
-        <div class={"mg-input__input-group-container--radio " + (this.inputVerticalList ? 'mg-input__input-group-container--vertical' : '')}>
+        <ul class={"mg-input__input-group-container mg-input__input-group-container--radio " + (this.inputVerticalList ? 'mg-input__input-group-container--vertical' : '')}>
           {this.options.map((input, index) => (
-            <div class="mg-input__input-group">
+            <li class="mg-input__input-group">
               <input
                 type="radio"
                 id={this.identifier + '_' + index}
@@ -249,9 +248,9 @@ export class MgInputRadio {
                 onInput={this.handleInput}
               />
               <label htmlFor={this.identifier + '_' + index}>{input.value}</label>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </MgInput>
     )
   }
