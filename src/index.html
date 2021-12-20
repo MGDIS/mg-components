@@ -8,7 +8,8 @@
     <script type="module" src="/build/mg-components.esm.js"></script>
     <script nomodule src="/build/mg-components.js"></script>
   </head>
-  <body style="padding: 1rem; background: #bada55">
+  <!-- <body style="padding: 1rem; background: #bada55"> -->
+  <body style="padding: 1rem">
     <main>
       <!-- <h1>MG Components</h1> -->
       <!-- <section>
@@ -327,7 +328,11 @@
       <section>
         <h2>.mg-grid</h2>
         <style>
-          [class*='mg-grid__col'] {
+          .mg-grid {
+            margin-bottom: 0.5rem;
+          }
+          .mg-grid__col {
+            padding: 0.5rem 1.5rem;
             border: 1px solid rgba(0, 0, 0, 0.2);
             background-color: rgba(0, 0, 0, 0.1);
           }
@@ -388,7 +393,7 @@
         </div>
         <div class="mg-grid">
           <div class="mg-grid__col mg-grid__col-10">col-10</div>
-          <div class="mg-grid__col mg-grid__col-2">col--2</div>
+          <div class="mg-grid__col mg-grid__col-2">col-2</div>
         </div>
         <div class="mg-grid">
           <div class="mg-grid__col mg-grid__col-11">col-11</div>
