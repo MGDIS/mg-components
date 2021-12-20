@@ -7,7 +7,7 @@ export default {
 const demoCss = `.mg-grid { margin-top: 1rem; }
 .mg-grid__col { border: 1px solid rgba(0, 0, 0, 0.1); background-color: rgba(0, 0, 0, 0.05); padding-top: 1.5rem; padding-bottom: 1.5rem; }`;
 
-const Template = args => (
+const Template = () => (
   <main>
     <style>{demoCss}</style>
 
@@ -43,7 +43,7 @@ const Template = args => (
     <p>Like Bootstrap, you can use sized colomn based on a 12 colomns grid.</p>
     <p>The library is using the BEM methodology, so to define a column width we need to set a modifier class, for exemple <code>mg-grid__col-2</code>.</p>
 
-      {[...Array.from(Array(12).keys())].map((e, i) =>
+      {[...Array.from(Array(12).keys())].map((_e, i) =>
           (<div class="mg-grid">
            <div class={`mg-grid__col mg-grid__col-${i+1}`}>.mg-grid__col.mg-grid__col-{i+1}</div>
           </div>)
