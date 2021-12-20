@@ -12,21 +12,17 @@ $grid-columns: 12;
 .mg-grid {
   display: flex;
   flex-wrap: wrap;
+}
 
-  // Apply to all column sizes
-  [class*='mg-grid__col'] {
-    flex: 0 0 auto;
-    padding: 0 var(--mg-grid-spacing);
-  }
-
-  // Those columns will equaly share space
-  .mg-grid__col {
-    flex: 1 0 0%;
-  }
+// Those columns will equaly share space
+.mg-grid__col {
+  flex: 1 0 0%;
+  padding: 0 var(--mg-grid-spacing);
 
   // Building columns
   @for $i from 1 through $grid-columns {
-    .mg-grid__col-#{$i} {
+    &.mg-grid__col-#{$i} {
+      flex: 0 0 auto;
       width: round-width($i);
     }
   }
