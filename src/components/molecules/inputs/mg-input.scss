@@ -46,6 +46,7 @@
     // Display
     padding: calc((var(--default-size) - var(--font-size-base) * var(--line-height)) / 2) var(--mg-inputs-spacer);
     height: var(--default-size);
+    box-sizing: border-box;
     // Decoration
     border-width: var(--mg-inputs-border-width);
     border-style: solid;
@@ -108,7 +109,7 @@
   // specifics spacers for checkbox and radio
   &--radio,
   &--checkbox {
-    & mg-tooltip {
+    mg-tooltip {
       margin-left: calc(var(--mg-inputs-spacer) * 2);
     }
   }
