@@ -12,7 +12,7 @@ export default {
 };
 
 const Template = args => (
-  <div>
+  <main>
     <h1>Messages</h1>
 
     <h2>Simple</h2>
@@ -58,7 +58,7 @@ const Template = args => (
       </div>
     </div>
 
-  </div>
+  </main>
 );
 
 export const Messages = Template.bind({});

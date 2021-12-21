@@ -13,9 +13,11 @@
   */
 
   mg-input-title {
+    width: var(--mg-inputs-title-width, auto);
     margin-top: calc((var(--default-size) - var(--font-size-base) * var(--line-height)) / 2);
-    margin-right: calc(var(--mg-inputs-spacer) * 3);
+    margin-right: var(--mg-inputs-title-horizontal-space, var(--mg-inputs-spacer));
     text-align: end;
+    flex-shrink: 0;
   }
 
   // Display label on top
@@ -80,7 +82,7 @@
     padding-inline-end: 0;
   }
 
-  input[type="radio"] {
+  input[type='radio'] {
     margin-top: 0;
     margin-right: calc(var(--mg-inputs-spacer) * 0.6);
     margin-bottom: 0;
@@ -105,8 +107,9 @@
     margin-left: var(--mg-inputs-spacer);
   }
   // specifics spacers for checkbox and radio
-  &--radio, &--checkbox {
-    & mg-tooltip {
+  &--radio,
+  &--checkbox {
+    mg-tooltip {
       margin-left: calc(var(--mg-inputs-spacer) * 2);
     }
   }
