@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { Option } from "./types/components.types";
+import { CheckboxOption, CheckboxValue, Option } from "./types/components.types";
 export namespace Components {
     interface MgButton {
         /**
@@ -75,14 +75,17 @@ export namespace Components {
          */
         "identifier"?: string;
         /**
-          * Manage indeterminate state
-          * @see https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input/checkbox#g%C3%A9rer_un_%C3%A9tat_ind%C3%A9termin%C3%A9
+          * Define if inputs are display verticaly
          */
-        "indeterminate": boolean;
+        "inputVerticalList": boolean;
         /**
           * Force invalid component
          */
         "invalid": boolean;
+        /**
+          * Items are the possible options to select Required
+         */
+        "items": string[] | CheckboxOption[];
         /**
           * Input label Required
          */
@@ -122,7 +125,7 @@ export namespace Components {
         /**
           * Component value If not set, checkbox will be indeterminate by default
          */
-        "value"?: boolean;
+        "value"?: CheckboxValue[];
     }
     interface MgInputDate {
         /**
@@ -788,14 +791,17 @@ declare namespace LocalJSX {
          */
         "identifier"?: string;
         /**
-          * Manage indeterminate state
-          * @see https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input/checkbox#g%C3%A9rer_un_%C3%A9tat_ind%C3%A9termin%C3%A9
+          * Define if inputs are display verticaly
          */
-        "indeterminate"?: boolean;
+        "inputVerticalList"?: boolean;
         /**
           * Force invalid component
          */
         "invalid"?: boolean;
+        /**
+          * Items are the possible options to select Required
+         */
+        "items": string[] | CheckboxOption[];
         /**
           * Input label Required
          */
@@ -819,7 +825,7 @@ declare namespace LocalJSX {
         /**
           * Emitted event when value change
          */
-        "onValueChange"?: (event: CustomEvent<boolean>) => void;
+        "onValueChange"?: (event: CustomEvent<CheckboxValue[]>) => void;
         /**
           * Define if input is readonly
          */
@@ -839,7 +845,7 @@ declare namespace LocalJSX {
         /**
           * Component value If not set, checkbox will be indeterminate by default
          */
-        "value"?: boolean;
+        "value"?: CheckboxValue[];
     }
     interface MgInputDate {
         /**

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-12-15T16:05:53",
+  "timestamp": "2021-12-21T15:24:39",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.12.0",
@@ -396,18 +396,13 @@
           "required": false
         },
         {
-          "name": "indeterminate",
+          "name": "inputVerticalList",
           "type": "boolean",
           "mutable": false,
-          "attr": "indeterminate",
+          "attr": "input-vertical-list",
           "reflectToAttr": false,
-          "docs": "Manage indeterminate state",
-          "docsTags": [
-            {
-              "name": "see",
-              "text": "https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input/checkbox#g%C3%A9rer_un_%C3%A9tat_ind%C3%A9termin%C3%A9"
-            }
-          ],
+          "docs": "Define if inputs are display verticaly",
+          "docsTags": [],
           "default": "false",
           "values": [
             {
@@ -432,6 +427,24 @@
           ],
           "optional": false,
           "required": false
+        },
+        {
+          "name": "items",
+          "type": "CheckboxOption[] | string[]",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "Items are the possible options to select\nRequired",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "CheckboxOption[]"
+            },
+            {
+              "type": "string[]"
+            }
+          ],
+          "optional": false,
+          "required": true
         },
         {
           "name": "label",
@@ -584,15 +597,14 @@
         },
         {
           "name": "value",
-          "type": "boolean",
+          "type": "CheckboxValue[]",
           "mutable": true,
-          "attr": "value",
-          "reflectToAttr": true,
+          "reflectToAttr": false,
           "docs": "Component value\nIf not set, checkbox will be indeterminate by default",
           "docsTags": [],
           "values": [
             {
-              "type": "boolean"
+              "type": "CheckboxValue[]"
             }
           ],
           "optional": true,
@@ -603,7 +615,7 @@
       "events": [
         {
           "event": "valueChange",
-          "detail": "boolean",
+          "detail": "CheckboxValue[]",
           "bubbles": true,
           "cancelable": true,
           "composed": true,
