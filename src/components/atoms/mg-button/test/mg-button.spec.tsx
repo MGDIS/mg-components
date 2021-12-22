@@ -38,7 +38,7 @@ describe('mg-button', () => {
     test('should NOT disable button after click', async () => {
       const page = await getPage({label: 'test'});
       const element = page.doc.querySelector('mg-button');
-      const button = element.shadowRoot.querySelector('button');
+      const button = element.querySelector('button');
 
       button.dispatchEvent(new CustomEvent('click', { bubbles: true }));
       await page.waitForChanges();
@@ -49,7 +49,7 @@ describe('mg-button', () => {
     test('should disable button after click', async () => {
       const page = await getPage({label: 'test', disableOnClick: true});
       const element = page.doc.querySelector('mg-button');
-      const button = element.shadowRoot.querySelector('button');
+      const button = element.querySelector('button');
 
       button.dispatchEvent(new CustomEvent('click', { bubbles: true }));
       await page.waitForChanges();

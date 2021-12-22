@@ -6,12 +6,80 @@ import { Meta } from '@storybook/addon-docs/blocks';
 
 ## Install
 
+### Vue.js
+
+#### Adding the lib
+
 Add MG Components to your project.
 
-`npm install -D @mgdis/mg-components`
+```bash
+npm install -D @mgdis/mg-components
+```
 
-## **Use**
+Import the lib by adding this code in the `main.js` file:
 
-Import components you want into your UI
+```js
+import { applyPolyfills, defineCustomElements } from '@mgdis/mg-components/loader';
 
-<!-- TODO -->
+// Tells VueJS to ignore Elements from the design system
+Vue.config.ignoredElements = [/mg-\w*/];
+// Bind the custom elements to the window object
+applyPolyfills().then(() => {
+  defineCustomElements();
+});
+```
+
+The `mg-components` components are now globally available in you project, no need to import them individually in your Vue.js views or components.
+
+You need now to import the components style by adding the mg-components variables or directly the stylesheet who came with in the `App.vue` file :
+
+```html
+<style lang="scss">
+  @import '~@mgdis/mg-components/dist/mg-components/variables.scss';
+</style>
+```
+
+or
+
+```html
+<style>
+  @import '~@mgdis/mg-components/dist/mg-components/mg-components.css';
+</style>
+```
+
+#### Use the lib
+
+##### Bind
+
+To bind a non string value in a web component we have to use the Vue.js [`.prop`](https://vuejs.org/v2/api/#v-bind) modifier:
+
+```html
+<mg-input-text
+  :readonly.prop="readOnly"
+  :value="user.firstname" // Not mandatory when the value is a string
+  :label="$t('firstname')"
+  identifier="firstname"
+></mg-input-text>
+```
+
+##### v-model
+
+`v-model` can not be used in web components so we must set the value and the custum event `valueChange`:
+
+```html
+<mg-input-text :value="user.firstname" :label="$t('firstname')" @valueChange="user.firstname = $event.target.value"></mg-input-text>
+```
+
+#### Tests
+
+During test custom elements are not registered, to prevent Jest to log errors you'll need to add the ignoredElements Vue.js config in your test file:
+
+```js
+import Vue from 'vue';
+Vue.config.ignoredElements = [/mg-\w*/];
+```
+
+<!--
+ TODO
+ ### Angular.js
+ -->
