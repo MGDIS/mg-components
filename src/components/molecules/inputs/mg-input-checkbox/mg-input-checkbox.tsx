@@ -45,7 +45,8 @@ export class MgInputCheckbox {
   validateItems(newValue){
     // String array
     if(newValue && (newValue as Array<string>).every(item => typeof item === 'string')) {
-      this.options = newValue.map(item => ({
+      this.options = newValue.map((item, index) => ({
+          id: this.identifier + '_' + index,
           title:item,
           value:item,
           checked: this.isChecked(item),
@@ -55,8 +56,9 @@ export class MgInputCheckbox {
     }
     // Object array
     else if(newValue && (newValue as Array<CheckboxOption>).every(item => isCheckboxOption(item))) {
-      this.options = newValue.map(item => ({
-          title:item.value,
+      this.options = newValue.map((item, index) => ({
+          id: this.identifier + '_' + index,
+          title:item.title,
           value:item.value,
           checked: item.checked || this.isChecked(item),
           disabled: item.disabled,
@@ -173,7 +175,7 @@ export class MgInputCheckbox {
   */
   private handleInput = (event:InputEvent & { target: HTMLInputElement }) => {
     this.options = this.options.map((o) => {
-      if (o.value === event.target.value) {
+      if (o.id === event.target.id) {
         o.checked = event.target.checked;
       }
       return o;
@@ -251,17 +253,17 @@ export class MgInputCheckbox {
   * Manage checked state
   * @param item
   */
-  private isChecked(item:CheckboxOption) :boolean {
+  private isChecked(item:CheckboxOption): boolean {
     // return false when NO value
     if (this.value === undefined || this.value === null) {
       return false;
     }
     // search for item in values
     if (typeof item === 'string') {
-      this.value.find((e) => e.value === item) !== undefined;
+      return this.value.find((e) => e.value === item) !== undefined;
     }
 
-    return this.value.find((e) => e.value === item.value) !== undefined;
+    return this.value.find((e) => e.title === item.title) !== undefined;
   }
 
   /**
@@ -290,10 +292,9 @@ export class MgInputCheckbox {
         return item
       } else if(i === arr.length - 1) {
         return `${item}.`;
-      } else if (i < arr.length - 1) {
+      } else {
         return `${item}, `;
       }
-      return '';
     })
     .join('');
   }
@@ -329,11 +330,11 @@ export class MgInputCheckbox {
         isFieldset={true}
       >
         <ul class={"mg-input__input-group-container mg-input__input-group-container--checkbox " + (this.inputVerticalList ? 'mg-input__input-group-container--vertical' : '')}>
-          {this.options.map((input, index) => (
+          {this.options.map(input => (
             <li class="mg-input__input-group">
               <input
                 type="checkbox"
-                id={this.identifier + '_' + index}
+                id={input.id}
                 name={this.identifier}
                 value={input.value && input.value.toString()}
                 checked={input.checked}
@@ -344,7 +345,7 @@ export class MgInputCheckbox {
                 onFocus={this.handleFocus}
                 onBlur={this.handleBlur}
               />
-              <label htmlFor={this.identifier + '_' + index}>{input.value}</label>
+              <label htmlFor={input.id}>{input.title}</label>
             </li>
           ))}
         </ul>

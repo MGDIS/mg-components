@@ -247,7 +247,7 @@ export class MgInputRadio {
                 onBlur={this.handleBlur}
                 onInput={this.handleInput}
               />
-              <label htmlFor={this.identifier + '_' + index}>{input.value}</label>
+              <label htmlFor={this.identifier + '_' + index}>{input.title}</label>
             </li>
           ))}
         </ul>

@@ -44,7 +44,7 @@ const Template = args => {
 export const MgInputCheckbox = Template.bind({});
 MgInputCheckbox.args = {
   // Global
-  value: ['ht'],
+  value: [{title: 'ht', value: 'ht'}],
   items: ['ht', 'ttc', 'mixte'],
   identifier: 'identifier',
   name: 'input-name',

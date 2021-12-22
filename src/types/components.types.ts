@@ -15,6 +15,7 @@ export type Option = {
  * use to match checkbox attributes
  */
  export type CheckboxOption = {
+  id: string,
   title: string,
   value: string | string,
   checked?: boolean,

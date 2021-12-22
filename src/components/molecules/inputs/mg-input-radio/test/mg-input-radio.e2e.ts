@@ -42,7 +42,7 @@ describe('mg-input-radio', () => {
     `<mg-input-radio label="legend" input-vertical-list help-text="HelpText Message"></mg-input-radio>`,
     `<mg-input-radio label="legend" label-on-top input-vertical-list help-text="HelpText Message"></mg-input-radio>`,
     `<mg-input-radio label="legend" label-hide></mg-input-radio>`,
-    `<mg-input-radio label="legend" label-colon placeholder="placeholder" help-text="HelpText Message"></mg-input-radio>`
+    `<mg-input-radio label="legend" label-colon help-text="HelpText Message"></mg-input-radio>`
   ])('without tooltip', (html)=>{
     test('render', async () => {
       const page = await createPage(`${html}
