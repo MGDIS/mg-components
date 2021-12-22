@@ -1,3 +1,10 @@
+// Make all element use the border box model
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 /**
  * We set html font size to 62.5% to get 10px in most of the case.
  * This is a common use for an easiest calculation : 1rem = 10px
