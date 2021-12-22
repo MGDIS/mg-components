@@ -31,7 +31,7 @@ test('Should render a button in a paragraph', async ()=>{
 
 test('should disable button after keyUp "Enter"', async () => {
   const page = await createPage(`<mg-button label="test" disable-on-click>test</mg-button>`);
-  const button = await page.find('mg-button >>> button');
+  const button = await page.find('button');
 
   await button.press('Enter');
 
@@ -40,7 +40,7 @@ test('should disable button after keyUp "Enter"', async () => {
 
 test('should disable button after keyUp "Enter"', async () => {
   const page = await createPage(`<mg-button label="test" disable-on-click>test</mg-button>`);
-  const button = await page.find('mg-button >>> button');
+  const button = await page.find('button');
 
   await button.press('Space');
 

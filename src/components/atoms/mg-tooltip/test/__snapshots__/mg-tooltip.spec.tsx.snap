@@ -47,16 +47,14 @@ exports[`mg-tooltip Should manage display on events enter with { eventIn: 'focus
 <mg-tooltip>
   <!---->
   <mg-button aria-describedby="identifier">
-    <mock:shadow-root>
-      <button class="mg-button mg-button--primary" id="identifier">
-        <slot></slot>
-      </button>
-    </mock:shadow-root>
-    mg-button
+    <!---->
+    <button class="mg-button mg-button--primary" data-show id="identifier" style="position: absolute; left: 0; top: 0; margin: 0;">
+      mg-button
+    </button>
   </mg-button>
-  <div data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+  <div id="identifier" role="tooltip">
     blu
-    <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
+    <div class="mg-tooltip__arrow" data-popper-arrow></div>
   </div>
 </mg-tooltip>
 `;
@@ -108,16 +106,14 @@ exports[`mg-tooltip Should manage display on events enter with { eventIn: 'mouse
 <mg-tooltip>
   <!---->
   <mg-button aria-describedby="identifier">
-    <mock:shadow-root>
-      <button class="mg-button mg-button--primary" id="identifier">
-        <slot></slot>
-      </button>
-    </mock:shadow-root>
-    mg-button
+    <!---->
+    <button class="mg-button mg-button--primary" data-show id="identifier" style="position: absolute; left: 0; top: 0; margin: 0;">
+      mg-button
+    </button>
   </mg-button>
-  <div data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+  <div id="identifier" role="tooltip">
     blu
-    <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
+    <div class="mg-tooltip__arrow" data-popper-arrow></div>
   </div>
 </mg-tooltip>
 `;
@@ -169,16 +165,14 @@ exports[`mg-tooltip Should render with element 4`] = `
 <mg-tooltip>
   <!---->
   <mg-button aria-describedby="identifier">
-    <mock:shadow-root>
-      <button class="mg-button mg-button--primary" id="identifier">
-        <slot></slot>
-      </button>
-    </mock:shadow-root>
-    mg-button
+    <!---->
+    <button class="mg-button mg-button--primary" id="identifier" style="position: absolute; left: 0; top: 0; margin: 0;">
+      mg-button
+    </button>
   </mg-button>
-  <div id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+  <div id="identifier" role="tooltip">
     My tooltip message
-    <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
+    <div class="mg-tooltip__arrow" data-popper-arrow></div>
   </div>
 </mg-tooltip>
 `;

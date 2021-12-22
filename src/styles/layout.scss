@@ -5,7 +5,7 @@ $grid-columns: 12;
 
 // Calculate width
 @function round-width($i) {
-  $width: math.div(math.div(100 * $i * 100, $grid-columns), 100);
+  $width: math.div(100 * $i, $grid-columns);
   @return #{$width}#{'%'};
 }
 

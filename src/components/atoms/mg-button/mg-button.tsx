@@ -5,7 +5,7 @@ import { ClassList, createID } from '../../../utils/components.utils';
 @Component({
   tag: 'mg-button',
   styleUrl: 'mg-button.scss',
-  shadow: true,
+  scoped: true,
 })
 export class MgButton {
 
