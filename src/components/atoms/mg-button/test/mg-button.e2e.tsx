@@ -29,20 +29,44 @@ test('Should render a button in a paragraph', async ()=>{
   expect(screenshot).toMatchImageSnapshot();
 })
 
-test('should disable button after keyUp "Enter"', async () => {
+
+test.each(["Enter", "Space"])('should disable button after keyUp "%s"', async (key) => {
   const page = await createPage(`<mg-button label="test" disable-on-click>test</mg-button>`);
   const button = await page.find('button');
 
-  await button.press('Enter');
+  const screenshot1 = await page.screenshot();
+  expect(screenshot1).toMatchImageSnapshot();
+
+  await button.press(key);
 
   expect(button).toHaveAttribute('disabled');
+
+  const screenshot2 = await page.screenshot();
+  expect(screenshot2).toMatchImageSnapshot();
 })
 
-test('should disable button after keyUp "Enter"', async () => {
-  const page = await createPage(`<mg-button label="test" disable-on-click>test</mg-button>`);
+test.each(["Enter", "Space"])('should change content by loader icon "%s"', async (key) => {
+  const page = await createPage(`<mg-button label="test">test</mg-button>`);
   const button = await page.find('button');
 
-  await button.press('Space');
+  const screenshot1 = await page.screenshot();
+  expect(screenshot1).toMatchImageSnapshot();
 
-  expect(button).toHaveAttribute('disabled');
+  await button.press(key);
+
+  const screenshot2 = await page.screenshot();
+  expect(screenshot2).toMatchImageSnapshot();
+})
+
+test.each(["Enter", "Space"])('should change icon by loader icon "%s"', async (key) => {
+  const page = await createPage(`<mg-button label="test" is-icon><mg-icon icon="info"></mg-icon></mg-button>`);
+  const button = await page.find('button');
+
+  const screenshot1 = await page.screenshot();
+  expect(screenshot1).toMatchImageSnapshot();
+
+  await button.press(key);
+
+  const screenshot2 = await page.screenshot();
+  expect(screenshot2).toMatchImageSnapshot();
 })

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-12-22T10:41:28",
+  "timestamp": "2021-12-24T14:40:51",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.12.0",
@@ -100,6 +100,23 @@
           "required": false
         },
         {
+          "name": "loading",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "loading",
+          "reflectToAttr": true,
+          "docs": "Define if button is loading, default to false.\nTrigger when button is clicked or key-up ['enter', 'space], then value change to true.\nIt's required to reset to false when action/promise in parent is done to stop the loading state",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "variant",
           "type": "string",
           "mutable": false,
@@ -126,8 +143,13 @@
       "dependents": [
         "mg-message"
       ],
-      "dependencies": [],
+      "dependencies": [
+        "mg-icon"
+      ],
       "dependencyGraph": {
+        "mg-button": [
+          "mg-icon"
+        ],
         "mg-message": [
           "mg-button"
         ]
@@ -299,6 +321,7 @@
       "slots": [],
       "parts": [],
       "dependents": [
+        "mg-button",
         "mg-input-checkbox",
         "mg-input-date",
         "mg-input-numeric",
@@ -310,6 +333,9 @@
       ],
       "dependencies": [],
       "dependencyGraph": {
+        "mg-button": [
+          "mg-icon"
+        ],
         "mg-input-checkbox": [
           "mg-icon"
         ],
@@ -2826,6 +2852,9 @@
         "mg-message": [
           "mg-icon",
           "mg-button"
+        ],
+        "mg-button": [
+          "mg-icon"
         ]
       }
     },

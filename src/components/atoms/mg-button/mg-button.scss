@@ -85,6 +85,18 @@
       background: hsla(var(--color-dark), 0.1);
     }
   }
+
+  &--loading {
+    display: flex;
+    flex-direction: column;
+    .mg-button__content {
+      height: 0;
+      visibility: hidden;
+    }
+    mg-icon {
+      margin: auto 0;
+    }
+  }
 }
 
 mg-button {

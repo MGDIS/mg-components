@@ -29,6 +29,10 @@ export namespace Components {
          */
         "label": string;
         /**
+          * Define if button is loading, default to false. Trigger when button is clicked or key-up ['enter', 'space], then value change to true. It's required to reset to false when action/promise in parent is done to stop the loading state
+         */
+        "loading": boolean;
+        /**
           * Define button variant
          */
         "variant": string;
@@ -741,6 +745,10 @@ declare namespace LocalJSX {
           * aria-label In case button text is not explicit enough
          */
         "label"?: string;
+        /**
+          * Define if button is loading, default to false. Trigger when button is clicked or key-up ['enter', 'space], then value change to true. It's required to reset to false when action/promise in parent is done to stop the loading state
+         */
+        "loading"?: boolean;
         /**
           * Define button variant
          */

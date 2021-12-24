@@ -51,15 +51,24 @@ export class MgButton {
   @Prop() disableOnClick: boolean = false;
 
   /**
-  * Define if button is loading.
-  * Used to prevent multi-click.
+  * Define if button is loading, default to false.
   * Trigger when button is clicked or key-up ['enter', 'space], then value change to true.
-  */
-  @State() loading: boolean = false;
+  * It's required to reset to false when action/promise in parent is done to stop the loading state
+   */
+  @Prop({reflect: true, mutable: true}) loading: boolean = false;
   @Watch('loading')
   loadingHandler(newValue: boolean) {
-    if(!this.disableOnClick) return;
-    this.disabled = newValue;
+    // we add loading style if it newvalue is true else we remove it
+    if (newValue === true) {
+      this.classList.add('mg-button--loading');
+    } else {
+      this.classList.delete('mg-button--loading');
+    }
+
+    // Used to prevent multi-click.
+    if(this.disableOnClick) {
+      this.disabled = newValue;
+    }
   }
 
   /**
@@ -99,7 +108,16 @@ export class MgButton {
           disabled={this.disabled}
           onClick={this.handleClick}
         >
-          <slot></slot>
+          {this.loading ?
+            <mg-icon
+              icon="loader"
+              size="regular"
+            ></mg-icon>
+            : null
+          }
+          <div class="mg-button__content">
+            <slot></slot>
+          </div>
         </button>
     );
   }
