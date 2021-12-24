@@ -2,14 +2,14 @@ import { Component, Event, h, Prop, EventEmitter, State, Watch } from '@stencil/
 import { MgInput } from '../MgInput';
 import { createID, ClassList } from '../../../../utils/components.utils';
 import { messages } from '../../../../locales';
-import { Option }from '../../../../types/components.types';
+import { RadioOption }from '../../../../types/components.types';
 
 /**
 * type Option validation function
 * @param option
 * @returns {boolean}
 */
-const isOption = (option: Option): boolean => typeof option === 'object' && typeof option.title === 'string' && typeof option.value === 'string' && option.value !== undefined;
+const isOption = (option: RadioOption): boolean => typeof option === 'object' && typeof option.title === 'string';
 
 @Component({
   tag: 'mg-input-radio',
@@ -32,21 +32,21 @@ export class MgInputRadio {
   /**
   * Component value
   */
-  @Prop({ mutable:true, reflect: true }) value?: string;
+  @Prop({ mutable:true, reflect: true }) value?: any;
 
   /**
   * Items are the possible options to select
   * Required
   */
-  @Prop() items!: string[] | Option[];
+  @Prop() items!: (string|boolean|number)[] | RadioOption[];
   @Watch('items')
   validateItems(newValue){
     // String array
-    if(newValue && (newValue as Array<string>).every(item => typeof item === 'string')) {
-      this.options = newValue.map(item => ({ title:item, value:item, disabled: this.disabled }));
+    if(newValue && (newValue as Array<String|Boolean|Number>).every(item => ['string', 'boolean', 'number'].includes(typeof item))) {
+      this.options = newValue.map(item => ({ title:item.toString(), value:item, disabled: this.disabled }));
     }
     // Object array
-    else if(newValue && (newValue as Array<Option>).every(item => isOption(item))) {
+    else if(newValue && (newValue as Array<RadioOption>).every(item => isOption(item))) {
       this.options = newValue;
     }
     else {
@@ -140,19 +140,21 @@ export class MgInputRadio {
   /**
   * Formated items for display
   */
-  @State() options: (Option)[];
+  @State() options: (RadioOption)[];
 
   /**
   * Emitted event when value change
   */
-  @Event() valueChange: EventEmitter<string>
+  @Event() valueChange: EventEmitter<any>
 
   /**
   * Handle input event
   * @param event
   */
   private handleInput = (event:InputEvent & { target: HTMLInputElement }) => {
-    this.value = event.target.value;
+    const eventValue = event.target.value;
+    this.value = this.options
+      .find(o => o.value.toString() === eventValue)?.value;
     this.valueChange.emit(this.value);
   }
 
@@ -247,7 +249,7 @@ export class MgInputRadio {
                 onBlur={this.handleBlur}
                 onInput={this.handleInput}
               />
-              <label htmlFor={this.identifier + '_' + index}>{input.value}</label>
+              <label htmlFor={this.identifier + '_' + index}>{input.title}</label>
             </li>
           ))}
         </ul>
