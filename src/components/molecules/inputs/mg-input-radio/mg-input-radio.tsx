@@ -9,7 +9,7 @@ import { RadioOption }from '../../../../types/components.types';
 * @param option
 * @returns {boolean}
 */
-const isOption = (option: RadioOption): boolean => typeof option === 'object' && typeof option.title === 'string';
+const isOption = (option: RadioOption): boolean => typeof option === 'object' && typeof option.title === 'string' && option.value !== undefined;
 
 @Component({
   tag: 'mg-input-radio',
@@ -38,19 +38,19 @@ export class MgInputRadio {
   * Items are the possible options to select
   * Required
   */
-  @Prop() items!: (string|boolean|number)[] | RadioOption[];
+  @Prop() items!: string[] | RadioOption[];
   @Watch('items')
   validateItems(newValue){
     // String array
-    if(newValue && (newValue as Array<String|Boolean|Number>).every(item => ['string', 'boolean', 'number'].includes(typeof item))) {
-      this.options = newValue.map(item => ({ title:item.toString(), value:item, disabled: this.disabled }));
+    if(newValue && (newValue as Array<String>).every(item => typeof item === 'string')) {
+      this.options = newValue.map(item => ({ title:item, value:item, disabled: this.disabled }));
     }
     // Object array
     else if(newValue && (newValue as Array<RadioOption>).every(item => isOption(item))) {
       this.options = newValue;
     }
     else {
-      throw new Error('<mg-input-radio> prop "items" is required and all items must be the same type, string or Option.')
+      throw new Error('<mg-input-radio> prop "items" is required and all items must be the same type, string or RadioOption.')
     }
   }
 
@@ -152,9 +152,8 @@ export class MgInputRadio {
   * @param event
   */
   private handleInput = (event:InputEvent & { target: HTMLInputElement }) => {
-    const eventValue = event.target.value;
     this.value = this.options
-      .find(o => o.value.toString() === eventValue)?.value;
+      .find(o => o.value.toString() === event.target.value)?.value;
     this.valueChange.emit(this.value);
   }
 

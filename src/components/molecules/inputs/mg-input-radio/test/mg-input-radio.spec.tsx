@@ -11,10 +11,9 @@ const getPage = (args) => newSpecPage({
 describe('mg-input-radio', () => {
   test.each([
     {label: 'label', identifier: "identifier", items: ['batman', 'robin', 'jocker', 'bane']},
-    {label: 'label', identifier: "identifier", items: [true, false]},
-    {label: 'label', identifier: "identifier", items: [1, 2, 3]},
-    {label: 'label', identifier: "identifier", items: [true, 1, 'batman']},
     {label: 'label', identifier: "identifier", items: [{ title: 'batman', value: 'u' },{ title: 'robin', value: 'i' }, { title: 'jocker', value: 'o' }, { title: 'bane', value: 'a' }]},
+    {label: 'label', identifier: "identifier", items: [{ title: 'batman', value: 1 },{ title: 'robin', value: 2 }, { title: 'jocker', value: 3 }, { title: 'bane', value: 4 }]},
+    {label: 'label', identifier: "identifier", items: [{ title: 'batman', value: true },{ title: 'robin', value: false }, { title: 'jocker', value: false }, { title: 'bane', value: false }]},
     {label: 'label', identifier: "identifier", items: ['batman', 'robin', 'jocker', 'bane'], labelOnTop: true},
     {label: 'label', identifier: "identifier", items: ['batman', 'robin', 'jocker', 'bane'], labelColon: true},
     {label: 'label', identifier: "identifier", items: ['batman', 'robin', 'jocker', 'bane'], labelHide: true},
@@ -41,21 +40,23 @@ describe('mg-input-radio', () => {
   test.each([
     [['batman', {title:'batman', value:'batman'}]],
     [['batman', {batman:'batman'}]],
+    [[true, false]],
+    [[1, 2, 3]],
+    [[true, 1, 'batman']],
     [[{title:'batman', value:'batman'}, {batman:'batman'}]],
+    [[{title:'batman', value: undefined}, {title:'batman', value: 'test'}]],
   ])('Should throw error with invalid items property : %s', async (items) => {
     try {
       await getPage({label:'Label', items});
     }
     catch (err) {
-      expect(err.message).toMatch('<mg-input-radio> prop "items" is required and all items must be the same type, string or Option.')
+      expect(err.message).toMatch('<mg-input-radio> prop "items" is required and all items must be the same type, string or RadioOption.')
     }
   });
 
 
     test.each([
       {items: ['batman', 'robin', 'jocker', 'bane'], inputValue: 'batman'},
-      {items: [true, false], inputValue: true},
-      {items: [1, 2, 3], inputValue: 1},
       {items: [{ title: 'batman', value: 'u' },{ title: 'robin', value: 'i' }, { title: 'jocker', value: 'o' }, { title: 'bane', value: 'a' }], inputValue: 'a'},
       {items: [{ title: 'batman', value: 1 },{ title: 'robin', value: 2 }, { title: 'jocker', value: 3 }, { title: 'bane', value: 4 }], inputValue: 1},
       {items: [{ title: 'batman', value: true },{ title: 'robin', value: false }], inputValue: true}

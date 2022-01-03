@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-12-23T16:47:27",
+  "timestamp": "2022-01-03T16:15:20",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.12.0",
@@ -1336,23 +1336,17 @@
         },
         {
           "name": "items",
-          "type": "(string | number | boolean)[] | RadioOption[]",
+          "type": "RadioOption[] | string[]",
           "mutable": false,
           "reflectToAttr": false,
           "docs": "Items are the possible options to select\nRequired",
           "docsTags": [],
           "values": [
             {
-              "type": "(string"
-            },
-            {
-              "type": "number"
-            },
-            {
-              "type": "boolean)[]"
-            },
-            {
               "type": "RadioOption[]"
+            },
+            {
+              "type": "string[]"
             }
           ],
           "optional": false,

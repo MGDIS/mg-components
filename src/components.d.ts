@@ -280,7 +280,7 @@ export namespace Components {
         /**
           * Items are the possible options to select Required
          */
-        "items": (string|boolean|number)[] | RadioOption[];
+        "items": string[] | RadioOption[];
         /**
           * Input label Required
          */
@@ -1005,7 +1005,7 @@ declare namespace LocalJSX {
         /**
           * Items are the possible options to select Required
          */
-        "items": (string|boolean|number)[] | RadioOption[];
+        "items": string[] | RadioOption[];
         /**
           * Input label Required
          */
