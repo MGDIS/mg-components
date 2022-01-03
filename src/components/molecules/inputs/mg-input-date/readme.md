@@ -12,7 +12,6 @@ This atom refers to the [PDA9-65](https://jira.mgdis.fr/browse/PDA9-65).
 | `identifier`         | `identifier`   | Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created. | `string`  | `createID('mg-input-date')` |
 | `invalid`            | `invalid`      | Define input pattern error message                                                                          | `boolean` | `undefined`                 |
 | `label` _(required)_ | `label`        | Input label Required                                                                                        | `string`  | `undefined`                 |
-| `labelColon`         | `label-colon`  | Define if label has colon ":"                                                                               | `boolean` | `false`                     |
 | `labelHide`          | `label-hide`   | Define if label is visible                                                                                  | `boolean` | `false`                     |
 | `labelOnTop`         | `label-on-top` | Define if label is displayed on top                                                                         | `boolean` | `undefined`                 |
 | `name`               | `name`         | Input name If not set the value equals the identifier                                                       | `string`  | `this.identifier`           |

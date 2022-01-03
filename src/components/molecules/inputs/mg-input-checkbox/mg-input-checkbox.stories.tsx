@@ -10,8 +10,7 @@ export default {
   label="Label"
   tooltip="This is a tooltip"
   help-text="Help text with html <strong>bold</strong>, <em>italic</em>."
-  required
-  has-colon></mg-input-checkbox>`,
+  required></mg-input-checkbox>`,
       },
     },
   },
@@ -31,7 +30,6 @@ const Template = args => (
   <mg-input-checkbox
     {...args}
     label-on-top={args.labelOnTop}
-    label-colon={args.labelColon}
     help-text={args.helpText}
   ></mg-input-checkbox>
 );
@@ -45,7 +43,6 @@ MgInputCheckbox.args = {
   // Label
   label: 'Label',
   labelOnTop: false,
-  labelColon: true,
   // Input
   required: true,
   disabled: false,

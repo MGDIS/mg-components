@@ -13,7 +13,6 @@
 | `indeterminate`      | `indeterminate` | Manage indeterminate state                                                                                  | `boolean` | `false`                         |
 | `invalid`            | `invalid`       | Force invalid component                                                                                     | `boolean` | `undefined`                     |
 | `label` _(required)_ | `label`         | Input label Required                                                                                        | `string`  | `undefined`                     |
-| `labelColon`         | `label-colon`   | Define if label has colon ":"                                                                               | `boolean` | `false`                         |
 | `labelHide`          | `label-hide`    | Define if label is visible                                                                                  | `boolean` | `false`                         |
 | `labelOnTop`         | `label-on-top`  | Define if label is displayed on top                                                                         | `boolean` | `undefined`                     |
 | `name`               | `name`          | Input name If not set the value equals the identifier                                                       | `string`  | `this.identifier`               |

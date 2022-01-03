@@ -37,7 +37,6 @@ interface MgInputProps {
   // Label
   label: string;
   labelOnTop: boolean;
-  labelColon: boolean;
   labelHide: boolean;
   isFieldset: boolean;
   // Input
@@ -142,7 +141,6 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
       <mg-input-title
         identifier={props.identifier}
         class={props.labelHide ? "sr-only" : undefined}
-        colon={props.labelColon}
         required={props.required}
         is-legend={props.isFieldset}
       >

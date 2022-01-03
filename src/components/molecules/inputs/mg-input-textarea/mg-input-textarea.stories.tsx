@@ -13,8 +13,6 @@ export default {
   // Extract slot so it won't be render as an attribute
   const labelOnTop = args.labelOnTop;
   delete args.labelOnTop;
-  const labelColon = args.labelColon;
-  delete args.labelColon;
   const labelHide = args.labelHide;
   delete args.labelHide;
   const patternErrorMessage = args.patternErrorMessage;
@@ -29,7 +27,6 @@ export default {
   return <mg-input-textarea
     {...args}
     label-on-top={labelOnTop}
-    label-colon={labelColon}
     label-hide={labelHide}
     pattern-error-message={patternErrorMessage}
     display-character-left={displayCharacterLeft}
@@ -47,7 +44,6 @@ MgInputTextarea.args = {
   // Label
   label: 'Label',
   labelOnTop: false,
-  labelColon: true,
   labelHide: false,
   // Input
   placeholder: 'placeholder',

@@ -13,7 +13,6 @@ describe('mg-input-radio', () => {
     {label: 'label', identifier: "identifier", items: ['batman', 'robin', 'jocker', 'bane']},
     {label: 'label', identifier: "identifier", items: [{ title: 'batman', value: 'u' },{ title: 'robin', value: 'i' }, { title: 'jocker', value: 'o' }, { title: 'bane', value: 'a' }]},
     {label: 'label', identifier: "identifier", items: ['batman', 'robin', 'jocker', 'bane'], labelOnTop: true},
-    {label: 'label', identifier: "identifier", items: ['batman', 'robin', 'jocker', 'bane'], labelColon: true},
     {label: 'label', identifier: "identifier", items: ['batman', 'robin', 'jocker', 'bane'], labelHide: true},
     {label: 'label', identifier: "identifier", items: ['batman', 'robin', 'jocker', 'bane'], inputVerticalList: true},
     {label: 'label', identifier: "identifier", items: ['batman', 'robin', 'jocker', 'bane'], required: true},

@@ -6,7 +6,7 @@ describe('mg-input-text', () => {
     `<mg-input-text label="label"></mg-input-text>`,
     `<mg-input-text label="label" label-on-top></mg-input-text>`,
     `<mg-input-text label="label" label-hide></mg-input-text>`,
-    `<mg-input-text label="label" label-colon placeholder="placeholder" help-text="HelpText Message"></mg-input-text>`
+    `<mg-input-text label="label" placeholder="placeholder" help-text="HelpText Message"></mg-input-text>`
   ])('without tooltip', (html)=>{
     test('render', async () => {
       const page = await createPage(html);
