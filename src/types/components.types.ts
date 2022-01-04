@@ -1,13 +1,23 @@
 
 /**
- * type Option
- * use to match radio, select>option attributes
+ * type SelectOption
+ * use to match select>option attributes
  */
-export type Option = {
+export type SelectOption = {
   title: string,
   value: string,
   disabled?: boolean,
   group?: string
+};
+
+/**
+ * type RadioOption
+ * use to match radio attributes
+ */
+ export type RadioOption = {
+  title: string,
+  value: any,
+  disabled?: boolean,
 };
 
 /**
@@ -16,5 +26,5 @@ export type Option = {
  */
 export type OptGroup = {
   group: string,
-  options: Option[]
+  options: SelectOption[]
 };

@@ -2,7 +2,7 @@ import { Component, Event, h, Prop, State, EventEmitter, Watch } from '@stencil/
 import { MgInput } from '../MgInput';
 import { createID, ClassList } from '../../../../utils/components.utils';
 import { messages } from '../../../../locales';
-import { Option, OptGroup }from '../../../../types/components.types';
+import { SelectOption, OptGroup }from '../../../../types/components.types';
 
 @Component({
   tag: 'mg-input-select',
@@ -30,7 +30,7 @@ export class MgInputSelect {
   /**
    * Items are the possible options to select
    */
-  @Prop() items!: string[] | Option[];
+  @Prop() items!: string[] | SelectOption[];
   @Watch('items')
   validateItems(newValue){
     // String array
@@ -38,7 +38,7 @@ export class MgInputSelect {
       this.options = newValue.map(item=>({ title:item, value:item }));
     }
     // Object array
-    else if(newValue && (newValue as Array<Option>).every((item) => (typeof item === 'object' && typeof item.title === 'string' && item.value !== undefined ))) {
+    else if(newValue && (newValue as Array<SelectOption>).every((item) => (typeof item === 'object' && typeof item.title === 'string' && item.value !== undefined ))) {
       // Grouped object options
       if(newValue.some((item)=>(item.group !== undefined))) {
         this.options = newValue.reduce((acc, {group, title, value, disabled})=>{
@@ -158,7 +158,7 @@ export class MgInputSelect {
    * Formated items for display
    */
 
-  @State() options: (Option|OptGroup)[];
+  @State() options: (SelectOption|OptGroup)[];
 
   /**
    * Emmited event when value change
@@ -268,8 +268,8 @@ export class MgInputSelect {
                   <option value={optgroup.value} selected={this.value===optgroup.value} disabled={optgroup.disabled}>{optgroup.title}</option>
                 )}
               </optgroup>
-            : <option value={(option as Option).value} selected={this.value===(option as Option).value} disabled={(option as Option).disabled}>
-                {(option as Option).title}
+            : <option value={(option as SelectOption).value} selected={this.value===(option as SelectOption).value} disabled={(option as SelectOption).disabled}>
+                {(option as SelectOption).title}
               </option>
           )}
         </select>
