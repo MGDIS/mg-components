@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { Option } from "./types/components.types";
+import { RadioOption, SelectOption } from "./types/components.types";
 export namespace Components {
     interface MgButton {
         /**
@@ -268,7 +268,7 @@ export namespace Components {
         /**
           * Items are the possible options to select Required
          */
-        "items": string[] | Option[];
+        "items": string[] | RadioOption[];
         /**
           * Input label Required
          */
@@ -304,7 +304,7 @@ export namespace Components {
         /**
           * Component value
          */
-        "value"?: string;
+        "value"?: any;
     }
     interface MgInputSelect {
         /**
@@ -326,7 +326,7 @@ export namespace Components {
         /**
           * Items are the possible options to select
          */
-        "items": string[] | Option[];
+        "items": string[] | SelectOption[];
         /**
           * Input label Required
          */
@@ -961,7 +961,7 @@ declare namespace LocalJSX {
         /**
           * Items are the possible options to select Required
          */
-        "items": string[] | Option[];
+        "items": string[] | RadioOption[];
         /**
           * Input label Required
          */
@@ -981,7 +981,7 @@ declare namespace LocalJSX {
         /**
           * Emitted event when value change
          */
-        "onValueChange"?: (event: CustomEvent<string>) => void;
+        "onValueChange"?: (event: CustomEvent<any>) => void;
         /**
           * Define if input is readonly
          */
@@ -1001,7 +1001,7 @@ declare namespace LocalJSX {
         /**
           * Component value
          */
-        "value"?: string;
+        "value"?: any;
     }
     interface MgInputSelect {
         /**
@@ -1023,7 +1023,7 @@ declare namespace LocalJSX {
         /**
           * Items are the possible options to select
          */
-        "items": string[] | Option[];
+        "items": string[] | SelectOption[];
         /**
           * Input label Required
          */
