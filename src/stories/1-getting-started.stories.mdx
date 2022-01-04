@@ -79,7 +79,50 @@ import Vue from 'vue';
 Vue.config.ignoredElements = [/mg-\w*/];
 ```
 
-<!--
- TODO
- ### Angular.js
- -->
+### Angular.js
+
+#### Adding the lib
+
+Add MG Components to your project.
+
+```bash
+npm install -D @mgdis/mg-components
+```
+
+Import the lib by adding this code in the `app.js` file:
+
+```js
+import { applyPolyfills, defineCustomElements } from '@mgdis/mg-components/loader';
+
+// Bind the custom elements to the window object
+applyPolyfills().then(() => {
+  defineCustomElements();
+});
+```
+
+The `mg-components` components are now globally available in you project, no need to import them individually in your components.
+
+You need now to import the components style by adding the mg-components variables or directly the stylesheet who came with in the `app.js` file :
+
+```js
+import '@mgdis/mg-components/dist/mg-components/variables.scss';
+import '@mgdis/mg-components/dist/mg-components/mg-components.css';
+```
+
+#### Use the lib
+
+##### Bind
+
+To bind a value in a web component we have to use the Angular.js [`ng-prop-`](https://docs.angularjs.org/api/ng/directive/ngProp) directive:
+
+```html
+<mg-input-text ng-prop-readonly="readOnly" ng-prop-value="user.firstname" label="Firstname" identifier="firstname"></mg-input-text>
+```
+
+##### ng-model
+
+`ng-model` can not be used in web components so we must set the value and the use the custum event `valueChange` with the [`ng-on-`](https://docs.angularjs.org/api/ng/directive/ngOn) directive :
+
+```html
+<mg-input-text ng-prop-value="user.firstname" label="Firstname" ng-on-value_change="user.firstname = $event.target.value"></mg-input-text>
+```
