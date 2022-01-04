@@ -102,7 +102,7 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
 
   // Help text
   const helpTextId = `${props.identifier}-help-text`;
-  if(props.classList.has('is-focused') && typeof props.helpText === 'string' && props.helpText !== ''){
+  if(typeof props.helpText === 'string' && props.helpText !== ''){
     ariaDescribedbyIDs.add(helpTextId);
   }
 

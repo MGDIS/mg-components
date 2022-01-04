@@ -22,8 +22,7 @@ export class MgInputRadio {
    * Internal *
    ************/
 
-   private classFocus = 'is-focused';
-   private classError = 'is-not-valid';
+  private classError = 'is-not-valid';
 
   /**************
   * Decorators *
@@ -153,23 +152,10 @@ export class MgInputRadio {
   }
 
   /**
-  * Handle focus event
-  */
-  private handleFocus = () => {
-    this.classList.add(this.classFocus);
-    this.classList = new ClassList(this.classList.classes);
-  }
-
-  /**
   * Handle blur event
   * @param event
   */
   private handleBlur = (event:FocusEvent) => {
-    // Manage focus
-    this.classList.delete(this.classFocus);
-    this.classList = new ClassList(this.classList.classes);
-
-  // Check validity
     this.checkValidity(event.target);
   }
 
@@ -238,7 +224,6 @@ export class MgInputRadio {
                 checked={input.value === this.value}
                 disabled={this.disabled || input.disabled}
                 required={this.required}
-                onFocus={this.handleFocus}
                 onBlur={this.handleBlur}
                 onInput={this.handleInput}
               />

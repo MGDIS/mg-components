@@ -15,7 +15,6 @@ export class MgInputSelect {
    * Internal *
    ************/
 
-  private classFocus = 'is-focused';
   private classError = 'is-not-valid';
 
   /**************
@@ -170,22 +169,10 @@ export class MgInputSelect {
    }
 
   /**
-   * Handle focus event
-   */
-  private handleFocus = () => {
-    this.classList.add(this.classFocus);
-    this.classList = new ClassList(this.classList.classes);
-  }
-
-  /**
    * Handle blur event
    * @param event
    */
   private handleBlur = (event:FocusEvent) => {
-    // Manage focus
-    this.classList.delete(this.classFocus);
-    this.classList = new ClassList(this.classList.classes);
-    // Check validity
     this.checkValidity(event.target);
   }
 
@@ -251,7 +238,6 @@ export class MgInputSelect {
           disabled={this.disabled}
           required={this.required}
           onInput={this.handleInput}
-          onFocus={this.handleFocus}
           onBlur={this.handleBlur}
         >
           <option value="">{this.placeholder}</option>
