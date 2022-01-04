@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-01-04T13:18:42",
+  "timestamp": "2022-01-04T13:48:11",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.12.0",
@@ -1345,14 +1345,14 @@
         },
         {
           "name": "items",
-          "type": "Option[] | string[]",
+          "type": "RadioOption[] | string[]",
           "mutable": false,
           "reflectToAttr": false,
           "docs": "Items are the possible options to select\nRequired",
           "docsTags": [],
           "values": [
             {
-              "type": "Option[]"
+              "type": "RadioOption[]"
             },
             {
               "type": "string[]"
@@ -1513,7 +1513,7 @@
         },
         {
           "name": "value",
-          "type": "string",
+          "type": "any",
           "mutable": true,
           "attr": "value",
           "reflectToAttr": true,
@@ -1521,7 +1521,7 @@
           "docsTags": [],
           "values": [
             {
-              "type": "string"
+              "type": "any"
             }
           ],
           "optional": true,
@@ -1532,7 +1532,7 @@
       "events": [
         {
           "event": "valueChange",
-          "detail": "string",
+          "detail": "any",
           "bubbles": true,
           "cancelable": true,
           "composed": true,
@@ -1637,14 +1637,14 @@
         },
         {
           "name": "items",
-          "type": "Option[] | string[]",
+          "type": "SelectOption[] | string[]",
           "mutable": false,
           "reflectToAttr": false,
           "docs": "Items are the possible options to select",
           "docsTags": [],
           "values": [
             {
-              "type": "Option[]"
+              "type": "SelectOption[]"
             },
             {
               "type": "string[]"
