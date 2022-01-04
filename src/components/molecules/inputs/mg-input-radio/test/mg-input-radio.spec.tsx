@@ -77,7 +77,6 @@ describe('mg-input-radio', () => {
 
     input.dispatchEvent(new CustomEvent('focus', { bubbles: true }));
     await page.waitForChanges();
-    expect(page.rootInstance.classList.has('is-focused')).toBeTruthy();
 
     expect(page.root).toMatchSnapshot(); //Snapshot on focus
 
@@ -85,11 +84,6 @@ describe('mg-input-radio', () => {
     input.dispatchEvent(new CustomEvent('input', { bubbles: true }));
     await page.waitForChanges();
     expect(page.rootInstance.valueChange.emit).toHaveBeenCalledWith(inputValue);
-
-    input.dispatchEvent(new CustomEvent('blur', { bubbles: true }));
-    await page.waitForChanges();
-    expect(page.rootInstance.classList.has('is-focused')).toBeFalsy();
-    expect(page.root).toMatchSnapshot(); //Snapshot on blur
   });
 
   test.each([
