@@ -10,17 +10,8 @@ export const icons:Object = {
   warning: () => <path fill="currentColor" d="M0,484H512L256,8.51Zm283.46-72.92H228.62V356h54.84Zm0-91.14H228.62V209.63h54.84Z"/>,
   cross: () => <path fill="currentColor" d="M512,51.58,460.42,0,256,204.42,51.58,0,0,51.58,204.42,256,0,460.42,51.58,512,256,307.58,460.42,512,512,460.42,307.58,256Z"/>,
   loader: () => [
-    <path fill="currentColor" class="loader--opacity" d="M8,2.67A5.33,5.33,0,1,1,2.67,8,5.33,5.33,0,0,1,8,2.67m0-2A7.33,7.33,0,1,0,15.33,8,7.33,7.33,0,0,0,8,.67Z"/>,
-    <path fill="currentColor" d="M8,2.67v-2A7.33,7.33,0,0,0,.67,8h2A5.33,5.33,0,0,1,8,2.67Z">
-      <animateTransform
-          attributeName="transform"
-          attributeType="XML"
-          type="rotate"
-          dur="5s"
-          from="0 8 8"
-          to="360 8 8"
-          repeatCount="indefinite" />
-    </path>
+    <path fill="currentColor" class="loader--opacity" d="M256,85.44A170.56,170.56,0,1,1,85.44,256h0A170.56,170.56,0,0,1,256,85.44m0-64c-129.54,0-234.56,105-234.56,234.56S126.46,490.56,256,490.56,490.56,385.54,490.56,256,385.54,21.44,256,21.44Z"/>,
+    <path fill="currentColor" d="M256,85.44v-64c-129.54,0-234.56,105-234.56,234.56h64A170.56,170.56,0,0,1,256,85.44Z" />
   ]
 }
 

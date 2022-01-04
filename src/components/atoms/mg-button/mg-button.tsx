@@ -34,10 +34,15 @@ export class MgButton {
    @Prop() label: string;
 
   /**
-   * Disable button
-   */
-   @Prop({mutable: true, reflect: true}) disabled: boolean = false;
-
+  * Disable button
+  */
+  @Prop({mutable: true, reflect: true}) disabled: boolean = false;
+  @Watch('disabled')
+  disabledHandler(newValue: boolean) {
+    // Used to revert multi-click
+    if(!this.disableOnClick) return;
+    this.loading = newValue;
+  }
    /**
    * Define if button is round.
    * Used for icon button.
@@ -55,26 +60,31 @@ export class MgButton {
   * Trigger when button is clicked or key-up ['enter', 'space], then value change to true.
   * It's required to reset to false when action/promise in parent is done to stop the loading state
    */
-  @Prop({reflect: true, mutable: true}) loading: boolean = false;
+  @State() loading: boolean = false;
   @Watch('loading')
   loadingHandler(newValue: boolean) {
     // we add loading style if it newvalue is true else we remove it
-    if (newValue === true) {
+    if (newValue) {
       this.classList.add('mg-button--loading');
-    } else {
-      this.classList.delete('mg-button--loading');
+      return;
     }
-
-    // Used to prevent multi-click.
-    if(this.disableOnClick) {
-      this.disabled = newValue;
-    }
+    this.classList.delete('mg-button--loading');
   }
 
   /**
    * Component classes
    */
   @State() classList: ClassList = new ClassList(['mg-button']);
+
+  /**
+   * Trigger actions onClick event
+   */
+   private handleClick = () => {
+    // Used to prevent multi-click.
+    if(!this.disableOnClick) return;
+    this.loading = true;
+    this.disabled = true;
+  }
 
   /**
    * Check if props are well configured on init
@@ -87,13 +97,6 @@ export class MgButton {
         throw new Error(`<mg-button> prop "label" is mandatory when prop "isIcon" is set to true.`);
       }
     }
-  }
-
-  /**
-   * Trigger actions onClick event
-   */
-  private handleClick = () => {
-    this.loading = true;
   }
 
   /**
@@ -111,7 +114,6 @@ export class MgButton {
           {this.loading ?
             <mg-icon
               icon="loader"
-              size="regular"
             ></mg-icon>
             : null
           }

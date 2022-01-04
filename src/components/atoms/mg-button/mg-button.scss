@@ -47,6 +47,7 @@
   line-height: var(--line-height);
   // Other
   touch-action: manipulation;
+  position: relative;
 
   // Disabled style
   &[disabled],
@@ -87,14 +88,14 @@
   }
 
   &--loading {
-    display: flex;
-    flex-direction: column;
     .mg-button__content {
-      height: 0;
-      visibility: hidden;
+      opacity: 0;
     }
-    mg-icon {
-      margin: auto 0;
+    mg-icon:first-child {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
     }
   }
 }

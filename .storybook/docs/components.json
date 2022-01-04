@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-12-24T14:40:51",
+  "timestamp": "2022-01-04T13:18:42",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.12.0",
@@ -94,23 +94,6 @@
           "values": [
             {
               "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "loading",
-          "type": "boolean",
-          "mutable": true,
-          "attr": "loading",
-          "reflectToAttr": true,
-          "docs": "Define if button is loading, default to false.\nTrigger when button is clicked or key-up ['enter', 'space], then value change to true.\nIt's required to reset to false when action/promise in parent is done to stop the loading state",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
             }
           ],
           "optional": false,

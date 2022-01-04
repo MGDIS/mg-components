@@ -25,6 +25,23 @@ mg-icon,
   line-height: 1;
 }
 
-.loader--opacity {
-  opacity:0.2;
+/**
+* Loader
+**/
+
+.mg-icon.mg-icon--loader {
+  animation-name: rotate;
+  animation-duration: .75s;
+  animation-iteration-count: infinite;
+  .loader--opacity {
+    opacity:.2;
+  }
+}
+
+/**
+* Animations
+**/
+
+@keyframes rotate {
+  to { transform: rotate(360deg); }
 }

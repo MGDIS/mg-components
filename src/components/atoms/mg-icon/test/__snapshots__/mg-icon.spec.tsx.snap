@@ -94,10 +94,8 @@ exports[`mg-icon Should render loader icon in large size 1`] = `
 <mg-icon>
   <mock:shadow-root>
     <svg aria-hidden="true" class="mg-icon mg-icon--large mg-icon--loader" focusable="false" viewBox="0 0 512 512">
-      <path class="loader--opacity" d="M8,2.67A5.33,5.33,0,1,1,2.67,8,5.33,5.33,0,0,1,8,2.67m0-2A7.33,7.33,0,1,0,15.33,8,7.33,7.33,0,0,0,8,.67Z" fill="currentColor"></path>
-      <path d="M8,2.67v-2A7.33,7.33,0,0,0,.67,8h2A5.33,5.33,0,0,1,8,2.67Z" fill="currentColor">
-        <animateTransform attributeName="transform" attributeType="XML" dur="5s" from="0 8 8" repeatCount="indefinite" to="360 8 8" type="rotate"></animateTransform>
-      </path>
+      <path class="loader--opacity" d="M256,85.44A170.56,170.56,0,1,1,85.44,256h0A170.56,170.56,0,0,1,256,85.44m0-64c-129.54,0-234.56,105-234.56,234.56S126.46,490.56,256,490.56,490.56,385.54,490.56,256,385.54,21.44,256,21.44Z" fill="currentColor"></path>
+      <path d="M256,85.44v-64c-129.54,0-234.56,105-234.56,234.56h64A170.56,170.56,0,0,1,256,85.44Z" fill="currentColor"></path>
     </svg>
   </mock:shadow-root>
 </mg-icon>
@@ -107,10 +105,8 @@ exports[`mg-icon Should render loader icon in regular size 1`] = `
 <mg-icon>
   <mock:shadow-root>
     <svg aria-hidden="true" class="mg-icon mg-icon--loader mg-icon--regular" focusable="false" viewBox="0 0 512 512">
-      <path class="loader--opacity" d="M8,2.67A5.33,5.33,0,1,1,2.67,8,5.33,5.33,0,0,1,8,2.67m0-2A7.33,7.33,0,1,0,15.33,8,7.33,7.33,0,0,0,8,.67Z" fill="currentColor"></path>
-      <path d="M8,2.67v-2A7.33,7.33,0,0,0,.67,8h2A5.33,5.33,0,0,1,8,2.67Z" fill="currentColor">
-        <animateTransform attributeName="transform" attributeType="XML" dur="5s" from="0 8 8" repeatCount="indefinite" to="360 8 8" type="rotate"></animateTransform>
-      </path>
+      <path class="loader--opacity" d="M256,85.44A170.56,170.56,0,1,1,85.44,256h0A170.56,170.56,0,0,1,256,85.44m0-64c-129.54,0-234.56,105-234.56,234.56S126.46,490.56,256,490.56,490.56,385.54,490.56,256,385.54,21.44,256,21.44Z" fill="currentColor"></path>
+      <path d="M256,85.44v-64c-129.54,0-234.56,105-234.56,234.56h64A170.56,170.56,0,0,1,256,85.44Z" fill="currentColor"></path>
     </svg>
   </mock:shadow-root>
 </mg-icon>
@@ -120,10 +116,8 @@ exports[`mg-icon Should render loader icon in small size 1`] = `
 <mg-icon>
   <mock:shadow-root>
     <svg aria-hidden="true" class="mg-icon mg-icon--loader mg-icon--small" focusable="false" viewBox="0 0 512 512">
-      <path class="loader--opacity" d="M8,2.67A5.33,5.33,0,1,1,2.67,8,5.33,5.33,0,0,1,8,2.67m0-2A7.33,7.33,0,1,0,15.33,8,7.33,7.33,0,0,0,8,.67Z" fill="currentColor"></path>
-      <path d="M8,2.67v-2A7.33,7.33,0,0,0,.67,8h2A5.33,5.33,0,0,1,8,2.67Z" fill="currentColor">
-        <animateTransform attributeName="transform" attributeType="XML" dur="5s" from="0 8 8" repeatCount="indefinite" to="360 8 8" type="rotate"></animateTransform>
-      </path>
+      <path class="loader--opacity" d="M256,85.44A170.56,170.56,0,1,1,85.44,256h0A170.56,170.56,0,0,1,256,85.44m0-64c-129.54,0-234.56,105-234.56,234.56S126.46,490.56,256,490.56,490.56,385.54,490.56,256,385.54,21.44,256,21.44Z" fill="currentColor"></path>
+      <path d="M256,85.44v-64c-129.54,0-234.56,105-234.56,234.56h64A170.56,170.56,0,0,1,256,85.44Z" fill="currentColor"></path>
     </svg>
   </mock:shadow-root>
 </mg-icon>
