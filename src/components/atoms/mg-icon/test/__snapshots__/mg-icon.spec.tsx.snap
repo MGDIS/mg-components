@@ -93,8 +93,8 @@ exports[`mg-icon Should render info icon in small size 1`] = `
 exports[`mg-icon Should render loader icon in large size 1`] = `
 <mg-icon>
   <mock:shadow-root>
-    <svg aria-hidden="true" class="mg-icon mg-icon--large mg-icon--loader" focusable="false" viewBox="0 0 512 512">
-      <path class="loader--opacity" d="M256,85.44A170.56,170.56,0,1,1,85.44,256h0A170.56,170.56,0,0,1,256,85.44m0-64c-129.54,0-234.56,105-234.56,234.56S126.46,490.56,256,490.56,490.56,385.54,490.56,256,385.54,21.44,256,21.44Z" fill="currentColor"></path>
+    <svg aria-hidden="true" class="mg-icon mg-icon--large mg-icon--loader mg-icon--spin" focusable="false" viewBox="0 0 512 512">
+      <path class="loader__full-circle" d="M256,85.44A170.56,170.56,0,1,1,85.44,256h0A170.56,170.56,0,0,1,256,85.44m0-64c-129.54,0-234.56,105-234.56,234.56S126.46,490.56,256,490.56,490.56,385.54,490.56,256,385.54,21.44,256,21.44Z" fill="currentColor"></path>
       <path d="M256,85.44v-64c-129.54,0-234.56,105-234.56,234.56h64A170.56,170.56,0,0,1,256,85.44Z" fill="currentColor"></path>
     </svg>
   </mock:shadow-root>
@@ -104,8 +104,8 @@ exports[`mg-icon Should render loader icon in large size 1`] = `
 exports[`mg-icon Should render loader icon in regular size 1`] = `
 <mg-icon>
   <mock:shadow-root>
-    <svg aria-hidden="true" class="mg-icon mg-icon--loader mg-icon--regular" focusable="false" viewBox="0 0 512 512">
-      <path class="loader--opacity" d="M256,85.44A170.56,170.56,0,1,1,85.44,256h0A170.56,170.56,0,0,1,256,85.44m0-64c-129.54,0-234.56,105-234.56,234.56S126.46,490.56,256,490.56,490.56,385.54,490.56,256,385.54,21.44,256,21.44Z" fill="currentColor"></path>
+    <svg aria-hidden="true" class="mg-icon mg-icon--loader mg-icon--regular mg-icon--spin" focusable="false" viewBox="0 0 512 512">
+      <path class="loader__full-circle" d="M256,85.44A170.56,170.56,0,1,1,85.44,256h0A170.56,170.56,0,0,1,256,85.44m0-64c-129.54,0-234.56,105-234.56,234.56S126.46,490.56,256,490.56,490.56,385.54,490.56,256,385.54,21.44,256,21.44Z" fill="currentColor"></path>
       <path d="M256,85.44v-64c-129.54,0-234.56,105-234.56,234.56h64A170.56,170.56,0,0,1,256,85.44Z" fill="currentColor"></path>
     </svg>
   </mock:shadow-root>
@@ -115,8 +115,8 @@ exports[`mg-icon Should render loader icon in regular size 1`] = `
 exports[`mg-icon Should render loader icon in small size 1`] = `
 <mg-icon>
   <mock:shadow-root>
-    <svg aria-hidden="true" class="mg-icon mg-icon--loader mg-icon--small" focusable="false" viewBox="0 0 512 512">
-      <path class="loader--opacity" d="M256,85.44A170.56,170.56,0,1,1,85.44,256h0A170.56,170.56,0,0,1,256,85.44m0-64c-129.54,0-234.56,105-234.56,234.56S126.46,490.56,256,490.56,490.56,385.54,490.56,256,385.54,21.44,256,21.44Z" fill="currentColor"></path>
+    <svg aria-hidden="true" class="mg-icon mg-icon--loader mg-icon--small mg-icon--spin" focusable="false" viewBox="0 0 512 512">
+      <path class="loader__full-circle" d="M256,85.44A170.56,170.56,0,1,1,85.44,256h0A170.56,170.56,0,0,1,256,85.44m0-64c-129.54,0-234.56,105-234.56,234.56S126.46,490.56,256,490.56,490.56,385.54,490.56,256,385.54,21.44,256,21.44Z" fill="currentColor"></path>
       <path d="M256,85.44v-64c-129.54,0-234.56,105-234.56,234.56h64A170.56,170.56,0,0,1,256,85.44Z" fill="currentColor"></path>
     </svg>
   </mock:shadow-root>

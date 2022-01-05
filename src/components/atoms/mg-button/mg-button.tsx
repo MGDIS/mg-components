@@ -40,8 +40,9 @@ export class MgButton {
   @Watch('disabled')
   disabledHandler(newValue: boolean) {
     // Used to revert multi-click
-    if(!this.disableOnClick) return;
-    this.loading = newValue;
+    if(this.disableOnClick){
+      this.loading = newValue;
+    }
   }
    /**
    * Define if button is round.
@@ -66,9 +67,9 @@ export class MgButton {
     // we add loading style if it newvalue is true else we remove it
     if (newValue) {
       this.classList.add('mg-button--loading');
-      return;
+    } else {
+      this.classList.delete('mg-button--loading');
     }
-    this.classList.delete('mg-button--loading');
   }
 
   /**
@@ -81,9 +82,10 @@ export class MgButton {
    */
    private handleClick = () => {
     // Used to prevent multi-click.
-    if(!this.disableOnClick) return;
-    this.loading = true;
-    this.disabled = true;
+    if(this.disableOnClick) {
+      this.loading = true;
+      this.disabled = true;
+    }
   }
 
   /**

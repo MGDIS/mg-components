@@ -26,21 +26,22 @@ mg-icon,
 }
 
 /**
-* Loader
+* Loader icon
 **/
 
-.mg-icon.mg-icon--loader {
-  animation-name: rotate;
-  animation-duration: .75s;
-  animation-iteration-count: infinite;
-  .loader--opacity {
-    opacity:.2;
-  }
+.loader__full-circle {
+  opacity: .2;
 }
 
 /**
 * Animations
 **/
+
+.mg-icon--spin {
+  animation-name: rotate;
+  animation-duration: .75s;
+  animation-iteration-count: infinite;
+}
 
 @keyframes rotate {
   to { transform: rotate(360deg); }

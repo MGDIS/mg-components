@@ -87,6 +87,10 @@
     }
   }
 
+  &__content {
+    display: flex;
+  }
+
   &--loading {
     .mg-button__content {
       opacity: 0;
@@ -114,5 +118,6 @@ mg-button {
   mg-icon {
     display: inline-flex;
     line-height: 1;
+    margin: auto 0;
   }
 }
