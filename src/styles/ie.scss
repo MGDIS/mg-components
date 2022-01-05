@@ -1,0 +1,13 @@
+/**
+ * IE fixes goes here
+ * Will be removed when IE11 not supperted anymore by the company (June 15th 2022)
+ * https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/21
+ */
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .mg-group-elements {
+    & > *:not(:last-child) {
+      margin-right: 1rem !important;
+    }
+  }
+}

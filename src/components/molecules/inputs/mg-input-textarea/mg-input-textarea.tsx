@@ -145,8 +145,9 @@ export class MgInputTextarea {
    * @param event
    */
    private handleInput = (event:InputEvent & { target: HTMLInputElement }) => {
-    this.value = event.target.value;
-    this.valueChange.emit(this.value);
+    console.log(event.target);
+    // this.value = event.target.value;
+    // this.valueChange.emit(this.value);
   }
 
   /**
