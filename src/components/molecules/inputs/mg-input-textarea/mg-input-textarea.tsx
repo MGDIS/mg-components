@@ -145,9 +145,8 @@ export class MgInputTextarea {
    * @param event
    */
    private handleInput = (event:InputEvent & { target: HTMLInputElement }) => {
-    console.log(event.target);
-    // this.value = event.target.value;
-    // this.valueChange.emit(this.value);
+    this.value = event.target.value;
+    this.valueChange.emit(this.value);
   }
 
   /**
@@ -242,6 +241,7 @@ export class MgInputTextarea {
         isFieldset={false}
       >
         <textarea
+          value={this.value}
           id={this.identifier}
           name={this.name}
           placeholder={this.placeholder}
@@ -253,7 +253,7 @@ export class MgInputTextarea {
           onInput={this.handleInput}
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
-        >{this.value}</textarea>
+        ></textarea>
       </MgInput>
     );
   }
