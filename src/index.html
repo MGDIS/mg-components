@@ -257,25 +257,31 @@
           ];
         </script> -->
         <h2>.mg-form-group</h2>
-        <div class="mg-form-group">
-          <mg-input-text
-            placeholder="placeholder"
-            help-text="Message du mg-input-text"
-            label="Libellé du mg-input-text"
-            tooltip="message tooltip du mg-input-text"
-            value="blu"
-          ></mg-input-text>
+        <div class="mg-grid">
+          <div class="mg-grid__col mg-grid__col-10">
+            <div class="mg-form-group">
+              <mg-input-text
+                placeholder="placeholder"
+                help-text="Message du mg-input-text"
+                label="Libellé du mg-input-text"
+                tooltip="message tooltip du mg-input-text"
+                value="mg-blu"
+                readonly
+              ></mg-input-text>
+            </div>
+            <div class="mg-form-group">
+              <mg-input-textarea
+                placeholder="placeholder"
+                help-text="Message du mg-input-textarea"
+                label="Libellé plutôt du mg-input-textarea"
+                tooltip="message tooltip du mg-input-textarea"
+                value="mg-blu"
+                readonly
+              ></mg-input-textarea>
+            </div>
+          </div>
         </div>
-        <div class="mg-form-group">
-          <mg-input-textarea
-            placeholder="placeholder"
-            help-text="Message du mg-input-textarea"
-            label="Libellé plutôt du mg-input-textarea"
-            tooltip="message tooltip du mg-input-textarea"
-            value="blu"
-          ></mg-input-textarea>
-        </div>
-        <div class="mg-form-group">
+        <!-- <div class="mg-form-group">
           <mg-input-select
             placeholder="placeholder"
             help-text="Message du mg-input-select"
@@ -294,8 +300,8 @@
               { title: 'blo', value: 'bloblo' },
             ];
           </script>
-        </div>
-        <div class="mg-form-group">
+        </div> -->
+        <!-- <div class="mg-form-group">
           <mg-input-date
             placeholder="placeholder"
             help-text="Message du mg-input-date"
@@ -303,8 +309,8 @@
             tooltip="message tooltip du mg-input-date"
             value="1982-06-02"
           ></mg-input-date>
-        </div>
-        <div class="mg-form-group">
+        </div> -->
+        <!-- <div class="mg-form-group">
           <mg-input-numeric
             placeholder="placeholder"
             help-text="Message du mg-input-numeric"
@@ -312,9 +318,9 @@
             tooltip="message tooltip du mg-input-numeric"
             value="1234567890"
           ></mg-input-numeric>
-        </div>
+        </div> -->
       </section>
-      <section>
+      <!-- <section>
         <h2>.mg-grid</h2>
         <style>
           .mg-grid {
@@ -448,7 +454,7 @@
           <div class="mg-grid__col mg-grid__col-5">col-5</div>
           <div class="mg-grid__col">col</div>
         </div>
-      </section>
+      </section> -->
     </main>
   </body>
 </html>
