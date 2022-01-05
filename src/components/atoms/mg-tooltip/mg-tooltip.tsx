@@ -64,7 +64,11 @@ export class MgTooltip {
    * Hide tooltip
    * @returns {void}
    */
-  private hide = () => {
+    private hide = (event: UIEvent & KeyboardEvent) => {
+    // we continue to process ONLY for KeyboardEvents 'Escape'
+    if(event.constructor.name === 'KeyboardEvent' && event.code !== 'Escape') {
+      return;
+    }
     // Hide the tooltip
     this.tooltip.removeAttribute('data-show');
     // Disable the event listeners
@@ -135,7 +139,7 @@ export class MgTooltip {
       slotElement.addEventListener(event, this.show);
     });
 
-    ['mouseleave', 'blur'].forEach((event) => {
+    ['mouseleave', 'blur', 'keydown'].forEach((event) => {
       slotElement.addEventListener(event, this.hide);
     });
   }
