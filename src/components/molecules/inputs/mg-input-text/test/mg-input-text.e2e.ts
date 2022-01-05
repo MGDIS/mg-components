@@ -54,6 +54,7 @@ describe('mg-input-text', () => {
     `<mg-input-text label="label" readonly></mg-input-text>`,
     `<mg-input-text label="label" value="blu"></mg-input-text>`,
     `<mg-input-text label="label" value="blu" readonly></mg-input-text>`,
+    `<mg-input-text label="label" value="blu" readonly label-on-top></mg-input-text>`,
     `<mg-input-text label="label" disabled></mg-input-text>`,
   ])('Should render with template', (html)=>{
     test('render', async () => {
