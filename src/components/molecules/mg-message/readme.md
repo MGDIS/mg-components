@@ -25,6 +25,7 @@ This molecule refers to the [PDA9-140](https://jira.mgdis.fr/browse/PDA9-140).
 graph TD;
   mg-message --> mg-icon
   mg-message --> mg-button
+  mg-button --> mg-icon
   style mg-message fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

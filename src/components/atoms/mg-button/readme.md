@@ -21,9 +21,14 @@ This atom refers to the [PDA9-67](https://jira.mgdis.fr/browse/PDA9-67).
 
  - [mg-message](../../molecules/mg-message)
 
+### Depends on
+
+- [mg-icon](../mg-icon)
+
 ### Graph
 ```mermaid
 graph TD;
+  mg-button --> mg-icon
   mg-message --> mg-button
   style mg-button fill:#f9f,stroke:#333,stroke-width:4px
 ```

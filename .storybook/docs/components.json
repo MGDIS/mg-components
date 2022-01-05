@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-01-03T16:15:20",
+  "timestamp": "2022-01-04T16:52:19",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.12.0",
@@ -126,8 +126,13 @@
       "dependents": [
         "mg-message"
       ],
-      "dependencies": [],
+      "dependencies": [
+        "mg-icon"
+      ],
       "dependencyGraph": {
+        "mg-button": [
+          "mg-icon"
+        ],
         "mg-message": [
           "mg-button"
         ]
@@ -299,6 +304,7 @@
       "slots": [],
       "parts": [],
       "dependents": [
+        "mg-button",
         "mg-input-checkbox",
         "mg-input-date",
         "mg-input-numeric",
@@ -310,6 +316,9 @@
       ],
       "dependencies": [],
       "dependencyGraph": {
+        "mg-button": [
+          "mg-icon"
+        ],
         "mg-input-checkbox": [
           "mg-icon"
         ],
@@ -2826,6 +2835,9 @@
         "mg-message": [
           "mg-icon",
           "mg-button"
+        ],
+        "mg-button": [
+          "mg-icon"
         ]
       }
     },
