@@ -6,7 +6,7 @@ describe('mg-input-textarea', () => {
     `<mg-input-textarea label="label"></mg-input-textarea>`,
     `<mg-input-textarea label="label" label-on-top></mg-input-textarea>`,
     `<mg-input-textarea label="label" label-hide></mg-input-textarea>`,
-    `<mg-input-textarea label="label" label-colon placeholder="placeholder" help-text="HelpText Message"></mg-input-textarea>`
+    `<mg-input-textarea label="label" placeholder="placeholder" help-text="HelpText Message"></mg-input-textarea>`
   ])('without tooltip', (html)=>{
     test('render', async () => {
       const page = await createPage(html);

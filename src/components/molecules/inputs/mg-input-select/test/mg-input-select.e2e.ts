@@ -45,7 +45,7 @@ describe('mg-input-select', () => {
   describe.each([
     `<mg-input-select label="label" label-on-top></mg-input-select>`,
     `<mg-input-select label="label" label-hide></mg-input-select>`,
-    `<mg-input-select label="label" label-colon placeholder="placeholder" help-text="HelpText Message"></mg-input-select>`
+    `<mg-input-select label="label" placeholder="placeholder" help-text="HelpText Message"></mg-input-select>`
   ])('without tooltip', (html)=>{
     test('render', async () => {
       const page = await createPage(`${html}

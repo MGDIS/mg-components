@@ -93,11 +93,6 @@ export class MgInputSelect {
   @Prop() labelOnTop: boolean;
 
   /**
-   * Define if label has colon ":"
-   */
-  @Prop() labelColon: boolean = false;
-
-  /**
    * Define if label is visible
    */
    @Prop() labelHide: boolean = false;
@@ -223,7 +218,6 @@ export class MgInputSelect {
         classList={this.classList}
         label={this.label}
         labelOnTop={this.labelOnTop}
-        labelColon={this.labelColon}
         labelHide={this.labelHide}
         required={this.required}
         readonly={this.readonly}

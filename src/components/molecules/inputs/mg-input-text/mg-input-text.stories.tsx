@@ -13,8 +13,6 @@ const Template = args => {
   // Extract slot so it won't be render as an attribute
   const labelOnTop = args.labelOnTop;
   delete args.labelOnTop;
-  const labelColon = args.labelColon;
-  delete args.labelColon;
   const labelHide = args.labelHide;
   delete args.labelHide;
   const patternErrorMessage = args.patternErrorMessage;
@@ -29,7 +27,6 @@ const Template = args => {
   return <mg-input-text
     {...args}
     label-on-top={labelOnTop}
-    label-colon={labelColon}
     label-hide={labelHide}
     pattern-error-message={patternErrorMessage}
     display-character-left={displayCharacterLeft}
@@ -52,7 +49,6 @@ MgInputText.args = {
   // Label
   label: 'Label',
   labelOnTop: false,
-  labelColon: true,
   labelHide: false,
   // Input
   placeholder: 'placeholder',
@@ -82,7 +78,6 @@ Email.args = {
   // remove feature to focus on pattern
   tooltip: '',
   required: false,
-  labelColon: false,
   label: "Adresse email",
   // Add pattern Email rules
   maxlength: 100,

@@ -6,7 +6,7 @@ describe('mg-input-numeric', () => {
     `<mg-input-numeric label="label"></mg-input-numeric>`,
     `<mg-input-numeric label="label" label-on-top></mg-input-numeric>`,
     `<mg-input-numeric label="label" label-hide></mg-input-numeric>`,
-    `<mg-input-numeric label="label" label-colon placeholder="placeholder" help-text="HelpText Message"></mg-input-numeric>`,
+    `<mg-input-numeric label="label" placeholder="placeholder" help-text="HelpText Message"></mg-input-numeric>`,
     `<mg-input-numeric label="label" type="integer"></mg-input-numeric>`
   ])('without tooltip', (html)=>{
     test('render', async () => {

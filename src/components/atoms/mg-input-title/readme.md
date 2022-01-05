@@ -7,7 +7,6 @@ This atom refers to thes [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64), [PDA9-
 
 | Property                  | Attribute    | Description                                                       | Type      | Default     |
 | ------------------------- | ------------ | ----------------------------------------------------------------- | --------- | ----------- |
-| `colon`                   | `colon`      | Add a colon punctuation after label text                          | `boolean` | `undefined` |
 | `identifier` _(required)_ | `identifier` | Label input id                                                    | `string`  | `undefined` |
 | `isLegend`                | `is-legend`  | Switch from label to fieldset sementic                            | `boolean` | `false`     |
 | `required`                | `required`   | If input is required an asterisk is added at the end of the label | `boolean` | `undefined` |

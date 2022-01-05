@@ -411,23 +411,6 @@
           "required": true
         },
         {
-          "name": "labelColon",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "label-colon",
-          "reflectToAttr": false,
-          "docs": "Define if label has colon \":\"",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
           "name": "labelHide",
           "type": "boolean",
           "mutable": false,
@@ -674,23 +657,6 @@
           "required": true
         },
         {
-          "name": "labelColon",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "label-colon",
-          "reflectToAttr": false,
-          "docs": "Define if label has colon \":\"",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
           "name": "labelHide",
           "type": "boolean",
           "mutable": false,
@@ -935,23 +901,6 @@
           ],
           "optional": false,
           "required": true
-        },
-        {
-          "name": "labelColon",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "label-colon",
-          "reflectToAttr": false,
-          "docs": "Define if label has colon \":\"",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
         },
         {
           "name": "labelHide",
@@ -1300,23 +1249,6 @@
           "required": true
         },
         {
-          "name": "labelColon",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "label-colon",
-          "reflectToAttr": false,
-          "docs": "Define if label has colon \":\"",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
           "name": "labelHide",
           "type": "boolean",
           "mutable": false,
@@ -1580,23 +1512,6 @@
           ],
           "optional": false,
           "required": true
-        },
-        {
-          "name": "labelColon",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "label-colon",
-          "reflectToAttr": false,
-          "docs": "Define if label has colon \":\"",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
         },
         {
           "name": "labelHide",
@@ -1893,23 +1808,6 @@
           ],
           "optional": false,
           "required": true
-        },
-        {
-          "name": "labelColon",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "label-colon",
-          "reflectToAttr": false,
-          "docs": "Define if label has colon \":\"",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
         },
         {
           "name": "labelHide",
@@ -2256,23 +2154,6 @@
           "required": true
         },
         {
-          "name": "labelColon",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "label-colon",
-          "reflectToAttr": false,
-          "docs": "Define if label has colon \":\"",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
           "name": "labelHide",
           "type": "boolean",
           "mutable": false,
@@ -2518,22 +2399,6 @@
       "docsTags": [],
       "usage": {},
       "props": [
-        {
-          "name": "colon",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "colon",
-          "reflectToAttr": false,
-          "docs": "Add a colon punctuation after label text",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
         {
           "name": "identifier",
           "type": "string",

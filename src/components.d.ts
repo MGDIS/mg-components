@@ -88,10 +88,6 @@ export namespace Components {
          */
         "label": string;
         /**
-          * Define if label has colon ":"
-         */
-        "labelColon": boolean;
-        /**
           * Define if label is visible
          */
         "labelHide": boolean;
@@ -146,10 +142,6 @@ export namespace Components {
          */
         "label": string;
         /**
-          * Define if label has colon ":"
-         */
-        "labelColon": boolean;
-        /**
           * Define if label is visible
          */
         "labelHide": boolean;
@@ -203,10 +195,6 @@ export namespace Components {
           * Input label Required
          */
         "label": string;
-        /**
-          * Define if label has colon ":"
-         */
-        "labelColon": boolean;
         /**
           * Define if label is visible
          */
@@ -286,10 +274,6 @@ export namespace Components {
          */
         "label": string;
         /**
-          * Define if label has colon ":"
-         */
-        "labelColon": boolean;
-        /**
           * Define if label is visible
          */
         "labelHide": boolean;
@@ -347,10 +331,6 @@ export namespace Components {
           * Input label Required
          */
         "label": string;
-        /**
-          * Define if label has colon ":"
-         */
-        "labelColon": boolean;
         /**
           * Define if label is visible
          */
@@ -417,10 +397,6 @@ export namespace Components {
           * Input label Required
          */
         "label": string;
-        /**
-          * Define if label has colon ":"
-         */
-        "labelColon": boolean;
         /**
           * Define if label is visible
          */
@@ -500,10 +476,6 @@ export namespace Components {
          */
         "label": string;
         /**
-          * Define if label has colon ":"
-         */
-        "labelColon": boolean;
-        /**
           * Define if label is visible
          */
         "labelHide": boolean;
@@ -557,10 +529,6 @@ export namespace Components {
         "value": string;
     }
     interface MgInputTitle {
-        /**
-          * Add a colon punctuation after label text
-         */
-        "colon": boolean;
         /**
           * Label input id
          */
@@ -801,10 +769,6 @@ declare namespace LocalJSX {
          */
         "label": string;
         /**
-          * Define if label has colon ":"
-         */
-        "labelColon"?: boolean;
-        /**
           * Define if label is visible
          */
         "labelHide"?: boolean;
@@ -863,10 +827,6 @@ declare namespace LocalJSX {
          */
         "label": string;
         /**
-          * Define if label has colon ":"
-         */
-        "labelColon"?: boolean;
-        /**
           * Define if label is visible
          */
         "labelHide"?: boolean;
@@ -924,10 +884,6 @@ declare namespace LocalJSX {
           * Input label Required
          */
         "label": string;
-        /**
-          * Define if label has colon ":"
-         */
-        "labelColon"?: boolean;
         /**
           * Define if label is visible
          */
@@ -1011,10 +967,6 @@ declare namespace LocalJSX {
          */
         "label": string;
         /**
-          * Define if label has colon ":"
-         */
-        "labelColon"?: boolean;
-        /**
           * Define if label is visible
          */
         "labelHide"?: boolean;
@@ -1076,10 +1028,6 @@ declare namespace LocalJSX {
           * Input label Required
          */
         "label": string;
-        /**
-          * Define if label has colon ":"
-         */
-        "labelColon"?: boolean;
         /**
           * Define if label is visible
          */
@@ -1150,10 +1098,6 @@ declare namespace LocalJSX {
           * Input label Required
          */
         "label": string;
-        /**
-          * Define if label has colon ":"
-         */
-        "labelColon"?: boolean;
         /**
           * Define if label is visible
          */
@@ -1237,10 +1181,6 @@ declare namespace LocalJSX {
          */
         "label": string;
         /**
-          * Define if label has colon ":"
-         */
-        "labelColon"?: boolean;
-        /**
           * Define if label is visible
          */
         "labelHide"?: boolean;
@@ -1298,10 +1238,6 @@ declare namespace LocalJSX {
         "value"?: string;
     }
     interface MgInputTitle {
-        /**
-          * Add a colon punctuation after label text
-         */
-        "colon"?: boolean;
         /**
           * Label input id
          */

@@ -18,11 +18,6 @@ export class MgInputTitle {
   @Prop() required: boolean;
 
   /**
-   * Add a colon punctuation after label text
-   */
-  @Prop() colon: boolean;
-
-  /**
    * Switch from label to fieldset sementic
    */
   @Prop() isLegend: boolean = false;
@@ -53,7 +48,6 @@ export class MgInputTitle {
       <TagName class="mg-input-title" htmlFor={this.identifier}>
         <slot></slot>
         { this.required && [`\u00A0`, <span class="is-asterisk">*</span>] }
-        { this.colon && `\u00A0:` }
       </TagName>
     );
   }
