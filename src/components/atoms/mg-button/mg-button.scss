@@ -47,6 +47,7 @@
   line-height: var(--line-height);
   // Other
   touch-action: manipulation;
+  position: relative;
 
   // Disabled style
   &[disabled],
@@ -85,6 +86,22 @@
       background: hsla(var(--color-dark), 0.1);
     }
   }
+
+  &__content {
+    display: flex;
+  }
+
+  &--loading {
+    .mg-button__content {
+      opacity: 0;
+    }
+    mg-icon:first-child {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
 }
 
 mg-button {
@@ -101,5 +118,6 @@ mg-button {
   mg-icon {
     display: inline-flex;
     line-height: 1;
+    margin: auto 0;
   }
 }

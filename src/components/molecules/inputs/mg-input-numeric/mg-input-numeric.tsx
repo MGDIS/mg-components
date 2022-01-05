@@ -20,7 +20,6 @@ export class MgInputNumeric {
   private numericValue: number;
   private readonlyValue: string;
   // Classes
-  private classFocus: string = 'is-focused';
   private classError: string = 'is-not-valid';
 
   /**************
@@ -191,9 +190,6 @@ export class MgInputNumeric {
    * Handle focus event
    */
   private handleFocus = () => {
-    this.classList.add(this.classFocus);
-    this.classList = new ClassList(this.classList.classes);
-    // Display value
     this.displayValue = this.value;
   };
 
@@ -202,9 +198,6 @@ export class MgInputNumeric {
    * @param event
    */
   private handleBlur = (event: FocusEvent) => {
-    // Manage focus
-    this.classList.delete(this.classFocus);
-    this.classList = new ClassList(this.classList.classes);
     // Check validity
     this.checkValidity(event.target as HTMLInputElement);
     // Display readonly value
