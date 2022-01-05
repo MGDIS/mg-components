@@ -36,30 +36,38 @@ describe('mg-button', () => {
 
   describe('prevent double click', () => {
     test('should NOT disable button after click', async () => {
-      const page = await getPage({label: 'test'});
+      const page = await getPage({identifier: 'identifier', label: 'test'});
       const element = page.doc.querySelector('mg-button');
       const button = element.querySelector('button');
+
+      expect(page.root).toMatchSnapshot();
 
       button.dispatchEvent(new CustomEvent('click', { bubbles: true }));
       await page.waitForChanges();
 
-      expect(button).not.toHaveAttribute('disabled')
+      expect(page.root).toMatchSnapshot();
+
+      page.rootInstance.disabled = true;
+
+      expect(page.root).toMatchSnapshot();
     })
 
     test('should disable button after click', async () => {
-      const page = await getPage({label: 'test', disableOnClick: true});
+      const page = await getPage({identifier: 'identifier', label: 'test', disableOnClick: true});
       const element = page.doc.querySelector('mg-button');
       const button = element.querySelector('button');
+
+      expect(page.root).toMatchSnapshot();
 
       button.dispatchEvent(new CustomEvent('click', { bubbles: true }));
       await page.waitForChanges();
 
-      expect(button).toHaveAttribute('disabled')
+      expect(page.root).toMatchSnapshot();
 
       page.rootInstance.disabled = false;
       await page.waitForChanges();
 
-      expect(button).not.toHaveAttribute('disabled')
+      expect(page.root).toMatchSnapshot();
     })
   })
 });

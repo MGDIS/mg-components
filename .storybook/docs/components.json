@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-01-04T08:58:00",
+  "timestamp": "2022-01-04T16:52:19",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.12.0",
@@ -123,14 +123,11 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "mg-message"
-      ],
-      "dependencies": [],
+      "dependents": ["mg-message"],
+      "dependencies": ["mg-icon"],
       "dependencyGraph": {
-        "mg-message": [
-          "mg-button"
-        ]
+        "mg-button": ["mg-icon"],
+        "mg-message": ["mg-button"]
       }
     },
     {
@@ -215,38 +212,16 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "mg-input-checkbox",
-        "mg-input-date",
-        "mg-input-numeric",
-        "mg-input-radio",
-        "mg-input-select",
-        "mg-input-text",
-        "mg-input-textarea"
-      ],
+      "dependents": ["mg-input-checkbox", "mg-input-date", "mg-input-numeric", "mg-input-radio", "mg-input-select", "mg-input-text", "mg-input-textarea"],
       "dependencies": [],
       "dependencyGraph": {
-        "mg-input-checkbox": [
-          "mg-character-left"
-        ],
-        "mg-input-date": [
-          "mg-character-left"
-        ],
-        "mg-input-numeric": [
-          "mg-character-left"
-        ],
-        "mg-input-radio": [
-          "mg-character-left"
-        ],
-        "mg-input-select": [
-          "mg-character-left"
-        ],
-        "mg-input-text": [
-          "mg-character-left"
-        ],
-        "mg-input-textarea": [
-          "mg-character-left"
-        ]
+        "mg-input-checkbox": ["mg-character-left"],
+        "mg-input-date": ["mg-character-left"],
+        "mg-input-numeric": ["mg-character-left"],
+        "mg-input-radio": ["mg-character-left"],
+        "mg-input-select": ["mg-character-left"],
+        "mg-input-text": ["mg-character-left"],
+        "mg-input-textarea": ["mg-character-left"]
       }
     },
     {
@@ -299,6 +274,7 @@
       "slots": [],
       "parts": [],
       "dependents": [
+        "mg-button",
         "mg-input-checkbox",
         "mg-input-date",
         "mg-input-numeric",
@@ -310,30 +286,15 @@
       ],
       "dependencies": [],
       "dependencyGraph": {
-        "mg-input-checkbox": [
-          "mg-icon"
-        ],
-        "mg-input-date": [
-          "mg-icon"
-        ],
-        "mg-input-numeric": [
-          "mg-icon"
-        ],
-        "mg-input-radio": [
-          "mg-icon"
-        ],
-        "mg-input-select": [
-          "mg-icon"
-        ],
-        "mg-input-text": [
-          "mg-icon"
-        ],
-        "mg-input-textarea": [
-          "mg-icon"
-        ],
-        "mg-message": [
-          "mg-icon"
-        ]
+        "mg-button": ["mg-icon"],
+        "mg-input-checkbox": ["mg-icon"],
+        "mg-input-date": ["mg-icon"],
+        "mg-input-numeric": ["mg-icon"],
+        "mg-input-radio": ["mg-icon"],
+        "mg-input-select": ["mg-icon"],
+        "mg-input-text": ["mg-icon"],
+        "mg-input-textarea": ["mg-icon"],
+        "mg-message": ["mg-icon"]
       }
     },
     {
@@ -599,19 +560,9 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "mg-input-title",
-        "mg-tooltip",
-        "mg-icon",
-        "mg-character-left"
-      ],
+      "dependencies": ["mg-input-title", "mg-tooltip", "mg-icon", "mg-character-left"],
       "dependencyGraph": {
-        "mg-input-checkbox": [
-          "mg-input-title",
-          "mg-tooltip",
-          "mg-icon",
-          "mg-character-left"
-        ]
+        "mg-input-checkbox": ["mg-input-title", "mg-tooltip", "mg-icon", "mg-character-left"]
       }
     },
     {
@@ -855,19 +806,9 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "mg-input-title",
-        "mg-tooltip",
-        "mg-icon",
-        "mg-character-left"
-      ],
+      "dependencies": ["mg-input-title", "mg-tooltip", "mg-icon", "mg-character-left"],
       "dependencyGraph": {
-        "mg-input-date": [
-          "mg-input-title",
-          "mg-tooltip",
-          "mg-icon",
-          "mg-character-left"
-        ]
+        "mg-input-date": ["mg-input-title", "mg-tooltip", "mg-icon", "mg-character-left"]
       }
     },
     {
@@ -1176,19 +1117,9 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "mg-input-title",
-        "mg-tooltip",
-        "mg-icon",
-        "mg-character-left"
-      ],
+      "dependencies": ["mg-input-title", "mg-tooltip", "mg-icon", "mg-character-left"],
       "dependencyGraph": {
-        "mg-input-numeric": [
-          "mg-input-title",
-          "mg-tooltip",
-          "mg-icon",
-          "mg-character-left"
-        ]
+        "mg-input-numeric": ["mg-input-title", "mg-tooltip", "mg-icon", "mg-character-left"]
       }
     },
     {
@@ -1468,19 +1399,9 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "mg-input-title",
-        "mg-tooltip",
-        "mg-icon",
-        "mg-character-left"
-      ],
+      "dependencies": ["mg-input-title", "mg-tooltip", "mg-icon", "mg-character-left"],
       "dependencyGraph": {
-        "mg-input-radio": [
-          "mg-input-title",
-          "mg-tooltip",
-          "mg-icon",
-          "mg-character-left"
-        ]
+        "mg-input-radio": ["mg-input-title", "mg-tooltip", "mg-icon", "mg-character-left"]
       }
     },
     {
@@ -1759,19 +1680,9 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "mg-input-title",
-        "mg-tooltip",
-        "mg-icon",
-        "mg-character-left"
-      ],
+      "dependencies": ["mg-input-title", "mg-tooltip", "mg-icon", "mg-character-left"],
       "dependencyGraph": {
-        "mg-input-select": [
-          "mg-input-title",
-          "mg-tooltip",
-          "mg-icon",
-          "mg-character-left"
-        ]
+        "mg-input-select": ["mg-input-title", "mg-tooltip", "mg-icon", "mg-character-left"]
       }
     },
     {
@@ -2113,19 +2024,9 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "mg-input-title",
-        "mg-tooltip",
-        "mg-icon",
-        "mg-character-left"
-      ],
+      "dependencies": ["mg-input-title", "mg-tooltip", "mg-icon", "mg-character-left"],
       "dependencyGraph": {
-        "mg-input-text": [
-          "mg-input-title",
-          "mg-tooltip",
-          "mg-icon",
-          "mg-character-left"
-        ]
+        "mg-input-text": ["mg-input-title", "mg-tooltip", "mg-icon", "mg-character-left"]
       }
     },
     {
@@ -2484,19 +2385,9 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "mg-input-title",
-        "mg-tooltip",
-        "mg-icon",
-        "mg-character-left"
-      ],
+      "dependencies": ["mg-input-title", "mg-tooltip", "mg-icon", "mg-character-left"],
       "dependencyGraph": {
-        "mg-input-textarea": [
-          "mg-input-title",
-          "mg-tooltip",
-          "mg-icon",
-          "mg-character-left"
-        ]
+        "mg-input-textarea": ["mg-input-title", "mg-tooltip", "mg-icon", "mg-character-left"]
       }
     },
     {
@@ -2564,38 +2455,16 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "mg-input-checkbox",
-        "mg-input-date",
-        "mg-input-numeric",
-        "mg-input-radio",
-        "mg-input-select",
-        "mg-input-text",
-        "mg-input-textarea"
-      ],
+      "dependents": ["mg-input-checkbox", "mg-input-date", "mg-input-numeric", "mg-input-radio", "mg-input-select", "mg-input-text", "mg-input-textarea"],
       "dependencies": [],
       "dependencyGraph": {
-        "mg-input-checkbox": [
-          "mg-input-title"
-        ],
-        "mg-input-date": [
-          "mg-input-title"
-        ],
-        "mg-input-numeric": [
-          "mg-input-title"
-        ],
-        "mg-input-radio": [
-          "mg-input-title"
-        ],
-        "mg-input-select": [
-          "mg-input-title"
-        ],
-        "mg-input-text": [
-          "mg-input-title"
-        ],
-        "mg-input-textarea": [
-          "mg-input-title"
-        ]
+        "mg-input-checkbox": ["mg-input-title"],
+        "mg-input-date": ["mg-input-title"],
+        "mg-input-numeric": ["mg-input-title"],
+        "mg-input-radio": ["mg-input-title"],
+        "mg-input-select": ["mg-input-title"],
+        "mg-input-text": ["mg-input-title"],
+        "mg-input-textarea": ["mg-input-title"]
       }
     },
     {
@@ -2683,15 +2552,10 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "mg-icon",
-        "mg-button"
-      ],
+      "dependencies": ["mg-icon", "mg-button"],
       "dependencyGraph": {
-        "mg-message": [
-          "mg-icon",
-          "mg-button"
-        ]
+        "mg-message": ["mg-icon", "mg-button"],
+        "mg-button": ["mg-icon"]
       }
     },
     {
@@ -2870,38 +2734,16 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "mg-input-checkbox",
-        "mg-input-date",
-        "mg-input-numeric",
-        "mg-input-radio",
-        "mg-input-select",
-        "mg-input-text",
-        "mg-input-textarea"
-      ],
+      "dependents": ["mg-input-checkbox", "mg-input-date", "mg-input-numeric", "mg-input-radio", "mg-input-select", "mg-input-text", "mg-input-textarea"],
       "dependencies": [],
       "dependencyGraph": {
-        "mg-input-checkbox": [
-          "mg-tooltip"
-        ],
-        "mg-input-date": [
-          "mg-tooltip"
-        ],
-        "mg-input-numeric": [
-          "mg-tooltip"
-        ],
-        "mg-input-radio": [
-          "mg-tooltip"
-        ],
-        "mg-input-select": [
-          "mg-tooltip"
-        ],
-        "mg-input-text": [
-          "mg-tooltip"
-        ],
-        "mg-input-textarea": [
-          "mg-tooltip"
-        ]
+        "mg-input-checkbox": ["mg-tooltip"],
+        "mg-input-date": ["mg-tooltip"],
+        "mg-input-numeric": ["mg-tooltip"],
+        "mg-input-radio": ["mg-tooltip"],
+        "mg-input-select": ["mg-tooltip"],
+        "mg-input-text": ["mg-tooltip"],
+        "mg-input-textarea": ["mg-tooltip"]
       }
     }
   ]

@@ -18,6 +18,9 @@ export class MgIcon {
     if(!Object.keys(icons).includes(newValue)) {
       throw new Error(`<mg-icon> prop "icon" must be one of : ${Object.keys(icons).join(', ')}`);
     }
+    if (this.icon === 'loader') {
+      this.classList.add('mg-icon--spin')
+    }
     this.classList.add(`mg-icon--${this.icon}`);
   }
 
@@ -34,9 +37,9 @@ export class MgIcon {
   }
 
   /**
-   * Component classes
-   */
-   @State() classList: ClassList = new ClassList(['mg-icon']);
+  * Component classes
+  */
+  @State() classList: ClassList = new ClassList(['mg-icon']);
 
   /**
    * Check if props are well configured on init

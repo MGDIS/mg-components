@@ -15,6 +15,7 @@ This atom refers to the [PDA9-744](https://jira.mgdis.fr/browse/PDA9-744).
 
 ### Used by
 
+ - [mg-button](../mg-button)
  - [mg-input-checkbox](../../molecules/inputs/mg-input-checkbox)
  - [mg-input-date](../../molecules/inputs/mg-input-date)
  - [mg-input-numeric](../../molecules/inputs/mg-input-numeric)
@@ -27,6 +28,7 @@ This atom refers to the [PDA9-744](https://jira.mgdis.fr/browse/PDA9-744).
 ### Graph
 ```mermaid
 graph TD;
+  mg-button --> mg-icon
   mg-input-checkbox --> mg-icon
   mg-input-date --> mg-icon
   mg-input-numeric --> mg-icon

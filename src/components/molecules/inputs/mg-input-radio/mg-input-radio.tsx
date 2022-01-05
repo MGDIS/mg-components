@@ -147,7 +147,7 @@ export class MgInputRadio {
   */
   private handleInput = (event:InputEvent & { target: HTMLInputElement }) => {
     this.value = this.options
-      .find(o => o.value.toString() === event.target.value)?.value;
+      .find(o => o.value.toString() === event.target.value).value;
     this.valueChange.emit(this.value);
   }
 
