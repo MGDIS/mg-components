@@ -513,6 +513,10 @@ export namespace Components {
     }
     interface MgTooltip {
         /**
+          * Display tooltip
+         */
+        "display": boolean;
+        /**
           * Sets an `id` attribute. Needed by the input for accessibility `arai-decribedby`.
          */
         "identifier": string;
@@ -1151,6 +1155,10 @@ declare namespace LocalJSX {
         "variant"?: string;
     }
     interface MgTooltip {
+        /**
+          * Display tooltip
+         */
+        "display"?: boolean;
         /**
           * Sets an `id` attribute. Needed by the input for accessibility `arai-decribedby`.
          */
