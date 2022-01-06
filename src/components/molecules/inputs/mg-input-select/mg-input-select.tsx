@@ -1,9 +1,10 @@
 import { Component, Event, h, Prop, State, EventEmitter, Watch } from '@stencil/core';
 import { MgInput } from '../MgInput';
-import { createID, ClassList } from '../../../../utils/components.utils';
+import { createID, ClassList, allItemsAreString } from '../../../../utils/components.utils';
 import { messages } from '../../../../locales';
 import { SelectOption, OptGroup }from '../../../../types/components.types';
 
+const isOption = (option: SelectOption): boolean => typeof option === 'object' && typeof option.title === 'string' && option.value !== undefined;
 @Component({
   tag: 'mg-input-select',
   styleUrl: 'mg-input-select.scss',
@@ -33,11 +34,11 @@ export class MgInputSelect {
   @Watch('items')
   validateItems(newValue){
     // String array
-    if(newValue && (newValue as Array<string>).every((item) => typeof item === 'string')) {
+    if(allItemsAreString(newValue)) {
       this.options = newValue.map(item=>({ title:item, value:item }));
     }
     // Object array
-    else if(newValue && (newValue as Array<SelectOption>).every((item) => (typeof item === 'object' && typeof item.title === 'string' && item.value !== undefined ))) {
+    else if(newValue && (newValue as Array<SelectOption>).every(item => isOption(item))) {
       // Grouped object options
       if(newValue.some((item)=>(item.group !== undefined))) {
         this.options = newValue.reduce((acc, {group, title, value, disabled})=>{
