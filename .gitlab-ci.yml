@@ -107,7 +107,7 @@ artifact:
 pages:
   stage: deploy
   rules:
-    - if: $CI_COMMIT_BRANCH == 'init'
+    - if: $CI_COMMIT_BRANCH == 'master'
   extends:
     - .install
   script:
