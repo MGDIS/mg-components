@@ -56,7 +56,7 @@ export class MgInputNumeric {
       }
       catch {
         /* IE FIX */
-        /* There is no Shadow dom on IE so we need to access via document */
+        /* There is no Shadow DOM on IE so we need to access via document */
         const elementInput = document.getElementById(this.identifier) as HTMLInputElement;
         if (elementInput !== null) elementInput.value = this.value;
       }
