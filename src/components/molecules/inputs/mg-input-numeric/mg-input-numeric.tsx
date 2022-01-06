@@ -50,8 +50,16 @@ export class MgInputNumeric {
       }
       // Set value and input value
       this.value = newValue;
-      const elementInput = this.element.shadowRoot.getElementById(this.identifier) as HTMLInputElement;
-      if (elementInput !== null) elementInput.value = this.value;
+      try {
+        const elementInput = this.element.shadowRoot.getElementById(this.identifier) as HTMLInputElement;
+        if (elementInput !== null) elementInput.value = this.value;
+      }
+      catch {
+        /* IE FIX */
+        /* There is no Shadow dom on IE so we need to access via document */
+        const elementInput = document.getElementById(this.identifier) as HTMLInputElement;
+        if (elementInput !== null) elementInput.value = this.value;
+      }
       // emit numeric value
       this.numericValue = this.value !== '' && this.value !== null ? parseFloat(this.value.replace(',', '.')) : null;
       this.valueChange.emit(this.numericValue);
