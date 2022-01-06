@@ -46,7 +46,7 @@ export class MgTooltip {
   */
   @Prop({ mutable: true, reflect: true}) display: boolean = false;
   @Watch('display')
-  toggleDisplay(newVal) {
+  handleDisplay(newVal) {
     if (newVal) {
       this.show();
     } else {
@@ -147,7 +147,7 @@ export class MgTooltip {
       ],
     });
 
-    this.toggleDisplay(this.display);
+    this.handleDisplay(this.display);
 
     // Add events
     ['mouseenter', 'focus'].forEach((event) => {
