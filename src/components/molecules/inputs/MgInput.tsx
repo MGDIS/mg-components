@@ -28,6 +28,29 @@ const applyAriadescribedBy = (children :VNode[], ariaDescribedbyIDs: Set<string>
 });
 
 /**
+ * Add classes based on props
+ * @param props
+ */
+const addClasses = (props): void => {
+  props.classList.add('mg-input');
+
+  if(props.labelOnTop) {
+    props.classList.add('mg-input--label-on-top');
+  }
+
+  if(props.readonly) {
+    props.classList.add('mg-input--readonly');
+  }
+}
+
+/**
+ * Define tagname based on props
+ * @param isFieldset
+ * @returns {string} tag name
+ */
+const getTagName = (isFieldset: boolean): string => isFieldset ? 'fieldset' : 'div';
+
+/**
  * MgInput Interface
  */
 interface MgInputProps {
@@ -68,8 +91,6 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
   /**
    * Check required properties
    */
-
-  // Label
   if(typeof props.label !== 'string' || props.label === '') {
     throw new Error(`prop "label" is required`);
   }
@@ -77,21 +98,11 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
   /**
    * Component classes
    */
-
-  props.classList.add('mg-input');
-
-  if(props.labelOnTop) {
-    props.classList.add('mg-input--label-on-top');
-  }
-
-  if(props.readonly) {
-    props.classList.add('mg-input--readonly');
-  }
+  addClasses(props);
 
   /**
    * a11y IDs
    */
-
   const ariaDescribedbyIDs: Set<string> = new Set();
 
   // Character Left
@@ -134,7 +145,7 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
    * Error message is based on this aria method: https://www.w3.org/WAI/tutorials/forms/notifications/#on-focus-change
    */
 
-  const TagName = props.isFieldset ? 'fieldset' : 'div';
+  const TagName = getTagName(props.isFieldset);
 
   return (
     <TagName class={props.classList.join()}>
