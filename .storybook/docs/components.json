@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-01-05T14:35:35",
+  "timestamp": "2022-01-06T15:23:41",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.12.0",
@@ -579,16 +579,16 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "mg-input-title",
         "mg-tooltip",
         "mg-icon",
+        "mg-input-title",
         "mg-character-left"
       ],
       "dependencyGraph": {
         "mg-input-date": [
-          "mg-input-title",
           "mg-tooltip",
           "mg-icon",
+          "mg-input-title",
           "mg-character-left"
         ]
       }
@@ -900,16 +900,16 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "mg-input-title",
         "mg-tooltip",
         "mg-icon",
+        "mg-input-title",
         "mg-character-left"
       ],
       "dependencyGraph": {
         "mg-input-numeric": [
-          "mg-input-title",
           "mg-tooltip",
           "mg-icon",
+          "mg-input-title",
           "mg-character-left"
         ]
       }
@@ -1192,16 +1192,16 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "mg-input-title",
         "mg-tooltip",
         "mg-icon",
+        "mg-input-title",
         "mg-character-left"
       ],
       "dependencyGraph": {
         "mg-input-radio": [
-          "mg-input-title",
           "mg-tooltip",
           "mg-icon",
+          "mg-input-title",
           "mg-character-left"
         ]
       }
@@ -1483,16 +1483,16 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "mg-input-title",
         "mg-tooltip",
         "mg-icon",
+        "mg-input-title",
         "mg-character-left"
       ],
       "dependencyGraph": {
         "mg-input-select": [
-          "mg-input-title",
           "mg-tooltip",
           "mg-icon",
+          "mg-input-title",
           "mg-character-left"
         ]
       }
@@ -1837,16 +1837,16 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "mg-input-title",
         "mg-tooltip",
         "mg-icon",
+        "mg-input-title",
         "mg-character-left"
       ],
       "dependencyGraph": {
         "mg-input-text": [
-          "mg-input-title",
           "mg-tooltip",
           "mg-icon",
+          "mg-input-title",
           "mg-character-left"
         ]
       }
@@ -2208,16 +2208,16 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "mg-input-title",
         "mg-tooltip",
         "mg-icon",
+        "mg-input-title",
         "mg-character-left"
       ],
       "dependencyGraph": {
         "mg-input-textarea": [
-          "mg-input-title",
           "mg-tooltip",
           "mg-icon",
+          "mg-input-title",
           "mg-character-left"
         ]
       }
@@ -2481,9 +2481,9 @@
         {
           "name": "display",
           "type": "boolean",
-          "mutable": false,
+          "mutable": true,
           "attr": "display",
-          "reflectToAttr": false,
+          "reflectToAttr": true,
           "docs": "Display tooltip",
           "docsTags": [],
           "default": "false",

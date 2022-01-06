@@ -20,6 +20,7 @@ describe('mg-input-numeric', () => {
       {label: 'label', identifier: "identifier", type, readonly: true, value: "1234567890"},
       {label: 'label', identifier: "identifier", type, disabled: true, value: "1234567890"},
       {label: 'label', identifier: "identifier", type, tooltip: "My Tooltip Message"},
+      {label: 'label', identifier: "identifier", type, tooltip: "My Tooltip Message", labelOnTop: true}
     ])('Should render with args %s:', async (args) => {
       const { root } = await getPage(args);
       expect(root).toMatchSnapshot();
@@ -31,6 +32,15 @@ describe('mg-input-numeric', () => {
       }
       catch (err) {
         expect(err.message).toMatch('prop "label" is required')
+      }
+    });
+
+    test('Should throw an error with labelOnTop & labelHide set to true', async () => {
+      try {
+        await getPage({label: 'batman', labelOnTop: true, labelHide: true});
+      }
+      catch (err) {
+        expect(err.message).toMatch('<mg-input> prop "labelOnTop" must not be paired with the prop "labelHide"')
       }
     });
 

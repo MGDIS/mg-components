@@ -64,8 +64,8 @@ describe('mg-input-select', () => {
     });
   });
 
-  test('render with tooltip', async () => {
-    const page = await createPage(`<mg-input-select label="label" tooltip="Tooltip message"></mg-input-select>
+  test.each([true, false])('render with tooltip, case label-on-top %s', async (labelOnTop) => {
+    const page = await createPage(`<mg-input-select label="label" tooltip="Tooltip message" label-on-top=${labelOnTop}></mg-input-select>
       <script>
       const mgInputSelect = document.querySelector('mg-input-select');
       mgInputSelect.items = ['blu', 'bli', 'bla', 'blo'];

@@ -73,6 +73,9 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
   if(typeof props.label !== 'string' || props.label === '') {
     throw new Error(`prop "label" is required`);
   }
+  if (props.labelOnTop && props.labelHide) {
+    throw new Error('<mg-input> prop "labelOnTop" must not be paired with the prop "labelHide"')
+  }
 
   /**
    * Component classes
@@ -135,6 +138,7 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
    */
 
   const TagName = props.isFieldset ? 'fieldset' : 'div';
+  const tooltip = props.tooltip && <mg-tooltip identifier={`${props.identifier}-tooltip`} message={props.tooltip}><mg-icon icon="info"></mg-icon></mg-tooltip>
 
   return (
     <TagName class={props.classList.join()}>
@@ -144,8 +148,9 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
         required={props.required}
         is-legend={props.isFieldset}
       >
-        {props.label}
+        { props.label }
       </mg-input-title>
+      { props.labelOnTop && tooltip }
       { props.readonly
       ? <div class="mg-input__input-container">
           <strong>{props.readonlyValue || props.value}</strong>
@@ -153,7 +158,7 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
       : <div class="mg-input__input-container">
           <div class="mg-input__input-container__input">
             { children }
-            { props.tooltip && <mg-tooltip identifier={`${props.identifier}-tooltip`} message={props.tooltip}><mg-icon icon="info"></mg-icon></mg-tooltip>}
+            { !props.labelOnTop && tooltip }
           </div>
           { props.displayCharacterLeft && props.maxlength && props.classList.has('is-focused') && <mg-character-left
             identifier={characterLeftId}

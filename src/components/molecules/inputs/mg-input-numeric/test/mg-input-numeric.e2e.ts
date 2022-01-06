@@ -39,8 +39,8 @@ describe('mg-input-numeric', () => {
     });
   });
 
-  test('render with tooltip', async () => {
-    const page = await createPage(`<mg-input-numeric label="label" tooltip="Tooltip message"></mg-input-numeric>`);
+  test.each([true, false])('render with tooltip, case label-on-top %s', async (labelOnTop) => {
+    const page = await createPage(`<mg-input-numeric label="label" tooltip="Tooltip message" label-on-top=${labelOnTop}></mg-input-numeric>`);
 
     const element = await page.find('mg-input-numeric');
 
