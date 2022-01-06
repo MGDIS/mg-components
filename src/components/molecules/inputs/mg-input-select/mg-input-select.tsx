@@ -1,9 +1,44 @@
 import { Component, Event, h, Prop, State, EventEmitter, Watch } from '@stencil/core';
 import { MgInput } from '../MgInput';
-import { createID, ClassList } from '../../../../utils/components.utils';
+import { createID, ClassList, allItemsAreString } from '../../../../utils/components.utils';
 import { messages } from '../../../../locales';
 import { SelectOption, OptGroup }from '../../../../types/components.types';
 
+/**
+ * Check if item is a well configured option
+ * @param option
+ * @returns {boolean}
+ */
+const isOption = (option: SelectOption): boolean => typeof option === 'object' && typeof option.title === 'string' && option.value !== undefined;
+
+/**
+ * Group options
+ * @param acc
+ * @param {SelectOption} item
+ * @param {string} item.group
+ * @param {string} item.title
+ * @param {string} item.value
+ * @param {boolean} item.disabled
+ * @returns {OptGroup} grouped options
+ */
+const groupOptions = (acc, {group, title, value, disabled}): OptGroup => {
+  if(group) {
+    // Check if group is already created
+    const optgroup = acc.find(grp=>grp.group===group);
+    // Add to group
+    if(optgroup) {
+      optgroup.options.push({title,value, disabled})
+    }
+    // Create group
+    else {
+      acc.push({group, options:[{title, value, disabled}]});
+    }
+  }
+  else {
+    acc.push({title, value, disabled});
+  }
+  return acc;
+}
 @Component({
   tag: 'mg-input-select',
   styleUrl: 'mg-input-select.scss',
@@ -33,31 +68,14 @@ export class MgInputSelect {
   @Watch('items')
   validateItems(newValue){
     // String array
-    if(newValue && (newValue as Array<string>).every((item) => typeof item === 'string')) {
+    if(allItemsAreString(newValue)) {
       this.options = newValue.map(item=>({ title:item, value:item }));
     }
     // Object array
-    else if(newValue && (newValue as Array<SelectOption>).every((item) => (typeof item === 'object' && typeof item.title === 'string' && item.value !== undefined ))) {
+    else if(newValue && (newValue as Array<SelectOption>).every(item => isOption(item))) {
       // Grouped object options
       if(newValue.some((item)=>(item.group !== undefined))) {
-        this.options = newValue.reduce((acc, {group, title, value, disabled})=>{
-          if(group) {
-            // Check if group is already created
-            const optgroup = acc.find(grp=>grp.group===group);
-            // Add to group
-            if(optgroup) {
-              optgroup.options.push({title,value, disabled})
-            }
-            // Create group
-            else {
-              acc.push({group, options:[{title, value, disabled}]});
-            }
-          }
-          else {
-            acc.push({title, value, disabled});
-          }
-          return acc;
-        }, []);
+        this.options = newValue.reduce(groupOptions, []);
       }
       // Standart object options
       else {
