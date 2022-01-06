@@ -8,7 +8,7 @@ import { ClassList } from '../../../utils/components.utils';
  * @param utils
  * @returns {VNode[]}
  */
-const applyAriadescribedBy = (children :VNode[], ariaDescribedbyIDs: Set<String>, utils: FunctionalUtilities): VNode[] =>  utils.map(children, child => {
+const applyAriadescribedBy = (children :VNode[], ariaDescribedbyIDs: Set<string>, utils: FunctionalUtilities): VNode[] =>  utils.map(children, child => {
   if(['input', 'select', 'textarea'].includes(child.vtag as string)) {
     return {
       ...child,
@@ -26,6 +26,29 @@ const applyAriadescribedBy = (children :VNode[], ariaDescribedbyIDs: Set<String>
     vchildren: applyAriadescribedBy(child.vchildren, ariaDescribedbyIDs, utils)
   };
 });
+
+/**
+ * Add classes based on props
+ * @param props
+ */
+const addClasses = (props): void => {
+  props.classList.add('mg-input');
+
+  if(props.labelOnTop) {
+    props.classList.add('mg-input--label-on-top');
+  }
+
+  if(props.readonly) {
+    props.classList.add('mg-input--readonly');
+  }
+}
+
+/**
+ * Define tagname based on props
+ * @param isFieldset
+ * @returns {string} tag name
+ */
+const getTagName = (isFieldset: boolean): string => isFieldset ? 'fieldset' : 'div';
 
 /**
  * MgInput Interface
@@ -68,8 +91,6 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
   /**
    * Check required properties
    */
-
-  // Label
   if(typeof props.label !== 'string' || props.label === '') {
     throw new Error(`prop "label" is required`);
   }
@@ -80,22 +101,12 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
   /**
    * Component classes
    */
-
-  props.classList.add('mg-input');
-
-  if(props.labelOnTop) {
-    props.classList.add('mg-input--label-on-top');
-  }
-
-  if(props.readonly) {
-    props.classList.add('mg-input--readonly');
-  }
+  addClasses(props);
 
   /**
    * a11y IDs
    */
-
-  const ariaDescribedbyIDs: Set<String> = new Set();
+  const ariaDescribedbyIDs: Set<string> = new Set();
 
   // Character Left
   const characterLeftId = `${props.identifier}-character-left`;
@@ -137,7 +148,7 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
    * Error message is based on this aria method: https://www.w3.org/WAI/tutorials/forms/notifications/#on-focus-change
    */
 
-  const TagName = props.isFieldset ? 'fieldset' : 'div';
+  const TagName = getTagName(props.isFieldset);
   const tooltip = props.tooltip && <mg-tooltip identifier={`${props.identifier}-tooltip`} message={props.tooltip}><mg-icon icon="info"></mg-icon></mg-tooltip>
 
   return (

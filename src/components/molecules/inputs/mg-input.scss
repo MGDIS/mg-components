@@ -49,6 +49,7 @@
    */
   input[type='text'],
   input[type='date'],
+  &.mg-input--date input, /* IE FIX */
   textarea,
   select {
     // Display
@@ -83,6 +84,7 @@
   select {
     padding-top: 0;
     padding-bottom: 0;
+    padding-right: 0;
   }
 
   legend {

@@ -1,6 +1,6 @@
 import { Component, Event, h, Prop, EventEmitter, State, Watch } from '@stencil/core';
 import { MgInput } from '../MgInput';
-import { createID, ClassList } from '../../../../utils/components.utils';
+import { createID, ClassList, allItemsAreString } from '../../../../utils/components.utils';
 import { messages } from '../../../../locales';
 import { RadioOption }from '../../../../types/components.types';
 
@@ -41,7 +41,7 @@ export class MgInputRadio {
   @Watch('items')
   validateItems(newValue){
     // String array
-    if(newValue && (newValue as Array<String>).every(item => typeof item === 'string')) {
+    if(allItemsAreString(newValue)) {
       this.options = newValue.map(item => ({ title:item, value:item, disabled: this.disabled }));
     }
     // Object array

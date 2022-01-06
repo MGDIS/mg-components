@@ -241,6 +241,7 @@ export class MgInputTextarea {
         isFieldset={false}
       >
         <textarea
+          value={this.value}
           id={this.identifier}
           name={this.name}
           placeholder={this.placeholder}
@@ -252,7 +253,7 @@ export class MgInputTextarea {
           onInput={this.handleInput}
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
-        >{this.value}</textarea>
+        ></textarea>
       </MgInput>
     );
   }
