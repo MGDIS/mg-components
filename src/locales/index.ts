@@ -1,4 +1,3 @@
-// TODO ADD POSSIBILITY TO CHANGE LOCALE
 export const locale = 'fr-FR';
 
 import fr from './fr-FR/messages.json'

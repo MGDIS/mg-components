@@ -8,7 +8,7 @@ import { ClassList } from '../../../utils/components.utils';
  * @param utils
  * @returns {VNode[]}
  */
-const applyAriadescribedBy = (children :VNode[], ariaDescribedbyIDs: Set<String>, utils: FunctionalUtilities): VNode[] =>  utils.map(children, child => {
+const applyAriadescribedBy = (children :VNode[], ariaDescribedbyIDs: Set<string>, utils: FunctionalUtilities): VNode[] =>  utils.map(children, child => {
   if(['input', 'select', 'textarea'].includes(child.vtag as string)) {
     return {
       ...child,
@@ -92,7 +92,7 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
    * a11y IDs
    */
 
-  const ariaDescribedbyIDs: Set<String> = new Set();
+  const ariaDescribedbyIDs: Set<string> = new Set();
 
   // Character Left
   const characterLeftId = `${props.identifier}-character-left`;

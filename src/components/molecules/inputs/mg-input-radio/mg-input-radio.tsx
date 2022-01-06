@@ -41,7 +41,7 @@ export class MgInputRadio {
   @Watch('items')
   validateItems(newValue){
     // String array
-    if(newValue && (newValue as Array<String>).every(item => typeof item === 'string')) {
+    if(newValue && (newValue as Array<string>).every(item => typeof item === 'string')) {
       this.options = newValue.map(item => ({ title:item, value:item, disabled: this.disabled }));
     }
     // Object array
