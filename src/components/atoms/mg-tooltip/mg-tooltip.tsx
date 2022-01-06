@@ -1,4 +1,4 @@
-import { Component, Element, h, Host, Prop } from '@stencil/core';
+import { Component, Element, h, Host, Prop, Watch } from '@stencil/core';
 import { createID } from '../../../utils/components.utils';
 import { Instance as PopperInstance, createPopper } from '@popperjs/core'
 
@@ -42,6 +42,19 @@ export class MgTooltip {
   @Prop() placement: 'auto'|'auto-start'|'auto-end'|'top'|'top-start'|'top-end'|'bottom'|'bottom-start'|'bottom-end'|'right'|'right-start'|'right-end'|'left'|'left-start'|'left-end' = 'bottom';
 
   /**
+  * Display tooltip
+  */
+  @Prop({ mutable: true, reflect: true}) display: boolean = false;
+  @Watch('display')
+  toggleDisplay(newVal) {
+    if (newVal) {
+      this.show();
+    } else {
+      this.hide();
+    }
+  }
+
+  /**
    * Show tooltip
    * @returns {void}
    */
@@ -64,9 +77,9 @@ export class MgTooltip {
    * Hide tooltip
    * @returns {void}
    */
-    private hide = (event: UIEvent & KeyboardEvent) => {
+  private hide = (event?: UIEvent & KeyboardEvent) => {
     // we continue to process ONLY for KeyboardEvents 'Escape'
-    if(event.constructor.name === 'KeyboardEvent' && event.code !== 'Escape') {
+    if(event?.constructor.name.includes('KeyboardEvent') && event.code !== 'Escape') {
       return;
     }
     // Hide the tooltip
@@ -133,6 +146,8 @@ export class MgTooltip {
         },
       ],
     });
+
+    this.toggleDisplay(this.display);
 
     // Add events
     ['mouseenter', 'focus'].forEach((event) => {
