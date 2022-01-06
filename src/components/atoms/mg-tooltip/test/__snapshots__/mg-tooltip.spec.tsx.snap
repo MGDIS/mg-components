@@ -182,3 +182,55 @@ exports[`mg-tooltip Should render with element 4`] = `
   </div>
 </mg-tooltip>
 `;
+
+exports[`mg-tooltip Should toogle tooltip from prop display, case display false 1`] = `
+<mg-tooltip>
+  <!---->
+  <span aria-describedby="identifier" tabindex="0">
+    batman
+  </span>
+  <div id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+    batman
+    <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
+  </div>
+</mg-tooltip>
+`;
+
+exports[`mg-tooltip Should toogle tooltip from prop display, case display false 2`] = `
+<mg-tooltip display="">
+  <!---->
+  <span aria-describedby="identifier" tabindex="0">
+    batman
+  </span>
+  <div data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+    batman
+    <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
+  </div>
+</mg-tooltip>
+`;
+
+exports[`mg-tooltip Should toogle tooltip from prop display, case display true 1`] = `
+<mg-tooltip display="">
+  <!---->
+  <span aria-describedby="identifier" tabindex="0">
+    batman
+  </span>
+  <div data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+    batman
+    <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
+  </div>
+</mg-tooltip>
+`;
+
+exports[`mg-tooltip Should toogle tooltip from prop display, case display true 2`] = `
+<mg-tooltip>
+  <!---->
+  <span aria-describedby="identifier" tabindex="0">
+    batman
+  </span>
+  <div id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+    batman
+    <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
+  </div>
+</mg-tooltip>
+`;
