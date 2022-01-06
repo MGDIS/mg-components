@@ -32,7 +32,8 @@
     }
 
     mg-tooltip {
-      margin-top: calc((var(--mg-inputs-spacer)) * 0.2);
+      margin-top: auto;
+      margin-bottom: auto;
     }
     .mg-input__input-container {
       width: 100%;
@@ -116,8 +117,10 @@
   // specifics spacers for checkbox and radio
   &--radio,
   &--checkbox {
-    mg-tooltip {
-      margin-left: calc(var(--mg-inputs-spacer) * 2);
+    &:not(.mg-input--label-on-top){
+      mg-tooltip {
+        margin-left: calc(var(--mg-inputs-spacer) * 2);
+      }
     }
   }
 
