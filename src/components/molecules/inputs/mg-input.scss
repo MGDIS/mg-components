@@ -22,13 +22,21 @@
 
   // Display label on top
   &.mg-input--label-on-top {
-    flex-direction: column;
+    flex-wrap: wrap;
 
     mg-input-title {
       margin-top: 0;
       margin-right: 0;
       margin-bottom: calc(var(--mg-inputs-spacer) * 0.3);
       text-align: start;
+    }
+
+    mg-tooltip {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+    .mg-input__input-container {
+      width: 100%;
     }
 
     .mg-input__input-group-container--radio {
@@ -111,8 +119,10 @@
   // specifics spacers for checkbox and radio
   &--radio,
   &--checkbox {
-    mg-tooltip {
-      margin-left: calc(var(--mg-inputs-spacer) * 2);
+    &:not(.mg-input--label-on-top){
+      mg-tooltip {
+        margin-left: calc(var(--mg-inputs-spacer) * 2);
+      }
     }
   }
 
@@ -188,7 +198,9 @@
   */
   &.mg-input--text,
   &.mg-input--textarea {
-    justify-content: space-between;
+    &:not(.mg-input--label-on-top){
+      justify-content: space-between;
+    }
 
     .mg-input__input-container {
       flex: auto;
