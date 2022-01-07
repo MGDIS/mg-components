@@ -4,6 +4,7 @@ import prettier from 'prettier/standalone';
 import prettierBabel from 'prettier/parser-babel';
 import docJson from './docs/components.json';
 import '!style-loader!css-loader!sass-loader!../src/styles/global.scss';
+import '!style-loader!css-loader!sass-loader!./demo.scss';
 
 defineCustomElements();
 setStencilDocJson(docJson);
