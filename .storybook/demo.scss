@@ -1,0 +1,11 @@
+#demo {
+  .mg-grid {
+    margin-top: 1rem;
+  }
+  .mg-grid__col {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.05);
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+}
