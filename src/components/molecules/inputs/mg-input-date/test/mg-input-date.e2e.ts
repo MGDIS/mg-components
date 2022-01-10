@@ -6,7 +6,7 @@ describe('mg-input-date', () => {
     `<mg-input-date label="label"></mg-input-date>`,
     `<mg-input-date label="label" label-on-top></mg-input-date>`,
     `<mg-input-date label="label" label-hide></mg-input-date>`,
-    `<mg-input-date label="label" label-colon placeholder="placeholder" help-text="HelpText Message"></mg-input-date>`
+    `<mg-input-date label="label" placeholder="placeholder" help-text="HelpText Message"></mg-input-date>`
   ])('without tooltip', (html)=>{
     test('render', async () => {
       const page = await createPage(html);
@@ -37,8 +37,8 @@ describe('mg-input-date', () => {
     });
   })
 
-  test('render with tooltip', async () => {
-    const page = await createPage(`<mg-input-date label="label" tooltip="Tooltip message"></mg-input-date>`);
+  test.each([true, false])('render with tooltip, case label-on-top %s', async (labelOnTop) => {
+    const page = await createPage(`<mg-input-date label="label" tooltip="Tooltip message" label-on-top=${labelOnTop}></mg-input-date>`);
 
     const element = await page.find('mg-input-date');
 

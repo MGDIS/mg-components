@@ -1,9 +1,9 @@
 
 /**
- * type Option
- * use to match radio, select>option attributes
+ * type SelectOption
+ * use to match select>option attributes
  */
-export type Option = {
+export type SelectOption = {
   title: string,
   value: string,
   disabled?: boolean,
@@ -11,16 +11,26 @@ export type Option = {
 };
 
 /**
- * type CheckboxOption
- * use to match checkbox attributes
- */
- export type CheckboxOption = {
+* type CheckboxOption
+* use to match checkbox attributes
+*/
+export type CheckboxOption = {
   id: string,
   title: string,
   value: string | string,
   checked?: boolean,
   disabled?: boolean,
   indeterminate?: boolean
+}
+
+/*
+* type RadioOption
+* use to match radio attributes
+*/
+export type RadioOption = {
+  title: string,
+  value: any,
+  disabled?: boolean,
 };
 
 /**
@@ -29,7 +39,7 @@ export type Option = {
  */
 export type OptGroup = {
   group: string,
-  options: Option[]
+  options: SelectOption[]
 };
 
 /**

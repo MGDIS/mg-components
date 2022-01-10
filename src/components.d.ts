@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { CheckboxOption, CheckboxValue, Option } from "./types/components.types";
+import { CheckboxOption, CheckboxValue, RadioOption, SelectOption } from "./types/components.types";
 export namespace Components {
     interface MgButton {
         /**
@@ -91,10 +91,6 @@ export namespace Components {
          */
         "label": string;
         /**
-          * Define if label has colon ":"
-         */
-        "labelColon": boolean;
-        /**
           * Define if label is visible
          */
         "labelHide": boolean;
@@ -149,10 +145,6 @@ export namespace Components {
          */
         "label": string;
         /**
-          * Define if label has colon ":"
-         */
-        "labelColon": boolean;
-        /**
           * Define if label is visible
          */
         "labelHide": boolean;
@@ -206,10 +198,6 @@ export namespace Components {
           * Input label Required
          */
         "label": string;
-        /**
-          * Define if label has colon ":"
-         */
-        "labelColon": boolean;
         /**
           * Define if label is visible
          */
@@ -283,15 +271,11 @@ export namespace Components {
         /**
           * Items are the possible options to select Required
          */
-        "items": string[] | Option[];
+        "items": string[] | RadioOption[];
         /**
           * Input label Required
          */
         "label": string;
-        /**
-          * Define if label has colon ":"
-         */
-        "labelColon": boolean;
         /**
           * Define if label is visible
          */
@@ -323,7 +307,7 @@ export namespace Components {
         /**
           * Component value
          */
-        "value"?: string;
+        "value"?: any;
     }
     interface MgInputSelect {
         /**
@@ -345,15 +329,11 @@ export namespace Components {
         /**
           * Items are the possible options to select
          */
-        "items": string[] | Option[];
+        "items": string[] | SelectOption[];
         /**
           * Input label Required
          */
         "label": string;
-        /**
-          * Define if label has colon ":"
-         */
-        "labelColon": boolean;
         /**
           * Define if label is visible
          */
@@ -420,10 +400,6 @@ export namespace Components {
           * Input label Required
          */
         "label": string;
-        /**
-          * Define if label has colon ":"
-         */
-        "labelColon": boolean;
         /**
           * Define if label is visible
          */
@@ -503,10 +479,6 @@ export namespace Components {
          */
         "label": string;
         /**
-          * Define if label has colon ":"
-         */
-        "labelColon": boolean;
-        /**
           * Define if label is visible
          */
         "labelHide": boolean;
@@ -561,10 +533,6 @@ export namespace Components {
     }
     interface MgInputTitle {
         /**
-          * Add a colon punctuation after label text
-         */
-        "colon": boolean;
-        /**
           * Label input id
          */
         "identifier": string;
@@ -606,6 +574,10 @@ export namespace Components {
         "variant"?: string;
     }
     interface MgTooltip {
+        /**
+          * Display tooltip
+         */
+        "display": boolean;
         /**
           * Sets an `id` attribute. Needed by the input for accessibility `arai-decribedby`.
          */
@@ -807,10 +779,6 @@ declare namespace LocalJSX {
          */
         "label": string;
         /**
-          * Define if label has colon ":"
-         */
-        "labelColon"?: boolean;
-        /**
           * Define if label is visible
          */
         "labelHide"?: boolean;
@@ -869,10 +837,6 @@ declare namespace LocalJSX {
          */
         "label": string;
         /**
-          * Define if label has colon ":"
-         */
-        "labelColon"?: boolean;
-        /**
           * Define if label is visible
          */
         "labelHide"?: boolean;
@@ -930,10 +894,6 @@ declare namespace LocalJSX {
           * Input label Required
          */
         "label": string;
-        /**
-          * Define if label has colon ":"
-         */
-        "labelColon"?: boolean;
         /**
           * Define if label is visible
          */
@@ -1011,15 +971,11 @@ declare namespace LocalJSX {
         /**
           * Items are the possible options to select Required
          */
-        "items": string[] | Option[];
+        "items": string[] | RadioOption[];
         /**
           * Input label Required
          */
         "label": string;
-        /**
-          * Define if label has colon ":"
-         */
-        "labelColon"?: boolean;
         /**
           * Define if label is visible
          */
@@ -1035,7 +991,7 @@ declare namespace LocalJSX {
         /**
           * Emitted event when value change
          */
-        "onValueChange"?: (event: CustomEvent<string>) => void;
+        "onValueChange"?: (event: CustomEvent<any>) => void;
         /**
           * Define if input is readonly
          */
@@ -1055,7 +1011,7 @@ declare namespace LocalJSX {
         /**
           * Component value
          */
-        "value"?: string;
+        "value"?: any;
     }
     interface MgInputSelect {
         /**
@@ -1077,15 +1033,11 @@ declare namespace LocalJSX {
         /**
           * Items are the possible options to select
          */
-        "items": string[] | Option[];
+        "items": string[] | SelectOption[];
         /**
           * Input label Required
          */
         "label": string;
-        /**
-          * Define if label has colon ":"
-         */
-        "labelColon"?: boolean;
         /**
           * Define if label is visible
          */
@@ -1156,10 +1108,6 @@ declare namespace LocalJSX {
           * Input label Required
          */
         "label": string;
-        /**
-          * Define if label has colon ":"
-         */
-        "labelColon"?: boolean;
         /**
           * Define if label is visible
          */
@@ -1243,10 +1191,6 @@ declare namespace LocalJSX {
          */
         "label": string;
         /**
-          * Define if label has colon ":"
-         */
-        "labelColon"?: boolean;
-        /**
           * Define if label is visible
          */
         "labelHide"?: boolean;
@@ -1305,10 +1249,6 @@ declare namespace LocalJSX {
     }
     interface MgInputTitle {
         /**
-          * Add a colon punctuation after label text
-         */
-        "colon"?: boolean;
-        /**
           * Label input id
          */
         "identifier": string;
@@ -1350,6 +1290,10 @@ declare namespace LocalJSX {
         "variant"?: string;
     }
     interface MgTooltip {
+        /**
+          * Display tooltip
+         */
+        "display"?: boolean;
         /**
           * Sets an `id` attribute. Needed by the input for accessibility `arai-decribedby`.
          */

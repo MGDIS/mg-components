@@ -20,8 +20,6 @@ export default {
   // Extract slot so it won't be render as an attribute
   const labelOnTop = args.labelOnTop;
   delete args.labelOnTop;
-  const labelColon = args.labelColon;
-  delete args.labelColon;
   const labelHide = args.labelHide;
   delete args.labelHide;
   const helpText = args.helpText;
@@ -30,7 +28,6 @@ export default {
   return <mg-input-numeric
     {...args}
     label-on-top={labelOnTop}
-    label-colon={labelColon}
     label-hide={labelHide}
     help-text={helpText}
   ></mg-input-numeric>
@@ -51,7 +48,6 @@ MgInputNumeric.args = {
   // Label
   label: 'Label',
   labelOnTop: false,
-  labelColon: true,
   labelHide: false,
   // Input
   placeholder: 'placeholder',

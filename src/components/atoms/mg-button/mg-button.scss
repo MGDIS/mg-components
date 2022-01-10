@@ -8,13 +8,15 @@
   }
   &.mg-button--#{$name} {
     // Decoration
+    border-color: hsl(var(#{$backgroundColor}-h), var(#{$backgroundColor}-s), var(#{$backgroundColor}-l)); /* IE FIX */
     border-color: hsl(var(#{$backgroundColor}-h), var(#{$backgroundColor}-s), calc(var(#{$backgroundColor}-l) - 10%));
     // Font
     color: hsl(var(#{$fontColor}));
     // Background
+    background: hsl(var(#{$backgroundColor}-h), var(#{$backgroundColor}-s), var(#{$backgroundColor}-l)); /* IE FIX */
     background: linear-gradient(
       to bottom,
-      hsl(var(#{$backgroundColor}-h), var(#{$backgroundColor}-s), calc(var(#{$backgroundColor}-l))),
+      hsl(var(#{$backgroundColor}-h), var(#{$backgroundColor}-s), var(#{$backgroundColor}-l)),
       hsl(var(#{$backgroundColor}-h), var(#{$backgroundColor}-s), calc(var(#{$backgroundColor}-l) - 10%))
     );
 
@@ -23,18 +25,18 @@
     &:hover:not([disabled], .disabled),
     &:focus:not([disabled], .disabled),
     &:active:not([disabled], .disabled) {
-      background: hsl(var(#{$backgroundColor}-h), var(#{$backgroundColor}-s), calc(var(#{$backgroundColor}-l)));
+      background: hsl(var(#{$backgroundColor}-h), var(#{$backgroundColor}-s), var(#{$backgroundColor}-l));
     }
   }
 }
 
 .mg-button {
   // Display
+  position: relative;
   display: inline-flex;
   align-items: center;
   vertical-align: middle;
   min-height: var(--default-size);
-  box-sizing: border-box;
   padding: 0.7435rem 1.1rem;
   // Decoration
   border-radius: var(--mg-button-border-radius);
@@ -58,6 +60,7 @@
   // Icon only button
   &.mg-button--icon {
     // Display
+    padding: 0;
     justify-content: center;
     width: var(--default-size);
     height: var(--default-size);
@@ -85,6 +88,22 @@
       background: hsla(var(--color-dark), 0.1);
     }
   }
+
+  &__content {
+    display: flex;
+  }
+
+  &--loading {
+    .mg-button__content {
+      opacity: 0;
+    }
+    mg-icon:first-child {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
 }
 
 mg-button {
@@ -98,8 +117,11 @@ mg-button {
 
 .mg-button,
 mg-button {
+  max-width: 100%;
   mg-icon {
     display: inline-flex;
+    flex-shrink: 0;
     line-height: 1;
+    margin: auto 0;
   }
 }

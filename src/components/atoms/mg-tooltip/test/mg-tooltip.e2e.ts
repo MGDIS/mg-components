@@ -34,7 +34,44 @@ describe('mg-tooltip', () => {
       await page.waitForChanges();
 
       expect(tooltip).not.toHaveAttribute('data-show');
+    });
 
+    test.each(['Space', 'Enter'])('Should NOT navigate with keyboard, case key %s', async (key) => {
+      const page = await createPage(`<style>mg-icon{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%)}</style><mg-tooltip message="this is a tooltip message" placement="${placement}"><mg-icon icon="info"></mg-icon></mg-tooltip>`);
+
+      const mgTooltip = await page.find('mg-tooltip');
+      const tooltip = await page.find('[role="tooltip"]');
+
+      expect(mgTooltip).toHaveClass('hydrated');
+
+      await page.keyboard.down('Tab');
+      await page.waitForChanges();
+
+      expect(tooltip).toHaveAttribute('data-show');
+
+      await page.keyboard.down(key as any);
+      await page.waitForChanges();
+
+      expect(tooltip).toHaveAttribute('data-show');
+    });
+
+    test('Should navigate with keyboard, case key "Escape"', async () => {
+      const page = await createPage(`<style>mg-icon{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%)}</style><mg-tooltip message="this is a tooltip message" placement="${placement}"><mg-icon icon="info"></mg-icon></mg-tooltip>`);
+
+      const mgTooltip = await page.find('mg-tooltip');
+      const tooltip = await page.find('[role="tooltip"]');
+
+      expect(mgTooltip).toHaveClass('hydrated');
+
+      await page.keyboard.down('Tab');
+      await page.waitForChanges();
+
+      expect(tooltip).toHaveAttribute('data-show');
+
+      await page.keyboard.down('Escape');
+      await page.waitForChanges();
+
+      expect(tooltip).not.toHaveAttribute('data-show');
     });
   });
 });

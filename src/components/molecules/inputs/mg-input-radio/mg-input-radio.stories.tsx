@@ -19,8 +19,6 @@ const Template = args => {
     // Extract slot so it won't be render as an attribute
     const labelOnTop = args.labelOnTop;
     delete args.labelOnTop;
-    const labelColon = args.labelColon;
-    delete args.labelColon;
     const helpText = args.helpText;
     delete args.helpText;
     const inputVerticalList = args.inputVerticalList;
@@ -31,7 +29,6 @@ const Template = args => {
     return   <mg-input-radio
     {...args}
     label-on-top={labelOnTop}
-    label-colon={labelColon}
     label-hide={labelHide}
     help-text={helpText}
     input-vertical-list={inputVerticalList}
@@ -48,7 +45,6 @@ MgInputRadio.args = {
   // Label
   label: 'Option',
   labelOnTop: false,
-  labelColon: false,
   // placement
   inputVerticalList: false,
   // Input

@@ -20,6 +20,7 @@ describe('mg-input-numeric', () => {
       {label: 'label', identifier: "identifier", type, readonly: true, value: "1234567890"},
       {label: 'label', identifier: "identifier", type, disabled: true, value: "1234567890"},
       {label: 'label', identifier: "identifier", type, tooltip: "My Tooltip Message"},
+      {label: 'label', identifier: "identifier", type, tooltip: "My Tooltip Message", labelOnTop: true}
     ])('Should render with args %s:', async (args) => {
       const { root } = await getPage(args);
       expect(root).toMatchSnapshot();
@@ -31,6 +32,15 @@ describe('mg-input-numeric', () => {
       }
       catch (err) {
         expect(err.message).toMatch('prop "label" is required')
+      }
+    });
+
+    test('Should throw an error with labelOnTop & labelHide set to true', async () => {
+      try {
+        await getPage({label: 'batman', labelOnTop: true, labelHide: true});
+      }
+      catch (err) {
+        expect(err.message).toMatch('<mg-input> prop "labelOnTop" must not be paired with the prop "labelHide"')
       }
     });
 
@@ -52,7 +62,6 @@ describe('mg-input-numeric', () => {
 
       input.dispatchEvent(new CustomEvent('focus', { bubbles: true }));
       await page.waitForChanges();
-      expect(page.rootInstance.classList.has('is-focused')).toBeTruthy();
 
       expect(page.root).toMatchSnapshot(); //Snapshot on focus
 
@@ -60,10 +69,6 @@ describe('mg-input-numeric', () => {
       input.dispatchEvent(new CustomEvent('input', { bubbles: true }));
       await page.waitForChanges();
       expect(page.rootInstance.valueChange.emit).toHaveBeenCalledWith(parseFloat(inputValue));
-
-      input.dispatchEvent(new CustomEvent('blur', { bubbles: true }));
-      await page.waitForChanges();
-      expect(page.rootInstance.classList.has('is-focused')).toBeFalsy();
     });
 
     test.each([
@@ -153,7 +158,7 @@ describe('mg-input-numeric', () => {
     });
 
     test('Should filter entered value', async ()=> {
-      let inputValue = '1';
+      const inputValue = '1';
       const args = {label: 'label', identifier: "identifier", type, helpText: "My help text"};
       const page = await getPage(args);
 
@@ -191,4 +196,28 @@ describe('mg-input-numeric', () => {
       expect(err.message).toMatch('<mg-input-numeric> prop "type" must be one of :')
     }
   });
+
+  test('Should manage missing shadowRoot on IE', async ()=>{
+    const inputValue = '1';
+    const args = {label: 'label', identifier: "identifier", helpText: "My help text", value: inputValue};
+    const page = await getPage(args);
+
+    await page.waitForChanges();
+
+    const element = page.doc.querySelector('mg-input-numeric');
+    const input = element.shadowRoot.querySelector('input');
+
+    page.rootInstance.element.shadowRoot = undefined;
+    const mockGetElementById = jest.fn();
+    global.document.getElementById = mockGetElementById.mockReturnValueOnce(null).mockReturnValueOnce(input);
+
+    //mock validity
+    input.checkValidity = jest.fn(()=> true);
+    jest.spyOn(page.rootInstance.valueChange, 'emit');
+
+    input.value = 'a';
+    input.dispatchEvent(new CustomEvent('input', { bubbles: true }));
+    await page.waitForChanges();
+    expect(page.rootInstance.valueChange.emit).toHaveBeenCalledWith(parseFloat(inputValue));
+  })
 });

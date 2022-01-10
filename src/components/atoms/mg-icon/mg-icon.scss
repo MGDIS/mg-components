@@ -24,3 +24,25 @@ mg-icon,
   vertical-align: middle;
   line-height: 1;
 }
+
+/**
+* Loader icon
+**/
+
+.loader__full-circle {
+  opacity: .2;
+}
+
+/**
+* Animations
+**/
+
+.mg-icon--spin {
+  animation-name: rotate;
+  animation-duration: .75s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotate {
+  to { transform: rotate(360deg); }
+}

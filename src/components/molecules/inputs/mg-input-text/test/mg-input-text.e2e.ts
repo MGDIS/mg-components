@@ -6,7 +6,7 @@ describe('mg-input-text', () => {
     `<mg-input-text label="label"></mg-input-text>`,
     `<mg-input-text label="label" label-on-top></mg-input-text>`,
     `<mg-input-text label="label" label-hide></mg-input-text>`,
-    `<mg-input-text label="label" label-colon placeholder="placeholder" help-text="HelpText Message"></mg-input-text>`
+    `<mg-input-text label="label" placeholder="placeholder" help-text="HelpText Message"></mg-input-text>`
   ])('without tooltip', (html)=>{
     test('render', async () => {
       const page = await createPage(html);
@@ -33,8 +33,8 @@ describe('mg-input-text', () => {
     });
   })
 
-  test('render with tooltip', async () => {
-    const page = await createPage(`<mg-input-text label="label" tooltip="Tooltip message"></mg-input-text>`);
+  test.each([true, false])('render with tooltip, case label-on-top %s', async (labelOnTop) => {
+    const page = await createPage(`<mg-input-text label="label" tooltip="Tooltip message" label-on-top=${labelOnTop}></mg-input-text>`);
 
     const element = await page.find('mg-input-text');
 
@@ -54,6 +54,7 @@ describe('mg-input-text', () => {
     `<mg-input-text label="label" readonly></mg-input-text>`,
     `<mg-input-text label="label" value="blu"></mg-input-text>`,
     `<mg-input-text label="label" value="blu" readonly></mg-input-text>`,
+    `<mg-input-text label="label" value="blu" readonly label-on-top></mg-input-text>`,
     `<mg-input-text label="label" disabled></mg-input-text>`,
   ])('Should render with template', (html)=>{
     test('render', async () => {

@@ -7,7 +7,7 @@ import { locale, currency } from "../locales";
  */
 export function localeCurrency(number:number):string {
   return new Intl.NumberFormat(locale, {style: "currency", currency}).format(number);
-};
+}
 
 /**
  * Format number to locale
@@ -16,7 +16,7 @@ export function localeCurrency(number:number):string {
  */
 export function localeNumber(number:number):string {
   return new Intl.NumberFormat(locale).format(number);
-};
+}
 
 /**
  * Locale date format

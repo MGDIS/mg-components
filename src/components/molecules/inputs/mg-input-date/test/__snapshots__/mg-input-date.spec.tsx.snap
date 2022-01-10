@@ -46,6 +46,31 @@ exports[`mg-input-date Should render with args {
 </mg-input-date>
 `;
 
+exports[`mg-input-date Should render with args {
+  label: 'label',
+  identifier: 'identifier',
+  tooltip: 'My Tooltip Message',
+  labelOnTop: true
+}: 1`] = `
+<mg-input-date>
+  <mock:shadow-root>
+    <div class="mg-input mg-input--date mg-input--label-on-top">
+      <mg-input-title identifier="identifier">
+        label
+      </mg-input-title>
+      <mg-tooltip identifier="identifier-tooltip" message="My Tooltip Message">
+        <mg-icon icon="info"></mg-icon>
+      </mg-tooltip>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input-container__input">
+          <input aria-describedby="" id="identifier" name="identifier" type="date">
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-date>
+`;
+
 exports[`mg-input-date Should render with args { label: 'label', identifier: 'identifier' }: 1`] = `
 <mg-input-date>
   <mock:shadow-root>
@@ -115,7 +140,7 @@ exports[`mg-input-date Should render with args { label: 'label', identifier: 'id
 exports[`mg-input-date Should trigger events 1`] = `
 <mg-input-date>
   <mock:shadow-root>
-    <div class="is-focused mg-input mg-input--date">
+    <div class="mg-input mg-input--date">
       <mg-input-title identifier="identifier">
         label
       </mg-input-title>

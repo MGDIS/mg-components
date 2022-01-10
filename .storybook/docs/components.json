@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-12-22T10:03:02",
+  "timestamp": "2022-01-10T08:39:57",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.12.0",
@@ -8,7 +8,7 @@
   "components": [
     {
       "filePath": "./src/components/atoms/mg-button/mg-button.tsx",
-      "encapsulation": "shadow",
+      "encapsulation": "scoped",
       "tag": "mg-button",
       "readme": "This atom refers to the [PDA9-67](https://jira.mgdis.fr/browse/PDA9-67).\n",
       "docs": "This atom refers to the [PDA9-67](https://jira.mgdis.fr/browse/PDA9-67).",
@@ -126,8 +126,13 @@
       "dependents": [
         "mg-message"
       ],
-      "dependencies": [],
+      "dependencies": [
+        "mg-icon"
+      ],
       "dependencyGraph": {
+        "mg-button": [
+          "mg-icon"
+        ],
         "mg-message": [
           "mg-button"
         ]
@@ -299,6 +304,7 @@
       "slots": [],
       "parts": [],
       "dependents": [
+        "mg-button",
         "mg-input-checkbox",
         "mg-input-date",
         "mg-input-numeric",
@@ -310,6 +316,9 @@
       ],
       "dependencies": [],
       "dependencyGraph": {
+        "mg-button": [
+          "mg-icon"
+        ],
         "mg-input-checkbox": [
           "mg-icon"
         ],
@@ -340,7 +349,7 @@
       "filePath": "./src/components/molecules/inputs/mg-input-checkbox/mg-input-checkbox.tsx",
       "encapsulation": "shadow",
       "tag": "mg-input-checkbox",
-      "readme": "# mg-input-checkbox\n",
+      "readme": "# mg-input-checkbox\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -461,23 +470,6 @@
           ],
           "optional": false,
           "required": true
-        },
-        {
-          "name": "labelColon",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "label-colon",
-          "reflectToAttr": false,
-          "docs": "Define if label has colon \":\"",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
         },
         {
           "name": "labelHide",
@@ -629,16 +621,16 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "mg-input-title",
         "mg-tooltip",
         "mg-icon",
+        "mg-input-title",
         "mg-character-left"
       ],
       "dependencyGraph": {
         "mg-input-checkbox": [
-          "mg-input-title",
           "mg-tooltip",
           "mg-icon",
+          "mg-input-title",
           "mg-character-left"
         ]
       }
@@ -733,23 +725,6 @@
           ],
           "optional": false,
           "required": true
-        },
-        {
-          "name": "labelColon",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "label-colon",
-          "reflectToAttr": false,
-          "docs": "Define if label has colon \":\"",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
         },
         {
           "name": "labelHide",
@@ -902,16 +877,16 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "mg-input-title",
         "mg-tooltip",
         "mg-icon",
+        "mg-input-title",
         "mg-character-left"
       ],
       "dependencyGraph": {
         "mg-input-date": [
-          "mg-input-title",
           "mg-tooltip",
           "mg-icon",
+          "mg-input-title",
           "mg-character-left"
         ]
       }
@@ -1006,23 +981,6 @@
           ],
           "optional": false,
           "required": true
-        },
-        {
-          "name": "labelColon",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "label-colon",
-          "reflectToAttr": false,
-          "docs": "Define if label has colon \":\"",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
         },
         {
           "name": "labelHide",
@@ -1240,16 +1198,16 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "mg-input-title",
         "mg-tooltip",
         "mg-icon",
+        "mg-input-title",
         "mg-character-left"
       ],
       "dependencyGraph": {
         "mg-input-numeric": [
-          "mg-input-title",
           "mg-tooltip",
           "mg-icon",
+          "mg-input-title",
           "mg-character-left"
         ]
       }
@@ -1348,14 +1306,14 @@
         },
         {
           "name": "items",
-          "type": "Option[] | string[]",
+          "type": "RadioOption[] | string[]",
           "mutable": false,
           "reflectToAttr": false,
           "docs": "Items are the possible options to select\nRequired",
           "docsTags": [],
           "values": [
             {
-              "type": "Option[]"
+              "type": "RadioOption[]"
             },
             {
               "type": "string[]"
@@ -1379,23 +1337,6 @@
           ],
           "optional": false,
           "required": true
-        },
-        {
-          "name": "labelColon",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "label-colon",
-          "reflectToAttr": false,
-          "docs": "Define if label has colon \":\"",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
         },
         {
           "name": "labelHide",
@@ -1516,7 +1457,7 @@
         },
         {
           "name": "value",
-          "type": "string",
+          "type": "any",
           "mutable": true,
           "attr": "value",
           "reflectToAttr": true,
@@ -1524,7 +1465,7 @@
           "docsTags": [],
           "values": [
             {
-              "type": "string"
+              "type": "any"
             }
           ],
           "optional": true,
@@ -1535,7 +1476,7 @@
       "events": [
         {
           "event": "valueChange",
-          "detail": "string",
+          "detail": "any",
           "bubbles": true,
           "cancelable": true,
           "composed": true,
@@ -1549,16 +1490,16 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "mg-input-title",
         "mg-tooltip",
         "mg-icon",
+        "mg-input-title",
         "mg-character-left"
       ],
       "dependencyGraph": {
         "mg-input-radio": [
-          "mg-input-title",
           "mg-tooltip",
           "mg-icon",
+          "mg-input-title",
           "mg-character-left"
         ]
       }
@@ -1640,14 +1581,14 @@
         },
         {
           "name": "items",
-          "type": "Option[] | string[]",
+          "type": "SelectOption[] | string[]",
           "mutable": false,
           "reflectToAttr": false,
           "docs": "Items are the possible options to select",
           "docsTags": [],
           "values": [
             {
-              "type": "Option[]"
+              "type": "SelectOption[]"
             },
             {
               "type": "string[]"
@@ -1671,23 +1612,6 @@
           ],
           "optional": false,
           "required": true
-        },
-        {
-          "name": "labelColon",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "label-colon",
-          "reflectToAttr": false,
-          "docs": "Define if label has colon \":\"",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
         },
         {
           "name": "labelHide",
@@ -1857,16 +1781,16 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "mg-input-title",
         "mg-tooltip",
         "mg-icon",
+        "mg-input-title",
         "mg-character-left"
       ],
       "dependencyGraph": {
         "mg-input-select": [
-          "mg-input-title",
           "mg-tooltip",
           "mg-icon",
+          "mg-input-title",
           "mg-character-left"
         ]
       }
@@ -1994,23 +1918,6 @@
           ],
           "optional": false,
           "required": true
-        },
-        {
-          "name": "labelColon",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "label-colon",
-          "reflectToAttr": false,
-          "docs": "Define if label has colon \":\"",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
         },
         {
           "name": "labelHide",
@@ -2228,16 +2135,16 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "mg-input-title",
         "mg-tooltip",
         "mg-icon",
+        "mg-input-title",
         "mg-character-left"
       ],
       "dependencyGraph": {
         "mg-input-text": [
-          "mg-input-title",
           "mg-tooltip",
           "mg-icon",
+          "mg-input-title",
           "mg-character-left"
         ]
       }
@@ -2365,23 +2272,6 @@
           ],
           "optional": false,
           "required": true
-        },
-        {
-          "name": "labelColon",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "label-colon",
-          "reflectToAttr": false,
-          "docs": "Define if label has colon \":\"",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
         },
         {
           "name": "labelHide",
@@ -2616,16 +2506,16 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "mg-input-title",
         "mg-tooltip",
         "mg-icon",
+        "mg-input-title",
         "mg-character-left"
       ],
       "dependencyGraph": {
         "mg-input-textarea": [
-          "mg-input-title",
           "mg-tooltip",
           "mg-icon",
+          "mg-input-title",
           "mg-character-left"
         ]
       }
@@ -2639,22 +2529,6 @@
       "docsTags": [],
       "usage": {},
       "props": [
-        {
-          "name": "colon",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "colon",
-          "reflectToAttr": false,
-          "docs": "Add a colon punctuation after label text",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
         {
           "name": "identifier",
           "type": "string",
@@ -2838,6 +2712,9 @@
         "mg-message": [
           "mg-icon",
           "mg-button"
+        ],
+        "mg-button": [
+          "mg-icon"
         ]
       }
     },
@@ -2903,6 +2780,23 @@
       "docsTags": [],
       "usage": {},
       "props": [
+        {
+          "name": "display",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "display",
+          "reflectToAttr": true,
+          "docs": "Display tooltip",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
         {
           "name": "identifier",
           "type": "string",

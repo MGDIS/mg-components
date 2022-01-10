@@ -1,9 +1,44 @@
 import { Component, Event, h, Prop, State, EventEmitter, Watch } from '@stencil/core';
 import { MgInput } from '../MgInput';
-import { createID, ClassList } from '../../../../utils/components.utils';
+import { createID, ClassList, allItemsAreString } from '../../../../utils/components.utils';
 import { messages } from '../../../../locales';
-import { Option, OptGroup }from '../../../../types/components.types';
+import { SelectOption, OptGroup }from '../../../../types/components.types';
 
+/**
+ * Check if item is a well configured option
+ * @param option
+ * @returns {boolean}
+ */
+const isOption = (option: SelectOption): boolean => typeof option === 'object' && typeof option.title === 'string' && option.value !== undefined;
+
+/**
+ * Group options
+ * @param acc
+ * @param {SelectOption} item
+ * @param {string} item.group
+ * @param {string} item.title
+ * @param {string} item.value
+ * @param {boolean} item.disabled
+ * @returns {OptGroup} grouped options
+ */
+const groupOptions = (acc, {group, title, value, disabled}): OptGroup => {
+  if(group) {
+    // Check if group is already created
+    const optgroup = acc.find(grp=>grp.group===group);
+    // Add to group
+    if(optgroup) {
+      optgroup.options.push({title,value, disabled})
+    }
+    // Create group
+    else {
+      acc.push({group, options:[{title, value, disabled}]});
+    }
+  }
+  else {
+    acc.push({title, value, disabled});
+  }
+  return acc;
+}
 @Component({
   tag: 'mg-input-select',
   styleUrl: 'mg-input-select.scss',
@@ -15,7 +50,6 @@ export class MgInputSelect {
    * Internal *
    ************/
 
-  private classFocus = 'is-focused';
   private classError = 'is-not-valid';
 
   /**************
@@ -30,35 +64,18 @@ export class MgInputSelect {
   /**
    * Items are the possible options to select
    */
-  @Prop() items!: string[] | Option[];
+  @Prop() items!: string[] | SelectOption[];
   @Watch('items')
   validateItems(newValue){
     // String array
-    if(newValue && (newValue as Array<string>).every((item) => typeof item === 'string')) {
+    if(allItemsAreString(newValue)) {
       this.options = newValue.map(item=>({ title:item, value:item }));
     }
     // Object array
-    else if(newValue && (newValue as Array<Option>).every((item) => (typeof item === 'object' && typeof item.title === 'string' && item.value !== undefined ))) {
+    else if(newValue && (newValue as Array<SelectOption>).every(item => isOption(item))) {
       // Grouped object options
       if(newValue.some((item)=>(item.group !== undefined))) {
-        this.options = newValue.reduce((acc, {group, title, value, disabled})=>{
-          if(group) {
-            // Check if group is already created
-            const optgroup = acc.find(grp=>grp.group===group);
-            // Add to group
-            if(optgroup) {
-              optgroup.options.push({title,value, disabled})
-            }
-            // Create group
-            else {
-              acc.push({group, options:[{title, value, disabled}]});
-            }
-          }
-          else {
-            acc.push({title, value, disabled});
-          }
-          return acc;
-        }, []);
+        this.options = newValue.reduce(groupOptions, []);
       }
       // Standart object options
       else {
@@ -92,11 +109,6 @@ export class MgInputSelect {
    * Define if label is displayed on top
    */
   @Prop() labelOnTop: boolean;
-
-  /**
-   * Define if label has colon ":"
-   */
-  @Prop() labelColon: boolean = false;
 
   /**
    * Define if label is visible
@@ -158,7 +170,7 @@ export class MgInputSelect {
    * Formated items for display
    */
 
-  @State() options: (Option|OptGroup)[];
+  @State() options: (SelectOption|OptGroup)[];
 
   /**
    * Emmited event when value change
@@ -175,22 +187,10 @@ export class MgInputSelect {
    }
 
   /**
-   * Handle focus event
-   */
-  private handleFocus = () => {
-    this.classList.add(this.classFocus);
-    this.classList = new ClassList(this.classList.classes);
-  }
-
-  /**
    * Handle blur event
    * @param event
    */
   private handleBlur = (event:FocusEvent) => {
-    // Manage focus
-    this.classList.delete(this.classFocus);
-    this.classList = new ClassList(this.classList.classes);
-    // Check validity
     this.checkValidity(event.target);
   }
 
@@ -236,7 +236,6 @@ export class MgInputSelect {
         classList={this.classList}
         label={this.label}
         labelOnTop={this.labelOnTop}
-        labelColon={this.labelColon}
         labelHide={this.labelHide}
         required={this.required}
         readonly={this.readonly}
@@ -257,7 +256,6 @@ export class MgInputSelect {
           disabled={this.disabled}
           required={this.required}
           onInput={this.handleInput}
-          onFocus={this.handleFocus}
           onBlur={this.handleBlur}
         >
           <option value="">{this.placeholder}</option>
@@ -268,8 +266,8 @@ export class MgInputSelect {
                   <option value={optgroup.value} selected={this.value===optgroup.value} disabled={optgroup.disabled}>{optgroup.title}</option>
                 )}
               </optgroup>
-            : <option value={(option as Option).value} selected={this.value===(option as Option).value} disabled={(option as Option).disabled}>
-                {(option as Option).title}
+            : <option value={(option as SelectOption).value} selected={this.value===(option as SelectOption).value} disabled={(option as SelectOption).disabled}>
+                {(option as SelectOption).title}
               </option>
           )}
         </select>

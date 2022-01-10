@@ -18,5 +18,4 @@ MgInputTitle.args = {
   slot: 'Label',
   identifier: 'identifier',
   required: true,
-  colon: true,
 };

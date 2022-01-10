@@ -15,7 +15,6 @@ export class MgInputDate {
    * Internal *
    ************/
 
-  private classFocus = 'is-focused';
   private classError = 'is-not-valid';
 
   /**************
@@ -49,11 +48,6 @@ export class MgInputDate {
    * Define if label is displayed on top
    */
    @Prop() labelOnTop: boolean;
-
-  /**
-   * Define if label has colon ":"
-   */
-  @Prop() labelColon: boolean = false;
 
   /**
    * Define if label is visible
@@ -120,22 +114,10 @@ export class MgInputDate {
   }
 
   /**
-   * Handle focus event
-   */
-  private handleFocus = () => {
-    this.classList.add(this.classFocus);
-    this.classList = new ClassList(this.classList.classes);
-  }
-
-  /**
    * Handle blur event
    * @param event
    */
   private handleBlur = (event:FocusEvent) => {
-    // Manage focus
-    this.classList.delete(this.classFocus);
-    this.classList = new ClassList(this.classList.classes);
-    // Check validity
     this.checkValidity(event.target);
   }
 
@@ -180,7 +162,6 @@ export class MgInputDate {
         classList={this.classList}
         label={this.label}
         labelOnTop={this.labelOnTop}
-        labelColon={this.labelColon}
         labelHide={this.labelHide}
         required={this.required}
         readonly={this.readonly}
@@ -202,7 +183,6 @@ export class MgInputDate {
           disabled={this.disabled}
           required={this.required}
           onInput={this.handleInput}
-          onFocus={this.handleFocus}
           onBlur={this.handleBlur}
         />
       </MgInput>

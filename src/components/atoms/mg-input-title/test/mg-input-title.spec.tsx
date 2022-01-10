@@ -9,10 +9,8 @@ const getPage = (args) => newSpecPage({
 
 describe('mg-input-title', () => {
   test.each([
-    {required: false, colon: false, identifier: 'identifier'},
-    {required: true, colon: false, identifier: 'identifier'},
-    {required: false, colon: true, identifier: 'identifier'},
-    {required: true, colon: true, identifier: 'identifier'},
+    {required: false, identifier: 'identifier'},
+    {required: true, identifier: 'identifier'},
     {isLegend: true, identifier: 'identifier'},
   ])('Should render label with args %s', async (args) => {
     const { root } = await getPage(args);

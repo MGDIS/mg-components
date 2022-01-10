@@ -16,6 +16,7 @@ describe('mg-input-textarea', () => {
     {label: 'label', identifier: "identifier", readonly: true},
     {label: 'label', identifier: "identifier", readonly: true, value: "blu"},
     {label: 'label', identifier: "identifier", tooltip: "My Tooltip Message"},
+    {label: 'label', identifier: "identifier", tooltip: "My Tooltip Message", labelOnTop: true},
   ])('Should render with args %s:', async (args) => {
     const { root } = await getPage(args);
     expect(root).toMatchSnapshot();
@@ -27,6 +28,15 @@ describe('mg-input-textarea', () => {
     }
     catch (err) {
       expect(err.message).toMatch('prop "label" is required')
+    }
+  });
+
+  test('Should throw an error with labelOnTop & labelHide set to true', async () => {
+    try {
+      await getPage({label: 'batman', labelOnTop: true, labelHide: true});
+    }
+    catch (err) {
+      expect(err.message).toMatch('<mg-input> prop "labelOnTop" must not be paired with the prop "labelHide"')
     }
   });
 

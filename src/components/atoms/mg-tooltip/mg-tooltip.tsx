@@ -1,4 +1,4 @@
-import { Component, Element, h, Host, Prop } from '@stencil/core';
+import { Component, Element, h, Host, Prop, Watch } from '@stencil/core';
 import { createID } from '../../../utils/components.utils';
 import { Instance as PopperInstance, createPopper } from '@popperjs/core'
 
@@ -42,6 +42,19 @@ export class MgTooltip {
   @Prop() placement: 'auto'|'auto-start'|'auto-end'|'top'|'top-start'|'top-end'|'bottom'|'bottom-start'|'bottom-end'|'right'|'right-start'|'right-end'|'left'|'left-start'|'left-end' = 'bottom';
 
   /**
+  * Display tooltip
+  */
+  @Prop({ mutable: true, reflect: true}) display: boolean = false;
+  @Watch('display')
+  handleDisplay(newVal) {
+    if (newVal) {
+      this.show();
+    } else {
+      this.hide();
+    }
+  }
+
+  /**
    * Show tooltip
    * @returns {void}
    */
@@ -64,7 +77,11 @@ export class MgTooltip {
    * Hide tooltip
    * @returns {void}
    */
-  private hide = () => {
+  private hide = (event?: UIEvent & KeyboardEvent) => {
+    // we continue to process ONLY for KeyboardEvents 'Escape'
+    if(event?.constructor.name.includes('KeyboardEvent') && event.code !== 'Escape') {
+      return;
+    }
     // Hide the tooltip
     this.tooltip.removeAttribute('data-show');
     // Disable the event listeners
@@ -130,12 +147,14 @@ export class MgTooltip {
       ],
     });
 
+    this.handleDisplay(this.display);
+
     // Add events
     ['mouseenter', 'focus'].forEach((event) => {
       slotElement.addEventListener(event, this.show);
     });
 
-    ['mouseleave', 'blur'].forEach((event) => {
+    ['mouseleave', 'blur', 'keydown'].forEach((event) => {
       slotElement.addEventListener(event, this.hide);
     });
   }

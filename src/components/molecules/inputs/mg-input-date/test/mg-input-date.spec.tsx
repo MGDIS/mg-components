@@ -20,6 +20,7 @@ describe('mg-input-date', () => {
     {label: 'label', identifier: "identifier", readonly: true},
     {label: 'label', identifier: "identifier", readonly: true, value: "2021-10-15"},
     {label: 'label', identifier: "identifier", tooltip: "My Tooltip Message"},
+    {label: 'label', identifier: "identifier", tooltip: "My Tooltip Message", labelOnTop: true}
   ])('Should render with args %s:', async (args) => {
     const { root } = await getPage(args);
     expect(root).toMatchSnapshot();
@@ -35,6 +36,15 @@ describe('mg-input-date', () => {
     }
     catch (err) {
       expect(err.message).toMatch('prop "label" is required')
+    }
+  });
+
+  test('Should throw an error with labelOnTop & labelHide set to true', async () => {
+    try {
+      await getPage({label: 'batman', labelOnTop: true, labelHide: true});
+    }
+    catch (err) {
+      expect(err.message).toMatch('<mg-input> prop "labelOnTop" must not be paired with the prop "labelHide"')
     }
   });
 
@@ -57,7 +67,6 @@ describe('mg-input-date', () => {
 
     input.dispatchEvent(new CustomEvent('focus', { bubbles: true }));
     await page.waitForChanges();
-    expect(page.rootInstance.classList.has('is-focused')).toBeTruthy();
 
     expect(page.root).toMatchSnapshot(); //Snapshot on focus
 
@@ -65,10 +74,6 @@ describe('mg-input-date', () => {
     input.dispatchEvent(new CustomEvent('input', { bubbles: true }));
     await page.waitForChanges();
     expect(page.rootInstance.valueChange.emit).toHaveBeenCalledWith(inputValue);
-
-    input.dispatchEvent(new CustomEvent('blur', { bubbles: true }));
-    await page.waitForChanges();
-    expect(page.rootInstance.classList.has('is-focused')).toBeFalsy();
   });
 
   test.each([

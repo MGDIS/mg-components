@@ -5,7 +5,7 @@ import { ClassList, createID } from '../../../utils/components.utils';
 @Component({
   tag: 'mg-button',
   styleUrl: 'mg-button.scss',
-  shadow: true,
+  scoped: true,
 })
 export class MgButton {
 
@@ -34,10 +34,16 @@ export class MgButton {
    @Prop() label: string;
 
   /**
-   * Disable button
-   */
-   @Prop({mutable: true, reflect: true}) disabled: boolean = false;
-
+  * Disable button
+  */
+  @Prop({mutable: true, reflect: true}) disabled: boolean = false;
+  @Watch('disabled')
+  disabledHandler(newValue: boolean) {
+    // Used to revert multi-click
+    if(this.disableOnClick){
+      this.loading = newValue;
+    }
+  }
    /**
    * Define if button is round.
    * Used for icon button.
@@ -51,21 +57,36 @@ export class MgButton {
   @Prop() disableOnClick: boolean = false;
 
   /**
-  * Define if button is loading.
-  * Used to prevent multi-click.
+  * Define if button is loading, default to false.
   * Trigger when button is clicked or key-up ['enter', 'space], then value change to true.
-  */
+  * It's required to reset to false when action/promise in parent is done to stop the loading state
+   */
   @State() loading: boolean = false;
   @Watch('loading')
   loadingHandler(newValue: boolean) {
-    if(!this.disableOnClick) return;
-    this.disabled = newValue;
+    // we add loading style if it newvalue is true else we remove it
+    if (newValue) {
+      this.classList.add('mg-button--loading');
+    } else {
+      this.classList.delete('mg-button--loading');
+    }
   }
 
   /**
    * Component classes
    */
   @State() classList: ClassList = new ClassList(['mg-button']);
+
+  /**
+   * Trigger actions onClick event
+   */
+   private handleClick = () => {
+    // Used to prevent multi-click.
+    if(this.disableOnClick) {
+      this.loading = true;
+      this.disabled = true;
+    }
+  }
 
   /**
    * Check if props are well configured on init
@@ -81,13 +102,6 @@ export class MgButton {
   }
 
   /**
-   * Trigger actions onClick event
-   */
-  private handleClick = () => {
-    this.loading = true;
-  }
-
-  /**
   * Render component
   */
   render() {
@@ -99,7 +113,15 @@ export class MgButton {
           disabled={this.disabled}
           onClick={this.handleClick}
         >
-          <slot></slot>
+          {this.loading ?
+            <mg-icon
+              icon="loader"
+            ></mg-icon>
+            : null
+          }
+          <div class="mg-button__content">
+            <slot></slot>
+          </div>
         </button>
     );
   }

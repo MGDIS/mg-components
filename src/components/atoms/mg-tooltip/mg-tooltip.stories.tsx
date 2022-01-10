@@ -16,6 +16,7 @@ MgTooltip.args = {
   identifier: 'identifier',
   message: 'This is a tooltip message',
   placement: 'bottom',
+  display: false
 };
 
 const TemplateButton = args => <mg-tooltip {...args}><mg-button>Action</mg-button></mg-tooltip>;

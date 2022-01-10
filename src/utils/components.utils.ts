@@ -64,3 +64,12 @@ export class ClassList {
     return this.classes.join(' ');
   }
 }
+
+/**
+ * Check if all items are string
+ * @param items
+ * @returns {boolean}
+ */
+export function allItemsAreString(items: Array<string>):boolean {
+  return items && items.every((item) => typeof item === 'string');
+}

@@ -33,7 +33,7 @@ export class MgCharacterLeft {
   validateTemplate(newValue: string) {
     if (typeof newValue !== 'string' || newValue === '' || newValue.indexOf(this.mustacheCounter) === -1) {
       throw new Error(`<mg-character-left> prop "template" must contain "${this.mustacheCounter}".`);
-    };
+    }
   }
 
   /**
@@ -49,7 +49,7 @@ export class MgCharacterLeft {
   validateMaxlength(newValue: number) {
     if (typeof newValue !== 'number') {
       throw new Error('<mg-character-left> prop "maxlength" is required.')
-    };
+    }
   }
 
   /**

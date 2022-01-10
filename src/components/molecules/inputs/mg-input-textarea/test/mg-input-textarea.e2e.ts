@@ -6,7 +6,7 @@ describe('mg-input-textarea', () => {
     `<mg-input-textarea label="label"></mg-input-textarea>`,
     `<mg-input-textarea label="label" label-on-top></mg-input-textarea>`,
     `<mg-input-textarea label="label" label-hide></mg-input-textarea>`,
-    `<mg-input-textarea label="label" label-colon placeholder="placeholder" help-text="HelpText Message"></mg-input-textarea>`
+    `<mg-input-textarea label="label" placeholder="placeholder" help-text="HelpText Message"></mg-input-textarea>`
   ])('without tooltip', (html)=>{
     test('render', async () => {
       const page = await createPage(html);
@@ -33,8 +33,8 @@ describe('mg-input-textarea', () => {
     });
   })
 
-  test('render with tooltip', async () => {
-    const page = await createPage(`<mg-input-textarea label="label" tooltip="Tooltip message"></mg-input-textarea>`);
+  test.each([true, false])('render with tooltip, case label-on-top %s', async (labelOnTop) => {
+    const page = await createPage(`<mg-input-textarea label="label" tooltip="Tooltip message" label-on-top=${labelOnTop}></mg-input-textarea>`);
 
     const element = await page.find('mg-input-textarea');
 

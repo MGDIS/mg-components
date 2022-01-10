@@ -20,7 +20,6 @@ export class MgInputNumeric {
   private numericValue: number;
   private readonlyValue: string;
   // Classes
-  private classFocus: string = 'is-focused';
   private classError: string = 'is-not-valid';
 
   /**************
@@ -51,8 +50,16 @@ export class MgInputNumeric {
       }
       // Set value and input value
       this.value = newValue;
-      const elementInput = this.element.shadowRoot.getElementById(this.identifier) as HTMLInputElement;
-      if (elementInput !== null) elementInput.value = this.value;
+      try {
+        const elementInput = this.element.shadowRoot.getElementById(this.identifier) as HTMLInputElement;
+        if (elementInput !== null) elementInput.value = this.value;
+      }
+      catch {
+        /* IE FIX */
+        /* There is no Shadow DOM on IE so we need to access via document */
+        const elementInput = document.getElementById(this.identifier) as HTMLInputElement;
+        if (elementInput !== null) elementInput.value = this.value;
+      }
       // emit numeric value
       this.numericValue = this.value !== '' && this.value !== null ? parseFloat(this.value.replace(',', '.')) : null;
       this.valueChange.emit(this.numericValue);
@@ -83,11 +90,6 @@ export class MgInputNumeric {
    * Define if label is displayed on top
    */
   @Prop() labelOnTop: boolean;
-
-  /**
-   * Define if label has colon ":"
-   */
-  @Prop() labelColon: boolean = false;
 
   /**
    * Define if label is visible
@@ -191,9 +193,6 @@ export class MgInputNumeric {
    * Handle focus event
    */
   private handleFocus = () => {
-    this.classList.add(this.classFocus);
-    this.classList = new ClassList(this.classList.classes);
-    // Display value
     this.displayValue = this.value;
   };
 
@@ -202,9 +201,6 @@ export class MgInputNumeric {
    * @param event
    */
   private handleBlur = (event: FocusEvent) => {
-    // Manage focus
-    this.classList.delete(this.classFocus);
-    this.classList = new ClassList(this.classList.classes);
     // Check validity
     this.checkValidity(event.target as HTMLInputElement);
     // Display readonly value
@@ -281,7 +277,6 @@ export class MgInputNumeric {
         classList={this.classList}
         label={this.label}
         labelOnTop={this.labelOnTop}
-        labelColon={this.labelColon}
         labelHide={this.labelHide}
         required={this.required}
         readonly={this.readonly}

@@ -7,6 +7,7 @@ This atom refers to the [PDA9-313](https://jira.mgdis.fr/browse/PDA9-313).
 
 | Property               | Attribute    | Description                                                                      | Type                                                                                                                                                                                                         | Default                  |
 | ---------------------- | ------------ | -------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------ |
+| `display`              | `display`    | Display tooltip                                                                  | `boolean`                                                                                                                                                                                                    | `false`                  |
 | `identifier`           | `identifier` | Sets an `id` attribute. Needed by the input for accessibility `arai-decribedby`. | `string`                                                                                                                                                                                                     | `createID('mg-tooltip')` |
 | `message` _(required)_ | `message`    | Displayed message in the tooltip                                                 | `string`                                                                                                                                                                                                     | `undefined`              |
 | `placement`            | `placement`  | Tooltip placement                                                                | `"auto" \| "auto-end" \| "auto-start" \| "bottom" \| "bottom-end" \| "bottom-start" \| "left" \| "left-end" \| "left-start" \| "right" \| "right-end" \| "right-start" \| "top" \| "top-end" \| "top-start"` | `'bottom'`               |
@@ -16,7 +17,6 @@ This atom refers to the [PDA9-313](https://jira.mgdis.fr/browse/PDA9-313).
 
 ### Used by
 
- - [mg-input-checkbox](../../molecules/inputs/mg-input-checkbox)
  - [mg-input-date](../../molecules/inputs/mg-input-date)
  - [mg-input-numeric](../../molecules/inputs/mg-input-numeric)
  - [mg-input-radio](../../molecules/inputs/mg-input-radio)
@@ -27,7 +27,6 @@ This atom refers to the [PDA9-313](https://jira.mgdis.fr/browse/PDA9-313).
 ### Graph
 ```mermaid
 graph TD;
-  mg-input-checkbox --> mg-tooltip
   mg-input-date --> mg-tooltip
   mg-input-numeric --> mg-tooltip
   mg-input-radio --> mg-tooltip

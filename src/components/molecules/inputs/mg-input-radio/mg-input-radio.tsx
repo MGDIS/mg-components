@@ -1,15 +1,15 @@
 import { Component, Event, h, Prop, EventEmitter, State, Watch } from '@stencil/core';
 import { MgInput } from '../MgInput';
-import { createID, ClassList } from '../../../../utils/components.utils';
+import { createID, ClassList, allItemsAreString } from '../../../../utils/components.utils';
 import { messages } from '../../../../locales';
-import { Option }from '../../../../types/components.types';
+import { RadioOption }from '../../../../types/components.types';
 
 /**
 * type Option validation function
 * @param option
 * @returns {boolean}
 */
-const isOption = (option: Option): boolean => typeof option === 'object' && typeof option.title === 'string' && typeof option.value === 'string' && option.value !== undefined;
+const isOption = (option: RadioOption): boolean => typeof option === 'object' && typeof option.title === 'string' && option.value !== undefined;
 
 @Component({
   tag: 'mg-input-radio',
@@ -22,8 +22,7 @@ export class MgInputRadio {
    * Internal *
    ************/
 
-   private classFocus = 'is-focused';
-   private classError = 'is-not-valid';
+  private classError = 'is-not-valid';
 
   /**************
   * Decorators *
@@ -32,25 +31,25 @@ export class MgInputRadio {
   /**
   * Component value
   */
-  @Prop({ mutable:true, reflect: true }) value?: string;
+  @Prop({ mutable:true, reflect: true }) value?: any;
 
   /**
   * Items are the possible options to select
   * Required
   */
-  @Prop() items!: string[] | Option[];
+  @Prop() items!: string[] | RadioOption[];
   @Watch('items')
   validateItems(newValue){
     // String array
-    if(newValue && (newValue as Array<string>).every(item => typeof item === 'string')) {
+    if(allItemsAreString(newValue)) {
       this.options = newValue.map(item => ({ title:item, value:item, disabled: this.disabled }));
     }
     // Object array
-    else if(newValue && (newValue as Array<Option>).every(item => isOption(item))) {
+    else if(newValue && (newValue as Array<RadioOption>).every(item => isOption(item))) {
       this.options = newValue;
     }
     else {
-      throw new Error('<mg-input-radio> prop "items" is required and all items must be the same type, string or Option.')
+      throw new Error('<mg-input-radio> prop "items" is required and all items must be the same type, string or RadioOption.')
     }
   }
 
@@ -76,11 +75,6 @@ export class MgInputRadio {
   * Define if label is displayed on top
   */
   @Prop() labelOnTop: boolean = false;
-
-  /**
-  * Define if label has colon ":"
-  */
-  @Prop() labelColon: boolean = false;
 
   /**
   * Define if label is visible
@@ -140,28 +134,21 @@ export class MgInputRadio {
   /**
   * Formated items for display
   */
-  @State() options: (Option)[];
+  @State() options: (RadioOption)[];
 
   /**
   * Emitted event when value change
   */
-  @Event() valueChange: EventEmitter<string>
+  @Event() valueChange: EventEmitter<any>
 
   /**
   * Handle input event
   * @param event
   */
   private handleInput = (event:InputEvent & { target: HTMLInputElement }) => {
-    this.value = event.target.value;
+    this.value = this.options
+      .find(o => o.value.toString() === event.target.value).value;
     this.valueChange.emit(this.value);
-  }
-
-  /**
-  * Handle focus event
-  */
-  private handleFocus = () => {
-    this.classList.add(this.classFocus);
-    this.classList = new ClassList(this.classList.classes);
   }
 
   /**
@@ -169,11 +156,6 @@ export class MgInputRadio {
   * @param event
   */
   private handleBlur = (event:FocusEvent) => {
-    // Manage focus
-    this.classList.delete(this.classFocus);
-    this.classList = new ClassList(this.classList.classes);
-
-  // Check validity
     this.checkValidity(event.target);
   }
 
@@ -218,7 +200,6 @@ export class MgInputRadio {
         classList={this.classList}
         label={this.label}
         labelOnTop={this.labelOnTop}
-        labelColon={this.labelColon}
         labelHide={this.labelHide}
         required={this.required}
         readonly={this.readonly}
@@ -243,7 +224,6 @@ export class MgInputRadio {
                 checked={input.value === this.value}
                 disabled={this.disabled || input.disabled}
                 required={this.required}
-                onFocus={this.handleFocus}
                 onBlur={this.handleBlur}
                 onInput={this.handleInput}
               />
