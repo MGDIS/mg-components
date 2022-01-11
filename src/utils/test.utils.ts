@@ -32,3 +32,4 @@ export async function createPage(htmlString?: string) {
 
   return page;
 }
+export const cloneDeep = (el) => JSON.parse(JSON.stringify(el));

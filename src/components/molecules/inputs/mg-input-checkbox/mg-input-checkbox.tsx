@@ -1,4 +1,4 @@
-import { Component, Event, h, Prop, EventEmitter, State, Watch, Element } from '@stencil/core';
+import { Component, Event, h, Prop, EventEmitter, State, Watch } from '@stencil/core';
 import { MgInput } from '../MgInput';
 import { createID, ClassList } from '../../../../utils/components.utils';
 import { messages } from '../../../../locales';
@@ -10,6 +10,16 @@ import { CheckboxOption, CheckboxValue }from '../../../../types/components.types
 * @returns {boolean}
 */
 const isCheckboxOption = (option: CheckboxOption): boolean => typeof option === 'object' && typeof option.title === 'string' && (option.value === null || typeof option.value === 'boolean') && option.value !== undefined;
+
+/**
+* utility function to get shadow-root HTML node element
+* @param element
+* @returns {HTMLElement}
+*/
+const getShadowRootElementFromElement = (element: HTMLElement) :HTMLElement => {
+  if (element.parentElement === null) return element;
+  return getShadowRootElementFromElement(element.parentElement);
+}
 
 @Component({
   tag: 'mg-input-checkbox',
@@ -138,11 +148,6 @@ export class MgInputCheckbox {
   @Event() valueChange: EventEmitter<CheckboxValue[]>
 
   /**
-  * Get component DOM element
-  */
-  @Element() element: HTMLMgInputCheckboxElement;
-
-  /**
   * Handle input event
   * @param event
   */
@@ -154,7 +159,7 @@ export class MgInputCheckbox {
       return option;
     })
 
-    this.value = this.options.map(o => ({value: o.value, title: o.title}));
+    this.value = this.options.map(o => ({value: o.value, title: o.title, disabled: o.disabled}));
     this.valueChange.emit(this.value);
   }
 
@@ -172,9 +177,17 @@ export class MgInputCheckbox {
   * @param element
   */
   private checkValidity(element) {
-    // we check element  OR group validity
-    const elementValidity = element.checkValidity();
-    const validity = elementValidity || this.checkInputGroupValidity();
+    // we check group validity
+    const shadowRootElement = getShadowRootElementFromElement(element);
+    const inputs = Array.from(shadowRootElement.querySelectorAll('input[type=checkbox]'));
+    const findValidInput = inputs.find(i => {
+      const element = i as HTMLInputElement;
+      // we skip disabled elements
+      if (element.disabled) return false;
+
+      return element.checkValidity();
+    });
+    const validity = findValidInput !== undefined;
 
     // Set error message
     this.errorMessage = undefined;
@@ -193,21 +206,6 @@ export class MgInputCheckbox {
     else {
       this.classList.add(this.classError);
     }
-  }
-
-  /**
-   * check input group validity
-   */
-  private checkInputGroupValidity(): boolean {
-    const inputs = Array.from(this.element.shadowRoot.querySelectorAll('input[type=checkbox]'));
-    const getValidInput = inputs.find(i => {
-      const element = i as HTMLInputElement;
-      // we skip disabled elements
-      if (element.disabled) return false;
-
-      return element.checkValidity();
-    });
-    return getValidInput !== undefined;
   }
 
   /*************

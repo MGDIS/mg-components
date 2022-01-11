@@ -497,7 +497,7 @@ exports[`mg-input-checkbox Should trigger events, case validity check false 2`] 
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="identifier-help-text identifier-error" id="identifier_1" name="identifier" type="checkbox" value="false">
+              <input aria-describedby="identifier-help-text identifier-error" disabled="" id="identifier_1" name="identifier" type="checkbox" value="false">
               <label htmlfor="identifier_1">
                 robin
               </label>
@@ -574,7 +574,7 @@ exports[`mg-input-checkbox Should trigger events, case validity check true 1`] =
 `;
 
 exports[`mg-input-checkbox Should trigger events, case validity check true 2`] = `
-<mg-input-checkbox valid="">
+<mg-input-checkbox>
   <mock:shadow-root>
     <fieldset class="mg-input mg-input--checkbox">
       <mg-input-title identifier="identifier" is-legend="">
@@ -590,7 +590,7 @@ exports[`mg-input-checkbox Should trigger events, case validity check true 2`] =
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="identifier-help-text" id="identifier_1" name="identifier" type="checkbox" value="false">
+              <input aria-describedby="identifier-help-text" disabled="" id="identifier_1" name="identifier" type="checkbox" value="false">
               <label htmlfor="identifier_1">
                 robin
               </label>

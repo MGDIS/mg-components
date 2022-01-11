@@ -60,9 +60,3 @@ MgInputCheckbox.args = {
   // Help Text
   helpText: 'Help text with html <strong>bold</strong>, <em>italic</em>.',
 };
-
-export const ItemsWithOptions = Template.bind({});
-ItemsWithOptions.args = {
-  ...MgInputCheckbox.args,
-  required: true
-};

@@ -1,5 +1,6 @@
 import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
+import { cloneDeep } from '../../../../../utils/test.utils';
 import { MgInputCheckbox } from '../mg-input-checkbox';
 import { messages } from '../../../../../locales';
 import { CheckboxValue }from '../../../../../types/components.types';
@@ -16,17 +17,18 @@ describe('mg-input-checkbox', () => {
     { title: 'jocker', value: false },
     { title: 'bane', value: null }
   ];
+
   test.each([
-    {label: 'label', identifier: "identifier", value: items },
-    {label: 'label', identifier: "identifier", value: items, readonly: true},
-    {label: 'label', identifier: "identifier", value: items, labelOnTop: true},
-    {label: 'label', identifier: "identifier", value: items, labelHide: true},
-    {label: 'label', identifier: "identifier", value: items, inputVerticalList: true},
-    {label: 'label', identifier: "identifier", value: items, required: true},
-    {label: 'label', identifier: "identifier", value: items, readonly: true, },
-    {label: 'label', identifier: "identifier", value: items, disabled: true},
-    {label: 'label', identifier: "identifier", value: items, helpText: 'Hello jocker'},
-    {label: 'label', identifier: "identifier", value: items, tooltip: "Batman is a DC Comics license"},
+    {label: 'label', identifier: "identifier", value: cloneDeep(items) },
+    {label: 'label', identifier: "identifier", value: cloneDeep(items), readonly: true},
+    {label: 'label', identifier: "identifier", value: cloneDeep(items), labelOnTop: true},
+    {label: 'label', identifier: "identifier", value: cloneDeep(items), labelHide: true},
+    {label: 'label', identifier: "identifier", value: cloneDeep(items), inputVerticalList: true},
+    {label: 'label', identifier: "identifier", value: cloneDeep(items), required: true},
+    {label: 'label', identifier: "identifier", value: cloneDeep(items), readonly: true, },
+    {label: 'label', identifier: "identifier", value: cloneDeep(items), disabled: true},
+    {label: 'label', identifier: "identifier", value: cloneDeep(items), helpText: 'Hello jocker'},
+    {label: 'label', identifier: "identifier", value: cloneDeep(items), tooltip: "Batman is a DC Comics license"},
   ])('Should render with args %s:', async (args) => {
     const { root } = await getPage(args);
     expect(root).toMatchSnapshot();
@@ -34,7 +36,7 @@ describe('mg-input-checkbox', () => {
 
   test.each(["", undefined])('Should not render with invalid label property : %s', async (value) => {
     try {
-      await getPage({label:value, value: items});
+      await getPage({label:value, value: cloneDeep(items)});
     }
     catch (err) {
       expect(err.message).toMatch('prop "label" is required')
@@ -51,7 +53,7 @@ describe('mg-input-checkbox', () => {
   });
 
   test('Should trigger events, case validity check true', async ()=> {
-    const value: CheckboxValue[] = [...items];
+    const value: CheckboxValue[] = cloneDeep(items);
     const args = {label: 'label', identifier: "identifier", helpText: "My help text", value};
     const page = await getPage(args);
 
@@ -75,7 +77,7 @@ describe('mg-input-checkbox', () => {
     input.dispatchEvent(new CustomEvent('input', { bubbles: true }));
     await page.waitForChanges();
 
-    const emittedValue = items.map(i => ({title: i.title, value: i.value}));
+    const emittedValue = cloneDeep(items);
     emittedValue[2].value = input.checked;
     expect(page.rootInstance.valueChange.emit).toHaveBeenCalledWith(emittedValue);
 
@@ -86,7 +88,7 @@ describe('mg-input-checkbox', () => {
   });
 
   test('Should trigger events, case validity check false', async ()=> {
-    const value: CheckboxValue[] = [...items];
+    const value: CheckboxValue[] = cloneDeep(items);
     const args = {label: 'label', identifier: "identifier", helpText: "My help text", value};
     const page = await getPage(args);
 
@@ -112,7 +114,7 @@ describe('mg-input-checkbox', () => {
     input.checked = false;
     input.dispatchEvent(new CustomEvent('input', { bubbles: true }));
 
-    const emittedValue = items.map(i => ({title: i.title, value: i.value}))
+    const emittedValue = cloneDeep(items);
     emittedValue[0].value = input.checked;
     await page.waitForChanges();
     expect(page.rootInstance.valueChange.emit).toHaveBeenCalledWith(emittedValue);
@@ -124,11 +126,11 @@ describe('mg-input-checkbox', () => {
   });
 
   test.each([
-    {validity: true, valueMissing: false, value:[...items]},
-    {validity: false, valueMissing: true, value:[...items]},
-    {validity: false, valueMissing: false, value:[...items]},
+    {validity: true, valueMissing: false, value: cloneDeep(items)},
+    {validity: false, valueMissing: true, value: cloneDeep(items)},
+    {validity: false, valueMissing: false, value: cloneDeep(items)},
   ])('validity (%s), valueMissing (%s)', async ({validity, valueMissing, value})=> {
-    const args = {label: 'label', identifier: "identifier", value, helpText: "My help text", items: [{ title: 'batman', value: false },{ title: 'robin', value: false, disabled: true}, { title: 'jocker', value: false }, { title: 'bane', value: false }]};
+    const args = {label: 'label', identifier: "identifier", value, helpText: "My help text"};
     const page = await getPage(args);
 
     const element = page.doc.querySelector('mg-input-checkbox');
