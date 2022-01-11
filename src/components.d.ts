@@ -60,6 +60,10 @@ export namespace Components {
           * Define icon size
          */
         "size": string;
+        /**
+          * Define icon variant Add a background to the icon based on variant color
+         */
+        "variant": string;
     }
     interface MgInputDate {
         /**
@@ -744,6 +748,10 @@ declare namespace LocalJSX {
           * Define icon size
          */
         "size"?: string;
+        /**
+          * Define icon variant Add a background to the icon based on variant color
+         */
+        "variant"?: string;
     }
     interface MgInputDate {
         /**

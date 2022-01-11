@@ -5,10 +5,11 @@ This atom refers to the [PDA9-744](https://jira.mgdis.fr/browse/PDA9-744).
 
 ## Properties
 
-| Property | Attribute | Description      | Type     | Default     |
-| -------- | --------- | ---------------- | -------- | ----------- |
-| `icon`   | `icon`    | Icon to display  | `string` | `undefined` |
-| `size`   | `size`    | Define icon size | `string` | `"regular"` |
+| Property  | Attribute | Description                                                             | Type     | Default     |
+| --------- | --------- | ----------------------------------------------------------------------- | -------- | ----------- |
+| `icon`    | `icon`    | Icon to display                                                         | `string` | `undefined` |
+| `size`    | `size`    | Define icon size                                                        | `string` | `"regular"` |
+| `variant` | `variant` | Define icon variant Add a background to the icon based on variant color | `string` | `undefined` |
 
 
 ## Dependencies
