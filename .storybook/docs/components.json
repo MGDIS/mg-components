@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-01-11T07:10:37",
+  "timestamp": "2022-01-11T08:26:20",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.12.0",
@@ -288,6 +288,22 @@
           "docs": "Define icon size",
           "docsTags": [],
           "default": "\"regular\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "variant",
+          "type": "string",
+          "mutable": false,
+          "attr": "variant",
+          "reflectToAttr": false,
+          "docs": "Define icon variant\nAdd a background to the icon based on variant color",
+          "docsTags": [],
           "values": [
             {
               "type": "string"

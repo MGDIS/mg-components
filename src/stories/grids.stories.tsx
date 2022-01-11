@@ -4,13 +4,9 @@ export default {
   title: 'Style/Layout/Grid',
 };
 
-const demoCss = `.mg-grid { margin-top: 1rem; }
-.mg-grid__col { border: 1px solid rgba(0, 0, 0, 0.1); background-color: rgba(0, 0, 0, 0.05); padding-top: 1.5rem; padding-bottom: 1.5rem; }`;
 
 const Template = () => (
-  <main>
-    <style>{demoCss}</style>
-
+  <main id="demo">
     <h1>Grid</h1>
 
     <p>You can use grid classes by using the <code>.mg-grid</code> class in the container. This call will add flex properties to the container.</p>
