@@ -14,6 +14,10 @@
 - [ ] Tests
   - [ ] Unit tests
   - [ ] E2E tests
+- [ ] Browser tests
+  - [ ] Chrome
+  - [ ] Firefox
+  - [ ] IE11
 - [ ] Doc
   - [ ] Linked to PDA9 in readme.md
   - [ ] PDA9 RGs listed in component

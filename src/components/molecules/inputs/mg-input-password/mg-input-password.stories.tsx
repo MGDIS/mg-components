@@ -1,8 +1,8 @@
 import { h } from "@stencil/core";
 
 export default {
-  component: 'mg-input-date',
-  title: 'Molecules/Inputs/mg-input-date',
+  component: 'mg-input-password',
+  title: 'Molecules/Inputs/mg-input-password',
 };
 
 /**
@@ -17,19 +17,23 @@ const Template = args => {
   const helpText = args.helpText;
   delete args.helpText;
   // return element
-  return <mg-input-date
+  return <mg-input-password
     {...args}
     label-on-top={labelOnTop}
     label-hide={labelHide}
     help-text={helpText}
-  ></mg-input-date>
-}
+  ></mg-input-password>
+};
 
-export const MgInputDate = Template.bind({});
+/**
+ * Global use
+ */
 
-MgInputDate.args = {
+export const MgInputText = Template.bind({});
+
+MgInputText.args = {
   // Global
-  value: '2021-10-14',
+  value: '',
   identifier: 'identifier',
   name: 'input-name',
   // Label
@@ -37,9 +41,11 @@ MgInputDate.args = {
   labelOnTop: false,
   labelHide: false,
   // Input
+  placeholder: 'placeholder',
+  maxlength: 400,
   required: true,
-  readonly: false,
   disabled: false,
+  readonly: false,
   // Tooltip
   tooltip: 'This is a tooltip',
   // Help Text

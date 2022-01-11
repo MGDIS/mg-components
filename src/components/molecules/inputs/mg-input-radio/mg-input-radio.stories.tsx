@@ -16,7 +16,6 @@ export default {
  * 2. boolean arguments with a default true value must be added like display-character-left={args.displayCharacterLeft ? 'true' : 'false'}
  */
 const Template = args => {
-    // Extract slot so it won't be render as an attribute
     const labelOnTop = args.labelOnTop;
     delete args.labelOnTop;
     const helpText = args.helpText;
