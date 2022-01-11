@@ -1,5 +1,5 @@
 import { Component, h, Prop, Watch, State } from '@stencil/core';
-import { icons, sizes } from './mg-icon.conf';
+import { icons, sizes, variants } from './mg-icon.conf';
 import { ClassList } from '../../../utils/components.utils';
 
 @Component({
@@ -27,13 +27,28 @@ export class MgIcon {
   /**
    * Define icon size
    */
-  @Prop() size: string = "regular"
+  @Prop() size: string = "regular";
   @Watch('size')
   validateSize(newValue: string) {
     if(!sizes.includes(newValue)) {
       throw new Error(`<mg-icon> prop "size" must be one of : ${sizes.join(', ')}`);
     }
-    this.classList.add(`mg-icon--${this.size}`);
+    this.classList.add(`mg-icon--size-${this.size}`);
+  }
+
+  /**
+   * Define icon variant
+   * Add a background to the icon based on variant color
+   */
+  @Prop() variant: string;
+  @Watch('variant')
+  validateVariant(newValue: string) {
+    if(newValue !== undefined && !variants.includes(newValue)) {
+      throw new Error(`<mg-icon> prop "variant" must be one of : ${variants.join(', ')}`);
+    }
+    else if (newValue !== undefined) {
+      this.classList.add(`mg-icon--variant-${this.variant}`);
+    }
   }
 
   /**
@@ -47,6 +62,7 @@ export class MgIcon {
   componentWillLoad() {
     this.validateIcon(this.icon);
     this.validateSize(this.size);
+    this.validateVariant(this.variant);
   }
 
   /**

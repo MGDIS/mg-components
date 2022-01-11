@@ -19,3 +19,8 @@ export const icons:Object = {
  * List of all possibles sizes
  */
  export const sizes:string[] = ["small", "regular", "large"];
+
+ /**
+ * List of all possibles variants
+ */
+  export const variants:string[] = ["success" , "warning", "danger", "info"];
