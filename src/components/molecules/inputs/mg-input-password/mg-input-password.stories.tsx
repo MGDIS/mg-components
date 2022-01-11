@@ -29,9 +29,9 @@ const Template = args => {
  * Global use
  */
 
-export const MgInputText = Template.bind({});
+export const MgInputPassword = Template.bind({});
 
-MgInputText.args = {
+MgInputPassword.args = {
   // Global
   value: '',
   identifier: 'identifier',
