@@ -11,6 +11,16 @@ import { RadioOption }from '../../../../types/components.types';
 */
 const isOption = (option: RadioOption): boolean => typeof option === 'object' && typeof option.title === 'string' && option.value !== undefined;
 
+/**
+* Validate if items have required min length
+* @param value
+*/
+const itemsLengthValidation = (value: string[] | RadioOption[]) => {
+  if(value.length < 2) {
+    throw new Error('<mg-input-radio> prop "items" require at least 2 items.')
+  }
+}
+
 @Component({
   tag: 'mg-input-radio',
   styleUrl: 'mg-input-radio.scss',
@@ -42,10 +52,12 @@ export class MgInputRadio {
   validateItems(newValue){
     // String array
     if(allItemsAreString(newValue)) {
+      itemsLengthValidation(newValue);
       this.options = newValue.map(item => ({ title:item, value:item, disabled: this.disabled }));
     }
     // Object array
     else if(newValue && (newValue as Array<RadioOption>).every(item => isOption(item))) {
+      itemsLengthValidation(newValue);
       this.options = newValue;
     }
     else {

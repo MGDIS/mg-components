@@ -16,6 +16,7 @@ This atom refers to thes [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64), [PDA9-
 
 ### Used by
 
+ - [mg-input-checkbox](../../molecules/inputs/mg-input-checkbox)
  - [mg-input-date](../../molecules/inputs/mg-input-date)
  - [mg-input-numeric](../../molecules/inputs/mg-input-numeric)
  - [mg-input-radio](../../molecules/inputs/mg-input-radio)
@@ -26,6 +27,7 @@ This atom refers to thes [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64), [PDA9-
 ### Graph
 ```mermaid
 graph TD;
+  mg-input-checkbox --> mg-input-title
   mg-input-date --> mg-input-title
   mg-input-numeric --> mg-input-title
   mg-input-radio --> mg-input-title

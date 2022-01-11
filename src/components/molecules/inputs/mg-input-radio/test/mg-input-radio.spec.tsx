@@ -46,6 +46,15 @@ describe('mg-input-radio', () => {
     }
   });
 
+  test.each([[['batman']], [[{ title: 'batman', value: 'u' }]]])('Should throw an error with less than 2 items, case %s', async (items) => {
+    try {
+      await getPage({label: 'batman', labelOnTop: true, labelHide: true, items });
+    }
+    catch (err) {
+      expect(err.message).toMatch('<mg-input-radio> prop "items" require at least 2 items.')
+    }
+  });
+
   test.each([
     [['batman', {title:'batman', value:'batman'}]],
     [['batman', {batman:'batman'}]],

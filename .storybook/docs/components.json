@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-01-10T08:39:57",
+  "timestamp": "2022-01-11T07:10:37",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.12.0",
@@ -438,24 +438,6 @@
           "required": false
         },
         {
-          "name": "items",
-          "type": "CheckboxOption[] | string[]",
-          "mutable": false,
-          "reflectToAttr": false,
-          "docs": "Items are the possible options to select\nRequired",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "CheckboxOption[]"
-            },
-            {
-              "type": "string[]"
-            }
-          ],
-          "optional": false,
-          "required": true
-        },
-        {
           "name": "label",
           "type": "string",
           "mutable": false,
@@ -592,15 +574,15 @@
           "type": "CheckboxValue[]",
           "mutable": true,
           "reflectToAttr": false,
-          "docs": "Component value\nIf not set, checkbox will be indeterminate by default",
+          "docs": "Component value\nIf item.value is `null`, checkbox will be indeterminate by default\nRequired",
           "docsTags": [],
           "values": [
             {
               "type": "CheckboxValue[]"
             }
           ],
-          "optional": true,
-          "required": false
+          "optional": false,
+          "required": true
         }
       ],
       "methods": [],

@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { CheckboxOption, CheckboxValue, RadioOption, SelectOption } from "./types/components.types";
+import { CheckboxValue, RadioOption, SelectOption } from "./types/components.types";
 export namespace Components {
     interface MgButton {
         /**
@@ -83,10 +83,6 @@ export namespace Components {
          */
         "invalid": boolean;
         /**
-          * Items are the possible options to select Required
-         */
-        "items": string[] | CheckboxOption[];
-        /**
           * Input label Required
          */
         "label": string;
@@ -119,9 +115,9 @@ export namespace Components {
          */
         "valid": boolean;
         /**
-          * Component value If not set, checkbox will be indeterminate by default
+          * Component value If item.value is `null`, checkbox will be indeterminate by default Required
          */
-        "value"?: CheckboxValue[];
+        "value": CheckboxValue[];
     }
     interface MgInputDate {
         /**
@@ -771,10 +767,6 @@ declare namespace LocalJSX {
          */
         "invalid"?: boolean;
         /**
-          * Items are the possible options to select Required
-         */
-        "items": string[] | CheckboxOption[];
-        /**
           * Input label Required
          */
         "label": string;
@@ -811,9 +803,9 @@ declare namespace LocalJSX {
          */
         "valid"?: boolean;
         /**
-          * Component value If not set, checkbox will be indeterminate by default
+          * Component value If item.value is `null`, checkbox will be indeterminate by default Required
          */
-        "value"?: CheckboxValue[];
+        "value": CheckboxValue[];
     }
     interface MgInputDate {
         /**

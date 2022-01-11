@@ -9,7 +9,7 @@ import { CheckboxOption, CheckboxValue }from '../../../../types/components.types
 * @param CheckboxOption
 * @returns {boolean}
 */
-const isCheckboxOption = (option: CheckboxOption): boolean => typeof option === 'object' && typeof option.title === 'string' && (typeof option.value === 'string' || typeof option.value === 'boolean') && option.value !== undefined;
+const isCheckboxOption = (option: CheckboxOption): boolean => typeof option === 'object' && typeof option.title === 'string' && (option.value === null || typeof option.value === 'boolean') && option.value !== undefined;
 
 @Component({
   tag: 'mg-input-checkbox',
@@ -22,8 +22,6 @@ export class MgInputCheckbox {
   /************
    * Internal *
    ************/
-
-   private classFocus = 'is-focused';
    private classError = 'is-not-valid';
 
   /**************
@@ -32,42 +30,22 @@ export class MgInputCheckbox {
 
   /**
   * Component value
-  * If not set, checkbox will be indeterminate by default
-  */
-  @Prop({ mutable:true, reflect: true }) value?: CheckboxValue[];
-
-  /**
-  * Items are the possible options to select
+  * If item.value is `null`, checkbox will be indeterminate by default
   * Required
   */
-  @Prop() items!: string[] | CheckboxOption[];
-  @Watch('items')
-  validateItems(newValue){
-    // String array
-    if(newValue && (newValue as Array<string>).every(item => typeof item === 'string')) {
+  @Prop({ mutable:true, reflect: true }) value!: CheckboxValue[];
+  @Watch('value')
+  validateValue(newValue){
+    if(newValue && (newValue as Array<CheckboxOption>).every(item => isCheckboxOption(item))) {
       this.options = newValue.map((item, index) => ({
-          id: this.identifier + '_' + index,
-          title:item,
-          value:item,
-          checked: this.isChecked(item),
-          disabled: this.disabled,
-          indeterminate: this.isIndeterminate(item)
+        id: `${this.identifier}_${index.toString()}`,
+        title:item.title,
+        value:item.value,
+        disabled: item.disabled
       }));
     }
-    // Object array
-    else if(newValue && (newValue as Array<CheckboxOption>).every(item => isCheckboxOption(item))) {
-      this.options = newValue.map((item, index) => ({
-          id: this.identifier + '_' + index,
-          title:item.title,
-          value:item.value,
-          checked: item.checked || this.isChecked(item),
-          disabled: item.disabled,
-          indeterminate: item.indeterminate || this.isIndeterminate(item)
-        }
-      ));
-    }
     else {
-      throw new Error('<mg-input-checkbox> prop "items" is required and all items must be the same type, string or Option.')
+      throw new Error('<mg-input-checkbox> prop "value" is required and all values must be the same type, CheckboxOption.')
     }
   }
 
@@ -93,11 +71,6 @@ export class MgInputCheckbox {
   * Define if label is displayed on top
   */
   @Prop() labelOnTop: boolean;
-
-  /**
-  * Define if label has colon ":"
-  */
-  @Prop() labelColon: boolean = false;
 
   /**
   * Define if label is visible
@@ -155,7 +128,7 @@ export class MgInputCheckbox {
   @State() errorMessage: string;
 
   /**
-  * Formated items for display
+  * Formated value for display
   */
   @State() options: (CheckboxOption)[];
 
@@ -174,23 +147,15 @@ export class MgInputCheckbox {
   * @param event
   */
   private handleInput = (event:InputEvent & { target: HTMLInputElement }) => {
-    this.options = this.options.map((o) => {
-      if (o.id === event.target.id) {
-        o.checked = event.target.checked;
+    this.options = this.options.map(option => {
+      if (option.id === event.target.id) {
+        option.value = Boolean(event.target.checked);
       }
-      return o;
+      return option;
     })
 
-    this.value = this.options.filter(o => o.checked === true).map(o => ({value: o.value, title: o.title}));
+    this.value = this.options.map(o => ({value: o.value, title: o.title}));
     this.valueChange.emit(this.value);
-  }
-
-  /**
-   * Handle focus event
-   */
-  private handleFocus = () => {
-    this.classList.add(this.classFocus);
-    this.classList = new ClassList(this.classList.classes);
   }
 
   /**
@@ -198,10 +163,6 @@ export class MgInputCheckbox {
    * @param event
    */
   private handleBlur = (event:FocusEvent) => {
-    // Manage focus
-    this.classList.delete(this.classFocus);
-    this.classList = new ClassList(this.classList.classes);
-
     // Check validity
     this.checkValidity(event.target);
   }
@@ -249,63 +210,13 @@ export class MgInputCheckbox {
     return getValidInput !== undefined;
   }
 
-  /**
-  * Manage checked state
-  * @param item
-  */
-  private isChecked(item:CheckboxOption): boolean {
-    // return false when NO value
-    if (this.value === undefined || this.value === null) {
-      return false;
-    }
-    // search for item in values
-    if (typeof item === 'string') {
-      return this.value.find((e) => e.value === item) !== undefined;
-    }
-
-    return this.value.find((e) => e.title === item.title) !== undefined;
-  }
-
-  /**
-  * Manage indeterminate state
-  * @see https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input/checkbox#g%C3%A9rer_un_%C3%A9tat_ind%C3%A9termin%C3%A9
-  */
-  private isIndeterminate(item:CheckboxOption) :boolean {
-    // for string items value is false
-    if (typeof item === 'string') {
-      return false;
-    }
-    // else we return a boolean
-    return !!item.indeterminate;
-  }
-
-  /**
-  * Value formater for readonly state
-  */
-  private getReadOnlyValue = (): string => {
-    if (this.value === undefined) {
-      return ''
-    };
-
-    return this.value.map((item, i, arr) => {
-      if (arr.length <= 1) {
-        return item
-      } else if(i === arr.length - 1) {
-        return `${item}.`;
-      } else {
-        return `${item}, `;
-      }
-    })
-    .join('');
-  }
-
   /*************
   * Lifecycle *
   *************/
 
   componentWillLoad() {
-    // Check items format
-    this.validateItems(this.items);
+    // Check values format
+    this.validateValue(this.value);
   }
 
   render() {
@@ -315,12 +226,11 @@ export class MgInputCheckbox {
         classList={this.classList}
         label={this.label}
         labelOnTop={this.labelOnTop}
-        labelColon={this.labelColon}
         labelHide={this.labelHide}
         required={this.required}
-        readonly={this.readonly}
+        readonly={false}
         value={this.value && this.value.toString()}
-        readonlyValue={this.getReadOnlyValue()}
+        readonlyValue={undefined}
         tooltip={this.tooltip}
         displayCharacterLeft={undefined}
         characterLeftTemplate={undefined}
@@ -330,19 +240,21 @@ export class MgInputCheckbox {
         isFieldset={true}
       >
         <ul class={"mg-input__input-group-container mg-input__input-group-container--checkbox " + (this.inputVerticalList ? 'mg-input__input-group-container--vertical' : '')}>
-          {this.options.map(input => (
+          {this.options
+            .filter((item) => {
+              return !this.readonly || item.value;
+            }).map(input => (
             <li class="mg-input__input-group">
               <input
                 type="checkbox"
                 id={input.id}
                 name={this.identifier}
                 value={input.value && input.value.toString()}
-                checked={input.checked}
-                disabled={this.disabled || input.disabled}
+                checked={Boolean(input.value)}
+                disabled={this.readonly || this.disabled || input.disabled}
                 required={this.required}
-                indeterminate={input.indeterminate && typeof input.value !== 'boolean'}
+                indeterminate={input.value === null}
                 onInput={this.handleInput}
-                onFocus={this.handleFocus}
                 onBlur={this.handleBlur}
               />
               <label htmlFor={input.id}>{input.title}</label>

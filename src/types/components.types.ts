@@ -10,19 +10,6 @@ export type SelectOption = {
   group?: string
 };
 
-/**
-* type CheckboxOption
-* use to match checkbox attributes
-*/
-export type CheckboxOption = {
-  id: string,
-  title: string,
-  value: string | string,
-  checked?: boolean,
-  disabled?: boolean,
-  indeterminate?: boolean
-}
-
 /*
 * type RadioOption
 * use to match radio attributes
@@ -43,10 +30,23 @@ export type OptGroup = {
 };
 
 /**
+* type CheckboxOption
+* use to match checkbox attributes
+*/
+export type CheckboxOption = {
+  id: string,
+  title: string,
+  value: boolean | null,
+  disabled?: boolean
+}
+
+
+/**
  * type CheckboxValue
  * use to match returned value
  */
 export type CheckboxValue = {
   title: string,
-  value: string | boolean
+  value: boolean | null,
+  disabled?: boolean
 }
