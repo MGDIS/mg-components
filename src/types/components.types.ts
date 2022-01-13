@@ -30,10 +30,10 @@ export type OptGroup = {
 };
 
 /**
-* type CheckboxOption
+* type CheckboxItems
 * use to match checkbox attributes
 */
-export type CheckboxOption = {
+export type CheckboxItems = {
   id: string,
   title: string,
   value: boolean | null,

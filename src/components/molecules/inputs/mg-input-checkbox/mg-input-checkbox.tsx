@@ -2,14 +2,14 @@ import { Component, Event, h, Prop, EventEmitter, State, Watch } from '@stencil/
 import { MgInput } from '../MgInput';
 import { createID, ClassList } from '../../../../utils/components.utils';
 import { messages } from '../../../../locales';
-import { CheckboxOption, CheckboxValue }from '../../../../types/components.types';
+import { CheckboxItems, CheckboxValue }from '../../../../types/components.types';
 
 /**
-* type CheckboxOption validation function
-* @param CheckboxOption
+* type CheckboxItems validation function
+* @param CheckboxItems
 * @returns {boolean}
 */
-const isCheckboxOption = (option: CheckboxOption): boolean => typeof option === 'object' && typeof option.title === 'string' && (option.value === null || typeof option.value === 'boolean') && option.value !== undefined;
+const isCheckboxItems = (item: CheckboxItems): boolean => typeof item === 'object' && typeof item.title === 'string' && (item.value === null || typeof item.value === 'boolean') && item.value !== undefined;
 
 /**
 * utility function to get shadow-root HTML node element
@@ -46,8 +46,8 @@ export class MgInputCheckbox {
   @Prop({ mutable:true, reflect: true }) value!: CheckboxValue[];
   @Watch('value')
   validateValue(newValue){
-    if(newValue && (newValue as Array<CheckboxOption>).every(item => isCheckboxOption(item))) {
-      this.options = newValue.map((item, index) => ({
+    if(newValue && (newValue as Array<CheckboxItems>).every(item => isCheckboxItems(item))) {
+      this.checkboxItems  = newValue.map((item, index) => ({
         id: `${this.identifier}_${index.toString()}`,
         title:item.title,
         value:item.value,
@@ -55,7 +55,7 @@ export class MgInputCheckbox {
       }));
     }
     else {
-      throw new Error('<mg-input-checkbox> prop "value" is required and all values must be the same type, CheckboxOption.')
+      throw new Error('<mg-input-checkbox> prop "value" is required and all values must be the same type, CheckboxItems.')
     }
   }
 
@@ -140,7 +140,7 @@ export class MgInputCheckbox {
   /**
   * Formated value for display
   */
-  @State() options: (CheckboxOption)[];
+  @State() checkboxItems: (CheckboxItems)[];
 
   /**
   * Emitted event when value change
@@ -152,14 +152,14 @@ export class MgInputCheckbox {
   * @param event
   */
   private handleInput = (event:InputEvent & { target: HTMLInputElement }) => {
-    this.options = this.options.map(option => {
-      if (option.id === event.target.id) {
-        option.value = Boolean(event.target.checked);
+    this.checkboxItems  = this.checkboxItems .map(item => {
+      if (item.id === event.target.id) {
+        item.value = Boolean(event.target.checked);
       }
-      return option;
+      return item;
     })
 
-    this.value = this.options.map(o => ({value: o.value, title: o.title, disabled: o.disabled}));
+    this.value = this.checkboxItems .map(o => ({value: o.value, title: o.title, disabled: o.disabled}));
     this.valueChange.emit(this.value);
   }
 
@@ -180,14 +180,7 @@ export class MgInputCheckbox {
     // we check group validity
     const shadowRootElement = getShadowRootElementFromElement(element);
     const inputs = Array.from(shadowRootElement.querySelectorAll('input[type=checkbox]'));
-    const findValidInput = inputs.find(i => {
-      const element = i as HTMLInputElement;
-      // we skip disabled elements
-      if (element.disabled) return false;
-
-      return element.checkValidity();
-    });
-    const validity = findValidInput !== undefined;
+    const validity = inputs.find((element: HTMLInputElement) => !element.disabled && element.checkValidity()) !== undefined;
 
     // Set error message
     this.errorMessage = undefined;
@@ -238,7 +231,7 @@ export class MgInputCheckbox {
         isFieldset={true}
       >
         <ul class={"mg-input__input-group-container mg-input__input-group-container--checkbox " + (this.inputVerticalList ? 'mg-input__input-group-container--vertical' : '')}>
-          {this.options
+          {this.checkboxItems
             .filter((item) => {
               return !this.readonly || item.value;
             }).map(input => (

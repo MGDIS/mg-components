@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-01-11T11:00:53",
+  "timestamp": "2022-01-13T13:45:22",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.12.0",
@@ -373,7 +373,7 @@
       "filePath": "./src/components/molecules/inputs/mg-input-checkbox/mg-input-checkbox.tsx",
       "encapsulation": "shadow",
       "tag": "mg-input-checkbox",
-      "readme": "# mg-input-checkbox\n\nThis molecule refers to the [PDA9-70](https://jira.mgdis.fr/browse/PDA9-70).\n",
+      "readme": "This molecule refers to the [PDA9-70](https://jira.mgdis.fr/browse/PDA9-70).\n",
       "docs": "This molecule refers to the [PDA9-70](https://jira.mgdis.fr/browse/PDA9-70).",
       "docsTags": [],
       "usage": {},
