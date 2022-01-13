@@ -5,7 +5,7 @@ exports[`mg-message Should render a danger message with args { identifier: 'iden
   <mock:shadow-root>
     <div class="mg-message mg-message--danger" id="identifier" role="alert">
       <span class="mg-message__icon">
-        <mg-icon icon="danger"></mg-icon>
+        <mg-icon icon="exclamation-circle"></mg-icon>
       </span>
       <div class="mg-message__content">
         <span class="mg-message__content__slot">
@@ -28,7 +28,7 @@ exports[`mg-message Should render a danger message with args { identifier: 'iden
   <mock:shadow-root>
     <div class="mg-message mg-message--close-button mg-message--danger" id="identifier" role="alert">
       <span class="mg-message__icon">
-        <mg-icon icon="danger"></mg-icon>
+        <mg-icon icon="exclamation-circle"></mg-icon>
       </span>
       <div class="mg-message__content">
         <span class="mg-message__content__slot">
@@ -56,7 +56,7 @@ exports[`mg-message Should render a info message with args { identifier: 'identi
   <mock:shadow-root>
     <div class="mg-message mg-message--info" id="identifier" role="status">
       <span class="mg-message__icon">
-        <mg-icon icon="info"></mg-icon>
+        <mg-icon icon="info-circle"></mg-icon>
       </span>
       <div class="mg-message__content">
         <span class="mg-message__content__slot">
@@ -79,7 +79,7 @@ exports[`mg-message Should render a info message with args { identifier: 'identi
   <mock:shadow-root>
     <div class="mg-message mg-message--close-button mg-message--info" id="identifier" role="status">
       <span class="mg-message__icon">
-        <mg-icon icon="info"></mg-icon>
+        <mg-icon icon="info-circle"></mg-icon>
       </span>
       <div class="mg-message__content">
         <span class="mg-message__content__slot">
@@ -107,7 +107,7 @@ exports[`mg-message Should render a success message with args { identifier: 'ide
   <mock:shadow-root>
     <div class="mg-message mg-message--success" id="identifier" role="alert">
       <span class="mg-message__icon">
-        <mg-icon icon="success"></mg-icon>
+        <mg-icon icon="check-circle"></mg-icon>
       </span>
       <div class="mg-message__content">
         <span class="mg-message__content__slot">
@@ -130,7 +130,7 @@ exports[`mg-message Should render a success message with args { identifier: 'ide
   <mock:shadow-root>
     <div class="mg-message mg-message--close-button mg-message--success" id="identifier" role="alert">
       <span class="mg-message__icon">
-        <mg-icon icon="success"></mg-icon>
+        <mg-icon icon="check-circle"></mg-icon>
       </span>
       <div class="mg-message__content">
         <span class="mg-message__content__slot">
@@ -158,7 +158,7 @@ exports[`mg-message Should render a warning message with args { identifier: 'ide
   <mock:shadow-root>
     <div class="mg-message mg-message--warning" id="identifier" role="alert">
       <span class="mg-message__icon">
-        <mg-icon icon="warning"></mg-icon>
+        <mg-icon icon="exclamation-triangle"></mg-icon>
       </span>
       <div class="mg-message__content">
         <span class="mg-message__content__slot">
@@ -181,7 +181,7 @@ exports[`mg-message Should render a warning message with args { identifier: 'ide
   <mock:shadow-root>
     <div class="mg-message mg-message--close-button mg-message--warning" id="identifier" role="alert">
       <span class="mg-message__icon">
-        <mg-icon icon="warning"></mg-icon>
+        <mg-icon icon="exclamation-triangle"></mg-icon>
       </span>
       <div class="mg-message__content">
         <span class="mg-message__content__slot">

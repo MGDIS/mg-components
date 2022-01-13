@@ -80,6 +80,23 @@ export class MgMessage {
     this.hide = true;
   }
 
+  /**
+   * Get icon corresponding to variant
+   */
+  private getIcon = ():string => {
+    switch (this.variant) {
+      case "info":
+        return "info-circle"
+      case "warning":
+        return "exclamation-triangle"
+      case "success":
+          return "check-circle"
+      case "danger":
+          return "exclamation-circle"
+      default:
+        break;
+    }
+  }
 
   /*************
    * Lifecycle *
@@ -104,7 +121,7 @@ export class MgMessage {
     return (
       <div id={this.identifier} class={this.classList.join()} role={this.variant === "info" ? "status" : "alert"}>
         <span class="mg-message__icon">
-          <mg-icon icon={this.variant}></mg-icon>
+          <mg-icon icon={this.getIcon()}></mg-icon>
         </span>
         <div class="mg-message__content">
           <span class="mg-message__content__slot">
