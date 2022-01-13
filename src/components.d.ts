@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { RadioOption, SelectOption } from "./types/components.types";
+import { CheckboxValue, RadioOption, SelectOption } from "./types/components.types";
 export namespace Components {
     interface MgButton {
         /**
@@ -64,6 +64,64 @@ export namespace Components {
           * Define icon variant Add a background to the icon based on variant color
          */
         "variant": string;
+    }
+    interface MgInputCheckbox {
+        /**
+          * Define if input is disabled
+         */
+        "disabled": boolean;
+        /**
+          * Template to use for characters left sentence
+         */
+        "helpText": string;
+        /**
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+         */
+        "identifier"?: string;
+        /**
+          * Define if inputs are display verticaly
+         */
+        "inputVerticalList": boolean;
+        /**
+          * Force invalid component
+         */
+        "invalid": boolean;
+        /**
+          * Input label Required
+         */
+        "label": string;
+        /**
+          * Define if label is visible
+         */
+        "labelHide": boolean;
+        /**
+          * Define if label is displayed on top
+         */
+        "labelOnTop": boolean;
+        /**
+          * Input name If not set the value equals the identifier
+         */
+        "name"?: string;
+        /**
+          * Define if input is readonly
+         */
+        "readonly": boolean;
+        /**
+          * Define if input is required
+         */
+        "required": boolean;
+        /**
+          * Add a tooltip message next to the input
+         */
+        "tooltip": string;
+        /**
+          * Force valid component
+         */
+        "valid": boolean;
+        /**
+          * Component value If item.value is `null`, checkbox will be indeterminate by default Required
+         */
+        "value": CheckboxValue[];
     }
     interface MgInputDate {
         /**
@@ -611,6 +669,12 @@ declare global {
         prototype: HTMLMgIconElement;
         new (): HTMLMgIconElement;
     };
+    interface HTMLMgInputCheckboxElement extends Components.MgInputCheckbox, HTMLStencilElement {
+    }
+    var HTMLMgInputCheckboxElement: {
+        prototype: HTMLMgInputCheckboxElement;
+        new (): HTMLMgInputCheckboxElement;
+    };
     interface HTMLMgInputDateElement extends Components.MgInputDate, HTMLStencilElement {
     }
     var HTMLMgInputDateElement: {
@@ -681,6 +745,7 @@ declare global {
         "mg-button": HTMLMgButtonElement;
         "mg-character-left": HTMLMgCharacterLeftElement;
         "mg-icon": HTMLMgIconElement;
+        "mg-input-checkbox": HTMLMgInputCheckboxElement;
         "mg-input-date": HTMLMgInputDateElement;
         "mg-input-numeric": HTMLMgInputNumericElement;
         "mg-input-password": HTMLMgInputPasswordElement;
@@ -752,6 +817,68 @@ declare namespace LocalJSX {
           * Define icon variant Add a background to the icon based on variant color
          */
         "variant"?: string;
+    }
+    interface MgInputCheckbox {
+        /**
+          * Define if input is disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * Template to use for characters left sentence
+         */
+        "helpText"?: string;
+        /**
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+         */
+        "identifier"?: string;
+        /**
+          * Define if inputs are display verticaly
+         */
+        "inputVerticalList"?: boolean;
+        /**
+          * Force invalid component
+         */
+        "invalid"?: boolean;
+        /**
+          * Input label Required
+         */
+        "label": string;
+        /**
+          * Define if label is visible
+         */
+        "labelHide"?: boolean;
+        /**
+          * Define if label is displayed on top
+         */
+        "labelOnTop"?: boolean;
+        /**
+          * Input name If not set the value equals the identifier
+         */
+        "name"?: string;
+        /**
+          * Emitted event when value change
+         */
+        "onValueChange"?: (event: CustomEvent<CheckboxValue[]>) => void;
+        /**
+          * Define if input is readonly
+         */
+        "readonly"?: boolean;
+        /**
+          * Define if input is required
+         */
+        "required"?: boolean;
+        /**
+          * Add a tooltip message next to the input
+         */
+        "tooltip"?: string;
+        /**
+          * Force valid component
+         */
+        "valid"?: boolean;
+        /**
+          * Component value If item.value is `null`, checkbox will be indeterminate by default Required
+         */
+        "value": CheckboxValue[];
     }
     interface MgInputDate {
         /**
@@ -1311,6 +1438,7 @@ declare namespace LocalJSX {
         "mg-button": MgButton;
         "mg-character-left": MgCharacterLeft;
         "mg-icon": MgIcon;
+        "mg-input-checkbox": MgInputCheckbox;
         "mg-input-date": MgInputDate;
         "mg-input-numeric": MgInputNumeric;
         "mg-input-password": MgInputPassword;
@@ -1331,6 +1459,7 @@ declare module "@stencil/core" {
             "mg-button": LocalJSX.MgButton & JSXBase.HTMLAttributes<HTMLMgButtonElement>;
             "mg-character-left": LocalJSX.MgCharacterLeft & JSXBase.HTMLAttributes<HTMLMgCharacterLeftElement>;
             "mg-icon": LocalJSX.MgIcon & JSXBase.HTMLAttributes<HTMLMgIconElement>;
+            "mg-input-checkbox": LocalJSX.MgInputCheckbox & JSXBase.HTMLAttributes<HTMLMgInputCheckboxElement>;
             "mg-input-date": LocalJSX.MgInputDate & JSXBase.HTMLAttributes<HTMLMgInputDateElement>;
             "mg-input-numeric": LocalJSX.MgInputNumeric & JSXBase.HTMLAttributes<HTMLMgInputNumericElement>;
             "mg-input-password": LocalJSX.MgInputPassword & JSXBase.HTMLAttributes<HTMLMgInputPasswordElement>;

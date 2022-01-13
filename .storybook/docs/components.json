@@ -221,6 +221,7 @@
       "slots": [],
       "parts": [],
       "dependents": [
+        "mg-input-checkbox",
         "mg-input-date",
         "mg-input-numeric",
         "mg-input-password",
@@ -231,6 +232,9 @@
       ],
       "dependencies": [],
       "dependencyGraph": {
+        "mg-input-checkbox": [
+          "mg-character-left"
+        ],
         "mg-input-date": [
           "mg-character-left"
         ],
@@ -321,6 +325,7 @@
       "parts": [],
       "dependents": [
         "mg-button",
+        "mg-input-checkbox",
         "mg-input-date",
         "mg-input-numeric",
         "mg-input-password",
@@ -333,6 +338,9 @@
       "dependencies": [],
       "dependencyGraph": {
         "mg-button": [
+          "mg-icon"
+        ],
+        "mg-input-checkbox": [
           "mg-icon"
         ],
         "mg-input-date": [
@@ -358,6 +366,278 @@
         ],
         "mg-message": [
           "mg-icon"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/molecules/inputs/mg-input-checkbox/mg-input-checkbox.tsx",
+      "encapsulation": "shadow",
+      "tag": "mg-input-checkbox",
+      "readme": "This molecule refers to the [PDA9-70](https://jira.mgdis.fr/browse/PDA9-70).\n",
+      "docs": "This molecule refers to the [PDA9-70](https://jira.mgdis.fr/browse/PDA9-70).",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Define if input is disabled",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "helpText",
+          "type": "string",
+          "mutable": false,
+          "attr": "help-text",
+          "reflectToAttr": false,
+          "docs": "Template to use for characters left sentence",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "identifier",
+          "type": "string",
+          "mutable": false,
+          "attr": "identifier",
+          "reflectToAttr": false,
+          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
+          "docsTags": [],
+          "default": "createID('mg-input-checkbox')",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "inputVerticalList",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "input-vertical-list",
+          "reflectToAttr": false,
+          "docs": "Define if inputs are display verticaly",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "invalid",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "invalid",
+          "reflectToAttr": true,
+          "docs": "Force invalid component",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "Input label\nRequired",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "labelHide",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "label-hide",
+          "reflectToAttr": false,
+          "docs": "Define if label is visible",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "labelOnTop",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "label-on-top",
+          "reflectToAttr": false,
+          "docs": "Define if label is displayed on top",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "Input name\nIf not set the value equals the identifier",
+          "docsTags": [],
+          "default": "this.identifier",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "readonly",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "readonly",
+          "reflectToAttr": false,
+          "docs": "Define if input is readonly",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "required",
+          "reflectToAttr": false,
+          "docs": "Define if input is required",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "tooltip",
+          "type": "string",
+          "mutable": false,
+          "attr": "tooltip",
+          "reflectToAttr": false,
+          "docs": "Add a tooltip message next to the input",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "valid",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "valid",
+          "reflectToAttr": true,
+          "docs": "Force valid component",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "CheckboxValue[]",
+          "mutable": true,
+          "reflectToAttr": false,
+          "docs": "Component value\nIf item.value is `null`, checkbox will be indeterminate by default\nRequired",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "CheckboxValue[]"
+            }
+          ],
+          "optional": false,
+          "required": true
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "valueChange",
+          "detail": "CheckboxValue[]",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted event when value change",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "mg-tooltip",
+        "mg-icon",
+        "mg-input-title",
+        "mg-character-left"
+      ],
+      "dependencyGraph": {
+        "mg-input-checkbox": [
+          "mg-tooltip",
+          "mg-icon",
+          "mg-input-title",
+          "mg-character-left"
         ]
       }
     },
@@ -2584,6 +2864,7 @@
       "slots": [],
       "parts": [],
       "dependents": [
+        "mg-input-checkbox",
         "mg-input-date",
         "mg-input-numeric",
         "mg-input-password",
@@ -2594,6 +2875,9 @@
       ],
       "dependencies": [],
       "dependencyGraph": {
+        "mg-input-checkbox": [
+          "mg-input-title"
+        ],
         "mg-input-date": [
           "mg-input-title"
         ],
@@ -2910,6 +3194,7 @@
       "slots": [],
       "parts": [],
       "dependents": [
+        "mg-input-checkbox",
         "mg-input-date",
         "mg-input-numeric",
         "mg-input-password",
@@ -2920,6 +3205,9 @@
       ],
       "dependencies": [],
       "dependencyGraph": {
+        "mg-input-checkbox": [
+          "mg-tooltip"
+        ],
         "mg-input-date": [
           "mg-tooltip"
         ],

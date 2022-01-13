@@ -10,11 +10,11 @@ export type SelectOption = {
   group?: string
 };
 
-/**
- * type RadioOption
- * use to match radio attributes
- */
- export type RadioOption = {
+/*
+* type RadioOption
+* use to match radio attributes
+*/
+export type RadioOption = {
   title: string,
   value: any,
   disabled?: boolean,
@@ -28,3 +28,25 @@ export type OptGroup = {
   group: string,
   options: SelectOption[]
 };
+
+/**
+* type CheckboxItem
+* use to match checkbox attributes
+*/
+export type CheckboxItem = {
+  id: string,
+  title: string,
+  value: boolean | null,
+  disabled?: boolean
+}
+
+
+/**
+ * type CheckboxValue
+ * use to match returned value
+ */
+export type CheckboxValue = {
+  title: string,
+  value: boolean | null,
+  disabled?: boolean
+}
