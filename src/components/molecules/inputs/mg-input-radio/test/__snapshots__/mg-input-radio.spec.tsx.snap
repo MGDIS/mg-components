@@ -355,6 +355,57 @@ exports[`mg-input-radio Should render with args {
 </mg-input-radio>
 `;
 
+exports[`mg-input-radio Should render with args {
+  label: 'label',
+  identifier: 'identifier',
+  items: [Array],
+  tooltip: 'My Tooltip Message',
+  labelOnTop: true
+}: 1`] = `
+<mg-input-radio>
+  <mock:shadow-root>
+    <fieldset class="mg-input mg-input--label-on-top mg-input--radio">
+      <mg-input-title identifier="identifier" is-legend="">
+        label
+      </mg-input-title>
+      <mg-tooltip identifier="identifier-tooltip" message="My Tooltip Message">
+        <mg-icon icon="info"></mg-icon>
+      </mg-tooltip>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input-container__input">
+          <ul class="mg-input__input-group-container mg-input__input-group-container--radio">
+            <li class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="batman">
+              <label htmlfor="identifier_0">
+                batman
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="robin">
+              <label htmlfor="identifier_1">
+                robin
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="jocker">
+              <label htmlfor="identifier_2">
+                jocker
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="bane">
+              <label htmlfor="identifier_3">
+                bane
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </fieldset>
+  </mock:shadow-root>
+</mg-input-radio>
+`;
+
 exports[`mg-input-radio Should render with args { label: 'label', identifier: 'identifier', items: [Array] }: 1`] = `
 <mg-input-radio>
   <mock:shadow-root>

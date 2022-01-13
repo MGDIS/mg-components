@@ -61,8 +61,8 @@ describe('mg-input-radio', () => {
     });
   });
 
-  test('render with tooltip', async () => {
-    const page = await createPage(`<mg-input-radio label="legend" tooltip="Tooltip message"></mg-input-radio>
+  test.each([true, false])('render with tooltip, case label-on-top %s', async (labelOnTop) => {
+    const page = await createPage(`<mg-input-radio label="legend" tooltip="Tooltip message" label-on-top=${labelOnTop}></mg-input-radio>
       <script>
       const mgInputRadio = document.querySelector('mg-input-radio');
       mgInputRadio.items = ['batman', 'robin', 'jocker', 'bane'];

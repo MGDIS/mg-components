@@ -4,6 +4,20 @@ import { MgTooltip } from '../mg-tooltip';
 import { MgButton } from '../../mg-button/mg-button';
 import { MgIcon } from '../../mg-icon/mg-icon';
 
+// fix popper console.error in test
+// it is generated in @popperjs/core/dist/cjs/popper.js l.1859
+// this is due to internal function isHTMLElement(), so we can not mock it directly.
+// this function check if test DOM element mockHTMLElement instance is 'instanceof HTMLElement'
+// so we only override the console.error side effect for this error
+const errorFunction = console.error;
+const mock = jest.spyOn(console, 'error')
+mock.mockImplementation((error) => {
+  const compareWith = 'Popper: "arrow" element must be an HTMLElement (not an SVGElement). To use an SVG arrow, wrap it in an HTMLElement that will be used as the arrow.';
+  if (error !== compareWith) {
+    errorFunction(error)
+  }
+})
+
 const getPage = (args, element) => newSpecPage({
   components: [MgTooltip, MgButton, MgIcon],
   template: () => (<mg-tooltip {...args}>{element}</mg-tooltip>),

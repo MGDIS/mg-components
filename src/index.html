@@ -40,9 +40,23 @@
         <mg-icon icon="cross" size="large"></mg-icon>
         <mg-icon icon="cross"></mg-icon>
         <mg-icon icon="cross" size="small"></mg-icon>
-        <h1><mg-icon icon="info" size="large"></mg-icon>Titre</h1>
-        <h2><mg-icon icon="warning"></mg-icon>Titre</h2>
-        <h3><mg-icon icon="success" size="small"></mg-icon>Titre</h3>
+        <h3>w/ text</h3>
+        <span class="h1"><mg-icon icon="info" size="large"></mg-icon>Titre</span>
+        <span class="h2"><mg-icon icon="warning"></mg-icon>Titre</span>
+        <span class="h3"><mg-icon icon="success" size="small"></mg-icon>Titre</span>
+        <h3>Variants</h3>
+        <mg-icon icon="info" variant="success"></mg-icon>
+        <mg-icon icon="info" variant="warning"></mg-icon>
+        <mg-icon icon="info" variant="danger"></mg-icon>
+        <mg-icon icon="info" variant="info"></mg-icon>
+        <mg-icon icon="info" size="small" variant="success"></mg-icon>
+        <mg-icon icon="info" size="small" variant="warning"></mg-icon>
+        <mg-icon icon="info" size="small" variant="danger"></mg-icon>
+        <mg-icon icon="info" size="small" variant="info"></mg-icon>
+        <mg-icon icon="info" size="large" variant="success"></mg-icon>
+        <mg-icon icon="info" size="large" variant="warning"></mg-icon>
+        <mg-icon icon="info" size="large" variant="danger"></mg-icon>
+        <mg-icon icon="info" size="large" variant="info"></mg-icon>
       </section>
       <section>
         <h2>Buttons</h2>
@@ -236,6 +250,15 @@
           required
           value="1234567890"
         ></mg-input-numeric>
+        <h3>Input Password</h3>
+        <mg-input-password
+          placeholder="placeholder"
+          help-text="Message d'aide plus long"
+          label="Libellé plutôt long on va dire"
+          tooltip="message tooltip"
+          required
+          value="1234567890"
+        ></mg-input-password>
         <h3>Input Checkbox</h3>
         <mg-input-checkbox label="Libellé" tooltip="message tooltip"></mg-input-checkbox>
         <h3>Input Search</h3>
@@ -285,6 +308,7 @@
         </div>
         <div class="mg-form-group">
           <mg-input-select
+            identifier="second"
             placeholder="placeholder"
             help-text="Message du mg-input-select"
             label="Libellé du mg-input-select"
@@ -292,8 +316,8 @@
             value="blu"
           ></mg-input-select>
           <script>
-            const mgInputSelect = document.querySelector('mg-input-select');
-            mgInputSelect.items = [
+            const mgInputSelect2 = document.querySelector('mg-input-select[identifier="second"]');
+            mgInputSelect2.items = [
               { title: 'blu', value: 'blu', group: 'Le groupe A' },
               { title: 'blu', value: 'blublu', group: 'Le groupe B' },
               { title: 'bli', value: 'bli', group: 'Le groupe A' },

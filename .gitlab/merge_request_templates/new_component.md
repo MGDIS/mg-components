@@ -14,10 +14,14 @@
 - [ ] Tests
   - [ ] Unit tests
   - [ ] E2E tests
+- [ ] Browser tests
+  - [ ] Chrome
+  - [ ] Firefox
+  - [ ] IE11
 - [ ] Doc
-  - [ ] Linked to PDA9 in readme.md
+  - [ ] Added Link to PDA9 in component readme.md
   - [ ] PDA9 RGs listed in component
-  - [ ] MG Component example in linked PDA9
+  - [ ] Story linked into related PDA9
 
 ## Reviewers
 

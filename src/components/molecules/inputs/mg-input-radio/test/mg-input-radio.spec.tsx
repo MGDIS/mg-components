@@ -22,6 +22,7 @@ describe('mg-input-radio', () => {
     {label: 'label', identifier: "identifier", items: ['batman', 'robin', 'jocker', 'bane'], disabled: true},
     {label: 'label', identifier: "identifier", items: ['batman', 'robin', 'jocker', 'bane'], helpText: 'Hello jocker'},
     {label: 'label', identifier: "identifier", items: ['batman', 'robin', 'jocker', 'bane'], tooltip: "My Tooltip Message"},
+    {label: 'label', identifier: "identifier", items: ['batman', 'robin', 'jocker', 'bane'], tooltip: "My Tooltip Message", labelOnTop: true}
   ])('Should render with args %s:', async (args) => {
     const { root } = await getPage(args);
     expect(root).toMatchSnapshot();
@@ -33,6 +34,15 @@ describe('mg-input-radio', () => {
     }
     catch (err) {
       expect(err.message).toMatch('prop "label" is required')
+    }
+  });
+
+  test('Should throw an error with labelOnTop & labelHide set to true', async () => {
+    try {
+      await getPage({label: 'batman', labelOnTop: true, labelHide: true, items: ['batman', 'jocker']});
+    }
+    catch (err) {
+      expect(err.message).toMatch('<mg-input> prop "labelOnTop" must not be paired with the prop "labelHide"')
     }
   });
 

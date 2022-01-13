@@ -33,8 +33,8 @@ describe('mg-input-text', () => {
     });
   })
 
-  test('render with tooltip', async () => {
-    const page = await createPage(`<mg-input-text label="label" tooltip="Tooltip message"></mg-input-text>`);
+  test.each([true, false])('render with tooltip, case label-on-top %s', async (labelOnTop) => {
+    const page = await createPage(`<mg-input-text label="label" tooltip="Tooltip message" label-on-top=${labelOnTop}></mg-input-text>`);
 
     const element = await page.find('mg-input-text');
 

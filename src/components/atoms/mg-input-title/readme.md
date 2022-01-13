@@ -18,6 +18,7 @@ This atom refers to thes [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64), [PDA9-
 
  - [mg-input-date](../../molecules/inputs/mg-input-date)
  - [mg-input-numeric](../../molecules/inputs/mg-input-numeric)
+ - [mg-input-password](../../molecules/inputs/mg-input-password)
  - [mg-input-radio](../../molecules/inputs/mg-input-radio)
  - [mg-input-select](../../molecules/inputs/mg-input-select)
  - [mg-input-text](../../molecules/inputs/mg-input-text)
@@ -29,6 +30,7 @@ This atom refers to thes [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64), [PDA9-
 graph TD;
   mg-input-date --> mg-input-title
   mg-input-numeric --> mg-input-title
+  mg-input-password --> mg-input-title
   mg-input-radio --> mg-input-title
   mg-input-select --> mg-input-title
   mg-input-text --> mg-input-title

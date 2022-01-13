@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-01-13T09:10:29",
+  "timestamp": "2022-01-13T14:02:25",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.12.0",
@@ -223,6 +223,7 @@
       "dependents": [
         "mg-input-date",
         "mg-input-numeric",
+        "mg-input-password",
         "mg-input-radio",
         "mg-input-select",
         "mg-input-text",
@@ -235,6 +236,9 @@
           "mg-character-left"
         ],
         "mg-input-numeric": [
+          "mg-character-left"
+        ],
+        "mg-input-password": [
           "mg-character-left"
         ],
         "mg-input-radio": [
@@ -295,6 +299,22 @@
           ],
           "optional": false,
           "required": false
+        },
+        {
+          "name": "variant",
+          "type": "string",
+          "mutable": false,
+          "attr": "variant",
+          "reflectToAttr": false,
+          "docs": "Define icon variant\nAdd a background to the icon based on variant color",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
         }
       ],
       "methods": [],
@@ -307,6 +327,7 @@
         "mg-button",
         "mg-input-date",
         "mg-input-numeric",
+        "mg-input-password",
         "mg-input-radio",
         "mg-input-select",
         "mg-input-text",
@@ -323,6 +344,9 @@
           "mg-icon"
         ],
         "mg-input-numeric": [
+          "mg-icon"
+        ],
+        "mg-input-password": [
           "mg-icon"
         ],
         "mg-input-radio": [
@@ -587,16 +611,16 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "mg-input-title",
         "mg-tooltip",
         "mg-icon",
+        "mg-input-title",
         "mg-character-left"
       ],
       "dependencyGraph": {
         "mg-input-date": [
-          "mg-input-title",
           "mg-tooltip",
           "mg-icon",
+          "mg-input-title",
           "mg-character-left"
         ]
       }
@@ -908,16 +932,288 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "mg-input-title",
         "mg-tooltip",
         "mg-icon",
+        "mg-input-title",
         "mg-character-left"
       ],
       "dependencyGraph": {
         "mg-input-numeric": [
-          "mg-input-title",
           "mg-tooltip",
           "mg-icon",
+          "mg-input-title",
+          "mg-character-left"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/molecules/inputs/mg-input-password/mg-input-password.tsx",
+      "encapsulation": "shadow",
+      "tag": "mg-input-password",
+      "readme": "This molecule refers to the [PDA9-769](https://jira.mgdis.fr/browse/PDA9-769)\n",
+      "docs": "This molecule refers to the [PDA9-769](https://jira.mgdis.fr/browse/PDA9-769)",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Define if input is disabled",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "helpText",
+          "type": "string",
+          "mutable": false,
+          "attr": "help-text",
+          "reflectToAttr": false,
+          "docs": "Template to use for characters left sentence",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "identifier",
+          "type": "string",
+          "mutable": false,
+          "attr": "identifier",
+          "reflectToAttr": false,
+          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
+          "docsTags": [],
+          "default": "createID('mg-input-password')",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "invalid",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "invalid",
+          "reflectToAttr": true,
+          "docs": "Define input pattern error message",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "Input label\nRequired",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "labelHide",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "label-hide",
+          "reflectToAttr": false,
+          "docs": "Define if label is visible",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "labelOnTop",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "label-on-top",
+          "reflectToAttr": false,
+          "docs": "Define if label is displayed on top",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "Input name\nIf not set the value equals the identifier",
+          "docsTags": [],
+          "default": "this.identifier",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "mutable": false,
+          "attr": "placeholder",
+          "reflectToAttr": false,
+          "docs": "Input placeholder.\nIt should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "readonly",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "readonly",
+          "reflectToAttr": false,
+          "docs": "Define if input is readonly",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "required",
+          "reflectToAttr": false,
+          "docs": "Define if input is required",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "tooltip",
+          "type": "string",
+          "mutable": false,
+          "attr": "tooltip",
+          "reflectToAttr": false,
+          "docs": "Add a tooltip message next to the input",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "valid",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "valid",
+          "reflectToAttr": true,
+          "docs": "Define input pattern to validate",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": true,
+          "docs": "Component value",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "valueChange",
+          "detail": "string",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emmited event when value change",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "mg-tooltip",
+        "mg-icon",
+        "mg-input-title",
+        "mg-character-left"
+      ],
+      "dependencyGraph": {
+        "mg-input-password": [
+          "mg-tooltip",
+          "mg-icon",
+          "mg-input-title",
           "mg-character-left"
         ]
       }
@@ -1200,16 +1496,16 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "mg-input-title",
         "mg-tooltip",
         "mg-icon",
+        "mg-input-title",
         "mg-character-left"
       ],
       "dependencyGraph": {
         "mg-input-radio": [
-          "mg-input-title",
           "mg-tooltip",
           "mg-icon",
+          "mg-input-title",
           "mg-character-left"
         ]
       }
@@ -1491,16 +1787,16 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "mg-input-title",
         "mg-tooltip",
         "mg-icon",
+        "mg-input-title",
         "mg-character-left"
       ],
       "dependencyGraph": {
         "mg-input-select": [
-          "mg-input-title",
           "mg-tooltip",
           "mg-icon",
+          "mg-input-title",
           "mg-character-left"
         ]
       }
@@ -1845,16 +2141,16 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "mg-input-title",
         "mg-tooltip",
         "mg-icon",
+        "mg-input-title",
         "mg-character-left"
       ],
       "dependencyGraph": {
         "mg-input-text": [
-          "mg-input-title",
           "mg-tooltip",
           "mg-icon",
+          "mg-input-title",
           "mg-character-left"
         ]
       }
@@ -2216,16 +2512,16 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "mg-input-title",
         "mg-tooltip",
         "mg-icon",
+        "mg-input-title",
         "mg-character-left"
       ],
       "dependencyGraph": {
         "mg-input-textarea": [
-          "mg-input-title",
           "mg-tooltip",
           "mg-icon",
+          "mg-input-title",
           "mg-character-left"
         ]
       }
@@ -2298,6 +2594,7 @@
       "dependents": [
         "mg-input-date",
         "mg-input-numeric",
+        "mg-input-password",
         "mg-input-radio",
         "mg-input-select",
         "mg-input-text",
@@ -2310,6 +2607,9 @@
           "mg-input-title"
         ],
         "mg-input-numeric": [
+          "mg-input-title"
+        ],
+        "mg-input-password": [
           "mg-input-title"
         ],
         "mg-input-radio": [
@@ -2590,15 +2890,15 @@
       "dependents": [],
       "dependencies": [
         "mg-icon",
-        "mg-input-title",
         "mg-tooltip",
+        "mg-input-title",
         "mg-character-left"
       ],
       "dependencyGraph": {
         "mg-input-toogle": [
           "mg-icon",
-          "mg-input-title",
           "mg-tooltip",
+          "mg-input-title",
           "mg-character-left"
         ]
       }
@@ -2898,6 +3198,7 @@
       "dependents": [
         "mg-input-date",
         "mg-input-numeric",
+        "mg-input-password",
         "mg-input-radio",
         "mg-input-select",
         "mg-input-text",
@@ -2910,6 +3211,9 @@
           "mg-tooltip"
         ],
         "mg-input-numeric": [
+          "mg-tooltip"
+        ],
+        "mg-input-password": [
           "mg-tooltip"
         ],
         "mg-input-radio": [
