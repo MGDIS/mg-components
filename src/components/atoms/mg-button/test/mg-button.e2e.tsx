@@ -1,4 +1,3 @@
-import { template } from "@babel/core";
 import { createPage } from "../../../../utils/test.utils"
 import { variants } from '../mg-button.conf';
 
