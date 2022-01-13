@@ -20,6 +20,7 @@ This atom refers to the [PDA9-313](https://jira.mgdis.fr/browse/PDA9-313).
  - [mg-input-checkbox](../../molecules/inputs/mg-input-checkbox)
  - [mg-input-date](../../molecules/inputs/mg-input-date)
  - [mg-input-numeric](../../molecules/inputs/mg-input-numeric)
+ - [mg-input-password](../../molecules/inputs/mg-input-password)
  - [mg-input-radio](../../molecules/inputs/mg-input-radio)
  - [mg-input-select](../../molecules/inputs/mg-input-select)
  - [mg-input-text](../../molecules/inputs/mg-input-text)
@@ -31,6 +32,7 @@ graph TD;
   mg-input-checkbox --> mg-tooltip
   mg-input-date --> mg-tooltip
   mg-input-numeric --> mg-tooltip
+  mg-input-password --> mg-tooltip
   mg-input-radio --> mg-tooltip
   mg-input-select --> mg-tooltip
   mg-input-text --> mg-tooltip

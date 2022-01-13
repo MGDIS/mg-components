@@ -48,6 +48,7 @@
    * Input style
    */
   input[type='text'],
+  input[type='password'],
   input[type='date'],
   &.mg-input--date input, /* IE FIX */
   textarea,
@@ -119,7 +120,7 @@
   // specifics spacers for checkbox and radio
   &--radio,
   &--checkbox {
-    &:not(.mg-input--label-on-top){
+    &:not(.mg-input--label-on-top) {
       mg-tooltip {
         margin-left: calc(var(--mg-inputs-spacer) * 2);
       }
@@ -198,7 +199,7 @@
   */
   &.mg-input--text,
   &.mg-input--textarea {
-    &:not(.mg-input--label-on-top){
+    &:not(.mg-input--label-on-top) {
       justify-content: space-between;
     }
 

@@ -247,6 +247,64 @@ export namespace Components {
          */
         "value": string;
     }
+    interface MgInputPassword {
+        /**
+          * Define if input is disabled
+         */
+        "disabled": boolean;
+        /**
+          * Template to use for characters left sentence
+         */
+        "helpText": string;
+        /**
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+         */
+        "identifier"?: string;
+        /**
+          * Define input pattern error message
+         */
+        "invalid": boolean;
+        /**
+          * Input label Required
+         */
+        "label": string;
+        /**
+          * Define if label is visible
+         */
+        "labelHide": boolean;
+        /**
+          * Define if label is displayed on top
+         */
+        "labelOnTop": boolean;
+        /**
+          * Input name If not set the value equals the identifier
+         */
+        "name"?: string;
+        /**
+          * Input placeholder. It should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text.
+         */
+        "placeholder": string;
+        /**
+          * Define if input is readonly
+         */
+        "readonly": boolean;
+        /**
+          * Define if input is required
+         */
+        "required": boolean;
+        /**
+          * Add a tooltip message next to the input
+         */
+        "tooltip": string;
+        /**
+          * Define input pattern to validate
+         */
+        "valid": boolean;
+        /**
+          * Component value
+         */
+        "value": string;
+    }
     interface MgInputRadio {
         /**
           * Define if input is disabled
@@ -629,6 +687,12 @@ declare global {
         prototype: HTMLMgInputNumericElement;
         new (): HTMLMgInputNumericElement;
     };
+    interface HTMLMgInputPasswordElement extends Components.MgInputPassword, HTMLStencilElement {
+    }
+    var HTMLMgInputPasswordElement: {
+        prototype: HTMLMgInputPasswordElement;
+        new (): HTMLMgInputPasswordElement;
+    };
     interface HTMLMgInputRadioElement extends Components.MgInputRadio, HTMLStencilElement {
     }
     var HTMLMgInputRadioElement: {
@@ -684,6 +748,7 @@ declare global {
         "mg-input-checkbox": HTMLMgInputCheckboxElement;
         "mg-input-date": HTMLMgInputDateElement;
         "mg-input-numeric": HTMLMgInputNumericElement;
+        "mg-input-password": HTMLMgInputPasswordElement;
         "mg-input-radio": HTMLMgInputRadioElement;
         "mg-input-select": HTMLMgInputSelectElement;
         "mg-input-text": HTMLMgInputTextElement;
@@ -938,6 +1003,68 @@ declare namespace LocalJSX {
           * Define numeric type
          */
         "type"?: string;
+        /**
+          * Define input pattern to validate
+         */
+        "valid"?: boolean;
+        /**
+          * Component value
+         */
+        "value"?: string;
+    }
+    interface MgInputPassword {
+        /**
+          * Define if input is disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * Template to use for characters left sentence
+         */
+        "helpText"?: string;
+        /**
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+         */
+        "identifier"?: string;
+        /**
+          * Define input pattern error message
+         */
+        "invalid"?: boolean;
+        /**
+          * Input label Required
+         */
+        "label": string;
+        /**
+          * Define if label is visible
+         */
+        "labelHide"?: boolean;
+        /**
+          * Define if label is displayed on top
+         */
+        "labelOnTop"?: boolean;
+        /**
+          * Input name If not set the value equals the identifier
+         */
+        "name"?: string;
+        /**
+          * Emmited event when value change
+         */
+        "onValueChange"?: (event: CustomEvent<string>) => void;
+        /**
+          * Input placeholder. It should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text.
+         */
+        "placeholder"?: string;
+        /**
+          * Define if input is readonly
+         */
+        "readonly"?: boolean;
+        /**
+          * Define if input is required
+         */
+        "required"?: boolean;
+        /**
+          * Add a tooltip message next to the input
+         */
+        "tooltip"?: string;
         /**
           * Define input pattern to validate
          */
@@ -1314,6 +1441,7 @@ declare namespace LocalJSX {
         "mg-input-checkbox": MgInputCheckbox;
         "mg-input-date": MgInputDate;
         "mg-input-numeric": MgInputNumeric;
+        "mg-input-password": MgInputPassword;
         "mg-input-radio": MgInputRadio;
         "mg-input-select": MgInputSelect;
         "mg-input-text": MgInputText;
@@ -1334,6 +1462,7 @@ declare module "@stencil/core" {
             "mg-input-checkbox": LocalJSX.MgInputCheckbox & JSXBase.HTMLAttributes<HTMLMgInputCheckboxElement>;
             "mg-input-date": LocalJSX.MgInputDate & JSXBase.HTMLAttributes<HTMLMgInputDateElement>;
             "mg-input-numeric": LocalJSX.MgInputNumeric & JSXBase.HTMLAttributes<HTMLMgInputNumericElement>;
+            "mg-input-password": LocalJSX.MgInputPassword & JSXBase.HTMLAttributes<HTMLMgInputPasswordElement>;
             "mg-input-radio": LocalJSX.MgInputRadio & JSXBase.HTMLAttributes<HTMLMgInputRadioElement>;
             "mg-input-select": LocalJSX.MgInputSelect & JSXBase.HTMLAttributes<HTMLMgInputSelectElement>;
             "mg-input-text": LocalJSX.MgInputText & JSXBase.HTMLAttributes<HTMLMgInputTextElement>;
