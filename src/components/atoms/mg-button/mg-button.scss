@@ -94,14 +94,14 @@
   }
 
   &--loading {
-    .mg-button__content {
-      opacity: 0;
-    }
-    mg-icon:first-child {
+    & > mg-icon {
       position: absolute;
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
+    }
+    .mg-button__content {
+      opacity: 0;
     }
   }
 }
