@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-01-05T18:07:03",
+  "timestamp": "2022-01-13T09:10:29",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.12.0",
@@ -123,11 +123,19 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mg-message"],
-      "dependencies": ["mg-icon"],
+      "dependents": [
+        "mg-message"
+      ],
+      "dependencies": [
+        "mg-icon"
+      ],
       "dependencyGraph": {
-        "mg-button": ["mg-icon"],
-        "mg-message": ["mg-button"]
+        "mg-button": [
+          "mg-icon"
+        ],
+        "mg-message": [
+          "mg-button"
+        ]
       }
     },
     {
@@ -212,15 +220,38 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mg-input-date", "mg-input-numeric", "mg-input-radio", "mg-input-select", "mg-input-text", "mg-input-textarea"],
+      "dependents": [
+        "mg-input-date",
+        "mg-input-numeric",
+        "mg-input-radio",
+        "mg-input-select",
+        "mg-input-text",
+        "mg-input-textarea",
+        "mg-input-toogle"
+      ],
       "dependencies": [],
       "dependencyGraph": {
-        "mg-input-date": ["mg-character-left"],
-        "mg-input-numeric": ["mg-character-left"],
-        "mg-input-radio": ["mg-character-left"],
-        "mg-input-select": ["mg-character-left"],
-        "mg-input-text": ["mg-character-left"],
-        "mg-input-textarea": ["mg-character-left"]
+        "mg-input-date": [
+          "mg-character-left"
+        ],
+        "mg-input-numeric": [
+          "mg-character-left"
+        ],
+        "mg-input-radio": [
+          "mg-character-left"
+        ],
+        "mg-input-select": [
+          "mg-character-left"
+        ],
+        "mg-input-text": [
+          "mg-character-left"
+        ],
+        "mg-input-textarea": [
+          "mg-character-left"
+        ],
+        "mg-input-toogle": [
+          "mg-character-left"
+        ]
       }
     },
     {
@@ -272,17 +303,46 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mg-button", "mg-input-date", "mg-input-numeric", "mg-input-radio", "mg-input-select", "mg-input-text", "mg-input-textarea", "mg-message"],
+      "dependents": [
+        "mg-button",
+        "mg-input-date",
+        "mg-input-numeric",
+        "mg-input-radio",
+        "mg-input-select",
+        "mg-input-text",
+        "mg-input-textarea",
+        "mg-input-toogle",
+        "mg-message"
+      ],
       "dependencies": [],
       "dependencyGraph": {
-        "mg-button": ["mg-icon"],
-        "mg-input-date": ["mg-icon"],
-        "mg-input-numeric": ["mg-icon"],
-        "mg-input-radio": ["mg-icon"],
-        "mg-input-select": ["mg-icon"],
-        "mg-input-text": ["mg-icon"],
-        "mg-input-textarea": ["mg-icon"],
-        "mg-message": ["mg-icon"]
+        "mg-button": [
+          "mg-icon"
+        ],
+        "mg-input-date": [
+          "mg-icon"
+        ],
+        "mg-input-numeric": [
+          "mg-icon"
+        ],
+        "mg-input-radio": [
+          "mg-icon"
+        ],
+        "mg-input-select": [
+          "mg-icon"
+        ],
+        "mg-input-text": [
+          "mg-icon"
+        ],
+        "mg-input-textarea": [
+          "mg-icon"
+        ],
+        "mg-input-toogle": [
+          "mg-icon"
+        ],
+        "mg-message": [
+          "mg-icon"
+        ]
       }
     },
     {
@@ -526,9 +586,19 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": ["mg-input-title", "mg-tooltip", "mg-icon", "mg-character-left"],
+      "dependencies": [
+        "mg-input-title",
+        "mg-tooltip",
+        "mg-icon",
+        "mg-character-left"
+      ],
       "dependencyGraph": {
-        "mg-input-date": ["mg-input-title", "mg-tooltip", "mg-icon", "mg-character-left"]
+        "mg-input-date": [
+          "mg-input-title",
+          "mg-tooltip",
+          "mg-icon",
+          "mg-character-left"
+        ]
       }
     },
     {
@@ -837,9 +907,19 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": ["mg-input-title", "mg-tooltip", "mg-icon", "mg-character-left"],
+      "dependencies": [
+        "mg-input-title",
+        "mg-tooltip",
+        "mg-icon",
+        "mg-character-left"
+      ],
       "dependencyGraph": {
-        "mg-input-numeric": ["mg-input-title", "mg-tooltip", "mg-icon", "mg-character-left"]
+        "mg-input-numeric": [
+          "mg-input-title",
+          "mg-tooltip",
+          "mg-icon",
+          "mg-character-left"
+        ]
       }
     },
     {
@@ -1119,9 +1199,19 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": ["mg-input-title", "mg-tooltip", "mg-icon", "mg-character-left"],
+      "dependencies": [
+        "mg-input-title",
+        "mg-tooltip",
+        "mg-icon",
+        "mg-character-left"
+      ],
       "dependencyGraph": {
-        "mg-input-radio": ["mg-input-title", "mg-tooltip", "mg-icon", "mg-character-left"]
+        "mg-input-radio": [
+          "mg-input-title",
+          "mg-tooltip",
+          "mg-icon",
+          "mg-character-left"
+        ]
       }
     },
     {
@@ -1400,9 +1490,19 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": ["mg-input-title", "mg-tooltip", "mg-icon", "mg-character-left"],
+      "dependencies": [
+        "mg-input-title",
+        "mg-tooltip",
+        "mg-icon",
+        "mg-character-left"
+      ],
       "dependencyGraph": {
-        "mg-input-select": ["mg-input-title", "mg-tooltip", "mg-icon", "mg-character-left"]
+        "mg-input-select": [
+          "mg-input-title",
+          "mg-tooltip",
+          "mg-icon",
+          "mg-character-left"
+        ]
       }
     },
     {
@@ -1744,9 +1844,19 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": ["mg-input-title", "mg-tooltip", "mg-icon", "mg-character-left"],
+      "dependencies": [
+        "mg-input-title",
+        "mg-tooltip",
+        "mg-icon",
+        "mg-character-left"
+      ],
       "dependencyGraph": {
-        "mg-input-text": ["mg-input-title", "mg-tooltip", "mg-icon", "mg-character-left"]
+        "mg-input-text": [
+          "mg-input-title",
+          "mg-tooltip",
+          "mg-icon",
+          "mg-character-left"
+        ]
       }
     },
     {
@@ -2105,9 +2215,19 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": ["mg-input-title", "mg-tooltip", "mg-icon", "mg-character-left"],
+      "dependencies": [
+        "mg-input-title",
+        "mg-tooltip",
+        "mg-icon",
+        "mg-character-left"
+      ],
       "dependencyGraph": {
-        "mg-input-textarea": ["mg-input-title", "mg-tooltip", "mg-icon", "mg-character-left"]
+        "mg-input-textarea": [
+          "mg-input-title",
+          "mg-tooltip",
+          "mg-icon",
+          "mg-character-left"
+        ]
       }
     },
     {
@@ -2175,15 +2295,312 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mg-input-date", "mg-input-numeric", "mg-input-radio", "mg-input-select", "mg-input-text", "mg-input-textarea"],
+      "dependents": [
+        "mg-input-date",
+        "mg-input-numeric",
+        "mg-input-radio",
+        "mg-input-select",
+        "mg-input-text",
+        "mg-input-textarea",
+        "mg-input-toogle"
+      ],
       "dependencies": [],
       "dependencyGraph": {
-        "mg-input-date": ["mg-input-title"],
-        "mg-input-numeric": ["mg-input-title"],
-        "mg-input-radio": ["mg-input-title"],
-        "mg-input-select": ["mg-input-title"],
-        "mg-input-text": ["mg-input-title"],
-        "mg-input-textarea": ["mg-input-title"]
+        "mg-input-date": [
+          "mg-input-title"
+        ],
+        "mg-input-numeric": [
+          "mg-input-title"
+        ],
+        "mg-input-radio": [
+          "mg-input-title"
+        ],
+        "mg-input-select": [
+          "mg-input-title"
+        ],
+        "mg-input-text": [
+          "mg-input-title"
+        ],
+        "mg-input-textarea": [
+          "mg-input-title"
+        ],
+        "mg-input-toogle": [
+          "mg-input-title"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/molecules/inputs/mg-input-toogle/mg-input-toogle.tsx",
+      "encapsulation": "shadow",
+      "tag": "mg-input-toogle",
+      "readme": "# mg-input-toogle\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Define if input is disabled",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "helpText",
+          "type": "string",
+          "mutable": false,
+          "attr": "help-text",
+          "reflectToAttr": false,
+          "docs": "Template to use for characters left sentence",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "identifier",
+          "type": "string",
+          "mutable": false,
+          "attr": "identifier",
+          "reflectToAttr": false,
+          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
+          "docsTags": [],
+          "default": "createID('mg-input-toogle')",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "invalid",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "invalid",
+          "reflectToAttr": true,
+          "docs": "Force invalid component",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "items",
+          "type": "ToogleValue[] | string[]",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "Items are the possible options to select\nRequired",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "ToogleValue[]"
+            },
+            {
+              "type": "string[]"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "Input label\nRequired",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "labelHide",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "label-hide",
+          "reflectToAttr": false,
+          "docs": "Define if label is visible",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "labelOnTop",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "label-on-top",
+          "reflectToAttr": false,
+          "docs": "Define if label is displayed on top",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "Input name\nIf not set the value equals the identifier",
+          "docsTags": [],
+          "default": "this.identifier",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "readonly",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "readonly",
+          "reflectToAttr": false,
+          "docs": "Define if input is readonly",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "required",
+          "reflectToAttr": false,
+          "docs": "Define if input is required",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "tooltip",
+          "type": "string",
+          "mutable": false,
+          "attr": "tooltip",
+          "reflectToAttr": false,
+          "docs": "Add a tooltip message next to the input",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "valid",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "valid",
+          "reflectToAttr": true,
+          "docs": "Force valid component",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "any",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": true,
+          "docs": "Component value",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "any"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "valueChange",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emmited event when value change",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "mg-icon",
+        "mg-input-title",
+        "mg-tooltip",
+        "mg-character-left"
+      ],
+      "dependencyGraph": {
+        "mg-input-toogle": [
+          "mg-icon",
+          "mg-input-title",
+          "mg-tooltip",
+          "mg-character-left"
+        ]
       }
     },
     {
@@ -2271,10 +2688,18 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": ["mg-icon", "mg-button"],
+      "dependencies": [
+        "mg-icon",
+        "mg-button"
+      ],
       "dependencyGraph": {
-        "mg-message": ["mg-icon", "mg-button"],
-        "mg-button": ["mg-icon"]
+        "mg-message": [
+          "mg-icon",
+          "mg-button"
+        ],
+        "mg-button": [
+          "mg-icon"
+        ]
       }
     },
     {
@@ -2342,9 +2767,9 @@
         {
           "name": "display",
           "type": "boolean",
-          "mutable": false,
+          "mutable": true,
           "attr": "display",
-          "reflectToAttr": false,
+          "reflectToAttr": true,
           "docs": "Display tooltip",
           "docsTags": [],
           "default": "false",
@@ -2470,15 +2895,38 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mg-input-date", "mg-input-numeric", "mg-input-radio", "mg-input-select", "mg-input-text", "mg-input-textarea"],
+      "dependents": [
+        "mg-input-date",
+        "mg-input-numeric",
+        "mg-input-radio",
+        "mg-input-select",
+        "mg-input-text",
+        "mg-input-textarea",
+        "mg-input-toogle"
+      ],
       "dependencies": [],
       "dependencyGraph": {
-        "mg-input-date": ["mg-tooltip"],
-        "mg-input-numeric": ["mg-tooltip"],
-        "mg-input-radio": ["mg-tooltip"],
-        "mg-input-select": ["mg-tooltip"],
-        "mg-input-text": ["mg-tooltip"],
-        "mg-input-textarea": ["mg-tooltip"]
+        "mg-input-date": [
+          "mg-tooltip"
+        ],
+        "mg-input-numeric": [
+          "mg-tooltip"
+        ],
+        "mg-input-radio": [
+          "mg-tooltip"
+        ],
+        "mg-input-select": [
+          "mg-tooltip"
+        ],
+        "mg-input-text": [
+          "mg-tooltip"
+        ],
+        "mg-input-textarea": [
+          "mg-tooltip"
+        ],
+        "mg-input-toogle": [
+          "mg-tooltip"
+        ]
       }
     }
   ]

@@ -221,7 +221,7 @@ export class MgInputRadio {
                 id={this.identifier + '_' + index}
                 name={this.identifier}
                 value={input.value && input.value.toString()}
-                checked={input.value === this.value}
+                checked={input.value === this.value  || (this.value === "" && input.value === true)}
                 disabled={this.disabled || input.disabled}
                 required={this.required}
                 onBlur={this.handleBlur}

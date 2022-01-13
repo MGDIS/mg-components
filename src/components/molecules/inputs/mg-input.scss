@@ -207,3 +207,76 @@ fieldset.mg-input {
   margin: 0;
   padding: 0;
 }
+
+.mg-input--toogle{
+  &-active.mg-input--toogle .mg-input_toogle-group {
+    background-color: hsl(var(--color-info));
+    padding-left: 2rem;
+    padding-right: 0;
+    label {
+      color: hsl(var(--color-info));
+      animation-name: toogleUnactive;
+      &:first-of-type {
+        opacity: 0;
+        position: absolute;
+      }
+      &:last-of-type {
+        opacity: 1;
+        position: relative;
+      }
+    }
+  }
+  .mg-input_toogle-group {
+    padding: 0.2rem 2rem 0.2rem 0;
+    border-radius: 1.5rem;
+    display: flex;
+    background-color: grey;
+    transition: background .2s ease-in-out;
+    label {
+      background-color: hsl(var(--color-neutral));
+      min-width: 20px;
+      border-radius: 1rem;
+      color: grey;
+      margin: 0 0.3rem;
+      display: flex;
+      align-items: center;
+      animation-name: toogleActive;
+      animation-timing-function: ease-in-out;
+      animation-duration: .2s;
+      &:first-of-type {
+        opacity: 1;
+        position: relative;
+      }
+      &:last-of-type {
+        opacity: 0;
+        position: absolute;
+      }
+    }
+    mg-icon, span {
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    &__text{
+      padding: 0 1rem;
+    }
+  }
+}
+
+@keyframes toogleActive {
+  from {
+    transform: translateX(1.5em);
+  }
+  to {
+    transform: translateX(0em);
+  }
+}
+
+@keyframes toogleUnactive {
+  from {
+    transform: translateX(-1.5em);
+  }
+  to {
+    transform: translateX(0em);
+  }
+}

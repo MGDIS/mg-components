@@ -28,3 +28,9 @@ export type OptGroup = {
   group: string,
   options: SelectOption[]
 };
+
+export type ToogleValue = {
+  title: string,
+  value: any,
+  icon?: string
+}
