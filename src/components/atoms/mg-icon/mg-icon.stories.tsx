@@ -1,5 +1,5 @@
 import { h } from "@stencil/core";
-import { icons, sizes } from "./mg-icon.conf";
+import { icons, sizes, variants } from "./mg-icon.conf";
 
 export default {
   component: 'mg-icon',
@@ -11,6 +11,10 @@ export default {
     },
     size: {
       options: sizes,
+      control: { type: 'select' },
+    },
+    variant: {
+      options: variants,
       control: { type: 'select' },
     },
   },
