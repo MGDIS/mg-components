@@ -36,10 +36,32 @@ To build for production, run:
 npm run build
 ```
 
-To run the unit tests for the components, run:
+To run tests for the components, run:
 
 ```bash
-npm test
+npm run test
+
+# only unit tests
+npm run test:unit
+
+# only e2e tests
+npm run test:e2e
+
+# filter on filename
+npm run test -- mg-icon
+```
+To regenerate snapshot you must add the `-u` parameter.
+
+To add a component, run:
+
+```bash
+npm run generate component-path
+
+# example for an atom
+npm run generate atoms/mg-icon
+
+# example for a molecule
+npm run generate molecules/mg-message
 ```
 
 ## Naming Components
