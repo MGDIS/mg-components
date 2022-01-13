@@ -2,14 +2,14 @@ import { Component, Event, h, Prop, EventEmitter, State, Watch } from '@stencil/
 import { MgInput } from '../MgInput';
 import { createID, ClassList } from '../../../../utils/components.utils';
 import { messages } from '../../../../locales';
-import { CheckboxItems, CheckboxValue }from '../../../../types/components.types';
+import { CheckboxItem, CheckboxValue }from '../../../../types/components.types';
 
 /**
-* type CheckboxItems validation function
-* @param CheckboxItems
+* type CheckboxItem validation function
+* @param CheckboxItem
 * @returns {boolean}
 */
-const isCheckboxItems = (item: CheckboxItems): boolean => typeof item === 'object' && typeof item.title === 'string' && (item.value === null || typeof item.value === 'boolean') && item.value !== undefined;
+const isCheckboxItem = (item: CheckboxItem): boolean => typeof item === 'object' && typeof item.title === 'string' && (item.value === null || typeof item.value === 'boolean') && item.value !== undefined;
 
 /**
 * utility function to get shadow-root HTML node element
@@ -46,7 +46,7 @@ export class MgInputCheckbox {
   @Prop({ mutable:true, reflect: true }) value!: CheckboxValue[];
   @Watch('value')
   validateValue(newValue){
-    if(newValue && (newValue as Array<CheckboxItems>).every(item => isCheckboxItems(item))) {
+    if(newValue && (newValue as Array<CheckboxItem>).every(item => isCheckboxItem(item))) {
       this.checkboxItems  = newValue.map((item, index) => ({
         id: `${this.identifier}_${index.toString()}`,
         title:item.title,
@@ -55,7 +55,7 @@ export class MgInputCheckbox {
       }));
     }
     else {
-      throw new Error('<mg-input-checkbox> prop "value" is required and all values must be the same type, CheckboxItems.')
+      throw new Error('<mg-input-checkbox> prop "value" is required and all values must be the same type, CheckboxItem.')
     }
   }
 
@@ -140,7 +140,7 @@ export class MgInputCheckbox {
   /**
   * Formated value for display
   */
-  @State() checkboxItems: (CheckboxItems)[];
+  @State() checkboxItems: (CheckboxItem)[];
 
   /**
   * Emitted event when value change

@@ -30,7 +30,7 @@ exports[`mg-input-checkbox Should render with args {
             <li class="mg-input__input-group">
               <input aria-describedby="" disabled="" id="identifier_2" name="identifier" type="checkbox" value="false">
               <label htmlfor="identifier_2">
-                jocker
+                joker
               </label>
             </li>
             <li class="mg-input__input-group">
@@ -51,7 +51,7 @@ exports[`mg-input-checkbox Should render with args {
   label: 'label',
   identifier: 'identifier',
   value: [Array],
-  helpText: 'Hello jocker'
+  helpText: 'Hello joker'
 }: 1`] = `
 <mg-input-checkbox>
   <mock:shadow-root>
@@ -77,7 +77,7 @@ exports[`mg-input-checkbox Should render with args {
             <li class="mg-input__input-group">
               <input aria-describedby="identifier-help-text" id="identifier_2" name="identifier" type="checkbox" value="false">
               <label htmlfor="identifier_2">
-                jocker
+                joker
               </label>
             </li>
             <li class="mg-input__input-group">
@@ -89,7 +89,7 @@ exports[`mg-input-checkbox Should render with args {
           </ul>
         </div>
         <div class="mg-input__input-container__help-text" id="identifier-help-text">
-          Hello jocker
+          Hello joker
         </div>
       </div>
     </fieldset>
@@ -127,7 +127,7 @@ exports[`mg-input-checkbox Should render with args {
             <li class="mg-input__input-group">
               <input aria-describedby="" id="identifier_2" name="identifier" type="checkbox" value="false">
               <label htmlfor="identifier_2">
-                jocker
+                joker
               </label>
             </li>
             <li class="mg-input__input-group">
@@ -174,7 +174,7 @@ exports[`mg-input-checkbox Should render with args {
             <li class="mg-input__input-group">
               <input aria-describedby="" id="identifier_2" name="identifier" type="checkbox" value="false">
               <label htmlfor="identifier_2">
-                jocker
+                joker
               </label>
             </li>
             <li class="mg-input__input-group">
@@ -221,7 +221,7 @@ exports[`mg-input-checkbox Should render with args {
             <li class="mg-input__input-group">
               <input aria-describedby="" id="identifier_2" name="identifier" type="checkbox" value="false">
               <label htmlfor="identifier_2">
-                jocker
+                joker
               </label>
             </li>
             <li class="mg-input__input-group">
@@ -326,7 +326,7 @@ exports[`mg-input-checkbox Should render with args {
             <li class="mg-input__input-group">
               <input aria-describedby="" id="identifier_2" name="identifier" required="" type="checkbox" value="false">
               <label htmlfor="identifier_2">
-                jocker
+                joker
               </label>
             </li>
             <li class="mg-input__input-group">
@@ -373,7 +373,7 @@ exports[`mg-input-checkbox Should render with args {
             <li class="mg-input__input-group">
               <input aria-describedby="" id="identifier_2" name="identifier" type="checkbox" value="false">
               <label htmlfor="identifier_2">
-                jocker
+                joker
               </label>
             </li>
             <li class="mg-input__input-group">
@@ -418,7 +418,7 @@ exports[`mg-input-checkbox Should render with args { label: 'label', identifier:
             <li class="mg-input__input-group">
               <input aria-describedby="" id="identifier_2" name="identifier" type="checkbox" value="false">
               <label htmlfor="identifier_2">
-                jocker
+                joker
               </label>
             </li>
             <li class="mg-input__input-group">
@@ -460,7 +460,7 @@ exports[`mg-input-checkbox Should trigger events, case validity check false 1`] 
             <li class="mg-input__input-group">
               <input aria-describedby="identifier-help-text" id="identifier_2" name="identifier" type="checkbox" value="false">
               <label htmlfor="identifier_2">
-                jocker
+                joker
               </label>
             </li>
             <li class="mg-input__input-group">
@@ -505,7 +505,7 @@ exports[`mg-input-checkbox Should trigger events, case validity check false 2`] 
             <li class="mg-input__input-group">
               <input aria-describedby="identifier-help-text identifier-error" id="identifier_2" name="identifier" type="checkbox" value="false">
               <label htmlfor="identifier_2">
-                jocker
+                joker
               </label>
             </li>
             <li class="mg-input__input-group">
@@ -553,7 +553,7 @@ exports[`mg-input-checkbox Should trigger events, case validity check true 1`] =
             <li class="mg-input__input-group">
               <input aria-describedby="identifier-help-text" id="identifier_2" name="identifier" type="checkbox" value="false">
               <label htmlfor="identifier_2">
-                jocker
+                joker
               </label>
             </li>
             <li class="mg-input__input-group">
@@ -598,7 +598,7 @@ exports[`mg-input-checkbox Should trigger events, case validity check true 2`] =
             <li class="mg-input__input-group">
               <input aria-describedby="identifier-help-text" checked="" id="identifier_2" name="identifier" type="checkbox" value="true">
               <label htmlfor="identifier_2">
-                jocker
+                joker
               </label>
             </li>
             <li class="mg-input__input-group">

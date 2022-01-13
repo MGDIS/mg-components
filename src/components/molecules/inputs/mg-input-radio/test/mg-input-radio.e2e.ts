@@ -9,7 +9,7 @@ describe('mg-input-radio', () => {
       const page = await createPage(`${html}
       <script>
       const mgInputRadio = document.querySelector('mg-input-radio');
-      mgInputRadio.items = ['batman', 'robin', 'jocker', 'bane'];
+      mgInputRadio.items = ['batman', 'robin', 'joker', 'bane'];
       </script>`);
 
       const element = await page.find('mg-input-radio');
@@ -48,7 +48,7 @@ describe('mg-input-radio', () => {
       const page = await createPage(`${html}
         <script>
         const mgInputRadio = document.querySelector('mg-input-radio');
-        mgInputRadio.items = ['batman', 'robin', 'jocker', 'bane'];
+        mgInputRadio.items = ['batman', 'robin', 'joker', 'bane'];
         </script>`);
 
       const element = await page.find('mg-input-radio');
@@ -65,7 +65,7 @@ describe('mg-input-radio', () => {
     const page = await createPage(`<mg-input-radio label="legend" tooltip="Tooltip message" label-on-top=${labelOnTop}></mg-input-radio>
       <script>
       const mgInputRadio = document.querySelector('mg-input-radio');
-      mgInputRadio.items = ['batman', 'robin', 'jocker', 'bane'];
+      mgInputRadio.items = ['batman', 'robin', 'joker', 'bane'];
       </script>`);
 
     const element = await page.find('mg-input-radio');
@@ -86,7 +86,7 @@ describe('mg-input-radio', () => {
     const page = await createPage(`<mg-input-radio label="legend"></mg-input-radio>
       <script>
       const mgInputRadio = document.querySelector('mg-input-radio');
-      mgInputRadio.items = ['batman', 'robin', 'jocker', 'bane', 'ironman', 'spiderman', 'captain america', 'thor', 'vision', 'antman', 'black widow', 'black panther'];
+      mgInputRadio.items = ['batman', 'robin', 'joker', 'bane', 'ironman', 'spiderman', 'captain america', 'thor', 'vision', 'antman', 'black widow', 'black panther'];
       </script>`);
 
     const element = await page.find('mg-input-radio');
@@ -108,7 +108,7 @@ describe('mg-input-radio', () => {
       const page = await createPage(`${html}
         <script>
         const mgInputRadio = document.querySelector('mg-input-radio');
-        mgInputRadio.items = ['batman', 'robin', 'jocker', 'bane'];
+        mgInputRadio.items = ['batman', 'robin', 'joker', 'bane'];
         </script>`);
 
       const element = await page.find('mg-input-radio');
@@ -124,7 +124,7 @@ describe('mg-input-radio', () => {
     const page = await createPage(`<mg-input-radio label="legend" help-text="HelpText Message" required></mg-input-radio>
       <script>
       const mgInputRadio = document.querySelector('mg-input-radio');
-      mgInputRadio.items = ['batman', 'robin', 'jocker', 'bane'];
+      mgInputRadio.items = ['batman', 'robin', 'joker', 'bane'];
       </script>`);
 
     const element = await page.find('mg-input-radio');

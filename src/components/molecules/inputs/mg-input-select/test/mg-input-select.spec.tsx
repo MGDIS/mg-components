@@ -34,7 +34,7 @@ describe('mg-input-select', () => {
 
   test('Should throw an error with labelOnTop & labelHide set to true', async () => {
     try {
-      await getPage({label: 'batman', labelOnTop: true, labelHide: true, items: ['batman', 'jocker']});
+      await getPage({label: 'batman', labelOnTop: true, labelHide: true, items: ['batman', 'joker']});
     }
     catch (err) {
       expect(err.message).toMatch('<mg-input> prop "labelOnTop" must not be paired with the prop "labelHide"')

@@ -8,7 +8,7 @@ describe('mg-checkbox', () => {
       const page = await createPage(`${html}
       <script>
       const mgInputCheckbox = document.querySelector('mg-input-checkbox');
-      mgInputCheckbox.value = [{title: 'batman', value: true}, {title: 'robin', value: false}, {title: 'jocker', value: null}, {title: 'bane', value: true, disabled: true}];
+      mgInputCheckbox.value = [{title: 'batman', value: true}, {title: 'robin', value: false}, {title: 'joker', value: null}, {title: 'bane', value: true, disabled: true}];
       </script>`);
 
       const element = await page.find('mg-input-checkbox');
@@ -32,7 +32,7 @@ describe('mg-checkbox', () => {
       const page = await createPage(`${html}
         <script>
         const mgInputCheckbox = document.querySelector('mg-input-checkbox');
-        mgInputCheckbox.value = [{title: 'batman', value: true}, {title: 'robin', value: false}, {title: 'jocker', value: null}, {title: 'bane', value: true, disabled: true}];
+        mgInputCheckbox.value = [{title: 'batman', value: true}, {title: 'robin', value: false}, {title: 'joker', value: null}, {title: 'bane', value: true, disabled: true}];
         </script>`);
 
       const element = await page.find('mg-input-checkbox');

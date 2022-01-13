@@ -14,7 +14,7 @@ describe('mg-input-checkbox', () => {
   const items: CheckboxValue[] = [
     { title: 'batman', value: true },
     { title: 'robin', value: false, disabled: true },
-    { title: 'jocker', value: false },
+    { title: 'joker', value: false },
     { title: 'bane', value: null }
   ];
 
@@ -27,7 +27,7 @@ describe('mg-input-checkbox', () => {
     {label: 'label', identifier: "identifier", value: cloneDeep(items), required: true},
     {label: 'label', identifier: "identifier", value: cloneDeep(items), readonly: true, },
     {label: 'label', identifier: "identifier", value: cloneDeep(items), disabled: true},
-    {label: 'label', identifier: "identifier", value: cloneDeep(items), helpText: 'Hello jocker'},
+    {label: 'label', identifier: "identifier", value: cloneDeep(items), helpText: 'Hello joker'},
     {label: 'label', identifier: "identifier", value: cloneDeep(items), tooltip: "Batman is a DC Comics license"},
   ])('Should render with args %s:', async (args) => {
     const { root } = await getPage(args);
@@ -45,10 +45,10 @@ describe('mg-input-checkbox', () => {
 
   test('Should not render with invalid label property : %s', async () => {
     try {
-      await getPage({label: 'label', value: ["batman", "jocker", "bane"]});
+      await getPage({label: 'label', value: ["batman", "joker", "bane"]});
     }
     catch (err) {
-      expect(err.message).toMatch('<mg-input-checkbox> prop "value" is required and all values must be the same type, CheckboxOption.')
+      expect(err.message).toMatch('<mg-input-checkbox> prop "value" is required and all values must be the same type, CheckboxItem.')
     }
   });
 
