@@ -118,7 +118,7 @@ export class MgMessage {
         </div>
         { this.closeButton && <span class="mg-message__close-button">
             <mg-button identifier={this.closeButtonId} is-icon variant="flat" label={messages.message.closeButton} onClick={this.handleClose}>
-              <mg-icon icon="cross" size="small"></mg-icon>
+              <mg-icon icon="cross"></mg-icon>
             </mg-button>
           </span>
         }

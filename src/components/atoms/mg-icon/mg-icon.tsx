@@ -18,9 +18,6 @@ export class MgIcon {
     if(!Object.keys(icons).includes(newValue)) {
       throw new Error(`<mg-icon> prop "icon" must be one of : ${Object.keys(icons).join(', ')}`);
     }
-    if (this.icon === 'loader') {
-      this.classList.add('mg-icon--spin')
-    }
     this.classList.add(`mg-icon--${this.icon}`);
   }
 
@@ -52,6 +49,17 @@ export class MgIcon {
   }
 
   /**
+   * Make the icon spin
+   */
+  @Prop() spin: boolean = false;
+  @Watch('spin')
+  handleSpin(newValue: boolean) {
+    if (newValue) {
+      this.classList.add('mg-icon--spin')
+    }
+  }
+
+  /**
   * Component classes
   */
   @State() classList: ClassList = new ClassList(['mg-icon']);
@@ -63,6 +71,7 @@ export class MgIcon {
     this.validateIcon(this.icon);
     this.validateSize(this.size);
     this.validateVariant(this.variant);
+    this.handleSpin(this.spin);
   }
 
   /**
@@ -74,7 +83,7 @@ export class MgIcon {
         class={this.classList.join()}
         aria-hidden="true"
         focusable="false"
-        viewBox="0 0 512 512">{icons[this.icon]()}</svg>
+        viewBox="0 0 16 16">{icons[this.icon]()}</svg>
     );
   }
 

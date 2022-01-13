@@ -37,7 +37,7 @@ exports[`mg-message Should render a danger message with args { identifier: 'iden
       </div>
       <span class="mg-message__close-button">
         <mg-button identifier="identifier-close-button" is-icon="" label="Fermer le message" variant="flat">
-          <mg-icon icon="cross" size="small"></mg-icon>
+          <mg-icon icon="cross"></mg-icon>
         </mg-button>
       </span>
     </div>
@@ -88,7 +88,7 @@ exports[`mg-message Should render a info message with args { identifier: 'identi
       </div>
       <span class="mg-message__close-button">
         <mg-button identifier="identifier-close-button" is-icon="" label="Fermer le message" variant="flat">
-          <mg-icon icon="cross" size="small"></mg-icon>
+          <mg-icon icon="cross"></mg-icon>
         </mg-button>
       </span>
     </div>
@@ -139,7 +139,7 @@ exports[`mg-message Should render a success message with args { identifier: 'ide
       </div>
       <span class="mg-message__close-button">
         <mg-button identifier="identifier-close-button" is-icon="" label="Fermer le message" variant="flat">
-          <mg-icon icon="cross" size="small"></mg-icon>
+          <mg-icon icon="cross"></mg-icon>
         </mg-button>
       </span>
     </div>
@@ -190,7 +190,7 @@ exports[`mg-message Should render a warning message with args { identifier: 'ide
       </div>
       <span class="mg-message__close-button">
         <mg-button identifier="identifier-close-button" is-icon="" label="Fermer le message" variant="flat">
-          <mg-icon icon="cross" size="small"></mg-icon>
+          <mg-icon icon="cross"></mg-icon>
         </mg-button>
       </span>
     </div>

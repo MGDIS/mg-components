@@ -115,7 +115,7 @@ export class MgButton {
         >
           {this.loading ?
             <mg-icon
-              icon="loader"
+              icon="loader" spin
             ></mg-icon>
             : null
           }
