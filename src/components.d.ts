@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { RadioOption, SelectOption, ToogleValue } from "./types/components.types";
+import { RadioOption, SelectOption, ToggleValue } from "./types/components.types";
 export namespace Components {
     interface MgButton {
         /**
@@ -545,7 +545,7 @@ export namespace Components {
          */
         "required": boolean;
     }
-    interface MgInputToogle {
+    interface MgInputToggle {
         /**
           * Define if input is disabled
          */
@@ -565,7 +565,7 @@ export namespace Components {
         /**
           * Items are the possible options to select Required
          */
-        "items": string[] | ToogleValue[];
+        "items": string[] | ToggleValue[];
         /**
           * Input label Required
          */
@@ -602,6 +602,10 @@ export namespace Components {
           * Component value
          */
         "value"?: any;
+        /**
+          * Define if values are displaed side by side
+         */
+        "valuesSideBySide"?: boolean;
     }
     interface MgMessage {
         /**
@@ -717,11 +721,11 @@ declare global {
         prototype: HTMLMgInputTitleElement;
         new (): HTMLMgInputTitleElement;
     };
-    interface HTMLMgInputToogleElement extends Components.MgInputToogle, HTMLStencilElement {
+    interface HTMLMgInputToggleElement extends Components.MgInputToggle, HTMLStencilElement {
     }
-    var HTMLMgInputToogleElement: {
-        prototype: HTMLMgInputToogleElement;
-        new (): HTMLMgInputToogleElement;
+    var HTMLMgInputToggleElement: {
+        prototype: HTMLMgInputToggleElement;
+        new (): HTMLMgInputToggleElement;
     };
     interface HTMLMgMessageElement extends Components.MgMessage, HTMLStencilElement {
     }
@@ -753,7 +757,7 @@ declare global {
         "mg-input-text": HTMLMgInputTextElement;
         "mg-input-textarea": HTMLMgInputTextareaElement;
         "mg-input-title": HTMLMgInputTitleElement;
-        "mg-input-toogle": HTMLMgInputToogleElement;
+        "mg-input-toggle": HTMLMgInputToggleElement;
         "mg-message": HTMLMgMessageElement;
         "mg-tag": HTMLMgTagElement;
         "mg-tooltip": HTMLMgTooltipElement;
@@ -1326,7 +1330,7 @@ declare namespace LocalJSX {
          */
         "required"?: boolean;
     }
-    interface MgInputToogle {
+    interface MgInputToggle {
         /**
           * Define if input is disabled
          */
@@ -1346,7 +1350,7 @@ declare namespace LocalJSX {
         /**
           * Items are the possible options to select Required
          */
-        "items": string[] | ToogleValue[];
+        "items": string[] | ToggleValue[];
         /**
           * Input label Required
          */
@@ -1387,6 +1391,10 @@ declare namespace LocalJSX {
           * Component value
          */
         "value"?: any;
+        /**
+          * Define if values are displaed side by side
+         */
+        "valuesSideBySide"?: boolean;
     }
     interface MgMessage {
         /**
@@ -1446,7 +1454,7 @@ declare namespace LocalJSX {
         "mg-input-text": MgInputText;
         "mg-input-textarea": MgInputTextarea;
         "mg-input-title": MgInputTitle;
-        "mg-input-toogle": MgInputToogle;
+        "mg-input-toggle": MgInputToggle;
         "mg-message": MgMessage;
         "mg-tag": MgTag;
         "mg-tooltip": MgTooltip;
@@ -1467,7 +1475,7 @@ declare module "@stencil/core" {
             "mg-input-text": LocalJSX.MgInputText & JSXBase.HTMLAttributes<HTMLMgInputTextElement>;
             "mg-input-textarea": LocalJSX.MgInputTextarea & JSXBase.HTMLAttributes<HTMLMgInputTextareaElement>;
             "mg-input-title": LocalJSX.MgInputTitle & JSXBase.HTMLAttributes<HTMLMgInputTitleElement>;
-            "mg-input-toogle": LocalJSX.MgInputToogle & JSXBase.HTMLAttributes<HTMLMgInputToogleElement>;
+            "mg-input-toggle": LocalJSX.MgInputToggle & JSXBase.HTMLAttributes<HTMLMgInputToggleElement>;
             "mg-message": LocalJSX.MgMessage & JSXBase.HTMLAttributes<HTMLMgMessageElement>;
             "mg-tag": LocalJSX.MgTag & JSXBase.HTMLAttributes<HTMLMgTagElement>;
             "mg-tooltip": LocalJSX.MgTooltip & JSXBase.HTMLAttributes<HTMLMgTooltipElement>;

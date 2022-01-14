@@ -221,62 +221,123 @@ fieldset.mg-input {
   padding: 0;
 }
 
-.mg-input--toogle{
-  &-active.mg-input--toogle .mg-input_toogle-group {
-    background-color: hsl(var(--color-info));
-    padding-left: 2rem;
-    padding-right: 0;
-    label {
-      color: hsl(var(--color-info));
-      animation-name: toogleUnactive;
-      &:first-of-type {
-        opacity: 0;
-        position: absolute;
-      }
-      &:last-of-type {
-        opacity: 1;
-        position: relative;
-      }
-    }
+/**
+* Toogle
+*/
+
+.mg-input_button-toggle {
+  display: flex;
+  overflow: hidden;
+  padding-top: var(--mg-input-toggle-border);
+  padding-right: calc((var(--mg-input-toggle-button-height) - (var(--mg-input-toggle-border) * 2)) - var(--mg-input-toggle-border));
+  padding-bottom: var(--mg-input-toggle-border);
+  padding-left: 0;
+  margin: calc((var(--default-size) - var(--mg-input-toggle-button-height)) / 2) 0;
+  height: var(--mg-input-toggle-button-height);
+  background-color: grey; // FIXME
+  border: none; // reset button default style
+  border-radius: calc(var(--default-size) / 2);
+  // animation
+  transition: background .2s ease-in-out;
+  &--disabled {
+    opacity: 30%;
   }
-  .mg-input_toogle-group {
-    padding: 0.2rem 2rem 0.2rem 0;
-    border-radius: 1.5rem;
-    display: flex;
-    background-color: grey;
-    transition: background .2s ease-in-out;
-    label {
-      background-color: hsl(var(--color-neutral));
-      min-width: 20px;
-      border-radius: 1rem;
-      color: grey;
-      margin: 0 0.3rem;
-      display: flex;
-      align-items: center;
-      animation-name: toogleActive;
-      animation-timing-function: ease-in-out;
-      animation-duration: .2s;
-      &:first-of-type {
-        opacity: 1;
-        position: relative;
-      }
-      &:last-of-type {
-        opacity: 0;
-        position: absolute;
-      }
+}
+
+.mg-input--toggle-active {
+  .mg-input_button-toggle {
+    padding-left: calc((var(--mg-input-toggle-button-height) - (var(--mg-input-toggle-border) * 2)) - var(--mg-input-toggle-border));
+    padding-right: 0;
+    background-color: hsl(var(--color-info));
+  }
+  .mg-input_button-toggle__item-container {
+    color: hsl(var(--color-info));
+    animation-name: toggleUnactive;
+    &:first-of-type {
+      opacity: 0;
+      position: absolute;
     }
-    mg-icon, span {
-      display: flex;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    &__text{
-      padding: 0 1rem;
+    &:last-of-type {
+      opacity: 1;
+      position: relative;
     }
   }
 }
 
-@keyframes toogleActive {
+.mg-input_button-toggle__item-container {
+  display: flex;
+  align-items: center;
+  margin: 0 var(--mg-input-toggle-border);
+  min-width: calc(var(--mg-input-toggle-button-height) - (var(--mg-input-toggle-border) * 2));
+  height: calc(var(--mg-input-toggle-button-height) - (var(--mg-input-toggle-border) * 2));
+  background-color: hsl(var(--color-light));
+  color: grey; // FIXME
+  border-radius: calc((var(--default-size) / 3) * 2);
+  //animation
+  animation-name: toggleActive;
+  animation-timing-function: ease-in-out;
+  animation-duration: .2s;
+  // side by side disable
+  &:first-of-type {
+    opacity: 1;
+    position: relative;
+  }
+  &:last-of-type {
+    opacity: 0;
+    position: absolute;
+  }
+  // slot
+  & > :not(.mg-input_button-toggle__item-container--icon) {
+    padding: 0 1rem;
+  }
+  & > .mg-input_button-toggle__item-container--icon {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+// toggle side by side variation
+.mg-input-toggle--side-by-side {
+  .mg-input_button-toggle {
+    padding-left: 0;
+    padding-right: 0;
+    background-color: hsl(var(--color-info));
+  }
+  .mg-input_button-toggle__item-container {
+    &:first-of-type, &:last-of-type {
+      opacity: unset;
+      position: unset;
+    }
+    &:first-of-type {
+      margin-right: 0;
+      background-color: hsl(var(--color-light));
+      color: hsl(var(--color-info));
+    }
+    &:last-of-type {
+      margin-left: 0;
+      background: none;
+      color: hsl(var(--color-light));
+    }
+  }
+  &.mg-input--toggle-active .mg-input_button-toggle__item-container{
+    &:first-of-type {
+      margin-right: 0;
+      background: none;
+      color: hsl(var(--color-light));
+    }
+    &:last-of-type {
+      margin-left: 0;
+      background-color: hsl(var(--color-light));
+      color: hsl(var(--color-info));
+    }
+  }
+}
+
+/**
+* Animations
+*/
+
+@keyframes toggleActive {
   from {
     transform: translateX(1.5em);
   }
@@ -285,7 +346,7 @@ fieldset.mg-input {
   }
 }
 
-@keyframes toogleUnactive {
+@keyframes toggleUnactive {
   from {
     transform: translateX(-1.5em);
   }

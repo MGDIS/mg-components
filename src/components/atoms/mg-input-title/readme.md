@@ -23,7 +23,7 @@ This atom refers to thes [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64), [PDA9-
  - [mg-input-select](../../molecules/inputs/mg-input-select)
  - [mg-input-text](../../molecules/inputs/mg-input-text)
  - [mg-input-textarea](../../molecules/inputs/mg-input-textarea)
- - [mg-input-toogle](../../molecules/inputs/mg-input-toogle)
+ - [mg-input-toggle](../../molecules/inputs/mg-input-toggle)
 
 ### Graph
 ```mermaid
@@ -35,7 +35,7 @@ graph TD;
   mg-input-select --> mg-input-title
   mg-input-text --> mg-input-title
   mg-input-textarea --> mg-input-title
-  mg-input-toogle --> mg-input-title
+  mg-input-toggle --> mg-input-title
   style mg-input-title fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

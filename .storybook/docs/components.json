@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-01-13T14:02:25",
+  "timestamp": "2022-01-14T15:55:51",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.12.0",
@@ -228,7 +228,7 @@
         "mg-input-select",
         "mg-input-text",
         "mg-input-textarea",
-        "mg-input-toogle"
+        "mg-input-toggle"
       ],
       "dependencies": [],
       "dependencyGraph": {
@@ -253,7 +253,7 @@
         "mg-input-textarea": [
           "mg-character-left"
         ],
-        "mg-input-toogle": [
+        "mg-input-toggle": [
           "mg-character-left"
         ]
       }
@@ -332,7 +332,7 @@
         "mg-input-select",
         "mg-input-text",
         "mg-input-textarea",
-        "mg-input-toogle",
+        "mg-input-toggle",
         "mg-message"
       ],
       "dependencies": [],
@@ -361,7 +361,7 @@
         "mg-input-textarea": [
           "mg-icon"
         ],
-        "mg-input-toogle": [
+        "mg-input-toggle": [
           "mg-icon"
         ],
         "mg-message": [
@@ -2599,7 +2599,7 @@
         "mg-input-select",
         "mg-input-text",
         "mg-input-textarea",
-        "mg-input-toogle"
+        "mg-input-toggle"
       ],
       "dependencies": [],
       "dependencyGraph": {
@@ -2624,16 +2624,16 @@
         "mg-input-textarea": [
           "mg-input-title"
         ],
-        "mg-input-toogle": [
+        "mg-input-toggle": [
           "mg-input-title"
         ]
       }
     },
     {
-      "filePath": "./src/components/molecules/inputs/mg-input-toogle/mg-input-toogle.tsx",
-      "encapsulation": "shadow",
-      "tag": "mg-input-toogle",
-      "readme": "# mg-input-toogle\n\n\n",
+      "filePath": "./src/components/molecules/inputs/mg-input-toggle/mg-input-toggle.tsx",
+      "encapsulation": "scoped",
+      "tag": "mg-input-toggle",
+      "readme": "# mg-input-toggle\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -2679,7 +2679,7 @@
           "reflectToAttr": false,
           "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
           "docsTags": [],
-          "default": "createID('mg-input-toogle')",
+          "default": "createID('mg-input-toggle')",
           "values": [
             {
               "type": "string"
@@ -2706,14 +2706,14 @@
         },
         {
           "name": "items",
-          "type": "ToogleValue[] | string[]",
+          "type": "ToggleValue[] | string[]",
           "mutable": false,
           "reflectToAttr": false,
           "docs": "Items are the possible options to select\nRequired",
           "docsTags": [],
           "values": [
             {
-              "type": "ToogleValue[]"
+              "type": "ToggleValue[]"
             },
             {
               "type": "string[]"
@@ -2869,6 +2869,23 @@
           ],
           "optional": true,
           "required": false
+        },
+        {
+          "name": "valuesSideBySide",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "values-side-by-side",
+          "reflectToAttr": false,
+          "docs": "Define if values are displaed side by side",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
         }
       ],
       "methods": [],
@@ -2889,15 +2906,15 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "mg-icon",
         "mg-tooltip",
+        "mg-icon",
         "mg-input-title",
         "mg-character-left"
       ],
       "dependencyGraph": {
-        "mg-input-toogle": [
-          "mg-icon",
+        "mg-input-toggle": [
           "mg-tooltip",
+          "mg-icon",
           "mg-input-title",
           "mg-character-left"
         ]
@@ -3203,7 +3220,7 @@
         "mg-input-select",
         "mg-input-text",
         "mg-input-textarea",
-        "mg-input-toogle"
+        "mg-input-toggle"
       ],
       "dependencies": [],
       "dependencyGraph": {
@@ -3228,7 +3245,7 @@
         "mg-input-textarea": [
           "mg-tooltip"
         ],
-        "mg-input-toogle": [
+        "mg-input-toggle": [
           "mg-tooltip"
         ]
       }
