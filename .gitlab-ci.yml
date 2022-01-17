@@ -21,7 +21,7 @@ stages:
 lint:
   stage: test
   rules:
-    - if: $CI_COMMIT_TAG == null
+    - if: $CI_COMMIT_TAG == null && $CI_MERGE_REQUEST_ID == null
   extends:
     - .install
   script:
@@ -30,7 +30,7 @@ lint:
 audit:
   stage: test
   rules:
-    - if: $CI_COMMIT_TAG == null
+    - if: $CI_COMMIT_TAG == null && $CI_MERGE_REQUEST_ID == null
   script:
     - gitlabci-npm-audit break-build
     - gitlabci-npm-audit-compare
@@ -38,7 +38,7 @@ audit:
 outdated:
   stage: test
   rules:
-    - if: $CI_COMMIT_TAG == null
+    - if: $CI_COMMIT_TAG == null && $CI_MERGE_REQUEST_ID == null
   before_script:
     - npm ci
   script:
@@ -51,7 +51,7 @@ test:
   image: $DOCKER_REGISTRE_URL/$DOCKER_REGISTRE_NAMESPACE_INT/node-build:14-debian
   rules:
     # except tags
-    - if: $CI_COMMIT_TAG == null
+    - if: $CI_COMMIT_TAG == null && $CI_MERGE_REQUEST_ID == null
   extends:
     - .install
   script:
@@ -68,7 +68,7 @@ test:
 sonar:
   stage: sonar
   rules:
-    - if: $CI_COMMIT_TAG == null
+    - if: $CI_COMMIT_TAG == null && $CI_MERGE_REQUEST_ID == null
   script:
     - /scripts/quality-gate-sonar.sh A+++
     - sonar-scanner -Dsonar.host.url=$SONAR_URL -Dsonar.login=$SONAR_KEY -Dsonar.projectKey=$CI_PROJECT_NAME-$CI_COMMIT_REF_SLUG -Dsonar.projectName=$CI_PROJECT_NAME-$CI_COMMIT_REF_SLUG
@@ -79,7 +79,7 @@ sonar:
 dist:
   stage: dist
   rules:
-    - when: always
+    - if: $CI_MERGE_REQUEST_ID == null
   extends:
     - .install
   script:
@@ -97,7 +97,7 @@ dist:
 artifact:
   stage: artifact
   rules:
-    - if: $CI_COMMIT_TAG == null
+    - if: $CI_COMMIT_TAG == null && $CI_MERGE_REQUEST_ID == null
   script:
     - npm publish
   needs:
@@ -115,7 +115,7 @@ review_app:
       - public
   environment:
     name: review/$CI_COMMIT_REF_SLUG
-    url: https://${CI_PROJECT_NAMESPACE}.gitlab.io/-/$CI_PROJECT_NAME/-/jobs/${CI_JOB_ID}/artifacts/public/index.html
+    url: http://core.pages.mgdis.fr/-/$CI_PROJECT_NAME/-/jobs/${CI_JOB_ID}/artifacts/public/index.html
     on_stop: stop_review_app
     auto_stop_in: 1 week
   rules:
