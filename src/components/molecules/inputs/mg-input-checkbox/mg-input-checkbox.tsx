@@ -1,28 +1,38 @@
 import { Component, Event, h, Prop, EventEmitter, State, Watch } from '@stencil/core';
 import { MgInput } from '../MgInput';
-import { createID, ClassList, allItemsAreString } from '../../../../utils/components.utils';
+import { createID, ClassList } from '../../../../utils/components.utils';
 import { messages } from '../../../../locales';
-import { RadioOption }from '../../../../types/components.types';
+import { CheckboxItem, CheckboxValue }from '../../../../types/components.types';
 
 /**
-* type Option validation function
-* @param option
+* type CheckboxItem validation function
+* @param CheckboxItem
 * @returns {boolean}
 */
-const isOption = (option: RadioOption): boolean => typeof option === 'object' && typeof option.title === 'string' && option.value !== undefined;
+const isCheckboxItem = (item: CheckboxItem): boolean => typeof item === 'object' && typeof item.title === 'string' && (item.value === null || typeof item.value === 'boolean') && item.value !== undefined;
+
+/**
+* utility function to get shadow-root HTML node element
+* @param element
+* @returns {HTMLElement}
+*/
+const getShadowRootElementFromElement = (element: HTMLElement) :HTMLElement => {
+  if (element.parentElement === null) return element;
+  return getShadowRootElementFromElement(element.parentElement);
+}
 
 @Component({
-  tag: 'mg-input-radio',
-  styleUrl: 'mg-input-radio.scss',
+  tag: 'mg-input-checkbox',
+  styleUrl: 'mg-input-checkbox.scss',
   shadow: true,
 })
-export class MgInputRadio {
+
+export class MgInputCheckbox {
 
   /************
    * Internal *
    ************/
-
-  private classError = 'is-not-valid';
+   private classError = 'is-not-valid';
 
   /**************
   * Decorators *
@@ -30,30 +40,22 @@ export class MgInputRadio {
 
   /**
   * Component value
-  */
-  @Prop({ mutable:true, reflect: true }) value?: any;
-
-  /**
-  * Items are the possible options to select
+  * If item.value is `null`, checkbox will be indeterminate by default
   * Required
   */
-  @Prop() items!: string[] | RadioOption[];
-  @Watch('items')
-  validateItems(newValue){
-    // Validate if items have required min length
-    if(typeof newValue === 'object' && newValue.length < 2) {
-      throw new Error('<mg-input-radio> prop "items" require at least 2 items.')
-    }
-    // String array
-    else if(allItemsAreString(newValue)) {
-      this.options = newValue.map(item => ({ title:item, value:item, disabled: this.disabled }));
-    }
-    // Object array
-    else if(newValue && (newValue as Array<RadioOption>).every(item => isOption(item))) {
-      this.options = newValue;
+  @Prop({ mutable:true, reflect: true }) value!: CheckboxValue[];
+  @Watch('value')
+  validateValue(newValue){
+    if(newValue && (newValue as Array<CheckboxItem>).every(item => isCheckboxItem(item))) {
+      this.checkboxItems  = newValue.map((item, index) => ({
+        id: `${this.identifier}_${index.toString()}`,
+        title:item.title,
+        value:item.value,
+        disabled: item.disabled
+      }));
     }
     else {
-      throw new Error('<mg-input-radio> prop "items" is required and all items must be the same type, string or RadioOption.')
+      throw new Error('<mg-input-checkbox> prop "value" is required and all values must be the same type, CheckboxItem.')
     }
   }
 
@@ -61,7 +63,7 @@ export class MgInputRadio {
   * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
   * If not set, it will be created.
   */
-  @Prop() identifier?: string = createID('mg-input-radio');
+  @Prop() identifier?: string = createID('mg-input-checkbox');
 
   /**
   * Input name
@@ -78,7 +80,7 @@ export class MgInputRadio {
   /**
   * Define if label is displayed on top
   */
-  @Prop() labelOnTop: boolean = false;
+  @Prop() labelOnTop: boolean;
 
   /**
   * Define if label is visible
@@ -128,7 +130,7 @@ export class MgInputRadio {
   /**
   * Component classes
   */
-  @State() classList: ClassList = new ClassList(['mg-input--radio']);
+  @State() classList: ClassList = new ClassList(['mg-input--checkbox']);
 
   /**
   * Error message to display
@@ -136,30 +138,37 @@ export class MgInputRadio {
   @State() errorMessage: string;
 
   /**
-  * Formated items for display
+  * Formated value for display
   */
-  @State() options: (RadioOption)[];
+  @State() checkboxItems: (CheckboxItem)[];
 
   /**
   * Emitted event when value change
   */
-  @Event() valueChange: EventEmitter<any>
+  @Event() valueChange: EventEmitter<CheckboxValue[]>
 
   /**
   * Handle input event
   * @param event
   */
   private handleInput = (event:InputEvent & { target: HTMLInputElement }) => {
-    this.value = this.options
-      .find(o => o.value.toString() === event.target.value).value;
+    this.checkboxItems  = this.checkboxItems .map(item => {
+      if (item.id === event.target.id) {
+        item.value = Boolean(event.target.checked);
+      }
+      return item;
+    })
+
+    this.value = this.checkboxItems .map(o => ({value: o.value, title: o.title, disabled: o.disabled}));
     this.valueChange.emit(this.value);
   }
 
   /**
-  * Handle blur event
-  * @param event
-  */
+   * Handle blur event
+   * @param event
+   */
   private handleBlur = (event:FocusEvent) => {
+    // Check validity
     this.checkValidity(event.target);
   }
 
@@ -168,7 +177,11 @@ export class MgInputRadio {
   * @param element
   */
   private checkValidity(element) {
-    const validity = element.checkValidity();
+    // we check group validity
+    const shadowRootElement = getShadowRootElementFromElement(element);
+    const inputs = Array.from(shadowRootElement.querySelectorAll('input[type=checkbox]'));
+    const validity = inputs.find((element: HTMLInputElement) => !element.disabled && element.checkValidity()) !== undefined;
+
     // Set error message
     this.errorMessage = undefined;
     if(!validity && element.validity.valueMissing) {
@@ -193,8 +206,8 @@ export class MgInputRadio {
   *************/
 
   componentWillLoad() {
-    // Check items format
-    this.validateItems(this.items);
+    // Check values format
+    this.validateValue(this.value);
   }
 
   render() {
@@ -206,9 +219,9 @@ export class MgInputRadio {
         labelOnTop={this.labelOnTop}
         labelHide={this.labelHide}
         required={this.required}
-        readonly={this.readonly}
+        readonly={false}
         value={this.value && this.value.toString()}
-        readonlyValue={this.value && this.value.toString()}
+        readonlyValue={undefined}
         tooltip={this.tooltip}
         displayCharacterLeft={undefined}
         characterLeftTemplate={undefined}
@@ -217,26 +230,30 @@ export class MgInputRadio {
         errorMessage={this.errorMessage}
         isFieldset={true}
       >
-        <ul class={"mg-input__input-group-container mg-input__input-group-container--radio " + (this.inputVerticalList ? 'mg-input__input-group-container--vertical' : '')}>
-          {this.options.map((input, index) => (
+        <ul class={"mg-input__input-group-container mg-input__input-group-container--checkbox " + (this.inputVerticalList ? 'mg-input__input-group-container--vertical' : '')}>
+          {this.checkboxItems
+            .filter((item) => {
+              return !this.readonly || item.value;
+            }).map(input => (
             <li class="mg-input__input-group">
               <input
-                type="radio"
-                id={this.identifier + '_' + index}
+                type="checkbox"
+                id={input.id}
                 name={this.identifier}
                 value={input.value && input.value.toString()}
-                // why `(this.value === "" && input.value === true)` ? Because, when value is render in DOM 'true' become a blank string as ` input checked="true"` result in `input checked` in DOM
-                checked={input.value === this.value  || (this.value === "" && input.value === true)}
-                disabled={this.disabled || input.disabled}
+                checked={Boolean(input.value)}
+                disabled={this.readonly || this.disabled || input.disabled}
                 required={this.required}
-                onBlur={this.handleBlur}
+                indeterminate={input.value === null}
                 onInput={this.handleInput}
+                onBlur={this.handleBlur}
               />
-              <label htmlFor={this.identifier + '_' + index}>{input.title}</label>
+              <label htmlFor={input.id}>{input.title}</label>
             </li>
           ))}
         </ul>
       </MgInput>
-    )
+    );
   }
+
 }

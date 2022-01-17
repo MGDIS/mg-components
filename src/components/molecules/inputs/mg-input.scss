@@ -93,7 +93,7 @@
     padding-inline-end: 0;
   }
 
-  input[type='radio'] {
+  input[type="radio"], input[type="checkbox"] {
     margin-top: 0;
     margin-right: calc(var(--mg-inputs-spacer) * 0.6);
     margin-bottom: 0;
@@ -174,12 +174,12 @@
     margin: 0;
     padding: 0;
     list-style: none;
-    &.mg-input__input-group-container--radio {
-      display: flex;
-      flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: calc(var(--mg-inputs-spacer) * 2.5);
+    row-gap: var(--mg-inputs-spacer);
+    &.mg-input__input-group-container--radio, &.mg-input__input-group-container--checkbox {
       margin-top: calc((var(--default-size) - var(--font-size-base) * var(--line-height)) / 2);
-      column-gap: calc(var(--mg-inputs-spacer) * 2.5);
-      row-gap: var(--mg-inputs-spacer);
     }
     &.mg-input__input-group-container--vertical {
       flex-direction: column;

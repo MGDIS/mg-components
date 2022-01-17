@@ -17,6 +17,7 @@ This atom refers to the [PDA9-313](https://jira.mgdis.fr/browse/PDA9-313).
 
 ### Used by
 
+ - [mg-input-checkbox](../../molecules/inputs/mg-input-checkbox)
  - [mg-input-date](../../molecules/inputs/mg-input-date)
  - [mg-input-numeric](../../molecules/inputs/mg-input-numeric)
  - [mg-input-password](../../molecules/inputs/mg-input-password)
@@ -29,6 +30,7 @@ This atom refers to the [PDA9-313](https://jira.mgdis.fr/browse/PDA9-313).
 ### Graph
 ```mermaid
 graph TD;
+  mg-input-checkbox --> mg-tooltip
   mg-input-date --> mg-tooltip
   mg-input-numeric --> mg-tooltip
   mg-input-password --> mg-tooltip

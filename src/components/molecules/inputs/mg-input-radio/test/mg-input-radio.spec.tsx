@@ -10,19 +10,19 @@ const getPage = (args) => newSpecPage({
 
 describe('mg-input-radio', () => {
   test.each([
-    {label: 'label', identifier: "identifier", items: ['batman', 'robin', 'jocker', 'bane']},
-    {label: 'label', identifier: "identifier", items: [{ title: 'batman', value: 'u' },{ title: 'robin', value: 'i' }, { title: 'jocker', value: 'o' }, { title: 'bane', value: 'a' }]},
-    {label: 'label', identifier: "identifier", items: [{ title: 'batman', value: 1 },{ title: 'robin', value: 2 }, { title: 'jocker', value: 3 }, { title: 'bane', value: 4 }]},
-    {label: 'label', identifier: "identifier", items: [{ title: 'batman', value: true },{ title: 'robin', value: false }, { title: 'jocker', value: false }, { title: 'bane', value: false }]},
-    {label: 'label', identifier: "identifier", items: ['batman', 'robin', 'jocker', 'bane'], labelOnTop: true},
-    {label: 'label', identifier: "identifier", items: ['batman', 'robin', 'jocker', 'bane'], labelHide: true},
-    {label: 'label', identifier: "identifier", items: ['batman', 'robin', 'jocker', 'bane'], inputVerticalList: true},
-    {label: 'label', identifier: "identifier", items: ['batman', 'robin', 'jocker', 'bane'], required: true},
-    {label: 'label', identifier: "identifier", items: ['batman', 'robin', 'jocker', 'bane'], readonly: true},
-    {label: 'label', identifier: "identifier", items: ['batman', 'robin', 'jocker', 'bane'], disabled: true},
-    {label: 'label', identifier: "identifier", items: ['batman', 'robin', 'jocker', 'bane'], helpText: 'Hello jocker'},
-    {label: 'label', identifier: "identifier", items: ['batman', 'robin', 'jocker', 'bane'], tooltip: "My Tooltip Message"},
-    {label: 'label', identifier: "identifier", items: ['batman', 'robin', 'jocker', 'bane'], tooltip: "My Tooltip Message", labelOnTop: true}
+    {label: 'label', identifier: "identifier", items: ['batman', 'robin', 'joker', 'bane']},
+    {label: 'label', identifier: "identifier", items: [{ title: 'batman', value: 'u' },{ title: 'robin', value: 'i' }, { title: 'joker', value: 'o' }, { title: 'bane', value: 'a' }]},
+    {label: 'label', identifier: "identifier", items: [{ title: 'batman', value: 1 },{ title: 'robin', value: 2 }, { title: 'joker', value: 3 }, { title: 'bane', value: 4 }]},
+    {label: 'label', identifier: "identifier", items: [{ title: 'batman', value: true },{ title: 'robin', value: false }, { title: 'joker', value: false }, { title: 'bane', value: false }]},
+    {label: 'label', identifier: "identifier", items: ['batman', 'robin', 'joker', 'bane'], labelOnTop: true},
+    {label: 'label', identifier: "identifier", items: ['batman', 'robin', 'joker', 'bane'], labelHide: true},
+    {label: 'label', identifier: "identifier", items: ['batman', 'robin', 'joker', 'bane'], inputVerticalList: true},
+    {label: 'label', identifier: "identifier", items: ['batman', 'robin', 'joker', 'bane'], required: true},
+    {label: 'label', identifier: "identifier", items: ['batman', 'robin', 'joker', 'bane'], readonly: true},
+    {label: 'label', identifier: "identifier", items: ['batman', 'robin', 'joker', 'bane'], disabled: true},
+    {label: 'label', identifier: "identifier", items: ['batman', 'robin', 'joker', 'bane'], helpText: 'Hello joker'},
+    {label: 'label', identifier: "identifier", items: ['batman', 'robin', 'joker', 'bane'], tooltip: "My Tooltip Message"},
+    {label: 'label', identifier: "identifier", items: ['batman', 'robin', 'joker', 'bane'], tooltip: "My Tooltip Message", labelOnTop: true}
   ])('Should render with args %s:', async (args) => {
     const { root } = await getPage(args);
     expect(root).toMatchSnapshot();
@@ -30,7 +30,7 @@ describe('mg-input-radio', () => {
 
   test.each(["", undefined])('Should throw error with invalid label property : %s', async (value) => {
     try {
-      await getPage({label:value, items: ['batman', 'robin', 'jocker', 'bane']});
+      await getPage({label:value, items: ['batman', 'robin', 'joker', 'bane']});
     }
     catch (err) {
       expect(err.message).toMatch('prop "label" is required')
@@ -39,10 +39,19 @@ describe('mg-input-radio', () => {
 
   test('Should throw an error with labelOnTop & labelHide set to true', async () => {
     try {
-      await getPage({label: 'batman', labelOnTop: true, labelHide: true, items: ['batman', 'jocker']});
+      await getPage({label: 'batman', labelOnTop: true, labelHide: true, items: ['batman', 'joker']});
     }
     catch (err) {
       expect(err.message).toMatch('<mg-input> prop "labelOnTop" must not be paired with the prop "labelHide"')
+    }
+  });
+
+  test.each([[['batman']], [[{ title: 'batman', value: 'u' }]]])('Should throw an error with less than 2 items, case %s', async (items) => {
+    try {
+      await getPage({label: 'batman', labelOnTop: true, labelHide: true, items });
+    }
+    catch (err) {
+      expect(err.message).toMatch('<mg-input-radio> prop "items" require at least 2 items.')
     }
   });
 
@@ -65,9 +74,9 @@ describe('mg-input-radio', () => {
 
 
     test.each([
-      {items: ['batman', 'robin', 'jocker', 'bane'], inputValue: 'batman'},
-      {items: [{ title: 'batman', value: 'u' },{ title: 'robin', value: 'i' }, { title: 'jocker', value: 'o' }, { title: 'bane', value: 'a' }], inputValue: 'a'},
-      {items: [{ title: 'batman', value: 1 },{ title: 'robin', value: 2 }, { title: 'jocker', value: 3 }, { title: 'bane', value: 4 }], inputValue: 1},
+      {items: ['batman', 'robin', 'joker', 'bane'], inputValue: 'batman'},
+      {items: [{ title: 'batman', value: 'u' },{ title: 'robin', value: 'i' }, { title: 'joker', value: 'o' }, { title: 'bane', value: 'a' }], inputValue: 'a'},
+      {items: [{ title: 'batman', value: 1 },{ title: 'robin', value: 2 }, { title: 'joker', value: 3 }, { title: 'bane', value: 4 }], inputValue: 1},
       {items: [{ title: 'batman', value: true },{ title: 'robin', value: false }], inputValue: true}
     ])('Should trigger events for items (%s) with inputValue (%s)', async ({items, inputValue})=> {
     const args = {label: 'label', items , identifier: "identifier", helpText: "My help text"};
@@ -99,7 +108,7 @@ describe('mg-input-radio', () => {
     {validity: true, valueMissing: false},
     {validity: false, valueMissing: true},
   ])('validity (%s), valueMissing (%s)', async ({validity, valueMissing})=> {
-    const args = {label: 'label', items: ['batman', 'robin', 'jocker', 'bane'], identifier: "identifier", patternErrorMessage: "Non"};
+    const args = {label: 'label', items: ['batman', 'robin', 'joker', 'bane'], identifier: "identifier", patternErrorMessage: "Non"};
     const page = await getPage(args);
 
     const element = page.doc.querySelector('mg-input-radio');
