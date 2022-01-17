@@ -384,7 +384,7 @@ exports[`mg-input-checkbox Should render with args {
             </li>
           </ul>
           <mg-tooltip identifier="identifier-tooltip" message="Batman is a DC Comics license">
-            <mg-icon icon="info"></mg-icon>
+            <mg-icon icon="info-circle"></mg-icon>
           </mg-tooltip>
         </div>
       </div>
