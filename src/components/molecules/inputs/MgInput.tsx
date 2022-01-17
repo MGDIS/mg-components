@@ -149,7 +149,7 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
    */
 
   const TagName = getTagName(props.isFieldset);
-  const tooltip = props.tooltip && <mg-tooltip identifier={`${props.identifier}-tooltip`} message={props.tooltip}><mg-icon icon="info"></mg-icon></mg-tooltip>
+  const tooltip = props.tooltip && <mg-tooltip identifier={`${props.identifier}-tooltip`} message={props.tooltip}><mg-icon icon="info-circle"></mg-icon></mg-tooltip>
 
   return (
     <TagName class={props.classList.join()}>

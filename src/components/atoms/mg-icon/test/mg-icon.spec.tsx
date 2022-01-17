@@ -23,6 +23,11 @@ describe('mg-icon', () => {
 
   });
 
+  test('Should render a spin icon', async () => {
+    const { root } = await getPage({icon: "check-circle", spin: true});
+    expect(root).toMatchSnapshot();
+  });
+
   test.each(["", "blu", undefined])('Should throw error with invalid icon property : %s', async (icon) => {
     try {
       await getPage({icon});
@@ -34,7 +39,7 @@ describe('mg-icon', () => {
 
   test.each(["", "blu", undefined])('Should throw error with invalid size property : %s', async (size) => {
     try {
-      await getPage({icon:"success", size});
+      await getPage({icon:"check-circle", size});
     }
     catch (err) {
       expect(err.message).toMatch('<mg-icon> prop "size" must be one of : ')
@@ -43,7 +48,7 @@ describe('mg-icon', () => {
 
   test.each(["", "blu"])('Should throw error with invalid variant property : %s', async (variant) => {
     try {
-      await getPage({icon: "success", variant});
+      await getPage({icon: "check-circle", variant});
     }
     catch (err) {
       expect(err.message).toMatch('<mg-icon> prop "variant" must be one of : ')

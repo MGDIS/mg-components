@@ -4,7 +4,7 @@ describe('mg-tooltip', () => {
   describe.each(['auto','auto-start','auto-end','top','top-start','top-end','bottom','bottom-start','bottom-end','right','right-start','right-end','left','left-start','left-end'])('placement %s', (placement) => {
     test('Should render', async () => {
 
-      const page = await createPage(`<style>mg-icon{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%)}</style><mg-tooltip message="this is a tooltip message" placement="${placement}"><mg-icon icon="info"></mg-icon></mg-tooltip>`);
+      const page = await createPage(`<style>mg-icon{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%)}</style><mg-tooltip message="this is a tooltip message" placement="${placement}"><mg-icon icon="info-circle"></mg-icon></mg-tooltip>`);
 
       const mgTooltip = await page.find('mg-tooltip');
       const mgIcon = await page.find('mg-icon');
@@ -37,7 +37,7 @@ describe('mg-tooltip', () => {
     });
 
     test.each(['Space', 'Enter'])('Should NOT navigate with keyboard, case key %s', async (key) => {
-      const page = await createPage(`<style>mg-icon{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%)}</style><mg-tooltip message="this is a tooltip message" placement="${placement}"><mg-icon icon="info"></mg-icon></mg-tooltip>`);
+      const page = await createPage(`<style>mg-icon{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%)}</style><mg-tooltip message="this is a tooltip message" placement="${placement}"><mg-icon icon="info-circle"></mg-icon></mg-tooltip>`);
 
       const mgTooltip = await page.find('mg-tooltip');
       const tooltip = await page.find('[role="tooltip"]');
@@ -56,7 +56,7 @@ describe('mg-tooltip', () => {
     });
 
     test('Should navigate with keyboard, case key "Escape"', async () => {
-      const page = await createPage(`<style>mg-icon{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%)}</style><mg-tooltip message="this is a tooltip message" placement="${placement}"><mg-icon icon="info"></mg-icon></mg-tooltip>`);
+      const page = await createPage(`<style>mg-icon{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%)}</style><mg-tooltip message="this is a tooltip message" placement="${placement}"><mg-icon icon="info-circle"></mg-icon></mg-tooltip>`);
 
       const mgTooltip = await page.find('mg-tooltip');
       const tooltip = await page.find('[role="tooltip"]');

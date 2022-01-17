@@ -20,7 +20,7 @@ describe('mg-icon', ()=>{
   describe.each(variants)('variant %s', (variant) => {
     describe.each(sizes)('size %s', (size) => {
       test('renders', async () => {
-        const page = await createPage(`<mg-icon icon="${variant}" size="${size}" variant="${variant}"></mg-icon>`);
+        const page = await createPage(`<mg-icon icon="check-circle" size="${size}" variant="${variant}"></mg-icon>`);
 
         const element = await page.find('mg-icon');
         expect(element).toHaveClass('hydrated');
