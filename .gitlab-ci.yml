@@ -115,7 +115,7 @@ review_app:
       - public
   environment:
     name: review/$CI_COMMIT_REF_SLUG
-    url: http://core.pages.mgdis.fr/-/core/core-ui/$CI_PROJECT_NAME/-/jobs/${CI_JOB_ID}/artifacts/public/index.html
+    url: http://core.pages.mgdis.fr/-/core-ui/$CI_PROJECT_NAME/-/jobs/${CI_JOB_ID}/artifacts/public/index.html
     on_stop: stop_review_app
     auto_stop_in: 1 week
   rules:
