@@ -79,7 +79,7 @@ sonar:
 dist:
   stage: dist
   rules:
-    - if: $CI_MERGE_REQUEST_ID == null
+    - when: always
   extends:
     - .install
   script:
