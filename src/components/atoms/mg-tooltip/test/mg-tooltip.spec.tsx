@@ -28,7 +28,7 @@ describe('mg-tooltip', () => {
   test.each([
     <span>span</span>,
     <button aria-describedby="blu">button</button>,
-    <mg-icon icon="success"></mg-icon>,
+    <mg-icon icon="check-circle"></mg-icon>,
     <mg-button identifier="identifier">mg-button</mg-button>
   ])('Should render with element', async (element) => {
     const args = { identifier:"identifier", message: 'My tooltip message'};
@@ -43,7 +43,7 @@ describe('mg-tooltip', () => {
     test.each([
       <span>span</span>,
       <button aria-describedby="blu">button</button>,
-      <mg-icon icon="success"></mg-icon>,
+      <mg-icon icon="check-circle"></mg-icon>,
       <mg-button identifier="identifier">mg-button</mg-button>
     ])('element', async(element) => {
       const args = { identifier:"identifier", message: 'blu'};

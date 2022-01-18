@@ -37,7 +37,7 @@ exports[`mg-input-text Should render with args {
         <div class="mg-input__input-container__input">
           <input aria-describedby="" id="identifier" maxlength="400" name="identifier" type="text">
           <mg-tooltip identifier="identifier-tooltip" message="My Tooltip Message">
-            <mg-icon icon="info"></mg-icon>
+            <mg-icon icon="info-circle"></mg-icon>
           </mg-tooltip>
         </div>
       </div>
@@ -59,7 +59,7 @@ exports[`mg-input-text Should render with args {
         label
       </mg-input-title>
       <mg-tooltip identifier="identifier-tooltip" message="My Tooltip Message">
-        <mg-icon icon="info"></mg-icon>
+        <mg-icon icon="info-circle"></mg-icon>
       </mg-tooltip>
       <div class="mg-input__input-container">
         <div class="mg-input__input-container__input">

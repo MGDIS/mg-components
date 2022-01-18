@@ -24,7 +24,7 @@ const Template = args => (
     <span class={`mg-group-elements${args.align === 'right' ? ' mg-group-elements--align-right' : ''}`}>
     {variants.map(variant=>
       <button class={`mg-button mg-button--${variant} mg-button--icon`}  {...args}>
-        <mg-icon icon="info"></mg-icon>
+        <mg-icon icon="info-circle"></mg-icon>
       </button>
     )}
     </span>

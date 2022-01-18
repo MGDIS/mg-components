@@ -8,7 +8,7 @@ export default {
   },
 };
 
-const Template = args => <mg-tooltip {...args}><mg-icon icon="info"></mg-icon></mg-tooltip>;
+const Template = args => <mg-tooltip {...args}><mg-icon icon="info-circle"></mg-icon></mg-tooltip>;
 
 export const MgTooltip = Template.bind({});
 

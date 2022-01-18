@@ -14,7 +14,7 @@ export default {
 const Template = args => (
   <ul style={{display: 'flex', flexWrap: 'wrap', margin: '0', padding : '0', listStyle: 'none', textAlign: 'center'}}>
     {Object.keys(icons).map((icon:string)=>
-      <li style={{margin: '1rem', padding: '1rem', width: '80px',}}>
+      <li style={{margin: '1rem', padding: '1rem', width: '100px',}}>
         <div style={{color: args.color, margin: '1rem'}}>
           <mg-icon icon={icon} size={args.size}></mg-icon>
         </div>

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-01-18T08:06:00",
+  "timestamp": "2022-01-18T08:19:48",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.12.1",
@@ -299,6 +299,23 @@
           "values": [
             {
               "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "spin",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "spin",
+          "reflectToAttr": false,
+          "docs": "Make the icon spin",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
             }
           ],
           "optional": false,

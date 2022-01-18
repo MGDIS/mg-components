@@ -61,6 +61,10 @@ export namespace Components {
          */
         "size": string;
         /**
+          * Make the icon spin
+         */
+        "spin": boolean;
+        /**
           * Define icon variant Add a background to the icon based on variant color
          */
         "variant": string;
@@ -882,6 +886,10 @@ declare namespace LocalJSX {
           * Define icon size
          */
         "size"?: string;
+        /**
+          * Make the icon spin
+         */
+        "spin"?: boolean;
         /**
           * Define icon variant Add a background to the icon based on variant color
          */

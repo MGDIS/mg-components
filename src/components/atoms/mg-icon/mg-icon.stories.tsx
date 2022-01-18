@@ -14,21 +14,25 @@ export default {
       control: { type: 'select' },
     },
     variant: {
-      options: variants,
+      options: [undefined, ...variants],
       control: { type: 'select' },
     },
   },
 };
 
-const Template = args => (
-  <div style={{color: args.color}}>
+const Template = args => {
+  const color = args.color;
+  delete args.color;
+  // return element
+  return <div style={{color}}>
     <mg-icon {...args}></mg-icon>
   </div>
-);
+};
 
 export const MgIcon = Template.bind({});
 MgIcon.args = {
   color: '',
   icon: Object.keys(icons)[0],
   size: sizes[1], // regular
+  spin: false,
 };
