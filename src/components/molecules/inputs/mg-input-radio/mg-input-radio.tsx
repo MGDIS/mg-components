@@ -225,7 +225,7 @@ export class MgInputRadio {
                 id={this.identifier + '_' + index}
                 name={this.identifier}
                 value={input.value && input.value.toString()}
-                // why `(this.value === "" && input.value === true)` ? Because, when value is render in DOM 'true' become a blank string as ` input checked="true"` result in `input checked` in DOM
+                // `(this.value === "" && input.value === true)` because when input value attribute is set to `true` it will be re render as a empty string.
                 checked={input.value === this.value  || (this.value === "" && input.value === true)}
                 disabled={this.disabled || input.disabled}
                 required={this.required}

@@ -1,67 +1,62 @@
-import { createPage } from "../../../../../utils/test.utils"
+import { createPage, delay } from "../../../../../utils/test.utils"
 
 describe('mg-input-toggle', () => {
-
-  describe.each([
+  test.each([
     `<mg-input-toggle label="legend"></mg-input-toggle>`,
     `<mg-input-toggle label="legend"><span slot="item-1">Non</span><span slot="item-2">Oui</span></mg-input-toggle>`,
-    `<mg-input-toggle label="legend" values-side-by-side><span slot="item-1">Non</span><span slot="item-2">Oui</span></mg-input-toggle>`,
-    `<mg-input-toggle label="legend"><span slot="item-1" class="mg-input_button-toggle__item-container--icon"><mg-icon icon="cross"></mg-icon></span><span slot="item-2" class="mg-input_button-toggle__item-container--icon"><mg-icon icon="success"></mg-icon></span></mg-input-toggle>`,
-  ])('without tooltip', (html)=>{
-    test('render', async () => {
-      const page = await createPage(`${html}
-      <script>
-      const mgInputtoggle = document.querySelector('mg-input-toggle');
-      mgInputtoggle.items = [{title: 'batman', value: false}, {title: 'joker', value: true}];
-      </script>`);
+    `<mg-input-toggle label="legend" display-both-values><span slot="item-1">Non</span><span slot="item-2">Oui</span></mg-input-toggle>`,
+    `<mg-input-toggle label="legend"><span slot="item-1" class="mg-input-toggle__item-icon"><mg-icon icon="cross"></mg-icon></span><span slot="item-2" class="mg-input-toggle__item-icon"><mg-icon icon="success"></mg-icon></span></mg-input-toggle>`,
+  ])('Keyboard navigation', async (html)=>{
+    const page = await createPage(`${html}
+    <script>
+    const mgInputtoggle = document.querySelector('mg-input-toggle');
+    mgInputtoggle.items = [{title: 'batman', value: false}, {title: 'joker', value: true}];
+    </script>`);
 
-      const element = await page.find('mg-input-toggle');
+    const element = await page.find('mg-input-toggle');
 
-      expect(element).toHaveClass('hydrated');
+    expect(element).toHaveClass('hydrated');
 
-      const screenshot = await page.screenshot();
-      expect(screenshot).toMatchImageSnapshot();
+    const screenshot = await page.screenshot();
+    expect(screenshot).toMatchImageSnapshot();
 
-      await page.keyboard.down('Tab');
+    await page.keyboard.down('Tab');
 
-      const screenshotFocus = await page.screenshot();
-      expect(screenshotFocus).toMatchImageSnapshot();
+    const screenshotFocus = await page.screenshot();
+    expect(screenshotFocus).toMatchImageSnapshot();
 
-      await page.keyboard.down("Space");
+    await page.keyboard.down("ArrowRight");
 
-      const screenshotList = await page.screenshot();
-      expect(screenshotList).toMatchImageSnapshot();
+    await delay(1000);
 
-      await page.keyboard.down("ArrowDown");
-      await page.keyboard.down("ArrowDown");
+    const screenshotSelection = await page.screenshot();
+    expect(screenshotSelection).toMatchImageSnapshot();
 
-      const screenshotSelection = await page.screenshot();
-      expect(screenshotSelection).toMatchImageSnapshot();
-    });
+    await page.keyboard.down('Tab');
+
+    const screenshotUnSelect = await page.screenshot();
+    expect(screenshotUnSelect).toMatchImageSnapshot();
   });
 
-  describe.each([
+  test.each([
     `<mg-input-toggle label="legend" label-on-top help-text="HelpText Message"></mg-input-toggle>`,
     `<mg-input-toggle label="legend" input-vertical-list help-text="HelpText Message"></mg-input-toggle>`,
     `<mg-input-toggle label="legend" label-on-top input-vertical-list help-text="HelpText Message"></mg-input-toggle>`,
     `<mg-input-toggle label="legend" label-hide></mg-input-toggle>`,
     `<mg-input-toggle label="legend" placeholder="placeholder" help-text="HelpText Message"></mg-input-toggle>`
-  ])('without tooltip', (html)=>{
-    test('render', async () => {
-      const page = await createPage(`${html}
-        <script>
-        const mgInputtoggle = document.querySelector('mg-input-toggle');
-        mgInputtoggle.items = [{title: 'batman', value: false}, {title: 'joker', value: true}];
-        </script>`);
+  ])('Render without tooltip', async (html)=>{
+    const page = await createPage(`${html}
+      <script>
+      const mgInputtoggle = document.querySelector('mg-input-toggle');
+      mgInputtoggle.items = [{title: 'batman', value: false}, {title: 'joker', value: true}];
+      </script>`);
 
-      const element = await page.find('mg-input-toggle');
+    const element = await page.find('mg-input-toggle');
 
-      expect(element).toHaveClass('hydrated');
+    expect(element).toHaveClass('hydrated');
 
-      const screenshot = await page.screenshot();
-      expect(screenshot).toMatchImageSnapshot();
-
-    });
+    const screenshot = await page.screenshot();
+    expect(screenshot).toMatchImageSnapshot();
   });
 
   test.each([true, false])('render with tooltip, case label-on-top %s', async (labelOnTop) => {
@@ -85,27 +80,25 @@ describe('mg-input-toggle', () => {
     expect(screenshotTooltip).toMatchImageSnapshot();
   });
 
-  describe.each([
+  test.each([
     `<mg-input-toggle label="legend" readonly></mg-input-toggle>`,
     `<mg-input-toggle label="legend" value="true"></mg-input-toggle>`,
     `<mg-input-toggle label="legend" value="true" readonly></mg-input-toggle>`,
     `<mg-input-toggle label="legend" value="true" readonly label-on-top></mg-input-toggle>`,
     `<mg-input-toggle label="legend" disabled></mg-input-toggle>`,
-  ])('Should render with template', (html)=>{
-    test('render', async () => {
-      const page = await createPage(`${html}
-        <script>
-        const mgInputtoggle = document.querySelector('mg-input-toggle');
-        mgInputtoggle.items = [{title: 'batman', value: false}, {title: 'joker', value: true}];
-        </script>`);
+  ])('Should render with template', async (html)=>{
+    const page = await createPage(`${html}
+      <script>
+      const mgInputtoggle = document.querySelector('mg-input-toggle');
+      mgInputtoggle.items = [{title: 'batman', value: false}, {title: 'joker', value: true}];
+      </script>`);
 
-      const element = await page.find('mg-input-toggle');
+    const element = await page.find('mg-input-toggle');
 
-      expect(element).toHaveClass('hydrated');
+    expect(element).toHaveClass('hydrated');
 
-      const screenshot = await page.screenshot();
-      expect(screenshot).toMatchImageSnapshot();
-    });
+    const screenshot = await page.screenshot();
+    expect(screenshot).toMatchImageSnapshot();
   })
 
   test('Should render error when leaving an empty required input', async () => {

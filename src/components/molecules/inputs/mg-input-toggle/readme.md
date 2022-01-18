@@ -1,6 +1,4 @@
-# mg-input-toggle
-
-
+This molecule refers to the [PDA9-770](https://jira.mgdis.fr/browse/PDA9-770).
 
 <!-- Auto Generated Below -->
 
@@ -10,6 +8,7 @@
 | Property             | Attribute             | Description                                                                                                 | Type                        | Default                       |
 | -------------------- | --------------------- | ----------------------------------------------------------------------------------------------------------- | --------------------------- | ----------------------------- |
 | `disabled`           | `disabled`            | Define if input is disabled                                                                                 | `boolean`                   | `false`                       |
+| `displayBothValues`  | `display-both-values` | Define if values are both displayed or only active one                                                      | `boolean`                   | `false`                       |
 | `helpText`           | `help-text`           | Template to use for characters left sentence                                                                | `string`                    | `undefined`                   |
 | `identifier`         | `identifier`          | Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created. | `string`                    | `createID('mg-input-toggle')` |
 | `invalid`            | `invalid`             | Force invalid component                                                                                     | `boolean`                   | `undefined`                   |
@@ -23,7 +22,6 @@
 | `tooltip`            | `tooltip`             | Add a tooltip message next to the input                                                                     | `string`                    | `undefined`                   |
 | `valid`              | `valid`               | Force valid component                                                                                       | `boolean`                   | `undefined`                   |
 | `value`              | `value`               | Component value                                                                                             | `any`                       | `undefined`                   |
-| `valuesSideBySide`   | `values-side-by-side` | Define if values are displaed side by side                                                                  | `boolean`                   | `false`                       |
 
 
 ## Events

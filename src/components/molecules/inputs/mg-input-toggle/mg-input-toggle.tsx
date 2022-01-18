@@ -23,7 +23,6 @@ export class MgInputToggle {
    * Internal *
    ************/
 
-  private classFocus = 'is-focused';
   private classError = 'is-not-valid';
   private classToggleActive = 'mg-input--toggle-active';
 
@@ -55,7 +54,7 @@ export class MgInputToggle {
       this.options = newValue;
     }
     else {
-      throw new Error('<mg-input-toggle> prop "items" is required and all items must be the same type, string or RadioOption.')
+      throw new Error('<mg-input-toggle> prop "items" is required and all items must be the same type: ToggleValue.')
     }
   }
 
@@ -78,22 +77,23 @@ export class MgInputToggle {
   @Prop() label!: string;
 
   /**
-  * Define if values are displaed side by side
-  */
-  @Prop() valuesSideBySide?: boolean = false;
-  @Watch('valuesSideBySide')
-  validateValuesSideBySide(newValue: boolean) {
-    if(newValue) this.classList.add(`mg-input-toggle--side-by-side`);
-  }
-  /**
-  * Define if label is displayed on top
-  */
+   * Define if label is displayed on top
+   */
   @Prop() labelOnTop: boolean;
 
   /**
-  * Define if label is visible
-  */
+   * Define if label is visible
+   */
   @Prop() labelHide: boolean = false;
+
+  /**
+  * Define if values are both displayed or only active one
+  */
+  @Prop() displayBothValues?: boolean = false;
+  @Watch('displayBothValues')
+  validateDisplayBothValues(newValue: boolean) {
+    if(newValue) this.classList.add(`mg-input-toggle--display-both-values`);
+  }
 
   /**
   * Define if input is required
@@ -172,33 +172,13 @@ export class MgInputToggle {
   * Handle input event
   * @param event
   */
-  private handleToggleClick = (event: MouseEvent) => {
-    // prevent focus onCLick
-    event.preventDefault();
-    if(this.disabled) {
-      return;
-    }
-
+  private handleToggleClick = () => {
     this.toggleValue();
   }
 
   private handleToggleKeyboard = (event: KeyboardEvent) => {
-    if(this.disabled) {
-      event.preventDefault();
-      return;
-    }
     if (['ArrowRight', 'ArrowLeft', 'ArrowUp', 'ArrowDown'].includes(event.code)) {
       this.toggleValue();
-    }
-  }
-
-  /**
-  * Handle focus event
-  */
-  private handleFocus = () => {
-    if(!this.classList.classes.includes(this.classFocus)) {
-      this.classList.add(this.classFocus);
-      this.classList = new ClassList(this.classList.classes);
     }
   }
 
@@ -208,7 +188,6 @@ export class MgInputToggle {
   */
   private handleBlur = () => {
     // Manage focus
-    this.classList.delete(this.classFocus);
     this.classList = new ClassList(this.classList.classes);
 
     // Check validity
@@ -253,7 +232,7 @@ export class MgInputToggle {
     this.validateItems(this.items);
 
     this.setToggleStyle();
-    this.validateValuesSideBySide(this.valuesSideBySide)
+    this.validateDisplayBothValues(this.displayBothValues)
   }
 
   render() {
@@ -280,18 +259,18 @@ export class MgInputToggle {
           role="switch"
           aria-checked={this.value}
           id={this.identifier}
-          class={`mg-input_button-toggle ${this.disabled ? 'mg-input_button-toggle--disabled' : ''}`}
-          onFocus={this.handleFocus}
+          class={`mg-input-toggle__button ${this.disabled ? 'mg-input-toggle__button--disabled' : ''}`}
+          disabled={this.disabled}
           onBlur={this.handleBlur}
           onClick={this.handleToggleClick}
           onKeyDown={this.handleToggleKeyboard}
-          tabIndex={this.disabled ? -1 : 0}
         >
-            {this.options.map((_item, key)=> (
-              <span aria-hidden="true" class="mg-input_button-toggle__item-container">
-                <slot name={`item-${key + 1}`}></slot>
-              </span>
-            ))}
+          <span aria-hidden="true" class="mg-input-toggle__item-container">
+            <slot name="item-1"></slot>
+          </span>
+          <span aria-hidden="true" class="mg-input-toggle__item-container">
+            <slot name="item-2"></slot>
+          </span>
         </button>
     </MgInput>)
   }

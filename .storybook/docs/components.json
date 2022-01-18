@@ -1,8 +1,8 @@
 {
-  "timestamp": "2022-01-14T15:55:51",
+  "timestamp": "2022-01-18T08:06:00",
   "compiler": {
     "name": "@stencil/core",
-    "version": "2.12.0",
+    "version": "2.12.1",
     "typescriptVersion": "4.3.5"
   },
   "components": [
@@ -2917,8 +2917,8 @@
       "filePath": "./src/components/molecules/inputs/mg-input-toggle/mg-input-toggle.tsx",
       "encapsulation": "scoped",
       "tag": "mg-input-toggle",
-      "readme": "# mg-input-toggle\n\n\n",
-      "docs": "",
+      "readme": "This molecule refers to the [PDA9-770](https://jira.mgdis.fr/browse/PDA9-770).\n",
+      "docs": "This molecule refers to the [PDA9-770](https://jira.mgdis.fr/browse/PDA9-770).",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -2937,6 +2937,23 @@
             }
           ],
           "optional": false,
+          "required": false
+        },
+        {
+          "name": "displayBothValues",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "display-both-values",
+          "reflectToAttr": false,
+          "docs": "Define if values are both displayed or only active one",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
           "required": false
         },
         {
@@ -3149,23 +3166,6 @@
           "values": [
             {
               "type": "any"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "valuesSideBySide",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "values-side-by-side",
-          "reflectToAttr": false,
-          "docs": "Define if values are displaed side by side",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
             }
           ],
           "optional": true,

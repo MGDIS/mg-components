@@ -609,6 +609,10 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
+          * Define if values are both displayed or only active one
+         */
+        "displayBothValues"?: boolean;
+        /**
           * Template to use for characters left sentence
          */
         "helpText": string;
@@ -660,10 +664,6 @@ export namespace Components {
           * Component value
          */
         "value"?: any;
-        /**
-          * Define if values are displaed side by side
-         */
-        "valuesSideBySide"?: boolean;
     }
     interface MgMessage {
         /**
@@ -1463,6 +1463,10 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
+          * Define if values are both displayed or only active one
+         */
+        "displayBothValues"?: boolean;
+        /**
           * Template to use for characters left sentence
          */
         "helpText"?: string;
@@ -1518,10 +1522,6 @@ declare namespace LocalJSX {
           * Component value
          */
         "value"?: any;
-        /**
-          * Define if values are displaed side by side
-         */
-        "valuesSideBySide"?: boolean;
     }
     interface MgMessage {
         /**

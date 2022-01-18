@@ -1,0 +1,307 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mg-input-toggle Should render with args {
+  label: 'label',
+  identifier: 'identifier',
+  items: [Array],
+  disabled: true
+}: 1`] = `
+<mg-input-toggle>
+  <!---->
+  <div class="mg-input mg-input--toggle">
+    <mg-input-title identifier="identifier">
+      label
+    </mg-input-title>
+    <div class="mg-input__input-container">
+      <div class="mg-input__input-container__input">
+        <button class="mg-input-toggle__button mg-input-toggle__button--disabled" disabled="" id="identifier" role="switch" type="button">
+          <span aria-hidden="true" class="mg-input-toggle__item-container"></span>
+          <span aria-hidden="true" class="mg-input-toggle__item-container"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</mg-input-toggle>
+`;
+
+exports[`mg-input-toggle Should render with args {
+  label: 'label',
+  identifier: 'identifier',
+  items: [Array],
+  displayBothValues: true
+}: 1`] = `
+<mg-input-toggle>
+  <!---->
+  <div class="mg-input mg-input--toggle mg-input-toggle--display-both-values">
+    <mg-input-title identifier="identifier">
+      label
+    </mg-input-title>
+    <div class="mg-input__input-container">
+      <div class="mg-input__input-container__input">
+        <button class="mg-input-toggle__button" id="identifier" role="switch" type="button">
+          <span aria-hidden="true" class="mg-input-toggle__item-container"></span>
+          <span aria-hidden="true" class="mg-input-toggle__item-container"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</mg-input-toggle>
+`;
+
+exports[`mg-input-toggle Should render with args {
+  label: 'label',
+  identifier: 'identifier',
+  items: [Array],
+  helpText: 'Hello joker'
+}: 1`] = `
+<mg-input-toggle>
+  <!---->
+  <div class="mg-input mg-input--toggle">
+    <mg-input-title identifier="identifier">
+      label
+    </mg-input-title>
+    <div class="mg-input__input-container">
+      <div class="mg-input__input-container__input">
+        <button class="mg-input-toggle__button" id="identifier" role="switch" type="button">
+          <span aria-hidden="true" class="mg-input-toggle__item-container"></span>
+          <span aria-hidden="true" class="mg-input-toggle__item-container"></span>
+        </button>
+      </div>
+      <div class="mg-input__input-container__help-text" id="identifier-help-text">
+        Hello joker
+      </div>
+    </div>
+  </div>
+</mg-input-toggle>
+`;
+
+exports[`mg-input-toggle Should render with args {
+  label: 'label',
+  identifier: 'identifier',
+  items: [Array],
+  labelHide: true
+}: 1`] = `
+<mg-input-toggle>
+  <!---->
+  <div class="mg-input mg-input--toggle">
+    <mg-input-title class="sr-only" identifier="identifier">
+      label
+    </mg-input-title>
+    <div class="mg-input__input-container">
+      <div class="mg-input__input-container__input">
+        <button class="mg-input-toggle__button" id="identifier" role="switch" type="button">
+          <span aria-hidden="true" class="mg-input-toggle__item-container"></span>
+          <span aria-hidden="true" class="mg-input-toggle__item-container"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</mg-input-toggle>
+`;
+
+exports[`mg-input-toggle Should render with args {
+  label: 'label',
+  identifier: 'identifier',
+  items: [Array],
+  labelOnTop: true
+}: 1`] = `
+<mg-input-toggle>
+  <!---->
+  <div class="mg-input mg-input--label-on-top mg-input--toggle">
+    <mg-input-title identifier="identifier">
+      label
+    </mg-input-title>
+    <div class="mg-input__input-container">
+      <div class="mg-input__input-container__input">
+        <button class="mg-input-toggle__button" id="identifier" role="switch" type="button">
+          <span aria-hidden="true" class="mg-input-toggle__item-container"></span>
+          <span aria-hidden="true" class="mg-input-toggle__item-container"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</mg-input-toggle>
+`;
+
+exports[`mg-input-toggle Should render with args {
+  label: 'label',
+  identifier: 'identifier',
+  items: [Array],
+  readonly: true
+}: 1`] = `
+<mg-input-toggle>
+  <!---->
+  <div class="mg-input mg-input--readonly mg-input--toggle">
+    <mg-input-title identifier="identifier">
+      label
+    </mg-input-title>
+    <div class="mg-input__input-container">
+      <strong></strong>
+    </div>
+  </div>
+</mg-input-toggle>
+`;
+
+exports[`mg-input-toggle Should render with args {
+  label: 'label',
+  identifier: 'identifier',
+  items: [Array],
+  required: true
+}: 1`] = `
+<mg-input-toggle>
+  <!---->
+  <div class="mg-input mg-input--toggle">
+    <mg-input-title identifier="identifier" required="">
+      label
+    </mg-input-title>
+    <div class="mg-input__input-container">
+      <div class="mg-input__input-container__input">
+        <button class="mg-input-toggle__button" id="identifier" role="switch" type="button">
+          <span aria-hidden="true" class="mg-input-toggle__item-container"></span>
+          <span aria-hidden="true" class="mg-input-toggle__item-container"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</mg-input-toggle>
+`;
+
+exports[`mg-input-toggle Should render with args {
+  label: 'label',
+  identifier: 'identifier',
+  items: [Array],
+  tooltip: 'My Tooltip Message'
+}: 1`] = `
+<mg-input-toggle>
+  <!---->
+  <div class="mg-input mg-input--toggle">
+    <mg-input-title identifier="identifier">
+      label
+    </mg-input-title>
+    <div class="mg-input__input-container">
+      <div class="mg-input__input-container__input">
+        <button class="mg-input-toggle__button" id="identifier" role="switch" type="button">
+          <span aria-hidden="true" class="mg-input-toggle__item-container"></span>
+          <span aria-hidden="true" class="mg-input-toggle__item-container"></span>
+        </button>
+        <mg-tooltip identifier="identifier-tooltip" message="My Tooltip Message">
+          <mg-icon icon="info"></mg-icon>
+        </mg-tooltip>
+      </div>
+    </div>
+  </div>
+</mg-input-toggle>
+`;
+
+exports[`mg-input-toggle Should render with args {
+  label: 'label',
+  identifier: 'identifier',
+  items: [Array],
+  tooltip: 'My Tooltip Message',
+  labelOnTop: true
+}: 1`] = `
+<mg-input-toggle>
+  <!---->
+  <div class="mg-input mg-input--label-on-top mg-input--toggle">
+    <mg-input-title identifier="identifier">
+      label
+    </mg-input-title>
+    <mg-tooltip identifier="identifier-tooltip" message="My Tooltip Message">
+      <mg-icon icon="info"></mg-icon>
+    </mg-tooltip>
+    <div class="mg-input__input-container">
+      <div class="mg-input__input-container__input">
+        <button class="mg-input-toggle__button" id="identifier" role="switch" type="button">
+          <span aria-hidden="true" class="mg-input-toggle__item-container"></span>
+          <span aria-hidden="true" class="mg-input-toggle__item-container"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</mg-input-toggle>
+`;
+
+exports[`mg-input-toggle Should render with args { label: 'label', identifier: 'identifier', items: [Array] }: 1`] = `
+<mg-input-toggle>
+  <!---->
+  <div class="mg-input mg-input--toggle">
+    <mg-input-title identifier="identifier">
+      label
+    </mg-input-title>
+    <div class="mg-input__input-container">
+      <div class="mg-input__input-container__input">
+        <button class="mg-input-toggle__button" id="identifier" role="switch" type="button">
+          <span aria-hidden="true" class="mg-input-toggle__item-container"></span>
+          <span aria-hidden="true" class="mg-input-toggle__item-container"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</mg-input-toggle>
+`;
+
+exports[`mg-input-toggle Should trigger events for items with inputValue : { items: [Array], expected: 'a', value: 'b' } 1`] = `
+<mg-input-toggle value="b">
+  <!---->
+  <div class="mg-input mg-input--toggle mg-input--toggle-active">
+    <mg-input-title identifier="identifier">
+      label
+    </mg-input-title>
+    <div class="mg-input__input-container">
+      <div class="mg-input__input-container__input">
+        <button aria-checked="b" class="mg-input-toggle__button" id="identifier" role="switch" type="button">
+          <span aria-hidden="true" class="mg-input-toggle__item-container"></span>
+          <span aria-hidden="true" class="mg-input-toggle__item-container"></span>
+        </button>
+      </div>
+      <div class="mg-input__input-container__help-text" id="identifier-help-text">
+        My help text
+      </div>
+    </div>
+  </div>
+</mg-input-toggle>
+`;
+
+exports[`mg-input-toggle Should trigger events for items with inputValue : { items: [Array], expected: 2, value: 1 } 1`] = `
+<mg-input-toggle value="1">
+  <!---->
+  <div class="mg-input mg-input--toggle">
+    <mg-input-title identifier="identifier">
+      label
+    </mg-input-title>
+    <div class="mg-input__input-container">
+      <div class="mg-input__input-container__input">
+        <button aria-checked="1" class="mg-input-toggle__button" id="identifier" role="switch" type="button">
+          <span aria-hidden="true" class="mg-input-toggle__item-container"></span>
+          <span aria-hidden="true" class="mg-input-toggle__item-container"></span>
+        </button>
+      </div>
+      <div class="mg-input__input-container__help-text" id="identifier-help-text">
+        My help text
+      </div>
+    </div>
+  </div>
+</mg-input-toggle>
+`;
+
+exports[`mg-input-toggle Should trigger events for items with inputValue : { items: [Array], expected: false, value: true } 1`] = `
+<mg-input-toggle value="">
+  <!---->
+  <div class="mg-input mg-input--toggle mg-input--toggle-active">
+    <mg-input-title identifier="identifier">
+      label
+    </mg-input-title>
+    <div class="mg-input__input-container">
+      <div class="mg-input__input-container__input">
+        <button aria-checked="" class="mg-input-toggle__button" id="identifier" role="switch" type="button">
+          <span aria-hidden="true" class="mg-input-toggle__item-container"></span>
+          <span aria-hidden="true" class="mg-input-toggle__item-container"></span>
+        </button>
+      </div>
+      <div class="mg-input__input-container__help-text" id="identifier-help-text">
+        My help text
+      </div>
+    </div>
+  </div>
+</mg-input-toggle>
+`;

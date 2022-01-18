@@ -225,7 +225,7 @@ fieldset.mg-input {
 * Toogle
 */
 
-.mg-input_button-toggle {
+.mg-input-toggle__button {
   display: flex;
   overflow: hidden;
   padding-top: var(--mg-input-toggle-border);
@@ -245,12 +245,12 @@ fieldset.mg-input {
 }
 
 .mg-input--toggle-active {
-  .mg-input_button-toggle {
+  .mg-input-toggle__button {
     padding-left: calc((var(--mg-input-toggle-button-height) - (var(--mg-input-toggle-border) * 2)) - var(--mg-input-toggle-border));
     padding-right: 0;
     background-color: hsl(var(--color-info));
   }
-  .mg-input_button-toggle__item-container {
+  .mg-input-toggle__item-container {
     color: hsl(var(--color-info));
     animation-name: toggleUnactive;
     &:first-of-type {
@@ -264,7 +264,7 @@ fieldset.mg-input {
   }
 }
 
-.mg-input_button-toggle__item-container {
+.mg-input-toggle__item-container {
   display: flex;
   align-items: center;
   margin: 0 var(--mg-input-toggle-border);
@@ -287,23 +287,27 @@ fieldset.mg-input {
     position: absolute;
   }
   // slot
-  & > :not(.mg-input_button-toggle__item-container--icon) {
+  & > :not(.mg-input-toggle__item-icon) {
     padding: 0 1rem;
   }
-  & > .mg-input_button-toggle__item-container--icon {
+  & > .mg-input-toggle__item-icon {
     margin-left: auto;
     margin-right: auto;
   }
 }
 
+.mg-input-toggle__item-icon mg-icon{
+  display: flex;
+}
+
 // toggle side by side variation
-.mg-input-toggle--side-by-side {
-  .mg-input_button-toggle {
+.mg-input-toggle--display-both-values {
+  .mg-input-toggle__button {
     padding-left: 0;
     padding-right: 0;
     background-color: hsl(var(--color-info));
   }
-  .mg-input_button-toggle__item-container {
+  .mg-input-toggle__item-container {
     &:first-of-type, &:last-of-type {
       opacity: unset;
       position: unset;
@@ -319,7 +323,7 @@ fieldset.mg-input {
       color: hsl(var(--color-light));
     }
   }
-  &.mg-input--toggle-active .mg-input_button-toggle__item-container{
+  &.mg-input--toggle-active .mg-input-toggle__item-container{
     &:first-of-type {
       margin-right: 0;
       background: none;
