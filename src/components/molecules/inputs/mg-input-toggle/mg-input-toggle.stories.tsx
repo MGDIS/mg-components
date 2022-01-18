@@ -76,7 +76,7 @@ const TemplateIcon = args => {
     display-both-values={displayBothValues}
   >
     <span slot="item-1" class="mg-input-toggle__item-icon"><mg-icon icon="cross"></mg-icon></span>
-    <span slot="item-2" class="mg-input-toggle__item-icon"><mg-icon icon="success"></mg-icon></span>
+    <span slot="item-2" class="mg-input-toggle__item-icon"><mg-icon icon="check-circle"></mg-icon></span>
   </mg-input-toggle>
 };
 

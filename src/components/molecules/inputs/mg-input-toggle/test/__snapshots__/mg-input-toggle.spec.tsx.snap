@@ -185,7 +185,7 @@ exports[`mg-input-toggle Should render with args {
           <span aria-hidden="true" class="mg-input-toggle__item-container"></span>
         </button>
         <mg-tooltip identifier="identifier-tooltip" message="My Tooltip Message">
-          <mg-icon icon="info"></mg-icon>
+          <mg-icon icon="info-circle"></mg-icon>
         </mg-tooltip>
       </div>
     </div>
@@ -207,7 +207,7 @@ exports[`mg-input-toggle Should render with args {
       label
     </mg-input-title>
     <mg-tooltip identifier="identifier-tooltip" message="My Tooltip Message">
-      <mg-icon icon="info"></mg-icon>
+      <mg-icon icon="info-circle"></mg-icon>
     </mg-tooltip>
     <div class="mg-input__input-container">
       <div class="mg-input__input-container__input">

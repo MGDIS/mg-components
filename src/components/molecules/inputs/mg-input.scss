@@ -42,6 +42,10 @@
     .mg-input__input-group-container--radio {
       margin-top: calc(var(--mg-inputs-spacer) * 0.7);
     }
+
+    .mg-input-toggle__button {
+      margin-top: 0;
+    }
   }
 
   /**
@@ -234,7 +238,7 @@ fieldset.mg-input {
   padding-left: 0;
   margin: calc((var(--default-size) - var(--mg-input-toggle-button-height)) / 2) 0;
   height: var(--mg-input-toggle-button-height);
-  background-color: grey; // FIXME
+  background-color: var(--mg-inputs-color);
   border: none; // reset button default style
   border-radius: calc(var(--default-size) / 2);
   // animation
@@ -271,7 +275,7 @@ fieldset.mg-input {
   min-width: calc(var(--mg-input-toggle-button-height) - (var(--mg-input-toggle-border) * 2));
   height: calc(var(--mg-input-toggle-button-height) - (var(--mg-input-toggle-border) * 2));
   background-color: hsl(var(--color-light));
-  color: grey; // FIXME
+  color: var(--mg-inputs-color);
   border-radius: calc((var(--default-size) / 3) * 2);
   //animation
   animation-name: toggleActive;

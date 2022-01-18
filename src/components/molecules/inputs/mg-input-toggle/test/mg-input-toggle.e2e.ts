@@ -1,11 +1,11 @@
-import { createPage, delay } from "../../../../../utils/test.utils"
+import { createPage } from "../../../../../utils/test.utils"
 
 describe('mg-input-toggle', () => {
   test.each([
     `<mg-input-toggle label="legend"></mg-input-toggle>`,
     `<mg-input-toggle label="legend"><span slot="item-1">Non</span><span slot="item-2">Oui</span></mg-input-toggle>`,
     `<mg-input-toggle label="legend" display-both-values><span slot="item-1">Non</span><span slot="item-2">Oui</span></mg-input-toggle>`,
-    `<mg-input-toggle label="legend"><span slot="item-1" class="mg-input-toggle__item-icon"><mg-icon icon="cross"></mg-icon></span><span slot="item-2" class="mg-input-toggle__item-icon"><mg-icon icon="success"></mg-icon></span></mg-input-toggle>`,
+    `<mg-input-toggle label="legend"><span slot="item-1" class="mg-input-toggle__item-icon"><mg-icon icon="cross"></mg-icon></span><span slot="item-2" class="mg-input-toggle__item-icon"><mg-icon icon="check-circle"></mg-icon></span></mg-input-toggle>`,
   ])('Keyboard navigation', async (html)=>{
     const page = await createPage(`${html}
     <script>
@@ -27,7 +27,7 @@ describe('mg-input-toggle', () => {
 
     await page.keyboard.down("ArrowRight");
 
-    await delay(1000);
+    await page.waitFor(300);
 
     const screenshotSelection = await page.screenshot();
     expect(screenshotSelection).toMatchImageSnapshot();

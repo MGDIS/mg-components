@@ -34,5 +34,3 @@ export async function createPage(htmlString?: string) {
 }
 
 export const cloneDeep = (el) => JSON.parse(JSON.stringify(el));
-
-export const delay = ms => new Promise<void>(res => setTimeout(() => res(), ms));
