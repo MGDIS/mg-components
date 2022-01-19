@@ -21,7 +21,7 @@ stages:
 lint:
   stage: test
   rules:
-    - if: $CI_COMMIT_TAG == null && $CI_MERGE_REQUEST_ID == null
+    - if: $CI_COMMIT_TAG == null
   extends:
     - .install
   script:
@@ -30,7 +30,7 @@ lint:
 audit:
   stage: test
   rules:
-    - if: $CI_COMMIT_TAG == null && $CI_MERGE_REQUEST_ID == null
+    - if: $CI_COMMIT_TAG == null
   script:
     - gitlabci-npm-audit break-build
     - gitlabci-npm-audit-compare
@@ -38,7 +38,7 @@ audit:
 outdated:
   stage: test
   rules:
-    - if: $CI_COMMIT_TAG == null && $CI_MERGE_REQUEST_ID == null
+    - if: $CI_COMMIT_TAG == null
   before_script:
     - npm ci
   script:
@@ -51,7 +51,7 @@ test:
   image: $DOCKER_REGISTRE_URL/$DOCKER_REGISTRE_NAMESPACE_INT/node-build:14-debian
   rules:
     # except tags
-    - if: $CI_COMMIT_TAG == null && $CI_MERGE_REQUEST_ID == null
+    - if: $CI_COMMIT_TAG == null
   extends:
     - .install
   script:
@@ -68,7 +68,7 @@ test:
 sonar:
   stage: sonar
   rules:
-    - if: $CI_COMMIT_TAG == null && $CI_MERGE_REQUEST_ID == null
+    - if: $CI_COMMIT_TAG == null
   script:
     - /scripts/quality-gate-sonar.sh A+++
     - sonar-scanner -Dsonar.host.url=$SONAR_URL -Dsonar.login=$SONAR_KEY -Dsonar.projectKey=$CI_PROJECT_NAME-$CI_COMMIT_REF_SLUG -Dsonar.projectName=$CI_PROJECT_NAME-$CI_COMMIT_REF_SLUG
@@ -79,7 +79,7 @@ sonar:
 dist:
   stage: dist
   rules:
-    - when: always
+    - if: $CI_COMMIT_TAG == null
   extends:
     - .install
   script:
@@ -93,11 +93,13 @@ dist:
       - package.json
       - dist
       - loader
+  needs:
+    - test
 
 artifact:
   stage: artifact
   rules:
-    - if: $CI_COMMIT_TAG == null && $CI_MERGE_REQUEST_ID == null
+    - if: $CI_COMMIT_TAG == null
   script:
     - npm publish
   needs:
