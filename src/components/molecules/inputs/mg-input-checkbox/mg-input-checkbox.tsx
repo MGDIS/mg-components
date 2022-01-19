@@ -140,7 +140,7 @@ export class MgInputCheckbox {
   /**
   * Formated value for display
   */
-  @State() checkboxItems: (CheckboxItem)[];
+  @State() checkboxItems: (CheckboxItem)[] = [];
 
   /**
   * Emitted event when value change

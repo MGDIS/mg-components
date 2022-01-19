@@ -79,7 +79,7 @@ export class MgTooltip {
    */
   private hide = (event?: UIEvent & KeyboardEvent) => {
     // we continue to process ONLY for KeyboardEvents 'Escape'
-    if(event?.constructor.name.includes('KeyboardEvent') && event.code !== 'Escape') {
+    if(event?.type === 'keydown' && event.code !== 'Escape') {
       return;
     }
     // Hide the tooltip

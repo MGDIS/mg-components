@@ -113,6 +113,26 @@ describe('mg-tooltip', () => {
 
       expect(tooltip).toHaveAttribute('data-show');
     })
+
+    test('should hide tooltip with keyboardEvent, case "Escape" code', async () => {
+      const args = { identifier:"identifier", message: 'batman'};
+      const element = <span id="batman">batman</span>;
+      const page = await getPage(args, element);
+
+      const mgTooltip = page.doc.querySelector('mg-tooltip');
+      const tooltip = mgTooltip.querySelector(`#${args.identifier}`);
+      const i = page.doc.querySelector('#batman')
+
+      i.dispatchEvent(new CustomEvent('focus', { bubbles: true }));
+      await page.waitForChanges();
+
+      expect(tooltip).toHaveAttribute('data-show');
+
+      i.dispatchEvent(new KeyboardEvent('keydown', {'code': 'Escape'}));
+      await page.waitForChanges();
+
+      expect(tooltip).not.toHaveAttribute('data-show');
+    })
   })
 });
 
