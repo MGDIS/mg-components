@@ -16,6 +16,7 @@ describe('mg-input-select', () => {
     {label: 'label', identifier: "identifier", items: [{ title: 'blu', value: 'u', group:'blu' },{ title: 'bli', value: 'i', group: 'blu' }, { title: 'blo', value: 'o', group: 'blo' }, { title: 'bla', value: 'a' }]},
     {label: 'label', identifier: "identifier", items: ['blu', 'bli', 'blo', 'bla'], labelOnTop: true},
     {label: 'label', identifier: "identifier", items: ['blu', 'bli', 'blo', 'bla'], readonly: true},
+    {label: 'label', identifier: "identifier", items: ['blu', 'bli', 'blo', 'bla'], readonly: true, labelOnTop: true, tooltip: "Tooltip message"},
     {label: 'label', identifier: "identifier", items: ['blu', 'bli', 'blo', 'bla'], tooltip: "My Tooltip Message"},
     {label: 'label', identifier: "identifier", items: ['blu', 'bli', 'blo', 'bla'], tooltip: "My Tooltip Message", labelOnTop: true},
   ])('Should render with args %s:', async (args) => {

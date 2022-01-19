@@ -14,6 +14,7 @@ describe('mg-input-text', () => {
     {label: 'label', identifier: "identifier", labelHide: true},
     {label: 'label', identifier: "identifier", labelOnTop: true},
     {label: 'label', identifier: "identifier", readonly: true},
+    {label: 'label', identifier: "identifier", readonly: true, labelOnTop: true, tooltip: "Tooltip message"},
     {label: 'label', identifier: "identifier", readonly: true, value: "blu"},
     {label: 'label', identifier: "identifier", tooltip: "My Tooltip Message"},
     {label: 'label', identifier: "identifier", tooltip: "My Tooltip Message", labelOnTop: true},

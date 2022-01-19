@@ -161,7 +161,7 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
       >
         { props.label }
       </mg-input-title>
-      { props.labelOnTop && tooltip }
+      { props.labelOnTop && !props.readonly && tooltip }
       { props.readonly
       ? <div class="mg-input__input-container">
           <strong>{props.readonlyValue || props.value}</strong>

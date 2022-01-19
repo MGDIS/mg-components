@@ -271,11 +271,13 @@ exports[`mg-input-checkbox Should render with args {
   label: 'label',
   identifier: 'identifier',
   value: [Array],
-  readonly: true
-}: 2`] = `
+  readonly: true,
+  labelOnTop: true,
+  tooltip: 'Tooltip message'
+}: 1`] = `
 <mg-input-checkbox>
   <mock:shadow-root>
-    <fieldset class="mg-input mg-input--checkbox">
+    <fieldset class="mg-input mg-input--checkbox mg-input--label-on-top">
       <mg-input-title identifier="identifier" is-legend="">
         label
       </mg-input-title>
