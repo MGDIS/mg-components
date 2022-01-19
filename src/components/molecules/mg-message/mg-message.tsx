@@ -29,11 +29,25 @@ export class MgMessage {
   @Prop() identifier?: string = createID('mg-message');
 
   /**
+  * Add a delay to hide/close message when it passed
+  * Value is defined in ms
+  */
+  @Prop() delay?: number;
+  @Watch('delay')
+  validateDelay(newValue) {
+    if (newValue && newValue < 2000) {
+      throw new Error(`<mg-message> prop "delay" must be greater than 2000ms (PDA9-314 RG-06), received : ${newValue}ms`);
+    } else if (this.delay > 0 && this.hide !== true) {
+      setTimeout(() => this.hide = true, this.delay);
+    }
+  }
+
+  /**
    * Message variant
    */
   @Prop() variant?: string = variants[0];
   @Watch('variant')
-  validateType(newValue: string) {
+  validateVariant(newValue: string) {
     if(!variants.includes(newValue)) {
       throw new Error(`<mg-message> prop "variant" must be one of : ${variants.join(', ')}`);
     }
@@ -106,7 +120,7 @@ export class MgMessage {
    * Check if component props are well configured on init
    */
    componentWillLoad() {
-    this.validateType(this.variant);
+    this.validateVariant(this.variant);
     // Check if close button is an can be activated
     this.hasActions = this.element.querySelector('[slot="actions"]') !== null;
     this.validateCloseButton(this.closeButton);
@@ -114,6 +128,7 @@ export class MgMessage {
       this.classList.add('mg-message--close-button');
       this.closeButtonId = `${this.identifier}-close-button`;
     }
+    this.validateDelay(this.delay);
     this.validateHide(this.hide);
   }
 

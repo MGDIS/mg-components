@@ -31,6 +31,15 @@ describe('mg-message', () => {
     }
   });
 
+  test('Should throw error with invalid delay property : 50ms', async () => {
+    try {
+      await getPage({ identifier: "identifier", delay: 50 }, getDefaultContent());
+    }
+    catch (err) {
+      expect(err.message).toMatch('<mg-message> prop "delay" must be greater than 2000ms (PDA9-314 RG-06), received : 50ms')
+    }
+  });
+
   test('Should throw error when using prop "close-button" with an action slot', async () => {
     try {
       await getPage({ identifier: "identifier", closeButton: true }, [getDefaultContent(), <div slot="actions" class="mg-group-elements mg-group-elements--align-right"><mg-button>Primary</mg-button><mg-button variant="secondary">Secondary</mg-button></div>]);
@@ -51,6 +60,16 @@ describe('mg-message', () => {
     await page.waitForChanges();
 
     expect(page.rootInstance.classList.join()).toContain('mg-message--hide');
+  });
 
+  test('Should hide message on delay', async () => {
+    const args = {identifier: "identifier", delay: 2000};
+    const page = await getPage(args, getDefaultContent());
+
+    expect(page.rootInstance.classList.join()).not.toContain('mg-message--hide');
+
+    await new Promise((r) => setTimeout(r, 2000));
+
+    expect(page.rootInstance.classList.join()).toContain('mg-message--hide');
   });
 });

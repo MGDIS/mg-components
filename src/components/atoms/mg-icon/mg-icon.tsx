@@ -16,7 +16,7 @@ export class MgIcon {
   @Watch('icon')
   validateIcon(newValue: string) {
     if(!Object.keys(icons).includes(newValue)) {
-      throw new Error(`<mg-icon> prop "icon" must be one of : ${Object.keys(icons).join(', ')}`);
+      throw new Error(`<mg-icon> prop "icon" must be one of : ${Object.keys(icons).join(', ')}, received: ${newValue}`);
     }
     this.classList.add(`mg-icon--${this.icon}`);
   }

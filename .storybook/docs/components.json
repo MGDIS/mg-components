@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-01-18T17:12:57",
+  "timestamp": "2022-01-19T16:54:52",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.12.1",
@@ -2939,6 +2939,22 @@
           "values": [
             {
               "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "delay",
+          "type": "number",
+          "mutable": false,
+          "attr": "delay",
+          "reflectToAttr": false,
+          "docs": "Add a delay to hide/close message when it passed\nValue is defined in ms",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
             }
           ],
           "optional": true,
