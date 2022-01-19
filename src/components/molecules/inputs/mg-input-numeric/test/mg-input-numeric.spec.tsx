@@ -17,6 +17,7 @@ describe('mg-input-numeric', () => {
       {label: 'label', identifier: "identifier", type, labelHide: true},
       {label: 'label', identifier: "identifier", type, labelOnTop: true},
       {label: 'label', identifier: "identifier", type, readonly: true},
+      {label: 'label', identifier: "identifier", type, readonly: true, labelOnTop: true, tooltip: "Tooltip message"},
       {label: 'label', identifier: "identifier", type, readonly: true, value: "1234567890"},
       {label: 'label', identifier: "identifier", type, disabled: true, value: "1234567890"},
       {label: 'label', identifier: "identifier", type, tooltip: "My Tooltip Message"},
