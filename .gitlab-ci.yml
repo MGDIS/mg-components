@@ -3,8 +3,6 @@ image: $DOCKER_REGISTRE_URL/$DOCKER_REGISTRE_NAMESPACE_INT/node-build:14-alpine
 # workflow stages are imported from templates
 include:
   - project: 'build/gitlab/gitlab-ci'
-    file: '/templates/base.yml'
-  - project: 'build/gitlab/gitlab-ci'
     file: '/templates/release-module.yml'
 
 stages:
@@ -12,6 +10,7 @@ stages:
   - sonar
   - dist
   - artifact
+  - review
   - release
   - deploy
 
@@ -80,7 +79,7 @@ sonar:
 dist:
   stage: dist
   rules:
-    - when: always
+    - if: $CI_COMMIT_TAG == null
   extends:
     - .install
   script:
@@ -94,6 +93,8 @@ dist:
       - package.json
       - dist
       - loader
+  needs:
+    - test
 
 artifact:
   stage: artifact
@@ -103,6 +104,35 @@ artifact:
     - npm publish
   needs:
     - dist
+
+review_app:
+  stage: review
+  extends:
+    - .install
+  script:
+    - npm run build-storybook
+    - mv storybook-static public
+  artifacts:
+    paths:
+      - public
+  environment:
+    name: review/$CI_COMMIT_REF_SLUG
+    url: 'http://core.pages.mgdis.fr/-/core-ui/$CI_PROJECT_NAME/-/jobs/$CI_JOB_ID/artifacts/public/index.html'
+    on_stop: stop_review_app
+    auto_stop_in: 1 week
+  rules:
+    - if: $CI_MERGE_REQUEST_ID
+
+stop_review_app:
+  stage: review
+  script:
+    - echo "👋"
+  environment:
+    name: review/$CI_COMMIT_REF_SLUG
+    action: stop
+  rules:
+    - if: $CI_MERGE_REQUEST_ID
+      when: manual
 
 pages:
   stage: deploy
