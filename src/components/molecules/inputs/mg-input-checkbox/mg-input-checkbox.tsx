@@ -140,7 +140,7 @@ export class MgInputCheckbox {
   /**
   * Formated value for display
   */
-  @State() checkboxItems: (CheckboxItem)[];
+  @State() checkboxItems: (CheckboxItem)[] = [];
 
   /**
   * Emitted event when value change
@@ -222,7 +222,7 @@ export class MgInputCheckbox {
         readonly={false}
         value={this.value && this.value.toString()}
         readonlyValue={undefined}
-        tooltip={this.tooltip}
+        tooltip={!this.readonly && this.tooltip}
         displayCharacterLeft={undefined}
         characterLeftTemplate={undefined}
         maxlength={undefined}

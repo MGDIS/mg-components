@@ -19,6 +19,7 @@ describe('mg-input-radio', () => {
     {label: 'label', identifier: "identifier", items: ['batman', 'robin', 'joker', 'bane'], inputVerticalList: true},
     {label: 'label', identifier: "identifier", items: ['batman', 'robin', 'joker', 'bane'], required: true},
     {label: 'label', identifier: "identifier", items: ['batman', 'robin', 'joker', 'bane'], readonly: true},
+    {label: 'label', identifier: "identifier", items: ['batman', 'robin', 'joker', 'bane'], readonly: true, labelOnTop: true, tooltip: "Tooltip message"},
     {label: 'label', identifier: "identifier", items: ['batman', 'robin', 'joker', 'bane'], disabled: true},
     {label: 'label', identifier: "identifier", items: ['batman', 'robin', 'joker', 'bane'], helpText: 'Hello joker'},
     {label: 'label', identifier: "identifier", items: ['batman', 'robin', 'joker', 'bane'], tooltip: "My Tooltip Message"},

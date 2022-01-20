@@ -18,6 +18,7 @@ describe('mg-input-date', () => {
     {label: 'label', identifier: "identifier", labelHide: true},
     {label: 'label', identifier: "identifier", labelOnTop: true},
     {label: 'label', identifier: "identifier", readonly: true},
+    {label: 'label', identifier: "identifier", readonly: true, labelOnTop: true, tooltip: "Tooltip message"},
     {label: 'label', identifier: "identifier", readonly: true, value: "2021-10-15"},
     {label: 'label', identifier: "identifier", tooltip: "My Tooltip Message"},
     {label: 'label', identifier: "identifier", tooltip: "My Tooltip Message", labelOnTop: true}

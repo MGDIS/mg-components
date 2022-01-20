@@ -25,10 +25,10 @@ describe('mg-input-checkbox', () => {
     {label: 'label', identifier: "identifier", value: cloneDeep(items), labelHide: true},
     {label: 'label', identifier: "identifier", value: cloneDeep(items), inputVerticalList: true},
     {label: 'label', identifier: "identifier", value: cloneDeep(items), required: true},
-    {label: 'label', identifier: "identifier", value: cloneDeep(items), readonly: true, },
+    {label: 'label', identifier: "identifier", value: cloneDeep(items), readonly: true, labelOnTop: true, tooltip: "Tooltip message"},
     {label: 'label', identifier: "identifier", value: cloneDeep(items), disabled: true},
     {label: 'label', identifier: "identifier", value: cloneDeep(items), helpText: 'Hello joker'},
-    {label: 'label', identifier: "identifier", value: cloneDeep(items), tooltip: "Batman is a DC Comics license"},
+    {label: 'label', identifier: "identifier", value: cloneDeep(items), tooltip: "Batman is a DC Comics license"}
   ])('Should render with args %s:', async (args) => {
     const { root } = await getPage(args);
     expect(root).toMatchSnapshot();
