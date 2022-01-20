@@ -96,9 +96,10 @@ To bind a non string value in a web component we have to use the Vue.js [`.prop`
 
 #### Tests
 
-During test custom elements are not registered, to prevent Jest to log errors you'll need to add the ignoredElements Vue.js config in your test file:
+During test custom elements are not registered, to prevent Jest to log errors you'll need to add the ignoredElements Vue.js config in the jest setup file:
 
 ```js
+//jest.setup.js
 import Vue from 'vue';
 Vue.config.ignoredElements = [/mg-\w*/];
 ```

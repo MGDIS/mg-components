@@ -4,26 +4,36 @@ import { Meta } from '@storybook/addon-docs/blocks';
 
 # Changelog
 
-## 1.1.0
+## 2.0.0
 
 TODO: replace with release date
 
-### ⚠️ New component
+### 💥 Icons naming convention
+
+- [**`<mg-icon>`**](?path=/docs/atoms-mg-icon--mg-icon) icons names changed following naming convention described in [PDA9-744](https://jira.mgdis.fr/browse/PDA9-744)
+
+### ⚠️ New components
 
 - [**`<mg-input-password>`**](?path=/story/molecules-inputs-mg-input-password--mg-input-password) refers to [PDA9-769](https://jira.mgdis.fr/browse/PDA9-769)
 - [**`<mg-input-checkbox>`**](?path=/docs/molecules-inputs-mg-input-checkbox--mg-input-checkbox) refers to [PDA9-70](https://jira.mgdis.fr/browse/PDA9-70)
 
 All inputs also refers to [PDA9-723](https://jira.mgdis.fr/browse/PDA9-723).
 
-### 🚀 icon variants
+### 🚀 Enhancement
 
 - [**`<mg-icon>`**](?path=/docs/atoms-mg-icon--mg-icon) for accessibility, sometimes we need to add a background on icons, it is now possible with the attribute `variant`.
+- [**`<mg-input-xxx>`**](?path=/story/molecules-inputs-mg-input-date--mg-input-date&args=labelOnTop:true) Tooltip icon moved next to label when used with the attribute `label-on-top`.
+
+### 🐛 Bug Fix
+
+- [#22](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/22) Remove error during test
+- [#25](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/25) Tooltip does not hide on IE
 
 ## 1.0.1
 
 January 7th, 2022
 
-### 🐛 Storybook error on grid layout example
+### 🐛 Bug Fix
 
 - [Storybook error on grid page](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/23)
 
