@@ -44,7 +44,7 @@ describe('mg-tooltip', () => {
       <span>span</span>,
       <button aria-describedby="blu">button</button>,
       <mg-icon icon="check-circle"></mg-icon>,
-      <mg-button identifier="identifier">mg-button</mg-button>
+      <mg-button identifier="identifier-mg-button">mg-button</mg-button>
     ])('element', async(element) => {
       const args = { identifier:"identifier", message: 'blu'};
       const page = await getPage(args, element);
