@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-01-19T16:54:52",
+  "timestamp": "2022-01-20T15:53:21",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.12.1",
@@ -2950,7 +2950,7 @@
           "mutable": false,
           "attr": "delay",
           "reflectToAttr": false,
-          "docs": "Add a delay to hide/close message when it passed\nValue is defined in ms",
+          "docs": "Add a delay to hide/close message when it passed\nValue is defined in seconds and must greater than 2 seconds (PDA9-314 RG-06)",
           "docsTags": [],
           "values": [
             {

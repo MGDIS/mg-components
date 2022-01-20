@@ -613,7 +613,7 @@ export namespace Components {
          */
         "closeButton"?: boolean;
         /**
-          * Add a delay to hide/close message when it passed Value is defined in ms
+          * Add a delay to hide/close message when it passed Value is defined in seconds and must greater than 2 seconds (PDA9-314 RG-06)
          */
         "delay"?: number;
         /**
@@ -1406,7 +1406,7 @@ declare namespace LocalJSX {
          */
         "closeButton"?: boolean;
         /**
-          * Add a delay to hide/close message when it passed Value is defined in ms
+          * Add a delay to hide/close message when it passed Value is defined in seconds and must greater than 2 seconds (PDA9-314 RG-06)
          */
         "delay"?: number;
         /**

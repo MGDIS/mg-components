@@ -30,15 +30,13 @@ export class MgMessage {
 
   /**
   * Add a delay to hide/close message when it passed
-  * Value is defined in ms
+  * Value is defined in seconds and must greater than 2 seconds (PDA9-314 RG-06)
   */
   @Prop() delay?: number;
   @Watch('delay')
   validateDelay(newValue) {
-    if (newValue && newValue < 2000) {
-      throw new Error(`<mg-message> prop "delay" must be greater than 2000ms (PDA9-314 RG-06), received : ${newValue}ms`);
-    } else if (this.delay > 0 && this.hide !== true) {
-      setTimeout(() => this.hide = true, this.delay);
+    if (newValue && newValue < 2) {
+      throw new Error(`<mg-message> prop "delay" must be greater than 2 seconds.`);
     }
   }
 
@@ -73,8 +71,9 @@ export class MgMessage {
    @Prop({ mutable: true, reflect: true }) hide?: boolean = false;
    @Watch('hide')
    validateHide(newValue: boolean) {
-     if(newValue) this.classList.add('mg-message--hide')
-     else this.classList.delete('mg-message--hide')
+    if(newValue) this.classList.add('mg-message--hide')
+    else this.classList.delete('mg-message--hide')
+    this.hideWithDelay();
    }
 
   /**
@@ -88,10 +87,26 @@ export class MgMessage {
   @State() hasActions: boolean = false;
 
   /**
+  * Stored timer setted when hide action is run from setTimeOut
+  */
+  @State() storedTimer: ReturnType<typeof setTimeout> = null;
+
+  /**
    * Handle close button
    */
   private handleClose = () => {
     this.hide = true;
+  }
+
+  /**
+  *
+  */
+  private hideWithDelay = () => {
+    if (this.delay > 0 && this.hide !== true) {
+      this.storedTimer = setTimeout(() => this.hide = true, this.delay * 1000);
+    } else if(this.storedTimer !== null) {
+      clearTimeout(this.storedTimer);
+    }
   }
 
   /**

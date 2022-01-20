@@ -33,10 +33,10 @@ describe('mg-message', () => {
 
   test('Should throw error with invalid delay property : 50ms', async () => {
     try {
-      await getPage({ identifier: "identifier", delay: 50 }, getDefaultContent());
+      await getPage({ identifier: "identifier", delay: 1 }, getDefaultContent());
     }
     catch (err) {
-      expect(err.message).toMatch('<mg-message> prop "delay" must be greater than 2000ms (PDA9-314 RG-06), received : 50ms')
+      expect(err.message).toMatch('<mg-message> prop "delay" must be greater than 2 seconds.')
     }
   });
 
@@ -63,8 +63,17 @@ describe('mg-message', () => {
   });
 
   test('Should hide message on delay', async () => {
-    const args = {identifier: "identifier", delay: 2000};
+    const args = {identifier: "identifier", delay: 2};
     const page = await getPage(args, getDefaultContent());
+
+    expect(page.rootInstance.classList.join()).not.toContain('mg-message--hide');
+
+    await new Promise((r) => setTimeout(r, 2000));
+
+    expect(page.rootInstance.classList.join()).toContain('mg-message--hide');
+
+    page.rootInstance.hide = false;
+    await page.waitForChanges();
 
     expect(page.rootInstance.classList.join()).not.toContain('mg-message--hide');
 
