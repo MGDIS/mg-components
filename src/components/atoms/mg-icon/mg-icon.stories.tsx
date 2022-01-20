@@ -33,6 +33,6 @@ export const MgIcon = Template.bind({});
 MgIcon.args = {
   color: '',
   icon: Object.keys(icons)[0],
-  size: sizes[1], // regular
+  size: sizes[0], // regular
   spin: false,
 };
