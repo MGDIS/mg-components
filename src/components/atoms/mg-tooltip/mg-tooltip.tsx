@@ -119,13 +119,16 @@ export class MgTooltip {
     const interactiveElements = ['a', 'button', 'input', 'textarea', 'select']; //! Might needs updates
     const interactiveElement = this.element.querySelector(interactiveElements.join(',')) || slotElement.shadowRoot?.querySelector(interactiveElements.join(','));
 
+    // define selected element to become tooltip selector
+    const tooltipedElement = interactiveElement || slotElement;
+
     // Add tabindex to slotted element if we can't find any interactive element
     if (interactiveElement === null || interactiveElement === undefined) slotElement.tabIndex = 0;
 
     // Set aria-describedby
     const ariaDescribedby = slotElement.getAttribute('aria-describedby');
     if(ariaDescribedby === null) {
-      (interactiveElement || slotElement).setAttribute('aria-describedby', this.identifier)
+      tooltipedElement.setAttribute('aria-describedby', this.identifier)
     }
     else {
       slotElement.setAttribute('aria-describedby', `${ariaDescribedby} ${this.identifier}`);
@@ -151,11 +154,11 @@ export class MgTooltip {
 
     // Add events
     ['mouseenter', 'focus'].forEach((event) => {
-      (interactiveElement || slotElement).addEventListener(event, this.show);
+      tooltipedElement.addEventListener(event, this.show);
     });
 
     ['mouseleave', 'blur', 'keydown'].forEach((event) => {
-      (interactiveElement || slotElement).addEventListener(event, this.hide);
+      tooltipedElement.addEventListener(event, this.hide);
     });
   }
 }
