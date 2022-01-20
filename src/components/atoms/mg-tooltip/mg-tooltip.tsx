@@ -125,7 +125,7 @@ export class MgTooltip {
     // Set aria-describedby
     const ariaDescribedby = slotElement.getAttribute('aria-describedby');
     if(ariaDescribedby === null) {
-      slotElement.setAttribute('aria-describedby', this.identifier)
+      (interactiveElement || slotElement).setAttribute('aria-describedby', this.identifier)
     }
     else {
       slotElement.setAttribute('aria-describedby', `${ariaDescribedby} ${this.identifier}`);
@@ -135,7 +135,7 @@ export class MgTooltip {
     this.tooltip = this.element.querySelector(`#${this.identifier}`);
 
     // Create popperjs tooltip
-    this.popper = createPopper(slotElement, this.tooltip, {
+    this.popper = createPopper((interactiveElement || slotElement), this.tooltip, {
       placement: this.placement,
       modifiers: [
         {
@@ -151,12 +151,11 @@ export class MgTooltip {
 
     // Add events
     ['mouseenter', 'focus'].forEach((event) => {
-      slotElement.addEventListener(event, this.show);
+      (interactiveElement || slotElement).addEventListener(event, this.show);
     });
 
     ['mouseleave', 'blur', 'keydown'].forEach((event) => {
-      slotElement.addEventListener(event, this.hide);
+      (interactiveElement || slotElement).addEventListener(event, this.hide);
     });
   }
-
 }
