@@ -1,8 +1,8 @@
-import { h } from "@stencil/core";
+import { h } from '@stencil/core';
 
 export default {
   component: 'mg-input-title',
-  title: 'Atoms/mg-input-title'
+  title: 'Atoms/mg-input-title',
 };
 
 const Template = args => {
@@ -10,7 +10,7 @@ const Template = args => {
   const slot = args.slot;
   delete args.slot;
   // return element
-  return <mg-input-title {...args}>{slot}</mg-input-title>
+  return <mg-input-title {...args}>{slot}</mg-input-title>;
 };
 
 export const MgInputTitle = Template.bind({});

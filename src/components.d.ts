@@ -651,7 +651,21 @@ export namespace Components {
         /**
           * Tooltip placement
          */
-        "placement": 'auto'|'auto-start'|'auto-end'|'top'|'top-start'|'top-end'|'bottom'|'bottom-start'|'bottom-end'|'right'|'right-start'|'right-end'|'left'|'left-start'|'left-end';
+        "placement": | 'auto'
+    | 'auto-start'
+    | 'auto-end'
+    | 'top'
+    | 'top-start'
+    | 'top-end'
+    | 'bottom'
+    | 'bottom-start'
+    | 'bottom-end'
+    | 'right'
+    | 'right-start'
+    | 'right-end'
+    | 'left'
+    | 'left-start'
+    | 'left-end';
     }
 }
 declare global {
@@ -1440,7 +1454,21 @@ declare namespace LocalJSX {
         /**
           * Tooltip placement
          */
-        "placement"?: 'auto'|'auto-start'|'auto-end'|'top'|'top-start'|'top-end'|'bottom'|'bottom-start'|'bottom-end'|'right'|'right-start'|'right-end'|'left'|'left-start'|'left-end';
+        "placement"?: | 'auto'
+    | 'auto-start'
+    | 'auto-end'
+    | 'top'
+    | 'top-start'
+    | 'top-end'
+    | 'bottom'
+    | 'bottom-start'
+    | 'bottom-end'
+    | 'right'
+    | 'right-start'
+    | 'right-end'
+    | 'left'
+    | 'left-start'
+    | 'left-end';
     }
     interface IntrinsicElements {
         "mg-button": MgButton;

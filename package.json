@@ -21,7 +21,9 @@
   "scripts": {
     "build": "stencil build --docs",
     "start": "stencil build --dev --watch --serve",
-    "lint": "eslint src/**/*{.ts,.tsx}",
+    "lint": "eslint src/**/*.{ts,tsx}",
+    "lint:prettier": "prettier --check src/**/*.{ts,tsx,scss,html,mdx}",
+    "lint:prettier:fix": "prettier --write src/**/*.{ts,tsx,scss,html,mdx}",
     "test": "stencil test --spec --e2e",
     "test:unit": "stencil test --spec",
     "test:e2e": "stencil test --e2e",

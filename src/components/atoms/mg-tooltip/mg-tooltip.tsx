@@ -1,6 +1,6 @@
 import { Component, Element, h, Host, Prop, Watch } from '@stencil/core';
 import { createID } from '../../../utils/components.utils';
-import { Instance as PopperInstance, createPopper } from '@popperjs/core'
+import { Instance as PopperInstance, createPopper } from '@popperjs/core';
 
 @Component({
   tag: 'mg-tooltip',
@@ -8,7 +8,6 @@ import { Instance as PopperInstance, createPopper } from '@popperjs/core'
   scoped: true,
 })
 export class MgTooltip {
-
   /************
    * Internal *
    ************/
@@ -39,12 +38,27 @@ export class MgTooltip {
   /**
    * Tooltip placement
    */
-  @Prop() placement: 'auto'|'auto-start'|'auto-end'|'top'|'top-start'|'top-end'|'bottom'|'bottom-start'|'bottom-end'|'right'|'right-start'|'right-end'|'left'|'left-start'|'left-end' = 'bottom';
+  @Prop() placement:
+    | 'auto'
+    | 'auto-start'
+    | 'auto-end'
+    | 'top'
+    | 'top-start'
+    | 'top-end'
+    | 'bottom'
+    | 'bottom-start'
+    | 'bottom-end'
+    | 'right'
+    | 'right-start'
+    | 'right-end'
+    | 'left'
+    | 'left-start'
+    | 'left-end' = 'bottom';
 
   /**
-  * Display tooltip
-  */
-  @Prop({ mutable: true, reflect: true}) display: boolean = false;
+   * Display tooltip
+   */
+  @Prop({ mutable: true, reflect: true }) display: boolean = false;
   @Watch('display')
   handleDisplay(newVal) {
     if (newVal) {
@@ -62,16 +76,13 @@ export class MgTooltip {
     // Make the tooltip visible
     this.tooltip.setAttribute('data-show', '');
     // Enable the event listeners
-    this.popper.setOptions((options) => ({
+    this.popper.setOptions(options => ({
       ...options,
-      modifiers: [
-        ...options.modifiers,
-        { name: 'eventListeners', enabled: true },
-      ],
+      modifiers: [...options.modifiers, { name: 'eventListeners', enabled: true }],
     }));
     // Update its position
     this.popper.update();
-  }
+  };
 
   /**
    * Hide tooltip
@@ -79,20 +90,17 @@ export class MgTooltip {
    */
   private hide = (event?: UIEvent & KeyboardEvent) => {
     // we continue to process ONLY for KeyboardEvents 'Escape'
-    if(event?.type === 'keydown' && event.code !== 'Escape') {
+    if (event?.type === 'keydown' && event.code !== 'Escape') {
       return;
     }
     // Hide the tooltip
     this.tooltip.removeAttribute('data-show');
     // Disable the event listeners
-    this.popper.setOptions((options) => ({
+    this.popper.setOptions(options => ({
       ...options,
-      modifiers: [
-        ...options.modifiers,
-        { name: 'eventListeners', enabled: false },
-      ],
+      modifiers: [...options.modifiers, { name: 'eventListeners', enabled: false }],
     }));
-  }
+  };
 
   /*************
    * Lifecycle *
@@ -102,7 +110,9 @@ export class MgTooltip {
     return (
       <Host>
         <slot></slot>
-        <div role="tooltip" id={this.identifier} innerHTML={this.message}><div class="mg-tooltip__arrow" data-popper-arrow></div></div>
+        <div role="tooltip" id={this.identifier} innerHTML={this.message}>
+          <div class="mg-tooltip__arrow" data-popper-arrow></div>
+        </div>
       </Host>
     );
   }
@@ -127,10 +137,9 @@ export class MgTooltip {
 
     // Set aria-describedby
     const ariaDescribedby = slotElement.getAttribute('aria-describedby');
-    if(ariaDescribedby === null) {
-      tooltipedElement.setAttribute('aria-describedby', this.identifier)
-    }
-    else {
+    if (ariaDescribedby === null) {
+      tooltipedElement.setAttribute('aria-describedby', this.identifier);
+    } else {
       slotElement.setAttribute('aria-describedby', `${ariaDescribedby} ${this.identifier}`);
     }
 
@@ -138,7 +147,7 @@ export class MgTooltip {
     this.tooltip = this.element.querySelector(`#${this.identifier}`);
 
     // Create popperjs tooltip
-    this.popper = createPopper((interactiveElement || slotElement), this.tooltip, {
+    this.popper = createPopper(interactiveElement || slotElement, this.tooltip, {
       placement: this.placement,
       modifiers: [
         {
@@ -153,11 +162,11 @@ export class MgTooltip {
     this.handleDisplay(this.display);
 
     // Add events
-    ['mouseenter', 'focus'].forEach((event) => {
+    ['mouseenter', 'focus'].forEach(event => {
       tooltipedElement.addEventListener(event, this.show);
     });
 
-    ['mouseleave', 'blur', 'keydown'].forEach((event) => {
+    ['mouseleave', 'blur', 'keydown'].forEach(event => {
       tooltipedElement.addEventListener(event, this.hide);
     });
   }

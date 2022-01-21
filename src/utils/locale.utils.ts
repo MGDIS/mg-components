@@ -1,12 +1,12 @@
-import { locale, currency } from "../locales";
+import { locale, currency } from '../locales';
 
 /**
  * Format number to the locale currency
  * @param number {number}
  * @returns {string} formatted currency
  */
-export function localeCurrency(number:number):string {
-  return new Intl.NumberFormat(locale, {style: "currency", currency}).format(number);
+export function localeCurrency(number: number): string {
+  return new Intl.NumberFormat(locale, { style: 'currency', currency }).format(number);
 }
 
 /**
@@ -14,7 +14,7 @@ export function localeCurrency(number:number):string {
  * @param number {number}
  * @returns {string} formatted number
  */
-export function localeNumber(number:number):string {
+export function localeNumber(number: number): string {
   return new Intl.NumberFormat(locale).format(number);
 }
 
@@ -23,9 +23,9 @@ export function localeNumber(number:number):string {
  * @param date {string}
  * @returns {string} formatted date
  */
-export function localeDate(date:string):string {
+export function localeDate(date: string): string {
   const dateRegexp = /\d{4}-\d{2}-\d{2}/;
-  if(typeof date !== 'string' || date === '' || !dateRegexp.test(date)) {
+  if (typeof date !== 'string' || date === '' || !dateRegexp.test(date)) {
     return '';
   }
   return new Intl.DateTimeFormat(locale).format(new Date(date));

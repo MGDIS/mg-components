@@ -9,7 +9,6 @@ import { messages } from '../../../../locales';
   shadow: true,
 })
 export class MgInputPassword {
-
   /************
    * Internal *
    ************/
@@ -23,7 +22,7 @@ export class MgInputPassword {
   /**
    * Component value
    */
-  @Prop({ mutable:true, reflect: true }) value: string;
+  @Prop({ mutable: true, reflect: true }) value: string;
 
   /**
    * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
@@ -46,12 +45,12 @@ export class MgInputPassword {
   /**
    * Define if label is displayed on top
    */
-   @Prop() labelOnTop: boolean;
+  @Prop() labelOnTop: boolean;
 
   /**
    * Define if label is visible
    */
-   @Prop() labelHide: boolean = false;
+  @Prop() labelHide: boolean = false;
 
   /**
    * Input placeholder.
@@ -77,7 +76,7 @@ export class MgInputPassword {
   /**
    * Add a tooltip message next to the input
    */
-   @Prop() tooltip: string;
+  @Prop() tooltip: string;
 
   /**
    * Template to use for characters left sentence
@@ -90,8 +89,8 @@ export class MgInputPassword {
   @Prop({ mutable: true, reflect: true }) valid: boolean;
 
   /**
-  * Define input pattern error message
-  */
+   * Define input pattern error message
+   */
   @Prop({ mutable: true, reflect: true }) invalid: boolean;
 
   /**
@@ -107,24 +106,24 @@ export class MgInputPassword {
   /**
    * Emmited event when value change
    */
-  @Event() valueChange: EventEmitter<string>
+  @Event() valueChange: EventEmitter<string>;
 
   /**
    * Handle input event
    * @param event
    */
-   private handleInput = (event:InputEvent & { target: HTMLInputElement }) => {
+  private handleInput = (event: InputEvent & { target: HTMLInputElement }) => {
     this.value = event.target.value;
     this.valueChange.emit(this.value);
-  }
+  };
 
   /**
    * Handle blur event
    * @param event
    */
-  private handleBlur = (event:FocusEvent) => {
+  private handleBlur = (event: FocusEvent) => {
     this.checkValidity(event.target);
-  }
+  };
 
   /**
    * Check if input is valid
@@ -135,7 +134,7 @@ export class MgInputPassword {
     // Set error message
     this.errorMessage = undefined;
     // required
-    if(!validity && element.validity.valueMissing) {
+    if (!validity && element.validity.valueMissing) {
       this.errorMessage = messages.errors.required;
     }
 
@@ -144,10 +143,9 @@ export class MgInputPassword {
     this.invalid = !validity;
 
     // Update class
-    if(validity) {
+    if (validity) {
       this.classList.delete(this.classError);
-    }
-    else {
+    } else {
       this.classList.add(this.classError);
     }
   }

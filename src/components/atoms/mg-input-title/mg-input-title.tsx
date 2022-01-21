@@ -6,7 +6,6 @@ import { Component, h, Prop, State } from '@stencil/core';
   scoped: true,
 })
 export class MgInputTitle {
-
   /**
    * Label input id
    */
@@ -27,13 +26,13 @@ export class MgInputTitle {
    */
   @State() tagName: string = 'label';
 
-  private getTagName () {
+  private getTagName() {
     this.tagName = this.isLegend ? 'legend' : 'label';
   }
 
-    /*************
-  * Lifecycle *
-  *************/
+  /*************
+   * Lifecycle *
+   *************/
 
   componentWillLoad() {
     // Init tag name
@@ -47,9 +46,8 @@ export class MgInputTitle {
     return (
       <TagName class="mg-input-title" htmlFor={this.identifier}>
         <slot></slot>
-        { this.required && [`\u00A0`, <span class="is-asterisk">*</span>] }
+        {this.required && [`\u00A0`, <span class="is-asterisk">*</span>]}
       </TagName>
     );
   }
-
 }

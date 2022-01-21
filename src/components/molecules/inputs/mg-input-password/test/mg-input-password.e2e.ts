@@ -1,13 +1,12 @@
-import { createPage } from "../../../../../utils/test.utils"
+import { createPage } from '../../../../../utils/test.utils';
 
 describe('mg-input-password', () => {
-
   describe.each([
     `<mg-input-password label="label"></mg-input-password>`,
     `<mg-input-password label="label" label-on-top></mg-input-password>`,
     `<mg-input-password label="label" label-hide></mg-input-password>`,
-    `<mg-input-password label="label" placeholder="placeholder" help-text="HelpText Message"></mg-input-password>`
-  ])('without tooltip', (html)=>{
+    `<mg-input-password label="label" placeholder="placeholder" help-text="HelpText Message"></mg-input-password>`,
+  ])('without tooltip', html => {
     test('render', async () => {
       const page = await createPage(html);
 
@@ -24,16 +23,16 @@ describe('mg-input-password', () => {
       const screenshotFocus = await page.screenshot();
       expect(screenshotFocus).toMatchImageSnapshot();
 
-      await input.press("KeyB");
-      await input.press("KeyL");
-      await input.press("KeyU");
+      await input.press('KeyB');
+      await input.press('KeyL');
+      await input.press('KeyU');
 
       const screenshotType = await page.screenshot();
       expect(screenshotType).toMatchImageSnapshot();
     });
-  })
+  });
 
-  test.each([true, false])('render with tooltip, case label-on-top %s', async (labelOnTop) => {
+  test.each([true, false])('render with tooltip, case label-on-top %s', async labelOnTop => {
     const page = await createPage(`<mg-input-password label="label" tooltip="Tooltip message" label-on-top=${labelOnTop}></mg-input-password>`);
 
     const element = await page.find('mg-input-password');
@@ -56,7 +55,7 @@ describe('mg-input-password', () => {
     `<mg-input-password label="label" value="blu" readonly></mg-input-password>`,
     `<mg-input-password label="label" value="blu" readonly label-on-top></mg-input-password>`,
     `<mg-input-password label="label" disabled></mg-input-password>`,
-  ])('Should render with template', (html)=>{
+  ])('Should render with template', html => {
     test('render', async () => {
       const page = await createPage(html);
 
@@ -67,7 +66,7 @@ describe('mg-input-password', () => {
       const screenshot = await page.screenshot();
       expect(screenshot).toMatchImageSnapshot();
     });
-  })
+  });
 
   test('Should render error when leaving an empty required input', async () => {
     const page = await createPage(`<mg-input-password label="label" required></mg-input-password>`);
@@ -82,5 +81,4 @@ describe('mg-input-password', () => {
     const screenshot = await page.screenshot();
     expect(screenshot).toMatchImageSnapshot();
   });
-
 });

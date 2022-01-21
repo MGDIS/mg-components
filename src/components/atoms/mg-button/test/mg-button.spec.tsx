@@ -3,40 +3,39 @@ import { newSpecPage } from '@stencil/core/testing';
 import { MgButton } from '../mg-button';
 import { variants } from '../mg-button.conf';
 
-const getPage = (args) => newSpecPage({
-  components: [MgButton],
-  template: () => (<mg-button {...args}>Text button</mg-button>),
-});
+const getPage = args =>
+  newSpecPage({
+    components: [MgButton],
+    template: () => <mg-button {...args}>Text button</mg-button>,
+  });
 
 describe('mg-button', () => {
-  describe.each(variants)('Should render an %s button', (variant) => {
-    test.each([false, true])('isIcon %s', async (isIcon) => {
-      const {root} = await getPage({identifier: 'identifier', variant, isIcon, label:'label'});
+  describe.each(variants)('Should render an %s button', variant => {
+    test.each([false, true])('isIcon %s', async isIcon => {
+      const { root } = await getPage({ identifier: 'identifier', variant, isIcon, label: 'label' });
       expect(root).toMatchSnapshot();
     });
   });
 
-  test.each(["", "blu", undefined])('Should throw error', async (variant) => {
+  test.each(['', 'blu', undefined])('Should throw error', async variant => {
     try {
-      await getPage({variant, label:'label'});
-    }
-    catch (err){
-      expect(err.message).toContain('<mg-button> prop "variant" must be one of : ')
+      await getPage({ variant, label: 'label' });
+    } catch (err) {
+      expect(err.message).toContain('<mg-button> prop "variant" must be one of : ');
     }
   });
 
-  test.each(["", undefined])('should throw error when using prop "isIcon" without a good prop "label"', async (label) => {
+  test.each(['', undefined])('should throw error when using prop "isIcon" without a good prop "label"', async label => {
     try {
-      await getPage({isIcon:true, label});
+      await getPage({ isIcon: true, label });
+    } catch (err) {
+      expect(err.message).toContain('<mg-button> prop "label" is mandatory when prop "isIcon" is set to true.');
     }
-    catch (err){
-      expect(err.message).toContain('<mg-button> prop "label" is mandatory when prop "isIcon" is set to true.')
-    }
-  })
+  });
 
   describe('prevent double click', () => {
     test('should NOT disable button after click', async () => {
-      const page = await getPage({identifier: 'identifier', label: 'test'});
+      const page = await getPage({ identifier: 'identifier', label: 'test' });
       const element = page.doc.querySelector('mg-button');
       const button = element.querySelector('button');
 
@@ -50,10 +49,10 @@ describe('mg-button', () => {
       page.rootInstance.disabled = true;
 
       expect(page.root).toMatchSnapshot();
-    })
+    });
 
     test('should disable button after click', async () => {
-      const page = await getPage({identifier: 'identifier', label: 'test', disableOnClick: true});
+      const page = await getPage({ identifier: 'identifier', label: 'test', disableOnClick: true });
       const element = page.doc.querySelector('mg-button');
       const button = element.querySelector('button');
 
@@ -68,6 +67,6 @@ describe('mg-button', () => {
       await page.waitForChanges();
 
       expect(page.root).toMatchSnapshot();
-    })
-  })
+    });
+  });
 });
