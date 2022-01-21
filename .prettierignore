@@ -1,0 +1,12 @@
+.stencil
+coverage
+dist
+loader
+node_module
+www
+package-lock.json
+
+# Ignore Stencil build files
+.storybook/docs/components.json
+components.d.ts
+src/index.ts
