@@ -192,6 +192,16 @@
           <mg-tooltip message="my tooltip mg-button"><mg-button>mg-button</mg-button></mg-tooltip>
           <mg-tooltip message="my tooltip native button"><button class="mg-button mg-button--primary" aria-describedby="blu">native button</button></mg-tooltip>
         </div>
+        <div class="mg-group-elements">
+          <mg-tooltip message="my tooltip icon" display><mg-icon icon="check-circle"></mg-icon></mg-tooltip>
+          <mg-tooltip message="my tooltip icon" disabled><mg-icon icon="check-circle"></mg-icon></mg-tooltip>
+          <mg-tooltip message="my tooltip mg-button" id="tp-disabled" disabled display
+            ><mg-button onclick="document.getElementById('tp-disabled').removeAttribute('disabled')">mg-button</mg-button></mg-tooltip
+          >
+        </div>
+        <!-- <div class="mg-grid">
+          <div class="mg-grid__col" style="height: 200px; background-color: black; position: relative; z-index: 10"></div>
+        </div> -->
         <h4>Character left</h4>
         <mg-character-left maxlength="400"></mg-character-left>
         <mg-character-left maxlength="100" template="Template custom qui te dit qu'il ne reste plus que {counter} lettres!"></mg-character-left>
