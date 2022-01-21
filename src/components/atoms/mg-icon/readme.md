@@ -8,7 +8,7 @@ This atom refers to the [PDA9-744](https://jira.mgdis.fr/browse/PDA9-744).
 | Property  | Attribute | Description                                                             | Type      | Default     |
 | --------- | --------- | ----------------------------------------------------------------------- | --------- | ----------- |
 | `icon`    | `icon`    | Icon to display                                                         | `string`  | `undefined` |
-| `size`    | `size`    | Define icon size                                                        | `string`  | `"regular"` |
+| `size`    | `size`    | Define icon size                                                        | `string`  | `'regular'` |
 | `spin`    | `spin`    | Make the icon spin                                                      | `boolean` | `false`     |
 | `variant` | `variant` | Define icon variant Add a background to the icon based on variant color | `string`  | `undefined` |
 
