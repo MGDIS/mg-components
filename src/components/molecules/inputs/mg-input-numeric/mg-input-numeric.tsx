@@ -38,14 +38,13 @@ export class MgInputNumeric {
       // Split number and decimal
       const [number, decimal = ''] = newValue.replace('-', '').split(/[\.,]/);
       // Regex
-      const regex = this.type === "integer" ? /^[\-]?\d+$/ : /^[\-]?\d+[.,]?\d*$/ ;
+      const regex = this.type === 'integer' ? /^[\-]?\d+$/ : /^[\-]?\d+[.,]?\d*$/;
       // Filter input
-      if (newValue === '' || (newValue.match(regex) && number.length <= 13 && decimal.length <= (this.type === "integer" ? 0 : 2 ))) {
+      if (newValue === '' || (newValue.match(regex) && number.length <= 13 && decimal.length <= (this.type === 'integer' ? 0 : 2))) {
         this.storedValue = newValue;
       } else if (this.storedValue !== undefined) {
         newValue = this.storedValue;
-      }
-      else {
+      } else {
         newValue = null;
       }
       // Set value and input value
@@ -53,8 +52,7 @@ export class MgInputNumeric {
       try {
         const elementInput = this.element.shadowRoot.getElementById(this.identifier) as HTMLInputElement;
         if (elementInput !== null) elementInput.value = this.value;
-      }
-      catch {
+      } catch {
         /* IE FIX */
         /* There is no Shadow DOM on IE so we need to access via document */
         const elementInput = document.getElementById(this.identifier) as HTMLInputElement;
@@ -134,7 +132,7 @@ export class MgInputNumeric {
   @Prop() type: string = types[0];
   @Watch('type')
   validateType(newValue: string) {
-    if(!types.includes(newValue)) {
+    if (!types.includes(newValue)) {
       throw new Error(`<mg-input-numeric> prop "type" must be one of : ${types.join(', ')}`);
     }
     this.classList.add(`mg-input--numeric--${this.type}`);
@@ -211,7 +209,7 @@ export class MgInputNumeric {
    * Check if input is valid
    * @param element
    */
-  private checkValidity(element:HTMLInputElement) {
+  private checkValidity(element: HTMLInputElement) {
     let validity = element.checkValidity();
     // Set error message
     this.errorMessage = undefined;
@@ -251,8 +249,8 @@ export class MgInputNumeric {
    * @param value {number}
    * @returns {string} formated local value
    */
-  private formatValue(value:number):string {
-    return this.type === "currency" ? localeCurrency(value) : localeNumber(value);
+  private formatValue(value: number): string {
+    return this.type === 'currency' ? localeCurrency(value) : localeNumber(value);
   }
 
   /*************

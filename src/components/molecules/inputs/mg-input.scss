@@ -93,7 +93,8 @@
     padding-inline-end: 0;
   }
 
-  input[type="radio"], input[type="checkbox"] {
+  input[type='radio'],
+  input[type='checkbox'] {
     margin-top: 0;
     margin-right: calc(var(--mg-inputs-spacer) * 0.6);
     margin-bottom: 0;
@@ -178,7 +179,8 @@
     flex-wrap: wrap;
     column-gap: calc(var(--mg-inputs-spacer) * 2.5);
     row-gap: var(--mg-inputs-spacer);
-    &.mg-input__input-group-container--radio, &.mg-input__input-group-container--checkbox {
+    &.mg-input__input-group-container--radio,
+    &.mg-input__input-group-container--checkbox {
       margin-top: calc((var(--default-size) - var(--font-size-base) * var(--line-height)) / 2);
     }
     &.mg-input__input-group-container--vertical {

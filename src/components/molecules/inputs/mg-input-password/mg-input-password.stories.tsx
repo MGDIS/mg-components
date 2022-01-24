@@ -1,4 +1,4 @@
-import { h } from "@stencil/core";
+import { h } from '@stencil/core';
 
 export default {
   component: 'mg-input-password',
@@ -17,12 +17,7 @@ const Template = args => {
   const helpText = args.helpText;
   delete args.helpText;
   // return element
-  return <mg-input-password
-    {...args}
-    label-on-top={labelOnTop}
-    label-hide={labelHide}
-    help-text={helpText}
-  ></mg-input-password>
+  return <mg-input-password {...args} label-on-top={labelOnTop} label-hide={labelHide} help-text={helpText}></mg-input-password>;
 };
 
 /**

@@ -1,4 +1,4 @@
-import { h } from "@stencil/core";
+import { h } from '@stencil/core';
 
 export default {
   component: 'mg-input-date',
@@ -17,13 +17,8 @@ const Template = args => {
   const helpText = args.helpText;
   delete args.helpText;
   // return element
-  return <mg-input-date
-    {...args}
-    label-on-top={labelOnTop}
-    label-hide={labelHide}
-    help-text={helpText}
-  ></mg-input-date>
-}
+  return <mg-input-date {...args} label-on-top={labelOnTop} label-hide={labelHide} help-text={helpText}></mg-input-date>;
+};
 
 export const MgInputDate = Template.bind({});
 

@@ -62,7 +62,7 @@ describe('mg-tooltip', () => {
       expect(tooltip).not.toHaveAttribute('data-show');
     });
 
-    test.each([false, true])('should call event methods when disabled and display:%s', async display => {
+    test.each([false, true])('should not call event methods when disabled and display:%s', async display => {
       const args = { identifier: 'identifier', message: 'blu', disabled: true, display };
       const page = await getPage(args, <span>span</span>);
       const mgTooltip = page.doc.querySelector('mg-tooltip');
@@ -88,7 +88,6 @@ describe('mg-tooltip', () => {
     const tooltip = mgTooltip.querySelector(`#${args.identifier}`);
 
     expect(page.root).toMatchSnapshot();
-
     if (display) {
       expect(tooltip).toHaveAttribute('data-show');
     } else {
@@ -99,7 +98,6 @@ describe('mg-tooltip', () => {
     await page.waitForChanges();
 
     expect(page.root).toMatchSnapshot();
-
     if (display) {
       expect(tooltip).not.toHaveAttribute('data-show');
     } else {

@@ -8,24 +8,25 @@ import { ClassList } from '../../../utils/components.utils';
  * @param utils
  * @returns {VNode[]}
  */
-const applyAriadescribedBy = (children :VNode[], ariaDescribedbyIDs: Set<string>, utils: FunctionalUtilities): VNode[] =>  utils.map(children, child => {
-  if(['input', 'select', 'textarea'].includes(child.vtag as string)) {
+const applyAriadescribedBy = (children: VNode[], ariaDescribedbyIDs: Set<string>, utils: FunctionalUtilities): VNode[] =>
+  utils.map(children, child => {
+    if (['input', 'select', 'textarea'].includes(child.vtag as string)) {
+      return {
+        ...child,
+        vattrs: {
+          ...child.vattrs,
+          'aria-describedby': [...ariaDescribedbyIDs].join(' '),
+        },
+      };
+    }
+
+    // we recursively apply ariadescribedBy attributes to child input nodes if exists
+    if (child.vchildren === null) return { ...child };
     return {
       ...child,
-      vattrs: {
-        ...child.vattrs,
-        'aria-describedby': [...ariaDescribedbyIDs].join(' '),
-      }
-    }
-  }
-
-  // we recursively apply ariadescribedBy attributes to child input nodes if exists
-  if(child.vchildren === null) return {...child};
-  return {
-    ...child,
-    vchildren: applyAriadescribedBy(child.vchildren, ariaDescribedbyIDs, utils)
-  };
-});
+      vchildren: applyAriadescribedBy(child.vchildren, ariaDescribedbyIDs, utils),
+    };
+  });
 
 /**
  * Add classes based on props
@@ -34,21 +35,21 @@ const applyAriadescribedBy = (children :VNode[], ariaDescribedbyIDs: Set<string>
 const addClasses = (props): void => {
   props.classList.add('mg-input');
 
-  if(props.labelOnTop) {
+  if (props.labelOnTop) {
     props.classList.add('mg-input--label-on-top');
   }
 
-  if(props.readonly) {
+  if (props.readonly) {
     props.classList.add('mg-input--readonly');
   }
-}
+};
 
 /**
  * Define tagname based on props
  * @param isFieldset
  * @returns {string} tag name
  */
-const getTagName = (isFieldset: boolean): string => isFieldset ? 'fieldset' : 'div';
+const getTagName = (isFieldset: boolean): string => (isFieldset ? 'fieldset' : 'div');
 
 /**
  * MgInput Interface
@@ -87,15 +88,14 @@ interface MgInputProps {
  * @returns JSX template
  */
 export const MgInput: FunctionalComponent<MgInputProps> = (props, children, utils) => {
-
   /**
    * Check required properties
    */
-  if(typeof props.label !== 'string' || props.label === '') {
+  if (typeof props.label !== 'string' || props.label === '') {
     throw new Error(`prop "label" is required`);
   }
   if (props.labelOnTop && props.labelHide) {
-    throw new Error('<mg-input> prop "labelOnTop" must not be paired with the prop "labelHide"')
+    throw new Error('<mg-input> prop "labelOnTop" must not be paired with the prop "labelHide"');
   }
 
   /**
@@ -110,19 +110,19 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
 
   // Character Left
   const characterLeftId = `${props.identifier}-character-left`;
-  if(props.classList.has('is-focused') && props.displayCharacterLeft){
+  if (props.classList.has('is-focused') && props.displayCharacterLeft) {
     ariaDescribedbyIDs.add(characterLeftId);
   }
 
   // Help text
   const helpTextId = `${props.identifier}-help-text`;
-  if(typeof props.helpText === 'string' && props.helpText !== ''){
+  if (typeof props.helpText === 'string' && props.helpText !== '') {
     ariaDescribedbyIDs.add(helpTextId);
   }
 
   // Error Message
   const helpTextErrorId = `${props.identifier}-error`;
-  if(typeof props.errorMessage === 'string' && props.errorMessage !== ''){
+  if (typeof props.errorMessage === 'string' && props.errorMessage !== '') {
     ariaDescribedbyIDs.add(helpTextErrorId);
   }
 
@@ -130,7 +130,6 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
    * Update input(s) in children
    */
   children = applyAriadescribedBy(children, ariaDescribedbyIDs, utils);
-
 
   /**
    * Return template
@@ -149,38 +148,35 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
    */
 
   const TagName = getTagName(props.isFieldset);
-  const tooltip = props.tooltip && <mg-tooltip identifier={`${props.identifier}-tooltip`} message={props.tooltip}><mg-icon icon="info-circle"></mg-icon></mg-tooltip>
+  const tooltip = props.tooltip && (
+    <mg-tooltip identifier={`${props.identifier}-tooltip`} message={props.tooltip}>
+      <mg-icon icon="info-circle"></mg-icon>
+    </mg-tooltip>
+  );
 
   return (
     <TagName class={props.classList.join()}>
-      <mg-input-title
-        identifier={props.identifier}
-        class={props.labelHide ? "sr-only" : undefined}
-        required={props.required}
-        is-legend={props.isFieldset}
-      >
-        { props.label }
+      <mg-input-title identifier={props.identifier} class={props.labelHide ? 'sr-only' : undefined} required={props.required} is-legend={props.isFieldset}>
+        {props.label}
       </mg-input-title>
-      { props.labelOnTop && !props.readonly && tooltip }
-      { props.readonly
-      ? <div class="mg-input__input-container">
+      {props.labelOnTop && !props.readonly && tooltip}
+      {props.readonly ? (
+        <div class="mg-input__input-container">
           <strong>{props.readonlyValue || props.value}</strong>
         </div>
-      : <div class="mg-input__input-container">
+      ) : (
+        <div class="mg-input__input-container">
           <div class="mg-input__input-container__input">
-            { children }
-            { !props.labelOnTop && tooltip }
+            {children}
+            {!props.labelOnTop && tooltip}
           </div>
-          { props.displayCharacterLeft && props.maxlength && props.classList.has('is-focused') && <mg-character-left
-            identifier={characterLeftId}
-            characters={props.value}
-            maxlength={props.maxlength}
-            template={props.characterLeftTemplate}
-          ></mg-character-left> }
-          { props.helpText && <div id={helpTextId} class="mg-input__input-container__help-text" innerHTML={props.helpText}></div> }
-          { props.errorMessage && <div id={helpTextErrorId} class="mg-input__input-container__error" innerHTML={props.errorMessage} aria-live="assertive"></div> }
+          {props.displayCharacterLeft && props.maxlength && props.classList.has('is-focused') && (
+            <mg-character-left identifier={characterLeftId} characters={props.value} maxlength={props.maxlength} template={props.characterLeftTemplate}></mg-character-left>
+          )}
+          {props.helpText && <div id={helpTextId} class="mg-input__input-container__help-text" innerHTML={props.helpText}></div>}
+          {props.errorMessage && <div id={helpTextErrorId} class="mg-input__input-container__error" innerHTML={props.errorMessage} aria-live="assertive"></div>}
         </div>
-      }
+      )}
     </TagName>
   );
-}
+};

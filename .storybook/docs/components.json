@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-01-21T13:26:56",
+  "timestamp": "2022-01-21T16:26:49",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.12.1",
@@ -291,7 +291,7 @@
           "reflectToAttr": false,
           "docs": "Define icon size",
           "docsTags": [],
-          "default": "\"regular\"",
+          "default": "'regular'",
           "values": [
             {
               "type": "string"
