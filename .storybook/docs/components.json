@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-01-20T11:03:59",
+  "timestamp": "2022-01-21T13:26:56",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.12.1",
@@ -3079,6 +3079,23 @@
       "docsTags": [],
       "usage": {},
       "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "disabled",
+          "reflectToAttr": true,
+          "docs": "Disable tooltip",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
         {
           "name": "display",
           "type": "boolean",
