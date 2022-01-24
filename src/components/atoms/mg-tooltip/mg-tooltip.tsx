@@ -69,6 +69,11 @@ export class MgTooltip {
   }
 
   /**
+   * Disable tooltip
+   */
+  @Prop({ mutable: true, reflect: true }) disabled: boolean = false;
+
+  /**
    * Show tooltip
    * @returns {void}
    */
@@ -88,11 +93,7 @@ export class MgTooltip {
    * Hide tooltip
    * @returns {void}
    */
-  private hide = (event?: UIEvent & KeyboardEvent) => {
-    // we continue to process ONLY for KeyboardEvents 'Escape'
-    if (event?.type === 'keydown' && event.code !== 'Escape') {
-      return;
-    }
+  private hide = () => {
     // Hide the tooltip
     this.tooltip.removeAttribute('data-show');
     // Disable the event listeners
@@ -106,23 +107,15 @@ export class MgTooltip {
    * Lifecycle *
    *************/
 
-  render() {
-    return (
-      <Host>
-        <slot></slot>
-        <div role="tooltip" id={this.identifier} innerHTML={this.message}>
-          <div class="mg-tooltip__arrow" data-popper-arrow></div>
-        </div>
-      </Host>
-    );
-  }
-
   /**
    * Get slotted element
    * Check if it already contain an interactive element, if not we need to add a tabIndex attribute
    * We need to attach the focused element to the tooltip (aria-describedby)
    */
   componentDidLoad() {
+    // Get tooltip element
+    this.tooltip = this.element.querySelector(`#${this.identifier}`);
+
     // get slotted element
     const slotElement = this.element.firstElementChild as HTMLElement;
     // Get interactive element
@@ -143,11 +136,8 @@ export class MgTooltip {
       slotElement.setAttribute('aria-describedby', `${ariaDescribedby} ${this.identifier}`);
     }
 
-    // Get tooltip element
-    this.tooltip = this.element.querySelector(`#${this.identifier}`);
-
     // Create popperjs tooltip
-    this.popper = createPopper(interactiveElement || slotElement, this.tooltip, {
+    this.popper = createPopper(tooltipedElement, this.tooltip, {
       placement: this.placement,
       modifiers: [
         {
@@ -159,15 +149,34 @@ export class MgTooltip {
       ],
     });
 
-    this.handleDisplay(this.display);
-
     // Add events
     ['mouseenter', 'focus'].forEach(event => {
-      tooltipedElement.addEventListener(event, this.show);
+      tooltipedElement.addEventListener(event, () => {
+        if (!this.disabled) this.display = true;
+      });
     });
 
     ['mouseleave', 'blur', 'keydown'].forEach(event => {
-      tooltipedElement.addEventListener(event, this.hide);
+      tooltipedElement.addEventListener(event, (e: UIEvent & KeyboardEvent) => {
+        // we continue to process ONLY for KeyboardEvents 'Escape'
+        if (e.type === 'keydown' && e.code !== 'Escape') {
+          return;
+        }
+        if (!this.disabled) this.display = false;
+      });
     });
+
+    this.handleDisplay(this.display);
+  }
+
+  render() {
+    return (
+      <Host>
+        <slot></slot>
+        <div role="tooltip" id={this.identifier} innerHTML={this.message}>
+          <div class="mg-tooltip__arrow" data-popper-arrow></div>
+        </div>
+      </Host>
+    );
   }
 }

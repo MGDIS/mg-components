@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`mg-tooltip Should manage display on events enter with { eventIn: 'focus', eventOut: 'blur' }, leave with %s element 1`] = `
-<mg-tooltip>
+<mg-tooltip display="">
   <!---->
   <span aria-describedby="identifier" tabindex="0">
     span
@@ -14,7 +14,7 @@ exports[`mg-tooltip Should manage display on events enter with { eventIn: 'focus
 `;
 
 exports[`mg-tooltip Should manage display on events enter with { eventIn: 'focus', eventOut: 'blur' }, leave with %s element 2`] = `
-<mg-tooltip>
+<mg-tooltip display="">
   <!---->
   <button aria-describedby="blu identifier">
     button
@@ -27,7 +27,7 @@ exports[`mg-tooltip Should manage display on events enter with { eventIn: 'focus
 `;
 
 exports[`mg-tooltip Should manage display on events enter with { eventIn: 'focus', eventOut: 'blur' }, leave with %s element 3`] = `
-<mg-tooltip>
+<mg-tooltip display="">
   <!---->
   <mg-icon aria-describedby="identifier" tabindex="0">
     <mock:shadow-root>
@@ -44,7 +44,7 @@ exports[`mg-tooltip Should manage display on events enter with { eventIn: 'focus
 `;
 
 exports[`mg-tooltip Should manage display on events enter with { eventIn: 'focus', eventOut: 'blur' }, leave with %s element 4`] = `
-<mg-tooltip>
+<mg-tooltip display="">
   <!---->
   <mg-button>
     <!---->
@@ -62,7 +62,7 @@ exports[`mg-tooltip Should manage display on events enter with { eventIn: 'focus
 `;
 
 exports[`mg-tooltip Should manage display on events enter with { eventIn: 'mouseenter', eventOut: 'mouseleave' }, leave with %s element 1`] = `
-<mg-tooltip>
+<mg-tooltip display="">
   <!---->
   <span aria-describedby="identifier" tabindex="0">
     span
@@ -75,7 +75,7 @@ exports[`mg-tooltip Should manage display on events enter with { eventIn: 'mouse
 `;
 
 exports[`mg-tooltip Should manage display on events enter with { eventIn: 'mouseenter', eventOut: 'mouseleave' }, leave with %s element 2`] = `
-<mg-tooltip>
+<mg-tooltip display="">
   <!---->
   <button aria-describedby="blu identifier">
     button
@@ -88,7 +88,7 @@ exports[`mg-tooltip Should manage display on events enter with { eventIn: 'mouse
 `;
 
 exports[`mg-tooltip Should manage display on events enter with { eventIn: 'mouseenter', eventOut: 'mouseleave' }, leave with %s element 3`] = `
-<mg-tooltip>
+<mg-tooltip display="">
   <!---->
   <mg-icon aria-describedby="identifier" tabindex="0">
     <mock:shadow-root>
@@ -105,7 +105,7 @@ exports[`mg-tooltip Should manage display on events enter with { eventIn: 'mouse
 `;
 
 exports[`mg-tooltip Should manage display on events enter with { eventIn: 'mouseenter', eventOut: 'mouseleave' }, leave with %s element 4`] = `
-<mg-tooltip>
+<mg-tooltip display="">
   <!---->
   <mg-button>
     <!---->

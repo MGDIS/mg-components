@@ -61,17 +61,31 @@ describe('mg-tooltip', () => {
 
       expect(tooltip).not.toHaveAttribute('data-show');
     });
+
+    test.each([false, true])('should not call event methods when disabled and display:%s', async display => {
+      const args = { identifier: 'identifier', message: 'blu', disabled: true, display };
+      const page = await getPage(args, <span>span</span>);
+      const mgTooltip = page.doc.querySelector('mg-tooltip');
+      const linkedTooltipElement = mgTooltip.querySelector(`[aria-describedby*='${args.identifier}']`);
+      const tooltip = mgTooltip.querySelector(`#${args.identifier}`);
+
+      [eventIn, eventOut].forEach(async event => {
+        linkedTooltipElement.dispatchEvent(new CustomEvent(event, { bubbles: true }));
+        await page.waitForChanges();
+        if (display) {
+          expect(tooltip).toHaveAttribute('data-show');
+        } else {
+          expect(tooltip).not.toHaveAttribute('data-show');
+        }
+      });
+    });
   });
 
   test.each([true, false])('Should toogle tooltip from prop display, case display %s', async display => {
     const args = { identifier: 'identifier', message: 'batman', display };
-    const element = <span>batman</span>;
-    const page = await getPage(args, element);
-
+    const page = await getPage(args, <span>batman</span>);
     const mgTooltip = page.doc.querySelector('mg-tooltip');
     const tooltip = mgTooltip.querySelector(`#${args.identifier}`);
-
-    await page.waitForChanges();
 
     expect(page.root).toMatchSnapshot();
     if (display) {
@@ -91,22 +105,20 @@ describe('mg-tooltip', () => {
     }
   });
 
-  describe('method hide', () => {
+  describe('hide method', () => {
     test.each(['Tab', 'Space', 'Enter', 'i'])('should prevent keyboardEvent, case not "Escape" code', async key => {
       const args = { identifier: 'identifier', message: 'batman' };
-      const element = <span id="batman">batman</span>;
-      const page = await getPage(args, element);
-
+      const page = await getPage(args, <span id="batman">batman</span>);
       const mgTooltip = page.doc.querySelector('mg-tooltip');
       const tooltip = mgTooltip.querySelector(`#${args.identifier}`);
-      const i = page.doc.querySelector('#batman');
+      const element = page.doc.querySelector('#batman');
 
-      i.dispatchEvent(new CustomEvent('focus', { bubbles: true }));
+      element.dispatchEvent(new CustomEvent('focus', { bubbles: true }));
       await page.waitForChanges();
 
       expect(tooltip).toHaveAttribute('data-show');
 
-      i.dispatchEvent(new KeyboardEvent('keydown', { code: key }));
+      element.dispatchEvent(new KeyboardEvent('keydown', { code: key }));
       await page.waitForChanges();
 
       expect(tooltip).toHaveAttribute('data-show');
@@ -114,19 +126,17 @@ describe('mg-tooltip', () => {
 
     test('should hide tooltip with keyboardEvent, case "Escape" code', async () => {
       const args = { identifier: 'identifier', message: 'batman' };
-      const element = <span id="batman">batman</span>;
-      const page = await getPage(args, element);
-
+      const page = await getPage(args, <span id="batman">batman</span>);
       const mgTooltip = page.doc.querySelector('mg-tooltip');
       const tooltip = mgTooltip.querySelector(`#${args.identifier}`);
-      const i = page.doc.querySelector('#batman');
+      const element = page.doc.querySelector('#batman');
 
-      i.dispatchEvent(new CustomEvent('focus', { bubbles: true }));
+      element.dispatchEvent(new CustomEvent('focus', { bubbles: true }));
       await page.waitForChanges();
 
       expect(tooltip).toHaveAttribute('data-show');
 
-      i.dispatchEvent(new KeyboardEvent('keydown', { code: 'Escape' }));
+      element.dispatchEvent(new KeyboardEvent('keydown', { code: 'Escape' }));
       await page.waitForChanges();
 
       expect(tooltip).not.toHaveAttribute('data-show');

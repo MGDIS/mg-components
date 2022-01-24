@@ -637,6 +637,10 @@ export namespace Components {
     }
     interface MgTooltip {
         /**
+          * Disable tooltip
+         */
+        "disabled": boolean;
+        /**
           * Display tooltip
          */
         "display": boolean;
@@ -1439,6 +1443,10 @@ declare namespace LocalJSX {
         "variant"?: string;
     }
     interface MgTooltip {
+        /**
+          * Disable tooltip
+         */
+        "disabled"?: boolean;
         /**
           * Display tooltip
          */

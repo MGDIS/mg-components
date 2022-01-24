@@ -3080,6 +3080,23 @@
       "usage": {},
       "props": [
         {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "disabled",
+          "reflectToAttr": true,
+          "docs": "Disable tooltip",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "display",
           "type": "boolean",
           "mutable": true,

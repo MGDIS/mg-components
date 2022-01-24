@@ -43,7 +43,7 @@ export const icons: Object = {
 /**
  * List of all possibles sizes
  */
-export const sizes: string[] = ['small', 'regular', 'large'];
+export const sizes: string[] = ['regular', 'large', 'extra-large'];
 
 /**
  * List of all possibles variants

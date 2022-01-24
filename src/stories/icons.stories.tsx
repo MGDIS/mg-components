@@ -27,5 +27,5 @@ const Template = args => (
 export const Icons = Template.bind({});
 Icons.args = {
   color: '',
-  size: sizes[1], // regular
+  size: sizes[0], // regular
 };

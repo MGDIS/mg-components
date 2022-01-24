@@ -21,6 +21,7 @@ MgTooltip.args = {
   message: 'This is a tooltip message',
   placement: 'bottom',
   display: false,
+  disabled: false,
 };
 
 const TemplateButton = args => (
