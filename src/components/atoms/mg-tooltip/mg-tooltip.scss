@@ -6,6 +6,7 @@ mg-tooltip {
   // Display
   display: none;
   padding: 0.5rem;
+  z-index: 9999;
   // Decoration
   border-radius: 0.3rem;
   background-color: hsl(var(--mg-tooltip-background-color));
@@ -22,6 +23,7 @@ mg-tooltip {
     position: absolute;
     width: 0.8rem;
     height: 0.8rem;
+    z-index: 9999;
     // Decoration
     background: inherit;
   }
