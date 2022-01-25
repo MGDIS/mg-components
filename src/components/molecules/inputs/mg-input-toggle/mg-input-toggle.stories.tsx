@@ -1,4 +1,4 @@
-import { h } from "@stencil/core";
+import { h } from '@stencil/core';
 
 export default {
   component: 'mg-input-toggle',
@@ -8,7 +8,10 @@ export default {
 const args = {
   // Global
   value: null,
-  items: [{title: 'non', value: false}, {title: 'oui', value: true}],
+  items: [
+    { title: 'non', value: false },
+    { title: 'oui', value: true },
+  ],
   identifier: 'identifier',
   name: 'input-name',
   // Label
@@ -25,8 +28,8 @@ const args = {
   // Tooltip
   tooltip: 'This is a tooltip',
   // Help Text
-  helpText: 'Help text with html <strong>bold</strong>, <em>italic</em>.'
-}
+  helpText: 'Help text with html <strong>bold</strong>, <em>italic</em>.',
+};
 
 /**
  * 1. camelCase arguments must be written in the template, for exemple labelOnTop must be placed in the template as label-on-top={args.labelOnTop}
@@ -45,21 +48,16 @@ const Template = args => {
   const helpText = args.helpText;
   delete args.helpText;
   // return element
-  return   <mg-input-toggle
-    {...args}
-    label-on-top={labelOnTop}
-    label-hide={labelHide}
-    help-text={helpText}
-    is-icon={isIcon}
-    is-on-off={isOnOff}
-  >
-    <span slot="item-1">Non</span>
-    <span slot="item-2">Oui</span>
-  </mg-input-toggle>
+  return (
+    <mg-input-toggle {...args} label-on-top={labelOnTop} label-hide={labelHide} help-text={helpText} is-icon={isIcon} is-on-off={isOnOff}>
+      <span slot="item-1">Non</span>
+      <span slot="item-2">Oui</span>
+    </mg-input-toggle>
+  );
 };
 
 export const MgInputtoggle = Template.bind({});
-MgInputtoggle.args = {...args };
+MgInputtoggle.args = { ...args };
 
 const TemplateIcon = args => {
   // Extract slot so it won't be render as an attribute
@@ -75,17 +73,16 @@ const TemplateIcon = args => {
   const isOnOff = args.isOnOff;
   delete args.isOnOff;
   // return element
-  return   <mg-input-toggle
-    {...args}
-    label-on-top={labelOnTop}
-    label-hide={labelHide}
-    help-text={helpText}
-    is-icon={isIcon}
-    is-on-off={isOnOff}
-  >
-    <span slot="item-1"><mg-icon icon="cross"></mg-icon></span>
-    <span slot="item-2"><mg-icon icon="check"></mg-icon></span>
-  </mg-input-toggle>
+  return (
+    <mg-input-toggle {...args} label-on-top={labelOnTop} label-hide={labelHide} help-text={helpText} is-icon={isIcon} is-on-off={isOnOff}>
+      <span slot="item-1">
+        <mg-icon icon="cross"></mg-icon>
+      </span>
+      <span slot="item-2">
+        <mg-icon icon="check"></mg-icon>
+      </span>
+    </mg-input-toggle>
+  );
 };
 
 export const MgInputtoggleWithIcon = TemplateIcon.bind({});

@@ -8,14 +8,13 @@ import { ClassList } from '../../../utils/components.utils';
   shadow: true,
 })
 export class MgIcon {
-
   /**
    * Icon to display
    */
   @Prop() icon: string;
   @Watch('icon')
   validateIcon(newValue: string) {
-    if(!Object.keys(icons).includes(newValue)) {
+    if (!Object.keys(icons).includes(newValue)) {
       throw new Error(`<mg-icon> prop "icon" must be one of : ${Object.keys(icons).join(', ')}`);
     }
     this.classList.add(`mg-icon--${this.icon}`);
@@ -24,10 +23,10 @@ export class MgIcon {
   /**
    * Define icon size
    */
-  @Prop() size: string = "regular";
+  @Prop() size: string = 'regular';
   @Watch('size')
   validateSize(newValue: string) {
-    if(!sizes.includes(newValue)) {
+    if (!sizes.includes(newValue)) {
       throw new Error(`<mg-icon> prop "size" must be one of : ${sizes.join(', ')}`);
     }
     this.classList.add(`mg-icon--size-${this.size}`);
@@ -40,10 +39,9 @@ export class MgIcon {
   @Prop() variant: string;
   @Watch('variant')
   validateVariant(newValue: string) {
-    if(newValue !== undefined && !variants.includes(newValue)) {
+    if (newValue !== undefined && !variants.includes(newValue)) {
       throw new Error(`<mg-icon> prop "variant" must be one of : ${variants.join(', ')}`);
-    }
-    else if (newValue !== undefined) {
+    } else if (newValue !== undefined) {
       this.classList.add(`mg-icon--variant-${this.variant}`);
     }
   }
@@ -55,13 +53,13 @@ export class MgIcon {
   @Watch('spin')
   handleSpin(newValue: boolean) {
     if (newValue) {
-      this.classList.add('mg-icon--spin')
+      this.classList.add('mg-icon--spin');
     }
   }
 
   /**
-  * Component classes
-  */
+   * Component classes
+   */
   @State() classList: ClassList = new ClassList(['mg-icon']);
 
   /**
@@ -75,16 +73,13 @@ export class MgIcon {
   }
 
   /**
-  * Render component
-  */
+   * Render component
+   */
   render() {
     return (
-      <svg
-        class={this.classList.join()}
-        aria-hidden="true"
-        focusable="false"
-        viewBox="0 0 16 16">{icons[this.icon]()}</svg>
+      <svg class={this.classList.join()} aria-hidden="true" focusable="false" viewBox="0 0 16 16">
+        {icons[this.icon]()}
+      </svg>
     );
   }
-
 }

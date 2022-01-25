@@ -295,7 +295,7 @@
           "reflectToAttr": false,
           "docs": "Define icon size",
           "docsTags": [],
-          "default": "\"regular\"",
+          "default": "'regular'",
           "values": [
             {
               "type": "string"
@@ -3399,6 +3399,23 @@
       "docsTags": [],
       "usage": {},
       "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "disabled",
+          "reflectToAttr": true,
+          "docs": "Disable tooltip",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
         {
           "name": "display",
           "type": "boolean",

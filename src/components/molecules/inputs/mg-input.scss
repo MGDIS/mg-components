@@ -97,7 +97,8 @@
     padding-inline-end: 0;
   }
 
-  input[type="radio"], input[type="checkbox"] {
+  input[type='radio'],
+  input[type='checkbox'] {
     margin-top: 0;
     margin-right: calc(var(--mg-inputs-spacer) * 0.6);
     margin-bottom: 0;
@@ -182,7 +183,8 @@
     flex-wrap: wrap;
     column-gap: calc(var(--mg-inputs-spacer) * 2.5);
     row-gap: var(--mg-inputs-spacer);
-    &.mg-input__input-group-container--radio, &.mg-input__input-group-container--checkbox {
+    &.mg-input__input-group-container--radio,
+    &.mg-input__input-group-container--checkbox {
       margin-top: calc((var(--default-size) - var(--font-size-base) * var(--line-height)) / 2);
     }
     &.mg-input__input-group-container--vertical {
@@ -236,7 +238,9 @@ fieldset.mg-input {
   .mg-input__button-toggle {
     margin-top: calc((var(--default-size) - (#{$elementMinSize} + #{$elementPadding} * 2 + var(--mg-inputs-border-width) * 2)) / 2);
     padding: $elementPadding;
-    border-radius: calc((#{$elementLineHeight} + #{$elementPadding} * 2 + #{$childElementPadding} * 2) / var(--mg-input-toggle-border-radius-ratio)); // = (lineheight + element vertical-padding + child vertical-padding) / ratio
+    border-radius: calc(
+      (#{$elementLineHeight} + #{$elementPadding} * 2 + #{$childElementPadding} * 2) / var(--mg-input-toggle-border-radius-ratio)
+    ); // = (lineheight + element vertical-padding + child vertical-padding) / ratio
     line-height: $elementLineHeight;
   }
 
@@ -289,7 +293,7 @@ fieldset.mg-input {
   animation-name: toggleUnactive;
   // font
   &:first-of-type {
-    background-color: hsl(var(--color-info-h) calc(var(--color-info-s) - 64%) calc(var(--color-info-l) + 55% ));
+    background-color: hsl(var(--color-info-h) calc(var(--color-info-s) - 64%) calc(var(--color-info-l) + 55%));
     color: hsl(var(--color-info));
     font-weight: 600;
   }
@@ -317,13 +321,13 @@ fieldset.mg-input {
     }
     &:last-of-type {
       font-weight: 600;
-      background-color: hsl(var(--color-info-h) calc(var(--color-info-s) - 64%) calc(var(--color-info-l) + 55% ));
+      background-color: hsl(var(--color-info-h) calc(var(--color-info-s) - 64%) calc(var(--color-info-l) + 55%));
       color: hsl(var(--color-info));
     }
   }
 
   // icon variation
-  &.mg-input--toggle-is-icon .toggle-button__toggle-item-container{
+  &.mg-input--toggle-is-icon .toggle-button__toggle-item-container {
     &:first-of-type {
       opacity: 0;
     }
@@ -380,7 +384,7 @@ fieldset.mg-input {
 // toggle on-off variation
 .mg-input--toggle-is-on-off {
   .toggle-button__toggle-item-container:first-of-type {
-    background-color: hsl(var(--color-dark-h) calc(var(--color-dark-s) - 30%) calc(var(--color-dark-l) + 75% ));
+    background-color: hsl(var(--color-dark-h) calc(var(--color-dark-s) - 30%) calc(var(--color-dark-l) + 75%));
     color: hsl(var(--color-dark));
   }
 
@@ -405,7 +409,7 @@ fieldset.mg-input {
   }
 }
 
-  /**
+/**
   * Animations
   */
 

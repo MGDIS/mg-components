@@ -1,4 +1,4 @@
-import { h } from "@stencil/core";
+import { h } from '@stencil/core';
 
 export default {
   component: 'mg-input-checkbox',
@@ -20,29 +20,27 @@ const Template = args => {
   const labelHide = args.labelHide;
   delete args.labelHide;
   // return element
-  return   <mg-input-checkbox
-    {...args}
-    label-on-top={labelOnTop}
-    label-hide={labelHide}
-    help-text={helpText}
-    input-vertical-list={inputVerticalList}
-  ></mg-input-checkbox>
+  return <mg-input-checkbox {...args} label-on-top={labelOnTop} label-hide={labelHide} help-text={helpText} input-vertical-list={inputVerticalList}></mg-input-checkbox>;
 };
 
 export const MgInputCheckbox = Template.bind({});
 MgInputCheckbox.args = {
   // Global
-  value: [{
-    title: 'HT',
-    value: true
-  }, {
-    title: 'TTC',
-    value: false,
-    disabled: true
-  }, {
-    title: 'Mixte (HT/TTC)',
-    value: null,
-  }],
+  value: [
+    {
+      title: 'HT',
+      value: true,
+    },
+    {
+      title: 'TTC',
+      value: false,
+      disabled: true,
+    },
+    {
+      title: 'Mixte (HT/TTC)',
+      value: null,
+    },
+  ],
   identifier: 'identifier',
   name: 'input-name',
   // Label

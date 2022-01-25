@@ -7,7 +7,6 @@ import { messages } from '../../../locales';
   scoped: true,
 })
 export class MgCharacterLeft {
-
   /************
    * Internal *
    ************/
@@ -24,7 +23,7 @@ export class MgCharacterLeft {
    */
   @Prop() identifier: string;
 
-   /**
+  /**
    * Template to display remaining characters.
    * Must have {counter} inside
    */
@@ -48,7 +47,7 @@ export class MgCharacterLeft {
   @Watch('maxlength')
   validateMaxlength(newValue: number) {
     if (typeof newValue !== 'number') {
-      throw new Error('<mg-character-left> prop "maxlength" is required.')
+      throw new Error('<mg-character-left> prop "maxlength" is required.');
     }
   }
 
@@ -57,8 +56,8 @@ export class MgCharacterLeft {
    * @returns {string}
    */
   private getMessage = () => {
-    return this.template.replace(this.mustacheCounter, `<strong>${this.maxlength - this.characters.length}</strong>`)
-  }
+    return this.template.replace(this.mustacheCounter, `<strong>${this.maxlength - this.characters.length}</strong>`);
+  };
 
   /*************
    * Lifecycle *
@@ -70,9 +69,6 @@ export class MgCharacterLeft {
   }
 
   render() {
-    return (
-      <span id={this.identifier} innerHTML={this.getMessage()} aria-live="polite"></span>
-    );
+    return <span id={this.identifier} innerHTML={this.getMessage()} aria-live="polite"></span>;
   }
-
 }

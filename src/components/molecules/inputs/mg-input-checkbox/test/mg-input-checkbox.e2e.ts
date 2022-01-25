@@ -1,9 +1,7 @@
-import { createPage } from "../../../../../utils/test.utils"
+import { createPage } from '../../../../../utils/test.utils';
 
 describe('mg-checkbox', () => {
-  describe.each([
-    `<mg-input-checkbox label="legend"></mg-input-checkbox>`,
-  ])('without tooltip', (html)=>{
+  describe.each([`<mg-input-checkbox label="legend"></mg-input-checkbox>`])('without tooltip', html => {
     test('render', async () => {
       const page = await createPage(`${html}
       <script>
@@ -26,8 +24,8 @@ describe('mg-checkbox', () => {
     `<mg-input-checkbox label="legend" label-on-top input-vertical-list help-text="HelpText Message"></mg-input-checkbox>`,
     `<mg-input-checkbox label="legend" label-hide></mg-input-checkbox>`,
     `<mg-input-checkbox label="legend" tooltip="Batman is DC Comics license." required help-text="HelpText Message"></mg-input-checkbox>`,
-    `<mg-input-checkbox label="legend" tooltip="Batman is DC Comics license." required label-on-top help-text="HelpText Message"></mg-input-checkbox>`
-  ])('without tooltip', (html)=>{
+    `<mg-input-checkbox label="legend" tooltip="Batman is DC Comics license." required label-on-top help-text="HelpText Message"></mg-input-checkbox>`,
+  ])('without tooltip', html => {
     test('render', async () => {
       const page = await createPage(`${html}
         <script>

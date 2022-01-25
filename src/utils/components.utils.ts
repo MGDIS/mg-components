@@ -5,12 +5,12 @@
  */
 export function createID(prefix: string = '', length: number = 10): string {
   let ID = '';
-  const chars = 'abcdefghijklmnopqrstuvwxyz0123456789'
+  const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
   const charsLength = chars.length;
-  for ( var i = 0; i < length; i++ ) {
+  for (var i = 0; i < length; i++) {
     ID += chars.charAt(Math.floor(Math.random() * charsLength));
- }
- return (prefix !== '' ? `${prefix}-` : '' ) + ID;
+  }
+  return (prefix !== '' ? `${prefix}-` : '') + ID;
 }
 
 /**
@@ -20,7 +20,7 @@ export function createID(prefix: string = '', length: number = 10): string {
 export class ClassList {
   classes: string[];
 
-  constructor (classlist:string[] = []) {
+  constructor(classlist: string[] = []) {
     this.classes = classlist;
   }
 
@@ -29,40 +29,40 @@ export class ClassList {
    * @param className
    * @returns {void}
    */
-  add = (className:string) => {
-    if(!this.has(className)) {
+  add = (className: string) => {
+    if (!this.has(className)) {
       this.classes.push(className);
     }
-  }
+  };
 
   /**
    * Delete class
    * @param className
    * @returns {void}
    */
-  delete = (className:string) => {
+  delete = (className: string) => {
     const index = this.classes.indexOf(className);
-    if(index > -1) {
+    if (index > -1) {
       this.classes.splice(index, 1);
     }
-  }
+  };
 
   /**
    * Check if class exist in list
    * @param className
    * @returns {boolean}
    */
-  has = (className:string) => {
+  has = (className: string) => {
     return this.classes.includes(className);
-  }
+  };
 
   /**
    * Join classes seperated by spaces
    * @returns {string}
    */
-  join = ():string => {
+  join = (): string => {
     return this.classes.join(' ');
-  }
+  };
 }
 
 /**
@@ -70,6 +70,6 @@ export class ClassList {
  * @param items
  * @returns {boolean}
  */
-export function allItemsAreString(items: Array<string>):boolean {
-  return items && items.every((item) => typeof item === 'string');
+export function allItemsAreString(items: Array<string>): boolean {
+  return items && items.every(item => typeof item === 'string');
 }

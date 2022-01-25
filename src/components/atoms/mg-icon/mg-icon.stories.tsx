@@ -1,5 +1,5 @@
-import { h } from "@stencil/core";
-import { icons, sizes, variants } from "./mg-icon.conf";
+import { h } from '@stencil/core';
+import { icons, sizes, variants } from './mg-icon.conf';
 
 export default {
   component: 'mg-icon',
@@ -24,15 +24,17 @@ const Template = args => {
   const color = args.color;
   delete args.color;
   // return element
-  return <div style={{color}}>
-    <mg-icon {...args}></mg-icon>
-  </div>
+  return (
+    <div style={{ color }}>
+      <mg-icon {...args}></mg-icon>
+    </div>
+  );
 };
 
 export const MgIcon = Template.bind({});
 MgIcon.args = {
   color: '',
   icon: Object.keys(icons)[0],
-  size: sizes[1], // regular
+  size: sizes[0], // regular
   spin: false,
 };

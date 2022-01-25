@@ -1,11 +1,10 @@
-import { createPage } from "../../../../utils/test.utils"
+import { createPage } from '../../../../utils/test.utils';
 
-describe('mg-input-title', ()=>{
-
+describe('mg-input-title', () => {
   describe.each([
-    {required: false, identifier: 'identifier'},
-    {required: true, identifier: 'identifier'},
-  ])('Screenshot with args', ({required}) => {
+    { required: false, identifier: 'identifier' },
+    { required: true, identifier: 'identifier' },
+  ])('Screenshot with args', ({ required }) => {
     test('Should render', async () => {
       const page = await createPage(`<mg-input-title required=${required}>Label</mg-input-title>`);
 
@@ -16,5 +15,4 @@ describe('mg-input-title', ()=>{
       expect(screenshot).toMatchImageSnapshot();
     });
   });
-
 });
