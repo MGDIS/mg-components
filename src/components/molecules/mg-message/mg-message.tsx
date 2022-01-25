@@ -16,6 +16,9 @@ export class MgMessage {
 
   private closeButtonId = "";
 
+  // Stored timer setted when hide action is run from setTimeOut
+  private storedTimer: ReturnType<typeof setTimeout> = null;
+
   /**************
    * Decorators *
    **************/
@@ -85,11 +88,6 @@ export class MgMessage {
    * Define if component is using actions slot
    */
   @State() hasActions: boolean = false;
-
-  /**
-  * Stored timer setted when hide action is run from setTimeOut
-  */
-  @State() storedTimer: ReturnType<typeof setTimeout> = null;
 
   /**
    * Handle close button
