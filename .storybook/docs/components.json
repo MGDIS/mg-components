@@ -3216,6 +3216,22 @@
           "required": false
         },
         {
+          "name": "delay",
+          "type": "number",
+          "mutable": false,
+          "attr": "delay",
+          "reflectToAttr": false,
+          "docs": "Add a delay to hide/close message when it passed\nValue is defined in seconds and must greater than 2 seconds (PDA9-314 RG-06)",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "hide",
           "type": "boolean",
           "mutable": true,

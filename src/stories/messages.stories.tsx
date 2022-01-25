@@ -19,7 +19,7 @@ const Template = args => (
 
     <div class={`mg-message mg-message--${args.variant}`}>
       <span class="mg-message__icon">
-        <mg-icon icon={args.variant}></mg-icon>
+        <mg-icon icon="info-circle"></mg-icon>
       </span>
       <div class="mg-message__content">
         <span class="mg-message__content__slot" innerHTML={args.content}></span>
@@ -30,7 +30,7 @@ const Template = args => (
 
     <div class={`mg-message mg-message--${args.variant} mg-message--close-button`}>
       <span class="mg-message__icon">
-        <mg-icon icon={args.variant}></mg-icon>
+        <mg-icon icon="info-circle"></mg-icon>
       </span>
       <div class="mg-message__content">
         <span class="mg-message__content__slot" innerHTML={args.content}></span>
@@ -46,7 +46,7 @@ const Template = args => (
 
     <div class={`mg-message mg-message--${args.variant}`}>
       <span class="mg-message__icon">
-        <mg-icon icon={args.variant}></mg-icon>
+        <mg-icon icon="info-circle"></mg-icon>
       </span>
       <div class="mg-message__content">
         <span class="mg-message__content__slot" innerHTML={args.content}></span>

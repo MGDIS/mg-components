@@ -43,6 +43,7 @@ MgMessage.args = {
   variant: variants[0], // info
   closeButton: false,
   hide: false,
+  delay: undefined,
 };
 
 export const WithCloseButton = Template.bind({});
