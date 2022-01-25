@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-01-20T15:53:21",
+  "timestamp": "2022-01-21T16:26:49",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.12.1",
@@ -291,7 +291,7 @@
           "reflectToAttr": false,
           "docs": "Define icon size",
           "docsTags": [],
-          "default": "\"regular\"",
+          "default": "'regular'",
           "values": [
             {
               "type": "string"
@@ -3095,6 +3095,23 @@
       "docsTags": [],
       "usage": {},
       "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "disabled",
+          "reflectToAttr": true,
+          "docs": "Disable tooltip",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
         {
           "name": "display",
           "type": "boolean",

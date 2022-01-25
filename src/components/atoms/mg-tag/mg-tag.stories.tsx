@@ -1,5 +1,5 @@
-import { h } from "@stencil/core";
-import { variants } from "./mg-tag.conf";
+import { h } from '@stencil/core';
+import { variants } from './mg-tag.conf';
 
 export default {
   component: 'mg-tag',
@@ -17,11 +17,12 @@ const Template = args => {
   const slot = args.slot;
   delete args.slot;
   // return element
-  return <mg-tag {...args}>{slot}</mg-tag>};
+  return <mg-tag {...args}>{slot}</mg-tag>;
+};
 
 export const MgTag = Template.bind({});
 MgTag.args = {
   slot: 'Label',
   variant: variants[0],
-  outline: false
+  outline: false,
 };

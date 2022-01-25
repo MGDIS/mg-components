@@ -27,32 +27,32 @@
         <h2>Icons</h2>
         <mg-icon icon="info-circle" size="large"></mg-icon>
         <mg-icon icon="info-circle"></mg-icon>
-        <mg-icon icon="info-circle" size="small"></mg-icon>
+        <mg-icon icon="info-circle" size="extra-large"></mg-icon>
         <mg-icon icon="exclamation-triangle" size="large"></mg-icon>
         <mg-icon icon="exclamation-triangle"></mg-icon>
-        <mg-icon icon="exclamation-triangle" size="small"></mg-icon>
+        <mg-icon icon="exclamation-triangle" size="extra-large"></mg-icon>
         <mg-icon icon="check-circle" size="large"></mg-icon>
         <mg-icon icon="check-circle"></mg-icon>
-        <mg-icon icon="check-circle" size="small"></mg-icon>
+        <mg-icon icon="check-circle" size="extra-large"></mg-icon>
         <mg-icon icon="exclamation-circle" size="large"></mg-icon>
         <mg-icon icon="exclamation-circle"></mg-icon>
-        <mg-icon icon="exclamation-circle" size="small"></mg-icon>
+        <mg-icon icon="exclamation-circle" size="extra-large"></mg-icon>
         <mg-icon icon="cross" size="large"></mg-icon>
         <mg-icon icon="cross"></mg-icon>
-        <mg-icon icon="cross" size="small"></mg-icon>
+        <mg-icon icon="cross" size="extra-large"></mg-icon>
         <h3>w/ text</h3>
         <span class="h1"><mg-icon icon="info-circle" size="large"></mg-icon>Titre</span>
         <span class="h2"><mg-icon icon="exclamation-triangle"></mg-icon>Titre</span>
-        <span class="h3"><mg-icon icon="check-circle" size="small"></mg-icon>Titre</span>
+        <span class="h3"><mg-icon icon="check-circle" size="extra-large"></mg-icon>Titre</span>
         <h3>Variants</h3>
         <mg-icon icon="info-circle" variant="success"></mg-icon>
         <mg-icon icon="info-circle" variant="warning"></mg-icon>
         <mg-icon icon="info-circle" variant="danger"></mg-icon>
         <mg-icon icon="info-circle" variant="info"></mg-icon>
-        <mg-icon icon="info-circle" size="small" variant="success"></mg-icon>
-        <mg-icon icon="info-circle" size="small" variant="warning"></mg-icon>
-        <mg-icon icon="info-circle" size="small" variant="danger"></mg-icon>
-        <mg-icon icon="info-circle" size="small" variant="info"></mg-icon>
+        <mg-icon icon="info-circle" size="extra-large" variant="success"></mg-icon>
+        <mg-icon icon="info-circle" size="extra-large" variant="warning"></mg-icon>
+        <mg-icon icon="info-circle" size="extra-large" variant="danger"></mg-icon>
+        <mg-icon icon="info-circle" size="extra-large" variant="info"></mg-icon>
         <mg-icon icon="info-circle" size="large" variant="success"></mg-icon>
         <mg-icon icon="info-circle" size="large" variant="warning"></mg-icon>
         <mg-icon icon="info-circle" size="large" variant="danger"></mg-icon>
@@ -82,12 +82,12 @@
           ><mg-button variant="flat" is-icon label="Label"> <mg-icon icon="cross"></mg-icon></mg-button>
         </div>
         <div style="padding: 0 0 1rem">
-          <mg-button variant="primary" is-icon label="Label"> <mg-icon size="small" icon="check-circle"></mg-icon></mg-button
-          ><mg-button variant="secondary" is-icon label="Label"> <mg-icon size="small" icon="check-circle"></mg-icon></mg-button
-          ><mg-button variant="danger" is-icon label="Label"> <mg-icon size="small" icon="check-circle"></mg-icon></mg-button
-          ><mg-button variant="danger-alt" is-icon label="Label"> <mg-icon size="small" icon="check-circle"></mg-icon></mg-button
-          ><mg-button variant="info" is-icon label="Label"> <mg-icon size="small" icon="check-circle"></mg-icon></mg-button
-          ><mg-button variant="flat" is-icon label="Label"> <mg-icon size="small" icon="cross"></mg-icon></mg-button>
+          <mg-button variant="primary" is-icon label="Label"> <mg-icon size="extra-large" icon="check-circle"></mg-icon></mg-button
+          ><mg-button variant="secondary" is-icon label="Label"> <mg-icon size="extra-large" icon="check-circle"></mg-icon></mg-button
+          ><mg-button variant="danger" is-icon label="Label"> <mg-icon size="extra-large" icon="check-circle"></mg-icon></mg-button
+          ><mg-button variant="danger-alt" is-icon label="Label"> <mg-icon size="extra-large" icon="check-circle"></mg-icon></mg-button
+          ><mg-button variant="info" is-icon label="Label"> <mg-icon size="extra-large" icon="check-circle"></mg-icon></mg-button
+          ><mg-button variant="flat" is-icon label="Label"> <mg-icon size="extra-large" icon="cross"></mg-icon></mg-button>
         </div>
         <div style="padding: 0 0 1rem">
           <mg-button variant="primary" is-icon label="Label"> <mg-icon size="large" icon="check-circle"></mg-icon></mg-button
@@ -192,6 +192,16 @@
           <mg-tooltip message="my tooltip mg-button"><mg-button>mg-button</mg-button></mg-tooltip>
           <mg-tooltip message="my tooltip native button"><button class="mg-button mg-button--primary" aria-describedby="blu">native button</button></mg-tooltip>
         </div>
+        <div class="mg-group-elements">
+          <mg-tooltip message="my tooltip icon" display><mg-icon icon="check-circle"></mg-icon></mg-tooltip>
+          <mg-tooltip message="my tooltip icon" disabled><mg-icon icon="check-circle"></mg-icon></mg-tooltip>
+          <mg-tooltip message="my tooltip mg-button" id="tp-disabled" disabled display
+            ><mg-button onclick="document.getElementById('tp-disabled').removeAttribute('disabled')">mg-button</mg-button></mg-tooltip
+          >
+        </div>
+        <!-- <div class="mg-grid">
+          <div class="mg-grid__col" style="height: 200px; background-color: black; position: relative; z-index: 10"></div>
+        </div> -->
         <h4>Character left</h4>
         <mg-character-left maxlength="400"></mg-character-left>
         <mg-character-left maxlength="100" template="Template custom qui te dit qu'il ne reste plus que {counter} lettres!"></mg-character-left>

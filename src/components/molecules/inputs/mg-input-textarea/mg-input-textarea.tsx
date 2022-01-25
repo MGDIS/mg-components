@@ -9,22 +9,21 @@ import { messages } from '../../../../locales';
   shadow: true,
 })
 export class MgInputTextarea {
-
   /************
    * Internal *
    ************/
 
-   private classFocus = 'is-focused';
-   private classError = 'is-not-valid';
+  private classFocus = 'is-focused';
+  private classError = 'is-not-valid';
 
   /**************
-  * Decorators *
-  **************/
+   * Decorators *
+   **************/
 
   /**
    * Component value
    */
-  @Prop({ mutable:true, reflect: true }) value: string;
+  @Prop({ mutable: true, reflect: true }) value: string;
 
   /**
    * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
@@ -47,7 +46,7 @@ export class MgInputTextarea {
   /**
    * Define if label is displayed on top
    */
-   @Prop() labelOnTop: boolean;
+  @Prop() labelOnTop: boolean;
 
   /**
    * Define if label is visible
@@ -93,12 +92,12 @@ export class MgInputTextarea {
   /**
    * Define input pattern error message
    */
-   @Prop() rows: number = 3;
+  @Prop() rows: number = 3;
 
   /**
    * Add a tooltip message next to the input
    */
-   @Prop() tooltip: string;
+  @Prop() tooltip: string;
 
   /**
    * Define if component should display character left
@@ -121,8 +120,8 @@ export class MgInputTextarea {
   @Prop({ mutable: true, reflect: true }) valid: boolean;
 
   /**
-  * Define input pattern error message
-  */
+   * Define input pattern error message
+   */
   @Prop({ mutable: true, reflect: true }) invalid: boolean;
 
   /**
@@ -138,16 +137,16 @@ export class MgInputTextarea {
   /**
    * Emmited event when value change
    */
-  @Event() valueChange: EventEmitter<string>
+  @Event() valueChange: EventEmitter<string>;
 
   /**
    * Handle input event
    * @param event
    */
-   private handleInput = (event:InputEvent & { target: HTMLInputElement }) => {
+  private handleInput = (event: InputEvent & { target: HTMLInputElement }) => {
     this.value = event.target.value;
     this.valueChange.emit(this.value);
-  }
+  };
 
   /**
    * Handle focus event
@@ -155,19 +154,19 @@ export class MgInputTextarea {
   private handleFocus = () => {
     this.classList.add(this.classFocus);
     this.classList = new ClassList(this.classList.classes);
-  }
+  };
 
   /**
    * Handle blur event
    * @param event
    */
-  private handleBlur = (event:FocusEvent) => {
+  private handleBlur = (event: FocusEvent) => {
     // Manage focus
     this.classList.delete(this.classFocus);
     this.classList = new ClassList(this.classList.classes);
     // Check validity
     this.checkValidity(event.target);
-  }
+  };
 
   /**
    * Check if input is valid
@@ -179,11 +178,11 @@ export class MgInputTextarea {
     const validity = element.checkValidity() && patternValidity;
     // Set error message
     this.errorMessage = undefined;
-    if(!validity && !patternValidity){
+    if (!validity && !patternValidity) {
       this.errorMessage = this.patternErrorMessage;
     }
     // required
-    else if(!validity && element.validity.valueMissing) {
+    else if (!validity && element.validity.valueMissing) {
       this.errorMessage = messages.errors.required;
     }
 
@@ -192,10 +191,9 @@ export class MgInputTextarea {
     this.invalid = !validity;
 
     // Update class
-    if(validity) {
+    if (validity) {
       this.classList.delete(this.classError);
-    }
-    else {
+    } else {
       this.classList.add(this.classError);
     }
   }
@@ -204,11 +202,13 @@ export class MgInputTextarea {
    * Validate pattern configuration
    */
   private validatePattern() {
-    if(
-      this.pattern && typeof this.pattern === 'string' && this.pattern !== '' &&
+    if (
+      this.pattern &&
+      typeof this.pattern === 'string' &&
+      this.pattern !== '' &&
       (this.patternErrorMessage === undefined || typeof this.patternErrorMessage !== 'string' || this.patternErrorMessage === '')
     ) {
-      throw new Error('<mg-input-textarea> prop "pattern" must be paired with the prop "patternErrorMessage"')
+      throw new Error('<mg-input-textarea> prop "pattern" must be paired with the prop "patternErrorMessage"');
     }
   }
 
