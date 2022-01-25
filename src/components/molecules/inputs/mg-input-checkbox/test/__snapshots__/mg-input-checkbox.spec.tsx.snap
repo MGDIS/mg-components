@@ -576,7 +576,7 @@ exports[`mg-input-checkbox Should trigger events, case validity check true 1`] =
 `;
 
 exports[`mg-input-checkbox Should trigger events, case validity check true 2`] = `
-<mg-input-checkbox>
+<mg-input-checkbox valid="">
   <mock:shadow-root>
     <fieldset class="mg-input mg-input--checkbox">
       <mg-input-title identifier="identifier" is-legend="">
