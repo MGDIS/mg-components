@@ -148,12 +148,22 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
    */
 
   const TagName = getTagName(props.isFieldset);
-  const tooltip = props.tooltip && (
+
+  /**
+   * Get tooltip node
+   * @returns mg-tooltip
+   */
+  const getTooltip = () => (
     <mg-tooltip identifier={`${props.identifier}-tooltip`} message={props.tooltip}>
       <mg-icon icon="info-circle"></mg-icon>
     </mg-tooltip>
   );
-  const inputTitle = (
+
+  /**
+   * Get input title (label) node
+   * @returns mg-input-title
+   */
+  const getInputTitle = () => (
     <mg-input-title identifier={props.identifier} class={props.labelHide ? 'sr-only' : undefined} required={props.required} is-legend={props.isFieldset}>
       {props.label}
     </mg-input-title>
@@ -163,11 +173,11 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
     <TagName class={props.classList.join()}>
       {props.labelOnTop ? (
         <div class="mg-input__title">
-          {inputTitle}
-          {!props.readonly && tooltip}
+          {getInputTitle()}
+          {!props.readonly && props.tooltip && getTooltip()}
         </div>
       ) : (
-        inputTitle
+        getInputTitle()
       )}
       {props.readonly ? (
         <div class="mg-input__input-container">
@@ -177,7 +187,7 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
         <div class="mg-input__input-container">
           <div class="mg-input__input">
             {children}
-            {!props.labelOnTop && tooltip}
+            {!props.labelOnTop && props.tooltip && getTooltip()}
           </div>
           {props.displayCharacterLeft && props.maxlength && props.classList.has('is-focused') && (
             <mg-character-left identifier={characterLeftId} characters={props.value} maxlength={props.maxlength} template={props.characterLeftTemplate}></mg-character-left>
