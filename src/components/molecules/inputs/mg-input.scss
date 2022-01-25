@@ -44,7 +44,7 @@
     }
 
     .mg-input__button-toggle {
-      margin-top: 0;
+      margin-top: 0.5rem;
     }
   }
 
@@ -260,11 +260,6 @@ fieldset.mg-input {
   // readonly variation
   .mg-input--toggle-readonly .mg-input__button-toggle {
     margin-top: calc((var(--default-size) - #{$elementMinSize}) / 2);
-  }
-
-  // readonly + label-on-top variation
-  .mg-input--toggle-readonly.mg-input--label-on-top .mg-input__button-toggle {
-    margin-top: calc(#{$elementPadding} + var(--mg-inputs-border-width));
   }
 }
 

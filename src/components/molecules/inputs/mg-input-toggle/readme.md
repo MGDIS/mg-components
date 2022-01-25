@@ -10,7 +10,6 @@ This molecule refers to the [PDA9-770](https://jira.mgdis.fr/browse/PDA9-770).
 | `disabled`           | `disabled`     | Define if input is disabled                                                                                 | `boolean`                   | `false`                       |
 | `helpText`           | `help-text`    | Template to use for characters left sentence                                                                | `string`                    | `undefined`                   |
 | `identifier`         | `identifier`   | Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created. | `string`                    | `createID('mg-input-toggle')` |
-| `invalid`            | `invalid`      | Force invalid component                                                                                     | `boolean`                   | `undefined`                   |
 | `isIcon`             | `is-icon`      | Define if toggle display icon                                                                               | `boolean`                   | `false`                       |
 | `isOnOff`            | `is-on-off`    | Define if toggle have on/off style                                                                          | `boolean`                   | `false`                       |
 | `items` _(required)_ | --             | Items are the possible options to select Required                                                           | `ToggleValue[] \| string[]` | `undefined`                   |
@@ -19,9 +18,7 @@ This molecule refers to the [PDA9-770](https://jira.mgdis.fr/browse/PDA9-770).
 | `labelOnTop`         | `label-on-top` | Define if label is displayed on top                                                                         | `boolean`                   | `undefined`                   |
 | `name`               | `name`         | Input name If not set the value equals the identifier                                                       | `string`                    | `this.identifier`             |
 | `readonly`           | `readonly`     | Define if input is readonly                                                                                 | `boolean`                   | `false`                       |
-| `required`           | `required`     | Define if input is required                                                                                 | `boolean`                   | `false`                       |
 | `tooltip`            | `tooltip`      | Add a tooltip message next to the input                                                                     | `string`                    | `undefined`                   |
-| `valid`              | `valid`        | Force valid component                                                                                       | `boolean`                   | `undefined`                   |
 | `value`              | `value`        | Component value                                                                                             | `any`                       | `undefined`                   |
 
 

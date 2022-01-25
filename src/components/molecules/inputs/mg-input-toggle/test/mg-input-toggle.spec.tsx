@@ -1,7 +1,6 @@
 import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
 import { MgInputToggle } from '../mg-input-toggle';
-import { messages } from '../../../../../locales';
 import { MgIcon } from '../../../../atoms/mg-icon/mg-icon';
 
 const getPage = (args, slots?) =>
@@ -71,15 +70,6 @@ describe('mg-input-toggle', () => {
           { title: 'joker', value: true },
         ],
         labelHide: true,
-      },
-      {
-        label: 'label',
-        identifier: 'identifier',
-        items: [
-          { title: 'batman', value: false },
-          { title: 'joker', value: true },
-        ],
-        required: true,
       },
       {
         label: 'label',
@@ -237,38 +227,6 @@ describe('mg-input-toggle', () => {
     expect(page.rootInstance.valueChange.emit).toHaveBeenCalledTimes(1);
   });
 
-  test.each([
-    { validity: true, valueMissing: false },
-    { validity: false, valueMissing: true },
-  ])('validity (%s), valueMissing (%s)', async ({ validity, valueMissing }) => {
-    const value = valueMissing ? undefined : true;
-    const args = {
-      label: 'label',
-      items: [
-        { title: 'batman', value: false },
-        { title: 'joker', value: true },
-      ],
-      identifier: 'identifier',
-      patternErrorMessage: 'Non',
-      value,
-    };
-
-    const page = await getPage(args);
-
-    const button = page.doc.querySelector('button');
-
-    button.dispatchEvent(new CustomEvent('blur', { bubbles: true }));
-    await page.waitForChanges();
-
-    if (validity) {
-      expect(page.rootInstance.errorMessage).toBeUndefined();
-    } else if (valueMissing) {
-      expect(page.rootInstance.errorMessage).toEqual(messages.errors.required);
-    }
-    expect(page.rootInstance.valid).toEqual(validity);
-    expect(page.rootInstance.invalid).toEqual(!validity);
-  });
-
   describe('keyboard', () => {
     test.each(['ArrowRight', 'ArrowLeft', 'ArrowUp', 'ArrowDown'])('should trigger toggle, case KeyDown %s', async key => {
       const args = {
@@ -287,7 +245,7 @@ describe('mg-input-toggle', () => {
       button.dispatchEvent(new CustomEvent('focus', { bubbles: true }));
       await page.waitForChanges();
 
-      expect(page.rootInstance.value).toBeUndefined();
+      expect(page.rootInstance.value).toBeFalsy();
 
       button.dispatchEvent(new KeyboardEvent('keydown', { code: key }));
       await page.waitForChanges();
@@ -312,12 +270,12 @@ describe('mg-input-toggle', () => {
       button.dispatchEvent(new CustomEvent('focus', { bubbles: true }));
       await page.waitForChanges();
 
-      expect(page.rootInstance.value).toBeUndefined();
+      expect(page.rootInstance.value).toBeFalsy();
 
       button.dispatchEvent(new KeyboardEvent('keydown', { code: key }));
       await page.waitForChanges();
 
-      expect(page.rootInstance.value).toBeUndefined();
+      expect(page.rootInstance.value).toBeFalsy();
     });
   });
 });

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-01-25T10:59:10",
+  "timestamp": "2022-01-25T16:54:18",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.12.1",
@@ -2990,22 +2990,6 @@
           "required": false
         },
         {
-          "name": "invalid",
-          "type": "boolean",
-          "mutable": true,
-          "attr": "invalid",
-          "reflectToAttr": true,
-          "docs": "Force invalid component",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
           "name": "isIcon",
           "type": "boolean",
           "mutable": false,
@@ -3141,23 +3125,6 @@
           "required": false
         },
         {
-          "name": "required",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "required",
-          "reflectToAttr": false,
-          "docs": "Define if input is required",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
           "name": "tooltip",
           "type": "string",
           "mutable": false,
@@ -3168,22 +3135,6 @@
           "values": [
             {
               "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "valid",
-          "type": "boolean",
-          "mutable": true,
-          "attr": "valid",
-          "reflectToAttr": true,
-          "docs": "Force valid component",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "boolean"
             }
           ],
           "optional": false,

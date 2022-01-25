@@ -2,7 +2,6 @@ import { Component, Event, h, Prop, EventEmitter, State, Watch, Element } from '
 import { MgInput } from '../MgInput';
 import { createID, ClassList, allItemsAreString } from '../../../../utils/components.utils';
 import { ToggleValue } from '../../../../types/components.types';
-import { messages } from '../../../../locales';
 
 /**
  * type Option validation function
@@ -21,7 +20,6 @@ export class MgInputToggle {
    * Internal *
    ************/
 
-  private classError = 'is-not-valid';
   private classToggleActive = 'mg-input--toggle-active';
 
   /**************
@@ -31,7 +29,7 @@ export class MgInputToggle {
   /**
    * Get component DOM element
    */
-  @Element() element: HTMLMgInputToggleElement;
+  @Element() element: HTMLMgInputToggleElement & { children: HTMLElement[] };
 
   /**
    * Component value
@@ -117,11 +115,6 @@ export class MgInputToggle {
   }
 
   /**
-   * Define if input is required
-   */
-  @Prop() required: boolean = false;
-
-  /**
    * Define if input is readonly
    */
   @Prop() readonly: boolean = false;
@@ -150,16 +143,6 @@ export class MgInputToggle {
   @Prop() helpText: string;
 
   /**
-   * Force valid component
-   */
-  @Prop({ mutable: true, reflect: true }) valid: boolean;
-
-  /**
-   * Force invalid component
-   */
-  @Prop({ mutable: true, reflect: true }) invalid: boolean;
-
-  /**
    * Component classes
    */
   @State() classList: ClassList = new ClassList(['mg-input--toggle']);
@@ -170,11 +153,6 @@ export class MgInputToggle {
   @State() options: ToggleValue[];
 
   /**
-   * Error message to display
-   */
-  @State() errorMessage: string;
-
-  /**
    * Emmited event when value change
    */
   @Event() valueChange: EventEmitter<any>;
@@ -183,12 +161,9 @@ export class MgInputToggle {
    * Change value
    */
   private toggleValue = () => {
-    // case value is not set
-    if (this.value === undefined) {
-      this.value = this.options[1].value;
-      // case value is true, as DOM rewrite true as blank string when it's render
-    } else if (this.value === '') {
-      this.value = this.options[0].value;
+    // case value is true, as DOM rewrite true as blank string when it's render
+    if (this.value === '') {
+      this.value = this.options.find(o => o.value !== true).value;
     } else {
       this.value = this.options.find(o => o.value !== this.value).value;
     }
@@ -196,7 +171,6 @@ export class MgInputToggle {
 
   /**
    * Handle input event
-   * @param event
    */
   private handleToggleClick = () => this.toggleValue();
 
@@ -211,50 +185,12 @@ export class MgInputToggle {
   };
 
   /**
-   * Handle blur event
-   * @param event
-   */
-  private handleBlur = () => {
-    // Manage focus
-    this.classList = new ClassList(this.classList.classes);
-
-    // Check validity
-    this.checkValidity();
-  };
-
-  /**
-   * Check if input is valid
-   * @param element
-   */
-  private checkValidity() {
-    const valueMissing: boolean = this.value === undefined ? true : false;
-
-    // Set error message
-    this.errorMessage = undefined;
-    if (valueMissing) {
-      this.errorMessage = messages.errors.required;
-    }
-
-    // Set validity
-    this.valid = valueMissing === false;
-    this.invalid = !this.valid;
-
-    // Update class
-    if (this.valid) {
-      this.classList.delete(this.classError);
-    } else {
-      this.classList.add(this.classError);
-    }
-  }
-
-  /**
    * Due to text-overflow set to ellipsis
    * we need to ensure that slot element have title to display value on mous over
    */
   private addTitleOnTextSlot() {
     if (!this.isIcon) {
-      const slots = Array.from(this.element.children);
-      slots.forEach(slot => slot.setAttribute('title', slot.textContent));
+      Array.from(this.element.children).forEach(slot => slot.setAttribute('title', slot.textContent));
     }
   }
 
@@ -268,7 +204,11 @@ export class MgInputToggle {
   componentWillLoad() {
     // Check items format
     this.validateItems(this.items);
-    this.handleValue(this.value);
+
+    // init value
+    this.value = this.value === undefined ? this.options[0].value : this.value;
+
+    // apply handler
     this.handleIsOnOff(this.isOnOff);
     this.handleIsIcon(this.isIcon);
     this.handleReadonly(this.readonly);
@@ -284,8 +224,8 @@ export class MgInputToggle {
         label={this.label}
         labelOnTop={this.labelOnTop}
         labelHide={this.labelHide}
-        required={this.required}
-        readonly={false}
+        required={undefined}
+        readonly={undefined}
         value={this.value?.toString()}
         readonlyValue={undefined}
         tooltip={!this.readonly && this.tooltip}
@@ -293,7 +233,7 @@ export class MgInputToggle {
         characterLeftTemplate={undefined}
         maxlength={undefined}
         helpText={this.helpText}
-        errorMessage={this.errorMessage}
+        errorMessage={undefined}
         isFieldset={false}
       >
         <button
@@ -303,7 +243,6 @@ export class MgInputToggle {
           id={this.identifier}
           class="mg-input__button-toggle"
           disabled={this.disabled || this.readonly}
-          onBlur={this.handleBlur}
           onClick={this.handleToggleClick}
           onKeyDown={this.handleToggleKeyboard}
         >

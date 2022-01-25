@@ -3,7 +3,7 @@
 exports[`mg-input-toggle Should trigger events for items with inputValue : { items: [Array], expected: 'a', value: 'b' } 1`] = `
 <mg-input-toggle value="b">
   <!---->
-  <div class="mg-input mg-input--toggle mg-input--toggle-active">
+  <div class="mg-input mg-input--toggle">
     <mg-input-title identifier="identifier">
       label
     </mg-input-title>
@@ -23,7 +23,7 @@ exports[`mg-input-toggle Should trigger events for items with inputValue : { ite
 `;
 
 exports[`mg-input-toggle Should trigger events for items with inputValue : { items: [Array], expected: 'b', value: undefined } 1`] = `
-<mg-input-toggle>
+<mg-input-toggle value="a">
   <!---->
   <div class="mg-input mg-input--toggle">
     <mg-input-title identifier="identifier">
@@ -768,106 +768,6 @@ exports[`mg-input-toggle template Should render with args {
     <div class="mg-input__input-container">
       <div class="mg-input__input-container__input">
         <button class="mg-input__button-toggle" disabled="" id="identifier" role="switch" type="button">
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
-            <span slot="item-1">
-              <mg-icon>
-                <mock:shadow-root>
-                  <svg aria-hidden="true" class="mg-icon mg-icon--cross mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                    <path d="M14.26 12.74 9.52 8l4.7-4.7a.29.29 0 0 0 0-.41l-1.1-1.1a.29.29 0 0 0-.41 0L8 6.48 3.26 1.74a.24.24 0 0 0-.34 0L1.74 2.91a.24.24 0 0 0 0 .34L6.48 8l-4.7 4.7a.29.29 0 0 0 0 .41l1.1 1.1a.29.29 0 0 0 .41 0L8 9.52l4.74 4.74a.24.24 0 0 0 .34 0l1.17-1.17a.24.24 0 0 0 0-.34Z" fill="currentColor"></path>
-                  </svg>
-                </mock:shadow-root>
-              </mg-icon>
-            </span>
-          </span>
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
-            <span slot="item-2">
-              <mg-icon>
-                <mock:shadow-root>
-                  <svg aria-hidden="true" class="mg-icon mg-icon--check mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                    <path d="M15.3,4.2L14.2,3c-0.1-0.1-0.3-0.1-0.4,0L6,10.4l-3.8-4C2.2,6.3,2.1,6.3,2,6.4L0.7,7.6c-0.1,0.1-0.1,0.2,0,0.3l5.1,5.4c0.1,0.1,0.2,0.1,0.3,0c0,0,0,0,0,0L7.4,12l0,0l7.9-7.4C15.4,4.5,15.4,4.3,15.3,4.2C15.3,4.2,15.3,4.2,15.3,4.2z" fill="currentColor"></path>
-                  </svg>
-                </mock:shadow-root>
-              </mg-icon>
-            </span>
-          </span>
-        </button>
-      </div>
-    </div>
-  </div>
-</mg-input-toggle>
-`;
-
-exports[`mg-input-toggle template Should render with args {
-  label: 'label',
-  identifier: 'identifier',
-  items: [Array],
-  required: true
-}: 1`] = `
-<mg-input-toggle>
-  <!---->
-  <div class="mg-input mg-input--toggle">
-    <mg-input-title identifier="identifier" required="">
-      label
-    </mg-input-title>
-    <div class="mg-input__input-container">
-      <div class="mg-input__input-container__input">
-        <button class="mg-input__button-toggle" id="identifier" role="switch" type="button">
-          <span aria-hidden="true" class="toggle-button__toggle-item-container"></span>
-          <span aria-hidden="true" class="toggle-button__toggle-item-container"></span>
-        </button>
-      </div>
-    </div>
-  </div>
-</mg-input-toggle>
-`;
-
-exports[`mg-input-toggle template Should render with args {
-  label: 'label',
-  identifier: 'identifier',
-  items: [Array],
-  required: true
-}: 2`] = `
-<mg-input-toggle>
-  <!---->
-  <div class="mg-input mg-input--toggle">
-    <mg-input-title identifier="identifier" required="">
-      label
-    </mg-input-title>
-    <div class="mg-input__input-container">
-      <div class="mg-input__input-container__input">
-        <button class="mg-input__button-toggle" id="identifier" role="switch" type="button">
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
-            <span slot="item-1" title="Choix A">
-              Choix A
-            </span>
-          </span>
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
-            <span slot="item-2" title="Choix B">
-              Choix B
-            </span>
-          </span>
-        </button>
-      </div>
-    </div>
-  </div>
-</mg-input-toggle>
-`;
-
-exports[`mg-input-toggle template Should render with args {
-  label: 'label',
-  identifier: 'identifier',
-  items: [Array],
-  required: true
-}: 3`] = `
-<mg-input-toggle>
-  <!---->
-  <div class="mg-input mg-input--toggle">
-    <mg-input-title identifier="identifier" required="">
-      label
-    </mg-input-title>
-    <div class="mg-input__input-container">
-      <div class="mg-input__input-container__input">
-        <button class="mg-input__button-toggle" id="identifier" role="switch" type="button">
           <span aria-hidden="true" class="toggle-button__toggle-item-container">
             <span slot="item-1">
               <mg-icon>

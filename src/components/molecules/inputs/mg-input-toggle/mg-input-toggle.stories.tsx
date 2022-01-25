@@ -22,7 +22,6 @@ const args = {
   isIcon: false,
   isOnOff: false,
   // Input
-  required: false,
   disabled: false,
   readonly: false,
   // Tooltip

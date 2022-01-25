@@ -103,22 +103,4 @@ describe('mg-input-toggle', () => {
     const screenshot = await page.screenshot();
     expect(screenshot).toMatchImageSnapshot();
   });
-
-  test('Should render error when leaving an empty required input', async () => {
-    const page = await createPage(`<mg-input-toggle label="legend" help-text="HelpText Message" required></mg-input-toggle>
-      <script>
-      const mgInputtoggle = document.querySelector('mg-input-toggle');
-      mgInputtoggle.items = [{title: 'batman', value: false}, {title: 'joker', value: true}];
-      </script>`);
-
-    const element = await page.find('mg-input-toggle');
-
-    expect(element).toHaveClass('hydrated');
-
-    await page.keyboard.down('Tab');
-    await page.keyboard.down('Tab');
-
-    const screenshot = await page.screenshot();
-    expect(screenshot).toMatchImageSnapshot();
-  });
 });

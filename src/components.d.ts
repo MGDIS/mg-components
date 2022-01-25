@@ -621,10 +621,6 @@ export namespace Components {
          */
         "identifier"?: string;
         /**
-          * Force invalid component
-         */
-        "invalid": boolean;
-        /**
           * Define if toggle display icon
          */
         "isIcon"?: boolean;
@@ -657,17 +653,9 @@ export namespace Components {
          */
         "readonly": boolean;
         /**
-          * Define if input is required
-         */
-        "required": boolean;
-        /**
           * Add a tooltip message next to the input
          */
         "tooltip": string;
-        /**
-          * Force valid component
-         */
-        "valid": boolean;
         /**
           * Component value
          */
@@ -1501,10 +1489,6 @@ declare namespace LocalJSX {
          */
         "identifier"?: string;
         /**
-          * Force invalid component
-         */
-        "invalid"?: boolean;
-        /**
           * Define if toggle display icon
          */
         "isIcon"?: boolean;
@@ -1541,17 +1525,9 @@ declare namespace LocalJSX {
          */
         "readonly"?: boolean;
         /**
-          * Define if input is required
-         */
-        "required"?: boolean;
-        /**
           * Add a tooltip message next to the input
          */
         "tooltip"?: string;
-        /**
-          * Force valid component
-         */
-        "valid"?: boolean;
         /**
           * Component value
          */

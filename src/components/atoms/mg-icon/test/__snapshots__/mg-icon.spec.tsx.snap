@@ -10,6 +10,16 @@ exports[`mg-icon Should render a spin icon 1`] = `
 </mg-icon>
 `;
 
+exports[`mg-icon Should render check icon in extra-large size 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--check mg-icon--size-extra-large" focusable="false" viewBox="0 0 16 16">
+      <path d="M15.3,4.2L14.2,3c-0.1-0.1-0.3-0.1-0.4,0L6,10.4l-3.8-4C2.2,6.3,2.1,6.3,2,6.4L0.7,7.6c-0.1,0.1-0.1,0.2,0,0.3l5.1,5.4c0.1,0.1,0.2,0.1,0.3,0c0,0,0,0,0,0L7.4,12l0,0l7.9-7.4C15.4,4.5,15.4,4.3,15.3,4.2C15.3,4.2,15.3,4.2,15.3,4.2z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
 exports[`mg-icon Should render check icon in large size 1`] = `
 <mg-icon>
   <mock:shadow-root>
@@ -24,16 +34,6 @@ exports[`mg-icon Should render check icon in regular size 1`] = `
 <mg-icon>
   <mock:shadow-root>
     <svg aria-hidden="true" class="mg-icon mg-icon--check mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-      <path d="M15.3,4.2L14.2,3c-0.1-0.1-0.3-0.1-0.4,0L6,10.4l-3.8-4C2.2,6.3,2.1,6.3,2,6.4L0.7,7.6c-0.1,0.1-0.1,0.2,0,0.3l5.1,5.4c0.1,0.1,0.2,0.1,0.3,0c0,0,0,0,0,0L7.4,12l0,0l7.9-7.4C15.4,4.5,15.4,4.3,15.3,4.2C15.3,4.2,15.3,4.2,15.3,4.2z" fill="currentColor"></path>
-    </svg>
-  </mock:shadow-root>
-</mg-icon>
-`;
-
-exports[`mg-icon Should render check icon in small size 1`] = `
-<mg-icon>
-  <mock:shadow-root>
-    <svg aria-hidden="true" class="mg-icon mg-icon--check mg-icon--size-small" focusable="false" viewBox="0 0 16 16">
       <path d="M15.3,4.2L14.2,3c-0.1-0.1-0.3-0.1-0.4,0L6,10.4l-3.8-4C2.2,6.3,2.1,6.3,2,6.4L0.7,7.6c-0.1,0.1-0.1,0.2,0,0.3l5.1,5.4c0.1,0.1,0.2,0.1,0.3,0c0,0,0,0,0,0L7.4,12l0,0l7.9-7.4C15.4,4.5,15.4,4.3,15.3,4.2C15.3,4.2,15.3,4.2,15.3,4.2z" fill="currentColor"></path>
     </svg>
   </mock:shadow-root>
@@ -80,7 +80,7 @@ exports[`mg-icon Should render check icon using warning variant 1`] = `
 </mg-icon>
 `;
 
-exports[`mg-icon Should render check-circle icon in large size 1`] = `
+exports[`mg-icon Should render check-circle icon in extra-large size 1`] = `
 <mg-icon>
   <mock:shadow-root>
     <svg aria-hidden="true" class="mg-icon mg-icon--check-circle mg-icon--size-extra-large" focusable="false" viewBox="0 0 16 16">
