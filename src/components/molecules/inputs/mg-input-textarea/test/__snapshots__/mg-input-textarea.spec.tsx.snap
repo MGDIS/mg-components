@@ -10,9 +10,11 @@ exports[`mg-input-textarea Should render with args {
 <mg-input-textarea>
   <mock:shadow-root>
     <div class="mg-input mg-input--label-on-top mg-input--readonly mg-input--textarea">
-      <mg-input-title identifier="identifier">
-        label
-      </mg-input-title>
+      <div class="mg-input__title">
+        <mg-input-title identifier="identifier">
+          label
+        </mg-input-title>
+      </div>
       <div class="mg-input__input-container">
         <strong></strong>
       </div>
@@ -55,7 +57,7 @@ exports[`mg-input-textarea Should render with args {
         label
       </mg-input-title>
       <div class="mg-input__input-container">
-        <div class="mg-input__input-container__input"><textarea aria-describedby="" id="identifier" maxlength="4000" name="identifier" rows="3"></textarea>
+        <div class="mg-input__input"><textarea aria-describedby="" id="identifier" maxlength="4000" name="identifier" rows="3"></textarea>
           <mg-tooltip identifier="identifier-tooltip" message="My Tooltip Message">
             <mg-icon icon="info-circle"></mg-icon>
           </mg-tooltip>
@@ -75,14 +77,16 @@ exports[`mg-input-textarea Should render with args {
 <mg-input-textarea>
   <mock:shadow-root>
     <div class="mg-input mg-input--label-on-top mg-input--textarea">
-      <mg-input-title identifier="identifier">
-        label
-      </mg-input-title>
-      <mg-tooltip identifier="identifier-tooltip" message="My Tooltip Message">
-        <mg-icon icon="info-circle"></mg-icon>
-      </mg-tooltip>
+      <div class="mg-input__title">
+        <mg-input-title identifier="identifier">
+          label
+        </mg-input-title>
+        <mg-tooltip identifier="identifier-tooltip" message="My Tooltip Message">
+          <mg-icon icon="info-circle"></mg-icon>
+        </mg-tooltip>
+      </div>
       <div class="mg-input__input-container">
-        <div class="mg-input__input-container__input"><textarea aria-describedby="" id="identifier" maxlength="4000" name="identifier" rows="3"></textarea>
+        <div class="mg-input__input"><textarea aria-describedby="" id="identifier" maxlength="4000" name="identifier" rows="3"></textarea>
         </div>
       </div>
     </div>
@@ -98,7 +102,7 @@ exports[`mg-input-textarea Should render with args { label: 'label', identifier:
         label
       </mg-input-title>
       <div class="mg-input__input-container">
-        <div class="mg-input__input-container__input"><textarea aria-describedby="" id="identifier" maxlength="4000" name="identifier" rows="3"></textarea>
+        <div class="mg-input__input"><textarea aria-describedby="" id="identifier" maxlength="4000" name="identifier" rows="3"></textarea>
         </div>
       </div>
     </div>
@@ -114,7 +118,7 @@ exports[`mg-input-textarea Should render with args { label: 'label', identifier:
         label
       </mg-input-title>
       <div class="mg-input__input-container">
-        <div class="mg-input__input-container__input"><textarea aria-describedby="" id="identifier" maxlength="4000" name="identifier" rows="3"></textarea>
+        <div class="mg-input__input"><textarea aria-describedby="" id="identifier" maxlength="4000" name="identifier" rows="3"></textarea>
         </div>
       </div>
     </div>
@@ -126,11 +130,13 @@ exports[`mg-input-textarea Should render with args { label: 'label', identifier:
 <mg-input-textarea>
   <mock:shadow-root>
     <div class="mg-input mg-input--label-on-top mg-input--textarea">
-      <mg-input-title identifier="identifier">
-        label
-      </mg-input-title>
+      <div class="mg-input__title">
+        <mg-input-title identifier="identifier">
+          label
+        </mg-input-title>
+      </div>
       <div class="mg-input__input-container">
-        <div class="mg-input__input-container__input"><textarea aria-describedby="" id="identifier" maxlength="4000" name="identifier" rows="3"></textarea>
+        <div class="mg-input__input"><textarea aria-describedby="" id="identifier" maxlength="4000" name="identifier" rows="3"></textarea>
         </div>
       </div>
     </div>
@@ -161,10 +167,10 @@ exports[`mg-input-textarea Should trigger events 1`] = `
         label
       </mg-input-title>
       <div class="mg-input__input-container">
-        <div class="mg-input__input-container__input"><textarea aria-describedby="identifier-character-left identifier-help-text" id="identifier" maxlength="4000" name="identifier" rows="3"></textarea>
+        <div class="mg-input__input"><textarea aria-describedby="identifier-character-left identifier-help-text" id="identifier" maxlength="4000" name="identifier" rows="3"></textarea>
         </div>
         <mg-character-left identifier="identifier-character-left" maxlength="4000"></mg-character-left>
-        <div class="mg-input__input-container__help-text" id="identifier-help-text">
+        <div class="mg-input__help-text" id="identifier-help-text">
           My help text
         </div>
       </div>

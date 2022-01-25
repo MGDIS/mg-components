@@ -12,6 +12,29 @@
     <main>
       <h1>MG Components</h1>
       <section>
+        <mg-input-text
+          placeholder="placeholder"
+          help-text="Message d'aide plus long"
+          label="Libellé plutôt long on va dire Libellé plutôt long on va dire Libellé plutôt long on va dire"
+          label-on-top
+          tooltip="message tooltip"
+          required
+          value="blu"
+        ></mg-input-text>
+        <mg-input-textarea
+          placeholder="placeholder"
+          help-text="Message d'aide plus long"
+          label="label"
+          tooltip="message tooltip"
+          required
+          value="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+          enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+          readonly
+        ></mg-input-textarea>
+        <mg-input-text placeholder="placeholder" help-text="Message d'aide plus long" label="label" tooltip="message tooltip" required value="Lorem ipsum" readonly></mg-input-text>
+      </section>
+      <section>
         <h2>Typography</h2>
         <h1>The h1 heading element</h1>
         <h2>The h2 heading element</h2>
@@ -362,6 +385,15 @@
             tooltip="message tooltip du mg-input-numeric"
             value="1234567890"
           ></mg-input-numeric>
+        </div>
+        <div class="mg-form-group">
+          <mg-input-text
+            placeholder="placeholder"
+            help-text="Message du mg-input-text"
+            label="Libellé du mg-input-text"
+            tooltip="message tooltip du mg-input-text"
+            value="mg-blu"
+          ></mg-input-text>
         </div>
       </section>
       <section>

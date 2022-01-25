@@ -5,7 +5,7 @@ export default {
   title: 'Molecules/Inputs/mg-input-radio',
   argTypes: {
     value: {
-      options: [null, 'HT', 'TTC', 'Mixte (HT/TTC)'],
+      options: [null, 'ht', 'ttc', 'mixte'],
       control: { type: 'radio' },
     },
   },
