@@ -613,6 +613,10 @@ export namespace Components {
          */
         "closeButton"?: boolean;
         /**
+          * Add a delay to hide/close message when it passed Value is defined in seconds and must greater than 2 seconds (PDA9-314 RG-06)
+         */
+        "delay"?: number;
+        /**
           * Define if message is hidden
          */
         "hide"?: boolean;
@@ -1419,6 +1423,10 @@ declare namespace LocalJSX {
           * Define if message has a cross button RG 01: https://jira.mgdis.fr/browse/PDA9-140
          */
         "closeButton"?: boolean;
+        /**
+          * Add a delay to hide/close message when it passed Value is defined in seconds and must greater than 2 seconds (PDA9-314 RG-06)
+         */
+        "delay"?: number;
         /**
           * Define if message is hidden
          */
