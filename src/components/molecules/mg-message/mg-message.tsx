@@ -96,7 +96,7 @@ export class MgMessage {
   };
 
   /**
-   *
+   * Hide component whith delay
    */
   private hideWithDelay = () => {
     if (this.delay > 0 && this.hide !== true) {
