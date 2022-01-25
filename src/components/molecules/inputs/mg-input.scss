@@ -43,7 +43,7 @@
       margin-top: calc(var(--mg-inputs-spacer) * 0.7);
     }
 
-    .mg-input-toggle__button {
+    .mg-input__button-toggle {
       margin-top: 0;
     }
   }
@@ -229,123 +229,187 @@ fieldset.mg-input {
 * Toogle
 */
 
-.mg-input-toggle__button {
-  display: flex;
-  overflow: hidden;
-  padding-top: var(--mg-input-toggle-border);
-  padding-right: calc((var(--mg-input-toggle-button-height) - (var(--mg-input-toggle-border) * 2)) - var(--mg-input-toggle-border));
-  padding-bottom: var(--mg-input-toggle-border);
-  padding-left: 0;
-  margin: calc((var(--default-size) - var(--mg-input-toggle-button-height)) / 2) 0;
-  height: var(--mg-input-toggle-button-height);
-  background-color: var(--mg-inputs-color);
-  border: none; // reset button default style
-  border-radius: calc(var(--default-size) / 2);
-  // animation
-  transition: background .2s ease-in-out;
-  &--disabled {
-    opacity: 30%;
+@mixin toggleSizeGenerator($elementPadding, $childElementPadding) {
+  $elementLineHeight: calc(var(--font-size-base) + 0.1rem);
+  $elementMinSize: calc(#{$elementLineHeight} + #{$childElementPadding} * 2);
+
+  .mg-input__button-toggle {
+    margin-top: calc((var(--default-size) - (#{$elementMinSize} + #{$elementPadding} * 2 + var(--mg-inputs-border-width) * 2)) / 2);
+    padding: $elementPadding;
+    border-radius: calc((#{$elementLineHeight} + #{$elementPadding} * 2 + #{$childElementPadding} * 2) / var(--mg-input-toggle-border-radius-ratio)); // = (lineheight + element vertical-padding + child vertical-padding) / ratio
+    line-height: $elementLineHeight;
+  }
+
+  .toggle-button__toggle-item-container {
+    padding: $childElementPadding 0;
+    min-width: $elementMinSize;
+    min-height: $elementMinSize;
+    border-radius: calc((#{$elementLineHeight} + #{$childElementPadding} * 2) / var(--mg-input-toggle-border-radius-ratio)); // = (lineheight + child vertical-padding) / ratio
+  }
+
+  // icon variation
+  .mg-input--toggle-is-icon .toggle-button__toggle-item-container mg-icon {
+    height: $elementLineHeight;
+    width: $elementLineHeight;
+  }
+
+  // readonly variation
+  .mg-input--toggle-readonly .mg-input__button-toggle {
+    margin-top: calc((var(--default-size) - #{$elementMinSize}) / 2);
+  }
+
+  // readonly + label-on-top variation
+  .mg-input--toggle-readonly.mg-input--label-on-top .mg-input__button-toggle {
+    margin-top: calc(#{$elementPadding} + var(--mg-inputs-border-width));
   }
 }
 
-.mg-input--toggle-active {
-  .mg-input-toggle__button {
-    padding-left: calc((var(--mg-input-toggle-button-height) - (var(--mg-input-toggle-border) * 2)) - var(--mg-input-toggle-border));
-    padding-right: 0;
-    background-color: hsl(var(--color-info));
+@include toggleSizeGenerator(0.2rem, 0.5rem);
+
+.mg-input__button-toggle {
+  display: flex;
+  overflow: hidden;
+  &:not(.mg-input--toggle-readonly .mg-input__button-toggle) {
+    background-color: hsl(var(--color-light));
+    // border
+    border-width: var(--mg-inputs-border-width);
+    border-style: solid;
+    border-color: var(--mg-inputs-color);
   }
-  .mg-input-toggle__item-container {
+}
+
+.toggle-button__toggle-item-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  max-height: var(--default-size);
+  // animation
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.2s;
+  animation-name: toggleUnactive;
+  // font
+  &:first-of-type {
+    background-color: hsl(var(--color-info-h) calc(var(--color-info-s) - 64%) calc(var(--color-info-l) + 55% ));
     color: hsl(var(--color-info));
-    animation-name: toggleUnactive;
+    font-weight: 600;
+  }
+  &:last-of-type {
+    color: hsl(var(--color-dark));
+  }
+  // slot
+  > *:not(mg-icon) {
+    padding: 0 0.9rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
+
+// toggle default active variation
+.mg-input--toggle-active {
+  .toggle-button__toggle-item-container {
+    // animation
+    animation-name: toggleActive;
+    &:first-of-type {
+      background-color: unset;
+      color: hsl(var(--color-dark));
+      font-weight: unset;
+    }
+    &:last-of-type {
+      font-weight: 600;
+      background-color: hsl(var(--color-info-h) calc(var(--color-info-s) - 64%) calc(var(--color-info-l) + 55% ));
+      color: hsl(var(--color-info));
+    }
+  }
+
+  // icon variation
+  &.mg-input--toggle-is-icon .toggle-button__toggle-item-container{
     &:first-of-type {
       opacity: 0;
-      position: absolute;
     }
     &:last-of-type {
       opacity: 1;
-      position: relative;
     }
   }
-}
 
-.mg-input-toggle__item-container {
-  display: flex;
-  align-items: center;
-  margin: 0 var(--mg-input-toggle-border);
-  min-width: calc(var(--mg-input-toggle-button-height) - (var(--mg-input-toggle-border) * 2));
-  height: calc(var(--mg-input-toggle-button-height) - (var(--mg-input-toggle-border) * 2));
-  background-color: hsl(var(--color-light));
-  color: var(--mg-inputs-color);
-  border-radius: calc((var(--default-size) / 3) * 2);
-  //animation
-  animation-name: toggleActive;
-  animation-timing-function: ease-in-out;
-  animation-duration: .2s;
-  // side by side disable
-  &:first-of-type {
-    opacity: 1;
-    position: relative;
-  }
-  &:last-of-type {
-    opacity: 0;
-    position: absolute;
-  }
-  // slot
-  & > :not(.mg-input-toggle__item-icon) {
-    padding: 0 1rem;
-  }
-  & > .mg-input-toggle__item-icon {
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-.mg-input-toggle__item-icon mg-icon{
-  display: flex;
-}
-
-// toggle side by side variation
-.mg-input-toggle--display-both-values {
-  .mg-input-toggle__button {
-    padding-left: 0;
-    padding-right: 0;
-    background-color: hsl(var(--color-info));
-  }
-  .mg-input-toggle__item-container {
-    &:first-of-type, &:last-of-type {
-      opacity: unset;
-      position: unset;
-    }
+  // readonly variation
+  &.mg-input--toggle-readonly .toggle-button__toggle-item-container {
     &:first-of-type {
-      margin-right: 0;
-      background-color: hsl(var(--color-light));
-      color: hsl(var(--color-info));
+      display: none;
     }
     &:last-of-type {
-      margin-left: 0;
-      background: none;
-      color: hsl(var(--color-light));
+      display: unset;
     }
   }
-  &.mg-input--toggle-active .mg-input-toggle__item-container{
+
+  // on-off variation
+  &.mg-input--toggle-is-on-off .toggle-button__toggle-item-container:first-of-type {
+    background: none;
+  }
+}
+
+// toggle icon variation
+.mg-input--toggle-is-icon {
+  .toggle-button__toggle-item-container {
     &:first-of-type {
-      margin-right: 0;
-      background: none;
-      color: hsl(var(--color-light));
+      opacity: 1;
     }
     &:last-of-type {
-      margin-left: 0;
-      background-color: hsl(var(--color-light));
-      color: hsl(var(--color-info));
+      opacity: 0;
+    }
+
+    // slot
+    > *:not(mg-icon) {
+      padding: 0;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    mg-icon {
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 }
 
-/**
-* Animations
-*/
+// disabled variation
+.mg-input--toggle-disabled .mg-input__button-toggle {
+  opacity: 30%;
+}
 
-@keyframes toggleActive {
+// toggle on-off variation
+.mg-input--toggle-is-on-off {
+  .toggle-button__toggle-item-container:first-of-type {
+    background-color: hsl(var(--color-dark-h) calc(var(--color-dark-s) - 30%) calc(var(--color-dark-l) + 75% ));
+    color: hsl(var(--color-dark));
+  }
+
+  &.mg-input--toggle-active .toggle-button__toggle-item-container:first-of-type {
+    background: none;
+  }
+}
+
+// readonly variation
+.mg-input--toggle-readonly {
+  .mg-input__button-toggle {
+    background: none;
+    border: none;
+    overflow: hidden;
+    padding: 0;
+  }
+  .toggle-button__toggle-item-container {
+    animation-name: unset;
+    &:last-of-type {
+      display: none;
+    }
+  }
+}
+
+  /**
+  * Animations
+  */
+
+@keyframes toggleUnactive {
   from {
     transform: translateX(1.5em);
   }
@@ -354,7 +418,7 @@ fieldset.mg-input {
   }
 }
 
-@keyframes toggleUnactive {
+@keyframes toggleActive {
   from {
     transform: translateX(-1.5em);
   }

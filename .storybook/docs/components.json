@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-01-20T11:03:59",
+  "timestamp": "2022-01-25T10:59:10",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.12.1",
@@ -2957,23 +2957,6 @@
           "required": false
         },
         {
-          "name": "displayBothValues",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "display-both-values",
-          "reflectToAttr": false,
-          "docs": "Define if values are both displayed or only active one",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "helpText",
           "type": "string",
           "mutable": false,
@@ -3020,6 +3003,40 @@
             }
           ],
           "optional": false,
+          "required": false
+        },
+        {
+          "name": "isIcon",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "is-icon",
+          "reflectToAttr": false,
+          "docs": "Define if toggle display icon",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "isOnOff",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "is-on-off",
+          "reflectToAttr": false,
+          "docs": "Define if toggle have on/off style",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
           "required": false
         },
         {

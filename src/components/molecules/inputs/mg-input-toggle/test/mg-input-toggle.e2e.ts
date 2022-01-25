@@ -4,10 +4,13 @@ describe('mg-input-toggle', () => {
   test.each([
     `<mg-input-toggle label="legend"></mg-input-toggle>`,
     `<mg-input-toggle label="legend"><span slot="item-1">Non</span><span slot="item-2">Oui</span></mg-input-toggle>`,
-    `<mg-input-toggle label="legend" display-both-values><span slot="item-1">Non</span><span slot="item-2">Oui</span></mg-input-toggle>`,
-    `<mg-input-toggle label="legend"><span slot="item-1" class="mg-input-toggle__item-icon"><mg-icon icon="cross"></mg-icon></span><span slot="item-2" class="mg-input-toggle__item-icon"><mg-icon icon="check-circle"></mg-icon></span></mg-input-toggle>`,
+    `<mg-input-toggle label="legend" is-on-off><span slot="item-1">Non</span><span slot="item-2">Oui</span></mg-input-toggle>`,
+    `<mg-input-toggle label="legend" is-icon is-on-off><span slot="item-1" class="toggle-item-container__item-icon"><mg-icon icon="cross"></mg-icon></span><span slot="item-2" class="toggle-item-container__item-icon"><mg-icon icon="check"></mg-icon></span></mg-input-toggle>`,
+    `<mg-input-toggle label="label" identifier="toggle-text" label-on-top><span slot="item-1">Choix <br> A retour</span><span slot="item-2">Choix <br> B retour</span></mg-input-toggle>`,
+    `<mg-input-toggle label="label" identifier="toggle-on-off-readonly" is-on-off readonly><span slot="item-1">Off</span><span slot="item-2">On</span></mg-input-toggle>`
   ])('Keyboard navigation', async (html)=>{
     const page = await createPage(`${html}
+    <style>#toggle-text {width: 100px;}</style>
     <script>
     const mgInputtoggle = document.querySelector('mg-input-toggle');
     mgInputtoggle.items = [{title: 'batman', value: false}, {title: 'joker', value: true}];

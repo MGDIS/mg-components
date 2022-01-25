@@ -613,10 +613,6 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
-          * Define if values are both displayed or only active one
-         */
-        "displayBothValues"?: boolean;
-        /**
           * Template to use for characters left sentence
          */
         "helpText": string;
@@ -628,6 +624,14 @@ export namespace Components {
           * Force invalid component
          */
         "invalid": boolean;
+        /**
+          * Define if toggle display icon
+         */
+        "isIcon"?: boolean;
+        /**
+          * Define if toggle have on/off style
+         */
+        "isOnOff"?: boolean;
         /**
           * Items are the possible options to select Required
          */
@@ -1471,10 +1475,6 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
-          * Define if values are both displayed or only active one
-         */
-        "displayBothValues"?: boolean;
-        /**
           * Template to use for characters left sentence
          */
         "helpText"?: string;
@@ -1486,6 +1486,14 @@ declare namespace LocalJSX {
           * Force invalid component
          */
         "invalid"?: boolean;
+        /**
+          * Define if toggle display icon
+         */
+        "isIcon"?: boolean;
+        /**
+          * Define if toggle have on/off style
+         */
+        "isOnOff"?: boolean;
         /**
           * Items are the possible options to select Required
          */

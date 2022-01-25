@@ -1,4 +1,4 @@
-import { Component, Event, h, Prop, EventEmitter, State, Watch } from '@stencil/core';
+import { Component, Event, h, Prop, EventEmitter, State, Watch, Element } from '@stencil/core';
 import { MgInput } from '../MgInput';
 import { createID, ClassList, allItemsAreString } from '../../../../utils/components.utils';
 import { ToggleValue } from '../../../../types/components.types'
@@ -10,7 +10,6 @@ import { messages } from '../../../../locales';
 * @returns {boolean}
 */
 const isOption = (option: ToggleValue): boolean => typeof option === 'object' && typeof option.title === 'string' && option.value !== undefined;
-
 
 @Component({
   tag: 'mg-input-toggle',
@@ -31,9 +30,25 @@ export class MgInputToggle {
    **************/
 
   /**
+  * Get component DOM element
+  */
+  @Element() element: HTMLMgInputToggleElement;
+
+
+  /**
   * Component value
   */
   @Prop({ mutable:true, reflect: true }) value?: any;
+  @Watch('value')
+  handleValue(newValue:any) {
+    if (newValue === this.options[1].value || newValue === '') {
+      this.classList.add(this.classToggleActive);
+    } else {
+      this.classList.delete(this.classToggleActive);
+    }
+
+    this.valueChange.emit(this.value);
+  }
 
   /**
   * Items are the possible options to select
@@ -52,8 +67,7 @@ export class MgInputToggle {
     // Object array
     else if(newValue && (newValue as Array<ToggleValue>).every(item => isOption(item))) {
       this.options = newValue;
-    }
-    else {
+    } else {
       throw new Error('<mg-input-toggle> prop "items" is required and all items must be the same type: ToggleValue.')
     }
   }
@@ -87,12 +101,21 @@ export class MgInputToggle {
   @Prop() labelHide: boolean = false;
 
   /**
-  * Define if values are both displayed or only active one
+  * Define if toggle have on/off style
   */
-  @Prop() displayBothValues?: boolean = false;
-  @Watch('displayBothValues')
-  validateDisplayBothValues(newValue: boolean) {
-    if(newValue) this.classList.add(`mg-input-toggle--display-both-values`);
+  @Prop() isOnOff?: boolean = false;
+  @Watch('isOnOff')
+  handleIsOnOff(newValue: boolean) {
+    if(newValue) this.classList.add(`mg-input--toggle-is-on-off`);
+  }
+
+  /**
+  * Define if toggle display icon
+  */
+  @Prop() isIcon?: boolean = false;
+  @Watch('isIcon')
+  handleIsIcon(newValue: boolean) {
+    if(newValue) this.classList.add(`mg-input--toggle-is-icon`);
   }
 
   /**
@@ -104,11 +127,19 @@ export class MgInputToggle {
   * Define if input is readonly
   */
   @Prop() readonly: boolean = false;
+  @Watch('readonly')
+  handleReadonly(newValue: boolean) {
+    if(newValue) this.classList.add(`mg-input--toggle-readonly`);
+  }
 
   /**
   * Define if input is disabled
   */
   @Prop() disabled: boolean = false;
+  @Watch('disabled')
+  handleDisabled(newValue: boolean) {
+    if(newValue) this.classList.add(`mg-input--toggle-disabled`);
+  }
 
   /**
   * Add a tooltip message next to the input
@@ -150,32 +181,31 @@ export class MgInputToggle {
   */
   @Event() valueChange: EventEmitter<any>
 
+  /**
+   * Change value
+   */
   private toggleValue = () => {
-    this.value = this.value === undefined
-      ? this.options[1].value
-      : this.options.find(o => o.value !== this.value).value;
-
-    this.valueChange.emit(this.value);
-    this.setToggleStyle()
-  }
-
-  private setToggleStyle() {
-    if (this.value !== undefined && this.value !== this.options[0].value) {
-      this.classList.add(this.classToggleActive);
+    // case value is not set
+    if (this.value === undefined) {
+      this.value = this.options[1].value
+      // case value is true, as DOM rewrite true as blank string when it's render
+    } else if ( this.value === '') {
+      this.value = this.options[0].value
     } else {
-      this.classList.delete(this.classToggleActive);
+      this.value = this.options.find(o => o.value !== this.value).value;
     }
-    this.classList = new ClassList(this.classList.classes);
   }
 
   /**
   * Handle input event
   * @param event
   */
-  private handleToggleClick = () => {
-    this.toggleValue();
-  }
+  private handleToggleClick = () => this.toggleValue();
 
+  /**
+   * Handle keyboard event
+   * @param event
+   */
   private handleToggleKeyboard = (event: KeyboardEvent) => {
     if (['ArrowRight', 'ArrowLeft', 'ArrowUp', 'ArrowDown'].includes(event.code)) {
       this.toggleValue();
@@ -220,6 +250,17 @@ export class MgInputToggle {
     }
   }
 
+  /**
+  * Due to text-overflow set to ellipsis
+  * we need to ensure that slot element have title to display value on mous over
+  */
+  private addTitleOnTextSlot () {
+    if (!this.isIcon) {
+      const slots = Array.from(this.element.children);
+      slots.forEach(slot => slot.setAttribute('title', slot.textContent));
+    }
+  }
+
   /*************
   * Lifecycle *
   *************/
@@ -230,9 +271,12 @@ export class MgInputToggle {
    componentWillLoad() {
     // Check items format
     this.validateItems(this.items);
-
-    this.setToggleStyle();
-    this.validateDisplayBothValues(this.displayBothValues)
+    this.handleValue(this.value);
+    this.handleIsOnOff(this.isOnOff);
+    this.handleIsIcon(this.isIcon);
+    this.handleReadonly(this.readonly);
+    this.handleDisabled(this.disabled);
+    this.addTitleOnTextSlot()
   }
 
   render() {
@@ -243,10 +287,10 @@ export class MgInputToggle {
       labelOnTop={this.labelOnTop}
       labelHide={this.labelHide}
       required={this.required}
-      readonly={this.readonly}
+      readonly={false}
       value={this.value?.toString()}
       readonlyValue={undefined}
-      tooltip={this.tooltip}
+      tooltip={!this.readonly && this.tooltip}
       displayCharacterLeft={undefined}
       characterLeftTemplate={undefined}
       maxlength={undefined}
@@ -257,18 +301,18 @@ export class MgInputToggle {
         <button
           type="button"
           role="switch"
-          aria-checked={this.value}
+          aria-checked={this.value === this.options[1].value}
           id={this.identifier}
-          class={`mg-input-toggle__button ${this.disabled ? 'mg-input-toggle__button--disabled' : ''}`}
-          disabled={this.disabled}
+          class="mg-input__button-toggle"
+          disabled={this.disabled || this.readonly}
           onBlur={this.handleBlur}
           onClick={this.handleToggleClick}
           onKeyDown={this.handleToggleKeyboard}
         >
-          <span aria-hidden="true" class="mg-input-toggle__item-container">
+          <span aria-hidden="true" class="toggle-button__toggle-item-container">
             <slot name="item-1"></slot>
           </span>
-          <span aria-hidden="true" class="mg-input-toggle__item-container">
+          <span aria-hidden="true" class="toggle-button__toggle-item-container">
             <slot name="item-2"></slot>
           </span>
         </button>

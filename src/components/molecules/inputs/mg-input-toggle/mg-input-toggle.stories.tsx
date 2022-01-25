@@ -16,7 +16,8 @@ const args = {
   labelOnTop: false,
   labelHide: false,
   // toggle
-  displayBothValues: false,
+  isIcon: false,
+  isOnOff: false,
   // Input
   required: false,
   disabled: false,
@@ -37,8 +38,10 @@ const Template = args => {
   delete args.labelOnTop;
   const labelHide = args.labelHide;
   delete args.labelHide;
-  const displayBothValues = args.displayBothValues;
-  delete args.displayBothValues;
+  const isIcon = args.isIcon;
+  delete args.isIcon;
+  const isOnOff = args.isOnOff;
+  delete args.isOnOff;
   const helpText = args.helpText;
   delete args.helpText;
   // return element
@@ -47,7 +50,8 @@ const Template = args => {
     label-on-top={labelOnTop}
     label-hide={labelHide}
     help-text={helpText}
-    display-both-values={displayBothValues}
+    is-icon={isIcon}
+    is-on-off={isOnOff}
   >
     <span slot="item-1">Non</span>
     <span slot="item-2">Oui</span>
@@ -65,20 +69,28 @@ const TemplateIcon = args => {
   delete args.helpText;
   const labelHide = args.labelHide;
   delete args.labelHide;
-  const displayBothValues = args.displayBothValues;
-  delete args.displayBothValues;
+
+  const isIcon = args.isIcon;
+  delete args.isIcon;
+  const isOnOff = args.isOnOff;
+  delete args.isOnOff;
   // return element
   return   <mg-input-toggle
     {...args}
     label-on-top={labelOnTop}
     label-hide={labelHide}
     help-text={helpText}
-    display-both-values={displayBothValues}
+    is-icon={isIcon}
+    is-on-off={isOnOff}
   >
-    <span slot="item-1" class="mg-input-toggle__item-icon"><mg-icon icon="cross"></mg-icon></span>
-    <span slot="item-2" class="mg-input-toggle__item-icon"><mg-icon icon="check-circle"></mg-icon></span>
+    <span slot="item-1"><mg-icon icon="cross"></mg-icon></span>
+    <span slot="item-2"><mg-icon icon="check"></mg-icon></span>
   </mg-input-toggle>
 };
 
 export const MgInputtoggleWithIcon = TemplateIcon.bind({});
-MgInputtoggleWithIcon.args = {...args};
+MgInputtoggleWithIcon.args = {
+  ...args,
+  isIcon: true,
+  isOnOff: true,
+};

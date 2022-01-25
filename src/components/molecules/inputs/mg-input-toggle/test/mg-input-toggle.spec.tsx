@@ -2,28 +2,36 @@ import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
 import { MgInputToggle } from '../mg-input-toggle';
 import { messages } from '../../../../../locales';
+import { MgIcon } from '../../../../atoms/mg-icon/mg-icon';
 
-const getPage = (args) => newSpecPage({
-  components: [MgInputToggle],
-  template: () => (<mg-input-toggle {...args}></mg-input-toggle>)
+const getPage = (args, slots?) => newSpecPage({
+  components: [MgInputToggle, MgIcon],
+  template: () => (<mg-input-toggle {...args}>{slots?.map(slot => slot())}</mg-input-toggle>)
 });
 
 describe('mg-input-toggle', () => {
-  test.each([
-    {label: 'label', identifier: "identifier", items: [{title: 'batman', value: false}, {title: 'joker', value: true}]},
-    {label: 'label', identifier: "identifier", items: [{title: 'batman', value: false}, {title: 'joker', value: true}], displayBothValues: true},
-    {label: 'label', identifier: "identifier", items: [{title: 'batman', value: false}, {title: 'joker', value: true}], labelOnTop: true},
-    {label: 'label', identifier: "identifier", items: [{title: 'batman', value: false}, {title: 'joker', value: true}], labelHide: true},
-    {label: 'label', identifier: "identifier", items: [{title: 'batman', value: false}, {title: 'joker', value: true}], required: true},
-    {label: 'label', identifier: "identifier", items: [{title: 'batman', value: false}, {title: 'joker', value: true}], readonly: true},
-    {label: 'label', identifier: "identifier", items: [{title: 'batman', value: false}, {title: 'joker', value: true}], disabled: true},
-    {label: 'label', identifier: "identifier", items: [{title: 'batman', value: false}, {title: 'joker', value: true}], helpText: 'Hello joker'},
-    {label: 'label', identifier: "identifier", items: [{title: 'batman', value: false}, {title: 'joker', value: true}], tooltip: "My Tooltip Message"},
-    {label: 'label', identifier: "identifier", items: [{title: 'batman', value: false}, {title: 'joker', value: true}], tooltip: "My Tooltip Message", labelOnTop: true}
-  ])('Should render with args %s:', async (args) => {
-    const { root } = await getPage(args);
-    expect(root).toMatchSnapshot();
-  });
+  describe.each([
+    undefined,
+    [() => <span slot="item-1">Choix A</span>, () => <span slot="item-2">Choix B</span>],
+    [() => <span slot="item-1"><mg-icon icon="cross"></mg-icon></span>, () => <span slot="item-2"><mg-icon icon="check"></mg-icon></span>]
+  ])('template', slots => {
+    test.each([
+      {label: 'label', identifier: "identifier", items: [{title: 'batman', value: false}, {title: 'joker', value: true}]},
+      {label: 'label', identifier: "identifier", items: [{title: 'batman', value: false}, {title: 'joker', value: true}], isIcon: true},
+      {label: 'label', identifier: "identifier", items: [{title: 'batman', value: false}, {title: 'joker', value: true}], isOnOff: true},
+      {label: 'label', identifier: "identifier", items: [{title: 'batman', value: false}, {title: 'joker', value: true}], labelOnTop: true},
+      {label: 'label', identifier: "identifier", items: [{title: 'batman', value: false}, {title: 'joker', value: true}], labelHide: true},
+      {label: 'label', identifier: "identifier", items: [{title: 'batman', value: false}, {title: 'joker', value: true}], required: true},
+      {label: 'label', identifier: "identifier", items: [{title: 'batman', value: false}, {title: 'joker', value: true}], readonly: true},
+      {label: 'label', identifier: "identifier", items: [{title: 'batman', value: false}, {title: 'joker', value: true}], disabled: true},
+      {label: 'label', identifier: "identifier", items: [{title: 'batman', value: false}, {title: 'joker', value: true}], helpText: 'Hello joker'},
+      {label: 'label', identifier: "identifier", items: [{title: 'batman', value: false}, {title: 'joker', value: true}], tooltip: "My Tooltip Message"},
+      {label: 'label', identifier: "identifier", items: [{title: 'batman', value: false}, {title: 'joker', value: true}], tooltip: "My Tooltip Message", labelOnTop: true}
+    ])('Should render with args %s:', async (args) => {
+      const {root} = await getPage(args, slots);
+      expect(root).toMatchSnapshot();
+    });
+  })
 
   test.each(["", undefined])('Should throw error with invalid label property : %s', async (value) => {
     try {
@@ -70,11 +78,12 @@ describe('mg-input-toggle', () => {
   });
 
 
-    test.each([
-      {items: [{ title: 'batman', value: 'a'}, { title: 'joker', value: 'b' }], expected: 'a', value: 'b'},
-      {items: [{ title: 'batman', value: 1}, { title: 'joker', value: 2 }], expected: 2, value: 1},
-      {items: [{ title: 'batman', value: false },{ title: 'robin', value: true }], expected: false, value: true}
-    ])('Should trigger events for items with inputValue : %s', async ({items, expected, value})=> {
+  test.each([
+    {items: [{ title: 'batman', value: 'a'}, { title: 'joker', value: 'b' }], expected: 'b', value: undefined},
+    {items: [{ title: 'batman', value: 'a'}, { title: 'joker', value: 'b' }], expected: 'a', value: 'b'},
+    {items: [{ title: 'batman', value: 1}, { title: 'joker', value: 2 }], expected: 2, value: 1},
+    {items: [{ title: 'batman', value: false },{ title: 'robin', value: true }], expected: false, value: true}
+  ])('Should trigger events for items with inputValue : %s', async ({items, expected, value})=> {
     const args = {label: 'label', items , identifier: "identifier", helpText: "My help text", value};
     const page = await getPage(args);
 
@@ -91,6 +100,7 @@ describe('mg-input-toggle', () => {
     await page.waitForChanges();
 
     expect(page.rootInstance.valueChange.emit).toHaveBeenCalledWith(expected);
+    expect(page.rootInstance.valueChange.emit).toHaveBeenCalledTimes(1);
   });
 
   test.each([
