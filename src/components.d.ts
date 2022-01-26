@@ -1523,7 +1523,7 @@ declare namespace LocalJSX {
         /**
           * Emmited event when value change
          */
-        "onValueChange"?: (event: CustomEvent<any>) => void;
+        "onValue-change"?: (event: CustomEvent<any>) => void;
         /**
           * Define if input is readonly
          */

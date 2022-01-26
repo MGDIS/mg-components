@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-01-25T16:54:18",
+  "timestamp": "2022-01-26T13:17:15",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.12.1",
@@ -3160,7 +3160,7 @@
       "methods": [],
       "events": [
         {
-          "event": "valueChange",
+          "event": "value-change",
           "detail": "any",
           "bubbles": true,
           "cancelable": true,

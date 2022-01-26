@@ -29,7 +29,7 @@ export class MgInputToggle {
   /**
    * Get component DOM element
    */
-  @Element() element: HTMLMgInputToggleElement & { children: HTMLElement[] };
+  @Element() element: HTMLMgInputToggleElement;
 
   /**
    * Component value
@@ -155,7 +155,7 @@ export class MgInputToggle {
   /**
    * Emmited event when value change
    */
-  @Event() valueChange: EventEmitter<any>;
+  @Event({ eventName: 'value-change' }) valueChange: EventEmitter<any>;
 
   /**
    * Change value

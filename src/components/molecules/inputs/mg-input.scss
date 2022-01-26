@@ -265,6 +265,10 @@ fieldset.mg-input {
 
 @include toggleSizeGenerator(0.2rem, 0.5rem);
 
+.mg-input-toggle .mg-input__input-container {
+  width: 100%;
+}
+
 .mg-input__button-toggle {
   display: flex;
   overflow: hidden;
@@ -296,11 +300,13 @@ fieldset.mg-input {
     color: hsl(var(--color-dark));
   }
   // slot
-  > *:not(mg-icon) {
-    padding: 0 0.9rem;
+  > *:not(.mg-input--toggle-readonly .toggle-button__toggle-item-container > *) {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+  }
+  > *:not(mg-icon) {
+    padding: 0 0.9rem;
   }
 }
 
