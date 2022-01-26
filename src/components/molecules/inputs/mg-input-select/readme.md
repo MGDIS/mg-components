@@ -26,9 +26,9 @@ This atom refers to the [PDA9-72](https://jira.mgdis.fr/browse/PDA9-72).
 
 ## Events
 
-| Event         | Description                     | Type                  |
-| ------------- | ------------------------------- | --------------------- |
-| `valueChange` | Emmited event when value change | `CustomEvent<string>` |
+| Event          | Description                     | Type                  |
+| -------------- | ------------------------------- | --------------------- |
+| `value-change` | Emmited event when value change | `CustomEvent<string>` |
 
 
 ## Dependencies

@@ -177,7 +177,7 @@ export class MgInputNumeric {
   /**
    * Emmited event when value change
    */
-  @Event() valueChange: EventEmitter<number>;
+  @Event({ eventName: 'value-change' }) valueChange: EventEmitter<number>;
 
   /**
    * Handle input event

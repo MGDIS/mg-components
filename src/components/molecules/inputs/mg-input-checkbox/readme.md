@@ -25,9 +25,9 @@ This molecule refers to the [PDA9-70](https://jira.mgdis.fr/browse/PDA9-70).
 
 ## Events
 
-| Event         | Description                     | Type                           |
-| ------------- | ------------------------------- | ------------------------------ |
-| `valueChange` | Emitted event when value change | `CustomEvent<CheckboxValue[]>` |
+| Event          | Description                     | Type                           |
+| -------------- | ------------------------------- | ------------------------------ |
+| `value-change` | Emitted event when value change | `CustomEvent<CheckboxValue[]>` |
 
 
 ## Dependencies

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-01-25T08:51:24",
+  "timestamp": "2022-01-26T06:09:21",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.12.1",
@@ -629,7 +629,7 @@
       "methods": [],
       "events": [
         {
-          "event": "valueChange",
+          "event": "value-change",
           "detail": "CheckboxValue[]",
           "bubbles": true,
           "cancelable": true,
@@ -885,7 +885,7 @@
       "methods": [],
       "events": [
         {
-          "event": "valueChange",
+          "event": "value-change",
           "detail": "string",
           "bubbles": true,
           "cancelable": true,
@@ -1206,7 +1206,7 @@
       "methods": [],
       "events": [
         {
-          "event": "valueChange",
+          "event": "value-change",
           "detail": "number",
           "bubbles": true,
           "cancelable": true,
@@ -1478,7 +1478,7 @@
       "methods": [],
       "events": [
         {
-          "event": "valueChange",
+          "event": "value-change",
           "detail": "string",
           "bubbles": true,
           "cancelable": true,
@@ -1770,7 +1770,7 @@
       "methods": [],
       "events": [
         {
-          "event": "valueChange",
+          "event": "value-change",
           "detail": "any",
           "bubbles": true,
           "cancelable": true,
@@ -2061,7 +2061,7 @@
       "methods": [],
       "events": [
         {
-          "event": "valueChange",
+          "event": "value-change",
           "detail": "string",
           "bubbles": true,
           "cancelable": true,
@@ -2415,7 +2415,7 @@
       "methods": [],
       "events": [
         {
-          "event": "valueChange",
+          "event": "value-change",
           "detail": "string",
           "bubbles": true,
           "cancelable": true,
@@ -2786,7 +2786,7 @@
       "methods": [],
       "events": [
         {
-          "event": "valueChange",
+          "event": "value-change",
           "detail": "string",
           "bubbles": true,
           "cancelable": true,
