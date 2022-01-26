@@ -10,9 +10,11 @@ exports[`mg-input-text Should render with args {
 <mg-input-text>
   <mock:shadow-root>
     <div class="mg-input mg-input--label-on-top mg-input--readonly mg-input--text">
-      <mg-input-title identifier="identifier">
-        label
-      </mg-input-title>
+      <div class="mg-input__title">
+        <mg-input-title identifier="identifier">
+          label
+        </mg-input-title>
+      </div>
       <div class="mg-input__input-container">
         <strong></strong>
       </div>
@@ -55,7 +57,7 @@ exports[`mg-input-text Should render with args {
         label
       </mg-input-title>
       <div class="mg-input__input-container">
-        <div class="mg-input__input-container__input">
+        <div class="mg-input__input">
           <input aria-describedby="" id="identifier" maxlength="400" name="identifier" type="text">
           <mg-tooltip identifier="identifier-tooltip" message="My Tooltip Message">
             <mg-icon icon="info-circle"></mg-icon>
@@ -76,14 +78,16 @@ exports[`mg-input-text Should render with args {
 <mg-input-text>
   <mock:shadow-root>
     <div class="mg-input mg-input--label-on-top mg-input--text">
-      <mg-input-title identifier="identifier">
-        label
-      </mg-input-title>
-      <mg-tooltip identifier="identifier-tooltip" message="My Tooltip Message">
-        <mg-icon icon="info-circle"></mg-icon>
-      </mg-tooltip>
+      <div class="mg-input__title">
+        <mg-input-title identifier="identifier">
+          label
+        </mg-input-title>
+        <mg-tooltip identifier="identifier-tooltip" message="My Tooltip Message">
+          <mg-icon icon="info-circle"></mg-icon>
+        </mg-tooltip>
+      </div>
       <div class="mg-input__input-container">
-        <div class="mg-input__input-container__input">
+        <div class="mg-input__input">
           <input aria-describedby="" id="identifier" maxlength="400" name="identifier" type="text">
         </div>
       </div>
@@ -100,7 +104,7 @@ exports[`mg-input-text Should render with args { label: 'label', identifier: 'id
         label
       </mg-input-title>
       <div class="mg-input__input-container">
-        <div class="mg-input__input-container__input">
+        <div class="mg-input__input">
           <input aria-describedby="" id="identifier" maxlength="400" name="identifier" type="text">
         </div>
       </div>
@@ -117,7 +121,7 @@ exports[`mg-input-text Should render with args { label: 'label', identifier: 'id
         label
       </mg-input-title>
       <div class="mg-input__input-container">
-        <div class="mg-input__input-container__input">
+        <div class="mg-input__input">
           <input aria-describedby="" id="identifier" maxlength="400" name="identifier" type="text">
         </div>
       </div>
@@ -130,11 +134,13 @@ exports[`mg-input-text Should render with args { label: 'label', identifier: 'id
 <mg-input-text>
   <mock:shadow-root>
     <div class="mg-input mg-input--label-on-top mg-input--text">
-      <mg-input-title identifier="identifier">
-        label
-      </mg-input-title>
+      <div class="mg-input__title">
+        <mg-input-title identifier="identifier">
+          label
+        </mg-input-title>
+      </div>
       <div class="mg-input__input-container">
-        <div class="mg-input__input-container__input">
+        <div class="mg-input__input">
           <input aria-describedby="" id="identifier" maxlength="400" name="identifier" type="text">
         </div>
       </div>
@@ -166,11 +172,11 @@ exports[`mg-input-text Should trigger events 1`] = `
         label
       </mg-input-title>
       <div class="mg-input__input-container">
-        <div class="mg-input__input-container__input">
+        <div class="mg-input__input">
           <input aria-describedby="identifier-character-left identifier-help-text" id="identifier" maxlength="400" name="identifier" type="text">
         </div>
         <mg-character-left identifier="identifier-character-left" maxlength="400"></mg-character-left>
-        <div class="mg-input__input-container__help-text" id="identifier-help-text">
+        <div class="mg-input__help-text" id="identifier-help-text">
           My help text
         </div>
       </div>

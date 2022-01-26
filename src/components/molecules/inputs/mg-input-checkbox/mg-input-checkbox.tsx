@@ -143,7 +143,7 @@ export class MgInputCheckbox {
   /**
    * Emitted event when value change
    */
-  @Event() valueChange: EventEmitter<CheckboxValue[]>;
+  @Event({ eventName: 'value-change' }) valueChange: EventEmitter<CheckboxValue[]>;
 
   /**
    * Handle input event

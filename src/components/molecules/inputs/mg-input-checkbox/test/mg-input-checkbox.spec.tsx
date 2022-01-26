@@ -57,14 +57,17 @@ describe('mg-input-checkbox', () => {
     const page = await getPage(args);
 
     const element = page.doc.querySelector('mg-input-checkbox');
-    const input = element.shadowRoot.querySelectorAll('input')[2];
+    const allInputs = element.shadowRoot.querySelectorAll('input');
+    const input = allInputs[2];
 
     //mock validity
-    input.checkValidity = jest.fn(() => true);
-    Object.defineProperty(input, 'validity', {
-      get: jest.fn(() => ({
-        valueMissing: false,
-      })),
+    allInputs.forEach(input => {
+      input.checkValidity = jest.fn(() => true);
+      Object.defineProperty(input, 'validity', {
+        get: jest.fn(() => ({
+          valueMissing: false,
+        })),
+      });
     });
 
     jest.spyOn(page.rootInstance.valueChange, 'emit');
@@ -98,9 +101,9 @@ describe('mg-input-checkbox', () => {
     const input = allInputs[0];
 
     //mock validity
-    allInputs.forEach(i => {
-      i.checkValidity = jest.fn(() => false);
-      Object.defineProperty(i, 'validity', {
+    allInputs.forEach(input => {
+      input.checkValidity = jest.fn(() => false);
+      Object.defineProperty(input, 'validity', {
         get: jest.fn(() => ({
           valueMissing: true,
         })),
@@ -141,9 +144,9 @@ describe('mg-input-checkbox', () => {
     const input = allInputs[0];
 
     //mock validity
-    allInputs.forEach(i => {
-      i.checkValidity = jest.fn(() => validity);
-      Object.defineProperty(i, 'validity', {
+    allInputs.forEach(input => {
+      input.checkValidity = jest.fn(() => validity);
+      Object.defineProperty(input, 'validity', {
         get: jest.fn(() => ({
           valueMissing,
         })),

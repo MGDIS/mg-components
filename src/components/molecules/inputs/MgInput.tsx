@@ -148,33 +148,52 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
    */
 
   const TagName = getTagName(props.isFieldset);
-  const tooltip = props.tooltip && (
+
+  /**
+   * Get tooltip node
+   * @returns mg-tooltip
+   */
+  const getTooltip = () => (
     <mg-tooltip identifier={`${props.identifier}-tooltip`} message={props.tooltip}>
       <mg-icon icon="info-circle"></mg-icon>
     </mg-tooltip>
   );
 
+  /**
+   * Get input title (label) node
+   * @returns mg-input-title
+   */
+  const getInputTitle = () => (
+    <mg-input-title identifier={props.identifier} class={props.labelHide ? 'sr-only' : undefined} required={props.required} is-legend={props.isFieldset}>
+      {props.label}
+    </mg-input-title>
+  );
+
   return (
     <TagName class={props.classList.join()}>
-      <mg-input-title identifier={props.identifier} class={props.labelHide ? 'sr-only' : undefined} required={props.required} is-legend={props.isFieldset}>
-        {props.label}
-      </mg-input-title>
-      {props.labelOnTop && !props.readonly && tooltip}
+      {props.labelOnTop ? (
+        <div class="mg-input__title">
+          {getInputTitle()}
+          {!props.readonly && props.tooltip && getTooltip()}
+        </div>
+      ) : (
+        getInputTitle()
+      )}
       {props.readonly ? (
         <div class="mg-input__input-container">
           <strong>{props.readonlyValue || props.value}</strong>
         </div>
       ) : (
         <div class="mg-input__input-container">
-          <div class="mg-input__input-container__input">
+          <div class="mg-input__input">
             {children}
-            {!props.labelOnTop && tooltip}
+            {!props.labelOnTop && props.tooltip && getTooltip()}
           </div>
           {props.displayCharacterLeft && props.maxlength && props.classList.has('is-focused') && (
             <mg-character-left identifier={characterLeftId} characters={props.value} maxlength={props.maxlength} template={props.characterLeftTemplate}></mg-character-left>
           )}
-          {props.helpText && <div id={helpTextId} class="mg-input__input-container__help-text" innerHTML={props.helpText}></div>}
-          {props.errorMessage && <div id={helpTextErrorId} class="mg-input__input-container__error" innerHTML={props.errorMessage} aria-live="assertive"></div>}
+          {props.helpText && <div id={helpTextId} class="mg-input__help-text" innerHTML={props.helpText}></div>}
+          {props.errorMessage && <div id={helpTextErrorId} class="mg-input__error" innerHTML={props.errorMessage} aria-live="assertive"></div>}
         </div>
       )}
     </TagName>

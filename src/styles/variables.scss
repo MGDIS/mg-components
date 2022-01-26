@@ -154,4 +154,10 @@
   // rgb(0, 221, 255);
   // hsl(188, 100%, 50%);
   --mg-inputs-color-shadow-focus-hsl: 188, 100%, 50%;
+
+  /**
+   * <mg-input-checkbox>
+   * <mg-input-radio>
+   */
+  --mg-input-check-size: 1.3rem;
 }
