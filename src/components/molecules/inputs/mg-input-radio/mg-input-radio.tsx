@@ -141,7 +141,7 @@ export class MgInputRadio {
   /**
    * Emitted event when value change
    */
-  @Event() valueChange: EventEmitter<any>;
+  @Event({ eventName: 'value-change' }) valueChange: EventEmitter<any>;
 
   /**
    * Handle input event

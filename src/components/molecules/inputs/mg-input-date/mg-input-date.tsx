@@ -101,7 +101,7 @@ export class MgInputDate {
   /**
    * Emmited event when value change
    */
-  @Event() valueChange: EventEmitter<string>;
+  @Event({ eventName: 'value-change' }) valueChange: EventEmitter<string>;
 
   /**
    * Handle input event
