@@ -323,8 +323,7 @@
           ];
         </script>
         <h3>Input Toggle</h3>
-        <mg-input-toggle label="label" identifier="toggle-blank"></mg-input-toggle>
-        <mg-input-toggle label="label" identifier="toggle-text" label-on-top>
+        <mg-input-toggle label="choix A/B" identifier="toggle-text" label-on-top>
           <span slot="item-1"
             >Choix <br />
             A retour</span
@@ -334,24 +333,19 @@
             B retour</span
           >
         </mg-input-toggle>
-        <mg-input-toggle label="label" identifier="toggle-icon" is-icon is-on-off>
+        <mg-input-toggle label="icons" identifier="toggle-icon" is-icon is-on-off>
           <span slot="item-1"><mg-icon icon="cross"></mg-icon></span>
           <span slot="item-2"><mg-icon icon="check"></mg-icon></span>
         </mg-input-toggle>
-        <mg-input-toggle label="label" identifier="toggle-on-off" is-on-off>
+        <mg-input-toggle label="on/off" identifier="toggle-on-off" is-on-off>
           <span slot="item-1">Off</span>
           <span slot="item-2">On</span>
         </mg-input-toggle>
-        <mg-input-toggle label="label" identifier="toggle-on-off-readonly" is-on-off readonly>
+        <mg-input-toggle label="on/off readonly" identifier="toggle-on-off-readonly" is-on-off readonly>
           <span slot="item-1">Off</span>
           <span slot="item-2">On</span>
         </mg-input-toggle>
         <script>
-          const mgInputToggleBlank = document.querySelector('mg-input-toggle[identifier="toggle-blank"]');
-          mgInputToggleBlank.items = [
-            { title: 'non', value: false },
-            { title: 'oui', value: true },
-          ];
           const mgInputToggleOnOff = document.querySelector('mg-input-toggle[identifier="toggle-on-off"]');
           mgInputToggleOnOff.items = [
             { title: 'non', value: false },

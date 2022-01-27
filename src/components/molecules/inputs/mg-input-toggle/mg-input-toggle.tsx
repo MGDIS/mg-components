@@ -21,6 +21,8 @@ export class MgInputToggle {
    ************/
 
   private classToggleActive = 'mg-input--toggle-active';
+  private classReadonly = 'mg-input--toggle-readonly';
+  private classDisabled = 'mg-input--toggle-disabled';
 
   /**************
    * Decorators *
@@ -120,7 +122,8 @@ export class MgInputToggle {
   @Prop() readonly: boolean = false;
   @Watch('readonly')
   handleReadonly(newValue: boolean) {
-    if (newValue) this.classList.add(`mg-input--toggle-readonly`);
+    if (newValue) this.classList.add(this.classReadonly);
+    else this.classList.delete(this.classReadonly);
   }
 
   /**
@@ -129,7 +132,8 @@ export class MgInputToggle {
   @Prop() disabled: boolean = false;
   @Watch('disabled')
   handleDisabled(newValue: boolean) {
-    if (newValue) this.classList.add(`mg-input--toggle-disabled`);
+    if (newValue) this.classList.add(this.classDisabled);
+    else this.classList.delete(this.classDisabled);
   }
 
   /**
@@ -172,25 +176,23 @@ export class MgInputToggle {
   /**
    * Handle input event
    */
-  private handleToggleClick = () => this.toggleValue();
-
-  /**
-   * Handle keyboard event
-   * @param event
-   */
-  private handleToggleKeyboard = (event: KeyboardEvent) => {
-    if (['ArrowRight', 'ArrowLeft', 'ArrowUp', 'ArrowDown'].includes(event.code)) {
-      this.toggleValue();
-    }
+  private handleToggleClick = () => {
+    this.classList.add('mg-input--toggle-clicked');
+    this.toggleValue();
   };
 
   /**
-   * Due to text-overflow set to ellipsis
-   * we need to ensure that slot element have title to display value on mous over
+   * Slots validation
+
    */
-  private addTitleOnTextSlot() {
-    if (!this.isIcon) {
-      Array.from(this.element.children).forEach(slot => slot.setAttribute('title', slot.textContent));
+  private validateSlots() {
+    const slots = Array.from(this.element.children);
+    if (slots.length === 0) {
+      throw new Error('<mg-input-toggle> slots must be defined.');
+    } else if (!this.isIcon) {
+      // * Due to text-overflow set to ellipsis
+      // we need to ensure that slot element have title to display value on mous over
+      slots.forEach(slot => slot.setAttribute('title', slot.textContent));
     }
   }
 
@@ -213,7 +215,7 @@ export class MgInputToggle {
     this.handleIsIcon(this.isIcon);
     this.handleReadonly(this.readonly);
     this.handleDisabled(this.disabled);
-    this.addTitleOnTextSlot();
+    this.validateSlots();
   }
 
   render() {
@@ -240,11 +242,11 @@ export class MgInputToggle {
           type="button"
           role="switch"
           aria-checked={this.value === this.options[1].value}
+          aria-readonly={this.disabled || this.readonly}
           id={this.identifier}
           class="mg-input__button-toggle"
           disabled={this.disabled || this.readonly}
           onClick={this.handleToggleClick}
-          onKeyDown={this.handleToggleKeyboard}
         >
           <span aria-hidden="true" class="toggle-button__toggle-item-container">
             <slot name="item-1"></slot>

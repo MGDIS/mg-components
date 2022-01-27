@@ -246,7 +246,7 @@ fieldset.mg-input {
 */
 
 @mixin toggleSizeGenerator($elementPadding, $childElementPadding) {
-  $elementLineHeight: calc(var(--font-size-base) + 0.1rem);
+  $elementLineHeight: calc(var(--font-size-base) + 0.2rem);
   $elementMinSize: calc(#{$elementLineHeight} + #{$childElementPadding} * 2);
 
   .mg-input__button-toggle {
@@ -299,11 +299,6 @@ fieldset.mg-input {
   display: flex;
   align-items: center;
   height: 100%;
-  max-height: var(--default-size);
-  // animation
-  animation-timing-function: ease-in-out;
-  animation-duration: 0.2s;
-  animation-name: toggleUnactive;
   // font
   &:first-of-type {
     background-color: hsl(var(--color-info-h) calc(var(--color-info-s) - 64%) calc(var(--color-info-l) + 55%));
@@ -314,12 +309,12 @@ fieldset.mg-input {
     color: hsl(var(--color-dark));
   }
   // slot
-  > *:not(.mg-input--toggle-readonly .toggle-button__toggle-item-container > *) {
+  & > *:not(.mg-input--toggle-readonly .toggle-button__toggle-item-container > *) {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
   }
-  > *:not(mg-icon) {
+  & > *:not(mg-icon) {
     padding: 0 0.9rem;
   }
 }
@@ -327,8 +322,6 @@ fieldset.mg-input {
 // toggle default active variation
 .mg-input--toggle-active {
   .toggle-button__toggle-item-container {
-    // animation
-    animation-name: toggleActive;
     &:first-of-type {
       background-color: unset;
       color: hsl(var(--color-dark));
@@ -416,11 +409,22 @@ fieldset.mg-input {
     overflow: hidden;
     padding: 0;
   }
+  .toggle-button__toggle-item-container:last-of-type {
+    display: none;
+  }
+}
+
+// clicked variation - animation trigger
+.mg-input--toggle-clicked {
   .toggle-button__toggle-item-container {
-    animation-name: unset;
-    &:last-of-type {
-      display: none;
-    }
+    // animation
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.2s;
+    animation-name: toggleUnactive;
+  }
+  &.mg-input--toggle-active .toggle-button__toggle-item-container {
+    // animation
+    animation-name: toggleActive;
   }
 }
 
