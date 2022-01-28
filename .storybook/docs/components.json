@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-01-26T06:09:21",
+  "timestamp": "2022-01-27T16:47:20",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.12.1",
@@ -228,7 +228,8 @@
         "mg-input-radio",
         "mg-input-select",
         "mg-input-text",
-        "mg-input-textarea"
+        "mg-input-textarea",
+        "mg-input-toggle"
       ],
       "dependencies": [],
       "dependencyGraph": {
@@ -254,6 +255,9 @@
           "mg-character-left"
         ],
         "mg-input-textarea": [
+          "mg-character-left"
+        ],
+        "mg-input-toggle": [
           "mg-character-left"
         ]
       }
@@ -350,6 +354,7 @@
         "mg-input-select",
         "mg-input-text",
         "mg-input-textarea",
+        "mg-input-toggle",
         "mg-message"
       ],
       "dependencies": [],
@@ -379,6 +384,9 @@
           "mg-icon"
         ],
         "mg-input-textarea": [
+          "mg-icon"
+        ],
+        "mg-input-toggle": [
           "mg-icon"
         ],
         "mg-message": [
@@ -2888,7 +2896,8 @@
         "mg-input-radio",
         "mg-input-select",
         "mg-input-text",
-        "mg-input-textarea"
+        "mg-input-textarea",
+        "mg-input-toggle"
       ],
       "dependencies": [],
       "dependencyGraph": {
@@ -2915,6 +2924,268 @@
         ],
         "mg-input-textarea": [
           "mg-input-title"
+        ],
+        "mg-input-toggle": [
+          "mg-input-title"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/molecules/inputs/mg-input-toggle/mg-input-toggle.tsx",
+      "encapsulation": "scoped",
+      "tag": "mg-input-toggle",
+      "readme": "This molecule refers to the [PDA9-770](https://jira.mgdis.fr/browse/PDA9-770).\n",
+      "docs": "This molecule refers to the [PDA9-770](https://jira.mgdis.fr/browse/PDA9-770).",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Define if input is disabled",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "helpText",
+          "type": "string",
+          "mutable": false,
+          "attr": "help-text",
+          "reflectToAttr": false,
+          "docs": "Template to use for characters left sentence",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "identifier",
+          "type": "string",
+          "mutable": false,
+          "attr": "identifier",
+          "reflectToAttr": false,
+          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
+          "docsTags": [],
+          "default": "createID('mg-input-toggle')",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "isIcon",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "is-icon",
+          "reflectToAttr": false,
+          "docs": "Define if toggle display icon",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "isOnOff",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "is-on-off",
+          "reflectToAttr": false,
+          "docs": "Define if toggle have on/off style",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "items",
+          "type": "ToggleValue[] | string[]",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "Items are the possible options to select\nRequired",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "ToggleValue[]"
+            },
+            {
+              "type": "string[]"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "Input label\nRequired",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "labelHide",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "label-hide",
+          "reflectToAttr": false,
+          "docs": "Define if label is visible",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "labelOnTop",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "label-on-top",
+          "reflectToAttr": false,
+          "docs": "Define if label is displayed on top",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "Input name\nIf not set the value equals the identifier",
+          "docsTags": [],
+          "default": "this.identifier",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "readonly",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "readonly",
+          "reflectToAttr": false,
+          "docs": "Define if input is readonly",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "tooltip",
+          "type": "string",
+          "mutable": false,
+          "attr": "tooltip",
+          "reflectToAttr": false,
+          "docs": "Add a tooltip message next to the input",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "any",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": true,
+          "docs": "Component value",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "any"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "value-change",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emmited event when value change",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "mg-tooltip",
+        "mg-icon",
+        "mg-input-title",
+        "mg-character-left"
+      ],
+      "dependencyGraph": {
+        "mg-input-toggle": [
+          "mg-tooltip",
+          "mg-icon",
+          "mg-input-title",
+          "mg-character-left"
         ]
       }
     },
@@ -3251,7 +3522,8 @@
         "mg-input-radio",
         "mg-input-select",
         "mg-input-text",
-        "mg-input-textarea"
+        "mg-input-textarea",
+        "mg-input-toggle"
       ],
       "dependencies": [],
       "dependencyGraph": {
@@ -3277,6 +3549,9 @@
           "mg-tooltip"
         ],
         "mg-input-textarea": [
+          "mg-tooltip"
+        ],
+        "mg-input-toggle": [
           "mg-tooltip"
         ]
       }
