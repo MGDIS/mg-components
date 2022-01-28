@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { CheckboxValue, RadioOption, SelectOption } from "./types/components.types";
+import { CheckboxValue, RadioOption, SelectOption, ToggleValue } from "./types/components.types";
 export namespace Components {
     interface MgButton {
         /**
@@ -607,6 +607,60 @@ export namespace Components {
          */
         "required": boolean;
     }
+    interface MgInputToggle {
+        /**
+          * Define if input is disabled
+         */
+        "disabled": boolean;
+        /**
+          * Template to use for characters left sentence
+         */
+        "helpText": string;
+        /**
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+         */
+        "identifier"?: string;
+        /**
+          * Define if toggle display icon
+         */
+        "isIcon"?: boolean;
+        /**
+          * Define if toggle have on/off style
+         */
+        "isOnOff"?: boolean;
+        /**
+          * Items are the possible options to select Required
+         */
+        "items": string[] | ToggleValue[];
+        /**
+          * Input label Required
+         */
+        "label": string;
+        /**
+          * Define if label is visible
+         */
+        "labelHide": boolean;
+        /**
+          * Define if label is displayed on top
+         */
+        "labelOnTop": boolean;
+        /**
+          * Input name If not set the value equals the identifier
+         */
+        "name"?: string;
+        /**
+          * Define if input is readonly
+         */
+        "readonly": boolean;
+        /**
+          * Add a tooltip message next to the input
+         */
+        "tooltip": string;
+        /**
+          * Component value
+         */
+        "value"?: any;
+    }
     interface MgMessage {
         /**
           * Define if message has a cross button RG 01: https://jira.mgdis.fr/browse/PDA9-140
@@ -749,6 +803,12 @@ declare global {
         prototype: HTMLMgInputTitleElement;
         new (): HTMLMgInputTitleElement;
     };
+    interface HTMLMgInputToggleElement extends Components.MgInputToggle, HTMLStencilElement {
+    }
+    var HTMLMgInputToggleElement: {
+        prototype: HTMLMgInputToggleElement;
+        new (): HTMLMgInputToggleElement;
+    };
     interface HTMLMgMessageElement extends Components.MgMessage, HTMLStencilElement {
     }
     var HTMLMgMessageElement: {
@@ -780,6 +840,7 @@ declare global {
         "mg-input-text": HTMLMgInputTextElement;
         "mg-input-textarea": HTMLMgInputTextareaElement;
         "mg-input-title": HTMLMgInputTitleElement;
+        "mg-input-toggle": HTMLMgInputToggleElement;
         "mg-message": HTMLMgMessageElement;
         "mg-tag": HTMLMgTagElement;
         "mg-tooltip": HTMLMgTooltipElement;
@@ -1418,6 +1479,64 @@ declare namespace LocalJSX {
          */
         "required"?: boolean;
     }
+    interface MgInputToggle {
+        /**
+          * Define if input is disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * Template to use for characters left sentence
+         */
+        "helpText"?: string;
+        /**
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+         */
+        "identifier"?: string;
+        /**
+          * Define if toggle display icon
+         */
+        "isIcon"?: boolean;
+        /**
+          * Define if toggle have on/off style
+         */
+        "isOnOff"?: boolean;
+        /**
+          * Items are the possible options to select Required
+         */
+        "items": string[] | ToggleValue[];
+        /**
+          * Input label Required
+         */
+        "label": string;
+        /**
+          * Define if label is visible
+         */
+        "labelHide"?: boolean;
+        /**
+          * Define if label is displayed on top
+         */
+        "labelOnTop"?: boolean;
+        /**
+          * Input name If not set the value equals the identifier
+         */
+        "name"?: string;
+        /**
+          * Emmited event when value change
+         */
+        "onValue-change"?: (event: CustomEvent<any>) => void;
+        /**
+          * Define if input is readonly
+         */
+        "readonly"?: boolean;
+        /**
+          * Add a tooltip message next to the input
+         */
+        "tooltip"?: string;
+        /**
+          * Component value
+         */
+        "value"?: any;
+    }
     interface MgMessage {
         /**
           * Define if message has a cross button RG 01: https://jira.mgdis.fr/browse/PDA9-140
@@ -1499,6 +1618,7 @@ declare namespace LocalJSX {
         "mg-input-text": MgInputText;
         "mg-input-textarea": MgInputTextarea;
         "mg-input-title": MgInputTitle;
+        "mg-input-toggle": MgInputToggle;
         "mg-message": MgMessage;
         "mg-tag": MgTag;
         "mg-tooltip": MgTooltip;
@@ -1520,6 +1640,7 @@ declare module "@stencil/core" {
             "mg-input-text": LocalJSX.MgInputText & JSXBase.HTMLAttributes<HTMLMgInputTextElement>;
             "mg-input-textarea": LocalJSX.MgInputTextarea & JSXBase.HTMLAttributes<HTMLMgInputTextareaElement>;
             "mg-input-title": LocalJSX.MgInputTitle & JSXBase.HTMLAttributes<HTMLMgInputTitleElement>;
+            "mg-input-toggle": LocalJSX.MgInputToggle & JSXBase.HTMLAttributes<HTMLMgInputToggleElement>;
             "mg-message": LocalJSX.MgMessage & JSXBase.HTMLAttributes<HTMLMgMessageElement>;
             "mg-tag": LocalJSX.MgTag & JSXBase.HTMLAttributes<HTMLMgTagElement>;
             "mg-tooltip": LocalJSX.MgTooltip & JSXBase.HTMLAttributes<HTMLMgTooltipElement>;

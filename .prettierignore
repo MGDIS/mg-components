@@ -1,4 +1,5 @@
 .stencil
+.history
 coverage
 dist
 loader

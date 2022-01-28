@@ -221,7 +221,8 @@ export class MgInputRadio {
                 id={this.identifier + '_' + index}
                 name={this.identifier}
                 value={input.value && input.value.toString()}
-                checked={input.value === this.value}
+                // `(this.value === "" && input.value === true)` because when input value attribute is set to `true` it will be re render as an empty string.
+                checked={input.value === this.value || (this.value === '' && input.value === true)}
                 disabled={this.disabled || input.disabled}
                 required={this.required}
                 onBlur={this.handleBlur}
