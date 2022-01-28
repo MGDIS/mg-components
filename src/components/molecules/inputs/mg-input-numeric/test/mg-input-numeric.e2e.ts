@@ -1,14 +1,13 @@
-import { createPage } from "../../../../../utils/test.utils"
+import { createPage } from '../../../../../utils/test.utils';
 
 describe('mg-input-numeric', () => {
-
   describe.each([
     `<mg-input-numeric label="label"></mg-input-numeric>`,
     `<mg-input-numeric label="label" label-on-top></mg-input-numeric>`,
     `<mg-input-numeric label="label" label-hide></mg-input-numeric>`,
     `<mg-input-numeric label="label" placeholder="placeholder" help-text="HelpText Message"></mg-input-numeric>`,
-    `<mg-input-numeric label="label" type="integer"></mg-input-numeric>`
-  ])('without tooltip', (html)=>{
+    `<mg-input-numeric label="label" type="integer"></mg-input-numeric>`,
+  ])('without tooltip', html => {
     test('render', async () => {
       const page = await createPage(html);
 
@@ -25,22 +24,22 @@ describe('mg-input-numeric', () => {
       const screenshotFocus = await page.screenshot();
       expect(screenshotFocus).toMatchImageSnapshot();
 
-      await input.press("1");
-      await input.press("2");
-      await input.press("3");
-      await input.press("4");
-      await input.press("5");
-      await input.press(",");
-      await input.press("6");
-      await input.press("7");
+      await input.press('1');
+      await input.press('2');
+      await input.press('3');
+      await input.press('4');
+      await input.press('5');
+      await input.press(',');
+      await input.press('6');
+      await input.press('7');
 
       const screenshotType = await page.screenshot();
       expect(screenshotType).toMatchImageSnapshot();
     });
   });
 
-  test('render with tooltip', async () => {
-    const page = await createPage(`<mg-input-numeric label="label" tooltip="Tooltip message"></mg-input-numeric>`);
+  test.each([true, false])('render with tooltip, case label-on-top %s', async labelOnTop => {
+    const page = await createPage(`<mg-input-numeric label="label" tooltip="Tooltip message" label-on-top=${labelOnTop}></mg-input-numeric>`);
 
     const element = await page.find('mg-input-numeric');
 
@@ -61,7 +60,7 @@ describe('mg-input-numeric', () => {
     `<mg-input-numeric label="label" value="123,45"></mg-input-numeric>`,
     `<mg-input-numeric label="label" value="123,45" readonly></mg-input-numeric>`,
     `<mg-input-numeric label="label" disabled></mg-input-numeric>`,
-  ])('Should render with template', (html)=>{
+  ])('Should render with template', html => {
     test('render', async () => {
       const page = await createPage(html);
 
@@ -72,7 +71,7 @@ describe('mg-input-numeric', () => {
       const screenshot = await page.screenshot();
       expect(screenshot).toMatchImageSnapshot();
     });
-  })
+  });
 
   test('Should render currency symbol', async () => {
     const page = await createPage(`<mg-input-numeric label="label" type="currency"></mg-input-numeric>`);
@@ -84,21 +83,20 @@ describe('mg-input-numeric', () => {
 
     await page.keyboard.down('Tab');
 
-    await input.press("1");
-    await input.press("2");
-    await input.press("3");
-    await input.press("4");
-    await input.press("5");
-    await input.press(",");
-    await input.press("6");
-    await input.press("7");
+    await input.press('1');
+    await input.press('2');
+    await input.press('3');
+    await input.press('4');
+    await input.press('5');
+    await input.press(',');
+    await input.press('6');
+    await input.press('7');
 
     await page.keyboard.down('Tab');
 
     const screenshot = await page.screenshot();
     expect(screenshot).toMatchImageSnapshot();
   });
-
 
   test('Should render error when leaving an empty required input', async () => {
     const page = await createPage(`<mg-input-numeric label="label" required></mg-input-numeric>`);
@@ -118,7 +116,7 @@ describe('mg-input-numeric', () => {
     `<mg-input-numeric label="label" min="120"></mg-input-numeric>`,
     `<mg-input-numeric label="label" max="100"></mg-input-numeric>`,
     `<mg-input-numeric label="label" min="10" max="100"></mg-input-numeric>`,
-  ])('Should render error when value does not respect min max attributes', (html)=>{
+  ])('Should render error when value does not respect min max attributes', html => {
     test('render', async () => {
       const page = await createPage(html);
 
@@ -129,9 +127,9 @@ describe('mg-input-numeric', () => {
 
       await page.keyboard.down('Tab');
 
-      await input.press("1");
-      await input.press("1");
-      await input.press("0");
+      await input.press('1');
+      await input.press('1');
+      await input.press('0');
 
       await page.keyboard.down('Tab');
 
@@ -150,31 +148,30 @@ describe('mg-input-numeric', () => {
 
     await page.keyboard.down('Tab');
 
-    await input.press("1");
-    await input.press("KeyB"); // Should not be included
-    await input.press("2");
-    await input.press("KeyL"); // Should not be included
-    await input.press("3");
-    await input.press("KeyU"); // Should not be included
-    await input.press("4");
-    await input.press("5");
-    await input.press("6");
-    await input.press("7");
-    await input.press("8");
-    await input.press("9");
-    await input.press("0");
-    await input.press("1");
-    await input.press("2");
-    await input.press("3");
-    await input.press("4"); // Should not be included
-    await input.press(",");
-    await input.press("."); // Should not be included
-    await input.press("4");
-    await input.press("5");
-    await input.press("6"); // Should not be included
+    await input.press('1');
+    await input.press('KeyB'); // Should not be included
+    await input.press('2');
+    await input.press('KeyL'); // Should not be included
+    await input.press('3');
+    await input.press('KeyU'); // Should not be included
+    await input.press('4');
+    await input.press('5');
+    await input.press('6');
+    await input.press('7');
+    await input.press('8');
+    await input.press('9');
+    await input.press('0');
+    await input.press('1');
+    await input.press('2');
+    await input.press('3');
+    await input.press('4'); // Should not be included
+    await input.press(',');
+    await input.press('.'); // Should not be included
+    await input.press('4');
+    await input.press('5');
+    await input.press('6'); // Should not be included
 
-    let value = await input.getProperty("value");
-    expect(value).toEqual("1234567890123,45");
+    let value = await input.getProperty('value');
+    expect(value).toEqual('1234567890123,45');
   });
-
 });

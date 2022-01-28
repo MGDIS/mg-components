@@ -1,0 +1,625 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mg-input-checkbox Should render with args {
+  label: 'label',
+  identifier: 'identifier',
+  value: [Array],
+  disabled: true
+}: 1`] = `
+<mg-input-checkbox>
+  <mock:shadow-root>
+    <fieldset class="mg-input mg-input--checkbox">
+      <mg-input-title identifier="identifier" is-legend="">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input">
+          <ul class="mg-input__input-group-container mg-input__input-group-container--checkbox">
+            <li class="mg-input__input-group">
+              <input aria-describedby="" checked="" disabled="" id="identifier_0" name="identifier" type="checkbox" value="true">
+              <label htmlfor="identifier_0">
+                batman
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="" disabled="" id="identifier_1" name="identifier" type="checkbox" value="false">
+              <label htmlfor="identifier_1">
+                robin
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="" disabled="" id="identifier_2" name="identifier" type="checkbox" value="false">
+              <label htmlfor="identifier_2">
+                joker
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="" disabled="" id="identifier_3" indeterminate="" name="identifier" type="checkbox">
+              <label htmlfor="identifier_3">
+                bane
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </fieldset>
+  </mock:shadow-root>
+</mg-input-checkbox>
+`;
+
+exports[`mg-input-checkbox Should render with args {
+  label: 'label',
+  identifier: 'identifier',
+  value: [Array],
+  helpText: 'Hello joker'
+}: 1`] = `
+<mg-input-checkbox>
+  <mock:shadow-root>
+    <fieldset class="mg-input mg-input--checkbox">
+      <mg-input-title identifier="identifier" is-legend="">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input">
+          <ul class="mg-input__input-group-container mg-input__input-group-container--checkbox">
+            <li class="mg-input__input-group">
+              <input aria-describedby="identifier-help-text" checked="" id="identifier_0" name="identifier" type="checkbox" value="true">
+              <label htmlfor="identifier_0">
+                batman
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="identifier-help-text" disabled="" id="identifier_1" name="identifier" type="checkbox" value="false">
+              <label htmlfor="identifier_1">
+                robin
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="identifier-help-text" id="identifier_2" name="identifier" type="checkbox" value="false">
+              <label htmlfor="identifier_2">
+                joker
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="identifier-help-text" id="identifier_3" indeterminate="" name="identifier" type="checkbox">
+              <label htmlfor="identifier_3">
+                bane
+              </label>
+            </li>
+          </ul>
+        </div>
+        <div class="mg-input__help-text" id="identifier-help-text">
+          Hello joker
+        </div>
+      </div>
+    </fieldset>
+  </mock:shadow-root>
+</mg-input-checkbox>
+`;
+
+exports[`mg-input-checkbox Should render with args {
+  label: 'label',
+  identifier: 'identifier',
+  value: [Array],
+  inputVerticalList: true
+}: 1`] = `
+<mg-input-checkbox>
+  <mock:shadow-root>
+    <fieldset class="mg-input mg-input--checkbox">
+      <mg-input-title identifier="identifier" is-legend="">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input">
+          <ul class="mg-input__input-group-container mg-input__input-group-container--checkbox mg-input__input-group-container--vertical">
+            <li class="mg-input__input-group">
+              <input aria-describedby="" checked="" id="identifier_0" name="identifier" type="checkbox" value="true">
+              <label htmlfor="identifier_0">
+                batman
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="" disabled="" id="identifier_1" name="identifier" type="checkbox" value="false">
+              <label htmlfor="identifier_1">
+                robin
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_2" name="identifier" type="checkbox" value="false">
+              <label htmlfor="identifier_2">
+                joker
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_3" indeterminate="" name="identifier" type="checkbox">
+              <label htmlfor="identifier_3">
+                bane
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </fieldset>
+  </mock:shadow-root>
+</mg-input-checkbox>
+`;
+
+exports[`mg-input-checkbox Should render with args {
+  label: 'label',
+  identifier: 'identifier',
+  value: [Array],
+  labelHide: true
+}: 1`] = `
+<mg-input-checkbox>
+  <mock:shadow-root>
+    <fieldset class="mg-input mg-input--checkbox">
+      <mg-input-title class="sr-only" identifier="identifier" is-legend="">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input">
+          <ul class="mg-input__input-group-container mg-input__input-group-container--checkbox">
+            <li class="mg-input__input-group">
+              <input aria-describedby="" checked="" id="identifier_0" name="identifier" type="checkbox" value="true">
+              <label htmlfor="identifier_0">
+                batman
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="" disabled="" id="identifier_1" name="identifier" type="checkbox" value="false">
+              <label htmlfor="identifier_1">
+                robin
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_2" name="identifier" type="checkbox" value="false">
+              <label htmlfor="identifier_2">
+                joker
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_3" indeterminate="" name="identifier" type="checkbox">
+              <label htmlfor="identifier_3">
+                bane
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </fieldset>
+  </mock:shadow-root>
+</mg-input-checkbox>
+`;
+
+exports[`mg-input-checkbox Should render with args {
+  label: 'label',
+  identifier: 'identifier',
+  value: [Array],
+  labelOnTop: true
+}: 1`] = `
+<mg-input-checkbox>
+  <mock:shadow-root>
+    <fieldset class="mg-input mg-input--checkbox mg-input--label-on-top">
+      <div class="mg-input__title">
+        <mg-input-title identifier="identifier" is-legend="">
+          label
+        </mg-input-title>
+      </div>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input">
+          <ul class="mg-input__input-group-container mg-input__input-group-container--checkbox">
+            <li class="mg-input__input-group">
+              <input aria-describedby="" checked="" id="identifier_0" name="identifier" type="checkbox" value="true">
+              <label htmlfor="identifier_0">
+                batman
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="" disabled="" id="identifier_1" name="identifier" type="checkbox" value="false">
+              <label htmlfor="identifier_1">
+                robin
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_2" name="identifier" type="checkbox" value="false">
+              <label htmlfor="identifier_2">
+                joker
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_3" indeterminate="" name="identifier" type="checkbox">
+              <label htmlfor="identifier_3">
+                bane
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </fieldset>
+  </mock:shadow-root>
+</mg-input-checkbox>
+`;
+
+exports[`mg-input-checkbox Should render with args {
+  label: 'label',
+  identifier: 'identifier',
+  value: [Array],
+  readonly: true
+}: 1`] = `
+<mg-input-checkbox>
+  <mock:shadow-root>
+    <fieldset class="mg-input mg-input--checkbox">
+      <mg-input-title identifier="identifier" is-legend="">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input">
+          <ul class="mg-input__input-group-container mg-input__input-group-container--checkbox">
+            <li class="mg-input__input-group">
+              <input aria-describedby="" checked="" disabled="" id="identifier_0" name="identifier" type="checkbox" value="true">
+              <label htmlfor="identifier_0">
+                batman
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </fieldset>
+  </mock:shadow-root>
+</mg-input-checkbox>
+`;
+
+exports[`mg-input-checkbox Should render with args {
+  label: 'label',
+  identifier: 'identifier',
+  value: [Array],
+  readonly: true,
+  labelOnTop: true,
+  tooltip: 'Tooltip message'
+}: 1`] = `
+<mg-input-checkbox>
+  <mock:shadow-root>
+    <fieldset class="mg-input mg-input--checkbox mg-input--label-on-top">
+      <div class="mg-input__title">
+        <mg-input-title identifier="identifier" is-legend="">
+          label
+        </mg-input-title>
+      </div>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input">
+          <ul class="mg-input__input-group-container mg-input__input-group-container--checkbox">
+            <li class="mg-input__input-group">
+              <input aria-describedby="" checked="" disabled="" id="identifier_0" name="identifier" type="checkbox" value="true">
+              <label htmlfor="identifier_0">
+                batman
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </fieldset>
+  </mock:shadow-root>
+</mg-input-checkbox>
+`;
+
+exports[`mg-input-checkbox Should render with args {
+  label: 'label',
+  identifier: 'identifier',
+  value: [Array],
+  required: true
+}: 1`] = `
+<mg-input-checkbox>
+  <mock:shadow-root>
+    <fieldset class="mg-input mg-input--checkbox">
+      <mg-input-title identifier="identifier" is-legend="" required="">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input">
+          <ul class="mg-input__input-group-container mg-input__input-group-container--checkbox">
+            <li class="mg-input__input-group">
+              <input aria-describedby="" checked="" id="identifier_0" name="identifier" required="" type="checkbox" value="true">
+              <label htmlfor="identifier_0">
+                batman
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="" disabled="" id="identifier_1" name="identifier" required="" type="checkbox" value="false">
+              <label htmlfor="identifier_1">
+                robin
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_2" name="identifier" required="" type="checkbox" value="false">
+              <label htmlfor="identifier_2">
+                joker
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_3" indeterminate="" name="identifier" required="" type="checkbox">
+              <label htmlfor="identifier_3">
+                bane
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </fieldset>
+  </mock:shadow-root>
+</mg-input-checkbox>
+`;
+
+exports[`mg-input-checkbox Should render with args {
+  label: 'label',
+  identifier: 'identifier',
+  value: [Array],
+  tooltip: 'Batman is a DC Comics license'
+}: 1`] = `
+<mg-input-checkbox>
+  <mock:shadow-root>
+    <fieldset class="mg-input mg-input--checkbox">
+      <mg-input-title identifier="identifier" is-legend="">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input">
+          <ul class="mg-input__input-group-container mg-input__input-group-container--checkbox">
+            <li class="mg-input__input-group">
+              <input aria-describedby="" checked="" id="identifier_0" name="identifier" type="checkbox" value="true">
+              <label htmlfor="identifier_0">
+                batman
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="" disabled="" id="identifier_1" name="identifier" type="checkbox" value="false">
+              <label htmlfor="identifier_1">
+                robin
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_2" name="identifier" type="checkbox" value="false">
+              <label htmlfor="identifier_2">
+                joker
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_3" indeterminate="" name="identifier" type="checkbox">
+              <label htmlfor="identifier_3">
+                bane
+              </label>
+            </li>
+          </ul>
+          <mg-tooltip identifier="identifier-tooltip" message="Batman is a DC Comics license">
+            <mg-icon icon="info-circle"></mg-icon>
+          </mg-tooltip>
+        </div>
+      </div>
+    </fieldset>
+  </mock:shadow-root>
+</mg-input-checkbox>
+`;
+
+exports[`mg-input-checkbox Should render with args { label: 'label', identifier: 'identifier', value: [Array] }: 1`] = `
+<mg-input-checkbox>
+  <mock:shadow-root>
+    <fieldset class="mg-input mg-input--checkbox">
+      <mg-input-title identifier="identifier" is-legend="">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input">
+          <ul class="mg-input__input-group-container mg-input__input-group-container--checkbox">
+            <li class="mg-input__input-group">
+              <input aria-describedby="" checked="" id="identifier_0" name="identifier" type="checkbox" value="true">
+              <label htmlfor="identifier_0">
+                batman
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="" disabled="" id="identifier_1" name="identifier" type="checkbox" value="false">
+              <label htmlfor="identifier_1">
+                robin
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_2" name="identifier" type="checkbox" value="false">
+              <label htmlfor="identifier_2">
+                joker
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="" id="identifier_3" indeterminate="" name="identifier" type="checkbox">
+              <label htmlfor="identifier_3">
+                bane
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </fieldset>
+  </mock:shadow-root>
+</mg-input-checkbox>
+`;
+
+exports[`mg-input-checkbox Should trigger events, case validity check false 1`] = `
+<mg-input-checkbox>
+  <mock:shadow-root>
+    <fieldset class="mg-input mg-input--checkbox">
+      <mg-input-title identifier="identifier" is-legend="">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input">
+          <ul class="mg-input__input-group-container mg-input__input-group-container--checkbox">
+            <li class="mg-input__input-group">
+              <input aria-describedby="identifier-help-text" checked="" id="identifier_0" name="identifier" type="checkbox" value="true">
+              <label htmlfor="identifier_0">
+                batman
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="identifier-help-text" disabled="" id="identifier_1" name="identifier" type="checkbox" value="false">
+              <label htmlfor="identifier_1">
+                robin
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="identifier-help-text" id="identifier_2" name="identifier" type="checkbox" value="false">
+              <label htmlfor="identifier_2">
+                joker
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="identifier-help-text" id="identifier_3" indeterminate="" name="identifier" type="checkbox">
+              <label htmlfor="identifier_3">
+                bane
+              </label>
+            </li>
+          </ul>
+        </div>
+        <div class="mg-input__help-text" id="identifier-help-text">
+          My help text
+        </div>
+      </div>
+    </fieldset>
+  </mock:shadow-root>
+</mg-input-checkbox>
+`;
+
+exports[`mg-input-checkbox Should trigger events, case validity check false 2`] = `
+<mg-input-checkbox invalid="">
+  <mock:shadow-root>
+    <fieldset class="is-not-valid mg-input mg-input--checkbox">
+      <mg-input-title identifier="identifier" is-legend="">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input">
+          <ul class="mg-input__input-group-container mg-input__input-group-container--checkbox">
+            <li class="mg-input__input-group">
+              <input aria-describedby="identifier-help-text identifier-error" id="identifier_0" name="identifier" type="checkbox" value="false">
+              <label htmlfor="identifier_0">
+                batman
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="identifier-help-text identifier-error" disabled="" id="identifier_1" name="identifier" type="checkbox" value="false">
+              <label htmlfor="identifier_1">
+                robin
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="identifier-help-text identifier-error" id="identifier_2" name="identifier" type="checkbox" value="false">
+              <label htmlfor="identifier_2">
+                joker
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="identifier-help-text identifier-error" id="identifier_3" indeterminate="" name="identifier" type="checkbox">
+              <label htmlfor="identifier_3">
+                bane
+              </label>
+            </li>
+          </ul>
+        </div>
+        <div class="mg-input__help-text" id="identifier-help-text">
+          My help text
+        </div>
+        <div aria-live="assertive" class="mg-input__error" id="identifier-error">
+          Ce champs est obligatoire.
+        </div>
+      </div>
+    </fieldset>
+  </mock:shadow-root>
+</mg-input-checkbox>
+`;
+
+exports[`mg-input-checkbox Should trigger events, case validity check true 1`] = `
+<mg-input-checkbox>
+  <mock:shadow-root>
+    <fieldset class="mg-input mg-input--checkbox">
+      <mg-input-title identifier="identifier" is-legend="">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input">
+          <ul class="mg-input__input-group-container mg-input__input-group-container--checkbox">
+            <li class="mg-input__input-group">
+              <input aria-describedby="identifier-help-text" checked="" id="identifier_0" name="identifier" type="checkbox" value="true">
+              <label htmlfor="identifier_0">
+                batman
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="identifier-help-text" disabled="" id="identifier_1" name="identifier" type="checkbox" value="false">
+              <label htmlfor="identifier_1">
+                robin
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="identifier-help-text" id="identifier_2" name="identifier" type="checkbox" value="false">
+              <label htmlfor="identifier_2">
+                joker
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="identifier-help-text" id="identifier_3" indeterminate="" name="identifier" type="checkbox">
+              <label htmlfor="identifier_3">
+                bane
+              </label>
+            </li>
+          </ul>
+        </div>
+        <div class="mg-input__help-text" id="identifier-help-text">
+          My help text
+        </div>
+      </div>
+    </fieldset>
+  </mock:shadow-root>
+</mg-input-checkbox>
+`;
+
+exports[`mg-input-checkbox Should trigger events, case validity check true 2`] = `
+<mg-input-checkbox valid="">
+  <mock:shadow-root>
+    <fieldset class="mg-input mg-input--checkbox">
+      <mg-input-title identifier="identifier" is-legend="">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input">
+          <ul class="mg-input__input-group-container mg-input__input-group-container--checkbox">
+            <li class="mg-input__input-group">
+              <input aria-describedby="identifier-help-text" checked="" id="identifier_0" name="identifier" type="checkbox" value="true">
+              <label htmlfor="identifier_0">
+                batman
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="identifier-help-text" disabled="" id="identifier_1" name="identifier" type="checkbox" value="false">
+              <label htmlfor="identifier_1">
+                robin
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="identifier-help-text" checked="" id="identifier_2" name="identifier" type="checkbox" value="true">
+              <label htmlfor="identifier_2">
+                joker
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="identifier-help-text" id="identifier_3" indeterminate="" name="identifier" type="checkbox">
+              <label htmlfor="identifier_3">
+                bane
+              </label>
+            </li>
+          </ul>
+        </div>
+        <div class="mg-input__help-text" id="identifier-help-text">
+          My help text
+        </div>
+      </div>
+    </fieldset>
+  </mock:shadow-root>
+</mg-input-checkbox>
+`;

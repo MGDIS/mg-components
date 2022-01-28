@@ -1,4 +1,4 @@
-import { h } from "@stencil/core";
+import { h } from '@stencil/core';
 
 export default {
   component: 'mg-input-text',
@@ -10,7 +10,6 @@ export default {
  * 2. boolean arguments with a default true value must be added like display-character-left={args.displayCharacterLeft ? 'true' : 'false'}
  */
 const Template = args => {
-  // Extract slot so it won't be render as an attribute
   const labelOnTop = args.labelOnTop;
   delete args.labelOnTop;
   const labelHide = args.labelHide;
@@ -24,15 +23,17 @@ const Template = args => {
   const helpText = args.helpText;
   delete args.helpText;
   // return element
-  return <mg-input-text
-    {...args}
-    label-on-top={labelOnTop}
-    label-hide={labelHide}
-    pattern-error-message={patternErrorMessage}
-    display-character-left={displayCharacterLeft}
-    character-left-template={characterLeftTemplate}
-    help-text={helpText}
-  ></mg-input-text>
+  return (
+    <mg-input-text
+      {...args}
+      label-on-top={labelOnTop}
+      label-hide={labelHide}
+      pattern-error-message={patternErrorMessage}
+      display-character-left={displayCharacterLeft}
+      character-left-template={characterLeftTemplate}
+      help-text={helpText}
+    ></mg-input-text>
+  );
 };
 
 /**
@@ -78,14 +79,14 @@ Email.args = {
   // remove feature to focus on pattern
   tooltip: '',
   required: false,
-  label: "Adresse email",
+  label: 'Adresse email',
   // Add pattern Email rules
   maxlength: 100,
-  pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,15}',
-  patternErrorMessage: 'L\'information saisie est incorrecte (exemple : prenom.nom@exemple.fr)',
+  pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,15}',
+  patternErrorMessage: "L'information saisie est incorrecte (exemple : prenom.nom@exemple.fr)",
   // Help Text
   helpText: 'exemple : prenom.nom@exemple.fr',
-}
+};
 
 /**
  * Emails
@@ -95,14 +96,14 @@ export const Emails = Template.bind({});
 
 Emails.args = {
   ...Email.args,
-  label: "Adresses email",
+  label: 'Adresses email',
   // Add pattern Emails rules
   maxlength: 200,
-  pattern: '([a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,15}(;)*)+',
-  patternErrorMessage: 'L\'information saisie est incorrecte (exemple : prenom.nom@exemple.fr;prenom.nom.2@exemple.fr)',
+  pattern: '([a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,15}(;)*)+',
+  patternErrorMessage: "L'information saisie est incorrecte (exemple : prenom.nom@exemple.fr;prenom.nom.2@exemple.fr)",
   // Help Text
   helpText: 'exemple : prenom.nom@exemple.fr;prenom.nom.2@exemple.fr',
-}
+};
 
 /**
  * RNA
@@ -111,28 +112,27 @@ Emails.args = {
 export const RNA = Template.bind({});
 RNA.args = {
   ...Emails.args,
-  label: "RNA",
+  label: 'RNA',
   // Add pattern RNA rules
   maxlength: 10,
   pattern: '(W[0-9]{1}[a-zA-Z0-9]{1}[0-9]{7})',
-  patternErrorMessage: 'Le numéro RNA n\'est pas valide (exemple: W123456789)',
+  patternErrorMessage: "Le numéro RNA n'est pas valide (exemple: W123456789)",
   // Help Text
   helpText: 'exemple : W123456789',
-}
+};
 
 /**
  * URL
  */
 
- export const URL = Template.bind({});
- URL.args = {
-   ...Emails.args,
-   label: "URL",
-   // Add pattern URL rules
-   maxlength: 200,
-   pattern: 'https?:\/\/(?:www\.)?([-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b)*(\/[\/\d\w\.-]*)*(?:[\?])*(.+)*',
-   patternErrorMessage: 'Le format du champ n\'est pas valide (exemple: https://www.exemple.fr)',
-   // Help Text
-   helpText: 'Exemple: https://www.exemple.fr',
- }
-
+export const URL = Template.bind({});
+URL.args = {
+  ...Emails.args,
+  label: 'URL',
+  // Add pattern URL rules
+  maxlength: 200,
+  pattern: 'https?://(?:www.)?([-a-zA-Z0-9@:%._+~#=]{2,256}.[a-z]{2,6}\b)*(/[/dw.-]*)*(?:[?])*(.+)*',
+  patternErrorMessage: "Le format du champ n'est pas valide (exemple: https://www.exemple.fr)",
+  // Help Text
+  helpText: 'Exemple: https://www.exemple.fr',
+};

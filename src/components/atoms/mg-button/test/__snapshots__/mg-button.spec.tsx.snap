@@ -180,7 +180,7 @@ exports[`mg-button prevent double click should disable button after click 2`] = 
 <mg-button disabled="">
   <!---->
   <button aria-label="test" class="mg-button mg-button--loading mg-button--primary" disabled="" id="identifier">
-    <mg-icon icon="loader"></mg-icon>
+    <mg-icon icon="loader" spin=""></mg-icon>
     <div class="mg-button__content">
       Text button
     </div>

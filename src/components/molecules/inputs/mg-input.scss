@@ -17,22 +17,39 @@
     margin-top: calc((var(--default-size) - var(--font-size-base) * var(--line-height)) / 2);
     margin-right: var(--mg-inputs-title-horizontal-space, var(--mg-inputs-spacer));
     text-align: end;
-    flex-shrink: 0;
+    flex-shrink: var(--mg-inputs-shrink, 1);
   }
 
   // Display label on top
   &.mg-input--label-on-top {
     flex-direction: column;
 
-    mg-input-title {
-      margin-top: 0;
-      margin-right: 0;
-      margin-bottom: calc(var(--mg-inputs-spacer) * 0.3);
-      text-align: start;
+    .mg-input__input-container {
+      width: 100%;
     }
 
     .mg-input__input-group-container--radio {
-      margin-top: calc(var(--mg-inputs-spacer) * 0.7);
+      margin-top: 0.7rem;
+    }
+  }
+
+  &__title {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 0.3rem;
+
+    mg-input-title {
+      margin-top: 0;
+      margin-right: 0;
+      text-align: start;
+    }
+
+    mg-tooltip {
+      margin-top: 0;
+    }
+
+    .mg-input__button-toggle {
+      margin-top: 0.5rem;
     }
   }
 
@@ -40,6 +57,7 @@
    * Input style
    */
   input[type='text'],
+  input[type='password'],
   input[type='date'],
   &.mg-input--date input, /* IE FIX */
   textarea,
@@ -84,17 +102,21 @@
     padding-inline-end: 0;
   }
 
-  input[type='radio'] {
-    margin-top: 0;
-    margin-right: calc(var(--mg-inputs-spacer) * 0.6);
+  input[type='radio'],
+  input[type='checkbox'] {
+    flex-shrink: 0; /* Ensure checkbox won't resize in flex element */
+    width: var(--mg-input-check-size);
+    height: var(--mg-input-check-size);
+    margin-top: calc((var(--font-size-base) * var(--line-height) - var(--mg-input-check-size)) / 2);
+    margin-right: 0.6rem;
     margin-bottom: 0;
     margin-left: 0;
   }
 
   // Ensure to keed input size on readonly
   .mg-input__input-container > strong {
-    display: flex;
-    align-items: center;
+    display: inline-block;
+    margin-top: calc((var(--default-size) - var(--font-size-base) * var(--line-height)) / 2);
     min-height: var(--default-size);
   }
 
@@ -105,26 +127,34 @@
     display: inline-flex;
     width: var(--mg-icon-regular-size);
     height: var(--mg-icon-regular-size);
-    margin-top: calc((var(--default-size) - var(--mg-icon-regular-size)) / 2);
     margin-left: var(--mg-inputs-spacer);
   }
+
+  &:not(.mg-input--label-on-top) {
+    mg-tooltip {
+      margin-top: calc((var(--default-size) - var(--mg-icon-regular-size)) / 2);
+    }
+  }
+
   // specifics spacers for checkbox and radio
   &--radio,
   &--checkbox {
-    mg-tooltip {
-      margin-left: calc(var(--mg-inputs-spacer) * 2);
+    &:not(.mg-input--label-on-top) {
+      mg-tooltip {
+        margin-left: 2rem;
+      }
     }
   }
 
   /**
    * Manage space between input and first message
    */
-  .mg-input__input-container__input {
+  .mg-input__input {
     display: flex;
 
     & + mg-character-left,
-    & + .mg-input__input-container__help-text,
-    & + .mg-input__input-container__error {
+    & + .mg-input__help-text,
+    & + .mg-input__error {
       margin-top: 0.5rem;
     }
   }
@@ -163,12 +193,13 @@
     margin: 0;
     padding: 0;
     list-style: none;
-    &.mg-input__input-group-container--radio {
-      display: flex;
-      flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 2.3rem;
+    row-gap: 1rem;
+    &.mg-input__input-group-container--radio,
+    &.mg-input__input-group-container--checkbox {
       margin-top: calc((var(--default-size) - var(--font-size-base) * var(--line-height)) / 2);
-      column-gap: calc(var(--mg-inputs-spacer) * 2.5);
-      row-gap: var(--mg-inputs-spacer);
     }
     &.mg-input__input-group-container--vertical {
       flex-direction: column;
@@ -180,7 +211,7 @@
   */
   &__input-group {
     display: flex;
-    align-items: center;
+    align-items: top;
   }
 
   /**
@@ -188,7 +219,9 @@
   */
   &.mg-input--text,
   &.mg-input--textarea {
-    justify-content: space-between;
+    &:not(.mg-input--label-on-top) {
+      justify-content: space-between;
+    }
 
     .mg-input__input-container {
       flex: auto;
@@ -206,4 +239,213 @@ fieldset.mg-input {
   border: 0;
   margin: 0;
   padding: 0;
+}
+
+/**
+* Toogle
+*/
+
+@mixin toggleSizeGenerator($elementPadding, $childElementPadding) {
+  $elementLineHeight: calc(var(--font-size-base) + 0.2rem);
+  $elementMinSize: calc(#{$elementLineHeight} + #{$childElementPadding} * 2);
+
+  .mg-input__button-toggle {
+    margin-top: calc((var(--default-size) - (#{$elementMinSize} + #{$elementPadding} * 2 + var(--mg-inputs-border-width) * 2)) / 2);
+    padding: $elementPadding;
+    border-radius: calc(
+      (#{$elementLineHeight} + #{$elementPadding} * 2 + #{$childElementPadding} * 2) / var(--mg-input-toggle-border-radius-ratio)
+    ); // = (lineheight + element vertical-padding + child vertical-padding) / ratio
+    line-height: $elementLineHeight;
+  }
+
+  .toggle-button__toggle-item-container {
+    padding: $childElementPadding 0;
+    min-width: $elementMinSize;
+    min-height: $elementMinSize;
+    border-radius: calc((#{$elementLineHeight} + #{$childElementPadding} * 2) / var(--mg-input-toggle-border-radius-ratio)); // = (lineheight + child vertical-padding) / ratio
+  }
+
+  // icon variation
+  .mg-input--toggle-is-icon .toggle-button__toggle-item-container mg-icon {
+    height: $elementLineHeight;
+    width: $elementLineHeight;
+  }
+
+  // readonly variation
+  .mg-input--toggle-readonly .mg-input__button-toggle {
+    margin-top: calc((var(--default-size) - #{$elementMinSize}) / 2);
+  }
+}
+
+@include toggleSizeGenerator(0.2rem, 0.5rem);
+
+.mg-input-toggle .mg-input__input-container {
+  width: 100%;
+}
+
+.mg-input__button-toggle {
+  display: flex;
+  overflow: hidden;
+  &:not(.mg-input--toggle-readonly .mg-input__button-toggle) {
+    background-color: hsl(var(--color-light));
+    // border
+    border-width: var(--mg-inputs-border-width);
+    border-style: solid;
+    border-color: var(--mg-inputs-color);
+  }
+}
+
+.toggle-button__toggle-item-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  // font
+  &:first-of-type {
+    background-color: hsl(var(--color-info-h) calc(var(--color-info-s) - 64%) calc(var(--color-info-l) + 55%));
+    color: hsl(var(--color-info));
+    font-weight: 600;
+  }
+  &:last-of-type {
+    color: hsl(var(--color-dark));
+  }
+  // slot
+  & > *:not(.mg-input--toggle-readonly .toggle-button__toggle-item-container > *) {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  & > *:not(mg-icon) {
+    padding: 0 0.9rem;
+  }
+}
+
+// toggle default active variation
+.mg-input--toggle-active {
+  .toggle-button__toggle-item-container {
+    &:first-of-type {
+      background-color: unset;
+      color: hsl(var(--color-dark));
+      font-weight: unset;
+    }
+    &:last-of-type {
+      font-weight: 600;
+      background-color: hsl(var(--color-info-h) calc(var(--color-info-s) - 64%) calc(var(--color-info-l) + 55%));
+      color: hsl(var(--color-info));
+    }
+  }
+
+  // icon variation
+  &.mg-input--toggle-is-icon .toggle-button__toggle-item-container {
+    &:first-of-type {
+      opacity: 0;
+    }
+    &:last-of-type {
+      opacity: 1;
+    }
+  }
+
+  // readonly variation
+  &.mg-input--toggle-readonly .toggle-button__toggle-item-container {
+    &:first-of-type {
+      display: none;
+    }
+    &:last-of-type {
+      display: unset;
+    }
+  }
+
+  // on-off variation
+  &.mg-input--toggle-is-on-off .toggle-button__toggle-item-container:first-of-type {
+    background: none;
+  }
+}
+
+// toggle icon variation
+.mg-input--toggle-is-icon {
+  .toggle-button__toggle-item-container {
+    &:first-of-type {
+      opacity: 1;
+    }
+    &:last-of-type {
+      opacity: 0;
+    }
+
+    // slot
+    > *:not(mg-icon) {
+      padding: 0;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    mg-icon {
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+// disabled variation
+.mg-input--toggle-disabled .mg-input__button-toggle {
+  opacity: 30%;
+}
+
+// toggle on-off variation
+.mg-input--toggle-is-on-off {
+  .toggle-button__toggle-item-container:first-of-type {
+    background-color: hsl(var(--color-dark-h) calc(var(--color-dark-s) - 30%) calc(var(--color-dark-l) + 75%));
+    color: hsl(var(--color-dark));
+  }
+
+  &.mg-input--toggle-active .toggle-button__toggle-item-container:first-of-type {
+    background: none;
+  }
+}
+
+// readonly variation
+.mg-input--toggle-readonly {
+  .mg-input__button-toggle {
+    background: none;
+    border: none;
+    overflow: hidden;
+    padding: 0;
+  }
+  .toggle-button__toggle-item-container:last-of-type {
+    display: none;
+  }
+}
+
+// clicked variation - animation trigger
+.mg-input--toggle-clicked {
+  .toggle-button__toggle-item-container {
+    // animation
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.2s;
+    animation-name: toggleUnactive;
+  }
+  &.mg-input--toggle-active .toggle-button__toggle-item-container {
+    // animation
+    animation-name: toggleActive;
+  }
+}
+
+/**
+  * Animations
+  */
+
+@keyframes toggleUnactive {
+  from {
+    transform: translateX(1.5em);
+  }
+  to {
+    transform: translateX(0em);
+  }
+}
+
+@keyframes toggleActive {
+  from {
+    transform: translateX(-1.5em);
+  }
+  to {
+    transform: translateX(0em);
+  }
 }

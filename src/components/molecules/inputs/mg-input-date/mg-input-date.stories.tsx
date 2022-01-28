@@ -1,4 +1,4 @@
-import { h } from "@stencil/core";
+import { h } from '@stencil/core';
 
 export default {
   component: 'mg-input-date',
@@ -10,7 +10,6 @@ export default {
  * 2. boolean arguments with a default true value must be added like display-character-left={args.displayCharacterLeft ? 'true' : 'false'}
  */
 const Template = args => {
-  // Extract slot so it won't be render as an attribute
   const labelOnTop = args.labelOnTop;
   delete args.labelOnTop;
   const labelHide = args.labelHide;
@@ -18,13 +17,8 @@ const Template = args => {
   const helpText = args.helpText;
   delete args.helpText;
   // return element
-  return <mg-input-date
-    {...args}
-    label-on-top={labelOnTop}
-    label-hide={labelHide}
-    help-text={helpText}
-  ></mg-input-date>
-}
+  return <mg-input-date {...args} label-on-top={labelOnTop} label-hide={labelHide} help-text={helpText}></mg-input-date>;
+};
 
 export const MgInputDate = Template.bind({});
 

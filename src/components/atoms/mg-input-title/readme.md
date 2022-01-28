@@ -16,22 +16,28 @@ This atom refers to thes [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64), [PDA9-
 
 ### Used by
 
+ - [mg-input-checkbox](../../molecules/inputs/mg-input-checkbox)
  - [mg-input-date](../../molecules/inputs/mg-input-date)
  - [mg-input-numeric](../../molecules/inputs/mg-input-numeric)
+ - [mg-input-password](../../molecules/inputs/mg-input-password)
  - [mg-input-radio](../../molecules/inputs/mg-input-radio)
  - [mg-input-select](../../molecules/inputs/mg-input-select)
  - [mg-input-text](../../molecules/inputs/mg-input-text)
  - [mg-input-textarea](../../molecules/inputs/mg-input-textarea)
+ - [mg-input-toggle](../../molecules/inputs/mg-input-toggle)
 
 ### Graph
 ```mermaid
 graph TD;
+  mg-input-checkbox --> mg-input-title
   mg-input-date --> mg-input-title
   mg-input-numeric --> mg-input-title
+  mg-input-password --> mg-input-title
   mg-input-radio --> mg-input-title
   mg-input-select --> mg-input-title
   mg-input-text --> mg-input-title
   mg-input-textarea --> mg-input-title
+  mg-input-toggle --> mg-input-title
   style mg-input-title fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

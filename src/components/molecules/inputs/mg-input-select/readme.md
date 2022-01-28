@@ -26,26 +26,26 @@ This atom refers to the [PDA9-72](https://jira.mgdis.fr/browse/PDA9-72).
 
 ## Events
 
-| Event         | Description                     | Type                  |
-| ------------- | ------------------------------- | --------------------- |
-| `valueChange` | Emmited event when value change | `CustomEvent<string>` |
+| Event          | Description                     | Type                  |
+| -------------- | ------------------------------- | --------------------- |
+| `value-change` | Emmited event when value change | `CustomEvent<string>` |
 
 
 ## Dependencies
 
 ### Depends on
 
-- [mg-input-title](../../../atoms/mg-input-title)
 - [mg-tooltip](../../../atoms/mg-tooltip)
 - [mg-icon](../../../atoms/mg-icon)
+- [mg-input-title](../../../atoms/mg-input-title)
 - [mg-character-left](../../../atoms/mg-character-left)
 
 ### Graph
 ```mermaid
 graph TD;
-  mg-input-select --> mg-input-title
   mg-input-select --> mg-tooltip
   mg-input-select --> mg-icon
+  mg-input-select --> mg-input-title
   mg-input-select --> mg-character-left
   style mg-input-select fill:#f9f,stroke:#333,stroke-width:4px
 ```

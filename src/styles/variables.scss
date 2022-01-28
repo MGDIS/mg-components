@@ -13,10 +13,20 @@
   --color-neutral: var(--color-neutral-h), var(--color-neutral-s), var(--color-neutral-l);
 
   // Warning
-  --color-warning: 41, 100%, 62.2%; // 255, 195, 62; // #ffc33e
+  // #ffc33e
+  // rgb(255, 195, 62);
+  --color-warning-h: 41;
+  --color-warning-s: 100%;
+  --color-warning-l: 62.2%;
+  --color-warning: var(--color-warning-h), var(--color-warning-s), var(--color-warning-l);
 
   // Success
-  --color-success: 159, 66%, 51.6%; // 50, 213, 156; // #32d59c
+  // #32d59c
+  // rgb(50, 213, 156);
+  --color-success-h: 159;
+  --color-success-s: 66%;
+  --color-success-l: 51.6%;
+  --color-success: var(--color-success-h), var(--color-success-s), var(--color-success-l);
 
   // Info
   // #005e9c;
@@ -75,9 +85,9 @@
   /**
    * <mg-icon>
    */
-  --mg-icon-small-size: 1rem;
-  --mg-icon-regular-size: 1.5rem;
-  --mg-icon-large-size: 2rem;
+  --mg-icon-regular-size: 1.6rem;
+  --mg-icon-large-size: 2.4rem;
+  --mg-icon-extra-large-size: 3.6rem;
 
   /**
    * <mg-button>
@@ -112,6 +122,11 @@
   --mg-tooltip-font-color: var(--color-font-light);
 
   /**
+  * <mg-input-toggle>
+  */
+  --mg-input-toggle-border-radius-ratio: 1;
+
+  /**
    * <mg-message>
    */
   --mg-message-border-radius: 0.3rem;
@@ -139,4 +154,10 @@
   // rgb(0, 221, 255);
   // hsl(188, 100%, 50%);
   --mg-inputs-color-shadow-focus-hsl: 188, 100%, 50%;
+
+  /**
+   * <mg-input-checkbox>
+   * <mg-input-radio>
+   */
+  --mg-input-check-size: 1.3rem;
 }

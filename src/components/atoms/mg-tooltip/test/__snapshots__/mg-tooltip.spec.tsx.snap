@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`mg-tooltip Should manage display on events enter with { eventIn: 'focus', eventOut: 'blur' }, leave with %s element 1`] = `
-<mg-tooltip>
+<mg-tooltip display="">
   <!---->
   <span aria-describedby="identifier" tabindex="0">
     span
@@ -14,7 +14,7 @@ exports[`mg-tooltip Should manage display on events enter with { eventIn: 'focus
 `;
 
 exports[`mg-tooltip Should manage display on events enter with { eventIn: 'focus', eventOut: 'blur' }, leave with %s element 2`] = `
-<mg-tooltip>
+<mg-tooltip display="">
   <!---->
   <button aria-describedby="blu identifier">
     button
@@ -27,12 +27,12 @@ exports[`mg-tooltip Should manage display on events enter with { eventIn: 'focus
 `;
 
 exports[`mg-tooltip Should manage display on events enter with { eventIn: 'focus', eventOut: 'blur' }, leave with %s element 3`] = `
-<mg-tooltip>
+<mg-tooltip display="">
   <!---->
   <mg-icon aria-describedby="identifier" tabindex="0">
     <mock:shadow-root>
-      <svg aria-hidden="true" class="mg-icon mg-icon--regular mg-icon--success" focusable="false" viewBox="0 0 512 512">
-        <path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z" fill="currentColor"></path>
+      <svg aria-hidden="true" class="mg-icon mg-icon--check-circle mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+        <path d="M15.33 8A7.33 7.33 0 1 1 8 .67 7.33 7.33 0 0 1 15.33 8Zm-8.18 3.88 5.44-5.44a.46.46 0 0 0 0-.65l-.67-.67a.48.48 0 0 0-.67 0L6.82 9.54 4.75 7.47a.46.46 0 0 0-.65 0l-.67.67a.46.46 0 0 0 0 .65l3.07 3.07a.46.46 0 0 0 .65 0Z" fill="currentColor"></path>
       </svg>
     </mock:shadow-root>
   </mg-icon>
@@ -44,25 +44,25 @@ exports[`mg-tooltip Should manage display on events enter with { eventIn: 'focus
 `;
 
 exports[`mg-tooltip Should manage display on events enter with { eventIn: 'focus', eventOut: 'blur' }, leave with %s element 4`] = `
-<mg-tooltip>
+<mg-tooltip display="">
   <!---->
-  <mg-button aria-describedby="identifier">
+  <mg-button>
     <!---->
-    <button class="mg-button mg-button--primary" data-show id="identifier" style="position: absolute; left: 0; top: 0; margin: 0;">
+    <button aria-describedby="identifier" class="mg-button mg-button--primary" id="identifier-mg-button">
       <div class="mg-button__content">
         mg-button
       </div>
     </button>
   </mg-button>
-  <div id="identifier" role="tooltip">
+  <div data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
     blu
-    <div class="mg-tooltip__arrow" data-popper-arrow></div>
+    <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
   </div>
 </mg-tooltip>
 `;
 
 exports[`mg-tooltip Should manage display on events enter with { eventIn: 'mouseenter', eventOut: 'mouseleave' }, leave with %s element 1`] = `
-<mg-tooltip>
+<mg-tooltip display="">
   <!---->
   <span aria-describedby="identifier" tabindex="0">
     span
@@ -75,7 +75,7 @@ exports[`mg-tooltip Should manage display on events enter with { eventIn: 'mouse
 `;
 
 exports[`mg-tooltip Should manage display on events enter with { eventIn: 'mouseenter', eventOut: 'mouseleave' }, leave with %s element 2`] = `
-<mg-tooltip>
+<mg-tooltip display="">
   <!---->
   <button aria-describedby="blu identifier">
     button
@@ -88,12 +88,12 @@ exports[`mg-tooltip Should manage display on events enter with { eventIn: 'mouse
 `;
 
 exports[`mg-tooltip Should manage display on events enter with { eventIn: 'mouseenter', eventOut: 'mouseleave' }, leave with %s element 3`] = `
-<mg-tooltip>
+<mg-tooltip display="">
   <!---->
   <mg-icon aria-describedby="identifier" tabindex="0">
     <mock:shadow-root>
-      <svg aria-hidden="true" class="mg-icon mg-icon--regular mg-icon--success" focusable="false" viewBox="0 0 512 512">
-        <path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z" fill="currentColor"></path>
+      <svg aria-hidden="true" class="mg-icon mg-icon--check-circle mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+        <path d="M15.33 8A7.33 7.33 0 1 1 8 .67 7.33 7.33 0 0 1 15.33 8Zm-8.18 3.88 5.44-5.44a.46.46 0 0 0 0-.65l-.67-.67a.48.48 0 0 0-.67 0L6.82 9.54 4.75 7.47a.46.46 0 0 0-.65 0l-.67.67a.46.46 0 0 0 0 .65l3.07 3.07a.46.46 0 0 0 .65 0Z" fill="currentColor"></path>
       </svg>
     </mock:shadow-root>
   </mg-icon>
@@ -105,19 +105,19 @@ exports[`mg-tooltip Should manage display on events enter with { eventIn: 'mouse
 `;
 
 exports[`mg-tooltip Should manage display on events enter with { eventIn: 'mouseenter', eventOut: 'mouseleave' }, leave with %s element 4`] = `
-<mg-tooltip>
+<mg-tooltip display="">
   <!---->
-  <mg-button aria-describedby="identifier">
+  <mg-button>
     <!---->
-    <button class="mg-button mg-button--primary" data-show id="identifier" style="position: absolute; left: 0; top: 0; margin: 0;">
+    <button aria-describedby="identifier" class="mg-button mg-button--primary" id="identifier-mg-button">
       <div class="mg-button__content">
         mg-button
       </div>
     </button>
   </mg-button>
-  <div id="identifier" role="tooltip">
+  <div data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
     blu
-    <div class="mg-tooltip__arrow" data-popper-arrow></div>
+    <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
   </div>
 </mg-tooltip>
 `;
@@ -153,8 +153,8 @@ exports[`mg-tooltip Should render with element 3`] = `
   <!---->
   <mg-icon aria-describedby="identifier" tabindex="0">
     <mock:shadow-root>
-      <svg aria-hidden="true" class="mg-icon mg-icon--regular mg-icon--success" focusable="false" viewBox="0 0 512 512">
-        <path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z" fill="currentColor"></path>
+      <svg aria-hidden="true" class="mg-icon mg-icon--check-circle mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+        <path d="M15.33 8A7.33 7.33 0 1 1 8 .67 7.33 7.33 0 0 1 15.33 8Zm-8.18 3.88 5.44-5.44a.46.46 0 0 0 0-.65l-.67-.67a.48.48 0 0 0-.67 0L6.82 9.54 4.75 7.47a.46.46 0 0 0-.65 0l-.67.67a.46.46 0 0 0 0 .65l3.07 3.07a.46.46 0 0 0 .65 0Z" fill="currentColor"></path>
       </svg>
     </mock:shadow-root>
   </mg-icon>
@@ -168,9 +168,9 @@ exports[`mg-tooltip Should render with element 3`] = `
 exports[`mg-tooltip Should render with element 4`] = `
 <mg-tooltip>
   <!---->
-  <mg-button aria-describedby="identifier">
+  <mg-button>
     <!---->
-    <button class="mg-button mg-button--primary" id="identifier" style="position: absolute; left: 0; top: 0; margin: 0;">
+    <button aria-describedby="identifier" class="mg-button mg-button--primary" id="identifier" style="position: absolute; left: 0; top: 0; margin: 0;">
       <div class="mg-button__content">
         mg-button
       </div>

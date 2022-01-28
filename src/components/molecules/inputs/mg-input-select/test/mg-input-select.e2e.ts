@@ -1,10 +1,7 @@
-import { createPage } from "../../../../../utils/test.utils"
+import { createPage } from '../../../../../utils/test.utils';
 
 describe('mg-input-select', () => {
-
-  describe.each([
-    `<mg-input-select label="label"></mg-input-select>`,
-  ])('without tooltip', (html)=>{
+  describe.each([`<mg-input-select label="label"></mg-input-select>`])('without tooltip', html => {
     test('render', async () => {
       const page = await createPage(`${html}
       <script>
@@ -24,18 +21,18 @@ describe('mg-input-select', () => {
       const screenshotFocus = await page.screenshot();
       expect(screenshotFocus).toMatchImageSnapshot();
 
-      await page.keyboard.down("Space");
+      await page.keyboard.down('Space');
 
       const screenshotList = await page.screenshot();
       expect(screenshotList).toMatchImageSnapshot();
 
-      await page.keyboard.down("ArrowDown");
-      await page.keyboard.down("ArrowDown");
+      await page.keyboard.down('ArrowDown');
+      await page.keyboard.down('ArrowDown');
 
       const screenshotSelection = await page.screenshot();
       expect(screenshotSelection).toMatchImageSnapshot();
 
-      await page.keyboard.down("Enter");
+      await page.keyboard.down('Enter');
 
       const screenshotSelected = await page.screenshot();
       expect(screenshotSelected).toMatchImageSnapshot();
@@ -45,8 +42,8 @@ describe('mg-input-select', () => {
   describe.each([
     `<mg-input-select label="label" label-on-top></mg-input-select>`,
     `<mg-input-select label="label" label-hide></mg-input-select>`,
-    `<mg-input-select label="label" placeholder="placeholder" help-text="HelpText Message"></mg-input-select>`
-  ])('without tooltip', (html)=>{
+    `<mg-input-select label="label" placeholder="placeholder" help-text="HelpText Message"></mg-input-select>`,
+  ])('without tooltip', html => {
     test('render', async () => {
       const page = await createPage(`${html}
         <script>
@@ -60,12 +57,11 @@ describe('mg-input-select', () => {
 
       const screenshot = await page.screenshot();
       expect(screenshot).toMatchImageSnapshot();
-
     });
   });
 
-  test('render with tooltip', async () => {
-    const page = await createPage(`<mg-input-select label="label" tooltip="Tooltip message"></mg-input-select>
+  test.each([true, false])('render with tooltip, case label-on-top %s', async labelOnTop => {
+    const page = await createPage(`<mg-input-select label="label" tooltip="Tooltip message" label-on-top=${labelOnTop}></mg-input-select>
       <script>
       const mgInputSelect = document.querySelector('mg-input-select');
       mgInputSelect.items = ['blu', 'bli', 'bla', 'blo'];
@@ -91,7 +87,7 @@ describe('mg-input-select', () => {
     `<mg-input-select label="label" value="blu" readonly></mg-input-select>`,
     `<mg-input-select label="label" value="blu" readonly label-on-top></mg-input-select>`,
     `<mg-input-select label="label" disabled></mg-input-select>`,
-  ])('Should render with template', (html)=>{
+  ])('Should render with template', html => {
     test('render', async () => {
       const page = await createPage(`${html}
         <script>
@@ -106,7 +102,7 @@ describe('mg-input-select', () => {
       const screenshot = await page.screenshot();
       expect(screenshot).toMatchImageSnapshot();
     });
-  })
+  });
 
   test('Should render error when leaving an empty required input', async () => {
     const page = await createPage(`<mg-input-select label="label" required></mg-input-select>
@@ -145,10 +141,9 @@ describe('mg-input-select', () => {
     expect(element).toHaveClass('hydrated');
 
     await page.keyboard.down('Tab');
-    await page.keyboard.down("Space");
+    await page.keyboard.down('Space');
 
     const screenshot = await page.screenshot();
     expect(screenshot).toMatchImageSnapshot();
   });
-
 });

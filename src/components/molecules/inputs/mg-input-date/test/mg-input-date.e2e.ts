@@ -1,13 +1,12 @@
-import { createPage } from "../../../../../utils/test.utils"
+import { createPage } from '../../../../../utils/test.utils';
 
 describe('mg-input-date', () => {
-
   describe.each([
     `<mg-input-date label="label"></mg-input-date>`,
     `<mg-input-date label="label" label-on-top></mg-input-date>`,
     `<mg-input-date label="label" label-hide></mg-input-date>`,
-    `<mg-input-date label="label" placeholder="placeholder" help-text="HelpText Message"></mg-input-date>`
-  ])('without tooltip', (html)=>{
+    `<mg-input-date label="label" placeholder="placeholder" help-text="HelpText Message"></mg-input-date>`,
+  ])('without tooltip', html => {
     test('render', async () => {
       const page = await createPage(html);
 
@@ -23,22 +22,22 @@ describe('mg-input-date', () => {
       const screenshotFocus = await page.screenshot();
       expect(screenshotFocus).toMatchImageSnapshot();
 
-      await page.keyboard.down("0");
-      await page.keyboard.down("2");
-      await page.keyboard.down("0");
-      await page.keyboard.down("6");
-      await page.keyboard.down("1");
-      await page.keyboard.down("9");
-      await page.keyboard.down("8");
-      await page.keyboard.down("2");
+      await page.keyboard.down('0');
+      await page.keyboard.down('2');
+      await page.keyboard.down('0');
+      await page.keyboard.down('6');
+      await page.keyboard.down('1');
+      await page.keyboard.down('9');
+      await page.keyboard.down('8');
+      await page.keyboard.down('2');
 
       const screenshotType = await page.screenshot();
       expect(screenshotType).toMatchImageSnapshot();
     });
-  })
+  });
 
-  test('render with tooltip', async () => {
-    const page = await createPage(`<mg-input-date label="label" tooltip="Tooltip message"></mg-input-date>`);
+  test.each([true, false])('render with tooltip, case label-on-top %s', async labelOnTop => {
+    const page = await createPage(`<mg-input-date label="label" tooltip="Tooltip message" label-on-top=${labelOnTop}></mg-input-date>`);
 
     const element = await page.find('mg-input-date');
 
@@ -61,7 +60,7 @@ describe('mg-input-date', () => {
     `<mg-input-date label="label" value="1982-06-02"></mg-input-date>`,
     `<mg-input-date label="label" value="1982-06-02" readonly></mg-input-date>`,
     `<mg-input-date label="label" disabled></mg-input-date>`,
-  ])('Should render with template', (html)=>{
+  ])('Should render with template', html => {
     test('render', async () => {
       const page = await createPage(html);
 
@@ -72,7 +71,7 @@ describe('mg-input-date', () => {
       const screenshot = await page.screenshot();
       expect(screenshot).toMatchImageSnapshot();
     });
-  })
+  });
 
   test('Should render error when leaving an empty required input', async () => {
     const page = await createPage(`<mg-input-date label="label" required></mg-input-date>`);
@@ -99,15 +98,14 @@ describe('mg-input-date', () => {
 
     await page.keyboard.down('Tab');
 
-    await page.keyboard.down("0");
-    await page.keyboard.down("2");
-    await page.keyboard.down("0");
-    await page.keyboard.down("6");
+    await page.keyboard.down('0');
+    await page.keyboard.down('2');
+    await page.keyboard.down('0');
+    await page.keyboard.down('6');
 
     await page.keyboard.down('Tab');
 
     const screenshot = await page.screenshot();
     expect(screenshot).toMatchImageSnapshot();
   });
-
 });

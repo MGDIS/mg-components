@@ -1,20 +1,42 @@
 .mg-icon {
-  &[size='small'],
-  &.mg-icon--small {
-    width: var(--mg-icon-small-size);
-    height: var(--mg-icon-small-size);
-  }
-
   &[size='regular'],
-  &.mg-icon--regular {
+  &.mg-icon--size-regular {
     width: var(--mg-icon-regular-size);
     height: var(--mg-icon-regular-size);
   }
 
   &[size='large'],
-  &.mg-icon--large {
+  &.mg-icon--size-large {
     width: var(--mg-icon-large-size);
     height: var(--mg-icon-large-size);
+  }
+
+  &[size='extra-large'],
+  &.mg-icon--size-extra-large {
+    width: var(--mg-icon-extra-large-size);
+    height: var(--mg-icon-extra-large-size);
+  }
+
+  &[class*='mg-icon--variant-'] {
+    border-radius: var(--mg-message-border-radius);
+    padding: 0.3rem;
+  }
+
+  // Variants
+  &.mg-icon--variant-success {
+    background-color: hsl(var(--color-success-h) var(--color-success-s) calc(var(--color-success-l) + 20%));
+  }
+
+  &.mg-icon--variant-warning {
+    background-color: hsl(var(--color-warning-h) var(--color-warning-s) calc(var(--color-warning-l) + 20%));
+  }
+
+  &.mg-icon--variant-danger {
+    background-color: hsl(var(--color-danger-h) var(--color-danger-s) calc(var(--color-danger-l) + 20%));
+  }
+
+  &.mg-icon--variant-info {
+    background-color: hsl(var(--color-info-h) var(--color-info-s) calc(var(--color-info-l) + 20%));
   }
 }
 
@@ -30,7 +52,7 @@ mg-icon,
 **/
 
 .loader__full-circle {
-  opacity: .2;
+  opacity: 0.2;
 }
 
 /**
@@ -39,10 +61,12 @@ mg-icon,
 
 .mg-icon--spin {
   animation-name: rotate;
-  animation-duration: .75s;
+  animation-duration: 0.75s;
   animation-iteration-count: infinite;
 }
 
 @keyframes rotate {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
