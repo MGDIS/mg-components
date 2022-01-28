@@ -88,10 +88,16 @@ To bind a non string value in a web component we have to use the Vue.js [`.prop`
 
 ##### v-model
 
-`v-model` can not be used in web components so we must set the value and the custum event `value-change`:
+`v-model` can not be used in web components so we must set the value and use the custum event `value-change` to update the value:
 
 ```html
 <mg-input-text :value="user.firstname" :label="$t('firstname')" @value-change="user.firstname = $event.target.value"></mg-input-text>
+```
+
+If this syntax is too verbose for you, you can use in your **Vue2 project** the directive `v-mg-model` used in the [template-example](https://gitlab.mgdis.fr/nodejs/template-example/-/tree/master/client/src/directives/mg-model.js), the syntax will become:
+
+```html
+<mg-input-text v-mg-model="user.firstname" :label="$t('firstname')"></mg-input-text>
 ```
 
 #### Tests

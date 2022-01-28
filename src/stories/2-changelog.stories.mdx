@@ -8,26 +8,37 @@ import { Meta } from '@storybook/addon-docs/blocks';
 
 TODO: replace with release date
 
-### 💥 Icons naming convention
+### 💥 Breaking Changes
 
-- [**`<mg-icon>`**](?path=/docs/atoms-mg-icon--mg-icon) icons names changed following naming convention described in [PDA9-744](https://jira.mgdis.fr/browse/PDA9-744)
+- [**`<mg-icon>`**](?path=/docs/atoms-mg-icon--mg-icon)
+  - icons names changed following naming convention described in [PDA9-744](https://jira.mgdis.fr/browse/PDA9-744)
+  - icons siezs are now `regular` (default), `large` and `extra-large`
+- Custom event names are now in kebab-case: `valueChange` changed to `value-change`
 
 ### ⚠️ New components
 
-- [**`<mg-input-password>`**](?path=/story/molecules-inputs-mg-input-password--mg-input-password) refers to [PDA9-769](https://jira.mgdis.fr/browse/PDA9-769)
 - [**`<mg-input-checkbox>`**](?path=/docs/molecules-inputs-mg-input-checkbox--mg-input-checkbox) refers to [PDA9-70](https://jira.mgdis.fr/browse/PDA9-70)
+- [**`<mg-input-password>`**](?path=/story/molecules-inputs-mg-input-password--mg-input-password) refers to [PDA9-769](https://jira.mgdis.fr/browse/PDA9-769)
+- [**`<mg-input-toggle>`**](?/path=story/molecules-inputs-mg-input-toggle--mg-input-toggle) refers to [PDA9-770](https://jira.mgdis.fr/browse/PDA9-770)
 
 All inputs also refers to [PDA9-723](https://jira.mgdis.fr/browse/PDA9-723).
 
 ### 🚀 Enhancement
 
-- [**`<mg-icon>`**](?path=/docs/atoms-mg-icon--mg-icon) for accessibility, sometimes we need to add a background on icons, it is now possible with the attribute `variant`.
-- [**`<mg-input-xxx>`**](?path=/story/molecules-inputs-mg-input-date--mg-input-date&args=labelOnTop:true) Tooltip icon moved next to label when used with the attribute `label-on-top`.
+- [**`<mg-icon>`**](?path=/docs/atoms-mg-icon--mg-icon) for accessibility, sometimes we need to add a background on icons, it is now possible with the attribute `variant`
+- [**`<mg-input-message>`**](?path=/story/molecules-mg-message--mg-message&args=closeButton:true;delay:10) can now be hidden after a defined delay using the `delay` attribute
+- [**`<mg-input-...>`**](?path=/story/molecules-inputs-mg-input-date--mg-input-date&args=labelOnTop:true) Tooltip icon moved next to label when used with the attribute `label-on-top`
 
 ### 🐛 Bug Fix
 
-- [#22](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/22) Remove error during test
+- [#22](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/22) [#32](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/32) Remove errors during test
 - [#25](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/25) Tooltip does not hide on IE
+- [#28](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/28) Tooltip not display with <mg-button> in slot on keyboard event
+- [#29](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/29) Tooltip hide behind tag with background-color
+- [#30](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/30) Add the possibility to display tooltip with conditions
+- [#31](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/31) mg-input-checkbox change tooltip margin top calc
+- [#33](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/33) mg-button : Action can be triggered with a disabled button
+- [#34](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/34) Custom events not working with vue3 projects
 
 ## 1.0.1
 
