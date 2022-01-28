@@ -7,14 +7,13 @@ import { ClassList } from '../../../utils/components.utils';
   shadow: true,
 })
 export class MgTag {
-
   /**
    * Define button variant
    */
   @Prop() variant?: string = variants[0];
   @Watch('variant')
   validateVariant(newValue: string) {
-    if(!variants.includes(newValue)) {
+    if (!variants.includes(newValue)) {
       throw new Error(`<mg-tag> prop "variant" must be one of : ${variants.join(', ')}.`);
     }
     this.classList.add(`mg-tag--${this.variant}`);
@@ -23,11 +22,11 @@ export class MgTag {
   /**
    * Define if button is using outline style
    */
-   @Prop() outline?: boolean;
-   @Watch('outline')
-   validateOutline(newValue: boolean) {
-     if(newValue) this.classList.add(`mg-tag--outline`);
-   }
+  @Prop() outline?: boolean;
+  @Watch('outline')
+  validateOutline(newValue: boolean) {
+    if (newValue) this.classList.add(`mg-tag--outline`);
+  }
 
   /**
    * Component classes
@@ -48,8 +47,9 @@ export class MgTag {
 
   render() {
     return (
-        <span class={this.classList.join()}><slot></slot></span>
+      <span class={this.classList.join()}>
+        <slot></slot>
+      </span>
     );
   }
-
 }

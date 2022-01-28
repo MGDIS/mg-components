@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-01-18T17:12:57",
+  "timestamp": "2022-01-26T06:09:21",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.12.1",
@@ -291,7 +291,7 @@
           "reflectToAttr": false,
           "docs": "Define icon size",
           "docsTags": [],
-          "default": "\"regular\"",
+          "default": "'regular'",
           "values": [
             {
               "type": "string"
@@ -629,7 +629,7 @@
       "methods": [],
       "events": [
         {
-          "event": "valueChange",
+          "event": "value-change",
           "detail": "CheckboxValue[]",
           "bubbles": true,
           "cancelable": true,
@@ -885,7 +885,7 @@
       "methods": [],
       "events": [
         {
-          "event": "valueChange",
+          "event": "value-change",
           "detail": "string",
           "bubbles": true,
           "cancelable": true,
@@ -1206,7 +1206,7 @@
       "methods": [],
       "events": [
         {
-          "event": "valueChange",
+          "event": "value-change",
           "detail": "number",
           "bubbles": true,
           "cancelable": true,
@@ -1478,7 +1478,7 @@
       "methods": [],
       "events": [
         {
-          "event": "valueChange",
+          "event": "value-change",
           "detail": "string",
           "bubbles": true,
           "cancelable": true,
@@ -1770,7 +1770,7 @@
       "methods": [],
       "events": [
         {
-          "event": "valueChange",
+          "event": "value-change",
           "detail": "any",
           "bubbles": true,
           "cancelable": true,
@@ -2061,7 +2061,7 @@
       "methods": [],
       "events": [
         {
-          "event": "valueChange",
+          "event": "value-change",
           "detail": "string",
           "bubbles": true,
           "cancelable": true,
@@ -2415,7 +2415,7 @@
       "methods": [],
       "events": [
         {
-          "event": "valueChange",
+          "event": "value-change",
           "detail": "string",
           "bubbles": true,
           "cancelable": true,
@@ -2786,7 +2786,7 @@
       "methods": [],
       "events": [
         {
-          "event": "valueChange",
+          "event": "value-change",
           "detail": "string",
           "bubbles": true,
           "cancelable": true,
@@ -2945,6 +2945,22 @@
           "required": false
         },
         {
+          "name": "delay",
+          "type": "number",
+          "mutable": false,
+          "attr": "delay",
+          "reflectToAttr": false,
+          "docs": "Add a delay to hide/close message when it passed\nValue is defined in seconds and must greater than 2 seconds (PDA9-314 RG-06)",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "hide",
           "type": "boolean",
           "mutable": true,
@@ -3079,6 +3095,23 @@
       "docsTags": [],
       "usage": {},
       "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "disabled",
+          "reflectToAttr": true,
+          "docs": "Disable tooltip",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
         {
           "name": "display",
           "type": "boolean",

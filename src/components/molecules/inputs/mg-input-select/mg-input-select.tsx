@@ -2,7 +2,7 @@ import { Component, Event, h, Prop, State, EventEmitter, Watch } from '@stencil/
 import { MgInput } from '../MgInput';
 import { createID, ClassList, allItemsAreString } from '../../../../utils/components.utils';
 import { messages } from '../../../../locales';
-import { SelectOption, OptGroup }from '../../../../types/components.types';
+import { SelectOption, OptGroup } from '../../../../types/components.types';
 
 /**
  * Check if item is a well configured option
@@ -21,31 +21,29 @@ const isOption = (option: SelectOption): boolean => typeof option === 'object' &
  * @param {boolean} item.disabled
  * @returns {OptGroup} grouped options
  */
-const groupOptions = (acc, {group, title, value, disabled}): OptGroup => {
-  if(group) {
+const groupOptions = (acc, { group, title, value, disabled }): OptGroup => {
+  if (group) {
     // Check if group is already created
-    const optgroup = acc.find(grp=>grp.group===group);
+    const optgroup = acc.find(grp => grp.group === group);
     // Add to group
-    if(optgroup) {
-      optgroup.options.push({title,value, disabled})
+    if (optgroup) {
+      optgroup.options.push({ title, value, disabled });
     }
     // Create group
     else {
-      acc.push({group, options:[{title, value, disabled}]});
+      acc.push({ group, options: [{ title, value, disabled }] });
     }
-  }
-  else {
-    acc.push({title, value, disabled});
+  } else {
+    acc.push({ title, value, disabled });
   }
   return acc;
-}
+};
 @Component({
   tag: 'mg-input-select',
   styleUrl: 'mg-input-select.scss',
   shadow: true,
 })
 export class MgInputSelect {
-
   /************
    * Internal *
    ************/
@@ -53,37 +51,36 @@ export class MgInputSelect {
   private classError = 'is-not-valid';
 
   /**************
-  * Decorators *
-  **************/
+   * Decorators *
+   **************/
 
   /**
    * Component value
    */
-  @Prop({ mutable:true, reflect: true }) value: string;
+  @Prop({ mutable: true, reflect: true }) value: string;
 
   /**
    * Items are the possible options to select
    */
   @Prop() items!: string[] | SelectOption[];
   @Watch('items')
-  validateItems(newValue){
+  validateItems(newValue) {
     // String array
-    if(allItemsAreString(newValue)) {
-      this.options = newValue.map(item=>({ title:item, value:item }));
+    if (allItemsAreString(newValue)) {
+      this.options = newValue.map(item => ({ title: item, value: item }));
     }
     // Object array
-    else if(newValue && (newValue as Array<SelectOption>).every(item => isOption(item))) {
+    else if (newValue && (newValue as Array<SelectOption>).every(item => isOption(item))) {
       // Grouped object options
-      if(newValue.some((item)=>(item.group !== undefined))) {
+      if (newValue.some(item => item.group !== undefined)) {
         this.options = newValue.reduce(groupOptions, []);
       }
       // Standart object options
       else {
         this.options = newValue;
       }
-    }
-    else {
-      throw new Error('<mg-input-select> prop "items" is required and all items must be the same type, string or Option.')
+    } else {
+      throw new Error('<mg-input-select> prop "items" is required and all items must be the same type, string or Option.');
     }
   }
 
@@ -113,7 +110,7 @@ export class MgInputSelect {
   /**
    * Define if label is visible
    */
-   @Prop() labelHide: boolean = false;
+  @Prop() labelHide: boolean = false;
 
   /**
    * Input placeholder.
@@ -127,8 +124,8 @@ export class MgInputSelect {
   @Prop() required: boolean = false;
 
   /**
-  * Define if input is readonly
-  */
+   * Define if input is readonly
+   */
   @Prop() readonly: boolean = false;
 
   /**
@@ -170,40 +167,40 @@ export class MgInputSelect {
    * Formated items for display
    */
 
-  @State() options: (SelectOption|OptGroup)[];
+  @State() options: (SelectOption | OptGroup)[];
 
   /**
    * Emmited event when value change
    */
-  @Event() valueChange: EventEmitter<string>
+  @Event({ eventName: 'value-change' }) valueChange: EventEmitter<string>;
 
   /**
    * Handle input event
    * @param event
    */
-  private handleInput = (event:InputEvent & { target: HTMLInputElement }) => {
+  private handleInput = (event: InputEvent & { target: HTMLInputElement }) => {
     this.value = event.target.value;
     this.valueChange.emit(this.value);
-   }
+  };
 
   /**
    * Handle blur event
    * @param event
    */
-  private handleBlur = (event:FocusEvent) => {
+  private handleBlur = (event: FocusEvent) => {
     this.checkValidity(event.target);
-  }
+  };
 
   /**
-    * Check if input is valid
-    * @param element
-    */
+   * Check if input is valid
+   * @param element
+   */
   private checkValidity(element) {
     const validity = element.checkValidity();
     // Set error message
     this.errorMessage = undefined;
     // required
-    if(!validity && element.validity.valueMissing) {
+    if (!validity && element.validity.valueMissing) {
       this.errorMessage = messages.errors.required;
     }
 
@@ -212,10 +209,9 @@ export class MgInputSelect {
     this.invalid = !validity;
 
     // Update class
-    if(validity) {
+    if (validity) {
       this.classList.delete(this.classError);
-    }
-    else {
+    } else {
       this.classList.add(this.classError);
     }
   }
@@ -259,16 +255,20 @@ export class MgInputSelect {
           onBlur={this.handleBlur}
         >
           <option value="">{this.placeholder}</option>
-          { this.options.map(option=>
-            option.group !== undefined
-            ? <optgroup label={option.group}>
-                {(option as OptGroup).options.map(optgroup=>
-                  <option value={optgroup.value} selected={this.value===optgroup.value} disabled={optgroup.disabled}>{optgroup.title}</option>
-                )}
+          {this.options.map(option =>
+            option.group !== undefined ? (
+              <optgroup label={option.group}>
+                {(option as OptGroup).options.map(optgroup => (
+                  <option value={optgroup.value} selected={this.value === optgroup.value} disabled={optgroup.disabled}>
+                    {optgroup.title}
+                  </option>
+                ))}
               </optgroup>
-            : <option value={(option as SelectOption).value} selected={this.value===(option as SelectOption).value} disabled={(option as SelectOption).disabled}>
+            ) : (
+              <option value={(option as SelectOption).value} selected={this.value === (option as SelectOption).value} disabled={(option as SelectOption).disabled}>
                 {(option as SelectOption).title}
               </option>
+            ),
           )}
         </select>
       </MgInput>

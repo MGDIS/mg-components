@@ -1,10 +1,4 @@
 .mg-icon {
-  &[size='small'],
-  &.mg-icon--size-small {
-    width: var(--mg-icon-small-size);
-    height: var(--mg-icon-small-size);
-  }
-
   &[size='regular'],
   &.mg-icon--size-regular {
     width: var(--mg-icon-regular-size);
@@ -17,13 +11,18 @@
     height: var(--mg-icon-large-size);
   }
 
+  &[size='extra-large'],
+  &.mg-icon--size-extra-large {
+    width: var(--mg-icon-extra-large-size);
+    height: var(--mg-icon-extra-large-size);
+  }
+
   &[class*='mg-icon--variant-'] {
     border-radius: var(--mg-message-border-radius);
     padding: 0.3rem;
   }
 
   // Variants
-
   &.mg-icon--variant-success {
     background-color: hsl(var(--color-success-h) var(--color-success-s) calc(var(--color-success-l) + 20%));
   }

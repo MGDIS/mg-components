@@ -50,7 +50,7 @@
 .mg-message__icon {
   // Display
   position: absolute;
-  top: 1rem;
+  top: calc((var(--default-size) - var(--mg-icon-regular-size)) / 2);
   left: 1.3rem;
   // Font
   line-height: 1;

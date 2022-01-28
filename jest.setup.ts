@@ -8,7 +8,7 @@ const toMatchImageSnapshot = configureToMatchImageSnapshot({
   failureThreshold: 0.025,
   failureThresholdType: 'percent',
   dumpInlineDiffToConsole: true,
-})
+});
 
 expect.extend({ toMatchImageSnapshot });
 
@@ -16,4 +16,4 @@ expect.extend({ toMatchImageSnapshot });
  * Change Jest Timeout
  */
 
- jest.setTimeout(60000)
+jest.setTimeout(60000);

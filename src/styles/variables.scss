@@ -85,9 +85,9 @@
   /**
    * <mg-icon>
    */
-  --mg-icon-small-size: 1rem;
-  --mg-icon-regular-size: 1.5rem;
-  --mg-icon-large-size: 2rem;
+  --mg-icon-regular-size: 1.6rem;
+  --mg-icon-large-size: 2.4rem;
+  --mg-icon-extra-large-size: 3.6rem;
 
   /**
    * <mg-button>
@@ -149,4 +149,10 @@
   // rgb(0, 221, 255);
   // hsl(188, 100%, 50%);
   --mg-inputs-color-shadow-focus-hsl: 188, 100%, 50%;
+
+  /**
+   * <mg-input-checkbox>
+   * <mg-input-radio>
+   */
+  --mg-input-check-size: 1.3rem;
 }

@@ -88,10 +88,10 @@ To bind a non string value in a web component we have to use the Vue.js [`.prop`
 
 ##### v-model
 
-`v-model` can not be used in web components so we must set the value and the custum event `valueChange`:
+`v-model` can not be used in web components so we must set the value and the custum event `value-change`:
 
 ```html
-<mg-input-text :value="user.firstname" :label="$t('firstname')" @valueChange="user.firstname = $event.target.value"></mg-input-text>
+<mg-input-text :value="user.firstname" :label="$t('firstname')" @value-change="user.firstname = $event.target.value"></mg-input-text>
 ```
 
 #### Tests
@@ -146,8 +146,8 @@ To bind a value in a web component we have to use the Angular.js [`ng-prop-`](ht
 
 ##### ng-model
 
-`ng-model` can not be used in web components so we must set the value and the use the custum event `valueChange` with the [`ng-on-`](https://docs.angularjs.org/api/ng/directive/ngOn) directive :
+`ng-model` can not be used in web components so we must set the value and the use the custum event `value-change` with the [`ng-on-`](https://docs.angularjs.org/api/ng/directive/ngOn) directive :
 
 ```html
-<mg-input-text ng-prop-value="user.firstname" label="Firstname" ng-on-value_change="user.firstname = $event.target.value"></mg-input-text>
+<mg-input-text ng-prop-value="user.firstname" label="Firstname" ng-on-value-change="user.firstname = $event.target.value"></mg-input-text>
 ```

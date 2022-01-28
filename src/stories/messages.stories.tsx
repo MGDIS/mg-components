@@ -1,5 +1,5 @@
-import { h } from "@stencil/core";
-import { variants } from "../components/molecules/mg-message/mg-message.conf";
+import { h } from '@stencil/core';
+import { variants } from '../components/molecules/mg-message/mg-message.conf';
 
 export default {
   title: 'Style/Messages',
@@ -19,7 +19,7 @@ const Template = args => (
 
     <div class={`mg-message mg-message--${args.variant}`}>
       <span class="mg-message__icon">
-        <mg-icon icon={args.variant}></mg-icon>
+        <mg-icon icon="info-circle"></mg-icon>
       </span>
       <div class="mg-message__content">
         <span class="mg-message__content__slot" innerHTML={args.content}></span>
@@ -30,13 +30,15 @@ const Template = args => (
 
     <div class={`mg-message mg-message--${args.variant} mg-message--close-button`}>
       <span class="mg-message__icon">
-        <mg-icon icon={args.variant}></mg-icon>
+        <mg-icon icon="info-circle"></mg-icon>
       </span>
       <div class="mg-message__content">
         <span class="mg-message__content__slot" innerHTML={args.content}></span>
       </div>
       <span class="mg-message__close-button">
-      <button class="mg-button mg-button--flat mg-button--icon"><mg-icon icon="cross" size="small"></mg-icon></button>
+        <button class="mg-button mg-button--flat mg-button--icon">
+          <mg-icon icon="cross" size="small"></mg-icon>
+        </button>
       </span>
     </div>
 
@@ -44,7 +46,7 @@ const Template = args => (
 
     <div class={`mg-message mg-message--${args.variant}`}>
       <span class="mg-message__icon">
-        <mg-icon icon={args.variant}></mg-icon>
+        <mg-icon icon="info-circle"></mg-icon>
       </span>
       <div class="mg-message__content">
         <span class="mg-message__content__slot" innerHTML={args.content}></span>
@@ -57,12 +59,12 @@ const Template = args => (
         </span>
       </div>
     </div>
-
   </main>
 );
 
 export const Messages = Template.bind({});
 Messages.args = {
   variant: variants[0], // info
-  content: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>"
+  content:
+    '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>',
 };

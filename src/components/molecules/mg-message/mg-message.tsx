@@ -9,12 +9,14 @@ import { messages } from '../../../locales';
   shadow: true,
 })
 export class MgMessage {
-
   /************
    * Internal *
    ************/
 
-  private closeButtonId = "";
+  private closeButtonId = '';
+
+  // Stored timer setted when hide action is run from setTimeOut
+  private storedTimer: ReturnType<typeof setTimeout> = null;
 
   /**************
    * Decorators *
@@ -29,12 +31,24 @@ export class MgMessage {
   @Prop() identifier?: string = createID('mg-message');
 
   /**
+   * Add a delay to hide/close message when it passed
+   * Value is defined in seconds and must greater than 2 seconds (PDA9-314 RG-06)
+   */
+  @Prop() delay?: number;
+  @Watch('delay')
+  validateDelay(newValue) {
+    if (newValue && newValue < 2) {
+      throw new Error(`<mg-message> prop "delay" must be greater than 2 seconds.`);
+    }
+  }
+
+  /**
    * Message variant
    */
   @Prop() variant?: string = variants[0];
   @Watch('variant')
-  validateType(newValue: string) {
-    if(!variants.includes(newValue)) {
+  validateVariant(newValue: string) {
+    if (!variants.includes(newValue)) {
       throw new Error(`<mg-message> prop "variant" must be one of : ${variants.join(', ')}`);
     }
     this.classList.add(`mg-message--${this.variant}`);
@@ -47,21 +61,22 @@ export class MgMessage {
   @Prop({ mutable: true }) closeButton?: boolean = false;
   @Watch('closeButton')
   validateCloseButton(newValue: boolean) {
-    if(newValue && this.hasActions) {
+    if (newValue && this.hasActions) {
       this.closeButton = false;
-      throw new Error('<mg-message> prop "close-button" can\'t be used with the actions slot.')
+      throw new Error('<mg-message> prop "close-button" can\'t be used with the actions slot.');
     }
   }
 
   /**
    * Define if message is hidden
    */
-   @Prop({ mutable: true, reflect: true }) hide?: boolean = false;
-   @Watch('hide')
-   validateHide(newValue: boolean) {
-     if(newValue) this.classList.add('mg-message--hide')
-     else this.classList.delete('mg-message--hide')
-   }
+  @Prop({ mutable: true, reflect: true }) hide?: boolean = false;
+  @Watch('hide')
+  validateHide(newValue: boolean) {
+    if (newValue) this.classList.add('mg-message--hide');
+    else this.classList.delete('mg-message--hide');
+    this.hideWithDelay();
+  }
 
   /**
    * Component classes
@@ -78,25 +93,36 @@ export class MgMessage {
    */
   private handleClose = () => {
     this.hide = true;
-  }
+  };
+
+  /**
+   * Hide component whith delay
+   */
+  private hideWithDelay = () => {
+    if (this.delay > 0 && this.hide !== true) {
+      this.storedTimer = setTimeout(() => (this.hide = true), this.delay * 1000);
+    } else if (this.storedTimer !== null) {
+      clearTimeout(this.storedTimer);
+    }
+  };
 
   /**
    * Get icon corresponding to variant
    */
-  private getIcon = ():string => {
+  private getIcon = (): string => {
     switch (this.variant) {
-      case "info":
-        return "info-circle"
-      case "warning":
-        return "exclamation-triangle"
-      case "success":
-          return "check-circle"
-      case "danger":
-          return "exclamation-circle"
+      case 'info':
+        return 'info-circle';
+      case 'warning':
+        return 'exclamation-triangle';
+      case 'success':
+        return 'check-circle';
+      case 'danger':
+        return 'exclamation-circle';
       default:
         break;
     }
-  }
+  };
 
   /*************
    * Lifecycle *
@@ -105,21 +131,22 @@ export class MgMessage {
   /**
    * Check if component props are well configured on init
    */
-   componentWillLoad() {
-    this.validateType(this.variant);
+  componentWillLoad() {
+    this.validateVariant(this.variant);
     // Check if close button is an can be activated
     this.hasActions = this.element.querySelector('[slot="actions"]') !== null;
     this.validateCloseButton(this.closeButton);
-    if(this.closeButton) {
+    if (this.closeButton) {
       this.classList.add('mg-message--close-button');
       this.closeButtonId = `${this.identifier}-close-button`;
     }
+    this.validateDelay(this.delay);
     this.validateHide(this.hide);
   }
 
   render() {
     return (
-      <div id={this.identifier} class={this.classList.join()} role={this.variant === "info" ? "status" : "alert"}>
+      <div id={this.identifier} class={this.classList.join()} role={this.variant === 'info' ? 'status' : 'alert'}>
         <span class="mg-message__icon">
           <mg-icon icon={this.getIcon()}></mg-icon>
         </span>
@@ -127,20 +154,21 @@ export class MgMessage {
           <span class="mg-message__content__slot">
             <slot></slot>
           </span>
-          { this.hasActions && <span class="mg-message__content__separator"></span> }
-          { this.hasActions && <span class="mg-message__content__actions-slot">
+          {this.hasActions && <span class="mg-message__content__separator"></span>}
+          {this.hasActions && (
+            <span class="mg-message__content__actions-slot">
               <slot name="actions"></slot>
             </span>
-          }
+          )}
         </div>
-        { this.closeButton && <span class="mg-message__close-button">
+        {this.closeButton && (
+          <span class="mg-message__close-button">
             <mg-button identifier={this.closeButtonId} is-icon variant="flat" label={messages.message.closeButton} onClick={this.handleClose}>
               <mg-icon icon="cross"></mg-icon>
             </mg-button>
           </span>
-        }
+        )}
       </div>
     );
   }
-
 }

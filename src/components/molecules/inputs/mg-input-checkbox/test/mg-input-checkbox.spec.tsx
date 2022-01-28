@@ -3,68 +3,72 @@ import { newSpecPage } from '@stencil/core/testing';
 import { cloneDeep } from '../../../../../utils/test.utils';
 import { MgInputCheckbox } from '../mg-input-checkbox';
 import { messages } from '../../../../../locales';
-import { CheckboxValue }from '../../../../../types/components.types';
+import { CheckboxValue } from '../../../../../types/components.types';
 
-const getPage = (args) => newSpecPage({
-  components: [MgInputCheckbox],
-  template: () => (<mg-input-checkbox {...args}></mg-input-checkbox>)
-});
+const getPage = args =>
+  newSpecPage({
+    components: [MgInputCheckbox],
+    template: () => <mg-input-checkbox {...args}></mg-input-checkbox>,
+  });
 
 describe('mg-input-checkbox', () => {
   const items: CheckboxValue[] = [
     { title: 'batman', value: true },
     { title: 'robin', value: false, disabled: true },
     { title: 'joker', value: false },
-    { title: 'bane', value: null }
+    { title: 'bane', value: null },
   ];
 
   test.each([
-    {label: 'label', identifier: "identifier", value: cloneDeep(items) },
-    {label: 'label', identifier: "identifier", value: cloneDeep(items), readonly: true},
-    {label: 'label', identifier: "identifier", value: cloneDeep(items), labelOnTop: true},
-    {label: 'label', identifier: "identifier", value: cloneDeep(items), labelHide: true},
-    {label: 'label', identifier: "identifier", value: cloneDeep(items), inputVerticalList: true},
-    {label: 'label', identifier: "identifier", value: cloneDeep(items), required: true},
-    {label: 'label', identifier: "identifier", value: cloneDeep(items), readonly: true, labelOnTop: true, tooltip: "Tooltip message"},
-    {label: 'label', identifier: "identifier", value: cloneDeep(items), disabled: true},
-    {label: 'label', identifier: "identifier", value: cloneDeep(items), helpText: 'Hello joker'},
-    {label: 'label', identifier: "identifier", value: cloneDeep(items), tooltip: "Batman is a DC Comics license"}
-  ])('Should render with args %s:', async (args) => {
+    { label: 'label', identifier: 'identifier', value: cloneDeep(items) },
+    { label: 'label', identifier: 'identifier', value: cloneDeep(items), readonly: true },
+    { label: 'label', identifier: 'identifier', value: cloneDeep(items), labelOnTop: true },
+    { label: 'label', identifier: 'identifier', value: cloneDeep(items), labelHide: true },
+    { label: 'label', identifier: 'identifier', value: cloneDeep(items), inputVerticalList: true },
+    { label: 'label', identifier: 'identifier', value: cloneDeep(items), required: true },
+    { label: 'label', identifier: 'identifier', value: cloneDeep(items), readonly: true, labelOnTop: true, tooltip: 'Tooltip message' },
+    { label: 'label', identifier: 'identifier', value: cloneDeep(items), disabled: true },
+    { label: 'label', identifier: 'identifier', value: cloneDeep(items), helpText: 'Hello joker' },
+    { label: 'label', identifier: 'identifier', value: cloneDeep(items), tooltip: 'Batman is a DC Comics license' },
+  ])('Should render with args %s:', async args => {
     const { root } = await getPage(args);
     expect(root).toMatchSnapshot();
   });
 
-  test.each(["", undefined])('Should not render with invalid label property : %s', async (value) => {
+  test.each(['', undefined])('Should not render with invalid label property : %s', async value => {
     try {
-      await getPage({label:value, value: cloneDeep(items)});
-    }
-    catch (err) {
-      expect(err.message).toMatch('prop "label" is required')
+      await getPage({ label: value, value: cloneDeep(items) });
+    } catch (err) {
+      expect(err.message).toMatch('prop "label" is required');
     }
   });
 
   test('Should not render with invalid label property : %s', async () => {
     try {
-      await getPage({label: 'label', value: ["batman", "joker", "bane"]});
-    }
-    catch (err) {
-      expect(err.message).toMatch('<mg-input-checkbox> prop "value" is required and all values must be the same type, CheckboxItem.')
+      await getPage({ label: 'label', value: ['batman', 'joker', 'bane'] });
+    } catch (err) {
+      expect(err.message).toMatch('<mg-input-checkbox> prop "value" is required and all values must be the same type, CheckboxItem.');
     }
   });
 
-  test('Should trigger events, case validity check true', async ()=> {
+  test('Should trigger events, case validity check true', async () => {
     const value: CheckboxValue[] = cloneDeep(items);
-    const args = {label: 'label', identifier: "identifier", helpText: "My help text", value};
+    const args = { label: 'label', identifier: 'identifier', helpText: 'My help text', value };
     const page = await getPage(args);
 
     const element = page.doc.querySelector('mg-input-checkbox');
-    const input = element.shadowRoot.querySelectorAll('input')[2];
+    const allInputs = element.shadowRoot.querySelectorAll('input');
+    const input = allInputs[2];
 
     //mock validity
-    input.checkValidity = jest.fn(() => true);
-    Object.defineProperty(input, 'validity', { get: jest.fn(()=> ({
-      valueMissing: false
-    }))});
+    allInputs.forEach(input => {
+      input.checkValidity = jest.fn(() => true);
+      Object.defineProperty(input, 'validity', {
+        get: jest.fn(() => ({
+          valueMissing: false,
+        })),
+      });
+    });
 
     jest.spyOn(page.rootInstance.valueChange, 'emit');
 
@@ -87,9 +91,9 @@ describe('mg-input-checkbox', () => {
     expect(page.root).toMatchSnapshot(); //Snapshot on focus
   });
 
-  test('Should trigger events, case validity check false', async ()=> {
+  test('Should trigger events, case validity check false', async () => {
     const value: CheckboxValue[] = cloneDeep(items);
-    const args = {label: 'label', identifier: "identifier", helpText: "My help text", value};
+    const args = { label: 'label', identifier: 'identifier', helpText: 'My help text', value };
     const page = await getPage(args);
 
     const element = page.doc.querySelector('mg-input-checkbox');
@@ -97,11 +101,13 @@ describe('mg-input-checkbox', () => {
     const input = allInputs[0];
 
     //mock validity
-    allInputs.forEach(i => {
-      i.checkValidity = jest.fn(() => false);
-      Object.defineProperty(i, 'validity', { get: jest.fn(()=> ({
-        valueMissing: true
-      }))});
+    allInputs.forEach(input => {
+      input.checkValidity = jest.fn(() => false);
+      Object.defineProperty(input, 'validity', {
+        get: jest.fn(() => ({
+          valueMissing: true,
+        })),
+      });
     });
 
     jest.spyOn(page.rootInstance.valueChange, 'emit');
@@ -126,11 +132,11 @@ describe('mg-input-checkbox', () => {
   });
 
   test.each([
-    {validity: true, valueMissing: false, value: cloneDeep(items)},
-    {validity: false, valueMissing: true, value: cloneDeep(items)},
-    {validity: false, valueMissing: false, value: cloneDeep(items)},
-  ])('validity (%s), valueMissing (%s)', async ({validity, valueMissing, value})=> {
-    const args = {label: 'label', identifier: "identifier", value, helpText: "My help text"};
+    { validity: true, valueMissing: false, value: cloneDeep(items) },
+    { validity: false, valueMissing: true, value: cloneDeep(items) },
+    { validity: false, valueMissing: false, value: cloneDeep(items) },
+  ])('validity (%s), valueMissing (%s)', async ({ validity, valueMissing, value }) => {
+    const args = { label: 'label', identifier: 'identifier', value, helpText: 'My help text' };
     const page = await getPage(args);
 
     const element = page.doc.querySelector('mg-input-checkbox');
@@ -138,25 +144,24 @@ describe('mg-input-checkbox', () => {
     const input = allInputs[0];
 
     //mock validity
-    allInputs.forEach(i => {
-      i.checkValidity = jest.fn(() => validity);
-      Object.defineProperty(i, 'validity', { get: jest.fn(()=> ({
-        valueMissing
-      }))});
+    allInputs.forEach(input => {
+      input.checkValidity = jest.fn(() => validity);
+      Object.defineProperty(input, 'validity', {
+        get: jest.fn(() => ({
+          valueMissing,
+        })),
+      });
     });
 
     input.dispatchEvent(new CustomEvent('blur', { bubbles: true }));
     await page.waitForChanges();
 
-    if(validity) {
+    if (validity) {
       expect(page.rootInstance.errorMessage).toBeUndefined();
-    }
-    else if (valueMissing){
+    } else if (valueMissing) {
       expect(page.rootInstance.errorMessage).toEqual(messages.errors.required);
     }
     expect(page.rootInstance.valid).toEqual(validity);
     expect(page.rootInstance.invalid).toEqual(!validity);
   });
-
 });
-

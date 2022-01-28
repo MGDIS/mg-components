@@ -28,9 +28,9 @@ This atom refers to the [PDA9-181](https://jira.mgdis.fr/browse/PDA9-181).
 
 ## Events
 
-| Event         | Description                     | Type                  |
-| ------------- | ------------------------------- | --------------------- |
-| `valueChange` | Emmited event when value change | `CustomEvent<number>` |
+| Event          | Description                     | Type                  |
+| -------------- | ------------------------------- | --------------------- |
+| `value-change` | Emmited event when value change | `CustomEvent<number>` |
 
 
 ## Dependencies

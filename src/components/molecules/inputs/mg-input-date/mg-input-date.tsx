@@ -10,7 +10,6 @@ import { messages } from '../../../../locales';
   shadow: true,
 })
 export class MgInputDate {
-
   /************
    * Internal *
    ************/
@@ -24,7 +23,7 @@ export class MgInputDate {
   /**
    * Component value
    */
-  @Prop({ mutable:true, reflect: true }) value: string;
+  @Prop({ mutable: true, reflect: true }) value: string;
 
   /**
    * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
@@ -47,7 +46,7 @@ export class MgInputDate {
   /**
    * Define if label is displayed on top
    */
-   @Prop() labelOnTop: boolean;
+  @Prop() labelOnTop: boolean;
 
   /**
    * Define if label is visible
@@ -102,24 +101,24 @@ export class MgInputDate {
   /**
    * Emmited event when value change
    */
-  @Event() valueChange: EventEmitter<string>
+  @Event({ eventName: 'value-change' }) valueChange: EventEmitter<string>;
 
   /**
    * Handle input event
    * @param event
    */
-  private handleInput = (event:InputEvent & { target: HTMLInputElement }) => {
+  private handleInput = (event: InputEvent & { target: HTMLInputElement }) => {
     this.value = event.target.value;
     this.valueChange.emit(this.value);
-  }
+  };
 
   /**
    * Handle blur event
    * @param event
    */
-  private handleBlur = (event:FocusEvent) => {
+  private handleBlur = (event: FocusEvent) => {
     this.checkValidity(event.target);
-  }
+  };
 
   /**
    * Check if input is valid
@@ -130,11 +129,11 @@ export class MgInputDate {
     // Set error message
     this.errorMessage = undefined;
     // wrong date format
-    if(!validity && element.validity.badInput){
+    if (!validity && element.validity.badInput) {
       this.errorMessage = messages.errors.date.badInput;
     }
     // required
-    else if(!validity && element.validity.valueMissing) {
+    else if (!validity && element.validity.valueMissing) {
       this.errorMessage = messages.errors.required;
     }
 
@@ -143,10 +142,9 @@ export class MgInputDate {
     this.invalid = !validity;
 
     // Update class
-    if(validity) {
+    if (validity) {
       this.classList.delete(this.classError);
-    }
-    else {
+    } else {
       this.classList.add(this.classError);
     }
   }
@@ -188,5 +186,4 @@ export class MgInputDate {
       </MgInput>
     );
   }
-
 }
