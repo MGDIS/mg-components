@@ -93,8 +93,6 @@ dist:
       - package.json
       - dist
       - loader
-  needs:
-    - test
 
 artifact:
   stage: artifact
