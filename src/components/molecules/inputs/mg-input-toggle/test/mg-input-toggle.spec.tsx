@@ -130,11 +130,11 @@ describe('mg-input-toggle', () => {
       }
     });
 
-    test('Should throw an error with blank slots', async () => {
+    test.each([undefined, [defaultSlots[0]], [...defaultSlots, ...defaultSlots]])('Should throw an error with blank slots', async () => {
       try {
         await getPage({ label: 'batman', items: ['batman', 'joker'] });
       } catch (err) {
-        expect(err.message).toMatch('<mg-input-toggle> slots must be defined.');
+        expect(err.message).toMatch('<mg-input-toggle> 2 slots are required.');
       }
     });
 

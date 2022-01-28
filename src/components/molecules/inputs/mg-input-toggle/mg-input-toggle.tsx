@@ -187,11 +187,11 @@ export class MgInputToggle {
    */
   private validateSlots() {
     const slots = Array.from(this.element.children);
-    if (slots.length === 0) {
-      throw new Error('<mg-input-toggle> slots must be defined.');
+    if (slots.length !== 2) {
+      throw new Error('<mg-input-toggle> 2 slots are required.');
     } else if (!this.isIcon) {
       // * Due to text-overflow set to ellipsis
-      // we need to ensure that slot element have title to display value on mous over
+      // we need to ensure that slot element have title to display value on mouse over
       slots.forEach(slot => slot.setAttribute('title', slot.textContent));
     }
   }

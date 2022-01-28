@@ -55,8 +55,8 @@ const Template = args => {
   );
 };
 
-export const MgInputtoggle = Template.bind({});
-MgInputtoggle.args = { ...args };
+export const MgInputToggle = Template.bind({});
+MgInputToggle.args = { ...args };
 
 const TemplateIcon = args => {
   // Extract slot so it won't be render as an attribute
@@ -84,8 +84,8 @@ const TemplateIcon = args => {
   );
 };
 
-export const MgInputtoggleWithIcon = TemplateIcon.bind({});
-MgInputtoggleWithIcon.args = {
+export const MgInputToggleWithIcon = TemplateIcon.bind({});
+MgInputToggleWithIcon.args = {
   ...args,
   isIcon: true,
   isOnOff: true,
