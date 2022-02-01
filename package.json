@@ -21,7 +21,8 @@
   "scripts": {
     "build": "stencil build --docs",
     "start": "stencil build --dev --watch --serve",
-    "lint": "eslint src/**/*.{ts,tsx}",
+    "lint": "run-s lint:es lint:prettier",
+    "lint:es": "eslint src/**/*.{ts,tsx}",
     "lint:prettier": "prettier --check **/*.{ts,tsx,scss,html,mdx,json}",
     "lint:prettier:fix": "prettier --write **/*.{ts,tsx,scss,html,mdx,json}",
     "test": "stencil test --spec --e2e",
@@ -30,7 +31,7 @@
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
     "storybook": "start-storybook -p 6006 -s www/build",
-    "build-storybook": "build-storybook"
+    "storybook:build": "build-storybook"
   },
   "jest-junit": {
     "outputDirectory": "coverage",
@@ -74,7 +75,9 @@
     "jest-junit": "^13.0.0",
     "jsx-dom": "^8.0.1-beta.1",
     "normalize.css": "^8.0.1",
+    "npm-run-all": "^4.1.5",
     "postcss": "^8.4.5",
+    "prettier": "^2.5.1",
     "puppeteer": "^10.0.0",
     "sass": "^1.41.0",
     "sass-loader": "^10.2.0",
