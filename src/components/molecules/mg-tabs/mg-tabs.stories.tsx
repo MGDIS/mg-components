@@ -12,8 +12,10 @@ export default {
 
 const Template = args => {
   // return element
+  const activeTab = args.activeTab;
+  delete args.activeTab;
   return (
-    <mg-tabs {...args}>
+    <mg-tabs {...args} active-tab={activeTab}>
       <div slot="tab_content-1">Content 1</div>
       <div slot="tab_content-2">Content 2</div>
       <div slot="tab_content-3">Content 3</div>
@@ -25,11 +27,14 @@ export const MgTabs = Template.bind({});
 
 MgTabs.args = {
   tabs: ['Tab 1', 'Tab 2', 'Tab 3'],
+  label: 'Short tabs description. Needeed for accessibility',
+  activeTab: undefined,
 };
 
 export const MgTabsItems = Template.bind({});
 
 MgTabsItems.args = {
+  ...MgTabs.args,
   tabs: [
     {
       label: 'Tab 1',

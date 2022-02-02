@@ -35,9 +35,12 @@
     background-color: hsl(var(--color-dark)) !important;
     color: hsl(var(--color-light)) !important;
   }
-  .mg-tabs-links__link:hover {
-    color: hsl(var(--color-info)) !important;
-    border-bottom-color: hsl(var(--color-info)) !important;
-    font-weight: 700 !important;
+  .mg-tabs-header__button {
+    &:hover,
+    &:focus {
+      color: hsl(var(--color-info)) !important;
+      border-bottom-color: hsl(var(--color-info)) !important;
+      font-weight: 700 !important;
+    }
   }
 }

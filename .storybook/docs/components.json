@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-02-02T07:46:44",
+  "timestamp": "2022-02-02T14:48:01",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.13.0",
@@ -3318,6 +3318,23 @@
       "usage": {},
       "props": [
         {
+          "name": "activeTab",
+          "type": "number",
+          "mutable": true,
+          "attr": "active-tab",
+          "reflectToAttr": true,
+          "docs": "Active tab number\ndefault: first is 1",
+          "docsTags": [],
+          "default": "1",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "identifier",
           "type": "string",
           "mutable": false,
@@ -3335,9 +3352,25 @@
           "required": false
         },
         {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "Tabs label. Include short tabs description.\nRequired for accessibility",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
           "name": "tabs",
           "type": "TabItem[] | string[]",
-          "mutable": true,
+          "mutable": false,
           "reflectToAttr": false,
           "docs": "Tabs items\nRequired",
           "docsTags": [],

@@ -685,9 +685,17 @@ export namespace Components {
     }
     interface MgTabs {
         /**
+          * Active tab number default: first is 1
+         */
+        "activeTab": number;
+        /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
         "identifier"?: string;
+        /**
+          * Tabs label. Include short tabs description. Required for accessibility
+         */
+        "label": string;
         /**
           * Tabs items Required
          */
@@ -1578,9 +1586,17 @@ declare namespace LocalJSX {
     }
     interface MgTabs {
         /**
+          * Active tab number default: first is 1
+         */
+        "activeTab"?: number;
+        /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
         "identifier"?: string;
+        /**
+          * Tabs label. Include short tabs description. Required for accessibility
+         */
+        "label": string;
         /**
           * Tabs items Required
          */

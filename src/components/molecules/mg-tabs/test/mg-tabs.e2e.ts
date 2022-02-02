@@ -26,7 +26,7 @@ describe('mg-tabs', () => {
         ],
       },
     ])('render', async ({ tabs }) => {
-      const page = await createPage(`<mg-tabs>${defaultSlots}</mg-tabs>
+      const page = await createPage(`<mg-tabs label="label">${defaultSlots}</mg-tabs>
       <script>
       const mgTabs = document.querySelector('mg-tabs');
       mgTabs.tabs = ${JSON.stringify(tabs)};
@@ -44,7 +44,7 @@ describe('mg-tabs', () => {
 
   describe('navigation', () => {
     test('should go to next tab on click event', async () => {
-      const page = await createPage(`<mg-tabs>${defaultSlots}</mg-tabs>
+      const page = await createPage(`<mg-tabs label="label">${defaultSlots}</mg-tabs>
       <script>
       const mgTabs = document.querySelector('mg-tabs');
       mgTabs.tabs = ['batman', 'joker'];

@@ -31,14 +31,32 @@ export class MgTabs {
   @Prop() identifier?: string = createID('mg-tabs');
 
   /**
+   * Tabs label. Include short tabs description.
+   * Required for accessibility
+   */
+  @Prop() label!: string;
+
+  /**
    * Tabs items
    * Required
    */
-  @Prop({ reflect: true, mutable: true }) tabs!: string[] | TabItem[];
+  @Prop() tabs!: string[] | TabItem[];
   @Watch('tabs')
   validateTabs(newValue) {
     if (!(allItemsAreString(newValue) || (newValue && (newValue as Array<TabItem>).every(item => isTabItem(item))))) {
       throw new Error('<mg-tabs> prop "tabs" is required and all items must be the same type: TabItem.');
+    }
+  }
+
+  /**
+   * Active tab number
+   * default: first is 1
+   */
+  @Prop({ reflect: true, mutable: true }) activeTab: number = 1;
+  @Watch('activeTab')
+  validateActiveTab(newValue) {
+    if (Number(newValue) < 1 || Number(newValue) > this.tabs.length) {
+      throw new Error('<mg-tabs> prop "activeTab" must be between 1 and tabs length.');
     }
   }
 
@@ -48,16 +66,11 @@ export class MgTabs {
   @State() classList: ClassList = new ClassList(['mg-tabs']);
 
   /**
-   * Active tab
-   */
-  @State() activeTab: number = 0;
-
-  /**
    * Handle click events on tabs
    * @param event
    */
-  private handleClick = (event: MouseEvent & { target: HTMLLIElement }) => {
-    const tabId = event.target.getAttribute('data-index');
+  private handleClick = (event: MouseEvent & { currentTarget: HTMLElement }) => {
+    const tabId = event.currentTarget.getAttribute('data-index');
     this.activeTab = Number(tabId);
   };
 
@@ -65,7 +78,7 @@ export class MgTabs {
    * Handle keyboard event on tabs
    * @param event
    */
-  private handleKeydown = (event: KeyboardEvent & { target: HTMLLIElement }) => {
+  private handleKeydown = (event: KeyboardEvent & { target: HTMLElement }) => {
     let selectedId: number;
     let selectedTab: HTMLElement;
 
@@ -73,11 +86,11 @@ export class MgTabs {
     const parent = event.target.parentElement;
 
     // change selected id from key code
-    if (['ArrowRight', 'ArrowDown', 'Right', 'Down'].indexOf(event.key) > -1) {
-      // /* IE FIX */'Right', 'Down'
+    // /* IE FIX */ delete 'Right'
+    if (['ArrowRight', 'Right'].indexOf(event.key) > -1) {
       selectedId = Number(tabId) + 1;
-    } else if (['ArrowLeft', 'ArrowUp', 'Left', 'Up'].indexOf(event.key) > -1) {
-      // /* IE FIX */'Left', 'Up'
+      // /* IE FIX */ delete 'Left'
+    } else if (['ArrowLeft', 'Left'].indexOf(event.key) > -1) {
       selectedId = Number(tabId) - 1;
     }
 
@@ -111,42 +124,49 @@ export class MgTabs {
   componentWillLoad() {
     // Check tabs format
     this.validateTabs(this.tabs);
+    this.validateActiveTab(this.activeTab);
     this.validateSlots();
   }
 
   render() {
     return (
       <Host>
-        <ul role="tablist" class="mg-tabs-links">
-          {this.tabs.map((tab, index) => (
-            <li
-              role="tab"
-              id={`${this.identifier}-${index}`}
-              class={`mg-tabs-links__link ${index === this.activeTab ? 'mg-tabs-links__link--active' : ''}`}
-              tabindex={index === this.activeTab ? 0 : -1}
-              aria-selected={(index === this.activeTab).toString()}
-              aria-controls={`pannel-${index}`}
-              onClick={this.handleClick}
-              onKeyDown={this.handleKeydown}
-              data-index={index}
+        <header role="tablist" aria-label={this.label} class="mg-tabs-header">
+          {this.tabs.map((tab, index) => {
+            const tabIndex = index + 1;
+            return (
+              <button
+                role="tab"
+                id={`${this.identifier}-${tabIndex}`}
+                class={`mg-tabs-header__button ${tabIndex === this.activeTab ? 'mg-tabs-header__button--active' : ''}`}
+                tabindex={tabIndex === this.activeTab ? 0 : -1}
+                aria-selected={(tabIndex === this.activeTab).toString()}
+                aria-controls={`pannel-${tabIndex}`}
+                onClick={this.handleClick}
+                onKeyDown={this.handleKeydown}
+                data-index={tabIndex}
+              >
+                {tab.icon !== undefined ? <mg-icon icon={tab.icon}></mg-icon> : null}
+                {tab.label || tab}
+                {tab.badge !== undefined ? <mg-tag variant="info">{tab.badge}</mg-tag> : null}
+              </button>
+            );
+          })}
+        </header>
+        {this.tabs.map((_tab, index) => {
+          const tabIndex = index + 1;
+          return (
+            <article
+              role="tabpanel"
+              id={`pannel-${tabIndex}`}
+              hidden={tabIndex !== this.activeTab}
+              aria-labelledby={`${this.identifier}-${this.activeTab}`}
+              tabindex={tabIndex === this.activeTab ? 0 : -1}
             >
-              {tab.icon !== undefined ? <mg-icon icon={tab.icon}></mg-icon> : null}
-              {tab.label || tab}
-              {tab.badge !== undefined ? <mg-tag variant="info">{tab.badge}</mg-tag> : null}
-            </li>
-          ))}
-        </ul>
-        {this.tabs.map((_tab, index) => (
-          <article
-            role="tabpanel"
-            id={`pannel-${index}`}
-            class={`mg-tabs-content ${index === this.activeTab ? 'mg-tabs-content--active' : ''}`}
-            aria-labelledby={`${this.identifier}-${this.activeTab}`}
-            tabindex={index === this.activeTab ? 0 : -1}
-          >
-            <slot name={`tab_content-${index + 1}`}></slot>
-          </article>
-        ))}
+              <slot name={`tab_content-${tabIndex}`}></slot>
+            </article>
+          );
+        })}
       </Host>
     );
   }
