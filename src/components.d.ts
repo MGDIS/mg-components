@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { CheckboxValue, RadioOption, SelectOption, ToggleValue } from "./types/components.types";
+import { CheckboxValue, RadioOption, SelectOption, TabItem, ToggleValue } from "./types/components.types";
 export namespace Components {
     interface MgButton {
         /**
@@ -683,6 +683,16 @@ export namespace Components {
          */
         "variant"?: string;
     }
+    interface MgTabs {
+        /**
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+         */
+        "identifier"?: string;
+        /**
+          * Tabs items Required
+         */
+        "tabs": string[] | TabItem[];
+    }
     interface MgTag {
         /**
           * Define if button is using outline style
@@ -815,6 +825,12 @@ declare global {
         prototype: HTMLMgMessageElement;
         new (): HTMLMgMessageElement;
     };
+    interface HTMLMgTabsElement extends Components.MgTabs, HTMLStencilElement {
+    }
+    var HTMLMgTabsElement: {
+        prototype: HTMLMgTabsElement;
+        new (): HTMLMgTabsElement;
+    };
     interface HTMLMgTagElement extends Components.MgTag, HTMLStencilElement {
     }
     var HTMLMgTagElement: {
@@ -842,6 +858,7 @@ declare global {
         "mg-input-title": HTMLMgInputTitleElement;
         "mg-input-toggle": HTMLMgInputToggleElement;
         "mg-message": HTMLMgMessageElement;
+        "mg-tabs": HTMLMgTabsElement;
         "mg-tag": HTMLMgTagElement;
         "mg-tooltip": HTMLMgTooltipElement;
     }
@@ -1559,6 +1576,16 @@ declare namespace LocalJSX {
          */
         "variant"?: string;
     }
+    interface MgTabs {
+        /**
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+         */
+        "identifier"?: string;
+        /**
+          * Tabs items Required
+         */
+        "tabs": string[] | TabItem[];
+    }
     interface MgTag {
         /**
           * Define if button is using outline style
@@ -1620,6 +1647,7 @@ declare namespace LocalJSX {
         "mg-input-title": MgInputTitle;
         "mg-input-toggle": MgInputToggle;
         "mg-message": MgMessage;
+        "mg-tabs": MgTabs;
         "mg-tag": MgTag;
         "mg-tooltip": MgTooltip;
     }
@@ -1642,6 +1670,7 @@ declare module "@stencil/core" {
             "mg-input-title": LocalJSX.MgInputTitle & JSXBase.HTMLAttributes<HTMLMgInputTitleElement>;
             "mg-input-toggle": LocalJSX.MgInputToggle & JSXBase.HTMLAttributes<HTMLMgInputToggleElement>;
             "mg-message": LocalJSX.MgMessage & JSXBase.HTMLAttributes<HTMLMgMessageElement>;
+            "mg-tabs": LocalJSX.MgTabs & JSXBase.HTMLAttributes<HTMLMgTabsElement>;
             "mg-tag": LocalJSX.MgTag & JSXBase.HTMLAttributes<HTMLMgTagElement>;
             "mg-tooltip": LocalJSX.MgTooltip & JSXBase.HTMLAttributes<HTMLMgTooltipElement>;
         }

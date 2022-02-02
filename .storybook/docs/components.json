@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-01-28T08:50:59",
+  "timestamp": "2022-02-02T07:46:44",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.13.0",
@@ -355,7 +355,8 @@
         "mg-input-text",
         "mg-input-textarea",
         "mg-input-toggle",
-        "mg-message"
+        "mg-message",
+        "mg-tabs"
       ],
       "dependencies": [],
       "dependencyGraph": {
@@ -390,6 +391,9 @@
           "mg-icon"
         ],
         "mg-message": [
+          "mg-icon"
+        ],
+        "mg-tabs": [
           "mg-icon"
         ]
       }
@@ -3305,6 +3309,69 @@
       }
     },
     {
+      "filePath": "./src/components/molecules/mg-tabs/mg-tabs.tsx",
+      "encapsulation": "scoped",
+      "tag": "mg-tabs",
+      "readme": "This molecule refers to the [PDA9-604](https://jira.mgdis.fr/browse/PDA9-604).\n",
+      "docs": "This molecule refers to the [PDA9-604](https://jira.mgdis.fr/browse/PDA9-604).",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "identifier",
+          "type": "string",
+          "mutable": false,
+          "attr": "identifier",
+          "reflectToAttr": false,
+          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
+          "docsTags": [],
+          "default": "createID('mg-tabs')",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "tabs",
+          "type": "TabItem[] | string[]",
+          "mutable": true,
+          "reflectToAttr": false,
+          "docs": "Tabs items\nRequired",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "TabItem[]"
+            },
+            {
+              "type": "string[]"
+            }
+          ],
+          "optional": false,
+          "required": true
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "mg-icon",
+        "mg-tag"
+      ],
+      "dependencyGraph": {
+        "mg-tabs": [
+          "mg-icon",
+          "mg-tag"
+        ]
+      }
+    },
+    {
       "filePath": "./src/components/atoms/mg-tag/mg-tag.tsx",
       "encapsulation": "shadow",
       "tag": "mg-tag",
@@ -3353,9 +3420,15 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [],
+      "dependents": [
+        "mg-tabs"
+      ],
       "dependencies": [],
-      "dependencyGraph": {}
+      "dependencyGraph": {
+        "mg-tabs": [
+          "mg-tag"
+        ]
+      }
     },
     {
       "filePath": "./src/components/atoms/mg-tooltip/mg-tooltip.tsx",

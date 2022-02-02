@@ -182,6 +182,18 @@
         </mg-message>
       </section>
       <section>
+        <h2>Tabs</h2>
+        <mg-tabs>
+          <div slot="tab_content-1">Content 1</div>
+          <div slot="tab_content-2">Content 2</div>
+          <div slot="tab_content-3">Content 3</div>
+        </mg-tabs>
+        <script>
+          const mgTabs = document.querySelector('mg-tabs');
+          mgTabs.tabs = [{ label: 'Tab 1', icon: 'check', badge: 1 }, { label: 'Tab 2', icon: 'cross', badge: 3 }, { label: 'Tab 3' }];
+        </script>
+      </section>
+      <section>
         <h2>Tags</h2>
         <div class="mg-group-elements" style="padding: 0 0 1rem">
           <mg-tag variant="primary">primary</mg-tag>

@@ -1,0 +1,3225 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mg-tabs navigation should NOT go to next tab one on keyboard event Enter 1`] = `
+Object {
+  "body": <body>
+  <mg-tabs>
+    <!---->
+    <ul class="mg-tabs-links" role="tablist">
+      <li aria-controls="pannel-0" aria-selected="true" class="mg-tabs-links__link mg-tabs-links__link--active" data-index="0" id="id-0" role="tab" tabindex="0">
+        batman
+      </li>
+      <li aria-controls="pannel-1" aria-selected="false" class="mg-tabs-links__link" data-index="1" id="id-1" role="tab" tabindex="-1">
+        joker
+      </li>
+    </ul>
+    <article aria-labelledby="id-0" class="mg-tabs-content mg-tabs-content--active" id="pannel-0" role="tabpanel" tabindex="0">
+      <div slot="tab_content-1">
+        Content 1
+      </div>
+    </article>
+    <article aria-labelledby="id-0" class="mg-tabs-content" id="pannel-1" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-2">
+        Content 2
+      </div>
+    </article>
+  </mg-tabs>
+</body>,
+  "build": Object {
+    "allRenderFn": true,
+    "appendChildSlotFix": false,
+    "asyncLoading": true,
+    "asyncQueue": true,
+    "attachStyles": false,
+    "cloneNodeFix": false,
+    "cmpDidLoad": true,
+    "cmpDidRender": true,
+    "cmpDidUnload": true,
+    "cmpDidUpdate": true,
+    "cmpShouldUpdate": true,
+    "cmpWillLoad": true,
+    "cmpWillRender": true,
+    "cmpWillUpdate": true,
+    "connectedCallback": true,
+    "constructableCSS": true,
+    "cssAnnotations": false,
+    "cssVarShim": true,
+    "devTools": false,
+    "disconnectedCallback": true,
+    "dynamicImportShim": false,
+    "element": true,
+    "event": true,
+    "hasRenderFn": true,
+    "hostListener": true,
+    "hostListenerTarget": true,
+    "hostListenerTargetBody": true,
+    "hostListenerTargetDocument": true,
+    "hostListenerTargetParent": true,
+    "hostListenerTargetWindow": true,
+    "hotModuleReplacement": false,
+    "hydrateClientSide": false,
+    "hydrateServerSide": false,
+    "hydratedAttribute": false,
+    "hydratedClass": true,
+    "initializeNextTick": true,
+    "invisiblePrehydration": true,
+    "isDebug": false,
+    "isDev": true,
+    "isTesting": true,
+    "lazyLoad": true,
+    "lifecycle": true,
+    "lifecycleDOMEvents": true,
+    "member": true,
+    "method": true,
+    "mode": true,
+    "observeAttribute": true,
+    "profile": true,
+    "prop": true,
+    "propBoolean": true,
+    "propMutable": true,
+    "propNumber": true,
+    "propString": true,
+    "reflect": true,
+    "safari10": false,
+    "scoped": true,
+    "scopedSlotTextContentFix": false,
+    "scriptDataOpts": false,
+    "shadowDelegatesFocus": true,
+    "shadowDom": true,
+    "shadowDomShim": false,
+    "slot": true,
+    "slotChildNodesFix": false,
+    "slotRelocation": true,
+    "state": true,
+    "style": true,
+    "svg": true,
+    "taskQueue": true,
+    "transformTagName": true,
+    "updatable": true,
+    "vdomAttribute": true,
+    "vdomClass": true,
+    "vdomFunctional": true,
+    "vdomKey": true,
+    "vdomListener": true,
+    "vdomPropOrAttr": true,
+    "vdomRef": true,
+    "vdomRender": true,
+    "vdomStyle": true,
+    "vdomText": true,
+    "vdomXlink": true,
+    "watchCallback": true,
+  },
+  "doc": ,
+  "flushLoadModule": [Function],
+  "flushQueue": [Function],
+  "setContent": [Function],
+  "styles": Map {},
+  "waitForChanges": [Function],
+  "win": [MockWindow],
+}
+`;
+
+exports[`mg-tabs navigation should NOT go to next tab one on keyboard event Enter 2`] = `
+Object {
+  "body": <body>
+  <mg-tabs>
+    <!---->
+    <ul class="mg-tabs-links" role="tablist">
+      <li aria-controls="pannel-0" aria-selected="true" class="mg-tabs-links__link mg-tabs-links__link--active" data-index="0" id="id-0" role="tab" tabindex="0">
+        batman
+      </li>
+      <li aria-controls="pannel-1" aria-selected="false" class="mg-tabs-links__link" data-index="1" id="id-1" role="tab" tabindex="-1">
+        joker
+      </li>
+    </ul>
+    <article aria-labelledby="id-0" class="mg-tabs-content mg-tabs-content--active" id="pannel-0" role="tabpanel" tabindex="0">
+      <div slot="tab_content-1">
+        Content 1
+      </div>
+    </article>
+    <article aria-labelledby="id-0" class="mg-tabs-content" id="pannel-1" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-2">
+        Content 2
+      </div>
+    </article>
+  </mg-tabs>
+</body>,
+  "build": Object {
+    "allRenderFn": true,
+    "appendChildSlotFix": false,
+    "asyncLoading": true,
+    "asyncQueue": true,
+    "attachStyles": false,
+    "cloneNodeFix": false,
+    "cmpDidLoad": true,
+    "cmpDidRender": true,
+    "cmpDidUnload": true,
+    "cmpDidUpdate": true,
+    "cmpShouldUpdate": true,
+    "cmpWillLoad": true,
+    "cmpWillRender": true,
+    "cmpWillUpdate": true,
+    "connectedCallback": true,
+    "constructableCSS": true,
+    "cssAnnotations": false,
+    "cssVarShim": true,
+    "devTools": false,
+    "disconnectedCallback": true,
+    "dynamicImportShim": false,
+    "element": true,
+    "event": true,
+    "hasRenderFn": true,
+    "hostListener": true,
+    "hostListenerTarget": true,
+    "hostListenerTargetBody": true,
+    "hostListenerTargetDocument": true,
+    "hostListenerTargetParent": true,
+    "hostListenerTargetWindow": true,
+    "hotModuleReplacement": false,
+    "hydrateClientSide": false,
+    "hydrateServerSide": false,
+    "hydratedAttribute": false,
+    "hydratedClass": true,
+    "initializeNextTick": true,
+    "invisiblePrehydration": true,
+    "isDebug": false,
+    "isDev": true,
+    "isTesting": true,
+    "lazyLoad": true,
+    "lifecycle": true,
+    "lifecycleDOMEvents": true,
+    "member": true,
+    "method": true,
+    "mode": true,
+    "observeAttribute": true,
+    "profile": true,
+    "prop": true,
+    "propBoolean": true,
+    "propMutable": true,
+    "propNumber": true,
+    "propString": true,
+    "reflect": true,
+    "safari10": false,
+    "scoped": true,
+    "scopedSlotTextContentFix": false,
+    "scriptDataOpts": false,
+    "shadowDelegatesFocus": true,
+    "shadowDom": true,
+    "shadowDomShim": false,
+    "slot": true,
+    "slotChildNodesFix": false,
+    "slotRelocation": true,
+    "state": true,
+    "style": true,
+    "svg": true,
+    "taskQueue": true,
+    "transformTagName": true,
+    "updatable": true,
+    "vdomAttribute": true,
+    "vdomClass": true,
+    "vdomFunctional": true,
+    "vdomKey": true,
+    "vdomListener": true,
+    "vdomPropOrAttr": true,
+    "vdomRef": true,
+    "vdomRender": true,
+    "vdomStyle": true,
+    "vdomText": true,
+    "vdomXlink": true,
+    "watchCallback": true,
+  },
+  "doc": ,
+  "flushLoadModule": [Function],
+  "flushQueue": [Function],
+  "setContent": [Function],
+  "styles": Map {},
+  "waitForChanges": [Function],
+  "win": [MockWindow],
+}
+`;
+
+exports[`mg-tabs navigation should NOT go to next tab one on keyboard event Enter 3`] = `
+Object {
+  "body": <body>
+  <mg-tabs>
+    <!---->
+    <ul class="mg-tabs-links" role="tablist">
+      <li aria-controls="pannel-0" aria-selected="true" class="mg-tabs-links__link mg-tabs-links__link--active" data-index="0" id="id-0" role="tab" tabindex="0">
+        batman
+      </li>
+      <li aria-controls="pannel-1" aria-selected="false" class="mg-tabs-links__link" data-index="1" id="id-1" role="tab" tabindex="-1">
+        joker
+      </li>
+    </ul>
+    <article aria-labelledby="id-0" class="mg-tabs-content mg-tabs-content--active" id="pannel-0" role="tabpanel" tabindex="0">
+      <div slot="tab_content-1">
+        Content 1
+      </div>
+    </article>
+    <article aria-labelledby="id-0" class="mg-tabs-content" id="pannel-1" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-2">
+        Content 2
+      </div>
+    </article>
+  </mg-tabs>
+</body>,
+  "build": Object {
+    "allRenderFn": true,
+    "appendChildSlotFix": false,
+    "asyncLoading": true,
+    "asyncQueue": true,
+    "attachStyles": false,
+    "cloneNodeFix": false,
+    "cmpDidLoad": true,
+    "cmpDidRender": true,
+    "cmpDidUnload": true,
+    "cmpDidUpdate": true,
+    "cmpShouldUpdate": true,
+    "cmpWillLoad": true,
+    "cmpWillRender": true,
+    "cmpWillUpdate": true,
+    "connectedCallback": true,
+    "constructableCSS": true,
+    "cssAnnotations": false,
+    "cssVarShim": true,
+    "devTools": false,
+    "disconnectedCallback": true,
+    "dynamicImportShim": false,
+    "element": true,
+    "event": true,
+    "hasRenderFn": true,
+    "hostListener": true,
+    "hostListenerTarget": true,
+    "hostListenerTargetBody": true,
+    "hostListenerTargetDocument": true,
+    "hostListenerTargetParent": true,
+    "hostListenerTargetWindow": true,
+    "hotModuleReplacement": false,
+    "hydrateClientSide": false,
+    "hydrateServerSide": false,
+    "hydratedAttribute": false,
+    "hydratedClass": true,
+    "initializeNextTick": true,
+    "invisiblePrehydration": true,
+    "isDebug": false,
+    "isDev": true,
+    "isTesting": true,
+    "lazyLoad": true,
+    "lifecycle": true,
+    "lifecycleDOMEvents": true,
+    "member": true,
+    "method": true,
+    "mode": true,
+    "observeAttribute": true,
+    "profile": true,
+    "prop": true,
+    "propBoolean": true,
+    "propMutable": true,
+    "propNumber": true,
+    "propString": true,
+    "reflect": true,
+    "safari10": false,
+    "scoped": true,
+    "scopedSlotTextContentFix": false,
+    "scriptDataOpts": false,
+    "shadowDelegatesFocus": true,
+    "shadowDom": true,
+    "shadowDomShim": false,
+    "slot": true,
+    "slotChildNodesFix": false,
+    "slotRelocation": true,
+    "state": true,
+    "style": true,
+    "svg": true,
+    "taskQueue": true,
+    "transformTagName": true,
+    "updatable": true,
+    "vdomAttribute": true,
+    "vdomClass": true,
+    "vdomFunctional": true,
+    "vdomKey": true,
+    "vdomListener": true,
+    "vdomPropOrAttr": true,
+    "vdomRef": true,
+    "vdomRender": true,
+    "vdomStyle": true,
+    "vdomText": true,
+    "vdomXlink": true,
+    "watchCallback": true,
+  },
+  "doc": ,
+  "flushLoadModule": [Function],
+  "flushQueue": [Function],
+  "setContent": [Function],
+  "styles": Map {},
+  "waitForChanges": [Function],
+  "win": [MockWindow],
+}
+`;
+
+exports[`mg-tabs navigation should NOT go to next tab one on keyboard event Space 1`] = `
+Object {
+  "body": <body>
+  <mg-tabs>
+    <!---->
+    <ul class="mg-tabs-links" role="tablist">
+      <li aria-controls="pannel-0" aria-selected="true" class="mg-tabs-links__link mg-tabs-links__link--active" data-index="0" id="id-0" role="tab" tabindex="0">
+        batman
+      </li>
+      <li aria-controls="pannel-1" aria-selected="false" class="mg-tabs-links__link" data-index="1" id="id-1" role="tab" tabindex="-1">
+        joker
+      </li>
+    </ul>
+    <article aria-labelledby="id-0" class="mg-tabs-content mg-tabs-content--active" id="pannel-0" role="tabpanel" tabindex="0">
+      <div slot="tab_content-1">
+        Content 1
+      </div>
+    </article>
+    <article aria-labelledby="id-0" class="mg-tabs-content" id="pannel-1" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-2">
+        Content 2
+      </div>
+    </article>
+  </mg-tabs>
+</body>,
+  "build": Object {
+    "allRenderFn": true,
+    "appendChildSlotFix": false,
+    "asyncLoading": true,
+    "asyncQueue": true,
+    "attachStyles": false,
+    "cloneNodeFix": false,
+    "cmpDidLoad": true,
+    "cmpDidRender": true,
+    "cmpDidUnload": true,
+    "cmpDidUpdate": true,
+    "cmpShouldUpdate": true,
+    "cmpWillLoad": true,
+    "cmpWillRender": true,
+    "cmpWillUpdate": true,
+    "connectedCallback": true,
+    "constructableCSS": true,
+    "cssAnnotations": false,
+    "cssVarShim": true,
+    "devTools": false,
+    "disconnectedCallback": true,
+    "dynamicImportShim": false,
+    "element": true,
+    "event": true,
+    "hasRenderFn": true,
+    "hostListener": true,
+    "hostListenerTarget": true,
+    "hostListenerTargetBody": true,
+    "hostListenerTargetDocument": true,
+    "hostListenerTargetParent": true,
+    "hostListenerTargetWindow": true,
+    "hotModuleReplacement": false,
+    "hydrateClientSide": false,
+    "hydrateServerSide": false,
+    "hydratedAttribute": false,
+    "hydratedClass": true,
+    "initializeNextTick": true,
+    "invisiblePrehydration": true,
+    "isDebug": false,
+    "isDev": true,
+    "isTesting": true,
+    "lazyLoad": true,
+    "lifecycle": true,
+    "lifecycleDOMEvents": true,
+    "member": true,
+    "method": true,
+    "mode": true,
+    "observeAttribute": true,
+    "profile": true,
+    "prop": true,
+    "propBoolean": true,
+    "propMutable": true,
+    "propNumber": true,
+    "propString": true,
+    "reflect": true,
+    "safari10": false,
+    "scoped": true,
+    "scopedSlotTextContentFix": false,
+    "scriptDataOpts": false,
+    "shadowDelegatesFocus": true,
+    "shadowDom": true,
+    "shadowDomShim": false,
+    "slot": true,
+    "slotChildNodesFix": false,
+    "slotRelocation": true,
+    "state": true,
+    "style": true,
+    "svg": true,
+    "taskQueue": true,
+    "transformTagName": true,
+    "updatable": true,
+    "vdomAttribute": true,
+    "vdomClass": true,
+    "vdomFunctional": true,
+    "vdomKey": true,
+    "vdomListener": true,
+    "vdomPropOrAttr": true,
+    "vdomRef": true,
+    "vdomRender": true,
+    "vdomStyle": true,
+    "vdomText": true,
+    "vdomXlink": true,
+    "watchCallback": true,
+  },
+  "doc": ,
+  "flushLoadModule": [Function],
+  "flushQueue": [Function],
+  "setContent": [Function],
+  "styles": Map {},
+  "waitForChanges": [Function],
+  "win": [MockWindow],
+}
+`;
+
+exports[`mg-tabs navigation should NOT go to next tab one on keyboard event Space 2`] = `
+Object {
+  "body": <body>
+  <mg-tabs>
+    <!---->
+    <ul class="mg-tabs-links" role="tablist">
+      <li aria-controls="pannel-0" aria-selected="true" class="mg-tabs-links__link mg-tabs-links__link--active" data-index="0" id="id-0" role="tab" tabindex="0">
+        batman
+      </li>
+      <li aria-controls="pannel-1" aria-selected="false" class="mg-tabs-links__link" data-index="1" id="id-1" role="tab" tabindex="-1">
+        joker
+      </li>
+    </ul>
+    <article aria-labelledby="id-0" class="mg-tabs-content mg-tabs-content--active" id="pannel-0" role="tabpanel" tabindex="0">
+      <div slot="tab_content-1">
+        Content 1
+      </div>
+    </article>
+    <article aria-labelledby="id-0" class="mg-tabs-content" id="pannel-1" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-2">
+        Content 2
+      </div>
+    </article>
+  </mg-tabs>
+</body>,
+  "build": Object {
+    "allRenderFn": true,
+    "appendChildSlotFix": false,
+    "asyncLoading": true,
+    "asyncQueue": true,
+    "attachStyles": false,
+    "cloneNodeFix": false,
+    "cmpDidLoad": true,
+    "cmpDidRender": true,
+    "cmpDidUnload": true,
+    "cmpDidUpdate": true,
+    "cmpShouldUpdate": true,
+    "cmpWillLoad": true,
+    "cmpWillRender": true,
+    "cmpWillUpdate": true,
+    "connectedCallback": true,
+    "constructableCSS": true,
+    "cssAnnotations": false,
+    "cssVarShim": true,
+    "devTools": false,
+    "disconnectedCallback": true,
+    "dynamicImportShim": false,
+    "element": true,
+    "event": true,
+    "hasRenderFn": true,
+    "hostListener": true,
+    "hostListenerTarget": true,
+    "hostListenerTargetBody": true,
+    "hostListenerTargetDocument": true,
+    "hostListenerTargetParent": true,
+    "hostListenerTargetWindow": true,
+    "hotModuleReplacement": false,
+    "hydrateClientSide": false,
+    "hydrateServerSide": false,
+    "hydratedAttribute": false,
+    "hydratedClass": true,
+    "initializeNextTick": true,
+    "invisiblePrehydration": true,
+    "isDebug": false,
+    "isDev": true,
+    "isTesting": true,
+    "lazyLoad": true,
+    "lifecycle": true,
+    "lifecycleDOMEvents": true,
+    "member": true,
+    "method": true,
+    "mode": true,
+    "observeAttribute": true,
+    "profile": true,
+    "prop": true,
+    "propBoolean": true,
+    "propMutable": true,
+    "propNumber": true,
+    "propString": true,
+    "reflect": true,
+    "safari10": false,
+    "scoped": true,
+    "scopedSlotTextContentFix": false,
+    "scriptDataOpts": false,
+    "shadowDelegatesFocus": true,
+    "shadowDom": true,
+    "shadowDomShim": false,
+    "slot": true,
+    "slotChildNodesFix": false,
+    "slotRelocation": true,
+    "state": true,
+    "style": true,
+    "svg": true,
+    "taskQueue": true,
+    "transformTagName": true,
+    "updatable": true,
+    "vdomAttribute": true,
+    "vdomClass": true,
+    "vdomFunctional": true,
+    "vdomKey": true,
+    "vdomListener": true,
+    "vdomPropOrAttr": true,
+    "vdomRef": true,
+    "vdomRender": true,
+    "vdomStyle": true,
+    "vdomText": true,
+    "vdomXlink": true,
+    "watchCallback": true,
+  },
+  "doc": ,
+  "flushLoadModule": [Function],
+  "flushQueue": [Function],
+  "setContent": [Function],
+  "styles": Map {},
+  "waitForChanges": [Function],
+  "win": [MockWindow],
+}
+`;
+
+exports[`mg-tabs navigation should NOT go to next tab one on keyboard event Space 3`] = `
+Object {
+  "body": <body>
+  <mg-tabs>
+    <!---->
+    <ul class="mg-tabs-links" role="tablist">
+      <li aria-controls="pannel-0" aria-selected="true" class="mg-tabs-links__link mg-tabs-links__link--active" data-index="0" id="id-0" role="tab" tabindex="0">
+        batman
+      </li>
+      <li aria-controls="pannel-1" aria-selected="false" class="mg-tabs-links__link" data-index="1" id="id-1" role="tab" tabindex="-1">
+        joker
+      </li>
+    </ul>
+    <article aria-labelledby="id-0" class="mg-tabs-content mg-tabs-content--active" id="pannel-0" role="tabpanel" tabindex="0">
+      <div slot="tab_content-1">
+        Content 1
+      </div>
+    </article>
+    <article aria-labelledby="id-0" class="mg-tabs-content" id="pannel-1" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-2">
+        Content 2
+      </div>
+    </article>
+  </mg-tabs>
+</body>,
+  "build": Object {
+    "allRenderFn": true,
+    "appendChildSlotFix": false,
+    "asyncLoading": true,
+    "asyncQueue": true,
+    "attachStyles": false,
+    "cloneNodeFix": false,
+    "cmpDidLoad": true,
+    "cmpDidRender": true,
+    "cmpDidUnload": true,
+    "cmpDidUpdate": true,
+    "cmpShouldUpdate": true,
+    "cmpWillLoad": true,
+    "cmpWillRender": true,
+    "cmpWillUpdate": true,
+    "connectedCallback": true,
+    "constructableCSS": true,
+    "cssAnnotations": false,
+    "cssVarShim": true,
+    "devTools": false,
+    "disconnectedCallback": true,
+    "dynamicImportShim": false,
+    "element": true,
+    "event": true,
+    "hasRenderFn": true,
+    "hostListener": true,
+    "hostListenerTarget": true,
+    "hostListenerTargetBody": true,
+    "hostListenerTargetDocument": true,
+    "hostListenerTargetParent": true,
+    "hostListenerTargetWindow": true,
+    "hotModuleReplacement": false,
+    "hydrateClientSide": false,
+    "hydrateServerSide": false,
+    "hydratedAttribute": false,
+    "hydratedClass": true,
+    "initializeNextTick": true,
+    "invisiblePrehydration": true,
+    "isDebug": false,
+    "isDev": true,
+    "isTesting": true,
+    "lazyLoad": true,
+    "lifecycle": true,
+    "lifecycleDOMEvents": true,
+    "member": true,
+    "method": true,
+    "mode": true,
+    "observeAttribute": true,
+    "profile": true,
+    "prop": true,
+    "propBoolean": true,
+    "propMutable": true,
+    "propNumber": true,
+    "propString": true,
+    "reflect": true,
+    "safari10": false,
+    "scoped": true,
+    "scopedSlotTextContentFix": false,
+    "scriptDataOpts": false,
+    "shadowDelegatesFocus": true,
+    "shadowDom": true,
+    "shadowDomShim": false,
+    "slot": true,
+    "slotChildNodesFix": false,
+    "slotRelocation": true,
+    "state": true,
+    "style": true,
+    "svg": true,
+    "taskQueue": true,
+    "transformTagName": true,
+    "updatable": true,
+    "vdomAttribute": true,
+    "vdomClass": true,
+    "vdomFunctional": true,
+    "vdomKey": true,
+    "vdomListener": true,
+    "vdomPropOrAttr": true,
+    "vdomRef": true,
+    "vdomRender": true,
+    "vdomStyle": true,
+    "vdomText": true,
+    "vdomXlink": true,
+    "watchCallback": true,
+  },
+  "doc": ,
+  "flushLoadModule": [Function],
+  "flushQueue": [Function],
+  "setContent": [Function],
+  "styles": Map {},
+  "waitForChanges": [Function],
+  "win": [MockWindow],
+}
+`;
+
+exports[`mg-tabs navigation should go to next tab on click event 1`] = `
+Object {
+  "body": <body>
+  <mg-tabs>
+    <!---->
+    <ul class="mg-tabs-links" role="tablist">
+      <li aria-controls="pannel-0" aria-selected="true" class="mg-tabs-links__link mg-tabs-links__link--active" data-index="0" id="id-0" role="tab" tabindex="0">
+        batman
+      </li>
+      <li aria-controls="pannel-1" aria-selected="false" class="mg-tabs-links__link" data-index="1" id="id-1" role="tab" tabindex="-1">
+        joker
+      </li>
+    </ul>
+    <article aria-labelledby="id-0" class="mg-tabs-content mg-tabs-content--active" id="pannel-0" role="tabpanel" tabindex="0">
+      <div slot="tab_content-1">
+        Content 1
+      </div>
+    </article>
+    <article aria-labelledby="id-0" class="mg-tabs-content" id="pannel-1" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-2">
+        Content 2
+      </div>
+    </article>
+  </mg-tabs>
+</body>,
+  "build": Object {
+    "allRenderFn": true,
+    "appendChildSlotFix": false,
+    "asyncLoading": true,
+    "asyncQueue": true,
+    "attachStyles": false,
+    "cloneNodeFix": false,
+    "cmpDidLoad": true,
+    "cmpDidRender": true,
+    "cmpDidUnload": true,
+    "cmpDidUpdate": true,
+    "cmpShouldUpdate": true,
+    "cmpWillLoad": true,
+    "cmpWillRender": true,
+    "cmpWillUpdate": true,
+    "connectedCallback": true,
+    "constructableCSS": true,
+    "cssAnnotations": false,
+    "cssVarShim": true,
+    "devTools": false,
+    "disconnectedCallback": true,
+    "dynamicImportShim": false,
+    "element": true,
+    "event": true,
+    "hasRenderFn": true,
+    "hostListener": true,
+    "hostListenerTarget": true,
+    "hostListenerTargetBody": true,
+    "hostListenerTargetDocument": true,
+    "hostListenerTargetParent": true,
+    "hostListenerTargetWindow": true,
+    "hotModuleReplacement": false,
+    "hydrateClientSide": false,
+    "hydrateServerSide": false,
+    "hydratedAttribute": false,
+    "hydratedClass": true,
+    "initializeNextTick": true,
+    "invisiblePrehydration": true,
+    "isDebug": false,
+    "isDev": true,
+    "isTesting": true,
+    "lazyLoad": true,
+    "lifecycle": true,
+    "lifecycleDOMEvents": true,
+    "member": true,
+    "method": true,
+    "mode": true,
+    "observeAttribute": true,
+    "profile": true,
+    "prop": true,
+    "propBoolean": true,
+    "propMutable": true,
+    "propNumber": true,
+    "propString": true,
+    "reflect": true,
+    "safari10": false,
+    "scoped": true,
+    "scopedSlotTextContentFix": false,
+    "scriptDataOpts": false,
+    "shadowDelegatesFocus": true,
+    "shadowDom": true,
+    "shadowDomShim": false,
+    "slot": true,
+    "slotChildNodesFix": false,
+    "slotRelocation": true,
+    "state": true,
+    "style": true,
+    "svg": true,
+    "taskQueue": true,
+    "transformTagName": true,
+    "updatable": true,
+    "vdomAttribute": true,
+    "vdomClass": true,
+    "vdomFunctional": true,
+    "vdomKey": true,
+    "vdomListener": true,
+    "vdomPropOrAttr": true,
+    "vdomRef": true,
+    "vdomRender": true,
+    "vdomStyle": true,
+    "vdomText": true,
+    "vdomXlink": true,
+    "watchCallback": true,
+  },
+  "doc": ,
+  "flushLoadModule": [Function],
+  "flushQueue": [Function],
+  "setContent": [Function],
+  "styles": Map {},
+  "waitForChanges": [Function],
+  "win": [MockWindow],
+}
+`;
+
+exports[`mg-tabs navigation should go to next tab on click event 2`] = `
+Object {
+  "body": <body>
+  <mg-tabs>
+    <!---->
+    <ul class="mg-tabs-links" role="tablist">
+      <li aria-controls="pannel-0" aria-selected="false" class="mg-tabs-links__link" data-index="0" id="id-0" role="tab" tabindex="-1">
+        batman
+      </li>
+      <li aria-controls="pannel-1" aria-selected="true" class="mg-tabs-links__link mg-tabs-links__link--active" data-index="1" id="id-1" role="tab" tabindex="0">
+        joker
+      </li>
+    </ul>
+    <article aria-labelledby="id-1" class="mg-tabs-content" id="pannel-0" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-1">
+        Content 1
+      </div>
+    </article>
+    <article aria-labelledby="id-1" class="mg-tabs-content mg-tabs-content--active" id="pannel-1" role="tabpanel" tabindex="0">
+      <div slot="tab_content-2">
+        Content 2
+      </div>
+    </article>
+  </mg-tabs>
+</body>,
+  "build": Object {
+    "allRenderFn": true,
+    "appendChildSlotFix": false,
+    "asyncLoading": true,
+    "asyncQueue": true,
+    "attachStyles": false,
+    "cloneNodeFix": false,
+    "cmpDidLoad": true,
+    "cmpDidRender": true,
+    "cmpDidUnload": true,
+    "cmpDidUpdate": true,
+    "cmpShouldUpdate": true,
+    "cmpWillLoad": true,
+    "cmpWillRender": true,
+    "cmpWillUpdate": true,
+    "connectedCallback": true,
+    "constructableCSS": true,
+    "cssAnnotations": false,
+    "cssVarShim": true,
+    "devTools": false,
+    "disconnectedCallback": true,
+    "dynamicImportShim": false,
+    "element": true,
+    "event": true,
+    "hasRenderFn": true,
+    "hostListener": true,
+    "hostListenerTarget": true,
+    "hostListenerTargetBody": true,
+    "hostListenerTargetDocument": true,
+    "hostListenerTargetParent": true,
+    "hostListenerTargetWindow": true,
+    "hotModuleReplacement": false,
+    "hydrateClientSide": false,
+    "hydrateServerSide": false,
+    "hydratedAttribute": false,
+    "hydratedClass": true,
+    "initializeNextTick": true,
+    "invisiblePrehydration": true,
+    "isDebug": false,
+    "isDev": true,
+    "isTesting": true,
+    "lazyLoad": true,
+    "lifecycle": true,
+    "lifecycleDOMEvents": true,
+    "member": true,
+    "method": true,
+    "mode": true,
+    "observeAttribute": true,
+    "profile": true,
+    "prop": true,
+    "propBoolean": true,
+    "propMutable": true,
+    "propNumber": true,
+    "propString": true,
+    "reflect": true,
+    "safari10": false,
+    "scoped": true,
+    "scopedSlotTextContentFix": false,
+    "scriptDataOpts": false,
+    "shadowDelegatesFocus": true,
+    "shadowDom": true,
+    "shadowDomShim": false,
+    "slot": true,
+    "slotChildNodesFix": false,
+    "slotRelocation": true,
+    "state": true,
+    "style": true,
+    "svg": true,
+    "taskQueue": true,
+    "transformTagName": true,
+    "updatable": true,
+    "vdomAttribute": true,
+    "vdomClass": true,
+    "vdomFunctional": true,
+    "vdomKey": true,
+    "vdomListener": true,
+    "vdomPropOrAttr": true,
+    "vdomRef": true,
+    "vdomRender": true,
+    "vdomStyle": true,
+    "vdomText": true,
+    "vdomXlink": true,
+    "watchCallback": true,
+  },
+  "doc": ,
+  "flushLoadModule": [Function],
+  "flushQueue": [Function],
+  "setContent": [Function],
+  "styles": Map {},
+  "waitForChanges": [Function],
+  "win": [MockWindow],
+}
+`;
+
+exports[`mg-tabs navigation should go to next tab on keyboard event 1`] = `
+Object {
+  "body": <body>
+  <mg-tabs>
+    <!---->
+    <ul class="mg-tabs-links" role="tablist">
+      <li aria-controls="pannel-0" aria-selected="true" class="mg-tabs-links__link mg-tabs-links__link--active" data-index="0" id="id-0" role="tab" tabindex="0">
+        batman
+      </li>
+      <li aria-controls="pannel-1" aria-selected="false" class="mg-tabs-links__link" data-index="1" id="id-1" role="tab" tabindex="-1">
+        joker
+      </li>
+    </ul>
+    <article aria-labelledby="id-0" class="mg-tabs-content mg-tabs-content--active" id="pannel-0" role="tabpanel" tabindex="0">
+      <div slot="tab_content-1">
+        Content 1
+      </div>
+    </article>
+    <article aria-labelledby="id-0" class="mg-tabs-content" id="pannel-1" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-2">
+        Content 2
+      </div>
+    </article>
+  </mg-tabs>
+</body>,
+  "build": Object {
+    "allRenderFn": true,
+    "appendChildSlotFix": false,
+    "asyncLoading": true,
+    "asyncQueue": true,
+    "attachStyles": false,
+    "cloneNodeFix": false,
+    "cmpDidLoad": true,
+    "cmpDidRender": true,
+    "cmpDidUnload": true,
+    "cmpDidUpdate": true,
+    "cmpShouldUpdate": true,
+    "cmpWillLoad": true,
+    "cmpWillRender": true,
+    "cmpWillUpdate": true,
+    "connectedCallback": true,
+    "constructableCSS": true,
+    "cssAnnotations": false,
+    "cssVarShim": true,
+    "devTools": false,
+    "disconnectedCallback": true,
+    "dynamicImportShim": false,
+    "element": true,
+    "event": true,
+    "hasRenderFn": true,
+    "hostListener": true,
+    "hostListenerTarget": true,
+    "hostListenerTargetBody": true,
+    "hostListenerTargetDocument": true,
+    "hostListenerTargetParent": true,
+    "hostListenerTargetWindow": true,
+    "hotModuleReplacement": false,
+    "hydrateClientSide": false,
+    "hydrateServerSide": false,
+    "hydratedAttribute": false,
+    "hydratedClass": true,
+    "initializeNextTick": true,
+    "invisiblePrehydration": true,
+    "isDebug": false,
+    "isDev": true,
+    "isTesting": true,
+    "lazyLoad": true,
+    "lifecycle": true,
+    "lifecycleDOMEvents": true,
+    "member": true,
+    "method": true,
+    "mode": true,
+    "observeAttribute": true,
+    "profile": true,
+    "prop": true,
+    "propBoolean": true,
+    "propMutable": true,
+    "propNumber": true,
+    "propString": true,
+    "reflect": true,
+    "safari10": false,
+    "scoped": true,
+    "scopedSlotTextContentFix": false,
+    "scriptDataOpts": false,
+    "shadowDelegatesFocus": true,
+    "shadowDom": true,
+    "shadowDomShim": false,
+    "slot": true,
+    "slotChildNodesFix": false,
+    "slotRelocation": true,
+    "state": true,
+    "style": true,
+    "svg": true,
+    "taskQueue": true,
+    "transformTagName": true,
+    "updatable": true,
+    "vdomAttribute": true,
+    "vdomClass": true,
+    "vdomFunctional": true,
+    "vdomKey": true,
+    "vdomListener": true,
+    "vdomPropOrAttr": true,
+    "vdomRef": true,
+    "vdomRender": true,
+    "vdomStyle": true,
+    "vdomText": true,
+    "vdomXlink": true,
+    "watchCallback": true,
+  },
+  "doc": ,
+  "flushLoadModule": [Function],
+  "flushQueue": [Function],
+  "setContent": [Function],
+  "styles": Map {},
+  "waitForChanges": [Function],
+  "win": [MockWindow],
+}
+`;
+
+exports[`mg-tabs navigation should go to next tab on keyboard event 2`] = `
+Object {
+  "body": <body>
+  <mg-tabs>
+    <!---->
+    <ul class="mg-tabs-links" role="tablist">
+      <li aria-controls="pannel-0" aria-selected="true" class="mg-tabs-links__link mg-tabs-links__link--active" data-index="0" id="id-0" role="tab" tabindex="0">
+        batman
+      </li>
+      <li aria-controls="pannel-1" aria-selected="false" class="mg-tabs-links__link" data-index="1" id="id-1" role="tab" tabindex="-1">
+        joker
+      </li>
+    </ul>
+    <article aria-labelledby="id-0" class="mg-tabs-content mg-tabs-content--active" id="pannel-0" role="tabpanel" tabindex="0">
+      <div slot="tab_content-1">
+        Content 1
+      </div>
+    </article>
+    <article aria-labelledby="id-0" class="mg-tabs-content" id="pannel-1" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-2">
+        Content 2
+      </div>
+    </article>
+  </mg-tabs>
+</body>,
+  "build": Object {
+    "allRenderFn": true,
+    "appendChildSlotFix": false,
+    "asyncLoading": true,
+    "asyncQueue": true,
+    "attachStyles": false,
+    "cloneNodeFix": false,
+    "cmpDidLoad": true,
+    "cmpDidRender": true,
+    "cmpDidUnload": true,
+    "cmpDidUpdate": true,
+    "cmpShouldUpdate": true,
+    "cmpWillLoad": true,
+    "cmpWillRender": true,
+    "cmpWillUpdate": true,
+    "connectedCallback": true,
+    "constructableCSS": true,
+    "cssAnnotations": false,
+    "cssVarShim": true,
+    "devTools": false,
+    "disconnectedCallback": true,
+    "dynamicImportShim": false,
+    "element": true,
+    "event": true,
+    "hasRenderFn": true,
+    "hostListener": true,
+    "hostListenerTarget": true,
+    "hostListenerTargetBody": true,
+    "hostListenerTargetDocument": true,
+    "hostListenerTargetParent": true,
+    "hostListenerTargetWindow": true,
+    "hotModuleReplacement": false,
+    "hydrateClientSide": false,
+    "hydrateServerSide": false,
+    "hydratedAttribute": false,
+    "hydratedClass": true,
+    "initializeNextTick": true,
+    "invisiblePrehydration": true,
+    "isDebug": false,
+    "isDev": true,
+    "isTesting": true,
+    "lazyLoad": true,
+    "lifecycle": true,
+    "lifecycleDOMEvents": true,
+    "member": true,
+    "method": true,
+    "mode": true,
+    "observeAttribute": true,
+    "profile": true,
+    "prop": true,
+    "propBoolean": true,
+    "propMutable": true,
+    "propNumber": true,
+    "propString": true,
+    "reflect": true,
+    "safari10": false,
+    "scoped": true,
+    "scopedSlotTextContentFix": false,
+    "scriptDataOpts": false,
+    "shadowDelegatesFocus": true,
+    "shadowDom": true,
+    "shadowDomShim": false,
+    "slot": true,
+    "slotChildNodesFix": false,
+    "slotRelocation": true,
+    "state": true,
+    "style": true,
+    "svg": true,
+    "taskQueue": true,
+    "transformTagName": true,
+    "updatable": true,
+    "vdomAttribute": true,
+    "vdomClass": true,
+    "vdomFunctional": true,
+    "vdomKey": true,
+    "vdomListener": true,
+    "vdomPropOrAttr": true,
+    "vdomRef": true,
+    "vdomRender": true,
+    "vdomStyle": true,
+    "vdomText": true,
+    "vdomXlink": true,
+    "watchCallback": true,
+  },
+  "doc": ,
+  "flushLoadModule": [Function],
+  "flushQueue": [Function],
+  "setContent": [Function],
+  "styles": Map {},
+  "waitForChanges": [Function],
+  "win": [MockWindow],
+}
+`;
+
+exports[`mg-tabs navigation should go to next tab on keyboard event 3`] = `
+Object {
+  "body": <body>
+  <mg-tabs>
+    <!---->
+    <ul class="mg-tabs-links" role="tablist">
+      <li aria-controls="pannel-0" aria-selected="false" class="mg-tabs-links__link" data-index="0" id="id-0" role="tab" tabindex="-1">
+        batman
+      </li>
+      <li aria-controls="pannel-1" aria-selected="true" class="mg-tabs-links__link mg-tabs-links__link--active" data-index="1" id="id-1" role="tab" tabindex="0">
+        joker
+      </li>
+    </ul>
+    <article aria-labelledby="id-1" class="mg-tabs-content" id="pannel-0" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-1">
+        Content 1
+      </div>
+    </article>
+    <article aria-labelledby="id-1" class="mg-tabs-content mg-tabs-content--active" id="pannel-1" role="tabpanel" tabindex="0">
+      <div slot="tab_content-2">
+        Content 2
+      </div>
+    </article>
+  </mg-tabs>
+</body>,
+  "build": Object {
+    "allRenderFn": true,
+    "appendChildSlotFix": false,
+    "asyncLoading": true,
+    "asyncQueue": true,
+    "attachStyles": false,
+    "cloneNodeFix": false,
+    "cmpDidLoad": true,
+    "cmpDidRender": true,
+    "cmpDidUnload": true,
+    "cmpDidUpdate": true,
+    "cmpShouldUpdate": true,
+    "cmpWillLoad": true,
+    "cmpWillRender": true,
+    "cmpWillUpdate": true,
+    "connectedCallback": true,
+    "constructableCSS": true,
+    "cssAnnotations": false,
+    "cssVarShim": true,
+    "devTools": false,
+    "disconnectedCallback": true,
+    "dynamicImportShim": false,
+    "element": true,
+    "event": true,
+    "hasRenderFn": true,
+    "hostListener": true,
+    "hostListenerTarget": true,
+    "hostListenerTargetBody": true,
+    "hostListenerTargetDocument": true,
+    "hostListenerTargetParent": true,
+    "hostListenerTargetWindow": true,
+    "hotModuleReplacement": false,
+    "hydrateClientSide": false,
+    "hydrateServerSide": false,
+    "hydratedAttribute": false,
+    "hydratedClass": true,
+    "initializeNextTick": true,
+    "invisiblePrehydration": true,
+    "isDebug": false,
+    "isDev": true,
+    "isTesting": true,
+    "lazyLoad": true,
+    "lifecycle": true,
+    "lifecycleDOMEvents": true,
+    "member": true,
+    "method": true,
+    "mode": true,
+    "observeAttribute": true,
+    "profile": true,
+    "prop": true,
+    "propBoolean": true,
+    "propMutable": true,
+    "propNumber": true,
+    "propString": true,
+    "reflect": true,
+    "safari10": false,
+    "scoped": true,
+    "scopedSlotTextContentFix": false,
+    "scriptDataOpts": false,
+    "shadowDelegatesFocus": true,
+    "shadowDom": true,
+    "shadowDomShim": false,
+    "slot": true,
+    "slotChildNodesFix": false,
+    "slotRelocation": true,
+    "state": true,
+    "style": true,
+    "svg": true,
+    "taskQueue": true,
+    "transformTagName": true,
+    "updatable": true,
+    "vdomAttribute": true,
+    "vdomClass": true,
+    "vdomFunctional": true,
+    "vdomKey": true,
+    "vdomListener": true,
+    "vdomPropOrAttr": true,
+    "vdomRef": true,
+    "vdomRender": true,
+    "vdomStyle": true,
+    "vdomText": true,
+    "vdomXlink": true,
+    "watchCallback": true,
+  },
+  "doc": ,
+  "flushLoadModule": [Function],
+  "flushQueue": [Function],
+  "setContent": [Function],
+  "styles": Map {},
+  "waitForChanges": [Function],
+  "win": [MockWindow],
+}
+`;
+
+exports[`mg-tabs navigation should go to next tab on keyboard event 4`] = `
+Object {
+  "body": <body>
+  <mg-tabs>
+    <!---->
+    <ul class="mg-tabs-links" role="tablist">
+      <li aria-controls="pannel-0" aria-selected="true" class="mg-tabs-links__link mg-tabs-links__link--active" data-index="0" id="id-0" role="tab" tabindex="0">
+        batman
+      </li>
+      <li aria-controls="pannel-1" aria-selected="false" class="mg-tabs-links__link" data-index="1" id="id-1" role="tab" tabindex="-1">
+        joker
+      </li>
+    </ul>
+    <article aria-labelledby="id-0" class="mg-tabs-content mg-tabs-content--active" id="pannel-0" role="tabpanel" tabindex="0">
+      <div slot="tab_content-1">
+        Content 1
+      </div>
+    </article>
+    <article aria-labelledby="id-0" class="mg-tabs-content" id="pannel-1" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-2">
+        Content 2
+      </div>
+    </article>
+  </mg-tabs>
+</body>,
+  "build": Object {
+    "allRenderFn": true,
+    "appendChildSlotFix": false,
+    "asyncLoading": true,
+    "asyncQueue": true,
+    "attachStyles": false,
+    "cloneNodeFix": false,
+    "cmpDidLoad": true,
+    "cmpDidRender": true,
+    "cmpDidUnload": true,
+    "cmpDidUpdate": true,
+    "cmpShouldUpdate": true,
+    "cmpWillLoad": true,
+    "cmpWillRender": true,
+    "cmpWillUpdate": true,
+    "connectedCallback": true,
+    "constructableCSS": true,
+    "cssAnnotations": false,
+    "cssVarShim": true,
+    "devTools": false,
+    "disconnectedCallback": true,
+    "dynamicImportShim": false,
+    "element": true,
+    "event": true,
+    "hasRenderFn": true,
+    "hostListener": true,
+    "hostListenerTarget": true,
+    "hostListenerTargetBody": true,
+    "hostListenerTargetDocument": true,
+    "hostListenerTargetParent": true,
+    "hostListenerTargetWindow": true,
+    "hotModuleReplacement": false,
+    "hydrateClientSide": false,
+    "hydrateServerSide": false,
+    "hydratedAttribute": false,
+    "hydratedClass": true,
+    "initializeNextTick": true,
+    "invisiblePrehydration": true,
+    "isDebug": false,
+    "isDev": true,
+    "isTesting": true,
+    "lazyLoad": true,
+    "lifecycle": true,
+    "lifecycleDOMEvents": true,
+    "member": true,
+    "method": true,
+    "mode": true,
+    "observeAttribute": true,
+    "profile": true,
+    "prop": true,
+    "propBoolean": true,
+    "propMutable": true,
+    "propNumber": true,
+    "propString": true,
+    "reflect": true,
+    "safari10": false,
+    "scoped": true,
+    "scopedSlotTextContentFix": false,
+    "scriptDataOpts": false,
+    "shadowDelegatesFocus": true,
+    "shadowDom": true,
+    "shadowDomShim": false,
+    "slot": true,
+    "slotChildNodesFix": false,
+    "slotRelocation": true,
+    "state": true,
+    "style": true,
+    "svg": true,
+    "taskQueue": true,
+    "transformTagName": true,
+    "updatable": true,
+    "vdomAttribute": true,
+    "vdomClass": true,
+    "vdomFunctional": true,
+    "vdomKey": true,
+    "vdomListener": true,
+    "vdomPropOrAttr": true,
+    "vdomRef": true,
+    "vdomRender": true,
+    "vdomStyle": true,
+    "vdomText": true,
+    "vdomXlink": true,
+    "watchCallback": true,
+  },
+  "doc": ,
+  "flushLoadModule": [Function],
+  "flushQueue": [Function],
+  "setContent": [Function],
+  "styles": Map {},
+  "waitForChanges": [Function],
+  "win": [MockWindow],
+}
+`;
+
+exports[`mg-tabs navigation should go to next tab on keyboard event 5`] = `
+Object {
+  "body": <body>
+  <mg-tabs>
+    <!---->
+    <ul class="mg-tabs-links" role="tablist">
+      <li aria-controls="pannel-0" aria-selected="true" class="mg-tabs-links__link mg-tabs-links__link--active" data-index="0" id="id-0" role="tab" tabindex="0">
+        batman
+      </li>
+      <li aria-controls="pannel-1" aria-selected="false" class="mg-tabs-links__link" data-index="1" id="id-1" role="tab" tabindex="-1">
+        joker
+      </li>
+    </ul>
+    <article aria-labelledby="id-0" class="mg-tabs-content mg-tabs-content--active" id="pannel-0" role="tabpanel" tabindex="0">
+      <div slot="tab_content-1">
+        Content 1
+      </div>
+    </article>
+    <article aria-labelledby="id-0" class="mg-tabs-content" id="pannel-1" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-2">
+        Content 2
+      </div>
+    </article>
+  </mg-tabs>
+</body>,
+  "build": Object {
+    "allRenderFn": true,
+    "appendChildSlotFix": false,
+    "asyncLoading": true,
+    "asyncQueue": true,
+    "attachStyles": false,
+    "cloneNodeFix": false,
+    "cmpDidLoad": true,
+    "cmpDidRender": true,
+    "cmpDidUnload": true,
+    "cmpDidUpdate": true,
+    "cmpShouldUpdate": true,
+    "cmpWillLoad": true,
+    "cmpWillRender": true,
+    "cmpWillUpdate": true,
+    "connectedCallback": true,
+    "constructableCSS": true,
+    "cssAnnotations": false,
+    "cssVarShim": true,
+    "devTools": false,
+    "disconnectedCallback": true,
+    "dynamicImportShim": false,
+    "element": true,
+    "event": true,
+    "hasRenderFn": true,
+    "hostListener": true,
+    "hostListenerTarget": true,
+    "hostListenerTargetBody": true,
+    "hostListenerTargetDocument": true,
+    "hostListenerTargetParent": true,
+    "hostListenerTargetWindow": true,
+    "hotModuleReplacement": false,
+    "hydrateClientSide": false,
+    "hydrateServerSide": false,
+    "hydratedAttribute": false,
+    "hydratedClass": true,
+    "initializeNextTick": true,
+    "invisiblePrehydration": true,
+    "isDebug": false,
+    "isDev": true,
+    "isTesting": true,
+    "lazyLoad": true,
+    "lifecycle": true,
+    "lifecycleDOMEvents": true,
+    "member": true,
+    "method": true,
+    "mode": true,
+    "observeAttribute": true,
+    "profile": true,
+    "prop": true,
+    "propBoolean": true,
+    "propMutable": true,
+    "propNumber": true,
+    "propString": true,
+    "reflect": true,
+    "safari10": false,
+    "scoped": true,
+    "scopedSlotTextContentFix": false,
+    "scriptDataOpts": false,
+    "shadowDelegatesFocus": true,
+    "shadowDom": true,
+    "shadowDomShim": false,
+    "slot": true,
+    "slotChildNodesFix": false,
+    "slotRelocation": true,
+    "state": true,
+    "style": true,
+    "svg": true,
+    "taskQueue": true,
+    "transformTagName": true,
+    "updatable": true,
+    "vdomAttribute": true,
+    "vdomClass": true,
+    "vdomFunctional": true,
+    "vdomKey": true,
+    "vdomListener": true,
+    "vdomPropOrAttr": true,
+    "vdomRef": true,
+    "vdomRender": true,
+    "vdomStyle": true,
+    "vdomText": true,
+    "vdomXlink": true,
+    "watchCallback": true,
+  },
+  "doc": ,
+  "flushLoadModule": [Function],
+  "flushQueue": [Function],
+  "setContent": [Function],
+  "styles": Map {},
+  "waitForChanges": [Function],
+  "win": [MockWindow],
+}
+`;
+
+exports[`mg-tabs navigation should go to next tab on keyboard event 6`] = `
+Object {
+  "body": <body>
+  <mg-tabs>
+    <!---->
+    <ul class="mg-tabs-links" role="tablist">
+      <li aria-controls="pannel-0" aria-selected="true" class="mg-tabs-links__link mg-tabs-links__link--active" data-index="0" id="id-0" role="tab" tabindex="0">
+        batman
+      </li>
+      <li aria-controls="pannel-1" aria-selected="false" class="mg-tabs-links__link" data-index="1" id="id-1" role="tab" tabindex="-1">
+        joker
+      </li>
+    </ul>
+    <article aria-labelledby="id-0" class="mg-tabs-content mg-tabs-content--active" id="pannel-0" role="tabpanel" tabindex="0">
+      <div slot="tab_content-1">
+        Content 1
+      </div>
+    </article>
+    <article aria-labelledby="id-0" class="mg-tabs-content" id="pannel-1" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-2">
+        Content 2
+      </div>
+    </article>
+  </mg-tabs>
+</body>,
+  "build": Object {
+    "allRenderFn": true,
+    "appendChildSlotFix": false,
+    "asyncLoading": true,
+    "asyncQueue": true,
+    "attachStyles": false,
+    "cloneNodeFix": false,
+    "cmpDidLoad": true,
+    "cmpDidRender": true,
+    "cmpDidUnload": true,
+    "cmpDidUpdate": true,
+    "cmpShouldUpdate": true,
+    "cmpWillLoad": true,
+    "cmpWillRender": true,
+    "cmpWillUpdate": true,
+    "connectedCallback": true,
+    "constructableCSS": true,
+    "cssAnnotations": false,
+    "cssVarShim": true,
+    "devTools": false,
+    "disconnectedCallback": true,
+    "dynamicImportShim": false,
+    "element": true,
+    "event": true,
+    "hasRenderFn": true,
+    "hostListener": true,
+    "hostListenerTarget": true,
+    "hostListenerTargetBody": true,
+    "hostListenerTargetDocument": true,
+    "hostListenerTargetParent": true,
+    "hostListenerTargetWindow": true,
+    "hotModuleReplacement": false,
+    "hydrateClientSide": false,
+    "hydrateServerSide": false,
+    "hydratedAttribute": false,
+    "hydratedClass": true,
+    "initializeNextTick": true,
+    "invisiblePrehydration": true,
+    "isDebug": false,
+    "isDev": true,
+    "isTesting": true,
+    "lazyLoad": true,
+    "lifecycle": true,
+    "lifecycleDOMEvents": true,
+    "member": true,
+    "method": true,
+    "mode": true,
+    "observeAttribute": true,
+    "profile": true,
+    "prop": true,
+    "propBoolean": true,
+    "propMutable": true,
+    "propNumber": true,
+    "propString": true,
+    "reflect": true,
+    "safari10": false,
+    "scoped": true,
+    "scopedSlotTextContentFix": false,
+    "scriptDataOpts": false,
+    "shadowDelegatesFocus": true,
+    "shadowDom": true,
+    "shadowDomShim": false,
+    "slot": true,
+    "slotChildNodesFix": false,
+    "slotRelocation": true,
+    "state": true,
+    "style": true,
+    "svg": true,
+    "taskQueue": true,
+    "transformTagName": true,
+    "updatable": true,
+    "vdomAttribute": true,
+    "vdomClass": true,
+    "vdomFunctional": true,
+    "vdomKey": true,
+    "vdomListener": true,
+    "vdomPropOrAttr": true,
+    "vdomRef": true,
+    "vdomRender": true,
+    "vdomStyle": true,
+    "vdomText": true,
+    "vdomXlink": true,
+    "watchCallback": true,
+  },
+  "doc": ,
+  "flushLoadModule": [Function],
+  "flushQueue": [Function],
+  "setContent": [Function],
+  "styles": Map {},
+  "waitForChanges": [Function],
+  "win": [MockWindow],
+}
+`;
+
+exports[`mg-tabs navigation should go to next tab on keyboard event 7`] = `
+Object {
+  "body": <body>
+  <mg-tabs>
+    <!---->
+    <ul class="mg-tabs-links" role="tablist">
+      <li aria-controls="pannel-0" aria-selected="false" class="mg-tabs-links__link" data-index="0" id="id-0" role="tab" tabindex="-1">
+        batman
+      </li>
+      <li aria-controls="pannel-1" aria-selected="true" class="mg-tabs-links__link mg-tabs-links__link--active" data-index="1" id="id-1" role="tab" tabindex="0">
+        joker
+      </li>
+    </ul>
+    <article aria-labelledby="id-1" class="mg-tabs-content" id="pannel-0" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-1">
+        Content 1
+      </div>
+    </article>
+    <article aria-labelledby="id-1" class="mg-tabs-content mg-tabs-content--active" id="pannel-1" role="tabpanel" tabindex="0">
+      <div slot="tab_content-2">
+        Content 2
+      </div>
+    </article>
+  </mg-tabs>
+</body>,
+  "build": Object {
+    "allRenderFn": true,
+    "appendChildSlotFix": false,
+    "asyncLoading": true,
+    "asyncQueue": true,
+    "attachStyles": false,
+    "cloneNodeFix": false,
+    "cmpDidLoad": true,
+    "cmpDidRender": true,
+    "cmpDidUnload": true,
+    "cmpDidUpdate": true,
+    "cmpShouldUpdate": true,
+    "cmpWillLoad": true,
+    "cmpWillRender": true,
+    "cmpWillUpdate": true,
+    "connectedCallback": true,
+    "constructableCSS": true,
+    "cssAnnotations": false,
+    "cssVarShim": true,
+    "devTools": false,
+    "disconnectedCallback": true,
+    "dynamicImportShim": false,
+    "element": true,
+    "event": true,
+    "hasRenderFn": true,
+    "hostListener": true,
+    "hostListenerTarget": true,
+    "hostListenerTargetBody": true,
+    "hostListenerTargetDocument": true,
+    "hostListenerTargetParent": true,
+    "hostListenerTargetWindow": true,
+    "hotModuleReplacement": false,
+    "hydrateClientSide": false,
+    "hydrateServerSide": false,
+    "hydratedAttribute": false,
+    "hydratedClass": true,
+    "initializeNextTick": true,
+    "invisiblePrehydration": true,
+    "isDebug": false,
+    "isDev": true,
+    "isTesting": true,
+    "lazyLoad": true,
+    "lifecycle": true,
+    "lifecycleDOMEvents": true,
+    "member": true,
+    "method": true,
+    "mode": true,
+    "observeAttribute": true,
+    "profile": true,
+    "prop": true,
+    "propBoolean": true,
+    "propMutable": true,
+    "propNumber": true,
+    "propString": true,
+    "reflect": true,
+    "safari10": false,
+    "scoped": true,
+    "scopedSlotTextContentFix": false,
+    "scriptDataOpts": false,
+    "shadowDelegatesFocus": true,
+    "shadowDom": true,
+    "shadowDomShim": false,
+    "slot": true,
+    "slotChildNodesFix": false,
+    "slotRelocation": true,
+    "state": true,
+    "style": true,
+    "svg": true,
+    "taskQueue": true,
+    "transformTagName": true,
+    "updatable": true,
+    "vdomAttribute": true,
+    "vdomClass": true,
+    "vdomFunctional": true,
+    "vdomKey": true,
+    "vdomListener": true,
+    "vdomPropOrAttr": true,
+    "vdomRef": true,
+    "vdomRender": true,
+    "vdomStyle": true,
+    "vdomText": true,
+    "vdomXlink": true,
+    "watchCallback": true,
+  },
+  "doc": ,
+  "flushLoadModule": [Function],
+  "flushQueue": [Function],
+  "setContent": [Function],
+  "styles": Map {},
+  "waitForChanges": [Function],
+  "win": [MockWindow],
+}
+`;
+
+exports[`mg-tabs navigation should go to next tab on keyboard event 8`] = `
+Object {
+  "body": <body>
+  <mg-tabs>
+    <!---->
+    <ul class="mg-tabs-links" role="tablist">
+      <li aria-controls="pannel-0" aria-selected="true" class="mg-tabs-links__link mg-tabs-links__link--active" data-index="0" id="id-0" role="tab" tabindex="0">
+        batman
+      </li>
+      <li aria-controls="pannel-1" aria-selected="false" class="mg-tabs-links__link" data-index="1" id="id-1" role="tab" tabindex="-1">
+        joker
+      </li>
+    </ul>
+    <article aria-labelledby="id-0" class="mg-tabs-content mg-tabs-content--active" id="pannel-0" role="tabpanel" tabindex="0">
+      <div slot="tab_content-1">
+        Content 1
+      </div>
+    </article>
+    <article aria-labelledby="id-0" class="mg-tabs-content" id="pannel-1" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-2">
+        Content 2
+      </div>
+    </article>
+  </mg-tabs>
+</body>,
+  "build": Object {
+    "allRenderFn": true,
+    "appendChildSlotFix": false,
+    "asyncLoading": true,
+    "asyncQueue": true,
+    "attachStyles": false,
+    "cloneNodeFix": false,
+    "cmpDidLoad": true,
+    "cmpDidRender": true,
+    "cmpDidUnload": true,
+    "cmpDidUpdate": true,
+    "cmpShouldUpdate": true,
+    "cmpWillLoad": true,
+    "cmpWillRender": true,
+    "cmpWillUpdate": true,
+    "connectedCallback": true,
+    "constructableCSS": true,
+    "cssAnnotations": false,
+    "cssVarShim": true,
+    "devTools": false,
+    "disconnectedCallback": true,
+    "dynamicImportShim": false,
+    "element": true,
+    "event": true,
+    "hasRenderFn": true,
+    "hostListener": true,
+    "hostListenerTarget": true,
+    "hostListenerTargetBody": true,
+    "hostListenerTargetDocument": true,
+    "hostListenerTargetParent": true,
+    "hostListenerTargetWindow": true,
+    "hotModuleReplacement": false,
+    "hydrateClientSide": false,
+    "hydrateServerSide": false,
+    "hydratedAttribute": false,
+    "hydratedClass": true,
+    "initializeNextTick": true,
+    "invisiblePrehydration": true,
+    "isDebug": false,
+    "isDev": true,
+    "isTesting": true,
+    "lazyLoad": true,
+    "lifecycle": true,
+    "lifecycleDOMEvents": true,
+    "member": true,
+    "method": true,
+    "mode": true,
+    "observeAttribute": true,
+    "profile": true,
+    "prop": true,
+    "propBoolean": true,
+    "propMutable": true,
+    "propNumber": true,
+    "propString": true,
+    "reflect": true,
+    "safari10": false,
+    "scoped": true,
+    "scopedSlotTextContentFix": false,
+    "scriptDataOpts": false,
+    "shadowDelegatesFocus": true,
+    "shadowDom": true,
+    "shadowDomShim": false,
+    "slot": true,
+    "slotChildNodesFix": false,
+    "slotRelocation": true,
+    "state": true,
+    "style": true,
+    "svg": true,
+    "taskQueue": true,
+    "transformTagName": true,
+    "updatable": true,
+    "vdomAttribute": true,
+    "vdomClass": true,
+    "vdomFunctional": true,
+    "vdomKey": true,
+    "vdomListener": true,
+    "vdomPropOrAttr": true,
+    "vdomRef": true,
+    "vdomRender": true,
+    "vdomStyle": true,
+    "vdomText": true,
+    "vdomXlink": true,
+    "watchCallback": true,
+  },
+  "doc": ,
+  "flushLoadModule": [Function],
+  "flushQueue": [Function],
+  "setContent": [Function],
+  "styles": Map {},
+  "waitForChanges": [Function],
+  "win": [MockWindow],
+}
+`;
+
+exports[`mg-tabs navigation should go to next tab, and key focus if it's the last one on keyboard event 1`] = `
+Object {
+  "body": <body>
+  <mg-tabs>
+    <!---->
+    <ul class="mg-tabs-links" role="tablist">
+      <li aria-controls="pannel-0" aria-selected="true" class="mg-tabs-links__link mg-tabs-links__link--active" data-index="0" id="id-0" role="tab" tabindex="0">
+        batman
+      </li>
+      <li aria-controls="pannel-1" aria-selected="false" class="mg-tabs-links__link" data-index="1" id="id-1" role="tab" tabindex="-1">
+        joker
+      </li>
+    </ul>
+    <article aria-labelledby="id-0" class="mg-tabs-content mg-tabs-content--active" id="pannel-0" role="tabpanel" tabindex="0">
+      <div slot="tab_content-1">
+        Content 1
+      </div>
+    </article>
+    <article aria-labelledby="id-0" class="mg-tabs-content" id="pannel-1" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-2">
+        Content 2
+      </div>
+    </article>
+  </mg-tabs>
+</body>,
+  "build": Object {
+    "allRenderFn": true,
+    "appendChildSlotFix": false,
+    "asyncLoading": true,
+    "asyncQueue": true,
+    "attachStyles": false,
+    "cloneNodeFix": false,
+    "cmpDidLoad": true,
+    "cmpDidRender": true,
+    "cmpDidUnload": true,
+    "cmpDidUpdate": true,
+    "cmpShouldUpdate": true,
+    "cmpWillLoad": true,
+    "cmpWillRender": true,
+    "cmpWillUpdate": true,
+    "connectedCallback": true,
+    "constructableCSS": true,
+    "cssAnnotations": false,
+    "cssVarShim": true,
+    "devTools": false,
+    "disconnectedCallback": true,
+    "dynamicImportShim": false,
+    "element": true,
+    "event": true,
+    "hasRenderFn": true,
+    "hostListener": true,
+    "hostListenerTarget": true,
+    "hostListenerTargetBody": true,
+    "hostListenerTargetDocument": true,
+    "hostListenerTargetParent": true,
+    "hostListenerTargetWindow": true,
+    "hotModuleReplacement": false,
+    "hydrateClientSide": false,
+    "hydrateServerSide": false,
+    "hydratedAttribute": false,
+    "hydratedClass": true,
+    "initializeNextTick": true,
+    "invisiblePrehydration": true,
+    "isDebug": false,
+    "isDev": true,
+    "isTesting": true,
+    "lazyLoad": true,
+    "lifecycle": true,
+    "lifecycleDOMEvents": true,
+    "member": true,
+    "method": true,
+    "mode": true,
+    "observeAttribute": true,
+    "profile": true,
+    "prop": true,
+    "propBoolean": true,
+    "propMutable": true,
+    "propNumber": true,
+    "propString": true,
+    "reflect": true,
+    "safari10": false,
+    "scoped": true,
+    "scopedSlotTextContentFix": false,
+    "scriptDataOpts": false,
+    "shadowDelegatesFocus": true,
+    "shadowDom": true,
+    "shadowDomShim": false,
+    "slot": true,
+    "slotChildNodesFix": false,
+    "slotRelocation": true,
+    "state": true,
+    "style": true,
+    "svg": true,
+    "taskQueue": true,
+    "transformTagName": true,
+    "updatable": true,
+    "vdomAttribute": true,
+    "vdomClass": true,
+    "vdomFunctional": true,
+    "vdomKey": true,
+    "vdomListener": true,
+    "vdomPropOrAttr": true,
+    "vdomRef": true,
+    "vdomRender": true,
+    "vdomStyle": true,
+    "vdomText": true,
+    "vdomXlink": true,
+    "watchCallback": true,
+  },
+  "doc": ,
+  "flushLoadModule": [Function],
+  "flushQueue": [Function],
+  "setContent": [Function],
+  "styles": Map {},
+  "waitForChanges": [Function],
+  "win": [MockWindow],
+}
+`;
+
+exports[`mg-tabs navigation should go to next tab, and key focus if it's the last one on keyboard event 2`] = `
+Object {
+  "body": <body>
+  <mg-tabs>
+    <!---->
+    <ul class="mg-tabs-links" role="tablist">
+      <li aria-controls="pannel-0" aria-selected="true" class="mg-tabs-links__link mg-tabs-links__link--active" data-index="0" id="id-0" role="tab" tabindex="0">
+        batman
+      </li>
+      <li aria-controls="pannel-1" aria-selected="false" class="mg-tabs-links__link" data-index="1" id="id-1" role="tab" tabindex="-1">
+        joker
+      </li>
+    </ul>
+    <article aria-labelledby="id-0" class="mg-tabs-content mg-tabs-content--active" id="pannel-0" role="tabpanel" tabindex="0">
+      <div slot="tab_content-1">
+        Content 1
+      </div>
+    </article>
+    <article aria-labelledby="id-0" class="mg-tabs-content" id="pannel-1" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-2">
+        Content 2
+      </div>
+    </article>
+  </mg-tabs>
+</body>,
+  "build": Object {
+    "allRenderFn": true,
+    "appendChildSlotFix": false,
+    "asyncLoading": true,
+    "asyncQueue": true,
+    "attachStyles": false,
+    "cloneNodeFix": false,
+    "cmpDidLoad": true,
+    "cmpDidRender": true,
+    "cmpDidUnload": true,
+    "cmpDidUpdate": true,
+    "cmpShouldUpdate": true,
+    "cmpWillLoad": true,
+    "cmpWillRender": true,
+    "cmpWillUpdate": true,
+    "connectedCallback": true,
+    "constructableCSS": true,
+    "cssAnnotations": false,
+    "cssVarShim": true,
+    "devTools": false,
+    "disconnectedCallback": true,
+    "dynamicImportShim": false,
+    "element": true,
+    "event": true,
+    "hasRenderFn": true,
+    "hostListener": true,
+    "hostListenerTarget": true,
+    "hostListenerTargetBody": true,
+    "hostListenerTargetDocument": true,
+    "hostListenerTargetParent": true,
+    "hostListenerTargetWindow": true,
+    "hotModuleReplacement": false,
+    "hydrateClientSide": false,
+    "hydrateServerSide": false,
+    "hydratedAttribute": false,
+    "hydratedClass": true,
+    "initializeNextTick": true,
+    "invisiblePrehydration": true,
+    "isDebug": false,
+    "isDev": true,
+    "isTesting": true,
+    "lazyLoad": true,
+    "lifecycle": true,
+    "lifecycleDOMEvents": true,
+    "member": true,
+    "method": true,
+    "mode": true,
+    "observeAttribute": true,
+    "profile": true,
+    "prop": true,
+    "propBoolean": true,
+    "propMutable": true,
+    "propNumber": true,
+    "propString": true,
+    "reflect": true,
+    "safari10": false,
+    "scoped": true,
+    "scopedSlotTextContentFix": false,
+    "scriptDataOpts": false,
+    "shadowDelegatesFocus": true,
+    "shadowDom": true,
+    "shadowDomShim": false,
+    "slot": true,
+    "slotChildNodesFix": false,
+    "slotRelocation": true,
+    "state": true,
+    "style": true,
+    "svg": true,
+    "taskQueue": true,
+    "transformTagName": true,
+    "updatable": true,
+    "vdomAttribute": true,
+    "vdomClass": true,
+    "vdomFunctional": true,
+    "vdomKey": true,
+    "vdomListener": true,
+    "vdomPropOrAttr": true,
+    "vdomRef": true,
+    "vdomRender": true,
+    "vdomStyle": true,
+    "vdomText": true,
+    "vdomXlink": true,
+    "watchCallback": true,
+  },
+  "doc": ,
+  "flushLoadModule": [Function],
+  "flushQueue": [Function],
+  "setContent": [Function],
+  "styles": Map {},
+  "waitForChanges": [Function],
+  "win": [MockWindow],
+}
+`;
+
+exports[`mg-tabs navigation should go to next tab, and key focus if it's the last one on keyboard event 3`] = `
+Object {
+  "body": <body>
+  <mg-tabs>
+    <!---->
+    <ul class="mg-tabs-links" role="tablist">
+      <li aria-controls="pannel-0" aria-selected="false" class="mg-tabs-links__link" data-index="0" id="id-0" role="tab" tabindex="-1">
+        batman
+      </li>
+      <li aria-controls="pannel-1" aria-selected="true" class="mg-tabs-links__link mg-tabs-links__link--active" data-index="1" id="id-1" role="tab" tabindex="0">
+        joker
+      </li>
+    </ul>
+    <article aria-labelledby="id-1" class="mg-tabs-content" id="pannel-0" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-1">
+        Content 1
+      </div>
+    </article>
+    <article aria-labelledby="id-1" class="mg-tabs-content mg-tabs-content--active" id="pannel-1" role="tabpanel" tabindex="0">
+      <div slot="tab_content-2">
+        Content 2
+      </div>
+    </article>
+  </mg-tabs>
+</body>,
+  "build": Object {
+    "allRenderFn": true,
+    "appendChildSlotFix": false,
+    "asyncLoading": true,
+    "asyncQueue": true,
+    "attachStyles": false,
+    "cloneNodeFix": false,
+    "cmpDidLoad": true,
+    "cmpDidRender": true,
+    "cmpDidUnload": true,
+    "cmpDidUpdate": true,
+    "cmpShouldUpdate": true,
+    "cmpWillLoad": true,
+    "cmpWillRender": true,
+    "cmpWillUpdate": true,
+    "connectedCallback": true,
+    "constructableCSS": true,
+    "cssAnnotations": false,
+    "cssVarShim": true,
+    "devTools": false,
+    "disconnectedCallback": true,
+    "dynamicImportShim": false,
+    "element": true,
+    "event": true,
+    "hasRenderFn": true,
+    "hostListener": true,
+    "hostListenerTarget": true,
+    "hostListenerTargetBody": true,
+    "hostListenerTargetDocument": true,
+    "hostListenerTargetParent": true,
+    "hostListenerTargetWindow": true,
+    "hotModuleReplacement": false,
+    "hydrateClientSide": false,
+    "hydrateServerSide": false,
+    "hydratedAttribute": false,
+    "hydratedClass": true,
+    "initializeNextTick": true,
+    "invisiblePrehydration": true,
+    "isDebug": false,
+    "isDev": true,
+    "isTesting": true,
+    "lazyLoad": true,
+    "lifecycle": true,
+    "lifecycleDOMEvents": true,
+    "member": true,
+    "method": true,
+    "mode": true,
+    "observeAttribute": true,
+    "profile": true,
+    "prop": true,
+    "propBoolean": true,
+    "propMutable": true,
+    "propNumber": true,
+    "propString": true,
+    "reflect": true,
+    "safari10": false,
+    "scoped": true,
+    "scopedSlotTextContentFix": false,
+    "scriptDataOpts": false,
+    "shadowDelegatesFocus": true,
+    "shadowDom": true,
+    "shadowDomShim": false,
+    "slot": true,
+    "slotChildNodesFix": false,
+    "slotRelocation": true,
+    "state": true,
+    "style": true,
+    "svg": true,
+    "taskQueue": true,
+    "transformTagName": true,
+    "updatable": true,
+    "vdomAttribute": true,
+    "vdomClass": true,
+    "vdomFunctional": true,
+    "vdomKey": true,
+    "vdomListener": true,
+    "vdomPropOrAttr": true,
+    "vdomRef": true,
+    "vdomRender": true,
+    "vdomStyle": true,
+    "vdomText": true,
+    "vdomXlink": true,
+    "watchCallback": true,
+  },
+  "doc": ,
+  "flushLoadModule": [Function],
+  "flushQueue": [Function],
+  "setContent": [Function],
+  "styles": Map {},
+  "waitForChanges": [Function],
+  "win": [MockWindow],
+}
+`;
+
+exports[`mg-tabs navigation should go to next tab, and key focus if it's the last one on keyboard event 4`] = `
+Object {
+  "body": <body>
+  <mg-tabs>
+    <!---->
+    <ul class="mg-tabs-links" role="tablist">
+      <li aria-controls="pannel-0" aria-selected="false" class="mg-tabs-links__link" data-index="0" id="id-0" role="tab" tabindex="-1">
+        batman
+      </li>
+      <li aria-controls="pannel-1" aria-selected="true" class="mg-tabs-links__link mg-tabs-links__link--active" data-index="1" id="id-1" role="tab" tabindex="0">
+        joker
+      </li>
+    </ul>
+    <article aria-labelledby="id-1" class="mg-tabs-content" id="pannel-0" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-1">
+        Content 1
+      </div>
+    </article>
+    <article aria-labelledby="id-1" class="mg-tabs-content mg-tabs-content--active" id="pannel-1" role="tabpanel" tabindex="0">
+      <div slot="tab_content-2">
+        Content 2
+      </div>
+    </article>
+  </mg-tabs>
+</body>,
+  "build": Object {
+    "allRenderFn": true,
+    "appendChildSlotFix": false,
+    "asyncLoading": true,
+    "asyncQueue": true,
+    "attachStyles": false,
+    "cloneNodeFix": false,
+    "cmpDidLoad": true,
+    "cmpDidRender": true,
+    "cmpDidUnload": true,
+    "cmpDidUpdate": true,
+    "cmpShouldUpdate": true,
+    "cmpWillLoad": true,
+    "cmpWillRender": true,
+    "cmpWillUpdate": true,
+    "connectedCallback": true,
+    "constructableCSS": true,
+    "cssAnnotations": false,
+    "cssVarShim": true,
+    "devTools": false,
+    "disconnectedCallback": true,
+    "dynamicImportShim": false,
+    "element": true,
+    "event": true,
+    "hasRenderFn": true,
+    "hostListener": true,
+    "hostListenerTarget": true,
+    "hostListenerTargetBody": true,
+    "hostListenerTargetDocument": true,
+    "hostListenerTargetParent": true,
+    "hostListenerTargetWindow": true,
+    "hotModuleReplacement": false,
+    "hydrateClientSide": false,
+    "hydrateServerSide": false,
+    "hydratedAttribute": false,
+    "hydratedClass": true,
+    "initializeNextTick": true,
+    "invisiblePrehydration": true,
+    "isDebug": false,
+    "isDev": true,
+    "isTesting": true,
+    "lazyLoad": true,
+    "lifecycle": true,
+    "lifecycleDOMEvents": true,
+    "member": true,
+    "method": true,
+    "mode": true,
+    "observeAttribute": true,
+    "profile": true,
+    "prop": true,
+    "propBoolean": true,
+    "propMutable": true,
+    "propNumber": true,
+    "propString": true,
+    "reflect": true,
+    "safari10": false,
+    "scoped": true,
+    "scopedSlotTextContentFix": false,
+    "scriptDataOpts": false,
+    "shadowDelegatesFocus": true,
+    "shadowDom": true,
+    "shadowDomShim": false,
+    "slot": true,
+    "slotChildNodesFix": false,
+    "slotRelocation": true,
+    "state": true,
+    "style": true,
+    "svg": true,
+    "taskQueue": true,
+    "transformTagName": true,
+    "updatable": true,
+    "vdomAttribute": true,
+    "vdomClass": true,
+    "vdomFunctional": true,
+    "vdomKey": true,
+    "vdomListener": true,
+    "vdomPropOrAttr": true,
+    "vdomRef": true,
+    "vdomRender": true,
+    "vdomStyle": true,
+    "vdomText": true,
+    "vdomXlink": true,
+    "watchCallback": true,
+  },
+  "doc": ,
+  "flushLoadModule": [Function],
+  "flushQueue": [Function],
+  "setContent": [Function],
+  "styles": Map {},
+  "waitForChanges": [Function],
+  "win": [MockWindow],
+}
+`;
+
+exports[`mg-tabs navigation should go to next tab, and key focus if it's the last one on keyboard event 5`] = `
+Object {
+  "body": <body>
+  <mg-tabs>
+    <!---->
+    <ul class="mg-tabs-links" role="tablist">
+      <li aria-controls="pannel-0" aria-selected="true" class="mg-tabs-links__link mg-tabs-links__link--active" data-index="0" id="id-0" role="tab" tabindex="0">
+        batman
+      </li>
+      <li aria-controls="pannel-1" aria-selected="false" class="mg-tabs-links__link" data-index="1" id="id-1" role="tab" tabindex="-1">
+        joker
+      </li>
+    </ul>
+    <article aria-labelledby="id-0" class="mg-tabs-content mg-tabs-content--active" id="pannel-0" role="tabpanel" tabindex="0">
+      <div slot="tab_content-1">
+        Content 1
+      </div>
+    </article>
+    <article aria-labelledby="id-0" class="mg-tabs-content" id="pannel-1" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-2">
+        Content 2
+      </div>
+    </article>
+  </mg-tabs>
+</body>,
+  "build": Object {
+    "allRenderFn": true,
+    "appendChildSlotFix": false,
+    "asyncLoading": true,
+    "asyncQueue": true,
+    "attachStyles": false,
+    "cloneNodeFix": false,
+    "cmpDidLoad": true,
+    "cmpDidRender": true,
+    "cmpDidUnload": true,
+    "cmpDidUpdate": true,
+    "cmpShouldUpdate": true,
+    "cmpWillLoad": true,
+    "cmpWillRender": true,
+    "cmpWillUpdate": true,
+    "connectedCallback": true,
+    "constructableCSS": true,
+    "cssAnnotations": false,
+    "cssVarShim": true,
+    "devTools": false,
+    "disconnectedCallback": true,
+    "dynamicImportShim": false,
+    "element": true,
+    "event": true,
+    "hasRenderFn": true,
+    "hostListener": true,
+    "hostListenerTarget": true,
+    "hostListenerTargetBody": true,
+    "hostListenerTargetDocument": true,
+    "hostListenerTargetParent": true,
+    "hostListenerTargetWindow": true,
+    "hotModuleReplacement": false,
+    "hydrateClientSide": false,
+    "hydrateServerSide": false,
+    "hydratedAttribute": false,
+    "hydratedClass": true,
+    "initializeNextTick": true,
+    "invisiblePrehydration": true,
+    "isDebug": false,
+    "isDev": true,
+    "isTesting": true,
+    "lazyLoad": true,
+    "lifecycle": true,
+    "lifecycleDOMEvents": true,
+    "member": true,
+    "method": true,
+    "mode": true,
+    "observeAttribute": true,
+    "profile": true,
+    "prop": true,
+    "propBoolean": true,
+    "propMutable": true,
+    "propNumber": true,
+    "propString": true,
+    "reflect": true,
+    "safari10": false,
+    "scoped": true,
+    "scopedSlotTextContentFix": false,
+    "scriptDataOpts": false,
+    "shadowDelegatesFocus": true,
+    "shadowDom": true,
+    "shadowDomShim": false,
+    "slot": true,
+    "slotChildNodesFix": false,
+    "slotRelocation": true,
+    "state": true,
+    "style": true,
+    "svg": true,
+    "taskQueue": true,
+    "transformTagName": true,
+    "updatable": true,
+    "vdomAttribute": true,
+    "vdomClass": true,
+    "vdomFunctional": true,
+    "vdomKey": true,
+    "vdomListener": true,
+    "vdomPropOrAttr": true,
+    "vdomRef": true,
+    "vdomRender": true,
+    "vdomStyle": true,
+    "vdomText": true,
+    "vdomXlink": true,
+    "watchCallback": true,
+  },
+  "doc": ,
+  "flushLoadModule": [Function],
+  "flushQueue": [Function],
+  "setContent": [Function],
+  "styles": Map {},
+  "waitForChanges": [Function],
+  "win": [MockWindow],
+}
+`;
+
+exports[`mg-tabs navigation should go to next tab, and key focus if it's the last one on keyboard event 6`] = `
+Object {
+  "body": <body>
+  <mg-tabs>
+    <!---->
+    <ul class="mg-tabs-links" role="tablist">
+      <li aria-controls="pannel-0" aria-selected="true" class="mg-tabs-links__link mg-tabs-links__link--active" data-index="0" id="id-0" role="tab" tabindex="0">
+        batman
+      </li>
+      <li aria-controls="pannel-1" aria-selected="false" class="mg-tabs-links__link" data-index="1" id="id-1" role="tab" tabindex="-1">
+        joker
+      </li>
+    </ul>
+    <article aria-labelledby="id-0" class="mg-tabs-content mg-tabs-content--active" id="pannel-0" role="tabpanel" tabindex="0">
+      <div slot="tab_content-1">
+        Content 1
+      </div>
+    </article>
+    <article aria-labelledby="id-0" class="mg-tabs-content" id="pannel-1" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-2">
+        Content 2
+      </div>
+    </article>
+  </mg-tabs>
+</body>,
+  "build": Object {
+    "allRenderFn": true,
+    "appendChildSlotFix": false,
+    "asyncLoading": true,
+    "asyncQueue": true,
+    "attachStyles": false,
+    "cloneNodeFix": false,
+    "cmpDidLoad": true,
+    "cmpDidRender": true,
+    "cmpDidUnload": true,
+    "cmpDidUpdate": true,
+    "cmpShouldUpdate": true,
+    "cmpWillLoad": true,
+    "cmpWillRender": true,
+    "cmpWillUpdate": true,
+    "connectedCallback": true,
+    "constructableCSS": true,
+    "cssAnnotations": false,
+    "cssVarShim": true,
+    "devTools": false,
+    "disconnectedCallback": true,
+    "dynamicImportShim": false,
+    "element": true,
+    "event": true,
+    "hasRenderFn": true,
+    "hostListener": true,
+    "hostListenerTarget": true,
+    "hostListenerTargetBody": true,
+    "hostListenerTargetDocument": true,
+    "hostListenerTargetParent": true,
+    "hostListenerTargetWindow": true,
+    "hotModuleReplacement": false,
+    "hydrateClientSide": false,
+    "hydrateServerSide": false,
+    "hydratedAttribute": false,
+    "hydratedClass": true,
+    "initializeNextTick": true,
+    "invisiblePrehydration": true,
+    "isDebug": false,
+    "isDev": true,
+    "isTesting": true,
+    "lazyLoad": true,
+    "lifecycle": true,
+    "lifecycleDOMEvents": true,
+    "member": true,
+    "method": true,
+    "mode": true,
+    "observeAttribute": true,
+    "profile": true,
+    "prop": true,
+    "propBoolean": true,
+    "propMutable": true,
+    "propNumber": true,
+    "propString": true,
+    "reflect": true,
+    "safari10": false,
+    "scoped": true,
+    "scopedSlotTextContentFix": false,
+    "scriptDataOpts": false,
+    "shadowDelegatesFocus": true,
+    "shadowDom": true,
+    "shadowDomShim": false,
+    "slot": true,
+    "slotChildNodesFix": false,
+    "slotRelocation": true,
+    "state": true,
+    "style": true,
+    "svg": true,
+    "taskQueue": true,
+    "transformTagName": true,
+    "updatable": true,
+    "vdomAttribute": true,
+    "vdomClass": true,
+    "vdomFunctional": true,
+    "vdomKey": true,
+    "vdomListener": true,
+    "vdomPropOrAttr": true,
+    "vdomRef": true,
+    "vdomRender": true,
+    "vdomStyle": true,
+    "vdomText": true,
+    "vdomXlink": true,
+    "watchCallback": true,
+  },
+  "doc": ,
+  "flushLoadModule": [Function],
+  "flushQueue": [Function],
+  "setContent": [Function],
+  "styles": Map {},
+  "waitForChanges": [Function],
+  "win": [MockWindow],
+}
+`;
+
+exports[`mg-tabs navigation should go to next tab, and key focus if it's the last one on keyboard event 7`] = `
+Object {
+  "body": <body>
+  <mg-tabs>
+    <!---->
+    <ul class="mg-tabs-links" role="tablist">
+      <li aria-controls="pannel-0" aria-selected="false" class="mg-tabs-links__link" data-index="0" id="id-0" role="tab" tabindex="-1">
+        batman
+      </li>
+      <li aria-controls="pannel-1" aria-selected="true" class="mg-tabs-links__link mg-tabs-links__link--active" data-index="1" id="id-1" role="tab" tabindex="0">
+        joker
+      </li>
+    </ul>
+    <article aria-labelledby="id-1" class="mg-tabs-content" id="pannel-0" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-1">
+        Content 1
+      </div>
+    </article>
+    <article aria-labelledby="id-1" class="mg-tabs-content mg-tabs-content--active" id="pannel-1" role="tabpanel" tabindex="0">
+      <div slot="tab_content-2">
+        Content 2
+      </div>
+    </article>
+  </mg-tabs>
+</body>,
+  "build": Object {
+    "allRenderFn": true,
+    "appendChildSlotFix": false,
+    "asyncLoading": true,
+    "asyncQueue": true,
+    "attachStyles": false,
+    "cloneNodeFix": false,
+    "cmpDidLoad": true,
+    "cmpDidRender": true,
+    "cmpDidUnload": true,
+    "cmpDidUpdate": true,
+    "cmpShouldUpdate": true,
+    "cmpWillLoad": true,
+    "cmpWillRender": true,
+    "cmpWillUpdate": true,
+    "connectedCallback": true,
+    "constructableCSS": true,
+    "cssAnnotations": false,
+    "cssVarShim": true,
+    "devTools": false,
+    "disconnectedCallback": true,
+    "dynamicImportShim": false,
+    "element": true,
+    "event": true,
+    "hasRenderFn": true,
+    "hostListener": true,
+    "hostListenerTarget": true,
+    "hostListenerTargetBody": true,
+    "hostListenerTargetDocument": true,
+    "hostListenerTargetParent": true,
+    "hostListenerTargetWindow": true,
+    "hotModuleReplacement": false,
+    "hydrateClientSide": false,
+    "hydrateServerSide": false,
+    "hydratedAttribute": false,
+    "hydratedClass": true,
+    "initializeNextTick": true,
+    "invisiblePrehydration": true,
+    "isDebug": false,
+    "isDev": true,
+    "isTesting": true,
+    "lazyLoad": true,
+    "lifecycle": true,
+    "lifecycleDOMEvents": true,
+    "member": true,
+    "method": true,
+    "mode": true,
+    "observeAttribute": true,
+    "profile": true,
+    "prop": true,
+    "propBoolean": true,
+    "propMutable": true,
+    "propNumber": true,
+    "propString": true,
+    "reflect": true,
+    "safari10": false,
+    "scoped": true,
+    "scopedSlotTextContentFix": false,
+    "scriptDataOpts": false,
+    "shadowDelegatesFocus": true,
+    "shadowDom": true,
+    "shadowDomShim": false,
+    "slot": true,
+    "slotChildNodesFix": false,
+    "slotRelocation": true,
+    "state": true,
+    "style": true,
+    "svg": true,
+    "taskQueue": true,
+    "transformTagName": true,
+    "updatable": true,
+    "vdomAttribute": true,
+    "vdomClass": true,
+    "vdomFunctional": true,
+    "vdomKey": true,
+    "vdomListener": true,
+    "vdomPropOrAttr": true,
+    "vdomRef": true,
+    "vdomRender": true,
+    "vdomStyle": true,
+    "vdomText": true,
+    "vdomXlink": true,
+    "watchCallback": true,
+  },
+  "doc": ,
+  "flushLoadModule": [Function],
+  "flushQueue": [Function],
+  "setContent": [Function],
+  "styles": Map {},
+  "waitForChanges": [Function],
+  "win": [MockWindow],
+}
+`;
+
+exports[`mg-tabs navigation should go to next tab, and key focus if it's the last one on keyboard event 8`] = `
+Object {
+  "body": <body>
+  <mg-tabs>
+    <!---->
+    <ul class="mg-tabs-links" role="tablist">
+      <li aria-controls="pannel-0" aria-selected="false" class="mg-tabs-links__link" data-index="0" id="id-0" role="tab" tabindex="-1">
+        batman
+      </li>
+      <li aria-controls="pannel-1" aria-selected="true" class="mg-tabs-links__link mg-tabs-links__link--active" data-index="1" id="id-1" role="tab" tabindex="0">
+        joker
+      </li>
+    </ul>
+    <article aria-labelledby="id-1" class="mg-tabs-content" id="pannel-0" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-1">
+        Content 1
+      </div>
+    </article>
+    <article aria-labelledby="id-1" class="mg-tabs-content mg-tabs-content--active" id="pannel-1" role="tabpanel" tabindex="0">
+      <div slot="tab_content-2">
+        Content 2
+      </div>
+    </article>
+  </mg-tabs>
+</body>,
+  "build": Object {
+    "allRenderFn": true,
+    "appendChildSlotFix": false,
+    "asyncLoading": true,
+    "asyncQueue": true,
+    "attachStyles": false,
+    "cloneNodeFix": false,
+    "cmpDidLoad": true,
+    "cmpDidRender": true,
+    "cmpDidUnload": true,
+    "cmpDidUpdate": true,
+    "cmpShouldUpdate": true,
+    "cmpWillLoad": true,
+    "cmpWillRender": true,
+    "cmpWillUpdate": true,
+    "connectedCallback": true,
+    "constructableCSS": true,
+    "cssAnnotations": false,
+    "cssVarShim": true,
+    "devTools": false,
+    "disconnectedCallback": true,
+    "dynamicImportShim": false,
+    "element": true,
+    "event": true,
+    "hasRenderFn": true,
+    "hostListener": true,
+    "hostListenerTarget": true,
+    "hostListenerTargetBody": true,
+    "hostListenerTargetDocument": true,
+    "hostListenerTargetParent": true,
+    "hostListenerTargetWindow": true,
+    "hotModuleReplacement": false,
+    "hydrateClientSide": false,
+    "hydrateServerSide": false,
+    "hydratedAttribute": false,
+    "hydratedClass": true,
+    "initializeNextTick": true,
+    "invisiblePrehydration": true,
+    "isDebug": false,
+    "isDev": true,
+    "isTesting": true,
+    "lazyLoad": true,
+    "lifecycle": true,
+    "lifecycleDOMEvents": true,
+    "member": true,
+    "method": true,
+    "mode": true,
+    "observeAttribute": true,
+    "profile": true,
+    "prop": true,
+    "propBoolean": true,
+    "propMutable": true,
+    "propNumber": true,
+    "propString": true,
+    "reflect": true,
+    "safari10": false,
+    "scoped": true,
+    "scopedSlotTextContentFix": false,
+    "scriptDataOpts": false,
+    "shadowDelegatesFocus": true,
+    "shadowDom": true,
+    "shadowDomShim": false,
+    "slot": true,
+    "slotChildNodesFix": false,
+    "slotRelocation": true,
+    "state": true,
+    "style": true,
+    "svg": true,
+    "taskQueue": true,
+    "transformTagName": true,
+    "updatable": true,
+    "vdomAttribute": true,
+    "vdomClass": true,
+    "vdomFunctional": true,
+    "vdomKey": true,
+    "vdomListener": true,
+    "vdomPropOrAttr": true,
+    "vdomRef": true,
+    "vdomRender": true,
+    "vdomStyle": true,
+    "vdomText": true,
+    "vdomXlink": true,
+    "watchCallback": true,
+  },
+  "doc": ,
+  "flushLoadModule": [Function],
+  "flushQueue": [Function],
+  "setContent": [Function],
+  "styles": Map {},
+  "waitForChanges": [Function],
+  "win": [MockWindow],
+}
+`;
+
+exports[`mg-tabs template display only slots with name "tab_content-*" 1`] = `
+Object {
+  "body": <body>
+  <mg-tabs>
+    <!---->
+    <div hidden="">
+      dummy content
+    </div>
+    <ul class="mg-tabs-links" role="tablist">
+      <li aria-controls="pannel-0" aria-selected="true" class="mg-tabs-links__link mg-tabs-links__link--active" data-index="0" id="identifier-0" role="tab" tabindex="0">
+        Batman
+      </li>
+      <li aria-controls="pannel-1" aria-selected="false" class="mg-tabs-links__link" data-index="1" id="identifier-1" role="tab" tabindex="-1">
+        Joker
+      </li>
+    </ul>
+    <article aria-labelledby="identifier-0" class="mg-tabs-content mg-tabs-content--active" id="pannel-0" role="tabpanel" tabindex="0">
+      <div slot="tab_content-1">
+        Content 1
+      </div>
+    </article>
+    <article aria-labelledby="identifier-0" class="mg-tabs-content" id="pannel-1" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-2">
+        Content 2
+      </div>
+    </article>
+  </mg-tabs>
+</body>,
+  "build": Object {
+    "allRenderFn": true,
+    "appendChildSlotFix": false,
+    "asyncLoading": true,
+    "asyncQueue": true,
+    "attachStyles": false,
+    "cloneNodeFix": false,
+    "cmpDidLoad": true,
+    "cmpDidRender": true,
+    "cmpDidUnload": true,
+    "cmpDidUpdate": true,
+    "cmpShouldUpdate": true,
+    "cmpWillLoad": true,
+    "cmpWillRender": true,
+    "cmpWillUpdate": true,
+    "connectedCallback": true,
+    "constructableCSS": true,
+    "cssAnnotations": false,
+    "cssVarShim": true,
+    "devTools": false,
+    "disconnectedCallback": true,
+    "dynamicImportShim": false,
+    "element": true,
+    "event": true,
+    "hasRenderFn": true,
+    "hostListener": true,
+    "hostListenerTarget": true,
+    "hostListenerTargetBody": true,
+    "hostListenerTargetDocument": true,
+    "hostListenerTargetParent": true,
+    "hostListenerTargetWindow": true,
+    "hotModuleReplacement": false,
+    "hydrateClientSide": false,
+    "hydrateServerSide": false,
+    "hydratedAttribute": false,
+    "hydratedClass": true,
+    "initializeNextTick": true,
+    "invisiblePrehydration": true,
+    "isDebug": false,
+    "isDev": true,
+    "isTesting": true,
+    "lazyLoad": true,
+    "lifecycle": true,
+    "lifecycleDOMEvents": true,
+    "member": true,
+    "method": true,
+    "mode": true,
+    "observeAttribute": true,
+    "profile": true,
+    "prop": true,
+    "propBoolean": true,
+    "propMutable": true,
+    "propNumber": true,
+    "propString": true,
+    "reflect": true,
+    "safari10": false,
+    "scoped": true,
+    "scopedSlotTextContentFix": false,
+    "scriptDataOpts": false,
+    "shadowDelegatesFocus": true,
+    "shadowDom": true,
+    "shadowDomShim": false,
+    "slot": true,
+    "slotChildNodesFix": false,
+    "slotRelocation": true,
+    "state": true,
+    "style": true,
+    "svg": true,
+    "taskQueue": true,
+    "transformTagName": true,
+    "updatable": true,
+    "vdomAttribute": true,
+    "vdomClass": true,
+    "vdomFunctional": true,
+    "vdomKey": true,
+    "vdomListener": true,
+    "vdomPropOrAttr": true,
+    "vdomRef": true,
+    "vdomRender": true,
+    "vdomStyle": true,
+    "vdomText": true,
+    "vdomXlink": true,
+    "watchCallback": true,
+  },
+  "doc": ,
+  "flushLoadModule": [Function],
+  "flushQueue": [Function],
+  "setContent": [Function],
+  "styles": Map {},
+  "waitForChanges": [Function],
+  "win": [MockWindow],
+}
+`;
+
+exports[`mg-tabs template render 1`] = `
+Object {
+  "body": <body>
+  <mg-tabs>
+    <!---->
+    <ul class="mg-tabs-links" role="tablist">
+      <li aria-controls="pannel-0" aria-selected="true" class="mg-tabs-links__link mg-tabs-links__link--active" data-index="0" id="identifier-0" role="tab" tabindex="0">
+        Batman
+      </li>
+      <li aria-controls="pannel-1" aria-selected="false" class="mg-tabs-links__link" data-index="1" id="identifier-1" role="tab" tabindex="-1">
+        Joker
+      </li>
+    </ul>
+    <article aria-labelledby="identifier-0" class="mg-tabs-content mg-tabs-content--active" id="pannel-0" role="tabpanel" tabindex="0">
+      <div slot="tab_content-1">
+        Content 1
+      </div>
+    </article>
+    <article aria-labelledby="identifier-0" class="mg-tabs-content" id="pannel-1" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-2">
+        Content 2
+      </div>
+    </article>
+  </mg-tabs>
+</body>,
+  "build": Object {
+    "allRenderFn": true,
+    "appendChildSlotFix": false,
+    "asyncLoading": true,
+    "asyncQueue": true,
+    "attachStyles": false,
+    "cloneNodeFix": false,
+    "cmpDidLoad": true,
+    "cmpDidRender": true,
+    "cmpDidUnload": true,
+    "cmpDidUpdate": true,
+    "cmpShouldUpdate": true,
+    "cmpWillLoad": true,
+    "cmpWillRender": true,
+    "cmpWillUpdate": true,
+    "connectedCallback": true,
+    "constructableCSS": true,
+    "cssAnnotations": false,
+    "cssVarShim": true,
+    "devTools": false,
+    "disconnectedCallback": true,
+    "dynamicImportShim": false,
+    "element": true,
+    "event": true,
+    "hasRenderFn": true,
+    "hostListener": true,
+    "hostListenerTarget": true,
+    "hostListenerTargetBody": true,
+    "hostListenerTargetDocument": true,
+    "hostListenerTargetParent": true,
+    "hostListenerTargetWindow": true,
+    "hotModuleReplacement": false,
+    "hydrateClientSide": false,
+    "hydrateServerSide": false,
+    "hydratedAttribute": false,
+    "hydratedClass": true,
+    "initializeNextTick": true,
+    "invisiblePrehydration": true,
+    "isDebug": false,
+    "isDev": true,
+    "isTesting": true,
+    "lazyLoad": true,
+    "lifecycle": true,
+    "lifecycleDOMEvents": true,
+    "member": true,
+    "method": true,
+    "mode": true,
+    "observeAttribute": true,
+    "profile": true,
+    "prop": true,
+    "propBoolean": true,
+    "propMutable": true,
+    "propNumber": true,
+    "propString": true,
+    "reflect": true,
+    "safari10": false,
+    "scoped": true,
+    "scopedSlotTextContentFix": false,
+    "scriptDataOpts": false,
+    "shadowDelegatesFocus": true,
+    "shadowDom": true,
+    "shadowDomShim": false,
+    "slot": true,
+    "slotChildNodesFix": false,
+    "slotRelocation": true,
+    "state": true,
+    "style": true,
+    "svg": true,
+    "taskQueue": true,
+    "transformTagName": true,
+    "updatable": true,
+    "vdomAttribute": true,
+    "vdomClass": true,
+    "vdomFunctional": true,
+    "vdomKey": true,
+    "vdomListener": true,
+    "vdomPropOrAttr": true,
+    "vdomRef": true,
+    "vdomRender": true,
+    "vdomStyle": true,
+    "vdomText": true,
+    "vdomXlink": true,
+    "watchCallback": true,
+  },
+  "doc": ,
+  "flushLoadModule": [Function],
+  "flushQueue": [Function],
+  "setContent": [Function],
+  "styles": Map {},
+  "waitForChanges": [Function],
+  "win": [MockWindow],
+}
+`;
+
+exports[`mg-tabs template render 2`] = `
+Object {
+  "body": <body>
+  <mg-tabs>
+    <!---->
+    <ul class="mg-tabs-links" role="tablist">
+      <li aria-controls="pannel-0" aria-selected="true" class="mg-tabs-links__link mg-tabs-links__link--active" data-index="0" id="identifier-0" role="tab" tabindex="0">
+        <mg-icon icon="check"></mg-icon>
+        Batman
+        <mg-tag variant="info">
+          2
+        </mg-tag>
+      </li>
+      <li aria-controls="pannel-1" aria-selected="false" class="mg-tabs-links__link" data-index="1" id="identifier-1" role="tab" tabindex="-1">
+        <mg-icon icon="cross"></mg-icon>
+        Joker
+        <mg-tag variant="info">
+          2
+        </mg-tag>
+      </li>
+    </ul>
+    <article aria-labelledby="identifier-0" class="mg-tabs-content mg-tabs-content--active" id="pannel-0" role="tabpanel" tabindex="0">
+      <div slot="tab_content-1">
+        Content 1
+      </div>
+    </article>
+    <article aria-labelledby="identifier-0" class="mg-tabs-content" id="pannel-1" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-2">
+        Content 2
+      </div>
+    </article>
+  </mg-tabs>
+</body>,
+  "build": Object {
+    "allRenderFn": true,
+    "appendChildSlotFix": false,
+    "asyncLoading": true,
+    "asyncQueue": true,
+    "attachStyles": false,
+    "cloneNodeFix": false,
+    "cmpDidLoad": true,
+    "cmpDidRender": true,
+    "cmpDidUnload": true,
+    "cmpDidUpdate": true,
+    "cmpShouldUpdate": true,
+    "cmpWillLoad": true,
+    "cmpWillRender": true,
+    "cmpWillUpdate": true,
+    "connectedCallback": true,
+    "constructableCSS": true,
+    "cssAnnotations": false,
+    "cssVarShim": true,
+    "devTools": false,
+    "disconnectedCallback": true,
+    "dynamicImportShim": false,
+    "element": true,
+    "event": true,
+    "hasRenderFn": true,
+    "hostListener": true,
+    "hostListenerTarget": true,
+    "hostListenerTargetBody": true,
+    "hostListenerTargetDocument": true,
+    "hostListenerTargetParent": true,
+    "hostListenerTargetWindow": true,
+    "hotModuleReplacement": false,
+    "hydrateClientSide": false,
+    "hydrateServerSide": false,
+    "hydratedAttribute": false,
+    "hydratedClass": true,
+    "initializeNextTick": true,
+    "invisiblePrehydration": true,
+    "isDebug": false,
+    "isDev": true,
+    "isTesting": true,
+    "lazyLoad": true,
+    "lifecycle": true,
+    "lifecycleDOMEvents": true,
+    "member": true,
+    "method": true,
+    "mode": true,
+    "observeAttribute": true,
+    "profile": true,
+    "prop": true,
+    "propBoolean": true,
+    "propMutable": true,
+    "propNumber": true,
+    "propString": true,
+    "reflect": true,
+    "safari10": false,
+    "scoped": true,
+    "scopedSlotTextContentFix": false,
+    "scriptDataOpts": false,
+    "shadowDelegatesFocus": true,
+    "shadowDom": true,
+    "shadowDomShim": false,
+    "slot": true,
+    "slotChildNodesFix": false,
+    "slotRelocation": true,
+    "state": true,
+    "style": true,
+    "svg": true,
+    "taskQueue": true,
+    "transformTagName": true,
+    "updatable": true,
+    "vdomAttribute": true,
+    "vdomClass": true,
+    "vdomFunctional": true,
+    "vdomKey": true,
+    "vdomListener": true,
+    "vdomPropOrAttr": true,
+    "vdomRef": true,
+    "vdomRender": true,
+    "vdomStyle": true,
+    "vdomText": true,
+    "vdomXlink": true,
+    "watchCallback": true,
+  },
+  "doc": ,
+  "flushLoadModule": [Function],
+  "flushQueue": [Function],
+  "setContent": [Function],
+  "styles": Map {},
+  "waitForChanges": [Function],
+  "win": [MockWindow],
+}
+`;

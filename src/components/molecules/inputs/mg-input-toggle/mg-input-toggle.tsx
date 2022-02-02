@@ -183,7 +183,6 @@ export class MgInputToggle {
 
   /**
    * Slots validation
-
    */
   private validateSlots() {
     const slots = Array.from(this.element.children);
