@@ -218,7 +218,8 @@
   * Set text and textarea inputs width to 100%
   */
   &.mg-input--text,
-  &.mg-input--textarea {
+  &.mg-input--textarea,
+  &.mg-input--password {
     &:not(.mg-input--label-on-top) {
       justify-content: space-between;
     }
@@ -228,7 +229,8 @@
       width: 100%;
 
       input[type='text'],
-      textarea {
+      textarea,
+      input[type='password'] {
         width: 100%;
       }
     }
