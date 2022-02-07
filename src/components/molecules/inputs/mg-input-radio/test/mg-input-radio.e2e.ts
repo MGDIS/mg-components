@@ -133,4 +133,24 @@ describe('mg-input-radio', () => {
     const screenshot = await page.screenshot();
     expect(screenshot).toMatchImageSnapshot();
   });
+
+  describe.each([
+    '<mg-input-radio label="long label long label long label long label long label long label long label long label long label long label long label" tooltip="tooltip message"></mg-input-radio>',
+    '<mg-input-radio label="long label long label long label long label long label long label long label long label long label long label long label" tooltip="tooltip message" label-on-top></mg-input-radio>',
+  ])('inside a div.mg-form-group', html => {
+    test('render', async () => {
+      const page = await createPage(`<div class="mg-form-group">${html}</div>
+      <script>
+      const mgInputRadio = document.querySelector('mg-input-radio');
+      mgInputRadio.items = ['batman', 'robin', 'joker', 'bane'];
+      </script>`);
+
+      const element = await page.find('mg-input-radio');
+
+      expect(element).toHaveClass('hydrated');
+
+      const screenshot = await page.screenshot();
+      expect(screenshot).toMatchImageSnapshot();
+    });
+  });
 });

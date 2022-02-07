@@ -174,4 +174,20 @@ describe('mg-input-numeric', () => {
     let value = await input.getProperty('value');
     expect(value).toEqual('1234567890123,45');
   });
+
+  describe.each([
+    '<mg-input-numeric label="long label long label long label long label long label long label long label long label long label long label long label" tooltip="tooltip message"></mg-input-numeric>',
+    '<mg-input-numeric label="long label long label long label long label long label long label long label long label long label long label long label" tooltip="tooltip message" label-on-top></mg-input-numeric>',
+  ])('inside a div.mg-form-group', html => {
+    test('render', async () => {
+      const page = await createPage(`<div class="mg-form-group">${html}</div>`);
+
+      const element = await page.find('mg-input-numeric');
+
+      expect(element).toHaveClass('hydrated');
+
+      const screenshot = await page.screenshot();
+      expect(screenshot).toMatchImageSnapshot();
+    });
+  });
 });
