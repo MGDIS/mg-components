@@ -38,8 +38,12 @@ export class MgInputToggle {
    */
   @Prop({ mutable: true, reflect: true }) value?: any;
   @Watch('value')
-  handleValue(newValue: any) {
-    if (newValue === this.options[1].value || newValue === '') {
+  handleValue(newValue: any, oldValue?: any) {
+    // while newValue=true DOM rendering reset value to "" and trigger a new value change. Then we get a newValue="".
+    // to prevent the second update we need to escape process when typeof old value is different to the typeof new value AND new value is a blank string.
+    if (newValue === '' && typeof oldValue !== typeof newValue && oldValue !== undefined) return;
+
+    if (newValue === this.options[1].value) {
       this.classList.add(this.classToggleActive);
     } else {
       this.classList.delete(this.classToggleActive);
@@ -210,6 +214,7 @@ export class MgInputToggle {
     this.value = this.value === undefined ? this.options[0].value : this.value;
 
     // apply handler
+    this.handleValue(this.value);
     this.handleIsOnOff(this.isOnOff);
     this.handleIsIcon(this.isIcon);
     this.handleReadonly(this.readonly);
