@@ -1,6 +1,6 @@
 import { Component, h, Host, Prop, State, Element, Watch } from '@stencil/core';
 import { createID, ClassList, allItemsAreString } from '../../../utils/components.utils';
-import { TabItem } from '../../../types/components.types';
+import { TabItem } from './mg-tabs.types';
 
 /**
  * type TabItem validation function
@@ -40,11 +40,18 @@ export class MgTabs {
    * Tabs items
    * Required
    */
-  @Prop() tabs!: string[] | TabItem[];
-  @Watch('tabs')
-  validateTabs(newValue) {
-    if (!(allItemsAreString(newValue) || (newValue && (newValue as Array<TabItem>).every(item => isTabItem(item))))) {
-      throw new Error('<mg-tabs> prop "tabs" is required and all items must be the same type: TabItem.');
+  @Prop() items!: string[] | TabItem[];
+  @Watch('items')
+  validateItems(newValue) {
+    // String array
+    if (allItemsAreString(newValue)) {
+      this.tabs = newValue.map(item => ({ label: item }));
+    }
+    // Object array
+    else if (newValue && (newValue as Array<TabItem>).every(item => isTabItem(item))) {
+      this.tabs = newValue;
+    } else {
+      throw new Error('<mg-tabs> prop "items" is required and all items must be the same type: TabItem.');
     }
   }
 
@@ -59,6 +66,11 @@ export class MgTabs {
       throw new Error('<mg-tabs> prop "activeTab" must be between 1 and tabs length.');
     }
   }
+
+  /**
+   * Component tabs
+   */
+  @State() tabs: TabItem[] = [];
 
   /**
    * Component classes
@@ -123,7 +135,7 @@ export class MgTabs {
    */
   componentWillLoad() {
     // Check tabs format
-    this.validateTabs(this.tabs);
+    this.validateItems(this.items);
     this.validateActiveTab(this.activeTab);
     this.validateSlots();
   }
@@ -147,7 +159,7 @@ export class MgTabs {
                 data-index={tabIndex}
               >
                 {tab.icon !== undefined ? <mg-icon icon={tab.icon}></mg-icon> : null}
-                {tab.label || tab}
+                {tab.label}
                 {tab.badge !== undefined ? <mg-tag variant="info">{tab.badge}</mg-tag> : null}
               </button>
             );

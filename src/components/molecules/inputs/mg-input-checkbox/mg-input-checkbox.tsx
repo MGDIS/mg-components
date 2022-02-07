@@ -2,7 +2,7 @@ import { Component, Event, h, Prop, EventEmitter, State, Watch } from '@stencil/
 import { MgInput } from '../MgInput';
 import { createID, ClassList } from '../../../../utils/components.utils';
 import { messages } from '../../../../locales';
-import { CheckboxItem, CheckboxValue } from '../../../../types/components.types';
+import { CheckboxItem, CheckboxValue } from './mg-input-checkbox.types';
 
 /**
  * type CheckboxItem validation function

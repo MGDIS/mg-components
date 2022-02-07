@@ -2,7 +2,7 @@ import { Component, Event, h, Prop, State, EventEmitter, Watch } from '@stencil/
 import { MgInput } from '../MgInput';
 import { createID, ClassList, allItemsAreString } from '../../../../utils/components.utils';
 import { messages } from '../../../../locales';
-import { SelectOption, OptGroup } from '../../../../types/components.types';
+import { SelectOption, OptGroup } from './mg-input-select.types';
 
 /**
  * Check if item is a well configured option

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-02-02T14:48:01",
+  "timestamp": "2022-02-07T08:21:57",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.13.0",
@@ -3352,23 +3352,7 @@
           "required": false
         },
         {
-          "name": "label",
-          "type": "string",
-          "mutable": false,
-          "attr": "label",
-          "reflectToAttr": false,
-          "docs": "Tabs label. Include short tabs description.\nRequired for accessibility",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": true
-        },
-        {
-          "name": "tabs",
+          "name": "items",
           "type": "TabItem[] | string[]",
           "mutable": false,
           "reflectToAttr": false,
@@ -3380,6 +3364,22 @@
             },
             {
               "type": "string[]"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "Tabs label. Include short tabs description.\nRequired for accessibility",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
             }
           ],
           "optional": false,

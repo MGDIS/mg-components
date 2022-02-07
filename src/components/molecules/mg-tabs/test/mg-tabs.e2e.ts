@@ -6,30 +6,30 @@ const defaultSlots =
 describe('mg-tabs', () => {
   describe('template', () => {
     test.each([
-      { tabs: ['batman', 'joker'] },
+      { items: ['batman', 'joker'] },
       {
-        tabs: [
+        items: [
           { label: 'batman', icon: 'check' },
           { label: 'joker', icon: 'cross' },
         ],
       },
       {
-        tabs: [
+        items: [
           { label: 'batman', badge: 1 },
           { label: 'joker', badge: 1 },
         ],
       },
       {
-        tabs: [
+        items: [
           { label: 'batman', icon: 'check', badge: 1 },
           { label: 'joker', icon: 'cross', badge: 1 },
         ],
       },
-    ])('render', async ({ tabs }) => {
+    ])('render', async ({ items }) => {
       const page = await createPage(`<mg-tabs label="label">${defaultSlots}</mg-tabs>
       <script>
       const mgTabs = document.querySelector('mg-tabs');
-      mgTabs.tabs = ${JSON.stringify(tabs)};
+      mgTabs.items = ${JSON.stringify(items)};
       </script>
       `);
 
@@ -47,7 +47,7 @@ describe('mg-tabs', () => {
       const page = await createPage(`<mg-tabs label="label">${defaultSlots}</mg-tabs>
       <script>
       const mgTabs = document.querySelector('mg-tabs');
-      mgTabs.tabs = ['batman', 'joker'];
+      mgTabs.items = ['batman', 'joker'];
       </script>
       `);
       page.keyboard.down('Tab');

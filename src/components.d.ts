@@ -5,7 +5,11 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { CheckboxValue, RadioOption, SelectOption, TabItem, ToggleValue } from "./types/components.types";
+import { CheckboxValue } from "./components/molecules/inputs/mg-input-checkbox/mg-input-checkbox.types";
+import { RadioOption } from "./components/molecules/inputs/mg-input-radio/mg-input-radio.types";
+import { SelectOption } from "./components/molecules/inputs/mg-input-select/mg-input-select.types";
+import { ToggleValue } from "./components/molecules/inputs/mg-input-toggle/mg-input-toggle.types";
+import { TabItem } from "./components/molecules/mg-tabs/mg-tabs.types";
 export namespace Components {
     interface MgButton {
         /**
@@ -693,13 +697,13 @@ export namespace Components {
          */
         "identifier"?: string;
         /**
+          * Tabs items Required
+         */
+        "items": string[] | TabItem[];
+        /**
           * Tabs label. Include short tabs description. Required for accessibility
          */
         "label": string;
-        /**
-          * Tabs items Required
-         */
-        "tabs": string[] | TabItem[];
     }
     interface MgTag {
         /**
@@ -1594,13 +1598,13 @@ declare namespace LocalJSX {
          */
         "identifier"?: string;
         /**
+          * Tabs items Required
+         */
+        "items": string[] | TabItem[];
+        /**
           * Tabs label. Include short tabs description. Required for accessibility
          */
         "label": string;
-        /**
-          * Tabs items Required
-         */
-        "tabs": string[] | TabItem[];
     }
     interface MgTag {
         /**

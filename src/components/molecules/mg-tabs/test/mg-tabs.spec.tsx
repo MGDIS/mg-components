@@ -20,18 +20,18 @@ describe('mg-tabs', () => {
           { label: 'Joker', icon: 'cross', badge: 2 },
         ],
       ],
-    ])('render', async tabs => {
-      const { root } = await getPage({ label: 'Sample label', tabs, identifier: 'identifier' }, defaultSlots);
+    ])('render', async items => {
+      const { root } = await getPage({ label: 'Sample label', items, identifier: 'identifier' }, defaultSlots);
       expect(root).toMatchSnapshot();
     });
 
     test('display only slots with name "tab_content-*"', async () => {
-      const { root } = await getPage({ label: 'Sample label', tabs: ['Batman', 'Joker'], identifier: 'identifier' }, [...defaultSlots, () => <div>dummy content</div>]);
+      const { root } = await getPage({ label: 'Sample label', items: ['Batman', 'Joker'], identifier: 'identifier' }, [...defaultSlots, () => <div>dummy content</div>]);
       expect(root).toMatchSnapshot();
     });
 
     test('display tabs with activeProps set by props', async () => {
-      const { root } = await getPage({ label: 'Sample label', tabs: ['Tab 1', 'Tab 2', 'Tab 3'], identifier: 'identifier', activeTab: 2 }, [...defaultSlots, defaultSlots[0]]);
+      const { root } = await getPage({ label: 'Sample label', items: ['Tab 1', 'Tab 2', 'Tab 3'], identifier: 'identifier', activeTab: 2 }, [...defaultSlots, defaultSlots[0]]);
       expect(root).toMatchSnapshot();
     });
   });
@@ -39,7 +39,7 @@ describe('mg-tabs', () => {
   describe('errors', () => {
     test.each(['', undefined])('Should throw error with invalid label property : %s', async value => {
       try {
-        await getPage({ label: value, tabs: ['Batman', 'Joker'] }, defaultSlots);
+        await getPage({ label: value, items: ['Batman', 'Joker'] }, defaultSlots);
       } catch (err) {
         expect(err.message).toMatch('prop "label" is required');
       }
@@ -53,17 +53,17 @@ describe('mg-tabs', () => {
       [[true, 1, 'batman']],
       [[{ label: 'batman', icon: 'batman' }, { batman: 'batman' }]],
       [[{ label: undefined, icon: 'batman' }, { label: 'batman' }]],
-    ])('Should throw error with invalid tabs property', async tabs => {
+    ])('Should throw error with invalid items property', async items => {
       try {
-        await getPage({ label: 'Sample label', tabs }, defaultSlots);
+        await getPage({ label: 'Sample label', items }, defaultSlots);
       } catch (error) {
-        expect(error.message).toMatch('<mg-tabs> prop "tabs" is required and all items must be the same type: TabItem.');
+        expect(error.message).toMatch('<mg-tabs> prop "items" is required and all items must be the same type: TabItem.');
       }
     });
 
     test.each([[[]], [[defaultSlots[0]]], [[undefined, defaultSlots[1]], [[...defaultSlots, defaultSlots[0]]]]])('should trown an error with invalid slots', async slots => {
       try {
-        await getPage({ label: 'Sample label', tabs: ['Tab 1', 'Tab 2'] }, slots);
+        await getPage({ label: 'Sample label', items: ['Tab 1', 'Tab 2'] }, slots);
       } catch (error) {
         expect(error.message).toMatch('<mg-tabs> Must have slots counts equal to tabs count.');
       }
@@ -71,7 +71,7 @@ describe('mg-tabs', () => {
 
     test.each([0, 3])('should trown an error with invalid tabItem props', async activeTab => {
       try {
-        await getPage({ label: 'Sample label', tabs: ['Tab 1', 'Tab 2'], activeTab }, defaultSlots);
+        await getPage({ label: 'Sample label', items: ['Tab 1', 'Tab 2'], activeTab }, defaultSlots);
       } catch (error) {
         expect(error.message).toMatch('<mg-tabs> prop "activeTab" must be between 1 and tabs length.');
       }
@@ -80,7 +80,7 @@ describe('mg-tabs', () => {
 
   describe('navigation', () => {
     test('should go to next tab on click event', async () => {
-      const page = await getPage({ label: 'Sample label', tabs: ['batman', 'joker'], identifier: 'id' }, defaultSlots);
+      const page = await getPage({ label: 'Sample label', items: ['batman', 'joker'], identifier: 'id' }, defaultSlots);
       expect(page.root).toMatchSnapshot();
 
       let activeTab = page.doc.querySelector('.mg-tabs-header__button--active');
@@ -99,7 +99,7 @@ describe('mg-tabs', () => {
     test('should go to next tab on click event', async () => {
       const page = await getPage(
         {
-          tabs: [
+          items: [
             { label: 'Batman', icon: 'check', badge: 2 },
             { label: 'Joker', icon: 'cross', badge: 2 },
           ],
@@ -124,7 +124,7 @@ describe('mg-tabs', () => {
 
     test('should go to next tab on keyboard event', async () => {
       const key = { next: 'ArrowRight', prev: 'ArrowLeft' };
-      const page = await getPage({ label: 'Sample label', tabs: ['batman', 'joker'], identifier: 'id' }, defaultSlots);
+      const page = await getPage({ label: 'Sample label', items: ['batman', 'joker'], identifier: 'id' }, defaultSlots);
       expect(page.root).toMatchSnapshot();
 
       page.doc.querySelectorAll('button').forEach(button => (button.focus = jest.fn()));
@@ -157,7 +157,7 @@ describe('mg-tabs', () => {
 
     test("should go to next tab, and keep focus if it's the last one on keyboard event", async () => {
       const key = { next: 'ArrowRight', prev: 'ArrowRight' };
-      const page = await getPage({ label: 'Sample label', tabs: ['batman', 'joker'], identifier: 'id' }, defaultSlots);
+      const page = await getPage({ label: 'Sample label', items: ['batman', 'joker'], identifier: 'id' }, defaultSlots);
       expect(page.root).toMatchSnapshot();
 
       page.doc.querySelectorAll('button').forEach(button => (button.focus = jest.fn()));
@@ -189,7 +189,7 @@ describe('mg-tabs', () => {
     });
 
     test.each(['Space', 'Enter'])('should NOT go to next tab on keyboard event %s', async key => {
-      const page = await getPage({ label: 'Sample label', tabs: ['batman', 'joker'], identifier: 'id' }, defaultSlots);
+      const page = await getPage({ label: 'Sample label', items: ['batman', 'joker'], identifier: 'id' }, defaultSlots);
       expect(page.root).toMatchSnapshot();
 
       const element = page.doc.querySelector('mg-tabs');

@@ -26,7 +26,7 @@ const Template = args => {
 export const MgTabs = Template.bind({});
 
 MgTabs.args = {
-  tabs: ['Tab 1', 'Tab 2', 'Tab 3'],
+  items: ['Tab 1', 'Tab 2', 'Tab 3'],
   label: 'Short tabs description. Needeed for accessibility',
   activeTab: undefined,
 };
@@ -35,7 +35,7 @@ export const MgTabsItems = Template.bind({});
 
 MgTabsItems.args = {
   ...MgTabs.args,
-  tabs: [
+  items: [
     {
       label: 'Tab 1',
       icon: 'check',
