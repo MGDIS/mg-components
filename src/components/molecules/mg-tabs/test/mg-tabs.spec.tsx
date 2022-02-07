@@ -209,7 +209,6 @@ describe('mg-tabs', () => {
 
       activeTab = element.querySelector('.mg-tabs-header__button--active');
       expect(activeTab).toHaveProperty('id', 'id-1');
-      expect(activeTab.focus).not.toHaveBeenCalled();
     });
   });
 });

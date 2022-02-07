@@ -42,5 +42,11 @@
       border-bottom-color: hsl(var(--color-info)) !important;
       font-weight: 700 !important;
     }
+    mg-icon {
+      margin-right: 0.5rem;
+    }
+    mg-tag {
+      margin-left: 0.5rem;
+    }
   }
 }

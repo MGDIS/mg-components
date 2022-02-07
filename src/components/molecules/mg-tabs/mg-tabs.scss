@@ -7,6 +7,7 @@
 .mg-tabs-header__button {
   display: flex;
   align-items: center;
+  column-gap: 0.5rem;
   padding: 1.8rem 2.4rem 1.5rem;
   background: none;
   border: none;
@@ -21,11 +22,5 @@
     color: hsl(var(--color-info));
     border-bottom: 0.3rem solid hsl(var(--color-info));
     font-weight: 700;
-  }
-  mg-icon {
-    margin-right: 0.5rem;
-  }
-  mg-tag {
-    margin-left: 0.5rem;
   }
 }

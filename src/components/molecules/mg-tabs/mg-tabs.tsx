@@ -12,7 +12,7 @@ const isTabItem = (tab: TabItem): boolean => typeof tab === 'object' && typeof t
 @Component({
   tag: 'mg-tabs',
   styleUrl: 'mg-tabs.scss',
-  scoped: true,
+  scoped: true /* IE FIX: use shadow DOM when IE droped */,
 })
 export class MgTabs {
   /**************
@@ -91,28 +91,27 @@ export class MgTabs {
    * @param event
    */
   private handleKeydown = (event: KeyboardEvent & { target: HTMLElement }) => {
-    let selectedId: number;
     let selectedTab: HTMLElement;
 
-    const tabId = event.target.getAttribute('data-index');
+    let tabId: number = Number(event.target.getAttribute('data-index'));
     const parent = event.target.parentElement;
 
     // change selected id from key code
     // /* IE FIX */ delete 'Right'
-    if (['ArrowRight', 'Right'].indexOf(event.key) > -1) {
-      selectedId = Number(tabId) + 1;
+    if (['ArrowRight', 'Right'].includes(event.key)) {
+      tabId++;
       // /* IE FIX */ delete 'Left'
-    } else if (['ArrowLeft', 'Left'].indexOf(event.key) > -1) {
-      selectedId = Number(tabId) - 1;
+    } else if (['ArrowLeft', 'Left'].includes(event.key)) {
+      tabId--;
     }
 
     // get selected tab
-    selectedTab = parent.querySelector(`[data-index="${selectedId}"]`);
+    selectedTab = parent.querySelector(`[data-index="${tabId}"]`);
 
     // apply selected tab if exist
     if (selectedTab !== null) {
       selectedTab.focus();
-      this.activeTab = selectedId;
+      this.activeTab = tabId;
     }
   };
 
@@ -120,7 +119,7 @@ export class MgTabs {
    * Validate slots setting
    */
   private validateSlots() {
-    const slots = Array.from(this.element.children).filter(slot => slot.getAttribute('slot')?.indexOf('tab_content-') > -1);
+    const slots = Array.from(this.element.children).filter(slot => slot.getAttribute('slot')?.includes('tab_content-'));
     if (slots.length !== this.tabs.length) {
       throw new Error('<mg-tabs> Must have slots counts equal to tabs count.');
     }
