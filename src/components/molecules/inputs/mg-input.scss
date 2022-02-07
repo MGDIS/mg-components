@@ -13,10 +13,13 @@
   */
 
   mg-input-title {
-    width: var(--mg-inputs-title-width, auto);
     margin-top: calc((var(--default-size) - var(--font-size-base) * var(--line-height)) / 2);
     margin-right: var(--mg-inputs-title-horizontal-space, var(--mg-inputs-spacer));
     text-align: end;
+  }
+
+  &:not(.mg-input--label-on-top) mg-input-title {
+    width: var(--mg-inputs-title-width, auto);
     flex-shrink: var(--mg-inputs-shrink, 1);
   }
 
