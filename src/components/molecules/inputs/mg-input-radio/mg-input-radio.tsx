@@ -2,7 +2,7 @@ import { Component, Event, h, Prop, EventEmitter, State, Watch } from '@stencil/
 import { MgInput } from '../MgInput';
 import { createID, ClassList, allItemsAreString } from '../../../../utils/components.utils';
 import { messages } from '../../../../locales';
-import { RadioOption } from './mg-input-radio.types';
+import { RadioOption } from './mg-input-radio.conf';
 
 /**
  * type Option validation function

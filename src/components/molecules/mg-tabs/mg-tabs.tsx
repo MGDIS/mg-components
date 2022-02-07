@@ -1,6 +1,6 @@
 import { Component, h, Host, Prop, State, Element, Watch } from '@stencil/core';
 import { createID, ClassList, allItemsAreString } from '../../../utils/components.utils';
-import { TabItem } from './mg-tabs.types';
+import { TabItem } from './mg-tabs.conf';
 
 /**
  * type TabItem validation function

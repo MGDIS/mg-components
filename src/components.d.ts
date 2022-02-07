@@ -5,11 +5,11 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { CheckboxValue } from "./components/molecules/inputs/mg-input-checkbox/mg-input-checkbox.types";
-import { RadioOption } from "./components/molecules/inputs/mg-input-radio/mg-input-radio.types";
-import { SelectOption } from "./components/molecules/inputs/mg-input-select/mg-input-select.types";
-import { ToggleValue } from "./components/molecules/inputs/mg-input-toggle/mg-input-toggle.types";
-import { TabItem } from "./components/molecules/mg-tabs/mg-tabs.types";
+import { CheckboxValue } from "./components/molecules/inputs/mg-input-checkbox/mg-input-checkbox.conf";
+import { RadioOption } from "./components/molecules/inputs/mg-input-radio/mg-input-radio.conf";
+import { SelectOption } from "./components/molecules/inputs/mg-input-select/mg-input-select.conf";
+import { ToggleValue } from "./components/molecules/inputs/mg-input-toggle/mg-input-toggle.conf";
+import { TabItem } from "./components/molecules/mg-tabs/mg-tabs.conf";
 export namespace Components {
     interface MgButton {
         /**
