@@ -1,0 +1,26 @@
+.mg-tabs-header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.mg-tabs-header__button {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  padding: 1.8rem 2.4rem 1.5rem;
+  background: none;
+  border: none;
+  border-bottom: solid 0.3rem transparent;
+  color: hsl(var(--color-dark));
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    background-color: hsl(var(--color-info-h) calc(var(--color-info-s) - 64%) calc(var(--color-info-l) + 55%));
+  }
+  &--active {
+    color: hsl(var(--color-info));
+    border-bottom: 0.3rem solid hsl(var(--color-info));
+    font-weight: 700;
+  }
+}
