@@ -41,4 +41,24 @@ describe('mg-checkbox', () => {
       expect(screenshot).toMatchImageSnapshot();
     });
   });
+
+  describe.each([
+    '<mg-input-checkbox label="long label long label long label long label long label long label long label long label long label long label long label" tooltip="tooltip message"></mg-input-checkbox>',
+    '<mg-input-checkbox label="long label long label long label long label long label long label long label long label long label long label long label" tooltip="tooltip message" label-on-top></mg-input-checkbox>',
+  ])('inside a div.mg-form-group', html => {
+    test('render', async () => {
+      const page = await createPage(`<div class="mg-form-group">${html}</div>
+        <script>
+        const mgInputCheckbox = document.querySelector('mg-input-checkbox');
+        mgInputCheckbox.value = [{title: 'batman', value: true}, {title: 'robin', value: false}, {title: 'joker', value: null}, {title: 'bane', value: true, disabled: true}];
+        </script>`);
+
+      const element = await page.find('mg-input-checkbox');
+
+      expect(element).toHaveClass('hydrated');
+
+      const screenshot = await page.screenshot();
+      expect(screenshot).toMatchImageSnapshot();
+    });
+  });
 });
