@@ -1,4 +1,4 @@
-import { Component, Element, h, Prop, State, Watch } from '@stencil/core';
+import { Component, Element, h, Host, Prop, State, Watch } from '@stencil/core';
 import { createID, ClassList } from '../../../utils/components.utils';
 import { variants } from './mg-message.conf';
 import { messages } from '../../../locales';
@@ -81,7 +81,7 @@ export class MgMessage {
   /**
    * Component classes
    */
-  @State() classList: ClassList = new ClassList(['mg-message']);
+  @State() classList: ClassList = new ClassList(['mg-components', 'mg-message']);
 
   /**
    * Define if component is using actions slot
@@ -146,29 +146,25 @@ export class MgMessage {
 
   render() {
     return (
-      <div id={this.identifier} class={this.classList.join()} role={this.variant === 'info' ? 'status' : 'alert'}>
-        <span class="mg-message__icon">
-          <mg-icon icon={this.getIcon()}></mg-icon>
-        </span>
-        <div class="mg-message__content">
-          <span class="mg-message__content__slot">
-            <slot></slot>
+      <Host>
+        <div id={this.identifier} class={this.classList.join()} role={this.variant === 'info' ? 'status' : 'alert'}>
+          <span class="mg-message__icon">
+            <mg-icon icon={this.getIcon()}></mg-icon>
           </span>
-          {this.hasActions && <span class="mg-message__content__separator"></span>}
-          {this.hasActions && (
-            <span class="mg-message__content__actions-slot">
-              <slot name="actions"></slot>
+          <div class="mg-message__content">
+            <span class="mg-message__content__slot">
+              <slot></slot>
+            </span>
+          </div>
+          {this.closeButton && (
+            <span class="mg-message__close-button">
+              <mg-button identifier={this.closeButtonId} is-icon variant="flat" label={messages.message.closeButton} onClick={this.handleClose}>
+                <mg-icon icon="cross"></mg-icon>
+              </mg-button>
             </span>
           )}
         </div>
-        {this.closeButton && (
-          <span class="mg-message__close-button">
-            <mg-button identifier={this.closeButtonId} is-icon variant="flat" label={messages.message.closeButton} onClick={this.handleClose}>
-              <mg-icon icon="cross"></mg-icon>
-            </mg-button>
-          </span>
-        )}
-      </div>
+      </Host>
     );
   }
 }

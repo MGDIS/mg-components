@@ -1,3 +1,17 @@
-[hide] {
-  display: none;
+/* Minimum viable for a component */
+
+:host {
+  /* Set system font in case custom font are not loaded */
+  font-size: 62.5%; /* (62.5/100) * 16px = 10px */
+  font-size: calc(1em * 0.625); /* IE fix */
+  font-family: var(--font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol');
+  line-height: var(--line-height);
+
+  [hide] {
+    display: none;
+  }
+
+  .mg-components {
+    font-size: var(--font-size);
+  }
 }

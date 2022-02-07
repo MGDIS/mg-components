@@ -1,3 +1,5 @@
+@import '../../../styles/components.scss';
+
 @mixin message-variant($variant) {
   &:before {
     background-color: hsl(var(--color-#{$variant}));
@@ -76,9 +78,7 @@
 }
 
 .mg-message__content__actions-slot {
-  // Display
   padding: 1rem 0;
-  // Font
   text-align: right;
 }
 

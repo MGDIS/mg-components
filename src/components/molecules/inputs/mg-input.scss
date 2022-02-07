@@ -14,7 +14,7 @@
 
   mg-input-title {
     width: var(--mg-inputs-title-width, auto);
-    margin-top: calc((var(--default-size) - var(--font-size-base) * var(--line-height)) / 2);
+    margin-top: calc((var(--default-size) - var(--font-size) * var(--line-height)) / 2);
     margin-right: var(--mg-inputs-title-horizontal-space, var(--mg-inputs-spacer));
     text-align: end;
     flex-shrink: var(--mg-inputs-shrink, 1);
@@ -63,7 +63,7 @@
   textarea,
   select {
     // Display
-    padding: calc((var(--default-size) - var(--font-size-base) * var(--line-height)) / 2) var(--mg-inputs-spacer);
+    padding: calc((var(--default-size) - var(--font-size) * var(--line-height)) / 2) var(--mg-inputs-spacer);
     height: var(--default-size);
     box-sizing: border-box;
     // Decoration
@@ -72,9 +72,9 @@
     border-color: var(--mg-inputs-color);
     border-radius: var(--mg-inputs-border-radius);
     // Font
-    font-family: var(--font-family-body);
+    font-family: var(--font-family);
     color: hsl(var(--color-dark));
-    font-size: var(--font-size-base);
+    font-size: var(--font-size);
 
     // placeholder
     &::placeholder {
@@ -107,7 +107,7 @@
     flex-shrink: 0; /* Ensure checkbox won't resize in flex element */
     width: var(--mg-input-check-size);
     height: var(--mg-input-check-size);
-    margin-top: calc((var(--font-size-base) * var(--line-height) - var(--mg-input-check-size)) / 2);
+    margin-top: calc((var(--font-size) * var(--line-height) - var(--mg-input-check-size)) / 2);
     margin-right: 0.6rem;
     margin-bottom: 0;
     margin-left: 0;
@@ -116,7 +116,7 @@
   // Ensure to keed input size on readonly
   .mg-input__input-container > strong {
     display: inline-block;
-    margin-top: calc((var(--default-size) - var(--font-size-base) * var(--line-height)) / 2);
+    margin-top: calc((var(--default-size) - var(--font-size) * var(--line-height)) / 2);
     min-height: var(--default-size);
   }
 
@@ -199,7 +199,7 @@
     row-gap: 1rem;
     &.mg-input__input-group-container--radio,
     &.mg-input__input-group-container--checkbox {
-      margin-top: calc((var(--default-size) - var(--font-size-base) * var(--line-height)) / 2);
+      margin-top: calc((var(--default-size) - var(--font-size) * var(--line-height)) / 2);
     }
     &.mg-input__input-group-container--vertical {
       flex-direction: column;
@@ -248,7 +248,7 @@ fieldset.mg-input {
 */
 
 @mixin toggleSizeGenerator($elementPadding, $childElementPadding) {
-  $elementLineHeight: calc(var(--font-size-base) + 0.2rem);
+  $elementLineHeight: calc(var(--font-size) + 0.2rem);
   $elementMinSize: calc(#{$elementLineHeight} + #{$childElementPadding} * 2);
 
   .mg-input__button-toggle {

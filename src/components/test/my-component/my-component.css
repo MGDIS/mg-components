@@ -1,0 +1,8 @@
+/* :host {
+  font-size: calc(62.5% * var(--font-size));
+}
+
+:host(.my-component) {
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+} */

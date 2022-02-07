@@ -60,7 +60,7 @@ export class MgIcon {
   /**
    * Component classes
    */
-  @State() classList: ClassList = new ClassList(['mg-icon']);
+  @State() classList: ClassList = new ClassList(['mg-components', 'mg-icon']);
 
   /**
    * Check if props are well configured on init

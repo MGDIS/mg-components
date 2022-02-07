@@ -729,6 +729,8 @@ export namespace Components {
     | 'left-start'
     | 'left-end';
     }
+    interface MyComponent {
+    }
 }
 declare global {
     interface HTMLMgButtonElement extends Components.MgButton, HTMLStencilElement {
@@ -827,6 +829,12 @@ declare global {
         prototype: HTMLMgTooltipElement;
         new (): HTMLMgTooltipElement;
     };
+    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    }
+    var HTMLMyComponentElement: {
+        prototype: HTMLMyComponentElement;
+        new (): HTMLMyComponentElement;
+    };
     interface HTMLElementTagNameMap {
         "mg-button": HTMLMgButtonElement;
         "mg-character-left": HTMLMgCharacterLeftElement;
@@ -844,6 +852,7 @@ declare global {
         "mg-message": HTMLMgMessageElement;
         "mg-tag": HTMLMgTagElement;
         "mg-tooltip": HTMLMgTooltipElement;
+        "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
@@ -1605,6 +1614,8 @@ declare namespace LocalJSX {
     | 'left-start'
     | 'left-end';
     }
+    interface MyComponent {
+    }
     interface IntrinsicElements {
         "mg-button": MgButton;
         "mg-character-left": MgCharacterLeft;
@@ -1622,6 +1633,7 @@ declare namespace LocalJSX {
         "mg-message": MgMessage;
         "mg-tag": MgTag;
         "mg-tooltip": MgTooltip;
+        "my-component": MyComponent;
     }
 }
 export { LocalJSX as JSX };
@@ -1644,6 +1656,7 @@ declare module "@stencil/core" {
             "mg-message": LocalJSX.MgMessage & JSXBase.HTMLAttributes<HTMLMgMessageElement>;
             "mg-tag": LocalJSX.MgTag & JSXBase.HTMLAttributes<HTMLMgTagElement>;
             "mg-tooltip": LocalJSX.MgTooltip & JSXBase.HTMLAttributes<HTMLMgTooltipElement>;
+            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }
 }
