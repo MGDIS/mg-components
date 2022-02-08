@@ -39,8 +39,8 @@ export class MgButton {
   @Watch('disabled')
   disabledHandler(newValue: boolean) {
     // Used to revert multi-click
-    if (this.disableOnClick) {
-      this.loading = newValue;
+    if (!newValue && this.disableOnClick) {
+      this.loading = false;
     }
   }
   /**
