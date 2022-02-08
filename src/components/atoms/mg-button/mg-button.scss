@@ -35,7 +35,6 @@
   position: relative;
   display: inline-flex;
   align-items: center;
-  vertical-align: middle;
   min-height: var(--default-size);
   padding: 0.7435rem 1.1rem;
   // Decoration
@@ -44,6 +43,7 @@
   background-image: none;
   border: 0.1rem solid;
   // Font
+  text-decoration: none;
   font-weight: normal;
   text-align: left;
   line-height: var(--line-height);
@@ -88,6 +88,10 @@
     }
   }
 
+  &:not(.mg-button--icon) mg-icon {
+    margin-right: 0.6rem;
+  }
+
   &__content {
     display: flex;
   }
@@ -107,11 +111,6 @@
 
 mg-button {
   display: inline-block;
-  vertical-align: middle;
-
-  &:not([is-icon]) mg-icon {
-    margin-right: 0.6rem;
-  }
 
   &[disabled] {
     pointer-events: none;
@@ -120,6 +119,7 @@ mg-button {
 
 .mg-button,
 mg-button {
+  vertical-align: middle;
   max-width: 100%;
   mg-icon {
     display: inline-flex;

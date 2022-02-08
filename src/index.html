@@ -83,20 +83,20 @@
       </section>
       <section>
         <h2>Buttons</h2>
-        <div style="padding: 0 0 1rem">
+        <div class="mg-group-elements" style="padding: 0 0 1rem">
           <mg-button variant="primary">Primary</mg-button><mg-button variant="secondary"> <mg-icon icon="check-circle"></mg-icon>Secondary</mg-button
           ><mg-button variant="danger"> <mg-icon icon="exclamation-circle"></mg-icon>Alert</mg-button
           ><mg-button variant="danger-alt"> <mg-icon icon="exclamation-triangle"></mg-icon>Alert-alt</mg-button
           ><mg-button variant="info"> <mg-icon icon="info-circle"></mg-icon>Info</mg-button><mg-button variant="flat"> <mg-icon icon="info-circle"></mg-icon>flat</mg-button>
         </div>
-        <div style="padding: 0 0 1rem">
+        <div class="mg-group-elements" style="padding: 0 0 1rem">
           <mg-button disabled variant="primary">Primary</mg-button><mg-button disabled variant="secondary"> <mg-icon icon="check-circle"></mg-icon>Secondary</mg-button
           ><mg-button disabled variant="danger"> <mg-icon icon="exclamation-circle"></mg-icon>Alert</mg-button
           ><mg-button disabled variant="danger-alt"> <mg-icon icon="exclamation-triangle"></mg-icon>Alert-alt</mg-button
           ><mg-button disabled variant="info"> <mg-icon icon="info-circle"></mg-icon>Info</mg-button
           ><mg-button disabled variant="flat"> <mg-icon icon="info-circle"></mg-icon>flat</mg-button>
         </div>
-        <div style="padding: 0 0 1rem">
+        <div class="mg-group-elements" style="padding: 0 0 1rem">
           <mg-button variant="primary" is-icon label="Label"> <mg-icon icon="check-circle"></mg-icon></mg-button
           ><mg-button variant="secondary" is-icon label="Label"> <mg-icon icon="check-circle"></mg-icon></mg-button
           ><mg-button variant="danger" is-icon label="Label"> <mg-icon icon="check-circle"></mg-icon></mg-button
@@ -104,7 +104,7 @@
           ><mg-button variant="info" is-icon label="Label"> <mg-icon icon="check-circle"></mg-icon></mg-button
           ><mg-button variant="flat" is-icon label="Label"> <mg-icon icon="cross"></mg-icon></mg-button>
         </div>
-        <div style="padding: 0 0 1rem">
+        <div class="mg-group-elements" style="padding: 0 0 1rem">
           <mg-button variant="primary" is-icon label="Label"> <mg-icon size="extra-large" icon="check-circle"></mg-icon></mg-button
           ><mg-button variant="secondary" is-icon label="Label"> <mg-icon size="extra-large" icon="check-circle"></mg-icon></mg-button
           ><mg-button variant="danger" is-icon label="Label"> <mg-icon size="extra-large" icon="check-circle"></mg-icon></mg-button
@@ -112,7 +112,7 @@
           ><mg-button variant="info" is-icon label="Label"> <mg-icon size="extra-large" icon="check-circle"></mg-icon></mg-button
           ><mg-button variant="flat" is-icon label="Label"> <mg-icon size="extra-large" icon="cross"></mg-icon></mg-button>
         </div>
-        <div style="padding: 0 0 1rem">
+        <div class="mg-group-elements" style="padding: 0 0 1rem">
           <mg-button variant="primary" is-icon label="Label"> <mg-icon size="large" icon="check-circle"></mg-icon></mg-button
           ><mg-button variant="secondary" is-icon label="Label"> <mg-icon size="large" icon="check-circle"></mg-icon></mg-button
           ><mg-button variant="danger" is-icon label="Label"> <mg-icon size="large" icon="check-circle"></mg-icon></mg-button
@@ -133,11 +133,17 @@
         <div style="padding: 0 0 1rem">
           <p>Coucou, ceci est un <mg-button variant="primary">bouton</mg-button> dans un paragraphe.</p>
         </div>
-        <h2>Disable on click</h2>
-        <div style="padding: 0 0 1rem">
+        <h3>Disable on click</h3>
+        <div class="mg-group-elements" style="padding: 0 0 1rem">
           <mg-button disable-on-click>Blu Blu Blu Blu Blu Blu Blu Blu</mg-button>
-          <mg-button disable-on-click><mg-icon icon="check-circle"></mg-icon> Blu</mg-button>
-          <mg-button is-icon disable-on-click><mg-icon icon="check-circle"></mg-icon></mg-button>
+          <mg-button disable-on-click><mg-icon icon="check-circle"></mg-icon>Blu</mg-button>
+          <mg-button is-icon label="Ce bouton se désactive après un clic" disable-on-click><mg-icon icon="check-circle"></mg-icon></mg-button>
+        </div>
+        <h3>a.mg-button</h3>
+        <div class="mg-group-elements" style="padding: 0 0 1rem">
+          <a href="#" class="mg-button mg-button--primary">a.mg-button</a>
+          <a href="#" class="mg-button mg-button--primary"><mg-icon icon="check-circle"></mg-icon>a.mg-button w/ icon</a>
+          <a href="#" class="mg-button mg-button--primary mg-button--icon"><mg-icon icon="check-circle"></mg-icon></a>
         </div>
       </section>
       <section>
