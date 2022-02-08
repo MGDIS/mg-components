@@ -36,6 +36,10 @@
     }
   }
 
+  &.mg-input--numeric input {
+    text-align: right;
+  }
+
   &__title {
     display: flex;
     align-items: baseline;
