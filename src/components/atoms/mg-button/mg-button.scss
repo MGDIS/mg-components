@@ -54,6 +54,7 @@
   &[disabled],
   &.disabled {
     opacity: var(--mg-button-disabled-opacity);
+    cursor: not-allowed;
   }
 
   // Icon only button
