@@ -16,7 +16,7 @@
   cursor: pointer;
   &:hover,
   &:focus {
-    background-color: hsl(var(--color-info-h) calc(var(--color-info-s) - 64%) calc(var(--color-info-l) + 55%));
+    background-color: hsla(var(--color-info-h), var(--color-info-s), var(--color-info-l), 10%);
   }
   &--active {
     color: hsl(var(--color-info));
