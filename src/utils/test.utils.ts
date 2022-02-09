@@ -5,7 +5,7 @@ export type DesignSystemE2EPage = E2EPage & Pick<PuppeteerPage, 'screenshot' | '
 
 export async function createPage(htmlString?: string) {
   const options = {
-    html: `<link rel="stylesheet" href="http://localhost:3333/build/mg-components.css" />${htmlString}`,
+    html: `<link rel="stylesheet" href="http://localhost:3333/build/mg-components.css" /><meta charset="UTF-8">${htmlString}`,
     viewportWidth: 600,
   };
 

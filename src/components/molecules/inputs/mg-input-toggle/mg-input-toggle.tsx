@@ -1,7 +1,7 @@
 import { Component, Event, h, Prop, EventEmitter, State, Watch, Element } from '@stencil/core';
 import { MgInput } from '../MgInput';
 import { createID, ClassList, allItemsAreString } from '../../../../utils/components.utils';
-import { ToggleValue } from '../../../../types/components.types';
+import { ToggleValue } from './mg-input-toggle.conf';
 
 /**
  * type Option validation function
@@ -187,7 +187,6 @@ export class MgInputToggle {
 
   /**
    * Slots validation
-
    */
   private validateSlots() {
     const slots = Array.from(this.element.children);

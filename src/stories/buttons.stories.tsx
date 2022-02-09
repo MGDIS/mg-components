@@ -14,22 +14,35 @@ export default {
 const Template = args => (
   <div>
     <h1>Buttons</h1>
-    <h2>Text</h2>
-    <span class={`mg-group-elements${args.align === 'right' ? ' mg-group-elements--align-right' : ''}`}>
-      {variants.map(variant => (
+    {variants.map(variant => (
+      <div style={{ marginBottom: '1rem' }} class={`mg-group-elements${args.align === 'right' ? ' mg-group-elements--align-right' : ''}`}>
         <button class={`mg-button mg-button--${variant}`} {...args}>
           {variant}
         </button>
-      ))}
-    </span>
-    <h2>Icon</h2>
-    <span class={`mg-group-elements${args.align === 'right' ? ' mg-group-elements--align-right' : ''}`}>
-      {variants.map(variant => (
+        <button class={`mg-button mg-button--${variant}`} {...args}>
+          <mg-icon icon="info-circle"></mg-icon>
+          {variant}
+        </button>
         <button class={`mg-button mg-button--${variant} mg-button--icon`} {...args}>
           <mg-icon icon="info-circle"></mg-icon>
         </button>
-      ))}
-    </span>
+      </div>
+    ))}
+    <h2>Link</h2>
+    {variants.map(variant => (
+      <div style={{ marginBottom: '1rem' }} class={`mg-group-elements${args.align === 'right' ? ' mg-group-elements--align-right' : ''}`}>
+        <a class={`mg-button mg-button--${variant}`} {...args}>
+          {variant}
+        </a>
+        <a class={`mg-button mg-button--${variant}`} {...args}>
+          <mg-icon icon="info-circle"></mg-icon>
+          {variant}
+        </a>
+        <a class={`mg-button mg-button--${variant} mg-button--icon`} {...args}>
+          <mg-icon icon="info-circle"></mg-icon>
+        </a>
+      </div>
+    ))}
     <h2>Helpers</h2>
     <h3>.mg-group-elements</h3>
     <p>

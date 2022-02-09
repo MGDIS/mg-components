@@ -146,4 +146,24 @@ describe('mg-input-select', () => {
     const screenshot = await page.screenshot();
     expect(screenshot).toMatchImageSnapshot();
   });
+
+  describe.each([
+    '<mg-input-select label="long label long label long label long label long label long label long label long label long label long label long label" tooltip="tooltip message"></mg-input-select>',
+    '<mg-input-select label="long label long label long label long label long label long label long label long label long label long label long label" tooltip="tooltip message" label-on-top></mg-input-select>',
+  ])('inside a div.mg-form-group', html => {
+    test('render', async () => {
+      const page = await createPage(`<div class="mg-form-group">${html}</div>
+      <script>
+      const mgInputSelect = document.querySelector('mg-input-select');
+      mgInputSelect.items = ['blu', 'bli', 'bla', 'blo'];
+      </script>`);
+
+      const element = await page.find('mg-input-select');
+
+      expect(element).toHaveClass('hydrated');
+
+      const screenshot = await page.screenshot();
+      expect(screenshot).toMatchImageSnapshot();
+    });
+  });
 });

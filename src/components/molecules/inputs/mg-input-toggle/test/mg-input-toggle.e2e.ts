@@ -12,8 +12,8 @@ describe('mg-input-toggle', () => {
     const page = await createPage(`${html}
     <style>#toggle-long-text {width: 100px;}</style>
     <script>
-    const mgInputtoggle = document.querySelector('mg-input-toggle');
-    mgInputtoggle.items = [{title: 'batman', value: false}, {title: 'joker', value: true}];
+    const mgInputToggle = document.querySelector('mg-input-toggle');
+    mgInputToggle.items = [{title: 'batman', value: false}, {title: 'joker', value: true}];
     </script>`);
 
     const element = await page.find('mg-input-toggle');
@@ -55,8 +55,8 @@ describe('mg-input-toggle', () => {
     const page = await createPage(`${html}
       <style>#toggle-long-text, #toggle-long-text-readonly {width: 100px;}</style>
       <script>
-      const mgInputtoggle = document.querySelector('mg-input-toggle');
-      mgInputtoggle.items = [{title: 'batman', value: false}, {title: 'joker', value: true}];
+      const mgInputToggle = document.querySelector('mg-input-toggle');
+      mgInputToggle.items = [{title: 'batman', value: false}, {title: 'joker', value: true}];
       </script>`);
 
     const element = await page.find('mg-input-toggle');
@@ -70,8 +70,8 @@ describe('mg-input-toggle', () => {
   test.each([true, false])('render with tooltip, case label-on-top %s', async labelOnTop => {
     const page = await createPage(`<mg-input-toggle label="label" tooltip="Tooltip message" label-on-top=${labelOnTop}>${defaultSlots}</mg-input-toggle>
       <script>
-      const mgInputtoggle = document.querySelector('mg-input-toggle');
-      mgInputtoggle.items = [{title: 'batman', value: false}, {title: 'joker', value: true}];
+      const mgInputToggle = document.querySelector('mg-input-toggle');
+      mgInputToggle.items = [{title: 'batman', value: false}, {title: 'joker', value: true}];
       </script>`);
 
     const element = await page.find('mg-input-toggle');
@@ -97,8 +97,8 @@ describe('mg-input-toggle', () => {
   ])('Should render with template', async html => {
     const page = await createPage(`${html}
       <script>
-      const mgInputtoggle = document.querySelector('mg-input-toggle');
-      mgInputtoggle.items = [{title: 'batman', value: false}, {title: 'joker', value: true}];
+      const mgInputToggle = document.querySelector('mg-input-toggle');
+      mgInputToggle.items = [{title: 'batman', value: false}, {title: 'joker', value: true}];
       </script>`);
 
     const element = await page.find('mg-input-toggle');
@@ -107,5 +107,25 @@ describe('mg-input-toggle', () => {
 
     const screenshot = await page.screenshot();
     expect(screenshot).toMatchImageSnapshot();
+  });
+
+  describe.each([
+    `<mg-input-toggle label="long label long label long label long label long label long label long label long label long label long label long label" tooltip="tooltip message">${defaultSlots}</mg-input-toggle>`,
+    `<mg-input-toggle label="long label long label long label long label long label long label long label long label long label long label long label" tooltip="tooltip message" label-on-top>${defaultSlots}</mg-input-toggle>`,
+  ])('inside a div.mg-form-group', html => {
+    test('render', async () => {
+      const page = await createPage(`<div class="mg-form-group">${html}</div>
+      <script>
+      const mgInputToggle = document.querySelector('mg-input-toggle');
+      mgInputToggle.items = [{title: 'batman', value: false}, {title: 'joker', value: true}];
+      </script>`);
+
+      const element = await page.find('mg-input-toggle');
+
+      expect(element).toHaveClass('hydrated');
+
+      const screenshot = await page.screenshot();
+      expect(screenshot).toMatchImageSnapshot();
+    });
   });
 });

@@ -45,3 +45,16 @@ describe.each([
     expect(screenshot2).toMatchImageSnapshot();
   });
 });
+
+describe.each([
+  '<a href="#" class="mg-button mg-button--primary">a.mg-button</a>',
+  '<a href="#" class="mg-button mg-button--primary"><mg-icon icon="check-circle"></mg-icon>a.mg-button w/ icon</a>',
+  '<a href="#" class="mg-button mg-button--primary mg-button--icon"><mg-icon icon="check-circle"></mg-icon></a>',
+])('template', template => {
+  test('should render a link like a button', async () => {
+    const page = await createPage(template);
+
+    const screenshot = await page.screenshot();
+    expect(screenshot).toMatchImageSnapshot();
+  });
+});
