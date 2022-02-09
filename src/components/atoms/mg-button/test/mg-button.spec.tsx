@@ -68,5 +68,17 @@ describe('mg-button', () => {
 
       expect(page.root).toMatchSnapshot();
     });
+
+    test('should not have fn when disabled', async () => {
+      const page = await getPage({
+        identifier: 'identifier',
+        disabled: true,
+        onClick: () => {
+          return false;
+        },
+      });
+
+      expect(page.root).toMatchSnapshot();
+    });
   });
 });
