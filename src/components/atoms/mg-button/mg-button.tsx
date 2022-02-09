@@ -1,4 +1,4 @@
-import { Component, h, Prop, State, Watch } from '@stencil/core';
+import { Component, Element, h, Prop, State, Watch } from '@stencil/core';
 import { variants } from './mg-button.conf';
 import { ClassList, createID } from '../../../utils/components.utils';
 
@@ -8,6 +8,21 @@ import { ClassList, createID } from '../../../utils/components.utils';
   scoped: true,
 })
 export class MgButton {
+  /************
+   * Internal *
+   ************/
+
+  private onClickElementFn = null;
+
+  /**************
+   * Decorators *
+   **************/
+
+  /**
+   * Get component DOM element
+   */
+  @Element() element: HTMLMgButtonElement;
+
   /**
    * Define button variant
    */
@@ -37,11 +52,13 @@ export class MgButton {
    */
   @Prop({ mutable: true, reflect: true }) disabled: boolean = false;
   @Watch('disabled')
-  disabledHandler(newValue: boolean) {
+  disabledHandler(isDisabled: boolean) {
     // Used to revert multi-click
     if (this.disableOnClick) {
-      this.loading = newValue;
+      this.loading = isDisabled;
     }
+    // Manage if onclick
+    this.element.onclick = isDisabled ? undefined : this.onClickElementFn;
   }
   /**
    * Define if button is round.
@@ -98,6 +115,9 @@ export class MgButton {
         throw new Error(`<mg-button> prop "label" is mandatory when prop "isIcon" is set to true.`);
       }
     }
+    // Store the onclick fn
+    this.onClickElementFn = this.element.onclick;
+    this.disabledHandler(this.disabled);
   }
 
   /**
@@ -105,7 +125,7 @@ export class MgButton {
    */
   render() {
     return (
-      <button id={this.identifier} class={this.classList.join()} aria-label={this.label} disabled={this.disabled} onClick={this.handleClick}>
+      <button id={this.identifier} class={this.classList.join()} aria-label={this.label} aria-disabled={this.disabled} onClick={this.handleClick}>
         {this.loading ? <mg-icon icon="loader" spin></mg-icon> : null}
         <div class="mg-button__content">
           <slot></slot>
