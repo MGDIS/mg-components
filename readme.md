@@ -97,7 +97,7 @@ The first step for all three of these strategies is to [publish to NPM](https://
 
 ### Naming methodology
 
-MG Components is using [BEM](https://en.bem.info/) (Block, Element, Modifier) methodology.
+MG Components is using [BEM](https://en.bem.info/) (Block, Element, Modifier) methodology with the [two dashes style](https://en.bem.info/methodology/naming-convention/#two-dashes-style) naming scheme.
 
 ### Declaration organisation
 
@@ -130,14 +130,14 @@ A good pratice is to manage hover, focus and active state at the same place.
 
 ```SCSS
 /* SCSS */
-div {
+button {
   &:hover, &:focus, &:active {
     text-decoration: underline;
   }
 }
 
 /* CSS */
-div:hover, div:focus, div:active {
+button:hover, button:focus, button:active {
   text-decoration: underline;
 }
 ```
