@@ -53,9 +53,10 @@ export class MgButton {
   @Prop({ mutable: true, reflect: true }) disabled: boolean = false;
   @Watch('disabled')
   disabledHandler(isDisabled: boolean) {
-    // Used to revert multi-click
-    if (this.disableOnClick) {
-      this.loading = isDisabled;
+    // Remove loading when enable
+    // Will be set back onclick
+    if (!isDisabled && this.disableOnClick) {
+      this.loading = false;
     }
     // Manage if onclick
     this.element.onclick = isDisabled ? undefined : this.onClickElementFn;
