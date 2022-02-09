@@ -22,9 +22,9 @@
 
     // Hover
     // Only apply if not disabled
-    &:hover:not([disabled], .disabled),
-    &:focus:not([disabled], .disabled),
-    &:active:not([disabled], .disabled) {
+    &:hover:not([disabled], [aria-disabled], .disabled),
+    &:focus:not([disabled], [aria-disabled], .disabled),
+    &:active:not([disabled], [aria-disabled], .disabled) {
       background: hsl(var(#{$backgroundColor}-h), var(#{$backgroundColor}-s), var(#{$backgroundColor}-l));
     }
   }
@@ -52,6 +52,7 @@
 
   // Disabled style
   &[disabled],
+  &[aria-disabled],
   &.disabled {
     opacity: var(--mg-button-disabled-opacity);
     cursor: not-allowed;
@@ -82,9 +83,9 @@
 
     // Hover
     // Only apply if not disabled
-    &:hover:not([disabled], .disabled),
-    &:focus:not([disabled], .disabled),
-    &:active:not([disabled], .disabled) {
+    &:hover:not([disabled], [aria-disabled], .disabled),
+    &:focus:not([disabled], [aria-disabled], .disabled),
+    &:active:not([disabled], [aria-disabled], .disabled) {
       background: hsla(var(--color-dark), 0.1);
     }
   }
@@ -112,10 +113,6 @@
 
 mg-button {
   display: inline-block;
-
-  &[disabled] {
-    pointer-events: none;
-  }
 }
 
 .mg-button,

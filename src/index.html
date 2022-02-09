@@ -227,13 +227,20 @@
           <mg-input-title required>Label when required</mg-input-title>
         </div>
         <h4>Tooltips</h4>
-        <div class="mg-group-elements">
+        <div class="mg-group-elements" style="padding: 0 0 1rem">
           <mg-tooltip message="my tooltip coucou"><span>coucou</span></mg-tooltip>
           <mg-tooltip message="my tooltip icon"><mg-icon icon="check-circle"></mg-icon></mg-tooltip>
           <mg-tooltip message="my tooltip mg-button"><mg-button>mg-button</mg-button></mg-tooltip>
           <mg-tooltip message="my tooltip native button"><button class="mg-button mg-button--primary" aria-describedby="blu">native button</button></mg-tooltip>
         </div>
-        <div class="mg-group-elements">
+        <div class="mg-group-elements" style="padding: 0 0 1rem">
+          <mg-tooltip message="This is a tooltip message">
+            <mg-button variant="primary" disabled id="btn-dbld" onClick="alert('blu')">Click Me !</mg-button>
+          </mg-tooltip>
+          <button class="mg-button mg-button--secondary" onClick="document.getElementById('btn-dbld').removeAttribute('disabled')">Enable first button</button>
+          <button class="mg-button mg-button--secondary" onClick="document.getElementById('btn-dbld').setAttribute('disabled', '')">Disable first button</button>
+        </div>
+        <div class="mg-group-elements" style="padding: 0 0 1rem">
           <mg-tooltip message="my tooltip icon" display><mg-icon icon="check-circle"></mg-icon></mg-tooltip>
           <mg-tooltip message="my tooltip icon" disabled><mg-icon icon="check-circle"></mg-icon></mg-tooltip>
           <mg-tooltip message="my tooltip mg-button" id="tp-disabled" disabled display
