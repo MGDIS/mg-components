@@ -108,4 +108,20 @@ describe('mg-input-date', () => {
     const screenshot = await page.screenshot();
     expect(screenshot).toMatchImageSnapshot();
   });
+
+  describe.each([
+    '<mg-input-date label="long label long label long label long label long label long label long label long label long label long label long label" tooltip="tooltip message"></mg-input-date>',
+    '<mg-input-date label="long label long label long label long label long label long label long label long label long label long label long label" tooltip="tooltip message" label-on-top></mg-input-date>',
+  ])('inside a div.mg-form-group', html => {
+    test('render', async () => {
+      const page = await createPage(`<div class="mg-form-group">${html}</div>`);
+
+      const element = await page.find('mg-input-date');
+
+      expect(element).toHaveClass('hydrated');
+
+      const screenshot = await page.screenshot();
+      expect(screenshot).toMatchImageSnapshot();
+    });
+  });
 });

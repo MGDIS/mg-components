@@ -102,4 +102,20 @@ describe('mg-input-text', () => {
     const screenshot = await page.screenshot();
     expect(screenshot).toMatchImageSnapshot();
   });
+
+  describe.each([
+    '<mg-input-text label="long label long label long label long label long label long label long label long label long label long label long label" tooltip="tooltip message"></mg-input-text>',
+    '<mg-input-text label="long label long label long label long label long label long label long label long label long label long label long label" tooltip="tooltip message" label-on-top></mg-input-text>',
+  ])('inside a div.mg-form-group', html => {
+    test('render', async () => {
+      const page = await createPage(`<div class="mg-form-group">${html}</div>`);
+
+      const element = await page.find('mg-input-text');
+
+      expect(element).toHaveClass('hydrated');
+
+      const screenshot = await page.screenshot();
+      expect(screenshot).toMatchImageSnapshot();
+    });
+  });
 });
