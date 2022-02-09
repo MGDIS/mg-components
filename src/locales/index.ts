@@ -1,7 +1,11 @@
 export const locale = 'fr-FR';
 
-import fr from './fr-FR/messages.json';
+import messagesFr from './fr-FR/messages.json';
 
-export const messages = fr;
+import paginationFr from './fr-FR/pagination.json';
+
+export const messages = messagesFr;
+
+export const pagination = paginationFr;
 
 export const currency = 'EUR';

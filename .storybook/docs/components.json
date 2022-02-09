@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-02-07T10:26:44",
+  "timestamp": "2022-02-09T14:47:23",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.13.0",
@@ -3307,6 +3307,94 @@
           "mg-icon"
         ]
       }
+    },
+    {
+      "filePath": "./src/components/molecules/mg-pagination/mg-pagination.tsx",
+      "encapsulation": "shadow",
+      "tag": "mg-pagination",
+      "readme": "This molecule refers to the [PDA9-787](https://jira.mgdis.fr/browse/PDA9-787).\n",
+      "docs": "This molecule refers to the [PDA9-787](https://jira.mgdis.fr/browse/PDA9-787).",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "currentPage",
+          "type": "number",
+          "mutable": true,
+          "attr": "current-page",
+          "reflectToAttr": true,
+          "docs": "Component current page",
+          "docsTags": [],
+          "default": "1",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "identifier",
+          "type": "string",
+          "mutable": false,
+          "attr": "identifier",
+          "reflectToAttr": false,
+          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
+          "docsTags": [],
+          "default": "createID('mg-tabs')",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "Panignation label. Is a short description.\nCustomize default value can be usefull to improve accessibility",
+          "docsTags": [],
+          "default": "'pagination'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "totalPages",
+          "type": "number",
+          "mutable": false,
+          "attr": "total-pages",
+          "reflectToAttr": false,
+          "docs": "Component total pages",
+          "docsTags": [],
+          "default": "1",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
     },
     {
       "filePath": "./src/components/molecules/mg-tabs/mg-tabs.tsx",
