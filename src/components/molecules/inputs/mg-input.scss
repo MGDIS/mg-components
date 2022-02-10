@@ -254,7 +254,12 @@ fieldset.mg-input {
 * Toogle
 */
 
-@mixin toggleSizeGenerator($elementPadding, $childElementPadding) {
+// variables
+$lightBlue: hsl(var(--color-info-h) calc(var(--color-info-s) - 64%) calc(var(--color-info-l) + 55%));
+$lightDark: hsl(var(--color-dark-h) calc(var(--color-dark-s) - 30%) calc(var(--color-dark-l) + 75%));
+
+//mixins
+@mixin mg-input-toggle__size-generator($elementPadding, $childElementPadding) {
   $elementLineHeight: calc(var(--font-size-base) + 0.2rem);
   $elementMinSize: calc(#{$elementLineHeight} + #{$childElementPadding} * 2);
 
@@ -267,7 +272,8 @@ fieldset.mg-input {
     line-height: $elementLineHeight;
   }
 
-  .toggle-button__toggle-item-container {
+  .toggle-button__toggle-item-container,
+  .toggle-button__toggle-item-container::before {
     padding: $childElementPadding 0;
     min-width: $elementMinSize;
     min-height: $elementMinSize;
@@ -286,7 +292,14 @@ fieldset.mg-input {
   }
 }
 
-@include toggleSizeGenerator(0.2rem, 0.5rem);
+@mixin mg-input-toggle__text-background($color) {
+  content: '';
+  position: absolute;
+  background-color: $color;
+  width: 100%;
+}
+
+@include mg-input-toggle__size-generator(0.2rem, 0.5rem);
 
 .mg-input-toggle .mg-input__input-container {
   width: 100%;
@@ -308,9 +321,9 @@ fieldset.mg-input {
   display: flex;
   align-items: center;
   height: 100%;
+  position: relative;
   // font
   &:first-of-type {
-    background-color: hsl(var(--color-info-h) calc(var(--color-info-s) - 64%) calc(var(--color-info-l) + 55%));
     color: hsl(var(--color-info));
     font-weight: 600;
   }
@@ -318,13 +331,24 @@ fieldset.mg-input {
     color: hsl(var(--color-dark));
   }
   // slot
-  & > *:not(.mg-input--toggle-readonly .toggle-button__toggle-item-container > *) {
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
+  & > * {
+    z-index: 1;
+    &:not(.mg-input--toggle-readonly .toggle-button__toggle-item-container > *) {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    &:not(mg-icon) {
+      padding: 0 0.9rem;
+    }
   }
-  & > *:not(mg-icon) {
-    padding: 0 0.9rem;
+}
+
+.mg-input--toggle:not(.mg-input--toggle-is-icon) .toggle-button__toggle-item-container {
+  &:first-of-type {
+    &::before {
+      @include mg-input-toggle__text-background($lightBlue);
+    }
   }
 }
 
@@ -332,40 +356,30 @@ fieldset.mg-input {
 .mg-input--toggle-active {
   .toggle-button__toggle-item-container {
     &:first-of-type {
-      background-color: unset;
       color: hsl(var(--color-dark));
       font-weight: unset;
     }
     &:last-of-type {
       font-weight: 600;
-      background-color: hsl(var(--color-info-h) calc(var(--color-info-s) - 64%) calc(var(--color-info-l) + 55%));
       color: hsl(var(--color-info));
     }
   }
+  &:not(.mg-input--toggle-is-icon) .toggle-button__toggle-item-container {
+    &:first-of-type::before {
+      content: unset;
+    }
+    &:last-of-type::before {
+      @include mg-input-toggle__text-background($lightBlue);
+    }
+  }
 
-  // icon variation
   &.mg-input--toggle-is-icon .toggle-button__toggle-item-container {
     &:first-of-type {
-      opacity: 0;
+      background-color: unset;
     }
     &:last-of-type {
-      opacity: 1;
+      background-color: $lightBlue;
     }
-  }
-
-  // readonly variation
-  &.mg-input--toggle-readonly .toggle-button__toggle-item-container {
-    &:first-of-type {
-      display: none;
-    }
-    &:last-of-type {
-      display: unset;
-    }
-  }
-
-  // on-off variation
-  &.mg-input--toggle-is-on-off .toggle-button__toggle-item-container:first-of-type {
-    background: none;
   }
 }
 
@@ -391,6 +405,19 @@ fieldset.mg-input {
       margin-right: auto;
     }
   }
+
+  &.mg-input--toggle-active .toggle-button__toggle-item-container {
+    &:first-of-type {
+      opacity: 0;
+    }
+    &:last-of-type {
+      opacity: 1;
+    }
+  }
+
+  .toggle-button__toggle-item-container:first-of-type {
+    background-color: $lightBlue;
+  }
 }
 
 // disabled variation
@@ -401,12 +428,30 @@ fieldset.mg-input {
 // toggle on-off variation
 .mg-input--toggle-is-on-off {
   .toggle-button__toggle-item-container:first-of-type {
-    background-color: hsl(var(--color-dark-h) calc(var(--color-dark-s) - 30%) calc(var(--color-dark-l) + 75%));
     color: hsl(var(--color-dark));
   }
 
-  &.mg-input--toggle-active .toggle-button__toggle-item-container:first-of-type {
-    background: none;
+  &.mg-input--toggle-active {
+    &:not(.mg-input--toggle-is-icon) .toggle-button__toggle-item-container:first-of-type::before {
+      content: unset;
+    }
+
+    &.mg-input--toggle-is-icon .toggle-button__toggle-item-container:first-of-type {
+      background: none;
+    }
+  }
+
+  &:not(.mg-input--toggle-is-icon) {
+    .toggle-button__toggle-item-container:first-of-type::before {
+      @include mg-input-toggle__text-background($lightDark);
+    }
+    &.mg-input--toggle-active .toggle-button__toggle-item-container:first-of-type::before {
+      content: unset;
+    }
+  }
+
+  &.mg-input--toggle-is-icon .toggle-button__toggle-item-container:first-of-type {
+    background-color: $lightDark;
   }
 }
 
@@ -418,22 +463,41 @@ fieldset.mg-input {
     overflow: hidden;
     padding: 0;
   }
-  .toggle-button__toggle-item-container:last-of-type {
+  &:not(.mg-input--toggle-active) .toggle-button__toggle-item-container:last-of-type {
     display: none;
+  }
+  &.mg-input--toggle-active .toggle-button__toggle-item-container {
+    &:first-of-type {
+      display: none;
+    }
   }
 }
 
 // clicked variation - animation trigger
 .mg-input--toggle-clicked {
-  .toggle-button__toggle-item-container {
-    // animation
-    animation-timing-function: ease-in-out;
-    animation-duration: 0.2s;
-    animation-name: toggleUnactive;
+  &:not(.mg-input--toggle-is-icon) {
+    .toggle-button__toggle-item-container::before {
+      // animation
+      animation-timing-function: ease-in-out;
+      animation-duration: 0.2s;
+      animation-name: toggleUnactive;
+    }
+    &.mg-input--toggle-active .toggle-button__toggle-item-container::before {
+      // animation
+      animation-name: toggleActive;
+    }
   }
-  &.mg-input--toggle-active .toggle-button__toggle-item-container {
-    // animation
-    animation-name: toggleActive;
+  &.mg-input--toggle-is-icon {
+    .toggle-button__toggle-item-container {
+      // animation
+      animation-timing-function: ease-in-out;
+      animation-duration: 0.2s;
+      animation-name: toggleUnactive;
+    }
+    &.mg-input--toggle-active .toggle-button__toggle-item-container {
+      // animation
+      animation-name: toggleActive;
+    }
   }
 }
 
