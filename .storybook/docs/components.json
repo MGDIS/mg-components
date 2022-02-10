@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-02-09T15:01:05",
+  "timestamp": "2022-02-10T07:58:05",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.13.0",
@@ -3342,7 +3342,7 @@
           "reflectToAttr": false,
           "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
           "docsTags": [],
-          "default": "createID('mg-tabs')",
+          "default": "createID('mg-pagination')",
           "values": [
             {
               "type": "string"

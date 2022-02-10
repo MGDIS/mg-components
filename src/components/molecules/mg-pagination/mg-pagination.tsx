@@ -1,7 +1,29 @@
 import { Component, h, Prop, State, Watch } from '@stencil/core';
 import { createID } from '../../../utils/components.utils';
 import { PageKind, Page, PagerItem, NavigationAction } from './mg-pagination.conf';
-import { pagination } from './../../../locales';
+import { messages } from './../../../locales';
+
+/**
+ * Range generator
+ *
+ * start by get the range length, add "+ 1" to include last value, ex: Math.ceil((3 + 1 - 1) / 1) => 3
+ * then with Array(Math.ceil...) we get the final array with empty values, ex: Array(Math.ceil(2 + 1 - 1) / 1)) => [empty, empty, empty]
+ * then with Array(Math.ceil...).keys() we get the Array Iterator from empty values
+ * then with Array.from(Array(...)) we get the complete array with "index" values instead of "empty" values
+ * ex: Array.from(Array(Math.ceil((2 + 1 - 1) / 1) || 1).keys()) => [0, 1, 2]
+ * finaly we map values from "start" range and apply the "step" coefficiant,
+ * ex: Array.from(Array(Math.ceil((2 + 1 - 1) / 1) || 1).keys()).map(x => 1 + x * 1) => [1, 2, 3]
+ *
+ * range(1, 1) = [1]
+ * range(1, 5) = [1, 2, 3, 4, 5]
+ * range(10, 20, 2) = [10, 12, 14, 16, 18, 20]
+ *
+ * @param start
+ * @param end
+ * @param step
+ * @returns {number[]}
+ */
+const range = (start: number, end: number, step = 1): number[] => Array.from(Array(Math.ceil((end + 1 - start) / step)).keys()).map(x => start + x * step);
 
 @Component({
   tag: 'mg-pagination',
@@ -17,7 +39,7 @@ export class MgPagination {
    * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
    * If not set, it will be created.
    */
-  @Prop() identifier?: string = createID('mg-tabs');
+  @Prop() identifier?: string = createID('mg-pagination');
 
   /**
    * Panignation label. Is a short description.
@@ -66,7 +88,6 @@ export class MgPagination {
    * @returns {void}
    */
   private setPages(): void {
-    const range = (start: number, end: number, step = 1) => Array.from(Array.from(Array(Math.ceil((end - start) / step)).keys()), x => start + x * step);
     const firstPage = 1;
     const pages = range(firstPage, this.totalPages);
     const lastPage = this.totalPages;
@@ -80,8 +101,12 @@ export class MgPagination {
      * < [1] 2 3 >
      * < 1 [2] 3 >
      * < 1 2 [3] >
+     * < [1] 2 3 4>
+     * < 1 [2] 3 4>
+     * < 1 2 [3] 4>
+     * < 1 2 3 [4]>
      */
-    if (pages.length <= 3) {
+    if (pages.length <= 4) {
       this.pages = pages;
       return;
     } else {
@@ -171,17 +196,17 @@ export class MgPagination {
           {this.pager.map(({ kind, number, disabled, navigationaction }) => (
             <li class="mg-pagination-list__item">
               {(() => {
-                if (kind === PageKind.ELLIPSIS) return <button class={`mg-pagination-list__button mg-pagination-list__button--ellipsis`}>&#8230;</button>;
+                if (kind === PageKind.ELLIPSIS) return <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">&#8230;</button>;
 
                 if (kind === PageKind.NAVIGATION)
                   return (
                     <button
-                      class={`mg-pagination-list__button mg-pagination-list__button--navigation`}
-                      aria-label={navigationaction === NavigationAction.PREVIOUS ? pagination.previousPage : pagination.nextPage}
+                      class="mg-pagination-list__button mg-pagination-list__button--navigation"
+                      aria-label={navigationaction === NavigationAction.PREVIOUS ? messages.pagination.previousPage : messages.pagination.nextPage}
                       onClick={navigationaction === NavigationAction.PREVIOUS ? this.handleGoToPrevious : this.handleGoToNext}
                       disabled={disabled}
                     >
-                      <span aria-hidden="true">{navigationaction === NavigationAction.PREVIOUS ? pagination.previous : pagination.next}</span>
+                      <span aria-hidden="true">{navigationaction === NavigationAction.PREVIOUS ? messages.pagination.previous : messages.pagination.next}</span>
                     </button>
                   );
 
@@ -190,10 +215,10 @@ export class MgPagination {
                     class={`mg-pagination-list__button ${number === this.currentPage ? 'mg-pagination-list__button--active' : ''}`}
                     onClick={this.handleClick}
                     data-page={number}
-                    aria-current={number === this.currentPage ? pagination.page : false}
+                    aria-current={number === this.currentPage ? messages.pagination.page : false}
                     disabled={disabled}
                   >
-                    <span class="sr-only">{pagination.page}</span> {number}
+                    <span class="sr-only">{messages.pagination.page}</span> {number}
                   </button>
                 );
               })()}

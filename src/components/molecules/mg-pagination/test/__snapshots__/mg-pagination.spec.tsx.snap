@@ -291,8 +291,11 @@ exports[`mg-pagination Should render with totalPages 4 1`] = `
           </button>
         </li>
         <li class="mg-pagination-list__item">
-          <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">
-            …
+          <button class="mg-pagination-list__button" data-page="3">
+            <span class="sr-only">
+              page
+            </span>
+            3
           </button>
         </li>
         <li class="mg-pagination-list__item">
@@ -345,8 +348,11 @@ exports[`mg-pagination Should render with totalPages 4 2`] = `
           </button>
         </li>
         <li class="mg-pagination-list__item">
-          <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">
-            …
+          <button class="mg-pagination-list__button" data-page="3">
+            <span class="sr-only">
+              page
+            </span>
+            3
           </button>
         </li>
         <li class="mg-pagination-list__item">
@@ -391,8 +397,11 @@ exports[`mg-pagination Should render with totalPages 4 3`] = `
           </button>
         </li>
         <li class="mg-pagination-list__item">
-          <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">
-            …
+          <button aria-current="page" class="mg-pagination-list__button" data-page="2">
+            <span class="sr-only">
+              page
+            </span>
+            2
           </button>
         </li>
         <li class="mg-pagination-list__item">
@@ -445,8 +454,11 @@ exports[`mg-pagination Should render with totalPages 4 4`] = `
           </button>
         </li>
         <li class="mg-pagination-list__item">
-          <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">
-            …
+          <button aria-current="page" class="mg-pagination-list__button" data-page="2">
+            <span class="sr-only">
+              page
+            </span>
+            2
           </button>
         </li>
         <li class="mg-pagination-list__item">
