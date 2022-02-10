@@ -27,21 +27,21 @@ describe('mg-pagination', () => {
   });
 
   describe('errors', () => {
-    it('should throw an error, case totalPages props invalid', async () => {
+    test('should throw an error, case totalPages props invalid', async () => {
       try {
         await getPage({ totalPages: 0 });
       } catch ({ message }) {
         expect(message).toBe('<mg-pagination> prop "totalPages" must be greater than 0');
       }
     });
-    it('should throw an error, case currentPage props invalid: 0', async () => {
+    test('should throw an error, case currentPage props invalid: 0', async () => {
       try {
         await getPage({ currentPage: 0 });
       } catch ({ message }) {
         expect(message).toBe('<mg-pagination> prop "currentPage" must be greater than 0');
       }
     });
-    it('should throw an error, case currentPage props invalid: currentPage > totalPages', async () => {
+    test('should throw an error, case currentPage props invalid: currentPage > totalPages', async () => {
       try {
         await getPage({ currentPage: 2, totalPages: 1 });
       } catch ({ message }) {
@@ -51,7 +51,7 @@ describe('mg-pagination', () => {
   });
 
   describe('navigation', () => {
-    test('navigatte with number 1 to 5 to 1, case totalPages=5', async () => {
+    test('navigatte with number from 1 to 5 to 1, case totalPages=5', async () => {
       const page = await getPage({ totalPages: 5, identifier: 'id' });
       expect(page.root).toMatchSnapshot();
 

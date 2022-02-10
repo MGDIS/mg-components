@@ -23,6 +23,6 @@ const Template = args => {
 export const MgPagination = Template.bind({});
 
 MgPagination.args = {
-  totalPages: 1,
+  totalPages: 5,
   currentPage: 1,
 };
