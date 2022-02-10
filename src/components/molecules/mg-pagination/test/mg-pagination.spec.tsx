@@ -51,7 +51,7 @@ describe('mg-pagination', () => {
   });
 
   describe('navigation', () => {
-    test('navigatte with number from 1 to 5 to 1, case totalPages=5', async () => {
+    test('navigate with number from 1 to 5 to 1, case totalPages=5', async () => {
       const page = await getPage({ totalPages: 5, identifier: 'id' });
       expect(page.root).toMatchSnapshot();
 

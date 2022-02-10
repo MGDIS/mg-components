@@ -49,12 +49,4 @@
       margin-left: 0.5rem;
     }
   }
-  .mg-pagination-list__button {
-    &:hover,
-    &:focus {
-      color: hsl(var(--color-info)) !important;
-      border-bottom-color: hsl(var(--color-info)) !important;
-      font-weight: 700 !important;
-    }
-  }
 }

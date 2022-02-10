@@ -18,10 +18,11 @@ $border-size: 0.3rem;
   min-height: $min-height;
   min-width: calc(#{$min-height} + #{$border-size});
   text-align: center;
-  align-items: center;
   padding: 0;
-  &:hover:not(.mg-pagination-list__button--ellipsis, [disabled]),
-  &:focus:not(.mg-pagination-list__button--ellipsis, [disabled]) {
+  &:hover:not([disabled]),
+  &:hover:not(.mg-pagination-list__button--ellipsis),
+  &:focus:not([disabled]),
+  &:focus:not(.mg-pagination-list__button--ellipsis) {
     cursor: pointer;
     background-color: hsla(var(--color-info-h), var(--color-info-s), var(--color-info-l), 0.1);
   }
