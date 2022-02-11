@@ -115,15 +115,16 @@
   --mg-tag-font-size: 1.2rem;
 
   /*
+    <mg-badge>
+   */
+  --mg-badge-border-radius: 2rem;
+  --mg-badge-font-size: 1.2rem;
+
+  /*
     <mg-tooltip>
    */
   --mg-tooltip-background-color: var(--color-dark);
   --mg-tooltip-font-color: var(--color-font-light);
-
-  /*
-  *<mg-input-toggle>
-  */
-  --mg-input-toggle-border-radius-ratio: 1;
 
   /*
     <mg-message>
@@ -155,8 +156,13 @@
   --mg-inputs-color-shadow-focus-hsl: 188, 100%, 50%;
 
   /*
+    <mg-input-toggle>
+  */
+  --mg-input-toggle-border-radius-ratio: 1;
+
+  /*
     <mg-input-checkbox>
-   * <mg-input-radio>
+    <mg-input-radio>
    */
   --mg-input-check-size: 1.3rem;
 }

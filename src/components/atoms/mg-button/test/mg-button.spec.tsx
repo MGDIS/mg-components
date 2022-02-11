@@ -1,12 +1,13 @@
 import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
 import { MgButton } from '../mg-button';
+import { MgBadge } from '../../mg-badge/mg-badge';
 import { variants } from '../mg-button.conf';
 
-const getPage = args =>
+const getPage = (args, content = 'Text button') =>
   newSpecPage({
-    components: [MgButton],
-    template: () => <mg-button {...args}>Text button</mg-button>,
+    components: [MgButton, MgBadge],
+    template: () => <mg-button {...args}>{content}</mg-button>,
   });
 
 describe('mg-button', () => {
@@ -22,6 +23,19 @@ describe('mg-button', () => {
       await getPage({ variant, label: 'label' });
     } catch (err) {
       expect(err.message).toContain('<mg-button> prop "variant" must be one of : ');
+    }
+  });
+
+  test.each(['primary', 'secondary', 'info'])('Should throw error, case mg-button use same variant on mg-badge', async variant => {
+    try {
+      await getPage(
+        { variant, label: 'label' },
+        <span>
+          content<mg-badge variant={variant}></mg-badge>
+        </span>,
+      );
+    } catch (err) {
+      expect(err.message).toContain('<mg-button> prop "variant" cannot be the same as child mg-badge variant');
     }
   });
 

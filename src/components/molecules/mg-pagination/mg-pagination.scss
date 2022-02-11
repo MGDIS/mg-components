@@ -1,0 +1,46 @@
+@import '../../../styles/a11y.scss';
+
+$min-height: 3rem;
+$border-size: 0.3rem;
+
+.mg-pagination-list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.mg-pagination-list__button {
+  background: none;
+  border: none;
+  border-bottom: $border-size solid transparent;
+  border-top: $border-size solid transparent;
+  min-height: $min-height;
+  min-width: calc(#{$min-height} + #{$border-size});
+  text-align: center;
+  padding: 0;
+  &:not(.mg-pagination-list__button--ellipsis) {
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      background-color: hsla(var(--color-info-h), var(--color-info-s), var(--color-info-l), 0.1);
+    }
+  }
+  &--active {
+    border-bottom: $border-size solid hsl(var(--color-info));
+    font-weight: 700;
+    color: hsl(var(--color-info));
+  }
+  &--navigation {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
+.mg-pagination-list .mg-pagination-list__button[disabled] {
+  &:hover,
+  &:focus {
+    background: none;
+    cursor: auto;
+  }
+}

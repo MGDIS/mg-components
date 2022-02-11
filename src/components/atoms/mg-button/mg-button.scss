@@ -127,3 +127,10 @@ mg-button {
   vertical-align: middle;
   max-width: 100%;
 }
+
+mg-badge::part(badge-content) {
+  margin-left: 0.3rem;
+  font-size: calc(var(--mg-badge-font-size) - 0.2rem);
+  line-height: calc(var(--mg-badge-font-size) - 0.2rem);
+  vertical-align: text-bottom;
+}

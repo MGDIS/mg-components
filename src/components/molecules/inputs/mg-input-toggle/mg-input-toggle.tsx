@@ -20,9 +20,9 @@ export class MgInputToggle {
    * Internal *
    ************/
 
-  private classToggleActive = 'mg-input--toggle-active';
   private classReadonly = 'mg-input--toggle-readonly';
   private classDisabled = 'mg-input--toggle-disabled';
+  private classIsActive = 'mg-input--toggle-is-active';
 
   /**************
    * Decorators *
@@ -44,9 +44,9 @@ export class MgInputToggle {
     if (newValue === '' && typeof oldValue !== typeof newValue && oldValue !== undefined) return;
 
     if (newValue === this.options[1].value) {
-      this.classList.add(this.classToggleActive);
+      this.classList.add(this.classIsActive);
     } else {
-      this.classList.delete(this.classToggleActive);
+      this.classList.delete(this.classIsActive);
     }
 
     this.valueChange.emit(this.value);
@@ -252,10 +252,10 @@ export class MgInputToggle {
           disabled={this.disabled || this.readonly}
           onClick={this.handleToggleClick}
         >
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <slot name="item-1"></slot>
           </span>
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <slot name="item-2"></slot>
           </span>
         </button>

@@ -11,6 +11,16 @@ import { SelectOption } from "./components/molecules/inputs/mg-input-select/mg-i
 import { ToggleValue } from "./components/molecules/inputs/mg-input-toggle/mg-input-toggle.conf";
 import { TabItem } from "./components/molecules/mg-tabs/mg-tabs.conf";
 export namespace Components {
+    interface MgBadge {
+        /**
+          * Define if button is using outline style
+         */
+        "outline"?: boolean;
+        /**
+          * Define button variant
+         */
+        "variant"?: string;
+    }
     interface MgButton {
         /**
           * Option to set input disable on click, in order to prevent multi-click. Parent component have to remove the attribute 'disabled' when the process ends.
@@ -687,6 +697,24 @@ export namespace Components {
          */
         "variant"?: string;
     }
+    interface MgPagination {
+        /**
+          * Component current page
+         */
+        "currentPage": number;
+        /**
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+         */
+        "identifier"?: string;
+        /**
+          * Panignation label. Is a short description. Customize default value can be usefull to improve accessibility
+         */
+        "label": string;
+        /**
+          * Component total pages
+         */
+        "totalPages": number;
+    }
     interface MgTabs {
         /**
           * Active tab number default: first is 1
@@ -755,6 +783,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLMgBadgeElement extends Components.MgBadge, HTMLStencilElement {
+    }
+    var HTMLMgBadgeElement: {
+        prototype: HTMLMgBadgeElement;
+        new (): HTMLMgBadgeElement;
+    };
     interface HTMLMgButtonElement extends Components.MgButton, HTMLStencilElement {
     }
     var HTMLMgButtonElement: {
@@ -839,6 +873,12 @@ declare global {
         prototype: HTMLMgMessageElement;
         new (): HTMLMgMessageElement;
     };
+    interface HTMLMgPaginationElement extends Components.MgPagination, HTMLStencilElement {
+    }
+    var HTMLMgPaginationElement: {
+        prototype: HTMLMgPaginationElement;
+        new (): HTMLMgPaginationElement;
+    };
     interface HTMLMgTabsElement extends Components.MgTabs, HTMLStencilElement {
     }
     var HTMLMgTabsElement: {
@@ -864,6 +904,7 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "mg-badge": HTMLMgBadgeElement;
         "mg-button": HTMLMgButtonElement;
         "mg-character-left": HTMLMgCharacterLeftElement;
         "mg-icon": HTMLMgIconElement;
@@ -878,6 +919,7 @@ declare global {
         "mg-input-title": HTMLMgInputTitleElement;
         "mg-input-toggle": HTMLMgInputToggleElement;
         "mg-message": HTMLMgMessageElement;
+        "mg-pagination": HTMLMgPaginationElement;
         "mg-tabs": HTMLMgTabsElement;
         "mg-tag": HTMLMgTagElement;
         "mg-tooltip": HTMLMgTooltipElement;
@@ -885,6 +927,16 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface MgBadge {
+        /**
+          * Define if button is using outline style
+         */
+        "outline"?: boolean;
+        /**
+          * Define button variant
+         */
+        "variant"?: string;
+    }
     interface MgButton {
         /**
           * Option to set input disable on click, in order to prevent multi-click. Parent component have to remove the attribute 'disabled' when the process ends.
@@ -1597,6 +1649,24 @@ declare namespace LocalJSX {
          */
         "variant"?: string;
     }
+    interface MgPagination {
+        /**
+          * Component current page
+         */
+        "currentPage"?: number;
+        /**
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+         */
+        "identifier"?: string;
+        /**
+          * Panignation label. Is a short description. Customize default value can be usefull to improve accessibility
+         */
+        "label"?: string;
+        /**
+          * Component total pages
+         */
+        "totalPages"?: number;
+    }
     interface MgTabs {
         /**
           * Active tab number default: first is 1
@@ -1664,6 +1734,7 @@ declare namespace LocalJSX {
     interface MyComponent {
     }
     interface IntrinsicElements {
+        "mg-badge": MgBadge;
         "mg-button": MgButton;
         "mg-character-left": MgCharacterLeft;
         "mg-icon": MgIcon;
@@ -1678,6 +1749,7 @@ declare namespace LocalJSX {
         "mg-input-title": MgInputTitle;
         "mg-input-toggle": MgInputToggle;
         "mg-message": MgMessage;
+        "mg-pagination": MgPagination;
         "mg-tabs": MgTabs;
         "mg-tag": MgTag;
         "mg-tooltip": MgTooltip;
@@ -1688,6 +1760,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "mg-badge": LocalJSX.MgBadge & JSXBase.HTMLAttributes<HTMLMgBadgeElement>;
             "mg-button": LocalJSX.MgButton & JSXBase.HTMLAttributes<HTMLMgButtonElement>;
             "mg-character-left": LocalJSX.MgCharacterLeft & JSXBase.HTMLAttributes<HTMLMgCharacterLeftElement>;
             "mg-icon": LocalJSX.MgIcon & JSXBase.HTMLAttributes<HTMLMgIconElement>;
@@ -1702,6 +1775,7 @@ declare module "@stencil/core" {
             "mg-input-title": LocalJSX.MgInputTitle & JSXBase.HTMLAttributes<HTMLMgInputTitleElement>;
             "mg-input-toggle": LocalJSX.MgInputToggle & JSXBase.HTMLAttributes<HTMLMgInputToggleElement>;
             "mg-message": LocalJSX.MgMessage & JSXBase.HTMLAttributes<HTMLMgMessageElement>;
+            "mg-pagination": LocalJSX.MgPagination & JSXBase.HTMLAttributes<HTMLMgPaginationElement>;
             "mg-tabs": LocalJSX.MgTabs & JSXBase.HTMLAttributes<HTMLMgTabsElement>;
             "mg-tag": LocalJSX.MgTag & JSXBase.HTMLAttributes<HTMLMgTagElement>;
             "mg-tooltip": LocalJSX.MgTooltip & JSXBase.HTMLAttributes<HTMLMgTooltipElement>;

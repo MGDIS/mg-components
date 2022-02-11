@@ -1,11 +1,75 @@
 {
-  "timestamp": "2022-02-09T13:55:50",
+  "timestamp": "2022-02-11T08:24:00",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.13.0",
     "typescriptVersion": "4.3.5"
   },
   "components": [
+    {
+      "filePath": "./src/components/atoms/mg-badge/mg-badge.tsx",
+      "encapsulation": "shadow",
+      "tag": "mg-badge",
+      "readme": "This atom refers to the [PDA9-315](https://jira.mgdis.fr/browse/PDA9-315).\n",
+      "docs": "This atom refers to the [PDA9-315](https://jira.mgdis.fr/browse/PDA9-315).",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "outline",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "outline",
+          "reflectToAttr": false,
+          "docs": "Define if button is using outline style",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "variant",
+          "type": "string",
+          "mutable": false,
+          "attr": "variant",
+          "reflectToAttr": false,
+          "docs": "Define button variant",
+          "docsTags": [],
+          "default": "variants[variants.length - 1]",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [
+        {
+          "name": "badge-content",
+          "docs": ""
+        }
+      ],
+      "dependents": [
+        "mg-tabs"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "mg-tabs": [
+          "mg-badge"
+        ]
+      }
+    },
     {
       "filePath": "./src/components/atoms/mg-button/mg-button.tsx",
       "encapsulation": "scoped",
@@ -3309,6 +3373,94 @@
       }
     },
     {
+      "filePath": "./src/components/molecules/mg-pagination/mg-pagination.tsx",
+      "encapsulation": "shadow",
+      "tag": "mg-pagination",
+      "readme": "This molecule refers to the [PDA9-787](https://jira.mgdis.fr/browse/PDA9-787).\n",
+      "docs": "This molecule refers to the [PDA9-787](https://jira.mgdis.fr/browse/PDA9-787).",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "currentPage",
+          "type": "number",
+          "mutable": true,
+          "attr": "current-page",
+          "reflectToAttr": true,
+          "docs": "Component current page",
+          "docsTags": [],
+          "default": "1",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "identifier",
+          "type": "string",
+          "mutable": false,
+          "attr": "identifier",
+          "reflectToAttr": false,
+          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
+          "docsTags": [],
+          "default": "createID('mg-pagination')",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "Panignation label. Is a short description.\nCustomize default value can be usefull to improve accessibility",
+          "docsTags": [],
+          "default": "'pagination'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "totalPages",
+          "type": "number",
+          "mutable": false,
+          "attr": "total-pages",
+          "reflectToAttr": false,
+          "docs": "Component total pages",
+          "docsTags": [],
+          "default": "1",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
       "filePath": "./src/components/molecules/mg-tabs/mg-tabs.tsx",
       "encapsulation": "scoped",
       "tag": "mg-tabs",
@@ -3395,12 +3547,12 @@
       "dependents": [],
       "dependencies": [
         "mg-icon",
-        "mg-tag"
+        "mg-badge"
       ],
       "dependencyGraph": {
         "mg-tabs": [
           "mg-icon",
-          "mg-tag"
+          "mg-badge"
         ]
       }
     },
@@ -3453,15 +3605,9 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "mg-tabs"
-      ],
+      "dependents": [],
       "dependencies": [],
-      "dependencyGraph": {
-        "mg-tabs": [
-          "mg-tag"
-        ]
-      }
+      "dependencyGraph": {}
     },
     {
       "filePath": "./src/components/atoms/mg-tooltip/mg-tooltip.tsx",
