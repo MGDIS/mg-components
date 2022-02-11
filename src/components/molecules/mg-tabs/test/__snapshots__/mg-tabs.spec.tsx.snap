@@ -199,16 +199,16 @@ exports[`mg-tabs navigation should go to next tab on click event 3`] = `
     <button aria-controls="pannel-1" aria-selected="true" class="mg-tabs-header__button mg-tabs-header__button--active" data-index="1" id="id-1" role="tab" tabindex="0">
       <mg-icon icon="check"></mg-icon>
       Batman
-      <mg-tag variant="info">
+      <mg-badge variant="info">
         2
-      </mg-tag>
+      </mg-badge>
     </button>
     <button aria-controls="pannel-2" aria-selected="false" class="mg-tabs-header__button" data-index="2" id="id-2" role="tab" tabindex="-1">
       <mg-icon icon="cross"></mg-icon>
       Joker
-      <mg-tag variant="info">
+      <mg-badge variant="info">
         2
-      </mg-tag>
+      </mg-badge>
     </button>
   </header>
   <article aria-labelledby="id-1" id="pannel-1" role="tabpanel" tabindex="0">
@@ -231,16 +231,16 @@ exports[`mg-tabs navigation should go to next tab on click event 4`] = `
     <button aria-controls="pannel-1" aria-selected="false" class="mg-tabs-header__button" data-index="1" id="id-1" role="tab" tabindex="-1">
       <mg-icon icon="check"></mg-icon>
       Batman
-      <mg-tag variant="info">
+      <mg-badge variant="info">
         2
-      </mg-tag>
+      </mg-badge>
     </button>
     <button aria-controls="pannel-2" aria-selected="true" class="mg-tabs-header__button mg-tabs-header__button--active" data-index="2" id="id-2" role="tab" tabindex="0">
       <mg-icon icon="cross"></mg-icon>
       Joker
-      <mg-tag variant="info">
+      <mg-badge variant="info">
         2
-      </mg-tag>
+      </mg-badge>
     </button>
   </header>
   <article aria-labelledby="id-2" hidden="" id="pannel-1" role="tabpanel" tabindex="-1">
@@ -537,16 +537,16 @@ exports[`mg-tabs template render 2`] = `
     <button aria-controls="pannel-1" aria-selected="true" class="mg-tabs-header__button mg-tabs-header__button--active" data-index="1" id="identifier-1" role="tab" tabindex="0">
       <mg-icon icon="check"></mg-icon>
       Batman
-      <mg-tag variant="info">
+      <mg-badge variant="info">
         2
-      </mg-tag>
+      </mg-badge>
     </button>
     <button aria-controls="pannel-2" aria-selected="false" class="mg-tabs-header__button" data-index="2" id="identifier-2" role="tab" tabindex="-1">
       <mg-icon icon="cross"></mg-icon>
       Joker
-      <mg-tag variant="info">
+      <mg-badge variant="info">
         2
-      </mg-tag>
+      </mg-badge>
     </button>
   </header>
   <article aria-labelledby="identifier-1" id="pannel-1" role="tabpanel" tabindex="0">

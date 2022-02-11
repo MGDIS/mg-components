@@ -1,0 +1,133 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mg-badge variant danger outiline false 1`] = `
+<mg-badge>
+  <mock:shadow-root>
+    <span class="mg-badge mg-badge--danger" part="badge-content">
+      <slot></slot>
+    </span>
+  </mock:shadow-root>
+  danger
+</mg-badge>
+`;
+
+exports[`mg-badge variant danger outiline true 1`] = `
+<mg-badge>
+  <mock:shadow-root>
+    <span class="mg-badge mg-badge--danger mg-badge--outline" part="badge-content">
+      <slot></slot>
+    </span>
+  </mock:shadow-root>
+  danger
+</mg-badge>
+`;
+
+exports[`mg-badge variant info outiline false 1`] = `
+<mg-badge>
+  <mock:shadow-root>
+    <span class="mg-badge mg-badge--info" part="badge-content">
+      <slot></slot>
+    </span>
+  </mock:shadow-root>
+  info
+</mg-badge>
+`;
+
+exports[`mg-badge variant info outiline true 1`] = `
+<mg-badge>
+  <mock:shadow-root>
+    <span class="mg-badge mg-badge--info mg-badge--outline" part="badge-content">
+      <slot></slot>
+    </span>
+  </mock:shadow-root>
+  info
+</mg-badge>
+`;
+
+exports[`mg-badge variant primary outiline false 1`] = `
+<mg-badge>
+  <mock:shadow-root>
+    <span class="mg-badge mg-badge--primary" part="badge-content">
+      <slot></slot>
+    </span>
+  </mock:shadow-root>
+  primary
+</mg-badge>
+`;
+
+exports[`mg-badge variant primary outiline true 1`] = `
+<mg-badge>
+  <mock:shadow-root>
+    <span class="mg-badge mg-badge--outline mg-badge--primary" part="badge-content">
+      <slot></slot>
+    </span>
+  </mock:shadow-root>
+  primary
+</mg-badge>
+`;
+
+exports[`mg-badge variant secondary outiline false 1`] = `
+<mg-badge>
+  <mock:shadow-root>
+    <span class="mg-badge mg-badge--secondary" part="badge-content">
+      <slot></slot>
+    </span>
+  </mock:shadow-root>
+  secondary
+</mg-badge>
+`;
+
+exports[`mg-badge variant secondary outiline true 1`] = `
+<mg-badge>
+  <mock:shadow-root>
+    <span class="mg-badge mg-badge--outline mg-badge--secondary" part="badge-content">
+      <slot></slot>
+    </span>
+  </mock:shadow-root>
+  secondary
+</mg-badge>
+`;
+
+exports[`mg-badge variant success outiline false 1`] = `
+<mg-badge>
+  <mock:shadow-root>
+    <span class="mg-badge mg-badge--success" part="badge-content">
+      <slot></slot>
+    </span>
+  </mock:shadow-root>
+  success
+</mg-badge>
+`;
+
+exports[`mg-badge variant success outiline true 1`] = `
+<mg-badge>
+  <mock:shadow-root>
+    <span class="mg-badge mg-badge--outline mg-badge--success" part="badge-content">
+      <slot></slot>
+    </span>
+  </mock:shadow-root>
+  success
+</mg-badge>
+`;
+
+exports[`mg-badge variant warning outiline false 1`] = `
+<mg-badge>
+  <mock:shadow-root>
+    <span class="mg-badge mg-badge--warning" part="badge-content">
+      <slot></slot>
+    </span>
+  </mock:shadow-root>
+  warning
+</mg-badge>
+`;
+
+exports[`mg-badge variant warning outiline true 1`] = `
+<mg-badge>
+  <mock:shadow-root>
+    <span class="mg-badge mg-badge--outline mg-badge--warning" part="badge-content">
+      <slot></slot>
+    </span>
+  </mock:shadow-root>
+  warning
+</mg-badge>
+`;
