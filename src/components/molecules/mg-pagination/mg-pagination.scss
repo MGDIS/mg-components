@@ -19,12 +19,12 @@ $border-size: 0.3rem;
   min-width: calc(#{$min-height} + #{$border-size});
   text-align: center;
   padding: 0;
-  &:hover:not([disabled]),
-  &:hover:not(.mg-pagination-list__button--ellipsis),
-  &:focus:not([disabled]),
-  &:focus:not(.mg-pagination-list__button--ellipsis) {
-    cursor: pointer;
-    background-color: hsla(var(--color-info-h), var(--color-info-s), var(--color-info-l), 0.1);
+  &:not(.mg-pagination-list__button--ellipsis) {
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      background-color: hsla(var(--color-info-h), var(--color-info-s), var(--color-info-l), 0.1);
+    }
   }
   &--active {
     border-bottom: $border-size solid hsl(var(--color-info));
@@ -34,5 +34,13 @@ $border-size: 0.3rem;
   &--navigation {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+  }
+}
+
+.mg-pagination-list .mg-pagination-list__button[disabled] {
+  &:hover,
+  &:focus {
+    background: none;
+    cursor: auto;
   }
 }

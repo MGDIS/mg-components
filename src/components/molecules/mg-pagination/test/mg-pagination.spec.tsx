@@ -67,5 +67,21 @@ describe('mg-pagination', () => {
 
       expect(page.root).toMatchSnapshot();
     });
+    test('navigate with next and previous, case totalPages=2', async () => {
+      const page = await getPage({ totalPages: 5, identifier: 'id' });
+      expect(page.root).toMatchSnapshot();
+
+      const pageFive = page.root.shadowRoot.querySelector('li:last-child button');
+      await pageFive.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+      await page.waitForChanges();
+
+      expect(page.root).toMatchSnapshot();
+
+      const pageOne = page.root.shadowRoot.querySelector('li:first-child button');
+      await pageOne.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+      await page.waitForChanges();
+
+      expect(page.root).toMatchSnapshot();
+    });
   });
 });

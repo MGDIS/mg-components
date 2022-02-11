@@ -25,6 +25,14 @@ import { messages } from './../../../locales';
  */
 const range = (start: number, end: number, step = 1): number[] => Array.from(Array(Math.ceil((end + 1 - start) / step)).keys()).map(x => start + x * step);
 
+/**
+ * Helper function to tell if given page is current
+ * @param currentPage
+ * @param number
+ * @returns {boolean}
+ */
+const isCurrentPage = (currentPage: number, number: number): boolean => currentPage === number;
+
 @Component({
   tag: 'mg-pagination',
   styleUrl: 'mg-pagination.scss',
@@ -134,8 +142,6 @@ export class MgPagination {
    * Pager state setter
    */
   private setPager() {
-    const isCurrentPage = (number: number) => this.currentPage === number;
-
     this.setPages();
 
     const pages = this.pages.map(page => ({
@@ -143,8 +149,8 @@ export class MgPagination {
       number: page === PageKind.ELLIPSIS ? null : page,
       disabled: false,
     }));
-    const previousPage = { kind: PageKind.NAVIGATION, disabled: isCurrentPage(1), navigationaction: NavigationAction.PREVIOUS };
-    const nextPage = { kind: PageKind.NAVIGATION, disabled: isCurrentPage(this.totalPages), navigationaction: NavigationAction.NEXT };
+    const previousPage = { kind: PageKind.NAVIGATION, disabled: isCurrentPage(this.currentPage, 1), navigationaction: NavigationAction.PREVIOUS };
+    const nextPage = { kind: PageKind.NAVIGATION, disabled: isCurrentPage(this.currentPage, this.totalPages), navigationaction: NavigationAction.NEXT };
 
     this.pager = [previousPage, ...pages, nextPage];
   }
@@ -190,39 +196,39 @@ export class MgPagination {
   }
 
   render() {
+    const button = ({ kind, number, disabled, navigationaction }) => {
+      if (kind === PageKind.ELLIPSIS) return <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">&#8230;</button>;
+
+      if (kind === PageKind.NAVIGATION)
+        return (
+          <button
+            class="mg-pagination-list__button mg-pagination-list__button--navigation"
+            aria-label={navigationaction === NavigationAction.PREVIOUS ? messages.pagination.previousPage : messages.pagination.nextPage}
+            onClick={navigationaction === NavigationAction.PREVIOUS ? this.handleGoToPrevious : this.handleGoToNext}
+            disabled={disabled}
+          >
+            <span aria-hidden="true">{navigationaction === NavigationAction.PREVIOUS ? messages.pagination.previous : messages.pagination.next}</span>
+          </button>
+        );
+
+      return (
+        <button
+          class={`mg-pagination-list__button ${number === this.currentPage ? 'mg-pagination-list__button--active' : ''}`}
+          onClick={this.handleClick}
+          data-page={number}
+          aria-current={number === this.currentPage ? messages.pagination.page : false}
+          disabled={disabled}
+        >
+          <span class="sr-only">{messages.pagination.page}</span> {number}
+        </button>
+      );
+    };
+
     return (
       <nav aria-label={this.label} id={this.identifier}>
         <ul class="mg-pagination-list">
           {this.pager.map(({ kind, number, disabled, navigationaction }) => (
-            <li class="mg-pagination-list__item">
-              {(() => {
-                if (kind === PageKind.ELLIPSIS) return <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">&#8230;</button>;
-
-                if (kind === PageKind.NAVIGATION)
-                  return (
-                    <button
-                      class="mg-pagination-list__button mg-pagination-list__button--navigation"
-                      aria-label={navigationaction === NavigationAction.PREVIOUS ? messages.pagination.previousPage : messages.pagination.nextPage}
-                      onClick={navigationaction === NavigationAction.PREVIOUS ? this.handleGoToPrevious : this.handleGoToNext}
-                      disabled={disabled}
-                    >
-                      <span aria-hidden="true">{navigationaction === NavigationAction.PREVIOUS ? messages.pagination.previous : messages.pagination.next}</span>
-                    </button>
-                  );
-
-                return (
-                  <button
-                    class={`mg-pagination-list__button ${number === this.currentPage ? 'mg-pagination-list__button--active' : ''}`}
-                    onClick={this.handleClick}
-                    data-page={number}
-                    aria-current={number === this.currentPage ? messages.pagination.page : false}
-                    disabled={disabled}
-                  >
-                    <span class="sr-only">{messages.pagination.page}</span> {number}
-                  </button>
-                );
-              })()}
-            </li>
+            <li class="mg-pagination-list__item">{button({ kind, number, disabled, navigationaction })}</li>
           ))}
         </ul>
       </nav>
