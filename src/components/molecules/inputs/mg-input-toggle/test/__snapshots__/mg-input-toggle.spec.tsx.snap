@@ -3,19 +3,19 @@
 exports[`mg-input-toggle Should trigger events for items with inputValue : { items: [Array], expected: 'a', value: 'b' } 1`] = `
 <mg-input-toggle value="b">
   <!---->
-  <div class="mg-input mg-input--toggle mg-input--toggle-active">
+  <div class="mg-input mg-input--toggle mg-input--toggle-is-active">
     <mg-input-title identifier="identifier">
       label
     </mg-input-title>
     <div class="mg-input__input-container">
       <div class="mg-input__input">
         <button aria-checked="" class="mg-input__button-toggle" id="identifier" role="switch" type="button">
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-1" title="Batman">
               Batman
             </span>
           </span>
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-2" title="Joker">
               Joker
             </span>
@@ -40,12 +40,12 @@ exports[`mg-input-toggle Should trigger events for items with inputValue : { ite
     <div class="mg-input__input-container">
       <div class="mg-input__input">
         <button class="mg-input__button-toggle" id="identifier" role="switch" type="button">
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-1" title="Batman">
               Batman
             </span>
           </span>
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-2" title="Joker">
               Joker
             </span>
@@ -70,12 +70,12 @@ exports[`mg-input-toggle Should trigger events for items with inputValue : { ite
     <div class="mg-input__input-container">
       <div class="mg-input__input">
         <button class="mg-input__button-toggle" id="identifier" role="switch" type="button">
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-1" title="Batman">
               Batman
             </span>
           </span>
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-2" title="Joker">
               Joker
             </span>
@@ -93,19 +93,19 @@ exports[`mg-input-toggle Should trigger events for items with inputValue : { ite
 exports[`mg-input-toggle Should trigger events for items with inputValue : { items: [Array], expected: false, value: true } 1`] = `
 <mg-input-toggle value="">
   <!---->
-  <div class="mg-input mg-input--toggle mg-input--toggle-active">
+  <div class="mg-input mg-input--toggle mg-input--toggle-is-active">
     <mg-input-title identifier="identifier">
       label
     </mg-input-title>
     <div class="mg-input__input-container">
       <div class="mg-input__input">
         <button class="mg-input__button-toggle" id="identifier" role="switch" type="button">
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-1" title="Batman">
               Batman
             </span>
           </span>
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-2" title="Joker">
               Joker
             </span>
@@ -135,12 +135,12 @@ exports[`mg-input-toggle template Should render with args {
     <div class="mg-input__input-container">
       <div class="mg-input__input">
         <button aria-readonly="" class="mg-input__button-toggle" disabled="" id="identifier" role="switch" type="button">
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-1" title="Batman">
               Batman
             </span>
           </span>
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-2" title="Joker">
               Joker
             </span>
@@ -167,12 +167,12 @@ exports[`mg-input-toggle template Should render with args {
     <div class="mg-input__input-container">
       <div class="mg-input__input">
         <button class="mg-input__button-toggle" id="identifier" role="switch" type="button">
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-1" title="Batman">
               Batman
             </span>
           </span>
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-2" title="Joker">
               Joker
             </span>
@@ -203,7 +203,7 @@ exports[`mg-input-toggle template Should render with args {
     <div class="mg-input__input-container">
       <div class="mg-input__input">
         <button class="mg-input__button-toggle" id="identifier" role="switch" type="button">
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-1">
               <mg-icon>
                 <mock:shadow-root>
@@ -214,7 +214,7 @@ exports[`mg-input-toggle template Should render with args {
               </mg-icon>
             </span>
           </span>
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-2">
               <mg-icon>
                 <mock:shadow-root>
@@ -249,7 +249,7 @@ exports[`mg-input-toggle template Should render with args {
     <div class="mg-input__input-container">
       <div class="mg-input__input">
         <button aria-readonly="" class="mg-input__button-toggle" disabled="" id="identifier" role="switch" type="button">
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-1">
               <mg-icon>
                 <mock:shadow-root>
@@ -260,7 +260,7 @@ exports[`mg-input-toggle template Should render with args {
               </mg-icon>
             </span>
           </span>
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-2">
               <mg-icon>
                 <mock:shadow-root>
@@ -295,7 +295,7 @@ exports[`mg-input-toggle template Should render with args {
     <div class="mg-input__input-container">
       <div class="mg-input__input">
         <button class="mg-input__button-toggle" id="identifier" role="switch" type="button">
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-1">
               <mg-icon>
                 <mock:shadow-root>
@@ -306,7 +306,7 @@ exports[`mg-input-toggle template Should render with args {
               </mg-icon>
             </span>
           </span>
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-2">
               <mg-icon>
                 <mock:shadow-root>
@@ -344,7 +344,7 @@ exports[`mg-input-toggle template Should render with args {
     <div class="mg-input__input-container">
       <div class="mg-input__input">
         <button class="mg-input__button-toggle" id="identifier" role="switch" type="button">
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-1">
               <mg-icon>
                 <mock:shadow-root>
@@ -355,7 +355,7 @@ exports[`mg-input-toggle template Should render with args {
               </mg-icon>
             </span>
           </span>
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-2">
               <mg-icon>
                 <mock:shadow-root>
@@ -392,7 +392,7 @@ exports[`mg-input-toggle template Should render with args {
     <div class="mg-input__input-container">
       <div class="mg-input__input">
         <button class="mg-input__button-toggle" id="identifier" role="switch" type="button">
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-1">
               <mg-icon>
                 <mock:shadow-root>
@@ -403,7 +403,7 @@ exports[`mg-input-toggle template Should render with args {
               </mg-icon>
             </span>
           </span>
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-2">
               <mg-icon>
                 <mock:shadow-root>
@@ -438,7 +438,7 @@ exports[`mg-input-toggle template Should render with args {
     <div class="mg-input__input-container">
       <div class="mg-input__input">
         <button aria-readonly="" class="mg-input__button-toggle" disabled="" id="identifier" role="switch" type="button">
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-1">
               <mg-icon>
                 <mock:shadow-root>
@@ -449,7 +449,7 @@ exports[`mg-input-toggle template Should render with args {
               </mg-icon>
             </span>
           </span>
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-2">
               <mg-icon>
                 <mock:shadow-root>
@@ -484,7 +484,7 @@ exports[`mg-input-toggle template Should render with args {
     <div class="mg-input__input-container">
       <div class="mg-input__input">
         <button class="mg-input__button-toggle" id="identifier" role="switch" type="button">
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-1">
               <mg-icon>
                 <mock:shadow-root>
@@ -495,7 +495,7 @@ exports[`mg-input-toggle template Should render with args {
               </mg-icon>
             </span>
           </span>
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-2">
               <mg-icon>
                 <mock:shadow-root>
@@ -551,7 +551,7 @@ exports[`mg-input-toggle template Should render with args {
     <div class="mg-input__input-container">
       <div class="mg-input__input">
         <button class="mg-input__button-toggle" id="identifier" role="switch" type="button">
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-1">
               <mg-icon>
                 <mock:shadow-root>
@@ -562,7 +562,7 @@ exports[`mg-input-toggle template Should render with args {
               </mg-icon>
             </span>
           </span>
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-2">
               <mg-icon>
                 <mock:shadow-root>
@@ -595,12 +595,12 @@ exports[`mg-input-toggle template Should render with args {
     <div class="mg-input__input-container">
       <div class="mg-input__input">
         <button class="mg-input__button-toggle" id="identifier" role="switch" type="button">
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-1" title="Non">
               Non
             </span>
           </span>
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-2" title="Oui">
               Oui
             </span>
@@ -628,12 +628,12 @@ exports[`mg-input-toggle template Should render with args {
     <div class="mg-input__input-container">
       <div class="mg-input__input">
         <button aria-readonly="" class="mg-input__button-toggle" disabled="" id="identifier" role="switch" type="button">
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-1" title="Non">
               Non
             </span>
           </span>
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-2" title="Oui">
               Oui
             </span>
@@ -661,12 +661,12 @@ exports[`mg-input-toggle template Should render with args {
     <div class="mg-input__input-container">
       <div class="mg-input__input">
         <button class="mg-input__button-toggle" id="identifier" role="switch" type="button">
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-1" title="Non">
               Non
             </span>
           </span>
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-2" title="Oui">
               Oui
             </span>
@@ -697,12 +697,12 @@ exports[`mg-input-toggle template Should render with args {
     <div class="mg-input__input-container">
       <div class="mg-input__input">
         <button class="mg-input__button-toggle" id="identifier" role="switch" type="button">
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-1" title="Non">
               Non
             </span>
           </span>
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-2" title="Oui">
               Oui
             </span>
@@ -732,12 +732,12 @@ exports[`mg-input-toggle template Should render with args {
     <div class="mg-input__input-container">
       <div class="mg-input__input">
         <button class="mg-input__button-toggle" id="identifier" role="switch" type="button">
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-1" title="Non">
               Non
             </span>
           </span>
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-2" title="Oui">
               Oui
             </span>
@@ -765,12 +765,12 @@ exports[`mg-input-toggle template Should render with args {
     <div class="mg-input__input-container">
       <div class="mg-input__input">
         <button aria-readonly="" class="mg-input__button-toggle" disabled="" id="identifier" role="switch" type="button">
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-1" title="Non">
               Non
             </span>
           </span>
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-2" title="Oui">
               Oui
             </span>
@@ -798,12 +798,12 @@ exports[`mg-input-toggle template Should render with args {
     <div class="mg-input__input-container">
       <div class="mg-input__input">
         <button class="mg-input__button-toggle" id="identifier" role="switch" type="button">
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-1" title="Non">
               Non
             </span>
           </span>
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-2" title="Oui">
               Oui
             </span>
@@ -852,12 +852,12 @@ exports[`mg-input-toggle template Should render with args {
     <div class="mg-input__input-container">
       <div class="mg-input__input">
         <button class="mg-input__button-toggle" id="identifier" role="switch" type="button">
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-1" title="Non">
               Non
             </span>
           </span>
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-2" title="Oui">
               Oui
             </span>
@@ -884,12 +884,12 @@ exports[`mg-input-toggle template Should render with args {
     <div class="mg-input__input-container">
       <div class="mg-input__input">
         <button class="mg-input__button-toggle" id="identifier" role="switch" type="button">
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-1" title="Batman">
               Batman
             </span>
           </span>
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-2" title="Joker">
               Joker
             </span>
@@ -918,12 +918,12 @@ exports[`mg-input-toggle template Should render with args {
     <div class="mg-input__input-container">
       <div class="mg-input__input">
         <button class="mg-input__button-toggle" id="identifier" role="switch" type="button">
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-1" title="Batman">
               Batman
             </span>
           </span>
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-2" title="Joker">
               Joker
             </span>
@@ -950,12 +950,12 @@ exports[`mg-input-toggle template Should render with args {
     <div class="mg-input__input-container">
       <div class="mg-input__input">
         <button aria-readonly="" class="mg-input__button-toggle" disabled="" id="identifier" role="switch" type="button">
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-1" title="Batman">
               Batman
             </span>
           </span>
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-2" title="Joker">
               Joker
             </span>
@@ -982,12 +982,12 @@ exports[`mg-input-toggle template Should render with args {
     <div class="mg-input__input-container">
       <div class="mg-input__input">
         <button class="mg-input__button-toggle" id="identifier" role="switch" type="button">
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-1" title="Batman">
               Batman
             </span>
           </span>
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-2" title="Joker">
               Joker
             </span>
@@ -1035,12 +1035,12 @@ exports[`mg-input-toggle template Should render with args {
     <div class="mg-input__input-container">
       <div class="mg-input__input">
         <button class="mg-input__button-toggle" id="identifier" role="switch" type="button">
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-1" title="Batman">
               Batman
             </span>
           </span>
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-2" title="Joker">
               Joker
             </span>
@@ -1062,12 +1062,12 @@ exports[`mg-input-toggle template Should render with args { label: 'label', iden
     <div class="mg-input__input-container">
       <div class="mg-input__input">
         <button class="mg-input__button-toggle" id="identifier" role="switch" type="button">
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-1" title="Batman">
               Batman
             </span>
           </span>
-          <span aria-hidden="true" class="toggle-button__toggle-item-container">
+          <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-2" title="Joker">
               Joker
             </span>
