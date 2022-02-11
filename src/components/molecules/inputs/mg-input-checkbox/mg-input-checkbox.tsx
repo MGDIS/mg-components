@@ -227,7 +227,7 @@ export class MgInputCheckbox {
         errorMessage={this.errorMessage}
         isFieldset={true}
       >
-        <ul class={'mg-input__input-group-container mg-input__input-group-container--checkbox ' + (this.inputVerticalList ? 'mg-input__input-group-container--vertical' : '')}>
+        <ul class={`mg-input__input-group-container${this.inputVerticalList ? ' mg-input__input-group-container--vertical' : ''}`}>
           {this.checkboxItems
             .filter(item => {
               return !this.readonly || item.value;

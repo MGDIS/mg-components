@@ -4,7 +4,25 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <title><mg-components/></title>
-    <!-- <link rel="stylesheet" href="/build/mg-components.css" /> -->
+    <!-- <link rel="stylesheet" href="/build/mg-components.css" />-->
+    <style>
+      /* Website style */
+      html {
+        font-size: 62.5%;
+        font-size: calc(1em * 0.625); /* IE fix */
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+        font-size: 1.3rem;
+        line-height: 1.4;
+      }
+      .mg-form-group {
+        margin-bottom: var(--mg-form-group-vertical-space);
+        --mg-inputs-title-horizontal-space: 3rem;
+        --mg-inputs-title-width: 15rem;
+        --mg-inputs-shrink: 0;
+      }
+    </style>
     <link rel="stylesheet" href="/build/variables.css" />
     <script type="module" src="/build/mg-components.esm.js"></script>
     <script nomodule src="/build/mg-components.js"></script>
@@ -12,29 +30,6 @@
   <body style="padding: 1rem; background: #bada55">
     <main>
       <h1>MG Components</h1>
-      <section>
-        <mg-input-text
-          placeholder="placeholder"
-          help-text="Message d'aide plus long"
-          label="Libellé plutôt long on va dire Libellé plutôt long on va dire Libellé plutôt long on va dire"
-          label-on-top
-          tooltip="message tooltip"
-          required
-          value="blu"
-        ></mg-input-text>
-        <mg-input-textarea
-          placeholder="placeholder"
-          help-text="Message d'aide plus long"
-          label="label"
-          tooltip="message tooltip"
-          required
-          value="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-          enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-          readonly
-        ></mg-input-textarea>
-        <mg-input-text placeholder="placeholder" help-text="Message d'aide plus long" label="label" tooltip="message tooltip" required value="Lorem ipsum" readonly></mg-input-text>
-      </section>
       <section>
         <h2>Typography</h2>
         <h1>The h1 heading element</h1>
@@ -49,80 +44,89 @@
       </section>
       <section>
         <h2>Icons</h2>
-        <mg-icon icon="info-circle" size="large"></mg-icon>
-        <mg-icon icon="info-circle"></mg-icon>
-        <mg-icon icon="info-circle" size="extra-large"></mg-icon>
-        <mg-icon icon="exclamation-triangle" size="large"></mg-icon>
-        <mg-icon icon="exclamation-triangle"></mg-icon>
-        <mg-icon icon="exclamation-triangle" size="extra-large"></mg-icon>
-        <mg-icon icon="check-circle" size="large"></mg-icon>
-        <mg-icon icon="check-circle"></mg-icon>
-        <mg-icon icon="check-circle" size="extra-large"></mg-icon>
-        <mg-icon icon="exclamation-circle" size="large"></mg-icon>
-        <mg-icon icon="exclamation-circle"></mg-icon>
-        <mg-icon icon="exclamation-circle" size="extra-large"></mg-icon>
-        <mg-icon icon="cross" size="large"></mg-icon>
-        <mg-icon icon="cross"></mg-icon>
-        <mg-icon icon="cross" size="extra-large"></mg-icon>
+        <div class="mg-group-elements">
+          <mg-icon icon="info-circle"></mg-icon>
+          <mg-icon icon="info-circle" size="large"></mg-icon>
+          <mg-icon icon="info-circle" size="extra-large"></mg-icon>
+          <mg-icon icon="exclamation-triangle"></mg-icon>
+          <mg-icon icon="exclamation-triangle" size="large"></mg-icon>
+          <mg-icon icon="exclamation-triangle" size="extra-large"></mg-icon>
+          <mg-icon icon="check-circle"></mg-icon>
+          <mg-icon icon="check-circle" size="large"></mg-icon>
+          <mg-icon icon="check-circle" size="extra-large"></mg-icon>
+          <mg-icon icon="exclamation-circle"></mg-icon>
+          <mg-icon icon="exclamation-circle" size="large"></mg-icon>
+          <mg-icon icon="exclamation-circle" size="extra-large"></mg-icon>
+          <mg-icon icon="cross"></mg-icon>
+          <mg-icon icon="cross" size="large"></mg-icon>
+          <mg-icon icon="cross" size="extra-large"></mg-icon>
+        </div>
         <h3>w/ text</h3>
-        <span class="h1"><mg-icon icon="info-circle" size="large"></mg-icon>Titre</span>
-        <span class="h2"><mg-icon icon="exclamation-triangle"></mg-icon>Titre</span>
-        <span class="h3"><mg-icon icon="check-circle" size="extra-large"></mg-icon>Titre</span>
+        <div class="mg-group-elements">
+          <span class="h2"><mg-icon icon="exclamation-triangle"></mg-icon>Titre</span>
+          <span class="h1"><mg-icon icon="info-circle" size="large"></mg-icon>Titre</span>
+          <span class="h3"><mg-icon icon="check-circle" size="extra-large"></mg-icon>Titre</span>
+        </div>
         <h3>Variants</h3>
-        <mg-icon icon="info-circle" variant="success"></mg-icon>
-        <mg-icon icon="info-circle" variant="warning"></mg-icon>
-        <mg-icon icon="info-circle" variant="danger"></mg-icon>
-        <mg-icon icon="info-circle" variant="info"></mg-icon>
-        <mg-icon icon="info-circle" size="extra-large" variant="success"></mg-icon>
-        <mg-icon icon="info-circle" size="extra-large" variant="warning"></mg-icon>
-        <mg-icon icon="info-circle" size="extra-large" variant="danger"></mg-icon>
-        <mg-icon icon="info-circle" size="extra-large" variant="info"></mg-icon>
-        <mg-icon icon="info-circle" size="large" variant="success"></mg-icon>
-        <mg-icon icon="info-circle" size="large" variant="warning"></mg-icon>
-        <mg-icon icon="info-circle" size="large" variant="danger"></mg-icon>
-        <mg-icon icon="info-circle" size="large" variant="info"></mg-icon>
+        <div class="mg-group-elements">
+          <mg-icon icon="info-circle" variant="success"></mg-icon>
+          <mg-icon icon="info-circle" variant="warning"></mg-icon>
+          <mg-icon icon="info-circle" variant="danger"></mg-icon>
+          <mg-icon icon="info-circle" variant="info"></mg-icon>
+          <mg-icon icon="info-circle" size="large" variant="success"></mg-icon>
+          <mg-icon icon="info-circle" size="large" variant="warning"></mg-icon>
+          <mg-icon icon="info-circle" size="large" variant="danger"></mg-icon>
+          <mg-icon icon="info-circle" size="large" variant="info"></mg-icon>
+          <mg-icon icon="info-circle" size="extra-large" variant="success"></mg-icon>
+          <mg-icon icon="info-circle" size="extra-large" variant="warning"></mg-icon>
+          <mg-icon icon="info-circle" size="extra-large" variant="danger"></mg-icon>
+          <mg-icon icon="info-circle" size="extra-large" variant="info"></mg-icon>
+        </div>
       </section>
       <section>
         <h2>Buttons</h2>
         <div class="mg-group-elements" style="padding: 0 0 1rem">
-          <mg-button variant="primary">Primary</mg-button><mg-button variant="secondary"> <mg-icon icon="check-circle"></mg-icon>Secondary</mg-button
-          ><mg-button variant="danger"> <mg-icon icon="exclamation-circle"></mg-icon>Alert</mg-button
-          ><mg-button variant="danger-alt"> <mg-icon icon="exclamation-triangle"></mg-icon>Alert-alt</mg-button
-          ><mg-button variant="info"> <mg-icon icon="info-circle"></mg-icon>Info</mg-button><mg-button variant="flat"> <mg-icon icon="info-circle"></mg-icon>flat</mg-button>
+          <mg-button variant="primary">Primary</mg-button>
+          <mg-button variant="secondary"><mg-icon icon="check-circle"></mg-icon>Secondary </mg-button>
+          <mg-button variant="danger"><mg-icon icon="exclamation-circle"></mg-icon>Alert</mg-button>
+          <mg-button variant="danger-alt"><mg-icon icon="exclamation-triangle"></mg-icon>Alert-alt</mg-button>
+          <mg-button variant="info"><mg-icon icon="info-circle"></mg-icon>Info</mg-button>
+          <mg-button variant="flat"><mg-icon icon="info-circle"></mg-icon>flat</mg-button>
         </div>
         <div class="mg-group-elements" style="padding: 0 0 1rem">
-          <mg-button disabled variant="primary">Primary</mg-button><mg-button disabled variant="secondary"> <mg-icon icon="check-circle"></mg-icon>Secondary</mg-button
-          ><mg-button disabled variant="danger"> <mg-icon icon="exclamation-circle"></mg-icon>Alert</mg-button
-          ><mg-button disabled variant="danger-alt"> <mg-icon icon="exclamation-triangle"></mg-icon>Alert-alt</mg-button
-          ><mg-button disabled variant="info"> <mg-icon icon="info-circle"></mg-icon>Info</mg-button
-          ><mg-button disabled variant="flat"> <mg-icon icon="info-circle"></mg-icon>flat</mg-button>
+          <mg-button disabled variant="primary">Primary</mg-button>
+          <mg-button disabled variant="secondary"><mg-icon icon="check-circle"></mg-icon>Secondary</mg-button>
+          <mg-button disabled variant="danger"><mg-icon icon="exclamation-circle"></mg-icon>Alert</mg-button>
+          <mg-button disabled variant="danger-alt"><mg-icon icon="exclamation-triangle"></mg-icon>Alert-alt</mg-button>
+          <mg-button disabled variant="info"><mg-icon icon="info-circle"></mg-icon>Info</mg-button>
+          <mg-button disabled variant="flat"><mg-icon icon="info-circle"></mg-icon>flat</mg-button>
         </div>
         <div class="mg-group-elements" style="padding: 0 0 1rem">
-          <mg-button variant="primary" is-icon label="Label"> <mg-icon icon="check-circle"></mg-icon></mg-button
-          ><mg-button variant="secondary" is-icon label="Label"> <mg-icon icon="check-circle"></mg-icon></mg-button
-          ><mg-button variant="danger" is-icon label="Label"> <mg-icon icon="check-circle"></mg-icon></mg-button
-          ><mg-button variant="danger-alt" is-icon label="Label"> <mg-icon icon="check-circle"></mg-icon></mg-button
-          ><mg-button variant="info" is-icon label="Label"> <mg-icon icon="check-circle"></mg-icon></mg-button
-          ><mg-button variant="flat" is-icon label="Label"> <mg-icon icon="cross"></mg-icon></mg-button>
+          <mg-button variant="primary" is-icon label="Label"><mg-icon icon="check-circle"></mg-icon></mg-button>
+          <mg-button variant="secondary" is-icon label="Label"><mg-icon icon="check-circle"></mg-icon></mg-button>
+          <mg-button variant="danger" is-icon label="Label"><mg-icon icon="check-circle"></mg-icon></mg-button>
+          <mg-button variant="danger-alt" is-icon label="Label"><mg-icon icon="check-circle"></mg-icon></mg-button>
+          <mg-button variant="info" is-icon label="Label"><mg-icon icon="check-circle"></mg-icon></mg-button>
+          <mg-button variant="flat" is-icon label="Label"><mg-icon icon="cross"></mg-icon></mg-button>
         </div>
         <div class="mg-group-elements" style="padding: 0 0 1rem">
-          <mg-button variant="primary" is-icon label="Label"> <mg-icon size="extra-large" icon="check-circle"></mg-icon></mg-button
-          ><mg-button variant="secondary" is-icon label="Label"> <mg-icon size="extra-large" icon="check-circle"></mg-icon></mg-button
-          ><mg-button variant="danger" is-icon label="Label"> <mg-icon size="extra-large" icon="check-circle"></mg-icon></mg-button
-          ><mg-button variant="danger-alt" is-icon label="Label"> <mg-icon size="extra-large" icon="check-circle"></mg-icon></mg-button
-          ><mg-button variant="info" is-icon label="Label"> <mg-icon size="extra-large" icon="check-circle"></mg-icon></mg-button
-          ><mg-button variant="flat" is-icon label="Label"> <mg-icon size="extra-large" icon="cross"></mg-icon></mg-button>
+          <mg-button variant="primary" is-icon label="Label"><mg-icon size="extra-large" icon="check-circle"></mg-icon></mg-button>
+          <mg-button variant="secondary" is-icon label="Label"><mg-icon size="extra-large" icon="check-circle"></mg-icon></mg-button>
+          <mg-button variant="danger" is-icon label="Label"><mg-icon size="extra-large" icon="check-circle"></mg-icon></mg-button>
+          <mg-button variant="danger-alt" is-icon label="Label"><mg-icon size="extra-large" icon="check-circle"></mg-icon></mg-button>
+          <mg-button variant="info" is-icon label="Label"><mg-icon size="extra-large" icon="check-circle"></mg-icon></mg-button>
+          <mg-button variant="flat" is-icon label="Label"><mg-icon size="extra-large" icon="cross"></mg-icon></mg-button>
         </div>
         <div class="mg-group-elements" style="padding: 0 0 1rem">
-          <mg-button variant="primary" is-icon label="Label"> <mg-icon size="large" icon="check-circle"></mg-icon></mg-button
-          ><mg-button variant="secondary" is-icon label="Label"> <mg-icon size="large" icon="check-circle"></mg-icon></mg-button
-          ><mg-button variant="danger" is-icon label="Label"> <mg-icon size="large" icon="check-circle"></mg-icon></mg-button
-          ><mg-button variant="danger-alt" is-icon label="Label"> <mg-icon size="large" icon="check-circle"></mg-icon></mg-button
-          ><mg-button variant="info" is-icon label="Label"> <mg-icon size="large" icon="check-circle"></mg-icon></mg-button
-          ><mg-button variant="flat" is-icon label="Label"> <mg-icon size="large" icon="cross"></mg-icon></mg-button>
+          <mg-button variant="primary" is-icon label="Label"><mg-icon size="large" icon="check-circle"></mg-icon></mg-button>
+          <mg-button variant="secondary" is-icon label="Label"><mg-icon size="large" icon="check-circle"></mg-icon></mg-button>
+          <mg-button variant="danger" is-icon label="Label"><mg-icon size="large" icon="check-circle"></mg-icon></mg-button>
+          <mg-button variant="danger-alt" is-icon label="Label"><mg-icon size="large" icon="check-circle"></mg-icon></mg-button>
+          <mg-button variant="info" is-icon label="Label"><mg-icon size="large" icon="check-circle"></mg-icon></mg-button>
+          <mg-button variant="flat" is-icon label="Label"><mg-icon size="large" icon="cross"></mg-icon></mg-button>
         </div>
         <div style="padding: 0 0 1rem">
-          <mg-button variant="primary"> <mg-icon icon="check-circle"></mg-icon>Court Texte <br />avec br</mg-button>
+          <mg-button variant="primary"><mg-icon icon="check-circle"></mg-icon>Court Texte <br />avec br</mg-button>
         </div>
         <div style="padding: 0 0 1rem">
           <mg-button variant="primary">
@@ -132,7 +136,7 @@
           >
         </div>
         <div style="padding: 0 0 1rem">
-          <p>Coucou, ceci est un <mg-button variant="primary">bouton</mg-button> dans un paragraphe.</p>
+          <p>Coucou, ceci est un <mg-button variant="primary">bouton</mg-button>dans un paragraphe.</p>
         </div>
         <h3>Disable on click</h3>
         <div class="mg-group-elements" style="padding: 0 0 1rem">
@@ -149,40 +153,38 @@
       </section>
       <section>
         <h2>Messages</h2>
-        <mg-message variant="info"
-          ><p><strong>Coucou</strong> toi !</p>
+        <mg-message variant="info">
+          <p><strong>Coucou</strong>toi !</p>
         </mg-message>
-        <mg-message variant="warning" close-button
-          ><p><strong>Coucou</strong> toi !</p>
+        <mg-message variant="warning" close-button>
+          <p><strong>Coucou</strong>toi !</p>
         </mg-message>
-        <mg-message variant="success"
-          ><p><strong>Coucou</strong> toi !</p>
+        <mg-message variant="success">
+          <p><strong>Coucou</strong>toi !</p>
           <div slot="actions" class="mg-group-elements mg-group-elements--align-right">
             <mg-button>Primary</mg-button>
             <mg-button variant="secondary">Secondary</mg-button>
           </div>
         </mg-message>
-        <mg-message variant="danger"
-          ><div>
-            <p>
-              <strong>Coucou</strong> toi ! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-              minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-              dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-            <p>
-              <strong>Coucou</strong> toi ! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-              minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-              dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-          </div>
+        <mg-message variant="danger">
+          <p>
+            <strong>Coucou</strong>toi ! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+            minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+            dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+          <p>
+            <strong>Coucou</strong>toi ! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+            minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+            dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
           <div slot="actions" class="mg-group-elements mg-group-elements--align-right">
             <mg-button>Primary</mg-button>
             <mg-button variant="secondary">Secondary</mg-button>
           </div>
         </mg-message>
-        <mg-message variant="info" close-button
-          ><p>
-            <strong>Coucou</strong> toi ! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+        <mg-message variant="info" close-button>
+          <p>
+            <strong>Coucou</strong>toi ! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
             minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
             dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           </p>
@@ -212,7 +214,7 @@
         <div class="mg-group-elements">
           <mg-tag outline variant="primary">primary</mg-tag>
           <mg-tag outline variant="secondary">secondary</mg-tag>
-          <mg-tag outline variant="danger"> danger</mg-tag>
+          <mg-tag outline variant="danger">danger</mg-tag>
           <mg-tag outline variant="success">success</mg-tag>
           <mg-tag outline variant="info">info</mg-tag>
         </div>
@@ -223,6 +225,9 @@
         <h4>Labels</h4>
         <div>
           <mg-input-title>Label</mg-input-title>
+        </div>
+        <div>
+          <mg-input-title is-legend>Legend</mg-input-title>
         </div>
         <div>
           <mg-input-title required>Label when required</mg-input-title>
@@ -244,43 +249,62 @@
         <div class="mg-group-elements" style="padding: 0 0 1rem">
           <mg-tooltip message="my tooltip icon" display><mg-icon icon="check-circle"></mg-icon></mg-tooltip>
           <mg-tooltip message="my tooltip icon" disabled><mg-icon icon="check-circle"></mg-icon></mg-tooltip>
-          <mg-tooltip message="my tooltip mg-button" id="tp-disabled" disabled display
-            ><mg-button onclick="document.getElementById('tp-disabled').removeAttribute('disabled')">mg-button</mg-button></mg-tooltip
+          <mg-tooltip message="my tooltip mg-button" id="tp-disabled" disabled display>
+            <mg-button onclick="document.getElementById('tp-disabled').removeAttribute('disabled')">mg-button</mg-button></mg-tooltip
           >
         </div>
         <!-- <div class="mg-grid">
           <div class="mg-grid__col" style="height: 200px; background-color: black; position: relative; z-index: 10"></div>
-        </div> -->
+        </div>-->
         <h4>Character left</h4>
         <mg-character-left maxlength="400"></mg-character-left>
         <mg-character-left maxlength="100" template="Template custom qui te dit qu'il ne reste plus que {counter} lettres!"></mg-character-left>
         <h3>Input Text</h3>
+        <div class="mg-form-group">
+          <mg-input-text
+            placeholder="placeholder"
+            help-text="Message d'aide plus long"
+            label-on-top
+            label="Libellé plus long plus long plus long plus long plus long plus long plus long plus long plus long plus long plus long plus long plus long plus long plus long"
+            tooltip="message tooltip"
+            required
+            value="blu"
+          ></mg-input-text>
+        </div>
+        <div class="mg-form-group">
+          <mg-input-text
+            placeholder="placeholder"
+            help-text="Message d'aide plus long"
+            label="Libellé plus long plus long plus long plus long plus long plus long plus long plus long plus long plus long plus long plus long plus long plus long plus long"
+            tooltip="message tooltip"
+            required
+            value="blu"
+          ></mg-input-text>
+        </div>
         <mg-input-text
           placeholder="placeholder"
           help-text="Message d'aide plus long"
-          label="Libellé plutôt long on va dire"
+          label-on-top
+          label="Libellé plus long plus long plus long plus long plus long plus long plus long plus long plus long plus long plus long plus long plus long plus long plus long"
           tooltip="message tooltip"
           required
           value="blu"
         ></mg-input-text>
+        <mg-input-text
+          placeholder="placeholder"
+          help-text="Message d'aide plus long"
+          label="Libellé plus long plus long plus long plus long plus long plus long plus long plus long plus long plus long plus long plus long plus long plus long plus long"
+          tooltip="message tooltip"
+          required
+          value="blu"
+        >
+        </mg-input-text>
         <h3>Input Textarea</h3>
-        <mg-input-textarea
-          placeholder="placeholder"
-          help-text="Message d'aide plus long"
-          label="Libellé plutôt long on va dire"
-          tooltip="message tooltip"
-          required
-          value="blu"
-        ></mg-input-textarea>
+        <mg-input-textarea placeholder="placeholder" help-text="Message d'aide plus long" label="Libellé plutôt long on va dire" tooltip="message tooltip" required value="blu">
+        </mg-input-textarea>
         <h3>Input Select</h3>
-        <mg-input-select
-          placeholder="placeholder"
-          help-text="Message d'aide plus long"
-          label="Libellé plutôt long on va dire"
-          tooltip="message tooltip"
-          required
-          value="blu"
-        ></mg-input-select>
+        <mg-input-select placeholder="placeholder" help-text="Message d'aide plus long" label="Libellé plutôt long on va dire" tooltip="message tooltip" required value="blu">
+        </mg-input-select>
         <script>
           const mgInputSelect = document.querySelector('mg-input-select');
           // mgInputSelect.items = ['blu', 'bli', 'bla', 'blo'];
@@ -291,7 +315,7 @@
           //   { title: 'blo', value: 'bloblo' },
           // ];
           mgInputSelect.items = [
-            { title: 'blu', value: 'blu', group: 'Le groupe A' },
+            { title: 'blu blu blu blu blu', value: 'blu', group: 'Le groupe A' },
             { title: 'blu', value: 'blublu', group: 'Le groupe B' },
             { title: 'bli', value: 'bli', group: 'Le groupe A' },
             { title: 'bli', value: 'blibli', group: 'Le groupe B' },
@@ -300,14 +324,8 @@
           ];
         </script>
         <h3>Input Date</h3>
-        <mg-input-date
-          placeholder="placeholder"
-          help-text="Message d'aide plus long"
-          label="Libellé plutôt long on va dire"
-          tooltip="message tooltip"
-          required
-          value="1982-06-02"
-        ></mg-input-date>
+        <mg-input-date placeholder="placeholder" help-text="Message d'aide plus long" label="Libellé plutôt long on va dire" tooltip="message tooltip" required value="1982-06-02">
+        </mg-input-date>
         <h3>Input Numeric</h3>
         <mg-input-numeric
           placeholder="placeholder"
@@ -316,7 +334,8 @@
           tooltip="message tooltip"
           required
           value="1234567890"
-        ></mg-input-numeric>
+        >
+        </mg-input-numeric>
         <h3>Input Password</h3>
         <mg-input-password
           placeholder="placeholder"
@@ -325,39 +344,29 @@
           tooltip="message tooltip"
           required
           value="1234567890"
-        ></mg-input-password>
-        <h3>Input Checkbox</h3>
-        <mg-input-checkbox label="Libellé" tooltip="message tooltip"></mg-input-checkbox>
-        <h3>Input Search</h3>
-        <mg-input-search placeholder="placeholder" label="Libellé" tooltip="message tooltip"></mg-input-search>
+        >
+        </mg-input-password>
+        <h3>Input Radio</h3>
+        <mg-input-radio label="Libellé" label-on-top tooltip="message tooltip" required></mg-input-radio>
         <script>
-          const mgInputSearch = document.querySelector('mg-input-search');
-          // mgInputSearch.items = ['blu', 'bli', 'bla', 'blo'];
-          // mgInputSearch.items = [
-          //   { title: 'blu', value: 'blublu' },
-          //   { title: 'bli', value: 'blibli' },
-          //   { title: 'bla', value: 'blabla' },
-          //   { title: 'blo', value: 'bloblo' },
-          // ];
-          mgInputSearch.items = [
-            { title: 'blu', value: 'blu', group: 'Le groupe A' },
-            { title: 'blu', value: 'blublu', group: 'Le groupe B' },
-            { title: 'bli', value: 'bli', group: 'Le groupe A' },
-            { title: 'bli', value: 'blibli', group: 'Le groupe B' },
-            { title: 'bla', value: 'blabla' },
-            { title: 'blo', value: 'bloblo' },
+          const mgInputRadio = document.querySelector('mg-input-radio');
+          mgInputRadio.items = ['blu', 'bli', 'blo', 'bla'];
+        </script>
+        <h3>Input Checkbox</h3>
+        <mg-input-checkbox label="Libellé" label-on-top tooltip="message tooltip" required></mg-input-checkbox>
+        <script>
+          const mgInputCheckbox = document.querySelector('mg-input-checkbox');
+          mgInputCheckbox.value = [
+            { title: 'blu', value: true },
+            { title: 'bli', value: false },
+            { title: 'blo', value: null },
+            { title: 'bla', value: false },
           ];
         </script>
         <h3>Input Toggle</h3>
         <mg-input-toggle label="choix A/B" identifier="toggle-text" label-on-top>
-          <span slot="item-1"
-            >Choix <br />
-            A retour</span
-          >
-          <span slot="item-2"
-            >Choix <br />
-            B retour</span
-          >
+          <span slot="item-1">Choix A</span>
+          <span slot="item-2">Choix B</span>
         </mg-input-toggle>
         <mg-input-toggle label="icons" identifier="toggle-icon" is-icon is-on-off>
           <span slot="item-1"><mg-icon icon="cross"></mg-icon></span>
@@ -409,7 +418,8 @@
                 tooltip="message tooltip du mg-input-text"
                 value="mg-blu"
                 readonly
-              ></mg-input-text>
+              >
+              </mg-input-text>
             </div>
             <div class="mg-form-group">
               <mg-input-textarea
@@ -419,7 +429,8 @@
                 tooltip="message tooltip du mg-input-textarea"
                 value="mg-blu"
                 readonly
-              ></mg-input-textarea>
+              >
+              </mg-input-textarea>
             </div>
           </div>
         </div>
@@ -431,7 +442,8 @@
             label="Libellé du mg-input-select"
             tooltip="message tooltip du mg-input-select"
             value="blu"
-          ></mg-input-select>
+          >
+          </mg-input-select>
           <script>
             const mgInputSelect2 = document.querySelector('mg-input-select[identifier="second"]');
             mgInputSelect2.items = [
@@ -451,7 +463,8 @@
             label="Libellé du mg-input-date"
             tooltip="message tooltip du mg-input-date"
             value="1982-06-02"
-          ></mg-input-date>
+          >
+          </mg-input-date>
         </div>
         <div class="mg-form-group">
           <mg-input-numeric
@@ -460,16 +473,12 @@
             label="Libellé du mg-input-numeric"
             tooltip="message tooltip du mg-input-numeric"
             value="1234567890"
-          ></mg-input-numeric>
+          >
+          </mg-input-numeric>
         </div>
         <div class="mg-form-group">
-          <mg-input-text
-            placeholder="placeholder"
-            help-text="Message du mg-input-text"
-            label="Libellé du mg-input-text"
-            tooltip="message tooltip du mg-input-text"
-            value="mg-blu"
-          ></mg-input-text>
+          <mg-input-text placeholder="placeholder" help-text="Message du mg-input-text" label="Libellé du mg-input-text" tooltip="message tooltip du mg-input-text" value="mg-blu">
+          </mg-input-text>
         </div>
       </section>
       <section>

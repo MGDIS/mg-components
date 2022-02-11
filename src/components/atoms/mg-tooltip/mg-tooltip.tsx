@@ -173,7 +173,7 @@ export class MgTooltip {
     return (
       <Host>
         <slot></slot>
-        <div role="tooltip" id={this.identifier} innerHTML={this.message}>
+        <div role="tooltip" id={this.identifier} class="mg-tooltip" innerHTML={this.message}>
           <div class="mg-tooltip__arrow" data-popper-arrow></div>
         </div>
       </Host>

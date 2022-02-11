@@ -175,6 +175,7 @@ export class MgInputDate {
       >
         <input
           type="date"
+          class="mg-input__box"
           value={this.value}
           id={this.identifier}
           name={this.name}

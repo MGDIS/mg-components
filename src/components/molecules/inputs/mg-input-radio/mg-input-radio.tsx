@@ -213,7 +213,7 @@ export class MgInputRadio {
         errorMessage={this.errorMessage}
         isFieldset={true}
       >
-        <ul class={'mg-input__input-group-container mg-input__input-group-container--radio ' + (this.inputVerticalList ? 'mg-input__input-group-container--vertical' : '')}>
+        <ul class={`mg-input__input-group-container${this.inputVerticalList ? ' mg-input__input-group-container--vertical' : ''}`}>
           {this.options.map((input, index) => (
             <li class="mg-input__input-group">
               <input

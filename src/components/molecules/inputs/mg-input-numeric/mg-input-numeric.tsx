@@ -290,6 +290,7 @@ export class MgInputNumeric {
       >
         <input
           type="text"
+          class="mg-input__box"
           value={this.displayValue}
           id={this.identifier}
           name={this.name}

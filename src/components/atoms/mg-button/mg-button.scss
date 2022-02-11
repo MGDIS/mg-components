@@ -43,10 +43,10 @@
   background-image: none;
   border: 0.1rem solid;
   // Font
+  font-family: inherit;
   text-decoration: none;
   font-weight: normal;
   text-align: left;
-  line-height: var(--line-height);
   // Other
   touch-action: manipulation;
 
@@ -90,7 +90,14 @@
     }
   }
 
-  &:not(.mg-button--icon) mg-icon {
+  ::slotted(mg-icon) {
+    display: inline-flex;
+    flex-shrink: 0;
+    line-height: 1;
+    margin: auto 0;
+  }
+
+  &:not(.mg-button--icon) ::slotted(mg-icon) {
     margin-right: 0.6rem;
   }
 
@@ -119,10 +126,4 @@ mg-button {
 mg-button {
   vertical-align: middle;
   max-width: 100%;
-  mg-icon {
-    display: inline-flex;
-    flex-shrink: 0;
-    line-height: 1;
-    margin: auto 0;
-  }
 }

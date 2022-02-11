@@ -3,31 +3,31 @@
  */
 
 // Normalize CSS : https://necolas.github.io/normalize.css/
-@import '~normalize.css/normalize.css';
+@use '~normalize.css/normalize.css';
 
 // Fonts
-@import './fonts.scss';
+@use './fonts.scss';
 
 // Variables
-@import './variables.css';
+@use './variables.css';
 
 // Utilities
-@import './utilities.scss';
+@use './utilities.scss';
 
 // Accessibility
-@import './a11y.scss';
+@use './a11y.scss';
 
 // Main style
-@import './main.scss';
+@use './main.scss';
 
 // Typography style
-@import './typography.scss';
+@use './typography.scss';
 
 // Form
-@import './form.scss';
+@use './form.scss';
 
 // Layout
-@import './layout.scss';
+@use './layout.scss';
 
 /**
  * Components style
@@ -35,34 +35,34 @@
  * molecules
  */
 
-@import './components.scss';
+// @use './components.scss';
 
 // <mg-input-title>
-@import '../components/atoms/mg-input-title/mg-input-title.scss';
+@use '../components/atoms/mg-input-title/mg-input-title.scss';
 
 // <mg-icon>
-@import '../components/atoms/mg-icon/mg-icon.scss';
+@use '../components/atoms/mg-icon/mg-icon.scss';
 
 // <mg-button>
-@import '../components/atoms/mg-button/mg-button.scss';
+@use '../components/atoms/mg-button/mg-button.scss';
 
 // <mg-tag>
-@import '../components/atoms/mg-tag/mg-tag.scss';
+@use '../components/atoms/mg-tag/mg-tag.scss';
 
 // <mg-tooltip>
-@import '../components/atoms/mg-tooltip/mg-tooltip.scss';
+@use '../components/atoms/mg-tooltip/mg-tooltip.scss';
 
 // <mg-message>
-@import '../components/molecules/mg-message/mg-message.scss';
+@use '../components/molecules/mg-message/mg-message.scss';
 
 // <mg-input-...>
-@import '../components/molecules/inputs/mg-input.scss';
+@use '../components/molecules/inputs/styles/mg-input.scss';
 
 // <mg-tabs>
-@import '../components/molecules/mg-tabs/mg-tabs.scss';
+@use '../components/molecules/mg-tabs/mg-tabs.scss';
 
 /**
  * IE fixes
  */
 
-@import './ie.scss';
+@use './ie.scss';

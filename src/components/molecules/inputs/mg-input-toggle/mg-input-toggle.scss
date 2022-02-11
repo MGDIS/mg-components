@@ -1,3 +1,211 @@
-@import '../mg-input.scss';
-@import '../../../atoms/mg-icon/mg-icon.scss';
-@import '../../../../styles/a11y.scss';
+@use '../styles/mg-input.scss';
+@use '../../../../styles/a11y.scss';
+
+$elementPadding: 0.2rem;
+$childElementPadding: 0.5rem;
+$elementLineHeight: calc(var(--font-size) + 0.2rem);
+$elementMinSize: calc(#{$elementLineHeight} + #{$childElementPadding} * 2);
+
+.mg-input--toggle {
+  // icon variation
+  &.mg-input--toggle-icon .toggle-button__toggle-item-container ::slotted(mg-icon) {
+    height: $elementLineHeight;
+    width: $elementLineHeight;
+  }
+
+  // readonly variation
+  &.mg-input--toggle-readonly .mg-input__button-toggle {
+    margin-top: calc((var(--default-size) - #{$elementMinSize}) / 2);
+  }
+
+  .mg-input__input-container {
+    width: 100%;
+  }
+
+  &.mg-input--toggle-active {
+    .toggle-button__toggle-item-container {
+      &:first-of-type {
+        background-color: unset;
+        color: hsl(var(--color-dark));
+        font-weight: unset;
+      }
+      &:last-of-type {
+        font-weight: 600;
+        background-color: hsl(var(--color-info-h) calc(var(--color-info-s) - 64%) calc(var(--color-info-l) + 55%));
+        color: hsl(var(--color-info));
+      }
+    }
+
+    // icon variation
+    &.mg-input--toggle-icon .toggle-button__toggle-item-container {
+      &:first-of-type {
+        opacity: 0;
+      }
+      &:last-of-type {
+        opacity: 1;
+      }
+    }
+
+    // readonly variation
+    &.mg-input--toggle-readonly .toggle-button__toggle-item-container {
+      &:first-of-type {
+        display: none;
+      }
+      &:last-of-type {
+        display: unset;
+      }
+    }
+
+    // on-off variation
+    &.mg-input--toggle-on-off .toggle-button__toggle-item-container:first-of-type {
+      background: none;
+    }
+  }
+
+  // toggle icon variation
+  &.mg-input--toggle-icon .toggle-button__toggle-item-container {
+    &:first-of-type {
+      opacity: 1;
+    }
+    &:last-of-type {
+      opacity: 0;
+    }
+
+    // slot
+    > *:not(mg-icon) {
+      padding: 0;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    mg-icon {
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  // disabled variation
+  &.mg-input--toggle-disabled .mg-input__button-toggle {
+    opacity: 30%;
+  }
+
+  // toggle on-off variation
+  &.mg-input--toggle-on-off {
+    .toggle-button__toggle-item-container:first-of-type {
+      background-color: hsl(var(--color-dark-h) calc(var(--color-dark-s) - 30%) calc(var(--color-dark-l) + 75%));
+      color: hsl(var(--color-dark));
+    }
+
+    &.mg-input--toggle-active .toggle-button__toggle-item-container:first-of-type {
+      background: none;
+    }
+  }
+
+  // readonly variation
+  &.mg-input--toggle-readonly {
+    .mg-input__button-toggle {
+      background: none;
+      border: none;
+      overflow: hidden;
+      padding: 0;
+    }
+    .toggle-button__toggle-item-container:last-of-type {
+      display: none;
+    }
+  }
+
+  // clicked variation - animation trigger
+  &.mg-input--toggle-clicked {
+    .toggle-button__toggle-item-container {
+      // animation
+      animation-timing-function: ease-in-out;
+      animation-duration: 0.2s;
+      animation-name: toggleUnactive;
+    }
+    &.mg-input--toggle-active .toggle-button__toggle-item-container {
+      // animation
+      animation-name: toggleActive;
+    }
+  }
+}
+
+.mg-input__button-toggle {
+  margin-top: calc((var(--default-size) - (#{$elementMinSize} + #{$elementPadding} * 2 + var(--mg-inputs-border-width) * 2)) / 2);
+  padding: $elementPadding;
+  border-radius: calc(
+    (#{$elementLineHeight} + #{$elementPadding} * 2 + #{$childElementPadding} * 2) / var(--mg-input-toggle-border-radius-ratio)
+  ); // = (lineheight + element vertical-padding + child vertical-padding) / ratio
+  line-height: $elementLineHeight;
+}
+
+.toggle-button__toggle-item-container {
+  padding: $childElementPadding 0;
+  min-width: $elementMinSize;
+  min-height: $elementMinSize;
+  border-radius: calc((#{$elementLineHeight} + #{$childElementPadding} * 2) / var(--mg-input-toggle-border-radius-ratio)); // = (lineheight + child vertical-padding) / ratio
+}
+
+.mg-input__button-toggle {
+  display: flex;
+  overflow: hidden;
+  &:not(&.mg-input--toggle-readonly .mg-input__button-toggle) {
+    background-color: hsl(var(--color-light));
+    // border
+    border-width: var(--mg-inputs-border-width);
+    border-style: solid;
+    border-color: var(--mg-inputs-color);
+  }
+}
+
+.toggle-button__toggle-item-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  // font
+  &:first-of-type {
+    background-color: hsl(var(--color-info-h) calc(var(--color-info-s) - 64%) calc(var(--color-info-l) + 55%));
+    color: hsl(var(--color-info));
+    font-weight: 600;
+  }
+  &:last-of-type {
+    color: hsl(var(--color-dark));
+  }
+  // slot
+  & > *:not(&.mg-input--toggle-readonly .toggle-button__toggle-item-container > *) {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  & > *:not(mg-icon) {
+    padding: 0 0.9rem;
+  }
+}
+
+.mg-input__title {
+  .mg-input__button-toggle {
+    margin-top: 0.5rem;
+  }
+}
+
+/**
+ * Animations
+ */
+
+@keyframes toggleUnactive {
+  from {
+    transform: translateX(1.5em);
+  }
+  to {
+    transform: translateX(0em);
+  }
+}
+
+@keyframes toggleActive {
+  from {
+    transform: translateX(-1.5em);
+  }
+  to {
+    transform: translateX(0em);
+  }
+}

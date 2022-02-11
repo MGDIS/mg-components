@@ -1,3 +1,9 @@
-@import '../mg-input.scss';
-@import '../../../atoms/mg-icon/mg-icon.scss';
-@import '../../../../styles/a11y.scss';
+@use '../styles/mg-input.scss';
+@use '../styles/mg-input-box.scss';
+@use '../../../../styles/a11y.scss';
+
+.mg-input__box {
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 0;
+}

@@ -15,7 +15,7 @@
     color: hsl(var(--color-light)) !important;
   }
   .mg-input--toggle-active,
-  .mg-input--toggle-active.mg-input--toggle-is-on-off {
+  .mg-input--toggle-active.mg-input--toggle-on-off {
     .toggle-button__toggle-item-container {
       &:first-of-type {
         background: none !important;
@@ -31,7 +31,7 @@
       display: block !important;
     }
   }
-  .mg-input--toggle-is-on-off .toggle-button__toggle-item-container:first-of-type {
+  .mg-input--toggle-on-off .toggle-button__toggle-item-container:first-of-type {
     background-color: hsl(var(--color-dark)) !important;
     color: hsl(var(--color-light)) !important;
   }

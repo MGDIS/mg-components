@@ -108,7 +108,7 @@ export class MgInputToggle {
   @Prop() isOnOff?: boolean = false;
   @Watch('isOnOff')
   handleIsOnOff(newValue: boolean) {
-    if (newValue) this.classList.add(`mg-input--toggle-is-on-off`);
+    if (newValue) this.classList.add(`mg-input--toggle-on-off`);
   }
 
   /**
@@ -117,7 +117,7 @@ export class MgInputToggle {
   @Prop() isIcon?: boolean = false;
   @Watch('isIcon')
   handleIsIcon(newValue: boolean) {
-    if (newValue) this.classList.add(`mg-input--toggle-is-icon`);
+    if (newValue) this.classList.add(`mg-input--toggle-icon`);
   }
 
   /**

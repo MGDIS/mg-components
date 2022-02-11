@@ -152,9 +152,15 @@ export class MgMessage {
             <mg-icon icon={this.getIcon()}></mg-icon>
           </span>
           <div class="mg-message__content">
-            <span class="mg-message__content__slot">
+            <span class="mg-message__content-slot">
               <slot></slot>
             </span>
+            {this.hasActions && <span class="mg-message__content-separator"></span>}
+            {this.hasActions && (
+              <span class="mg-message__content-actions-slot">
+                <slot name="actions"></slot>
+              </span>
+            )}
           </div>
           {this.closeButton && (
             <span class="mg-message__close-button">

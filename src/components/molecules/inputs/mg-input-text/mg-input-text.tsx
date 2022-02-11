@@ -122,7 +122,7 @@ export class MgInputText {
   /**
    * Component classes
    */
-  @State() classList: ClassList = new ClassList(['mg-input--text']);
+  @State() classList: ClassList = new ClassList(['mg-input--text', 'mg-input--width-full']);
 
   /**
    * Error message to display
@@ -239,6 +239,7 @@ export class MgInputText {
       >
         <input
           type="text"
+          class="mg-input__box"
           value={this.value}
           id={this.identifier}
           name={this.name}

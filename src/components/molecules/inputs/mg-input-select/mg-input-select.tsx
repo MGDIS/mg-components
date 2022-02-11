@@ -246,6 +246,7 @@ export class MgInputSelect {
         isFieldset={false}
       >
         <select
+          class="mg-input__box"
           id={this.identifier}
           name={this.name}
           title={this.placeholder}
