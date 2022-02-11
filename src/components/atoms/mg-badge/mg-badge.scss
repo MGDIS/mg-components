@@ -1,0 +1,47 @@
+@mixin badge-variant($name, $backgroundColor, $color) {
+  &.mg-badge--#{$name} {
+    // Decoration
+    background-color: hsl(var(--color-#{$backgroundColor}));
+    border-color: hsl(var(--color-#{$backgroundColor}));
+    // Font
+    color: hsl(var(--color-#{$color}));
+
+    &.mg-badge--outline {
+      // Decoration
+      background-color: transparent;
+      // Font
+      color: hsl(var(--color-#{$backgroundColor}));
+    }
+  }
+}
+
+.mg-badge {
+  $vertical-padding: 0.3rem;
+  $line-height: var(--mg-badge-font-size);
+  // Display
+  padding: $vertical-padding 0.7em;
+  min-height: calc($vertical-padding * 2 + $line-height);
+  box-sizing: border-box;
+  // Decoration
+  border-radius: var(--mg-badge-border-radius);
+  border: 0.1rem solid;
+  // Font
+  font-size: var(--mg-badge-font-size);
+  line-height: $line-height;
+  font-weight: 600;
+  text-align: center;
+
+  // Variant
+  @include badge-variant('primary', 'dark', 'light');
+  @include badge-variant('secondary', 'light', 'dark');
+  @include badge-variant('success', 'success', 'dark');
+  @include badge-variant('warning', 'warning', 'dark');
+  @include badge-variant('danger', 'danger', 'light');
+  @include badge-variant('info', 'info', 'light');
+}
+
+.mg-badge,
+mg-badge {
+  display: inline-block;
+  vertical-align: middle;
+}
