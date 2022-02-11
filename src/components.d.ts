@@ -11,6 +11,16 @@ import { SelectOption } from "./components/molecules/inputs/mg-input-select/mg-i
 import { ToggleValue } from "./components/molecules/inputs/mg-input-toggle/mg-input-toggle.conf";
 import { TabItem } from "./components/molecules/mg-tabs/mg-tabs.conf";
 export namespace Components {
+    interface MgBadge {
+        /**
+          * Define if button is using outline style
+         */
+        "outline"?: boolean;
+        /**
+          * Define button variant
+         */
+        "variant"?: string;
+    }
     interface MgButton {
         /**
           * Option to set input disable on click, in order to prevent multi-click. Parent component have to remove the attribute 'disabled' when the process ends.
@@ -753,6 +763,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLMgBadgeElement extends Components.MgBadge, HTMLStencilElement {
+    }
+    var HTMLMgBadgeElement: {
+        prototype: HTMLMgBadgeElement;
+        new (): HTMLMgBadgeElement;
+    };
     interface HTMLMgButtonElement extends Components.MgButton, HTMLStencilElement {
     }
     var HTMLMgButtonElement: {
@@ -856,6 +872,7 @@ declare global {
         new (): HTMLMgTooltipElement;
     };
     interface HTMLElementTagNameMap {
+        "mg-badge": HTMLMgBadgeElement;
         "mg-button": HTMLMgButtonElement;
         "mg-character-left": HTMLMgCharacterLeftElement;
         "mg-icon": HTMLMgIconElement;
@@ -876,6 +893,16 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface MgBadge {
+        /**
+          * Define if button is using outline style
+         */
+        "outline"?: boolean;
+        /**
+          * Define button variant
+         */
+        "variant"?: string;
+    }
     interface MgButton {
         /**
           * Option to set input disable on click, in order to prevent multi-click. Parent component have to remove the attribute 'disabled' when the process ends.
@@ -1653,6 +1680,7 @@ declare namespace LocalJSX {
     | 'left-end';
     }
     interface IntrinsicElements {
+        "mg-badge": MgBadge;
         "mg-button": MgButton;
         "mg-character-left": MgCharacterLeft;
         "mg-icon": MgIcon;
@@ -1676,6 +1704,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "mg-badge": LocalJSX.MgBadge & JSXBase.HTMLAttributes<HTMLMgBadgeElement>;
             "mg-button": LocalJSX.MgButton & JSXBase.HTMLAttributes<HTMLMgButtonElement>;
             "mg-character-left": LocalJSX.MgCharacterLeft & JSXBase.HTMLAttributes<HTMLMgCharacterLeftElement>;
             "mg-icon": LocalJSX.MgIcon & JSXBase.HTMLAttributes<HTMLMgIconElement>;

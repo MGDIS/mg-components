@@ -1,11 +1,75 @@
 {
-  "timestamp": "2022-02-10T16:33:16",
+  "timestamp": "2022-02-11T14:32:46",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.13.0",
     "typescriptVersion": "4.3.5"
   },
   "components": [
+    {
+      "filePath": "./src/components/atoms/mg-badge/mg-badge.tsx",
+      "encapsulation": "shadow",
+      "tag": "mg-badge",
+      "readme": "This atom refers to the [PDA9-315](https://jira.mgdis.fr/browse/PDA9-315).\n",
+      "docs": "This atom refers to the [PDA9-315](https://jira.mgdis.fr/browse/PDA9-315).",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "outline",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "outline",
+          "reflectToAttr": false,
+          "docs": "Define if button is using outline style",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "variant",
+          "type": "string",
+          "mutable": false,
+          "attr": "variant",
+          "reflectToAttr": false,
+          "docs": "Define button variant",
+          "docsTags": [],
+          "default": "variants[variants.length - 1]",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [
+        {
+          "name": "badge-content",
+          "docs": ""
+        }
+      ],
+      "dependents": [
+        "mg-tabs"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "mg-tabs": [
+          "mg-badge"
+        ]
+      }
+    },
     {
       "filePath": "./src/components/atoms/mg-button/mg-button.tsx",
       "encapsulation": "scoped",
@@ -3395,12 +3459,12 @@
       "dependents": [],
       "dependencies": [
         "mg-icon",
-        "mg-tag"
+        "mg-badge"
       ],
       "dependencyGraph": {
         "mg-tabs": [
           "mg-icon",
-          "mg-tag"
+          "mg-badge"
         ]
       }
     },
@@ -3453,15 +3517,9 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "mg-tabs"
-      ],
+      "dependents": [],
       "dependencies": [],
-      "dependencyGraph": {
-        "mg-tabs": [
-          "mg-tag"
-        ]
-      }
+      "dependencyGraph": {}
     },
     {
       "filePath": "./src/components/atoms/mg-tooltip/mg-tooltip.tsx",

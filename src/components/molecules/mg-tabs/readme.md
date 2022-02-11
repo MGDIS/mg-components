@@ -18,13 +18,13 @@ This molecule refers to the [PDA9-604](https://jira.mgdis.fr/browse/PDA9-604).
 ### Depends on
 
 - [mg-icon](../../atoms/mg-icon)
-- [mg-tag](../../atoms/mg-tag)
+- [mg-badge](../../atoms/mg-badge)
 
 ### Graph
 ```mermaid
 graph TD;
   mg-tabs --> mg-icon
-  mg-tabs --> mg-tag
+  mg-tabs --> mg-badge
   style mg-tabs fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

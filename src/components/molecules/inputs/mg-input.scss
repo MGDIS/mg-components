@@ -272,12 +272,16 @@ $lightDark: hsl(var(--color-dark-h) calc(var(--color-dark-s) - 30%) calc(var(--c
     line-height: $elementLineHeight;
   }
 
-  .mg-input__toggle-item-container,
-  .mg-input__toggle-item-container::before {
+  .mg-input__toggle-item-container {
     padding: $childElementPadding 0;
     min-width: $elementMinSize;
     min-height: $elementMinSize;
-    border-radius: calc((#{$elementLineHeight} + #{$childElementPadding} * 2) / var(--mg-input-toggle-border-radius-ratio)); // = (lineheight + child vertical-padding) / ratio
+  }
+  .mg-input__toggle-item-container {
+    &,
+    &:before {
+      border-radius: calc((#{$elementLineHeight} + #{$childElementPadding} * 2) / var(--mg-input-toggle-border-radius-ratio)); // = (lineheight + child vertical-padding) / ratio
+    }
   }
 
   // icon variation
@@ -297,6 +301,7 @@ $lightDark: hsl(var(--color-dark-h) calc(var(--color-dark-s) - 30%) calc(var(--c
   position: absolute;
   background-color: $color;
   width: 100%;
+  height: 100%;
 }
 
 @include mg-input-toggle__size-generator(0.2rem, 0.5rem);
