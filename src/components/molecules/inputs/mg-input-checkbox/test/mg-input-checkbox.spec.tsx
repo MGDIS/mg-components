@@ -3,7 +3,7 @@ import { newSpecPage } from '@stencil/core/testing';
 import { cloneDeep } from '../../../../../utils/test.utils';
 import { MgInputCheckbox } from '../mg-input-checkbox';
 import { messages } from '../../../../../locales';
-import { CheckboxValue } from '../../../../../types/components.types';
+import { CheckboxValue } from '../mg-input-checkbox.conf';
 
 const getPage = args =>
   newSpecPage({

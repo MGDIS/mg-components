@@ -1,0 +1,1994 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mg-pagination Should render with totalPages 1 1`] = `
+<mg-pagination current-page="1">
+  <mock:shadow-root>
+    <nav aria-label="pagination" id="id">
+      <ul class="mg-pagination-list">
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page précédente" class="mg-pagination-list__button mg-pagination-list__button--navigation" disabled="">
+            <span aria-hidden="true">
+              précédent
+            </span>
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button mg-pagination-list__button--active" data-page="1">
+            <span class="sr-only">
+              page
+            </span>
+            1
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page suivante" class="mg-pagination-list__button mg-pagination-list__button--navigation" disabled="">
+            <span aria-hidden="true">
+              suivant
+            </span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </mock:shadow-root>
+</mg-pagination>
+`;
+
+exports[`mg-pagination Should render with totalPages 2 1`] = `
+<mg-pagination current-page="1">
+  <mock:shadow-root>
+    <nav aria-label="pagination" id="id">
+      <ul class="mg-pagination-list">
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page précédente" class="mg-pagination-list__button mg-pagination-list__button--navigation" disabled="">
+            <span aria-hidden="true">
+              précédent
+            </span>
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button mg-pagination-list__button--active" data-page="1">
+            <span class="sr-only">
+              page
+            </span>
+            1
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button" data-page="2">
+            <span class="sr-only">
+              page
+            </span>
+            2
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page suivante" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              suivant
+            </span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </mock:shadow-root>
+</mg-pagination>
+`;
+
+exports[`mg-pagination Should render with totalPages 2 2`] = `
+<mg-pagination current-page="2">
+  <mock:shadow-root>
+    <nav aria-label="pagination" id="id">
+      <ul class="mg-pagination-list">
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page précédente" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              précédent
+            </span>
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button" data-page="1">
+            <span class="sr-only">
+              page
+            </span>
+            1
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button mg-pagination-list__button--active" data-page="2">
+            <span class="sr-only">
+              page
+            </span>
+            2
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page suivante" class="mg-pagination-list__button mg-pagination-list__button--navigation" disabled="">
+            <span aria-hidden="true">
+              suivant
+            </span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </mock:shadow-root>
+</mg-pagination>
+`;
+
+exports[`mg-pagination Should render with totalPages 3 1`] = `
+<mg-pagination current-page="1">
+  <mock:shadow-root>
+    <nav aria-label="pagination" id="id">
+      <ul class="mg-pagination-list">
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page précédente" class="mg-pagination-list__button mg-pagination-list__button--navigation" disabled="">
+            <span aria-hidden="true">
+              précédent
+            </span>
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button mg-pagination-list__button--active" data-page="1">
+            <span class="sr-only">
+              page
+            </span>
+            1
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button" data-page="2">
+            <span class="sr-only">
+              page
+            </span>
+            2
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button" data-page="3">
+            <span class="sr-only">
+              page
+            </span>
+            3
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page suivante" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              suivant
+            </span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </mock:shadow-root>
+</mg-pagination>
+`;
+
+exports[`mg-pagination Should render with totalPages 3 2`] = `
+<mg-pagination current-page="2">
+  <mock:shadow-root>
+    <nav aria-label="pagination" id="id">
+      <ul class="mg-pagination-list">
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page précédente" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              précédent
+            </span>
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button" data-page="1">
+            <span class="sr-only">
+              page
+            </span>
+            1
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button mg-pagination-list__button--active" data-page="2">
+            <span class="sr-only">
+              page
+            </span>
+            2
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button" data-page="3">
+            <span class="sr-only">
+              page
+            </span>
+            3
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page suivante" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              suivant
+            </span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </mock:shadow-root>
+</mg-pagination>
+`;
+
+exports[`mg-pagination Should render with totalPages 3 3`] = `
+<mg-pagination current-page="3">
+  <mock:shadow-root>
+    <nav aria-label="pagination" id="id">
+      <ul class="mg-pagination-list">
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page précédente" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              précédent
+            </span>
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button" data-page="1">
+            <span class="sr-only">
+              page
+            </span>
+            1
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button" data-page="2">
+            <span class="sr-only">
+              page
+            </span>
+            2
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button mg-pagination-list__button--active" data-page="3">
+            <span class="sr-only">
+              page
+            </span>
+            3
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page suivante" class="mg-pagination-list__button mg-pagination-list__button--navigation" disabled="">
+            <span aria-hidden="true">
+              suivant
+            </span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </mock:shadow-root>
+</mg-pagination>
+`;
+
+exports[`mg-pagination Should render with totalPages 4 1`] = `
+<mg-pagination current-page="1">
+  <mock:shadow-root>
+    <nav aria-label="pagination" id="id">
+      <ul class="mg-pagination-list">
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page précédente" class="mg-pagination-list__button mg-pagination-list__button--navigation" disabled="">
+            <span aria-hidden="true">
+              précédent
+            </span>
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button mg-pagination-list__button--active" data-page="1">
+            <span class="sr-only">
+              page
+            </span>
+            1
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button" data-page="2">
+            <span class="sr-only">
+              page
+            </span>
+            2
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button" data-page="3">
+            <span class="sr-only">
+              page
+            </span>
+            3
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button" data-page="4">
+            <span class="sr-only">
+              page
+            </span>
+            4
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page suivante" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              suivant
+            </span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </mock:shadow-root>
+</mg-pagination>
+`;
+
+exports[`mg-pagination Should render with totalPages 4 2`] = `
+<mg-pagination current-page="2">
+  <mock:shadow-root>
+    <nav aria-label="pagination" id="id">
+      <ul class="mg-pagination-list">
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page précédente" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              précédent
+            </span>
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button" data-page="1">
+            <span class="sr-only">
+              page
+            </span>
+            1
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button mg-pagination-list__button--active" data-page="2">
+            <span class="sr-only">
+              page
+            </span>
+            2
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button" data-page="3">
+            <span class="sr-only">
+              page
+            </span>
+            3
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button" data-page="4">
+            <span class="sr-only">
+              page
+            </span>
+            4
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page suivante" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              suivant
+            </span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </mock:shadow-root>
+</mg-pagination>
+`;
+
+exports[`mg-pagination Should render with totalPages 4 3`] = `
+<mg-pagination current-page="3">
+  <mock:shadow-root>
+    <nav aria-label="pagination" id="id">
+      <ul class="mg-pagination-list">
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page précédente" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              précédent
+            </span>
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button" data-page="1">
+            <span class="sr-only">
+              page
+            </span>
+            1
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button" data-page="2">
+            <span class="sr-only">
+              page
+            </span>
+            2
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button mg-pagination-list__button--active" data-page="3">
+            <span class="sr-only">
+              page
+            </span>
+            3
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button" data-page="4">
+            <span class="sr-only">
+              page
+            </span>
+            4
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page suivante" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              suivant
+            </span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </mock:shadow-root>
+</mg-pagination>
+`;
+
+exports[`mg-pagination Should render with totalPages 4 4`] = `
+<mg-pagination current-page="4">
+  <mock:shadow-root>
+    <nav aria-label="pagination" id="id">
+      <ul class="mg-pagination-list">
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page précédente" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              précédent
+            </span>
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button" data-page="1">
+            <span class="sr-only">
+              page
+            </span>
+            1
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button" data-page="2">
+            <span class="sr-only">
+              page
+            </span>
+            2
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button" data-page="3">
+            <span class="sr-only">
+              page
+            </span>
+            3
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button mg-pagination-list__button--active" data-page="4">
+            <span class="sr-only">
+              page
+            </span>
+            4
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page suivante" class="mg-pagination-list__button mg-pagination-list__button--navigation" disabled="">
+            <span aria-hidden="true">
+              suivant
+            </span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </mock:shadow-root>
+</mg-pagination>
+`;
+
+exports[`mg-pagination Should render with totalPages 5 1`] = `
+<mg-pagination current-page="1">
+  <mock:shadow-root>
+    <nav aria-label="pagination" id="id">
+      <ul class="mg-pagination-list">
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page précédente" class="mg-pagination-list__button mg-pagination-list__button--navigation" disabled="">
+            <span aria-hidden="true">
+              précédent
+            </span>
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button mg-pagination-list__button--active" data-page="1">
+            <span class="sr-only">
+              page
+            </span>
+            1
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button" data-page="2">
+            <span class="sr-only">
+              page
+            </span>
+            2
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">
+            …
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button" data-page="5">
+            <span class="sr-only">
+              page
+            </span>
+            5
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page suivante" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              suivant
+            </span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </mock:shadow-root>
+</mg-pagination>
+`;
+
+exports[`mg-pagination Should render with totalPages 5 2`] = `
+<mg-pagination current-page="2">
+  <mock:shadow-root>
+    <nav aria-label="pagination" id="id">
+      <ul class="mg-pagination-list">
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page précédente" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              précédent
+            </span>
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button" data-page="1">
+            <span class="sr-only">
+              page
+            </span>
+            1
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button mg-pagination-list__button--active" data-page="2">
+            <span class="sr-only">
+              page
+            </span>
+            2
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">
+            …
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button" data-page="5">
+            <span class="sr-only">
+              page
+            </span>
+            5
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page suivante" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              suivant
+            </span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </mock:shadow-root>
+</mg-pagination>
+`;
+
+exports[`mg-pagination Should render with totalPages 5 3`] = `
+<mg-pagination current-page="3">
+  <mock:shadow-root>
+    <nav aria-label="pagination" id="id">
+      <ul class="mg-pagination-list">
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page précédente" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              précédent
+            </span>
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button" data-page="1">
+            <span class="sr-only">
+              page
+            </span>
+            1
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">
+            …
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button mg-pagination-list__button--active" data-page="3">
+            <span class="sr-only">
+              page
+            </span>
+            3
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">
+            …
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button" data-page="5">
+            <span class="sr-only">
+              page
+            </span>
+            5
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page suivante" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              suivant
+            </span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </mock:shadow-root>
+</mg-pagination>
+`;
+
+exports[`mg-pagination Should render with totalPages 5 4`] = `
+<mg-pagination current-page="4">
+  <mock:shadow-root>
+    <nav aria-label="pagination" id="id">
+      <ul class="mg-pagination-list">
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page précédente" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              précédent
+            </span>
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button" data-page="1">
+            <span class="sr-only">
+              page
+            </span>
+            1
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">
+            …
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button mg-pagination-list__button--active" data-page="4">
+            <span class="sr-only">
+              page
+            </span>
+            4
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button" data-page="5">
+            <span class="sr-only">
+              page
+            </span>
+            5
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page suivante" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              suivant
+            </span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </mock:shadow-root>
+</mg-pagination>
+`;
+
+exports[`mg-pagination Should render with totalPages 5 5`] = `
+<mg-pagination current-page="5">
+  <mock:shadow-root>
+    <nav aria-label="pagination" id="id">
+      <ul class="mg-pagination-list">
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page précédente" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              précédent
+            </span>
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button" data-page="1">
+            <span class="sr-only">
+              page
+            </span>
+            1
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">
+            …
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button" data-page="4">
+            <span class="sr-only">
+              page
+            </span>
+            4
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button mg-pagination-list__button--active" data-page="5">
+            <span class="sr-only">
+              page
+            </span>
+            5
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page suivante" class="mg-pagination-list__button mg-pagination-list__button--navigation" disabled="">
+            <span aria-hidden="true">
+              suivant
+            </span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </mock:shadow-root>
+</mg-pagination>
+`;
+
+exports[`mg-pagination Should render with totalPages 6 1`] = `
+<mg-pagination current-page="1">
+  <mock:shadow-root>
+    <nav aria-label="pagination" id="id">
+      <ul class="mg-pagination-list">
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page précédente" class="mg-pagination-list__button mg-pagination-list__button--navigation" disabled="">
+            <span aria-hidden="true">
+              précédent
+            </span>
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button mg-pagination-list__button--active" data-page="1">
+            <span class="sr-only">
+              page
+            </span>
+            1
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button" data-page="2">
+            <span class="sr-only">
+              page
+            </span>
+            2
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">
+            …
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button" data-page="6">
+            <span class="sr-only">
+              page
+            </span>
+            6
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page suivante" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              suivant
+            </span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </mock:shadow-root>
+</mg-pagination>
+`;
+
+exports[`mg-pagination Should render with totalPages 6 2`] = `
+<mg-pagination current-page="2">
+  <mock:shadow-root>
+    <nav aria-label="pagination" id="id">
+      <ul class="mg-pagination-list">
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page précédente" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              précédent
+            </span>
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button" data-page="1">
+            <span class="sr-only">
+              page
+            </span>
+            1
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button mg-pagination-list__button--active" data-page="2">
+            <span class="sr-only">
+              page
+            </span>
+            2
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">
+            …
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button" data-page="6">
+            <span class="sr-only">
+              page
+            </span>
+            6
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page suivante" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              suivant
+            </span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </mock:shadow-root>
+</mg-pagination>
+`;
+
+exports[`mg-pagination Should render with totalPages 6 3`] = `
+<mg-pagination current-page="3">
+  <mock:shadow-root>
+    <nav aria-label="pagination" id="id">
+      <ul class="mg-pagination-list">
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page précédente" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              précédent
+            </span>
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button" data-page="1">
+            <span class="sr-only">
+              page
+            </span>
+            1
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">
+            …
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button mg-pagination-list__button--active" data-page="3">
+            <span class="sr-only">
+              page
+            </span>
+            3
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">
+            …
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button" data-page="6">
+            <span class="sr-only">
+              page
+            </span>
+            6
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page suivante" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              suivant
+            </span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </mock:shadow-root>
+</mg-pagination>
+`;
+
+exports[`mg-pagination Should render with totalPages 6 4`] = `
+<mg-pagination current-page="4">
+  <mock:shadow-root>
+    <nav aria-label="pagination" id="id">
+      <ul class="mg-pagination-list">
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page précédente" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              précédent
+            </span>
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button" data-page="1">
+            <span class="sr-only">
+              page
+            </span>
+            1
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">
+            …
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button mg-pagination-list__button--active" data-page="4">
+            <span class="sr-only">
+              page
+            </span>
+            4
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">
+            …
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button" data-page="6">
+            <span class="sr-only">
+              page
+            </span>
+            6
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page suivante" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              suivant
+            </span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </mock:shadow-root>
+</mg-pagination>
+`;
+
+exports[`mg-pagination Should render with totalPages 6 5`] = `
+<mg-pagination current-page="5">
+  <mock:shadow-root>
+    <nav aria-label="pagination" id="id">
+      <ul class="mg-pagination-list">
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page précédente" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              précédent
+            </span>
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button" data-page="1">
+            <span class="sr-only">
+              page
+            </span>
+            1
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">
+            …
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button mg-pagination-list__button--active" data-page="5">
+            <span class="sr-only">
+              page
+            </span>
+            5
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button" data-page="6">
+            <span class="sr-only">
+              page
+            </span>
+            6
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page suivante" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              suivant
+            </span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </mock:shadow-root>
+</mg-pagination>
+`;
+
+exports[`mg-pagination Should render with totalPages 6 6`] = `
+<mg-pagination current-page="6">
+  <mock:shadow-root>
+    <nav aria-label="pagination" id="id">
+      <ul class="mg-pagination-list">
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page précédente" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              précédent
+            </span>
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button" data-page="1">
+            <span class="sr-only">
+              page
+            </span>
+            1
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">
+            …
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button" data-page="5">
+            <span class="sr-only">
+              page
+            </span>
+            5
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button mg-pagination-list__button--active" data-page="6">
+            <span class="sr-only">
+              page
+            </span>
+            6
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page suivante" class="mg-pagination-list__button mg-pagination-list__button--navigation" disabled="">
+            <span aria-hidden="true">
+              suivant
+            </span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </mock:shadow-root>
+</mg-pagination>
+`;
+
+exports[`mg-pagination Should render with totalPages 10 1`] = `
+<mg-pagination current-page="1">
+  <mock:shadow-root>
+    <nav aria-label="pagination" id="id">
+      <ul class="mg-pagination-list">
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page précédente" class="mg-pagination-list__button mg-pagination-list__button--navigation" disabled="">
+            <span aria-hidden="true">
+              précédent
+            </span>
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button mg-pagination-list__button--active" data-page="1">
+            <span class="sr-only">
+              page
+            </span>
+            1
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button" data-page="2">
+            <span class="sr-only">
+              page
+            </span>
+            2
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">
+            …
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button" data-page="10">
+            <span class="sr-only">
+              page
+            </span>
+            10
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page suivante" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              suivant
+            </span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </mock:shadow-root>
+</mg-pagination>
+`;
+
+exports[`mg-pagination Should render with totalPages 10 2`] = `
+<mg-pagination current-page="2">
+  <mock:shadow-root>
+    <nav aria-label="pagination" id="id">
+      <ul class="mg-pagination-list">
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page précédente" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              précédent
+            </span>
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button" data-page="1">
+            <span class="sr-only">
+              page
+            </span>
+            1
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button mg-pagination-list__button--active" data-page="2">
+            <span class="sr-only">
+              page
+            </span>
+            2
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">
+            …
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button" data-page="10">
+            <span class="sr-only">
+              page
+            </span>
+            10
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page suivante" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              suivant
+            </span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </mock:shadow-root>
+</mg-pagination>
+`;
+
+exports[`mg-pagination Should render with totalPages 10 3`] = `
+<mg-pagination current-page="3">
+  <mock:shadow-root>
+    <nav aria-label="pagination" id="id">
+      <ul class="mg-pagination-list">
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page précédente" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              précédent
+            </span>
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button" data-page="1">
+            <span class="sr-only">
+              page
+            </span>
+            1
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">
+            …
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button mg-pagination-list__button--active" data-page="3">
+            <span class="sr-only">
+              page
+            </span>
+            3
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">
+            …
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button" data-page="10">
+            <span class="sr-only">
+              page
+            </span>
+            10
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page suivante" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              suivant
+            </span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </mock:shadow-root>
+</mg-pagination>
+`;
+
+exports[`mg-pagination Should render with totalPages 10 4`] = `
+<mg-pagination current-page="4">
+  <mock:shadow-root>
+    <nav aria-label="pagination" id="id">
+      <ul class="mg-pagination-list">
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page précédente" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              précédent
+            </span>
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button" data-page="1">
+            <span class="sr-only">
+              page
+            </span>
+            1
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">
+            …
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button mg-pagination-list__button--active" data-page="4">
+            <span class="sr-only">
+              page
+            </span>
+            4
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">
+            …
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button" data-page="10">
+            <span class="sr-only">
+              page
+            </span>
+            10
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page suivante" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              suivant
+            </span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </mock:shadow-root>
+</mg-pagination>
+`;
+
+exports[`mg-pagination Should render with totalPages 10 5`] = `
+<mg-pagination current-page="5">
+  <mock:shadow-root>
+    <nav aria-label="pagination" id="id">
+      <ul class="mg-pagination-list">
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page précédente" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              précédent
+            </span>
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button" data-page="1">
+            <span class="sr-only">
+              page
+            </span>
+            1
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">
+            …
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button mg-pagination-list__button--active" data-page="5">
+            <span class="sr-only">
+              page
+            </span>
+            5
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">
+            …
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button" data-page="10">
+            <span class="sr-only">
+              page
+            </span>
+            10
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page suivante" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              suivant
+            </span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </mock:shadow-root>
+</mg-pagination>
+`;
+
+exports[`mg-pagination Should render with totalPages 10 6`] = `
+<mg-pagination current-page="6">
+  <mock:shadow-root>
+    <nav aria-label="pagination" id="id">
+      <ul class="mg-pagination-list">
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page précédente" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              précédent
+            </span>
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button" data-page="1">
+            <span class="sr-only">
+              page
+            </span>
+            1
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">
+            …
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button mg-pagination-list__button--active" data-page="6">
+            <span class="sr-only">
+              page
+            </span>
+            6
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">
+            …
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button" data-page="10">
+            <span class="sr-only">
+              page
+            </span>
+            10
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page suivante" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              suivant
+            </span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </mock:shadow-root>
+</mg-pagination>
+`;
+
+exports[`mg-pagination Should render with totalPages 10 7`] = `
+<mg-pagination current-page="7">
+  <mock:shadow-root>
+    <nav aria-label="pagination" id="id">
+      <ul class="mg-pagination-list">
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page précédente" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              précédent
+            </span>
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button" data-page="1">
+            <span class="sr-only">
+              page
+            </span>
+            1
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">
+            …
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button mg-pagination-list__button--active" data-page="7">
+            <span class="sr-only">
+              page
+            </span>
+            7
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">
+            …
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button" data-page="10">
+            <span class="sr-only">
+              page
+            </span>
+            10
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page suivante" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              suivant
+            </span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </mock:shadow-root>
+</mg-pagination>
+`;
+
+exports[`mg-pagination Should render with totalPages 10 8`] = `
+<mg-pagination current-page="8">
+  <mock:shadow-root>
+    <nav aria-label="pagination" id="id">
+      <ul class="mg-pagination-list">
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page précédente" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              précédent
+            </span>
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button" data-page="1">
+            <span class="sr-only">
+              page
+            </span>
+            1
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">
+            …
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button mg-pagination-list__button--active" data-page="8">
+            <span class="sr-only">
+              page
+            </span>
+            8
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">
+            …
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button" data-page="10">
+            <span class="sr-only">
+              page
+            </span>
+            10
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page suivante" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              suivant
+            </span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </mock:shadow-root>
+</mg-pagination>
+`;
+
+exports[`mg-pagination Should render with totalPages 10 9`] = `
+<mg-pagination current-page="9">
+  <mock:shadow-root>
+    <nav aria-label="pagination" id="id">
+      <ul class="mg-pagination-list">
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page précédente" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              précédent
+            </span>
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button" data-page="1">
+            <span class="sr-only">
+              page
+            </span>
+            1
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">
+            …
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button mg-pagination-list__button--active" data-page="9">
+            <span class="sr-only">
+              page
+            </span>
+            9
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button" data-page="10">
+            <span class="sr-only">
+              page
+            </span>
+            10
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page suivante" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              suivant
+            </span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </mock:shadow-root>
+</mg-pagination>
+`;
+
+exports[`mg-pagination Should render with totalPages 10 10`] = `
+<mg-pagination current-page="10">
+  <mock:shadow-root>
+    <nav aria-label="pagination" id="id">
+      <ul class="mg-pagination-list">
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page précédente" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              précédent
+            </span>
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button" data-page="1">
+            <span class="sr-only">
+              page
+            </span>
+            1
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">
+            …
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button" data-page="9">
+            <span class="sr-only">
+              page
+            </span>
+            9
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button mg-pagination-list__button--active" data-page="10">
+            <span class="sr-only">
+              page
+            </span>
+            10
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page suivante" class="mg-pagination-list__button mg-pagination-list__button--navigation" disabled="">
+            <span aria-hidden="true">
+              suivant
+            </span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </mock:shadow-root>
+</mg-pagination>
+`;
+
+exports[`mg-pagination navigation navigate with next and previous, case totalPages=2 1`] = `
+<mg-pagination current-page="1">
+  <mock:shadow-root>
+    <nav aria-label="pagination" id="id">
+      <ul class="mg-pagination-list">
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page précédente" class="mg-pagination-list__button mg-pagination-list__button--navigation" disabled="">
+            <span aria-hidden="true">
+              précédent
+            </span>
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button mg-pagination-list__button--active" data-page="1">
+            <span class="sr-only">
+              page
+            </span>
+            1
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button" data-page="2">
+            <span class="sr-only">
+              page
+            </span>
+            2
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">
+            …
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button" data-page="5">
+            <span class="sr-only">
+              page
+            </span>
+            5
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page suivante" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              suivant
+            </span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </mock:shadow-root>
+</mg-pagination>
+`;
+
+exports[`mg-pagination navigation navigate with next and previous, case totalPages=2 2`] = `
+<mg-pagination current-page="2">
+  <mock:shadow-root>
+    <nav aria-label="pagination" id="id">
+      <ul class="mg-pagination-list">
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page précédente" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              précédent
+            </span>
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button" data-page="1">
+            <span class="sr-only">
+              page
+            </span>
+            1
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button mg-pagination-list__button--active" data-page="2">
+            <span class="sr-only">
+              page
+            </span>
+            2
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">
+            …
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button" data-page="5">
+            <span class="sr-only">
+              page
+            </span>
+            5
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page suivante" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              suivant
+            </span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </mock:shadow-root>
+</mg-pagination>
+`;
+
+exports[`mg-pagination navigation navigate with next and previous, case totalPages=2 3`] = `
+<mg-pagination current-page="1">
+  <mock:shadow-root>
+    <nav aria-label="pagination" id="id">
+      <ul class="mg-pagination-list">
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page précédente" class="mg-pagination-list__button mg-pagination-list__button--navigation" disabled="">
+            <span aria-hidden="true">
+              précédent
+            </span>
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button mg-pagination-list__button--active" data-page="1">
+            <span class="sr-only">
+              page
+            </span>
+            1
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button" data-page="2">
+            <span class="sr-only">
+              page
+            </span>
+            2
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">
+            …
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button" data-page="5">
+            <span class="sr-only">
+              page
+            </span>
+            5
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page suivante" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              suivant
+            </span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </mock:shadow-root>
+</mg-pagination>
+`;
+
+exports[`mg-pagination navigation navigate with number from 1 to 5 to 1, case totalPages=5 1`] = `
+<mg-pagination current-page="1">
+  <mock:shadow-root>
+    <nav aria-label="pagination" id="id">
+      <ul class="mg-pagination-list">
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page précédente" class="mg-pagination-list__button mg-pagination-list__button--navigation" disabled="">
+            <span aria-hidden="true">
+              précédent
+            </span>
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button mg-pagination-list__button--active" data-page="1">
+            <span class="sr-only">
+              page
+            </span>
+            1
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button" data-page="2">
+            <span class="sr-only">
+              page
+            </span>
+            2
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">
+            …
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button" data-page="5">
+            <span class="sr-only">
+              page
+            </span>
+            5
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page suivante" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              suivant
+            </span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </mock:shadow-root>
+</mg-pagination>
+`;
+
+exports[`mg-pagination navigation navigate with number from 1 to 5 to 1, case totalPages=5 2`] = `
+<mg-pagination current-page="5">
+  <mock:shadow-root>
+    <nav aria-label="pagination" id="id">
+      <ul class="mg-pagination-list">
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page précédente" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              précédent
+            </span>
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button" data-page="1">
+            <span class="sr-only">
+              page
+            </span>
+            1
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">
+            …
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button" data-page="4">
+            <span class="sr-only">
+              page
+            </span>
+            4
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button mg-pagination-list__button--active" data-page="5">
+            <span class="sr-only">
+              page
+            </span>
+            5
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page suivante" class="mg-pagination-list__button mg-pagination-list__button--navigation" disabled="">
+            <span aria-hidden="true">
+              suivant
+            </span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </mock:shadow-root>
+</mg-pagination>
+`;
+
+exports[`mg-pagination navigation navigate with number from 1 to 5 to 1, case totalPages=5 3`] = `
+<mg-pagination current-page="1">
+  <mock:shadow-root>
+    <nav aria-label="pagination" id="id">
+      <ul class="mg-pagination-list">
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page précédente" class="mg-pagination-list__button mg-pagination-list__button--navigation" disabled="">
+            <span aria-hidden="true">
+              précédent
+            </span>
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button mg-pagination-list__button--active" data-page="1">
+            <span class="sr-only">
+              page
+            </span>
+            1
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button" data-page="2">
+            <span class="sr-only">
+              page
+            </span>
+            2
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">
+            …
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-current="page" class="mg-pagination-list__button" data-page="5">
+            <span class="sr-only">
+              page
+            </span>
+            5
+          </button>
+        </li>
+        <li class="mg-pagination-list__item">
+          <button aria-label="Page suivante" class="mg-pagination-list__button mg-pagination-list__button--navigation">
+            <span aria-hidden="true">
+              suivant
+            </span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </mock:shadow-root>
+</mg-pagination>
+`;

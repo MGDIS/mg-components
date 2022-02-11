@@ -697,6 +697,24 @@ export namespace Components {
          */
         "variant"?: string;
     }
+    interface MgPagination {
+        /**
+          * Component current page
+         */
+        "currentPage": number;
+        /**
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+         */
+        "identifier"?: string;
+        /**
+          * Panignation label. Is a short description. Customize default value can be usefull to improve accessibility
+         */
+        "label": string;
+        /**
+          * Component total pages
+         */
+        "totalPages": number;
+    }
     interface MgTabs {
         /**
           * Active tab number default: first is 1
@@ -853,6 +871,12 @@ declare global {
         prototype: HTMLMgMessageElement;
         new (): HTMLMgMessageElement;
     };
+    interface HTMLMgPaginationElement extends Components.MgPagination, HTMLStencilElement {
+    }
+    var HTMLMgPaginationElement: {
+        prototype: HTMLMgPaginationElement;
+        new (): HTMLMgPaginationElement;
+    };
     interface HTMLMgTabsElement extends Components.MgTabs, HTMLStencilElement {
     }
     var HTMLMgTabsElement: {
@@ -887,6 +911,7 @@ declare global {
         "mg-input-title": HTMLMgInputTitleElement;
         "mg-input-toggle": HTMLMgInputToggleElement;
         "mg-message": HTMLMgMessageElement;
+        "mg-pagination": HTMLMgPaginationElement;
         "mg-tabs": HTMLMgTabsElement;
         "mg-tag": HTMLMgTagElement;
         "mg-tooltip": HTMLMgTooltipElement;
@@ -1615,6 +1640,24 @@ declare namespace LocalJSX {
          */
         "variant"?: string;
     }
+    interface MgPagination {
+        /**
+          * Component current page
+         */
+        "currentPage"?: number;
+        /**
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+         */
+        "identifier"?: string;
+        /**
+          * Panignation label. Is a short description. Customize default value can be usefull to improve accessibility
+         */
+        "label"?: string;
+        /**
+          * Component total pages
+         */
+        "totalPages"?: number;
+    }
     interface MgTabs {
         /**
           * Active tab number default: first is 1
@@ -1695,6 +1738,7 @@ declare namespace LocalJSX {
         "mg-input-title": MgInputTitle;
         "mg-input-toggle": MgInputToggle;
         "mg-message": MgMessage;
+        "mg-pagination": MgPagination;
         "mg-tabs": MgTabs;
         "mg-tag": MgTag;
         "mg-tooltip": MgTooltip;
@@ -1719,6 +1763,7 @@ declare module "@stencil/core" {
             "mg-input-title": LocalJSX.MgInputTitle & JSXBase.HTMLAttributes<HTMLMgInputTitleElement>;
             "mg-input-toggle": LocalJSX.MgInputToggle & JSXBase.HTMLAttributes<HTMLMgInputToggleElement>;
             "mg-message": LocalJSX.MgMessage & JSXBase.HTMLAttributes<HTMLMgMessageElement>;
+            "mg-pagination": LocalJSX.MgPagination & JSXBase.HTMLAttributes<HTMLMgPaginationElement>;
             "mg-tabs": LocalJSX.MgTabs & JSXBase.HTMLAttributes<HTMLMgTabsElement>;
             "mg-tag": LocalJSX.MgTag & JSXBase.HTMLAttributes<HTMLMgTagElement>;
             "mg-tooltip": LocalJSX.MgTooltip & JSXBase.HTMLAttributes<HTMLMgTooltipElement>;
