@@ -74,7 +74,7 @@ export class MgInputDate {
   @Prop() tooltip: string;
 
   /**
-   * Template to use for characters left sentence
+   * Add an help text under the input, usually expected data format and example
    */
   @Prop() helpText: string;
 

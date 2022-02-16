@@ -26,13 +26,6 @@
     text-align: right;
   }
 
-  /* Tooltip icon */
-  mg-icon {
-    display: inline-block;
-    vertical-align: middle;
-    line-height: 1;
-  }
-
   /* Label-on-top */
   &.mg-input--label-on-top {
     flex-direction: column;
@@ -60,6 +53,11 @@
   mg-tooltip {
     margin-top: 0;
   }
+
+  mg-icon {
+    display: inline-flex;
+    vertical-align: text-bottom;
+  }
 }
 
 .mg-input__input-container {
@@ -75,6 +73,10 @@
     width: var(--mg-icon-regular-size);
     height: var(--mg-icon-regular-size);
     margin-left: var(--mg-inputs-spacer);
+  }
+
+  mg-icon {
+    display: flex;
   }
 }
 

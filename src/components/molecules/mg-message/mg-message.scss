@@ -1,7 +1,7 @@
 @mixin message-variants($variants...) {
   @each $variant in $variants {
     &.mg-message--#{$variant} {
-      &:before {
+      &::before {
         background-color: hsl(var(--color-#{$variant}));
       }
       .mg-message__icon {
@@ -23,7 +23,7 @@
   border-radius: var(--mg-message-border-radius);
   box-shadow: 0 0.3rem 0.8rem 0 hsla(var(--color-dark), 0.1);
 
-  &:before {
+  &::before {
     content: '';
     position: absolute;
     top: 0;

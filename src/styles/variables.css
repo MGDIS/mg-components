@@ -111,13 +111,15 @@
   /*
     <mg-tag>
    */
+  --mg-tag-height: 2.3rem;
   --mg-tag-border-radius: 0.5rem;
   --mg-tag-font-size: 1.2rem;
 
   /*
-    <mg-badge>
-   */
-  --mg-badge-border-radius: 2rem;
+  <mg-badge>
+  */
+  --mg-badge-height: 2rem;
+  --mg-badge-border-radius: 1rem;
   --mg-badge-font-size: 1.2rem;
 
   /*

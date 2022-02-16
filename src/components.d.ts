@@ -89,7 +89,7 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
-          * Template to use for characters left sentence
+          * Add an help text under the input, usually expected data format and example
          */
         "helpText": string;
         /**
@@ -147,7 +147,7 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
-          * Template to use for characters left sentence
+          * Add an help text under the input, usually expected data format and example
          */
         "helpText": string;
         /**
@@ -201,7 +201,7 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
-          * Template to use for characters left sentence
+          * Add an help text under the input, usually expected data format and example
          */
         "helpText": string;
         /**
@@ -271,7 +271,7 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
-          * Template to use for characters left sentence
+          * Add an help text under the input, usually expected data format and example
          */
         "helpText": string;
         /**
@@ -329,7 +329,7 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
-          * Template to use for characters left sentence
+          * Add an help text under the input, usually expected data format and example
          */
         "helpText": string;
         /**
@@ -391,7 +391,7 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
-          * Template to use for characters left sentence
+          * Add an help text under the input, usually expected data format and example
          */
         "helpText": string;
         /**
@@ -461,7 +461,7 @@ export namespace Components {
          */
         "displayCharacterLeft": boolean;
         /**
-          * Template to use for characters left sentence
+          * Add an help text under the input, usually expected data format and example
          */
         "helpText": string;
         /**
@@ -539,7 +539,7 @@ export namespace Components {
          */
         "displayCharacterLeft": boolean;
         /**
-          * Template to use for characters left sentence
+          * Add an help text under the input, usually expected data format and example
          */
         "helpText": string;
         /**
@@ -627,7 +627,7 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
-          * Template to use for characters left sentence
+          * Add an help text under the input, usually expected data format and example
          */
         "helpText": string;
         /**
@@ -1005,7 +1005,7 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
-          * Template to use for characters left sentence
+          * Add an help text under the input, usually expected data format and example
          */
         "helpText"?: string;
         /**
@@ -1067,7 +1067,7 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
-          * Template to use for characters left sentence
+          * Add an help text under the input, usually expected data format and example
          */
         "helpText"?: string;
         /**
@@ -1125,7 +1125,7 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
-          * Template to use for characters left sentence
+          * Add an help text under the input, usually expected data format and example
          */
         "helpText"?: string;
         /**
@@ -1199,7 +1199,7 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
-          * Template to use for characters left sentence
+          * Add an help text under the input, usually expected data format and example
          */
         "helpText"?: string;
         /**
@@ -1261,7 +1261,7 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
-          * Template to use for characters left sentence
+          * Add an help text under the input, usually expected data format and example
          */
         "helpText"?: string;
         /**
@@ -1327,7 +1327,7 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
-          * Template to use for characters left sentence
+          * Add an help text under the input, usually expected data format and example
          */
         "helpText"?: string;
         /**
@@ -1401,7 +1401,7 @@ declare namespace LocalJSX {
          */
         "displayCharacterLeft"?: boolean;
         /**
-          * Template to use for characters left sentence
+          * Add an help text under the input, usually expected data format and example
          */
         "helpText"?: string;
         /**
@@ -1483,7 +1483,7 @@ declare namespace LocalJSX {
          */
         "displayCharacterLeft"?: boolean;
         /**
-          * Template to use for characters left sentence
+          * Add an help text under the input, usually expected data format and example
          */
         "helpText"?: string;
         /**
@@ -1575,7 +1575,7 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
-          * Template to use for characters left sentence
+          * Add an help text under the input, usually expected data format and example
          */
         "helpText"?: string;
         /**

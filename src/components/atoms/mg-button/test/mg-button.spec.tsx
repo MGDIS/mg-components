@@ -20,7 +20,7 @@ describe('mg-button', () => {
 
   test.each(['', 'blu', undefined])('Should throw error', async variant => {
     try {
-      await getPage({ variant, label: 'label' });
+      await getPage({ variant });
     } catch (err) {
       expect(err.message).toContain('<mg-button> prop "variant" must be one of : ');
     }
@@ -29,7 +29,7 @@ describe('mg-button', () => {
   test.each(['primary', 'secondary', 'info'])('Should throw error, case mg-button use same variant on mg-badge', async variant => {
     try {
       await getPage(
-        { variant, label: 'label' },
+        { variant },
         <span>
           content<mg-badge variant={variant}></mg-badge>
         </span>,
@@ -49,7 +49,7 @@ describe('mg-button', () => {
 
   describe('prevent double click', () => {
     test('should NOT disable button after click', async () => {
-      const page = await getPage({ identifier: 'identifier', label: 'test' });
+      const page = await getPage({ identifier: 'identifier' });
       const element = page.doc.querySelector('mg-button');
       const button = element.querySelector('button');
 
@@ -66,7 +66,7 @@ describe('mg-button', () => {
     });
 
     test('should disable button after click', async () => {
-      const page = await getPage({ identifier: 'identifier', label: 'test', disableOnClick: true });
+      const page = await getPage({ identifier: 'identifier', disableOnClick: true });
       const element = page.doc.querySelector('mg-button');
       const button = element.querySelector('button');
 
