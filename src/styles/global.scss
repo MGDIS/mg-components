@@ -3,83 +3,83 @@
  */
 
 // Normalize CSS : https://necolas.github.io/normalize.css/
-@use '~normalize.css/normalize.css';
+@import '~normalize.css/normalize.css';
 
 // Fonts
-@use './fonts.scss';
+@import './fonts.scss';
 
 // Variables
-@use './variables.css';
+@import './variables.css';
 
 // Utilities
-@use './utilities.scss';
+@import './utilities.scss';
 
 // Main style
-@use './main.scss';
+@import './main.scss';
 
 // Typography style
-@use './typography.scss';
+@import './typography.scss';
 
 // Accessibility
-@use './a11y.scss';
+@import './a11y.scss';
 
 // Form
-@use './form.scss';
+@import './form.scss';
 
 // Layout
-@use './layout.scss';
+@import './layout.scss';
 
 /**
  * Components style
  * molecules
  */
 
-@use './components.scss';
+@import './components.scss';
 
 /* Atoms */
 
 // <mg-badge>
-@use '../components/atoms/mg-badge/mg-badge.scss';
+@import '../components/atoms/mg-badge/mg-badge.scss';
 
 // <mg-button>
-@use '../components/atoms/mg-button/mg-button.scss';
+@import '../components/atoms/mg-button/mg-button.scss';
 
 // <mg-character-left>
-@use '../components/atoms/mg-character-left/mg-character-left.scss';
+@import '../components/atoms/mg-character-left/mg-character-left.scss';
 
 // <mg-icon>
-@use '../components/atoms/mg-icon/mg-icon.scss';
+@import '../components/atoms/mg-icon/mg-icon.scss';
 
 // <mg-input-title>
-@use '../components/atoms/mg-input-title/mg-input-title.scss';
+@import '../components/atoms/mg-input-title/mg-input-title.scss';
 
 // <mg-tag>
-@use '../components/atoms/mg-tag/mg-tag.scss';
+@import '../components/atoms/mg-tag/mg-tag.scss';
 
 // <mg-tooltip>
-@use '../components/atoms/mg-tooltip/mg-tooltip.scss';
+@import '../components/atoms/mg-tooltip/mg-tooltip.scss';
 
 /* Molecules */
 
 // <mg-input-...>
 //! For now input style will not be included
-// @use '../components/molecules/inputs/styles/mg-input.scss';
-// @use '../components/molecules/inputs/styles/mg-input-box.scss';
-// @use '../components/molecules/inputs/styles/mg-input-charleft.scss';
-// @use '../components/molecules/inputs/styles/mg-input-fieldset.scss';
-// @use '../components/molecules/inputs/styles/mg-input-width.scss';
+// @import '../components/molecules/inputs/styles/mg-input.scss';
+// @import '../components/molecules/inputs/styles/mg-input-box.scss';
+// @import '../components/molecules/inputs/styles/mg-input-charleft.scss';
+// @import '../components/molecules/inputs/styles/mg-input-fieldset.scss';
+// @import '../components/molecules/inputs/styles/mg-input-width.scss';
 
 // <mg-message>
-@use '../components/molecules/mg-message/mg-message.scss';
+@import '../components/molecules/mg-message/mg-message.scss';
 
 // <mg-pagination>
-@use '../components/molecules/mg-pagination/mg-pagination.scss';
+@import '../components/molecules/mg-pagination/mg-pagination.scss';
 
 // <mg-tabs>
-@use '../components/molecules/mg-tabs/mg-tabs.scss';
+@import '../components/molecules/mg-tabs/mg-tabs.scss';
 
 /**
  * IE fixes
  */
 
-@use './ie.scss';
+@import './ie.scss';
