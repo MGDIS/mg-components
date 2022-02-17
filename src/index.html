@@ -393,13 +393,19 @@
           ];
         </script>
         <h3>Input Toggle</h3>
-        <mg-input-toggle label="choix A/B" identifier="toggle-text" label-on-top>
+        <mg-input-toggle label="choix A/B" identifier="toggle-text" label-on-top tooltip="message tooltip">
           <span slot="item-1">Choix A</span>
           <span slot="item-2">Choix B</span>
         </mg-input-toggle>
-        <mg-input-toggle label="icons" identifier="toggle-icon" is-icon is-on-off>
-          <span slot="item-1"><mg-icon icon="cross"></mg-icon></span>
-          <span slot="item-2"><mg-icon icon="check"></mg-icon></span>
+        <mg-input-toggle identifier="toggle-text-long" help-text="Message d'aide plus long" label="Libellé plutôt long on va dire" tooltip="message tooltip" label-on-top readonly>
+          <span slot="item-1"
+            >Long choix A Long choix A Long choix A Long choix A Long choix A Long choix A Long choix A Long choix A Long choix A Long choix A Long choix A Long choix A</span
+          >
+          <span slot="item-2">Long choix B Long choix B Long choix B Long choix B Long choix B Long choix B Long choix B</span>
+        </mg-input-toggle>
+        <mg-input-toggle label="icons" identifier="toggle-icon" is-icon is-on-off readonly>
+          <mg-icon icon="cross" slot="item-1"></mg-icon>
+          <mg-icon icon="check" slot="item-2"></mg-icon>
         </mg-input-toggle>
         <mg-input-toggle label="on/off" identifier="toggle-on-off" is-on-off>
           <span slot="item-1">Off</span>
@@ -409,14 +415,19 @@
           <span slot="item-1">Off</span>
           <span slot="item-2">On</span>
         </mg-input-toggle>
+        <mg-input-toggle label="on/off readonly" identifier="toggle-on-off-readonly-false" is-on-off readonly>
+          <span slot="item-1">Off</span>
+          <span slot="item-2">On</span>
+        </mg-input-toggle>
         <script>
-          const mgInputToggleOnOff = document.querySelector('mg-input-toggle[identifier="toggle-on-off"]');
-          mgInputToggleOnOff.items = [
+          const mgInputToggleText = document.querySelector('mg-input-toggle[identifier="toggle-text"]');
+          mgInputToggleText.items = [
             { title: 'non', value: false },
             { title: 'oui', value: true },
           ];
-          const mgInputToggleText = document.querySelector('mg-input-toggle[identifier="toggle-text"]');
-          mgInputToggleText.items = [
+          mgInputToggleText.value = true;
+          const mgInputToggleTextLong = document.querySelector('mg-input-toggle[identifier="toggle-text-long"]');
+          mgInputToggleTextLong.items = [
             { title: 'non', value: false },
             { title: 'oui', value: true },
           ];
@@ -425,17 +436,24 @@
             { title: 'non', value: false },
             { title: 'oui', value: true },
           ];
+          mgInputToggleIcon.value = true;
+          const mgInputToggleOnOff = document.querySelector('mg-input-toggle[identifier="toggle-on-off"]');
+          mgInputToggleOnOff.items = [
+            { title: 'non', value: false },
+            { title: 'oui', value: true },
+          ];
           const mgInputToggleOnOffReadonly = document.querySelector('mg-input-toggle[identifier="toggle-on-off-readonly"]');
           mgInputToggleOnOffReadonly.items = [
             { title: 'non', value: false },
             { title: 'oui', value: true },
           ];
+          const mgInputToggleOnOffReadonlyFalse = document.querySelector('mg-input-toggle[identifier="toggle-on-off-readonly-false"]');
+          mgInputToggleOnOffReadonlyFalse.items = [
+            { title: 'non', value: false },
+            { title: 'oui', value: true },
+          ];
+          mgInputToggleOnOffReadonlyFalse.value = true;
         </script>
-        <style>
-          #toggle-text {
-            width: 100px;
-          }
-        </style>
         <h2>.mg-form-group</h2>
         <div class="mg-grid">
           <div class="mg-grid__col mg-grid__col-10">

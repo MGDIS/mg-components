@@ -6,6 +6,7 @@
   display: flex;
   align-items: flex-start;
   min-height: var(--default-size);
+  max-width: 100%;
 
   /* Style when input is not valid */
   &.is-not-valid {

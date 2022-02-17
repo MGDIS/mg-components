@@ -181,7 +181,6 @@ export class MgInputToggle {
    * Handle input event
    */
   private handleToggleClick = () => {
-    this.classList.add('mg-input--toggle-clicked');
     this.toggleValue();
   };
 
@@ -193,7 +192,7 @@ export class MgInputToggle {
     if (slots.length !== 2) {
       throw new Error('<mg-input-toggle> 2 slots are required.');
     } else if (!this.isIcon) {
-      // * Due to text-overflow set to ellipsis
+      // Due to text-overflow set to ellipsis
       // we need to ensure that slot element have title to display value on mouse over
       slots.forEach(slot => slot.setAttribute('title', slot.textContent));
     }

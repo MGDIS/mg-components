@@ -6,14 +6,10 @@
 */
 
 // variables
-$lightBlue: hsl(var(--color-info-h) calc(var(--color-info-s) - 64%) calc(var(--color-info-l) + 55%));
-$lightDark: hsl(var(--color-dark-h) calc(var(--color-dark-s) - 30%) calc(var(--color-dark-l) + 75%));
-$elementLineHeight: calc(var(--font-size-base) + 0.2rem);
-$childElementPadding: 0.5rem;
-$elementMinSize: calc(#{$elementLineHeight} + #{$childElementPadding} * 2);
-$elementPadding: 0.2rem;
+$color-light-blue: hsl(var(--color-info-h) calc(var(--color-info-s) - 64%) calc(var(--color-info-l) + 55%));
+$color-light-dark: hsl(var(--color-dark-h) calc(var(--color-dark-s) - 30%) calc(var(--color-dark-l) + 75%));
 
-// mixins
+//mixins
 @mixin mg-input-toggle__text-background($color) {
   content: '';
   position: absolute;
@@ -22,240 +18,132 @@ $elementPadding: 0.2rem;
   height: 100%;
 }
 
-// styles
+$button-toggle-padding: 0.2rem;
+$toggle-item-container-padding-vertical: 0.5rem;
+
+.mg-input.mg-input.mg-input--toggle .mg-input__input-container {
+  flex: auto;
+  min-width: 0;
+}
+
 .mg-input__button-toggle {
-  margin-top: calc((var(--default-size) - (#{$elementMinSize} + #{$elementPadding} * 2 + var(--mg-inputs-border-width) * 2)) / 2);
-  padding: $elementPadding;
+  // Display
+  display: flex;
+  padding: $button-toggle-padding;
+  min-width: 0;
+  // Decoration
+  background-color: hsl(var(--color-light));
+  border-width: var(--mg-inputs-border-width);
+  border-style: solid;
+  border-color: var(--mg-inputs-color);
   border-radius: calc(
-    (#{$elementLineHeight} + #{$elementPadding} * 2 + #{$childElementPadding} * 2) / var(--mg-input-toggle-border-radius-ratio)
-  ); // = (lineheight + element vertical-padding + child vertical-padding) / ratio
-  line-height: $elementLineHeight;
+    ((var(--font-size) * var(--line-height)) + (2 * ($button-toggle-padding + $toggle-item-container-padding-vertical + var(--mg-inputs-border-width)))) /
+      var(--mg-input-toggle-border-radius-ratio)
+  );
+  // Font
+  font-size: inherit;
+  line-height: inherit;
 }
 
 .mg-input__toggle-item-container {
-  padding: $childElementPadding 0;
-  min-width: $elementMinSize;
-  min-height: $elementMinSize;
-}
-.mg-input__toggle-item-container {
-  &,
-  &::before {
-    border-radius: calc((#{$elementLineHeight} + #{$childElementPadding} * 2) / var(--mg-input-toggle-border-radius-ratio)); // = (lineheight + child vertical-padding) / ratio
-  }
-}
+  padding: $toggle-item-container-padding-vertical 0.9rem;
+  border: 0;
+  box-sizing: border-box;
+  border-radius: calc(((var(--font-size) * var(--line-height)) + (2 * $toggle-item-container-padding-vertical)) / var(--mg-input-toggle-border-radius-ratio));
 
-// icon variation
-.mg-input.mg-input--toggle-icon .mg-input__toggle-item-container mg-icon {
-  height: $elementLineHeight;
-  width: $elementLineHeight;
-}
+  background-color: unset;
+  font-weight: unset;
+  color: hsl(var(--color-dark));
 
-// readonly variation
-.mg-input.mg-input--toggle-readonly .mg-input__button-toggle {
-  margin-top: calc((var(--default-size) - #{$elementMinSize}) / 2);
-}
-
-.mg-input__button-toggle {
-  display: flex;
+  white-space: nowrap;
   overflow: hidden;
-  &:not(.mg-input--toggle-readonly .mg-input__button-toggle) {
-    background-color: hsl(var(--color-light));
-    // border
-    border-width: var(--mg-inputs-border-width);
-    border-style: solid;
-    border-color: var(--mg-inputs-color);
-  }
-}
+  text-overflow: ellipsis;
 
-.mg-input__toggle-item-container {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  position: relative;
-  // font
   &:first-of-type {
-    color: hsl(var(--color-info));
     font-weight: 600;
+    color: hsl(var(--color-info));
+    background-color: $color-light-blue;
   }
-  &:last-of-type {
-    color: hsl(var(--color-dark));
-  }
-  // slot
-  & > * {
-    z-index: 1;
-    &:not(.mg-input--toggle-readonly .mg-input__toggle-item-container > *) {
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
-    }
-    &:not(mg-icon) {
-      padding: 0 0.9rem;
-    }
-  }
-}
-
-.mg-input.mg-input--toggle:not(.mg-input--toggle-icon) .mg-input__toggle-item-container:first-of-type::before {
-  @include mg-input-toggle__text-background($lightBlue);
 }
 
 // toggle default active variation
 .mg-input.mg-input--toggle-is-active {
   .mg-input__toggle-item-container {
     &:first-of-type {
-      color: hsl(var(--color-dark));
+      background-color: unset;
       font-weight: unset;
+      color: hsl(var(--color-dark));
     }
     &:last-of-type {
       font-weight: 600;
       color: hsl(var(--color-info));
-    }
-  }
-  &:not(.mg-input--toggle-icon) .mg-input__toggle-item-container {
-    &:first-of-type::before {
-      content: unset;
-    }
-    &:last-of-type::before {
-      @include mg-input-toggle__text-background($lightBlue);
+      background-color: $color-light-blue;
     }
   }
 }
 
-// toggle icon variation
-.mg-input.mg-input--toggle-icon {
-  .mg-input__toggle-item-container {
-    &:first-of-type {
-      opacity: 1;
-    }
-    &:last-of-type {
-      opacity: 0;
-    }
+// icon
+.mg-input.mg-input--toggle-icon .mg-input__toggle-item-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(((var(--font-size) * var(--line-height)) + (2 * $toggle-item-container-padding-vertical)));
+  height: calc(((var(--font-size) * var(--line-height)) + (2 * $toggle-item-container-padding-vertical)));
+  padding: 0;
+  visibility: hidden;
 
-    // slot
-    > *:not(mg-icon) {
-      padding: 0;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    mg-icon {
-      display: flex;
-      margin-left: auto;
-      margin-right: auto;
-    }
+  &:first-of-type {
+    visibility: visible;
+  }
+
+  ::slotted(mg-icon) {
+    display: flex;
+  }
+}
+
+.mg-input.mg-input--toggle-icon.mg-input--toggle-is-active .mg-input__toggle-item-container {
+  &:first-of-type {
+    visibility: hidden;
+  }
+
+  &:last-of-type {
+    visibility: visible;
+  }
+}
+
+// on/off
+.mg-input.mg-input--toggle-on-off {
+  .mg-input__toggle-item-container:first-of-type {
+    font-weight: 600;
+    color: hsl(var(--color-dark));
+    background-color: $color-light-dark;
+  }
+
+  &.mg-input--toggle-is-active .mg-input__toggle-item-container:first-of-type {
+    background-color: unset;
+    font-weight: unset;
+    color: hsl(var(--color-dark));
+  }
+}
+
+// readonly
+.mg-input.mg-input--toggle-readonly {
+  .mg-input__button-toggle {
+    border-color: transparent;
+    background-color: transparent;
+  }
+
+  .mg-input__toggle-item-container:last-of-type {
+    display: none;
   }
 
   &.mg-input--toggle-is-active .mg-input__toggle-item-container {
     &:first-of-type {
-      background-color: unset;
-      opacity: 0;
+      display: none;
     }
+
     &:last-of-type {
-      opacity: 1;
-      background-color: $lightBlue;
+      display: flex;
     }
-  }
-
-  .mg-input__toggle-item-container:first-of-type {
-    background-color: $lightBlue;
-  }
-}
-
-// disabled variation
-.mg-input.mg-input--toggle-disabled .mg-input__button-toggle {
-  opacity: 30%;
-}
-
-// toggle on-off variation
-.mg-input.mg-input--toggle-on-off {
-  .mg-input__toggle-item-container:first-of-type {
-    color: hsl(var(--color-dark));
-  }
-
-  &.mg-input--toggle-is-active {
-    &:not(.mg-input--toggle-icon) .mg-input__toggle-item-container:first-of-type::before {
-      content: unset;
-    }
-
-    &.mg-input--toggle-icon .mg-input__toggle-item-container:first-of-type {
-      background: none;
-    }
-  }
-
-  &:not(.mg-input--toggle-icon) {
-    .mg-input__toggle-item-container:first-of-type::before {
-      @include mg-input-toggle__text-background($lightDark);
-    }
-    &.mg-input--toggle-is-active .mg-input__toggle-item-container:first-of-type::before {
-      content: unset;
-    }
-  }
-
-  &.mg-input--toggle-icon .mg-input__toggle-item-container:first-of-type {
-    background-color: $lightDark;
-  }
-}
-
-// readonly variation
-.mg-input.mg-input--toggle-readonly {
-  .mg-input__button-toggle {
-    background: none;
-    border: none;
-    overflow: hidden;
-    padding: 0;
-  }
-  &:not(.mg-input--toggle-is-active) .mg-input__toggle-item-container:last-of-type {
-    display: none;
-  }
-  &.mg-input--toggle-is-active .mg-input__toggle-item-container:first-of-type {
-    display: none;
-  }
-}
-
-// clicked variation - animation trigger
-.mg-input.mg-input--toggle-clicked {
-  &:not(.mg-input--toggle-icon) {
-    .mg-input__toggle-item-container::before {
-      // animation
-      animation-timing-function: ease-in-out;
-      animation-duration: 0.2s;
-      animation-name: toggleUnactive;
-    }
-    &.mg-input--toggle-is-active .mg-input__toggle-item-container::before {
-      // animation
-      animation-name: toggleActive;
-    }
-  }
-  &.mg-input--toggle-icon {
-    .mg-input__toggle-item-container {
-      // animation
-      animation-timing-function: ease-in-out;
-      animation-duration: 0.2s;
-      animation-name: toggleUnactive;
-    }
-    &.mg-input--toggle-is-active .mg-input__toggle-item-container {
-      // animation
-      animation-name: toggleActive;
-    }
-  }
-}
-
-/**
-  * Animations
-  */
-
-@keyframes toggleUnactive {
-  from {
-    transform: translateX(1.5em);
-  }
-  to {
-    transform: translateX(0em);
-  }
-}
-
-@keyframes toggleActive {
-  from {
-    transform: translateX(-1.5em);
-  }
-  to {
-    transform: translateX(0em);
   }
 }
