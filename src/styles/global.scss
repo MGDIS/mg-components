@@ -14,14 +14,14 @@
 // Utilities
 @use './utilities.scss';
 
-// Accessibility
-@use './a11y.scss';
-
 // Main style
 @use './main.scss';
 
 // Typography style
 @use './typography.scss';
+
+// Accessibility
+@use './a11y.scss';
 
 // Form
 @use './form.scss';
@@ -31,20 +31,27 @@
 
 /**
  * Components style
- * atoms
  * molecules
  */
 
-// @use './components.scss';
+@use './components.scss';
 
-// <mg-input-title>
-@use '../components/atoms/mg-input-title/mg-input-title.scss';
+/* Atoms */
+
+// <mg-badge>
+@use '../components/atoms/mg-badge/mg-badge.scss';
+
+// <mg-button>
+@use '../components/atoms/mg-button/mg-button.scss';
+
+// <mg-character-left>
+@use '../components/atoms/mg-character-left/mg-character-left.scss';
 
 // <mg-icon>
 @use '../components/atoms/mg-icon/mg-icon.scss';
 
-// <mg-button>
-@use '../components/atoms/mg-button/mg-button.scss';
+// <mg-input-title>
+@use '../components/atoms/mg-input-title/mg-input-title.scss';
 
 // <mg-tag>
 @use '../components/atoms/mg-tag/mg-tag.scss';
@@ -52,14 +59,21 @@
 // <mg-tooltip>
 @use '../components/atoms/mg-tooltip/mg-tooltip.scss';
 
+/* Molecules */
+
+// <mg-input-...>
+//! For now input style will not be included
+// @use '../components/molecules/inputs/styles/mg-input.scss';
+// @use '../components/molecules/inputs/styles/mg-input-box.scss';
+// @use '../components/molecules/inputs/styles/mg-input-charleft.scss';
+// @use '../components/molecules/inputs/styles/mg-input-fieldset.scss';
+// @use '../components/molecules/inputs/styles/mg-input-width.scss';
+
 // <mg-message>
 @use '../components/molecules/mg-message/mg-message.scss';
 
 // <mg-pagination>
 @use '../components/molecules/mg-pagination/mg-pagination.scss';
-
-// <mg-input-...>
-@use '../components/molecules/inputs/styles/mg-input.scss';
 
 // <mg-tabs>
 @use '../components/molecules/mg-tabs/mg-tabs.scss';
