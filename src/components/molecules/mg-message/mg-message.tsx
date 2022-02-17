@@ -81,7 +81,7 @@ export class MgMessage {
   /**
    * Component classes
    */
-  @State() classList: ClassList = new ClassList(['mg-components', 'mg-message']);
+  @State() classList: ClassList = new ClassList(['mg-message']);
 
   /**
    * Define if component is using actions slot
