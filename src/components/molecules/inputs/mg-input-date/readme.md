@@ -8,7 +8,7 @@ This atom refers to the [PDA9-65](https://jira.mgdis.fr/browse/PDA9-65).
 | Property             | Attribute      | Description                                                                                                 | Type      | Default                     |
 | -------------------- | -------------- | ----------------------------------------------------------------------------------------------------------- | --------- | --------------------------- |
 | `disabled`           | `disabled`     | Define if input is disabled                                                                                 | `boolean` | `false`                     |
-| `helpText`           | `help-text`    | add a help text under the input, usually expected data format and example                                   | `string`  | `undefined`                 |
+| `helpText`           | `help-text`    | Add a help text under the input, usually expected data format and example                                   | `string`  | `undefined`                 |
 | `identifier`         | `identifier`   | Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created. | `string`  | `createID('mg-input-date')` |
 | `invalid`            | `invalid`      | Define input pattern error message                                                                          | `boolean` | `undefined`                 |
 | `label` _(required)_ | `label`        | Input label Required                                                                                        | `string`  | `undefined`                 |

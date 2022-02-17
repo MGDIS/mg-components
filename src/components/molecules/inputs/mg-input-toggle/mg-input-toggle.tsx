@@ -146,7 +146,7 @@ export class MgInputToggle {
   @Prop() tooltip: string;
 
   /**
-   * add a help text under the input, usually expected data format and example
+   * Add a help text under the input, usually expected data format and example
    */
   @Prop() helpText: string;
 
