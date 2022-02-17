@@ -38,6 +38,7 @@ MgInputRadio.args = {
   // Label
   label: 'Option',
   labelOnTop: false,
+  labelHide: false,
   // placement
   inputVerticalList: false,
   // Input
