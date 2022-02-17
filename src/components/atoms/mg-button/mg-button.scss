@@ -104,6 +104,7 @@ $mg-button-padding-horizontal: 1.1rem;
     margin: auto 0;
   }
 
+  &:not(.mg-button--icon) mg-icon,
   &:not(.mg-button--icon) ::slotted(mg-icon) {
     margin-right: 0.6rem;
   }
@@ -126,7 +127,7 @@ $mg-button-padding-horizontal: 1.1rem;
   }
 
   ::slotted(mg-badge) {
-    display: inline-grid;
+    display: inline-flex;
     margin-left: 0.3rem;
   }
 }

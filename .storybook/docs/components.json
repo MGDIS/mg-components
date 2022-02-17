@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-02-17T17:04:39",
+  "timestamp": "2022-02-17T17:01:34",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.13.0",
@@ -3802,25 +3802,6 @@
           "mg-tooltip"
         ]
       }
-    },
-    {
-      "filePath": "./src/components/test/my-component/my-component.tsx",
-      "encapsulation": "shadow",
-      "tag": "my-component",
-      "readme": "# my-component\n\n\n",
-      "docs": "",
-      "docsTags": [],
-      "usage": {},
-      "props": [],
-      "methods": [],
-      "events": [],
-      "listeners": [],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
     }
   ]
 }

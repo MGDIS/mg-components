@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <title><mg-components/></title>
-    <!-- <link rel="stylesheet" href="/build/mg-components.css" />-->
     <style>
       /* Website style */
       html {
@@ -24,6 +23,7 @@
       }
     </style>
     <link rel="stylesheet" href="/build/variables.css" />
+    <!-- <link rel="stylesheet" href="/build/mg-components.css" /> -->
     <script type="module" src="/build/mg-components.esm.js"></script>
     <script nomodule src="/build/mg-components.js"></script>
   </head>
@@ -245,6 +245,13 @@
           <mg-badge outline variant="info">info</mg-badge>
         </div>
         <div class="mg-group-elements" style="padding: 0 0 1rem">
+          <mg-badge variant="primary">1</mg-badge>
+          <mg-badge variant="secondary">2</mg-badge>
+          <mg-badge variant="danger">3</mg-badge>
+          <mg-badge variant="success">4</mg-badge>
+          <mg-badge variant="info">*</mg-badge>
+        </div>
+        <div class="mg-group-elements" style="padding: 0 0 1rem">
           <mg-button>mg-button <mg-badge>23</mg-badge></mg-button>
         </div>
       </section>
@@ -403,11 +410,11 @@
           >
           <span slot="item-2">Long choix B Long choix B Long choix B Long choix B Long choix B Long choix B Long choix B</span>
         </mg-input-toggle>
-        <mg-input-toggle label="icons" identifier="toggle-icon" is-icon is-on-off readonly>
+        <mg-input-toggle label="icons" identifier="toggle-icon" is-icon is-on-off readonly tooltip="blu">
           <mg-icon icon="cross" slot="item-1"></mg-icon>
           <mg-icon icon="check" slot="item-2"></mg-icon>
         </mg-input-toggle>
-        <mg-input-toggle label="on/off" identifier="toggle-on-off" is-on-off>
+        <mg-input-toggle label="on/off" identifier="toggle-on-off" is-on-off disabled>
           <span slot="item-1">Off</span>
           <span slot="item-2">On</span>
         </mg-input-toggle>

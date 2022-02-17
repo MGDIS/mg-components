@@ -8,16 +8,6 @@
 // variables
 $color-light-blue: hsl(var(--color-info-h) calc(var(--color-info-s) - 64%) calc(var(--color-info-l) + 55%));
 $color-light-dark: hsl(var(--color-dark-h) calc(var(--color-dark-s) - 30%) calc(var(--color-dark-l) + 75%));
-
-//mixins
-@mixin mg-input-toggle__text-background($color) {
-  content: '';
-  position: absolute;
-  background-color: $color;
-  width: 100%;
-  height: 100%;
-}
-
 $button-toggle-padding: 0.2rem;
 $toggle-item-container-padding-vertical: 0.5rem;
 
@@ -43,6 +33,8 @@ $toggle-item-container-padding-vertical: 0.5rem;
   // Font
   font-size: inherit;
   line-height: inherit;
+
+  cursor: pointer;
 }
 
 .mg-input__toggle-item-container {
@@ -131,6 +123,7 @@ $toggle-item-container-padding-vertical: 0.5rem;
   .mg-input__button-toggle {
     border-color: transparent;
     background-color: transparent;
+    cursor: initial;
   }
 
   .mg-input__toggle-item-container:last-of-type {
@@ -146,4 +139,10 @@ $toggle-item-container-padding-vertical: 0.5rem;
       display: flex;
     }
   }
+}
+
+// readonly
+.mg-input.mg-input--toggle-disabled .mg-input__button-toggle {
+  opacity: 0.3;
+  cursor: not-allowed;
 }

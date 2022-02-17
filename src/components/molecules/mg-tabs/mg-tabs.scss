@@ -11,8 +11,9 @@
   padding: 1.8rem 2.4rem 1.5rem;
   background: none;
   border: none;
-  border-bottom: solid 0.3rem transparent;
+  border-bottom: 0.3rem solid transparent;
   color: hsl(var(--color-dark));
+  line-height: var(--line-height);
   cursor: pointer;
   &:hover,
   &:focus {
@@ -20,7 +21,7 @@
   }
   &--active {
     color: hsl(var(--color-info));
-    border-bottom: 0.3rem solid hsl(var(--color-info));
+    border-bottom-color: hsl(var(--color-info));
     font-weight: 700;
   }
 }
