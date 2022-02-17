@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-02-17T17:01:34",
+  "timestamp": "2022-02-17T17:09:00",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.13.0",
@@ -489,7 +489,7 @@
           "mutable": false,
           "attr": "help-text",
           "reflectToAttr": false,
-          "docs": "Add an help text under the input, usually expected data format and example",
+          "docs": "add a help text under the input, usually expected data format and example",
           "docsTags": [],
           "values": [
             {
@@ -761,7 +761,7 @@
           "mutable": false,
           "attr": "help-text",
           "reflectToAttr": false,
-          "docs": "Add an help text under the input, usually expected data format and example",
+          "docs": "add a help text under the input, usually expected data format and example",
           "docsTags": [],
           "values": [
             {
@@ -1017,7 +1017,7 @@
           "mutable": false,
           "attr": "help-text",
           "reflectToAttr": false,
-          "docs": "Add an help text under the input, usually expected data format and example",
+          "docs": "add a help text under the input, usually expected data format and example",
           "docsTags": [],
           "values": [
             {
@@ -1338,7 +1338,7 @@
           "mutable": false,
           "attr": "help-text",
           "reflectToAttr": false,
-          "docs": "Add an help text under the input, usually expected data format and example",
+          "docs": "add a help text under the input, usually expected data format and example",
           "docsTags": [],
           "values": [
             {
@@ -1610,7 +1610,7 @@
           "mutable": false,
           "attr": "help-text",
           "reflectToAttr": false,
-          "docs": "Add an help text under the input, usually expected data format and example",
+          "docs": "add a help text under the input, usually expected data format and example",
           "docsTags": [],
           "values": [
             {
@@ -1902,7 +1902,7 @@
           "mutable": false,
           "attr": "help-text",
           "reflectToAttr": false,
-          "docs": "Add an help text under the input, usually expected data format and example",
+          "docs": "add a help text under the input, usually expected data format and example",
           "docsTags": [],
           "values": [
             {
@@ -2226,7 +2226,7 @@
           "mutable": false,
           "attr": "help-text",
           "reflectToAttr": false,
-          "docs": "Add an help text under the input, usually expected data format and example",
+          "docs": "add a help text under the input, usually expected data format and example",
           "docsTags": [],
           "values": [
             {
@@ -2580,7 +2580,7 @@
           "mutable": false,
           "attr": "help-text",
           "reflectToAttr": false,
-          "docs": "Add an help text under the input, usually expected data format and example",
+          "docs": "add a help text under the input, usually expected data format and example",
           "docsTags": [],
           "values": [
             {
@@ -3025,7 +3025,7 @@
           "mutable": false,
           "attr": "help-text",
           "reflectToAttr": false,
-          "docs": "Add an help text under the input, usually expected data format and example",
+          "docs": "add a help text under the input, usually expected data format and example",
           "docsTags": [],
           "values": [
             {
