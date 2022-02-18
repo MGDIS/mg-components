@@ -111,7 +111,7 @@ export class MgInputCheckbox {
   @Prop() tooltip: string;
 
   /**
-   * Template to use for characters left sentence
+   * Add a help text under the input, usually expected data format and example
    */
   @Prop() helpText: string;
 
@@ -227,7 +227,7 @@ export class MgInputCheckbox {
         errorMessage={this.errorMessage}
         isFieldset={true}
       >
-        <ul class={'mg-input__input-group-container mg-input__input-group-container--checkbox ' + (this.inputVerticalList ? 'mg-input__input-group-container--vertical' : '')}>
+        <ul class={`mg-input__input-group-container${this.inputVerticalList ? ' mg-input__input-group-container--vertical' : ''}`}>
           {this.checkboxItems
             .filter(item => {
               return !this.readonly || item.value;

@@ -1,9 +1,9 @@
 {
-  "timestamp": "2022-02-17T08:52:08",
+  "timestamp": "2022-02-17T21:43:34",
   "compiler": {
     "name": "@stencil/core",
-    "version": "2.13.0",
-    "typescriptVersion": "4.3.5"
+    "version": "2.14.0",
+    "typescriptVersion": "4.5.4"
   },
   "components": [
     {
@@ -54,12 +54,7 @@
       "listeners": [],
       "styles": [],
       "slots": [],
-      "parts": [
-        {
-          "name": "badge-content",
-          "docs": ""
-        }
-      ],
+      "parts": [],
       "dependents": [
         "mg-tabs"
       ],
@@ -494,7 +489,7 @@
           "mutable": false,
           "attr": "help-text",
           "reflectToAttr": false,
-          "docs": "Template to use for characters left sentence",
+          "docs": "Add a help text under the input, usually expected data format and example",
           "docsTags": [],
           "values": [
             {
@@ -766,7 +761,7 @@
           "mutable": false,
           "attr": "help-text",
           "reflectToAttr": false,
-          "docs": "Template to use for characters left sentence",
+          "docs": "Add a help text under the input, usually expected data format and example",
           "docsTags": [],
           "values": [
             {
@@ -1022,7 +1017,7 @@
           "mutable": false,
           "attr": "help-text",
           "reflectToAttr": false,
-          "docs": "Template to use for characters left sentence",
+          "docs": "Add a help text under the input, usually expected data format and example",
           "docsTags": [],
           "values": [
             {
@@ -1343,7 +1338,7 @@
           "mutable": false,
           "attr": "help-text",
           "reflectToAttr": false,
-          "docs": "Template to use for characters left sentence",
+          "docs": "Add a help text under the input, usually expected data format and example",
           "docsTags": [],
           "values": [
             {
@@ -1615,7 +1610,7 @@
           "mutable": false,
           "attr": "help-text",
           "reflectToAttr": false,
-          "docs": "Template to use for characters left sentence",
+          "docs": "Add a help text under the input, usually expected data format and example",
           "docsTags": [],
           "values": [
             {
@@ -1907,7 +1902,7 @@
           "mutable": false,
           "attr": "help-text",
           "reflectToAttr": false,
-          "docs": "Template to use for characters left sentence",
+          "docs": "Add a help text under the input, usually expected data format and example",
           "docsTags": [],
           "values": [
             {
@@ -2231,7 +2226,7 @@
           "mutable": false,
           "attr": "help-text",
           "reflectToAttr": false,
-          "docs": "Template to use for characters left sentence",
+          "docs": "Add a help text under the input, usually expected data format and example",
           "docsTags": [],
           "values": [
             {
@@ -2585,7 +2580,7 @@
           "mutable": false,
           "attr": "help-text",
           "reflectToAttr": false,
-          "docs": "Template to use for characters left sentence",
+          "docs": "Add a help text under the input, usually expected data format and example",
           "docsTags": [],
           "values": [
             {
@@ -3030,7 +3025,7 @@
           "mutable": false,
           "attr": "help-text",
           "reflectToAttr": false,
-          "docs": "Template to use for characters left sentence",
+          "docs": "Add a help text under the input, usually expected data format and example",
           "docsTags": [],
           "values": [
             {

@@ -6,7 +6,7 @@ exports[`mg-tooltip Should manage display on events enter with { eventIn: 'focus
   <span aria-describedby="identifier" tabindex="0">
     span
   </span>
-  <div data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+  <div class="mg-tooltip" data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
     blu
     <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
   </div>
@@ -19,7 +19,7 @@ exports[`mg-tooltip Should manage display on events enter with { eventIn: 'focus
   <button aria-describedby="blu identifier">
     button
   </button>
-  <div data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+  <div class="mg-tooltip" data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
     blu
     <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
   </div>
@@ -36,7 +36,7 @@ exports[`mg-tooltip Should manage display on events enter with { eventIn: 'focus
       </svg>
     </mock:shadow-root>
   </mg-icon>
-  <div data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+  <div class="mg-tooltip" data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
     blu
     <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
   </div>
@@ -54,7 +54,7 @@ exports[`mg-tooltip Should manage display on events enter with { eventIn: 'focus
       </div>
     </button>
   </mg-button>
-  <div data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+  <div class="mg-tooltip" data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
     blu
     <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
   </div>
@@ -67,7 +67,7 @@ exports[`mg-tooltip Should manage display on events enter with { eventIn: 'mouse
   <span aria-describedby="identifier" tabindex="0">
     span
   </span>
-  <div data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+  <div class="mg-tooltip" data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
     blu
     <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
   </div>
@@ -80,7 +80,7 @@ exports[`mg-tooltip Should manage display on events enter with { eventIn: 'mouse
   <button aria-describedby="blu identifier">
     button
   </button>
-  <div data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+  <div class="mg-tooltip" data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
     blu
     <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
   </div>
@@ -97,7 +97,7 @@ exports[`mg-tooltip Should manage display on events enter with { eventIn: 'mouse
       </svg>
     </mock:shadow-root>
   </mg-icon>
-  <div data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+  <div class="mg-tooltip" data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
     blu
     <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
   </div>
@@ -115,7 +115,7 @@ exports[`mg-tooltip Should manage display on events enter with { eventIn: 'mouse
       </div>
     </button>
   </mg-button>
-  <div data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+  <div class="mg-tooltip" data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
     blu
     <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
   </div>
@@ -128,7 +128,7 @@ exports[`mg-tooltip Should render with element 1`] = `
   <span aria-describedby="identifier" tabindex="0">
     span
   </span>
-  <div id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+  <div class="mg-tooltip" id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
     My tooltip message
     <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
   </div>
@@ -141,7 +141,7 @@ exports[`mg-tooltip Should render with element 2`] = `
   <button aria-describedby="blu identifier">
     button
   </button>
-  <div id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+  <div class="mg-tooltip" id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
     My tooltip message
     <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
   </div>
@@ -158,7 +158,7 @@ exports[`mg-tooltip Should render with element 3`] = `
       </svg>
     </mock:shadow-root>
   </mg-icon>
-  <div id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+  <div class="mg-tooltip" id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
     My tooltip message
     <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
   </div>
@@ -176,7 +176,7 @@ exports[`mg-tooltip Should render with element 4`] = `
       </div>
     </button>
   </mg-button>
-  <div id="identifier" role="tooltip">
+  <div class="mg-tooltip" id="identifier" role="tooltip">
     My tooltip message
     <div class="mg-tooltip__arrow" data-popper-arrow></div>
   </div>
@@ -189,7 +189,7 @@ exports[`mg-tooltip Should toogle tooltip from prop display, case display false 
   <span aria-describedby="identifier" tabindex="0">
     batman
   </span>
-  <div id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+  <div class="mg-tooltip" id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
     batman
     <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
   </div>
@@ -202,7 +202,7 @@ exports[`mg-tooltip Should toogle tooltip from prop display, case display false 
   <span aria-describedby="identifier" tabindex="0">
     batman
   </span>
-  <div data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+  <div class="mg-tooltip" data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
     batman
     <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
   </div>
@@ -215,7 +215,7 @@ exports[`mg-tooltip Should toogle tooltip from prop display, case display true 1
   <span aria-describedby="identifier" tabindex="0">
     batman
   </span>
-  <div data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+  <div class="mg-tooltip" data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
     batman
     <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
   </div>
@@ -228,7 +228,7 @@ exports[`mg-tooltip Should toogle tooltip from prop display, case display true 2
   <span aria-describedby="identifier" tabindex="0">
     batman
   </span>
-  <div id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+  <div class="mg-tooltip" id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
     batman
     <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
   </div>

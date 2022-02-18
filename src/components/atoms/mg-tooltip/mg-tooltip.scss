@@ -2,7 +2,7 @@ mg-tooltip {
   display: contents;
 }
 
-[role='tooltip'] {
+.mg-tooltip {
   // Display
   display: none;
   padding: 0.5rem;
@@ -18,7 +18,7 @@ mg-tooltip {
   }
 
   .mg-tooltip__arrow,
-  .mg-tooltip__arrow:before {
+  .mg-tooltip__arrow::before {
     // Display
     position: absolute;
     width: 0.8rem;
@@ -32,7 +32,7 @@ mg-tooltip {
     visibility: hidden;
   }
 
-  .mg-tooltip__arrow:before {
+  .mg-tooltip__arrow::before {
     visibility: visible;
     content: '';
     transform: rotate(45deg);

@@ -1,169 +1,170 @@
 :root {
-  /**
-   * Colors
-   * https://jira.mgdis.fr/browse/PDA9-690
+  /*
+    Fonts
+  */
+
+  --font-size: 1.3rem;
+  --line-height: 1.4;
+
+  /* Open Sans is used for the body (mostly all texts) */
+  --font-family: 'Open Sans', sans-serif;
+
+  /* Poppins is used for the headings (h1 to h6) */
+  --font-family-heading: 'Poppins', sans-serif;
+
+  /* Font colors */
+  --color-font-light: var(--color-light);
+  --color-font-dark: var(--color-dark);
+  /*
+    Colors
+    https://jira.mgdis.fr/browse/PDA9-690
    */
 
-  // Neutral
-  // #fefefe;
-  // rgb(254, 254, 254);
+  /* Neutral */
+  /* #fefefe; */
+  /* rgb(254, 254, 254); */
   --color-neutral-h: 0;
   --color-neutral-s: 0%;
   --color-neutral-l: 99.6%;
   --color-neutral: var(--color-neutral-h), var(--color-neutral-s), var(--color-neutral-l);
 
-  // Warning
-  // #ffc33e
-  // rgb(255, 195, 62);
+  /* Warning */
+  /* #ffc33e */
+  /* rgb(255, 195, 62); */
   --color-warning-h: 41;
   --color-warning-s: 100%;
   --color-warning-l: 62.2%;
   --color-warning: var(--color-warning-h), var(--color-warning-s), var(--color-warning-l);
 
-  // Success
-  // #32d59c
-  // rgb(50, 213, 156);
+  /* Success */
+  /* #32d59c */
+  /* rgb(50, 213, 156); */
   --color-success-h: 159;
   --color-success-s: 66%;
   --color-success-l: 51.6%;
   --color-success: var(--color-success-h), var(--color-success-s), var(--color-success-l);
 
-  // Info
-  // #005e9c;
-  // rgb(0, 94, 156);
+  /* Info */
+  /* #005e9c; */
+  /* rgb(0, 94, 156); */
   --color-info-h: 204;
   --color-info-s: 100%;
   --color-info-l: 30.6%;
   --color-info: var(--color-info-h), var(--color-info-s), var(--color-info-l);
 
-  // Danger
-  // #df242c;
-  // rgb(223, 36, 44);
+  /* Danger */
+  /* #df242c; */
+  /* rgb(223, 36, 44); */
   --color-danger-h: 357;
   --color-danger-s: 74.5%;
   --color-danger-l: 50.8%;
   --color-danger: var(--color-danger-h), var(--color-danger-s), var(--color-danger-l);
 
-  // Dark
-  // #15282e;
-  // rgb(21, 40, 46);
+  /* Dark */
+  /* #15282e; */
+  /* rgb(21, 40, 46); */
   --color-dark-h: 194;
   --color-dark-s: 37.3%;
   --color-dark-l: 13.1%;
   --color-dark: var(--color-dark-h), var(--color-dark-s), var(--color-dark-l);
 
-  // Light
-  // white; (#ffffff)
-  // rgb(255, 255, 255);
+  /* Light */
+  /* white; (#ffffff) */
+  /* rgb(255, 255, 255); */
   --color-light-h: 0;
   --color-light-s: 0%;
   --color-light-l: 100%;
   --color-light: var(--color-light-h), var(--color-light-s), var(--color-light-l);
 
-  /**
-   * Fonts
-   */
-
-  --font-size-base: 1.3rem;
-  --line-height: 1.4;
-
-  // Open Sans is used for the body (mostly all texts)
-  --font-family-body: 'Open Sans', sans-serif;
-
-  // Poppins is used for the headings (h1 to h6)
-  --font-family-heading: 'Poppins', sans-serif;
-
-  // Font colors
-  --color-font-light: var(--color-light);
-  --color-font-dark: var(--color-dark);
-
-  /**
-   * Global
+  /*
+    Global
    */
   --default-size: 3.5rem;
 
-  /**
-   * <mg-icon>
+  /*
+    <mg-icon>
    */
   --mg-icon-regular-size: 1.6rem;
   --mg-icon-large-size: 2.4rem;
   --mg-icon-extra-large-size: 3.6rem;
 
-  /**
-   * <mg-button>
+  /*
+    <mg-button>
    */
 
   --mg-button-border-radius: 0.3rem;
   --mg-button-icon-border-radius: var(--default-size);
   --mg-button-disabled-opacity: 0.6;
 
-  // Primary
+  /* Primary */
   --mg-button-primary-color-h: var(--color-dark-h);
   --mg-button-primary-color-s: var(--color-dark-s);
   --mg-button-primary-color-l: var(--color-dark-l);
   --mg-button-primary-font-color: var(--color-neutral);
 
-  // Secondary
+  /* Secondary */
   --mg-button-secondary-color-h: var(--color-neutral-h);
   --mg-button-secondary-color-s: var(--color-neutral-s);
   --mg-button-secondary-color-l: var(--color-neutral-l);
   --mg-button-secondary-font-color: var(--color-dark);
 
-  /**
-   * <mg-tag>
+  /*
+    <mg-tag>
    */
+  --mg-tag-height: 2.3rem;
   --mg-tag-border-radius: 0.5rem;
   --mg-tag-font-size: 1.2rem;
 
-  /**
-   * <mg-badge>
-   */
-  --mg-badge-border-radius: 2rem;
+  /*
+  <mg-badge>
+  */
+  --mg-badge-height: 2rem;
+  --mg-badge-border-radius: 1rem;
   --mg-badge-font-size: 1.2rem;
 
-  /**
-   * <mg-tooltip>
+  /*
+    <mg-tooltip>
    */
   --mg-tooltip-background-color: var(--color-dark);
   --mg-tooltip-font-color: var(--color-font-light);
 
-  /**
-  * <mg-input-toggle>
-  */
-  --mg-input-toggle-border-radius-ratio: 1;
-
-  /**
-   * <mg-message>
+  /*
+    <mg-message>
    */
   --mg-message-border-radius: 0.3rem;
 
-  /**
-   * Layout
+  /*
+    Layout
    */
   --mg-grid-spacing: 1rem;
 
-  /**
-   * Forms
+  /*
+    Forms
    */
   --mg-form-group-vertical-space: 1.5rem;
 
-  /**
-   * <mg-input-...>
+  /*
+    <mg-input-...>
    */
   --mg-inputs-border-width: 0.1rem;
   --mg-inputs-border-radius: 0.3rem;
   --mg-inputs-color: #b5c2c9;
   --mg-inputs-spacer: 1rem;
 
-  // Input focus shadow
-  // #b5c2c9
-  // rgb(0, 221, 255);
-  // hsl(188, 100%, 50%);
+  /* Input focus shadow */
+  /* #b5c2c9 */
+  /* rgb(0, 221, 255); */
+  /* hsl(188, 100%, 50%); */
   --mg-inputs-color-shadow-focus-hsl: 188, 100%, 50%;
 
-  /**
-   * <mg-input-checkbox>
-   * <mg-input-radio>
+  /*
+    <mg-input-toggle>
+  */
+  --mg-input-toggle-border-radius-ratio: 2;
+
+  /*
+    <mg-input-checkbox>
+    <mg-input-radio>
    */
   --mg-input-check-size: 1.3rem;
 }

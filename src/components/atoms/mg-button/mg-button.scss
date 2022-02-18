@@ -1,3 +1,8 @@
+/* Variables */
+$mg-button-border-width: 0.1rem;
+$mg-button-padding-horizontal: 1.1rem;
+
+/* Mixins */
 @mixin style-gradient($name, $backgroundColor, $fontColor, $hasVariable: false) {
   @if $hasVariable {
     $backgroundColor: --mg-button-#{$name}-color;
@@ -30,23 +35,25 @@
   }
 }
 
+/* Styles */
 .mg-button {
   // Display
   position: relative;
   display: inline-flex;
   align-items: center;
+  padding: calc((var(--default-size) - (2 * $mg-button-border-width) - (var(--font-size) * var(--line-height))) / 2) $mg-button-padding-horizontal;
   min-height: var(--default-size);
-  padding: 0.7435rem 1.1rem;
+  box-sizing: border-box;
   // Decoration
   border-radius: var(--mg-button-border-radius);
   cursor: pointer;
   background-image: none;
-  border: 0.1rem solid;
+  border: $mg-button-border-width solid;
   // Font
+  font-family: inherit;
   text-decoration: none;
   font-weight: normal;
   text-align: left;
-  line-height: var(--line-height);
   // Other
   touch-action: manipulation;
 
@@ -90,12 +97,21 @@
     }
   }
 
-  &:not(.mg-button--icon) mg-icon {
+  ::slotted(mg-icon) {
+    display: inline-flex;
+    flex-shrink: 0;
+    line-height: 1;
+    margin: auto 0;
+  }
+
+  &:not(.mg-button--icon) mg-icon,
+  &:not(.mg-button--icon) ::slotted(mg-icon) {
     margin-right: 0.6rem;
   }
 
   &__content {
     display: flex;
+    align-items: baseline;
   }
 
   &--loading {
@@ -109,6 +125,11 @@
       opacity: 0;
     }
   }
+
+  ::slotted(mg-badge) {
+    display: inline-flex;
+    margin-left: 0.3rem;
+  }
 }
 
 mg-button {
@@ -119,17 +140,4 @@ mg-button {
 mg-button {
   vertical-align: middle;
   max-width: 100%;
-  mg-icon {
-    display: inline-flex;
-    flex-shrink: 0;
-    line-height: 1;
-    margin: auto 0;
-  }
-}
-
-mg-badge::part(badge-content) {
-  margin-left: 0.3rem;
-  font-size: calc(var(--mg-badge-font-size) - 0.2rem);
-  line-height: calc(var(--mg-badge-font-size) - 0.2rem);
-  vertical-align: text-bottom;
 }

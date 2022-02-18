@@ -52,7 +52,7 @@ describe.each([
   '<a href="#" class="mg-button mg-button--primary mg-button--icon"><mg-icon icon="check-circle"></mg-icon></a>',
 ])('template', template => {
   test('should render a link like a button', async () => {
-    const page = await createPage(template);
+    const page = await createPage(`<link rel="stylesheet" href="http://localhost:3333/build/mg-components.css" />${template}`);
 
     const screenshot = await page.screenshot();
     expect(screenshot).toMatchImageSnapshot();

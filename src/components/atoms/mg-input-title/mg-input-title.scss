@@ -1,7 +1,12 @@
 /**
  * Not scoped into `mg-input-title` because it could be used outside of an input
- * (ex: All imput with a * are required)
+ * (ex: All input with a * are required)
  */
 .is-asterisk {
   color: hsl(var(--color-danger));
+}
+
+legend.mg-input-title {
+  padding-left: 0;
+  padding-right: 0;
 }

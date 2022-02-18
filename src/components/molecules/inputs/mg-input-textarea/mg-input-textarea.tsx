@@ -110,7 +110,7 @@ export class MgInputTextarea {
   @Prop() characterLeftTemplate: string;
 
   /**
-   * Template to use for characters left sentence
+   * Add a help text under the input, usually expected data format and example
    */
   @Prop() helpText: string;
 
@@ -127,7 +127,7 @@ export class MgInputTextarea {
   /**
    * Component classes
    */
-  @State() classList: ClassList = new ClassList(['mg-input--textarea']);
+  @State() classList: ClassList = new ClassList(['mg-input--textarea', 'mg-input--width-full']);
 
   /**
    * Error message to display
@@ -241,6 +241,7 @@ export class MgInputTextarea {
         isFieldset={false}
       >
         <textarea
+          class="mg-input__box"
           value={this.value}
           id={this.identifier}
           name={this.name}

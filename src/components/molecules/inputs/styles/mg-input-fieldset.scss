@@ -1,0 +1,51 @@
+/**
+ * Manage style when input needs to be a fieldset, like checkbox and radio.
+ */
+
+fieldset.mg-input {
+  border: 0;
+  margin: 0;
+  padding: 0;
+
+  input[type='radio'],
+  input[type='checkbox'] {
+    flex-shrink: 0; /* Ensure checkbox won't resize in flex element */
+    width: var(--mg-input-check-size);
+    height: var(--mg-input-check-size);
+    margin-top: calc((var(--font-size) * var(--line-height) - var(--mg-input-check-size)) / 2);
+    margin-right: 0.6rem;
+    margin-bottom: 0;
+    margin-left: 0;
+  }
+
+  &.mg-input--label-on-top .mg-input__input-group-container {
+    margin-top: 0.7rem;
+  }
+}
+
+.mg-input__input-container {
+  mg-tooltip {
+    margin-left: 2rem;
+  }
+}
+
+/* input group container */
+.mg-input__input-group-container {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 2.3rem;
+  row-gap: 1rem;
+  margin-top: calc((var(--default-size) - var(--font-size) * var(--line-height)) / 2);
+  &--vertical {
+    flex-direction: column;
+  }
+}
+
+/* input group */
+.mg-input__input-group {
+  display: flex;
+  align-items: top;
+}

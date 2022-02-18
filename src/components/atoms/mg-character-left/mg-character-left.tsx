@@ -55,7 +55,7 @@ export class MgCharacterLeft {
    * Calculate number character left
    * @returns {string}
    */
-  private getMessage = () => {
+  private getMessage = (): string => {
     return this.template.replace(this.mustacheCounter, `<strong>${this.maxlength - this.characters.length}</strong>`);
   };
 

@@ -5,6 +5,9 @@ export const config: Config = {
   namespace: 'mg-components',
   globalStyle: 'src/styles/global.scss',
   buildEs5: true,
+  devServer: {
+    openBrowser: false,
+  },
   extras: {
     cssVarsShim: true,
     shadowDomShim: true,
@@ -15,8 +18,12 @@ export const config: Config = {
       esmLoaderPath: '../loader',
       copy: [
         {
-          src: 'styles/variables.scss',
-          dest: 'variables.scss', // export variable in a seperate file for component inside another framework
+          src: 'styles/variables.css',
+          dest: 'variables.css', // export variable in a seperate file for component inside another framework
+        },
+        {
+          src: 'styles/variables.css',
+          dest: 'variables.scss', // keeping scss file to prevent breaking change
         },
         {
           src: 'styles/fonts',
@@ -39,6 +46,10 @@ export const config: Config = {
       type: 'www',
       serviceWorker: null, // disable service workers
       copy: [
+        {
+          src: 'styles/variables.css',
+          dest: 'build/variables.css', // export variable for working space
+        },
         {
           src: 'styles/fonts',
           dest: 'build/fonts', // export fonts for working space
