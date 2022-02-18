@@ -52,7 +52,7 @@
     "@stencil/sass": "^1.5.2",
     "@storybook/addon-a11y": "^6.4.19",
     "@storybook/addon-actions": "^6.4.19",
-    "@storybook/addon-docs": "6.4",
+    "@storybook/addon-docs": "^6.4.19",
     "@storybook/addon-essentials": "^6.4.19",
     "@storybook/addon-links": "^6.4.19",
     "@storybook/html": "^6.4.19",
