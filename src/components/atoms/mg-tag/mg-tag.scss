@@ -1,3 +1,8 @@
+/* Variables */
+$mg-tag-border-width: 0.1rem;
+$mg-tag-padding-horizontal: 0.7rem;
+
+/* Mixins */
 @mixin tag-variant($name, $backgroundColor, $color) {
   &.mg-tag--#{$name} {
     // Decoration
@@ -15,14 +20,15 @@
   }
 }
 
+/* Styles */
 .mg-tag {
   // Display
-  padding: 0.2em 0.5em;
-  min-height: 2em;
+  padding: calc((var(--mg-tag-height) - (2 * $mg-tag-border-width) - (var(--mg-tag-font-size) * var(--line-height))) / 2) $mg-tag-padding-horizontal - $mg-tag-border-width;
+  min-height: var(--mg-tag-height);
   box-sizing: border-box;
   // Decoration
   border-radius: var(--mg-tag-border-radius);
-  border: 0.1rem solid;
+  border: $mg-tag-border-width solid;
   // Font
   font-size: var(--mg-tag-font-size);
   font-weight: 600;

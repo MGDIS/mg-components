@@ -22,7 +22,7 @@ const Template = args => (
         <mg-icon icon="info-circle"></mg-icon>
       </span>
       <div class="mg-message__content">
-        <span class="mg-message__content__slot" innerHTML={args.content}></span>
+        <span class="mg-message__content-slot" innerHTML={args.content}></span>
       </div>
     </div>
 
@@ -33,7 +33,7 @@ const Template = args => (
         <mg-icon icon="info-circle"></mg-icon>
       </span>
       <div class="mg-message__content">
-        <span class="mg-message__content__slot" innerHTML={args.content}></span>
+        <span class="mg-message__content-slot" innerHTML={args.content}></span>
       </div>
       <span class="mg-message__close-button">
         <button class="mg-button mg-button--flat mg-button--icon">
@@ -49,9 +49,9 @@ const Template = args => (
         <mg-icon icon="info-circle"></mg-icon>
       </span>
       <div class="mg-message__content">
-        <span class="mg-message__content__slot" innerHTML={args.content}></span>
-        <span class="mg-message__content__separator"></span>
-        <span class="mg-message__content__actions-slot">
+        <span class="mg-message__content-slot" innerHTML={args.content}></span>
+        <span class="mg-message__content-separator"></span>
+        <span class="mg-message__content-actions-slot">
           <span class="mg-group-elements mg-group-elements--align-right">
             <button class="mg-button mg-button--primary">Primary</button>
             <button class="mg-button mg-button--secondary">Secondary</button>

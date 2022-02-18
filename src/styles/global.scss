@@ -9,19 +9,19 @@
 @import './fonts.scss';
 
 // Variables
-@import './variables.scss';
+@import './variables.css';
 
 // Utilities
 @import './utilities.scss';
-
-// Accessibility
-@import './a11y.scss';
 
 // Main style
 @import './main.scss';
 
 // Typography style
 @import './typography.scss';
+
+// Accessibility
+@import './a11y.scss';
 
 // Form
 @import './form.scss';
@@ -31,20 +31,27 @@
 
 /**
  * Components style
- * atoms
  * molecules
  */
 
 @import './components.scss';
 
-// <mg-input-title>
-@import '../components/atoms/mg-input-title/mg-input-title.scss';
+/* Atoms */
+
+// <mg-badge>
+@import '../components/atoms/mg-badge/mg-badge.scss';
+
+// <mg-button>
+@import '../components/atoms/mg-button/mg-button.scss';
+
+// <mg-character-left>
+@import '../components/atoms/mg-character-left/mg-character-left.scss';
 
 // <mg-icon>
 @import '../components/atoms/mg-icon/mg-icon.scss';
 
-// <mg-button>
-@import '../components/atoms/mg-button/mg-button.scss';
+// <mg-input-title>
+@import '../components/atoms/mg-input-title/mg-input-title.scss';
 
 // <mg-tag>
 @import '../components/atoms/mg-tag/mg-tag.scss';
@@ -52,14 +59,21 @@
 // <mg-tooltip>
 @import '../components/atoms/mg-tooltip/mg-tooltip.scss';
 
+/* Molecules */
+
+// <mg-input-...>
+//! For now input style will not be included
+// @import '../components/molecules/inputs/styles/mg-input.scss';
+// @import '../components/molecules/inputs/styles/mg-input-box.scss';
+// @import '../components/molecules/inputs/styles/mg-input-charleft.scss';
+// @import '../components/molecules/inputs/styles/mg-input-fieldset.scss';
+// @import '../components/molecules/inputs/styles/mg-input-width.scss';
+
 // <mg-message>
 @import '../components/molecules/mg-message/mg-message.scss';
 
 // <mg-pagination>
 @import '../components/molecules/mg-pagination/mg-pagination.scss';
-
-// <mg-input-...>
-@import '../components/molecules/inputs/mg-input.scss';
 
 // <mg-tabs>
 @import '../components/molecules/mg-tabs/mg-tabs.scss';

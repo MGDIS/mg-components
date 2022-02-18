@@ -109,7 +109,7 @@ export class MgInputRadio {
   @Prop() tooltip: string;
 
   /**
-   * Template to use for characters left sentence
+   * Add a help text under the input, usually expected data format and example
    */
   @Prop() helpText: string;
 
@@ -213,7 +213,7 @@ export class MgInputRadio {
         errorMessage={this.errorMessage}
         isFieldset={true}
       >
-        <ul class={'mg-input__input-group-container mg-input__input-group-container--radio ' + (this.inputVerticalList ? 'mg-input__input-group-container--vertical' : '')}>
+        <ul class={`mg-input__input-group-container${this.inputVerticalList ? ' mg-input__input-group-container--vertical' : ''}`}>
           {this.options.map((input, index) => (
             <li class="mg-input__input-group">
               <input

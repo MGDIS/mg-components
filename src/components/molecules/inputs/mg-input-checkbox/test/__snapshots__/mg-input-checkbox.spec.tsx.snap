@@ -14,7 +14,7 @@ exports[`mg-input-checkbox Should render with args {
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <ul class="mg-input__input-group-container mg-input__input-group-container--checkbox">
+          <ul class="mg-input__input-group-container">
             <li class="mg-input__input-group">
               <input aria-describedby="" checked="" disabled="" id="identifier_0" name="identifier" type="checkbox" value="true">
               <label htmlfor="identifier_0">
@@ -61,7 +61,7 @@ exports[`mg-input-checkbox Should render with args {
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <ul class="mg-input__input-group-container mg-input__input-group-container--checkbox">
+          <ul class="mg-input__input-group-container">
             <li class="mg-input__input-group">
               <input aria-describedby="identifier-help-text" checked="" id="identifier_0" name="identifier" type="checkbox" value="true">
               <label htmlfor="identifier_0">
@@ -111,7 +111,7 @@ exports[`mg-input-checkbox Should render with args {
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <ul class="mg-input__input-group-container mg-input__input-group-container--checkbox mg-input__input-group-container--vertical">
+          <ul class="mg-input__input-group-container mg-input__input-group-container--vertical">
             <li class="mg-input__input-group">
               <input aria-describedby="" checked="" id="identifier_0" name="identifier" type="checkbox" value="true">
               <label htmlfor="identifier_0">
@@ -158,7 +158,7 @@ exports[`mg-input-checkbox Should render with args {
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <ul class="mg-input__input-group-container mg-input__input-group-container--checkbox">
+          <ul class="mg-input__input-group-container">
             <li class="mg-input__input-group">
               <input aria-describedby="" checked="" id="identifier_0" name="identifier" type="checkbox" value="true">
               <label htmlfor="identifier_0">
@@ -207,7 +207,7 @@ exports[`mg-input-checkbox Should render with args {
       </div>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <ul class="mg-input__input-group-container mg-input__input-group-container--checkbox">
+          <ul class="mg-input__input-group-container">
             <li class="mg-input__input-group">
               <input aria-describedby="" checked="" id="identifier_0" name="identifier" type="checkbox" value="true">
               <label htmlfor="identifier_0">
@@ -254,7 +254,7 @@ exports[`mg-input-checkbox Should render with args {
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <ul class="mg-input__input-group-container mg-input__input-group-container--checkbox">
+          <ul class="mg-input__input-group-container">
             <li class="mg-input__input-group">
               <input aria-describedby="" checked="" disabled="" id="identifier_0" name="identifier" type="checkbox" value="true">
               <label htmlfor="identifier_0">
@@ -287,7 +287,7 @@ exports[`mg-input-checkbox Should render with args {
       </div>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <ul class="mg-input__input-group-container mg-input__input-group-container--checkbox">
+          <ul class="mg-input__input-group-container">
             <li class="mg-input__input-group">
               <input aria-describedby="" checked="" disabled="" id="identifier_0" name="identifier" type="checkbox" value="true">
               <label htmlfor="identifier_0">
@@ -316,7 +316,7 @@ exports[`mg-input-checkbox Should render with args {
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <ul class="mg-input__input-group-container mg-input__input-group-container--checkbox">
+          <ul class="mg-input__input-group-container">
             <li class="mg-input__input-group">
               <input aria-describedby="" checked="" id="identifier_0" name="identifier" required="" type="checkbox" value="true">
               <label htmlfor="identifier_0">
@@ -363,7 +363,7 @@ exports[`mg-input-checkbox Should render with args {
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <ul class="mg-input__input-group-container mg-input__input-group-container--checkbox">
+          <ul class="mg-input__input-group-container">
             <li class="mg-input__input-group">
               <input aria-describedby="" checked="" id="identifier_0" name="identifier" type="checkbox" value="true">
               <label htmlfor="identifier_0">
@@ -408,7 +408,7 @@ exports[`mg-input-checkbox Should render with args { label: 'label', identifier:
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <ul class="mg-input__input-group-container mg-input__input-group-container--checkbox">
+          <ul class="mg-input__input-group-container">
             <li class="mg-input__input-group">
               <input aria-describedby="" checked="" id="identifier_0" name="identifier" type="checkbox" value="true">
               <label htmlfor="identifier_0">
@@ -450,7 +450,7 @@ exports[`mg-input-checkbox Should trigger events, case validity check false 1`] 
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <ul class="mg-input__input-group-container mg-input__input-group-container--checkbox">
+          <ul class="mg-input__input-group-container">
             <li class="mg-input__input-group">
               <input aria-describedby="identifier-help-text" checked="" id="identifier_0" name="identifier" type="checkbox" value="true">
               <label htmlfor="identifier_0">
@@ -495,7 +495,7 @@ exports[`mg-input-checkbox Should trigger events, case validity check false 2`] 
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <ul class="mg-input__input-group-container mg-input__input-group-container--checkbox">
+          <ul class="mg-input__input-group-container">
             <li class="mg-input__input-group">
               <input aria-describedby="identifier-help-text identifier-error" id="identifier_0" name="identifier" type="checkbox" value="false">
               <label htmlfor="identifier_0">
@@ -543,7 +543,7 @@ exports[`mg-input-checkbox Should trigger events, case validity check true 1`] =
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <ul class="mg-input__input-group-container mg-input__input-group-container--checkbox">
+          <ul class="mg-input__input-group-container">
             <li class="mg-input__input-group">
               <input aria-describedby="identifier-help-text" checked="" id="identifier_0" name="identifier" type="checkbox" value="true">
               <label htmlfor="identifier_0">
@@ -588,7 +588,7 @@ exports[`mg-input-checkbox Should trigger events, case validity check true 2`] =
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <ul class="mg-input__input-group-container mg-input__input-group-container--checkbox">
+          <ul class="mg-input__input-group-container">
             <li class="mg-input__input-group">
               <input aria-describedby="identifier-help-text" checked="" id="identifier_0" name="identifier" type="checkbox" value="true">
               <label htmlfor="identifier_0">

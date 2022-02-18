@@ -11,13 +11,6 @@ This atom refers to the [PDA9-315](https://jira.mgdis.fr/browse/PDA9-315).
 | `variant` | `variant` | Define button variant                   | `string`  | `variants[variants.length - 1]` |
 
 
-## Shadow Parts
-
-| Part              | Description |
-| ----------------- | ----------- |
-| `"badge-content"` |             |
-
-
 ## Dependencies
 
 ### Used by

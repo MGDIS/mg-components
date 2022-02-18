@@ -1,3 +1,148 @@
-@import '../mg-input.scss';
-@import '../../../atoms/mg-icon/mg-icon.scss';
-@import '../../../../styles/a11y.scss';
+@use '../styles/mg-input.scss';
+@use '../../../../styles/a11y.scss';
+
+/**
+* Toogle
+*/
+
+// variables
+$color-light-blue: hsl(var(--color-info-h) calc(var(--color-info-s) - 64%) calc(var(--color-info-l) + 55%));
+$color-light-dark: hsl(var(--color-dark-h) calc(var(--color-dark-s) - 30%) calc(var(--color-dark-l) + 75%));
+$button-toggle-padding: 0.2rem;
+$toggle-item-container-padding-vertical: 0.5rem;
+
+.mg-input.mg-input.mg-input--toggle .mg-input__input-container {
+  flex: auto;
+  min-width: 0;
+}
+
+.mg-input__button-toggle {
+  // Display
+  display: flex;
+  padding: $button-toggle-padding;
+  min-width: 0;
+  // Decoration
+  background-color: hsl(var(--color-light));
+  border-width: var(--mg-inputs-border-width);
+  border-style: solid;
+  border-color: var(--mg-inputs-color);
+  border-radius: calc(
+    ((var(--font-size) * var(--line-height)) + (2 * ($button-toggle-padding + $toggle-item-container-padding-vertical + var(--mg-inputs-border-width)))) /
+      var(--mg-input-toggle-border-radius-ratio)
+  );
+  // Font
+  font-size: inherit;
+  line-height: inherit;
+
+  cursor: pointer;
+}
+
+.mg-input__toggle-item-container {
+  padding: $toggle-item-container-padding-vertical 0.9rem;
+  border: 0;
+  box-sizing: border-box;
+  border-radius: calc(((var(--font-size) * var(--line-height)) + (2 * $toggle-item-container-padding-vertical)) / var(--mg-input-toggle-border-radius-ratio));
+
+  background-color: unset;
+  font-weight: unset;
+  color: hsl(var(--color-dark));
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &:first-of-type {
+    font-weight: 600;
+    color: hsl(var(--color-info));
+    background-color: $color-light-blue;
+  }
+}
+
+// toggle default active variation
+.mg-input.mg-input--toggle-is-active {
+  .mg-input__toggle-item-container {
+    &:first-of-type {
+      background-color: unset;
+      font-weight: unset;
+      color: hsl(var(--color-dark));
+    }
+    &:last-of-type {
+      font-weight: 600;
+      color: hsl(var(--color-info));
+      background-color: $color-light-blue;
+    }
+  }
+}
+
+// icon
+.mg-input.mg-input--toggle-icon .mg-input__toggle-item-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(((var(--font-size) * var(--line-height)) + (2 * $toggle-item-container-padding-vertical)));
+  height: calc(((var(--font-size) * var(--line-height)) + (2 * $toggle-item-container-padding-vertical)));
+  padding: 0;
+  visibility: hidden;
+
+  &:first-of-type {
+    visibility: visible;
+  }
+
+  ::slotted(mg-icon) {
+    display: flex;
+  }
+}
+
+.mg-input.mg-input--toggle-icon.mg-input--toggle-is-active .mg-input__toggle-item-container {
+  &:first-of-type {
+    visibility: hidden;
+  }
+
+  &:last-of-type {
+    visibility: visible;
+  }
+}
+
+// on/off
+.mg-input.mg-input--toggle-on-off {
+  .mg-input__toggle-item-container:first-of-type {
+    font-weight: 600;
+    color: hsl(var(--color-dark));
+    background-color: $color-light-dark;
+  }
+
+  &.mg-input--toggle-is-active .mg-input__toggle-item-container:first-of-type {
+    background-color: unset;
+    font-weight: unset;
+    color: hsl(var(--color-dark));
+  }
+}
+
+// readonly
+.mg-input.mg-input--toggle-readonly {
+  .mg-input__button-toggle {
+    border-color: transparent;
+    background-color: transparent;
+    cursor: initial;
+  }
+
+  .mg-input__toggle-item-container:last-of-type {
+    display: none;
+  }
+
+  &.mg-input--toggle-is-active .mg-input__toggle-item-container {
+    &:first-of-type {
+      display: none;
+    }
+
+    &:last-of-type {
+      display: flex;
+    }
+  }
+}
+
+// readonly
+.mg-input.mg-input--toggle-disabled .mg-input__button-toggle {
+  opacity: 0.3;
+  cursor: not-allowed;
+}

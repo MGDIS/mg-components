@@ -122,7 +122,7 @@ export class MgInputNumeric {
   @Prop() tooltip: string;
 
   /**
-   * Template to use for characters left sentence
+   * Add a help text under the input, usually expected data format and example
    */
   @Prop() helpText: string;
 
@@ -290,6 +290,7 @@ export class MgInputNumeric {
       >
         <input
           type="text"
+          class="mg-input__box"
           value={this.displayValue}
           id={this.identifier}
           name={this.name}

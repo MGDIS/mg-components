@@ -1,0 +1,95 @@
+/**
+ * Common style for MGDIS inputs
+ */
+
+.mg-input {
+  display: flex;
+  align-items: flex-start;
+  min-height: var(--default-size);
+  max-width: 100%;
+
+  /* Style when input is not valid */
+  &.is-not-valid {
+    color: hsl(var(--color-danger));
+    .mg-input__box {
+      border-color: hsl(var(--color-danger));
+    }
+  }
+
+  /* Label */
+  mg-input-title {
+    // Display
+    flex-shrink: var(--mg-inputs-shrink, 1);
+    width: var(--mg-inputs-title-width, auto);
+    margin-top: calc((var(--default-size) - var(--font-size) * var(--line-height)) / 2);
+    margin-right: var(--mg-inputs-title-horizontal-space, var(--mg-inputs-spacer));
+    // Font
+    text-align: right;
+  }
+
+  /* Label-on-top */
+  &.mg-input--label-on-top {
+    flex-direction: column;
+
+    .mg-input__input-container {
+      width: 100%;
+    }
+  }
+}
+
+/* Label-on-top */
+.mg-input__title {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 0.3rem;
+
+  mg-input-title {
+    flex-shrink: 1;
+    width: auto;
+    margin-top: 0;
+    margin-right: var(--mg-inputs-spacer);
+    text-align: left;
+  }
+
+  mg-tooltip {
+    margin-top: 0;
+  }
+
+  mg-icon {
+    display: inline-flex;
+    vertical-align: text-bottom;
+  }
+}
+
+.mg-input__input-container {
+  /* Readonly */
+  & > strong {
+    display: inline-block;
+    margin-top: calc((var(--default-size) - var(--font-size) * var(--line-height)) / 2);
+    min-height: var(--default-size);
+  }
+
+  mg-tooltip {
+    display: inline-flex;
+    width: var(--mg-icon-regular-size);
+    height: var(--mg-icon-regular-size);
+    margin-left: var(--mg-inputs-spacer);
+  }
+
+  mg-icon {
+    display: flex;
+  }
+}
+
+.mg-input__input {
+  display: flex;
+
+  mg-tooltip {
+    margin-top: calc((var(--default-size) - var(--mg-icon-regular-size)) / 2);
+  }
+
+  /* Manage space between input and first message */
+  & + * {
+    margin-top: 0.5rem;
+  }
+}

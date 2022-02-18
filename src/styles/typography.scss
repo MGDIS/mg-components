@@ -27,35 +27,35 @@ p {
 //h1
 h1,
 .h1 {
-  font-size: calc(var(--font-size-base) * 1.85);
+  font-size: calc(var(--font-size) * 1.85);
 }
 
 //h2
 h2,
 .h2 {
-  font-size: calc(var(--font-size-base) * 1.65);
+  font-size: calc(var(--font-size) * 1.65);
 }
 
 //h3
 h3,
 .h3 {
-  font-size: calc(var(--font-size-base) * 1.35);
+  font-size: calc(var(--font-size) * 1.35);
 }
 
 //h4
 h4,
 .h4 {
-  font-size: calc(var(--font-size-base) * 1.2);
+  font-size: calc(var(--font-size) * 1.2);
 }
 
 //h5
 h5,
 .h5 {
-  font-size: calc(var(--font-size-base) * 1.1);
+  font-size: calc(var(--font-size) * 1.1);
 }
 
 //h6
 h6,
 .h6 {
-  font-size: calc(var(--font-size-base) * 0.8);
+  font-size: calc(var(--font-size) * 0.8);
 }

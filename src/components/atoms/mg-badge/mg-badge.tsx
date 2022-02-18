@@ -47,7 +47,7 @@ export class MgBadge {
 
   render() {
     return (
-      <span class={this.classList.join()} part="badge-content">
+      <span class={this.classList.join()}>
         <slot></slot>
       </span>
     );

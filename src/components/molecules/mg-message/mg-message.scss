@@ -1,16 +1,12 @@
-@mixin message-variant($variant) {
-  &:before {
-    background-color: hsl(var(--color-#{$variant}));
-  }
-  .mg-message__icon {
-    color: hsl(var(--color-#{$variant}));
-  }
-}
-
 @mixin message-variants($variants...) {
   @each $variant in $variants {
     &.mg-message--#{$variant} {
-      @include message-variant($variant);
+      &::before {
+        background-color: hsl(var(--color-#{$variant}));
+      }
+      .mg-message__icon {
+        color: hsl(var(--color-#{$variant}));
+      }
     }
   }
 }
@@ -27,7 +23,7 @@
   border-radius: var(--mg-message-border-radius);
   box-shadow: 0 0.3rem 0.8rem 0 hsla(var(--color-dark), 0.1);
 
-  &:before {
+  &::before {
     content: '';
     position: absolute;
     top: 0;
@@ -44,6 +40,12 @@
 
   &.mg-message--hide {
     display: none;
+  }
+
+  ::slotted(*) {
+    // Removing default marging to slotted element
+    margin: 0;
+    padding: 0;
   }
 }
 
@@ -64,21 +66,19 @@
   padding: 0 1rem 0 3.8rem;
 }
 
-.mg-message__content__slot {
+.mg-message__content-slot {
   flex-grow: 1;
   margin: 0.84rem 0;
 }
 
-.mg-message__content__separator {
+.mg-message__content-separator {
   display: inline-block;
   width: 4.5rem;
   height: 0;
 }
 
-.mg-message__content__actions-slot {
-  // Display
+.mg-message__content-actions-slot {
   padding: 1rem 0;
-  // Font
   text-align: right;
 }
 

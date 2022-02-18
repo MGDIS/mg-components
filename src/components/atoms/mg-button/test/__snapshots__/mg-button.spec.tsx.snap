@@ -135,7 +135,7 @@ exports[`mg-button Should render an secondary button isIcon true 1`] = `
 exports[`mg-button prevent double click should NOT disable button after click 1`] = `
 <mg-button>
   <!---->
-  <button aria-label="test" class="mg-button mg-button--primary" id="identifier">
+  <button class="mg-button mg-button--primary" id="identifier">
     <div class="mg-button__content">
       Text button
     </div>
@@ -146,7 +146,7 @@ exports[`mg-button prevent double click should NOT disable button after click 1`
 exports[`mg-button prevent double click should NOT disable button after click 2`] = `
 <mg-button>
   <!---->
-  <button aria-label="test" class="mg-button mg-button--primary" id="identifier">
+  <button class="mg-button mg-button--primary" id="identifier">
     <div class="mg-button__content">
       Text button
     </div>
@@ -157,7 +157,7 @@ exports[`mg-button prevent double click should NOT disable button after click 2`
 exports[`mg-button prevent double click should NOT disable button after click 3`] = `
 <mg-button>
   <!---->
-  <button aria-label="test" class="mg-button mg-button--primary" id="identifier">
+  <button class="mg-button mg-button--primary" id="identifier">
     <div class="mg-button__content">
       Text button
     </div>
@@ -168,7 +168,7 @@ exports[`mg-button prevent double click should NOT disable button after click 3`
 exports[`mg-button prevent double click should disable button after click 1`] = `
 <mg-button>
   <!---->
-  <button aria-label="test" class="mg-button mg-button--primary" id="identifier">
+  <button class="mg-button mg-button--primary" id="identifier">
     <div class="mg-button__content">
       Text button
     </div>
@@ -179,7 +179,7 @@ exports[`mg-button prevent double click should disable button after click 1`] = 
 exports[`mg-button prevent double click should disable button after click 2`] = `
 <mg-button disabled="">
   <!---->
-  <button aria-disabled="" aria-label="test" class="mg-button mg-button--loading mg-button--primary" id="identifier">
+  <button aria-disabled="" class="mg-button mg-button--loading mg-button--primary" id="identifier">
     <mg-icon icon="loader" spin=""></mg-icon>
     <div class="mg-button__content">
       Text button
@@ -191,7 +191,7 @@ exports[`mg-button prevent double click should disable button after click 2`] = 
 exports[`mg-button prevent double click should disable button after click 3`] = `
 <mg-button>
   <!---->
-  <button aria-label="test" class="mg-button mg-button--primary" id="identifier">
+  <button class="mg-button mg-button--primary" id="identifier">
     <div class="mg-button__content">
       Text button
     </div>

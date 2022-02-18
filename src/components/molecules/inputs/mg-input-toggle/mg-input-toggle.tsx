@@ -23,9 +23,6 @@ export class MgInputToggle {
   private classReadonly = 'mg-input--toggle-readonly';
   private classDisabled = 'mg-input--toggle-disabled';
   private classIsActive = 'mg-input--toggle-is-active';
-  private classIsClicked = 'mg-input--toggle-clicked';
-  private classIsOnOff = 'mg-input--toggle-is-on-off';
-  private classIsIcon = 'mg-input--toggle-is-icon';
 
   /**************
    * Decorators *
@@ -111,7 +108,7 @@ export class MgInputToggle {
   @Prop() isOnOff?: boolean = false;
   @Watch('isOnOff')
   handleIsOnOff(newValue: boolean) {
-    if (newValue) this.classList.add(this.classIsOnOff);
+    if (newValue) this.classList.add(`mg-input--toggle-on-off`);
   }
 
   /**
@@ -120,7 +117,7 @@ export class MgInputToggle {
   @Prop() isIcon?: boolean = false;
   @Watch('isIcon')
   handleIsIcon(newValue: boolean) {
-    if (newValue) this.classList.add(this.classIsIcon);
+    if (newValue) this.classList.add(`mg-input--toggle-icon`);
   }
 
   /**
@@ -149,7 +146,7 @@ export class MgInputToggle {
   @Prop() tooltip: string;
 
   /**
-   * Template to use for characters left sentence
+   * Add a help text under the input, usually expected data format and example
    */
   @Prop() helpText: string;
 
@@ -184,7 +181,6 @@ export class MgInputToggle {
    * Handle input event
    */
   private handleToggleClick = () => {
-    this.classList.add(this.classIsClicked);
     this.toggleValue();
   };
 
@@ -196,7 +192,7 @@ export class MgInputToggle {
     if (slots.length !== 2) {
       throw new Error('<mg-input-toggle> 2 slots are required.');
     } else if (!this.isIcon) {
-      // * Due to text-overflow set to ellipsis
+      // Due to text-overflow set to ellipsis
       // we need to ensure that slot element have title to display value on mouse over
       slots.forEach(slot => slot.setAttribute('title', slot.textContent));
     }

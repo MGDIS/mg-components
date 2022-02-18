@@ -79,7 +79,7 @@ export class MgInputPassword {
   @Prop() tooltip: string;
 
   /**
-   * Template to use for characters left sentence
+   * Add a help text under the input, usually expected data format and example
    */
   @Prop() helpText: string;
 
@@ -96,7 +96,7 @@ export class MgInputPassword {
   /**
    * Component classes
    */
-  @State() classList: ClassList = new ClassList(['mg-input--password']);
+  @State() classList: ClassList = new ClassList(['mg-input--password', 'mg-input--width-full']);
 
   /**
    * Error message to display
@@ -176,6 +176,7 @@ export class MgInputPassword {
       >
         <input
           type="password"
+          class="mg-input__box"
           value={this.value}
           id={this.identifier}
           name={this.name}

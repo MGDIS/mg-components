@@ -139,7 +139,7 @@ export class MgInputSelect {
   @Prop() tooltip: string;
 
   /**
-   * Template to use for characters left sentence
+   * Add a help text under the input, usually expected data format and example
    */
   @Prop() helpText: string;
 
@@ -246,6 +246,7 @@ export class MgInputSelect {
         isFieldset={false}
       >
         <select
+          class="mg-input__box"
           id={this.identifier}
           name={this.name}
           title={this.placeholder}
