@@ -41,7 +41,7 @@
     "@mgdis:registry": "http://artifactory.mgdis.fr/artifactory/api/npm/npm-local/"
   },
   "dependencies": {
-    "@stencil/core": "^2.13.0"
+    "@stencil/core": "^2.14.0"
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",
