@@ -10,14 +10,16 @@ const getPage = (args, slots?) =>
 
 const defaultSlots = [() => <div slot="tab_content-1">Content 1</div>, () => <div slot="tab_content-2">Content 2</div>];
 
+const badge = { value: 2, label: 'messages' };
+
 describe('mg-tabs', () => {
   describe('template', () => {
     test.each([
       [['Batman', 'Joker']],
       [
         [
-          { label: 'Batman', icon: 'check', badge: 2 },
-          { label: 'Joker', icon: 'cross', badge: 2 },
+          { label: 'Batman', icon: 'check', badge },
+          { label: 'Joker', icon: 'cross', badge },
         ],
       ],
     ])('render', async items => {
@@ -100,8 +102,8 @@ describe('mg-tabs', () => {
       const page = await getPage(
         {
           items: [
-            { label: 'Batman', icon: 'check', badge: 2 },
-            { label: 'Joker', icon: 'cross', badge: 2 },
+            { label: 'Batman', icon: 'check', badge },
+            { label: 'Joker', icon: 'cross', badge },
           ],
           identifier: 'id',
         },

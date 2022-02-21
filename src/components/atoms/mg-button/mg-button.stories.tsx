@@ -49,17 +49,6 @@ IsIcon.args = {
   slot: <mg-icon icon={Object.keys(icons)[0]}></mg-icon>,
 };
 
-export const WithBadge = Template.bind({});
-
-WithBadge.args = {
-  ...MgButton.args,
-  slot: (
-    <span>
-      Button with badge <mg-badge>23</mg-badge>
-    </span>
-  ),
-};
-
 export const DisableOnClick = Template.bind({});
 
 DisableOnClick.args = {
