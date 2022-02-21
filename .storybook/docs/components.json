@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-02-18T06:52:28",
+  "timestamp": "2022-02-21T09:40:06",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.14.0",
@@ -3446,7 +3446,17 @@
         }
       ],
       "methods": [],
-      "events": [],
+      "events": [
+        {
+          "event": "current-page-change",
+          "detail": "number",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emmited event when current page change",
+          "docsTags": []
+        }
+      ],
       "listeners": [],
       "styles": [],
       "slots": [],

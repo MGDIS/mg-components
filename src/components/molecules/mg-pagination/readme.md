@@ -13,6 +13,13 @@ This molecule refers to the [PDA9-787](https://jira.mgdis.fr/browse/PDA9-787).
 | `totalPages`  | `total-pages`  | Component total pages                                                                                       | `number` | `1`                         |
 
 
+## Events
+
+| Event                 | Description                            | Type                  |
+| --------------------- | -------------------------------------- | --------------------- |
+| `current-page-change` | Emmited event when current page change | `CustomEvent<number>` |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

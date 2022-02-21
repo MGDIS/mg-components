@@ -1654,6 +1654,10 @@ declare namespace LocalJSX {
          */
         "label"?: string;
         /**
+          * Emmited event when current page change
+         */
+        "onCurrent-page-change"?: (event: CustomEvent<number>) => void;
+        /**
           * Component total pages
          */
         "totalPages"?: number;
