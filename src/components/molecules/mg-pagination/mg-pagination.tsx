@@ -1,4 +1,4 @@
-import { Component, h, Prop, State, Watch } from '@stencil/core';
+import { Component, h, Prop, State, Watch, Event, EventEmitter } from '@stencil/core';
 import { createID } from '../../../utils/components.utils';
 import { PageKind, Page, PagerItem, NavigationAction } from './mg-pagination.conf';
 import { messages } from './../../../locales';
@@ -79,6 +79,8 @@ export class MgPagination {
     } else {
       this.setPager();
     }
+
+    this.currentPageChange.emit(newValue);
   }
 
   /**
@@ -90,6 +92,11 @@ export class MgPagination {
    * Pages to display
    */
   @State() pages: Page[] = [1];
+
+  /**
+   * Emmited event when current page change
+   */
+  @Event({ eventName: 'current-page-change' }) currentPageChange: EventEmitter<number>;
 
   /**
    * Pages state setter
