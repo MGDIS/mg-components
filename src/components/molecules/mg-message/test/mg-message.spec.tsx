@@ -60,9 +60,12 @@ describe('mg-message', () => {
     const element = page.doc.querySelector('mg-message');
     const button = element.shadowRoot.querySelector('mg-button');
 
+    jest.spyOn(page.rootInstance.componentHide, 'emit');
+
     button.dispatchEvent(new CustomEvent('click', { bubbles: true }));
     await page.waitForChanges();
 
+    expect(page.rootInstance.componentHide.emit).toHaveBeenCalledTimes(1);
     expect(page.rootInstance.classList.join()).toContain('mg-message--hide');
   });
 
@@ -70,19 +73,25 @@ describe('mg-message', () => {
     const args = { identifier: 'identifier', delay: 2 };
     const page = await getPage(args, getDefaultContent());
 
+    jest.spyOn(page.rootInstance.componentHide, 'emit');
+    jest.spyOn(page.rootInstance.componentShow, 'emit');
+
     expect(page.rootInstance.classList.join()).not.toContain('mg-message--hide');
 
     await new Promise(r => setTimeout(r, 2000));
 
     expect(page.rootInstance.classList.join()).toContain('mg-message--hide');
+    expect(page.rootInstance.componentHide.emit).toHaveBeenCalledTimes(1);
 
     page.rootInstance.hide = false;
     await page.waitForChanges();
 
     expect(page.rootInstance.classList.join()).not.toContain('mg-message--hide');
+    expect(page.rootInstance.componentShow.emit).toHaveBeenCalledTimes(1);
 
     await new Promise(r => setTimeout(r, 2000));
 
     expect(page.rootInstance.classList.join()).toContain('mg-message--hide');
+    expect(page.rootInstance.componentHide.emit).toHaveBeenCalledTimes(2);
   });
 });

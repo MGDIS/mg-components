@@ -1636,6 +1636,14 @@ declare namespace LocalJSX {
          */
         "identifier"?: string;
         /**
+          * Emmited event when message is hidden
+         */
+        "onComponent-hide"?: (event: CustomEvent<string>) => void;
+        /**
+          * Emmited event when message is diplayed
+         */
+        "onComponent-show"?: (event: CustomEvent<string>) => void;
+        /**
           * Message variant
          */
         "variant"?: string;
