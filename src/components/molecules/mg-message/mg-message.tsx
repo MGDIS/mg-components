@@ -1,4 +1,4 @@
-import { Component, Element, h, Prop, State, Watch } from '@stencil/core';
+import { Component, Element, Event, EventEmitter, h, Prop, State, Watch } from '@stencil/core';
 import { createID, ClassList } from '../../../utils/components.utils';
 import { variants } from './mg-message.conf';
 import { messages } from '../../../locales';
@@ -73,8 +73,13 @@ export class MgMessage {
   @Prop({ mutable: true, reflect: true }) hide?: boolean = false;
   @Watch('hide')
   validateHide(newValue: boolean) {
-    if (newValue) this.classList.add('mg-message--hide');
-    else this.classList.delete('mg-message--hide');
+    if (newValue) {
+      this.componentHide.emit();
+      this.classList.add('mg-message--hide');
+    } else {
+      this.componentShow.emit();
+      this.classList.delete('mg-message--hide');
+    }
     this.hideWithDelay();
   }
 
@@ -87,6 +92,16 @@ export class MgMessage {
    * Define if component is using actions slot
    */
   @State() hasActions: boolean = false;
+
+  /**
+   * Emmited event when message is diplayed
+   */
+  @Event({ eventName: 'component-show' }) componentShow: EventEmitter<string>;
+
+  /**
+   * Emmited event when message is hidden
+   */
+  @Event({ eventName: 'component-hide' }) componentHide: EventEmitter<string>;
 
   /**
    * Handle close button

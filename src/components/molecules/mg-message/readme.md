@@ -14,6 +14,14 @@ This molecule refers to the [PDA9-140](https://jira.mgdis.fr/browse/PDA9-140).
 | `variant`     | `variant`      | Message variant                                                                                                               | `string`  | `variants[0]`            |
 
 
+## Events
+
+| Event            | Description                            | Type                  |
+| ---------------- | -------------------------------------- | --------------------- |
+| `component-hide` | Emmited event when message is hidden   | `CustomEvent<string>` |
+| `component-show` | Emmited event when message is diplayed | `CustomEvent<string>` |
+
+
 ## Dependencies
 
 ### Depends on
