@@ -22,9 +22,15 @@ const Template = args => {
 
 export const MgInputDate = Template.bind({});
 
+const date = new Date();
+const getMonth = date => {
+  const month = `${date.getMonth() + 1}`;
+  return `${month.length > 1 ? month : '0' + month}`;
+};
+
 MgInputDate.args = {
   // Global
-  value: '2021-10-14',
+  value: `${date.getFullYear()}-${getMonth(date)}-${date.getDate()}`,
   identifier: 'identifier',
   name: 'input-name',
   // Label
@@ -37,6 +43,9 @@ MgInputDate.args = {
   disabled: false,
   // Tooltip
   tooltip: 'This is a tooltip',
+  // date range
+  min: `${date.getFullYear()}-01-01`,
+  max: `${date.getFullYear() + 1}-12-31`,
   // Help Text
   helpText: 'Help text with html <strong>bold</strong>, <em>italic</em>.',
 };

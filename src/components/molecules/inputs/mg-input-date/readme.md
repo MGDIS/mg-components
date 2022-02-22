@@ -14,6 +14,8 @@ This atom refers to the [PDA9-65](https://jira.mgdis.fr/browse/PDA9-65).
 | `label` _(required)_ | `label`        | Input label Required                                                                                        | `string`  | `undefined`                 |
 | `labelHide`          | `label-hide`   | Define if label is visible                                                                                  | `boolean` | `false`                     |
 | `labelOnTop`         | `label-on-top` | Define if label is displayed on top                                                                         | `boolean` | `undefined`                 |
+| `max`                | `max`          | Define input maximum date format: yyyy-mm-dd                                                                | `string`  | `undefined`                 |
+| `min`                | `min`          | Define input minimum date format: yyyy-mm-dd                                                                | `string`  | `undefined`                 |
 | `name`               | `name`         | Input name If not set the value equals the identifier                                                       | `string`  | `this.identifier`           |
 | `readonly`           | `readonly`     | Define if input is readonly                                                                                 | `boolean` | `false`                     |
 | `required`           | `required`     | Define if input is required                                                                                 | `boolean` | `false`                     |

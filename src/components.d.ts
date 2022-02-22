@@ -171,6 +171,14 @@ export namespace Components {
          */
         "labelOnTop": boolean;
         /**
+          * Define input maximum date format: yyyy-mm-dd
+         */
+        "max": string;
+        /**
+          * Define input minimum date format: yyyy-mm-dd
+         */
+        "min": string;
+        /**
           * Input name If not set the value equals the identifier
          */
         "name"?: string;
@@ -1081,6 +1089,14 @@ declare namespace LocalJSX {
           * Define if label is displayed on top
          */
         "labelOnTop"?: boolean;
+        /**
+          * Define input maximum date format: yyyy-mm-dd
+         */
+        "max"?: string;
+        /**
+          * Define input minimum date format: yyyy-mm-dd
+         */
+        "min"?: string;
         /**
           * Input name If not set the value equals the identifier
          */
