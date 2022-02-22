@@ -35,7 +35,7 @@ $mg-badge-border-width: 0.1rem;
   font-size: var(--mg-badge-font-size);
   font-weight: 600;
   text-align: center;
-  line-height: calc($mg-badge-border-width * 2 + var(--mg-badge-font-size));
+  line-height: var(--mg-badge-size);
 
   // Variant
   @include badge-variant('primary', 'dark', 'light');
@@ -49,4 +49,5 @@ $mg-badge-border-width: 0.1rem;
 .mg-badge,
 mg-badge {
   display: inline-flex;
+  align-items: center;
 }

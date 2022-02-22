@@ -13,7 +13,7 @@ export class MgBadge {
   @Prop({ mutable: true, reflect: true }) value!: BadgeType['value'];
   @Watch('value')
   valideValue(newValue) {
-    if (`${newValue}`.match(/(^\d+$|[!?])/) === null) {
+    if (`${newValue}`.match(/^(\d+|[?*!a-z])$/i) === null) {
       throw new Error('<mg-badge> prop "value" must be interger or ponctuation character.');
     }
   }
