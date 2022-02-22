@@ -64,6 +64,11 @@ describe('mg-tabs', () => {
 
       const screenshot3 = await page.screenshot();
       expect(screenshot3).toMatchImageSnapshot();
+
+      page.keyboard.down('Tab');
+
+      const screenshot4 = await page.screenshot();
+      expect(screenshot4).toMatchImageSnapshot();
     });
   });
 });

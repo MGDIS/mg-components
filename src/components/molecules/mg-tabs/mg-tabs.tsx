@@ -142,14 +142,14 @@ export class MgTabs {
   render() {
     return (
       <Host>
-        <header role="tablist" aria-label={this.label} class="mg-tabs-header">
+        <header role="tablist" aria-label={this.label} class="mg-tabs__header">
           {this.tabs.map((tab, index) => {
             const tabIndex = index + 1;
             return (
               <button
                 role="tab"
                 id={`${this.identifier}-${tabIndex}`}
-                class={`mg-tabs-header__button ${tabIndex === this.activeTab ? 'mg-tabs-header__button--active' : ''}`}
+                class={`mg-tabs__navigation-button ${tabIndex === this.activeTab ? 'mg-tabs__navigation-button--active' : ''}`}
                 tabindex={tabIndex === this.activeTab ? 0 : -1}
                 aria-selected={(tabIndex === this.activeTab).toString()}
                 aria-controls={`pannel-${tabIndex}`}
@@ -173,6 +173,7 @@ export class MgTabs {
               hidden={tabIndex !== this.activeTab}
               aria-labelledby={`${this.identifier}-${this.activeTab}`}
               tabindex={tabIndex === this.activeTab ? 0 : -1}
+              class="mg-tabs__content-container"
             >
               <slot name={`tab_content-${tabIndex}`}></slot>
             </article>
