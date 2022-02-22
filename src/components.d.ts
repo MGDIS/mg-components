@@ -14,7 +14,7 @@ import { TabItem } from "./components/molecules/mg-tabs/mg-tabs.conf";
 export namespace Components {
     interface MgBadge {
         /**
-          * Badge label. Include short tabs description. Required for accessibility
+          * Badge label. Include short description. Required for accessibility
          */
         "label": BadgeType['label'];
         /**
@@ -929,7 +929,7 @@ declare global {
 declare namespace LocalJSX {
     interface MgBadge {
         /**
-          * Badge label. Include short tabs description. Required for accessibility
+          * Badge label. Include short description. Required for accessibility
          */
         "label": BadgeType['label'];
         /**

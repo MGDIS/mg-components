@@ -10,7 +10,7 @@ export default {
       control: { type: 'select' },
     },
     value: {
-      control: { type: 'number' },
+      control: { type: 'text' },
     },
   },
 };
@@ -23,7 +23,7 @@ const Template = args => {
 
 export const MgBadge = Template.bind({});
 MgBadge.args = {
-  value: 99,
+  value: '99',
   label: 'unread messages',
   variant: variants[0],
   outline: false,

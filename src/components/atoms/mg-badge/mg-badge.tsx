@@ -13,13 +13,13 @@ export class MgBadge {
   @Prop({ mutable: true, reflect: true }) value!: BadgeType['value'];
   @Watch('value')
   valideValue(newValue) {
-    if (!(Number.isInteger(Number(newValue)) || (newValue.match(/[!?]/) && newValue.length === 1))) {
+    if (`${newValue}`.match(/(^\d+$|[!?])/) === null) {
       throw new Error('<mg-badge> prop "value" must be interger or ponctuation character.');
     }
   }
 
   /**
-   * Badge label. Include short tabs description.
+   * Badge label. Include short description.
    * Required for accessibility
    */
   @Prop() label!: BadgeType['label'];

@@ -5,12 +5,12 @@ This atom refers to the [PDA9-315](https://jira.mgdis.fr/browse/PDA9-315).
 
 ## Properties
 
-| Property             | Attribute | Description                                                             | Type               | Default                         |
-| -------------------- | --------- | ----------------------------------------------------------------------- | ------------------ | ------------------------------- |
-| `label` _(required)_ | `label`   | Badge label. Include short tabs description. Required for accessibility | `string`           | `undefined`                     |
-| `outline`            | `outline` | Define if button is using outline style                                 | `boolean`          | `undefined`                     |
-| `value` _(required)_ | `value`   | Badge value                                                             | `number \| string` | `undefined`                     |
-| `variant`            | `variant` | Define button variant                                                   | `string`           | `variants[variants.length - 1]` |
+| Property             | Attribute | Description                                                        | Type               | Default                         |
+| -------------------- | --------- | ------------------------------------------------------------------ | ------------------ | ------------------------------- |
+| `label` _(required)_ | `label`   | Badge label. Include short description. Required for accessibility | `string`           | `undefined`                     |
+| `outline`            | `outline` | Define if button is using outline style                            | `boolean`          | `undefined`                     |
+| `value` _(required)_ | `value`   | Badge value                                                        | `number \| string` | `undefined`                     |
+| `variant`            | `variant` | Define button variant                                              | `string`           | `variants[variants.length - 1]` |
 
 
 ## Dependencies

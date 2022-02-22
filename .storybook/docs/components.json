@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-02-21T16:22:33",
+  "timestamp": "2022-02-22T08:36:27",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.14.0",
@@ -21,7 +21,7 @@
           "mutable": false,
           "attr": "label",
           "reflectToAttr": false,
-          "docs": "Badge label. Include short tabs description.\nRequired for accessibility",
+          "docs": "Badge label. Include short description.\nRequired for accessibility",
           "docsTags": [],
           "values": [
             {

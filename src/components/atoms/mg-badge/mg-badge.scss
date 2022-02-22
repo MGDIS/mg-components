@@ -25,13 +25,12 @@ $mg-badge-border-width: 0.1rem;
 .mg-badge {
   // Display
   padding: 0 0.5rem;
-  height: var(--mg-badge-height);
-  min-width: var(--mg-badge-height);
+  height: var(--mg-badge-size);
+  min-width: var(--mg-badge-size);
   box-sizing: border-box;
-  overflow-y: hidden;
   // Decoration
   border: $mg-badge-border-width solid;
-  border-radius: calc(var(--mg-badge-height) / 2);
+  border-radius: calc(var(--mg-badge-size) / 2);
   // Font
   font-size: var(--mg-badge-font-size);
   font-weight: 600;
