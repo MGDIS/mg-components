@@ -1,10 +1,10 @@
-.mg-tabs-header {
+.mg-tabs__header {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-.mg-tabs-header__button {
+.mg-tabs__navigation-button {
   display: flex;
   align-items: center;
   column-gap: 0.5rem;
@@ -19,9 +19,13 @@
   &:focus {
     background-color: hsla(var(--color-info-h), var(--color-info-s), var(--color-info-l), 10%);
   }
-  &--active {
+  &.mg-tabs__navigation-button--active {
     color: hsl(var(--color-info));
     border-bottom-color: hsl(var(--color-info));
     font-weight: 700;
   }
+}
+
+.mg-tabs__content-container:focus-visible {
+  outline-color: transparent;
 }
