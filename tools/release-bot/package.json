@@ -1,0 +1,12 @@
+{
+  "name": "@mgdis/release-bot",
+  "version": "1.0.0",
+  "private": true,
+  "bin": {
+    "run": "./bin/release.js"
+  },
+  "dependencies": {
+    "axios": "^0.26.0",
+    "showdown": "^2.0.0"
+  }
+}
