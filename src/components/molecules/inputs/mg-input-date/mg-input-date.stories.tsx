@@ -20,13 +20,13 @@ const Template = args => {
   return <mg-input-date {...args} label-on-top={labelOnTop} label-hide={labelHide} help-text={helpText}></mg-input-date>;
 };
 
-export const MgInputDate = Template.bind({});
-
 const date = new Date();
 const getMonth = date => {
   const month = `${date.getMonth() + 1}`;
   return `${month.length > 1 ? month : '0' + month}`;
 };
+
+export const MgInputDate = Template.bind({});
 
 MgInputDate.args = {
   // Global
@@ -43,9 +43,15 @@ MgInputDate.args = {
   disabled: false,
   // Tooltip
   tooltip: 'This is a tooltip',
+  // Help Text
+  helpText: 'Help text with html <strong>bold</strong>, <em>italic</em>.',
+};
+
+export const MgInputDateMinMax = Template.bind({});
+
+MgInputDateMinMax.args = {
+  ...MgInputDate.args,
   // date range
   min: `${date.getFullYear()}-01-01`,
   max: `${date.getFullYear() + 1}-12-31`,
-  // Help Text
-  helpText: 'Help text with html <strong>bold</strong>, <em>italic</em>.',
 };
