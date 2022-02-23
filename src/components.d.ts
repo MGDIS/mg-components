@@ -5,6 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { BadgeType } from "./components/atoms/mg-badge/mg-badge.conf";
 import { CheckboxValue } from "./components/molecules/inputs/mg-input-checkbox/mg-input-checkbox.conf";
 import { RadioOption } from "./components/molecules/inputs/mg-input-radio/mg-input-radio.conf";
 import { SelectOption } from "./components/molecules/inputs/mg-input-select/mg-input-select.conf";
@@ -13,9 +14,17 @@ import { TabItem } from "./components/molecules/mg-tabs/mg-tabs.conf";
 export namespace Components {
     interface MgBadge {
         /**
+          * Badge label. Include short description. Required for accessibility
+         */
+        "label": BadgeType['label'];
+        /**
           * Define if button is using outline style
          */
         "outline"?: boolean;
+        /**
+          * Badge value
+         */
+        "value": BadgeType['value'];
         /**
           * Define button variant
          */
@@ -920,9 +929,17 @@ declare global {
 declare namespace LocalJSX {
     interface MgBadge {
         /**
+          * Badge label. Include short description. Required for accessibility
+         */
+        "label": BadgeType['label'];
+        /**
           * Define if button is using outline style
          */
         "outline"?: boolean;
+        /**
+          * Badge value
+         */
+        "value": BadgeType['value'];
         /**
           * Define button variant
          */
