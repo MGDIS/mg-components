@@ -121,13 +121,6 @@ export class MgButton {
     this.disabledHandler(this.disabled);
   }
 
-  componentDidLoad() {
-    const variant = this.element.querySelector('mg-badge')?.shadowRoot?.querySelector(`.mg-badge--${this.variant}`);
-    if (!(variant === null || variant === undefined)) {
-      throw new Error(`<mg-button> prop "variant" cannot be the same as child mg-badge variant`);
-    }
-  }
-
   /**
    * Render component
    */

@@ -159,7 +159,7 @@ export class MgTabs {
               >
                 {tab.icon !== undefined ? <mg-icon icon={tab.icon}></mg-icon> : null}
                 {tab.label}
-                {tab.badge !== undefined ? <mg-badge variant="info">{tab.badge}</mg-badge> : null}
+                {tab.badge !== undefined ? <mg-badge variant="info" value={tab.badge.value} label={tab.badge.label}></mg-badge> : null}
               </button>
             );
           })}

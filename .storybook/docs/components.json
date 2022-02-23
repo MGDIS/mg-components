@@ -16,6 +16,22 @@
       "usage": {},
       "props": [
         {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "Badge label. Include short description.\nRequired for accessibility",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
           "name": "outline",
           "type": "boolean",
           "mutable": false,
@@ -30,6 +46,25 @@
           ],
           "optional": true,
           "required": false
+        },
+        {
+          "name": "value",
+          "type": "number | string",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": true,
+          "docs": "Badge value",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
         },
         {
           "name": "variant",

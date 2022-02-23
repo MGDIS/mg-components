@@ -1,6 +1,7 @@
+@import '../../../styles/a11y.scss';
+
 /* Variables */
 $mg-badge-border-width: 0.1rem;
-$mg-badge-padding-horizontal: 0.7rem;
 
 /* Mixins */
 @mixin badge-variant($name, $backgroundColor, $color) {
@@ -23,17 +24,18 @@ $mg-badge-padding-horizontal: 0.7rem;
 /* Styles */
 .mg-badge {
   // Display
-  padding: calc((var(--mg-badge-height) - (2 * $mg-badge-border-width) - (var(--mg-badge-font-size) * var(--line-height))) / 2) $mg-badge-padding-horizontal -
-    $mg-badge-border-width;
-  min-height: var(--mg-badge-height);
+  padding: 0 0.5rem;
+  height: var(--mg-badge-size);
+  min-width: var(--mg-badge-size);
   box-sizing: border-box;
   // Decoration
-  border-radius: var(--mg-badge-border-radius);
   border: $mg-badge-border-width solid;
+  border-radius: calc(var(--mg-badge-size) / 2);
   // Font
   font-size: var(--mg-badge-font-size);
   font-weight: 600;
   text-align: center;
+  line-height: var(--mg-badge-size);
 
   // Variant
   @include badge-variant('primary', 'dark', 'light');
@@ -46,6 +48,6 @@ $mg-badge-padding-horizontal: 0.7rem;
 
 .mg-badge,
 mg-badge {
-  display: inline-block;
-  vertical-align: middle;
+  display: inline-flex;
+  align-items: center;
 }
