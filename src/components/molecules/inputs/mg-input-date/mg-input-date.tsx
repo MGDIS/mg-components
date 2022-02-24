@@ -1,7 +1,7 @@
 import { Component, Event, EventEmitter, h, Prop, State, Watch } from '@stencil/core';
 import { MgInput } from '../MgInput';
 import { createID, ClassList } from '../../../../utils/components.utils';
-import { localeDate } from '../../../../utils/locale.utils';
+import { localeDate, dateRegexp } from '../../../../utils/locale.utils';
 import { messages } from '../../../../locales';
 
 @Component({
@@ -145,7 +145,7 @@ export class MgInputDate {
    * @param date
    */
   private validateDateFormat(date: string) {
-    if (date?.length > 0 && !(typeof date === 'string' && date.match(/^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/) !== null)) {
+    if (date?.length > 0 && !(typeof date === 'string' && dateRegexp.test(date))) {
       throw new Error("<mg-input-date> props 'min/max' doesn't match pattern: yyyy-mm-dd");
     }
   }
@@ -160,7 +160,7 @@ export class MgInputDate {
     this.errorMessage = undefined;
     // wrong date format
     if (!validity && element.validity.badInput) {
-      this.errorMessage = messages.errors.date.badInput.replace('{min}', this.min?.length > 0 ? localeDate(this.min) : '01/01/1900');
+      this.errorMessage = messages.errors.date.badInput.replace('{min}', this.min?.length > 0 ? localeDate(this.min) : localeDate('1900-01-01'));
     }
     // required
     else if (!validity && element.validity.valueMissing) {
@@ -232,6 +232,7 @@ export class MgInputDate {
           required={this.required}
           onInput={this.handleInput}
           onBlur={this.handleBlur}
+          pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"
         />
       </MgInput>
     );
