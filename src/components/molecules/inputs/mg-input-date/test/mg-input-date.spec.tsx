@@ -46,6 +46,14 @@ describe('mg-input-date', () => {
     }
   });
 
+  test.each(['', 2021, '31-12-2022', '2022-02-24T08:01:44.460Z'])('Should throw an error with invalid value property : %s', async value => {
+    try {
+      await getPage({ label: 'label', value });
+    } catch (err) {
+      expect(err.message).toMatch("<mg-input-date> props 'value' doesn't match pattern: yyyy-mm-dd");
+    }
+  });
+
   test('Should throw an error with labelOnTop & labelHide set to true', async () => {
     try {
       await getPage({ label: 'batman', labelOnTop: true, labelHide: true });

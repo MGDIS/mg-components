@@ -24,6 +24,12 @@ export class MgInputDate {
    * Component value
    */
   @Prop({ mutable: true, reflect: true }) value: string;
+  @Watch('value')
+  validateValue(newValue) {
+    if (newValue !== undefined && !(typeof newValue === 'string' && dateRegexp.test(newValue))) {
+      throw new Error("<mg-input-date> props 'value' doesn't match pattern: yyyy-mm-dd");
+    }
+  }
 
   /**
    * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
@@ -196,6 +202,7 @@ export class MgInputDate {
    *************/
 
   componentWillLoad() {
+    this.validateValue(this.value);
     this.validateMin(this.min);
     this.validateMax(this.max);
   }
