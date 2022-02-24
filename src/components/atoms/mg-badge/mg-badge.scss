@@ -24,7 +24,7 @@ $mg-badge-border-width: 0.1rem;
 /* Styles */
 .mg-badge {
   // Display
-  padding: 0 0.5rem;
+  padding: 0 0.4rem;
   height: var(--mg-badge-size);
   min-width: var(--mg-badge-size);
   box-sizing: border-box;
@@ -50,4 +50,5 @@ $mg-badge-border-width: 0.1rem;
 mg-badge {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
 }
