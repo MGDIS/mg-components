@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-02-22T10:10:09",
+  "timestamp": "2022-02-23T16:10:06",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.14.0",
@@ -883,6 +883,38 @@
           "values": [
             {
               "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "string",
+          "mutable": false,
+          "attr": "max",
+          "reflectToAttr": false,
+          "docs": "Define input maximum date\nformat: yyyy-mm-dd",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "string",
+          "mutable": false,
+          "attr": "min",
+          "reflectToAttr": false,
+          "docs": "Define input minimum date\nformat: yyyy-mm-dd",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
             }
           ],
           "optional": false,
