@@ -20,10 +20,12 @@ export const parameters = {
     extractArgTypes,
     extractComponentDescription,
     transformSource: input =>
-      prettier.format(input, {
-        parser: 'babel',
-        plugins: [prettierBabel],
-      }),
+      prettier
+        .format(input, {
+          parser: 'babel',
+          plugins: [prettierBabel],
+        })
+        .slice(0, -2), // use to remove semicolon at code example end. semi: false still display a semicolon at start.
   },
   options: {
     storySort: {
