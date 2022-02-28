@@ -62,6 +62,12 @@ export const icons: Object = {
     <path fill="currentColor" class="loader__full-circle" d="M8 2.67A5.33 5.33 0 1 1 2.67 8 5.33 5.33 0 0 1 8 2.67m0-2A7.33 7.33 0 1 0 15.33 8 7.33 7.33 0 0 0 8 .67Z" />,
     <path fill="currentColor" d="M8 2.67v-2A7.33 7.33 0 0 0 .67 8h2A5.33 5.33 0 0 1 8 2.67Z" />,
   ],
+  'magnifying-glass': () => (
+    <path
+      fill="currentColor"
+      d="M11.24,9.52A5.17,5.17,0,0,0,9.51,2.41l-.17-.09A5.18,5.18,0,0,0,4,11.18a5.16,5.16,0,0,0,5.54.11L12.3,14a1,1,0,0,0,1.41,0l.33-.33a1,1,0,0,0,0-1.41Zm-4.4.5A3.19,3.19,0,1,1,10,6.8v.06A3.19,3.19,0,0,1,6.84,10Z"
+    />
+  ),
   'paper-plane': () => (
     <path
       fill="currentColor"

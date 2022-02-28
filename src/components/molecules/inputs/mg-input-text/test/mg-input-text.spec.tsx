@@ -3,10 +3,18 @@ import { newSpecPage } from '@stencil/core/testing';
 import { MgInputText } from '../mg-input-text';
 import { messages } from '../../../../../locales';
 
-const getPage = args =>
+const getPage = (args, content = false) =>
   newSpecPage({
     components: [MgInputText],
-    template: () => <mg-input-text {...args}></mg-input-text>,
+    template: () => (
+      <mg-input-text {...args}>
+        {content ? (
+          <mg-button slot="append-input" label="search" is-input-group={true}>
+            <mg-icon icon="magnifying-glass"></mg-icon> Search
+          </mg-button>
+        ) : null}
+      </mg-input-text>
+    ),
   });
 
 describe('mg-input-text', () => {
@@ -15,12 +23,17 @@ describe('mg-input-text', () => {
     { label: 'label', identifier: 'identifier', labelHide: true },
     { label: 'label', identifier: 'identifier', labelOnTop: true },
     { label: 'label', identifier: 'identifier', readonly: true },
+    { label: 'label', identifier: 'identifier', type: 'search' },
+    { label: 'label', identifier: 'identifier', type: 'search', icon: 'magnifying-glass' },
+    { label: 'label', identifier: 'identifier', type: 'search', content: true },
     { label: 'label', identifier: 'identifier', readonly: true, labelOnTop: true, tooltip: 'Tooltip message' },
     { label: 'label', identifier: 'identifier', readonly: true, value: 'blu' },
     { label: 'label', identifier: 'identifier', tooltip: 'My Tooltip Message' },
     { label: 'label', identifier: 'identifier', tooltip: 'My Tooltip Message', labelOnTop: true },
   ])('Should render with args %s:', async args => {
-    const { root } = await getPage(args);
+    const content = args.content;
+    delete args.content;
+    const { root } = await getPage(args, content);
     expect(root).toMatchSnapshot();
   });
 

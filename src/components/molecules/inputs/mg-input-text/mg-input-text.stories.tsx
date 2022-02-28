@@ -136,3 +136,25 @@ URL.args = {
   // Help Text
   helpText: 'Exemple: https://www.exemple.fr',
 };
+
+/**
+ * Search
+ */
+
+const SearchTemplate = args => (
+  <form role="search">
+    <mg-input-text {...args}>
+      <mg-button slot="append-input" label="search" is-input-group={true}>
+        <mg-icon icon="magnifying-glass"></mg-icon> Search
+      </mg-button>
+    </mg-input-text>
+  </form>
+);
+
+export const Search = SearchTemplate.bind({});
+
+Search.args = {
+  ...MgInputText.args,
+  type: 'search',
+  icon: 'magnifying-glass',
+};

@@ -717,6 +717,76 @@ exports[`mg-icon Should render loader icon using warning variant 1`] = `
 </mg-icon>
 `;
 
+exports[`mg-icon Should render magnifying-glass icon in extra-large size 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--magnifying-glass mg-icon--size-extra-large" focusable="false" viewBox="0 0 16 16">
+      <path d="M11.24,9.52A5.17,5.17,0,0,0,9.51,2.41l-.17-.09A5.18,5.18,0,0,0,4,11.18a5.16,5.16,0,0,0,5.54.11L12.3,14a1,1,0,0,0,1.41,0l.33-.33a1,1,0,0,0,0-1.41Zm-4.4.5A3.19,3.19,0,1,1,10,6.8v.06A3.19,3.19,0,0,1,6.84,10Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render magnifying-glass icon in large size 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--magnifying-glass mg-icon--size-large" focusable="false" viewBox="0 0 16 16">
+      <path d="M11.24,9.52A5.17,5.17,0,0,0,9.51,2.41l-.17-.09A5.18,5.18,0,0,0,4,11.18a5.16,5.16,0,0,0,5.54.11L12.3,14a1,1,0,0,0,1.41,0l.33-.33a1,1,0,0,0,0-1.41Zm-4.4.5A3.19,3.19,0,1,1,10,6.8v.06A3.19,3.19,0,0,1,6.84,10Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render magnifying-glass icon in regular size 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--magnifying-glass mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+      <path d="M11.24,9.52A5.17,5.17,0,0,0,9.51,2.41l-.17-.09A5.18,5.18,0,0,0,4,11.18a5.16,5.16,0,0,0,5.54.11L12.3,14a1,1,0,0,0,1.41,0l.33-.33a1,1,0,0,0,0-1.41Zm-4.4.5A3.19,3.19,0,1,1,10,6.8v.06A3.19,3.19,0,0,1,6.84,10Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render magnifying-glass icon using danger variant 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--magnifying-glass mg-icon--size-regular mg-icon--variant-danger" focusable="false" viewBox="0 0 16 16">
+      <path d="M11.24,9.52A5.17,5.17,0,0,0,9.51,2.41l-.17-.09A5.18,5.18,0,0,0,4,11.18a5.16,5.16,0,0,0,5.54.11L12.3,14a1,1,0,0,0,1.41,0l.33-.33a1,1,0,0,0,0-1.41Zm-4.4.5A3.19,3.19,0,1,1,10,6.8v.06A3.19,3.19,0,0,1,6.84,10Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render magnifying-glass icon using info variant 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--magnifying-glass mg-icon--size-regular mg-icon--variant-info" focusable="false" viewBox="0 0 16 16">
+      <path d="M11.24,9.52A5.17,5.17,0,0,0,9.51,2.41l-.17-.09A5.18,5.18,0,0,0,4,11.18a5.16,5.16,0,0,0,5.54.11L12.3,14a1,1,0,0,0,1.41,0l.33-.33a1,1,0,0,0,0-1.41Zm-4.4.5A3.19,3.19,0,1,1,10,6.8v.06A3.19,3.19,0,0,1,6.84,10Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render magnifying-glass icon using success variant 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--magnifying-glass mg-icon--size-regular mg-icon--variant-success" focusable="false" viewBox="0 0 16 16">
+      <path d="M11.24,9.52A5.17,5.17,0,0,0,9.51,2.41l-.17-.09A5.18,5.18,0,0,0,4,11.18a5.16,5.16,0,0,0,5.54.11L12.3,14a1,1,0,0,0,1.41,0l.33-.33a1,1,0,0,0,0-1.41Zm-4.4.5A3.19,3.19,0,1,1,10,6.8v.06A3.19,3.19,0,0,1,6.84,10Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render magnifying-glass icon using warning variant 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--magnifying-glass mg-icon--size-regular mg-icon--variant-warning" focusable="false" viewBox="0 0 16 16">
+      <path d="M11.24,9.52A5.17,5.17,0,0,0,9.51,2.41l-.17-.09A5.18,5.18,0,0,0,4,11.18a5.16,5.16,0,0,0,5.54.11L12.3,14a1,1,0,0,0,1.41,0l.33-.33a1,1,0,0,0,0-1.41Zm-4.4.5A3.19,3.19,0,1,1,10,6.8v.06A3.19,3.19,0,0,1,6.84,10Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
 exports[`mg-icon Should render paper-plane icon in extra-large size 1`] = `
 <mg-icon>
   <mock:shadow-root>

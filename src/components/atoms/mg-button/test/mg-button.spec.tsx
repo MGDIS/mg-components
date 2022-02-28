@@ -15,6 +15,10 @@ describe('mg-button', () => {
       const { root } = await getPage({ identifier: 'identifier', variant, isIcon, label: 'label' });
       expect(root).toMatchSnapshot();
     });
+    test.each([false, true])('isInputGroup %s', async isInputGroup => {
+      const { root } = await getPage({ identifier: 'identifier', variant, isInputGroup, label: 'label' });
+      expect(root).toMatchSnapshot();
+    });
   });
 
   test.each(['', 'blu', undefined])('Should throw error', async variant => {

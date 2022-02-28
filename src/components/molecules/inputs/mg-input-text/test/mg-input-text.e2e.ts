@@ -118,4 +118,23 @@ describe('mg-input-text', () => {
       expect(screenshot).toMatchImageSnapshot();
     });
   });
+
+  describe('type search', () => {
+    test('render', async () => {
+      const page = await createPage(`
+        <mg-input-text label="label" icon="magnifying-glass" placeholder="placeholder">
+          <mg-button slot="append-input" label="search" is-input-group>
+            <mg-icon icon="magnifying-glass"></mg-icon> Search
+          </mg-button>
+        </mg-input-text>
+      `);
+
+      const element = await page.find('mg-input-text');
+
+      expect(element).toHaveClass('hydrated');
+
+      const screenshot = await page.screenshot();
+      expect(screenshot).toMatchImageSnapshot();
+    });
+  });
 });

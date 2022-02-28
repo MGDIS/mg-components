@@ -68,6 +68,11 @@ export class MgButton {
   @Prop() isIcon: boolean = false;
 
   /**
+   * Define if button is display with mg-input.
+   */
+  @Prop() isInputGroup: boolean = false;
+
+  /**
    * Option to set input disable on click, in order to prevent multi-click.
    * Parent component have to remove the attribute 'disabled' when the process ends.
    */
@@ -115,6 +120,9 @@ export class MgButton {
       if (typeof this.label !== 'string' || this.label === '') {
         throw new Error(`<mg-button> prop "label" is mandatory when prop "isIcon" is set to true.`);
       }
+    }
+    if (this.isInputGroup) {
+      this.classList.add(`mg-button--input-group`);
     }
     // Store the onclick fn
     this.onClickElementFn = this.element.onclick;

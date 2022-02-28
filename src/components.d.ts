@@ -48,6 +48,10 @@ export namespace Components {
          */
         "isIcon": boolean;
         /**
+          * Define if button is display with mg-input.
+         */
+        "isInputGroup": boolean;
+        /**
           * aria-label In case button text is not explicit enough
          */
         "label": string;
@@ -482,6 +486,10 @@ export namespace Components {
          */
         "helpText": string;
         /**
+          * Input search type
+         */
+        "icon": string;
+        /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
         "identifier"?: string;
@@ -533,6 +541,10 @@ export namespace Components {
           * Add a tooltip message next to the input
          */
         "tooltip": string;
+        /**
+          * Input search type
+         */
+        "type": 'text' | 'search';
         /**
           * Define input pattern to validate
          */
@@ -970,6 +982,10 @@ declare namespace LocalJSX {
           * Define if button is round. Used for icon button.
          */
         "isIcon"?: boolean;
+        /**
+          * Define if button is display with mg-input.
+         */
+        "isInputGroup"?: boolean;
         /**
           * aria-label In case button text is not explicit enough
          */
@@ -1429,6 +1445,10 @@ declare namespace LocalJSX {
          */
         "helpText"?: string;
         /**
+          * Input search type
+         */
+        "icon"?: string;
+        /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
         "identifier"?: string;
@@ -1484,6 +1504,10 @@ declare namespace LocalJSX {
           * Add a tooltip message next to the input
          */
         "tooltip"?: string;
+        /**
+          * Input search type
+         */
+        "type"?: 'text' | 'search';
         /**
           * Define input pattern to validate
          */

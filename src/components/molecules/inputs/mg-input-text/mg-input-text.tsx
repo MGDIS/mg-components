@@ -1,4 +1,4 @@
-import { Component, Event, h, Prop, EventEmitter, State } from '@stencil/core';
+import { Component, Event, h, Prop, EventEmitter, State, Element } from '@stencil/core';
 import { MgInput } from '../MgInput';
 import { createID, ClassList } from '../../../../utils/components.utils';
 import { messages } from '../../../../locales';
@@ -19,6 +19,8 @@ export class MgInputText {
   /**************
    * Decorators *
    **************/
+
+  @Element() element: HTMLMgInputTextElement;
 
   /**
    * Component value
@@ -42,6 +44,16 @@ export class MgInputText {
    * Required
    */
   @Prop() label!: string;
+
+  /**
+   * Input search type
+   */
+  @Prop() type: 'text' | 'search' = 'text';
+
+  /**
+   * Input search type
+   */
+  @Prop() icon: string;
 
   /**
    * Define if label is displayed on top
@@ -214,6 +226,12 @@ export class MgInputText {
    * Check if component props are well configured on init
    */
   componentWillLoad() {
+    if (this.icon !== undefined) {
+      this.classList.add('mg-input--has-icon');
+    }
+    if (this.element.querySelector('[slot="append-input"]') !== null) {
+      this.classList.add('mg-input--has-append-slot');
+    }
     this.validatePattern();
   }
 
@@ -237,8 +255,9 @@ export class MgInputText {
         errorMessage={this.errorMessage}
         isFieldset={false}
       >
+        {this.icon !== undefined ? <mg-icon icon={this.icon} size="regular"></mg-icon> : null}
         <input
-          type="text"
+          type={this.type}
           class="mg-input__box"
           value={this.value}
           id={this.identifier}
@@ -253,6 +272,7 @@ export class MgInputText {
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
         />
+        <slot name="append-input"></slot>
       </MgInput>
     );
   }

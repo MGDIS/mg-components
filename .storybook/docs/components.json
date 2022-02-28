@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-02-23T16:10:06",
+  "timestamp": "2022-02-28T07:55:33",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.14.0",
@@ -167,6 +167,23 @@
           "attr": "is-icon",
           "reflectToAttr": false,
           "docs": "Define if button is round.\nUsed for icon button.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "isInputGroup",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "is-input-group",
+          "reflectToAttr": false,
+          "docs": "Define if button is display with mg-input.",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -2232,7 +2249,7 @@
       "filePath": "./src/components/molecules/inputs/mg-input-text/mg-input-text.tsx",
       "encapsulation": "shadow",
       "tag": "mg-input-text",
-      "readme": "This atom refers to the [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64).\n",
+      "readme": "This atom refers to the [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64).\n\n## Use as search input\n\nDue to accessibility recommendation, a `<input type=\"search\"` must be used with a `<form role=\"search\" />` we recommend to use mg-input-text as in dedicated story.\n",
       "docs": "This atom refers to the [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64).",
       "docsTags": [],
       "usage": {},
@@ -2294,6 +2311,22 @@
           "attr": "help-text",
           "reflectToAttr": false,
           "docs": "Add a help text under the input, usually expected data format and example",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "icon",
+          "type": "string",
+          "mutable": false,
+          "attr": "icon",
+          "reflectToAttr": false,
+          "docs": "Input search type",
           "docsTags": [],
           "values": [
             {
@@ -2518,6 +2551,28 @@
           "required": false
         },
         {
+          "name": "type",
+          "type": "\"search\" | \"text\"",
+          "mutable": false,
+          "attr": "type",
+          "reflectToAttr": false,
+          "docs": "Input search type",
+          "docsTags": [],
+          "default": "'text'",
+          "values": [
+            {
+              "value": "search",
+              "type": "string"
+            },
+            {
+              "value": "text",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "valid",
           "type": "boolean",
           "mutable": true,
@@ -2568,15 +2623,15 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "mg-tooltip",
         "mg-icon",
+        "mg-tooltip",
         "mg-input-title",
         "mg-character-left"
       ],
       "dependencyGraph": {
         "mg-input-text": [
-          "mg-tooltip",
           "mg-icon",
+          "mg-tooltip",
           "mg-input-title",
           "mg-character-left"
         ]

@@ -76,6 +76,18 @@ $mg-button-padding-horizontal: 1.1rem;
     border-radius: var(--mg-button-icon-border-radius);
   }
 
+  // Input group button
+  &.mg-button--input-group {
+    // Display
+    justify-content: center;
+    height: var(--default-size);
+    // Decoration
+    border-top-right-radius: var(--mg-inputs-border-radius);
+    border-bottom-right-radius: var(--mg-inputs-border-radius);
+    border-top-left-radius: 0%;
+    border-bottom-left-radius: 0%;
+  }
+
   // Gradient style
   @include style-gradient('primary', null, null, true);
   @include style-gradient('secondary', null, null, true);

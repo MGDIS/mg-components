@@ -22,6 +22,28 @@ exports[`mg-button Should render an danger button isIcon true 1`] = `
 </mg-button>
 `;
 
+exports[`mg-button Should render an danger button isInputGroup false 1`] = `
+<mg-button>
+  <!---->
+  <button aria-label="label" class="mg-button mg-button--danger" id="identifier">
+    <div class="mg-button__content">
+      Text button
+    </div>
+  </button>
+</mg-button>
+`;
+
+exports[`mg-button Should render an danger button isInputGroup true 1`] = `
+<mg-button>
+  <!---->
+  <button aria-label="label" class="mg-button mg-button--danger mg-button--input-group" id="identifier">
+    <div class="mg-button__content">
+      Text button
+    </div>
+  </button>
+</mg-button>
+`;
+
 exports[`mg-button Should render an danger-alt button isIcon false 1`] = `
 <mg-button>
   <!---->
@@ -37,6 +59,28 @@ exports[`mg-button Should render an danger-alt button isIcon true 1`] = `
 <mg-button>
   <!---->
   <button aria-label="label" class="mg-button mg-button--danger-alt mg-button--icon" id="identifier">
+    <div class="mg-button__content">
+      Text button
+    </div>
+  </button>
+</mg-button>
+`;
+
+exports[`mg-button Should render an danger-alt button isInputGroup false 1`] = `
+<mg-button>
+  <!---->
+  <button aria-label="label" class="mg-button mg-button--danger-alt" id="identifier">
+    <div class="mg-button__content">
+      Text button
+    </div>
+  </button>
+</mg-button>
+`;
+
+exports[`mg-button Should render an danger-alt button isInputGroup true 1`] = `
+<mg-button>
+  <!---->
+  <button aria-label="label" class="mg-button mg-button--danger-alt mg-button--input-group" id="identifier">
     <div class="mg-button__content">
       Text button
     </div>
@@ -66,6 +110,28 @@ exports[`mg-button Should render an flat button isIcon true 1`] = `
 </mg-button>
 `;
 
+exports[`mg-button Should render an flat button isInputGroup false 1`] = `
+<mg-button>
+  <!---->
+  <button aria-label="label" class="mg-button mg-button--flat" id="identifier">
+    <div class="mg-button__content">
+      Text button
+    </div>
+  </button>
+</mg-button>
+`;
+
+exports[`mg-button Should render an flat button isInputGroup true 1`] = `
+<mg-button>
+  <!---->
+  <button aria-label="label" class="mg-button mg-button--flat mg-button--input-group" id="identifier">
+    <div class="mg-button__content">
+      Text button
+    </div>
+  </button>
+</mg-button>
+`;
+
 exports[`mg-button Should render an info button isIcon false 1`] = `
 <mg-button>
   <!---->
@@ -81,6 +147,28 @@ exports[`mg-button Should render an info button isIcon true 1`] = `
 <mg-button>
   <!---->
   <button aria-label="label" class="mg-button mg-button--icon mg-button--info" id="identifier">
+    <div class="mg-button__content">
+      Text button
+    </div>
+  </button>
+</mg-button>
+`;
+
+exports[`mg-button Should render an info button isInputGroup false 1`] = `
+<mg-button>
+  <!---->
+  <button aria-label="label" class="mg-button mg-button--info" id="identifier">
+    <div class="mg-button__content">
+      Text button
+    </div>
+  </button>
+</mg-button>
+`;
+
+exports[`mg-button Should render an info button isInputGroup true 1`] = `
+<mg-button>
+  <!---->
+  <button aria-label="label" class="mg-button mg-button--info mg-button--input-group" id="identifier">
     <div class="mg-button__content">
       Text button
     </div>
@@ -110,6 +198,28 @@ exports[`mg-button Should render an primary button isIcon true 1`] = `
 </mg-button>
 `;
 
+exports[`mg-button Should render an primary button isInputGroup false 1`] = `
+<mg-button>
+  <!---->
+  <button aria-label="label" class="mg-button mg-button--primary" id="identifier">
+    <div class="mg-button__content">
+      Text button
+    </div>
+  </button>
+</mg-button>
+`;
+
+exports[`mg-button Should render an primary button isInputGroup true 1`] = `
+<mg-button>
+  <!---->
+  <button aria-label="label" class="mg-button mg-button--input-group mg-button--primary" id="identifier">
+    <div class="mg-button__content">
+      Text button
+    </div>
+  </button>
+</mg-button>
+`;
+
 exports[`mg-button Should render an secondary button isIcon false 1`] = `
 <mg-button>
   <!---->
@@ -125,6 +235,28 @@ exports[`mg-button Should render an secondary button isIcon true 1`] = `
 <mg-button>
   <!---->
   <button aria-label="label" class="mg-button mg-button--icon mg-button--secondary" id="identifier">
+    <div class="mg-button__content">
+      Text button
+    </div>
+  </button>
+</mg-button>
+`;
+
+exports[`mg-button Should render an secondary button isInputGroup false 1`] = `
+<mg-button>
+  <!---->
+  <button aria-label="label" class="mg-button mg-button--secondary" id="identifier">
+    <div class="mg-button__content">
+      Text button
+    </div>
+  </button>
+</mg-button>
+`;
+
+exports[`mg-button Should render an secondary button isInputGroup true 1`] = `
+<mg-button>
+  <!---->
+  <button aria-label="label" class="mg-button mg-button--input-group mg-button--secondary" id="identifier">
     <div class="mg-button__content">
       Text button
     </div>

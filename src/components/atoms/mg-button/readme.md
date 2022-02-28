@@ -11,6 +11,7 @@ This atom refers to the [PDA9-67](https://jira.mgdis.fr/browse/PDA9-67).
 | `disabled`       | `disabled`         | Disable button                                                                                                                                         | `boolean` | `false`                 |
 | `identifier`     | `identifier`       | Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.                                            | `string`  | `createID('mg-button')` |
 | `isIcon`         | `is-icon`          | Define if button is round. Used for icon button.                                                                                                       | `boolean` | `false`                 |
+| `isInputGroup`   | `is-input-group`   | Define if button is display with mg-input.                                                                                                             | `boolean` | `false`                 |
 | `label`          | `label`            | aria-label In case button text is not explicit enough                                                                                                  | `string`  | `undefined`             |
 | `variant`        | `variant`          | Define button variant                                                                                                                                  | `string`  | `variants[0]`           |
 
