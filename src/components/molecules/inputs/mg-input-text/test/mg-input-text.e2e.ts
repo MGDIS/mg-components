@@ -122,7 +122,7 @@ describe('mg-input-text', () => {
   describe('type search', () => {
     test('render', async () => {
       const page = await createPage(`
-        <mg-input-text label="label" icon="magnifying-glass" placeholder="placeholder">
+        <mg-input-text label="label" icon="magnifying-glass" placeholder="placeholder" type="search">
           <mg-button slot="append-input" label="search" is-input-group>
             <mg-icon icon="magnifying-glass"></mg-icon> Search
           </mg-button>

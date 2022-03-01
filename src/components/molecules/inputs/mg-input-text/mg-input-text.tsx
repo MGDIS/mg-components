@@ -229,10 +229,15 @@ export class MgInputText {
     if (this.icon !== undefined) {
       this.classList.add('mg-input--has-icon');
     }
-    if (this.element.querySelector('[slot="append-input"]') !== null) {
-      this.classList.add('mg-input--has-append-slot');
-    }
     this.validatePattern();
+  }
+
+  componentDidLoad() {
+    const slotAppendInput: HTMLSlotElement = this.element.querySelector('[slot="append-input"]');
+    if (slotAppendInput !== null && slotAppendInput.querySelector('.mg-button--input-group') !== null) {
+      this.classList.add('mg-input--is-input-group');
+      this.classList = new ClassList(this.classList.classes);
+    }
   }
 
   render() {
@@ -255,7 +260,7 @@ export class MgInputText {
         errorMessage={this.errorMessage}
         isFieldset={false}
       >
-        {this.icon !== undefined ? <mg-icon icon={this.icon} size="regular"></mg-icon> : null}
+        {this.icon !== undefined ? <mg-icon icon={this.icon}></mg-icon> : null}
         <input
           type={this.type}
           class="mg-input__box"

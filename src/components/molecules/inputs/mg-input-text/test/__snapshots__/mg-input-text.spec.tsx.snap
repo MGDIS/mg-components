@@ -61,7 +61,13 @@ exports[`mg-input-text Should render with args {
           <input aria-describedby="" class="mg-input__box" id="identifier" maxlength="400" name="identifier" type="text">
           <slot name="append-input"></slot>
           <mg-tooltip identifier="identifier-tooltip" message="My Tooltip Message">
-            <mg-icon icon="info-circle"></mg-icon>
+            <mg-icon>
+              <mock:shadow-root>
+                <svg aria-hidden="true" class="mg-icon mg-icon--info-circle mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+                  <path d="M8 .67A7.33 7.33 0 1 0 15.33 8 7.33 7.33 0 0 0 8 .67ZM9 12a.29.29 0 0 1-.3.3H7.35a.29.29 0 0 1-.3-.3V7.32A.29.29 0 0 1 7.33 7h1.32a.29.29 0 0 1 .35.3Zm0-6.74a.29.29 0 0 1-.3.3H7.35a.29.29 0 0 1-.3-.3V4a.29.29 0 0 1 .28-.3h1.32a.29.29 0 0 1 .3.28V4Z" fill="currentColor"></path>
+                </svg>
+              </mock:shadow-root>
+            </mg-icon>
           </mg-tooltip>
         </div>
       </div>
@@ -84,7 +90,13 @@ exports[`mg-input-text Should render with args {
           label
         </mg-input-title>
         <mg-tooltip identifier="identifier-tooltip" message="My Tooltip Message">
-          <mg-icon icon="info-circle"></mg-icon>
+          <mg-icon>
+            <mock:shadow-root>
+              <svg aria-hidden="true" class="mg-icon mg-icon--info-circle mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+                <path d="M8 .67A7.33 7.33 0 1 0 15.33 8 7.33 7.33 0 0 0 8 .67ZM9 12a.29.29 0 0 1-.3.3H7.35a.29.29 0 0 1-.3-.3V7.32A.29.29 0 0 1 7.33 7h1.32a.29.29 0 0 1 .35.3Zm0-6.74a.29.29 0 0 1-.3.3H7.35a.29.29 0 0 1-.3-.3V4a.29.29 0 0 1 .28-.3h1.32a.29.29 0 0 1 .3.28V4Z" fill="currentColor"></path>
+              </svg>
+            </mock:shadow-root>
+          </mg-icon>
         </mg-tooltip>
       </div>
       <div class="mg-input__input-container">
@@ -102,33 +114,6 @@ exports[`mg-input-text Should render with args {
   label: 'label',
   identifier: 'identifier',
   type: 'search',
-  content: true
-}: 1`] = `
-<mg-input-text>
-  <mock:shadow-root>
-    <div class="mg-input mg-input--has-append-slot mg-input--text mg-input--width-full">
-      <mg-input-title identifier="identifier">
-        label
-      </mg-input-title>
-      <div class="mg-input__input-container">
-        <div class="mg-input__input">
-          <input aria-describedby="" class="mg-input__box" id="identifier" maxlength="400" name="identifier" type="search">
-          <slot name="append-input"></slot>
-        </div>
-      </div>
-    </div>
-  </mock:shadow-root>
-  <mg-button is-input-group="" label="search" slot="append-input">
-    <mg-icon icon="magnifying-glass"></mg-icon>
-    Search
-  </mg-button>
-</mg-input-text>
-`;
-
-exports[`mg-input-text Should render with args {
-  label: 'label',
-  identifier: 'identifier',
-  type: 'search',
   icon: 'magnifying-glass'
 }: 1`] = `
 <mg-input-text>
@@ -139,7 +124,13 @@ exports[`mg-input-text Should render with args {
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <mg-icon icon="magnifying-glass" size="regular"></mg-icon>
+          <mg-icon>
+            <mock:shadow-root>
+              <svg aria-hidden="true" class="mg-icon mg-icon--magnifying-glass mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+                <path d="M11.24,9.52A5.17,5.17,0,0,0,9.51,2.41l-.17-.09A5.18,5.18,0,0,0,4,11.18a5.16,5.16,0,0,0,5.54.11L12.3,14a1,1,0,0,0,1.41,0l.33-.33a1,1,0,0,0,0-1.41Zm-4.4.5A3.19,3.19,0,1,1,10,6.8v.06A3.19,3.19,0,0,1,6.84,10Z" fill="currentColor"></path>
+              </svg>
+            </mock:shadow-root>
+          </mg-icon>
           <input aria-describedby="" class="mg-input__box" id="identifier" maxlength="400" name="identifier" type="search">
           <slot name="append-input"></slot>
         </div>
@@ -235,6 +226,39 @@ exports[`mg-input-text Should render with args { label: 'label', identifier: 'id
       </div>
     </div>
   </mock:shadow-root>
+</mg-input-text>
+`;
+
+exports[`mg-input-text Should render with slot. 1`] = `
+<mg-input-text>
+  <mock:shadow-root>
+    <div class="mg-input mg-input--is-input-group mg-input--text mg-input--width-full">
+      <mg-input-title identifier="identifier">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input">
+          <input aria-describedby="" class="mg-input__box" id="identifier" maxlength="400" name="identifier" type="search">
+          <slot name="append-input"></slot>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+  <mg-button is-input-group="" slot="append-input">
+    <!---->
+    <button aria-label="search" class="mg-button mg-button--input-group mg-button--primary" id="identifier">
+      <div class="mg-button__content">
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--magnifying-glass mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M11.24,9.52A5.17,5.17,0,0,0,9.51,2.41l-.17-.09A5.18,5.18,0,0,0,4,11.18a5.16,5.16,0,0,0,5.54.11L12.3,14a1,1,0,0,0,1.41,0l.33-.33a1,1,0,0,0,0-1.41Zm-4.4.5A3.19,3.19,0,1,1,10,6.8v.06A3.19,3.19,0,0,1,6.84,10Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
+        Search
+      </div>
+    </button>
+  </mg-button>
 </mg-input-text>
 `;
 

@@ -1,20 +1,14 @@
 import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
 import { MgInputText } from '../mg-input-text';
+import { MgButton } from '../../../../atoms/mg-button/mg-button';
+import { MgIcon } from '../../../../atoms/mg-icon/mg-icon';
 import { messages } from '../../../../../locales';
 
-const getPage = (args, content = false) =>
+const getPage = (args, content?) =>
   newSpecPage({
-    components: [MgInputText],
-    template: () => (
-      <mg-input-text {...args}>
-        {content ? (
-          <mg-button slot="append-input" label="search" is-input-group={true}>
-            <mg-icon icon="magnifying-glass"></mg-icon> Search
-          </mg-button>
-        ) : null}
-      </mg-input-text>
-    ),
+    components: [MgInputText, MgButton, MgIcon],
+    template: () => <mg-input-text {...args}>{content}</mg-input-text>,
   });
 
 describe('mg-input-text', () => {
@@ -25,16 +19,25 @@ describe('mg-input-text', () => {
     { label: 'label', identifier: 'identifier', readonly: true },
     { label: 'label', identifier: 'identifier', type: 'search' },
     { label: 'label', identifier: 'identifier', type: 'search', icon: 'magnifying-glass' },
-    { label: 'label', identifier: 'identifier', type: 'search', content: true },
     { label: 'label', identifier: 'identifier', readonly: true, labelOnTop: true, tooltip: 'Tooltip message' },
     { label: 'label', identifier: 'identifier', readonly: true, value: 'blu' },
     { label: 'label', identifier: 'identifier', tooltip: 'My Tooltip Message' },
     { label: 'label', identifier: 'identifier', tooltip: 'My Tooltip Message', labelOnTop: true },
   ])('Should render with args %s:', async args => {
-    const content = args.content;
-    delete args.content;
-    const { root } = await getPage(args, content);
+    const { root } = await getPage(args);
     expect(root).toMatchSnapshot();
+  });
+
+  test('Should render with slot.', async () => {
+    const args = { label: 'label', identifier: 'identifier', type: 'search' };
+    const content = (
+      <mg-button slot="append-input" label="search" identifier="identifier" is-input-group>
+        <mg-icon icon="magnifying-glass"></mg-icon> Search
+      </mg-button>
+    );
+
+    const page = await getPage(args, content);
+    expect(page.root).toMatchSnapshot();
   });
 
   test.each(['', undefined])('Should throw error with invalid label property : %s', async value => {

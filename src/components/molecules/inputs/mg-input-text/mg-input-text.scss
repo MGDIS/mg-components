@@ -4,7 +4,7 @@
 @use '../styles/mg-input-charleft.scss';
 @use '../../../../styles/a11y.scss';
 
-:root {
+:host {
   display: block;
 }
 
@@ -33,7 +33,7 @@
 * Append input slot
 */
 
-.mg-input.mg-input--has-append-slot .mg-input__box {
+.mg-input.mg-input--is-input-group .mg-input__box {
   border-top-right-radius: 0%;
   border-bottom-right-radius: 0%;
   &:focus-visible {
