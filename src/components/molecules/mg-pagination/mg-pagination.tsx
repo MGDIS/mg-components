@@ -102,7 +102,7 @@ export class MgPagination {
    * Pages state setter
    * @returns {void}
    */
-  private setPages(): void {
+  private setPages = (): void => {
     const firstPage = 1;
     const pages = range(firstPage, this.totalPages);
     const lastPage = this.totalPages;
@@ -143,12 +143,12 @@ export class MgPagination {
       this.pages = [firstPage, ...middlePages, lastPage];
       return;
     }
-  }
+  };
 
   /**
    * Pager state setter
    */
-  private setPager() {
+  private setPager = () => {
     this.setPages();
 
     const pages = this.pages.map(page => ({
@@ -160,7 +160,7 @@ export class MgPagination {
     const nextPage = { kind: PageKind.NAVIGATION, disabled: isCurrentPage(this.currentPage, this.totalPages), navigationaction: NavigationAction.NEXT };
 
     this.pager = [previousPage, ...pages, nextPage];
-  }
+  };
 
   /**
    * Change current page from target

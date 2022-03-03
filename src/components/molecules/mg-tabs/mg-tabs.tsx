@@ -118,12 +118,12 @@ export class MgTabs {
   /**
    * Validate slots setting
    */
-  private validateSlots() {
+  private validateSlots = () => {
     const slots = Array.from(this.element.children).filter(slot => slot.getAttribute('slot')?.includes('tab_content-'));
     if (slots.length !== this.tabs.length) {
       throw new Error('<mg-tabs> Must have slots counts equal to tabs count.');
     }
-  }
+  };
 
   /*************
    * Lifecycle *
