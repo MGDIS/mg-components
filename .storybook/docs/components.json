@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-02-18T06:52:28",
+  "timestamp": "2022-03-01T16:18:40",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.14.0",
@@ -183,7 +183,8 @@
       "slots": [],
       "parts": [],
       "dependents": [
-        "mg-message"
+        "mg-message",
+        "mg-popover"
       ],
       "dependencies": [
         "mg-icon"
@@ -193,6 +194,9 @@
           "mg-icon"
         ],
         "mg-message": [
+          "mg-button"
+        ],
+        "mg-popover": [
           "mg-button"
         ]
       }
@@ -415,6 +419,7 @@
         "mg-input-textarea",
         "mg-input-toggle",
         "mg-message",
+        "mg-popover",
         "mg-tabs"
       ],
       "dependencies": [],
@@ -450,6 +455,9 @@
           "mg-icon"
         ],
         "mg-message": [
+          "mg-icon"
+        ],
+        "mg-popover": [
           "mg-icon"
         ],
         "mg-tabs": [
@@ -3264,7 +3272,7 @@
         {
           "name": "closeButton",
           "type": "boolean",
-          "mutable": true,
+          "mutable": false,
           "attr": "close-button",
           "reflectToAttr": false,
           "docs": "Define if message has a cross button\nRG 01: https://jira.mgdis.fr/browse/PDA9-140",
@@ -3275,7 +3283,7 @@
               "type": "boolean"
             }
           ],
-          "optional": true,
+          "optional": false,
           "required": false
         },
         {
@@ -3291,7 +3299,7 @@
               "type": "number"
             }
           ],
-          "optional": true,
+          "optional": false,
           "required": false
         },
         {
@@ -3308,7 +3316,7 @@
               "type": "boolean"
             }
           ],
-          "optional": true,
+          "optional": false,
           "required": false
         },
         {
@@ -3325,7 +3333,7 @@
               "type": "string"
             }
           ],
-          "optional": true,
+          "optional": false,
           "required": false
         },
         {
@@ -3342,7 +3350,7 @@
               "type": "string"
             }
           ],
-          "optional": true,
+          "optional": false,
           "required": false
         }
       ],
@@ -3454,6 +3462,179 @@
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/atoms/mg-popover/mg-popover.tsx",
+      "encapsulation": "scoped",
+      "tag": "mg-popover",
+      "readme": "# mg-popover\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "closeButton",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "close-button",
+          "reflectToAttr": false,
+          "docs": "Define if popover has a cross button",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "disabled",
+          "reflectToAttr": true,
+          "docs": "Disable popover",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "display",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "display",
+          "reflectToAttr": true,
+          "docs": "Display popover",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "identifier",
+          "type": "string",
+          "mutable": false,
+          "attr": "identifier",
+          "reflectToAttr": false,
+          "docs": "Sets an `id` attribute.\nNeeded by the input for accessibility `arai-decribedby`.",
+          "docsTags": [],
+          "default": "createID('mg-popover')",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "placement",
+          "type": "\"auto\" | \"auto-end\" | \"auto-start\" | \"bottom\" | \"bottom-end\" | \"bottom-start\" | \"left\" | \"left-end\" | \"left-start\" | \"right\" | \"right-end\" | \"right-start\" | \"top\" | \"top-end\" | \"top-start\"",
+          "mutable": false,
+          "attr": "placement",
+          "reflectToAttr": false,
+          "docs": "Popover placement",
+          "docsTags": [],
+          "default": "'bottom'",
+          "values": [
+            {
+              "value": "auto",
+              "type": "string"
+            },
+            {
+              "value": "auto-end",
+              "type": "string"
+            },
+            {
+              "value": "auto-start",
+              "type": "string"
+            },
+            {
+              "value": "bottom",
+              "type": "string"
+            },
+            {
+              "value": "bottom-end",
+              "type": "string"
+            },
+            {
+              "value": "bottom-start",
+              "type": "string"
+            },
+            {
+              "value": "left",
+              "type": "string"
+            },
+            {
+              "value": "left-end",
+              "type": "string"
+            },
+            {
+              "value": "left-start",
+              "type": "string"
+            },
+            {
+              "value": "right",
+              "type": "string"
+            },
+            {
+              "value": "right-end",
+              "type": "string"
+            },
+            {
+              "value": "right-start",
+              "type": "string"
+            },
+            {
+              "value": "top",
+              "type": "string"
+            },
+            {
+              "value": "top-end",
+              "type": "string"
+            },
+            {
+              "value": "top-start",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "mg-button",
+        "mg-icon"
+      ],
+      "dependencyGraph": {
+        "mg-popover": [
+          "mg-button",
+          "mg-icon"
+        ],
+        "mg-button": [
+          "mg-icon"
+        ]
+      }
     },
     {
       "filePath": "./src/components/molecules/mg-tabs/mg-tabs.tsx",

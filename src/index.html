@@ -15,12 +15,6 @@
         font-size: 1.3rem;
         line-height: 1.4;
       }
-      .mg-form-group {
-        margin-bottom: var(--mg-form-group-vertical-space);
-        --mg-inputs-title-horizontal-space: 3rem;
-        --mg-inputs-title-width: 15rem;
-        --mg-inputs-shrink: 0;
-      }
     </style>
     <link rel="stylesheet" href="/build/variables.css" />
     <!-- <link rel="stylesheet" href="/build/mg-components.css" /> -->
@@ -289,9 +283,20 @@
             <mg-button onclick="document.getElementById('tp-disabled').removeAttribute('disabled')">mg-button</mg-button></mg-tooltip
           >
         </div>
-        <!-- <div class="mg-grid">
-          <div class="mg-grid__col" style="height: 200px; background-color: black; position: relative; z-index: 10"></div>
-        </div>-->
+        <h4>Popover</h4>
+        <mg-popover>
+          <mg-button>Display popover</mg-button>
+          <div slot="content">Coucou</div>
+        </mg-popover>
+        <mg-popover close-button display>
+          <div slot="content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </div>
+          <h1 slot="title">Titre un peu plus long un peu plus long un peu plus long un peu plus long un peu plus long</h1>
+          <mg-button>Display popover</mg-button>
+        </mg-popover>
         <h4>Character left</h4>
         <mg-character-left maxlength="400"></mg-character-left>
         <mg-character-left maxlength="100" template="Template custom qui te dit qu'il ne reste plus que {counter} lettres!"></mg-character-left>

@@ -679,23 +679,23 @@ export namespace Components {
         /**
           * Define if message has a cross button RG 01: https://jira.mgdis.fr/browse/PDA9-140
          */
-        "closeButton"?: boolean;
+        "closeButton": boolean;
         /**
           * Add a delay to hide/close message when it passed Value is defined in seconds and must greater than 2 seconds (PDA9-314 RG-06)
          */
-        "delay"?: number;
+        "delay": number;
         /**
           * Define if message is hidden
          */
-        "hide"?: boolean;
+        "hide": boolean;
         /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
-        "identifier"?: string;
+        "identifier": string;
         /**
           * Message variant
          */
-        "variant"?: string;
+        "variant": string;
     }
     interface MgPagination {
         /**
@@ -714,6 +714,42 @@ export namespace Components {
           * Component total pages
          */
         "totalPages": number;
+    }
+    interface MgPopover {
+        /**
+          * Define if popover has a cross button
+         */
+        "closeButton": boolean;
+        /**
+          * Disable popover
+         */
+        "disabled": boolean;
+        /**
+          * Display popover
+         */
+        "display": boolean;
+        /**
+          * Sets an `id` attribute. Needed by the input for accessibility `arai-decribedby`.
+         */
+        "identifier": string;
+        /**
+          * Popover placement
+         */
+        "placement": | 'auto'
+    | 'auto-start'
+    | 'auto-end'
+    | 'top'
+    | 'top-start'
+    | 'top-end'
+    | 'bottom'
+    | 'bottom-start'
+    | 'bottom-end'
+    | 'right'
+    | 'right-start'
+    | 'right-end'
+    | 'left'
+    | 'left-start'
+    | 'left-end';
     }
     interface MgTabs {
         /**
@@ -877,6 +913,12 @@ declare global {
         prototype: HTMLMgPaginationElement;
         new (): HTMLMgPaginationElement;
     };
+    interface HTMLMgPopoverElement extends Components.MgPopover, HTMLStencilElement {
+    }
+    var HTMLMgPopoverElement: {
+        prototype: HTMLMgPopoverElement;
+        new (): HTMLMgPopoverElement;
+    };
     interface HTMLMgTabsElement extends Components.MgTabs, HTMLStencilElement {
     }
     var HTMLMgTabsElement: {
@@ -912,6 +954,7 @@ declare global {
         "mg-input-toggle": HTMLMgInputToggleElement;
         "mg-message": HTMLMgMessageElement;
         "mg-pagination": HTMLMgPaginationElement;
+        "mg-popover": HTMLMgPopoverElement;
         "mg-tabs": HTMLMgTabsElement;
         "mg-tag": HTMLMgTagElement;
         "mg-tooltip": HTMLMgTooltipElement;
@@ -1658,6 +1701,42 @@ declare namespace LocalJSX {
          */
         "totalPages"?: number;
     }
+    interface MgPopover {
+        /**
+          * Define if popover has a cross button
+         */
+        "closeButton"?: boolean;
+        /**
+          * Disable popover
+         */
+        "disabled"?: boolean;
+        /**
+          * Display popover
+         */
+        "display"?: boolean;
+        /**
+          * Sets an `id` attribute. Needed by the input for accessibility `arai-decribedby`.
+         */
+        "identifier"?: string;
+        /**
+          * Popover placement
+         */
+        "placement"?: | 'auto'
+    | 'auto-start'
+    | 'auto-end'
+    | 'top'
+    | 'top-start'
+    | 'top-end'
+    | 'bottom'
+    | 'bottom-start'
+    | 'bottom-end'
+    | 'right'
+    | 'right-start'
+    | 'right-end'
+    | 'left'
+    | 'left-start'
+    | 'left-end';
+    }
     interface MgTabs {
         /**
           * Active tab number default: first is 1
@@ -1739,6 +1818,7 @@ declare namespace LocalJSX {
         "mg-input-toggle": MgInputToggle;
         "mg-message": MgMessage;
         "mg-pagination": MgPagination;
+        "mg-popover": MgPopover;
         "mg-tabs": MgTabs;
         "mg-tag": MgTag;
         "mg-tooltip": MgTooltip;
@@ -1764,6 +1844,7 @@ declare module "@stencil/core" {
             "mg-input-toggle": LocalJSX.MgInputToggle & JSXBase.HTMLAttributes<HTMLMgInputToggleElement>;
             "mg-message": LocalJSX.MgMessage & JSXBase.HTMLAttributes<HTMLMgMessageElement>;
             "mg-pagination": LocalJSX.MgPagination & JSXBase.HTMLAttributes<HTMLMgPaginationElement>;
+            "mg-popover": LocalJSX.MgPopover & JSXBase.HTMLAttributes<HTMLMgPopoverElement>;
             "mg-tabs": LocalJSX.MgTabs & JSXBase.HTMLAttributes<HTMLMgTabsElement>;
             "mg-tag": LocalJSX.MgTag & JSXBase.HTMLAttributes<HTMLMgTagElement>;
             "mg-tooltip": LocalJSX.MgTooltip & JSXBase.HTMLAttributes<HTMLMgTooltipElement>;
