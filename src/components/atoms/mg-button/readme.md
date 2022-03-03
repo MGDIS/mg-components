@@ -20,7 +20,7 @@ This atom refers to the [PDA9-67](https://jira.mgdis.fr/browse/PDA9-67).
 ### Used by
 
  - [mg-message](../../molecules/mg-message)
- - [mg-popover](../mg-popover)
+ - [mg-popover](../../molecules/mg-popover)
 
 ### Depends on
 

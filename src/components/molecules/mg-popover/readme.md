@@ -20,8 +20,8 @@
 
 ### Depends on
 
-- [mg-button](../mg-button)
-- [mg-icon](../mg-icon)
+- [mg-button](../../atoms/mg-button)
+- [mg-icon](../../atoms/mg-icon)
 
 ### Graph
 ```mermaid
