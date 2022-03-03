@@ -33,6 +33,10 @@ This atom refers to the [PDA9-72](https://jira.mgdis.fr/browse/PDA9-72).
 
 ## Dependencies
 
+### Used by
+
+ - [mg-pagination](../../mg-pagination)
+
 ### Depends on
 
 - [mg-tooltip](../../../atoms/mg-tooltip)
@@ -47,6 +51,7 @@ graph TD;
   mg-input-select --> mg-icon
   mg-input-select --> mg-input-title
   mg-input-select --> mg-character-left
+  mg-pagination --> mg-input-select
   style mg-input-select fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

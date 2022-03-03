@@ -3,44 +3,35 @@
 $min-height: 3rem;
 $border-size: 0.3rem;
 
-.mg-pagination-list {
-  list-style: none;
+.mg-pagination__nav {
   display: flex;
-  margin: 0;
-  padding: 0;
+  align-items: center;
+  flex-direction: row;
+  mg-input-select {
+    margin-right: 0.5rem;
+  }
 }
 
-.mg-pagination-list__button {
-  background: none;
-  border: none;
-  border-bottom: $border-size solid transparent;
-  border-top: $border-size solid transparent;
-  min-height: $min-height;
-  min-width: calc(#{$min-height} + #{$border-size});
-  text-align: center;
-  padding: 0;
-  &:not(.mg-pagination-list__button--ellipsis) {
-    &:hover,
-    &:focus {
-      cursor: pointer;
-      background-color: hsla(var(--color-info-h), var(--color-info-s), var(--color-info-l), 0.1);
+.mg-pagination__button {
+  display: flex;
+  &:first-of-type {
+    margin-right: 1rem;
+    mg-icon {
+      margin-left: 0;
+      margin-right: 0.6rem;
     }
   }
-  &--active {
-    border-bottom: $border-size solid hsl(var(--color-info));
-    font-weight: 700;
-    color: hsl(var(--color-info));
+  &:last-of-type {
+    margin-left: 1rem;
+    mg-icon {
+      margin-left: 0.6rem;
+      margin-right: 0;
+    }
   }
-  &--navigation {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+  mg-icon {
+    margin: 0 0.6rem;
   }
-}
-
-.mg-pagination-list .mg-pagination-list__button[disabled] {
-  &:hover,
-  &:focus {
-    background: none;
-    cursor: auto;
+  &.mg-pagination__button--reverse .mg-button__content {
+    flex-direction: row-reverse;
   }
 }

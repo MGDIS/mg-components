@@ -20,6 +20,7 @@ This atom refers to the [PDA9-67](https://jira.mgdis.fr/browse/PDA9-67).
 ### Used by
 
  - [mg-message](../../molecules/mg-message)
+ - [mg-pagination](../../molecules/mg-pagination)
 
 ### Depends on
 
@@ -30,6 +31,7 @@ This atom refers to the [PDA9-67](https://jira.mgdis.fr/browse/PDA9-67).
 graph TD;
   mg-button --> mg-icon
   mg-message --> mg-button
+  mg-pagination --> mg-button
   style mg-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-02-28T09:31:22",
+  "timestamp": "2022-03-03T10:42:17",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.14.0",
@@ -218,7 +218,8 @@
       "slots": [],
       "parts": [],
       "dependents": [
-        "mg-message"
+        "mg-message",
+        "mg-pagination"
       ],
       "dependencies": [
         "mg-icon"
@@ -228,6 +229,9 @@
           "mg-icon"
         ],
         "mg-message": [
+          "mg-button"
+        ],
+        "mg-pagination": [
           "mg-button"
         ]
       }
@@ -450,6 +454,7 @@
         "mg-input-textarea",
         "mg-input-toggle",
         "mg-message",
+        "mg-pagination",
         "mg-tabs"
       ],
       "dependencies": [],
@@ -485,6 +490,9 @@
           "mg-icon"
         ],
         "mg-message": [
+          "mg-icon"
+        ],
+        "mg-pagination": [
           "mg-icon"
         ],
         "mg-tabs": [
@@ -2212,7 +2220,9 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [],
+      "dependents": [
+        "mg-pagination"
+      ],
       "dependencies": [
         "mg-tooltip",
         "mg-icon",
@@ -2225,6 +2235,9 @@
           "mg-icon",
           "mg-input-title",
           "mg-character-left"
+        ],
+        "mg-pagination": [
+          "mg-input-select"
         ]
       }
     },
@@ -3548,8 +3561,27 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
+      "dependencies": [
+        "mg-button",
+        "mg-icon",
+        "mg-input-select"
+      ],
+      "dependencyGraph": {
+        "mg-pagination": [
+          "mg-button",
+          "mg-icon",
+          "mg-input-select"
+        ],
+        "mg-button": [
+          "mg-icon"
+        ],
+        "mg-input-select": [
+          "mg-tooltip",
+          "mg-icon",
+          "mg-input-title",
+          "mg-character-left"
+        ]
+      }
     },
     {
       "filePath": "./src/components/molecules/mg-tabs/mg-tabs.tsx",

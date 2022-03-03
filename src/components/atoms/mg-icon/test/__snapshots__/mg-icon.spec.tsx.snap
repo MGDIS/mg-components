@@ -570,6 +570,286 @@ exports[`mg-icon Should render check-circle icon using warning variant 1`] = `
 </mg-icon>
 `;
 
+exports[`mg-icon Should render chevron-down icon in extra-large size 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-extra-large" focusable="false" viewBox="0 0 16 16">
+      <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render chevron-down icon in large size 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-large" focusable="false" viewBox="0 0 16 16">
+      <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render chevron-down icon in regular size 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+      <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render chevron-down icon using danger variant 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular mg-icon--variant-danger" focusable="false" viewBox="0 0 16 16">
+      <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render chevron-down icon using info variant 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular mg-icon--variant-info" focusable="false" viewBox="0 0 16 16">
+      <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render chevron-down icon using success variant 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular mg-icon--variant-success" focusable="false" viewBox="0 0 16 16">
+      <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render chevron-down icon using warning variant 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular mg-icon--variant-warning" focusable="false" viewBox="0 0 16 16">
+      <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render chevron-left icon in extra-large size 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-extra-large" focusable="false" viewBox="0 0 16 16">
+      <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render chevron-left icon in large size 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-large" focusable="false" viewBox="0 0 16 16">
+      <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render chevron-left icon in regular size 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+      <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render chevron-left icon using danger variant 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular mg-icon--variant-danger" focusable="false" viewBox="0 0 16 16">
+      <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render chevron-left icon using info variant 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular mg-icon--variant-info" focusable="false" viewBox="0 0 16 16">
+      <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render chevron-left icon using success variant 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular mg-icon--variant-success" focusable="false" viewBox="0 0 16 16">
+      <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render chevron-left icon using warning variant 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular mg-icon--variant-warning" focusable="false" viewBox="0 0 16 16">
+      <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render chevron-right icon in extra-large size 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-extra-large" focusable="false" viewBox="0 0 16 16">
+      <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render chevron-right icon in large size 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-large" focusable="false" viewBox="0 0 16 16">
+      <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render chevron-right icon in regular size 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+      <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render chevron-right icon using danger variant 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular mg-icon--variant-danger" focusable="false" viewBox="0 0 16 16">
+      <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render chevron-right icon using info variant 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular mg-icon--variant-info" focusable="false" viewBox="0 0 16 16">
+      <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render chevron-right icon using success variant 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular mg-icon--variant-success" focusable="false" viewBox="0 0 16 16">
+      <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render chevron-right icon using warning variant 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular mg-icon--variant-warning" focusable="false" viewBox="0 0 16 16">
+      <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render chevron-up icon in extra-large size 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-up mg-icon--size-extra-large" focusable="false" viewBox="0 0 16 16">
+      <path d="M8.57,3.79l6.53,6.52a.81.81,0,0,1,0,1.14h0l-.76.77a.81.81,0,0,1-1.14,0L8,7,2.8,12.22a.81.81,0,0,1-1.14,0L.9,11.45a.8.8,0,0,1,0-1.13h0L7.43,3.79a.79.79,0,0,1,1.13,0Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render chevron-up icon in large size 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-up mg-icon--size-large" focusable="false" viewBox="0 0 16 16">
+      <path d="M8.57,3.79l6.53,6.52a.81.81,0,0,1,0,1.14h0l-.76.77a.81.81,0,0,1-1.14,0L8,7,2.8,12.22a.81.81,0,0,1-1.14,0L.9,11.45a.8.8,0,0,1,0-1.13h0L7.43,3.79a.79.79,0,0,1,1.13,0Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render chevron-up icon in regular size 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-up mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+      <path d="M8.57,3.79l6.53,6.52a.81.81,0,0,1,0,1.14h0l-.76.77a.81.81,0,0,1-1.14,0L8,7,2.8,12.22a.81.81,0,0,1-1.14,0L.9,11.45a.8.8,0,0,1,0-1.13h0L7.43,3.79a.79.79,0,0,1,1.13,0Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render chevron-up icon using danger variant 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-up mg-icon--size-regular mg-icon--variant-danger" focusable="false" viewBox="0 0 16 16">
+      <path d="M8.57,3.79l6.53,6.52a.81.81,0,0,1,0,1.14h0l-.76.77a.81.81,0,0,1-1.14,0L8,7,2.8,12.22a.81.81,0,0,1-1.14,0L.9,11.45a.8.8,0,0,1,0-1.13h0L7.43,3.79a.79.79,0,0,1,1.13,0Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render chevron-up icon using info variant 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-up mg-icon--size-regular mg-icon--variant-info" focusable="false" viewBox="0 0 16 16">
+      <path d="M8.57,3.79l6.53,6.52a.81.81,0,0,1,0,1.14h0l-.76.77a.81.81,0,0,1-1.14,0L8,7,2.8,12.22a.81.81,0,0,1-1.14,0L.9,11.45a.8.8,0,0,1,0-1.13h0L7.43,3.79a.79.79,0,0,1,1.13,0Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render chevron-up icon using success variant 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-up mg-icon--size-regular mg-icon--variant-success" focusable="false" viewBox="0 0 16 16">
+      <path d="M8.57,3.79l6.53,6.52a.81.81,0,0,1,0,1.14h0l-.76.77a.81.81,0,0,1-1.14,0L8,7,2.8,12.22a.81.81,0,0,1-1.14,0L.9,11.45a.8.8,0,0,1,0-1.13h0L7.43,3.79a.79.79,0,0,1,1.13,0Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render chevron-up icon using warning variant 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-up mg-icon--size-regular mg-icon--variant-warning" focusable="false" viewBox="0 0 16 16">
+      <path d="M8.57,3.79l6.53,6.52a.81.81,0,0,1,0,1.14h0l-.76.77a.81.81,0,0,1-1.14,0L8,7,2.8,12.22a.81.81,0,0,1-1.14,0L.9,11.45a.8.8,0,0,1,0-1.13h0L7.43,3.79a.79.79,0,0,1,1.13,0Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
 exports[`mg-icon Should render cross icon in extra-large size 1`] = `
 <mg-icon>
   <mock:shadow-root>
