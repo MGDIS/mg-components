@@ -15,14 +15,14 @@ describe('mg-tabs', () => {
       },
       {
         items: [
-          { label: 'batman', badge: 1 },
-          { label: 'joker', badge: 1 },
+          { label: 'batman', badge: { label: 'count', value: 1 } },
+          { label: 'joker', badge: { label: 'count', value: 1 } },
         ],
       },
       {
         items: [
-          { label: 'batman', icon: 'check', badge: 1 },
-          { label: 'joker', icon: 'cross', badge: 1 },
+          { label: 'batman', icon: 'check', badge: { label: 'count', value: 1 } },
+          { label: 'joker', icon: 'cross', badge: { label: 'count', value: 1 } },
         ],
       },
     ])('render', async ({ items }) => {
@@ -64,6 +64,11 @@ describe('mg-tabs', () => {
 
       const screenshot3 = await page.screenshot();
       expect(screenshot3).toMatchImageSnapshot();
+
+      page.keyboard.down('Tab');
+
+      const screenshot4 = await page.screenshot();
+      expect(screenshot4).toMatchImageSnapshot();
     });
   });
 });

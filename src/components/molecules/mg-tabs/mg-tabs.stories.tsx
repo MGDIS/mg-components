@@ -39,11 +39,11 @@ MgTabsItems.args = {
     {
       label: 'Tab 1',
       icon: 'check',
-      badge: 1,
+      badge: { value: 1, label: 'message' },
     },
     {
       label: 'Tab 2',
-      badge: 5,
+      badge: { value: 5, label: 'messages' },
     },
     {
       label: 'Tab 3',

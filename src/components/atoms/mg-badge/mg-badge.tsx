@@ -1,5 +1,5 @@
 import { Component, h, Prop, State, Watch } from '@stencil/core';
-import { variants } from './mg-badge.conf';
+import { variants, BadgeType } from './mg-badge.conf';
 import { ClassList } from '../../../utils/components.utils';
 @Component({
   tag: 'mg-badge',
@@ -7,6 +7,23 @@ import { ClassList } from '../../../utils/components.utils';
   shadow: true,
 })
 export class MgBadge {
+  /**
+   * Badge value
+   */
+  @Prop({ mutable: true, reflect: true }) value!: BadgeType['value'];
+  @Watch('value')
+  valideValue(newValue) {
+    if (`${newValue}`.match(/^(\d+|[?*!a-z])$/i) === null) {
+      throw new Error('<mg-badge> prop "value" must be interger or ponctuation character.');
+    }
+  }
+
+  /**
+   * Badge label. Include short description.
+   * Required for accessibility
+   */
+  @Prop() label!: BadgeType['label'];
+
   /**
    * Define button variant
    */
@@ -37,6 +54,7 @@ export class MgBadge {
    * Check if props are well configured on init
    */
   componentWillLoad() {
+    this.valideValue(this.value);
     this.validateVariant(this.variant);
     this.validateOutline(this.outline);
   }
@@ -48,7 +66,8 @@ export class MgBadge {
   render() {
     return (
       <span class={this.classList.join()}>
-        <slot></slot>
+        {this.value}
+        <span class="sr-only">{this.label}</span>
       </span>
     );
   }

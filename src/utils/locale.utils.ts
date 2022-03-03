@@ -18,13 +18,14 @@ export function localeNumber(number: number): string {
   return new Intl.NumberFormat(locale).format(number);
 }
 
+export const dateRegexp = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/;
+
 /**
  * Locale date format
  * @param date {string}
  * @returns {string} formatted date
  */
 export function localeDate(date: string): string {
-  const dateRegexp = /\d{4}-\d{2}-\d{2}/;
   if (typeof date !== 'string' || date === '' || !dateRegexp.test(date)) {
     return '';
   }

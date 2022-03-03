@@ -5,6 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { BadgeType } from "./components/atoms/mg-badge/mg-badge.conf";
 import { CheckboxValue } from "./components/molecules/inputs/mg-input-checkbox/mg-input-checkbox.conf";
 import { RadioOption } from "./components/molecules/inputs/mg-input-radio/mg-input-radio.conf";
 import { SelectOption } from "./components/molecules/inputs/mg-input-select/mg-input-select.conf";
@@ -13,9 +14,17 @@ import { TabItem } from "./components/molecules/mg-tabs/mg-tabs.conf";
 export namespace Components {
     interface MgBadge {
         /**
+          * Badge label. Include short description. Required for accessibility
+         */
+        "label": BadgeType['label'];
+        /**
           * Define if button is using outline style
          */
         "outline"?: boolean;
+        /**
+          * Badge value
+         */
+        "value": BadgeType['value'];
         /**
           * Define button variant
          */
@@ -170,6 +179,14 @@ export namespace Components {
           * Define if label is displayed on top
          */
         "labelOnTop": boolean;
+        /**
+          * Define input maximum date format: yyyy-mm-dd
+         */
+        "max": string;
+        /**
+          * Define input minimum date format: yyyy-mm-dd
+         */
+        "min": string;
         /**
           * Input name If not set the value equals the identifier
          */
@@ -963,9 +980,17 @@ declare global {
 declare namespace LocalJSX {
     interface MgBadge {
         /**
+          * Badge label. Include short description. Required for accessibility
+         */
+        "label": BadgeType['label'];
+        /**
           * Define if button is using outline style
          */
         "outline"?: boolean;
+        /**
+          * Badge value
+         */
+        "value": BadgeType['value'];
         /**
           * Define button variant
          */
@@ -1124,6 +1149,14 @@ declare namespace LocalJSX {
           * Define if label is displayed on top
          */
         "labelOnTop"?: boolean;
+        /**
+          * Define input maximum date format: yyyy-mm-dd
+         */
+        "max"?: string;
+        /**
+          * Define input minimum date format: yyyy-mm-dd
+         */
+        "min"?: string;
         /**
           * Input name If not set the value equals the identifier
          */
@@ -1679,6 +1712,14 @@ declare namespace LocalJSX {
          */
         "identifier"?: string;
         /**
+          * Emmited event when message is hidden
+         */
+        "onComponent-hide"?: (event: CustomEvent<string>) => void;
+        /**
+          * Emmited event when message is diplayed
+         */
+        "onComponent-show"?: (event: CustomEvent<string>) => void;
+        /**
           * Message variant
          */
         "variant"?: string;
@@ -1696,6 +1737,10 @@ declare namespace LocalJSX {
           * Panignation label. Is a short description. Customize default value can be usefull to improve accessibility
          */
         "label"?: string;
+        /**
+          * Emmited event when current page change
+         */
+        "onCurrent-page-change"?: (event: CustomEvent<number>) => void;
         /**
           * Component total pages
          */
