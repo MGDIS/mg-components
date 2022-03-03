@@ -55,33 +55,43 @@ describe('mg-pagination', () => {
       const page = await getPage({ totalPages: 5, identifier: 'id' });
       expect(page.root).toMatchSnapshot();
 
+      jest.spyOn(page.rootInstance.currentPageChange, 'emit');
+
       const pageFive = page.root.shadowRoot.querySelector('[data-page="5"]');
       await pageFive.dispatchEvent(new CustomEvent('click', { bubbles: true }));
       await page.waitForChanges();
 
       expect(page.root).toMatchSnapshot();
+      expect(page.rootInstance.currentPageChange.emit).toHaveBeenCalledWith(5);
 
       const pageOne = page.root.shadowRoot.querySelector('[data-page="1"]');
       await pageOne.dispatchEvent(new CustomEvent('click', { bubbles: true }));
       await page.waitForChanges();
 
       expect(page.root).toMatchSnapshot();
+      expect(page.rootInstance.currentPageChange.emit).toHaveBeenCalledWith(1);
+      expect(page.rootInstance.currentPageChange.emit).toHaveBeenCalledTimes(2);
     });
-    test('navigate with next and previous, case totalPages=2', async () => {
+    test('navigate with next and previous, case totalPages=5', async () => {
       const page = await getPage({ totalPages: 5, identifier: 'id' });
       expect(page.root).toMatchSnapshot();
+
+      jest.spyOn(page.rootInstance.currentPageChange, 'emit');
 
       const pageFive = page.root.shadowRoot.querySelector('li:last-child button');
       await pageFive.dispatchEvent(new CustomEvent('click', { bubbles: true }));
       await page.waitForChanges();
 
       expect(page.root).toMatchSnapshot();
+      expect(page.rootInstance.currentPageChange.emit).toHaveBeenCalledWith(2);
 
       const pageOne = page.root.shadowRoot.querySelector('li:first-child button');
       await pageOne.dispatchEvent(new CustomEvent('click', { bubbles: true }));
       await page.waitForChanges();
 
       expect(page.root).toMatchSnapshot();
+      expect(page.rootInstance.currentPageChange.emit).toHaveBeenCalledWith(1);
+      expect(page.rootInstance.currentPageChange.emit).toHaveBeenCalledTimes(2);
     });
   });
 });

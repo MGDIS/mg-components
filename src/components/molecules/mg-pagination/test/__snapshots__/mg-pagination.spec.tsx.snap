@@ -1669,7 +1669,7 @@ exports[`mg-pagination Should render with totalPages 10 10`] = `
 </mg-pagination>
 `;
 
-exports[`mg-pagination navigation navigate with next and previous, case totalPages=2 1`] = `
+exports[`mg-pagination navigation navigate with next and previous, case totalPages=5 1`] = `
 <mg-pagination current-page="1">
   <mock:shadow-root>
     <nav aria-label="pagination" id="id">
@@ -1723,7 +1723,7 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
 </mg-pagination>
 `;
 
-exports[`mg-pagination navigation navigate with next and previous, case totalPages=2 2`] = `
+exports[`mg-pagination navigation navigate with next and previous, case totalPages=5 2`] = `
 <mg-pagination current-page="2">
   <mock:shadow-root>
     <nav aria-label="pagination" id="id">
@@ -1777,7 +1777,7 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
 </mg-pagination>
 `;
 
-exports[`mg-pagination navigation navigate with next and previous, case totalPages=2 3`] = `
+exports[`mg-pagination navigation navigate with next and previous, case totalPages=5 3`] = `
 <mg-pagination current-page="1">
   <mock:shadow-root>
     <nav aria-label="pagination" id="id">

@@ -1,133 +1,209 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`mg-badge variant danger outiline false 1`] = `
-<mg-badge>
+exports[`mg-badge value ! 1`] = `
+<mg-badge value="!">
   <mock:shadow-root>
-    <span class="mg-badge mg-badge--danger">
-      <slot></slot>
+    <span class="mg-badge mg-badge--info">
+      !
+      <span class="sr-only">
+        batman
+      </span>
     </span>
   </mock:shadow-root>
-  danger
+</mg-badge>
+`;
+
+exports[`mg-badge value ? 1`] = `
+<mg-badge value="?">
+  <mock:shadow-root>
+    <span class="mg-badge mg-badge--info">
+      ?
+      <span class="sr-only">
+        batman
+      </span>
+    </span>
+  </mock:shadow-root>
+</mg-badge>
+`;
+
+exports[`mg-badge value 1 1`] = `
+<mg-badge value="1">
+  <mock:shadow-root>
+    <span class="mg-badge mg-badge--info">
+      1
+      <span class="sr-only">
+        batman
+      </span>
+    </span>
+  </mock:shadow-root>
+</mg-badge>
+`;
+
+exports[`mg-badge value 100 1`] = `
+<mg-badge value="100">
+  <mock:shadow-root>
+    <span class="mg-badge mg-badge--info">
+      100
+      <span class="sr-only">
+        batman
+      </span>
+    </span>
+  </mock:shadow-root>
+</mg-badge>
+`;
+
+exports[`mg-badge variant danger outiline false 1`] = `
+<mg-badge value="1">
+  <mock:shadow-root>
+    <span class="mg-badge mg-badge--danger">
+      1
+      <span class="sr-only">
+        batman
+      </span>
+    </span>
+  </mock:shadow-root>
 </mg-badge>
 `;
 
 exports[`mg-badge variant danger outiline true 1`] = `
-<mg-badge>
+<mg-badge value="1">
   <mock:shadow-root>
     <span class="mg-badge mg-badge--danger mg-badge--outline">
-      <slot></slot>
+      1
+      <span class="sr-only">
+        batman
+      </span>
     </span>
   </mock:shadow-root>
-  danger
 </mg-badge>
 `;
 
 exports[`mg-badge variant info outiline false 1`] = `
-<mg-badge>
+<mg-badge value="1">
   <mock:shadow-root>
     <span class="mg-badge mg-badge--info">
-      <slot></slot>
+      1
+      <span class="sr-only">
+        batman
+      </span>
     </span>
   </mock:shadow-root>
-  info
 </mg-badge>
 `;
 
 exports[`mg-badge variant info outiline true 1`] = `
-<mg-badge>
+<mg-badge value="1">
   <mock:shadow-root>
     <span class="mg-badge mg-badge--info mg-badge--outline">
-      <slot></slot>
+      1
+      <span class="sr-only">
+        batman
+      </span>
     </span>
   </mock:shadow-root>
-  info
 </mg-badge>
 `;
 
 exports[`mg-badge variant primary outiline false 1`] = `
-<mg-badge>
+<mg-badge value="1">
   <mock:shadow-root>
     <span class="mg-badge mg-badge--primary">
-      <slot></slot>
+      1
+      <span class="sr-only">
+        batman
+      </span>
     </span>
   </mock:shadow-root>
-  primary
 </mg-badge>
 `;
 
 exports[`mg-badge variant primary outiline true 1`] = `
-<mg-badge>
+<mg-badge value="1">
   <mock:shadow-root>
     <span class="mg-badge mg-badge--outline mg-badge--primary">
-      <slot></slot>
+      1
+      <span class="sr-only">
+        batman
+      </span>
     </span>
   </mock:shadow-root>
-  primary
 </mg-badge>
 `;
 
 exports[`mg-badge variant secondary outiline false 1`] = `
-<mg-badge>
+<mg-badge value="1">
   <mock:shadow-root>
     <span class="mg-badge mg-badge--secondary">
-      <slot></slot>
+      1
+      <span class="sr-only">
+        batman
+      </span>
     </span>
   </mock:shadow-root>
-  secondary
 </mg-badge>
 `;
 
 exports[`mg-badge variant secondary outiline true 1`] = `
-<mg-badge>
+<mg-badge value="1">
   <mock:shadow-root>
     <span class="mg-badge mg-badge--outline mg-badge--secondary">
-      <slot></slot>
+      1
+      <span class="sr-only">
+        batman
+      </span>
     </span>
   </mock:shadow-root>
-  secondary
 </mg-badge>
 `;
 
 exports[`mg-badge variant success outiline false 1`] = `
-<mg-badge>
+<mg-badge value="1">
   <mock:shadow-root>
     <span class="mg-badge mg-badge--success">
-      <slot></slot>
+      1
+      <span class="sr-only">
+        batman
+      </span>
     </span>
   </mock:shadow-root>
-  success
 </mg-badge>
 `;
 
 exports[`mg-badge variant success outiline true 1`] = `
-<mg-badge>
+<mg-badge value="1">
   <mock:shadow-root>
     <span class="mg-badge mg-badge--outline mg-badge--success">
-      <slot></slot>
+      1
+      <span class="sr-only">
+        batman
+      </span>
     </span>
   </mock:shadow-root>
-  success
 </mg-badge>
 `;
 
 exports[`mg-badge variant warning outiline false 1`] = `
-<mg-badge>
+<mg-badge value="1">
   <mock:shadow-root>
     <span class="mg-badge mg-badge--warning">
-      <slot></slot>
+      1
+      <span class="sr-only">
+        batman
+      </span>
     </span>
   </mock:shadow-root>
-  warning
 </mg-badge>
 `;
 
 exports[`mg-badge variant warning outiline true 1`] = `
-<mg-badge>
+<mg-badge value="1">
   <mock:shadow-root>
     <span class="mg-badge mg-badge--outline mg-badge--warning">
-      <slot></slot>
+      1
+      <span class="sr-only">
+        batman
+      </span>
     </span>
   </mock:shadow-root>
-  warning
 </mg-badge>
 `;

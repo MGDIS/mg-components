@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-02-18T06:52:28",
+  "timestamp": "2022-02-28T09:31:22",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.14.0",
@@ -16,6 +16,22 @@
       "usage": {},
       "props": [
         {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "Badge label. Include short description.\nRequired for accessibility",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
           "name": "outline",
           "type": "boolean",
           "mutable": false,
@@ -30,6 +46,25 @@
           ],
           "optional": true,
           "required": false
+        },
+        {
+          "name": "value",
+          "type": "number | string",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": true,
+          "docs": "Badge value",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
         },
         {
           "name": "variant",
@@ -848,6 +883,38 @@
           "values": [
             {
               "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "string",
+          "mutable": false,
+          "attr": "max",
+          "reflectToAttr": false,
+          "docs": "Define input maximum date\nformat: yyyy-mm-dd",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "string",
+          "mutable": false,
+          "attr": "min",
+          "reflectToAttr": false,
+          "docs": "Define input minimum date\nformat: yyyy-mm-dd",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
             }
           ],
           "optional": false,
@@ -3347,7 +3414,26 @@
         }
       ],
       "methods": [],
-      "events": [],
+      "events": [
+        {
+          "event": "component-hide",
+          "detail": "string",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emmited event when message is hidden",
+          "docsTags": []
+        },
+        {
+          "event": "component-show",
+          "detail": "string",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emmited event when message is diplayed",
+          "docsTags": []
+        }
+      ],
       "listeners": [],
       "styles": [],
       "slots": [],
@@ -3446,7 +3532,17 @@
         }
       ],
       "methods": [],
-      "events": [],
+      "events": [
+        {
+          "event": "current-page-change",
+          "detail": "number",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emmited event when current page change",
+          "docsTags": []
+        }
+      ],
       "listeners": [],
       "styles": [],
       "slots": [],
