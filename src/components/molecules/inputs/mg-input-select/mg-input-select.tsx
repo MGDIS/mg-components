@@ -179,13 +179,11 @@ export class MgInputSelect {
   /**
    * Formated items for display
    */
-
   @State() options: (SelectOption | OptGroup)[];
 
   /**
-   * Formated items for display
+   * Does value match any item option
    */
-
   @State() valueExist: boolean;
 
   /**
