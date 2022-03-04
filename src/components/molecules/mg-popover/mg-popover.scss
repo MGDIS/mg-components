@@ -20,7 +20,7 @@ mg-popover {
   color: hsl(var(--mg-popover-font-color));
 
   &[data-show] {
-    display: initial;
+    display: block;
   }
 
   mg-button {

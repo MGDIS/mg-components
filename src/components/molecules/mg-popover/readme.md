@@ -1,6 +1,4 @@
-# mg-popover
-
-
+This atom refers to the [PDA9-504](https://jira.mgdis.fr/browse/PDA9-504).
 
 <!-- Auto Generated Below -->
 
