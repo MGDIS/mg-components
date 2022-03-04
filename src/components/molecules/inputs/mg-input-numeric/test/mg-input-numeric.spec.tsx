@@ -1,14 +1,16 @@
 import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
 import { MgInputNumeric } from '../mg-input-numeric';
+import { MgButton } from '../../../../atoms/mg-button/mg-button';
+import { MgIcon } from '../../../../atoms/mg-icon/mg-icon';
 import { messages } from '../../../../../locales';
 import { localeCurrency, localeNumber } from '../../../../../utils/locale.utils';
 import { types } from '../mg-input-numeric.conf';
 
-const getPage = args =>
+const getPage = (args, slot?) =>
   newSpecPage({
-    components: [MgInputNumeric],
-    template: () => <mg-input-numeric {...args}></mg-input-numeric>,
+    components: [MgInputNumeric, MgButton, MgIcon],
+    template: () => <mg-input-numeric {...args}>{slot}</mg-input-numeric>,
   });
 
 describe('mg-input-numeric', () => {
@@ -25,6 +27,17 @@ describe('mg-input-numeric', () => {
       { label: 'label', identifier: 'identifier', type, tooltip: 'My Tooltip Message', labelOnTop: true },
     ])('Should render with args %s:', async args => {
       const { root } = await getPage(args);
+      expect(root).toMatchSnapshot();
+    });
+
+    test.each([
+      <mg-button slot="append-input" label="search" identifier="identifier">
+        <mg-icon icon="magnifying-glass"></mg-icon> Search
+      </mg-button>,
+      <span slot="append-input">test</span>,
+    ])('Should render with slot.', async slot => {
+      const args = { label: 'label', identifier: 'identifier', type };
+      const { root } = await getPage(args, slot);
       expect(root).toMatchSnapshot();
     });
 

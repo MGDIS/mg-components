@@ -24,7 +24,11 @@ const Template = args => {
   const helpText = args.helpText;
   delete args.helpText;
   // return element
-  return <mg-input-numeric {...args} label-on-top={labelOnTop} label-hide={labelHide} help-text={helpText}></mg-input-numeric>;
+  return (
+    <mg-input-numeric {...args} label-on-top={labelOnTop} label-hide={labelHide} help-text={helpText}>
+      <span slot="append-input">Slot content</span>
+    </mg-input-numeric>
+  );
 };
 
 /**
