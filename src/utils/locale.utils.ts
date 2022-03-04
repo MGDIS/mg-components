@@ -18,7 +18,10 @@ export function localeNumber(number: number): string {
   return new Intl.NumberFormat(locale).format(number);
 }
 
-export const dateRegexp = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/;
+/**
+ * Date RegExp
+ */
+export const dateRegExp: RegExp = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/;
 
 /**
  * Locale date format
@@ -26,7 +29,7 @@ export const dateRegexp = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/;
  * @returns {string} formatted date
  */
 export function localeDate(date: string): string {
-  if (typeof date !== 'string' || date === '' || !dateRegexp.test(date)) {
+  if (typeof date !== 'string' || date === '' || !dateRegExp.test(date)) {
     return '';
   }
   return new Intl.DateTimeFormat(locale).format(new Date(date));

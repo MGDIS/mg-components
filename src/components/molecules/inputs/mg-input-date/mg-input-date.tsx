@@ -1,7 +1,7 @@
 import { Component, Event, EventEmitter, h, Prop, State, Watch } from '@stencil/core';
 import { MgInput } from '../MgInput';
 import { createID, ClassList } from '../../../../utils/components.utils';
-import { localeDate, dateRegexp } from '../../../../utils/locale.utils';
+import { localeDate, dateRegExp } from '../../../../utils/locale.utils';
 import { messages } from '../../../../locales';
 
 @Component({
@@ -26,7 +26,7 @@ export class MgInputDate {
   @Prop({ mutable: true, reflect: true }) value: string;
   @Watch('value')
   validateValue(newValue) {
-    if (newValue !== undefined && !(typeof newValue === 'string' && dateRegexp.test(newValue))) {
+    if (newValue !== undefined && !(typeof newValue === 'string' && dateRegExp.test(newValue))) {
       throw new Error("<mg-input-date> props 'value' doesn't match pattern: yyyy-mm-dd");
     }
   }
@@ -151,7 +151,7 @@ export class MgInputDate {
    * @param date
    */
   private validateDateFormat(date: string) {
-    if (date?.length > 0 && !(typeof date === 'string' && dateRegexp.test(date))) {
+    if (date?.length > 0 && !(typeof date === 'string' && dateRegExp.test(date))) {
       throw new Error("<mg-input-date> props 'min/max' doesn't match pattern: yyyy-mm-dd");
     }
   }
