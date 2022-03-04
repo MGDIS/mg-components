@@ -1,4 +1,4 @@
-import { Component, Event, h, Prop, EventEmitter, State } from '@stencil/core';
+import { Component, Event, h, Prop, EventEmitter, State, Element } from '@stencil/core';
 import { MgInput } from '../MgInput';
 import { createID, ClassList } from '../../../../utils/components.utils';
 import { messages } from '../../../../locales';
@@ -19,6 +19,11 @@ export class MgInputText {
   /**************
    * Decorators *
    **************/
+
+  /**
+   * Get component DOM element
+   */
+  @Element() element: HTMLMgInputTextElement;
 
   /**
    * Component value
@@ -42,6 +47,16 @@ export class MgInputText {
    * Required
    */
   @Prop() label!: string;
+
+  /**
+   * Input type
+   */
+  @Prop() type: 'text' | 'search' = 'text';
+
+  /**
+   * Input icon
+   */
+  @Prop() icon: string;
 
   /**
    * Define if label is displayed on top
@@ -206,6 +221,17 @@ export class MgInputText {
     }
   }
 
+  /**
+   * Validate append slot
+   */
+  private validateAppendSlot() {
+    const slotAppendInput: HTMLSlotElement = this.element.querySelector('[slot="append-input"]');
+    if (slotAppendInput !== null && slotAppendInput.querySelector('.mg-button') !== null) {
+      this.classList.add('mg-input--is-input-group-append');
+      this.classList = new ClassList(this.classList.classes);
+    }
+  }
+
   /*************
    * Lifecycle *
    *************/
@@ -214,7 +240,14 @@ export class MgInputText {
    * Check if component props are well configured on init
    */
   componentWillLoad() {
+    if (this.icon !== undefined) {
+      this.classList.add('mg-input--has-icon');
+    }
     this.validatePattern();
+  }
+
+  componentDidLoad() {
+    this.validateAppendSlot();
   }
 
   render() {
@@ -237,8 +270,9 @@ export class MgInputText {
         errorMessage={this.errorMessage}
         isFieldset={false}
       >
+        {this.icon !== undefined && <mg-icon icon={this.icon}></mg-icon>}
         <input
-          type="text"
+          type={this.type}
           class="mg-input__box"
           value={this.value}
           id={this.identifier}
@@ -253,6 +287,7 @@ export class MgInputText {
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
         />
+        <slot name="append-input"></slot>
       </MgInput>
     );
   }

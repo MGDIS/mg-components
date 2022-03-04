@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-03-03T16:16:14",
+  "timestamp": "2022-03-04T07:21:29",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.14.0",
@@ -2266,7 +2266,7 @@
       "filePath": "./src/components/molecules/inputs/mg-input-text/mg-input-text.tsx",
       "encapsulation": "shadow",
       "tag": "mg-input-text",
-      "readme": "This atom refers to the [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64).\n",
+      "readme": "This atom refers to the [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64).\n\n## Use as search input\n\nDue to [accessibility recommendation](https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input/search#les_champs_de_recherche_et_l%E2%80%99accessibilit%C3%A9), an `<input type=\"search\" />` must be used within a `<form role=\"search\" />` we recommend to use mg-input-text as in dedicated story.\n",
       "docs": "This atom refers to the [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64).",
       "docsTags": [],
       "usage": {},
@@ -2328,6 +2328,22 @@
           "attr": "help-text",
           "reflectToAttr": false,
           "docs": "Add a help text under the input, usually expected data format and example",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "icon",
+          "type": "string",
+          "mutable": false,
+          "attr": "icon",
+          "reflectToAttr": false,
+          "docs": "Input icon",
           "docsTags": [],
           "values": [
             {
@@ -2552,6 +2568,28 @@
           "required": false
         },
         {
+          "name": "type",
+          "type": "\"search\" | \"text\"",
+          "mutable": false,
+          "attr": "type",
+          "reflectToAttr": false,
+          "docs": "Input type",
+          "docsTags": [],
+          "default": "'text'",
+          "values": [
+            {
+              "value": "search",
+              "type": "string"
+            },
+            {
+              "value": "text",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "valid",
           "type": "boolean",
           "mutable": true,
@@ -2602,15 +2640,15 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "mg-tooltip",
         "mg-icon",
+        "mg-tooltip",
         "mg-input-title",
         "mg-character-left"
       ],
       "dependencyGraph": {
         "mg-input-text": [
-          "mg-tooltip",
           "mg-icon",
+          "mg-tooltip",
           "mg-input-title",
           "mg-character-left"
         ]

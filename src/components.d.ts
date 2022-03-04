@@ -490,6 +490,10 @@ export namespace Components {
          */
         "helpText": string;
         /**
+          * Input icon
+         */
+        "icon": string;
+        /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
         "identifier"?: string;
@@ -541,6 +545,10 @@ export namespace Components {
           * Add a tooltip message next to the input
          */
         "tooltip": string;
+        /**
+          * Input type
+         */
+        "type": 'text' | 'search';
         /**
           * Define input pattern to validate
          */
@@ -1445,6 +1453,10 @@ declare namespace LocalJSX {
          */
         "helpText"?: string;
         /**
+          * Input icon
+         */
+        "icon"?: string;
+        /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
         "identifier"?: string;
@@ -1500,6 +1512,10 @@ declare namespace LocalJSX {
           * Add a tooltip message next to the input
          */
         "tooltip"?: string;
+        /**
+          * Input type
+         */
+        "type"?: 'text' | 'search';
         /**
           * Define input pattern to validate
          */

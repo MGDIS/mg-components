@@ -7,6 +7,15 @@
  * - select
  */
 
+.mg-input__input {
+  display: flex;
+  align-items: center;
+
+  mg-tooltip {
+    margin-top: 0;
+  }
+}
+
 .mg-input__box {
   // Display
   padding: calc((var(--default-size) - var(--font-size) * var(--line-height)) / 2) var(--mg-inputs-spacer);
@@ -30,5 +39,29 @@
 
   &:focus {
     box-shadow: 0 0 0.6rem hsla(var(--mg-inputs-color-shadow-focus-hsl), 0.5);
+  }
+}
+
+/**
+* Variations
+*/
+
+.mg-input.mg-input--is-input-group-append {
+  // Input group button
+  --mg-button-border-radius-top-left: 0;
+  --mg-button-border-radius-bottom-left: 0;
+
+  /**
+  * Append input slot
+  */
+
+  .mg-input__box {
+    border-top-right-radius: 0%;
+    border-bottom-right-radius: 0%;
+    &:focus-visible {
+      outline-style: solid;
+      outline-offset: -0.2rem;
+      outline-width: 0.2rem;
+    }
   }
 }
