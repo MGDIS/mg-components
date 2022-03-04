@@ -162,38 +162,37 @@ export class MgInputDate {
    */
   private checkValidity(element) {
     const validity = element.checkValidity();
-    // Set error message
-    this.errorMessage = undefined;
-    // wrong date format
-    if (!validity && element.validity.badInput) {
-      this.errorMessage = messages.errors.date.badInput.replace('{min}', this.min?.length > 0 ? localeDate(this.min) : localeDate('1900-01-01'));
-    }
-    // required
-    else if (!validity && element.validity.valueMissing) {
-      this.errorMessage = messages.errors.required;
-    }
-    // min & max
-    else if (!validity && (element.validity.rangeUnderflow || element.validity.rangeOverflow) && this.min?.length > 0 && this.max?.length > 0) {
-      this.errorMessage = messages.errors.date.minMax.replace('{min}', localeDate(this.min)).replace('{max}', localeDate(this.max));
-    }
-    // min
-    else if (!validity && element.validity.rangeUnderflow) {
-      this.errorMessage = messages.errors.date.min.replace('{min}', localeDate(this.min));
-    }
-    //max
-    else if (!validity && element.validity.rangeOverflow) {
-      this.errorMessage = messages.errors.date.max.replace('{max}', localeDate(this.max));
-    }
 
     // Set validity
     this.valid = validity;
     this.invalid = !validity;
 
-    // Update class
-    if (validity) {
-      this.classList.delete(this.classError);
-    } else {
+    // Set error message
+    this.errorMessage = undefined;
+    if (!validity) {
       this.classList.add(this.classError);
+      // wrong date format
+      if (element.validity.badInput) {
+        this.errorMessage = messages.errors.date.badInput.replace('{min}', this.min?.length > 0 ? localeDate(this.min) : localeDate('1900-01-01'));
+      }
+      // required
+      else if (element.validity.valueMissing) {
+        this.errorMessage = messages.errors.required;
+      }
+      // min & max
+      else if ((element.validity.rangeUnderflow || element.validity.rangeOverflow) && this.min?.length > 0 && this.max?.length > 0) {
+        this.errorMessage = messages.errors.date.minMax.replace('{min}', localeDate(this.min)).replace('{max}', localeDate(this.max));
+      }
+      // min
+      else if (element.validity.rangeUnderflow) {
+        this.errorMessage = messages.errors.date.min.replace('{min}', localeDate(this.min));
+      }
+      //max
+      else if (element.validity.rangeOverflow) {
+        this.errorMessage = messages.errors.date.max.replace('{max}', localeDate(this.max));
+      }
+    } else {
+      this.classList.delete(this.classError);
     }
   }
 
