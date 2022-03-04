@@ -2114,6 +2114,40 @@
           "required": false
         },
         {
+          "name": "placeholderDisabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "placeholder-disabled",
+          "reflectToAttr": false,
+          "docs": "Option to disable placeholder",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "placeholderHide",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "placeholder-hide",
+          "reflectToAttr": false,
+          "docs": "Option to remove placeholder",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "readonly",
           "type": "boolean",
           "mutable": false,
