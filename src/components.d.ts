@@ -444,6 +444,14 @@ export namespace Components {
          */
         "placeholder": string;
         /**
+          * Option to disable placeholder
+         */
+        "placeholderDisabled": boolean;
+        /**
+          * Option to remove placeholder
+         */
+        "placeholderHide": boolean;
+        /**
           * Define if input is readonly
          */
         "readonly": boolean;
@@ -481,6 +489,10 @@ export namespace Components {
           * Add a help text under the input, usually expected data format and example
          */
         "helpText": string;
+        /**
+          * Input icon
+         */
+        "icon": string;
         /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
@@ -533,6 +545,10 @@ export namespace Components {
           * Add a tooltip message next to the input
          */
         "tooltip": string;
+        /**
+          * Input type
+         */
+        "type": 'text' | 'search';
         /**
           * Define input pattern to validate
          */
@@ -1434,6 +1450,14 @@ declare namespace LocalJSX {
          */
         "placeholder"?: string;
         /**
+          * Option to disable placeholder
+         */
+        "placeholderDisabled"?: boolean;
+        /**
+          * Option to remove placeholder
+         */
+        "placeholderHide"?: boolean;
+        /**
           * Define if input is readonly
          */
         "readonly"?: boolean;
@@ -1471,6 +1495,10 @@ declare namespace LocalJSX {
           * Add a help text under the input, usually expected data format and example
          */
         "helpText"?: string;
+        /**
+          * Input icon
+         */
+        "icon"?: string;
         /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
@@ -1527,6 +1555,10 @@ declare namespace LocalJSX {
           * Add a tooltip message next to the input
          */
         "tooltip"?: string;
+        /**
+          * Input type
+         */
+        "type"?: 'text' | 'search';
         /**
           * Define input pattern to validate
          */

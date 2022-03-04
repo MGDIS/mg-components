@@ -1,12 +1,14 @@
 import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
 import { MgInputText } from '../mg-input-text';
+import { MgButton } from '../../../../atoms/mg-button/mg-button';
+import { MgIcon } from '../../../../atoms/mg-icon/mg-icon';
 import { messages } from '../../../../../locales';
 
-const getPage = args =>
+const getPage = (args, content?) =>
   newSpecPage({
-    components: [MgInputText],
-    template: () => <mg-input-text {...args}></mg-input-text>,
+    components: [MgInputText, MgButton, MgIcon],
+    template: () => <mg-input-text {...args}>{content}</mg-input-text>,
   });
 
 describe('mg-input-text', () => {
@@ -15,6 +17,8 @@ describe('mg-input-text', () => {
     { label: 'label', identifier: 'identifier', labelHide: true },
     { label: 'label', identifier: 'identifier', labelOnTop: true },
     { label: 'label', identifier: 'identifier', readonly: true },
+    { label: 'label', identifier: 'identifier', type: 'search' },
+    { label: 'label', identifier: 'identifier', type: 'search', icon: 'magnifying-glass' },
     { label: 'label', identifier: 'identifier', readonly: true, labelOnTop: true, tooltip: 'Tooltip message' },
     { label: 'label', identifier: 'identifier', readonly: true, value: 'blu' },
     { label: 'label', identifier: 'identifier', tooltip: 'My Tooltip Message' },
@@ -22,6 +26,18 @@ describe('mg-input-text', () => {
   ])('Should render with args %s:', async args => {
     const { root } = await getPage(args);
     expect(root).toMatchSnapshot();
+  });
+
+  test.each([
+    <mg-button slot="append-input" label="search" identifier="identifier">
+      <mg-icon icon="magnifying-glass"></mg-icon> Search
+    </mg-button>,
+    <span slot="append-input">test</span>,
+  ])('Should render with slot.', async slot => {
+    const args = { label: 'label', identifier: 'identifier', type: 'search' };
+
+    const page = await getPage(args, slot);
+    expect(page.root).toMatchSnapshot();
   });
 
   test.each(['', undefined])('Should throw error with invalid label property : %s', async value => {
