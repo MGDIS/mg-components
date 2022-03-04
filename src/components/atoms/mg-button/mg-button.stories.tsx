@@ -21,11 +21,9 @@ const Template = args => {
   delete args.disableOnClick;
   const isIcon = args.isIcon;
   delete args.isIcon;
-  const isInputGroup = args.isInputGroup;
-  delete args.isInputGroup;
   // return element
   return (
-    <mg-button {...args} disable-on-click={disableOnClick} is-icon={isIcon} is-input-group={isInputGroup}>
+    <mg-button {...args} disable-on-click={disableOnClick} is-icon={isIcon}>
       {slot}
     </mg-button>
   );

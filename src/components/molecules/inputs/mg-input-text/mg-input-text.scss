@@ -28,17 +28,3 @@
     padding-left: calc(var(--mg-icon-regular-size) + var(--mg-inputs-spacer) * 2);
   }
 }
-
-/**
-* Append input slot
-*/
-
-.mg-input.mg-input--is-input-group .mg-input__box {
-  border-top-right-radius: 0%;
-  border-bottom-right-radius: 0%;
-  &:focus-visible {
-    outline-style: solid;
-    outline-offset: -0.2rem;
-    outline-width: 0.2rem;
-  }
-}

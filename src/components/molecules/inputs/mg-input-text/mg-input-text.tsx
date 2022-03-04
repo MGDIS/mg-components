@@ -20,6 +20,9 @@ export class MgInputText {
    * Decorators *
    **************/
 
+  /**
+   * Get component DOM element
+   */
   @Element() element: HTMLMgInputTextElement;
 
   /**
@@ -46,12 +49,12 @@ export class MgInputText {
   @Prop() label!: string;
 
   /**
-   * Input search type
+   * Input type
    */
   @Prop() type: 'text' | 'search' = 'text';
 
   /**
-   * Input search type
+   * Input icon
    */
   @Prop() icon: string;
 
@@ -218,6 +221,17 @@ export class MgInputText {
     }
   }
 
+  /**
+   * Validate append slot
+   */
+  private validateAppendSlot() {
+    const slotAppendInput: HTMLSlotElement = this.element.querySelector('[slot="append-input"]');
+    if (slotAppendInput !== null && slotAppendInput.querySelector('.mg-button') !== null) {
+      this.classList.add('mg-input--is-input-group-append');
+      this.classList = new ClassList(this.classList.classes);
+    }
+  }
+
   /*************
    * Lifecycle *
    *************/
@@ -233,11 +247,7 @@ export class MgInputText {
   }
 
   componentDidLoad() {
-    const slotAppendInput: HTMLSlotElement = this.element.querySelector('[slot="append-input"]');
-    if (slotAppendInput !== null && slotAppendInput.querySelector('.mg-button--input-group') !== null) {
-      this.classList.add('mg-input--is-input-group');
-      this.classList = new ClassList(this.classList.classes);
-    }
+    this.validateAppendSlot();
   }
 
   render() {
@@ -260,7 +270,7 @@ export class MgInputText {
         errorMessage={this.errorMessage}
         isFieldset={false}
       >
-        {this.icon !== undefined ? <mg-icon icon={this.icon}></mg-icon> : null}
+        {this.icon !== undefined && <mg-icon icon={this.icon}></mg-icon>}
         <input
           type={this.type}
           class="mg-input__box"

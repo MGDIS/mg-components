@@ -48,10 +48,6 @@ export namespace Components {
          */
         "isIcon": boolean;
         /**
-          * Define if button is display with mg-input.
-         */
-        "isInputGroup": boolean;
-        /**
           * aria-label In case button text is not explicit enough
          */
         "label": string;
@@ -486,7 +482,7 @@ export namespace Components {
          */
         "helpText": string;
         /**
-          * Input search type
+          * Input icon
          */
         "icon": string;
         /**
@@ -542,7 +538,7 @@ export namespace Components {
          */
         "tooltip": string;
         /**
-          * Input search type
+          * Input type
          */
         "type": 'text' | 'search';
         /**
@@ -982,10 +978,6 @@ declare namespace LocalJSX {
           * Define if button is round. Used for icon button.
          */
         "isIcon"?: boolean;
-        /**
-          * Define if button is display with mg-input.
-         */
-        "isInputGroup"?: boolean;
         /**
           * aria-label In case button text is not explicit enough
          */
@@ -1445,7 +1437,7 @@ declare namespace LocalJSX {
          */
         "helpText"?: string;
         /**
-          * Input search type
+          * Input icon
          */
         "icon"?: string;
         /**
@@ -1505,7 +1497,7 @@ declare namespace LocalJSX {
          */
         "tooltip"?: string;
         /**
-          * Input search type
+          * Input type
          */
         "type"?: 'text' | 'search';
         /**

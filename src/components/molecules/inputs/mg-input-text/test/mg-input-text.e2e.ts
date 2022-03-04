@@ -119,13 +119,16 @@ describe('mg-input-text', () => {
     });
   });
 
-  describe('type search', () => {
-    test('render', async () => {
+  describe('using append-input slot', () => {
+    test.each([
+      `<mg-button slot="append-input" label="search">
+        <mg-icon icon="magnifying-glass"></mg-icon> Search
+      </mg-button>`,
+      '<span slot="append-input">test</span>',
+    ])('render', async slot => {
       const page = await createPage(`
         <mg-input-text label="label" icon="magnifying-glass" placeholder="placeholder" type="search">
-          <mg-button slot="append-input" label="search" is-input-group>
-            <mg-icon icon="magnifying-glass"></mg-icon> Search
-          </mg-button>
+          ${slot}
         </mg-input-text>
       `);
 

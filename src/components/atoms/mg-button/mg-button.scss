@@ -45,7 +45,10 @@ $mg-button-padding-horizontal: 1.1rem;
   min-height: var(--default-size);
   box-sizing: border-box;
   // Decoration
-  border-radius: var(--mg-button-border-radius);
+  border-top-right-radius: var(--mg-button-border-radius-top-right, var(--mg-button-border-radius));
+  border-top-left-radius: var(--mg-button-border-radius-top-left, var(--mg-button-border-radius));
+  border-bottom-right-radius: var(--mg-button-border-radius-bottom-right, var(--mg-button-border-radius));
+  border-bottom-left-radius: var(--mg-button-border-radius-bottom-left, var(--mg-button-border-radius));
   cursor: pointer;
   background-image: none;
   border: $mg-button-border-width solid;
@@ -74,18 +77,6 @@ $mg-button-padding-horizontal: 1.1rem;
     height: var(--default-size);
     // Decoration
     border-radius: var(--mg-button-icon-border-radius);
-  }
-
-  // Input group button
-  &.mg-button--input-group {
-    // Display
-    justify-content: center;
-    height: var(--default-size);
-    // Decoration
-    border-top-right-radius: var(--mg-inputs-border-radius);
-    border-bottom-right-radius: var(--mg-inputs-border-radius);
-    border-top-left-radius: 0%;
-    border-bottom-left-radius: 0%;
   }
 
   // Gradient style

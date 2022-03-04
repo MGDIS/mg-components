@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-03-01T07:20:19",
+  "timestamp": "2022-03-04T07:10:18",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.14.0",
@@ -167,23 +167,6 @@
           "attr": "is-icon",
           "reflectToAttr": false,
           "docs": "Define if button is round.\nUsed for icon button.",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "isInputGroup",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "is-input-group",
-          "reflectToAttr": false,
-          "docs": "Define if button is display with mg-input.",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -2326,7 +2309,7 @@
           "mutable": false,
           "attr": "icon",
           "reflectToAttr": false,
-          "docs": "Input search type",
+          "docs": "Input icon",
           "docsTags": [],
           "values": [
             {
@@ -2556,7 +2539,7 @@
           "mutable": false,
           "attr": "type",
           "reflectToAttr": false,
-          "docs": "Input search type",
+          "docs": "Input type",
           "docsTags": [],
           "default": "'text'",
           "values": [

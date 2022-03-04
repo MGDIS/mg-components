@@ -141,15 +141,35 @@ URL.args = {
  * Search
  */
 
-const SearchTemplate = args => (
-  <form role="search">
-    <mg-input-text {...args}>
-      <mg-button slot="append-input" label="search" is-input-group={true}>
-        <mg-icon icon="magnifying-glass"></mg-icon> Search
-      </mg-button>
-    </mg-input-text>
-  </form>
-);
+const SearchTemplate = args => {
+  const labelOnTop = args.labelOnTop;
+  delete args.labelOnTop;
+  const labelHide = args.labelHide;
+  delete args.labelHide;
+  const patternErrorMessage = args.patternErrorMessage;
+  delete args.patternErrorMessage;
+  const displayCharacterLeft = args.displayCharacterLeft;
+  delete args.displayCharacterLeft;
+  const characterLeftTemplate = args.characterLeftTemplate;
+  delete args.characterLeftTemplate;
+  // return element
+  return (
+    <form role="search">
+      <mg-input-text
+        {...args}
+        label-on-top={labelOnTop}
+        label-hide={labelHide}
+        pattern-error-message={patternErrorMessage}
+        display-character-left={displayCharacterLeft}
+        character-left-template={characterLeftTemplate}
+      >
+        <mg-button slot="append-input" label="search">
+          <mg-icon icon="magnifying-glass"></mg-icon> Search
+        </mg-button>
+      </mg-input-text>
+    </form>
+  );
+};
 
 export const Search = SearchTemplate.bind({});
 

@@ -232,7 +232,7 @@ exports[`mg-input-text Should render with args { label: 'label', identifier: 'id
 exports[`mg-input-text Should render with slot. 1`] = `
 <mg-input-text>
   <mock:shadow-root>
-    <div class="mg-input mg-input--is-input-group mg-input--text mg-input--width-full">
+    <div class="mg-input mg-input--is-input-group-append mg-input--text mg-input--width-full">
       <mg-input-title identifier="identifier">
         label
       </mg-input-title>
@@ -244,9 +244,9 @@ exports[`mg-input-text Should render with slot. 1`] = `
       </div>
     </div>
   </mock:shadow-root>
-  <mg-button is-input-group="" slot="append-input">
+  <mg-button slot="append-input">
     <!---->
-    <button aria-label="search" class="mg-button mg-button--input-group mg-button--primary" id="identifier">
+    <button aria-label="search" class="mg-button mg-button--primary" id="identifier">
       <div class="mg-button__content">
         <mg-icon>
           <mock:shadow-root>
@@ -259,6 +259,27 @@ exports[`mg-input-text Should render with slot. 1`] = `
       </div>
     </button>
   </mg-button>
+</mg-input-text>
+`;
+
+exports[`mg-input-text Should render with slot. 2`] = `
+<mg-input-text>
+  <mock:shadow-root>
+    <div class="mg-input mg-input--text mg-input--width-full">
+      <mg-input-title identifier="identifier">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input">
+          <input aria-describedby="" class="mg-input__box" id="identifier" maxlength="400" name="identifier" type="search">
+          <slot name="append-input"></slot>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+  <span slot="append-input">
+    test
+  </span>
 </mg-input-text>
 `;
 

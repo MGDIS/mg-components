@@ -28,15 +28,15 @@ describe('mg-input-text', () => {
     expect(root).toMatchSnapshot();
   });
 
-  test('Should render with slot.', async () => {
+  test.each([
+    <mg-button slot="append-input" label="search" identifier="identifier">
+      <mg-icon icon="magnifying-glass"></mg-icon> Search
+    </mg-button>,
+    <span slot="append-input">test</span>,
+  ])('Should render with slot.', async slot => {
     const args = { label: 'label', identifier: 'identifier', type: 'search' };
-    const content = (
-      <mg-button slot="append-input" label="search" identifier="identifier" is-input-group>
-        <mg-icon icon="magnifying-glass"></mg-icon> Search
-      </mg-button>
-    );
 
-    const page = await getPage(args, content);
+    const page = await getPage(args, slot);
     expect(page.root).toMatchSnapshot();
   });
 
