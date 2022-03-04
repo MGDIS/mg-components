@@ -16,8 +16,21 @@ const Template = args => {
   delete args.labelHide;
   const helpText = args.helpText;
   delete args.helpText;
+  const placeholderDisabled = args.placeholderDisabled;
+  delete args.placeholderDisabled;
+  const placeholderHide = args.placeholderHide;
+  delete args.placeholderHide;
   // return element
-  return <mg-input-select {...args} label-on-top={labelOnTop} label-hide={labelHide} help-text={helpText}></mg-input-select>;
+  return (
+    <mg-input-select
+      {...args}
+      label-on-top={labelOnTop}
+      label-hide={labelHide}
+      help-text={helpText}
+      placeholder-hide={placeholderHide}
+      placeholder-disabled={placeholderDisabled}
+    ></mg-input-select>
+  );
 };
 
 export const MgInputSelect = Template.bind({});
@@ -39,6 +52,9 @@ MgInputSelect.args = {
   tooltip: 'This is a tooltip',
   // Help Text
   helpText: 'Help text with html <strong>bold</strong>, <em>italic</em>.',
+  // Placeholder
+  placeholderHide: false,
+  placeholderDisabled: false,
 };
 
 /**

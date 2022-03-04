@@ -38,6 +38,7 @@ const groupOptions = (acc, { group, title, value, disabled }): OptGroup => {
   }
   return acc;
 };
+
 @Component({
   tag: 'mg-input-select',
   styleUrl: 'mg-input-select.scss',
@@ -67,10 +68,12 @@ export class MgInputSelect {
   validateItems(newValue) {
     // String array
     if (allItemsAreString(newValue)) {
+      this.valueExist = newValue.includes(this.value);
       this.options = newValue.map(item => ({ title: item, value: item }));
     }
     // Object array
     else if (newValue && (newValue as Array<SelectOption>).every(item => isOption(item))) {
+      this.valueExist = newValue.map(item => item.value).includes(this.value);
       // Grouped object options
       if (newValue.some(item => item.group !== undefined)) {
         this.options = newValue.reduce(groupOptions, []);
@@ -117,6 +120,16 @@ export class MgInputSelect {
    * It should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text.
    */
   @Prop() placeholder: string = messages.input.select.placeholder;
+
+  /**
+   * Option to remove placeholder
+   */
+  @Prop() placeholderHide: boolean = false;
+
+  /**
+   * Option to disable placeholder
+   */
+  @Prop() placeholderDisabled: boolean = false;
 
   /**
    * Define if input is required
@@ -166,8 +179,12 @@ export class MgInputSelect {
   /**
    * Formated items for display
    */
-
   @State() options: (SelectOption | OptGroup)[];
+
+  /**
+   * Does value match any item option
+   */
+  @State() valueExist: boolean;
 
   /**
    * Emmited event when value change
@@ -255,7 +272,11 @@ export class MgInputSelect {
           onInput={this.handleInput}
           onBlur={this.handleBlur}
         >
-          <option value="">{this.placeholder}</option>
+          {(!this.placeholderHide || !this.valueExist) && ( // In case passed value does not match any option we display the placeholder
+            <option value="" disabled={this.placeholderDisabled && this.valueExist}>
+              {this.placeholder}
+            </option>
+          )}
           {this.options.map(option =>
             option.group !== undefined ? (
               <optgroup label={option.group}>

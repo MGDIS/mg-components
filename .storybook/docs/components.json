@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-02-28T09:31:22",
+  "timestamp": "2022-03-03T16:16:14",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.14.0",
@@ -2108,6 +2108,40 @@
           "values": [
             {
               "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "placeholderDisabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "placeholder-disabled",
+          "reflectToAttr": false,
+          "docs": "Option to disable placeholder",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "placeholderHide",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "placeholder-hide",
+          "reflectToAttr": false,
+          "docs": "Option to remove placeholder",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
             }
           ],
           "optional": false,

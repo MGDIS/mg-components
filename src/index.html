@@ -231,28 +231,28 @@
       <section>
         <h2>Badges</h2>
         <div class="mg-group-elements" style="padding: 0 0 1rem">
-          <mg-badge variant="primary">primary</mg-badge>
-          <mg-badge variant="secondary">secondary</mg-badge>
-          <mg-badge variant="danger">danger</mg-badge>
-          <mg-badge variant="success">success</mg-badge>
-          <mg-badge variant="info">info</mg-badge>
+          <mg-badge variant="primary" value="1"></mg-badge>
+          <mg-badge variant="secondary" value="1"></mg-badge>
+          <mg-badge variant="danger" value="1"></mg-badge>
+          <mg-badge variant="success" value="1"></mg-badge>
+          <mg-badge variant="info" value="1"></mg-badge>
         </div>
         <div class="mg-group-elements" style="padding: 0 0 1rem">
-          <mg-badge outline variant="primary">primary</mg-badge>
-          <mg-badge outline variant="secondary">secondary</mg-badge>
-          <mg-badge outline variant="danger"> danger</mg-badge>
-          <mg-badge outline variant="success">success</mg-badge>
-          <mg-badge outline variant="info">info</mg-badge>
+          <mg-badge outline variant="primary" value="1"></mg-badge>
+          <mg-badge outline variant="secondary" value="1"></mg-badge>
+          <mg-badge outline variant="danger" value="1"></mg-badge>
+          <mg-badge outline variant="success" value="1"></mg-badge>
+          <mg-badge outline variant="info" value="1"></mg-badge>
         </div>
         <div class="mg-group-elements" style="padding: 0 0 1rem">
-          <mg-badge variant="primary">1</mg-badge>
-          <mg-badge variant="secondary">2</mg-badge>
-          <mg-badge variant="danger">3</mg-badge>
-          <mg-badge variant="success">4</mg-badge>
-          <mg-badge variant="info">*</mg-badge>
+          <mg-badge variant="primary" value="1"></mg-badge>
+          <mg-badge variant="secondary" value="1"></mg-badge>
+          <mg-badge variant="danger" value="1"></mg-badge>
+          <mg-badge variant="success" value="1"></mg-badge>
+          <mg-badge variant="info" value="1"></mg-badge>
         </div>
         <div class="mg-group-elements" style="padding: 0 0 1rem">
-          <mg-button>mg-button <mg-badge>23</mg-badge></mg-button>
+          <mg-button>mg-button <mg-badge value="1"></mg-badge></mg-button>
         </div>
       </section>
       <section>
@@ -339,25 +339,33 @@
         <mg-input-textarea placeholder="placeholder" help-text="Message d'aide plus long" label="Libellé plutôt long on va dire" tooltip="message tooltip" required value="blu">
         </mg-input-textarea>
         <h3>Input Select</h3>
-        <mg-input-select placeholder="placeholder" help-text="Message d'aide plus long" label="Libellé plutôt long on va dire" tooltip="message tooltip" required value="blu">
+        <mg-input-select
+          placeholder="placeholder"
+          placeholder-disabled
+          help-text="Message d'aide plus long"
+          label="Libellé plutôt long on va dire"
+          tooltip="message tooltip"
+          required
+          value="blubl"
+        >
         </mg-input-select>
         <script>
           const mgInputSelect = document.querySelector('mg-input-select');
           // mgInputSelect.items = ['blu', 'bli', 'bla', 'blo'];
-          // mgInputSelect.items = [
-          //   { title: 'blu', value: 'blublu' },
-          //   { title: 'bli', value: 'blibli' },
-          //   { title: 'bla', value: 'blabla' },
-          //   { title: 'blo', value: 'bloblo' },
-          // ];
           mgInputSelect.items = [
-            { title: 'blu blu blu blu blu', value: 'blu', group: 'Le groupe A' },
-            { title: 'blu', value: 'blublu', group: 'Le groupe B' },
-            { title: 'bli', value: 'bli', group: 'Le groupe A' },
-            { title: 'bli', value: 'blibli', group: 'Le groupe B' },
+            { title: 'blu', value: 'blublu' },
+            { title: 'bli', value: 'blibli' },
             { title: 'bla', value: 'blabla' },
             { title: 'blo', value: 'bloblo' },
           ];
+          // mgInputSelect.items = [
+          //   { title: 'blu blu blu blu blu', value: 'blu', group: 'Le groupe A' },
+          //   { title: 'blu', value: 'blublu', group: 'Le groupe B' },
+          //   { title: 'bli', value: 'bli', group: 'Le groupe A' },
+          //   { title: 'bli', value: 'blibli', group: 'Le groupe B' },
+          //   { title: 'bla', value: 'blabla' },
+          //   { title: 'blo', value: 'bloblo' },
+          // ];
         </script>
         <h3>Input Date</h3>
         <mg-input-date placeholder="placeholder" help-text="Message d'aide plus long" label="Libellé plutôt long on va dire" tooltip="message tooltip" required value="1982-06-02">

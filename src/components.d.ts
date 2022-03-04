@@ -444,6 +444,14 @@ export namespace Components {
          */
         "placeholder": string;
         /**
+          * Option to disable placeholder
+         */
+        "placeholderDisabled": boolean;
+        /**
+          * Option to remove placeholder
+         */
+        "placeholderHide": boolean;
+        /**
           * Define if input is readonly
          */
         "readonly": boolean;
@@ -1390,6 +1398,14 @@ declare namespace LocalJSX {
           * Input placeholder. It should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text.
          */
         "placeholder"?: string;
+        /**
+          * Option to disable placeholder
+         */
+        "placeholderDisabled"?: boolean;
+        /**
+          * Option to remove placeholder
+         */
+        "placeholderHide"?: boolean;
         /**
           * Define if input is readonly
          */
