@@ -20,11 +20,7 @@ mock.mockImplementation(error => {
 const getPage = (args, element) =>
   newSpecPage({
     components: [MgPopover, MgButton],
-    template: () => (
-      <div id="outer-element">
-        <mg-popover {...args}>{element}</mg-popover>
-      </div>
-    ),
+    template: () => <mg-popover {...args}>{element}</mg-popover>,
   });
 
 describe('mg-popover', () => {
@@ -50,7 +46,6 @@ describe('mg-popover', () => {
     { eventIn: 'click', eventOut: 'clickBtn' },
     { eventIn: 'click', eventOut: { code: 'Escape' } },
     { eventIn: 'click', eventOut: 'clickCross' },
-    // { eventIn: 'click', eventOut: 'clickOutside' },
   ])('Should manage display on events', async ({ eventIn, eventOut }) => {
     const args = { identifier: 'identifier', closeButton: true };
     const page = await getPage(args, [
@@ -67,7 +62,6 @@ describe('mg-popover', () => {
     const interactiveElement = mgPopover.querySelector(`[aria-controls*='${args.identifier}']`);
     const popover = mgPopover.querySelector(`#${args.identifier}`);
     const popoverButton = popover.querySelector(`mg-button`);
-    const outerElement = page.doc.querySelector('#outer-element');
 
     interactiveElement.dispatchEvent(new CustomEvent(eventIn, { bubbles: true }));
     await page.waitForChanges();
@@ -79,8 +73,6 @@ describe('mg-popover', () => {
         interactiveElement.dispatchEvent(new Event('click', { bubbles: true }));
       } else if (eventOut === 'clickCross') {
         popoverButton.dispatchEvent(new Event('click', { bubbles: true }));
-      } else if (eventOut === 'clickOutside') {
-        outerElement.dispatchEvent(new Event('click', { bubbles: true }));
       }
     } else {
       mgPopover.dispatchEvent(new KeyboardEvent('keydown', { code: eventOut.code }));
@@ -88,6 +80,41 @@ describe('mg-popover', () => {
     await page.waitForChanges();
 
     expect(popover).not.toHaveAttribute('data-show');
+  });
+
+  test.each([false, true])('Should not toggle display when disabled', async display => {
+    const args = { identifier: 'identifier', closeButton: true, disabled: true, display };
+    const page = await getPage(args, [
+      <h2 slot="title">Blu bli blo bla</h2>,
+      <p slot="content">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>,
+      <mg-button identifier="identifier-btn">mg-button</mg-button>,
+    ]);
+
+    const mgPopover = page.doc.querySelector('mg-popover');
+    const interactiveElement = mgPopover.querySelector(`[aria-controls*='${args.identifier}']`);
+    const popover = mgPopover.querySelector(`#${args.identifier}`);
+    const popoverButton = popover.querySelector(`mg-button`);
+
+    expect(popoverButton).toBeNull();
+
+    if (display) expect(popover).toHaveAttribute('data-show');
+    else expect(popover).not.toHaveAttribute('data-show');
+
+    interactiveElement.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+    await page.waitForChanges();
+
+    if (display) expect(popover).toHaveAttribute('data-show');
+    else expect(popover).not.toHaveAttribute('data-show');
+
+    mgPopover.dispatchEvent(new KeyboardEvent('keydown', { code: 'Escape' }));
+    await page.waitForChanges();
+
+    if (display) expect(popover).toHaveAttribute('data-show');
+    else expect(popover).not.toHaveAttribute('data-show');
   });
 
   test('Should throw error if slot title element is not a heading', async () => {

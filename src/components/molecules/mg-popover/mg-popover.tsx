@@ -79,6 +79,8 @@ export class MgPopover {
    * Check if clicked outside of component
    * @param e {event}
    */
+  // Unable to trigger document events in unit tests:  https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/57
+  /* istanbul ignore next */
   private clickOutside = e => {
     if (!this.disabled && e.target.closest(`#${this.identifier}`)?.parentElement.nodeName !== 'MG-POPOVER') {
       this.display = false;
@@ -102,6 +104,8 @@ export class MgPopover {
     // hide when click outside
     // setTimeout is used to prevent event to trigger after creation
     setTimeout(() => {
+      // Unable to trigger document events in unit tests:  https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/57
+      /* istanbul ignore next */
       document.addEventListener('click', this.clickOutside, false);
     }, 0);
   };
