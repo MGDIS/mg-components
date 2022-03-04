@@ -171,12 +171,8 @@ export class MgInputDate {
     this.errorMessage = undefined;
     if (!validity) {
       this.classList.add(this.classError);
-      // wrong date format
-      if (element.validity.badInput) {
-        this.errorMessage = messages.errors.date.badInput.replace('{min}', this.min?.length > 0 ? localeDate(this.min) : localeDate('1900-01-01'));
-      }
       // required
-      else if (element.validity.valueMissing) {
+      if (element.validity.valueMissing) {
         this.errorMessage = messages.errors.required;
       }
       // min & max
@@ -190,6 +186,11 @@ export class MgInputDate {
       //max
       else if (element.validity.rangeOverflow) {
         this.errorMessage = messages.errors.date.max.replace('{max}', localeDate(this.max));
+      }
+      // wrong date format
+      // element.validity.badInput is default error message
+      else {
+        this.errorMessage = messages.errors.date.badInput.replace('{min}', this.min?.length > 0 ? localeDate(this.min) : localeDate('1900-01-01'));
       }
     } else {
       this.classList.delete(this.classError);
