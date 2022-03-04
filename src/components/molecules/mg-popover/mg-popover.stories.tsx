@@ -2,7 +2,7 @@ import { h } from '@stencil/core';
 
 export default {
   component: 'mg-popover',
-  title: 'Atoms/mg-popover',
+  title: 'Molecules/mg-popover',
   parameters: {
     layout: 'centered',
     docs: { iframeHeight: 600 },
