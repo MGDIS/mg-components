@@ -28,13 +28,13 @@ export class MgMessage {
    * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
    * If not set, it will be created.
    */
-  @Prop() identifier?: string = createID('mg-message');
+  @Prop() identifier: string = createID('mg-message');
 
   /**
    * Add a delay to hide/close message when it passed
    * Value is defined in seconds and must greater than 2 seconds (PDA9-314 RG-06)
    */
-  @Prop() delay?: number;
+  @Prop() delay: number;
   @Watch('delay')
   validateDelay(newValue) {
     if (newValue && newValue < 2) {
@@ -45,7 +45,7 @@ export class MgMessage {
   /**
    * Message variant
    */
-  @Prop() variant?: string = variants[0];
+  @Prop() variant: string = variants[0];
   @Watch('variant')
   validateVariant(newValue: string) {
     if (!variants.includes(newValue)) {
@@ -58,7 +58,7 @@ export class MgMessage {
    * Define if message has a cross button
    * RG 01: https://jira.mgdis.fr/browse/PDA9-140
    */
-  @Prop({ mutable: true }) closeButton?: boolean = false;
+  @Prop() closeButton: boolean = false;
   @Watch('closeButton')
   validateCloseButton(newValue: boolean) {
     if (newValue && this.hasActions) {
@@ -70,7 +70,7 @@ export class MgMessage {
   /**
    * Define if message is hidden
    */
-  @Prop({ mutable: true, reflect: true }) hide?: boolean = false;
+  @Prop({ mutable: true, reflect: true }) hide: boolean = false;
   @Watch('hide')
   validateHide(newValue: boolean) {
     if (newValue) {

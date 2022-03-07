@@ -4,14 +4,9 @@
 @use '../styles/mg-input-charleft.scss';
 @use '../../../../styles/a11y.scss';
 
-:host {
-  display: block;
-}
-
 /**
 * Icon in input
 */
-
 .mg-input.mg-input--has-icon .mg-input__input {
   position: relative;
   & > mg-icon {
@@ -24,7 +19,18 @@
     // other
     transform: translateY(-50%);
   }
+
   .mg-input__box {
     padding-left: calc(var(--mg-icon-regular-size) + var(--mg-inputs-spacer) * 2);
+  }
+}
+
+/**
+ * Slotted content
+ */
+.mg-input .mg-input__input {
+  ::slotted(:not(mg-button)) {
+    margin-top: calc((var(--default-size) - var(--font-size) * var(--line-height)) / 2);
+    margin-left: var(--mg-inputs-spacer);
   }
 }

@@ -210,7 +210,7 @@ export class MgInputText {
   /**
    * Validate patern configuration
    */
-  private validatePattern() {
+  private validatePattern = () => {
     if (
       this.pattern &&
       typeof this.pattern === 'string' &&
@@ -219,7 +219,7 @@ export class MgInputText {
     ) {
       throw new Error('<mg-input-text> prop "pattern" must be paired with the prop "patternErrorMessage"');
     }
-  }
+  };
 
   /**
    * Validate append slot

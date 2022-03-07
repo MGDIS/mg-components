@@ -1,0 +1,77 @@
+$mg-popover-padding-vertivcal: 1.5rem;
+
+mg-popover {
+  display: contents;
+  &::slotted(*) {
+    display: inline-block;
+  }
+}
+
+.mg-popover {
+  // Display
+  display: none;
+  padding: $mg-popover-padding-vertivcal;
+  z-index: 9999;
+  // Decoration
+  border-radius: 0.5rem;
+  background-color: hsl(var(--mg-popover-background-color));
+  box-shadow: 0 0.3rem 0.8rem 0 rgba(0, 0, 0, 0.1);
+  // Font
+  color: hsl(var(--mg-popover-font-color));
+
+  &[data-show] {
+    display: block;
+  }
+
+  mg-button {
+    float: right;
+    margin-right: calc(0rem - (var(--default-size) - var(--mg-icon-regular-size)) / 2); // Without unit (rem) the value can not be negative
+    margin-top: calc(0rem - (var(--default-size) - var(--mg-popover-title-font-size) * var(--line-height)) / 2);
+    margin-left: 3rem;
+  }
+
+  .mg-popover__arrow,
+  .mg-popover__arrow::before {
+    // Display
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    z-index: 9999;
+    // Decoration
+    background: inherit;
+  }
+
+  .mg-popover__arrow {
+    visibility: hidden;
+  }
+
+  .mg-popover__arrow::before {
+    visibility: visible;
+    content: '';
+    transform: rotate(45deg);
+  }
+
+  &[data-popper-placement^='top'] > .mg-popover__arrow {
+    bottom: -6px;
+  }
+
+  &[data-popper-placement^='bottom'] > .mg-popover__arrow {
+    top: -6px;
+  }
+
+  &[data-popper-placement^='left'] > .mg-popover__arrow {
+    right: -6px;
+  }
+
+  &[data-popper-placement^='right'] > .mg-popover__arrow {
+    left: -6px;
+  }
+}
+
+.mg-popover__title {
+  ::slotted(*) {
+    margin: 0 0 1rem;
+    font-size: var(--mg-popover-title-font-size);
+    font-weight: 600;
+  }
+}

@@ -19,7 +19,7 @@ export class MgCharacterLeft {
 
   /**
    * Sets an `id` attribute.
-   * Needed by the input for accessibility `arai-decribedby`.
+   * Needed by the input for accessibility `aria-decribedby`.
    */
   @Prop() identifier: string;
 

@@ -128,6 +128,13 @@
   --mg-tooltip-font-color: var(--color-font-light);
 
   /*
+    <mg-popover>
+   */
+  --mg-popover-background-color: var(--color-light);
+  --mg-popover-font-color: var(--color-font-dark);
+  --mg-popover-title-font-size: 1.4rem;
+
+  /*
     <mg-message>
    */
   --mg-message-border-radius: 0.3rem;
