@@ -191,15 +191,15 @@ describe('mg-input-numeric', () => {
     });
   });
 
-  describe('using append-input slot', () => {
+  describe.each([true, false])('using append-input slot, case readonly %s', readonly => {
     test.each([
       `<mg-button slot="append-input" label="search">
-        <mg-icon icon="magnifying-glass"></mg-icon> Search
+        <mg-icon icon="calculator"></mg-icon> Calculate
       </mg-button>`,
-      '<span slot="append-input">test</span>',
+      '<span slot="append-input">km</span>',
     ])('render', async slot => {
       const page = await createPage(`
-        <mg-input-numeric label="label">
+        <mg-input-numeric label="label" readonly="${readonly}" value="1">
           ${slot}
         </mg-input-numeric>
       `);

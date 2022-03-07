@@ -261,6 +261,9 @@ export class MgInputNumeric {
     if (slotAppendInput !== null && slotAppendInput.querySelector('.mg-button') !== null) {
       this.classList.add('mg-input--is-input-group-append');
       this.classList = new ClassList(this.classList.classes);
+    } else if (slotAppendInput !== null) {
+      this.classList.add('mg-input--is-append-input-slot-content');
+      this.classList = new ClassList(this.classList.classes);
     }
   }
 

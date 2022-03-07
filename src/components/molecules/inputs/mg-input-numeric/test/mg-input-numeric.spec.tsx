@@ -32,9 +32,9 @@ describe('mg-input-numeric', () => {
 
     test.each([
       <mg-button slot="append-input" label="search" identifier="identifier">
-        <mg-icon icon="magnifying-glass"></mg-icon> Search
+        <mg-icon icon="calculator"></mg-icon> Calculate
       </mg-button>,
-      <span slot="append-input">test</span>,
+      <span slot="append-input">km</span>,
     ])('Should render with slot.', async slot => {
       const args = { label: 'label', identifier: 'identifier', type };
       const { root } = await getPage(args, slot);

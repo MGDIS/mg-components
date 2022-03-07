@@ -24,11 +24,7 @@ const Template = args => {
   const helpText = args.helpText;
   delete args.helpText;
   // return element
-  return (
-    <mg-input-numeric {...args} label-on-top={labelOnTop} label-hide={labelHide} help-text={helpText}>
-      <span slot="append-input">Slot content</span>
-    </mg-input-numeric>
-  );
+  return <mg-input-numeric {...args} label-on-top={labelOnTop} label-hide={labelHide} help-text={helpText}></mg-input-numeric>;
 };
 
 /**
@@ -58,4 +54,29 @@ MgInputNumeric.args = {
   tooltip: 'This is a tooltip',
   // Help Text
   helpText: 'Help text with html <strong>bold</strong>, <em>italic</em>.',
+};
+
+const TemplateSlot = args => {
+  const labelOnTop = args.labelOnTop;
+  delete args.labelOnTop;
+  const labelHide = args.labelHide;
+  delete args.labelHide;
+  const helpText = args.helpText;
+  delete args.helpText;
+  // return element
+  return (
+    <mg-input-numeric {...args} label-on-top={labelOnTop} label-hide={labelHide} help-text={helpText}>
+      <span slot="append-input">km</span>
+    </mg-input-numeric>
+  );
+};
+
+/**
+ * Global use
+ */
+
+export const AppendSlot = TemplateSlot.bind({});
+
+AppendSlot.args = {
+  ...MgInputNumeric.args,
 };

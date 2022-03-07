@@ -54,8 +54,8 @@
   /**
   * Append input slot
   */
-
   .mg-input__box {
+    margin-right: -0.1rem;
     border-top-right-radius: 0%;
     border-bottom-right-radius: 0%;
     &:focus-visible {
@@ -63,5 +63,18 @@
       outline-offset: -0.2rem;
       outline-width: 0.2rem;
     }
+  }
+
+  /**
+  * Readonly variation
+  */
+  &.mg-input--readonly slot[name='append-input'] {
+    display: none;
+  }
+}
+
+.mg-input.mg-input--is-append-input-slot-content {
+  .mg-input__box {
+    margin-right: var(--mg-inputs-spacer);
   }
 }

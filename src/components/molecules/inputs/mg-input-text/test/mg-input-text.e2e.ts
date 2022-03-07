@@ -119,7 +119,7 @@ describe('mg-input-text', () => {
     });
   });
 
-  describe('using append-input slot', () => {
+  describe.each([true, false])('using append-input slot, case readonly %s', readonly => {
     test.each([
       `<mg-button slot="append-input" label="search">
         <mg-icon icon="magnifying-glass"></mg-icon> Search
@@ -127,7 +127,7 @@ describe('mg-input-text', () => {
       '<span slot="append-input">test</span>',
     ])('render', async slot => {
       const page = await createPage(`
-        <mg-input-text label="label" icon="magnifying-glass" placeholder="placeholder" type="search">
+        <mg-input-text label="label" icon="magnifying-glass" placeholder="placeholder" type="search" readonly="${readonly}" value="text">
           ${slot}
         </mg-input-text>
       `);
