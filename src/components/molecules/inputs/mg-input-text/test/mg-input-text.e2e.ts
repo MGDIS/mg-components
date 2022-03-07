@@ -124,10 +124,10 @@ describe('mg-input-text', () => {
       `<mg-button slot="append-input" label="search">
         <mg-icon icon="magnifying-glass"></mg-icon> Search
       </mg-button>`,
-      '<span slot="append-input">test</span>',
+      '<span slot="append-input">@batman.marvel</span>',
     ])('render', async slot => {
       const page = await createPage(`
-        <mg-input-text label="label" icon="magnifying-glass" placeholder="placeholder" type="search" readonly="${readonly}" value="text">
+        <mg-input-text label="label" icon="magnifying-glass" placeholder="placeholder" type="search" readonly="${readonly}" value="bruce">
           ${slot}
         </mg-input-text>
       `);
