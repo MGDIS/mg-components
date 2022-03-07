@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-03-04T08:26:31",
+  "timestamp": "2022-03-07T10:07:47",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.14.0",
@@ -268,7 +268,7 @@
           "mutable": false,
           "attr": "identifier",
           "reflectToAttr": false,
-          "docs": "Sets an `id` attribute.\nNeeded by the input for accessibility `arai-decribedby`.",
+          "docs": "Sets an `id` attribute.\nNeeded by the input for accessibility `aria-decribedby`.",
           "docsTags": [],
           "values": [
             {
@@ -3635,8 +3635,8 @@
       "filePath": "./src/components/molecules/mg-popover/mg-popover.tsx",
       "encapsulation": "scoped",
       "tag": "mg-popover",
-      "readme": "# mg-popover\n\n\n",
-      "docs": "",
+      "readme": "This atom refers to the [PDA9-504](https://jira.mgdis.fr/browse/PDA9-504).\n",
+      "docs": "This atom refers to the [PDA9-504](https://jira.mgdis.fr/browse/PDA9-504).",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -3697,7 +3697,7 @@
           "mutable": false,
           "attr": "identifier",
           "reflectToAttr": false,
-          "docs": "Sets an `id` attribute.\nNeeded by the input for accessibility `arai-decribedby`.",
+          "docs": "Sets an `id` attribute.\nNeeded by the input for accessibility `aria-decribedby`.",
           "docsTags": [],
           "default": "createID('mg-popover')",
           "values": [
@@ -4002,7 +4002,7 @@
           "mutable": false,
           "attr": "identifier",
           "reflectToAttr": false,
-          "docs": "Sets an `id` attribute.\nNeeded by the input for accessibility `arai-decribedby`.",
+          "docs": "Sets an `id` attribute.\nNeeded by the input for accessibility `aria-decribedby`.",
           "docsTags": [],
           "default": "createID('mg-tooltip')",
           "values": [

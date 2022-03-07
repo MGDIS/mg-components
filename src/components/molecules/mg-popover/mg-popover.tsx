@@ -28,7 +28,7 @@ export class MgPopover {
 
   /**
    * Sets an `id` attribute.
-   * Needed by the input for accessibility `arai-decribedby`.
+   * Needed by the input for accessibility `aria-decribedby`.
    */
   @Prop() identifier: string = createID('mg-popover');
 
@@ -156,7 +156,7 @@ export class MgPopover {
 
     //Get interactive element
     const interactiveElement = this.element.firstElementChild as HTMLElement;
-    // Add arai attributes
+    // Add aria attributes
     interactiveElement.setAttribute('aria-controls', this.identifier);
     interactiveElement.setAttribute('aria-expanded', `${this.display}`);
 

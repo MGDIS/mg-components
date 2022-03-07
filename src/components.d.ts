@@ -62,7 +62,7 @@ export namespace Components {
          */
         "characters": string;
         /**
-          * Sets an `id` attribute. Needed by the input for accessibility `arai-decribedby`.
+          * Sets an `id` attribute. Needed by the input for accessibility `aria-decribedby`.
          */
         "identifier": string;
         /**
@@ -762,7 +762,7 @@ export namespace Components {
          */
         "display": boolean;
         /**
-          * Sets an `id` attribute. Needed by the input for accessibility `arai-decribedby`.
+          * Sets an `id` attribute. Needed by the input for accessibility `aria-decribedby`.
          */
         "identifier": string;
         /**
@@ -822,7 +822,7 @@ export namespace Components {
          */
         "display": boolean;
         /**
-          * Sets an `id` attribute. Needed by the input for accessibility `arai-decribedby`.
+          * Sets an `id` attribute. Needed by the input for accessibility `aria-decribedby`.
          */
         "identifier": string;
         /**
@@ -1044,7 +1044,7 @@ declare namespace LocalJSX {
          */
         "characters"?: string;
         /**
-          * Sets an `id` attribute. Needed by the input for accessibility `arai-decribedby`.
+          * Sets an `id` attribute. Needed by the input for accessibility `aria-decribedby`.
          */
         "identifier"?: string;
         /**
@@ -1792,7 +1792,7 @@ declare namespace LocalJSX {
          */
         "display"?: boolean;
         /**
-          * Sets an `id` attribute. Needed by the input for accessibility `arai-decribedby`.
+          * Sets an `id` attribute. Needed by the input for accessibility `aria-decribedby`.
          */
         "identifier"?: string;
         /**
@@ -1852,7 +1852,7 @@ declare namespace LocalJSX {
          */
         "display"?: boolean;
         /**
-          * Sets an `id` attribute. Needed by the input for accessibility `arai-decribedby`.
+          * Sets an `id` attribute. Needed by the input for accessibility `aria-decribedby`.
          */
         "identifier"?: string;
         /**
