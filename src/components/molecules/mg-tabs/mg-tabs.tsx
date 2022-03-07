@@ -118,12 +118,12 @@ export class MgTabs {
   /**
    * Validate slots setting
    */
-  private validateSlots() {
+  private validateSlots = () => {
     const slots = Array.from(this.element.children).filter(slot => slot.getAttribute('slot')?.includes('tab_content-'));
     if (slots.length !== this.tabs.length) {
       throw new Error('<mg-tabs> Must have slots counts equal to tabs count.');
     }
-  }
+  };
 
   /*************
    * Lifecycle *
@@ -157,9 +157,9 @@ export class MgTabs {
                 onKeyDown={this.handleKeydown}
                 data-index={tabIndex}
               >
-                {tab.icon !== undefined ? <mg-icon icon={tab.icon}></mg-icon> : null}
+                {tab.icon !== undefined && <mg-icon icon={tab.icon}></mg-icon>}
                 {tab.label}
-                {tab.badge !== undefined ? <mg-badge variant="info" value={tab.badge.value} label={tab.badge.label}></mg-badge> : null}
+                {tab.badge !== undefined && <mg-badge variant="info" value={tab.badge.value} label={tab.badge.label}></mg-badge>}
               </button>
             );
           })}

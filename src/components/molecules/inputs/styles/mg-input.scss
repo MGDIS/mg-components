@@ -2,6 +2,10 @@
  * Common style for MGDIS inputs
  */
 
+:host {
+  display: block;
+}
+
 .mg-input {
   display: flex;
   align-items: flex-start;

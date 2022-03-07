@@ -26,9 +26,9 @@ export class MgInputTitle {
    */
   @State() tagName: string = 'label';
 
-  private getTagName() {
+  private getTagName = () => {
     this.tagName = this.isLegend ? 'legend' : 'label';
-  }
+  };
 
   /*************
    * Lifecycle *

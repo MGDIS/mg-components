@@ -201,7 +201,7 @@ export class MgInputTextarea {
   /**
    * Validate pattern configuration
    */
-  private validatePattern() {
+  private validatePattern = () => {
     if (
       this.pattern &&
       typeof this.pattern === 'string' &&
@@ -210,7 +210,7 @@ export class MgInputTextarea {
     ) {
       throw new Error('<mg-input-textarea> prop "pattern" must be paired with the prop "patternErrorMessage"');
     }
-  }
+  };
 
   /*************
    * Lifecycle *
