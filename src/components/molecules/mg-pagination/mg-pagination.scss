@@ -16,22 +16,8 @@ $border-size: 0.3rem;
   display: flex;
   &:first-of-type {
     margin-right: 1rem;
-    mg-icon {
-      margin-left: 0;
-      margin-right: 0.6rem;
-    }
   }
   &:last-of-type {
     margin-left: 1rem;
-    mg-icon {
-      margin-left: 0.6rem;
-      margin-right: 0;
-    }
-  }
-  mg-icon {
-    margin: 0 0.6rem;
-  }
-  &.mg-pagination__button--reverse .mg-button__content {
-    flex-direction: row-reverse;
   }
 }

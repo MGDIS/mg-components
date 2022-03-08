@@ -4,13 +4,10 @@ exports[`mg-pagination Should render with totalPages 1 1`] = `
 <mg-pagination current-page="1">
   <mock:shadow-root>
     <nav aria-label="pagination" class="mg-pagination__nav" id="id">
-      <mg-button class="mg-pagination__button mg-pagination__button--reverse" data-action="previous" disabled="" tabindex="-1">
+      <mg-button class="mg-pagination__button" disabled="">
         <!---->
         <button aria-disabled="" aria-label="Page précédente" class="mg-button mg-button--flat" id="id-button-previous">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              précédent
-            </span>
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -18,21 +15,21 @@ exports[`mg-pagination Should render with totalPages 1 1`] = `
                 </svg>
               </mock:shadow-root>
             </mg-icon>
+            <span aria-hidden="true">
+              précédent
+            </span>
           </div>
         </button>
       </mg-button>
-      <mg-input-select label-hide="" value="1">
+      <mg-input-select label-hide="" placeholder-hide="" value="1">
         <mock:shadow-root>
           <div class="mg-input mg-input--select">
             <mg-input-title class="sr-only" identifier="id-select">
-              Sélectionner la page a afficher.
+              Sélectionner la page à afficher.
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="page">
-                  <option value="">
-                    page
-                  </option>
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
                   <option selected="" value="1">
                     1
                   </option>
@@ -48,7 +45,7 @@ exports[`mg-pagination Should render with totalPages 1 1`] = `
       <span>
         / 1 pages
       </span>
-      <mg-button class="mg-pagination__button" data-action="next" disabled="" tabindex="-1">
+      <mg-button class="mg-pagination__button" disabled="">
         <!---->
         <button aria-disabled="" aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
@@ -74,13 +71,10 @@ exports[`mg-pagination Should render with totalPages 2 1`] = `
 <mg-pagination current-page="1">
   <mock:shadow-root>
     <nav aria-label="pagination" class="mg-pagination__nav" id="id">
-      <mg-button class="mg-pagination__button mg-pagination__button--reverse" data-action="previous" disabled="" tabindex="-1">
+      <mg-button class="mg-pagination__button" disabled="">
         <!---->
         <button aria-disabled="" aria-label="Page précédente" class="mg-button mg-button--flat" id="id-button-previous">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              précédent
-            </span>
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -88,21 +82,21 @@ exports[`mg-pagination Should render with totalPages 2 1`] = `
                 </svg>
               </mock:shadow-root>
             </mg-icon>
+            <span aria-hidden="true">
+              précédent
+            </span>
           </div>
         </button>
       </mg-button>
-      <mg-input-select label-hide="" value="1">
+      <mg-input-select label-hide="" placeholder-hide="" value="1">
         <mock:shadow-root>
           <div class="mg-input mg-input--select">
             <mg-input-title class="sr-only" identifier="id-select">
-              Sélectionner la page a afficher.
+              Sélectionner la page à afficher.
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="page">
-                  <option value="">
-                    page
-                  </option>
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
                   <option selected="" value="1">
                     1
                   </option>
@@ -121,7 +115,7 @@ exports[`mg-pagination Should render with totalPages 2 1`] = `
       <span>
         / 2 pages
       </span>
-      <mg-button class="mg-pagination__button" data-action="next" tabindex="0">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
@@ -147,13 +141,10 @@ exports[`mg-pagination Should render with totalPages 2 2`] = `
 <mg-pagination current-page="2">
   <mock:shadow-root>
     <nav aria-label="pagination" class="mg-pagination__nav" id="id">
-      <mg-button class="mg-pagination__button mg-pagination__button--reverse" data-action="previous" tabindex="0">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-label="Page précédente" class="mg-button mg-button--flat" id="id-button-previous">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              précédent
-            </span>
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -161,21 +152,21 @@ exports[`mg-pagination Should render with totalPages 2 2`] = `
                 </svg>
               </mock:shadow-root>
             </mg-icon>
+            <span aria-hidden="true">
+              précédent
+            </span>
           </div>
         </button>
       </mg-button>
-      <mg-input-select label-hide="" value="2">
+      <mg-input-select label-hide="" placeholder-hide="" value="2">
         <mock:shadow-root>
           <div class="mg-input mg-input--select">
             <mg-input-title class="sr-only" identifier="id-select">
-              Sélectionner la page a afficher.
+              Sélectionner la page à afficher.
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="page">
-                  <option value="">
-                    page
-                  </option>
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
                   <option value="1">
                     1
                   </option>
@@ -194,7 +185,7 @@ exports[`mg-pagination Should render with totalPages 2 2`] = `
       <span>
         / 2 pages
       </span>
-      <mg-button class="mg-pagination__button" data-action="next" disabled="" tabindex="-1">
+      <mg-button class="mg-pagination__button" disabled="">
         <!---->
         <button aria-disabled="" aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
@@ -220,13 +211,10 @@ exports[`mg-pagination Should render with totalPages 3 1`] = `
 <mg-pagination current-page="1">
   <mock:shadow-root>
     <nav aria-label="pagination" class="mg-pagination__nav" id="id">
-      <mg-button class="mg-pagination__button mg-pagination__button--reverse" data-action="previous" disabled="" tabindex="-1">
+      <mg-button class="mg-pagination__button" disabled="">
         <!---->
         <button aria-disabled="" aria-label="Page précédente" class="mg-button mg-button--flat" id="id-button-previous">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              précédent
-            </span>
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -234,21 +222,21 @@ exports[`mg-pagination Should render with totalPages 3 1`] = `
                 </svg>
               </mock:shadow-root>
             </mg-icon>
+            <span aria-hidden="true">
+              précédent
+            </span>
           </div>
         </button>
       </mg-button>
-      <mg-input-select label-hide="" value="1">
+      <mg-input-select label-hide="" placeholder-hide="" value="1">
         <mock:shadow-root>
           <div class="mg-input mg-input--select">
             <mg-input-title class="sr-only" identifier="id-select">
-              Sélectionner la page a afficher.
+              Sélectionner la page à afficher.
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="page">
-                  <option value="">
-                    page
-                  </option>
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
                   <option selected="" value="1">
                     1
                   </option>
@@ -270,7 +258,7 @@ exports[`mg-pagination Should render with totalPages 3 1`] = `
       <span>
         / 3 pages
       </span>
-      <mg-button class="mg-pagination__button" data-action="next" tabindex="0">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
@@ -296,13 +284,10 @@ exports[`mg-pagination Should render with totalPages 3 2`] = `
 <mg-pagination current-page="2">
   <mock:shadow-root>
     <nav aria-label="pagination" class="mg-pagination__nav" id="id">
-      <mg-button class="mg-pagination__button mg-pagination__button--reverse" data-action="previous" tabindex="0">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-label="Page précédente" class="mg-button mg-button--flat" id="id-button-previous">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              précédent
-            </span>
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -310,21 +295,21 @@ exports[`mg-pagination Should render with totalPages 3 2`] = `
                 </svg>
               </mock:shadow-root>
             </mg-icon>
+            <span aria-hidden="true">
+              précédent
+            </span>
           </div>
         </button>
       </mg-button>
-      <mg-input-select label-hide="" value="2">
+      <mg-input-select label-hide="" placeholder-hide="" value="2">
         <mock:shadow-root>
           <div class="mg-input mg-input--select">
             <mg-input-title class="sr-only" identifier="id-select">
-              Sélectionner la page a afficher.
+              Sélectionner la page à afficher.
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="page">
-                  <option value="">
-                    page
-                  </option>
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
                   <option value="1">
                     1
                   </option>
@@ -346,7 +331,7 @@ exports[`mg-pagination Should render with totalPages 3 2`] = `
       <span>
         / 3 pages
       </span>
-      <mg-button class="mg-pagination__button" data-action="next" tabindex="0">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
@@ -372,13 +357,10 @@ exports[`mg-pagination Should render with totalPages 3 3`] = `
 <mg-pagination current-page="3">
   <mock:shadow-root>
     <nav aria-label="pagination" class="mg-pagination__nav" id="id">
-      <mg-button class="mg-pagination__button mg-pagination__button--reverse" data-action="previous" tabindex="0">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-label="Page précédente" class="mg-button mg-button--flat" id="id-button-previous">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              précédent
-            </span>
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -386,21 +368,21 @@ exports[`mg-pagination Should render with totalPages 3 3`] = `
                 </svg>
               </mock:shadow-root>
             </mg-icon>
+            <span aria-hidden="true">
+              précédent
+            </span>
           </div>
         </button>
       </mg-button>
-      <mg-input-select label-hide="" value="3">
+      <mg-input-select label-hide="" placeholder-hide="" value="3">
         <mock:shadow-root>
           <div class="mg-input mg-input--select">
             <mg-input-title class="sr-only" identifier="id-select">
-              Sélectionner la page a afficher.
+              Sélectionner la page à afficher.
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="page">
-                  <option value="">
-                    page
-                  </option>
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
                   <option value="1">
                     1
                   </option>
@@ -422,7 +404,7 @@ exports[`mg-pagination Should render with totalPages 3 3`] = `
       <span>
         / 3 pages
       </span>
-      <mg-button class="mg-pagination__button" data-action="next" disabled="" tabindex="-1">
+      <mg-button class="mg-pagination__button" disabled="">
         <!---->
         <button aria-disabled="" aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
@@ -448,13 +430,10 @@ exports[`mg-pagination Should render with totalPages 10 1`] = `
 <mg-pagination current-page="1">
   <mock:shadow-root>
     <nav aria-label="pagination" class="mg-pagination__nav" id="id">
-      <mg-button class="mg-pagination__button mg-pagination__button--reverse" data-action="previous" disabled="" tabindex="-1">
+      <mg-button class="mg-pagination__button" disabled="">
         <!---->
         <button aria-disabled="" aria-label="Page précédente" class="mg-button mg-button--flat" id="id-button-previous">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              précédent
-            </span>
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -462,21 +441,21 @@ exports[`mg-pagination Should render with totalPages 10 1`] = `
                 </svg>
               </mock:shadow-root>
             </mg-icon>
+            <span aria-hidden="true">
+              précédent
+            </span>
           </div>
         </button>
       </mg-button>
-      <mg-input-select label-hide="" value="1">
+      <mg-input-select label-hide="" placeholder-hide="" value="1">
         <mock:shadow-root>
           <div class="mg-input mg-input--select">
             <mg-input-title class="sr-only" identifier="id-select">
-              Sélectionner la page a afficher.
+              Sélectionner la page à afficher.
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="page">
-                  <option value="">
-                    page
-                  </option>
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
                   <option selected="" value="1">
                     1
                   </option>
@@ -519,7 +498,7 @@ exports[`mg-pagination Should render with totalPages 10 1`] = `
       <span>
         / 10 pages
       </span>
-      <mg-button class="mg-pagination__button" data-action="next" tabindex="0">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
@@ -545,13 +524,10 @@ exports[`mg-pagination Should render with totalPages 10 2`] = `
 <mg-pagination current-page="2">
   <mock:shadow-root>
     <nav aria-label="pagination" class="mg-pagination__nav" id="id">
-      <mg-button class="mg-pagination__button mg-pagination__button--reverse" data-action="previous" tabindex="0">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-label="Page précédente" class="mg-button mg-button--flat" id="id-button-previous">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              précédent
-            </span>
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -559,21 +535,21 @@ exports[`mg-pagination Should render with totalPages 10 2`] = `
                 </svg>
               </mock:shadow-root>
             </mg-icon>
+            <span aria-hidden="true">
+              précédent
+            </span>
           </div>
         </button>
       </mg-button>
-      <mg-input-select label-hide="" value="2">
+      <mg-input-select label-hide="" placeholder-hide="" value="2">
         <mock:shadow-root>
           <div class="mg-input mg-input--select">
             <mg-input-title class="sr-only" identifier="id-select">
-              Sélectionner la page a afficher.
+              Sélectionner la page à afficher.
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="page">
-                  <option value="">
-                    page
-                  </option>
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
                   <option value="1">
                     1
                   </option>
@@ -616,7 +592,7 @@ exports[`mg-pagination Should render with totalPages 10 2`] = `
       <span>
         / 10 pages
       </span>
-      <mg-button class="mg-pagination__button" data-action="next" tabindex="0">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
@@ -642,13 +618,10 @@ exports[`mg-pagination Should render with totalPages 10 3`] = `
 <mg-pagination current-page="3">
   <mock:shadow-root>
     <nav aria-label="pagination" class="mg-pagination__nav" id="id">
-      <mg-button class="mg-pagination__button mg-pagination__button--reverse" data-action="previous" tabindex="0">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-label="Page précédente" class="mg-button mg-button--flat" id="id-button-previous">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              précédent
-            </span>
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -656,21 +629,21 @@ exports[`mg-pagination Should render with totalPages 10 3`] = `
                 </svg>
               </mock:shadow-root>
             </mg-icon>
+            <span aria-hidden="true">
+              précédent
+            </span>
           </div>
         </button>
       </mg-button>
-      <mg-input-select label-hide="" value="3">
+      <mg-input-select label-hide="" placeholder-hide="" value="3">
         <mock:shadow-root>
           <div class="mg-input mg-input--select">
             <mg-input-title class="sr-only" identifier="id-select">
-              Sélectionner la page a afficher.
+              Sélectionner la page à afficher.
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="page">
-                  <option value="">
-                    page
-                  </option>
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
                   <option value="1">
                     1
                   </option>
@@ -713,7 +686,7 @@ exports[`mg-pagination Should render with totalPages 10 3`] = `
       <span>
         / 10 pages
       </span>
-      <mg-button class="mg-pagination__button" data-action="next" tabindex="0">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
@@ -739,13 +712,10 @@ exports[`mg-pagination Should render with totalPages 10 4`] = `
 <mg-pagination current-page="4">
   <mock:shadow-root>
     <nav aria-label="pagination" class="mg-pagination__nav" id="id">
-      <mg-button class="mg-pagination__button mg-pagination__button--reverse" data-action="previous" tabindex="0">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-label="Page précédente" class="mg-button mg-button--flat" id="id-button-previous">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              précédent
-            </span>
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -753,21 +723,21 @@ exports[`mg-pagination Should render with totalPages 10 4`] = `
                 </svg>
               </mock:shadow-root>
             </mg-icon>
+            <span aria-hidden="true">
+              précédent
+            </span>
           </div>
         </button>
       </mg-button>
-      <mg-input-select label-hide="" value="4">
+      <mg-input-select label-hide="" placeholder-hide="" value="4">
         <mock:shadow-root>
           <div class="mg-input mg-input--select">
             <mg-input-title class="sr-only" identifier="id-select">
-              Sélectionner la page a afficher.
+              Sélectionner la page à afficher.
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="page">
-                  <option value="">
-                    page
-                  </option>
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
                   <option value="1">
                     1
                   </option>
@@ -810,7 +780,7 @@ exports[`mg-pagination Should render with totalPages 10 4`] = `
       <span>
         / 10 pages
       </span>
-      <mg-button class="mg-pagination__button" data-action="next" tabindex="0">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
@@ -836,13 +806,10 @@ exports[`mg-pagination Should render with totalPages 10 5`] = `
 <mg-pagination current-page="5">
   <mock:shadow-root>
     <nav aria-label="pagination" class="mg-pagination__nav" id="id">
-      <mg-button class="mg-pagination__button mg-pagination__button--reverse" data-action="previous" tabindex="0">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-label="Page précédente" class="mg-button mg-button--flat" id="id-button-previous">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              précédent
-            </span>
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -850,21 +817,21 @@ exports[`mg-pagination Should render with totalPages 10 5`] = `
                 </svg>
               </mock:shadow-root>
             </mg-icon>
+            <span aria-hidden="true">
+              précédent
+            </span>
           </div>
         </button>
       </mg-button>
-      <mg-input-select label-hide="" value="5">
+      <mg-input-select label-hide="" placeholder-hide="" value="5">
         <mock:shadow-root>
           <div class="mg-input mg-input--select">
             <mg-input-title class="sr-only" identifier="id-select">
-              Sélectionner la page a afficher.
+              Sélectionner la page à afficher.
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="page">
-                  <option value="">
-                    page
-                  </option>
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
                   <option value="1">
                     1
                   </option>
@@ -907,7 +874,7 @@ exports[`mg-pagination Should render with totalPages 10 5`] = `
       <span>
         / 10 pages
       </span>
-      <mg-button class="mg-pagination__button" data-action="next" tabindex="0">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
@@ -933,13 +900,10 @@ exports[`mg-pagination Should render with totalPages 10 6`] = `
 <mg-pagination current-page="6">
   <mock:shadow-root>
     <nav aria-label="pagination" class="mg-pagination__nav" id="id">
-      <mg-button class="mg-pagination__button mg-pagination__button--reverse" data-action="previous" tabindex="0">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-label="Page précédente" class="mg-button mg-button--flat" id="id-button-previous">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              précédent
-            </span>
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -947,21 +911,21 @@ exports[`mg-pagination Should render with totalPages 10 6`] = `
                 </svg>
               </mock:shadow-root>
             </mg-icon>
+            <span aria-hidden="true">
+              précédent
+            </span>
           </div>
         </button>
       </mg-button>
-      <mg-input-select label-hide="" value="6">
+      <mg-input-select label-hide="" placeholder-hide="" value="6">
         <mock:shadow-root>
           <div class="mg-input mg-input--select">
             <mg-input-title class="sr-only" identifier="id-select">
-              Sélectionner la page a afficher.
+              Sélectionner la page à afficher.
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="page">
-                  <option value="">
-                    page
-                  </option>
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
                   <option value="1">
                     1
                   </option>
@@ -1004,7 +968,7 @@ exports[`mg-pagination Should render with totalPages 10 6`] = `
       <span>
         / 10 pages
       </span>
-      <mg-button class="mg-pagination__button" data-action="next" tabindex="0">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
@@ -1030,13 +994,10 @@ exports[`mg-pagination Should render with totalPages 10 7`] = `
 <mg-pagination current-page="7">
   <mock:shadow-root>
     <nav aria-label="pagination" class="mg-pagination__nav" id="id">
-      <mg-button class="mg-pagination__button mg-pagination__button--reverse" data-action="previous" tabindex="0">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-label="Page précédente" class="mg-button mg-button--flat" id="id-button-previous">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              précédent
-            </span>
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -1044,21 +1005,21 @@ exports[`mg-pagination Should render with totalPages 10 7`] = `
                 </svg>
               </mock:shadow-root>
             </mg-icon>
+            <span aria-hidden="true">
+              précédent
+            </span>
           </div>
         </button>
       </mg-button>
-      <mg-input-select label-hide="" value="7">
+      <mg-input-select label-hide="" placeholder-hide="" value="7">
         <mock:shadow-root>
           <div class="mg-input mg-input--select">
             <mg-input-title class="sr-only" identifier="id-select">
-              Sélectionner la page a afficher.
+              Sélectionner la page à afficher.
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="page">
-                  <option value="">
-                    page
-                  </option>
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
                   <option value="1">
                     1
                   </option>
@@ -1101,7 +1062,7 @@ exports[`mg-pagination Should render with totalPages 10 7`] = `
       <span>
         / 10 pages
       </span>
-      <mg-button class="mg-pagination__button" data-action="next" tabindex="0">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
@@ -1127,13 +1088,10 @@ exports[`mg-pagination Should render with totalPages 10 8`] = `
 <mg-pagination current-page="8">
   <mock:shadow-root>
     <nav aria-label="pagination" class="mg-pagination__nav" id="id">
-      <mg-button class="mg-pagination__button mg-pagination__button--reverse" data-action="previous" tabindex="0">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-label="Page précédente" class="mg-button mg-button--flat" id="id-button-previous">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              précédent
-            </span>
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -1141,21 +1099,21 @@ exports[`mg-pagination Should render with totalPages 10 8`] = `
                 </svg>
               </mock:shadow-root>
             </mg-icon>
+            <span aria-hidden="true">
+              précédent
+            </span>
           </div>
         </button>
       </mg-button>
-      <mg-input-select label-hide="" value="8">
+      <mg-input-select label-hide="" placeholder-hide="" value="8">
         <mock:shadow-root>
           <div class="mg-input mg-input--select">
             <mg-input-title class="sr-only" identifier="id-select">
-              Sélectionner la page a afficher.
+              Sélectionner la page à afficher.
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="page">
-                  <option value="">
-                    page
-                  </option>
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
                   <option value="1">
                     1
                   </option>
@@ -1198,7 +1156,7 @@ exports[`mg-pagination Should render with totalPages 10 8`] = `
       <span>
         / 10 pages
       </span>
-      <mg-button class="mg-pagination__button" data-action="next" tabindex="0">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
@@ -1224,13 +1182,10 @@ exports[`mg-pagination Should render with totalPages 10 9`] = `
 <mg-pagination current-page="9">
   <mock:shadow-root>
     <nav aria-label="pagination" class="mg-pagination__nav" id="id">
-      <mg-button class="mg-pagination__button mg-pagination__button--reverse" data-action="previous" tabindex="0">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-label="Page précédente" class="mg-button mg-button--flat" id="id-button-previous">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              précédent
-            </span>
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -1238,21 +1193,21 @@ exports[`mg-pagination Should render with totalPages 10 9`] = `
                 </svg>
               </mock:shadow-root>
             </mg-icon>
+            <span aria-hidden="true">
+              précédent
+            </span>
           </div>
         </button>
       </mg-button>
-      <mg-input-select label-hide="" value="9">
+      <mg-input-select label-hide="" placeholder-hide="" value="9">
         <mock:shadow-root>
           <div class="mg-input mg-input--select">
             <mg-input-title class="sr-only" identifier="id-select">
-              Sélectionner la page a afficher.
+              Sélectionner la page à afficher.
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="page">
-                  <option value="">
-                    page
-                  </option>
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
                   <option value="1">
                     1
                   </option>
@@ -1295,7 +1250,7 @@ exports[`mg-pagination Should render with totalPages 10 9`] = `
       <span>
         / 10 pages
       </span>
-      <mg-button class="mg-pagination__button" data-action="next" tabindex="0">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
@@ -1321,13 +1276,10 @@ exports[`mg-pagination Should render with totalPages 10 10`] = `
 <mg-pagination current-page="10">
   <mock:shadow-root>
     <nav aria-label="pagination" class="mg-pagination__nav" id="id">
-      <mg-button class="mg-pagination__button mg-pagination__button--reverse" data-action="previous" tabindex="0">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-label="Page précédente" class="mg-button mg-button--flat" id="id-button-previous">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              précédent
-            </span>
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -1335,21 +1287,21 @@ exports[`mg-pagination Should render with totalPages 10 10`] = `
                 </svg>
               </mock:shadow-root>
             </mg-icon>
+            <span aria-hidden="true">
+              précédent
+            </span>
           </div>
         </button>
       </mg-button>
-      <mg-input-select label-hide="" value="10">
+      <mg-input-select label-hide="" placeholder-hide="" value="10">
         <mock:shadow-root>
           <div class="mg-input mg-input--select">
             <mg-input-title class="sr-only" identifier="id-select">
-              Sélectionner la page a afficher.
+              Sélectionner la page à afficher.
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="page">
-                  <option value="">
-                    page
-                  </option>
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
                   <option value="1">
                     1
                   </option>
@@ -1392,7 +1344,7 @@ exports[`mg-pagination Should render with totalPages 10 10`] = `
       <span>
         / 10 pages
       </span>
-      <mg-button class="mg-pagination__button" data-action="next" disabled="" tabindex="-1">
+      <mg-button class="mg-pagination__button" disabled="">
         <!---->
         <button aria-disabled="" aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
@@ -1418,13 +1370,10 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
 <mg-pagination current-page="1">
   <mock:shadow-root>
     <nav aria-label="pagination" class="mg-pagination__nav" id="id">
-      <mg-button class="mg-pagination__button mg-pagination__button--reverse" data-action="previous" disabled="" tabindex="-1">
+      <mg-button class="mg-pagination__button" disabled="">
         <!---->
         <button aria-disabled="" aria-label="Page précédente" class="mg-button mg-button--flat" id="id-button-previous">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              précédent
-            </span>
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -1432,21 +1381,21 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
                 </svg>
               </mock:shadow-root>
             </mg-icon>
+            <span aria-hidden="true">
+              précédent
+            </span>
           </div>
         </button>
       </mg-button>
-      <mg-input-select label-hide="" value="1">
+      <mg-input-select label-hide="" placeholder-hide="" value="1">
         <mock:shadow-root>
           <div class="mg-input mg-input--select">
             <mg-input-title class="sr-only" identifier="id-select">
-              Sélectionner la page a afficher.
+              Sélectionner la page à afficher.
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="page">
-                  <option value="">
-                    page
-                  </option>
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
                   <option selected="" value="1">
                     1
                   </option>
@@ -1474,7 +1423,7 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
       <span>
         / 5 pages
       </span>
-      <mg-button class="mg-pagination__button" data-action="next" tabindex="0">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
@@ -1500,13 +1449,10 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
 <mg-pagination current-page="1">
   <mock:shadow-root>
     <nav aria-label="pagination" class="mg-pagination__nav" id="id">
-      <mg-button class="mg-pagination__button mg-pagination__button--reverse" data-action="previous" disabled="" tabindex="-1">
+      <mg-button class="mg-pagination__button" disabled="">
         <!---->
         <button aria-disabled="" aria-label="Page précédente" class="mg-button mg-button--flat" id="id-button-previous">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              précédent
-            </span>
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -1514,21 +1460,21 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
                 </svg>
               </mock:shadow-root>
             </mg-icon>
+            <span aria-hidden="true">
+              précédent
+            </span>
           </div>
         </button>
       </mg-button>
-      <mg-input-select label-hide="" value="1">
+      <mg-input-select label-hide="" placeholder-hide="" value="1">
         <mock:shadow-root>
           <div class="mg-input mg-input--select">
             <mg-input-title class="sr-only" identifier="id-select">
-              Sélectionner la page a afficher.
+              Sélectionner la page à afficher.
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="page">
-                  <option value="">
-                    page
-                  </option>
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
                   <option selected="" value="1">
                     1
                   </option>
@@ -1556,7 +1502,7 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
       <span>
         / 5 pages
       </span>
-      <mg-button class="mg-pagination__button" data-action="next" tabindex="0">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
@@ -1582,13 +1528,10 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
 <mg-pagination current-page="2">
   <mock:shadow-root>
     <nav aria-label="pagination" class="mg-pagination__nav" id="id">
-      <mg-button class="mg-pagination__button mg-pagination__button--reverse" data-action="previous" tabindex="0">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-label="Page précédente" class="mg-button mg-button--flat" id="id-button-previous">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              précédent
-            </span>
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -1596,21 +1539,21 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
                 </svg>
               </mock:shadow-root>
             </mg-icon>
+            <span aria-hidden="true">
+              précédent
+            </span>
           </div>
         </button>
       </mg-button>
-      <mg-input-select label-hide="" value="2">
+      <mg-input-select label-hide="" placeholder-hide="" value="2">
         <mock:shadow-root>
           <div class="mg-input mg-input--select">
             <mg-input-title class="sr-only" identifier="id-select">
-              Sélectionner la page a afficher.
+              Sélectionner la page à afficher.
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="page">
-                  <option value="">
-                    page
-                  </option>
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
                   <option value="1">
                     1
                   </option>
@@ -1638,7 +1581,7 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
       <span>
         / 5 pages
       </span>
-      <mg-button class="mg-pagination__button" data-action="next" tabindex="0">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
@@ -1664,13 +1607,10 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
 <mg-pagination current-page="1">
   <mock:shadow-root>
     <nav aria-label="pagination" class="mg-pagination__nav" id="id">
-      <mg-button class="mg-pagination__button mg-pagination__button--reverse" data-action="previous" disabled="" tabindex="-1">
+      <mg-button class="mg-pagination__button" disabled="">
         <!---->
         <button aria-disabled="" aria-label="Page précédente" class="mg-button mg-button--flat" id="id-button-previous">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              précédent
-            </span>
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -1678,21 +1618,21 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
                 </svg>
               </mock:shadow-root>
             </mg-icon>
+            <span aria-hidden="true">
+              précédent
+            </span>
           </div>
         </button>
       </mg-button>
-      <mg-input-select label-hide="" value="1">
+      <mg-input-select label-hide="" placeholder-hide="" value="1">
         <mock:shadow-root>
           <div class="mg-input mg-input--select">
             <mg-input-title class="sr-only" identifier="id-select">
-              Sélectionner la page a afficher.
+              Sélectionner la page à afficher.
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="page">
-                  <option value="">
-                    page
-                  </option>
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
                   <option selected="" value="1">
                     1
                   </option>
@@ -1720,7 +1660,7 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
       <span>
         / 5 pages
       </span>
-      <mg-button class="mg-pagination__button" data-action="next" tabindex="0">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
@@ -1746,13 +1686,10 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 2, case to
 <mg-pagination current-page="1">
   <mock:shadow-root>
     <nav aria-label="pagination" class="mg-pagination__nav" id="id">
-      <mg-button class="mg-pagination__button mg-pagination__button--reverse" data-action="previous" disabled="" tabindex="-1">
+      <mg-button class="mg-pagination__button" disabled="">
         <!---->
         <button aria-disabled="" aria-label="Page précédente" class="mg-button mg-button--flat" id="id-button-previous">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              précédent
-            </span>
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -1760,21 +1697,21 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 2, case to
                 </svg>
               </mock:shadow-root>
             </mg-icon>
+            <span aria-hidden="true">
+              précédent
+            </span>
           </div>
         </button>
       </mg-button>
-      <mg-input-select label-hide="" value="1">
+      <mg-input-select label-hide="" placeholder-hide="" value="1">
         <mock:shadow-root>
           <div class="mg-input mg-input--select">
             <mg-input-title class="sr-only" identifier="id-select">
-              Sélectionner la page a afficher.
+              Sélectionner la page à afficher.
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="page">
-                  <option value="">
-                    page
-                  </option>
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
                   <option selected="" value="1">
                     1
                   </option>
@@ -1802,7 +1739,7 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 2, case to
       <span>
         / 5 pages
       </span>
-      <mg-button class="mg-pagination__button" data-action="next" tabindex="0">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
@@ -1828,13 +1765,10 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 2, case to
 <mg-pagination current-page="5">
   <mock:shadow-root>
     <nav aria-label="pagination" class="mg-pagination__nav" id="id">
-      <mg-button class="mg-pagination__button mg-pagination__button--reverse" data-action="previous" tabindex="0">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-label="Page précédente" class="mg-button mg-button--flat" id="id-button-previous">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              précédent
-            </span>
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -1842,21 +1776,21 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 2, case to
                 </svg>
               </mock:shadow-root>
             </mg-icon>
+            <span aria-hidden="true">
+              précédent
+            </span>
           </div>
         </button>
       </mg-button>
-      <mg-input-select label-hide="" value="5">
+      <mg-input-select label-hide="" placeholder-hide="" value="5">
         <mock:shadow-root>
           <div class="mg-input mg-input--select">
             <mg-input-title class="sr-only" identifier="id-select">
-              Sélectionner la page a afficher.
+              Sélectionner la page à afficher.
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="page">
-                  <option value="">
-                    page
-                  </option>
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
                   <option value="1">
                     1
                   </option>
@@ -1884,7 +1818,7 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 2, case to
       <span>
         / 5 pages
       </span>
-      <mg-button class="mg-pagination__button" data-action="next" disabled="" tabindex="-1">
+      <mg-button class="mg-pagination__button" disabled="">
         <!---->
         <button aria-disabled="" aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
@@ -1910,13 +1844,10 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 2, case to
 <mg-pagination current-page="2">
   <mock:shadow-root>
     <nav aria-label="pagination" class="mg-pagination__nav" id="id">
-      <mg-button class="mg-pagination__button mg-pagination__button--reverse" data-action="previous" tabindex="0">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-label="Page précédente" class="mg-button mg-button--flat" id="id-button-previous">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              précédent
-            </span>
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -1924,21 +1855,21 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 2, case to
                 </svg>
               </mock:shadow-root>
             </mg-icon>
+            <span aria-hidden="true">
+              précédent
+            </span>
           </div>
         </button>
       </mg-button>
-      <mg-input-select label-hide="" value="2">
+      <mg-input-select label-hide="" placeholder-hide="" value="2">
         <mock:shadow-root>
           <div class="mg-input mg-input--select">
             <mg-input-title class="sr-only" identifier="id-select">
-              Sélectionner la page a afficher.
+              Sélectionner la page à afficher.
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="page">
-                  <option value="">
-                    page
-                  </option>
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
                   <option value="1">
                     1
                   </option>
@@ -1966,7 +1897,7 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 2, case to
       <span>
         / 5 pages
       </span>
-      <mg-button class="mg-pagination__button" data-action="next" tabindex="0">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
@@ -1992,13 +1923,10 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 2, case to
 <mg-pagination current-page="1">
   <mock:shadow-root>
     <nav aria-label="pagination" class="mg-pagination__nav" id="id">
-      <mg-button class="mg-pagination__button mg-pagination__button--reverse" data-action="previous" disabled="" tabindex="-1">
+      <mg-button class="mg-pagination__button" disabled="">
         <!---->
         <button aria-disabled="" aria-label="Page précédente" class="mg-button mg-button--flat" id="id-button-previous">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              précédent
-            </span>
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -2006,20 +1934,23 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 2, case to
                 </svg>
               </mock:shadow-root>
             </mg-icon>
+            <span aria-hidden="true">
+              précédent
+            </span>
           </div>
         </button>
       </mg-button>
-      <mg-input-select label-hide="" value="1">
+      <mg-input-select label-hide="" placeholder-hide="" value="1">
         <mock:shadow-root>
           <div class="mg-input mg-input--select">
             <mg-input-title class="sr-only" identifier="id-select">
-              Sélectionner la page a afficher.
+              Sélectionner la page à afficher.
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="page">
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
                   <option value="">
-                    page
+                    Veuillez sélectionner une valeur
                   </option>
                   <option selected="" value="1">
                     1
@@ -2048,7 +1979,7 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 2, case to
       <span>
         / 5 pages
       </span>
-      <mg-button class="mg-pagination__button" data-action="next" tabindex="0">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">

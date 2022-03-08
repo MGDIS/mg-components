@@ -98,21 +98,10 @@ export class MgPagination {
   };
 
   /**
-   * Go to 'previous' button handler
+   * Go to 'previous/next' page button handler
    * @returns {void}
    */
-  private handleGoToPage = (event: MouseEvent & { currentTarget: HTMLElement }) => {
-    if (event.currentTarget.getAttribute('disabled') !== null) return;
-
-    const action = event.currentTarget.getAttribute('data-action');
-    let targetPage = this.currentPage + 1;
-
-    if (action === NavigationAction.PREVIOUS) {
-      targetPage = this.currentPage - 1;
-    }
-
-    this.goToPage(targetPage);
-  };
+  private handleGoToPage = (action: NavigationAction) => this.goToPage(action === NavigationAction.NEXT ? this.currentPage + 1 : this.currentPage - 1);
 
   /*************
    * Lifecycle *
@@ -126,17 +115,17 @@ export class MgPagination {
   render() {
     const navigationActionButton = (disabled: boolean, action: NavigationAction) => (
       <mg-button
-        identifier={`${this.identifier}-button-${action === NavigationAction.PREVIOUS ? 'previous' : 'next'}`}
-        class={`mg-pagination__button ${action === NavigationAction.PREVIOUS ? 'mg-pagination__button--reverse' : ''}`}
-        label={action === NavigationAction.PREVIOUS ? messages.pagination.previousPage : messages.pagination.nextPage}
-        onClick={this.handleGoToPage}
+        identifier={`${this.identifier}-button-${action}`}
+        class="mg-pagination__button"
+        label={messages.pagination[`${action}Page`]}
+        // eslint-disable-next-line react/jsx-no-bind
+        onClick={() => this.handleGoToPage(action)}
         disabled={disabled}
         variant="flat"
-        data-action={action}
-        tabIndex={disabled ? -1 : 0}
       >
-        <span aria-hidden="true">{action === NavigationAction.PREVIOUS ? messages.pagination.previous : messages.pagination.next}</span>
-        <mg-icon icon={action === NavigationAction.PREVIOUS ? 'chevron-left' : 'chevron-right'}></mg-icon>
+        {action === NavigationAction.PREVIOUS && <mg-icon icon="chevron-left"></mg-icon>}
+        <span aria-hidden="true">{messages.pagination[action]}</span>
+        {action === NavigationAction.NEXT && <mg-icon icon="chevron-right"></mg-icon>}
       </mg-button>
     );
 
@@ -149,8 +138,8 @@ export class MgPagination {
           label={messages.pagination.selectPage}
           label-hide={true}
           on-value-change={this.handleSelect}
-          placeholder={messages.pagination.page}
           value={this.currentPage.toString()}
+          placeholder-hide
         ></mg-input-select>
         <span class="sr-only">
           {messages.pagination.page} {this.currentPage}

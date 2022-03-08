@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-03-08T08:58:42",
+  "timestamp": "2022-03-08T09:43:55",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.14.0",
@@ -104,6 +104,7 @@
       "filePath": "./src/components/atoms/mg-button/mg-button.tsx",
       "encapsulation": "scoped",
       "tag": "mg-button",
+      "readme": "# mg-button\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -367,6 +368,7 @@
       "filePath": "./src/components/atoms/mg-icon/mg-icon.tsx",
       "encapsulation": "shadow",
       "tag": "mg-icon",
+      "readme": "# mg-icon\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},

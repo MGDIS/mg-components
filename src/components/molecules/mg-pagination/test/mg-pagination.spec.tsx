@@ -90,7 +90,7 @@ describe('mg-pagination', () => {
       jest.spyOn(page.rootInstance.currentPageChange, 'emit');
 
       // no action with a disabled button clic
-      const pageOneFirstClick = page.root.shadowRoot.querySelector('.mg-pagination__button:first-of-type');
+      const pageOneFirstClick = page.root.shadowRoot.querySelector('.mg-pagination__button:first-of-type button');
       await pageOneFirstClick.dispatchEvent(new CustomEvent('click', { bubbles: true }));
       await page.waitForChanges();
 
@@ -98,7 +98,7 @@ describe('mg-pagination', () => {
       expect(page.rootInstance.currentPageChange.emit).not.toHaveBeenCalled();
 
       // action to go to page 2 with a next button clic
-      const pageFive = page.root.shadowRoot.querySelector('.mg-pagination__button:last-of-type');
+      const pageFive = page.root.shadowRoot.querySelector('.mg-pagination__button:last-of-type button');
       await pageFive.dispatchEvent(new CustomEvent('click', { bubbles: true }));
       await page.waitForChanges();
 
@@ -106,7 +106,7 @@ describe('mg-pagination', () => {
       expect(page.rootInstance.currentPageChange.emit).toHaveBeenCalledWith(2);
 
       // action to go to page 1 with a previous button clic
-      const pageOne = page.root.shadowRoot.querySelector('.mg-pagination__button:first-of-type');
+      const pageOne = page.root.shadowRoot.querySelector('.mg-pagination__button:first-of-type button');
       await pageOne.dispatchEvent(new CustomEvent('click', { bubbles: true }));
       await page.waitForChanges();
 

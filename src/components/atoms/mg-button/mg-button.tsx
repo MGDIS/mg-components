@@ -97,7 +97,9 @@ export class MgButton {
   /**
    * Trigger actions onClick event
    */
-  private handleClick = () => {
+  private handleClick = (event: MouseEvent) => {
+    if (this.disabled) event.stopPropagation();
+
     // Used to prevent multi-click.
     if (this.disableOnClick) {
       this.loading = true;
