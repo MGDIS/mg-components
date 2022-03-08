@@ -38,6 +38,10 @@ describe('mg-input-select', () => {
     { label: 'label', identifier: 'identifier', items: ['blu', 'bli', 'blo', 'bla'], readonly: true, labelOnTop: true, tooltip: 'Tooltip message' },
     { label: 'label', identifier: 'identifier', items: ['blu', 'bli', 'blo', 'bla'], tooltip: 'My Tooltip Message' },
     { label: 'label', identifier: 'identifier', items: ['blu', 'bli', 'blo', 'bla'], tooltip: 'My Tooltip Message', labelOnTop: true },
+    { label: 'label', identifier: 'identifier', items: ['blu', 'bli', 'blo', 'bla'], placeholder: 'placeholder' },
+    { label: 'label', identifier: 'identifier', items: ['blu', 'bli', 'blo', 'bla'], placeholder: 'placeholder', placeholderHide: true },
+    { label: 'label', identifier: 'identifier', items: ['blu', 'bli', 'blo', 'bla'], placeholder: 'placeholder', placeholderDisabled: true },
+    { label: 'label', identifier: 'identifier', items: ['blu', 'bli', 'blo', 'bla'], placeholder: 'placeholder', placeholderDisabled: true, value: 'ble' },
   ])('Should render with args %s:', async args => {
     const { root } = await getPage(args);
     expect(root).toMatchSnapshot();

@@ -3,3 +3,28 @@
 @use '../styles/mg-input-width.scss';
 @use '../styles/mg-input-charleft.scss';
 @use '../../../../styles/a11y.scss';
+
+:host {
+  display: block;
+}
+
+/**
+* Icon in input
+*/
+
+.mg-input.mg-input--has-icon .mg-input__input {
+  position: relative;
+  & > mg-icon {
+    // layout
+    position: absolute;
+    top: 50%;
+    left: var(--mg-inputs-spacer);
+    // text
+    color: var(--mg-inputs-color);
+    // other
+    transform: translateY(-50%);
+  }
+  .mg-input__box {
+    padding-left: calc(var(--mg-icon-regular-size) + var(--mg-inputs-spacer) * 2);
+  }
+}

@@ -82,6 +82,162 @@ exports[`mg-input-select Should render with args {
   label: 'label',
   identifier: 'identifier',
   items: [Array],
+  placeholder: 'placeholder'
+}: 1`] = `
+<mg-input-select>
+  <mock:shadow-root>
+    <div class="mg-input mg-input--select">
+      <mg-input-title identifier="identifier">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input">
+          <select aria-describedby="" class="mg-input__box" id="identifier" name="identifier" title="placeholder">
+            <option value="">
+              placeholder
+            </option>
+            <option value="blu">
+              blu
+            </option>
+            <option value="bli">
+              bli
+            </option>
+            <option value="blo">
+              blo
+            </option>
+            <option value="bla">
+              bla
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-select>
+`;
+
+exports[`mg-input-select Should render with args {
+  label: 'label',
+  identifier: 'identifier',
+  items: [Array],
+  placeholder: 'placeholder',
+  placeholderDisabled: true
+}: 1`] = `
+<mg-input-select>
+  <mock:shadow-root>
+    <div class="mg-input mg-input--select">
+      <mg-input-title identifier="identifier">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input">
+          <select aria-describedby="" class="mg-input__box" id="identifier" name="identifier" title="placeholder">
+            <option value="">
+              placeholder
+            </option>
+            <option value="blu">
+              blu
+            </option>
+            <option value="bli">
+              bli
+            </option>
+            <option value="blo">
+              blo
+            </option>
+            <option value="bla">
+              bla
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-select>
+`;
+
+exports[`mg-input-select Should render with args {
+  label: 'label',
+  identifier: 'identifier',
+  items: [Array],
+  placeholder: 'placeholder',
+  placeholderDisabled: true,
+  value: 'ble'
+}: 1`] = `
+<mg-input-select value="ble">
+  <mock:shadow-root>
+    <div class="mg-input mg-input--select">
+      <mg-input-title identifier="identifier">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input">
+          <select aria-describedby="" class="mg-input__box" id="identifier" name="identifier" title="placeholder">
+            <option value="">
+              placeholder
+            </option>
+            <option value="blu">
+              blu
+            </option>
+            <option value="bli">
+              bli
+            </option>
+            <option value="blo">
+              blo
+            </option>
+            <option value="bla">
+              bla
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-select>
+`;
+
+exports[`mg-input-select Should render with args {
+  label: 'label',
+  identifier: 'identifier',
+  items: [Array],
+  placeholder: 'placeholder',
+  placeholderHide: true
+}: 1`] = `
+<mg-input-select>
+  <mock:shadow-root>
+    <div class="mg-input mg-input--select">
+      <mg-input-title identifier="identifier">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input">
+          <select aria-describedby="" class="mg-input__box" id="identifier" name="identifier" title="placeholder">
+            <option value="">
+              placeholder
+            </option>
+            <option value="blu">
+              blu
+            </option>
+            <option value="bli">
+              bli
+            </option>
+            <option value="blo">
+              blo
+            </option>
+            <option value="bla">
+              bla
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-select>
+`;
+
+exports[`mg-input-select Should render with args {
+  label: 'label',
+  identifier: 'identifier',
+  items: [Array],
   readonly: true
 }: 1`] = `
 <mg-input-select>
