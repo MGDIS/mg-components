@@ -187,7 +187,7 @@ export class MgInputToggle {
   /**
    * Slots validation
    */
-  private validateSlots() {
+  private validateSlots = () => {
     const slots = Array.from(this.element.children);
     if (slots.length !== 2) {
       throw new Error('<mg-input-toggle> 2 slots are required.');
@@ -196,7 +196,7 @@ export class MgInputToggle {
       // we need to ensure that slot element have title to display value on mouse over
       slots.forEach(slot => slot.setAttribute('title', slot.textContent));
     }
-  }
+  };
 
   /*************
    * Lifecycle *

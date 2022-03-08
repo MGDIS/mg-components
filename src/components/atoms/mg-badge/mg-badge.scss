@@ -30,6 +30,7 @@ $mg-badge-border-width: 0.1rem;
   box-sizing: border-box;
   // Decoration
   border: $mg-badge-border-width solid;
+  border-radius: 50%; /* IE FIX */
   border-radius: calc(var(--mg-badge-size) / 2);
   // Font
   font-size: var(--mg-badge-font-size);

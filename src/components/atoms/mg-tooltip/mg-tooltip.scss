@@ -1,17 +1,18 @@
-mg-tooltip {
-  display: contents;
+:host {
+  display: inline-block;
 }
 
 .mg-tooltip {
   // Display
   display: none;
-  padding: 0.5rem;
+  padding: 0.5rem 0.8rem;
   z-index: 9999;
   // Decoration
-  border-radius: 0.3rem;
+  border-radius: 0.5rem;
   background-color: hsl(var(--mg-tooltip-background-color));
   // Font
   color: hsl(var(--mg-tooltip-font-color));
+  text-align: start;
 
   &[data-show] {
     display: block;

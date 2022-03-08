@@ -2,6 +2,10 @@
  * Common style for MGDIS inputs
  */
 
+:host {
+  display: block;
+}
+
 .mg-input {
   display: flex;
   align-items: flex-start;
@@ -62,11 +66,12 @@
 }
 
 .mg-input__input-container {
+  min-height: var(--default-size);
   /* Readonly */
   & > strong {
     display: inline-block;
     margin-top: calc((var(--default-size) - var(--font-size) * var(--line-height)) / 2);
-    min-height: var(--default-size);
+    min-height: var(--font-size);
   }
 
   mg-tooltip {

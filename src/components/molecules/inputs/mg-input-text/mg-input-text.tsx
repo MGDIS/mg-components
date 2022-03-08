@@ -210,7 +210,7 @@ export class MgInputText {
   /**
    * Validate patern configuration
    */
-  private validatePattern() {
+  private validatePattern = () => {
     if (
       this.pattern &&
       typeof this.pattern === 'string' &&
@@ -219,7 +219,7 @@ export class MgInputText {
     ) {
       throw new Error('<mg-input-text> prop "pattern" must be paired with the prop "patternErrorMessage"');
     }
-  }
+  };
 
   /**
    * Validate append slot
@@ -228,6 +228,9 @@ export class MgInputText {
     const slotAppendInput: HTMLSlotElement = this.element.querySelector('[slot="append-input"]');
     if (slotAppendInput !== null && slotAppendInput.querySelector('.mg-button') !== null) {
       this.classList.add('mg-input--is-input-group-append');
+      this.classList = new ClassList(this.classList.classes);
+    } else if (slotAppendInput !== null) {
+      this.classList.add('mg-input--is-append-input-slot-content');
       this.classList = new ClassList(this.classList.classes);
     }
   }

@@ -27,6 +27,9 @@
   "message": {
     "closeButton": "Fermer le message"
   },
+  "popover": {
+    "closeButton": "Fermer"
+  },
   "pagination": {
     "page": "page",
     "pages": "pages",
