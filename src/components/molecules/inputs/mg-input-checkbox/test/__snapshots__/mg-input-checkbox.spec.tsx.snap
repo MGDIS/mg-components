@@ -526,7 +526,7 @@ exports[`mg-input-checkbox Should trigger events, case validity check false 2`] 
           My help text
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
-          Ce champs est obligatoire.
+          Ce champ est obligatoire.
         </div>
       </div>
     </fieldset>
