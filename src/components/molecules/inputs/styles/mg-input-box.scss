@@ -64,11 +64,7 @@
   }
 }
 
-.mg-input.mg-input--is-append-input-slot-content {
-  ::slotted([slot='append-input']) {
-    margin-left: var(--mg-inputs-spacer);
-  }
-  &:not(.mg-input--readonly) ::slotted([slot='append-input']) {
-    padding-top: calc((var(--default-size) - var(--mg-icon-regular-size)) / 2);
-  }
+.mg-input.mg-input--is-append-input-slot-content:not(.mg-input--readonly) ::slotted([slot='append-input']) {
+  margin-left: var(--mg-inputs-spacer);
+  padding-top: calc((var(--default-size) - var(--mg-icon-regular-size)) / 2);
 }
