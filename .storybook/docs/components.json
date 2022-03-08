@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-03-07T16:53:11",
+  "timestamp": "2022-03-08T13:31:12",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.14.0",
@@ -52,7 +52,7 @@
           "type": "number | string",
           "mutable": true,
           "attr": "value",
-          "reflectToAttr": true,
+          "reflectToAttr": false,
           "docs": "Badge value",
           "docsTags": [],
           "values": [
@@ -131,7 +131,7 @@
           "type": "boolean",
           "mutable": true,
           "attr": "disabled",
-          "reflectToAttr": true,
+          "reflectToAttr": false,
           "docs": "Disable button",
           "docsTags": [],
           "default": "false",
@@ -581,7 +581,7 @@
           "type": "boolean",
           "mutable": true,
           "attr": "invalid",
-          "reflectToAttr": true,
+          "reflectToAttr": false,
           "docs": "Force invalid component",
           "docsTags": [],
           "values": [
@@ -713,7 +713,7 @@
           "type": "boolean",
           "mutable": true,
           "attr": "valid",
-          "reflectToAttr": true,
+          "reflectToAttr": false,
           "docs": "Force valid component",
           "docsTags": [],
           "values": [
@@ -836,7 +836,7 @@
           "type": "boolean",
           "mutable": true,
           "attr": "invalid",
-          "reflectToAttr": true,
+          "reflectToAttr": false,
           "docs": "Define input pattern error message",
           "docsTags": [],
           "values": [
@@ -1000,7 +1000,7 @@
           "type": "boolean",
           "mutable": true,
           "attr": "valid",
-          "reflectToAttr": true,
+          "reflectToAttr": false,
           "docs": "Define input pattern to validate",
           "docsTags": [],
           "values": [
@@ -1124,7 +1124,7 @@
           "type": "boolean",
           "mutable": true,
           "attr": "invalid",
-          "reflectToAttr": true,
+          "reflectToAttr": false,
           "docs": "Define input pattern error message",
           "docsTags": [],
           "values": [
@@ -1321,7 +1321,7 @@
           "type": "boolean",
           "mutable": true,
           "attr": "valid",
-          "reflectToAttr": true,
+          "reflectToAttr": false,
           "docs": "Define input pattern to validate",
           "docsTags": [],
           "values": [
@@ -1445,7 +1445,7 @@
           "type": "boolean",
           "mutable": true,
           "attr": "invalid",
-          "reflectToAttr": true,
+          "reflectToAttr": false,
           "docs": "Define input pattern error message",
           "docsTags": [],
           "values": [
@@ -1593,7 +1593,7 @@
           "type": "boolean",
           "mutable": true,
           "attr": "valid",
-          "reflectToAttr": true,
+          "reflectToAttr": false,
           "docs": "Define input pattern to validate",
           "docsTags": [],
           "values": [
@@ -1734,7 +1734,7 @@
           "type": "boolean",
           "mutable": true,
           "attr": "invalid",
-          "reflectToAttr": true,
+          "reflectToAttr": false,
           "docs": "Force invalid component",
           "docsTags": [],
           "values": [
@@ -1885,7 +1885,7 @@
           "type": "boolean",
           "mutable": true,
           "attr": "valid",
-          "reflectToAttr": true,
+          "reflectToAttr": false,
           "docs": "Force valid component",
           "docsTags": [],
           "values": [
@@ -1901,7 +1901,7 @@
           "type": "any",
           "mutable": true,
           "attr": "value",
-          "reflectToAttr": true,
+          "reflectToAttr": false,
           "docs": "Component value",
           "docsTags": [],
           "values": [
@@ -2009,7 +2009,7 @@
           "type": "boolean",
           "mutable": true,
           "attr": "invalid",
-          "reflectToAttr": true,
+          "reflectToAttr": false,
           "docs": "Define input invalid state",
           "docsTags": [],
           "values": [
@@ -2210,7 +2210,7 @@
           "type": "boolean",
           "mutable": true,
           "attr": "valid",
-          "reflectToAttr": true,
+          "reflectToAttr": false,
           "docs": "Define input valid state",
           "docsTags": [],
           "values": [
@@ -2383,7 +2383,7 @@
           "type": "boolean",
           "mutable": true,
           "attr": "invalid",
-          "reflectToAttr": true,
+          "reflectToAttr": false,
           "docs": "Define input pattern error message",
           "docsTags": [],
           "values": [
@@ -2602,7 +2602,7 @@
           "type": "boolean",
           "mutable": true,
           "attr": "valid",
-          "reflectToAttr": true,
+          "reflectToAttr": false,
           "docs": "Define input pattern to validate",
           "docsTags": [],
           "values": [
@@ -2759,7 +2759,7 @@
           "type": "boolean",
           "mutable": true,
           "attr": "invalid",
-          "reflectToAttr": true,
+          "reflectToAttr": false,
           "docs": "Define input pattern error message",
           "docsTags": [],
           "values": [
@@ -2973,7 +2973,7 @@
           "type": "boolean",
           "mutable": true,
           "attr": "valid",
-          "reflectToAttr": true,
+          "reflectToAttr": false,
           "docs": "Define input pattern to validate",
           "docsTags": [],
           "values": [
@@ -3355,7 +3355,7 @@
           "type": "any",
           "mutable": true,
           "attr": "value",
-          "reflectToAttr": true,
+          "reflectToAttr": false,
           "docs": "Component value",
           "docsTags": [],
           "values": [
@@ -3446,7 +3446,7 @@
           "type": "boolean",
           "mutable": true,
           "attr": "hide",
-          "reflectToAttr": true,
+          "reflectToAttr": false,
           "docs": "Define if message is hidden",
           "docsTags": [],
           "default": "false",
@@ -3662,7 +3662,7 @@
           "type": "boolean",
           "mutable": true,
           "attr": "disabled",
-          "reflectToAttr": true,
+          "reflectToAttr": false,
           "docs": "Disable popover",
           "docsTags": [],
           "default": "false",
@@ -3679,7 +3679,7 @@
           "type": "boolean",
           "mutable": true,
           "attr": "display",
-          "reflectToAttr": true,
+          "reflectToAttr": false,
           "docs": "Display popover",
           "docsTags": [],
           "default": "false",
@@ -3967,7 +3967,7 @@
           "type": "boolean",
           "mutable": true,
           "attr": "disabled",
-          "reflectToAttr": true,
+          "reflectToAttr": false,
           "docs": "Disable tooltip",
           "docsTags": [],
           "default": "false",
@@ -3984,7 +3984,7 @@
           "type": "boolean",
           "mutable": true,
           "attr": "display",
-          "reflectToAttr": true,
+          "reflectToAttr": false,
           "docs": "Display tooltip",
           "docsTags": [],
           "default": "false",

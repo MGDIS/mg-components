@@ -26,7 +26,7 @@ exports[`mg-popover Should render with element 1`] = `
 `;
 
 exports[`mg-popover Should render with element 2`] = `
-<mg-popover display="">
+<mg-popover>
   <!---->
   <mg-button aria-controls="identifier" aria-expanded="true">
     <!---->
@@ -84,7 +84,7 @@ exports[`mg-popover Should render with element 3`] = `
 `;
 
 exports[`mg-popover Should render with element 4`] = `
-<mg-popover display="">
+<mg-popover>
   <!---->
   <mg-button aria-controls="identifier" aria-expanded="true">
     <!---->

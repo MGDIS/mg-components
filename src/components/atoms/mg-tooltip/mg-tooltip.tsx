@@ -58,7 +58,7 @@ export class MgTooltip {
   /**
    * Display tooltip
    */
-  @Prop({ mutable: true, reflect: true }) display: boolean = false;
+  @Prop({ mutable: true }) display: boolean = false;
   @Watch('display')
   handleDisplay(newVal) {
     if (newVal) {
@@ -71,7 +71,7 @@ export class MgTooltip {
   /**
    * Disable tooltip
    */
-  @Prop({ mutable: true, reflect: true }) disabled: boolean = false;
+  @Prop({ mutable: true }) disabled: boolean = false;
 
   /**
    * Show tooltip
