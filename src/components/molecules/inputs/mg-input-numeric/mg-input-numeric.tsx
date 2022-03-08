@@ -253,6 +253,20 @@ export class MgInputNumeric {
     return this.type === 'currency' ? localeCurrency(value) : localeNumber(value);
   }
 
+  /**
+   * Validate append slot
+   */
+  private validateAppendSlot() {
+    const slotAppendInput: HTMLSlotElement = this.element.querySelector('[slot="append-input"]');
+    if (slotAppendInput !== null && slotAppendInput.querySelector('.mg-button') !== null) {
+      this.classList.add('mg-input--is-input-group-append');
+      this.classList = new ClassList(this.classList.classes);
+    } else if (slotAppendInput !== null) {
+      this.classList.add('mg-input--is-append-input-slot-content');
+      this.classList = new ClassList(this.classList.classes);
+    }
+  }
+
   /*************
    * Lifecycle *
    *************/
@@ -262,6 +276,10 @@ export class MgInputNumeric {
     // Set displayed value
     this.displayValue = this.readonlyValue;
     this.validateType(this.type);
+  }
+
+  componentDidLoad() {
+    this.validateAppendSlot();
   }
 
   /**
@@ -302,6 +320,7 @@ export class MgInputNumeric {
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
         />
+        <slot name="append-input"></slot>
       </MgInput>
     );
   }

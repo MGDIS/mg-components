@@ -45,8 +45,8 @@
   /**
   * Append input slot
   */
-
   .mg-input__box {
+    margin-right: -0.1rem;
     border-top-right-radius: 0%;
     border-bottom-right-radius: 0%;
     &:focus-visible {
@@ -54,5 +54,21 @@
       outline-offset: -0.2rem;
       outline-width: 0.2rem;
     }
+  }
+
+  /**
+  * Readonly variation
+  */
+  &.mg-input--readonly slot[name='append-input'] {
+    display: none;
+  }
+}
+
+.mg-input.mg-input--is-append-input-slot-content {
+  ::slotted([slot='append-input']) {
+    margin-left: var(--mg-inputs-spacer);
+  }
+  &:not(.mg-input--readonly) ::slotted([slot='append-input']) {
+    padding-top: calc((var(--default-size) - var(--mg-icon-regular-size)) / 2);
   }
 }

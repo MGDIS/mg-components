@@ -129,7 +129,11 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
   /**
    * Update input(s) in children
    */
-  children = applyAriadescribedBy(children, ariaDescribedbyIDs, utils);
+  if (props.readonly) {
+    children = children.filter(child => child.$name$ === 'append-input');
+  } else {
+    children = applyAriadescribedBy(children, ariaDescribedbyIDs, utils);
+  }
 
   /**
    * Return template
@@ -182,6 +186,7 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
       {props.readonly ? (
         <div class="mg-input__input-container">
           <strong>{props.readonlyValue || props.value}</strong>
+          {children}
         </div>
       ) : (
         <div class="mg-input__input-container">

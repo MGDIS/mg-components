@@ -193,7 +193,11 @@
         </mg-tabs>
         <script>
           const mgTabs = document.querySelector('mg-tabs');
-          mgTabs.items = [{ label: 'Tab 1', icon: 'check', badge: 1 }, { label: 'Tab 2', icon: 'cross', badge: 3 }, { label: 'Tab 3' }];
+          mgTabs.items = [
+            { label: 'Tab 1', icon: 'check', badge: { value: 1, label: 'messages' } },
+            { label: 'Tab 2', icon: 'cross', badge: { value: 3, label: 'messages' } },
+            { label: 'Tab 3' },
+          ];
         </script>
       </section>
       <section>

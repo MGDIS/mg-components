@@ -190,4 +190,22 @@ describe('mg-input-numeric', () => {
       expect(screenshot).toMatchImageSnapshot();
     });
   });
+
+  describe.each([true, false])('using append-input slot, case readonly %s', readonly => {
+    test.each([
+      `<mg-button slot="append-input" label="search">
+        <mg-icon icon="calculator"></mg-icon> Calculate
+      </mg-button>`,
+      '<span slot="append-input">km</span>',
+    ])('render', async slot => {
+      const page = await createPage(`
+        <mg-input-numeric label="label" readonly="${readonly}" value="1">
+          ${slot}
+        </mg-input-numeric>
+      `);
+
+      const screenshot = await page.screenshot();
+      expect(screenshot).toMatchImageSnapshot();
+    });
+  });
 });
