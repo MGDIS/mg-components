@@ -177,7 +177,7 @@ exports[`mg-button prevent double click should disable button after click 1`] = 
 `;
 
 exports[`mg-button prevent double click should disable button after click 2`] = `
-<mg-button disabled="">
+<mg-button>
   <!---->
   <button aria-disabled="" class="mg-button mg-button--loading mg-button--primary" id="identifier">
     <mg-icon icon="loader" spin=""></mg-icon>
@@ -200,7 +200,7 @@ exports[`mg-button prevent double click should disable button after click 3`] = 
 `;
 
 exports[`mg-button prevent double click should not have fn when disabled 1`] = `
-<mg-button disabled="">
+<mg-button>
   <!---->
   <button aria-disabled="" class="mg-button mg-button--primary" id="identifier">
     <div class="mg-button__content">

@@ -87,12 +87,12 @@ export class MgInputDate {
   /**
    * Define input pattern to validate
    */
-  @Prop({ mutable: true, reflect: true }) valid: boolean;
+  @Prop({ mutable: true }) valid: boolean;
 
   /**
    * Define input pattern error message
    */
-  @Prop({ mutable: true, reflect: true }) invalid: boolean;
+  @Prop({ mutable: true }) invalid: boolean;
 
   /**
    * Define input minimum date

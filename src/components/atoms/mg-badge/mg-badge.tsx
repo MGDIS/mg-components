@@ -10,7 +10,7 @@ export class MgBadge {
   /**
    * Badge value
    */
-  @Prop({ mutable: true, reflect: true }) value!: BadgeType['value'];
+  @Prop({ mutable: true }) value!: BadgeType['value'];
   @Watch('value')
   valideValue(newValue) {
     if (`${newValue}`.match(/^(\d+|[?*!a-z])$/i) === null) {
