@@ -6,7 +6,7 @@ Due to [accessibility recommendation](https://developer.mozilla.org/fr/docs/Web/
 
 ## 🚨 Slot
 
-Horizontal spacing is not managed by the composant, it must be defined in slot implementation.
+Horizontal spacing is not managed by the component, it must be defined in slot implementation.
 
 <!-- Auto Generated Below -->
 
