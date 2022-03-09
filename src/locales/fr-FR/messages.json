@@ -1,6 +1,6 @@
 {
   "errors": {
-    "required": "Ce champs est obligatoire.",
+    "required": "Ce champ est obligatoire.",
     "date": {
       "badInput": "Le format de la date doit être du type <span aria-hidden=\"true\">jj/mm/aaaa</span><span class=\"sr-only\">j j / m m / a a a a</span> et supérieure au {min}",
       "min": "La date ne peut pas être antérieur au {min}",

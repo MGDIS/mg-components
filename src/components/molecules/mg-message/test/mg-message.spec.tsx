@@ -23,6 +23,23 @@ describe('mg-message', () => {
     });
   });
 
+  test('Should replace classes on variant changes', async () => {
+    const page = await getPage({ identifier: 'identifier' }, getDefaultContent());
+    const element = page.doc.querySelector('mg-message');
+    let classInfo = element.shadowRoot.querySelector('.mg-message--info');
+
+    expect(classInfo).not.toBeNull();
+
+    element.variant = 'danger';
+    await page.waitForChanges();
+
+    classInfo = element.shadowRoot.querySelector('.mg-message--info');
+    const classDanger = element.shadowRoot.querySelector('.mg-message--danger');
+
+    expect(classInfo).toBeNull();
+    expect(classDanger).not.toBeNull();
+  });
+
   test.each(['', 'blu', undefined])('Should throw error with invalid variant property : %s', async variant => {
     try {
       await getPage({ identifier: 'identifier', variant }, getDefaultContent());

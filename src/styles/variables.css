@@ -124,6 +124,7 @@
   /*
     <mg-tooltip>
    */
+  --mg-tooltip-border-radius: 0.5rem;
   --mg-tooltip-background-color: var(--color-dark);
   --mg-tooltip-font-color: var(--color-font-light);
 

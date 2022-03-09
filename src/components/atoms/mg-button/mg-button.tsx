@@ -101,7 +101,7 @@ export class MgButton {
     if (this.disabled) event.stopPropagation();
 
     // Used to prevent multi-click.
-    if (this.disableOnClick) {
+    if (this.disableOnClick && !this.disabled) {
       this.loading = true;
       this.disabled = true;
     }
