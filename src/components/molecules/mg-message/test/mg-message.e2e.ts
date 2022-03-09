@@ -46,7 +46,8 @@ describe('mg-message', () => {
     mgButton.triggerEvent('click');
     await page.waitForChanges();
 
-    expect(mgMessage).toHaveAttribute('hide');
+    const mgMessageHideProp = await mgMessage.getProperty('hide');
+    expect(mgMessageHideProp).toBeTruthy();
 
     const screenshot = await page.screenshot();
     expect(screenshot).toMatchImageSnapshot();

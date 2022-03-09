@@ -70,7 +70,7 @@ export class MgMessage {
   /**
    * Define if message is hidden
    */
-  @Prop({ mutable: true, reflect: true }) hide: boolean = false;
+  @Prop({ mutable: true }) hide: boolean = false;
   @Watch('hide')
   validateHide(newValue: boolean) {
     if (newValue) {
