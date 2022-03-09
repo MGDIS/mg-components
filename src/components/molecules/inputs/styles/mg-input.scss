@@ -95,6 +95,7 @@
 
   /* Manage space between input and first message */
   & + * {
+    text-align: start;
     margin-top: 0.5rem;
   }
 }

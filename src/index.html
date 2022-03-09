@@ -268,14 +268,20 @@
         </div>
         <h4>Tooltips</h4>
         <div class="mg-group-elements" style="padding: 0 0 1rem">
-          <mg-tooltip message="my tooltip coucou"><span>coucou</span></mg-tooltip>
+          <mg-tooltip
+            message="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            placement="right"
+            ><span>coucou</span></mg-tooltip
+          >
           <mg-tooltip message="my tooltip icon"><mg-icon icon="check-circle"></mg-icon></mg-tooltip>
           <mg-tooltip message="my tooltip mg-button"><mg-button>mg-button</mg-button></mg-tooltip>
           <mg-tooltip message="my tooltip native button"><button class="mg-button mg-button--primary" aria-describedby="blu">native button</button></mg-tooltip>
         </div>
         <div class="mg-group-elements" style="padding: 0 0 1rem">
           <mg-tooltip message="This is a tooltip message">
-            <mg-button variant="primary" disabled id="btn-dbld" onClick="alert('blu')">Click Me !</mg-button>
+            <mg-button variant="primary" disabled disable-on-click id="btn-dbld" onClick="alert('blu')">Click Me !</mg-button>
           </mg-tooltip>
           <button class="mg-button mg-button--secondary" onClick="document.getElementById('btn-dbld').removeAttribute('disabled')">Enable first button</button>
           <button class="mg-button mg-button--secondary" onClick="document.getElementById('btn-dbld').setAttribute('disabled', '')">Disable first button</button>
@@ -292,7 +298,7 @@
           <mg-button>Display popover</mg-button>
           <div slot="content">Coucou</div>
         </mg-popover>
-        <mg-popover close-button display>
+        <mg-popover close-button display placement="left">
           <div slot="content">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
             exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
@@ -309,12 +315,12 @@
           <mg-input-text
             placeholder="placeholder"
             help-text="Message d'aide plus long"
-            label-on-top
             label="Libellé Libellé Libellé Libellé Libellé Libellé Libellé Libellé Libellé Libellé Libellé Libellé Libellé Libellé Libellé Libellé Libellé Libellé Libellé Libellé"
             tooltip="message tooltip"
             required
             value="blu"
-          ></mg-input-text>
+            ><mg-button slot="append-input" label="search"> <mg-icon icon="magnifying-glass"></mg-icon> Search </mg-button></mg-input-text
+          >
         </div>
         <div class="mg-form-group">
           <mg-input-text
@@ -449,7 +455,7 @@
             { title: 'non', value: false },
             { title: 'oui', value: true },
           ];
-          mgInputToggleText.value = true;
+          mgInputToggleText.value = false;
           const mgInputToggleTextLong = document.querySelector('mg-input-toggle[identifier="toggle-text-long"]');
           mgInputToggleTextLong.items = [
             { title: 'non', value: false },

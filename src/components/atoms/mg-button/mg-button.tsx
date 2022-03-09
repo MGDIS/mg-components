@@ -99,7 +99,7 @@ export class MgButton {
    */
   private handleClick = () => {
     // Used to prevent multi-click.
-    if (this.disableOnClick) {
+    if (this.disableOnClick && !this.disabled) {
       this.loading = true;
       this.disabled = true;
     }
