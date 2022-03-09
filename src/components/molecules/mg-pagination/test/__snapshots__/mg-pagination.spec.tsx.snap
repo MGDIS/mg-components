@@ -4,7 +4,7 @@ exports[`mg-pagination Should render with totalPages 1 1`] = `
 <mg-pagination current-page="1">
   <mock:shadow-root>
     <nav aria-label="pagination" class="mg-pagination__nav" id="id">
-      <mg-button class="mg-pagination__button" disabled="">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-disabled="" aria-label="Page précédente" class="mg-button mg-button--flat" id="id-button-previous">
           <div class="mg-button__content">
@@ -43,7 +43,7 @@ exports[`mg-pagination Should render with totalPages 1 1`] = `
       <span>
         / 1 pages
       </span>
-      <mg-button class="mg-pagination__button" disabled="">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-disabled="" aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
@@ -67,7 +67,7 @@ exports[`mg-pagination Should render with totalPages 2 1`] = `
 <mg-pagination current-page="1">
   <mock:shadow-root>
     <nav aria-label="pagination" class="mg-pagination__nav" id="id">
-      <mg-button class="mg-pagination__button" disabled="">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-disabled="" aria-label="Page précédente" class="mg-button mg-button--flat" id="id-button-previous">
           <div class="mg-button__content">
@@ -175,7 +175,7 @@ exports[`mg-pagination Should render with totalPages 2 2`] = `
       <span>
         / 2 pages
       </span>
-      <mg-button class="mg-pagination__button" disabled="">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-disabled="" aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
@@ -199,7 +199,7 @@ exports[`mg-pagination Should render with totalPages 3 1`] = `
 <mg-pagination current-page="1">
   <mock:shadow-root>
     <nav aria-label="pagination" class="mg-pagination__nav" id="id">
-      <mg-button class="mg-pagination__button" disabled="">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-disabled="" aria-label="Page précédente" class="mg-button mg-button--flat" id="id-button-previous">
           <div class="mg-button__content">
@@ -382,7 +382,7 @@ exports[`mg-pagination Should render with totalPages 3 3`] = `
       <span>
         / 3 pages
       </span>
-      <mg-button class="mg-pagination__button" disabled="">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-disabled="" aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
@@ -406,7 +406,7 @@ exports[`mg-pagination Should render with totalPages 10 1`] = `
 <mg-pagination current-page="1">
   <mock:shadow-root>
     <nav aria-label="pagination" class="mg-pagination__nav" id="id">
-      <mg-button class="mg-pagination__button" disabled="">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-disabled="" aria-label="Page précédente" class="mg-button mg-button--flat" id="id-button-previous">
           <div class="mg-button__content">
@@ -1282,7 +1282,7 @@ exports[`mg-pagination Should render with totalPages 10 10`] = `
       <span>
         / 10 pages
       </span>
-      <mg-button class="mg-pagination__button" disabled="">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-disabled="" aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
@@ -1306,7 +1306,7 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
 <mg-pagination current-page="1">
   <mock:shadow-root>
     <nav aria-label="pagination" class="mg-pagination__nav" id="id">
-      <mg-button class="mg-pagination__button" disabled="">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-disabled="" aria-label="Page précédente" class="mg-button mg-button--flat" id="id-button-previous">
           <div class="mg-button__content">
@@ -1381,7 +1381,7 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
 <mg-pagination current-page="1">
   <mock:shadow-root>
     <nav aria-label="pagination" class="mg-pagination__nav" id="id">
-      <mg-button class="mg-pagination__button" disabled="">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-disabled="" aria-label="Page précédente" class="mg-button mg-button--flat" id="id-button-previous">
           <div class="mg-button__content">
@@ -1531,7 +1531,7 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
 <mg-pagination current-page="1">
   <mock:shadow-root>
     <nav aria-label="pagination" class="mg-pagination__nav" id="id">
-      <mg-button class="mg-pagination__button" disabled="">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-disabled="" aria-label="Page précédente" class="mg-button mg-button--flat" id="id-button-previous">
           <div class="mg-button__content">
@@ -1606,7 +1606,7 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 1, case to
 <mg-pagination current-page="1">
   <mock:shadow-root>
     <nav aria-label="pagination" class="mg-pagination__nav" id="id">
-      <mg-button class="mg-pagination__button" disabled="">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-disabled="" aria-label="Page précédente" class="mg-button mg-button--flat" id="id-button-previous">
           <div class="mg-button__content">
@@ -1732,7 +1732,7 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 1, case to
       <span>
         / 5 pages
       </span>
-      <mg-button class="mg-pagination__button" disabled="">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-disabled="" aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
@@ -1831,7 +1831,7 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 1, case to
 <mg-pagination current-page="1">
   <mock:shadow-root>
     <nav aria-label="pagination" class="mg-pagination__nav" id="id">
-      <mg-button class="mg-pagination__button" disabled="">
+      <mg-button class="mg-pagination__button">
         <!---->
         <button aria-disabled="" aria-label="Page précédente" class="mg-button mg-button--flat" id="id-button-previous">
           <div class="mg-button__content">
