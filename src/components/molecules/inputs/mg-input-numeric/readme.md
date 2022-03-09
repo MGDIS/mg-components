@@ -1,5 +1,10 @@
 This atom refers to the [PDA9-181](https://jira.mgdis.fr/browse/PDA9-181).
 
+
+## 🚨 Slot
+
+Horizontal spacing is not managed by the component, it must be defined in slot implementation.
+
 <!-- Auto Generated Below -->
 
 
