@@ -15,9 +15,7 @@ exports[`mg-pagination Should render with totalPages 1 1`] = `
                 </svg>
               </mock:shadow-root>
             </mg-icon>
-            <span aria-hidden="true">
-              précédent
-            </span>
+            précédent
           </div>
         </button>
       </mg-button>
@@ -49,9 +47,7 @@ exports[`mg-pagination Should render with totalPages 1 1`] = `
         <!---->
         <button aria-disabled="" aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              suivant
-            </span>
+            suivant
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -82,9 +78,7 @@ exports[`mg-pagination Should render with totalPages 2 1`] = `
                 </svg>
               </mock:shadow-root>
             </mg-icon>
-            <span aria-hidden="true">
-              précédent
-            </span>
+            précédent
           </div>
         </button>
       </mg-button>
@@ -119,9 +113,7 @@ exports[`mg-pagination Should render with totalPages 2 1`] = `
         <!---->
         <button aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              suivant
-            </span>
+            suivant
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -152,9 +144,7 @@ exports[`mg-pagination Should render with totalPages 2 2`] = `
                 </svg>
               </mock:shadow-root>
             </mg-icon>
-            <span aria-hidden="true">
-              précédent
-            </span>
+            précédent
           </div>
         </button>
       </mg-button>
@@ -189,9 +179,7 @@ exports[`mg-pagination Should render with totalPages 2 2`] = `
         <!---->
         <button aria-disabled="" aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              suivant
-            </span>
+            suivant
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -222,9 +210,7 @@ exports[`mg-pagination Should render with totalPages 3 1`] = `
                 </svg>
               </mock:shadow-root>
             </mg-icon>
-            <span aria-hidden="true">
-              précédent
-            </span>
+            précédent
           </div>
         </button>
       </mg-button>
@@ -262,9 +248,7 @@ exports[`mg-pagination Should render with totalPages 3 1`] = `
         <!---->
         <button aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              suivant
-            </span>
+            suivant
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -295,9 +279,7 @@ exports[`mg-pagination Should render with totalPages 3 2`] = `
                 </svg>
               </mock:shadow-root>
             </mg-icon>
-            <span aria-hidden="true">
-              précédent
-            </span>
+            précédent
           </div>
         </button>
       </mg-button>
@@ -335,9 +317,7 @@ exports[`mg-pagination Should render with totalPages 3 2`] = `
         <!---->
         <button aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              suivant
-            </span>
+            suivant
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -368,9 +348,7 @@ exports[`mg-pagination Should render with totalPages 3 3`] = `
                 </svg>
               </mock:shadow-root>
             </mg-icon>
-            <span aria-hidden="true">
-              précédent
-            </span>
+            précédent
           </div>
         </button>
       </mg-button>
@@ -408,9 +386,7 @@ exports[`mg-pagination Should render with totalPages 3 3`] = `
         <!---->
         <button aria-disabled="" aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              suivant
-            </span>
+            suivant
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -441,9 +417,7 @@ exports[`mg-pagination Should render with totalPages 10 1`] = `
                 </svg>
               </mock:shadow-root>
             </mg-icon>
-            <span aria-hidden="true">
-              précédent
-            </span>
+            précédent
           </div>
         </button>
       </mg-button>
@@ -502,9 +476,7 @@ exports[`mg-pagination Should render with totalPages 10 1`] = `
         <!---->
         <button aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              suivant
-            </span>
+            suivant
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -535,9 +507,7 @@ exports[`mg-pagination Should render with totalPages 10 2`] = `
                 </svg>
               </mock:shadow-root>
             </mg-icon>
-            <span aria-hidden="true">
-              précédent
-            </span>
+            précédent
           </div>
         </button>
       </mg-button>
@@ -596,9 +566,7 @@ exports[`mg-pagination Should render with totalPages 10 2`] = `
         <!---->
         <button aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              suivant
-            </span>
+            suivant
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -629,9 +597,7 @@ exports[`mg-pagination Should render with totalPages 10 3`] = `
                 </svg>
               </mock:shadow-root>
             </mg-icon>
-            <span aria-hidden="true">
-              précédent
-            </span>
+            précédent
           </div>
         </button>
       </mg-button>
@@ -690,9 +656,7 @@ exports[`mg-pagination Should render with totalPages 10 3`] = `
         <!---->
         <button aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              suivant
-            </span>
+            suivant
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -723,9 +687,7 @@ exports[`mg-pagination Should render with totalPages 10 4`] = `
                 </svg>
               </mock:shadow-root>
             </mg-icon>
-            <span aria-hidden="true">
-              précédent
-            </span>
+            précédent
           </div>
         </button>
       </mg-button>
@@ -784,9 +746,7 @@ exports[`mg-pagination Should render with totalPages 10 4`] = `
         <!---->
         <button aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              suivant
-            </span>
+            suivant
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -817,9 +777,7 @@ exports[`mg-pagination Should render with totalPages 10 5`] = `
                 </svg>
               </mock:shadow-root>
             </mg-icon>
-            <span aria-hidden="true">
-              précédent
-            </span>
+            précédent
           </div>
         </button>
       </mg-button>
@@ -878,9 +836,7 @@ exports[`mg-pagination Should render with totalPages 10 5`] = `
         <!---->
         <button aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              suivant
-            </span>
+            suivant
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -911,9 +867,7 @@ exports[`mg-pagination Should render with totalPages 10 6`] = `
                 </svg>
               </mock:shadow-root>
             </mg-icon>
-            <span aria-hidden="true">
-              précédent
-            </span>
+            précédent
           </div>
         </button>
       </mg-button>
@@ -972,9 +926,7 @@ exports[`mg-pagination Should render with totalPages 10 6`] = `
         <!---->
         <button aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              suivant
-            </span>
+            suivant
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -1005,9 +957,7 @@ exports[`mg-pagination Should render with totalPages 10 7`] = `
                 </svg>
               </mock:shadow-root>
             </mg-icon>
-            <span aria-hidden="true">
-              précédent
-            </span>
+            précédent
           </div>
         </button>
       </mg-button>
@@ -1066,9 +1016,7 @@ exports[`mg-pagination Should render with totalPages 10 7`] = `
         <!---->
         <button aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              suivant
-            </span>
+            suivant
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -1099,9 +1047,7 @@ exports[`mg-pagination Should render with totalPages 10 8`] = `
                 </svg>
               </mock:shadow-root>
             </mg-icon>
-            <span aria-hidden="true">
-              précédent
-            </span>
+            précédent
           </div>
         </button>
       </mg-button>
@@ -1160,9 +1106,7 @@ exports[`mg-pagination Should render with totalPages 10 8`] = `
         <!---->
         <button aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              suivant
-            </span>
+            suivant
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -1193,9 +1137,7 @@ exports[`mg-pagination Should render with totalPages 10 9`] = `
                 </svg>
               </mock:shadow-root>
             </mg-icon>
-            <span aria-hidden="true">
-              précédent
-            </span>
+            précédent
           </div>
         </button>
       </mg-button>
@@ -1254,9 +1196,7 @@ exports[`mg-pagination Should render with totalPages 10 9`] = `
         <!---->
         <button aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              suivant
-            </span>
+            suivant
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -1287,9 +1227,7 @@ exports[`mg-pagination Should render with totalPages 10 10`] = `
                 </svg>
               </mock:shadow-root>
             </mg-icon>
-            <span aria-hidden="true">
-              précédent
-            </span>
+            précédent
           </div>
         </button>
       </mg-button>
@@ -1348,9 +1286,7 @@ exports[`mg-pagination Should render with totalPages 10 10`] = `
         <!---->
         <button aria-disabled="" aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              suivant
-            </span>
+            suivant
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -1381,9 +1317,7 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
                 </svg>
               </mock:shadow-root>
             </mg-icon>
-            <span aria-hidden="true">
-              précédent
-            </span>
+            précédent
           </div>
         </button>
       </mg-button>
@@ -1427,9 +1361,7 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
         <!---->
         <button aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              suivant
-            </span>
+            suivant
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -1460,9 +1392,7 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
                 </svg>
               </mock:shadow-root>
             </mg-icon>
-            <span aria-hidden="true">
-              précédent
-            </span>
+            précédent
           </div>
         </button>
       </mg-button>
@@ -1506,9 +1436,7 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
         <!---->
         <button aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              suivant
-            </span>
+            suivant
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -1539,9 +1467,7 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
                 </svg>
               </mock:shadow-root>
             </mg-icon>
-            <span aria-hidden="true">
-              précédent
-            </span>
+            précédent
           </div>
         </button>
       </mg-button>
@@ -1585,9 +1511,7 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
         <!---->
         <button aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              suivant
-            </span>
+            suivant
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -1618,9 +1542,7 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
                 </svg>
               </mock:shadow-root>
             </mg-icon>
-            <span aria-hidden="true">
-              précédent
-            </span>
+            précédent
           </div>
         </button>
       </mg-button>
@@ -1664,9 +1586,7 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
         <!---->
         <button aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              suivant
-            </span>
+            suivant
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -1682,7 +1602,7 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
 </mg-pagination>
 `;
 
-exports[`mg-pagination navigation navigate with select from 1 to 5 to 2, case totalPages=5 1`] = `
+exports[`mg-pagination navigation navigate with select from 1 to 5 to 1, case totalPages=5 1`] = `
 <mg-pagination current-page="1">
   <mock:shadow-root>
     <nav aria-label="pagination" class="mg-pagination__nav" id="id">
@@ -1697,9 +1617,7 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 2, case to
                 </svg>
               </mock:shadow-root>
             </mg-icon>
-            <span aria-hidden="true">
-              précédent
-            </span>
+            précédent
           </div>
         </button>
       </mg-button>
@@ -1743,9 +1661,7 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 2, case to
         <!---->
         <button aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              suivant
-            </span>
+            suivant
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -1761,7 +1677,7 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 2, case to
 </mg-pagination>
 `;
 
-exports[`mg-pagination navigation navigate with select from 1 to 5 to 2, case totalPages=5 2`] = `
+exports[`mg-pagination navigation navigate with select from 1 to 5 to 1, case totalPages=5 2`] = `
 <mg-pagination current-page="5">
   <mock:shadow-root>
     <nav aria-label="pagination" class="mg-pagination__nav" id="id">
@@ -1776,9 +1692,7 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 2, case to
                 </svg>
               </mock:shadow-root>
             </mg-icon>
-            <span aria-hidden="true">
-              précédent
-            </span>
+            précédent
           </div>
         </button>
       </mg-button>
@@ -1822,9 +1736,7 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 2, case to
         <!---->
         <button aria-disabled="" aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              suivant
-            </span>
+            suivant
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -1840,7 +1752,7 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 2, case to
 </mg-pagination>
 `;
 
-exports[`mg-pagination navigation navigate with select from 1 to 5 to 2, case totalPages=5 3`] = `
+exports[`mg-pagination navigation navigate with select from 1 to 5 to 1, case totalPages=5 3`] = `
 <mg-pagination current-page="2">
   <mock:shadow-root>
     <nav aria-label="pagination" class="mg-pagination__nav" id="id">
@@ -1855,9 +1767,7 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 2, case to
                 </svg>
               </mock:shadow-root>
             </mg-icon>
-            <span aria-hidden="true">
-              précédent
-            </span>
+            précédent
           </div>
         </button>
       </mg-button>
@@ -1901,9 +1811,7 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 2, case to
         <!---->
         <button aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              suivant
-            </span>
+            suivant
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -1919,7 +1827,7 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 2, case to
 </mg-pagination>
 `;
 
-exports[`mg-pagination navigation navigate with select from 1 to 5 to 2, case totalPages=5 4`] = `
+exports[`mg-pagination navigation navigate with select from 1 to 5 to 1, case totalPages=5 4`] = `
 <mg-pagination current-page="1">
   <mock:shadow-root>
     <nav aria-label="pagination" class="mg-pagination__nav" id="id">
@@ -1934,9 +1842,7 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 2, case to
                 </svg>
               </mock:shadow-root>
             </mg-icon>
-            <span aria-hidden="true">
-              précédent
-            </span>
+            précédent
           </div>
         </button>
       </mg-button>
@@ -1983,9 +1889,7 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 2, case to
         <!---->
         <button aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
           <div class="mg-button__content">
-            <span aria-hidden="true">
-              suivant
-            </span>
+            suivant
             <mg-icon>
               <mock:shadow-root>
                 <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">

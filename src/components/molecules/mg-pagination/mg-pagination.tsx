@@ -124,7 +124,7 @@ export class MgPagination {
         variant="flat"
       >
         {action === NavigationAction.PREVIOUS && <mg-icon icon="chevron-left"></mg-icon>}
-        <span aria-hidden="true">{messages.pagination[action]}</span>
+        {messages.pagination[action]}
         {action === NavigationAction.NEXT && <mg-icon icon="chevron-right"></mg-icon>}
       </mg-button>
     );

@@ -107,10 +107,6 @@ $mg-button-padding-horizontal: 1.1rem;
     margin: auto 0;
   }
 
-  &:not(.mg-button--icon) mg-icon {
-    margin-right: 0.6rem;
-  }
-
   &__content {
     display: flex;
     align-items: baseline;
