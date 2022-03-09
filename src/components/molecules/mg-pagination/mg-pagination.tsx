@@ -1,6 +1,6 @@
-import { Component, h, Prop, State, Watch, Event, EventEmitter } from '@stencil/core';
+import { Component, h, Prop, Watch, Event, EventEmitter } from '@stencil/core';
 import { createID } from '../../../utils/components.utils';
-import { PageKind, Page, PagerItem, NavigationAction } from './mg-pagination.conf';
+import { NavigationAction } from './mg-pagination.conf';
 import { messages } from './../../../locales';
 
 /**
@@ -24,14 +24,6 @@ import { messages } from './../../../locales';
  * @returns {number[]}
  */
 const range = (start: number, end: number, step = 1): number[] => Array.from(Array(Math.ceil((end + 1 - start) / step)).keys()).map(x => start + x * step);
-
-/**
- * Helper function to tell if given page is current
- * @param currentPage
- * @param number
- * @returns {boolean}
- */
-const isCurrentPage = (currentPage: number, number: number): boolean => currentPage === number;
 
 @Component({
   tag: 'mg-pagination',
@@ -76,91 +68,15 @@ export class MgPagination {
       throw new Error('<mg-pagination> prop "currentPage" must be greater than 0');
     } else if (newValue > this.totalPages) {
       throw new Error('<mg-pagination> prop "currentPage" can not be greater than total page');
-    } else {
-      this.setPager();
     }
 
     this.currentPageChange.emit(newValue);
   }
 
   /**
-   * Pager items
-   */
-  @State() pager: PagerItem[] = [];
-
-  /**
-   * Pages to display
-   */
-  @State() pages: Page[] = [1];
-
-  /**
    * Emmited event when current page change
    */
   @Event({ eventName: 'current-page-change' }) currentPageChange: EventEmitter<number>;
-
-  /**
-   * Pages state setter
-   * @returns {void}
-   */
-  private setPages = (): void => {
-    const firstPage = 1;
-    const pages = range(firstPage, this.totalPages);
-    const lastPage = this.totalPages;
-    const ellipsis = PageKind.ELLIPSIS;
-    let middlePages = [];
-
-    /*
-     * < [1] >
-     * < [1] 2 >
-     * < 1 [2] >
-     * < [1] 2 3 >
-     * < 1 [2] 3 >
-     * < 1 2 [3] >
-     * < [1] 2 3 4>
-     * < 1 [2] 3 4>
-     * < 1 2 [3] 4>
-     * < 1 2 3 [4]>
-     */
-    if (pages.length <= 4) {
-      this.pages = pages;
-      return;
-    } else {
-      /**
-       * < [1] 2 ... total >
-       * < 1 [2] ... total >
-       * < 1 ...[n] ... total >
-       * < 1 ... [total-1] total >
-       * < 1 ... total-1 [total] >
-       */
-      if ([this.currentPage - 1, this.currentPage].includes(firstPage)) {
-        middlePages = [firstPage + 1, ellipsis];
-      } else if ([this.currentPage + 1, this.currentPage].includes(lastPage)) {
-        middlePages = [ellipsis, lastPage - 1];
-      } else {
-        middlePages = [ellipsis, this.currentPage, ellipsis];
-      }
-
-      this.pages = [firstPage, ...middlePages, lastPage];
-      return;
-    }
-  };
-
-  /**
-   * Pager state setter
-   */
-  private setPager = () => {
-    this.setPages();
-
-    const pages = this.pages.map(page => ({
-      kind: page === PageKind.ELLIPSIS ? PageKind.ELLIPSIS : PageKind.NUMBER,
-      number: page === PageKind.ELLIPSIS ? null : page,
-      disabled: false,
-    }));
-    const previousPage = { kind: PageKind.NAVIGATION, disabled: isCurrentPage(this.currentPage, 1), navigationaction: NavigationAction.PREVIOUS };
-    const nextPage = { kind: PageKind.NAVIGATION, disabled: isCurrentPage(this.currentPage, this.totalPages), navigationaction: NavigationAction.NEXT };
-
-    this.pager = [previousPage, ...pages, nextPage];
-  };
 
   /**
    * Change current page from target
@@ -176,22 +92,16 @@ export class MgPagination {
    * Default click handler
    * @param event
    */
-  private handleClick = (event: MouseEvent & { currentTarget: HTMLElement }) => {
-    const nextPage: number = Number(event.currentTarget.getAttribute('data-page'));
-    this.goToPage(nextPage);
+  private handleSelect = (event: InputEvent & { target: HTMLInputElement }) => {
+    const to = Number(event.target.value);
+    this.goToPage(to > 0 ? to : 1);
   };
 
   /**
-   * Go to 'previous' button handler
+   * Go to 'previous/next' page button handler
    * @returns {void}
    */
-  private handleGoToPrevious = () => this.goToPage(this.currentPage - 1);
-
-  /**
-   * Go to 'next' button handler
-   * @returns {void}
-   */
-  private handleGoToNext = () => this.goToPage(this.currentPage + 1);
+  private handleGoToPage = (action: NavigationAction) => this.goToPage(action === NavigationAction.NEXT ? this.currentPage + 1 : this.currentPage - 1);
 
   /*************
    * Lifecycle *
@@ -203,41 +113,41 @@ export class MgPagination {
   }
 
   render() {
-    const button = ({ kind, number, disabled, navigationaction }) => {
-      if (kind === PageKind.ELLIPSIS) return <button class="mg-pagination-list__button mg-pagination-list__button--ellipsis">&#8230;</button>;
-
-      if (kind === PageKind.NAVIGATION)
-        return (
-          <button
-            class="mg-pagination-list__button mg-pagination-list__button--navigation"
-            aria-label={navigationaction === NavigationAction.PREVIOUS ? messages.pagination.previousPage : messages.pagination.nextPage}
-            onClick={navigationaction === NavigationAction.PREVIOUS ? this.handleGoToPrevious : this.handleGoToNext}
-            disabled={disabled}
-          >
-            <span aria-hidden="true">{navigationaction === NavigationAction.PREVIOUS ? messages.pagination.previous : messages.pagination.next}</span>
-          </button>
-        );
-
-      return (
-        <button
-          class={`mg-pagination-list__button ${number === this.currentPage ? 'mg-pagination-list__button--active' : ''}`}
-          onClick={this.handleClick}
-          data-page={number}
-          aria-current={number === this.currentPage ? messages.pagination.page : false}
-          disabled={disabled}
-        >
-          <span class="sr-only">{messages.pagination.page}</span> {number}
-        </button>
-      );
-    };
+    const navigationActionButton = (disabled: boolean, action: NavigationAction) => (
+      <mg-button
+        identifier={`${this.identifier}-button-${action}`}
+        class="mg-pagination__button"
+        label={messages.pagination[`${action}Page`]}
+        // eslint-disable-next-line react/jsx-no-bind
+        onClick={() => this.handleGoToPage(action)}
+        disabled={disabled}
+        variant="flat"
+      >
+        {action === NavigationAction.PREVIOUS && <mg-icon icon="chevron-left"></mg-icon>}
+        {messages.pagination[action]}
+        {action === NavigationAction.NEXT && <mg-icon icon="chevron-right"></mg-icon>}
+      </mg-button>
+    );
 
     return (
-      <nav aria-label={this.label} id={this.identifier}>
-        <ul class="mg-pagination-list">
-          {this.pager.map(({ kind, number, disabled, navigationaction }) => (
-            <li class="mg-pagination-list__item">{button({ kind, number, disabled, navigationaction })}</li>
-          ))}
-        </ul>
+      <nav aria-label={this.label} id={this.identifier} class="mg-pagination__nav">
+        {navigationActionButton(this.currentPage <= 1, NavigationAction.PREVIOUS)}
+        <mg-input-select
+          identifier={`${this.identifier}-select`}
+          items={range(1, this.totalPages).map(page => page.toString())}
+          label={messages.pagination.selectPage}
+          label-hide={true}
+          on-value-change={this.handleSelect}
+          value={this.currentPage.toString()}
+          placeholder-hide
+        ></mg-input-select>
+        <span class="sr-only">
+          {messages.pagination.page} {this.currentPage}
+        </span>
+        <span>
+          / {this.totalPages} {this.totalPages > 1 ? messages.pagination.pages : messages.pagination.pages}
+        </span>
+        {navigationActionButton(this.currentPage >= this.totalPages, NavigationAction.NEXT)}
       </nav>
     );
   }

@@ -50,7 +50,7 @@ export class MgButton {
   /**
    * Disable button
    */
-  @Prop({ mutable: true, reflect: true }) disabled: boolean = false;
+  @Prop({ mutable: true }) disabled: boolean = false;
   @Watch('disabled')
   disabledHandler(isDisabled: boolean) {
     // Remove loading when enable
@@ -97,9 +97,11 @@ export class MgButton {
   /**
    * Trigger actions onClick event
    */
-  private handleClick = () => {
+  private handleClick = (event: MouseEvent) => {
+    if (this.disabled) event.stopPropagation();
+
     // Used to prevent multi-click.
-    if (this.disableOnClick) {
+    if (this.disableOnClick && !this.disabled) {
       this.loading = true;
       this.disabled = true;
     }

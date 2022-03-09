@@ -487,7 +487,7 @@ exports[`mg-input-checkbox Should trigger events, case validity check false 1`] 
 `;
 
 exports[`mg-input-checkbox Should trigger events, case validity check false 2`] = `
-<mg-input-checkbox invalid="">
+<mg-input-checkbox>
   <mock:shadow-root>
     <fieldset class="is-not-valid mg-input mg-input--checkbox">
       <mg-input-title identifier="identifier" is-legend="">
@@ -526,7 +526,7 @@ exports[`mg-input-checkbox Should trigger events, case validity check false 2`] 
           My help text
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
-          Ce champs est obligatoire.
+          Ce champ est obligatoire.
         </div>
       </div>
     </fieldset>
@@ -580,7 +580,7 @@ exports[`mg-input-checkbox Should trigger events, case validity check true 1`] =
 `;
 
 exports[`mg-input-checkbox Should trigger events, case validity check true 2`] = `
-<mg-input-checkbox valid="">
+<mg-input-checkbox>
   <mock:shadow-root>
     <fieldset class="mg-input mg-input--checkbox">
       <mg-input-title identifier="identifier" is-legend="">

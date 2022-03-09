@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`mg-input-toggle Should trigger events for items with inputValue : { items: [Array], expected: 'a', value: 'b' } 1`] = `
-<mg-input-toggle value="b">
+<mg-input-toggle>
   <!---->
   <div class="mg-input mg-input--toggle mg-input--toggle-is-active">
     <mg-input-title identifier="identifier">
@@ -31,7 +31,7 @@ exports[`mg-input-toggle Should trigger events for items with inputValue : { ite
 `;
 
 exports[`mg-input-toggle Should trigger events for items with inputValue : { items: [Array], expected: 'b', value: undefined } 1`] = `
-<mg-input-toggle value="a">
+<mg-input-toggle>
   <!---->
   <div class="mg-input mg-input--toggle">
     <mg-input-title identifier="identifier">
@@ -61,7 +61,7 @@ exports[`mg-input-toggle Should trigger events for items with inputValue : { ite
 `;
 
 exports[`mg-input-toggle Should trigger events for items with inputValue : { items: [Array], expected: 2, value: 1 } 1`] = `
-<mg-input-toggle value="1">
+<mg-input-toggle>
   <!---->
   <div class="mg-input mg-input--toggle">
     <mg-input-title identifier="identifier">
@@ -91,7 +91,7 @@ exports[`mg-input-toggle Should trigger events for items with inputValue : { ite
 `;
 
 exports[`mg-input-toggle Should trigger events for items with inputValue : { items: [Array], expected: false, value: true } 1`] = `
-<mg-input-toggle value="">
+<mg-input-toggle>
   <!---->
   <div class="mg-input mg-input--toggle mg-input--toggle-is-active">
     <mg-input-title identifier="identifier">
@@ -99,7 +99,7 @@ exports[`mg-input-toggle Should trigger events for items with inputValue : { ite
     </mg-input-title>
     <div class="mg-input__input-container">
       <div class="mg-input__input">
-        <button class="mg-input__button-toggle" id="identifier" role="switch" type="button">
+        <button aria-checked="" class="mg-input__button-toggle" id="identifier" role="switch" type="button">
           <span aria-hidden="true" class="mg-input__toggle-item-container">
             <span slot="item-1" title="Batman">
               Batman

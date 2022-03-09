@@ -30,7 +30,7 @@ export class MgInputRadio {
   /**
    * Component value
    */
-  @Prop({ mutable: true, reflect: true }) value?: any;
+  @Prop({ mutable: true }) value?: any;
 
   /**
    * Items are the possible options to select
@@ -116,12 +116,12 @@ export class MgInputRadio {
   /**
    * Force valid component
    */
-  @Prop({ mutable: true, reflect: true }) valid: boolean;
+  @Prop({ mutable: true }) valid: boolean;
 
   /**
    * Force invalid component
    */
-  @Prop({ mutable: true, reflect: true }) invalid: boolean;
+  @Prop({ mutable: true }) invalid: boolean;
 
   /**
    * Component classes
@@ -221,8 +221,7 @@ export class MgInputRadio {
                 id={this.identifier + '_' + index}
                 name={this.identifier}
                 value={input.value && input.value.toString()}
-                // `(this.value === "" && input.value === true)` because when input value attribute is set to `true` it will be re render as an empty string.
-                checked={input.value === this.value || (this.value === '' && input.value === true)}
+                checked={input.value === this.value || input.value === true}
                 disabled={this.disabled || input.disabled}
                 required={this.required}
                 onBlur={this.handleBlur}

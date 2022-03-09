@@ -159,12 +159,12 @@ export class MgInputSelect {
   /**
    * Define input valid state
    */
-  @Prop({ mutable: true, reflect: true }) valid: boolean;
+  @Prop({ mutable: true }) valid: boolean;
 
   /**
    * Define input invalid state
    */
-  @Prop({ mutable: true, reflect: true }) invalid: boolean;
+  @Prop({ mutable: true }) invalid: boolean;
 
   /**
    * Component classes

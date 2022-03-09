@@ -60,7 +60,7 @@ export class MgPopover {
   /**
    * Display popover
    */
-  @Prop({ mutable: true, reflect: true }) display: boolean = false;
+  @Prop({ mutable: true }) display: boolean = false;
   @Watch('display')
   handleDisplay(newVal) {
     if (newVal) {
@@ -73,7 +73,7 @@ export class MgPopover {
   /**
    * Disable popover
    */
-  @Prop({ mutable: true, reflect: true }) disabled: boolean = false;
+  @Prop({ mutable: true }) disabled: boolean = false;
 
   /**
    * Check if clicked outside of component

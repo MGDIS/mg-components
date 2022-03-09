@@ -36,18 +36,11 @@ export class MgInputToggle {
   /**
    * Component value
    */
-  @Prop({ mutable: true, reflect: true }) value?: any;
+  @Prop({ mutable: true }) value?: any;
   @Watch('value')
-  handleValue(newValue: any, oldValue?: any) {
-    // while newValue=true DOM rendering reset value to "" and trigger a new value change. Then we get a newValue="".
-    // to prevent the second update we need to escape process when typeof old value is different to the typeof new value AND new value is a blank string.
-    if (newValue === '' && typeof oldValue !== typeof newValue && oldValue !== undefined) return;
-
-    if (newValue === this.options[1].value) {
-      this.classList.add(this.classIsActive);
-    } else {
-      this.classList.delete(this.classIsActive);
-    }
+  handleValue(newValue: any) {
+    if (newValue === this.options[1].value) this.classList.add(this.classIsActive);
+    else this.classList.delete(this.classIsActive);
 
     this.valueChange.emit(this.value);
   }
@@ -168,21 +161,7 @@ export class MgInputToggle {
   /**
    * Change value
    */
-  private toggleValue = () => {
-    // case value is true, as DOM rewrite true as blank string when it's render
-    if (this.value === '') {
-      this.value = this.options.find(o => o.value !== true).value;
-    } else {
-      this.value = this.options.find(o => o.value !== this.value).value;
-    }
-  };
-
-  /**
-   * Handle input event
-   */
-  private handleToggleClick = () => {
-    this.toggleValue();
-  };
+  private toggleValue = () => (this.value = this.options.find(o => o.value !== this.value).value);
 
   /**
    * Slots validation
@@ -249,7 +228,8 @@ export class MgInputToggle {
           id={this.identifier}
           class="mg-input__button-toggle"
           disabled={this.disabled || this.readonly}
-          onClick={this.handleToggleClick}
+          // eslint-disable-next-line react/jsx-no-bind
+          onClick={() => this.toggleValue()}
         >
           <span aria-hidden="true" class="mg-input__toggle-item-container">
             <slot name="item-1"></slot>

@@ -42,7 +42,7 @@ export class MgInputCheckbox {
    * If item.value is `null`, checkbox will be indeterminate by default
    * Required
    */
-  @Prop({ mutable: true, reflect: true }) value!: CheckboxValue[];
+  @Prop({ mutable: true }) value!: CheckboxValue[];
   @Watch('value')
   validateValue(newValue) {
     if (newValue && (newValue as Array<CheckboxItem>).every(item => isCheckboxItem(item))) {
@@ -118,12 +118,12 @@ export class MgInputCheckbox {
   /**
    * Force valid component
    */
-  @Prop({ mutable: true, reflect: true }) valid: boolean;
+  @Prop({ mutable: true }) valid: boolean;
 
   /**
    * Force invalid component
    */
-  @Prop({ mutable: true, reflect: true }) invalid: boolean;
+  @Prop({ mutable: true }) invalid: boolean;
 
   /**
    * Component classes

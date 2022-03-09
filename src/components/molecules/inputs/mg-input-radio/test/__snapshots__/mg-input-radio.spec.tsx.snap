@@ -571,7 +571,7 @@ exports[`mg-input-radio Should render with args { label: 'label', identifier: 'i
         <div class="mg-input__input">
           <ul class="mg-input__input-group-container">
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="true">
+              <input aria-describedby="" checked="" id="identifier_0" name="identifier" type="radio" value="true">
               <label htmlfor="identifier_0">
                 batman
               </label>
@@ -748,7 +748,7 @@ exports[`mg-input-radio Should trigger events for items ({ items: [Array], input
         <div class="mg-input__input">
           <ul class="mg-input__input-group-container">
             <li class="mg-input__input-group">
-              <input aria-describedby="identifier-help-text" id="identifier_0" name="identifier" type="radio" value="true">
+              <input aria-describedby="identifier-help-text" checked="" id="identifier_0" name="identifier" type="radio" value="true">
               <label htmlfor="identifier_0">
                 batman
               </label>

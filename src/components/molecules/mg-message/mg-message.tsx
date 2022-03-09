@@ -47,9 +47,12 @@ export class MgMessage {
    */
   @Prop() variant: string = variants[0];
   @Watch('variant')
-  validateVariant(newValue: string) {
+  validateVariant(newValue: string, oldValue?: string) {
     if (!variants.includes(newValue)) {
       throw new Error(`<mg-message> prop "variant" must be one of : ${variants.join(', ')}`);
+    }
+    if (oldValue !== undefined) {
+      this.classList.delete(`mg-message--${oldValue}`);
     }
     this.classList.add(`mg-message--${this.variant}`);
   }
@@ -70,7 +73,7 @@ export class MgMessage {
   /**
    * Define if message is hidden
    */
-  @Prop({ mutable: true, reflect: true }) hide: boolean = false;
+  @Prop({ mutable: true }) hide: boolean = false;
   @Watch('hide')
   validateHide(newValue: boolean) {
     if (newValue) {
