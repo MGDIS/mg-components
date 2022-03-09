@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-03-08T13:31:12",
+  "timestamp": "2022-03-09T09:08:01",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.14.0",
@@ -219,6 +219,7 @@
       "parts": [],
       "dependents": [
         "mg-message",
+        "mg-pagination",
         "mg-popover"
       ],
       "dependencies": [
@@ -229,6 +230,9 @@
           "mg-icon"
         ],
         "mg-message": [
+          "mg-button"
+        ],
+        "mg-pagination": [
           "mg-button"
         ],
         "mg-popover": [
@@ -454,6 +458,7 @@
         "mg-input-textarea",
         "mg-input-toggle",
         "mg-message",
+        "mg-pagination",
         "mg-popover",
         "mg-tabs"
       ],
@@ -490,6 +495,9 @@
           "mg-icon"
         ],
         "mg-message": [
+          "mg-icon"
+        ],
+        "mg-pagination": [
           "mg-icon"
         ],
         "mg-popover": [
@@ -2254,7 +2262,9 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [],
+      "dependents": [
+        "mg-pagination"
+      ],
       "dependencies": [
         "mg-tooltip",
         "mg-icon",
@@ -2267,6 +2277,9 @@
           "mg-icon",
           "mg-input-title",
           "mg-character-left"
+        ],
+        "mg-pagination": [
+          "mg-input-select"
         ]
       }
     },
@@ -3628,8 +3641,27 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
+      "dependencies": [
+        "mg-button",
+        "mg-icon",
+        "mg-input-select"
+      ],
+      "dependencyGraph": {
+        "mg-pagination": [
+          "mg-button",
+          "mg-icon",
+          "mg-input-select"
+        ],
+        "mg-button": [
+          "mg-icon"
+        ],
+        "mg-input-select": [
+          "mg-tooltip",
+          "mg-icon",
+          "mg-input-title",
+          "mg-character-left"
+        ]
+      }
     },
     {
       "filePath": "./src/components/molecules/mg-popover/mg-popover.tsx",

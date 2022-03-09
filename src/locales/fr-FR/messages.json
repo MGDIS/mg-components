@@ -32,9 +32,11 @@
   },
   "pagination": {
     "page": "page",
+    "pages": "pages",
     "next": "suivant",
     "previous": "précédent",
     "nextPage": "Page suivante",
-    "previousPage": "Page précédente"
+    "previousPage": "Page précédente",
+    "selectPage": "Sélectionner la page à afficher."
   }
 }
