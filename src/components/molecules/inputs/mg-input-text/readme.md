@@ -4,6 +4,10 @@ This atom refers to the [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64).
 
 Due to [accessibility recommendation](https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input/search#les_champs_de_recherche_et_l%E2%80%99accessibilit%C3%A9), an `<input type="search" />` must be used within a `<form role="search" />` we recommend to use mg-input-text as in dedicated story.
 
+## 🚨 Slot
+
+Horizontal spacing is not managed by the component, it must be defined in slot implementation.
+
 <!-- Auto Generated Below -->
 
 
