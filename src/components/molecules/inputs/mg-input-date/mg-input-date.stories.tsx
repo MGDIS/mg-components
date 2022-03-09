@@ -21,16 +21,15 @@ const Template = args => {
 };
 
 const date = new Date();
-const getMonth = date => {
-  const month = `${date.getMonth() + 1}`;
-  return `${month.length > 1 ? month : '0' + month}`;
+const getFormatedNumber = (number: number) => {
+  return `${number > 9 ? number : '0' + number}`;
 };
 
 export const MgInputDate = Template.bind({});
 
 MgInputDate.args = {
   // Global
-  value: `${date.getFullYear()}-${getMonth(date)}-${date.getDate()}`,
+  value: `${date.getFullYear()}-${getFormatedNumber(date.getMonth())}-${getFormatedNumber(date.getDate())}`,
   identifier: 'identifier',
   name: 'input-name',
   // Label
