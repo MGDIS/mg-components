@@ -18,4 +18,28 @@
       }
     }
   }
+
+  &.mg-input--width-16 {
+    .mg-input__box {
+      width: 21rem;
+    }
+  }
+
+  &.mg-input--width-4 {
+    .mg-input__box {
+      width: 7rem;
+    }
+  }
+
+  &.mg-input--width-2 {
+    .mg-input__box {
+      width: 5rem;
+    }
+  }
+
+  &.mg-input--width-col-4-8 {
+    .mg-input__box {
+      width: 21rem;
+    }
+  }
 }

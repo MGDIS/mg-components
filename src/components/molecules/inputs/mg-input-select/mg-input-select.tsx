@@ -1,5 +1,6 @@
 import { Component, Event, h, Prop, State, EventEmitter, Watch } from '@stencil/core';
 import { MgInput } from '../MgInput';
+import { Width } from '../MgInput.conf';
 import { createID, ClassList, allItemsAreString } from '../../../../utils/components.utils';
 import { messages } from '../../../../locales';
 import { SelectOption, OptGroup } from './mg-input-select.conf';
@@ -147,6 +148,11 @@ export class MgInputSelect {
   @Prop() disabled: boolean = false;
 
   /**
+   * Define input width
+   */
+  @Prop() width: Width = 'auto';
+
+  /**
    * Add a tooltip message next to the input
    */
   @Prop() tooltip: string;
@@ -252,6 +258,7 @@ export class MgInputSelect {
         labelHide={this.labelHide}
         required={this.required}
         readonly={this.readonly}
+        width={this.width}
         value={this.value}
         readonlyValue={undefined}
         tooltip={this.tooltip}

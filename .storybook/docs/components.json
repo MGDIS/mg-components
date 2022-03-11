@@ -1,8 +1,8 @@
 {
-  "timestamp": "2022-03-09T14:04:26",
+  "timestamp": "2022-03-11T11:26:06",
   "compiler": {
     "name": "@stencil/core",
-    "version": "2.14.0",
+    "version": "2.14.1",
     "typescriptVersion": "4.5.4"
   },
   "components": [
@@ -1355,6 +1355,40 @@
           ],
           "optional": false,
           "required": false
+        },
+        {
+          "name": "width",
+          "type": "\"auto\" | \"full\" | 16 | 2 | 4",
+          "mutable": false,
+          "attr": "width",
+          "reflectToAttr": false,
+          "docs": "Define input width",
+          "docsTags": [],
+          "default": "'auto'",
+          "values": [
+            {
+              "value": "auto",
+              "type": "string"
+            },
+            {
+              "value": "full",
+              "type": "string"
+            },
+            {
+              "value": "16",
+              "type": "number"
+            },
+            {
+              "value": "2",
+              "type": "number"
+            },
+            {
+              "value": "4",
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
         }
       ],
       "methods": [],
@@ -1623,6 +1657,40 @@
           "values": [
             {
               "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "width",
+          "type": "\"auto\" | \"full\" | 16 | 2 | 4",
+          "mutable": false,
+          "attr": "width",
+          "reflectToAttr": false,
+          "docs": "Define input width",
+          "docsTags": [],
+          "default": "'full'",
+          "values": [
+            {
+              "value": "auto",
+              "type": "string"
+            },
+            {
+              "value": "full",
+              "type": "string"
+            },
+            {
+              "value": "16",
+              "type": "number"
+            },
+            {
+              "value": "2",
+              "type": "number"
+            },
+            {
+              "value": "4",
+              "type": "number"
             }
           ],
           "optional": false,
@@ -2244,6 +2312,40 @@
           ],
           "optional": false,
           "required": false
+        },
+        {
+          "name": "width",
+          "type": "\"auto\" | \"full\" | 16 | 2 | 4",
+          "mutable": false,
+          "attr": "width",
+          "reflectToAttr": false,
+          "docs": "Define input width",
+          "docsTags": [],
+          "default": "'auto'",
+          "values": [
+            {
+              "value": "auto",
+              "type": "string"
+            },
+            {
+              "value": "full",
+              "type": "string"
+            },
+            {
+              "value": "16",
+              "type": "number"
+            },
+            {
+              "value": "2",
+              "type": "number"
+            },
+            {
+              "value": "4",
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
         }
       ],
       "methods": [],
@@ -2641,6 +2743,40 @@
           ],
           "optional": false,
           "required": false
+        },
+        {
+          "name": "width",
+          "type": "\"auto\" | \"full\" | 16 | 2 | 4",
+          "mutable": false,
+          "attr": "width",
+          "reflectToAttr": false,
+          "docs": "Define input width",
+          "docsTags": [],
+          "default": "'full'",
+          "values": [
+            {
+              "value": "auto",
+              "type": "string"
+            },
+            {
+              "value": "full",
+              "type": "string"
+            },
+            {
+              "value": "16",
+              "type": "number"
+            },
+            {
+              "value": "2",
+              "type": "number"
+            },
+            {
+              "value": "4",
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
         }
       ],
       "methods": [],
@@ -3008,6 +3144,40 @@
           "values": [
             {
               "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "width",
+          "type": "\"auto\" | \"full\" | 16 | 2 | 4",
+          "mutable": false,
+          "attr": "width",
+          "reflectToAttr": false,
+          "docs": "Define input width",
+          "docsTags": [],
+          "default": "'full'",
+          "values": [
+            {
+              "value": "auto",
+              "type": "string"
+            },
+            {
+              "value": "full",
+              "type": "string"
+            },
+            {
+              "value": "16",
+              "type": "number"
+            },
+            {
+              "value": "2",
+              "type": "number"
+            },
+            {
+              "value": "4",
+              "type": "number"
             }
           ],
           "optional": false,

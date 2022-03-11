@@ -39,7 +39,7 @@ describe('mg-input-checkbox', () => {
     try {
       await getPage({ label: value, value: cloneDeep(items) });
     } catch (err) {
-      expect(err.message).toMatch('prop "label" is required');
+      expect(err.message).toMatch('<mg-input> prop "label" is required');
     }
   });
 

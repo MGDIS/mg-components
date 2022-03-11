@@ -51,7 +51,7 @@ describe('mg-input-select', () => {
     try {
       await getPage({ label: value, items: ['blu', 'bli', 'blo', 'bla'] });
     } catch (err) {
-      expect(err.message).toMatch('prop "label" is required');
+      expect(err.message).toMatch('<mg-input> prop "label" is required');
     }
   });
 

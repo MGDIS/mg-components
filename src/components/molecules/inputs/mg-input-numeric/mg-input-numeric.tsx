@@ -1,5 +1,6 @@
 import { Component, Element, Event, h, Prop, EventEmitter, State, Watch } from '@stencil/core';
 import { MgInput } from '../MgInput';
+import { Width } from '../MgInput.conf';
 import { types } from './mg-input-numeric.conf';
 import { createID, ClassList } from '../../../../utils/components.utils';
 import { messages } from '../../../../locales';
@@ -115,6 +116,11 @@ export class MgInputNumeric {
    * Define if input is disabled
    */
   @Prop() disabled: boolean = false;
+
+  /**
+   * Define input width
+   */
+  @Prop() width: Width = 'auto';
 
   /**
    * Add a tooltip message next to the input
@@ -296,6 +302,7 @@ export class MgInputNumeric {
         labelHide={this.labelHide}
         required={this.required}
         readonly={this.readonly}
+        width={this.width}
         value={this.value}
         readonlyValue={this.readonlyValue}
         tooltip={this.tooltip}
