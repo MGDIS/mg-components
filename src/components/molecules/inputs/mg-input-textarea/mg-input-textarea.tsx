@@ -13,8 +13,12 @@ export class MgInputTextarea {
    * Internal *
    ************/
 
+  // classes
   private classFocus = 'is-focused';
   private classError = 'is-not-valid';
+
+  // HTML selector
+  private input: HTMLTextAreaElement;
 
   /**************
    * Decorators *
@@ -141,10 +145,10 @@ export class MgInputTextarea {
 
   /**
    * Handle input event
-   * @param event
    */
-  private handleInput = (event: InputEvent & { target: HTMLInputElement }) => {
-    this.value = event.target.value;
+  private handleInput = () => {
+    this.checkValidity();
+    this.value = this.input.value;
     this.valueChange.emit(this.value);
   };
 
@@ -158,40 +162,51 @@ export class MgInputTextarea {
 
   /**
    * Handle blur event
-   * @param event
    */
-  private handleBlur = (event: FocusEvent) => {
+  private handleBlur = () => {
     // Manage focus
     this.classList.delete(this.classFocus);
     this.classList = new ClassList(this.classList.classes);
     // Check validity
-    this.checkValidity(event.target);
+    this.checkValidity();
+    this.checkError();
   };
 
   /**
-   * Check if input is valid
-   * @param element
+   * Get pattern validity
+   * Pattern is not defined on textarea field : https://developer.mozilla.org/fr/docs/Web/HTML/Element/Textarea
+   * @returns {boolean}
    */
-  private checkValidity(element) {
-    // Pattern is not defined on textarea field : https://developer.mozilla.org/fr/docs/Web/HTML/Element/Textarea
-    const patternValidity = this.pattern === undefined || new RegExp(`^${this.pattern}$`, 'u').test(this.value);
-    const validity = element.checkValidity() && patternValidity;
-    // Set error message
-    this.errorMessage = undefined;
-    if (!validity && !patternValidity) {
-      this.errorMessage = this.patternErrorMessage;
-    }
-    // required
-    else if (!validity && element.validity.valueMissing) {
-      this.errorMessage = messages.errors.required;
-    }
+  private getPatternValidity = (): boolean => this.pattern === undefined || new RegExp(`^${this.pattern}$`, 'u').test(this.value);
+
+  /**
+   * Check if input is valid
+   */
+  private checkValidity() {
+    const patternValidity = this.getPatternValidity();
+    const validity = this.input?.checkValidity && this.input.checkValidity() && patternValidity;
 
     // Set validity
     this.valid = validity;
     this.invalid = !validity;
+  }
 
+  /**
+   * Check input errors
+   */
+  private checkError() {
+    const patternValidity = this.getPatternValidity();
+    // Set error message
+    this.errorMessage = undefined;
+    if (!this.valid && !patternValidity) {
+      this.errorMessage = this.patternErrorMessage;
+    }
+    // required
+    else if (!this.valid && this.input.validity.valueMissing) {
+      this.errorMessage = messages.errors.required;
+    }
     // Update class
-    if (validity) {
+    if (this.valid) {
       this.classList.delete(this.classError);
     } else {
       this.classList.add(this.classError);
@@ -218,6 +233,10 @@ export class MgInputTextarea {
 
   componentWillLoad() {
     this.validatePattern();
+
+    // return a promise tu process action only in the FIRST render().
+    // https://stenciljs.com/docs/component-lifecycle#componentwillload
+    return setTimeout(() => this.checkValidity.bind(this)(), 0);
   }
 
   render() {
@@ -254,6 +273,7 @@ export class MgInputTextarea {
           onInput={this.handleInput}
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
+          ref={el => (this.input = el as HTMLTextAreaElement)}
         ></textarea>
       </MgInput>
     );

@@ -14,7 +14,11 @@ export class MgInputDate {
    * Internal *
    ************/
 
+  // classes
   private classError = 'is-not-valid';
+
+  // HTML selector
+  private input: HTMLInputElement;
 
   /**************
    * Decorators *
@@ -131,19 +135,19 @@ export class MgInputDate {
 
   /**
    * Handle input event
-   * @param event
    */
-  private handleInput = (event: InputEvent & { target: HTMLInputElement }) => {
-    this.value = event.target.value;
+  private handleInput = () => {
+    this.checkValidity();
+    this.value = this.input.value;
     this.valueChange.emit(this.value);
   };
 
   /**
    * Handle blur event
-   * @param event
    */
-  private handleBlur = (event: FocusEvent) => {
-    this.checkValidity(event.target);
+  private handleBlur = () => {
+    this.checkValidity();
+    this.checkError();
   };
 
   /**
@@ -158,40 +162,53 @@ export class MgInputDate {
 
   /**
    * Check if input is valid
-   * @param element
    */
-  private checkValidity(element) {
-    const validity = element.checkValidity();
+  private checkValidity() {
+    if (!this.readonly && this.input !== undefined) {
+      const validity = this.input.checkValidity();
 
-    // Set validity
-    this.valid = validity;
-    this.invalid = !validity;
+      // Set validity
+      this.valid = validity;
+      this.invalid = !validity;
+    }
+  }
 
+  /**
+   * Set error message
+   */
+  private setErrorMessage() {
+    // required
+    if (this.input.validity.valueMissing) {
+      this.errorMessage = messages.errors.required;
+    }
+    // min & max
+    else if ((this.input.validity.rangeUnderflow || this.input.validity.rangeOverflow) && this.min?.length > 0 && this.max?.length > 0) {
+      this.errorMessage = messages.errors.date.minMax.replace('{min}', localeDate(this.min)).replace('{max}', localeDate(this.max));
+    }
+    // min
+    else if (this.input.validity.rangeUnderflow) {
+      this.errorMessage = messages.errors.date.min.replace('{min}', localeDate(this.min));
+    }
+    //max
+    else if (this.input.validity.rangeOverflow) {
+      this.errorMessage = messages.errors.date.max.replace('{max}', localeDate(this.max));
+    }
+    // wrong date format
+    // element.validity.badInput is default error message
+    else {
+      this.errorMessage = messages.errors.date.badInput.replace('{min}', this.min?.length > 0 ? localeDate(this.min) : localeDate('1900-01-01'));
+    }
+  }
+
+  /**
+   * Check input errors
+   */
+  private checkError() {
     // Set error message
     this.errorMessage = undefined;
-    if (!validity) {
+    if (!this.valid) {
+      this.setErrorMessage();
       this.classList.add(this.classError);
-      // required
-      if (element.validity.valueMissing) {
-        this.errorMessage = messages.errors.required;
-      }
-      // min & max
-      else if ((element.validity.rangeUnderflow || element.validity.rangeOverflow) && this.min?.length > 0 && this.max?.length > 0) {
-        this.errorMessage = messages.errors.date.minMax.replace('{min}', localeDate(this.min)).replace('{max}', localeDate(this.max));
-      }
-      // min
-      else if (element.validity.rangeUnderflow) {
-        this.errorMessage = messages.errors.date.min.replace('{min}', localeDate(this.min));
-      }
-      //max
-      else if (element.validity.rangeOverflow) {
-        this.errorMessage = messages.errors.date.max.replace('{max}', localeDate(this.max));
-      }
-      // wrong date format
-      // element.validity.badInput is default error message
-      else {
-        this.errorMessage = messages.errors.date.badInput.replace('{min}', this.min?.length > 0 ? localeDate(this.min) : localeDate('1900-01-01'));
-      }
     } else {
       this.classList.delete(this.classError);
     }
@@ -205,6 +222,10 @@ export class MgInputDate {
     this.validateValue(this.value);
     this.validateMin(this.min);
     this.validateMax(this.max);
+
+    // return a promise tu process action only in the FIRST render().
+    // https://stenciljs.com/docs/component-lifecycle#componentwillload
+    return setTimeout(() => this.checkValidity.bind(this)(), 0);
   }
 
   render() {
@@ -240,6 +261,7 @@ export class MgInputDate {
           onInput={this.handleInput}
           onBlur={this.handleBlur}
           pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"
+          ref={el => (this.input = el as HTMLInputElement)}
         />
       </MgInput>
     );

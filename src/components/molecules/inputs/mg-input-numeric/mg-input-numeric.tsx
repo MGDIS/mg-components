@@ -1,6 +1,6 @@
 import { Component, Element, Event, h, Prop, EventEmitter, State, Watch } from '@stencil/core';
 import { MgInput } from '../MgInput';
-import { types } from './mg-input-numeric.conf';
+import { types, InputError } from './mg-input-numeric.conf';
 import { createID, ClassList } from '../../../../utils/components.utils';
 import { messages } from '../../../../locales';
 import { localeCurrency, localeNumber } from '../../../../utils/locale.utils';
@@ -19,8 +19,12 @@ export class MgInputNumeric {
   private storedValue: string;
   private numericValue: number;
   private readonlyValue: string;
+
   // Classes
   private classError: string = 'is-not-valid';
+
+  // HTML selector
+  private input: HTMLInputElement;
 
   /**************
    * Decorators *
@@ -49,15 +53,8 @@ export class MgInputNumeric {
       }
       // Set value and input value
       this.value = newValue;
-      try {
-        const elementInput = this.element.shadowRoot.getElementById(this.identifier) as HTMLInputElement;
-        if (elementInput !== null) elementInput.value = this.value;
-      } catch {
-        /* IE FIX */
-        /* There is no Shadow DOM on IE so we need to access via document */
-        const elementInput = document.getElementById(this.identifier) as HTMLInputElement;
-        if (elementInput !== null) elementInput.value = this.value;
-      }
+      if (this.input !== undefined) this.input.value = this.value;
+
       // emit numeric value
       this.numericValue = this.value !== '' && this.value !== null ? parseFloat(this.value.replace(',', '.')) : null;
       this.valueChange.emit(this.numericValue);
@@ -97,7 +94,6 @@ export class MgInputNumeric {
   /**
    * Input placeholder.
    * It should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text.
-   *
    */
   @Prop() placeholder: string;
 
@@ -181,10 +177,11 @@ export class MgInputNumeric {
 
   /**
    * Handle input event
-   * @param event
    */
-  private handleInput = (event: InputEvent & { target: HTMLInputElement }) => {
-    this.value = event.target.value;
+  private handleInput = () => {
+    // Check validity
+    this.checkValidity();
+    this.value = this.input.value;
   };
 
   /**
@@ -196,62 +193,89 @@ export class MgInputNumeric {
 
   /**
    * Handle blur event
-   * @param event
    */
-  private handleBlur = (event: FocusEvent) => {
+  private handleBlur = () => {
     // Check validity
-    this.checkValidity(event.target as HTMLInputElement);
+    this.checkValidity();
+    this.checkError();
     // Display readonly value
     this.displayValue = this.readonlyValue;
   };
 
   /**
    * Check if input is valid
-   * @param element
    */
-  private checkValidity(element: HTMLInputElement) {
-    let validity = element.checkValidity();
+  private checkValidity() {
+    if (!this.readonly) {
+      const error = this.getInputError();
+      const validity = error === null;
+
+      // Set validity
+      this.valid = validity;
+      this.invalid = !validity;
+    }
+  }
+
+  /**
+   * Set error message
+   */
+  private setErrorMessage() {
+    const inputError = this.getInputError();
+    if (inputError === InputError.REQUIRED) {
+      this.errorMessage = messages.errors[inputError];
+    } else {
+      this.errorMessage = messages.errors.numeric[inputError].replace('{min}', `${this.formatValue(this.min)}`).replace('{max}', `${this.formatValue(this.max)}`);
+    }
+  }
+
+  /**
+   * Check input errors
+   */
+  private checkError() {
     // Set error message
     this.errorMessage = undefined;
+
+    // Update class
+    if (!this.valid) {
+      this.setErrorMessage();
+      this.classList.add(this.classError);
+    } else {
+      this.classList.delete(this.classError);
+    }
+  }
+
+  /**
+   * get input error code
+   * @returns {null | InputError}
+   */
+  private getInputError = (): null | InputError => {
+    let inputError = null;
+    if (this.input === undefined) return inputError;
+
     // required
-    if (!validity && element.validity.valueMissing) {
-      this.errorMessage = messages.errors.required;
+    if (!this.input.checkValidity() && this.input.validity.valueMissing) {
+      inputError = InputError.REQUIRED;
     }
     // Min & Max
     if (this.min !== undefined && this.numericValue < this.min && this.max === undefined) {
       // Only a min value is set
-      validity = false;
-      this.errorMessage = messages.errors.numeric.min.replace('{min}', `${this.formatValue(this.min)}`);
+      inputError = InputError.MIN;
     } else if (this.max !== undefined && this.numericValue > this.max && this.min === undefined) {
       // Only a max value is set
-      validity = false;
-      this.errorMessage = messages.errors.numeric.max.replace('{max}', `${this.formatValue(this.max)}`);
+      inputError = InputError.MAX;
     } else if ((this.min !== undefined && this.numericValue < this.min) || (this.max !== undefined && this.numericValue > this.max)) {
       // both min and max values are set
-      validity = false;
-      this.errorMessage = messages.errors.numeric.minMax.replace('{min}', `${this.formatValue(this.min)}`).replace('{max}', `${this.formatValue(this.max)}`);
+      inputError = InputError.MINMAX;
     }
-
-    // Set validity
-    this.valid = validity;
-    this.invalid = !validity;
-
-    // Update class
-    if (validity) {
-      this.classList.delete(this.classError);
-    } else {
-      this.classList.add(this.classError);
-    }
-  }
+    return inputError;
+  };
 
   /**
    * Format value based on type
    * @param value {number}
    * @returns {string} formated local value
    */
-  private formatValue(value: number): string {
-    return this.type === 'currency' ? localeCurrency(value) : localeNumber(value);
-  }
+  private formatValue = (value: number): string => (this.type === 'currency' ? localeCurrency(value) : localeNumber(value));
 
   /**
    * Validate append slot
@@ -276,6 +300,10 @@ export class MgInputNumeric {
     // Set displayed value
     this.displayValue = this.readonlyValue;
     this.validateType(this.type);
+
+    // return a promise tu process action only in the FIRST render().
+    // https://stenciljs.com/docs/component-lifecycle#componentwillload
+    return setTimeout(() => this.checkValidity.bind(this)(), 0);
   }
 
   componentDidLoad() {
@@ -319,6 +347,7 @@ export class MgInputNumeric {
           onInput={this.handleInput}
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
+          ref={el => (this.input = el as HTMLInputElement)}
         />
         <slot name="append-input"></slot>
       </MgInput>

@@ -7,13 +7,20 @@ import { messages } from '../../../../../locales';
 import { localeCurrency, localeNumber } from '../../../../../utils/locale.utils';
 import { types } from '../mg-input-numeric.conf';
 
-const getPage = (args, slot?) =>
-  newSpecPage({
+const getPage = (args, slot?) => {
+  const page = newSpecPage({
     components: [MgInputNumeric, MgButton, MgIcon],
     template: () => <mg-input-numeric {...args}>{slot}</mg-input-numeric>,
   });
+  jest.runAllTimers();
+  return page;
+};
+
+// const setTimeOutSpy = jest.spyOn(window, 'setTimeout')
 
 describe('mg-input-numeric', () => {
+  beforeEach(() => jest.useFakeTimers());
+  afterEach(() => jest.runOnlyPendingTimers());
   describe.each(types)('type %s', type => {
     test.each([
       { label: 'label', identifier: 'identifier', type },

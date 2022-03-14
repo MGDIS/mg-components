@@ -12,16 +12,6 @@ import { CheckboxItem, CheckboxValue } from './mg-input-checkbox.conf';
 const isCheckboxItem = (item: CheckboxItem): boolean =>
   typeof item === 'object' && typeof item.title === 'string' && (item.value === null || typeof item.value === 'boolean') && item.value !== undefined;
 
-/**
- * utility function to get shadow-root HTML node element
- * @param element
- * @returns {HTMLElement}
- */
-const getShadowRootElementFromElement = (element: HTMLElement): HTMLElement => {
-  if (element.parentElement === null) return element;
-  return getShadowRootElementFromElement(element.parentElement);
-};
-
 @Component({
   tag: 'mg-input-checkbox',
   styleUrl: 'mg-input-checkbox.scss',
@@ -31,7 +21,12 @@ export class MgInputCheckbox {
   /************
    * Internal *
    ************/
+
+  // classes
   private classError = 'is-not-valid';
+
+  // HTML selector
+  private inputs: HTMLInputElement[] = [];
 
   /**************
    * Decorators *
@@ -158,45 +153,57 @@ export class MgInputCheckbox {
     });
 
     this.value = this.checkboxItems.map(o => ({ value: o.value, title: o.title, disabled: o.disabled }));
+    this.checkValidity();
     this.valueChange.emit(this.value);
   };
 
   /**
    * Handle blur event
-   * @param event
    */
-  private handleBlur = (event: FocusEvent) => {
+  private handleBlur = () => {
     // Check validity
-    this.checkValidity(event.target);
+    this.checkValidity();
+    this.checkError();
   };
 
   /**
    * Check if input is valid
-   * @param element
    */
-  private checkValidity(element) {
-    // we check group validity
-    const shadowRootElement = getShadowRootElementFromElement(element);
-    const inputs = Array.from(shadowRootElement.querySelectorAll('input[type=checkbox]'));
-    const validity = inputs.find((element: HTMLInputElement) => !element.disabled && element.checkValidity()) !== undefined;
+  private checkValidity() {
+    if (!this.readonly) {
+      const validity = this.getInvalidElement() === undefined;
+
+      // Set validity
+      this.valid = validity;
+      this.invalid = !validity;
+    }
+  }
+
+  /**
+   * Check input errors
+   */
+  private checkError() {
+    const invalidElement = this.getInvalidElement();
 
     // Set error message
     this.errorMessage = undefined;
-    if (!validity && element.validity.valueMissing) {
+    if (!this.valid && invalidElement.validity.valueMissing) {
       this.errorMessage = messages.errors.required;
     }
 
-    // Set validity
-    this.valid = validity;
-    this.invalid = !validity;
-
     // Update class
-    if (validity) {
+    if (this.valid) {
       this.classList.delete(this.classError);
     } else {
       this.classList.add(this.classError);
     }
   }
+
+  /**
+   * get invalid element
+   * @returns element: HTMLInputElement
+   */
+  private getInvalidElement = () => this.inputs.find((element: HTMLInputElement) => !element.disabled && !element.checkValidity());
 
   /*************
    * Lifecycle *
@@ -205,6 +212,10 @@ export class MgInputCheckbox {
   componentWillLoad() {
     // Check values format
     this.validateValue(this.value);
+
+    // return a promise tu process action only in the FIRST render().
+    // https://stenciljs.com/docs/component-lifecycle#componentwillload
+    return setTimeout(() => this.checkValidity.bind(this)(), 0);
   }
 
   render() {
@@ -245,6 +256,7 @@ export class MgInputCheckbox {
                   indeterminate={input.value === null}
                   onInput={this.handleInput}
                   onBlur={this.handleBlur}
+                  ref={el => this.inputs.push(el as HTMLInputElement)}
                 />
                 <label htmlFor={input.id}>{input.title}</label>
               </li>
