@@ -16,8 +16,6 @@ const getPage = (args, slot?) => {
   return page;
 };
 
-// const setTimeOutSpy = jest.spyOn(window, 'setTimeout')
-
 describe('mg-input-numeric', () => {
   beforeEach(() => jest.useFakeTimers());
   afterEach(() => jest.runOnlyPendingTimers());

@@ -207,8 +207,7 @@ export class MgInputNumeric {
    */
   private checkValidity() {
     if (!this.readonly) {
-      const error = this.getInputError();
-      const validity = error === null;
+      const validity = this.getInputError() === null;
 
       // Set validity
       this.valid = validity;
@@ -301,9 +300,9 @@ export class MgInputNumeric {
     this.displayValue = this.readonlyValue;
     this.validateType(this.type);
 
-    // return a promise tu process action only in the FIRST render().
+    // return a promise to process action only in the FIRST render().
     // https://stenciljs.com/docs/component-lifecycle#componentwillload
-    return setTimeout(() => this.checkValidity.bind(this)(), 0);
+    return setTimeout(() => this.checkValidity(), 0);
   }
 
   componentDidLoad() {

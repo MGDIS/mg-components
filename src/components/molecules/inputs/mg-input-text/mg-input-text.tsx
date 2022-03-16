@@ -257,9 +257,9 @@ export class MgInputText {
       this.classList.add('mg-input--has-icon');
     }
     this.validatePattern();
-    // return a promise tu process action only in the FIRST render().
+    // return a promise to process action only in the FIRST render().
     // https://stenciljs.com/docs/component-lifecycle#componentwillload
-    return setTimeout(() => this.checkValidity.bind(this)(), 0);
+    return setTimeout(() => this.checkValidity(), 0);
   }
 
   componentDidLoad() {

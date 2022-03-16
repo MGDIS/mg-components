@@ -1,5 +1,6 @@
 import { Component, Event, EventEmitter, h, Prop, State, Watch } from '@stencil/core';
 import { MgInput } from '../MgInput';
+import { InputError } from './mg-input-date.conf';
 import { createID, ClassList } from '../../../../utils/components.utils';
 import { localeDate, dateRegExp } from '../../../../utils/locale.utils';
 import { messages } from '../../../../locales';
@@ -174,24 +175,44 @@ export class MgInputDate {
   }
 
   /**
-   * Set error message
+   * get input error code
+   * @returns {null | InputError}
    */
-  private setErrorMessage() {
+  private getInputError = (): null | InputError => {
+    let inputError = null;
+
     // required
     if (this.input.validity.valueMissing) {
-      this.errorMessage = messages.errors.required;
+      inputError = InputError.REQUIRED;
     }
     // min & max
     else if ((this.input.validity.rangeUnderflow || this.input.validity.rangeOverflow) && this.min?.length > 0 && this.max?.length > 0) {
-      this.errorMessage = messages.errors.date.minMax.replace('{min}', localeDate(this.min)).replace('{max}', localeDate(this.max));
+      inputError = InputError.MINMAX;
     }
     // min
     else if (this.input.validity.rangeUnderflow) {
-      this.errorMessage = messages.errors.date.min.replace('{min}', localeDate(this.min));
+      inputError = InputError.MIN;
     }
     //max
     else if (this.input.validity.rangeOverflow) {
-      this.errorMessage = messages.errors.date.max.replace('{max}', localeDate(this.max));
+      inputError = InputError.MAX;
+    }
+
+    return inputError;
+  };
+
+  /**
+   * Set error message
+   */
+  private setErrorMessage() {
+    const inputError = this.getInputError();
+    // required
+    if (inputError === InputError.REQUIRED) {
+      this.errorMessage = messages.errors[inputError];
+    }
+    // min, max & minMax
+    else if ([InputError.MIN, InputError.MAX, InputError.MINMAX].includes(inputError)) {
+      this.errorMessage = messages.errors.date[inputError].replace('{min}', localeDate(this.min)).replace('{max}', localeDate(this.max));
     }
     // wrong date format
     // element.validity.badInput is default error message
@@ -223,9 +244,9 @@ export class MgInputDate {
     this.validateMin(this.min);
     this.validateMax(this.max);
 
-    // return a promise tu process action only in the FIRST render().
+    // return a promise to process action only in the FIRST render().
     // https://stenciljs.com/docs/component-lifecycle#componentwillload
-    return setTimeout(() => this.checkValidity.bind(this)(), 0);
+    return setTimeout(() => this.checkValidity(), 0);
   }
 
   render() {
