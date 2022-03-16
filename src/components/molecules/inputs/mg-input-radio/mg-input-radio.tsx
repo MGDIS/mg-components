@@ -21,7 +21,11 @@ export class MgInputRadio {
    * Internal *
    ************/
 
+  // classes
   private classError = 'is-not-valid';
+
+  // HTML selector
+  private inputs: HTMLInputElement[] = [];
 
   /**************
    * Decorators *
@@ -145,44 +149,59 @@ export class MgInputRadio {
 
   /**
    * Handle input event
-   * @param event
    */
   private handleInput = (event: InputEvent & { target: HTMLInputElement }) => {
+    this.checkValidity();
     this.value = this.options.find(o => o.value.toString() === event.target.value).value;
     this.valueChange.emit(this.value);
   };
 
   /**
    * Handle blur event
-   * @param event
    */
-  private handleBlur = (event: FocusEvent) => {
-    this.checkValidity(event.target);
+  private handleBlur = () => {
+    this.checkValidity();
+    this.checkError();
   };
 
   /**
    * Check if input is valid
-   * @param element
    */
-  private checkValidity(element) {
-    const validity = element.checkValidity();
+  private checkValidity() {
+    if (!this.readonly) {
+      const validity = this.getInvalidElement() === undefined;
+
+      // Set validity
+      this.valid = validity;
+      this.invalid = !validity;
+    }
+  }
+
+  /**
+   * Check input errors
+   */
+  private checkError() {
+    const invalidElement = this.getInvalidElement();
+
     // Set error message
     this.errorMessage = undefined;
-    if (!validity && element.validity.valueMissing) {
+    if (!this.valid && invalidElement.validity.valueMissing) {
       this.errorMessage = messages.errors.required;
     }
 
-    // Set validity
-    this.valid = validity;
-    this.invalid = !validity;
-
     // Update class
-    if (validity) {
+    if (this.valid) {
       this.classList.delete(this.classError);
     } else {
       this.classList.add(this.classError);
     }
   }
+
+  /**
+   * get invalid element
+   * @returns element: HTMLInputElement
+   */
+  private getInvalidElement = () => this.inputs.find((element: HTMLInputElement) => !element.disabled && !element.checkValidity());
 
   /*************
    * Lifecycle *
@@ -191,6 +210,10 @@ export class MgInputRadio {
   componentWillLoad() {
     // Check items format
     this.validateItems(this.items);
+
+    // return a promise to process action only in the FIRST render().
+    // https://stenciljs.com/docs/component-lifecycle#componentwillload
+    return setTimeout(() => this.checkValidity(), 0);
   }
 
   render() {
@@ -226,6 +249,7 @@ export class MgInputRadio {
                 required={this.required}
                 onBlur={this.handleBlur}
                 onInput={this.handleInput}
+                ref={el => this.inputs.push(el as HTMLInputElement)}
               />
               <label htmlFor={this.identifier + '_' + index}>{input.title}</label>
             </li>

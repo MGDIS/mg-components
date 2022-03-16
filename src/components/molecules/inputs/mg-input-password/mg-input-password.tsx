@@ -13,7 +13,11 @@ export class MgInputPassword {
    * Internal *
    ************/
 
+  // classes
   private classError = 'is-not-valid';
+
+  // HTML selector
+  private input: HTMLInputElement;
 
   /**************
    * Decorators *
@@ -110,40 +114,46 @@ export class MgInputPassword {
 
   /**
    * Handle input event
-   * @param event
    */
-  private handleInput = (event: InputEvent & { target: HTMLInputElement }) => {
-    this.value = event.target.value;
+  private handleInput = () => {
+    this.checkValidity();
+    this.value = this.input.value;
     this.valueChange.emit(this.value);
   };
 
   /**
    * Handle blur event
-   * @param event
    */
-  private handleBlur = (event: FocusEvent) => {
-    this.checkValidity(event.target);
+  private handleBlur = () => {
+    this.checkValidity();
+    this.checkError();
   };
 
   /**
    * Check if input is valid
-   * @param element
    */
-  private checkValidity(element) {
-    const validity = element.checkValidity();
+  private checkValidity() {
+    if (!this.readonly && this.input !== undefined) {
+      const validity = this.input.checkValidity();
+
+      // Set validity
+      this.valid = validity;
+      this.invalid = !validity;
+    }
+  }
+
+  /**
+   * Check input errors
+   */
+  private checkError() {
     // Set error message
     this.errorMessage = undefined;
     // required
-    if (!validity && element.validity.valueMissing) {
+    if (!this.valid && this.input.validity.valueMissing) {
       this.errorMessage = messages.errors.required;
     }
-
-    // Set validity
-    this.valid = validity;
-    this.invalid = !validity;
-
     // Update class
-    if (validity) {
+    if (this.valid) {
       this.classList.delete(this.classError);
     } else {
       this.classList.add(this.classError);
@@ -153,6 +163,12 @@ export class MgInputPassword {
   /*************
    * Lifecycle *
    *************/
+
+  componentWillLoad() {
+    // return a promise to process action only in the FIRST render().
+    // https://stenciljs.com/docs/component-lifecycle#componentwillload
+    return setTimeout(() => this.checkValidity(), 0);
+  }
 
   render() {
     return (
@@ -186,6 +202,7 @@ export class MgInputPassword {
           required={this.required}
           onInput={this.handleInput}
           onBlur={this.handleBlur}
+          ref={el => (this.input = el as HTMLInputElement)}
         />
       </MgInput>
     );

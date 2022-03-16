@@ -5,13 +5,20 @@ import { MgButton } from '../../../../atoms/mg-button/mg-button';
 import { MgIcon } from '../../../../atoms/mg-icon/mg-icon';
 import { messages } from '../../../../../locales';
 
-const getPage = (args, content?) =>
-  newSpecPage({
+const getPage = (args, content?) => {
+  const page = newSpecPage({
     components: [MgInputText, MgButton, MgIcon],
     template: () => <mg-input-text {...args}>{content}</mg-input-text>,
   });
 
+  jest.runAllTimers();
+
+  return page;
+};
+
 describe('mg-input-text', () => {
+  beforeEach(() => jest.useFakeTimers());
+  afterEach(() => jest.runOnlyPendingTimers());
   test.each([
     { label: 'label', identifier: 'identifier' },
     { label: 'label', identifier: 'identifier', labelHide: true },
