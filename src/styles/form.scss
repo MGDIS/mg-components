@@ -8,9 +8,4 @@
   --mg-inputs-title-horizontal-space: 3rem;
   --mg-inputs-title-width: 15rem;
   --mg-inputs-shrink: 0;
-
-  // TODO 11/03/2022 STOPED WORKING HERE
-  .mg-inputs-width-col-4-8 {
-    --mg-inputs-title-width: calc(100% / 3);
-  }
 }
