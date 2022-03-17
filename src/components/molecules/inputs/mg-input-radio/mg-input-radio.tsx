@@ -3,6 +3,7 @@ import { MgInput } from '../MgInput';
 import { createID, ClassList, allItemsAreString } from '../../../../utils/components.utils';
 import { messages } from '../../../../locales';
 import { RadioOption } from './mg-input-radio.conf';
+import { InputClass } from '../MgInput.conf';
 
 /**
  * type Option validation function
@@ -22,7 +23,7 @@ export class MgInputRadio {
    ************/
 
   // classes
-  private classError = 'is-not-valid';
+  private classError = InputClass.ERROR;
 
   // HTML selector
   private inputs: HTMLInputElement[] = [];
@@ -101,18 +102,12 @@ export class MgInputRadio {
    * Define if input is readonly
    */
   @Prop() readonly: boolean = false;
-  @Watch('readonly')
-  handleReadOnly() {
-    this.classList.delete(this.classError);
-  }
+
   /**
    * Define if input is disabled
    */
   @Prop() disabled: boolean = false;
-  @Watch('disabled')
-  handleDisabled() {
-    this.classList.delete(this.classError);
-  }
+
   /**
    * Add a tooltip message next to the input
    */
@@ -231,6 +226,7 @@ export class MgInputRadio {
         labelOnTop={this.labelOnTop}
         labelHide={this.labelHide}
         required={this.required}
+        disabled={this.disabled}
         readonly={this.readonly}
         width={undefined}
         value={this.value && this.value.toString()}

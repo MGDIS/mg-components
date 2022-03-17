@@ -1,8 +1,9 @@
-import { Component, Event, h, Prop, EventEmitter, State, Watch } from '@stencil/core';
+import { Component, Event, h, Prop, EventEmitter, State } from '@stencil/core';
 import { MgInput } from '../MgInput';
 import { Width } from '../MgInput.conf';
 import { createID, ClassList } from '../../../../utils/components.utils';
 import { messages } from '../../../../locales';
+import { InputClass } from '../MgInput.conf';
 
 @Component({
   tag: 'mg-input-textarea',
@@ -16,7 +17,7 @@ export class MgInputTextarea {
 
   // classes
   private classFocus = 'is-focused';
-  private classError = 'is-not-valid';
+  private classError = InputClass.ERROR;
 
   // HTML selector
   private input: HTMLTextAreaElement;
@@ -78,18 +79,12 @@ export class MgInputTextarea {
    * Define if input is readonly
    */
   @Prop() readonly: boolean = false;
-  @Watch('readonly')
-  handleReadOnly() {
-    this.classList.delete(this.classError);
-  }
+
   /**
    * Define if input is disabled
    */
   @Prop() disabled: boolean = false;
-  @Watch('disabled')
-  handleDisabled() {
-    this.classList.delete(this.classError);
-  }
+
   /**
    * Define input width
    */
@@ -264,6 +259,7 @@ export class MgInputTextarea {
         required={this.required}
         readonly={this.readonly}
         width={this.width}
+        disabled={this.disabled}
         value={this.value}
         readonlyValue={undefined}
         tooltip={this.tooltip}

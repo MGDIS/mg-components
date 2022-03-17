@@ -4,6 +4,7 @@ import { Width } from '../MgInput.conf';
 import { createID, ClassList, allItemsAreString } from '../../../../utils/components.utils';
 import { messages } from '../../../../locales';
 import { SelectOption, OptGroup } from './mg-input-select.conf';
+import { InputClass } from '../MgInput.conf';
 
 /**
  * Check if item is a well configured option
@@ -51,7 +52,7 @@ export class MgInputSelect {
    ************/
 
   // classes
-  private classError = 'is-not-valid';
+  private classError = InputClass.ERROR;
 
   // HTML selector
   private input: HTMLSelectElement;
@@ -145,18 +146,12 @@ export class MgInputSelect {
    * Define if input is readonly
    */
   @Prop() readonly: boolean = false;
-  @Watch('readonly')
-  handleReadOnly() {
-    this.classList.delete(this.classError);
-  }
+
   /**
    * Define if input is disabled
    */
   @Prop() disabled: boolean = false;
-  @Watch('disabled')
-  handleDisabled() {
-    this.classList.delete(this.classError);
-  }
+
   /**
    * Define input width
    */
@@ -279,6 +274,7 @@ export class MgInputSelect {
         required={this.required}
         readonly={this.readonly}
         width={this.width}
+        disabled={this.disabled}
         value={this.value}
         readonlyValue={undefined}
         tooltip={this.tooltip}

@@ -3,6 +3,7 @@ import { MgInput } from '../MgInput';
 import { createID, ClassList } from '../../../../utils/components.utils';
 import { messages } from '../../../../locales';
 import { CheckboxItem, CheckboxValue } from './mg-input-checkbox.conf';
+import { InputClass } from '../MgInput.conf';
 
 /**
  * type CheckboxItem validation function
@@ -23,7 +24,7 @@ export class MgInputCheckbox {
    ************/
 
   // classes
-  private classError = 'is-not-valid';
+  private classError = InputClass.ERROR;
 
   // HTML selector
   private inputs: HTMLInputElement[] = [];
@@ -103,10 +104,6 @@ export class MgInputCheckbox {
    * Define if input is disabled
    */
   @Prop() disabled: boolean = false;
-  @Watch('disabled')
-  handleDisabled() {
-    this.classList.delete(this.classError);
-  }
 
   /**
    * Add a tooltip message next to the input
@@ -235,8 +232,9 @@ export class MgInputCheckbox {
         labelOnTop={this.labelOnTop}
         labelHide={this.labelHide}
         required={this.required}
-        readonly={false}
+        readonly={undefined}
         width={undefined}
+        disabled={this.disabled}
         value={this.value && this.value.toString()}
         readonlyValue={undefined}
         tooltip={!this.readonly && this.tooltip}

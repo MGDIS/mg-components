@@ -5,6 +5,7 @@ import { types, InputError } from './mg-input-numeric.conf';
 import { createID, ClassList } from '../../../../utils/components.utils';
 import { messages } from '../../../../locales';
 import { localeCurrency, localeNumber } from '../../../../utils/locale.utils';
+import { InputClass } from '../MgInput.conf';
 
 @Component({
   tag: 'mg-input-numeric',
@@ -22,7 +23,7 @@ export class MgInputNumeric {
   private readonlyValue: string;
 
   // Classes
-  private classError: string = 'is-not-valid';
+  private classError: string = InputClass.ERROR;
 
   // HTML selector
   private input: HTMLInputElement;
@@ -106,18 +107,12 @@ export class MgInputNumeric {
    * Define if input is readonly
    */
   @Prop() readonly: boolean = false;
-  @Watch('readonly')
-  handleReadOnly() {
-    this.classList.delete(this.classError);
-  }
+
   /**
    * Define if input is disabled
    */
   @Prop() disabled: boolean = false;
-  @Watch('disabled')
-  handleDisabled() {
-    this.classList.delete(this.classError);
-  }
+
   /**
    * Define input width
    */
@@ -361,6 +356,7 @@ export class MgInputNumeric {
         required={this.required}
         readonly={this.readonly}
         width={this.width}
+        disabled={this.disabled}
         value={this.value}
         readonlyValue={this.readonlyValue}
         tooltip={this.tooltip}
