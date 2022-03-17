@@ -98,7 +98,7 @@ describe('mg-input-password', () => {
     });
   });
 
-  describe.each([16, 4])('with custom width: %s', width => {
+  describe.each([16])('with custom width: %s', width => {
     test.each([false, true])('with label on top: %s', async labelOnTop => {
       const page = await createPage(`<mg-input-password label="label" width="${width}" label-on-top="${labelOnTop}"></mg-input-password>`);
 
