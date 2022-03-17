@@ -24,6 +24,7 @@ This atom refers to the [PDA9-72](https://jira.mgdis.fr/browse/PDA9-72).
 | `tooltip`             | `tooltip`              | Add a tooltip message next to the input                                                                                                        | `string`                     | `undefined`                         |
 | `valid`               | `valid`                | Define input valid state                                                                                                                       | `boolean`                    | `undefined`                         |
 | `value`               | `value`                | Component value                                                                                                                                | `string`                     | `undefined`                         |
+| `width`               | `width`                | Define input width                                                                                                                             | `"full" \| 16 \| 2 \| 4`     | `undefined`                         |
 
 
 ## Events

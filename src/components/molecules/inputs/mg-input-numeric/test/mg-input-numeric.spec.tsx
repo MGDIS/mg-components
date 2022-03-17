@@ -50,7 +50,7 @@ describe('mg-input-numeric', () => {
       try {
         await getPage({ label: value, type });
       } catch (err) {
-        expect(err.message).toMatch('prop "label" is required');
+        expect(err.message).toMatch('<mg-input> prop "label" is required');
       }
     });
 
