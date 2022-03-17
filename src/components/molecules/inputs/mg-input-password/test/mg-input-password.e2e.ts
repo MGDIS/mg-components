@@ -97,4 +97,17 @@ describe('mg-input-password', () => {
       expect(screenshot).toMatchImageSnapshot();
     });
   });
+
+  describe.each([16, 4])('with custom width: %s', width => {
+    test.each([false, true])('with label on top: %s', async labelOnTop => {
+      const page = await createPage(`<mg-input-password label="label" width="${width}" label-on-top="${labelOnTop}"></mg-input-password>`);
+
+      const element = await page.find('mg-input-password');
+
+      expect(element).toHaveClass('hydrated');
+
+      const screenshot = await page.screenshot();
+      expect(screenshot).toMatchImageSnapshot();
+    });
+  });
 });
