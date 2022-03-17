@@ -3,13 +3,20 @@ import { newSpecPage } from '@stencil/core/testing';
 import { MgInputSelect } from '../mg-input-select';
 import { messages } from '../../../../../locales';
 
-const getPage = args =>
-  newSpecPage({
+const getPage = async args => {
+  const page = newSpecPage({
     components: [MgInputSelect],
     template: () => <mg-input-select {...args}></mg-input-select>,
   });
 
+  jest.runAllTimers();
+
+  return page;
+};
+
 describe('mg-input-select', () => {
+  beforeEach(() => jest.useFakeTimers());
+  afterEach(() => jest.runOnlyPendingTimers());
   test.each([
     { label: 'label', identifier: 'identifier', items: ['blu', 'bli', 'blo', 'bla'] },
     { label: 'label', identifier: 'identifier', items: ['blu', 'bli', 'blo', 'bla'], labelHide: true },

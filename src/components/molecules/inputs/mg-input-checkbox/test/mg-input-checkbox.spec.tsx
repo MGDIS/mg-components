@@ -5,13 +5,19 @@ import { MgInputCheckbox } from '../mg-input-checkbox';
 import { messages } from '../../../../../locales';
 import { CheckboxValue } from '../mg-input-checkbox.conf';
 
-const getPage = args =>
-  newSpecPage({
+const getPage = args => {
+  const page = newSpecPage({
     components: [MgInputCheckbox],
     template: () => <mg-input-checkbox {...args}></mg-input-checkbox>,
   });
 
+  jest.runAllTimers();
+  return page;
+};
+
 describe('mg-input-checkbox', () => {
+  beforeEach(() => jest.useFakeTimers());
+  afterEach(() => jest.runOnlyPendingTimers());
   const items: CheckboxValue[] = [
     { title: 'batman', value: true },
     { title: 'robin', value: false, disabled: true },

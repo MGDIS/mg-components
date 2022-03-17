@@ -3,13 +3,20 @@ import { newSpecPage } from '@stencil/core/testing';
 import { MgInputRadio } from '../mg-input-radio';
 import { messages } from '../../../../../locales';
 
-const getPage = args =>
-  newSpecPage({
+const getPage = args => {
+  const page = newSpecPage({
     components: [MgInputRadio],
     template: () => <mg-input-radio {...args}></mg-input-radio>,
   });
 
+  jest.runAllTimers();
+
+  return page;
+};
+
 describe('mg-input-radio', () => {
+  beforeEach(() => jest.useFakeTimers());
+  afterEach(() => jest.runOnlyPendingTimers());
   test.each([
     { label: 'label', identifier: 'identifier', items: ['batman', 'robin', 'joker', 'bane'] },
     {

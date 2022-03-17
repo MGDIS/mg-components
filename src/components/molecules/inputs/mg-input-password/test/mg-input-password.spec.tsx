@@ -3,13 +3,18 @@ import { newSpecPage } from '@stencil/core/testing';
 import { MgInputPassword } from '../mg-input-password';
 import { messages } from '../../../../../locales';
 
-const getPage = args =>
-  newSpecPage({
+const getPage = args => {
+  const page = newSpecPage({
     components: [MgInputPassword],
     template: () => <mg-input-password {...args}></mg-input-password>,
   });
+  jest.runAllTimers();
+  return page;
+};
 
 describe('mg-input-password', () => {
+  beforeEach(() => jest.useFakeTimers());
+  afterEach(() => jest.runOnlyPendingTimers());
   test.each([
     { label: 'label', identifier: 'identifier' },
     { label: 'label', identifier: 'identifier', labelHide: true },

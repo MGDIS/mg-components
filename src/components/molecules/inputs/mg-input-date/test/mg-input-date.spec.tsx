@@ -4,11 +4,14 @@ import { MgInputDate } from '../mg-input-date';
 import { messages } from '../../../../../locales';
 import { localeDate } from '../../../../../utils/locale.utils';
 
-const getPage = args =>
-  newSpecPage({
+const getPage = args => {
+  const page = newSpecPage({
     components: [MgInputDate],
     template: () => <mg-input-date {...args}></mg-input-date>,
   });
+  jest.runAllTimers();
+  return page;
+};
 
 const date = {
   first: '2021-01-01',
@@ -17,6 +20,8 @@ const date = {
 };
 
 describe('mg-input-date', () => {
+  beforeEach(() => jest.useFakeTimers());
+  afterEach(() => jest.runOnlyPendingTimers());
   /**
    * Snapshots
    */

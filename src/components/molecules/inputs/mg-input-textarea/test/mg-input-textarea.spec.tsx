@@ -3,13 +3,20 @@ import { newSpecPage } from '@stencil/core/testing';
 import { MgInputTextarea } from '../mg-input-textarea';
 import { messages } from '../../../../../locales';
 
-const getPage = args =>
-  newSpecPage({
+const getPage = args => {
+  const page = newSpecPage({
     components: [MgInputTextarea],
     template: () => <mg-input-textarea {...args}></mg-input-textarea>,
   });
 
+  jest.runAllTimers();
+
+  return page;
+};
+
 describe('mg-input-textarea', () => {
+  beforeEach(() => jest.useFakeTimers());
+  afterEach(() => jest.runOnlyPendingTimers());
   test.each([
     { label: 'label', identifier: 'identifier' },
     { label: 'label', identifier: 'identifier', labelHide: true },
