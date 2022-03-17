@@ -120,4 +120,17 @@ describe('mg-input-textarea', () => {
       expect(screenshot).toMatchImageSnapshot();
     });
   });
+
+  describe.each([16])('with custom width: %s', width => {
+    test.each([false, true])('with label on top: %s', async labelOnTop => {
+      const page = await createPage(`<mg-input-textarea label="label" width="${width}" label-on-top="${labelOnTop}"></mg-input-textarea>`);
+
+      const element = await page.find('mg-input-textarea');
+
+      expect(element).toHaveClass('hydrated');
+
+      const screenshot = await page.screenshot();
+      expect(screenshot).toMatchImageSnapshot();
+    });
+  });
 });

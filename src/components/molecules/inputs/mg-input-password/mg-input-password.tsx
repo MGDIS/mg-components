@@ -1,5 +1,6 @@
 import { Component, Event, h, Prop, EventEmitter, State, Watch } from '@stencil/core';
 import { MgInput } from '../MgInput';
+import { Width } from '../MgInput.conf';
 import { createID, ClassList } from '../../../../utils/components.utils';
 import { messages } from '../../../../locales';
 
@@ -84,6 +85,11 @@ export class MgInputPassword {
     this.classList.delete(this.classError);
   }
   /**
+   * Define input width
+   */
+  @Prop() width: Width = 'full';
+
+  /**
    * Add a tooltip message next to the input
    */
   @Prop() tooltip: string;
@@ -106,7 +112,7 @@ export class MgInputPassword {
   /**
    * Component classes
    */
-  @State() classList: ClassList = new ClassList(['mg-input--password', 'mg-input--width-full']);
+  @State() classList: ClassList = new ClassList(['mg-input--password']);
 
   /**
    * Error message to display
@@ -186,6 +192,7 @@ export class MgInputPassword {
         labelHide={this.labelHide}
         required={this.required}
         readonly={this.readonly}
+        width={this.width}
         value={this.value}
         readonlyValue={this.value !== undefined ? '•'.repeat(this.value.length) : undefined}
         tooltip={this.tooltip}

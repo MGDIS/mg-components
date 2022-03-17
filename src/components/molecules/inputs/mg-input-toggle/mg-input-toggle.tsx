@@ -234,6 +234,7 @@ export class MgInputToggle {
         labelHide={this.labelHide}
         required={undefined}
         readonly={undefined}
+        width={undefined}
         value={this.value?.toString()}
         readonlyValue={undefined}
         tooltip={!this.readonly && this.tooltip}

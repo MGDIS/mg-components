@@ -265,6 +265,7 @@ export class MgInputDate {
         labelHide={this.labelHide}
         required={this.required}
         readonly={this.readonly}
+        width={undefined}
         value={this.value}
         readonlyValue={localeDate(this.value)}
         tooltip={this.tooltip}

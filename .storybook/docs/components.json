@@ -2,7 +2,7 @@
   "timestamp": "2022-03-17T08:28:54",
   "compiler": {
     "name": "@stencil/core",
-    "version": "2.14.0",
+    "version": "2.14.1",
     "typescriptVersion": "4.5.4"
   },
   "components": [
@@ -1078,6 +1078,23 @@
       "usage": {},
       "props": [
         {
+          "name": "decimalLength",
+          "type": "number",
+          "mutable": false,
+          "attr": "decimal-length",
+          "reflectToAttr": false,
+          "docs": "Override decimal length\ndecimal is the number after the decimal point",
+          "docsTags": [],
+          "default": "2",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "disabled",
           "type": "boolean",
           "mutable": false,
@@ -1125,6 +1142,23 @@
             }
           ],
           "optional": true,
+          "required": false
+        },
+        {
+          "name": "integerLength",
+          "type": "number",
+          "mutable": false,
+          "attr": "integer-length",
+          "reflectToAttr": false,
+          "docs": "Override integer length\ninteger is the number before the decimal point",
+          "docsTags": [],
+          "default": "13",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
           "required": false
         },
         {
@@ -1351,6 +1385,35 @@
           "values": [
             {
               "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "width",
+          "type": "\"full\" | 16 | 2 | 4",
+          "mutable": false,
+          "attr": "width",
+          "reflectToAttr": false,
+          "docs": "Define input width",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "full",
+              "type": "string"
+            },
+            {
+              "value": "16",
+              "type": "number"
+            },
+            {
+              "value": "2",
+              "type": "number"
+            },
+            {
+              "value": "4",
+              "type": "number"
             }
           ],
           "optional": false,
@@ -1623,6 +1686,36 @@
           "values": [
             {
               "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "width",
+          "type": "\"full\" | 16 | 2 | 4",
+          "mutable": false,
+          "attr": "width",
+          "reflectToAttr": false,
+          "docs": "Define input width",
+          "docsTags": [],
+          "default": "'full'",
+          "values": [
+            {
+              "value": "full",
+              "type": "string"
+            },
+            {
+              "value": "16",
+              "type": "number"
+            },
+            {
+              "value": "2",
+              "type": "number"
+            },
+            {
+              "value": "4",
+              "type": "number"
             }
           ],
           "optional": false,
@@ -2244,6 +2337,35 @@
           ],
           "optional": false,
           "required": false
+        },
+        {
+          "name": "width",
+          "type": "\"full\" | 16 | 2 | 4",
+          "mutable": false,
+          "attr": "width",
+          "reflectToAttr": false,
+          "docs": "Define input width",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "full",
+              "type": "string"
+            },
+            {
+              "value": "16",
+              "type": "number"
+            },
+            {
+              "value": "2",
+              "type": "number"
+            },
+            {
+              "value": "4",
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
         }
       ],
       "methods": [],
@@ -2641,6 +2763,36 @@
           ],
           "optional": false,
           "required": false
+        },
+        {
+          "name": "width",
+          "type": "\"full\" | 16 | 2 | 4",
+          "mutable": false,
+          "attr": "width",
+          "reflectToAttr": false,
+          "docs": "Define input width",
+          "docsTags": [],
+          "default": "'full'",
+          "values": [
+            {
+              "value": "full",
+              "type": "string"
+            },
+            {
+              "value": "16",
+              "type": "number"
+            },
+            {
+              "value": "2",
+              "type": "number"
+            },
+            {
+              "value": "4",
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
         }
       ],
       "methods": [],
@@ -3008,6 +3160,36 @@
           "values": [
             {
               "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "width",
+          "type": "\"full\" | 16 | 2 | 4",
+          "mutable": false,
+          "attr": "width",
+          "reflectToAttr": false,
+          "docs": "Define input width",
+          "docsTags": [],
+          "default": "'full'",
+          "values": [
+            {
+              "value": "full",
+              "type": "string"
+            },
+            {
+              "value": "16",
+              "type": "number"
+            },
+            {
+              "value": "2",
+              "type": "number"
+            },
+            {
+              "value": "4",
+              "type": "number"
             }
           ],
           "optional": false,

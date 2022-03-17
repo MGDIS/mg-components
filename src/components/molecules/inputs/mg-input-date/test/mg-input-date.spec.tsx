@@ -47,7 +47,7 @@ describe('mg-input-date', () => {
     try {
       await getPage({ label: value });
     } catch (err) {
-      expect(err.message).toMatch('prop "label" is required');
+      expect(err.message).toMatch('<mg-input> prop "label" is required');
     }
   });
 
