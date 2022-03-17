@@ -137,37 +137,46 @@ describe('mg-input-checkbox', () => {
     expect(page.root).toMatchSnapshot(); //Snapshot on focus
   });
 
-  test.each([
-    { validity: true, valueMissing: false, value: cloneDeep(items) },
-    { validity: false, valueMissing: true, value: cloneDeep(items) },
-    { validity: false, valueMissing: false, value: cloneDeep(items) },
-  ])('validity (%s), valueMissing (%s)', async ({ validity, valueMissing, value }) => {
-    const args = { label: 'label', identifier: 'identifier', value, helpText: 'My help text' };
-    const page = await getPage(args);
+  describe.each(['readonly', 'disabled'])('validity, case next state is %s', nextState => {
+    test.each([
+      { validity: true, valueMissing: false, value: cloneDeep(items) },
+      { validity: false, valueMissing: true, value: cloneDeep(items) },
+      { validity: false, valueMissing: false, value: cloneDeep(items) },
+    ])('validity (%s), valueMissing (%s)', async ({ validity, valueMissing, value }) => {
+      const args = { label: 'label', identifier: 'identifier', value, helpText: 'My help text' };
+      const page = await getPage(args);
 
-    const element = page.doc.querySelector('mg-input-checkbox');
-    const allInputs = element.shadowRoot.querySelectorAll('input');
-    const input = allInputs[0];
+      const element = page.doc.querySelector('mg-input-checkbox');
+      const allInputs = element.shadowRoot.querySelectorAll('input');
+      const input = allInputs[0];
 
-    //mock validity
-    allInputs.forEach(input => {
-      input.checkValidity = jest.fn(() => validity);
-      Object.defineProperty(input, 'validity', {
-        get: jest.fn(() => ({
-          valueMissing,
-        })),
+      //mock validity
+      allInputs.forEach(input => {
+        input.checkValidity = jest.fn(() => validity);
+        Object.defineProperty(input, 'validity', {
+          get: jest.fn(() => ({
+            valueMissing,
+          })),
+        });
       });
+
+      input.dispatchEvent(new CustomEvent('blur', { bubbles: true }));
+      await page.waitForChanges();
+
+      if (validity) {
+        expect(page.rootInstance.errorMessage).toBeUndefined();
+      } else if (valueMissing) {
+        expect(page.rootInstance.errorMessage).toEqual(messages.errors.required);
+      }
+      expect(page.rootInstance.valid).toEqual(validity);
+      expect(page.rootInstance.invalid).toEqual(!validity);
+
+      if (valueMissing) {
+        expect(page.root).toMatchSnapshot(); //Snapshot with readonly/disabled FALSE
+        element[nextState] = true;
+        await page.waitForChanges();
+        expect(page.root).toMatchSnapshot(); //Snapshot with readonly/disabled TRUE
+      }
     });
-
-    input.dispatchEvent(new CustomEvent('blur', { bubbles: true }));
-    await page.waitForChanges();
-
-    if (validity) {
-      expect(page.rootInstance.errorMessage).toBeUndefined();
-    } else if (valueMissing) {
-      expect(page.rootInstance.errorMessage).toEqual(messages.errors.required);
-    }
-    expect(page.rootInstance.valid).toEqual(validity);
-    expect(page.rootInstance.invalid).toEqual(!validity);
   });
 });

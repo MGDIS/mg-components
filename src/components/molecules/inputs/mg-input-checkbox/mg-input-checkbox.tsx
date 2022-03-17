@@ -94,11 +94,19 @@ export class MgInputCheckbox {
    * Define if input is readonly
    */
   @Prop() readonly: boolean = false;
+  @Watch('readonly')
+  handleReadOnly() {
+    this.classList.delete(this.classError);
+  }
 
   /**
    * Define if input is disabled
    */
   @Prop() disabled: boolean = false;
+  @Watch('disabled')
+  handleDisabled() {
+    this.classList.delete(this.classError);
+  }
 
   /**
    * Add a tooltip message next to the input

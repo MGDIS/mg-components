@@ -1,4 +1,4 @@
-import { Component, Event, h, Prop, EventEmitter, State, Element } from '@stencil/core';
+import { Component, Event, h, Prop, EventEmitter, State, Element, Watch } from '@stencil/core';
 import { MgInput } from '../MgInput';
 import { createID, ClassList } from '../../../../utils/components.utils';
 import { messages } from '../../../../locales';
@@ -92,12 +92,18 @@ export class MgInputText {
    * Define if input is readonly
    */
   @Prop() readonly: boolean = false;
-
+  @Watch('readonly')
+  handleReadOnly() {
+    this.classList.delete(this.classError);
+  }
   /**
    * Define if input is disabled
    */
   @Prop() disabled: boolean = false;
-
+  @Watch('disabled')
+  handleDisabled() {
+    this.classList.delete(this.classError);
+  }
   /**
    * Define input pattern to validate
    */
