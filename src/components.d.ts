@@ -215,6 +215,10 @@ export namespace Components {
     }
     interface MgInputNumeric {
         /**
+          * Override decimal length decimal is the number after the decimal point
+         */
+        "decimalLength": number;
+        /**
           * Define if input is disabled
          */
         "disabled": boolean;
@@ -226,6 +230,10 @@ export namespace Components {
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
         "identifier"?: string;
+        /**
+          * Override integer length integer is the number before the decimal point
+         */
+        "integerLength": number;
         /**
           * Define input pattern error message
          */
@@ -1225,6 +1233,10 @@ declare namespace LocalJSX {
     }
     interface MgInputNumeric {
         /**
+          * Override decimal length decimal is the number after the decimal point
+         */
+        "decimalLength"?: number;
+        /**
           * Define if input is disabled
          */
         "disabled"?: boolean;
@@ -1236,6 +1248,10 @@ declare namespace LocalJSX {
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
         "identifier"?: string;
+        /**
+          * Override integer length integer is the number before the decimal point
+         */
+        "integerLength"?: number;
         /**
           * Define input pattern error message
          */

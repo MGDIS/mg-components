@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-03-17T11:40:12",
+  "timestamp": "2022-03-17T14:43:08",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.14.1",
@@ -1078,6 +1078,23 @@
       "usage": {},
       "props": [
         {
+          "name": "decimalLength",
+          "type": "number",
+          "mutable": false,
+          "attr": "decimal-length",
+          "reflectToAttr": false,
+          "docs": "Override decimal length\ndecimal is the number after the decimal point",
+          "docsTags": [],
+          "default": "2",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "disabled",
           "type": "boolean",
           "mutable": false,
@@ -1125,6 +1142,23 @@
             }
           ],
           "optional": true,
+          "required": false
+        },
+        {
+          "name": "integerLength",
+          "type": "number",
+          "mutable": false,
+          "attr": "integer-length",
+          "reflectToAttr": false,
+          "docs": "Override integer length\ninteger is the number before the decimal point",
+          "docsTags": [],
+          "default": "13",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
           "required": false
         },
         {
