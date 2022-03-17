@@ -20,6 +20,7 @@ export class MgInputToggle {
    * Internal *
    ************/
 
+  // classes
   private classReadonly = 'mg-input--toggle-readonly';
   private classDisabled = 'mg-input--toggle-disabled';
   private classIsActive = 'mg-input--toggle-is-active';
@@ -37,13 +38,6 @@ export class MgInputToggle {
    * Component value
    */
   @Prop({ mutable: true }) value?: any;
-  @Watch('value')
-  handleValue(newValue: any) {
-    if (newValue === this.options[1].value) this.classList.add(this.classIsActive);
-    else this.classList.delete(this.classIsActive);
-
-    this.valueChange.emit(this.value);
-  }
 
   /**
    * Items are the possible options to select
@@ -154,14 +148,31 @@ export class MgInputToggle {
   @State() options: ToggleValue[];
 
   /**
+   * Checked internal value
+   */
+  @State() checked: boolean = false;
+  @Watch('checked')
+  handleChecked(newValue) {
+    // style
+    if (newValue) this.classList.add(this.classIsActive);
+    else this.classList.delete(this.classIsActive);
+
+    // update value
+    this.value = this.options[this.checked ? 1 : 0].value;
+    this.valueChange.emit(this.value);
+  }
+
+  /**
    * Emmited event when value change
    */
   @Event({ eventName: 'value-change' }) valueChange: EventEmitter<any>;
 
   /**
-   * Change value
+   * Change checked value
    */
-  private toggleValue = () => (this.value = this.options.find(o => o.value !== this.value).value);
+  private toggleChecked = () => {
+    this.setChecked(!this.checked);
+  };
 
   /**
    * Slots validation
@@ -177,6 +188,20 @@ export class MgInputToggle {
     }
   };
 
+  /**
+   * set checked state
+   * @param newValue?
+   */
+  private setChecked(newValue?) {
+    if (newValue !== undefined) {
+      this.checked = newValue;
+    } else if (this.value === this.options[1].value) {
+      this.checked = true;
+    } else {
+      this.checked = false;
+    }
+  }
+
   /*************
    * Lifecycle *
    *************/
@@ -188,11 +213,10 @@ export class MgInputToggle {
     // Check items format
     this.validateItems(this.items);
 
-    // init value
-    this.value = this.value === undefined ? this.options[0].value : this.value;
+    // init checked value
+    this.setChecked();
 
     // apply handler
-    this.handleValue(this.value);
     this.handleIsOnOff(this.isOnOff);
     this.handleIsIcon(this.isIcon);
     this.handleReadonly(this.readonly);
@@ -223,13 +247,13 @@ export class MgInputToggle {
         <button
           type="button"
           role="switch"
-          aria-checked={this.value === this.options[1].value}
+          aria-checked={this.checked}
           aria-readonly={this.disabled || this.readonly}
           id={this.identifier}
           class="mg-input__button-toggle"
           disabled={this.disabled || this.readonly}
           // eslint-disable-next-line react/jsx-no-bind
-          onClick={() => this.toggleValue()}
+          onClick={() => this.toggleChecked()}
         >
           <span aria-hidden="true" class="mg-input__toggle-item-container">
             <slot name="item-1"></slot>
