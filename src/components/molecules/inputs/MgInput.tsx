@@ -40,7 +40,7 @@ const addClasses = (props): void => {
 
   if (props.readonly) props.classList.add('mg-input--readonly');
 
-  if (props.width !== undefined && props.width !== 'auto') props.classList.add(`mg-input--width-${props.width}`);
+  if (props.width !== undefined) props.classList.add(`mg-input--width-${props.width}`);
 };
 
 /**

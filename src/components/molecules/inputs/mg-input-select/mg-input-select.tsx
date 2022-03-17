@@ -154,7 +154,7 @@ export class MgInputSelect {
   /**
    * Define input width
    */
-  @Prop() width: Width = 'auto';
+  @Prop() width: Width;
 
   /**
    * Add a tooltip message next to the input

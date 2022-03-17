@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-03-15T10:27:23",
+  "timestamp": "2022-03-17T11:40:12",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.14.1",
@@ -1358,18 +1358,13 @@
         },
         {
           "name": "width",
-          "type": "\"auto\" | \"full\" | 16 | 2 | 4",
+          "type": "\"full\" | 16 | 2 | 4",
           "mutable": false,
           "attr": "width",
           "reflectToAttr": false,
           "docs": "Define input width",
           "docsTags": [],
-          "default": "'auto'",
           "values": [
-            {
-              "value": "auto",
-              "type": "string"
-            },
             {
               "value": "full",
               "type": "string"
@@ -1664,7 +1659,7 @@
         },
         {
           "name": "width",
-          "type": "\"auto\" | \"full\" | 16 | 2 | 4",
+          "type": "\"full\" | 16 | 2 | 4",
           "mutable": false,
           "attr": "width",
           "reflectToAttr": false,
@@ -1672,10 +1667,6 @@
           "docsTags": [],
           "default": "'full'",
           "values": [
-            {
-              "value": "auto",
-              "type": "string"
-            },
             {
               "value": "full",
               "type": "string"
@@ -2315,18 +2306,13 @@
         },
         {
           "name": "width",
-          "type": "\"auto\" | \"full\" | 16 | 2 | 4",
+          "type": "\"full\" | 16 | 2 | 4",
           "mutable": false,
           "attr": "width",
           "reflectToAttr": false,
           "docs": "Define input width",
           "docsTags": [],
-          "default": "'auto'",
           "values": [
-            {
-              "value": "auto",
-              "type": "string"
-            },
             {
               "value": "full",
               "type": "string"
@@ -2746,7 +2732,7 @@
         },
         {
           "name": "width",
-          "type": "\"auto\" | \"full\" | 16 | 2 | 4",
+          "type": "\"full\" | 16 | 2 | 4",
           "mutable": false,
           "attr": "width",
           "reflectToAttr": false,
@@ -2754,10 +2740,6 @@
           "docsTags": [],
           "default": "'full'",
           "values": [
-            {
-              "value": "auto",
-              "type": "string"
-            },
             {
               "value": "full",
               "type": "string"
@@ -3151,7 +3133,7 @@
         },
         {
           "name": "width",
-          "type": "\"auto\" | \"full\" | 16 | 2 | 4",
+          "type": "\"full\" | 16 | 2 | 4",
           "mutable": false,
           "attr": "width",
           "reflectToAttr": false,
@@ -3159,10 +3141,6 @@
           "docsTags": [],
           "default": "'full'",
           "values": [
-            {
-              "value": "auto",
-              "type": "string"
-            },
             {
               "value": "full",
               "type": "string"
