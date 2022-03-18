@@ -164,33 +164,41 @@ describe('mg-input-radio', () => {
     expect(page.rootInstance.valueChange.emit).toHaveBeenCalledWith(inputValue);
   });
 
-  test.each([
-    { validity: true, valueMissing: false },
-    { validity: false, valueMissing: true },
-  ])('validity (%s), valueMissing (%s)', async ({ validity, valueMissing }) => {
-    const args = { label: 'label', items: ['batman', 'robin', 'joker', 'bane'], identifier: 'identifier', patternErrorMessage: 'Non' };
-    const page = await getPage(args);
+  describe.each(['readonly', 'disabled'])('validity, case next state is %s', nextState => {
+    test.each([
+      { validity: true, valueMissing: false },
+      { validity: false, valueMissing: true },
+    ])('validity (%s), valueMissing (%s)', async ({ validity, valueMissing }) => {
+      const args = { label: 'label', items: ['batman', 'robin', 'joker', 'bane'], identifier: 'identifier', patternErrorMessage: 'Non' };
+      const page = await getPage(args);
 
-    const element = page.doc.querySelector('mg-input-radio');
-    const input = element.shadowRoot.querySelector('input');
+      const element = page.doc.querySelector('mg-input-radio');
+      const input = element.shadowRoot.querySelector('input');
 
-    //mock validity
-    input.checkValidity = jest.fn(() => validity);
-    Object.defineProperty(input, 'validity', {
-      get: jest.fn(() => ({
-        valueMissing,
-      })),
+      //mock validity
+      input.checkValidity = jest.fn(() => validity);
+      Object.defineProperty(input, 'validity', {
+        get: jest.fn(() => ({
+          valueMissing,
+        })),
+      });
+
+      input.dispatchEvent(new CustomEvent('blur', { bubbles: true }));
+      await page.waitForChanges();
+
+      if (validity) {
+        expect(page.rootInstance.errorMessage).toBeUndefined();
+      } else if (valueMissing) {
+        expect(page.rootInstance.errorMessage).toEqual(messages.errors.required);
+      }
+      expect(page.rootInstance.valid).toEqual(validity);
+      expect(page.rootInstance.invalid).toEqual(!validity);
+      if (valueMissing) {
+        expect(page.root).toMatchSnapshot(); //Snapshot with readonly/disabled FALSE
+        element[nextState] = true;
+        await page.waitForChanges();
+        expect(page.root).toMatchSnapshot(); //Snapshot with readonly/disabled TRUE
+      }
     });
-
-    input.dispatchEvent(new CustomEvent('blur', { bubbles: true }));
-    await page.waitForChanges();
-
-    if (validity) {
-      expect(page.rootInstance.errorMessage).toBeUndefined();
-    } else if (valueMissing) {
-      expect(page.rootInstance.errorMessage).toEqual(messages.errors.required);
-    }
-    expect(page.rootInstance.valid).toEqual(validity);
-    expect(page.rootInstance.invalid).toEqual(!validity);
   });
 });
