@@ -14,6 +14,6 @@
 /* Firefox selector */
 @-moz-document url-prefix() {
   .mg-input__box {
-    overflow-x: hidden; // has FF add a "phantom scrollbar" in textarea bottom
+    overflow-x: hidden; // remove Firefox bottom "phantom scrollbar" in textarea 
   }
 }
