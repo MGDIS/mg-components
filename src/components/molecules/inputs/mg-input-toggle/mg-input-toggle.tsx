@@ -193,10 +193,14 @@ export class MgInputToggle {
    * @param newValue?
    */
   private setChecked(newValue?) {
-    // has "value" props type is not a boolean, it is bind/render as an attributes
-    // true props will be represent by "" string so we convert it has boolean
+    // has "value" props type is not a boolean, it is bind/render as an attributes/props
+    // true props will be represent by "true" string so we convert it has boolean
+    // true attribute will be represent by "" string so we convert it has boolean
     // https://stenciljs.com/docs/properties
-    this.value = this.value === '' && typeof this.options[1].value === 'boolean' ? true : this.value;
+    if (['', 'true'].includes(this.value) && this.options.find(option => option.value) !== undefined) {
+      this.value = true;
+    }
+
     if (newValue !== undefined) {
       this.checked = newValue;
     } else if (this.value === this.options[1].value) {
