@@ -16,25 +16,25 @@ exports[`mg-input-radio Should render with args {
         <div class="mg-input__input">
           <ul class="mg-input__input-group-container">
             <li class="mg-input__input-group">
-              <input aria-describedby="" disabled="" id="identifier_0" name="identifier" type="radio" value="batman">
+              <input aria-describedby="" disabled="" id="identifier_0" name="identifier" type="radio" value="0">
               <label htmlfor="identifier_0">
                 batman
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="" disabled="" id="identifier_1" name="identifier" type="radio" value="robin">
+              <input aria-describedby="" disabled="" id="identifier_1" name="identifier" type="radio" value="1">
               <label htmlfor="identifier_1">
                 robin
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="" disabled="" id="identifier_2" name="identifier" type="radio" value="joker">
+              <input aria-describedby="" disabled="" id="identifier_2" name="identifier" type="radio" value="2">
               <label htmlfor="identifier_2">
                 joker
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="" disabled="" id="identifier_3" name="identifier" type="radio" value="bane">
+              <input aria-describedby="" disabled="" id="identifier_3" name="identifier" type="radio" value="3">
               <label htmlfor="identifier_3">
                 bane
               </label>
@@ -63,25 +63,25 @@ exports[`mg-input-radio Should render with args {
         <div class="mg-input__input">
           <ul class="mg-input__input-group-container">
             <li class="mg-input__input-group">
-              <input aria-describedby="identifier-help-text" id="identifier_0" name="identifier" type="radio" value="batman">
+              <input aria-describedby="identifier-help-text" id="identifier_0" name="identifier" type="radio" value="0">
               <label htmlfor="identifier_0">
                 batman
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="identifier-help-text" id="identifier_1" name="identifier" type="radio" value="robin">
+              <input aria-describedby="identifier-help-text" id="identifier_1" name="identifier" type="radio" value="1">
               <label htmlfor="identifier_1">
                 robin
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="identifier-help-text" id="identifier_2" name="identifier" type="radio" value="joker">
+              <input aria-describedby="identifier-help-text" id="identifier_2" name="identifier" type="radio" value="2">
               <label htmlfor="identifier_2">
                 joker
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="identifier-help-text" id="identifier_3" name="identifier" type="radio" value="bane">
+              <input aria-describedby="identifier-help-text" id="identifier_3" name="identifier" type="radio" value="3">
               <label htmlfor="identifier_3">
                 bane
               </label>
@@ -113,25 +113,25 @@ exports[`mg-input-radio Should render with args {
         <div class="mg-input__input">
           <ul class="mg-input__input-group-container mg-input__input-group-container--vertical">
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="batman">
+              <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="0">
               <label htmlfor="identifier_0">
                 batman
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="robin">
+              <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="1">
               <label htmlfor="identifier_1">
                 robin
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="joker">
+              <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="2">
               <label htmlfor="identifier_2">
                 joker
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="bane">
+              <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="3">
               <label htmlfor="identifier_3">
                 bane
               </label>
@@ -160,25 +160,25 @@ exports[`mg-input-radio Should render with args {
         <div class="mg-input__input">
           <ul class="mg-input__input-group-container">
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="batman">
+              <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="0">
               <label htmlfor="identifier_0">
                 batman
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="robin">
+              <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="1">
               <label htmlfor="identifier_1">
                 robin
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="joker">
+              <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="2">
               <label htmlfor="identifier_2">
                 joker
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="bane">
+              <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="3">
               <label htmlfor="identifier_3">
                 bane
               </label>
@@ -209,25 +209,25 @@ exports[`mg-input-radio Should render with args {
         <div class="mg-input__input">
           <ul class="mg-input__input-group-container">
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="batman">
+              <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="0">
               <label htmlfor="identifier_0">
                 batman
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="robin">
+              <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="1">
               <label htmlfor="identifier_1">
                 robin
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="joker">
+              <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="2">
               <label htmlfor="identifier_2">
                 joker
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="bane">
+              <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="3">
               <label htmlfor="identifier_3">
                 bane
               </label>
@@ -300,25 +300,25 @@ exports[`mg-input-radio Should render with args {
         <div class="mg-input__input">
           <ul class="mg-input__input-group-container">
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_0" name="identifier" required="" type="radio" value="batman">
+              <input aria-describedby="" id="identifier_0" name="identifier" required="" type="radio" value="0">
               <label htmlfor="identifier_0">
                 batman
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_1" name="identifier" required="" type="radio" value="robin">
+              <input aria-describedby="" id="identifier_1" name="identifier" required="" type="radio" value="1">
               <label htmlfor="identifier_1">
                 robin
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_2" name="identifier" required="" type="radio" value="joker">
+              <input aria-describedby="" id="identifier_2" name="identifier" required="" type="radio" value="2">
               <label htmlfor="identifier_2">
                 joker
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_3" name="identifier" required="" type="radio" value="bane">
+              <input aria-describedby="" id="identifier_3" name="identifier" required="" type="radio" value="3">
               <label htmlfor="identifier_3">
                 bane
               </label>
@@ -347,25 +347,25 @@ exports[`mg-input-radio Should render with args {
         <div class="mg-input__input">
           <ul class="mg-input__input-group-container">
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="batman">
+              <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="0">
               <label htmlfor="identifier_0">
                 batman
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="robin">
+              <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="1">
               <label htmlfor="identifier_1">
                 robin
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="joker">
+              <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="2">
               <label htmlfor="identifier_2">
                 joker
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="bane">
+              <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="3">
               <label htmlfor="identifier_3">
                 bane
               </label>
@@ -403,25 +403,25 @@ exports[`mg-input-radio Should render with args {
         <div class="mg-input__input">
           <ul class="mg-input__input-group-container">
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="batman">
+              <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="0">
               <label htmlfor="identifier_0">
                 batman
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="robin">
+              <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="1">
               <label htmlfor="identifier_1">
                 robin
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="joker">
+              <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="2">
               <label htmlfor="identifier_2">
                 joker
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="bane">
+              <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="3">
               <label htmlfor="identifier_3">
                 bane
               </label>
@@ -445,25 +445,25 @@ exports[`mg-input-radio Should render with args { label: 'label', identifier: 'i
         <div class="mg-input__input">
           <ul class="mg-input__input-group-container">
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="batman">
+              <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="0">
               <label htmlfor="identifier_0">
                 batman
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="robin">
+              <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="1">
               <label htmlfor="identifier_1">
                 robin
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="joker">
+              <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="2">
               <label htmlfor="identifier_2">
                 joker
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="bane">
+              <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="3">
               <label htmlfor="identifier_3">
                 bane
               </label>
@@ -487,25 +487,25 @@ exports[`mg-input-radio Should render with args { label: 'label', identifier: 'i
         <div class="mg-input__input">
           <ul class="mg-input__input-group-container">
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="u">
+              <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="0">
               <label htmlfor="identifier_0">
                 batman
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="i">
+              <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="1">
               <label htmlfor="identifier_1">
                 robin
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="o">
+              <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="2">
               <label htmlfor="identifier_2">
                 joker
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="a">
+              <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="3">
               <label htmlfor="identifier_3">
                 bane
               </label>
@@ -529,25 +529,25 @@ exports[`mg-input-radio Should render with args { label: 'label', identifier: 'i
         <div class="mg-input__input">
           <ul class="mg-input__input-group-container">
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="1">
+              <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="0">
               <label htmlfor="identifier_0">
                 batman
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="2">
+              <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="1">
               <label htmlfor="identifier_1">
                 robin
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="3">
+              <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="2">
               <label htmlfor="identifier_2">
                 joker
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="4">
+              <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="3">
               <label htmlfor="identifier_3">
                 bane
               </label>
@@ -571,25 +571,25 @@ exports[`mg-input-radio Should render with args { label: 'label', identifier: 'i
         <div class="mg-input__input">
           <ul class="mg-input__input-group-container">
             <li class="mg-input__input-group">
-              <input aria-describedby="" checked="" id="identifier_0" name="identifier" type="radio" value="true">
+              <input aria-describedby="" id="identifier_0" name="identifier" type="radio" value="0">
               <label htmlfor="identifier_0">
                 batman
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="false">
+              <input aria-describedby="" id="identifier_1" name="identifier" type="radio" value="1">
               <label htmlfor="identifier_1">
                 robin
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="false">
+              <input aria-describedby="" id="identifier_2" name="identifier" type="radio" value="2">
               <label htmlfor="identifier_2">
                 joker
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="false">
+              <input aria-describedby="" id="identifier_3" name="identifier" type="radio" value="3">
               <label htmlfor="identifier_3">
                 bane
               </label>
@@ -602,7 +602,7 @@ exports[`mg-input-radio Should render with args { label: 'label', identifier: 'i
 </mg-input-radio>
 `;
 
-exports[`mg-input-radio Should trigger events for items ({ items: [Array], inputValue: 'a' }) with inputValue (%s) 1`] = `
+exports[`mg-input-radio Should trigger events for items ({ items: [Array], selectedIndex: 0 }) with selectedIndex (%s) 1`] = `
 <mg-input-radio>
   <mock:shadow-root>
     <fieldset class="mg-input mg-input--radio">
@@ -613,25 +613,58 @@ exports[`mg-input-radio Should trigger events for items ({ items: [Array], input
         <div class="mg-input__input">
           <ul class="mg-input__input-group-container">
             <li class="mg-input__input-group">
-              <input aria-describedby="identifier-help-text" id="identifier_0" name="identifier" type="radio" value="u">
+              <input aria-describedby="identifier-help-text" id="identifier_0" name="identifier" type="radio" value="0">
               <label htmlfor="identifier_0">
                 batman
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="identifier-help-text" id="identifier_1" name="identifier" type="radio" value="i">
+              <input aria-describedby="identifier-help-text" id="identifier_1" name="identifier" type="radio" value="1">
+              <label htmlfor="identifier_1">
+                robin
+              </label>
+            </li>
+          </ul>
+        </div>
+        <div class="mg-input__help-text" id="identifier-help-text">
+          My help text
+        </div>
+      </div>
+    </fieldset>
+  </mock:shadow-root>
+</mg-input-radio>
+`;
+
+exports[`mg-input-radio Should trigger events for items ({ items: [Array], selectedIndex: 1 }) with selectedIndex (%s) 1`] = `
+<mg-input-radio>
+  <mock:shadow-root>
+    <fieldset class="mg-input mg-input--radio">
+      <mg-input-title identifier="identifier" is-legend="">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input">
+          <ul class="mg-input__input-group-container">
+            <li class="mg-input__input-group">
+              <input aria-describedby="identifier-help-text" id="identifier_0" name="identifier" type="radio" value="0">
+              <label htmlfor="identifier_0">
+                batman
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="identifier-help-text" id="identifier_1" name="identifier" type="radio" value="1">
               <label htmlfor="identifier_1">
                 robin
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="identifier-help-text" id="identifier_2" name="identifier" type="radio" value="o">
+              <input aria-describedby="identifier-help-text" id="identifier_2" name="identifier" type="radio" value="2">
               <label htmlfor="identifier_2">
                 joker
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="identifier-help-text" id="identifier_3" name="identifier" type="radio" value="a">
+              <input aria-describedby="identifier-help-text" id="identifier_3" name="identifier" type="radio" value="3">
               <label htmlfor="identifier_3">
                 bane
               </label>
@@ -647,7 +680,7 @@ exports[`mg-input-radio Should trigger events for items ({ items: [Array], input
 </mg-input-radio>
 `;
 
-exports[`mg-input-radio Should trigger events for items ({ items: [Array], inputValue: 'batman' }) with inputValue (%s) 1`] = `
+exports[`mg-input-radio Should trigger events for items ({ items: [Array], selectedIndex: 1 }) with selectedIndex (%s) 2`] = `
 <mg-input-radio>
   <mock:shadow-root>
     <fieldset class="mg-input mg-input--radio">
@@ -658,25 +691,58 @@ exports[`mg-input-radio Should trigger events for items ({ items: [Array], input
         <div class="mg-input__input">
           <ul class="mg-input__input-group-container">
             <li class="mg-input__input-group">
-              <input aria-describedby="identifier-help-text" id="identifier_0" name="identifier" type="radio" value="batman">
+              <input aria-describedby="identifier-help-text" id="identifier_0" name="identifier" type="radio" value="0">
               <label htmlfor="identifier_0">
                 batman
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="identifier-help-text" id="identifier_1" name="identifier" type="radio" value="robin">
+              <input aria-describedby="identifier-help-text" id="identifier_1" name="identifier" type="radio" value="1">
+              <label htmlfor="identifier_1">
+                robin
+              </label>
+            </li>
+          </ul>
+        </div>
+        <div class="mg-input__help-text" id="identifier-help-text">
+          My help text
+        </div>
+      </div>
+    </fieldset>
+  </mock:shadow-root>
+</mg-input-radio>
+`;
+
+exports[`mg-input-radio Should trigger events for items ({ items: [Array], selectedIndex: 2 }) with selectedIndex (%s) 1`] = `
+<mg-input-radio>
+  <mock:shadow-root>
+    <fieldset class="mg-input mg-input--radio">
+      <mg-input-title identifier="identifier" is-legend="">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input">
+          <ul class="mg-input__input-group-container">
+            <li class="mg-input__input-group">
+              <input aria-describedby="identifier-help-text" id="identifier_0" name="identifier" type="radio" value="0">
+              <label htmlfor="identifier_0">
+                batman
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="identifier-help-text" id="identifier_1" name="identifier" type="radio" value="1">
               <label htmlfor="identifier_1">
                 robin
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="identifier-help-text" id="identifier_2" name="identifier" type="radio" value="joker">
+              <input aria-describedby="identifier-help-text" id="identifier_2" name="identifier" type="radio" value="2">
               <label htmlfor="identifier_2">
                 joker
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="identifier-help-text" id="identifier_3" name="identifier" type="radio" value="bane">
+              <input aria-describedby="identifier-help-text" id="identifier_3" name="identifier" type="radio" value="3">
               <label htmlfor="identifier_3">
                 bane
               </label>
@@ -692,7 +758,7 @@ exports[`mg-input-radio Should trigger events for items ({ items: [Array], input
 </mg-input-radio>
 `;
 
-exports[`mg-input-radio Should trigger events for items ({ items: [Array], inputValue: 1 }) with inputValue (%s) 1`] = `
+exports[`mg-input-radio Should trigger events for items ({ items: [Array], selectedIndex: 3 }) with selectedIndex (%s) 1`] = `
 <mg-input-radio>
   <mock:shadow-root>
     <fieldset class="mg-input mg-input--radio">
@@ -703,60 +769,27 @@ exports[`mg-input-radio Should trigger events for items ({ items: [Array], input
         <div class="mg-input__input">
           <ul class="mg-input__input-group-container">
             <li class="mg-input__input-group">
-              <input aria-describedby="identifier-help-text" id="identifier_0" name="identifier" type="radio" value="1">
+              <input aria-describedby="identifier-help-text" id="identifier_0" name="identifier" type="radio" value="0">
               <label htmlfor="identifier_0">
                 batman
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="identifier-help-text" id="identifier_1" name="identifier" type="radio" value="2">
+              <input aria-describedby="identifier-help-text" id="identifier_1" name="identifier" type="radio" value="1">
               <label htmlfor="identifier_1">
                 robin
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="identifier-help-text" id="identifier_2" name="identifier" type="radio" value="3">
+              <input aria-describedby="identifier-help-text" id="identifier_2" name="identifier" type="radio" value="2">
               <label htmlfor="identifier_2">
                 joker
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="identifier-help-text" id="identifier_3" name="identifier" type="radio" value="4">
+              <input aria-describedby="identifier-help-text" id="identifier_3" name="identifier" type="radio" value="3">
               <label htmlfor="identifier_3">
                 bane
-              </label>
-            </li>
-          </ul>
-        </div>
-        <div class="mg-input__help-text" id="identifier-help-text">
-          My help text
-        </div>
-      </div>
-    </fieldset>
-  </mock:shadow-root>
-</mg-input-radio>
-`;
-
-exports[`mg-input-radio Should trigger events for items ({ items: [Array], inputValue: true }) with inputValue (%s) 1`] = `
-<mg-input-radio>
-  <mock:shadow-root>
-    <fieldset class="mg-input mg-input--radio">
-      <mg-input-title identifier="identifier" is-legend="">
-        label
-      </mg-input-title>
-      <div class="mg-input__input-container">
-        <div class="mg-input__input">
-          <ul class="mg-input__input-group-container">
-            <li class="mg-input__input-group">
-              <input aria-describedby="identifier-help-text" checked="" id="identifier_0" name="identifier" type="radio" value="true">
-              <label htmlfor="identifier_0">
-                batman
-              </label>
-            </li>
-            <li class="mg-input__input-group">
-              <input aria-describedby="identifier-help-text" id="identifier_1" name="identifier" type="radio" value="false">
-              <label htmlfor="identifier_1">
-                robin
               </label>
             </li>
           </ul>
@@ -781,25 +814,25 @@ exports[`mg-input-radio validity, case next state is disabled validity ({ validi
         <div class="mg-input__input">
           <ul class="mg-input__input-group-container">
             <li class="mg-input__input-group">
-              <input aria-describedby="identifier-error" id="identifier_0" name="identifier" type="radio" value="batman">
+              <input aria-describedby="identifier-error" id="identifier_0" name="identifier" type="radio" value="0">
               <label htmlfor="identifier_0">
                 batman
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="identifier-error" id="identifier_1" name="identifier" type="radio" value="robin">
+              <input aria-describedby="identifier-error" id="identifier_1" name="identifier" type="radio" value="1">
               <label htmlfor="identifier_1">
                 robin
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="identifier-error" id="identifier_2" name="identifier" type="radio" value="joker">
+              <input aria-describedby="identifier-error" id="identifier_2" name="identifier" type="radio" value="2">
               <label htmlfor="identifier_2">
                 joker
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="identifier-error" id="identifier_3" name="identifier" type="radio" value="bane">
+              <input aria-describedby="identifier-error" id="identifier_3" name="identifier" type="radio" value="3">
               <label htmlfor="identifier_3">
                 bane
               </label>
@@ -826,25 +859,25 @@ exports[`mg-input-radio validity, case next state is disabled validity ({ validi
         <div class="mg-input__input">
           <ul class="mg-input__input-group-container">
             <li class="mg-input__input-group">
-              <input aria-describedby="identifier-error" disabled="" id="identifier_0" name="identifier" type="radio" value="batman">
+              <input aria-describedby="identifier-error" disabled="" id="identifier_0" name="identifier" type="radio" value="0">
               <label htmlfor="identifier_0">
                 batman
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="identifier-error" disabled="" id="identifier_1" name="identifier" type="radio" value="robin">
+              <input aria-describedby="identifier-error" disabled="" id="identifier_1" name="identifier" type="radio" value="1">
               <label htmlfor="identifier_1">
                 robin
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="identifier-error" disabled="" id="identifier_2" name="identifier" type="radio" value="joker">
+              <input aria-describedby="identifier-error" disabled="" id="identifier_2" name="identifier" type="radio" value="2">
               <label htmlfor="identifier_2">
                 joker
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="identifier-error" disabled="" id="identifier_3" name="identifier" type="radio" value="bane">
+              <input aria-describedby="identifier-error" disabled="" id="identifier_3" name="identifier" type="radio" value="3">
               <label htmlfor="identifier_3">
                 bane
               </label>
@@ -871,25 +904,25 @@ exports[`mg-input-radio validity, case next state is readonly validity ({ validi
         <div class="mg-input__input">
           <ul class="mg-input__input-group-container">
             <li class="mg-input__input-group">
-              <input aria-describedby="identifier-error" id="identifier_0" name="identifier" type="radio" value="batman">
+              <input aria-describedby="identifier-error" id="identifier_0" name="identifier" type="radio" value="0">
               <label htmlfor="identifier_0">
                 batman
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="identifier-error" id="identifier_1" name="identifier" type="radio" value="robin">
+              <input aria-describedby="identifier-error" id="identifier_1" name="identifier" type="radio" value="1">
               <label htmlfor="identifier_1">
                 robin
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="identifier-error" id="identifier_2" name="identifier" type="radio" value="joker">
+              <input aria-describedby="identifier-error" id="identifier_2" name="identifier" type="radio" value="2">
               <label htmlfor="identifier_2">
                 joker
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="identifier-error" id="identifier_3" name="identifier" type="radio" value="bane">
+              <input aria-describedby="identifier-error" id="identifier_3" name="identifier" type="radio" value="3">
               <label htmlfor="identifier_3">
                 bane
               </label>

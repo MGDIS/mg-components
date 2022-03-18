@@ -4,7 +4,7 @@
  */
 export type SelectOption = {
   title: string;
-  value: string;
+  value: any;
   disabled?: boolean;
   group?: string;
 };

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-03-17T16:23:20",
+  "timestamp": "2022-03-18T13:36:19",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.14.1",
@@ -1810,7 +1810,7 @@
               "type": "string"
             }
           ],
-          "optional": true,
+          "optional": false,
           "required": false
         },
         {
@@ -1928,7 +1928,7 @@
               "type": "string"
             }
           ],
-          "optional": true,
+          "optional": false,
           "required": false
         },
         {
@@ -2010,7 +2010,7 @@
               "type": "any"
             }
           ],
-          "optional": true,
+          "optional": false,
           "required": false
         }
       ],
@@ -2102,7 +2102,7 @@
               "type": "string"
             }
           ],
-          "optional": true,
+          "optional": false,
           "required": false
         },
         {
@@ -2202,7 +2202,7 @@
               "type": "string"
             }
           ],
-          "optional": true,
+          "optional": false,
           "required": false
         },
         {
@@ -2324,15 +2324,15 @@
         },
         {
           "name": "value",
-          "type": "string",
+          "type": "any",
           "mutable": true,
           "attr": "value",
-          "reflectToAttr": true,
+          "reflectToAttr": false,
           "docs": "Component value",
           "docsTags": [],
           "values": [
             {
-              "type": "string"
+              "type": "any"
             }
           ],
           "optional": false,
