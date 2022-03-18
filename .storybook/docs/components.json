@@ -1,8 +1,8 @@
 {
-  "timestamp": "2022-03-15T10:27:23",
+  "timestamp": "2022-03-18T13:31:48",
   "compiler": {
     "name": "@stencil/core",
-    "version": "2.14.0",
+    "version": "2.14.1",
     "typescriptVersion": "4.5.4"
   },
   "components": [
@@ -1717,7 +1717,7 @@
               "type": "string"
             }
           ],
-          "optional": true,
+          "optional": false,
           "required": false
         },
         {
@@ -1835,7 +1835,7 @@
               "type": "string"
             }
           ],
-          "optional": true,
+          "optional": false,
           "required": false
         },
         {
@@ -1917,7 +1917,7 @@
               "type": "any"
             }
           ],
-          "optional": true,
+          "optional": false,
           "required": false
         }
       ],
@@ -2009,7 +2009,7 @@
               "type": "string"
             }
           ],
-          "optional": true,
+          "optional": false,
           "required": false
         },
         {
@@ -2109,7 +2109,7 @@
               "type": "string"
             }
           ],
-          "optional": true,
+          "optional": false,
           "required": false
         },
         {
@@ -2231,15 +2231,15 @@
         },
         {
           "name": "value",
-          "type": "string",
+          "type": "any",
           "mutable": true,
           "attr": "value",
-          "reflectToAttr": true,
+          "reflectToAttr": false,
           "docs": "Component value",
           "docsTags": [],
           "values": [
             {
-              "type": "string"
+              "type": "any"
             }
           ],
           "optional": false,

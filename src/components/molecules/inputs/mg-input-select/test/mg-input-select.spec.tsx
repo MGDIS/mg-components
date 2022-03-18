@@ -1,6 +1,7 @@
 import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
 import { MgInputSelect } from '../mg-input-select';
+import { SelectOption } from '../mg-input-select.conf';
 import { messages } from '../../../../../locales';
 
 const getPage = async args => {
@@ -81,9 +82,42 @@ describe('mg-input-select', () => {
     },
   );
 
-  test('Should trigger events', async () => {
-    const inputValue = 'Blu';
-    const args = { label: 'label', items: ['blu', 'bli', 'blo', 'bla'], identifier: 'identifier', helpText: 'My help text' };
+  test.each([
+    { items: ['batman', 'robin', 'joker', 'bane'], selectedIndex: 3 },
+    {
+      items: [
+        { title: 'batman', value: 'u' },
+        { title: 'robin', value: 'i' },
+        { title: 'joker', value: 'o' },
+        { title: 'bane', value: 'a' },
+      ],
+      selectedIndex: 2,
+    },
+    {
+      items: [
+        { title: 'batman', value: 1 },
+        { title: 'robin', value: 2 },
+        { title: 'joker', value: 3 },
+        { title: 'bane', value: 4 },
+      ],
+      selectedIndex: 1,
+    },
+    {
+      items: [
+        { title: 'batman', value: true },
+        { title: 'robin', value: false },
+      ],
+      selectedIndex: 0,
+    },
+    {
+      items: [
+        { title: 'batman', value: { name: 'Batman' } },
+        { title: 'robin', value: { name: 'Robin' } },
+      ],
+      selectedIndex: 1,
+    },
+  ])('Should trigger events for items (%s) with selectedIndex (%s)', async ({ items, selectedIndex }) => {
+    const args = { label: 'label', items, identifier: 'identifier', helpText: 'My help text' };
     const page = await getPage(args);
 
     const element = page.doc.querySelector('mg-input-select');
@@ -104,10 +138,11 @@ describe('mg-input-select', () => {
 
     expect(page.root).toMatchSnapshot(); //Snapshot on focus
 
-    input.value = inputValue;
+    input.value = selectedIndex.toString();
     input.dispatchEvent(new CustomEvent('input', { bubbles: true }));
     await page.waitForChanges();
-    expect(page.rootInstance.valueChange.emit).toHaveBeenCalledWith(inputValue);
+    const expectedEmitValue = typeof items[selectedIndex] === 'object' ? (items[selectedIndex] as SelectOption).value : items[selectedIndex];
+    expect(page.rootInstance.valueChange.emit).toHaveBeenCalledWith(expectedEmitValue);
   });
 
   test.each([

@@ -62,7 +62,7 @@ export class MgInputSelect {
   /**
    * Component value
    */
-  @Prop({ mutable: true, reflect: true }) value: string;
+  @Prop({ mutable: true }) value: any;
 
   /**
    * Items are the possible options to select
@@ -200,7 +200,7 @@ export class MgInputSelect {
    */
   private handleInput = () => {
     this.checkValidity();
-    this.value = this.input.value;
+    this.value = this.input.value !== '' ? this.options[this.input.value].value : null;
     this.valueChange.emit(this.value);
   };
 
@@ -292,21 +292,17 @@ export class MgInputSelect {
               {this.placeholder}
             </option>
           )}
-          {this.options.map(option =>
+          {this.options.map((option, optionIndex) =>
             option.group !== undefined ? (
               <optgroup label={option.group}>
-                {(option as OptGroup).options.map(optgroup => (
-                  <option value={optgroup.value} selected={this.value === optgroup.value} disabled={optgroup.disabled}>
+                {(option as OptGroup).options.map((optgroup, optgroupIndex) => (
+                  <option value={optgroupIndex} selected={JSON.stringify(this.value) === JSON.stringify(optgroup.value)} disabled={optgroup.disabled}>
                     {optgroup.title}
                   </option>
                 ))}
               </optgroup>
             ) : (
-              <option
-                value={(option as SelectOption).value && (option as SelectOption).value.toString()}
-                selected={this.value === (option as SelectOption).value}
-                disabled={(option as SelectOption).disabled}
-              >
+              <option value={optionIndex} selected={JSON.stringify(this.value) === JSON.stringify((option as SelectOption).value)} disabled={(option as SelectOption).disabled}>
                 {(option as SelectOption).title}
               </option>
             ),

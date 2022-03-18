@@ -1,6 +1,7 @@
 import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
 import { MgInputRadio } from '../mg-input-radio';
+import { RadioOption } from '../mg-input-radio.conf';
 import { messages } from '../../../../../locales';
 
 const getPage = args => {
@@ -168,7 +169,7 @@ describe('mg-input-radio', () => {
     input.value = selectedIndex.toString();
     input.dispatchEvent(new CustomEvent('input', { bubbles: true }));
     await page.waitForChanges();
-    const expectedEmitValue = items[selectedIndex].value || items[selectedIndex]; // manage non object case
+    const expectedEmitValue = typeof items[selectedIndex] === 'object' ? (items[selectedIndex] as RadioOption).value : items[selectedIndex];
     expect(page.rootInstance.valueChange.emit).toHaveBeenCalledWith(expectedEmitValue);
   });
 

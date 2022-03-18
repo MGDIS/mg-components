@@ -34,7 +34,7 @@ export class MgInputRadio {
   /**
    * Component value
    */
-  @Prop({ mutable: true }) value?: any;
+  @Prop({ mutable: true }) value: any;
 
   /**
    * Items are the possible options to select
@@ -63,13 +63,13 @@ export class MgInputRadio {
    * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
    * If not set, it will be created.
    */
-  @Prop() identifier?: string = createID('mg-input-radio');
+  @Prop() identifier: string = createID('mg-input-radio');
 
   /**
    * Input name
    * If not set the value equals the identifier
    */
-  @Prop() name?: string = this.identifier;
+  @Prop() name: string = this.identifier;
 
   /**
    * Input label

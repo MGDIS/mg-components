@@ -367,20 +367,26 @@
         <script>
           const mgInputSelect = document.querySelector('mg-input-select');
           // mgInputSelect.items = ['blu', 'bli', 'bla', 'blo'];
-          mgInputSelect.items = [
-            { title: 'blu', value: 'blublu' },
-            { title: 'bli', value: 5 },
-            { title: 'bla', value: { blu: 'blu' } },
-            { title: 'blo', value: ['blu', 'bli', 'blo'] },
-          ];
+          mgInputSelect.value = 5;
           // mgInputSelect.items = [
-          //   { title: 'blu blu blu blu blu', value: 'blu', group: 'Le groupe A' },
-          //   { title: 'blu', value: 'blublu', group: 'Le groupe B' },
-          //   { title: 'bli', value: 'bli', group: 'Le groupe A' },
-          //   { title: 'bli', value: 'blibli', group: 'Le groupe B' },
-          //   { title: 'bla', value: 'blabla' },
-          //   { title: 'blo', value: 'bloblo' },
+          //   { title: 'blu', value: 'blublu' },
+          //   { title: 'bli', value: 5 },
+          //   { title: 'bla', value: { bla: 'bla' } },
+          //   { title: 'blo', value: ['blu', 'bli', 'blo'] },
+          //   { title: 'ble', value: false },
+          //   { title: 'bly', value: true },
           // ];
+          mgInputSelect.items = [
+            { title: 'blu blu blu blu blu', value: 'blu', group: 'Le groupe A' },
+            { title: 'blu', value: 5, group: 'Le groupe B' },
+            { title: 'bli', value: { blu: 'blu' }, group: 'Le groupe A' },
+            { title: 'non', value: false, group: 'Le groupe B' },
+            { title: 'bla', value: 'blabla' },
+            { title: 'blo', value: 'bloblo' },
+          ];
+          mgInputSelect.addEventListener('value-change', e => {
+            console.log(e.target.value);
+          });
         </script>
         <h3>Input Date</h3>
         <mg-input-date placeholder="placeholder" help-text="Message d'aide plus long" label="Libellé plutôt long on va dire" tooltip="message tooltip" required value="1982-06-02">
@@ -417,7 +423,7 @@
             { title: 'blo', value: { blo: 'blo' } },
             { title: 'bla', value: { bla: 'bla' } },
           ];
-          mgInputRadio.value = { blo: 'blo' };
+          // mgInputRadio.value = { blo: 'blo' };
           mgInputRadio.addEventListener('value-change', e => {
             console.log(e.target.value);
           });

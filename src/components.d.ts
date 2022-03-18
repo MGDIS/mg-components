@@ -352,7 +352,7 @@ export namespace Components {
         /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
-        "identifier"?: string;
+        "identifier": string;
         /**
           * Define if inputs are display verticaly
          */
@@ -380,7 +380,7 @@ export namespace Components {
         /**
           * Input name If not set the value equals the identifier
          */
-        "name"?: string;
+        "name": string;
         /**
           * Define if input is readonly
          */
@@ -400,7 +400,7 @@ export namespace Components {
         /**
           * Component value
          */
-        "value"?: any;
+        "value": any;
     }
     interface MgInputSelect {
         /**
@@ -414,7 +414,7 @@ export namespace Components {
         /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
-        "identifier"?: string;
+        "identifier": string;
         /**
           * Define input invalid state
          */
@@ -438,7 +438,7 @@ export namespace Components {
         /**
           * Input name If not set the value equals the identifier
          */
-        "name"?: string;
+        "name": string;
         /**
           * Input placeholder. It should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text.
          */
@@ -470,7 +470,7 @@ export namespace Components {
         /**
           * Component value
          */
-        "value": string;
+        "value": any;
     }
     interface MgInputText {
         /**
@@ -1476,7 +1476,7 @@ declare namespace LocalJSX {
         /**
           * Component value
          */
-        "value"?: string;
+        "value"?: any;
     }
     interface MgInputText {
         /**
