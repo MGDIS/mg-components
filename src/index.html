@@ -369,9 +369,9 @@
           // mgInputSelect.items = ['blu', 'bli', 'bla', 'blo'];
           mgInputSelect.items = [
             { title: 'blu', value: 'blublu' },
-            { title: 'bli', value: 'blibli' },
-            { title: 'bla', value: 'blabla' },
-            { title: 'blo', value: 'bloblo' },
+            { title: 'bli', value: 5 },
+            { title: 'bla', value: { blu: 'blu' } },
+            { title: 'blo', value: ['blu', 'bli', 'blo'] },
           ];
           // mgInputSelect.items = [
           //   { title: 'blu blu blu blu blu', value: 'blu', group: 'Le groupe A' },
@@ -409,7 +409,18 @@
         <mg-input-radio label="Libellé" label-on-top tooltip="message tooltip" required></mg-input-radio>
         <script>
           const mgInputRadio = document.querySelector('mg-input-radio');
-          mgInputRadio.items = ['blu', 'bli', 'blo', 'bla'];
+          // mgInputRadio.items = ['blu', 'bli', 'blo', 'bla'];
+          // mgInputRadio.value = 'bli';
+          mgInputRadio.items = [
+            { title: 'blu', value: { blu: 'blu' } },
+            { title: 'bli', value: { bli: 'bli' } },
+            { title: 'blo', value: { blo: 'blo' } },
+            { title: 'bla', value: { bla: 'bla' } },
+          ];
+          mgInputRadio.value = { blo: 'blo' };
+          mgInputRadio.addEventListener('value-change', e => {
+            console.log(e.target.value);
+          });
         </script>
         <h3>Input Checkbox</h3>
         <mg-input-checkbox label="Libellé" label-on-top tooltip="message tooltip" required></mg-input-checkbox>

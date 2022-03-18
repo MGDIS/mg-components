@@ -17,14 +17,14 @@ const isOption = (option: SelectOption): boolean => typeof option === 'object' &
  * @param {SelectOption} item
  * @param {string} item.group
  * @param {string} item.title
- * @param {string} item.value
+ * @param {any} item.value
  * @param {boolean} item.disabled
  * @returns {OptGroup} grouped options
  */
-const groupOptions = (acc, { group, title, value, disabled }): OptGroup => {
-  if (group) {
+const groupOptions = (acc, { group, title, value, disabled }: SelectOption): OptGroup => {
+  if (group !== undefined) {
     // Check if group is already created
-    const optgroup = acc.find(grp => grp.group === group);
+    const optgroup = acc.find((grp: { group: string }) => grp.group === group);
     // Add to group
     if (optgroup) {
       optgroup.options.push({ title, value, disabled });
@@ -69,7 +69,7 @@ export class MgInputSelect {
    */
   @Prop() items!: string[] | SelectOption[];
   @Watch('items')
-  validateItems(newValue) {
+  validateItems(newValue): void {
     // String array
     if (allItemsAreString(newValue)) {
       this.valueExist = newValue.includes(this.value);
@@ -79,7 +79,7 @@ export class MgInputSelect {
     else if (newValue && (newValue as Array<SelectOption>).every(item => isOption(item))) {
       this.valueExist = newValue.map(item => item.value).includes(this.value);
       // Grouped object options
-      if (newValue.some(item => item.group !== undefined)) {
+      if (newValue.some((item: { group: string }) => item.group !== undefined)) {
         this.options = newValue.reduce(groupOptions, []);
       }
       // Standart object options
@@ -95,13 +95,13 @@ export class MgInputSelect {
    * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
    * If not set, it will be created.
    */
-  @Prop() identifier?: string = createID('mg-input-select');
+  @Prop() identifier: string = createID('mg-input-select');
 
   /**
    * Input name
    * If not set the value equals the identifier
    */
-  @Prop() name?: string = this.identifier;
+  @Prop() name: string = this.identifier;
 
   /**
    * Input label
@@ -302,7 +302,11 @@ export class MgInputSelect {
                 ))}
               </optgroup>
             ) : (
-              <option value={(option as SelectOption).value} selected={this.value === (option as SelectOption).value} disabled={(option as SelectOption).disabled}>
+              <option
+                value={(option as SelectOption).value && (option as SelectOption).value.toString()}
+                selected={this.value === (option as SelectOption).value}
+                disabled={(option as SelectOption).disabled}
+              >
                 {(option as SelectOption).title}
               </option>
             ),

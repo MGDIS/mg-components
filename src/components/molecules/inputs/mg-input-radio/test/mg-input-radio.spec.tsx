@@ -110,7 +110,7 @@ describe('mg-input-radio', () => {
   });
 
   test.each([
-    { items: ['batman', 'robin', 'joker', 'bane'], inputValue: 'batman' },
+    { items: ['batman', 'robin', 'joker', 'bane'], selectedIndex: 3 },
     {
       items: [
         { title: 'batman', value: 'u' },
@@ -118,7 +118,7 @@ describe('mg-input-radio', () => {
         { title: 'joker', value: 'o' },
         { title: 'bane', value: 'a' },
       ],
-      inputValue: 'a',
+      selectedIndex: 2,
     },
     {
       items: [
@@ -127,16 +127,23 @@ describe('mg-input-radio', () => {
         { title: 'joker', value: 3 },
         { title: 'bane', value: 4 },
       ],
-      inputValue: 1,
+      selectedIndex: 1,
     },
     {
       items: [
         { title: 'batman', value: true },
         { title: 'robin', value: false },
       ],
-      inputValue: true,
+      selectedIndex: 0,
     },
-  ])('Should trigger events for items (%s) with inputValue (%s)', async ({ items, inputValue }) => {
+    {
+      items: [
+        { title: 'batman', value: { name: 'Batman' } },
+        { title: 'robin', value: { name: 'Robin' } },
+      ],
+      selectedIndex: 1,
+    },
+  ])('Should trigger events for items (%s) with selectedIndex (%s)', async ({ items, selectedIndex }) => {
     const args = { label: 'label', items, identifier: 'identifier', helpText: 'My help text' };
     const page = await getPage(args);
 
@@ -158,10 +165,11 @@ describe('mg-input-radio', () => {
 
     expect(page.root).toMatchSnapshot(); //Snapshot on focus
 
-    input.value = inputValue.toString();
+    input.value = selectedIndex.toString();
     input.dispatchEvent(new CustomEvent('input', { bubbles: true }));
     await page.waitForChanges();
-    expect(page.rootInstance.valueChange.emit).toHaveBeenCalledWith(inputValue);
+    const expectedEmitValue = items[selectedIndex].value || items[selectedIndex]; // manage non object case
+    expect(page.rootInstance.valueChange.emit).toHaveBeenCalledWith(expectedEmitValue);
   });
 
   test.each([

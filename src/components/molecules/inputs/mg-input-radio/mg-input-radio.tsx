@@ -152,7 +152,7 @@ export class MgInputRadio {
    */
   private handleInput = (event: InputEvent & { target: HTMLInputElement }) => {
     this.checkValidity();
-    this.value = this.options.find(o => o.value.toString() === event.target.value).value;
+    this.value = this.options[event.target.value].value;
     this.valueChange.emit(this.value);
   };
 
@@ -243,8 +243,8 @@ export class MgInputRadio {
                 type="radio"
                 id={this.identifier + '_' + index}
                 name={this.identifier}
-                value={input.value && input.value.toString()}
-                checked={input.value === this.value || input.value === true}
+                value={index}
+                checked={JSON.stringify(this.value) === JSON.stringify(this.options[index].value)}
                 disabled={this.disabled || input.disabled}
                 required={this.required}
                 onBlur={this.handleBlur}
