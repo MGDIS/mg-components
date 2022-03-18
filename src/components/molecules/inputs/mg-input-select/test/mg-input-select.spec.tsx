@@ -83,7 +83,8 @@ describe('mg-input-select', () => {
   );
 
   test.each([
-    { items: ['batman', 'robin', 'joker', 'bane'], selectedIndex: 3 },
+    { items: ['batman', 'robin', 'joker', 'bane'], selectedOption: '' },
+    { items: ['batman', 'robin', 'joker', 'bane'], selectedOption: 3 },
     {
       items: [
         { title: 'batman', value: 'u' },
@@ -91,7 +92,7 @@ describe('mg-input-select', () => {
         { title: 'joker', value: 'o' },
         { title: 'bane', value: 'a' },
       ],
-      selectedIndex: 2,
+      selectedOption: 2,
     },
     {
       items: [
@@ -100,23 +101,23 @@ describe('mg-input-select', () => {
         { title: 'joker', value: 3 },
         { title: 'bane', value: 4 },
       ],
-      selectedIndex: 1,
+      selectedOption: 1,
     },
     {
       items: [
         { title: 'batman', value: true },
         { title: 'robin', value: false },
       ],
-      selectedIndex: 0,
+      selectedOption: 0,
     },
     {
       items: [
         { title: 'batman', value: { name: 'Batman' } },
         { title: 'robin', value: { name: 'Robin' } },
       ],
-      selectedIndex: 1,
+      selectedOption: 1,
     },
-  ])('Should trigger events for items (%s) with selectedIndex (%s)', async ({ items, selectedIndex }) => {
+  ])('Should trigger events for items (%s) with selectedOption (%s)', async ({ items, selectedOption }) => {
     const args = { label: 'label', items, identifier: 'identifier', helpText: 'My help text' };
     const page = await getPage(args);
 
@@ -138,10 +139,10 @@ describe('mg-input-select', () => {
 
     expect(page.root).toMatchSnapshot(); //Snapshot on focus
 
-    input.value = selectedIndex.toString();
+    input.value = selectedOption.toString();
     input.dispatchEvent(new CustomEvent('input', { bubbles: true }));
     await page.waitForChanges();
-    const expectedEmitValue = typeof items[selectedIndex] === 'object' ? (items[selectedIndex] as SelectOption).value : items[selectedIndex];
+    const expectedEmitValue = selectedOption !== '' ? (typeof items[selectedOption] === 'object' ? (items[selectedOption] as SelectOption).value : items[selectedOption]) : null;
     expect(page.rootInstance.valueChange.emit).toHaveBeenCalledWith(expectedEmitValue);
   });
 

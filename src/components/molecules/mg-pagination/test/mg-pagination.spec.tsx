@@ -21,7 +21,7 @@ describe('mg-pagination', () => {
 
       for (const _ of actions) {
         const nextButton = page.root.shadowRoot.querySelector('.mg-pagination__button:last-of-type');
-        await nextButton.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+        nextButton.dispatchEvent(new CustomEvent('click', { bubbles: true }));
         await page.waitForChanges();
 
         expect(page.root).toMatchSnapshot();
