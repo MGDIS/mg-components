@@ -1,5 +1,7 @@
 import { FunctionalComponent, h, VNode, FunctionalUtilities } from '@stencil/core';
+import { Width } from './MgInput.conf';
 import { ClassList } from '../../../utils/components.utils';
+import { InputClass } from './MgInput.conf';
 
 /**
  * Apply in all input child node the aria-describedby attribute
@@ -32,15 +34,17 @@ const applyAriadescribedBy = (children: VNode[], ariaDescribedbyIDs: Set<string>
  * Add classes based on props
  * @param props
  */
-const addClasses = (props): void => {
+const manageClasses = (props): void => {
   props.classList.add('mg-input');
 
-  if (props.labelOnTop) {
-    props.classList.add('mg-input--label-on-top');
-  }
+  if (props.labelOnTop) props.classList.add('mg-input--label-on-top');
 
-  if (props.readonly) {
-    props.classList.add('mg-input--readonly');
+  if (props.readonly) props.classList.add('mg-input--readonly');
+
+  if (props.width !== undefined) props.classList.add(`mg-input--width-${props.width}`);
+
+  if (props.readonly || props.disabled) {
+    props.classList.delete(InputClass.ERROR);
   }
 };
 
@@ -68,6 +72,8 @@ interface MgInputProps {
   readonlyValue: string;
   required: boolean;
   readonly: boolean;
+  width: Width;
+  disabled: boolean;
   // Tooltip
   tooltip: string;
   // Nb Char Left
@@ -92,7 +98,7 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
    * Check required properties
    */
   if (typeof props.label !== 'string' || props.label === '') {
-    throw new Error(`prop "label" is required`);
+    throw new Error('<mg-input> prop "label" is required');
   }
   if (props.labelOnTop && props.labelHide) {
     throw new Error('<mg-input> prop "labelOnTop" must not be paired with the prop "labelHide"');
@@ -101,7 +107,7 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
   /**
    * Component classes
    */
-  addClasses(props);
+  manageClasses(props);
 
   /**
    * a11y IDs

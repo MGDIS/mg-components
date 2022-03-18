@@ -7,6 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { BadgeType } from "./components/atoms/mg-badge/mg-badge.conf";
 import { CheckboxValue } from "./components/molecules/inputs/mg-input-checkbox/mg-input-checkbox.conf";
+import { Width } from "./components/molecules/inputs/MgInput.conf";
 import { RadioOption } from "./components/molecules/inputs/mg-input-radio/mg-input-radio.conf";
 import { SelectOption } from "./components/molecules/inputs/mg-input-select/mg-input-select.conf";
 import { ToggleValue } from "./components/molecules/inputs/mg-input-toggle/mg-input-toggle.conf";
@@ -214,6 +215,10 @@ export namespace Components {
     }
     interface MgInputNumeric {
         /**
+          * Override decimal length decimal is the number after the decimal point
+         */
+        "decimalLength": number;
+        /**
           * Define if input is disabled
          */
         "disabled": boolean;
@@ -225,6 +230,10 @@ export namespace Components {
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
         "identifier"?: string;
+        /**
+          * Override integer length integer is the number before the decimal point
+         */
+        "integerLength": number;
         /**
           * Define input pattern error message
          */
@@ -281,6 +290,10 @@ export namespace Components {
           * Component value
          */
         "value": string;
+        /**
+          * Define input width
+         */
+        "width": Width;
     }
     interface MgInputPassword {
         /**
@@ -339,6 +352,10 @@ export namespace Components {
           * Component value
          */
         "value": string;
+        /**
+          * Define input width
+         */
+        "width": Width;
     }
     interface MgInputRadio {
         /**
@@ -471,6 +488,10 @@ export namespace Components {
           * Component value
          */
         "value": any;
+        /**
+          * Define input width
+         */
+        "width": Width;
     }
     interface MgInputText {
         /**
@@ -557,6 +578,10 @@ export namespace Components {
           * Component value
          */
         "value": string;
+        /**
+          * Define input width
+         */
+        "width": Width;
     }
     interface MgInputTextarea {
         /**
@@ -639,6 +664,10 @@ export namespace Components {
           * Component value
          */
         "value": string;
+        /**
+          * Define input width
+         */
+        "width": Width;
     }
     interface MgInputTitle {
         /**
@@ -1204,6 +1233,10 @@ declare namespace LocalJSX {
     }
     interface MgInputNumeric {
         /**
+          * Override decimal length decimal is the number after the decimal point
+         */
+        "decimalLength"?: number;
+        /**
           * Define if input is disabled
          */
         "disabled"?: boolean;
@@ -1215,6 +1248,10 @@ declare namespace LocalJSX {
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
         "identifier"?: string;
+        /**
+          * Override integer length integer is the number before the decimal point
+         */
+        "integerLength"?: number;
         /**
           * Define input pattern error message
          */
@@ -1275,6 +1312,10 @@ declare namespace LocalJSX {
           * Component value
          */
         "value"?: string;
+        /**
+          * Define input width
+         */
+        "width"?: Width;
     }
     interface MgInputPassword {
         /**
@@ -1337,6 +1378,10 @@ declare namespace LocalJSX {
           * Component value
          */
         "value"?: string;
+        /**
+          * Define input width
+         */
+        "width"?: Width;
     }
     interface MgInputRadio {
         /**
@@ -1477,6 +1522,10 @@ declare namespace LocalJSX {
           * Component value
          */
         "value"?: any;
+        /**
+          * Define input width
+         */
+        "width"?: Width;
     }
     interface MgInputText {
         /**
@@ -1567,6 +1616,10 @@ declare namespace LocalJSX {
           * Component value
          */
         "value"?: string;
+        /**
+          * Define input width
+         */
+        "width"?: Width;
     }
     interface MgInputTextarea {
         /**
@@ -1653,6 +1706,10 @@ declare namespace LocalJSX {
           * Component value
          */
         "value"?: string;
+        /**
+          * Define input width
+         */
+        "width"?: Width;
     }
     interface MgInputTitle {
         /**

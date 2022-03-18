@@ -36,7 +36,7 @@ describe('mg-input-numeric', () => {
     });
 
     test.each([
-      <mg-button slot="append-input" label="search" identifier="identifier">
+      <mg-button slot="append-input" label="search" identifier="button-identifier">
         <mg-icon icon="calculator"></mg-icon> Calculate
       </mg-button>,
       <span slot="append-input">km</span>,
@@ -50,7 +50,7 @@ describe('mg-input-numeric', () => {
       try {
         await getPage({ label: value, type });
       } catch (err) {
-        expect(err.message).toMatch('prop "label" is required');
+        expect(err.message).toMatch('<mg-input> prop "label" is required');
       }
     });
 
@@ -59,6 +59,22 @@ describe('mg-input-numeric', () => {
         await getPage({ label: 'batman', labelOnTop: true, labelHide: true });
       } catch (err) {
         expect(err.message).toMatch('<mg-input> prop "labelOnTop" must not be paired with the prop "labelHide"');
+      }
+    });
+
+    test('Should throw an error with non positive integer length value', async () => {
+      try {
+        await getPage({ label: 'label', integerLength: 0 });
+      } catch (err) {
+        expect(err.message).toMatch('<mg-input-numeric> prop "integer-length" must be a positive number.');
+      }
+    });
+
+    test('Should throw an error with non positive decimal length value', async () => {
+      try {
+        await getPage({ label: 'label', decimalLength: 0 });
+      } catch (err) {
+        expect(err.message).toMatch('<mg-input-numeric> prop "decimal-length" must be a positive number, consider using prop "type" to "integer" instead.');
       }
     });
 
@@ -91,34 +107,42 @@ describe('mg-input-numeric', () => {
       expect(page.rootInstance.valueChange.emit).toHaveBeenCalledWith(parseFloat(inputValue));
     });
 
-    test.each([
-      { validity: true, valueMissing: false },
-      { validity: false, valueMissing: true },
-    ])('validity (%s), valueMissing (%s)', async ({ validity, valueMissing }) => {
-      const args = { label: 'label', identifier: 'identifier', type };
-      const page = await getPage(args);
+    describe.each(['readonly', 'disabled'])('validity, case next state is %s', nextState => {
+      test.each([
+        { validity: true, valueMissing: false },
+        { validity: false, valueMissing: true },
+      ])('validity (%s), valueMissing (%s)', async ({ validity, valueMissing }) => {
+        const args = { label: 'label', identifier: 'identifier', type };
+        const page = await getPage(args);
 
-      const element = page.doc.querySelector('mg-input-numeric');
-      const input = element.shadowRoot.querySelector('input');
+        const element = page.doc.querySelector('mg-input-numeric');
+        const input = element.shadowRoot.querySelector('input');
 
-      //mock validity
-      input.checkValidity = jest.fn(() => validity);
-      Object.defineProperty(input, 'validity', {
-        get: jest.fn(() => ({
-          valueMissing,
-        })),
+        //mock validity
+        input.checkValidity = jest.fn(() => validity);
+        Object.defineProperty(input, 'validity', {
+          get: jest.fn(() => ({
+            valueMissing,
+          })),
+        });
+
+        input.dispatchEvent(new CustomEvent('blur', { bubbles: true }));
+        await page.waitForChanges();
+
+        if (validity) {
+          expect(page.rootInstance.errorMessage).toBeUndefined();
+        } else if (valueMissing) {
+          expect(page.rootInstance.errorMessage).toEqual(messages.errors.required);
+        }
+        expect(page.rootInstance.valid).toEqual(validity);
+        expect(page.rootInstance.invalid).toEqual(!validity);
+        if (valueMissing) {
+          expect(page.root).toMatchSnapshot(); //Snapshot with readonly/disabled FALSE
+          element[nextState] = true;
+          await page.waitForChanges();
+          expect(page.root).toMatchSnapshot(); //Snapshot with readonly/disabled TRUE
+        }
       });
-
-      input.dispatchEvent(new CustomEvent('blur', { bubbles: true }));
-      await page.waitForChanges();
-
-      if (validity) {
-        expect(page.rootInstance.errorMessage).toBeUndefined();
-      } else if (valueMissing) {
-        expect(page.rootInstance.errorMessage).toEqual(messages.errors.required);
-      }
-      expect(page.rootInstance.valid).toEqual(validity);
-      expect(page.rootInstance.invalid).toEqual(!validity);
     });
 
     test.each([
@@ -197,29 +221,5 @@ describe('mg-input-numeric', () => {
     } catch (err) {
       expect(err.message).toMatch('<mg-input-numeric> prop "type" must be one of :');
     }
-  });
-
-  test('Should manage missing shadowRoot on IE', async () => {
-    const inputValue = '1';
-    const args = { label: 'label', identifier: 'identifier', helpText: 'My help text', value: inputValue };
-    const page = await getPage(args);
-
-    await page.waitForChanges();
-
-    const element = page.doc.querySelector('mg-input-numeric');
-    const input = element.shadowRoot.querySelector('input');
-
-    page.rootInstance.element.shadowRoot = undefined;
-    const mockGetElementById = jest.fn();
-    global.document.getElementById = mockGetElementById.mockReturnValueOnce(null).mockReturnValueOnce(input);
-
-    //mock validity
-    input.checkValidity = jest.fn(() => true);
-    jest.spyOn(page.rootInstance.valueChange, 'emit');
-
-    input.value = 'a';
-    input.dispatchEvent(new CustomEvent('input', { bubbles: true }));
-    await page.waitForChanges();
-    expect(page.rootInstance.valueChange.emit).toHaveBeenCalledWith(parseFloat(inputValue));
   });
 });

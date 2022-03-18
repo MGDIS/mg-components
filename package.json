@@ -31,7 +31,8 @@
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
     "storybook": "start-storybook -p 6006 -s www/build",
-    "storybook:build": "build-storybook"
+    "storybook:build": "build-storybook",
+    "prepare": "husky install"
   },
   "jest-junit": {
     "outputDirectory": "coverage",
@@ -42,7 +43,7 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.2",
-    "@stencil/core": "^2.14.0",
+    "@stencil/core": "^2.14.1",
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {

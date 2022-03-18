@@ -44,6 +44,20 @@ describe('mg-input-toggle', () => {
     {
       props: {
         ...defaultProps,
+        value: '',
+      },
+      slots: defaultSlots,
+    },
+    {
+      props: {
+        ...defaultProps,
+        value: true,
+      },
+      slots: defaultSlots,
+    },
+    {
+      props: {
+        ...defaultProps,
         isOnOff: false,
       },
       slots: onOffSlots,
@@ -110,7 +124,7 @@ describe('mg-input-toggle', () => {
           defaultSlots,
         );
       } catch (err) {
-        expect(err.message).toMatch('prop "label" is required');
+        expect(err.message).toMatch('<mg-input> prop "label" is required');
       }
     });
 

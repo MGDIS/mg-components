@@ -1,9 +1,11 @@
 import { Component, Element, Event, h, Prop, EventEmitter, State, Watch } from '@stencil/core';
 import { MgInput } from '../MgInput';
+import { Width } from '../MgInput.conf';
 import { types, InputError } from './mg-input-numeric.conf';
 import { createID, ClassList } from '../../../../utils/components.utils';
 import { messages } from '../../../../locales';
 import { localeCurrency, localeNumber } from '../../../../utils/locale.utils';
+import { InputClass } from '../MgInput.conf';
 
 @Component({
   tag: 'mg-input-numeric',
@@ -21,7 +23,7 @@ export class MgInputNumeric {
   private readonlyValue: string;
 
   // Classes
-  private classError: string = 'is-not-valid';
+  private classError: string = InputClass.ERROR;
 
   // HTML selector
   private input: HTMLInputElement;
@@ -40,11 +42,11 @@ export class MgInputNumeric {
   validateValue(newValue: string) {
     if (newValue !== undefined && newValue !== null) {
       // Split number and decimal
-      const [number, decimal = ''] = newValue.replace('-', '').split(/[\.,]/);
+      const [integer, decimal = ''] = newValue.replace('-', '').split(/[\.,]/);
       // Regex
       const regex = this.type === 'integer' ? /^[\-]?\d+$/ : /^[\-]?\d+[.,]?\d*$/;
       // Filter input
-      if (newValue === '' || (newValue.match(regex) && number.length <= 13 && decimal.length <= (this.type === 'integer' ? 0 : 2))) {
+      if (newValue === '' || (newValue.match(regex) && integer.length <= this.integerLength && decimal.length <= (this.type === 'integer' ? 0 : this.decimalLength))) {
         this.storedValue = newValue;
       } else if (this.storedValue !== undefined) {
         newValue = this.storedValue;
@@ -54,7 +56,6 @@ export class MgInputNumeric {
       // Set value and input value
       this.value = newValue;
       if (this.input !== undefined) this.input.value = this.value;
-
       // emit numeric value
       this.numericValue = this.value !== '' && this.value !== null ? parseFloat(this.value.replace(',', '.')) : null;
       this.valueChange.emit(this.numericValue);
@@ -113,6 +114,11 @@ export class MgInputNumeric {
   @Prop() disabled: boolean = false;
 
   /**
+   * Define input width
+   */
+  @Prop() width: Width;
+
+  /**
    * Add a tooltip message next to the input
    */
   @Prop() tooltip: string;
@@ -127,7 +133,7 @@ export class MgInputNumeric {
    */
   @Prop() type: string = types[0];
   @Watch('type')
-  validateType(newValue: string) {
+  validateType(newValue: string): void {
     if (!types.includes(newValue)) {
       throw new Error(`<mg-input-numeric> prop "type" must be one of : ${types.join(', ')}`);
     }
@@ -143,6 +149,30 @@ export class MgInputNumeric {
    * Minimum value
    */
   @Prop() min: number;
+
+  /**
+   * Override integer length
+   * integer is the number before the decimal point
+   */
+  @Prop() integerLength: number = 13;
+  @Watch('integerLength')
+  validateIntegerLength(newValue: number): void {
+    if (newValue < 1) {
+      throw new Error(`<mg-input-numeric> prop "integer-length" must be a positive number.`);
+    }
+  }
+
+  /**
+   * Override decimal length
+   * decimal is the number after the decimal point
+   */
+  @Prop() decimalLength: number = 2;
+  @Watch('decimalLength')
+  validateDecimalLength(newValue: number): void {
+    if (newValue < 1) {
+      throw new Error(`<mg-input-numeric> prop "decimal-length" must be a positive number, consider using prop "type" to "integer" instead.`);
+    }
+  }
 
   /**
    * Define input pattern to validate
@@ -299,6 +329,8 @@ export class MgInputNumeric {
     // Set displayed value
     this.displayValue = this.readonlyValue;
     this.validateType(this.type);
+    this.validateIntegerLength(this.integerLength);
+    this.validateDecimalLength(this.decimalLength);
 
     // return a promise to process action only in the FIRST render().
     // https://stenciljs.com/docs/component-lifecycle#componentwillload
@@ -323,6 +355,8 @@ export class MgInputNumeric {
         labelHide={this.labelHide}
         required={this.required}
         readonly={this.readonly}
+        width={this.width}
+        disabled={this.disabled}
         value={this.value}
         readonlyValue={this.readonlyValue}
         tooltip={this.tooltip}

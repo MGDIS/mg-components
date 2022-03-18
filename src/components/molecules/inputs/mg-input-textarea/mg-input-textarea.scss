@@ -10,3 +10,10 @@
     height: auto;
   }
 }
+
+/* Firefox selector */
+@-moz-document url-prefix() {
+  .mg-input__box {
+    overflow-x: hidden; // remove Firefox bottom "phantom scrollbar" in textarea
+  }
+}

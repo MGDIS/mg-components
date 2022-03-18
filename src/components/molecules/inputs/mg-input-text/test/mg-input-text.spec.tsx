@@ -51,7 +51,7 @@ describe('mg-input-text', () => {
     try {
       await getPage({ label: value });
     } catch (err) {
-      expect(err.message).toMatch('prop "label" is required');
+      expect(err.message).toMatch('<mg-input> prop "label" is required');
     }
   });
 
@@ -107,37 +107,45 @@ describe('mg-input-text', () => {
     expect(page.rootInstance.classList.has('is-focused')).toBeFalsy();
   });
 
-  test.each([
-    { validity: true, valueMissing: false, patternMismatch: false },
-    { validity: false, valueMissing: true, patternMismatch: false },
-    { validity: false, valueMissing: false, patternMismatch: true },
-  ])('validity (%s), valueMissing (%s), patternMismatch (%s)', async ({ validity, valueMissing, patternMismatch }) => {
-    const args = { label: 'label', identifier: 'identifier', patternErrorMessage: 'Non' };
-    const page = await getPage(args);
+  describe.each(['readonly', 'disabled'])('validity, case next state is %s', nextState => {
+    test.each([
+      { validity: true, valueMissing: false, patternMismatch: false },
+      { validity: false, valueMissing: true, patternMismatch: false },
+      { validity: false, valueMissing: false, patternMismatch: true },
+    ])('validity (%s), valueMissing (%s), patternMismatch (%s)', async ({ validity, valueMissing, patternMismatch }) => {
+      const args = { label: 'label', identifier: 'identifier', patternErrorMessage: 'Non' };
+      const page = await getPage(args);
 
-    const element = page.doc.querySelector('mg-input-text');
-    const input = element.shadowRoot.querySelector('input');
+      const element = page.doc.querySelector('mg-input-text');
+      const input = element.shadowRoot.querySelector('input');
 
-    //mock validity
-    input.checkValidity = jest.fn(() => validity);
-    Object.defineProperty(input, 'validity', {
-      get: jest.fn(() => ({
-        valueMissing,
-        patternMismatch,
-      })),
+      //mock validity
+      input.checkValidity = jest.fn(() => validity);
+      Object.defineProperty(input, 'validity', {
+        get: jest.fn(() => ({
+          valueMissing,
+          patternMismatch,
+        })),
+      });
+
+      input.dispatchEvent(new CustomEvent('blur', { bubbles: true }));
+      await page.waitForChanges();
+
+      if (validity) {
+        expect(page.rootInstance.errorMessage).toBeUndefined();
+      } else if (valueMissing) {
+        expect(page.rootInstance.errorMessage).toEqual(messages.errors.required);
+      } else if (patternMismatch) {
+        expect(page.rootInstance.errorMessage).toEqual(args.patternErrorMessage);
+      }
+      expect(page.rootInstance.valid).toEqual(validity);
+      expect(page.rootInstance.invalid).toEqual(!validity);
+      if (valueMissing) {
+        expect(page.root).toMatchSnapshot(); //Snapshot with readonly/disabled FALSE
+        element[nextState] = true;
+        await page.waitForChanges();
+        expect(page.root).toMatchSnapshot(); //Snapshot with readonly/disabled TRUE
+      }
     });
-
-    input.dispatchEvent(new CustomEvent('blur', { bubbles: true }));
-    await page.waitForChanges();
-
-    if (validity) {
-      expect(page.rootInstance.errorMessage).toBeUndefined();
-    } else if (valueMissing) {
-      expect(page.rootInstance.errorMessage).toEqual(messages.errors.required);
-    } else if (patternMismatch) {
-      expect(page.rootInstance.errorMessage).toEqual(args.patternErrorMessage);
-    }
-    expect(page.rootInstance.valid).toEqual(validity);
-    expect(page.rootInstance.invalid).toEqual(!validity);
   });
 });

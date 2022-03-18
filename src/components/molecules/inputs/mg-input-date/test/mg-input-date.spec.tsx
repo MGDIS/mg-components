@@ -47,7 +47,7 @@ describe('mg-input-date', () => {
     try {
       await getPage({ label: value });
     } catch (err) {
-      expect(err.message).toMatch('prop "label" is required');
+      expect(err.message).toMatch('<mg-input> prop "label" is required');
     }
   });
 
@@ -97,39 +97,47 @@ describe('mg-input-date', () => {
     expect(page.rootInstance.valueChange.emit).toHaveBeenCalledWith(inputValue);
   });
 
-  test.each([
-    { validity: true, valueMissing: false, badInput: false },
-    { validity: false, valueMissing: true, badInput: false },
-    { validity: false, valueMissing: false, badInput: true },
-    { validity: false, valueMissing: false, badInput: true, min: date.first },
-  ])('validity (%s), valueMissing (%s), badInput (%s)', async ({ validity, valueMissing, badInput, min }) => {
-    const args = { label: 'label', identifier: 'identifier', min };
-    const page = await getPage(args);
+  describe.each(['readonly', 'disabled'])('validity, case next state is %s', nextState => {
+    test.each([
+      { validity: true, valueMissing: false, badInput: false },
+      { validity: false, valueMissing: true, badInput: false },
+      { validity: false, valueMissing: false, badInput: true },
+      { validity: false, valueMissing: false, badInput: true, min: date.first },
+    ])('validity (%s), valueMissing (%s), badInput (%s)', async ({ validity, valueMissing, badInput, min }) => {
+      const args = { label: 'label', identifier: 'identifier', min };
+      const page = await getPage(args);
 
-    const element = page.doc.querySelector('mg-input-date');
-    const input = element.shadowRoot.querySelector('input');
+      const element = page.doc.querySelector('mg-input-date');
+      const input = element.shadowRoot.querySelector('input');
 
-    //mock validity
-    input.checkValidity = jest.fn(() => validity);
-    Object.defineProperty(input, 'validity', {
-      get: jest.fn(() => ({
-        valueMissing,
-        badInput,
-      })),
+      //mock validity
+      input.checkValidity = jest.fn(() => validity);
+      Object.defineProperty(input, 'validity', {
+        get: jest.fn(() => ({
+          valueMissing,
+          badInput,
+        })),
+      });
+
+      input.dispatchEvent(new CustomEvent('blur', { bubbles: true }));
+      await page.waitForChanges();
+
+      if (validity) {
+        expect(page.rootInstance.errorMessage).toBeUndefined();
+      } else if (valueMissing) {
+        expect(page.rootInstance.errorMessage).toEqual(messages.errors.required);
+      } else if (badInput) {
+        expect(page.rootInstance.errorMessage).toEqual(messages.errors.date.badInput.replace('{min}', min !== undefined ? localeDate(min) : '01/01/1900'));
+      }
+      expect(page.rootInstance.valid).toEqual(validity);
+      expect(page.rootInstance.invalid).toEqual(!validity);
+      if (valueMissing) {
+        expect(page.root).toMatchSnapshot(); //Snapshot with readonly/disabled FALSE
+        element[nextState] = true;
+        await page.waitForChanges();
+        expect(page.root).toMatchSnapshot(); //Snapshot with readonly/disabled TRUE
+      }
     });
-
-    input.dispatchEvent(new CustomEvent('blur', { bubbles: true }));
-    await page.waitForChanges();
-
-    if (validity) {
-      expect(page.rootInstance.errorMessage).toBeUndefined();
-    } else if (valueMissing) {
-      expect(page.rootInstance.errorMessage).toEqual(messages.errors.required);
-    } else if (badInput) {
-      expect(page.rootInstance.errorMessage).toEqual(messages.errors.date.badInput.replace('{min}', min !== undefined ? localeDate(min) : '01/01/1900'));
-    }
-    expect(page.rootInstance.valid).toEqual(validity);
-    expect(page.rootInstance.invalid).toEqual(!validity);
   });
 
   test.each([
