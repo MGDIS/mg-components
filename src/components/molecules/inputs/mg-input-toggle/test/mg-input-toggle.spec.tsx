@@ -58,6 +58,13 @@ describe('mg-input-toggle', () => {
     {
       props: {
         ...defaultProps,
+        value: 'true',
+      },
+      slots: defaultSlots,
+    },
+    {
+      props: {
+        ...defaultProps,
         isOnOff: false,
       },
       slots: onOffSlots,
