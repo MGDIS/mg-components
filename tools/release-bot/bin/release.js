@@ -14,7 +14,7 @@ const converter = new showdown.Converter();
     process.exit(1);
   }
 
-  const webhookUrl = TEAMS_WEBHOOK_URL;
+  const webhookUrl = process.env.TEAMS_WEBHOOK_URL;
 
   const { data: gitlabTags } = await axios({
     method: 'GET',
