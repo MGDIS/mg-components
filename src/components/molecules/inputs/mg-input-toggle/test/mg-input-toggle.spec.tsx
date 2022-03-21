@@ -218,7 +218,8 @@ describe('mg-input-toggle', () => {
     const args = { label: 'label', items, identifier: 'identifier', helpText: 'My help text', value };
     const page = await getPage(args, defaultSlots);
 
-    const button = page.doc.querySelector('button');
+    const mgInputToogle = page.doc.querySelector('mg-input-toggle');
+    const button = mgInputToogle.shadowRoot.querySelector('button');
 
     jest.spyOn(page.rootInstance.valueChange, 'emit');
 

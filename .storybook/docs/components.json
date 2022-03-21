@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-03-18T13:36:19",
+  "timestamp": "2022-03-21T13:03:42",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.14.1",
@@ -3337,7 +3337,7 @@
     },
     {
       "filePath": "./src/components/molecules/inputs/mg-input-toggle/mg-input-toggle.tsx",
-      "encapsulation": "scoped",
+      "encapsulation": "shadow",
       "tag": "mg-input-toggle",
       "readme": "This molecule refers to the [PDA9-770](https://jira.mgdis.fr/browse/PDA9-770).\n",
       "docs": "This molecule refers to the [PDA9-770](https://jira.mgdis.fr/browse/PDA9-770).",
