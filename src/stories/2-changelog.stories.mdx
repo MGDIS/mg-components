@@ -4,6 +4,43 @@ import { Meta } from '@storybook/addon-docs/blocks';
 
 # Changelog
 
+## 3.0.0
+
+March 21st, 2022
+
+### 💥 Breaking Changes
+
+- Components properties are not reflected anymore to prevent errors with boolean values. For exemple to change the disabled property of a component in Vue.js you can do `disabled.prop="maVarDisabled"`.
+
+### ⚠️ New component
+
+- [**`<mg-popover>`**](?path=/docs/molecules-mg-popover--mg-popover) refers to [PDA9-504](https://jira.mgdis.fr/browse/PDA9-504)
+
+### 🚀 Enhancement
+
+- Added icons to [`<mg-icon>`](?path=/docs/atoms-mg-icon--mg-icon), [see all the availables icons](?path=/docs/style-icons--icons)
+- Added `component-hide` & `component-show` events on [`<mg-message>`](?path=/docs/molecules-mg-message--mg-message)
+- Added `width` attribute on `<mg-input-...>` to override default behavior
+- Added `append-input` slot on `<mg-input-numeric>` & `<mg-input-text>`
+- Added `type` and `icon` attributes on [`<mg-input-text>`](?path=/story/molecules-inputs-mg-input-text--search) to get an a search input
+
+### 🐛 Bug Fix
+
+- [#44](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/44) Read ISO 8601 date-time format with mg-input-date
+- [#46](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/46) mg-pagination - Missing currentPage change event
+- [#47](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/47) mg-tabs content display Firefox dotted border when clicked
+- [#48](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/48) Control on mg-input-date-field
+- [#49](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/49) mg-badge - change padding to 4px horizontal
+- [#50](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/50) Storybook - remove semicolon at the end of code example
+- [#51](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/51) Toggle component value
+- [#52](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/52) Add the possibility to remove the placeholder option in a mg-input-select
+- [#53](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/53) Change the type of SelectOption.value
+- [#56](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/56) mg-input-date - "effacer" displays error in console and value can't be retrieved
+- [#59](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/59) Impossible de récupérer la validité d'un composant mg-input après @blur ou @value-change
+- [#61](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/61) mg-button : action can be triggered with a disabled button (fix of the fix)
+- [#67](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/67) Composant mg-input-xxxx en erreur même si il est readOnly ou required
+- [#68](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/68) mg-input-toggle Le style appliqué ne correspond pas a la valeur renseignée au premier rendu
+
 ## 2.1.0
 
 February 18th, 2022

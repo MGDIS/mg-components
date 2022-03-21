@@ -17,6 +17,7 @@
   border-style: solid;
   border-color: var(--mg-inputs-color);
   border-radius: var(--mg-inputs-border-radius);
+  background-color: hsl(var(--color-light));
   // Font
   font-family: inherit;
   color: hsl(var(--color-dark));
@@ -30,6 +31,11 @@
 
   &:focus {
     box-shadow: 0 0 0.6rem hsla(var(--mg-inputs-color-shadow-focus-hsl), 0.5);
+  }
+
+  // disabled
+  &:disabled {
+    opacity: 0.3;
   }
 }
 

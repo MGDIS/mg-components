@@ -17,7 +17,7 @@
       }
     </style>
     <link rel="stylesheet" href="/build/variables.css" />
-    <link rel="stylesheet" href="/build/mg-components.css" />
+    <!-- <link rel="stylesheet" href="/build/mg-components.css" /> -->
     <script type="module" src="/build/mg-components.esm.js"></script>
     <script nomodule src="/build/mg-components.js"></script>
   </head>
@@ -323,7 +323,7 @@
             <mg-button slot="append-input" label="search"><mg-icon icon="magnifying-glass"></mg-icon> Search</mg-button></mg-input-text
           >
         </div>
-        <mg-input-text placeholder="placeholder" help-text="Message d'aide plus long" label="Libellé" tooltip="message tooltip" required value="bla"></mg-input-text>
+        <mg-input-text disabled placeholder="placeholder" help-text="Message d'aide plus long" label="Libellé" tooltip="message tooltip" required value="bla"></mg-input-text>
         <mg-input-text width="16" placeholder="placeholder" help-text="Message d'aide plus long" label="Libellé" tooltip="message tooltip" required value="bla"></mg-input-text>
         <mg-input-text width="4" placeholder="placeholder" help-text="Message d'aide plus long" label="Libellé" tooltip="message tooltip" required value="bla"></mg-input-text>
         <mg-input-text width="2" placeholder="placeholder" help-text="Message d'aide plus long" label="Libellé" tooltip="message tooltip" required value="bla"></mg-input-text>
@@ -335,6 +335,7 @@
           tooltip="message tooltip"
           required
           value="blu"
+          disabled
         ></mg-input-textarea>
         <mg-input-textarea
           width="16"
@@ -355,16 +356,7 @@
           tooltip="message tooltip"
           required
           value="blubl"
-        ></mg-input-select>
-        <mg-input-select
-          class="mg-input-width-full"
-          placeholder="placeholder"
-          placeholder-disabled
-          help-text="Message d'aide plus long"
-          label="Libellé plutôt long on va dire"
-          tooltip="message tooltip"
-          required
-          value="blubl"
+          disabled
         ></mg-input-select>
         <script>
           const mgInputSelect = document.querySelector('mg-input-select');
@@ -399,6 +391,7 @@
           tooltip="message tooltip"
           required
           value="1982-06-02"
+          disabled
         ></mg-input-date>
         <h3>Input Numeric</h3>
         <mg-input-numeric
@@ -408,6 +401,7 @@
           tooltip="message tooltip"
           required
           value="1234567890"
+          disabled
         ></mg-input-numeric>
         <mg-input-numeric
           width="full"
@@ -453,6 +447,7 @@
           tooltip="message tooltip"
           required
           value="1234567890"
+          disabled
         ></mg-input-password>
         <mg-input-password
           width="7"
