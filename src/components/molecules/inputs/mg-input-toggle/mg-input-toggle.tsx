@@ -13,7 +13,7 @@ const isOption = (option: ToggleValue): boolean => typeof option === 'object' &&
 @Component({
   tag: 'mg-input-toggle',
   styleUrl: 'mg-input-toggle.scss',
-  scoped: true,
+  shadow: true,
 })
 export class MgInputToggle {
   /************

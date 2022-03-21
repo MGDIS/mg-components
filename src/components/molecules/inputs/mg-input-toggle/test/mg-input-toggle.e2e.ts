@@ -16,7 +16,7 @@ describe('mg-input-toggle', () => {
     </script>`);
 
     const element = await page.find('mg-input-toggle');
-    const toggle = await page.find('button');
+    const toggle = await page.find('mg-input-toggle >>> button');
 
     expect(element).toHaveClass('hydrated');
 
