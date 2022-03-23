@@ -9,6 +9,7 @@ export default {
       control: { type: 'radio' },
     },
   },
+  parameters: { actions: { handles: ['value-change'] } },
 };
 
 /**
