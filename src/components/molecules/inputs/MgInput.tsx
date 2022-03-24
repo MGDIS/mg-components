@@ -5,10 +5,11 @@ import { InputClass } from './MgInput.conf';
 
 /**
  * Apply in all input child node the aria-describedby attribute
- * @param children
- * @param ariaDescribedbyIDs
- * @param utils
- * @returns {VNode[]}
+ *
+ * @param {VNode[]} children Represent scoped elements
+ * @param {Set<string>} ariaDescribedbyIDs List of IDs
+ * @param {FunctionalUtilities} utils Stencil.js utils
+ * @returns {VNode[]} Children with aria-describedby attribute
  */
 const applyAriadescribedBy = (children: VNode[], ariaDescribedbyIDs: Set<string>, utils: FunctionalUtilities): VNode[] =>
   utils.map(children, child => {
@@ -32,9 +33,10 @@ const applyAriadescribedBy = (children: VNode[], ariaDescribedbyIDs: Set<string>
 
 /**
  * Add classes based on props
- * @param props
+ *
+ * @param {MgInputProps} props MgInput Interface Props
  */
-const manageClasses = (props): void => {
+const manageClasses = (props: MgInputProps): void => {
   props.classList.add('mg-input');
 
   if (props.labelOnTop) props.classList.add('mg-input--label-on-top');
@@ -49,8 +51,9 @@ const manageClasses = (props): void => {
 };
 
 /**
- * Define tagname based on props
- * @param isFieldset
+ * Get tagname
+ *
+ * @param {boolean} isFieldset is fieldset
  * @returns {string} tag name
  */
 const getTagName = (isFieldset: boolean): string => (isFieldset ? 'fieldset' : 'div');
@@ -88,12 +91,13 @@ interface MgInputProps {
 
 /**
  * Get input template
- * @param props MgInput Interface Props
- * @param children Represent scoped elements
- * @param utils Stencil.js utils
- * @returns JSX template
+ *
+ * @param {MgInputProps} props MgInput Interface Props
+ * @param {VNode[]} children Represent scoped elements
+ * @param {FunctionalUtilities} utils Stencil.js utils
+ * @returns {VNode[]} input template
  */
-export const MgInput: FunctionalComponent<MgInputProps> = (props, children, utils) => {
+export const MgInput: FunctionalComponent<MgInputProps> = (props: MgInputProps, children: VNode[], utils: FunctionalUtilities): VNode[] => {
   /**
    * Check required properties
    */
@@ -161,9 +165,10 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
 
   /**
    * Get tooltip node
-   * @returns mg-tooltip
+   *
+   * @returns {VNode[]} mg-tooltip
    */
-  const getTooltip = () => (
+  const getTooltip = (): VNode[] => (
     <mg-tooltip identifier={`${props.identifier}-tooltip`} message={props.tooltip}>
       <mg-icon icon="info-circle"></mg-icon>
     </mg-tooltip>
@@ -171,9 +176,10 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props, children, util
 
   /**
    * Get input title (label) node
-   * @returns mg-input-title
+   *
+   * @returns {VNode[]} mg-input-title
    */
-  const getInputTitle = () => (
+  const getInputTitle = (): VNode[] => (
     <mg-input-title identifier={props.identifier} class={props.labelHide ? 'sr-only' : undefined} required={props.required} is-legend={props.isFieldset}>
       {props.label}
     </mg-input-title>

@@ -19,6 +19,7 @@ describe('mg-pagination', () => {
 
       const actions = [...Array(totalPages - 1).keys()];
 
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       for (const _ of actions) {
         const nextButton = page.root.shadowRoot.querySelector('.mg-pagination__button:last-of-type');
         nextButton.dispatchEvent(new CustomEvent('click', { bubbles: true }));

@@ -13,7 +13,7 @@ export class MgIcon {
    */
   @Prop() icon: string;
   @Watch('icon')
-  validateIcon(newValue: string) {
+  validateIcon(newValue: string): void {
     if (!Object.keys(icons).includes(newValue)) {
       throw new Error(`<mg-icon> prop "icon" must be one of : ${Object.keys(icons).join(', ')}`);
     }
@@ -23,9 +23,9 @@ export class MgIcon {
   /**
    * Define icon size
    */
-  @Prop() size: string = 'regular';
+  @Prop() size = 'regular';
   @Watch('size')
-  validateSize(newValue: string) {
+  validateSize(newValue: string): void {
     if (!sizes.includes(newValue)) {
       throw new Error(`<mg-icon> prop "size" must be one of : ${sizes.join(', ')}`);
     }
@@ -38,7 +38,7 @@ export class MgIcon {
    */
   @Prop() variant: string;
   @Watch('variant')
-  validateVariant(newValue: string) {
+  validateVariant(newValue: string): void {
     if (newValue !== undefined && !variants.includes(newValue)) {
       throw new Error(`<mg-icon> prop "variant" must be one of : ${variants.join(', ')}`);
     } else if (newValue !== undefined) {
@@ -49,9 +49,9 @@ export class MgIcon {
   /**
    * Make the icon spin
    */
-  @Prop() spin: boolean = false;
+  @Prop() spin = false;
   @Watch('spin')
-  handleSpin(newValue: boolean) {
+  handleSpin(newValue: boolean): void {
     if (newValue) {
       this.classList.add('mg-icon--spin');
     }
@@ -64,8 +64,10 @@ export class MgIcon {
 
   /**
    * Check if props are well configured on init
+   *
+   * @returns {void}
    */
-  componentWillLoad() {
+  componentWillLoad(): void {
     this.validateIcon(this.icon);
     this.validateSize(this.size);
     this.validateVariant(this.variant);
@@ -74,8 +76,10 @@ export class MgIcon {
 
   /**
    * Render component
+   *
+   * @returns {HTMLElement} HTML Element
    */
-  render() {
+  render(): HTMLElement {
     return (
       <svg class={this.classList.join()} aria-hidden="true" focusable="false" viewBox="0 0 16 16">
         {icons[this.icon]()}

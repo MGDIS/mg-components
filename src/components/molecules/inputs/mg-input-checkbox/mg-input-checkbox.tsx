@@ -7,8 +7,9 @@ import { InputClass } from '../MgInput.conf';
 
 /**
  * type CheckboxItem validation function
- * @param CheckboxItem
- * @returns {boolean}
+ *
+ * @param {CheckboxItem} item Checkbox item
+ * @returns {boolean} match item expectations
  */
 const isCheckboxItem = (item: CheckboxItem): boolean =>
   typeof item === 'object' && typeof item.title === 'string' && (item.value === null || typeof item.value === 'boolean') && item.value !== undefined;
@@ -40,8 +41,8 @@ export class MgInputCheckbox {
    */
   @Prop({ mutable: true }) value!: CheckboxValue[];
   @Watch('value')
-  validateValue(newValue) {
-    if (newValue && (newValue as Array<CheckboxItem>).every(item => isCheckboxItem(item))) {
+  validateValue(newValue: CheckboxValue[]): void {
+    if (newValue && (newValue as CheckboxItem[]).every(item => isCheckboxItem(item))) {
       this.checkboxItems = newValue.map((item, index) => ({
         id: `${this.identifier}_${index.toString()}`,
         title: item.title,
@@ -57,13 +58,13 @@ export class MgInputCheckbox {
    * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
    * If not set, it will be created.
    */
-  @Prop() identifier?: string = createID('mg-input-checkbox');
+  @Prop() identifier: string = createID('mg-input-checkbox');
 
   /**
    * Input name
    * If not set the value equals the identifier
    */
-  @Prop() name?: string = this.identifier;
+  @Prop() name: string = this.identifier;
 
   /**
    * Input label
@@ -79,31 +80,31 @@ export class MgInputCheckbox {
   /**
    * Define if label is visible
    */
-  @Prop() labelHide: boolean = false;
+  @Prop() labelHide = false;
 
   /**
    * Define if inputs are display verticaly
    */
-  @Prop() inputVerticalList: boolean = false;
+  @Prop() inputVerticalList = false;
 
   /**
    * Define if input is required
    */
-  @Prop() required: boolean = false;
+  @Prop() required = false;
 
   /**
    * Define if input is readonly
    */
-  @Prop() readonly: boolean = false;
+  @Prop() readonly = false;
   @Watch('readonly')
-  handleReadOnly() {
+  handleReadOnly(): void {
     this.classList.delete(this.classError);
   }
 
   /**
    * Define if input is disabled
    */
-  @Prop() disabled: boolean = false;
+  @Prop() disabled = false;
 
   /**
    * Add a tooltip message next to the input
@@ -147,9 +148,10 @@ export class MgInputCheckbox {
 
   /**
    * Handle input event
-   * @param event
+   *
+   * @param {InputEvent} event input event
    */
-  private handleInput = (event: InputEvent & { target: HTMLInputElement }) => {
+  private handleInput = (event: InputEvent & { target: HTMLInputElement }): void => {
     this.checkboxItems = this.checkboxItems.map(item => {
       if (item.id === event.target.id) {
         item.value = Boolean(event.target.checked);
@@ -165,7 +167,7 @@ export class MgInputCheckbox {
   /**
    * Handle blur event
    */
-  private handleBlur = () => {
+  private handleBlur = (): void => {
     // Check validity
     this.checkValidity();
     this.checkError();
@@ -174,7 +176,7 @@ export class MgInputCheckbox {
   /**
    * Check if input is valid
    */
-  private checkValidity() {
+  private checkValidity = (): void => {
     if (!this.readonly) {
       const validity = this.getInvalidElement() === undefined;
 
@@ -182,12 +184,12 @@ export class MgInputCheckbox {
       this.valid = validity;
       this.invalid = !validity;
     }
-  }
+  };
 
   /**
    * Check input errors
    */
-  private checkError() {
+  private checkError = (): void => {
     const invalidElement = this.getInvalidElement();
 
     // Set error message
@@ -202,19 +204,25 @@ export class MgInputCheckbox {
     } else {
       this.classList.add(this.classError);
     }
-  }
+  };
 
   /**
    * get invalid element
-   * @returns element: HTMLInputElement
+   *
+   * @returns {HTMLInputElement} element
    */
-  private getInvalidElement = () => this.inputs.find((element: HTMLInputElement) => !element.disabled && !element.checkValidity());
+  private getInvalidElement = (): HTMLInputElement => this.inputs.find((element: HTMLInputElement) => !element.disabled && !element.checkValidity());
 
   /*************
    * Lifecycle *
    *************/
 
-  componentWillLoad() {
+  /**
+   * Check if component props are well configured on init
+   *
+   * @returns {ReturnType<typeof setTimeout>} timeout
+   */
+  componentWillLoad(): ReturnType<typeof setTimeout> {
     // Check values format
     this.validateValue(this.value);
 
@@ -223,7 +231,12 @@ export class MgInputCheckbox {
     return setTimeout(() => this.checkValidity(), 0);
   }
 
-  render() {
+  /**
+   * Render
+   *
+   * @returns {HTMLElement} HTML Element
+   */
+  render(): HTMLElement {
     return (
       <MgInput
         identifier={this.identifier}

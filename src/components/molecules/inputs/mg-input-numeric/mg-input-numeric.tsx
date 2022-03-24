@@ -39,7 +39,7 @@ export class MgInputNumeric {
    */
   @Prop({ mutable: true, reflect: true }) value: string;
   @Watch('value')
-  validateValue(newValue: string) {
+  validateValue(newValue: string): void {
     if (newValue !== undefined && newValue !== null) {
       // Split number and decimal
       const [integer, decimal = ''] = newValue.replace('-', '').split(/[\.,]/);
@@ -68,13 +68,13 @@ export class MgInputNumeric {
    * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
    * If not set, it will be created.
    */
-  @Prop() identifier?: string = createID('mg-input-numeric');
+  @Prop() identifier: string = createID('mg-input-numeric');
 
   /**
    * Input name
    * If not set the value equals the identifier
    */
-  @Prop() name?: string = this.identifier;
+  @Prop() name: string = this.identifier;
 
   /**
    * Input label
@@ -90,7 +90,7 @@ export class MgInputNumeric {
   /**
    * Define if label is visible
    */
-  @Prop() labelHide: boolean = false;
+  @Prop() labelHide = false;
 
   /**
    * Input placeholder.
@@ -101,17 +101,17 @@ export class MgInputNumeric {
   /**
    * Define if input is required
    */
-  @Prop() required: boolean = false;
+  @Prop() required = false;
 
   /**
    * Define if input is readonly
    */
-  @Prop() readonly: boolean = false;
+  @Prop() readonly = false;
 
   /**
    * Define if input is disabled
    */
-  @Prop() disabled: boolean = false;
+  @Prop() disabled = false;
 
   /**
    * Define input width
@@ -154,7 +154,7 @@ export class MgInputNumeric {
    * Override integer length
    * integer is the number before the decimal point
    */
-  @Prop() integerLength: number = 13;
+  @Prop() integerLength = 13;
   @Watch('integerLength')
   validateIntegerLength(newValue: number): void {
     if (newValue < 1) {
@@ -166,7 +166,7 @@ export class MgInputNumeric {
    * Override decimal length
    * decimal is the number after the decimal point
    */
-  @Prop() decimalLength: number = 2;
+  @Prop() decimalLength = 2;
   @Watch('decimalLength')
   validateDecimalLength(newValue: number): void {
     if (newValue < 1) {
@@ -207,8 +207,10 @@ export class MgInputNumeric {
 
   /**
    * Handle input event
+   *
+   * @returns {void}
    */
-  private handleInput = () => {
+  private handleInput = (): void => {
     // Check validity
     this.checkValidity();
     this.value = this.input.value;
@@ -216,15 +218,19 @@ export class MgInputNumeric {
 
   /**
    * Handle focus event
+   *
+   * @returns {void}
    */
-  private handleFocus = () => {
+  private handleFocus = (): void => {
     this.displayValue = this.value;
   };
 
   /**
    * Handle blur event
+   *
+   * @returns {void}
    */
-  private handleBlur = () => {
+  private handleBlur = (): void => {
     // Check validity
     this.checkValidity();
     this.checkError();
@@ -234,8 +240,10 @@ export class MgInputNumeric {
 
   /**
    * Check if input is valid
+   *
+   * @returns {void}
    */
-  private checkValidity() {
+  private checkValidity = (): void => {
     if (!this.readonly) {
       const validity = this.getInputError() === null;
 
@@ -243,24 +251,28 @@ export class MgInputNumeric {
       this.valid = validity;
       this.invalid = !validity;
     }
-  }
+  };
 
   /**
    * Set error message
+   *
+   * @returns {void}
    */
-  private setErrorMessage() {
+  private setErrorMessage = (): void => {
     const inputError = this.getInputError();
     if (inputError === InputError.REQUIRED) {
       this.errorMessage = messages.errors[inputError];
     } else {
       this.errorMessage = messages.errors.numeric[inputError].replace('{min}', `${this.formatValue(this.min)}`).replace('{max}', `${this.formatValue(this.max)}`);
     }
-  }
+  };
 
   /**
    * Check input errors
+   *
+   * @returns {void}
    */
-  private checkError() {
+  private checkError = (): void => {
     // Set error message
     this.errorMessage = undefined;
 
@@ -271,11 +283,12 @@ export class MgInputNumeric {
     } else {
       this.classList.delete(this.classError);
     }
-  }
+  };
 
   /**
    * get input error code
-   * @returns {null | InputError}
+   *
+   * @returns {null | InputError} error code
    */
   private getInputError = (): null | InputError => {
     let inputError = null;
@@ -286,7 +299,7 @@ export class MgInputNumeric {
       inputError = InputError.REQUIRED;
     }
     // Min & Max
-    if (this.min !== undefined && this.numericValue < this.min && this.max === undefined) {
+    else if (this.min !== undefined && this.numericValue < this.min && this.max === undefined) {
       // Only a min value is set
       inputError = InputError.MIN;
     } else if (this.max !== undefined && this.numericValue > this.max && this.min === undefined) {
@@ -301,15 +314,18 @@ export class MgInputNumeric {
 
   /**
    * Format value based on type
-   * @param value {number}
+   *
+   * @param {number} value value to format
    * @returns {string} formated local value
    */
   private formatValue = (value: number): string => (this.type === 'currency' ? localeCurrency(value) : localeNumber(value));
 
   /**
    * Validate append slot
+   *
+   * @returns {void}
    */
-  private validateAppendSlot() {
+  private validateAppendSlot = (): void => {
     const slotAppendInput: HTMLSlotElement = this.element.querySelector('[slot="append-input"]');
     if (slotAppendInput !== null && slotAppendInput.querySelector('.mg-button') !== null) {
       this.classList.add('mg-input--is-input-group-append');
@@ -318,13 +334,18 @@ export class MgInputNumeric {
       this.classList.add('mg-input--is-append-input-slot-content');
       this.classList = new ClassList(this.classList.classes);
     }
-  }
+  };
 
   /*************
    * Lifecycle *
    *************/
 
-  componentWillLoad() {
+  /**
+   * Check if component props are well configured on init
+   *
+   * @returns {ReturnType<typeof setTimeout>} timeout
+   */
+  componentWillLoad(): ReturnType<typeof setTimeout> {
     this.validateValue(this.value);
     // Set displayed value
     this.displayValue = this.readonlyValue;
@@ -337,15 +358,21 @@ export class MgInputNumeric {
     return setTimeout(() => this.checkValidity(), 0);
   }
 
-  componentDidLoad() {
+  /**
+   * Check if component props are well configured on init
+   *
+   * @returns {void}
+   */
+  componentDidLoad(): void {
     this.validateAppendSlot();
   }
 
   /**
-   * Check if component props are well configured on init
+   * Render
+   *
+   * @returns {HTMLElement} HTML Element
    */
-
-  render() {
+  render(): HTMLElement {
     return (
       <MgInput
         identifier={this.identifier}

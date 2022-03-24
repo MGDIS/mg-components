@@ -73,7 +73,7 @@ describe('mg-tooltip', () => {
 
       expect(tooltip).toHaveAttribute('data-show');
 
-      await page.keyboard.down(key as any);
+      await page.keyboard.down(key as never);
       await page.waitForChanges();
 
       expect(tooltip).toHaveAttribute('data-show');

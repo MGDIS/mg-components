@@ -4,8 +4,9 @@ import { TabItem } from './mg-tabs.conf';
 
 /**
  * type TabItem validation function
- * @param tab
- * @returns {boolean}
+ *
+ * @param {TabItem} tab tab item
+ * @returns {boolean} tab item type is valid
  */
 const isTabItem = (tab: TabItem): boolean => typeof tab === 'object' && typeof tab.label === 'string';
 
@@ -28,7 +29,7 @@ export class MgTabs {
    * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
    * If not set, it will be created.
    */
-  @Prop() identifier?: string = createID('mg-tabs');
+  @Prop() identifier: string = createID('mg-tabs');
 
   /**
    * Tabs label. Include short tabs description.
@@ -42,14 +43,14 @@ export class MgTabs {
    */
   @Prop() items!: string[] | TabItem[];
   @Watch('items')
-  validateItems(newValue) {
+  validateItems(newValue: string[] | TabItem[]): void {
     // String array
-    if (allItemsAreString(newValue)) {
-      this.tabs = newValue.map(item => ({ label: item }));
+    if (allItemsAreString(newValue as string[])) {
+      this.tabs = (newValue as string[]).map(item => ({ label: item }));
     }
     // Object array
-    else if (newValue && (newValue as Array<TabItem>).every(item => isTabItem(item))) {
-      this.tabs = newValue;
+    else if (newValue && (newValue as TabItem[]).every(item => isTabItem(item))) {
+      this.tabs = newValue as TabItem[];
     } else {
       throw new Error('<mg-tabs> prop "items" is required and all items must be the same type: TabItem.');
     }
@@ -59,9 +60,9 @@ export class MgTabs {
    * Active tab number
    * default: first is 1
    */
-  @Prop({ reflect: true, mutable: true }) activeTab: number = 1;
+  @Prop({ reflect: true, mutable: true }) activeTab = 1;
   @Watch('activeTab')
-  validateActiveTab(newValue) {
+  validateActiveTab(newValue: number): void {
     if (Number(newValue) < 1 || Number(newValue) > this.tabs.length) {
       throw new Error('<mg-tabs> prop "activeTab" must be between 1 and tabs length.');
     }
@@ -79,21 +80,22 @@ export class MgTabs {
 
   /**
    * Handle click events on tabs
-   * @param event
+   *
+   * @param {MouseEvent} event mouse event
    */
-  private handleClick = (event: MouseEvent & { currentTarget: HTMLElement }) => {
+  private handleClick = (event: MouseEvent & { currentTarget: HTMLElement }): void => {
     const tabId = event.currentTarget.getAttribute('data-index');
     this.activeTab = Number(tabId);
   };
 
   /**
    * Handle keyboard event on tabs
-   * @param event
+   *
+   * @param {MouseEvent} event mouse event
+   * @returns {void}
    */
-  private handleKeydown = (event: KeyboardEvent & { target: HTMLElement }) => {
-    let selectedTab: HTMLElement;
-
-    let tabId: number = Number(event.target.getAttribute('data-index'));
+  private handleKeydown = (event: KeyboardEvent & { target: HTMLElement }): void => {
+    let tabId = Number(event.target.getAttribute('data-index'));
     const parent = event.target.parentElement;
 
     // change selected id from key code
@@ -106,7 +108,7 @@ export class MgTabs {
     }
 
     // get selected tab
-    selectedTab = parent.querySelector(`[data-index="${tabId}"]`);
+    const selectedTab: HTMLElement = parent.querySelector(`[data-index="${tabId}"]`);
 
     // apply selected tab if exist
     if (selectedTab !== null) {
@@ -118,7 +120,7 @@ export class MgTabs {
   /**
    * Validate slots setting
    */
-  private validateSlots = () => {
+  private validateSlots = (): void => {
     const slots = Array.from(this.element.children).filter(slot => slot.getAttribute('slot')?.includes('tab_content-'));
     if (slots.length !== this.tabs.length) {
       throw new Error('<mg-tabs> Must have slots counts equal to tabs count.');
@@ -131,15 +133,22 @@ export class MgTabs {
 
   /**
    * Check if component props are well configured on init
+   *
+   * @returns {void}
    */
-  componentWillLoad() {
+  componentWillLoad(): void {
     // Check tabs format
     this.validateItems(this.items);
     this.validateActiveTab(this.activeTab);
     this.validateSlots();
   }
 
-  render() {
+  /**
+   * Render
+   *
+   * @returns {HTMLElement} HTML Element
+   */
+  render(): HTMLElement {
     return (
       <Host>
         <header role="tablist" aria-label={this.label} class="mg-tabs__header">

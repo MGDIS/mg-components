@@ -171,7 +171,7 @@ describe('mg-input-numeric', () => {
     await input.press('5');
     await input.press('6'); // Should not be included
 
-    let value = await input.getProperty('value');
+    const value = await input.getProperty('value');
     expect(value).toEqual('1234567890123,45');
   });
 

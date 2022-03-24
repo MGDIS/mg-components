@@ -19,14 +19,14 @@ export class MgInputTitle {
   /**
    * Switch from label to fieldset sementic
    */
-  @Prop() isLegend: boolean = false;
+  @Prop() isLegend = false;
 
   /**
    * Component parent tagname
    */
-  @State() tagName: string = 'label';
+  @State() tagName = 'label';
 
-  private getTagName = () => {
+  private getTagName = (): void => {
     this.tagName = this.isLegend ? 'legend' : 'label';
   };
 
@@ -34,15 +34,23 @@ export class MgInputTitle {
    * Lifecycle *
    *************/
 
-  componentWillLoad() {
-    // Init tag name
+  /**
+   * Init tag name
+   *
+   * @returns {void}
+   */
+  componentWillLoad(): void {
     this.getTagName();
   }
 
-  // \u00A0 represent a &nbsp;
-  render() {
+  /**
+   * Render
+   *
+   * @returns {HTMLElement} HTML Element
+   */
+  render(): HTMLElement {
     const TagName = this.tagName;
-
+    // \u00A0 represent a &nbsp;
     return (
       <TagName class="mg-input-title" htmlFor={this.isLegend ? undefined : this.identifier}>
         <slot></slot>

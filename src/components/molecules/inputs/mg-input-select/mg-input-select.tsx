@@ -8,28 +8,30 @@ import { InputClass } from '../MgInput.conf';
 
 /**
  * Check if item is a well configured option
- * @param option
- * @returns {boolean}
+ *
+ * @param {SelectOption} option select option
+ * @returns {boolean} select option type is valid
  */
 const isOption = (option: SelectOption): boolean => typeof option === 'object' && typeof option.title === 'string' && option.value !== undefined;
 
 /**
  * Group options
- * @param acc
- * @param {SelectOption} item
- * @param {string} item.group
- * @param {string} item.title
- * @param {any} item.value
- * @param {boolean} item.disabled
- * @returns {OptGroup} grouped options
+ *
+ * @param {(SelectOption | OptGroup)[]} acc reduce accumulator
+ * @param {SelectOption} item item to add
+ * @param {string} item.group item group
+ * @param {string} item.title item title
+ * @param {unknown} item.value item value
+ * @param {boolean} item.disabled is item disabled
+ * @returns {(SelectOption | OptGroup)[]} grouped options
  */
-const groupOptions = (acc, { group, title, value, disabled }: SelectOption): OptGroup => {
+const groupOptions = (acc: (SelectOption | OptGroup)[], { group, title, value, disabled }: SelectOption): (SelectOption | OptGroup)[] => {
   if (group !== undefined) {
     // Check if group is already created
-    const optgroup = acc.find((grp: { group: string }) => grp.group === group);
+    const optGroup: OptGroup = (acc as OptGroup[]).find(grp => grp.group === group);
     // Add to group
-    if (optgroup) {
-      optgroup.options.push({ title, value, disabled });
+    if (optGroup !== undefined) {
+      optGroup.options.push({ title, value, disabled });
     }
     // Create group
     else {
@@ -64,29 +66,29 @@ export class MgInputSelect {
   /**
    * Component value
    */
-  @Prop({ mutable: true }) value: any;
+  @Prop({ mutable: true }) value: unknown;
 
   /**
    * Items are the possible options to select
    */
   @Prop() items!: string[] | SelectOption[];
   @Watch('items')
-  validateItems(newValue): void {
+  validateItems(newValue: string[] | SelectOption[]): void {
     // String array
-    if (allItemsAreString(newValue)) {
-      this.valueExist = newValue.includes(this.value);
-      this.options = newValue.map(item => ({ title: item, value: item }));
+    if (allItemsAreString(newValue as string[])) {
+      this.valueExist = (newValue as string[]).includes(this.value as string);
+      this.options = (newValue as string[]).map((item: string) => ({ title: item, value: item }));
     }
     // Object array
-    else if (newValue && (newValue as Array<SelectOption>).every(item => isOption(item))) {
-      this.valueExist = newValue.map(item => item.value).includes(this.value);
+    else if (newValue && (newValue as SelectOption[]).every(item => isOption(item))) {
+      this.valueExist = (newValue as SelectOption[]).map(item => item.value).includes(this.value);
       // Grouped object options
-      if (newValue.some((item: { group: string }) => item.group !== undefined)) {
-        this.options = newValue.reduce(groupOptions, []);
+      if ((newValue as SelectOption[]).some(item => item.group !== undefined)) {
+        this.options = (newValue as SelectOption[]).reduce(groupOptions, []);
       }
       // Standart object options
       else {
-        this.options = newValue;
+        this.options = newValue as SelectOption[];
       }
     } else {
       throw new Error('<mg-input-select> prop "items" is required and all items must be the same type, string or Option.');
@@ -119,7 +121,7 @@ export class MgInputSelect {
   /**
    * Define if label is visible
    */
-  @Prop() labelHide: boolean = false;
+  @Prop() labelHide = false;
 
   /**
    * Input placeholder.
@@ -130,27 +132,27 @@ export class MgInputSelect {
   /**
    * Option to remove placeholder
    */
-  @Prop() placeholderHide: boolean = false;
+  @Prop() placeholderHide = false;
 
   /**
    * Option to disable placeholder
    */
-  @Prop() placeholderDisabled: boolean = false;
+  @Prop() placeholderDisabled = false;
 
   /**
    * Define if input is required
    */
-  @Prop() required: boolean = false;
+  @Prop() required = false;
 
   /**
    * Define if input is readonly
    */
-  @Prop() readonly: boolean = false;
+  @Prop() readonly = false;
 
   /**
    * Define if input is disabled
    */
-  @Prop() disabled: boolean = false;
+  @Prop() disabled = false;
 
   /**
    * Define input width
@@ -200,12 +202,12 @@ export class MgInputSelect {
   /**
    * Emmited event when value change
    */
-  @Event({ eventName: 'value-change' }) valueChange: EventEmitter<string>;
+  @Event({ eventName: 'value-change' }) valueChange: EventEmitter<unknown>;
 
   /**
    * Handle input event
    */
-  private handleInput = () => {
+  private handleInput = (): void => {
     this.checkValidity();
     this.value = this.input.value !== '' ? this.options[this.input.value].value : null;
     this.valueChange.emit(this.value);
@@ -214,7 +216,7 @@ export class MgInputSelect {
   /**
    * Handle blur event
    */
-  private handleBlur = () => {
+  private handleBlur = (): void => {
     this.checkValidity();
     this.checkError();
   };
@@ -222,7 +224,7 @@ export class MgInputSelect {
   /**
    * Check if input is valid
    */
-  private checkValidity() {
+  private checkValidity = (): void => {
     if (!this.readonly && this.input !== undefined) {
       const validity = this.input.checkValidity && this.input.checkValidity();
 
@@ -230,12 +232,12 @@ export class MgInputSelect {
       this.valid = validity;
       this.invalid = !validity;
     }
-  }
+  };
 
   /**
    * Check input errors
    */
-  private checkError() {
+  private checkError = (): void => {
     // Set error message
     this.errorMessage = undefined;
     if (!this.valid && this.input.validity.valueMissing) {
@@ -248,13 +250,18 @@ export class MgInputSelect {
     } else {
       this.classList.add(this.classError);
     }
-  }
+  };
 
   /*************
    * Lifecycle *
    *************/
 
-  componentWillLoad() {
+  /**
+   * Check if component props are well configured on init
+   *
+   * @returns {ReturnType<typeof setTimeout>} timeout
+   */
+  componentWillLoad(): ReturnType<typeof setTimeout> {
     // Check items format
     this.validateItems(this.items);
 
@@ -263,7 +270,12 @@ export class MgInputSelect {
     return setTimeout(() => this.checkValidity(), 0);
   }
 
-  render() {
+  /**
+   * Render
+   *
+   * @returns {HTMLElement} HTML Element
+   */
+  render(): HTMLElement {
     return (
       <MgInput
         identifier={this.identifier}
@@ -275,7 +287,7 @@ export class MgInputSelect {
         readonly={this.readonly}
         width={this.width}
         disabled={this.disabled}
-        value={this.value}
+        value={this.value as string}
         readonlyValue={undefined}
         tooltip={this.tooltip}
         displayCharacterLeft={undefined}

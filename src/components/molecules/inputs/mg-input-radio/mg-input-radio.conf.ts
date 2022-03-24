@@ -4,6 +4,6 @@
  */
 export type RadioOption = {
   title: string;
-  value: any;
+  value: unknown;
   disabled?: boolean;
 };
