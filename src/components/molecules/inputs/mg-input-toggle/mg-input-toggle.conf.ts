@@ -4,5 +4,5 @@
  */
 export type ToggleValue = {
   title: string;
-  value: any;
+  value: unknown;
 };

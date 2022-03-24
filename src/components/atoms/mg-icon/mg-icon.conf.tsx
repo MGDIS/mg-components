@@ -3,7 +3,7 @@ import { h } from '@stencil/core';
 /**
  * Icon SVG paths
  */
-export const icons: Object = {
+export const icons: unknown = {
   'arrow-down': () => (
     <path
       fill="currentColor"

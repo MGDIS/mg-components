@@ -29,7 +29,7 @@ export class MgCharacterLeft {
    */
   @Prop() template: string = messages.nbCharLeft;
   @Watch('template')
-  validateTemplate(newValue: string) {
+  validateTemplate(newValue: string): void {
     if (typeof newValue !== 'string' || newValue === '' || newValue.indexOf(this.mustacheCounter) === -1) {
       throw new Error(`<mg-character-left> prop "template" must contain "${this.mustacheCounter}".`);
     }
@@ -38,14 +38,14 @@ export class MgCharacterLeft {
   /**
    * Sets the characters to count
    */
-  @Prop() characters: string = '';
+  @Prop() characters = '';
 
   /**
    * Add maximum length
    */
   @Prop() maxlength!: number;
   @Watch('maxlength')
-  validateMaxlength(newValue: number) {
+  validateMaxlength(newValue: number): void {
     if (typeof newValue !== 'number') {
       throw new Error('<mg-character-left> prop "maxlength" is required.');
     }
@@ -53,7 +53,8 @@ export class MgCharacterLeft {
 
   /**
    * Calculate number character left
-   * @returns {string}
+   *
+   * @returns {string} message
    */
   private getMessage = (): string => {
     return this.template.replace(this.mustacheCounter, `<strong>${this.maxlength - this.characters.length}</strong>`);
@@ -63,12 +64,17 @@ export class MgCharacterLeft {
    * Lifecycle *
    *************/
 
-  componentWillLoad() {
+  componentWillLoad(): void {
     this.validateTemplate(this.template);
     this.validateMaxlength(this.maxlength);
   }
 
-  render() {
+  /**
+   * Render component
+   *
+   * @returns {HTMLElement} HTML Element
+   */
+  render(): HTMLElement {
     return <span id={this.identifier} innerHTML={this.getMessage()} aria-live="polite"></span>;
   }
 }

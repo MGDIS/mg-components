@@ -21,7 +21,7 @@ export namespace Components {
         /**
           * Define if button is using outline style
          */
-        "outline"?: boolean;
+        "outline": boolean;
         /**
           * Badge value
          */
@@ -29,7 +29,7 @@ export namespace Components {
         /**
           * Define button variant
          */
-        "variant"?: string;
+        "variant": string;
     }
     interface MgButton {
         /**
@@ -43,7 +43,7 @@ export namespace Components {
         /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
-        "identifier"?: string;
+        "identifier": string;
         /**
           * Define if button is round. Used for icon button.
          */
@@ -105,7 +105,7 @@ export namespace Components {
         /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
-        "identifier"?: string;
+        "identifier": string;
         /**
           * Define if inputs are display verticaly
          */
@@ -129,7 +129,7 @@ export namespace Components {
         /**
           * Input name If not set the value equals the identifier
          */
-        "name"?: string;
+        "name": string;
         /**
           * Define if input is readonly
          */
@@ -163,7 +163,7 @@ export namespace Components {
         /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
-        "identifier"?: string;
+        "identifier": string;
         /**
           * Define input pattern error message
          */
@@ -191,7 +191,7 @@ export namespace Components {
         /**
           * Input name If not set the value equals the identifier
          */
-        "name"?: string;
+        "name": string;
         /**
           * Define if input is readonly
          */
@@ -229,7 +229,7 @@ export namespace Components {
         /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
-        "identifier"?: string;
+        "identifier": string;
         /**
           * Override integer length integer is the number before the decimal point
          */
@@ -261,7 +261,7 @@ export namespace Components {
         /**
           * Input name If not set the value equals the identifier
          */
-        "name"?: string;
+        "name": string;
         /**
           * Input placeholder. It should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text.
          */
@@ -307,7 +307,7 @@ export namespace Components {
         /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
-        "identifier"?: string;
+        "identifier": string;
         /**
           * Define input pattern error message
          */
@@ -327,7 +327,7 @@ export namespace Components {
         /**
           * Input name If not set the value equals the identifier
          */
-        "name"?: string;
+        "name": string;
         /**
           * Input placeholder. It should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text.
          */
@@ -417,7 +417,7 @@ export namespace Components {
         /**
           * Component value
          */
-        "value": any;
+        "value": unknown;
     }
     interface MgInputSelect {
         /**
@@ -487,7 +487,7 @@ export namespace Components {
         /**
           * Component value
          */
-        "value": any;
+        "value": unknown;
         /**
           * Define input width
          */
@@ -517,7 +517,7 @@ export namespace Components {
         /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
-        "identifier"?: string;
+        "identifier": string;
         /**
           * Define input pattern error message
          */
@@ -541,7 +541,7 @@ export namespace Components {
         /**
           * Input name If not set the value equals the identifier
          */
-        "name"?: string;
+        "name": string;
         /**
           * Define input pattern to validate
          */
@@ -603,7 +603,7 @@ export namespace Components {
         /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
-        "identifier"?: string;
+        "identifier": string;
         /**
           * Define input pattern error message
          */
@@ -627,7 +627,7 @@ export namespace Components {
         /**
           * Input name If not set the value equals the identifier
          */
-        "name"?: string;
+        "name": string;
         /**
           * Define input pattern to validate
          */
@@ -695,17 +695,18 @@ export namespace Components {
         /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
-        "identifier"?: string;
+        "identifier": string;
         /**
           * Define if toggle display icon
          */
-        "isIcon"?: boolean;
+        "isIcon": boolean;
         /**
           * Define if toggle have on/off style
          */
-        "isOnOff"?: boolean;
+        "isOnOff": boolean;
         /**
-          * Items are the possible options to select Required
+          * Items are the possible options to select
+          * @returns
          */
         "items": string[] | ToggleValue[];
         /**
@@ -723,7 +724,7 @@ export namespace Components {
         /**
           * Input name If not set the value equals the identifier
          */
-        "name"?: string;
+        "name": string;
         /**
           * Define if input is readonly
          */
@@ -735,7 +736,7 @@ export namespace Components {
         /**
           * Component value
          */
-        "value"?: any;
+        "value": unknown;
     }
     interface MgMessage {
         /**
@@ -767,7 +768,7 @@ export namespace Components {
         /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
-        "identifier"?: string;
+        "identifier": string;
         /**
           * Panignation label. Is a short description. Customize default value can be usefull to improve accessibility
          */
@@ -821,7 +822,7 @@ export namespace Components {
         /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
-        "identifier"?: string;
+        "identifier": string;
         /**
           * Tabs items Required
          */
@@ -835,11 +836,11 @@ export namespace Components {
         /**
           * Define if button is using outline style
          */
-        "outline"?: boolean;
+        "outline": boolean;
         /**
           * Define button variant
          */
-        "variant"?: string;
+        "variant": string;
     }
     interface MgTooltip {
         /**
@@ -1427,7 +1428,7 @@ declare namespace LocalJSX {
         /**
           * Emitted event when value change
          */
-        "onValue-change"?: (event: CustomEvent<any>) => void;
+        "onValue-change"?: (event: CustomEvent<unknown>) => void;
         /**
           * Define if input is readonly
          */
@@ -1447,7 +1448,7 @@ declare namespace LocalJSX {
         /**
           * Component value
          */
-        "value"?: any;
+        "value"?: unknown;
     }
     interface MgInputSelect {
         /**
@@ -1489,7 +1490,7 @@ declare namespace LocalJSX {
         /**
           * Emmited event when value change
          */
-        "onValue-change"?: (event: CustomEvent<string>) => void;
+        "onValue-change"?: (event: CustomEvent<unknown>) => void;
         /**
           * Input placeholder. It should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text.
          */
@@ -1521,7 +1522,7 @@ declare namespace LocalJSX {
         /**
           * Component value
          */
-        "value"?: any;
+        "value"?: unknown;
         /**
           * Define input width
          */
@@ -1747,7 +1748,8 @@ declare namespace LocalJSX {
          */
         "isOnOff"?: boolean;
         /**
-          * Items are the possible options to select Required
+          * Items are the possible options to select
+          * @returns
          */
         "items": string[] | ToggleValue[];
         /**
@@ -1769,7 +1771,7 @@ declare namespace LocalJSX {
         /**
           * Emmited event when value change
          */
-        "onValue-change"?: (event: CustomEvent<any>) => void;
+        "onValue-change"?: (event: CustomEvent<unknown>) => void;
         /**
           * Define if input is readonly
          */
@@ -1781,7 +1783,7 @@ declare namespace LocalJSX {
         /**
           * Component value
          */
-        "value"?: any;
+        "value"?: unknown;
     }
     interface MgMessage {
         /**

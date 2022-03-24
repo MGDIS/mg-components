@@ -31,7 +31,7 @@ export class MgInputDate {
    */
   @Prop({ mutable: true, reflect: true }) value: string;
   @Watch('value')
-  validateValue(newValue) {
+  validateValue(newValue: string): void {
     if (newValue !== undefined && newValue !== '' && !(typeof newValue === 'string' && dateRegExp.test(newValue))) {
       throw new Error("<mg-input-date> props 'value' doesn't match pattern: yyyy-mm-dd");
     }
@@ -41,13 +41,13 @@ export class MgInputDate {
    * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
    * If not set, it will be created.
    */
-  @Prop() identifier?: string = createID('mg-input-date');
+  @Prop() identifier: string = createID('mg-input-date');
 
   /**
    * Input name
    * If not set the value equals the identifier
    */
-  @Prop() name?: string = this.identifier;
+  @Prop() name: string = this.identifier;
 
   /**
    * Input label
@@ -63,22 +63,22 @@ export class MgInputDate {
   /**
    * Define if label is visible
    */
-  @Prop() labelHide: boolean = false;
+  @Prop() labelHide = false;
 
   /**
    * Define if input is required
    */
-  @Prop() required: boolean = false;
+  @Prop() required = false;
 
   /**
    * Define if input is readonly
    */
-  @Prop() readonly: boolean = false;
+  @Prop() readonly = false;
 
   /**
    * Define if input is disabled
    */
-  @Prop() disabled: boolean = false;
+  @Prop() disabled = false;
 
   /**
    * Add a tooltip message next to the input
@@ -106,7 +106,7 @@ export class MgInputDate {
    */
   @Prop() min: string;
   @Watch('min')
-  validateMin(newValue) {
+  validateMin(newValue: string): void {
     this.validateDateFormat(newValue);
   }
 
@@ -116,7 +116,7 @@ export class MgInputDate {
    */
   @Prop() max: string;
   @Watch('max')
-  validateMax(newValue) {
+  validateMax(newValue: string): void {
     this.validateDateFormat(newValue);
   }
 
@@ -138,7 +138,7 @@ export class MgInputDate {
   /**
    * Handle input event
    */
-  private handleInput = () => {
+  private handleInput = (): void => {
     this.checkValidity();
     this.value = this.input.value;
     this.valueChange.emit(this.value);
@@ -147,16 +147,18 @@ export class MgInputDate {
   /**
    * Handle blur event
    */
-  private handleBlur = () => {
+  private handleBlur = (): void => {
     this.checkValidity();
     this.checkError();
   };
 
   /**
    * Date format validation
-   * @param date
+   *
+   * @param {string} date date to validate
+   * @returns {void}
    */
-  private validateDateFormat(date: string) {
+  private validateDateFormat(date: string): void {
     if (date?.length > 0 && !(typeof date === 'string' && dateRegExp.test(date))) {
       throw new Error("<mg-input-date> props 'min/max' doesn't match pattern: yyyy-mm-dd");
     }
@@ -165,7 +167,7 @@ export class MgInputDate {
   /**
    * Check if input is valid
    */
-  private checkValidity() {
+  private checkValidity = (): void => {
     if (!this.readonly && this.input !== undefined) {
       const validity = this.input.checkValidity();
 
@@ -173,11 +175,12 @@ export class MgInputDate {
       this.valid = validity;
       this.invalid = !validity;
     }
-  }
+  };
 
   /**
    * get input error code
-   * @returns {null | InputError}
+   *
+   * @returns {null | InputError} error code
    */
   private getInputError = (): null | InputError => {
     let inputError = null;
@@ -204,8 +207,10 @@ export class MgInputDate {
 
   /**
    * Set error message
+   *
+   * @returns {void}
    */
-  private setErrorMessage() {
+  private setErrorMessage = (): void => {
     const inputError = this.getInputError();
     // required
     if (inputError === InputError.REQUIRED) {
@@ -220,12 +225,14 @@ export class MgInputDate {
     else {
       this.errorMessage = messages.errors.date.badInput.replace('{min}', this.min?.length > 0 ? localeDate(this.min) : localeDate('1900-01-01'));
     }
-  }
+  };
 
   /**
    * Check input errors
+   *
+   * @returns {void}
    */
-  private checkError() {
+  private checkError = (): void => {
     // Set error message
     this.errorMessage = undefined;
     if (!this.valid) {
@@ -234,13 +241,18 @@ export class MgInputDate {
     } else {
       this.classList.delete(this.classError);
     }
-  }
+  };
 
   /*************
    * Lifecycle *
    *************/
 
-  componentWillLoad() {
+  /**
+   * Check if component props are well configured on init
+   *
+   * @returns {ReturnType<typeof setTimeout>} timeout
+   */
+  componentWillLoad(): ReturnType<typeof setTimeout> {
     this.validateValue(this.value);
     this.validateMin(this.min);
     this.validateMax(this.max);
@@ -250,7 +262,12 @@ export class MgInputDate {
     return setTimeout(() => this.checkValidity(), 0);
   }
 
-  render() {
+  /**
+   * Render
+   *
+   * @returns {HTMLElement} HTML Element
+   */
+  render(): HTMLElement {
     return (
       <MgInput
         identifier={this.identifier}

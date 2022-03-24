@@ -12,21 +12,21 @@ This molecule refers to the [PDA9-770](https://jira.mgdis.fr/browse/PDA9-770).
 | `identifier`         | `identifier`   | Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created. | `string`                    | `createID('mg-input-toggle')` |
 | `isIcon`             | `is-icon`      | Define if toggle display icon                                                                               | `boolean`                   | `false`                       |
 | `isOnOff`            | `is-on-off`    | Define if toggle have on/off style                                                                          | `boolean`                   | `false`                       |
-| `items` _(required)_ | --             | Items are the possible options to select Required                                                           | `ToggleValue[] \| string[]` | `undefined`                   |
+| `items` _(required)_ | --             | Items are the possible options to select                                                                    | `ToggleValue[] \| string[]` | `undefined`                   |
 | `label` _(required)_ | `label`        | Input label Required                                                                                        | `string`                    | `undefined`                   |
 | `labelHide`          | `label-hide`   | Define if label is visible                                                                                  | `boolean`                   | `false`                       |
 | `labelOnTop`         | `label-on-top` | Define if label is displayed on top                                                                         | `boolean`                   | `undefined`                   |
 | `name`               | `name`         | Input name If not set the value equals the identifier                                                       | `string`                    | `this.identifier`             |
 | `readonly`           | `readonly`     | Define if input is readonly                                                                                 | `boolean`                   | `false`                       |
 | `tooltip`            | `tooltip`      | Add a tooltip message next to the input                                                                     | `string`                    | `undefined`                   |
-| `value`              | `value`        | Component value                                                                                             | `any`                       | `undefined`                   |
+| `value`              | --             | Component value                                                                                             | `unknown`                   | `undefined`                   |
 
 
 ## Events
 
-| Event          | Description                     | Type               |
-| -------------- | ------------------------------- | ------------------ |
-| `value-change` | Emmited event when value change | `CustomEvent<any>` |
+| Event          | Description                     | Type                   |
+| -------------- | ------------------------------- | ---------------------- |
+| `value-change` | Emmited event when value change | `CustomEvent<unknown>` |
 
 
 ## Dependencies

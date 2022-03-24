@@ -28,7 +28,7 @@ export class MgButton {
    */
   @Prop() variant: string = variants[0]; // Primary
   @Watch('variant')
-  validateVariant(newValue: string) {
+  validateVariant(newValue: string): void {
     if (!variants.includes(newValue)) {
       throw new Error(`<mg-button> prop "variant" must be one of : ${variants.join(', ')}`);
     }
@@ -39,7 +39,7 @@ export class MgButton {
    * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
    * If not set, it will be created.
    */
-  @Prop() identifier?: string = createID('mg-button');
+  @Prop() identifier: string = createID('mg-button');
 
   /**
    * aria-label
@@ -50,9 +50,9 @@ export class MgButton {
   /**
    * Disable button
    */
-  @Prop({ mutable: true }) disabled: boolean = false;
+  @Prop({ mutable: true }) disabled = false;
   @Watch('disabled')
-  disabledHandler(isDisabled: boolean) {
+  disabledHandler(isDisabled: boolean): void {
     // Remove loading when enable
     // Will be set back onclick
     if (!isDisabled && this.disableOnClick) {
@@ -65,22 +65,22 @@ export class MgButton {
    * Define if button is round.
    * Used for icon button.
    */
-  @Prop() isIcon: boolean = false;
+  @Prop() isIcon = false;
 
   /**
    * Option to set input disable on click, in order to prevent multi-click.
    * Parent component have to remove the attribute 'disabled' when the process ends.
    */
-  @Prop() disableOnClick: boolean = false;
+  @Prop() disableOnClick = false;
 
   /**
    * Define if button is loading, default to false.
    * Trigger when button is clicked or key-up ['enter', 'space], then value change to true.
    * It's required to reset to false when action/promise in parent is done to stop the loading state
    */
-  @State() loading: boolean = false;
+  @State() loading = false;
   @Watch('loading')
-  loadingHandler(newValue: boolean) {
+  loadingHandler(newValue: boolean): void {
     // we add loading style if it newvalue is true else we remove it
     if (newValue) {
       this.classList.add('mg-button--loading');
@@ -96,8 +96,11 @@ export class MgButton {
 
   /**
    * Trigger actions onClick event
+   *
+   * @param {MouseEvent} event click event
+   * @returns {void}
    */
-  private handleClick = (event: MouseEvent) => {
+  private handleClick = (event: MouseEvent): void => {
     if (this.disabled) event.stopPropagation();
 
     // Used to prevent multi-click.
@@ -109,8 +112,10 @@ export class MgButton {
 
   /**
    * Check if props are well configured on init
+   *
+   * @returns {void}
    */
-  componentWillLoad() {
+  componentWillLoad(): void {
     this.validateVariant(this.variant);
     if (this.isIcon) {
       this.classList.add(`mg-button--icon`);
@@ -125,8 +130,10 @@ export class MgButton {
 
   /**
    * Render component
+   *
+   * @returns {HTMLElement} html element
    */
-  render() {
+  render(): HTMLElement {
     return (
       <button id={this.identifier} class={this.classList.join()} aria-label={this.label} aria-disabled={this.disabled} onClick={this.handleClick}>
         {this.loading && <mg-icon icon="loader" spin></mg-icon>}

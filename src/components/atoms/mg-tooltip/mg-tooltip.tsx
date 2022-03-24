@@ -58,9 +58,9 @@ export class MgTooltip {
   /**
    * Display tooltip
    */
-  @Prop({ mutable: true }) display: boolean = false;
+  @Prop({ mutable: true }) display = false;
   @Watch('display')
-  handleDisplay(newVal) {
+  handleDisplay(newVal: boolean): void {
     if (newVal) {
       this.show();
     } else {
@@ -71,13 +71,14 @@ export class MgTooltip {
   /**
    * Disable tooltip
    */
-  @Prop({ mutable: true }) disabled: boolean = false;
+  @Prop({ mutable: true }) disabled = false;
 
   /**
    * Show tooltip
+   *
    * @returns {void}
    */
-  private show = () => {
+  private show = (): void => {
     // Make the tooltip visible
     this.tooltip.setAttribute('data-show', '');
     // Enable the event listeners
@@ -91,9 +92,10 @@ export class MgTooltip {
 
   /**
    * Hide tooltip
+   *
    * @returns {void}
    */
-  private hide = () => {
+  private hide = (): void => {
     // Hide the tooltip
     this.tooltip.removeAttribute('data-show');
     // Disable the event listeners
@@ -111,8 +113,10 @@ export class MgTooltip {
    * Get slotted element
    * Check if it already contain an interactive element, if not we need to add a tabIndex attribute
    * We need to attach the focused element to the tooltip (aria-describedby)
+   *
+   * @returns {void}
    */
-  componentDidLoad() {
+  componentDidLoad(): void {
     // Get tooltip element
     this.tooltip = this.element.querySelector(`#${this.identifier}`);
 
@@ -169,7 +173,12 @@ export class MgTooltip {
     this.handleDisplay(this.display);
   }
 
-  render() {
+  /**
+   * Render
+   *
+   * @returns {HTMLElement} HTML Element
+   */
+  render(): HTMLElement {
     return (
       <Host>
         <slot></slot>

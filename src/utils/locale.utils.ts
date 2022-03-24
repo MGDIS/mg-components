@@ -2,7 +2,8 @@ import { locale, currency } from '../locales';
 
 /**
  * Format number to the locale currency
- * @param number {number}
+ *
+ * @param {number} number number to format
  * @returns {string} formatted currency
  */
 export function localeCurrency(number: number): string {
@@ -11,7 +12,8 @@ export function localeCurrency(number: number): string {
 
 /**
  * Format number to locale
- * @param number {number}
+ *
+ * @param {number} number number to format
  * @returns {string} formatted number
  */
 export function localeNumber(number: number): string {
@@ -21,11 +23,12 @@ export function localeNumber(number: number): string {
 /**
  * Date RegExp
  */
-export const dateRegExp: RegExp = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/;
+export const dateRegExp = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/;
 
 /**
  * Locale date format
- * @param date {string}
+ *
+ * @param {string} date date to format
  * @returns {string} formatted date
  */
 export function localeDate(date: string): string {

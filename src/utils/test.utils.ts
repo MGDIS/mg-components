@@ -3,7 +3,13 @@ import { Page as PuppeteerPage } from 'puppeteer';
 
 export type DesignSystemE2EPage = E2EPage & Pick<PuppeteerPage, 'screenshot' | 'viewport'>;
 
-export async function createPage(htmlString?: string) {
+/**
+ * Create E2E page
+ *
+ * @param {string} htmlString html to render
+ * @returns {Promise<DesignSystemE2EPage>} page
+ */
+export async function createPage(htmlString?: string): Promise<DesignSystemE2EPage> {
   const options = {
     html: `<link rel="stylesheet" href="http://localhost:3333/build/variables.css" /><meta charset="UTF-8">${htmlString}`,
     viewportWidth: 600,
@@ -30,4 +36,11 @@ export async function createPage(htmlString?: string) {
 
   return page;
 }
-export const cloneDeep = el => JSON.parse(JSON.stringify(el));
+
+/**
+ * Clone Deep function
+ *
+ * @param {unknown} obj object to clone
+ * @returns {unknown} cloned json
+ */
+export const cloneDeep = (obj: unknown): unknown => JSON.parse(JSON.stringify(obj));

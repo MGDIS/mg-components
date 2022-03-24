@@ -14,6 +14,7 @@ describe('mg-pagination', () => {
 
       const actions = [...Array(totalPages - 1).keys()];
 
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       for (const _ of actions) {
         const nextButton = await page.find('mg-pagination >>> .mg-pagination__button:last-of-type');
         await nextButton.click();

@@ -10,9 +10,9 @@ export class MgTag {
   /**
    * Define button variant
    */
-  @Prop() variant?: string = variants[0];
+  @Prop() variant: string = variants[0];
   @Watch('variant')
-  validateVariant(newValue: string) {
+  validateVariant(newValue: string): void {
     if (!variants.includes(newValue)) {
       throw new Error(`<mg-tag> prop "variant" must be one of : ${variants.join(', ')}.`);
     }
@@ -22,9 +22,9 @@ export class MgTag {
   /**
    * Define if button is using outline style
    */
-  @Prop() outline?: boolean;
+  @Prop() outline: boolean;
   @Watch('outline')
-  validateOutline(newValue: boolean) {
+  validateOutline(newValue: boolean): void {
     if (newValue) this.classList.add(`mg-tag--outline`);
   }
 
@@ -33,19 +33,26 @@ export class MgTag {
    */
   @State() classList: ClassList = new ClassList(['mg-tag']);
 
+  /*************
+   * Lifecycle *
+   *************/
+
   /**
    * Check if props are well configured on init
+   *
+   * @returns {void}
    */
-  componentWillLoad() {
+  componentWillLoad(): void {
     this.validateVariant(this.variant);
     this.validateOutline(this.outline);
   }
 
   /**
    * Render
+   *
+   * @returns {HTMLElement} HTML Element
    */
-
-  render() {
+  render(): HTMLElement {
     return (
       <span class={this.classList.join()}>
         <slot></slot>

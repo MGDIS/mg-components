@@ -12,7 +12,7 @@ export class MgBadge {
    */
   @Prop({ mutable: true }) value!: BadgeType['value'];
   @Watch('value')
-  valideValue(newValue) {
+  validateValue(newValue: BadgeType['value']): void {
     if (`${newValue}`.match(/^(\d+|[?*!a-z])$/i) === null) {
       throw new Error('<mg-badge> prop "value" must be interger or ponctuation character.');
     }
@@ -27,9 +27,9 @@ export class MgBadge {
   /**
    * Define button variant
    */
-  @Prop() variant?: string = variants[variants.length - 1];
+  @Prop() variant: string = variants[variants.length - 1];
   @Watch('variant')
-  validateVariant(newValue: string) {
+  validateVariant(newValue: string): void {
     if (!variants.includes(newValue)) {
       throw new Error(`<mg-badge> prop "variant" must be one of : ${variants.join(', ')}.`);
     }
@@ -39,9 +39,9 @@ export class MgBadge {
   /**
    * Define if button is using outline style
    */
-  @Prop() outline?: boolean;
+  @Prop() outline: boolean;
   @Watch('outline')
-  validateOutline(newValue: boolean) {
+  validateOutline(newValue: boolean): void {
     if (newValue) this.classList.add(`mg-badge--outline`);
   }
 
@@ -53,17 +53,18 @@ export class MgBadge {
   /**
    * Check if props are well configured on init
    */
-  componentWillLoad() {
-    this.valideValue(this.value);
+  componentWillLoad(): void {
+    this.validateValue(this.value);
     this.validateVariant(this.variant);
     this.validateOutline(this.outline);
   }
 
   /**
    * Render
+   *
+   * @returns {HTMLElement} HTML Element
    */
-
-  render() {
+  render(): HTMLElement {
     return (
       <span class={this.classList.join()}>
         {this.value}
