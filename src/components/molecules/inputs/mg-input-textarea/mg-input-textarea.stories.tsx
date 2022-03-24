@@ -3,6 +3,7 @@ import { h } from '@stencil/core';
 export default {
   component: 'mg-input-textarea',
   title: 'Molecules/Inputs/mg-input-textarea',
+  parameters: { actions: { handles: ['value-change'] } },
 };
 
 /**

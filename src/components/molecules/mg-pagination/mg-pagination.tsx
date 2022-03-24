@@ -95,7 +95,7 @@ export class MgPagination {
   /**
    * select handler
    *
-   * @param {event} event value change event
+   * @param {InputEvent} event value change event
    * @returns {void}
    */
   private handleSelect = (event: InputEvent & { target: HTMLInputElement }): void => {
