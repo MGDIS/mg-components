@@ -52,7 +52,7 @@ export class MgPagination {
    */
   @Prop() totalPages: number = 1;
   @Watch('totalPages')
-  validateTotalPages(newValue) {
+  validateTotalPages(newValue: number) {
     if (newValue < 1) {
       throw new Error('<mg-pagination> prop "totalPages" must be greater than 0');
     }
@@ -63,7 +63,7 @@ export class MgPagination {
    */
   @Prop({ reflect: true, mutable: true }) currentPage: number = 1;
   @Watch('currentPage')
-  validateCurrentPage(newValue) {
+  validateCurrentPage(newValue: number) {
     if (newValue < 1) {
       throw new Error('<mg-pagination> prop "currentPage" must be greater than 0');
     } else if (newValue > this.totalPages) {
@@ -80,9 +80,12 @@ export class MgPagination {
 
   /**
    * Change current page from target
-   * @param target
+   * @param {number} target
+   * @returns {void}
    */
-  private goToPage = (target: number) => (this.currentPage = target);
+  private goToPage = (target: number): void => {
+    this.currentPage = target;
+  };
 
   /************
    * Handlers *
@@ -91,17 +94,21 @@ export class MgPagination {
   /**
    * Default click handler
    * @param event
+   * @returns {void}
    */
-  private handleSelect = (event: InputEvent & { target: HTMLInputElement }) => {
+  private handleSelect = (event: InputEvent & { target: HTMLInputElement }): void => {
     const to = Number(event.target.value);
     this.goToPage(to > 0 ? to : 1);
   };
 
   /**
    * Go to 'previous/next' page button handler
+   * @param {NavigationAction} action
    * @returns {void}
    */
-  private handleGoToPage = (action: NavigationAction) => this.goToPage(action === NavigationAction.NEXT ? this.currentPage + 1 : this.currentPage - 1);
+  private handleGoToPage = (action: NavigationAction): void => {
+    this.goToPage(action === NavigationAction.NEXT ? this.currentPage + 1 : this.currentPage - 1);
+  };
 
   /*************
    * Lifecycle *

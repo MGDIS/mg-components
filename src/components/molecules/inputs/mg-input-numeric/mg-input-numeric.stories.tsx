@@ -10,6 +10,7 @@ export default {
       control: { type: 'select' },
     },
   },
+  parameters: { actions: { handles: ['value-change'] } },
 };
 
 /**
