@@ -27,7 +27,7 @@ exports[`mg-pagination Should render with totalPages 1 1`] = `
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Sélectionnez une valeur">
                   <option selected="" value="0">
                     1
                   </option>
@@ -90,7 +90,7 @@ exports[`mg-pagination Should render with totalPages 2 1`] = `
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Sélectionnez une valeur">
                   <option selected="" value="0">
                     1
                   </option>
@@ -156,7 +156,7 @@ exports[`mg-pagination Should render with totalPages 2 2`] = `
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Sélectionnez une valeur">
                   <option value="0">
                     1
                   </option>
@@ -222,7 +222,7 @@ exports[`mg-pagination Should render with totalPages 3 1`] = `
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Sélectionnez une valeur">
                   <option selected="" value="0">
                     1
                   </option>
@@ -291,7 +291,7 @@ exports[`mg-pagination Should render with totalPages 3 2`] = `
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Sélectionnez une valeur">
                   <option value="0">
                     1
                   </option>
@@ -360,7 +360,7 @@ exports[`mg-pagination Should render with totalPages 3 3`] = `
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Sélectionnez une valeur">
                   <option value="0">
                     1
                   </option>
@@ -429,7 +429,7 @@ exports[`mg-pagination Should render with totalPages 10 1`] = `
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Sélectionnez une valeur">
                   <option selected="" value="0">
                     1
                   </option>
@@ -519,7 +519,7 @@ exports[`mg-pagination Should render with totalPages 10 2`] = `
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Sélectionnez une valeur">
                   <option value="0">
                     1
                   </option>
@@ -609,7 +609,7 @@ exports[`mg-pagination Should render with totalPages 10 3`] = `
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Sélectionnez une valeur">
                   <option value="0">
                     1
                   </option>
@@ -699,7 +699,7 @@ exports[`mg-pagination Should render with totalPages 10 4`] = `
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Sélectionnez une valeur">
                   <option value="0">
                     1
                   </option>
@@ -789,7 +789,7 @@ exports[`mg-pagination Should render with totalPages 10 5`] = `
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Sélectionnez une valeur">
                   <option value="0">
                     1
                   </option>
@@ -879,7 +879,7 @@ exports[`mg-pagination Should render with totalPages 10 6`] = `
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Sélectionnez une valeur">
                   <option value="0">
                     1
                   </option>
@@ -969,7 +969,7 @@ exports[`mg-pagination Should render with totalPages 10 7`] = `
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Sélectionnez une valeur">
                   <option value="0">
                     1
                   </option>
@@ -1059,7 +1059,7 @@ exports[`mg-pagination Should render with totalPages 10 8`] = `
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Sélectionnez une valeur">
                   <option value="0">
                     1
                   </option>
@@ -1149,7 +1149,7 @@ exports[`mg-pagination Should render with totalPages 10 9`] = `
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Sélectionnez une valeur">
                   <option value="0">
                     1
                   </option>
@@ -1239,7 +1239,7 @@ exports[`mg-pagination Should render with totalPages 10 10`] = `
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Sélectionnez une valeur">
                   <option value="0">
                     1
                   </option>
@@ -1329,7 +1329,7 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Sélectionnez une valeur">
                   <option selected="" value="0">
                     1
                   </option>
@@ -1404,7 +1404,7 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Sélectionnez une valeur">
                   <option selected="" value="0">
                     1
                   </option>
@@ -1479,7 +1479,7 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Sélectionnez une valeur">
                   <option value="0">
                     1
                   </option>
@@ -1554,7 +1554,7 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Sélectionnez une valeur">
                   <option selected="" value="0">
                     1
                   </option>
@@ -1629,7 +1629,7 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 1, case to
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Sélectionnez une valeur">
                   <option selected="" value="0">
                     1
                   </option>
@@ -1704,7 +1704,7 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 1, case to
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Sélectionnez une valeur">
                   <option value="0">
                     1
                   </option>
@@ -1779,7 +1779,7 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 1, case to
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Sélectionnez une valeur">
                   <option value="0">
                     1
                   </option>
@@ -1854,9 +1854,9 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 1, case to
             </mg-input-title>
             <div class="mg-input__input-container">
               <div class="mg-input__input">
-                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Veuillez sélectionner une valeur">
+                <select aria-describedby="" class="mg-input__box" id="id-select" name="id-select" title="Sélectionnez une valeur">
                   <option value="">
-                    Veuillez sélectionner une valeur
+                    Sélectionnez une valeur
                   </option>
                   <option selected="" value="0">
                     1
