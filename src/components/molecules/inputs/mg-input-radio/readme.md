@@ -21,14 +21,14 @@ This atom refers to the [PDA9-745](https://jira.mgdis.fr/browse/PDA9-745)
 | `required`           | `required`            | Define if input is required                                                                                 | `boolean`                   | `false`                      |
 | `tooltip`            | `tooltip`             | Add a tooltip message next to the input                                                                     | `string`                    | `undefined`                  |
 | `valid`              | `valid`               | Force valid component                                                                                       | `boolean`                   | `undefined`                  |
-| `value`              | `value`               | Component value                                                                                             | `any`                       | `undefined`                  |
+| `value`              | --                    | Component value                                                                                             | `unknown`                   | `undefined`                  |
 
 
 ## Events
 
-| Event          | Description                     | Type               |
-| -------------- | ------------------------------- | ------------------ |
-| `value-change` | Emitted event when value change | `CustomEvent<any>` |
+| Event          | Description                     | Type                   |
+| -------------- | ------------------------------- | ---------------------- |
+| `value-change` | Emitted event when value change | `CustomEvent<unknown>` |
 
 
 ## Dependencies

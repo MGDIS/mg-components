@@ -55,14 +55,14 @@ export class MgPopover {
   /**
    * Define if popover has a cross button
    */
-  @Prop() closeButton: boolean = false;
+  @Prop() closeButton = false;
 
   /**
    * Display popover
    */
-  @Prop({ mutable: true }) display: boolean = false;
+  @Prop({ mutable: true }) display = false;
   @Watch('display')
-  handleDisplay(newVal) {
+  handleDisplay(newVal: boolean): void {
     if (newVal) {
       this.show();
     } else {
@@ -73,22 +73,25 @@ export class MgPopover {
   /**
    * Disable popover
    */
-  @Prop({ mutable: true }) disabled: boolean = false;
+  @Prop({ mutable: true }) disabled = false;
 
   /**
    * Check if clicked outside of component
-   * @param e {event}
+   *
+   * @param {MouseEvent} event mouse event
+   * @returns {void}
    */
   // Unable to trigger document events in unit tests:  https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/57
   /* istanbul ignore next */
-  private clickOutside = e => {
-    if (!this.disabled && e.target.closest(`#${this.identifier}`)?.parentElement.nodeName !== 'MG-POPOVER') {
+  private clickOutside = (event: MouseEvent & { target: HTMLElement }): void => {
+    if (!this.disabled && event.target.closest(`#${this.identifier}`)?.parentElement.nodeName !== 'MG-POPOVER') {
       this.display = false;
     }
   };
 
   /**
    * Show popover
+   *
    * @returns {void}
    */
   private show = (): void => {
@@ -112,6 +115,7 @@ export class MgPopover {
 
   /**
    * Hide popover
+   *
    * @returns {void}
    */
   private hide = (): void => {
@@ -128,6 +132,7 @@ export class MgPopover {
 
   /**
    * Handle action for close button
+   *
    * @returns {void}
    */
   private handleCloseButton = (): void => {
@@ -138,7 +143,12 @@ export class MgPopover {
    * Lifecycle *
    *************/
 
-  componentDidLoad() {
+  /**
+   * Check if component props are well configured on init
+   *
+   * @returns {void}
+   */
+  componentDidLoad(): void {
     //Check if slotted title is a heading
     const headingElements = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
     const slotedTitleElement = this.element.querySelector('[slot="title"]');
@@ -186,7 +196,12 @@ export class MgPopover {
     this.handleDisplay(this.display);
   }
 
-  render() {
+  /**
+   * Render
+   *
+   * @returns {HTMLElement} HTML Element
+   */
+  render(): HTMLElement {
     return (
       <Host>
         <slot></slot>

@@ -36,7 +36,7 @@ export class MgMessage {
    */
   @Prop() delay: number;
   @Watch('delay')
-  validateDelay(newValue) {
+  validateDelay(newValue: number): void {
     if (newValue && newValue < 2) {
       throw new Error(`<mg-message> prop "delay" must be greater than 2 seconds.`);
     }
@@ -47,7 +47,7 @@ export class MgMessage {
    */
   @Prop() variant: string = variants[0];
   @Watch('variant')
-  validateVariant(newValue: string, oldValue?: string) {
+  validateVariant(newValue: string, oldValue?: string): void {
     if (!variants.includes(newValue)) {
       throw new Error(`<mg-message> prop "variant" must be one of : ${variants.join(', ')}`);
     }
@@ -61,9 +61,9 @@ export class MgMessage {
    * Define if message has a cross button
    * RG 01: https://jira.mgdis.fr/browse/PDA9-140
    */
-  @Prop() closeButton: boolean = false;
+  @Prop() closeButton = false;
   @Watch('closeButton')
-  validateCloseButton(newValue: boolean) {
+  validateCloseButton(newValue: boolean): void {
     if (newValue && this.hasActions) {
       this.closeButton = false;
       throw new Error('<mg-message> prop "close-button" can\'t be used with the actions slot.');
@@ -73,9 +73,9 @@ export class MgMessage {
   /**
    * Define if message is hidden
    */
-  @Prop({ mutable: true }) hide: boolean = false;
+  @Prop({ mutable: true }) hide = false;
   @Watch('hide')
-  validateHide(newValue: boolean) {
+  validateHide(newValue: boolean): void {
     if (newValue) {
       this.componentHide.emit();
       this.classList.add('mg-message--hide');
@@ -94,7 +94,7 @@ export class MgMessage {
   /**
    * Define if component is using actions slot
    */
-  @State() hasActions: boolean = false;
+  @State() hasActions = false;
 
   /**
    * Emmited event when message is diplayed
@@ -109,14 +109,14 @@ export class MgMessage {
   /**
    * Handle close button
    */
-  private handleClose = () => {
+  private handleClose = (): void => {
     this.hide = true;
   };
 
   /**
    * Hide component whith delay
    */
-  private hideWithDelay = () => {
+  private hideWithDelay = (): void => {
     if (this.delay > 0 && this.hide !== true) {
       this.storedTimer = setTimeout(() => (this.hide = true), this.delay * 1000);
     } else if (this.storedTimer !== null) {
@@ -126,6 +126,8 @@ export class MgMessage {
 
   /**
    * Get icon corresponding to variant
+   *
+   * @returns {string} icon
    */
   private getIcon = (): string => {
     switch (this.variant) {
@@ -149,7 +151,7 @@ export class MgMessage {
   /**
    * Check if component props are well configured on init
    */
-  componentWillLoad() {
+  componentWillLoad(): void {
     this.validateVariant(this.variant);
     // Check if close button is an can be activated
     this.hasActions = this.element.querySelector('[slot="actions"]') !== null;
@@ -162,7 +164,12 @@ export class MgMessage {
     this.validateHide(this.hide);
   }
 
-  render() {
+  /**
+   * Render
+   *
+   * @returns {HTMLElement} HTML Element
+   */
+  render(): HTMLElement {
     return (
       <div id={this.identifier} class={this.classList.join()} role={this.variant === 'info' ? 'status' : 'alert'}>
         <span class="mg-message__icon">

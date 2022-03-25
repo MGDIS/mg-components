@@ -3,6 +3,7 @@ import { h } from '@stencil/core';
 export default {
   component: 'mg-pagination',
   title: 'Molecules/mg-pagination',
+  parameters: { actions: { handles: ['current-page-change'] } },
 };
 
 /**

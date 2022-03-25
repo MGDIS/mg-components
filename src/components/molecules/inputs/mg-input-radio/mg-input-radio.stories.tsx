@@ -9,13 +9,18 @@ export default {
       control: { type: 'radio' },
     },
   },
+  parameters: { actions: { handles: ['value-change'] } },
 };
 
 /**
  * 1. camelCase arguments must be written in the template, for exemple labelOnTop must be placed in the template as label-on-top={args.labelOnTop}
  * 2. boolean arguments with a default true value must be added like display-character-left={args.displayCharacterLeft ? 'true' : 'false'}
+ *
+ * @param {any} args component arguments
+ * @returns {HTMLElement} HTMLElement
  */
-const Template = args => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Template = (args: any): HTMLElement => {
   const labelOnTop = args.labelOnTop;
   delete args.labelOnTop;
   const helpText = args.helpText;

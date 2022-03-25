@@ -1,13 +1,15 @@
 /**
  * Create random ID
- * @param prefix {string} add prefix to created ID
+ *
+ * @param {string} prefix  add prefix to created ID
+ * @param {number} length ID length
  * @returns {string} ID
  */
-export function createID(prefix: string = '', length: number = 10): string {
+export function createID(prefix = '', length = 10): string {
   let ID = '';
   const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
   const charsLength = chars.length;
-  for (var i = 0; i < length; i++) {
+  for (let i = 0; i < length; i++) {
     ID += chars.charAt(Math.floor(Math.random() * charsLength));
   }
   return (prefix !== '' ? `${prefix}-` : '') + ID;
@@ -26,10 +28,11 @@ export class ClassList {
 
   /**
    * Add class
-   * @param className
+   *
+   * @param {string} className class name to add
    * @returns {void}
    */
-  add = (className: string) => {
+  add = (className: string): void => {
     if (!this.has(className)) {
       this.classes.push(className);
     }
@@ -37,10 +40,11 @@ export class ClassList {
 
   /**
    * Delete class
-   * @param className
+   *
+   * @param {string} className class name to delete
    * @returns {void}
    */
-  delete = (className: string) => {
+  delete = (className: string): void => {
     const index = this.classes.indexOf(className);
     if (index > -1) {
       this.classes.splice(index, 1);
@@ -49,16 +53,18 @@ export class ClassList {
 
   /**
    * Check if class exist in list
-   * @param className
-   * @returns {boolean}
+   *
+   * @param {string} className class name to check
+   * @returns {boolean} class name is in the list
    */
-  has = (className: string) => {
+  has = (className: string): boolean => {
     return this.classes.includes(className);
   };
 
   /**
    * Join classes seperated by spaces
-   * @returns {string}
+   *
+   * @returns {string} joined values
    */
   join = (): string => {
     return this.classes.join(' ');
@@ -67,9 +73,10 @@ export class ClassList {
 
 /**
  * Check if all items are string
- * @param items
- * @returns {boolean}
+ *
+ * @param {string[]} items items to check
+ * @returns {boolean} all items are string
  */
-export function allItemsAreString(items: Array<string>): boolean {
+export function allItemsAreString(items: string[]): boolean {
   return items && items.every(item => typeof item === 'string');
 }

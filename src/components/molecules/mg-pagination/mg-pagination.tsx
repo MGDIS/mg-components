@@ -18,10 +18,10 @@ import { messages } from './../../../locales';
  * range(1, 5) = [1, 2, 3, 4, 5]
  * range(10, 20, 2) = [10, 12, 14, 16, 18, 20]
  *
- * @param start
- * @param end
- * @param step
- * @returns {number[]}
+ * @param {number} start start range
+ * @param {number} end start end
+ * @param {number} step step size
+ * @returns {number[]} range numbers
  */
 const range = (start: number, end: number, step = 1): number[] => Array.from(Array(Math.ceil((end + 1 - start) / step)).keys()).map(x => start + x * step);
 
@@ -39,20 +39,20 @@ export class MgPagination {
    * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
    * If not set, it will be created.
    */
-  @Prop() identifier?: string = createID('mg-pagination');
+  @Prop() identifier: string = createID('mg-pagination');
 
   /**
    * Panignation label. Is a short description.
    * Customize default value can be usefull to improve accessibility
    */
-  @Prop() label: string = 'pagination';
+  @Prop() label = 'pagination';
 
   /**
    * Component total pages
    */
-  @Prop() totalPages: number = 1;
+  @Prop() totalPages = 1;
   @Watch('totalPages')
-  validateTotalPages(newValue) {
+  validateTotalPages(newValue: number): void {
     if (newValue < 1) {
       throw new Error('<mg-pagination> prop "totalPages" must be greater than 0');
     }
@@ -61,9 +61,9 @@ export class MgPagination {
   /**
    * Component current page
    */
-  @Prop({ reflect: true, mutable: true }) currentPage: number = 1;
+  @Prop({ reflect: true, mutable: true }) currentPage = 1;
   @Watch('currentPage')
-  validateCurrentPage(newValue) {
+  validateCurrentPage(newValue: number): void {
     if (newValue < 1) {
       throw new Error('<mg-pagination> prop "currentPage" must be greater than 0');
     } else if (newValue > this.totalPages) {
@@ -80,40 +80,55 @@ export class MgPagination {
 
   /**
    * Change current page from target
-   * @param target
+   *
+   * @param {number} target target page
+   * @returns {void}
    */
-  private goToPage = (target: number) => (this.currentPage = target);
+  private goToPage = (target: number): void => {
+    this.currentPage = target;
+  };
 
   /************
    * Handlers *
    ************/
 
   /**
-   * Default click handler
-   * @param event
+   * select handler
+   *
+   * @param {InputEvent} event value change event
+   * @returns {void}
    */
-  private handleSelect = (event: InputEvent & { target: HTMLInputElement }) => {
+  private handleSelect = (event: InputEvent & { target: HTMLInputElement }): void => {
     const to = Number(event.target.value);
     this.goToPage(to > 0 ? to : 1);
   };
 
   /**
    * Go to 'previous/next' page button handler
+   *
+   * @param {string} action navigation action
    * @returns {void}
    */
-  private handleGoToPage = (action: NavigationAction) => this.goToPage(action === NavigationAction.NEXT ? this.currentPage + 1 : this.currentPage - 1);
+  private handleGoToPage = (action: string): void => {
+    this.goToPage(action === NavigationAction.NEXT ? this.currentPage + 1 : this.currentPage - 1);
+  };
 
   /*************
    * Lifecycle *
    *************/
 
-  componentWillLoad() {
+  componentWillLoad(): void {
     this.validateTotalPages(this.totalPages);
     this.validateCurrentPage(this.currentPage);
   }
 
-  render() {
-    const navigationActionButton = (disabled: boolean, action: NavigationAction) => (
+  /**
+   * Render
+   *
+   * @returns {HTMLElement} HTML Element
+   */
+  render(): HTMLElement {
+    const navigationActionButton = (disabled: boolean, action: string) => (
       <mg-button
         identifier={`${this.identifier}-button-${action}`}
         class="mg-pagination__button"

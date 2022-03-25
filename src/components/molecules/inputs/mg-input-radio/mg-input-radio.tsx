@@ -7,8 +7,9 @@ import { InputClass } from '../MgInput.conf';
 
 /**
  * type Option validation function
- * @param option
- * @returns {boolean}
+ *
+ * @param {RadioOption} option radio option
+ * @returns {boolean} radio option type is valid
  */
 const isOption = (option: RadioOption): boolean => typeof option === 'object' && typeof option.title === 'string' && option.value !== undefined;
 
@@ -35,7 +36,7 @@ export class MgInputRadio {
   /**
    * Component value
    */
-  @Prop({ mutable: true }) value: any;
+  @Prop({ mutable: true }) value: unknown;
 
   /**
    * Items are the possible options to select
@@ -43,18 +44,18 @@ export class MgInputRadio {
    */
   @Prop() items!: string[] | RadioOption[];
   @Watch('items')
-  validateItems(newValue) {
+  validateItems(newValue: string[] | RadioOption[]): void {
     // Validate if items have required min length
     if (typeof newValue === 'object' && newValue.length < 2) {
       throw new Error('<mg-input-radio> prop "items" require at least 2 items.');
     }
     // String array
-    else if (allItemsAreString(newValue)) {
+    else if (allItemsAreString(newValue as string[])) {
       this.options = newValue.map(item => ({ title: item, value: item, disabled: this.disabled }));
     }
     // Object array
-    else if (newValue && (newValue as Array<RadioOption>).every(item => isOption(item))) {
-      this.options = newValue;
+    else if (newValue && (newValue as RadioOption[]).every(item => isOption(item))) {
+      this.options = newValue as RadioOption[];
     } else {
       throw new Error('<mg-input-radio> prop "items" is required and all items must be the same type, string or RadioOption.');
     }
@@ -81,32 +82,32 @@ export class MgInputRadio {
   /**
    * Define if label is displayed on top
    */
-  @Prop() labelOnTop: boolean = false;
+  @Prop() labelOnTop = false;
 
   /**
    * Define if label is visible
    */
-  @Prop() labelHide: boolean = false;
+  @Prop() labelHide = false;
 
   /**
    * Define if inputs are display verticaly
    */
-  @Prop() inputVerticalList: boolean = false;
+  @Prop() inputVerticalList = false;
 
   /**
    * Define if input is required
    */
-  @Prop() required: boolean = false;
+  @Prop() required = false;
 
   /**
    * Define if input is readonly
    */
-  @Prop() readonly: boolean = false;
+  @Prop() readonly = false;
 
   /**
    * Define if input is disabled
    */
-  @Prop() disabled: boolean = false;
+  @Prop() disabled = false;
 
   /**
    * Add a tooltip message next to the input
@@ -146,10 +147,13 @@ export class MgInputRadio {
   /**
    * Emitted event when value change
    */
-  @Event({ eventName: 'value-change' }) valueChange: EventEmitter<any>;
+  @Event({ eventName: 'value-change' }) valueChange: EventEmitter<unknown>;
 
   /**
    * Handle input event
+   *
+   * @param {event} event input event
+   * @returns {void}
    */
   private handleInput = (event: InputEvent & { target: HTMLInputElement }) => {
     this.checkValidity();
@@ -159,16 +163,20 @@ export class MgInputRadio {
 
   /**
    * Handle blur event
+   *
+   * @returns {void}
    */
-  private handleBlur = () => {
+  private handleBlur = (): void => {
     this.checkValidity();
     this.checkError();
   };
 
   /**
    * Check if input is valid
+   *
+   * @returns {void}
    */
-  private checkValidity() {
+  private checkValidity = (): void => {
     if (!this.readonly) {
       const validity = this.getInvalidElement() === undefined;
 
@@ -176,12 +184,14 @@ export class MgInputRadio {
       this.valid = validity;
       this.invalid = !validity;
     }
-  }
+  };
 
   /**
    * Check input errors
+   *
+   * @returns {void}
    */
-  private checkError() {
+  private checkError = (): void => {
     const invalidElement = this.getInvalidElement();
 
     // Set error message
@@ -196,19 +206,25 @@ export class MgInputRadio {
     } else {
       this.classList.add(this.classError);
     }
-  }
+  };
 
   /**
    * get invalid element
-   * @returns element: HTMLInputElement
+   *
+   * @returns {HTMLInputElement} element
    */
-  private getInvalidElement = () => this.inputs.find((element: HTMLInputElement) => !element.disabled && !element.checkValidity());
+  private getInvalidElement = (): HTMLInputElement => this.inputs.find((element: HTMLInputElement) => !element.disabled && !element.checkValidity());
 
   /*************
    * Lifecycle *
    *************/
 
-  componentWillLoad() {
+  /**
+   * Check if component props are well configured on init
+   *
+   * @returns {ReturnType<typeof setTimeout>} timeout
+   */
+  componentWillLoad(): ReturnType<typeof setTimeout> {
     // Check items format
     this.validateItems(this.items);
 
@@ -217,7 +233,12 @@ export class MgInputRadio {
     return setTimeout(() => this.checkValidity(), 0);
   }
 
-  render() {
+  /**
+   * Render
+   *
+   * @returns {HTMLElement} HTML Element
+   */
+  render(): HTMLElement {
     return (
       <MgInput
         identifier={this.identifier}
@@ -229,8 +250,8 @@ export class MgInputRadio {
         disabled={this.disabled}
         readonly={this.readonly}
         width={undefined}
-        value={this.value && this.value.toString()}
-        readonlyValue={this.value && this.value.toString()}
+        value={this.value as string}
+        readonlyValue={this.value as string}
         tooltip={this.tooltip}
         displayCharacterLeft={undefined}
         characterLeftTemplate={undefined}

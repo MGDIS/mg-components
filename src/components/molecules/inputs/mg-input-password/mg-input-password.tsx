@@ -34,13 +34,13 @@ export class MgInputPassword {
    * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
    * If not set, it will be created.
    */
-  @Prop() identifier?: string = createID('mg-input-password');
+  @Prop() identifier: string = createID('mg-input-password');
 
   /**
    * Input name
    * If not set the value equals the identifier
    */
-  @Prop() name?: string = this.identifier;
+  @Prop() name: string = this.identifier;
 
   /**
    * Input label
@@ -56,7 +56,7 @@ export class MgInputPassword {
   /**
    * Define if label is visible
    */
-  @Prop() labelHide: boolean = false;
+  @Prop() labelHide = false;
 
   /**
    * Input placeholder.
@@ -67,17 +67,17 @@ export class MgInputPassword {
   /**
    * Define if input is required
    */
-  @Prop() required: boolean = false;
+  @Prop() required = false;
 
   /**
    * Define if input is readonly
    */
-  @Prop() readonly: boolean = false;
+  @Prop() readonly = false;
 
   /**
    * Define if input is disabled
    */
-  @Prop() disabled: boolean = false;
+  @Prop() disabled = false;
 
   /**
    * Define input width
@@ -122,7 +122,7 @@ export class MgInputPassword {
   /**
    * Handle input event
    */
-  private handleInput = () => {
+  private handleInput = (): void => {
     this.checkValidity();
     this.value = this.input.value;
     this.valueChange.emit(this.value);
@@ -131,7 +131,7 @@ export class MgInputPassword {
   /**
    * Handle blur event
    */
-  private handleBlur = () => {
+  private handleBlur = (): void => {
     this.checkValidity();
     this.checkError();
   };
@@ -139,7 +139,7 @@ export class MgInputPassword {
   /**
    * Check if input is valid
    */
-  private checkValidity() {
+  private checkValidity = (): void => {
     if (!this.readonly && this.input !== undefined) {
       const validity = this.input.checkValidity();
 
@@ -147,12 +147,12 @@ export class MgInputPassword {
       this.valid = validity;
       this.invalid = !validity;
     }
-  }
+  };
 
   /**
    * Check input errors
    */
-  private checkError() {
+  private checkError = (): void => {
     // Set error message
     this.errorMessage = undefined;
     // required
@@ -165,19 +165,29 @@ export class MgInputPassword {
     } else {
       this.classList.add(this.classError);
     }
-  }
+  };
 
   /*************
    * Lifecycle *
    *************/
 
-  componentWillLoad() {
+  /**
+   * Check if component props are well configured on init
+   *
+   * @returns {ReturnType<typeof setTimeout>} timeout
+   */
+  componentWillLoad(): ReturnType<typeof setTimeout> {
     // return a promise to process action only in the FIRST render().
     // https://stenciljs.com/docs/component-lifecycle#componentwillload
     return setTimeout(() => this.checkValidity(), 0);
   }
 
-  render() {
+  /**
+   * Render
+   *
+   * @returns {HTMLElement} HTML Element
+   */
+  render(): HTMLElement {
     return (
       <MgInput
         identifier={this.identifier}

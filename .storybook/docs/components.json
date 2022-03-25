@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-03-24T09:14:12",
+  "timestamp": "2022-03-24T11:21:10",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.14.1",
@@ -44,7 +44,7 @@
               "type": "boolean"
             }
           ],
-          "optional": true,
+          "optional": false,
           "required": false
         },
         {
@@ -80,7 +80,7 @@
               "type": "string"
             }
           ],
-          "optional": true,
+          "optional": false,
           "required": false
         }
       ],
@@ -157,7 +157,7 @@
               "type": "string"
             }
           ],
-          "optional": true,
+          "optional": false,
           "required": false
         },
         {
@@ -564,7 +564,7 @@
               "type": "string"
             }
           ],
-          "optional": true,
+          "optional": false,
           "required": false
         },
         {
@@ -663,7 +663,7 @@
               "type": "string"
             }
           ],
-          "optional": true,
+          "optional": false,
           "required": false
         },
         {
@@ -836,7 +836,7 @@
               "type": "string"
             }
           ],
-          "optional": true,
+          "optional": false,
           "required": false
         },
         {
@@ -950,7 +950,7 @@
               "type": "string"
             }
           ],
-          "optional": true,
+          "optional": false,
           "required": false
         },
         {
@@ -1141,7 +1141,7 @@
               "type": "string"
             }
           ],
-          "optional": true,
+          "optional": false,
           "required": false
         },
         {
@@ -1272,7 +1272,7 @@
               "type": "string"
             }
           ],
-          "optional": true,
+          "optional": false,
           "required": false
         },
         {
@@ -1508,7 +1508,7 @@
               "type": "string"
             }
           ],
-          "optional": true,
+          "optional": false,
           "required": false
         },
         {
@@ -1590,7 +1590,7 @@
               "type": "string"
             }
           ],
-          "optional": true,
+          "optional": false,
           "required": false
         },
         {
@@ -1999,15 +1999,14 @@
         },
         {
           "name": "value",
-          "type": "any",
+          "type": "unknown",
           "mutable": true,
-          "attr": "value",
           "reflectToAttr": false,
           "docs": "Component value",
           "docsTags": [],
           "values": [
             {
-              "type": "any"
+              "type": "unknown"
             }
           ],
           "optional": false,
@@ -2018,7 +2017,7 @@
       "events": [
         {
           "event": "value-change",
-          "detail": "any",
+          "detail": "unknown",
           "bubbles": true,
           "cancelable": true,
           "composed": true,
@@ -2324,15 +2323,14 @@
         },
         {
           "name": "value",
-          "type": "any",
+          "type": "unknown",
           "mutable": true,
-          "attr": "value",
           "reflectToAttr": false,
           "docs": "Component value",
           "docsTags": [],
           "values": [
             {
-              "type": "any"
+              "type": "unknown"
             }
           ],
           "optional": false,
@@ -2372,7 +2370,7 @@
       "events": [
         {
           "event": "value-change",
-          "detail": "string",
+          "detail": "unknown",
           "bubbles": true,
           "cancelable": true,
           "composed": true,
@@ -2510,7 +2508,7 @@
               "type": "string"
             }
           ],
-          "optional": true,
+          "optional": false,
           "required": false
         },
         {
@@ -2609,7 +2607,7 @@
               "type": "string"
             }
           ],
-          "optional": true,
+          "optional": false,
           "required": false
         },
         {
@@ -2916,7 +2914,7 @@
               "type": "string"
             }
           ],
-          "optional": true,
+          "optional": false,
           "required": false
         },
         {
@@ -3015,7 +3013,7 @@
               "type": "string"
             }
           ],
-          "optional": true,
+          "optional": false,
           "required": false
         },
         {
@@ -3391,7 +3389,7 @@
               "type": "string"
             }
           ],
-          "optional": true,
+          "optional": false,
           "required": false
         },
         {
@@ -3408,7 +3406,7 @@
               "type": "boolean"
             }
           ],
-          "optional": true,
+          "optional": false,
           "required": false
         },
         {
@@ -3425,7 +3423,7 @@
               "type": "boolean"
             }
           ],
-          "optional": true,
+          "optional": false,
           "required": false
         },
         {
@@ -3433,8 +3431,12 @@
           "type": "ToggleValue[] | string[]",
           "mutable": false,
           "reflectToAttr": false,
-          "docs": "Items are the possible options to select\nRequired",
-          "docsTags": [],
+          "docs": "Items are the possible options to select",
+          "docsTags": [
+            {
+              "name": "returns"
+            }
+          ],
           "values": [
             {
               "type": "ToggleValue[]"
@@ -3509,7 +3511,7 @@
               "type": "string"
             }
           ],
-          "optional": true,
+          "optional": false,
           "required": false
         },
         {
@@ -3547,18 +3549,17 @@
         },
         {
           "name": "value",
-          "type": "any",
+          "type": "unknown",
           "mutable": true,
-          "attr": "value",
           "reflectToAttr": false,
           "docs": "Component value",
           "docsTags": [],
           "values": [
             {
-              "type": "any"
+              "type": "unknown"
             }
           ],
-          "optional": true,
+          "optional": false,
           "required": false
         }
       ],
@@ -3566,7 +3567,7 @@
       "events": [
         {
           "event": "value-change",
-          "detail": "any",
+          "detail": "unknown",
           "bubbles": true,
           "cancelable": true,
           "composed": true,
@@ -3768,7 +3769,7 @@
               "type": "string"
             }
           ],
-          "optional": true,
+          "optional": false,
           "required": false
         },
         {
@@ -4058,7 +4059,7 @@
               "type": "string"
             }
           ],
-          "optional": true,
+          "optional": false,
           "required": false
         },
         {
@@ -4136,7 +4137,7 @@
               "type": "boolean"
             }
           ],
-          "optional": true,
+          "optional": false,
           "required": false
         },
         {
@@ -4153,7 +4154,7 @@
               "type": "string"
             }
           ],
-          "optional": true,
+          "optional": false,
           "required": false
         }
       ],

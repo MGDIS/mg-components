@@ -40,13 +40,13 @@ export class MgInputText {
    * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
    * If not set, it will be created.
    */
-  @Prop() identifier?: string = createID('mg-input-text');
+  @Prop() identifier: string = createID('mg-input-text');
 
   /**
    * Input name
    * If not set the value equals the identifier
    */
-  @Prop() name?: string = this.identifier;
+  @Prop() name: string = this.identifier;
 
   /**
    * Input label
@@ -72,7 +72,7 @@ export class MgInputText {
   /**
    * Define if label is visible
    */
-  @Prop() labelHide: boolean = false;
+  @Prop() labelHide = false;
 
   /**
    * Input placeholder.
@@ -83,22 +83,22 @@ export class MgInputText {
   /**
    * Input max length
    */
-  @Prop() maxlength: number = 400;
+  @Prop() maxlength = 400;
 
   /**
    * Define if input is required
    */
-  @Prop() required: boolean = false;
+  @Prop() required = false;
 
   /**
    * Define if input is readonly
    */
-  @Prop() readonly: boolean = false;
+  @Prop() readonly = false;
 
   /**
    * Define if input is disabled
    */
-  @Prop() disabled: boolean = false;
+  @Prop() disabled = false;
 
   /**
    * Define input width
@@ -123,7 +123,7 @@ export class MgInputText {
   /**
    * Define if component should display character left
    */
-  @Prop() displayCharacterLeft: boolean = true;
+  @Prop() displayCharacterLeft = true;
 
   /**
    * Template to use for characters left sentence
@@ -163,7 +163,7 @@ export class MgInputText {
   /**
    * Handle input event
    */
-  private handleInput = () => {
+  private handleInput = (): void => {
     this.checkValidity();
     this.value = this.input.value;
     this.valueChange.emit(this.value);
@@ -172,7 +172,7 @@ export class MgInputText {
   /**
    * Handle focus event
    */
-  private handleFocus = () => {
+  private handleFocus = (): void => {
     this.classList.add(this.classFocus);
     this.classList = new ClassList(this.classList.classes);
   };
@@ -180,7 +180,7 @@ export class MgInputText {
   /**
    * Handle blur event
    */
-  private handleBlur = () => {
+  private handleBlur = (): void => {
     // Manage focus
     this.classList.delete(this.classFocus);
     this.classList = new ClassList(this.classList.classes);
@@ -192,7 +192,7 @@ export class MgInputText {
   /**
    * Check if input is valid
    */
-  private checkValidity() {
+  private checkValidity = (): void => {
     if (!this.readonly && this.input !== undefined) {
       const validity = this.input.checkValidity();
 
@@ -200,12 +200,12 @@ export class MgInputText {
       this.valid = validity;
       this.invalid = !validity;
     }
-  }
+  };
 
   /**
    * Check input errors
    */
-  private checkError() {
+  private checkError = (): void => {
     // Set error message
     this.errorMessage = undefined;
     // Does not match pattern
@@ -222,12 +222,12 @@ export class MgInputText {
     } else {
       this.classList.add(this.classError);
     }
-  }
+  };
 
   /**
    * Validate patern configuration
    */
-  private validatePattern = () => {
+  private validatePattern = (): void => {
     if (
       this.pattern &&
       typeof this.pattern === 'string' &&
@@ -241,7 +241,7 @@ export class MgInputText {
   /**
    * Validate append slot
    */
-  private validateAppendSlot() {
+  private validateAppendSlot = (): void => {
     const slotAppendInput: HTMLSlotElement = this.element.querySelector('[slot="append-input"]');
     if (slotAppendInput !== null && slotAppendInput.querySelector('.mg-button') !== null) {
       this.classList.add('mg-input--is-input-group-append');
@@ -250,7 +250,7 @@ export class MgInputText {
       this.classList.add('mg-input--is-append-input-slot-content');
       this.classList = new ClassList(this.classList.classes);
     }
-  }
+  };
 
   /*************
    * Lifecycle *
@@ -258,8 +258,10 @@ export class MgInputText {
 
   /**
    * Check if component props are well configured on init
+   *
+   * @returns {ReturnType<typeof setTimeout>} timeout
    */
-  componentWillLoad() {
+  componentWillLoad(): ReturnType<typeof setTimeout> {
     if (this.icon !== undefined) {
       this.classList.add('mg-input--has-icon');
     }
@@ -269,11 +271,21 @@ export class MgInputText {
     return setTimeout(() => this.checkValidity(), 0);
   }
 
-  componentDidLoad() {
+  /**
+   * Check if component props are well configured on init
+   *
+   * @returns {void}
+   */
+  componentDidLoad(): void {
     this.validateAppendSlot();
   }
 
-  render() {
+  /**
+   * Render
+   *
+   * @returns {HTMLElement} HTML Element
+   */
+  render(): HTMLElement {
     return (
       <MgInput
         identifier={this.identifier}
