@@ -38,5 +38,10 @@
     "nextPage": "Page suivante",
     "previousPage": "Page précédente",
     "selectPage": "Sélectionner la page à afficher."
+  },
+  "panel": {
+    "editLabel": "Modifer le titre de la section.",
+    "validate": "Valider",
+    "cancel": "Annuler"
   }
 }

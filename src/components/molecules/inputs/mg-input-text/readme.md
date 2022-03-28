@@ -48,6 +48,10 @@ Horizontal spacing is not managed by the component, it must be defined in slot i
 
 ## Dependencies
 
+### Used by
+
+ - [mg-panel](../../mg-panel)
+
 ### Depends on
 
 - [mg-icon](../../../atoms/mg-icon)
@@ -62,6 +66,7 @@ graph TD;
   mg-input-text --> mg-tooltip
   mg-input-text --> mg-input-title
   mg-input-text --> mg-character-left
+  mg-panel --> mg-input-text
   style mg-input-text fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

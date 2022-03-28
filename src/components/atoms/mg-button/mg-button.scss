@@ -76,7 +76,10 @@ $mg-button-padding-horizontal: 1.1rem;
     width: var(--default-size);
     height: var(--default-size);
     // Decoration
-    border-radius: var(--mg-button-icon-border-radius);
+    border-top-right-radius: var(--mg-button-border-radius-top-right, var(--mg-button-icon-border-radius));
+    border-top-left-radius: var(--mg-button-border-radius-top-left, var(--mg-button-icon-border-radius));
+    border-bottom-right-radius: var(--mg-button-border-radius-bottom-right, var(--mg-button-icon-border-radius));
+    border-bottom-left-radius: var(--mg-button-border-radius-bottom-left, var(--mg-button-icon-border-radius));
   }
 
   // Gradient style
@@ -113,7 +116,7 @@ $mg-button-padding-horizontal: 1.1rem;
     column-gap: 0.6rem;
   }
 
-  &--loading {
+  &.mg-button--loading {
     & > mg-icon {
       position: absolute;
       left: 50%;
@@ -123,6 +126,19 @@ $mg-button-padding-horizontal: 1.1rem;
     .mg-button__content {
       opacity: 0;
     }
+  }
+
+  &.mg-button--with-input-group.mg-button--secondary {
+    border-color: var(--mg-inputs-color);
+  }
+
+  &.mg-button--with-input-group:not(.mg-button--with-input-group-last) {
+    border-right: none;
+  }
+
+  &.mg-button--with-input-group-last {
+    border-top-right-radius: var(--mg-inputs-border-radius);
+    border-bottom-right-radius: var(--mg-inputs-border-radius);
   }
 
   ::slotted(mg-badge) {

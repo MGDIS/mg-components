@@ -210,6 +210,18 @@
         <mg-pagination total-pages="10"></mg-pagination>
       </section>
       <section>
+        <h2>Panel</h2>
+        <mg-panel panel-title="panel title" is-editabled>
+          <div slot="content">Content</div>
+          <div slot="header-right">
+            <mg-button variant="secondary"> <mg-icon icon="file-upload"></mg-icon> Upload </mg-button>
+            <mg-button is-icon variant="secondary" label="delete">
+              <mg-icon icon="trash"></mg-icon>
+            </mg-button>
+          </div>
+        </mg-panel>
+      </section>
+      <section>
         <h2>Tags</h2>
         <div class="mg-group-elements" style="padding: 0 0 1rem">
           <mg-tag variant="primary">primary</mg-tag>

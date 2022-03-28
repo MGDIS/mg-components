@@ -1,0 +1,45 @@
+$header-padding: 0.3rem;
+
+.mg-panel {
+  background: hsl(var(--color-light));
+  background: linear-gradient(110deg, hsl(192, 17%, 94%) 0%, hsl(200, 14%, 92%) 50%, hsl(var(--color-light)) 100%);
+  border-radius: var(--mg-panel-border-radius);
+  box-shadow: 0 0.3rem 0.8rem 0 hsla(var(--color-dark), 0.2);
+}
+
+.mg-panel__header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 0 1rem 0 $header-padding;
+  align-items: center;
+}
+
+.mg-panel__header-left,
+.mg-panel__header-right {
+  display: flex;
+  flex-grow: 1;
+  margin: $header-padding 0;
+}
+
+.mg-panel__header-left mg-input-text {
+  flex-grow: 1;
+}
+
+.mg-panel__collapse-button {
+  font-family: var(--font-family-heading);
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin: 0 $header-padding 0 0;
+}
+
+.mg-panel__content {
+  padding: 1.5rem;
+}
+
+.mg-panel ::slotted([slot='header-right']) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-left: auto;
+}

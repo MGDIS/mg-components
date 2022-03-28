@@ -141,6 +141,12 @@
   --mg-message-border-radius: 0.3rem;
 
   /*
+    <mg-panel>
+   */
+
+  --mg-panel-border-radius: 0.5rem;
+
+  /*
     Layout
    */
   --mg-grid-spacing: 1rem;

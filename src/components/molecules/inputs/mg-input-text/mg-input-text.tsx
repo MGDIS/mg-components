@@ -246,6 +246,13 @@ export class MgInputText {
     if (slotAppendInput !== null && slotAppendInput.querySelector('.mg-button') !== null) {
       this.classList.add('mg-input--is-input-group-append');
       this.classList = new ClassList(this.classList.classes);
+
+      // add class to flag input-group buttons
+      Array.from(slotAppendInput.querySelectorAll('.mg-button')).forEach((button, index, elements) => {
+        button.classList.add('mg-button--with-input-group');
+        // add class to last button
+        if (index + 1 === elements.length) button.classList.add('mg-button--with-input-group-last');
+      });
     } else if (slotAppendInput !== null) {
       this.classList.add('mg-input--is-append-input-slot-content');
       this.classList = new ClassList(this.classList.classes);

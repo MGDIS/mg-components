@@ -46,7 +46,9 @@
 .mg-input.mg-input--is-input-group-append {
   // Input group button
   --mg-button-border-radius-top-left: 0;
+  --mg-button-border-radius-top-right: 0;
   --mg-button-border-radius-bottom-left: 0;
+  --mg-button-border-radius-bottom-right: 0;
 
   /**
   * Append input slot
@@ -60,6 +62,10 @@
       outline-offset: -0.2rem;
       outline-width: 0.2rem;
     }
+  }
+
+  ::slotted(*) {
+    display: inline-flex;
   }
 
   /**

@@ -21,6 +21,7 @@ This atom refers to the [PDA9-67](https://jira.mgdis.fr/browse/PDA9-67).
 
  - [mg-message](../../molecules/mg-message)
  - [mg-pagination](../../molecules/mg-pagination)
+ - [mg-panel](../../molecules/mg-panel)
  - [mg-popover](../../molecules/mg-popover)
 
 ### Depends on
@@ -33,6 +34,7 @@ graph TD;
   mg-button --> mg-icon
   mg-message --> mg-button
   mg-pagination --> mg-button
+  mg-panel --> mg-button
   mg-popover --> mg-button
   style mg-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
