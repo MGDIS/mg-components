@@ -258,8 +258,7 @@ export class MgInputText {
   private validateAppendSlot = (): void => {
     const slotAppendInput: HTMLSlotElement = this.element.querySelector('[slot="append-input"]');
     if (slotAppendInput !== null) {
-      if (slotAppendInput.nodeName === 'MG-BUTTON') this.classList.add('mg-input--is-input-group-append');
-      else this.classList.add('mg-input--is-append-input-slot-content');
+      this.classList.add(slotAppendInput.nodeName === 'MG-BUTTON' ? 'mg-input--is-input-group-append' : 'mg-input--is-append-input-slot-content');
     }
   };
 
