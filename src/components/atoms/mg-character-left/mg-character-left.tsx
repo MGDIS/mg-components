@@ -64,6 +64,11 @@ export class MgCharacterLeft {
    * Lifecycle *
    *************/
 
+  /**
+   * Check if props are well configured on init
+   *
+   * @returns {void}
+   */
   componentWillLoad(): void {
     this.validateTemplate(this.template);
     this.validateMaxlength(this.maxlength);
