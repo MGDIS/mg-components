@@ -1,10 +1,9 @@
 import { Component, Event, h, Prop, State, EventEmitter, Watch } from '@stencil/core';
 import { MgInput } from '../MgInput';
-import { Width } from '../MgInput.conf';
+import { InputClass, Width } from '../MgInput.conf';
 import { createID, ClassList, allItemsAreString } from '../../../../utils/components.utils';
 import { messages } from '../../../../locales';
 import { SelectOption, OptGroup } from './mg-input-select.conf';
-import { InputClass } from '../MgInput.conf';
 
 /**
  * Check if item is a well configured option

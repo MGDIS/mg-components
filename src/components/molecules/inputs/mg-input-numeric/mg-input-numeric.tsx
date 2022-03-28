@@ -1,11 +1,10 @@
 import { Component, Element, Event, h, Prop, EventEmitter, State, Watch } from '@stencil/core';
 import { MgInput } from '../MgInput';
-import { Width } from '../MgInput.conf';
+import { InputClass, Width } from '../MgInput.conf';
 import { types, InputError } from './mg-input-numeric.conf';
 import { createID, ClassList } from '../../../../utils/components.utils';
 import { messages } from '../../../../locales';
 import { localeCurrency, localeNumber } from '../../../../utils/locale.utils';
-import { InputClass } from '../MgInput.conf';
 
 @Component({
   tag: 'mg-input-numeric',
