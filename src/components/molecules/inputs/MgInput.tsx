@@ -1,7 +1,6 @@
 import { FunctionalComponent, h, VNode, FunctionalUtilities } from '@stencil/core';
-import { Width } from './MgInput.conf';
+import { Width, InputClass } from './MgInput.conf';
 import { ClassList } from '../../../utils/components.utils';
-import { InputClass } from './MgInput.conf';
 
 /**
  * Apply in all input child node the aria-describedby attribute
