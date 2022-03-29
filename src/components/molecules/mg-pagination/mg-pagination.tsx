@@ -117,6 +117,11 @@ export class MgPagination {
    * Lifecycle *
    *************/
 
+  /**
+   * Check if props are well configured on init
+   *
+   * @returns {void}
+   */
   componentWillLoad(): void {
     this.validateTotalPages(this.totalPages);
     this.validateCurrentPage(this.currentPage);

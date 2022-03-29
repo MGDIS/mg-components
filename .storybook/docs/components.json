@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-03-24T11:21:10",
+  "timestamp": "2022-03-28T10:33:43",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.14.1",
@@ -3607,7 +3607,7 @@
         {
           "name": "closeButton",
           "type": "boolean",
-          "mutable": false,
+          "mutable": true,
           "attr": "close-button",
           "reflectToAttr": false,
           "docs": "Define if message has a cross button\nRG 01: https://jira.mgdis.fr/browse/PDA9-140",

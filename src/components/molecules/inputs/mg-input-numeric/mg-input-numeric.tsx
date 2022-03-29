@@ -1,11 +1,10 @@
 import { Component, Element, Event, h, Prop, EventEmitter, State, Watch } from '@stencil/core';
 import { MgInput } from '../MgInput';
-import { Width } from '../MgInput.conf';
+import { InputClass, Width } from '../MgInput.conf';
 import { types, InputError } from './mg-input-numeric.conf';
 import { createID, ClassList } from '../../../../utils/components.utils';
 import { messages } from '../../../../locales';
 import { localeCurrency, localeNumber } from '../../../../utils/locale.utils';
-import { InputClass } from '../MgInput.conf';
 
 @Component({
   tag: 'mg-input-numeric',
@@ -327,12 +326,8 @@ export class MgInputNumeric {
    */
   private validateAppendSlot = (): void => {
     const slotAppendInput: HTMLSlotElement = this.element.querySelector('[slot="append-input"]');
-    if (slotAppendInput !== null && slotAppendInput.querySelector('.mg-button') !== null) {
-      this.classList.add('mg-input--is-input-group-append');
-      this.classList = new ClassList(this.classList.classes);
-    } else if (slotAppendInput !== null) {
-      this.classList.add('mg-input--is-append-input-slot-content');
-      this.classList = new ClassList(this.classList.classes);
+    if (slotAppendInput !== null) {
+      this.classList.add(slotAppendInput.nodeName === 'MG-BUTTON' ? 'mg-input--is-input-group-append' : 'mg-input--is-append-input-slot-content');
     }
   };
 
@@ -352,19 +347,13 @@ export class MgInputNumeric {
     this.validateType(this.type);
     this.validateIntegerLength(this.integerLength);
     this.validateDecimalLength(this.decimalLength);
+    this.validateAppendSlot();
 
     // return a promise to process action only in the FIRST render().
     // https://stenciljs.com/docs/component-lifecycle#componentwillload
-    return setTimeout(() => this.checkValidity(), 0);
-  }
-
-  /**
-   * Check if component props are well configured on init
-   *
-   * @returns {void}
-   */
-  componentDidLoad(): void {
-    this.validateAppendSlot();
+    return setTimeout(() => {
+      this.checkValidity();
+    }, 0);
   }
 
   /**
