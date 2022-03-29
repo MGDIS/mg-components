@@ -16,7 +16,7 @@
   "nbCharLeft": "{counter} caractères disponibles.",
   "input": {
     "select": {
-      "placeholder": "Veuillez sélectionner une valeur"
+      "placeholder": "Sélectionnez une valeur"
     },
     "checkbox": {
       "true": "Oui",

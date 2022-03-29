@@ -230,7 +230,9 @@ export class MgInputRadio {
 
     // return a promise to process action only in the FIRST render().
     // https://stenciljs.com/docs/component-lifecycle#componentwillload
-    return setTimeout(() => this.checkValidity(), 0);
+    return setTimeout(() => {
+      this.checkValidity();
+    }, 0);
   }
 
   /**

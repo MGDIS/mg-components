@@ -1,9 +1,8 @@
 import { Component, Event, h, Prop, EventEmitter, State, Element } from '@stencil/core';
 import { MgInput } from '../MgInput';
-import { Width } from '../MgInput.conf';
+import { InputClass, Width } from '../MgInput.conf';
 import { createID, ClassList } from '../../../../utils/components.utils';
 import { messages } from '../../../../locales';
-import { InputClass } from '../MgInput.conf';
 
 @Component({
   tag: 'mg-input-text',
@@ -162,6 +161,8 @@ export class MgInputText {
 
   /**
    * Handle input event
+   *
+   * @returns {void}
    */
   private handleInput = (): void => {
     this.checkValidity();
@@ -171,6 +172,8 @@ export class MgInputText {
 
   /**
    * Handle focus event
+   *
+   * @returns {void}
    */
   private handleFocus = (): void => {
     this.classList.add(this.classFocus);
@@ -179,6 +182,8 @@ export class MgInputText {
 
   /**
    * Handle blur event
+   *
+   * @returns {void}
    */
   private handleBlur = (): void => {
     // Manage focus
@@ -191,6 +196,8 @@ export class MgInputText {
 
   /**
    * Check if input is valid
+   *
+   * @returns {void}
    */
   private checkValidity = (): void => {
     if (!this.readonly && this.input !== undefined) {
@@ -204,6 +211,8 @@ export class MgInputText {
 
   /**
    * Check input errors
+   *
+   * @returns {void}
    */
   private checkError = (): void => {
     // Set error message
@@ -226,6 +235,8 @@ export class MgInputText {
 
   /**
    * Validate patern configuration
+   *
+   * @returns {void}
    */
   private validatePattern = (): void => {
     if (
@@ -240,22 +251,13 @@ export class MgInputText {
 
   /**
    * Validate append slot
+   *
+   * @returns {void}
    */
   private validateAppendSlot = (): void => {
     const slotAppendInput: HTMLSlotElement = this.element.querySelector('[slot="append-input"]');
-    if (slotAppendInput !== null && slotAppendInput.querySelector('.mg-button') !== null) {
-      this.classList.add('mg-input--is-input-group-append');
-      this.classList = new ClassList(this.classList.classes);
-
-      // add class to flag input-group buttons
-      Array.from(slotAppendInput.querySelectorAll('.mg-button')).forEach((button, index, elements) => {
-        button.classList.add('mg-button--with-input-group');
-        // add class to last button
-        if (index + 1 === elements.length) button.classList.add('mg-button--with-input-group-last');
-      });
-    } else if (slotAppendInput !== null) {
-      this.classList.add('mg-input--is-append-input-slot-content');
-      this.classList = new ClassList(this.classList.classes);
+    if (slotAppendInput !== null) {
+      this.classList.add(slotAppendInput.nodeName === 'MG-BUTTON' ? 'mg-input--is-input-group-append' : 'mg-input--is-append-input-slot-content');
     }
   };
 
@@ -273,18 +275,13 @@ export class MgInputText {
       this.classList.add('mg-input--has-icon');
     }
     this.validatePattern();
+    this.validateAppendSlot();
+
     // return a promise to process action only in the FIRST render().
     // https://stenciljs.com/docs/component-lifecycle#componentwillload
-    return setTimeout(() => this.checkValidity(), 0);
-  }
-
-  /**
-   * Check if component props are well configured on init
-   *
-   * @returns {void}
-   */
-  componentDidLoad(): void {
-    this.validateAppendSlot();
+    return setTimeout(() => {
+      this.checkValidity();
+    }, 0);
   }
 
   /**

@@ -76,6 +76,18 @@
   --color-light-l: 100%;
   --color-light: var(--color-light-h), var(--color-light-s), var(--color-light-l);
 
+  /* Primary */
+  --color-primary-h: hsl(var(--color-dark-h));
+  --color-primary-s: hsl(var(--color-dark-s));
+  --color-primary-l: hsl(var(--color-dark-l));
+  --color-primary: hsl(var(--color-dark));
+
+  /* Secondary */
+  --color-secondary-h: hsl(var(--color-neutral-h));
+  --color-secondary-s: hsl(var(--color-neutral-s));
+  --color-secondary-l: hsl(var(--color-neutral-l));
+  --color-secondary: hsl(var(--color-neutral));
+
   /*
     Global
    */
@@ -95,6 +107,7 @@
   --mg-button-border-radius: 0.3rem;
   --mg-button-icon-border-radius: var(--default-size);
   --mg-button-disabled-opacity: 0.6;
+  --mg-button-gradient: 1; /* Can only be 1 or 0 to enable disable gradient */
 
   /* Primary */
   --mg-button-primary-color-h: var(--color-dark-h);

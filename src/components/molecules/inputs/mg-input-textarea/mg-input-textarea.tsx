@@ -1,9 +1,8 @@
 import { Component, Event, h, Prop, EventEmitter, State } from '@stencil/core';
 import { MgInput } from '../MgInput';
-import { Width } from '../MgInput.conf';
+import { InputClass, Width } from '../MgInput.conf';
 import { createID, ClassList } from '../../../../utils/components.utils';
 import { messages } from '../../../../locales';
-import { InputClass } from '../MgInput.conf';
 
 @Component({
   tag: 'mg-input-textarea',
@@ -251,7 +250,9 @@ export class MgInputTextarea {
 
     // return a promise to process action only in the FIRST render().
     // https://stenciljs.com/docs/component-lifecycle#componentwillload
-    return setTimeout(() => this.checkValidity(), 0);
+    return setTimeout(() => {
+      this.checkValidity();
+    }, 0);
   }
 
   /**

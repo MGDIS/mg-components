@@ -35,6 +35,7 @@
         <p>The Paragraph element</p>
         <p><strong>The Strong Importance element</strong></p>
         <p><small>The side comment element</small></p>
+        <p><a href="#">A link</a></p>
       </section>
       <section>
         <h2>Icons</h2>
@@ -336,18 +337,27 @@
           >
         </div>
         <mg-input-text disabled placeholder="placeholder" help-text="Message d'aide plus long" label="Libellé" tooltip="message tooltip" required value="bla"></mg-input-text>
-        <mg-input-text width="16" placeholder="placeholder" help-text="Message d'aide plus long" label="Libellé" tooltip="message tooltip" required value="bla"></mg-input-text>
+        <mg-input-text
+          display-character-left="false"
+          width="16"
+          placeholder="placeholder"
+          help-text="Message d'aide plus long"
+          label="Libellé"
+          tooltip="message tooltip"
+          required
+          value="bla"
+        ></mg-input-text>
         <mg-input-text width="4" placeholder="placeholder" help-text="Message d'aide plus long" label="Libellé" tooltip="message tooltip" required value="bla"></mg-input-text>
         <mg-input-text width="2" placeholder="placeholder" help-text="Message d'aide plus long" label="Libellé" tooltip="message tooltip" required value="bla"></mg-input-text>
         <h3>Input Textarea</h3>
         <mg-input-textarea
           placeholder="placeholder"
+          display-character-left="false"
           help-text="Message d'aide plus long"
           label="Libellé plutôt long on va dire"
           tooltip="message tooltip"
           required
           value="blu"
-          disabled
         ></mg-input-textarea>
         <mg-input-textarea
           width="16"
@@ -359,38 +369,28 @@
           value="blu"
         ></mg-input-textarea>
         <h3>Input Select</h3>
-        <mg-input-select
-          width="full"
-          placeholder="placeholder"
-          placeholder-disabled
-          help-text="Message d'aide plus long"
-          label="Libellé plutôt long on va dire"
-          tooltip="message tooltip"
-          required
-          value="blubl"
-          disabled
-        ></mg-input-select>
+        <mg-input-select placeholder-hide help-text="Message d'aide plus long" label="Libellé plutôt long on va dire" tooltip="message tooltip" required></mg-input-select>
         <script>
           const mgInputSelect = document.querySelector('mg-input-select');
           const mgInputSelectFullWidth = document.querySelector('mg-input-select.mg-input-width-full');
           // mgInputSelect.items = ['blu', 'bli', 'bla', 'blo'];
           mgInputSelect.value = 5;
-          // mgInputSelect.items = [
-          //   { title: 'blu', value: 'blublu' },
-          //   { title: 'bli', value: 5 },
-          //   { title: 'bla', value: { bla: 'bla' } },
-          //   { title: 'blo', value: ['blu', 'bli', 'blo'] },
-          //   { title: 'ble', value: false },
-          //   { title: 'bly', value: true },
-          // ];
           mgInputSelect.items = [
-            { title: 'blu blu blu blu blu', value: 'blu', group: 'Le groupe A' },
-            { title: 'blu', value: 5, group: 'Le groupe B' },
-            { title: 'bli', value: { blu: 'blu' }, group: 'Le groupe A' },
-            { title: 'non', value: false, group: 'Le groupe B' },
-            { title: 'bla', value: 'blabla' },
-            { title: 'blo', value: 'bloblo' },
+            { title: 'blu', value: 'blublu' },
+            { title: 'bli', value: 5 },
+            { title: 'bla', value: { bla: 'bla' } },
+            { title: 'blo', value: ['blu', 'bli', 'blo'] },
+            { title: 'ble', value: false },
+            { title: 'bly', value: true },
           ];
+          // mgInputSelect.items = [
+          //   { title: 'blu blu blu blu blu', value: 'blu', group: 'Le groupe A' },
+          //   { title: 'blu', value: 5, group: 'Le groupe B' },
+          //   { title: 'bli', value: { blu: 'blu' }, group: 'Le groupe A' },
+          //   { title: 'non', value: false, group: 'Le groupe B' },
+          //   { title: 'bla', value: 'blabla' },
+          //   { title: 'blo', value: 'bloblo' },
+          // ];
           mgInputSelect.addEventListener('value-change', e => {
             console.log(e.target.value);
           });

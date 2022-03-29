@@ -61,7 +61,7 @@ export class MgMessage {
    * Define if message has a cross button
    * RG 01: https://jira.mgdis.fr/browse/PDA9-140
    */
-  @Prop() closeButton = false;
+  @Prop({ mutable: true }) closeButton = false;
   @Watch('closeButton')
   validateCloseButton(newValue: boolean): void {
     if (newValue && this.hasActions) {
