@@ -95,7 +95,7 @@ describe('mg-message', () => {
 
     expect(page.rootInstance.classList.join()).not.toContain('mg-message--hide');
 
-    await new Promise(r => setTimeout(r, 2000));
+    jest.advanceTimersByTime(2000);
 
     expect(page.rootInstance.classList.join()).toContain('mg-message--hide');
     expect(page.rootInstance.componentHide.emit).toHaveBeenCalledTimes(1);
@@ -106,7 +106,7 @@ describe('mg-message', () => {
     expect(page.rootInstance.classList.join()).not.toContain('mg-message--hide');
     expect(page.rootInstance.componentShow.emit).toHaveBeenCalledTimes(1);
 
-    await new Promise(r => setTimeout(r, 2000));
+    jest.advanceTimersByTime(2000);
 
     expect(page.rootInstance.classList.join()).toContain('mg-message--hide');
     expect(page.rootInstance.componentHide.emit).toHaveBeenCalledTimes(2);

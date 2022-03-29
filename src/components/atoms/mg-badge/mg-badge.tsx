@@ -52,6 +52,8 @@ export class MgBadge {
 
   /**
    * Check if props are well configured on init
+   *
+   * @returns {void}
    */
   componentWillLoad(): void {
     this.validateValue(this.value);

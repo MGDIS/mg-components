@@ -1,6 +1,6 @@
 {
   "name": "@mgdis/mg-components",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "MG Components",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
@@ -22,6 +22,7 @@
     "build": "stencil build --docs",
     "start": "stencil build --dev --watch --serve",
     "lint": "run-s lint:es lint:prettier",
+    "lint:fix": "run-s lint:es:fix lint:prettier:fix",
     "lint:es": "eslint src/**/*.{ts,tsx}",
     "lint:es:fix": "eslint src/**/*.{ts,tsx} --fix",
     "lint:prettier": "prettier --check **/*.{ts,tsx,scss,html,mdx,json}",

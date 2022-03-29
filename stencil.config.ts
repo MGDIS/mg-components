@@ -59,6 +59,7 @@ export const config: Config = {
   ],
   plugins: [sass()],
   testing: {
+    timers: 'fake',
     collectCoverage: true,
     reporters: ['default', 'jest-junit'],
     /**
