@@ -22,7 +22,7 @@ $mg-button-padding-horizontal: 1.1rem;
     background: linear-gradient(
       to bottom,
       hsl(var(#{$backgroundColor}-h), var(#{$backgroundColor}-s), var(#{$backgroundColor}-l)),
-      hsl(var(#{$backgroundColor}-h), var(#{$backgroundColor}-s), calc(var(#{$backgroundColor}-l) - 10%))
+      hsl(var(#{$backgroundColor}-h), var(#{$backgroundColor}-s), calc(var(#{$backgroundColor}-l) - var(--mg-button-gradient) * 10%))
     );
 
     // Hover
@@ -65,7 +65,6 @@ $mg-button-padding-horizontal: 1.1rem;
   &[aria-disabled],
   &.disabled {
     opacity: var(--mg-button-disabled-opacity);
-    cursor: not-allowed;
   }
 
   // Icon only button

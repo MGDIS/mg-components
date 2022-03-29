@@ -14,9 +14,9 @@ exports[`mg-input-select Should render with args {
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <select aria-describedby="" class="mg-input__box" id="identifier" name="identifier" title="Veuillez sélectionner une valeur">
+          <select aria-describedby="" class="mg-input__box" id="identifier" name="identifier" title="Sélectionnez une valeur">
             <option value="">
-              Veuillez sélectionner une valeur
+              Sélectionnez une valeur
             </option>
             <option value="0">
               blu
@@ -54,9 +54,9 @@ exports[`mg-input-select Should render with args {
       </div>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <select aria-describedby="" class="mg-input__box" id="identifier" name="identifier" title="Veuillez sélectionner une valeur">
+          <select aria-describedby="" class="mg-input__box" id="identifier" name="identifier" title="Sélectionnez une valeur">
             <option value="">
-              Veuillez sélectionner une valeur
+              Sélectionnez une valeur
             </option>
             <option value="0">
               blu
@@ -292,9 +292,9 @@ exports[`mg-input-select Should render with args {
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <select aria-describedby="" class="mg-input__box" id="identifier" name="identifier" title="Veuillez sélectionner une valeur">
+          <select aria-describedby="" class="mg-input__box" id="identifier" name="identifier" title="Sélectionnez une valeur">
             <option value="">
-              Veuillez sélectionner une valeur
+              Sélectionnez une valeur
             </option>
             <option value="0">
               blu
@@ -339,9 +339,9 @@ exports[`mg-input-select Should render with args {
       </div>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <select aria-describedby="" class="mg-input__box" id="identifier" name="identifier" title="Veuillez sélectionner une valeur">
+          <select aria-describedby="" class="mg-input__box" id="identifier" name="identifier" title="Sélectionnez une valeur">
             <option value="">
-              Veuillez sélectionner une valeur
+              Sélectionnez une valeur
             </option>
             <option value="0">
               blu
@@ -372,9 +372,9 @@ exports[`mg-input-select Should render with args { label: 'label', identifier: '
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <select aria-describedby="" class="mg-input__box" id="identifier" name="identifier" title="Veuillez sélectionner une valeur">
+          <select aria-describedby="" class="mg-input__box" id="identifier" name="identifier" title="Sélectionnez une valeur">
             <option value="">
-              Veuillez sélectionner une valeur
+              Sélectionnez une valeur
             </option>
             <option value="0">
               blu
@@ -405,9 +405,9 @@ exports[`mg-input-select Should render with args { label: 'label', identifier: '
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <select aria-describedby="" class="mg-input__box" id="identifier" name="identifier" title="Veuillez sélectionner une valeur">
+          <select aria-describedby="" class="mg-input__box" id="identifier" name="identifier" title="Sélectionnez une valeur">
             <option value="">
-              Veuillez sélectionner une valeur
+              Sélectionnez une valeur
             </option>
             <option value="0">
               blu
@@ -438,9 +438,9 @@ exports[`mg-input-select Should render with args { label: 'label', identifier: '
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <select aria-describedby="" class="mg-input__box" id="identifier" name="identifier" title="Veuillez sélectionner une valeur">
+          <select aria-describedby="" class="mg-input__box" id="identifier" name="identifier" title="Sélectionnez une valeur">
             <option value="">
-              Veuillez sélectionner une valeur
+              Sélectionnez une valeur
             </option>
             <optgroup label="blu">
               <option value="0">
@@ -475,9 +475,9 @@ exports[`mg-input-select Should trigger events for items ({ items: [Array], sele
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <select aria-describedby="identifier-help-text" class="mg-input__box" id="identifier" name="identifier" title="Veuillez sélectionner une valeur">
+          <select aria-describedby="identifier-help-text" class="mg-input__box" id="identifier" name="identifier" title="Sélectionnez une valeur">
             <option value="">
-              Veuillez sélectionner une valeur
+              Sélectionnez une valeur
             </option>
             <option value="0">
               batman
@@ -511,9 +511,9 @@ exports[`mg-input-select Should trigger events for items ({ items: [Array], sele
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <select aria-describedby="identifier-help-text" class="mg-input__box" id="identifier" name="identifier" title="Veuillez sélectionner une valeur">
+          <select aria-describedby="identifier-help-text" class="mg-input__box" id="identifier" name="identifier" title="Sélectionnez une valeur">
             <option value="">
-              Veuillez sélectionner une valeur
+              Sélectionnez une valeur
             </option>
             <option value="0">
               batman
@@ -541,9 +541,9 @@ exports[`mg-input-select Should trigger events for items ({ items: [Array], sele
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <select aria-describedby="identifier-help-text" class="mg-input__box" id="identifier" name="identifier" title="Veuillez sélectionner une valeur">
+          <select aria-describedby="identifier-help-text" class="mg-input__box" id="identifier" name="identifier" title="Sélectionnez une valeur">
             <option value="">
-              Veuillez sélectionner une valeur
+              Sélectionnez une valeur
             </option>
             <option value="0">
               batman
@@ -577,9 +577,9 @@ exports[`mg-input-select Should trigger events for items ({ items: [Array], sele
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <select aria-describedby="identifier-help-text" class="mg-input__box" id="identifier" name="identifier" title="Veuillez sélectionner une valeur">
+          <select aria-describedby="identifier-help-text" class="mg-input__box" id="identifier" name="identifier" title="Sélectionnez une valeur">
             <option value="">
-              Veuillez sélectionner une valeur
+              Sélectionnez une valeur
             </option>
             <option value="0">
               batman
@@ -607,9 +607,9 @@ exports[`mg-input-select Should trigger events for items ({ items: [Array], sele
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <select aria-describedby="identifier-help-text" class="mg-input__box" id="identifier" name="identifier" title="Veuillez sélectionner une valeur">
+          <select aria-describedby="identifier-help-text" class="mg-input__box" id="identifier" name="identifier" title="Sélectionnez une valeur">
             <option value="">
-              Veuillez sélectionner une valeur
+              Sélectionnez une valeur
             </option>
             <option value="0">
               batman
@@ -643,9 +643,9 @@ exports[`mg-input-select Should trigger events for items ({ items: [Array], sele
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <select aria-describedby="identifier-help-text" class="mg-input__box" id="identifier" name="identifier" title="Veuillez sélectionner une valeur">
+          <select aria-describedby="identifier-help-text" class="mg-input__box" id="identifier" name="identifier" title="Sélectionnez une valeur">
             <option value="">
-              Veuillez sélectionner une valeur
+              Sélectionnez une valeur
             </option>
             <option value="0">
               batman
@@ -679,9 +679,9 @@ exports[`mg-input-select validity, case next state is disabled validity ({ valid
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <select aria-describedby="identifier-error" class="mg-input__box" id="identifier" name="identifier" title="Veuillez sélectionner une valeur">
+          <select aria-describedby="identifier-error" class="mg-input__box" id="identifier" name="identifier" title="Sélectionnez une valeur">
             <option value="">
-              Veuillez sélectionner une valeur
+              Sélectionnez une valeur
             </option>
             <option value="0">
               blu
@@ -715,9 +715,9 @@ exports[`mg-input-select validity, case next state is disabled validity ({ valid
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <select aria-describedby="identifier-error" class="mg-input__box" disabled="" id="identifier" name="identifier" title="Veuillez sélectionner une valeur">
+          <select aria-describedby="identifier-error" class="mg-input__box" disabled="" id="identifier" name="identifier" title="Sélectionnez une valeur">
             <option value="">
-              Veuillez sélectionner une valeur
+              Sélectionnez une valeur
             </option>
             <option value="0">
               blu
@@ -751,9 +751,9 @@ exports[`mg-input-select validity, case next state is readonly validity ({ valid
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <select aria-describedby="identifier-error" class="mg-input__box" id="identifier" name="identifier" title="Veuillez sélectionner une valeur">
+          <select aria-describedby="identifier-error" class="mg-input__box" id="identifier" name="identifier" title="Sélectionnez une valeur">
             <option value="">
-              Veuillez sélectionner une valeur
+              Sélectionnez une valeur
             </option>
             <option value="0">
               blu

@@ -59,3 +59,17 @@ h6,
 .h6 {
   font-size: calc(var(--font-size) * 0.8);
 }
+
+/**
+ * Links
+ */
+a {
+  color: hsl(var(--color-primary));
+  text-decoration: underline;
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+  }
+}

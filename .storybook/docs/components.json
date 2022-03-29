@@ -244,8 +244,8 @@
       "filePath": "./src/components/atoms/mg-character-left/mg-character-left.tsx",
       "encapsulation": "scoped",
       "tag": "mg-character-left",
-      "readme": "This atom refers to thes [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64), [PDA9-723](https://jira.mgdis.fr/browse/PDA9-723).\n",
-      "docs": "This atom refers to thes [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64), [PDA9-723](https://jira.mgdis.fr/browse/PDA9-723).",
+      "readme": "This atom refers to [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64), [PDA9-723](https://jira.mgdis.fr/browse/PDA9-723).\n",
+      "docs": "This atom refers to [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64), [PDA9-723](https://jira.mgdis.fr/browse/PDA9-723).",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -3230,8 +3230,8 @@
       "filePath": "./src/components/atoms/mg-input-title/mg-input-title.tsx",
       "encapsulation": "scoped",
       "tag": "mg-input-title",
-      "readme": "This atom refers to thes [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64), [PDA9-723](https://jira.mgdis.fr/browse/PDA9-723).\n",
-      "docs": "This atom refers to thes [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64), [PDA9-723](https://jira.mgdis.fr/browse/PDA9-723).",
+      "readme": "This atom refers to [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64), [PDA9-723](https://jira.mgdis.fr/browse/PDA9-723).\n",
+      "docs": "This atom refers to [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64), [PDA9-723](https://jira.mgdis.fr/browse/PDA9-723).",
       "docsTags": [],
       "usage": {},
       "props": [
