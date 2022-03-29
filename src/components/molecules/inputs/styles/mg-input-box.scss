@@ -45,10 +45,8 @@
 
 .mg-input.mg-input--is-input-group-append {
   // Input group button
-  --mg-button-border-radius-top-left: 0;
-  --mg-button-border-radius-top-right: 0;
-  --mg-button-border-radius-bottom-left: 0;
-  --mg-button-border-radius-bottom-right: 0;
+  --mg-button-border-radius-top-left: 0rem;
+  --mg-button-border-radius-bottom-left: 0rem;
 
   /**
   * Append input slot
@@ -64,15 +62,30 @@
     }
   }
 
-  ::slotted(*) {
-    display: inline-flex;
-  }
-
   /**
   * Readonly variation
   */
   &.mg-input--readonly slot[name='append-input'] {
     display: none;
+  }
+}
+
+.mg-input.mg-input--has-buttons-group-append {
+  ::slotted([slot='append-input']) {
+    --mg-button-border-color: var(--mg-inputs-color);
+    --mg-button-border-radius-top-right: 0rem;
+    --mg-button-border-radius-bottom-right: 0rem;
+    --mg-button-border-radius-top-left: 0rem; /* IE FIX */
+    --mg-button-border-radius-bottom-left: 0rem; /* IE FIX */
+  }
+  ::slotted([slot='append-input']:not(:last-of-type)) {
+    --mg-button-border-right-width: 0rem;
+  }
+  ::slotted([slot='append-input']:last-of-type) {
+    --mg-button-border-radius-top-right: var(--mg-inputs-border-radius);
+    --mg-button-border-radius-bottom-right: var(--mg-inputs-border-radius);
+    --mg-button-border-radius-top-left: 0rem; /* IE FIX */
+    --mg-button-border-radius-bottom-left: 0rem; /* IE FIX */
   }
 }
 

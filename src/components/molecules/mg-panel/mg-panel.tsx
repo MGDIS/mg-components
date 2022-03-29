@@ -29,7 +29,7 @@ export class MgPanel {
   /**
    * Panel title
    */
-  @Prop() panelTitle!: string;
+  @Prop({ mutable: true }) panelTitle!: string;
   @Watch('panelTitle')
   handelTileChange(newValue: string): void {
     this.titleChange.emit(newValue);
@@ -165,20 +165,26 @@ export class MgPanel {
           ref={el => (this.editInputElement = el as HTMLMgInputTextElement)}
           width="full"
         >
-          <div slot="append-input">
-            <mg-button label={messages.panel.cancel} is-icon variant="secondary" onClick={this.handleCancelEditButton} identifier={`${this.identifier}-edition-button-cancel`}>
-              <mg-icon icon="cross"></mg-icon>
-            </mg-button>
-            <mg-button
-              label={messages.panel.validate}
-              is-icon
-              variant="secondary"
-              onClick={this.handleValidateEditButton}
-              identifier={`${this.identifier}-edition-button-validate`}
-            >
-              <mg-icon icon="check"></mg-icon>
-            </mg-button>
-          </div>
+          <mg-button
+            slot="append-input"
+            label={messages.panel.cancel}
+            is-icon
+            variant="secondary"
+            onClick={this.handleCancelEditButton}
+            identifier={`${this.identifier}-edition-button-cancel`}
+          >
+            <mg-icon icon="cross"></mg-icon>
+          </mg-button>
+          <mg-button
+            slot="append-input"
+            label={messages.panel.validate}
+            is-icon
+            variant="secondary"
+            onClick={this.handleValidateEditButton}
+            identifier={`${this.identifier}-edition-button-validate`}
+          >
+            <mg-icon icon="check"></mg-icon>
+          </mg-button>
         </mg-input-text>,
       ];
     }

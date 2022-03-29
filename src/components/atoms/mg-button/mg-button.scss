@@ -13,8 +13,8 @@ $mg-button-padding-horizontal: 1.1rem;
   }
   &.mg-button--#{$name} {
     // Decoration
-    border-color: hsl(var(#{$backgroundColor}-h), var(#{$backgroundColor}-s), var(#{$backgroundColor}-l)); /* IE FIX */
-    border-color: hsl(var(#{$backgroundColor}-h), var(#{$backgroundColor}-s), calc(var(#{$backgroundColor}-l) - 10%));
+    border-color: var(--mg-button-border-color, hsl(var(#{$backgroundColor}-h), var(#{$backgroundColor}-s), var(#{$backgroundColor}-l))); /* IE FIX */
+    border-color: var(--mg-button-border-color, hsl(var(#{$backgroundColor}-h), var(#{$backgroundColor}-s), calc(var(#{$backgroundColor}-l) - 10%)));
     // Font
     color: hsl(var(#{$fontColor}));
     // Background
@@ -51,7 +51,11 @@ $mg-button-padding-horizontal: 1.1rem;
   border-bottom-left-radius: var(--mg-button-border-radius-bottom-left, var(--mg-button-border-radius));
   cursor: pointer;
   background-image: none;
-  border: $mg-button-border-width solid;
+  border-top-width: var(--mg-button-border-top-width, $mg-button-border-width);
+  border-right-width: var(--mg-button-border-right-width, $mg-button-border-width);
+  border-bottom-width: var(--mg-button-border-bottom-width, $mg-button-border-width);
+  border-left-width: var(--mg-button-border-left-width, $mg-button-border-width);
+  border-style: solid;
   // Font
   font-family: inherit;
   text-decoration: none;
@@ -125,19 +129,6 @@ $mg-button-padding-horizontal: 1.1rem;
     .mg-button__content {
       opacity: 0;
     }
-  }
-
-  &.mg-button--with-input-group.mg-button--secondary {
-    border-color: var(--mg-inputs-color);
-  }
-
-  &.mg-button--with-input-group:not(.mg-button--with-input-group-last) {
-    border-right: none;
-  }
-
-  &.mg-button--with-input-group-last {
-    border-top-right-radius: var(--mg-inputs-border-radius);
-    border-bottom-right-radius: var(--mg-inputs-border-radius);
   }
 
   ::slotted(mg-badge) {

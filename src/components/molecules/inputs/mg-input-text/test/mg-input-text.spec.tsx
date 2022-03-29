@@ -40,6 +40,14 @@ describe('mg-input-text', () => {
       <mg-icon icon="magnifying-glass"></mg-icon> Search
     </mg-button>,
     <span slot="append-input">test</span>,
+    [
+      <mg-button is-icon slot="append-input" label="cancel" identifier="identifier-cancel">
+        <mg-icon icon="cross"></mg-icon>
+      </mg-button>,
+      <mg-button is-icon slot="append-input" label="validate" identifier="identifier-validate">
+        <mg-icon icon="check"></mg-icon>
+      </mg-button>,
+    ],
   ])('Should render with slot.', async slot => {
     const args = { label: 'label', identifier: 'identifier', type: 'search' };
 

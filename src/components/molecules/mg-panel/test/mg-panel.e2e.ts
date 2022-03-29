@@ -48,7 +48,7 @@ describe('mg-panel', () => {
       const screenshot = await page.screenshot();
       expect(screenshot).toMatchImageSnapshot();
 
-      const editButton = await page.find('mg-panel >>> .mg-panel__edit-button');
+      const editButton = await page.find('mg-panel >>> #identifier-edit-button');
       await editButton.click();
 
       const screenshot2 = await page.screenshot();

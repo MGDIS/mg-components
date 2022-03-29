@@ -27,7 +27,6 @@
     "lint:es:fix": "eslint src/**/*.{ts,tsx} --fix",
     "lint:prettier": "prettier --check **/*.{ts,tsx,scss,html,mdx,json}",
     "lint:prettier:fix": "prettier --write **/*.{ts,tsx,scss,html,mdx,json}",
-    "lint:fix": "npm run lint:es:fix & npm run lint:prettier:fix",
     "test": "stencil test --spec --e2e",
     "test:unit": "stencil test --spec",
     "test:e2e": "stencil test --e2e",

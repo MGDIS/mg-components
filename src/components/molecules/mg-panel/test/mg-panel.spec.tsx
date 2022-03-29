@@ -52,7 +52,7 @@ describe('mg-panel', () => {
     test.each([true, false])('Should toggle edit panel title', async isEditabled => {
       const page = await getPage({ identifier: 'identifier', panelTitle: 'panel title', isEditabled });
       const mgPanel = page.doc.querySelector('mg-panel');
-      const editButton = mgPanel.shadowRoot.querySelector('.mg-panel__edit-button');
+      const editButton = mgPanel.shadowRoot.querySelector('#identifier-edit-button');
 
       expect(page.root).toMatchSnapshot();
 
@@ -74,7 +74,7 @@ describe('mg-panel', () => {
       const args = { identifier: 'identifier', panelTitle: 'panel title', isEditabled: true };
       const page = await getPage(args);
       const mgPanel = page.doc.querySelector('mg-panel');
-      const editButton = mgPanel.shadowRoot.querySelector('.mg-panel__edit-button');
+      const editButton = mgPanel.shadowRoot.querySelector('#identifier-edit-button');
 
       expect(page.root).toMatchSnapshot();
 
@@ -119,7 +119,7 @@ describe('mg-panel', () => {
       const args = { identifier: 'identifier', panelTitle: 'panel title', isEditabled: true };
       const page = await getPage(args);
       const mgPanel = page.doc.querySelector('mg-panel');
-      const editButton = mgPanel.shadowRoot.querySelector('.mg-panel__edit-button');
+      const editButton = mgPanel.shadowRoot.querySelector('#identifier-edit-button');
 
       expect(page.root).toMatchSnapshot();
 
