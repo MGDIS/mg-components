@@ -1,4 +1,4 @@
-import { Component, Event, EventEmitter, h, Prop, State, Watch } from '@stencil/core';
+import { Component, Event, EventEmitter, h, Prop, State, Watch, Method } from '@stencil/core';
 import { MgInput } from '../MgInput';
 import { InputError } from './mg-input-date.conf';
 import { createID, ClassList } from '../../../../utils/components.utils';
@@ -134,6 +134,17 @@ export class MgInputDate {
    * Emmited event when value change
    */
   @Event({ eventName: 'value-change' }) valueChange: EventEmitter<string>;
+
+  /**
+   * Public method to display errors
+   *
+   * @returns {Promise<void>}
+   */
+  @Method()
+  async displayError(): Promise<void> {
+    this.checkValidity();
+    this.checkError();
+  }
 
   /**
    * Handle input event

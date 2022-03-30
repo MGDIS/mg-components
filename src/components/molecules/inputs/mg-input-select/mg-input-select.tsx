@@ -1,4 +1,4 @@
-import { Component, Event, h, Prop, State, EventEmitter, Watch } from '@stencil/core';
+import { Component, Event, h, Prop, State, EventEmitter, Watch, Method } from '@stencil/core';
 import { MgInput } from '../MgInput';
 import { InputClass, Width } from '../MgInput.conf';
 import { createID, ClassList, allItemsAreString } from '../../../../utils/components.utils';
@@ -202,6 +202,17 @@ export class MgInputSelect {
    * Emmited event when value change
    */
   @Event({ eventName: 'value-change' }) valueChange: EventEmitter<unknown>;
+
+  /**
+   * Public method to display errors
+   *
+   * @returns {Promise<void>}
+   */
+  @Method()
+  async displayError(): Promise<void> {
+    this.checkValidity();
+    this.checkError();
+  }
 
   /**
    * Handle input event
