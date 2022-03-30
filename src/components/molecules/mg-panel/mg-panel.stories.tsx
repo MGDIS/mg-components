@@ -14,13 +14,11 @@ const Template = args => {
   // Extract slot so it won't be render as an attribute
   const panelTitle = args.panelTitle;
   delete args.panelTitle;
-  const isOpened = args.isOpened;
-  delete args.isOpened;
-  const isEditabled = args.isEditabled;
-  delete args.isEditabled;
+  const titleEditable = args.titleEditable;
+  delete args.titleEditable;
   // return element
   return (
-    <mg-panel {...args} panel-title={panelTitle} is-opened={isOpened} is-editabled={isEditabled}>
+    <mg-panel {...args} panel-title={panelTitle} title-editable={titleEditable}>
       <div slot="content">Content</div>
       <div slot="header-right">
         <mg-button variant="secondary">
@@ -38,6 +36,6 @@ export const MgPanel = Template.bind({});
 
 MgPanel.args = {
   panelTitle: 'title',
-  isOpened: false,
-  isEditabled: true,
+  expanded: false,
+  titleEditable: true,
 };

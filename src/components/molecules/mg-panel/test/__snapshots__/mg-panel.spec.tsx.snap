@@ -3,7 +3,7 @@
 exports[`mg-panel Should render with args {
   identifier: 'identifier',
   panelTitle: 'panel title',
-  isEditabled: true
+  titleEditable: true
 }: 1`] = `
 <mg-panel>
   <mock:shadow-root>
@@ -12,7 +12,7 @@ exports[`mg-panel Should render with args {
         <div class="mg-panel__header-left">
           <mg-button class="mg-panel__collapse-button">
             <!---->
-            <button aria-controls="identifier-content" aria-expanded="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
+            <button aria-controls="identifier-content" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
                 <mg-icon>
                   <mock:shadow-root>
@@ -45,7 +45,7 @@ exports[`mg-panel Should render with args {
         </div>
       </header>
       <article aria-labelledby="identifier-header" class="mg-panel__content" hidden="" id="identifier-content">
-        <slot name="content"></slot>
+        <slot></slot>
       </article>
     </section>
   </mock:shadow-root>
@@ -60,7 +60,7 @@ exports[`mg-panel Should render with args { identifier: 'identifier', panelTitle
         <div class="mg-panel__header-left">
           <mg-button class="mg-panel__collapse-button">
             <!---->
-            <button aria-controls="identifier-content" aria-expanded="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
+            <button aria-controls="identifier-content" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
                 <mg-icon>
                   <mock:shadow-root>
@@ -79,14 +79,14 @@ exports[`mg-panel Should render with args { identifier: 'identifier', panelTitle
         </div>
       </header>
       <article aria-labelledby="identifier-header" class="mg-panel__content" hidden="" id="identifier-content">
-        <slot name="content"></slot>
+        <slot></slot>
       </article>
     </section>
   </mock:shadow-root>
 </mg-panel>
 `;
 
-exports[`mg-panel Should render with args { identifier: 'identifier', panelTitle: 'panel title', isOpened: true }: 1`] = `
+exports[`mg-panel Should render with args { identifier: 'identifier', panelTitle: 'panel title', expanded: true }: 1`] = `
 <mg-panel>
   <mock:shadow-root>
     <section class="mg-panel" id="identifier">
@@ -94,7 +94,7 @@ exports[`mg-panel Should render with args { identifier: 'identifier', panelTitle
         <div class="mg-panel__header-left">
           <mg-button class="mg-panel__collapse-button">
             <!---->
-            <button aria-controls="identifier-content" aria-expanded="true" class="mg-button mg-button--flat" id="identifier-collapse-button">
+            <button aria-controls="identifier-content" aria-expanded="" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
                 <mg-icon>
                   <mock:shadow-root>
@@ -113,7 +113,7 @@ exports[`mg-panel Should render with args { identifier: 'identifier', panelTitle
         </div>
       </header>
       <article aria-labelledby="identifier-header" class="mg-panel__content" id="identifier-content">
-        <slot name="content"></slot>
+        <slot></slot>
       </article>
     </section>
   </mock:shadow-root>
@@ -128,7 +128,7 @@ exports[`mg-panel navigation Should toggle collapse panel 1`] = `
         <div class="mg-panel__header-left">
           <mg-button class="mg-panel__collapse-button">
             <!---->
-            <button aria-controls="identifier-content" aria-expanded="true" class="mg-button mg-button--flat" id="identifier-collapse-button">
+            <button aria-controls="identifier-content" aria-expanded="" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
                 <mg-icon>
                   <mock:shadow-root>
@@ -147,7 +147,7 @@ exports[`mg-panel navigation Should toggle collapse panel 1`] = `
         </div>
       </header>
       <article aria-labelledby="identifier-header" class="mg-panel__content" id="identifier-content">
-        <slot name="content"></slot>
+        <slot></slot>
       </article>
     </section>
   </mock:shadow-root>
@@ -162,7 +162,7 @@ exports[`mg-panel navigation Should toggle collapse panel 2`] = `
         <div class="mg-panel__header-left">
           <mg-button class="mg-panel__collapse-button">
             <!---->
-            <button aria-controls="identifier-content" aria-expanded="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
+            <button aria-controls="identifier-content" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
                 <mg-icon>
                   <mock:shadow-root>
@@ -181,7 +181,7 @@ exports[`mg-panel navigation Should toggle collapse panel 2`] = `
         </div>
       </header>
       <article aria-labelledby="identifier-header" class="mg-panel__content" hidden="" id="identifier-content">
-        <slot name="content"></slot>
+        <slot></slot>
       </article>
     </section>
   </mock:shadow-root>
@@ -196,7 +196,7 @@ exports[`mg-panel navigation Should toggle collapse panel 3`] = `
         <div class="mg-panel__header-left">
           <mg-button class="mg-panel__collapse-button">
             <!---->
-            <button aria-controls="identifier-content" aria-expanded="true" class="mg-button mg-button--flat" id="identifier-collapse-button">
+            <button aria-controls="identifier-content" aria-expanded="" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
                 <mg-icon>
                   <mock:shadow-root>
@@ -215,7 +215,7 @@ exports[`mg-panel navigation Should toggle collapse panel 3`] = `
         </div>
       </header>
       <article aria-labelledby="identifier-header" class="mg-panel__content" id="identifier-content">
-        <slot name="content"></slot>
+        <slot></slot>
       </article>
     </section>
   </mock:shadow-root>
@@ -230,7 +230,7 @@ exports[`mg-panel navigation Should toggle collapse panel 4`] = `
         <div class="mg-panel__header-left">
           <mg-button class="mg-panel__collapse-button">
             <!---->
-            <button aria-controls="identifier-content" aria-expanded="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
+            <button aria-controls="identifier-content" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
                 <mg-icon>
                   <mock:shadow-root>
@@ -249,7 +249,7 @@ exports[`mg-panel navigation Should toggle collapse panel 4`] = `
         </div>
       </header>
       <article aria-labelledby="identifier-header" class="mg-panel__content" hidden="" id="identifier-content">
-        <slot name="content"></slot>
+        <slot></slot>
       </article>
     </section>
   </mock:shadow-root>
@@ -264,7 +264,7 @@ exports[`mg-panel navigation Should toggle edit panel title 1`] = `
         <div class="mg-panel__header-left">
           <mg-button class="mg-panel__collapse-button">
             <!---->
-            <button aria-controls="identifier-content" aria-expanded="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
+            <button aria-controls="identifier-content" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
                 <mg-icon>
                   <mock:shadow-root>
@@ -297,7 +297,7 @@ exports[`mg-panel navigation Should toggle edit panel title 1`] = `
         </div>
       </header>
       <article aria-labelledby="identifier-header" class="mg-panel__content" hidden="" id="identifier-content">
-        <slot name="content"></slot>
+        <slot></slot>
       </article>
     </section>
   </mock:shadow-root>
@@ -312,7 +312,7 @@ exports[`mg-panel navigation Should toggle edit panel title 2`] = `
         <div class="mg-panel__header-left">
           <mg-button class="mg-panel__collapse-button">
             <!---->
-            <button aria-controls="identifier-content" aria-expanded="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
+            <button aria-controls="identifier-content" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
                 <mg-icon>
                   <mock:shadow-root>
@@ -373,7 +373,7 @@ exports[`mg-panel navigation Should toggle edit panel title 2`] = `
         </div>
       </header>
       <article aria-labelledby="identifier-header" class="mg-panel__content" hidden="" id="identifier-content">
-        <slot name="content"></slot>
+        <slot></slot>
       </article>
     </section>
   </mock:shadow-root>
@@ -388,7 +388,7 @@ exports[`mg-panel navigation Should toggle edit panel title 3`] = `
         <div class="mg-panel__header-left">
           <mg-button class="mg-panel__collapse-button">
             <!---->
-            <button aria-controls="identifier-content" aria-expanded="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
+            <button aria-controls="identifier-content" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
                 <mg-icon>
                   <mock:shadow-root>
@@ -421,7 +421,7 @@ exports[`mg-panel navigation Should toggle edit panel title 3`] = `
         </div>
       </header>
       <article aria-labelledby="identifier-header" class="mg-panel__content" hidden="" id="identifier-content">
-        <slot name="content"></slot>
+        <slot></slot>
       </article>
     </section>
   </mock:shadow-root>
@@ -436,7 +436,7 @@ exports[`mg-panel navigation Should toggle edit panel title 4`] = `
         <div class="mg-panel__header-left">
           <mg-button class="mg-panel__collapse-button">
             <!---->
-            <button aria-controls="identifier-content" aria-expanded="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
+            <button aria-controls="identifier-content" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
                 <mg-icon>
                   <mock:shadow-root>
@@ -455,7 +455,7 @@ exports[`mg-panel navigation Should toggle edit panel title 4`] = `
         </div>
       </header>
       <article aria-labelledby="identifier-header" class="mg-panel__content" hidden="" id="identifier-content">
-        <slot name="content"></slot>
+        <slot></slot>
       </article>
     </section>
   </mock:shadow-root>
@@ -470,7 +470,7 @@ exports[`mg-panel navigation should NOT update panel title, case no enter in inp
         <div class="mg-panel__header-left">
           <mg-button class="mg-panel__collapse-button">
             <!---->
-            <button aria-controls="identifier-content" aria-expanded="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
+            <button aria-controls="identifier-content" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
                 <mg-icon>
                   <mock:shadow-root>
@@ -503,7 +503,7 @@ exports[`mg-panel navigation should NOT update panel title, case no enter in inp
         </div>
       </header>
       <article aria-labelledby="identifier-header" class="mg-panel__content" hidden="" id="identifier-content">
-        <slot name="content"></slot>
+        <slot></slot>
       </article>
     </section>
   </mock:shadow-root>
@@ -518,7 +518,7 @@ exports[`mg-panel navigation should NOT update panel title, case no enter in inp
         <div class="mg-panel__header-left">
           <mg-button class="mg-panel__collapse-button">
             <!---->
-            <button aria-controls="identifier-content" aria-expanded="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
+            <button aria-controls="identifier-content" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
                 <mg-icon>
                   <mock:shadow-root>
@@ -579,7 +579,7 @@ exports[`mg-panel navigation should NOT update panel title, case no enter in inp
         </div>
       </header>
       <article aria-labelledby="identifier-header" class="mg-panel__content" hidden="" id="identifier-content">
-        <slot name="content"></slot>
+        <slot></slot>
       </article>
     </section>
   </mock:shadow-root>
@@ -594,7 +594,7 @@ exports[`mg-panel navigation should NOT update panel title, case no enter in inp
         <div class="mg-panel__header-left">
           <mg-button class="mg-panel__collapse-button">
             <!---->
-            <button aria-controls="identifier-content" aria-expanded="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
+            <button aria-controls="identifier-content" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
                 <mg-icon>
                   <mock:shadow-root>
@@ -627,7 +627,7 @@ exports[`mg-panel navigation should NOT update panel title, case no enter in inp
         </div>
       </header>
       <article aria-labelledby="identifier-header" class="mg-panel__content" hidden="" id="identifier-content">
-        <slot name="content"></slot>
+        <slot></slot>
       </article>
     </section>
   </mock:shadow-root>
@@ -642,7 +642,7 @@ exports[`mg-panel navigation should update panel title, case cancel 1`] = `
         <div class="mg-panel__header-left">
           <mg-button class="mg-panel__collapse-button">
             <!---->
-            <button aria-controls="identifier-content" aria-expanded="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
+            <button aria-controls="identifier-content" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
                 <mg-icon>
                   <mock:shadow-root>
@@ -675,7 +675,7 @@ exports[`mg-panel navigation should update panel title, case cancel 1`] = `
         </div>
       </header>
       <article aria-labelledby="identifier-header" class="mg-panel__content" hidden="" id="identifier-content">
-        <slot name="content"></slot>
+        <slot></slot>
       </article>
     </section>
   </mock:shadow-root>
@@ -690,7 +690,7 @@ exports[`mg-panel navigation should update panel title, case cancel 2`] = `
         <div class="mg-panel__header-left">
           <mg-button class="mg-panel__collapse-button">
             <!---->
-            <button aria-controls="identifier-content" aria-expanded="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
+            <button aria-controls="identifier-content" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
                 <mg-icon>
                   <mock:shadow-root>
@@ -751,7 +751,7 @@ exports[`mg-panel navigation should update panel title, case cancel 2`] = `
         </div>
       </header>
       <article aria-labelledby="identifier-header" class="mg-panel__content" hidden="" id="identifier-content">
-        <slot name="content"></slot>
+        <slot></slot>
       </article>
     </section>
   </mock:shadow-root>
@@ -766,7 +766,7 @@ exports[`mg-panel navigation should update panel title, case cancel 3`] = `
         <div class="mg-panel__header-left">
           <mg-button class="mg-panel__collapse-button">
             <!---->
-            <button aria-controls="identifier-content" aria-expanded="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
+            <button aria-controls="identifier-content" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
                 <mg-icon>
                   <mock:shadow-root>
@@ -799,7 +799,7 @@ exports[`mg-panel navigation should update panel title, case cancel 3`] = `
         </div>
       </header>
       <article aria-labelledby="identifier-header" class="mg-panel__content" hidden="" id="identifier-content">
-        <slot name="content"></slot>
+        <slot></slot>
       </article>
     </section>
   </mock:shadow-root>
@@ -814,7 +814,7 @@ exports[`mg-panel navigation should update panel title, case validate 1`] = `
         <div class="mg-panel__header-left">
           <mg-button class="mg-panel__collapse-button">
             <!---->
-            <button aria-controls="identifier-content" aria-expanded="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
+            <button aria-controls="identifier-content" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
                 <mg-icon>
                   <mock:shadow-root>
@@ -847,7 +847,7 @@ exports[`mg-panel navigation should update panel title, case validate 1`] = `
         </div>
       </header>
       <article aria-labelledby="identifier-header" class="mg-panel__content" hidden="" id="identifier-content">
-        <slot name="content"></slot>
+        <slot></slot>
       </article>
     </section>
   </mock:shadow-root>
@@ -862,7 +862,7 @@ exports[`mg-panel navigation should update panel title, case validate 2`] = `
         <div class="mg-panel__header-left">
           <mg-button class="mg-panel__collapse-button">
             <!---->
-            <button aria-controls="identifier-content" aria-expanded="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
+            <button aria-controls="identifier-content" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
                 <mg-icon>
                   <mock:shadow-root>
@@ -923,7 +923,7 @@ exports[`mg-panel navigation should update panel title, case validate 2`] = `
         </div>
       </header>
       <article aria-labelledby="identifier-header" class="mg-panel__content" hidden="" id="identifier-content">
-        <slot name="content"></slot>
+        <slot></slot>
       </article>
     </section>
   </mock:shadow-root>
@@ -938,7 +938,7 @@ exports[`mg-panel navigation should update panel title, case validate 3`] = `
         <div class="mg-panel__header-left">
           <mg-button class="mg-panel__collapse-button">
             <!---->
-            <button aria-controls="identifier-content" aria-expanded="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
+            <button aria-controls="identifier-content" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
                 <mg-icon>
                   <mock:shadow-root>
@@ -971,7 +971,7 @@ exports[`mg-panel navigation should update panel title, case validate 3`] = `
         </div>
       </header>
       <article aria-labelledby="identifier-header" class="mg-panel__content" hidden="" id="identifier-content">
-        <slot name="content"></slot>
+        <slot></slot>
       </article>
     </section>
   </mock:shadow-root>

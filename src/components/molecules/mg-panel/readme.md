@@ -5,12 +5,12 @@ This molecule refers to the [PDA9-484](https://jira.mgdis.fr/browse/PDA9-484).
 
 ## Properties
 
-| Property                  | Attribute      | Description                                                                                                 | Type      | Default                |
-| ------------------------- | -------------- | ----------------------------------------------------------------------------------------------------------- | --------- | ---------------------- |
-| `identifier`              | `identifier`   | Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created. | `string`  | `createID('mg-panel')` |
-| `isEditabled`             | `is-editabled` | Panel is editabled                                                                                          | `boolean` | `false`                |
-| `isOpened`                | `is-opened`    | Panel is opened                                                                                             | `boolean` | `false`                |
-| `panelTitle` _(required)_ | `panel-title`  | Panel title                                                                                                 | `string`  | `undefined`            |
+| Property                  | Attribute        | Description                                                                                                 | Type      | Default                |
+| ------------------------- | ---------------- | ----------------------------------------------------------------------------------------------------------- | --------- | ---------------------- |
+| `expanded`                | `expanded`       | Panel is opened                                                                                             | `boolean` | `false`                |
+| `identifier`              | `identifier`     | Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created. | `string`  | `createID('mg-panel')` |
+| `panelTitle` _(required)_ | `panel-title`    | Panel title                                                                                                 | `string`  | `undefined`            |
+| `titleEditable`           | `title-editable` | Panel is editabled                                                                                          | `boolean` | `false`                |
 
 
 ## Events

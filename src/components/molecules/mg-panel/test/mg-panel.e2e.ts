@@ -1,7 +1,7 @@
 import { createPage } from '../../../../utils/test.utils';
 
 const slot = `
-  <div slot="content">Content</div>
+  <div>Content</div>
   <div slot="header-right">
     <mg-button variant="secondary">
       <mg-icon icon="file-upload"></mg-icon> Upload
@@ -15,10 +15,10 @@ const slot = `
 describe('mg-panel', () => {
   describe.each([
     `<mg-panel label="label" panel-title="panel title" >${slot}</mg-panel>`,
-    `<mg-panel label="label" panel-title="panel title" is-opened>${slot}</mg-panel>`,
-    `<mg-panel label="label" panel-title="panel title" is-editabled>${slot}</mg-panel>`,
+    `<mg-panel label="label" panel-title="panel title" expanded>${slot}</mg-panel>`,
+    `<mg-panel label="label" panel-title="panel title" title-editable>${slot}</mg-panel>`,
     `<mg-panel label="label" panel-title="very long panel title very long panel title very long panel title very long panel title very long panel title very long panel title very long panel title very long panel title">${slot}</mg-panel>`,
-    `<mg-panel label="label" panel-title="very long panel title very long panel title very long panel title very long panel title very long panel title very long panel title very long panel title very long panel title" is-editabled>${slot}</mg-panel>`,
+    `<mg-panel label="label" panel-title="very long panel title very long panel title very long panel title very long panel title very long panel title very long panel title very long panel title very long panel title" title-editable>${slot}</mg-panel>`,
   ])('without tooltip', html => {
     test('render', async () => {
       const page = await createPage(html);
@@ -40,8 +40,8 @@ describe('mg-panel', () => {
 
   describe('navigation', () => {
     test.each([
-      `<mg-panel identifier="identifier" panel-title="panel title" is-editabled>${slot}</mg-panel>`,
-      `<mg-panel identifier="identifier" panel-title="very long panel title very long panel title very long panel title very long panel title very long panel title very long panel title very long panel title very long panel title" is-editabled>${slot}</mg-panel>`,
+      `<mg-panel identifier="identifier" panel-title="panel title" title-editable>${slot}</mg-panel>`,
+      `<mg-panel identifier="identifier" panel-title="very long panel title very long panel title very long panel title very long panel title very long panel title very long panel title very long panel title very long panel title" title-editable>${slot}</mg-panel>`,
     ])('Should navigate throw editabled panel', async html => {
       const page = await createPage(html);
 

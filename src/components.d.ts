@@ -33,6 +33,10 @@ export namespace Components {
     }
     interface MgButton {
         /**
+          * Prop to set aria-controls on button element
+         */
+        "controls": string;
+        /**
           * Option to set input disable on click, in order to prevent multi-click. Parent component have to remove the attribute 'disabled' when the process ends.
          */
         "disableOnClick": boolean;
@@ -40,6 +44,10 @@ export namespace Components {
           * Disable button
          */
         "disabled": boolean;
+        /**
+          * Prop to set aria-expanded on button element
+         */
+        "expanded": boolean;
         /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
@@ -563,6 +571,11 @@ export namespace Components {
          */
         "required": boolean;
         /**
+          * Public method to play input focus
+          * @returns
+         */
+        "setFocus": () => Promise<void>;
+        /**
           * Add a tooltip message next to the input
          */
         "tooltip": string;
@@ -780,21 +793,21 @@ export namespace Components {
     }
     interface MgPanel {
         /**
-          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
-         */
-        "identifier"?: string;
-        /**
-          * Panel is editabled
-         */
-        "isEditabled": boolean;
-        /**
           * Panel is opened
          */
-        "isOpened": boolean;
+        "expanded": boolean;
+        /**
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+         */
+        "identifier": string;
         /**
           * Panel title
          */
         "panelTitle": string;
+        /**
+          * Panel is editabled
+         */
+        "titleEditable": boolean;
     }
     interface MgPopover {
         /**
@@ -1069,6 +1082,10 @@ declare namespace LocalJSX {
     }
     interface MgButton {
         /**
+          * Prop to set aria-controls on button element
+         */
+        "controls"?: string;
+        /**
           * Option to set input disable on click, in order to prevent multi-click. Parent component have to remove the attribute 'disabled' when the process ends.
          */
         "disableOnClick"?: boolean;
@@ -1076,6 +1093,10 @@ declare namespace LocalJSX {
           * Disable button
          */
         "disabled"?: boolean;
+        /**
+          * Prop to set aria-expanded on button element
+         */
+        "expanded"?: boolean;
         /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
@@ -1864,17 +1885,13 @@ declare namespace LocalJSX {
     }
     interface MgPanel {
         /**
+          * Panel is opened
+         */
+        "expanded"?: boolean;
+        /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
         "identifier"?: string;
-        /**
-          * Panel is editabled
-         */
-        "isEditabled"?: boolean;
-        /**
-          * Panel is opened
-         */
-        "isOpened"?: boolean;
         /**
           * Emmited event when title change
          */
@@ -1883,6 +1900,10 @@ declare namespace LocalJSX {
           * Panel title
          */
         "panelTitle": string;
+        /**
+          * Panel is editabled
+         */
+        "titleEditable"?: boolean;
     }
     interface MgPopover {
         /**

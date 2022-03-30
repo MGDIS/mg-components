@@ -1,4 +1,4 @@
-import { Component, Event, h, Prop, EventEmitter, State, Element } from '@stencil/core';
+import { Component, Event, h, Prop, EventEmitter, State, Element, Method } from '@stencil/core';
 import { MgInput } from '../MgInput';
 import { InputClass, Width } from '../MgInput.conf';
 import { createID, ClassList } from '../../../../utils/components.utils';
@@ -159,6 +159,16 @@ export class MgInputText {
    * Emmited event when value change
    */
   @Event({ eventName: 'value-change' }) valueChange: EventEmitter<string>;
+
+  /**
+   * Public method to play input focus
+   *
+   * @returns {Promise<void>}
+   */
+  @Method()
+  async setFocus(): Promise<void> {
+    this.input.focus();
+  }
 
   /**
    * Handle input event

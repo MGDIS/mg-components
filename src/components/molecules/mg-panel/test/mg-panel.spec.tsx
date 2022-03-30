@@ -21,22 +21,22 @@ describe('mg-panel', () => {
   afterEach(() => jest.runOnlyPendingTimers());
   test.each([
     { identifier: 'identifier', panelTitle: 'panel title' },
-    { identifier: 'identifier', panelTitle: 'panel title', isOpened: true },
-    { identifier: 'identifier', panelTitle: 'panel title', isEditabled: true },
+    { identifier: 'identifier', panelTitle: 'panel title', expanded: true },
+    { identifier: 'identifier', panelTitle: 'panel title', titleEditable: true },
   ])('Should render with args %s:', async args => {
     const { root } = await getPage(args);
     expect(root).toMatchSnapshot();
   });
 
   describe('navigation', () => {
-    test.each([true, false])('Should toggle collapse panel', async isOpened => {
-      const page = await getPage({ identifier: 'identifier', panelTitle: 'panel title', isOpened });
+    test.each([true, false])('Should toggle collapse panel', async expanded => {
+      const page = await getPage({ identifier: 'identifier', panelTitle: 'panel title', expanded });
       const mgPanel = page.doc.querySelector('mg-panel');
       const collapseButton = mgPanel.shadowRoot.querySelector('.mg-panel__collapse-button');
 
       expect(page.root).toMatchSnapshot();
 
-      if (isOpened) {
+      if (expanded) {
         collapseButton.dispatchEvent(new CustomEvent('click', { bubbles: true }));
         await page.waitForChanges();
 
@@ -49,14 +49,14 @@ describe('mg-panel', () => {
       }
     });
 
-    test.each([true, false])('Should toggle edit panel title', async isEditabled => {
-      const page = await getPage({ identifier: 'identifier', panelTitle: 'panel title', isEditabled });
+    test.each([true, false])('Should toggle edit panel title', async titleEditable => {
+      const page = await getPage({ identifier: 'identifier', panelTitle: 'panel title', titleEditable });
       const mgPanel = page.doc.querySelector('mg-panel');
       const editButton = mgPanel.shadowRoot.querySelector('#identifier-edit-button');
 
       expect(page.root).toMatchSnapshot();
 
-      if (isEditabled) {
+      if (titleEditable) {
         editButton.dispatchEvent(new CustomEvent('click', { bubbles: true }));
         await page.waitForChanges();
 
@@ -71,7 +71,7 @@ describe('mg-panel', () => {
 
     test.each(['cancel', 'validate'])('should update panel title, case %s', async lastAction => {
       const updatedPanelTitle = 'Updated panel title';
-      const args = { identifier: 'identifier', panelTitle: 'panel title', isEditabled: true };
+      const args = { identifier: 'identifier', panelTitle: 'panel title', titleEditable: true };
       const page = await getPage(args);
       const mgPanel = page.doc.querySelector('mg-panel');
       const editButton = mgPanel.shadowRoot.querySelector('#identifier-edit-button');
@@ -88,8 +88,6 @@ describe('mg-panel', () => {
       const mgInputText = mgPanel.shadowRoot.querySelector('mg-input-text');
       const input = mgInputText.shadowRoot.querySelector('input');
       await page.waitForChanges();
-
-      expect(input.focus).toHaveBeenCalled();
 
       input.value = updatedPanelTitle;
       input.dispatchEvent(new CustomEvent('input', { bubbles: true }));
@@ -116,7 +114,7 @@ describe('mg-panel', () => {
 
     test('should NOT update panel title, case no enter in input', async () => {
       const updatedPanelTitle = 'Updated panel title';
-      const args = { identifier: 'identifier', panelTitle: 'panel title', isEditabled: true };
+      const args = { identifier: 'identifier', panelTitle: 'panel title', titleEditable: true };
       const page = await getPage(args);
       const mgPanel = page.doc.querySelector('mg-panel');
       const editButton = mgPanel.shadowRoot.querySelector('#identifier-edit-button');
@@ -133,8 +131,6 @@ describe('mg-panel', () => {
       const mgInputText = mgPanel.shadowRoot.querySelector('mg-input-text');
       const input = mgInputText.shadowRoot.querySelector('input');
       await page.waitForChanges();
-
-      expect(input.focus).toHaveBeenCalled();
 
       input.dispatchEvent(new CustomEvent('blur', { bubbles: true }));
       await page.waitForChanges();

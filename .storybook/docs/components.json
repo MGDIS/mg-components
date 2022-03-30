@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-03-29T06:36:08",
+  "timestamp": "2022-03-30T16:26:11",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.14.1",
@@ -110,6 +110,22 @@
       "usage": {},
       "props": [
         {
+          "name": "controls",
+          "type": "string",
+          "mutable": false,
+          "attr": "controls",
+          "reflectToAttr": false,
+          "docs": "Prop to set aria-controls on button element",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "disableOnClick",
           "type": "boolean",
           "mutable": false,
@@ -133,6 +149,23 @@
           "attr": "disabled",
           "reflectToAttr": false,
           "docs": "Disable button",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "expanded",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "expanded",
+          "reflectToAttr": false,
+          "docs": "Prop to set aria-expanded on button element",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -2801,7 +2834,23 @@
           "required": false
         }
       ],
-      "methods": [],
+      "methods": [
+        {
+          "name": "setFocus",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "setFocus() => Promise<void>",
+          "parameters": [],
+          "docs": "Public method to play input focus",
+          "docsTags": [
+            {
+              "name": "returns"
+            }
+          ]
+        }
+      ],
       "events": [
         {
           "event": "value-change",
@@ -3869,44 +3918,10 @@
       "usage": {},
       "props": [
         {
-          "name": "identifier",
-          "type": "string",
-          "mutable": false,
-          "attr": "identifier",
-          "reflectToAttr": false,
-          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
-          "docsTags": [],
-          "default": "createID('mg-panel')",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "isEditabled",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "is-editabled",
-          "reflectToAttr": false,
-          "docs": "Panel is editabled",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "isOpened",
+          "name": "expanded",
           "type": "boolean",
           "mutable": true,
-          "attr": "is-opened",
+          "attr": "expanded",
           "reflectToAttr": false,
           "docs": "Panel is opened",
           "docsTags": [],
@@ -3920,9 +3935,26 @@
           "required": false
         },
         {
-          "name": "panelTitle",
+          "name": "identifier",
           "type": "string",
           "mutable": false,
+          "attr": "identifier",
+          "reflectToAttr": false,
+          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
+          "docsTags": [],
+          "default": "createID('mg-panel')",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "panelTitle",
+          "type": "string",
+          "mutable": true,
           "attr": "panel-title",
           "reflectToAttr": false,
           "docs": "Panel title",
@@ -3934,6 +3966,23 @@
           ],
           "optional": false,
           "required": true
+        },
+        {
+          "name": "titleEditable",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "title-editable",
+          "reflectToAttr": false,
+          "docs": "Panel is editabled",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
         }
       ],
       "methods": [],

@@ -14,7 +14,6 @@ export class MgPanel {
 
   // HTML selector
   private editInputElement: HTMLMgInputTextElement;
-  private collapseButtonElement: HTMLMgButtonElement;
 
   /**************
    * Decorators *
@@ -24,7 +23,7 @@ export class MgPanel {
    * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
    * If not set, it will be created.
    */
-  @Prop() identifier?: string = createID('mg-panel');
+  @Prop() identifier: string = createID('mg-panel');
 
   /**
    * Panel title
@@ -38,17 +37,12 @@ export class MgPanel {
   /**
    * Panel is opened
    */
-  @Prop({ mutable: true }) isOpened = false;
+  @Prop({ mutable: true }) expanded = false;
 
   /**
    * Panel is editabled
    */
-  @Prop() isEditabled = false;
-
-  /**
-   * Emmited event when title change
-   */
-  @Event({ eventName: 'title-change' }) titleChange: EventEmitter<string>;
+  @Prop() titleEditable = false;
 
   /**
    * Component classes
@@ -65,12 +59,19 @@ export class MgPanel {
    */
   @State() updatedPanelTitle: string;
 
+  /**
+   * Emmited event when title change
+   */
+  @Event({ eventName: 'title-change' }) titleChange: EventEmitter<string>;
+
   /************
    * Methods *
    ************/
 
   /**
    * Toggle is editing state
+   *
+   * @returns {void}
    */
   private toggleIsEditing = (): void => {
     this.isEditing = !this.isEditing;
@@ -82,13 +83,17 @@ export class MgPanel {
 
   /**
    * Collapse button click handler
+   *
+   * @returns {void}
    */
   private handleCollapseButton = (): void => {
-    this.isOpened = !this.isOpened;
+    this.expanded = !this.expanded;
   };
 
   /**
    * Edit button click handler
+   *
+   * @returns {void}
    */
   private handleEditButton = (): void => {
     this.toggleIsEditing();
@@ -98,6 +103,7 @@ export class MgPanel {
    * Update title handler
    *
    * @param {CustomEvent<string>} event input value change event
+   * @returns {void}
    */
   private handleUpdateTitle = (event: CustomEvent<string>): void => {
     this.updatedPanelTitle = event.detail;
@@ -105,6 +111,8 @@ export class MgPanel {
 
   /**
    * Cancel edition button handler
+   *
+   * @returns {void}
    */
   private handleCancelEditButton = (): void => {
     this.updatedPanelTitle = undefined;
@@ -113,6 +121,8 @@ export class MgPanel {
 
   /**
    * Validate edition button handler
+   *
+   * @returns {void}
    */
   private handleValidateEditButton = (): void => {
     if (this.updatedPanelTitle !== undefined) this.panelTitle = this.updatedPanelTitle;
@@ -127,23 +137,25 @@ export class MgPanel {
   /**
    * Header left conditional render
    *
-   * @returns {HTMLElement | HTMLElement[]} header left element
+   * @typedef {HTMLElement} HTMLMgButtonElement
+   * @returns {HTMLMgButtonElement | HTMLElement | HTMLElement[]} header left element
    */
-  private headerLeft = (): HTMLElement | HTMLElement[] => {
+  private headerLeft = (): HTMLMgButtonElement | HTMLElement | HTMLElement[] => {
     const collapseButton = (): HTMLMgButtonElement => (
       <mg-button
         onClick={this.handleCollapseButton}
         variant="flat"
         class="mg-panel__collapse-button"
         identifier={`${this.identifier}-collapse-button`}
-        ref={el => (this.collapseButtonElement = el as HTMLMgButtonElement)}
+        expanded={this.expanded}
+        controls={`${this.identifier}-content`}
       >
-        <mg-icon icon={this.isOpened ? 'chevron-up' : 'chevron-down'}></mg-icon>
+        <mg-icon icon={this.expanded ? 'chevron-up' : 'chevron-down'}></mg-icon>
         {!this.isEditing && this.panelTitle}
       </mg-button>
     );
 
-    if (this.isEditabled && !this.isEditing) {
+    if (this.titleEditable && !this.isEditing) {
       return [
         collapseButton(),
         <mg-button is-icon variant="secondary" label={messages.panel.editLabel} onClick={this.handleEditButton} identifier={`${this.identifier}-edit-button`}>
@@ -152,7 +164,7 @@ export class MgPanel {
       ];
     }
 
-    if (this.isEditabled && this.isEditing) {
+    if (this.titleEditable && this.isEditing) {
       return [
         collapseButton(),
         <mg-input-text
@@ -167,7 +179,7 @@ export class MgPanel {
         >
           <mg-button
             slot="append-input"
-            label={messages.panel.cancel}
+            label={messages.global.cancel}
             is-icon
             variant="secondary"
             onClick={this.handleCancelEditButton}
@@ -177,7 +189,7 @@ export class MgPanel {
           </mg-button>
           <mg-button
             slot="append-input"
-            label={messages.panel.validate}
+            label={messages.global.validate}
             is-icon
             variant="secondary"
             onClick={this.handleValidateEditButton}
@@ -192,18 +204,23 @@ export class MgPanel {
     return collapseButton();
   };
 
+  /**
+   * Edit DOM after render
+   *
+   * @returns {void}
+   */
   componentDidRender(): void {
-    // set aria element on MgButton >>> button element
-    const collapseButtonElement = this.collapseButtonElement.querySelector('button');
-    collapseButtonElement.setAttribute('aria-expanded', this.isOpened.toString());
-    collapseButtonElement.setAttribute('aria-controls', `${this.identifier}-content`);
-
     // when we are editing we get focus on edition input
     if (this.isEditing) {
-      this.editInputElement.shadowRoot.querySelector('input').focus();
+      this.editInputElement.setFocus();
     }
   }
 
+  /**
+   * Render component
+   *
+   * @returns {HTMLElement} html element
+   */
   render(): HTMLElement {
     return (
       <section class={this.classList.join()} id={this.identifier}>
@@ -213,8 +230,8 @@ export class MgPanel {
             <slot name="header-right"></slot>
           </div>
         </header>
-        <article class="mg-panel__content" id={`${this.identifier}-content`} aria-labelledby={`${this.identifier}-header`} hidden={!this.isOpened}>
-          <slot name="content"></slot>
+        <article class="mg-panel__content" id={`${this.identifier}-content`} aria-labelledby={`${this.identifier}-header`} hidden={!this.expanded}>
+          <slot></slot>
         </article>
       </section>
     );
