@@ -1,4 +1,4 @@
-import { Component, Element, Event, h, Prop, EventEmitter, State, Watch } from '@stencil/core';
+import { Component, Element, Event, h, Prop, EventEmitter, State, Watch, Method } from '@stencil/core';
 import { MgInput } from '../MgInput';
 import { InputClass, Width } from '../MgInput.conf';
 import { types, InputError } from './mg-input-numeric.conf';
@@ -202,6 +202,17 @@ export class MgInputNumeric {
    * Emmited event when value change
    */
   @Event({ eventName: 'value-change' }) valueChange: EventEmitter<number>;
+
+  /**
+   * Public method to display errors
+   *
+   * @returns {Promise<void>}
+   */
+  @Method()
+  async displayError(): Promise<void> {
+    this.checkValidity();
+    this.checkError();
+  }
 
   /**
    * Displayed value in input

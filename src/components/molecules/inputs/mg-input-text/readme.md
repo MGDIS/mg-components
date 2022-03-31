@@ -46,6 +46,19 @@ Horizontal spacing is not managed by the component, it must be defined in slot i
 | `value-change` | Emmited event when value change | `CustomEvent<string>` |
 
 
+## Methods
+
+### `displayError() => Promise<void>`
+
+Public method to display errors
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+
 ## Dependencies
 
 ### Depends on

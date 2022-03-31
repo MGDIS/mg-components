@@ -183,4 +183,27 @@ describe('mg-input-select', () => {
       }
     });
   });
+
+  test("display error with displayError component's public method", async () => {
+    const page = await getPage({ label: 'label', items: ['batman', 'robin', 'joker', 'bane'], identifier: 'identifier', required: true });
+
+    expect(page.root).toMatchSnapshot();
+
+    const element = page.doc.querySelector('mg-input-select');
+    const input = element.shadowRoot.querySelector('select');
+
+    //mock validity
+    input.checkValidity = jest.fn(() => false);
+    Object.defineProperty(input, 'validity', {
+      get: jest.fn(() => ({
+        valueMissing: true,
+      })),
+    });
+
+    await element.displayError();
+
+    await page.waitForChanges();
+
+    expect(page.root).toMatchSnapshot();
+  });
 });

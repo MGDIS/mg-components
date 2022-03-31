@@ -34,6 +34,19 @@ This atom refers to the [PDA9-72](https://jira.mgdis.fr/browse/PDA9-72).
 | `value-change` | Emmited event when value change | `CustomEvent<unknown>` |
 
 
+## Methods
+
+### `displayError() => Promise<void>`
+
+Public method to display errors
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+
 ## Dependencies
 
 ### Used by
