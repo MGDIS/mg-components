@@ -40,7 +40,7 @@ export class MgPanel {
   @Prop({ mutable: true }) expanded = false;
 
   /**
-   * Panel is editabled
+   * Panel title is editabled
    */
   @Prop() titleEditable = false;
 
