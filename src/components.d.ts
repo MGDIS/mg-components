@@ -99,6 +99,11 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
+          * Public method to display errors
+          * @returns
+         */
+        "displayError": () => Promise<void>;
+        /**
           * Add a help text under the input, usually expected data format and example
          */
         "helpText": string;
@@ -156,6 +161,11 @@ export namespace Components {
           * Define if input is disabled
          */
         "disabled": boolean;
+        /**
+          * Public method to display errors
+          * @returns
+         */
+        "displayError": () => Promise<void>;
         /**
           * Add a help text under the input, usually expected data format and example
          */
@@ -222,6 +232,11 @@ export namespace Components {
           * Define if input is disabled
          */
         "disabled": boolean;
+        /**
+          * Public method to display errors
+          * @returns
+         */
+        "displayError": () => Promise<void>;
         /**
           * Add a help text under the input, usually expected data format and example
          */
@@ -301,6 +316,11 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
+          * Public method to display errors
+          * @returns
+         */
+        "displayError": () => Promise<void>;
+        /**
           * Add a help text under the input, usually expected data format and example
          */
         "helpText": string;
@@ -363,6 +383,11 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
+          * Public method to display errors
+          * @returns
+         */
+        "displayError": () => Promise<void>;
+        /**
           * Add a help text under the input, usually expected data format and example
          */
         "helpText": string;
@@ -424,6 +449,11 @@ export namespace Components {
           * Define if input is disabled
          */
         "disabled": boolean;
+        /**
+          * Public method to display errors
+          * @returns
+         */
+        "displayError": () => Promise<void>;
         /**
           * Add a help text under the input, usually expected data format and example
          */
@@ -506,6 +536,11 @@ export namespace Components {
           * Define if component should display character left
          */
         "displayCharacterLeft": boolean;
+        /**
+          * Public method to display errors
+          * @returns
+         */
+        "displayError": () => Promise<void>;
         /**
           * Add a help text under the input, usually expected data format and example
          */
@@ -596,6 +631,11 @@ export namespace Components {
           * Define if component should display character left
          */
         "displayCharacterLeft": boolean;
+        /**
+          * Public method to display errors
+          * @returns
+         */
+        "displayError": () => Promise<void>;
         /**
           * Add a help text under the input, usually expected data format and example
          */

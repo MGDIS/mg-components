@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-03-28T10:33:43",
+  "timestamp": "2022-03-30T07:13:33",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.14.1",
@@ -748,7 +748,23 @@
           "required": true
         }
       ],
-      "methods": [],
+      "methods": [
+        {
+          "name": "displayError",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "displayError() => Promise<void>",
+          "parameters": [],
+          "docs": "Public method to display errors",
+          "docsTags": [
+            {
+              "name": "returns"
+            }
+          ]
+        }
+      ],
       "events": [
         {
           "event": "value-change",
@@ -1036,7 +1052,23 @@
           "required": false
         }
       ],
-      "methods": [],
+      "methods": [
+        {
+          "name": "displayError",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "displayError() => Promise<void>",
+          "parameters": [],
+          "docs": "Public method to display errors",
+          "docsTags": [
+            {
+              "name": "returns"
+            }
+          ]
+        }
+      ],
       "events": [
         {
           "event": "value-change",
@@ -1420,7 +1452,23 @@
           "required": false
         }
       ],
-      "methods": [],
+      "methods": [
+        {
+          "name": "displayError",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "displayError() => Promise<void>",
+          "parameters": [],
+          "docs": "Public method to display errors",
+          "docsTags": [
+            {
+              "name": "returns"
+            }
+          ]
+        }
+      ],
       "events": [
         {
           "event": "value-change",
@@ -1722,7 +1770,23 @@
           "required": false
         }
       ],
-      "methods": [],
+      "methods": [
+        {
+          "name": "displayError",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "displayError() => Promise<void>",
+          "parameters": [],
+          "docs": "Public method to display errors",
+          "docsTags": [
+            {
+              "name": "returns"
+            }
+          ]
+        }
+      ],
       "events": [
         {
           "event": "value-change",
@@ -2013,7 +2077,23 @@
           "required": false
         }
       ],
-      "methods": [],
+      "methods": [
+        {
+          "name": "displayError",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "displayError() => Promise<void>",
+          "parameters": [],
+          "docs": "Public method to display errors",
+          "docsTags": [
+            {
+              "name": "returns"
+            }
+          ]
+        }
+      ],
       "events": [
         {
           "event": "value-change",
@@ -2366,7 +2446,23 @@
           "required": false
         }
       ],
-      "methods": [],
+      "methods": [
+        {
+          "name": "displayError",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "displayError() => Promise<void>",
+          "parameters": [],
+          "docs": "Public method to display errors",
+          "docsTags": [
+            {
+              "name": "returns"
+            }
+          ]
+        }
+      ],
       "events": [
         {
           "event": "value-change",
@@ -2793,7 +2889,23 @@
           "required": false
         }
       ],
-      "methods": [],
+      "methods": [
+        {
+          "name": "displayError",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "displayError() => Promise<void>",
+          "parameters": [],
+          "docs": "Public method to display errors",
+          "docsTags": [
+            {
+              "name": "returns"
+            }
+          ]
+        }
+      ],
       "events": [
         {
           "event": "value-change",
@@ -3194,7 +3306,23 @@
           "required": false
         }
       ],
-      "methods": [],
+      "methods": [
+        {
+          "name": "displayError",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "displayError() => Promise<void>",
+          "parameters": [],
+          "docs": "Public method to display errors",
+          "docsTags": [
+            {
+              "name": "returns"
+            }
+          ]
+        }
+      ],
       "events": [
         {
           "event": "value-change",

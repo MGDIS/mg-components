@@ -58,7 +58,7 @@ describe('mg-input-checkbox', () => {
   });
 
   test('Should trigger events, case validity check true', async () => {
-    const value: CheckboxValue[] = cloneDeep(items);
+    const value: CheckboxValue[] = cloneDeep(items) as CheckboxValue[];
     const args = { label: 'label', identifier: 'identifier', helpText: 'My help text', value };
     const page = await getPage(args);
 
@@ -98,7 +98,7 @@ describe('mg-input-checkbox', () => {
   });
 
   test('Should trigger events, case validity check false', async () => {
-    const value: CheckboxValue[] = cloneDeep(items);
+    const value: CheckboxValue[] = cloneDeep(items) as CheckboxValue[];
     const args = { label: 'label', identifier: 'identifier', helpText: 'My help text', value };
     const page = await getPage(args);
 
@@ -177,6 +177,34 @@ describe('mg-input-checkbox', () => {
         await page.waitForChanges();
         expect(page.root).toMatchSnapshot(); //Snapshot with readonly/disabled TRUE
       }
+    });
+
+    test("display error with displayError component's public method", async () => {
+      const value = cloneDeep(items);
+      value[0].value = false;
+
+      const page = await getPage({ label: 'label', identifier: 'identifier', value, helpText: 'My help text', required: true });
+
+      expect(page.root).toMatchSnapshot();
+
+      const element = page.doc.querySelector('mg-input-checkbox');
+      const allInputs = element.shadowRoot.querySelectorAll('input');
+
+      //mock validity
+      allInputs.forEach(input => {
+        input.checkValidity = jest.fn(() => false);
+        Object.defineProperty(input, 'validity', {
+          get: jest.fn(() => ({
+            valueMissing: true,
+          })),
+        });
+      });
+
+      await element.displayError();
+
+      await page.waitForChanges();
+
+      expect(page.root).toMatchSnapshot();
     });
   });
 });
