@@ -65,6 +65,7 @@ $mg-button-padding-horizontal: 1.1rem;
   &[aria-disabled],
   &.disabled {
     opacity: var(--mg-button-disabled-opacity);
+    cursor: default;
   }
 
   // Icon only button
@@ -106,26 +107,22 @@ $mg-button-padding-horizontal: 1.1rem;
     margin: auto 0;
   }
 
-  &__content {
+  ::slotted(*:not(mg-icon)) {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     column-gap: 0.6rem;
   }
 
-  &--loading {
+  &.mg-button--loading {
     & > mg-icon {
       position: absolute;
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
     }
-    .mg-button__content {
+    ::slotted(*) {
       opacity: 0;
     }
-  }
-
-  ::slotted(mg-badge) {
-    margin-left: 0.3rem;
   }
 }
 

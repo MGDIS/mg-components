@@ -13,6 +13,16 @@ describe.each(variants)('mg-button %s', variant => {
   });
 });
 
+test.each(['<span><mg-icon icon="trash"></mg-icon>Text button</span>', '<span><mg-icon icon="trash"></mg-icon>Text button<mg-badge value="1" label="label"></mg-badge></span>'])(
+  'Should render whith icon slot',
+  async slot => {
+    const page = await createPage(`<mg-button>${slot}</mg-button>`);
+
+    const screenshot = await page.screenshot();
+    expect(screenshot).toMatchImageSnapshot();
+  },
+);
+
 test('Should render a 2 lines button', async () => {
   const page = await createPage(`<mg-button>Button with a<br> two lines text</mg-button>`);
 

@@ -137,9 +137,7 @@ export class MgButton {
     return (
       <button id={this.identifier} class={this.classList.join()} aria-label={this.label} aria-disabled={this.disabled} onClick={this.handleClick}>
         {this.loading && <mg-icon icon="loader" spin></mg-icon>}
-        <div class="mg-button__content">
-          <slot></slot>
-        </div>
+        <slot></slot>
       </button>
     );
   }

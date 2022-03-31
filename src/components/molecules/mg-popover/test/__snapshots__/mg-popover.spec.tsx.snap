@@ -6,9 +6,7 @@ exports[`mg-popover Should render with element 1`] = `
   <mg-button aria-controls="identifier" aria-expanded="false">
     <!---->
     <button class="mg-button mg-button--primary" id="identifier-btn">
-      <div class="mg-button__content">
-        mg-button
-      </div>
+      mg-button
     </button>
   </mg-button>
   <div class="mg-popover" id="identifier" style="position: absolute; left: 0; top: 0; margin: 0;">
@@ -31,9 +29,7 @@ exports[`mg-popover Should render with element 2`] = `
   <mg-button aria-controls="identifier" aria-expanded="true">
     <!---->
     <button class="mg-button mg-button--primary" id="identifier-btn">
-      <div class="mg-button__content">
-        mg-button
-      </div>
+      mg-button
     </button>
   </mg-button>
   <div class="mg-popover" data-show id="identifier" style="position: absolute; left: 0; top: 0; margin: 0;">
@@ -56,18 +52,14 @@ exports[`mg-popover Should render with element 3`] = `
   <mg-button aria-controls="identifier" aria-expanded="false">
     <!---->
     <button class="mg-button mg-button--primary" id="identifier-btn">
-      <div class="mg-button__content">
-        mg-button
-      </div>
+      mg-button
     </button>
   </mg-button>
   <div class="mg-popover" id="identifier" style="position: absolute; left: 0; top: 0; margin: 0;">
     <mg-button is-icon="">
       <!---->
       <button aria-label="Fermer" class="mg-button mg-button--flat mg-button--icon">
-        <div class="mg-button__content">
-          <mg-icon icon="cross"></mg-icon>
-        </div>
+        <mg-icon icon="cross"></mg-icon>
       </button>
     </mg-button>
     <div class="mg-popover__title">
@@ -89,9 +81,7 @@ exports[`mg-popover Should render with element 4`] = `
   <mg-button aria-controls="identifier" aria-expanded="true">
     <!---->
     <button class="mg-button mg-button--primary" id="identifier-btn">
-      <div class="mg-button__content">
-        mg-button
-      </div>
+      mg-button
     </button>
   </mg-button>
   <div class="mg-popover" data-show id="identifier" style="position: absolute; left: 0; top: 0; margin: 0;">
