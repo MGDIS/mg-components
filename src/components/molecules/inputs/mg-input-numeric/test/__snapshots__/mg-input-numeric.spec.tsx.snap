@@ -302,6 +302,42 @@ exports[`mg-input-numeric type currency Should trigger events 1`] = `
 </mg-input-numeric>
 `;
 
+exports[`mg-input-numeric type currency Should update display value when value props change 1`] = `
+<mg-input-numeric>
+  <mock:shadow-root>
+    <div class="mg-input mg-input--numeric mg-input--numeric--currency">
+      <mg-input-title identifier="identifier">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input">
+          <input aria-describedby="" class="mg-input__box" id="identifier" name="identifier" type="text">
+          <slot name="append-input"></slot>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-numeric>
+`;
+
+exports[`mg-input-numeric type currency Should update display value when value props change 2`] = `
+<mg-input-numeric value="10">
+  <mock:shadow-root>
+    <div class="mg-input mg-input--numeric mg-input--numeric--currency">
+      <mg-input-title identifier="identifier">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input">
+          <input aria-describedby="" class="mg-input__box" id="identifier" name="identifier" type="text" value="10,00&nbsp;€">
+          <slot name="append-input"></slot>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-numeric>
+`;
+
 exports[`mg-input-numeric type currency validity, case next state is disabled validity ({ validity: false, valueMissing: true }), valueMissing (%s) 1`] = `
 <mg-input-numeric>
   <mock:shadow-root>
@@ -683,6 +719,42 @@ exports[`mg-input-numeric type decimal Should trigger events 1`] = `
 </mg-input-numeric>
 `;
 
+exports[`mg-input-numeric type decimal Should update display value when value props change 1`] = `
+<mg-input-numeric>
+  <mock:shadow-root>
+    <div class="mg-input mg-input--numeric mg-input--numeric--decimal">
+      <mg-input-title identifier="identifier">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input">
+          <input aria-describedby="" class="mg-input__box" id="identifier" name="identifier" type="text">
+          <slot name="append-input"></slot>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-numeric>
+`;
+
+exports[`mg-input-numeric type decimal Should update display value when value props change 2`] = `
+<mg-input-numeric value="10">
+  <mock:shadow-root>
+    <div class="mg-input mg-input--numeric mg-input--numeric--decimal">
+      <mg-input-title identifier="identifier">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input">
+          <input aria-describedby="" class="mg-input__box" id="identifier" name="identifier" type="text" value="10">
+          <slot name="append-input"></slot>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-numeric>
+`;
+
 exports[`mg-input-numeric type decimal validity, case next state is disabled validity ({ validity: false, valueMissing: true }), valueMissing (%s) 1`] = `
 <mg-input-numeric>
   <mock:shadow-root>
@@ -1057,6 +1129,42 @@ exports[`mg-input-numeric type integer Should trigger events 1`] = `
         </div>
         <div class="mg-input__help-text" id="identifier-help-text">
           My help text
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-numeric>
+`;
+
+exports[`mg-input-numeric type integer Should update display value when value props change 1`] = `
+<mg-input-numeric>
+  <mock:shadow-root>
+    <div class="mg-input mg-input--numeric mg-input--numeric--integer">
+      <mg-input-title identifier="identifier">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input">
+          <input aria-describedby="" class="mg-input__box" id="identifier" name="identifier" type="text">
+          <slot name="append-input"></slot>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-numeric>
+`;
+
+exports[`mg-input-numeric type integer Should update display value when value props change 2`] = `
+<mg-input-numeric value="10">
+  <mock:shadow-root>
+    <div class="mg-input mg-input--numeric mg-input--numeric--integer">
+      <mg-input-title identifier="identifier">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input">
+          <input aria-describedby="" class="mg-input__box" id="identifier" name="identifier" type="text" value="10">
+          <slot name="append-input"></slot>
         </div>
       </div>
     </div>
