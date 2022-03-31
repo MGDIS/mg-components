@@ -35,6 +35,18 @@ describe('mg-input-numeric', () => {
       expect(root).toMatchSnapshot();
     });
 
+    test('Should update display value when value props change', async () => {
+      const page = await getPage({ label: 'label', identifier: 'identifier', type });
+      const element = page.doc.querySelector('mg-input-numeric');
+
+      expect(page.root).toMatchSnapshot();
+
+      element.value = '10';
+      await page.waitForChanges();
+
+      expect(page.root).toMatchSnapshot();
+    });
+
     test.each([
       <mg-button slot="append-input" label="search" identifier="button-identifier">
         <mg-icon icon="calculator"></mg-icon> Calculate
