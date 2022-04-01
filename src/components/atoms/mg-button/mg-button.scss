@@ -1,6 +1,7 @@
 /* Variables */
 $mg-button-border-width: 0.1rem;
 $mg-button-padding-horizontal: 1.1rem;
+$button-column-gap: 0.6rem;
 
 /* Mixins */
 @mixin style-gradient($name, $backgroundColor, $fontColor, $hasVariable: false) {
@@ -41,6 +42,7 @@ $mg-button-padding-horizontal: 1.1rem;
   position: relative;
   display: inline-flex;
   align-items: center;
+  column-gap: $button-column-gap;
   padding: calc((var(--default-size) - (2 * $mg-button-border-width) - (var(--font-size) * var(--line-height))) / 2) $mg-button-padding-horizontal;
   min-height: var(--default-size);
   box-sizing: border-box;
@@ -100,6 +102,7 @@ $mg-button-padding-horizontal: 1.1rem;
     }
   }
 
+  mg-icon:only-child,
   ::slotted(mg-icon) {
     display: inline-flex;
     flex-shrink: 0;
@@ -110,7 +113,7 @@ $mg-button-padding-horizontal: 1.1rem;
   ::slotted(*:not(mg-icon)) {
     display: flex;
     align-items: center;
-    column-gap: 0.6rem;
+    column-gap: $button-column-gap;
   }
 
   &.mg-button--loading {
