@@ -3,6 +3,13 @@ import { h } from '@stencil/core';
 export default {
   component: 'mg-character-left',
   title: 'Atoms/mg-character-left',
+  argTypes: {
+    template: {
+      table: {
+        defaultValue: { summary: '{counter} caractères disponibles.' },
+      },
+    },
+  },
 };
 
 const Template = args => <mg-character-left {...args}></mg-character-left>;

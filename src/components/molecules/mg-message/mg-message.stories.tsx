@@ -8,6 +8,9 @@ export default {
     variant: {
       options: variants,
       control: { type: 'select' },
+      table: {
+        defaultValue: { summary: 'info' },
+      },
     },
   },
   parameters: { actions: { handles: ['component-show', 'component-hide'] } },

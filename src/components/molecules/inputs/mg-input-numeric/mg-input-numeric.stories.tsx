@@ -9,6 +9,11 @@ export default {
       options: types,
       control: { type: 'select' },
     },
+    name: {
+      table: {
+        defaultValue: { summary: "createID('mg-input-numeric')" },
+      },
+    },
   },
   parameters: { actions: { handles: ['value-change'] } },
 };

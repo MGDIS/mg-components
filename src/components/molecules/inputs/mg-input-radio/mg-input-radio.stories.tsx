@@ -8,6 +8,11 @@ export default {
       options: [null, 'ht', 'ttc', 'mixte'],
       control: { type: 'radio' },
     },
+    name: {
+      table: {
+        defaultValue: { summary: "createID('mg-input-radio')" },
+      },
+    },
   },
   parameters: { actions: { handles: ['value-change'] } },
 };

@@ -4,6 +4,13 @@ export default {
   component: 'mg-input-checkbox',
   title: 'Molecules/Inputs/mg-input-checkbox',
   parameters: { actions: { handles: ['value-change'] } },
+  argTypes: {
+    name: {
+      table: {
+        defaultValue: { summary: "createID('mg-input-checkbox')" },
+      },
+    },
+  },
 };
 
 /**

@@ -4,6 +4,13 @@ export default {
   component: 'mg-input-password',
   title: 'Molecules/Inputs/mg-input-password',
   parameters: { actions: { handles: ['value-change'] } },
+  argTypes: {
+    name: {
+      table: {
+        defaultValue: { summary: "createID('mg-input-password')" },
+      },
+    },
+  },
 };
 
 /**
