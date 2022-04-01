@@ -1,9 +1,17 @@
 import { h } from '@stencil/core';
+import { messages } from '../../../../locales';
 
 export default {
   component: 'mg-input-select',
   title: 'Molecules/Inputs/mg-input-select',
   parameters: { actions: { handles: ['value-change'] } },
+  argTypes: {
+    placeholder: {
+      table: {
+        defaultValue: { summary: messages.input.select.placeholder },
+      },
+    },
+  },
 };
 
 /**

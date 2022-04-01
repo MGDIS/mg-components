@@ -1,8 +1,16 @@
 import { h } from '@stencil/core';
+import { messages } from '../../../locales';
 
 export default {
   component: 'mg-character-left',
   title: 'Atoms/mg-character-left',
+  argTypes: {
+    template: {
+      table: {
+        defaultValue: { summary: messages.nbCharLeft },
+      },
+    },
+  },
 };
 
 const Template = args => <mg-character-left {...args}></mg-character-left>;

@@ -14,7 +14,9 @@
   border-bottom: 0.3rem solid transparent;
   color: hsl(var(--color-dark));
   line-height: var(--line-height);
-  cursor: pointer;
+  &:disabled {
+    cursor: default;
+  }
   &:hover,
   &:focus {
     background-color: hsla(var(--color-info-h), var(--color-info-s), var(--color-info-l), 10%);

@@ -250,16 +250,14 @@ exports[`mg-input-text Should render with slot. 1`] = `
   <mg-button slot="append-input">
     <!---->
     <button aria-label="search" class="mg-button mg-button--primary" id="identifier">
-      <div class="mg-button__content">
-        <mg-icon>
-          <mock:shadow-root>
-            <svg aria-hidden="true" class="mg-icon mg-icon--magnifying-glass mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-              <path d="M11.24,9.52A5.17,5.17,0,0,0,9.51,2.41l-.17-.09A5.18,5.18,0,0,0,4,11.18a5.16,5.16,0,0,0,5.54.11L12.3,14a1,1,0,0,0,1.41,0l.33-.33a1,1,0,0,0,0-1.41Zm-4.4.5A3.19,3.19,0,1,1,10,6.8v.06A3.19,3.19,0,0,1,6.84,10Z" fill="currentColor"></path>
-            </svg>
-          </mock:shadow-root>
-        </mg-icon>
-        Search
-      </div>
+      <mg-icon>
+        <mock:shadow-root>
+          <svg aria-hidden="true" class="mg-icon mg-icon--magnifying-glass mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+            <path d="M11.24,9.52A5.17,5.17,0,0,0,9.51,2.41l-.17-.09A5.18,5.18,0,0,0,4,11.18a5.16,5.16,0,0,0,5.54.11L12.3,14a1,1,0,0,0,1.41,0l.33-.33a1,1,0,0,0,0-1.41Zm-4.4.5A3.19,3.19,0,1,1,10,6.8v.06A3.19,3.19,0,0,1,6.84,10Z" fill="currentColor"></path>
+          </svg>
+        </mock:shadow-root>
+      </mg-icon>
+      Search
     </button>
   </mg-button>
 </mg-input-text>

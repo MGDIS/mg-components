@@ -10,7 +10,7 @@ export class MgTag {
   /**
    * Define button variant
    */
-  @Prop() variant: string = variants[0];
+  @Prop() variant: string = variants[0]; // info
   @Watch('variant')
   validateVariant(newValue: string): void {
     if (!variants.includes(newValue)) {
