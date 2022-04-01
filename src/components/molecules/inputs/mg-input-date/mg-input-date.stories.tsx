@@ -4,13 +4,6 @@ export default {
   component: 'mg-input-date',
   title: 'Molecules/Inputs/mg-input-date',
   parameters: { actions: { handles: ['value-change'] } },
-  argTypes: {
-    name: {
-      table: {
-        defaultValue: { summary: "createID('mg-input-date')" },
-      },
-    },
-  },
 };
 
 /**

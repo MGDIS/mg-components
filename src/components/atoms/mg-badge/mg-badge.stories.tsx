@@ -9,7 +9,7 @@ export default {
       options: variants,
       control: { type: 'select' },
       table: {
-        defaultValue: { summary: 'info' },
+        defaultValue: { summary: variants[0] },
       },
     },
     value: {

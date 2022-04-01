@@ -1,18 +1,14 @@
 import { h } from '@stencil/core';
+import { messages } from '../../../../locales';
 
 export default {
   component: 'mg-input-select',
   title: 'Molecules/Inputs/mg-input-select',
   parameters: { actions: { handles: ['value-change'] } },
   argTypes: {
-    name: {
-      table: {
-        defaultValue: { summary: "createID('mg-input-select')" },
-      },
-    },
     placeholder: {
       table: {
-        defaultValue: { summary: 'Sélectionnez une valeur' },
+        defaultValue: { summary: messages.input.select.placeholder },
       },
     },
   },

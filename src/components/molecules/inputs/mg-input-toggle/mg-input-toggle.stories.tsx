@@ -4,13 +4,6 @@ export default {
   component: 'mg-input-toggle',
   title: 'Molecules/Inputs/mg-input-toggle',
   parameters: { actions: { handles: ['value-change'] } },
-  argTypes: {
-    name: {
-      table: {
-        defaultValue: { summary: "createID('mg-input-toggle')" },
-      },
-    },
-  },
 };
 
 const args = {

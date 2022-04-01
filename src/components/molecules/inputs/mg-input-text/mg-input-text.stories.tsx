@@ -4,13 +4,6 @@ export default {
   component: 'mg-input-text',
   title: 'Molecules/Inputs/mg-input-text',
   parameters: { actions: { handles: ['value-change'] } },
-  argTypes: {
-    name: {
-      table: {
-        defaultValue: { summary: "createID('mg-input-text')" },
-      },
-    },
-  },
 };
 
 /**

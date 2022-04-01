@@ -1,4 +1,5 @@
 import { h } from '@stencil/core';
+import { messages } from '../../../locales';
 
 export default {
   component: 'mg-character-left',
@@ -6,7 +7,7 @@ export default {
   argTypes: {
     template: {
       table: {
-        defaultValue: { summary: '{counter} caractères disponibles.' },
+        defaultValue: { summary: messages.nbCharLeft },
       },
     },
   },

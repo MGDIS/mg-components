@@ -4,13 +4,6 @@ export default {
   component: 'mg-input-textarea',
   title: 'Molecules/Inputs/mg-input-textarea',
   parameters: { actions: { handles: ['value-change'] } },
-  argTypes: {
-    name: {
-      table: {
-        defaultValue: { summary: "createID('mg-input-textarea')" },
-      },
-    },
-  },
 };
 
 /**
