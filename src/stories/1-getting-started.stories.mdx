@@ -159,3 +159,31 @@ To bind a value in a web component we have to use the Angular.js [`ng-prop-`](ht
 ```html
 <mg-input-text ng-prop-value="user.firstname" label="Firstname" ng-on-value-change="user.firstname = $event.target.value"></mg-input-text>
 ```
+
+##### Common issues
+
+###### Slot render
+
+You can have troubles with i18n render in slots. In some cases, with the exemple below, the i18n can not be render due to angularjs lifecycle and i18n filter render hook.
+
+```html
+<mg-button>
+  <mg-icon icon="trash"></mg-icon>
+  {{'dispositifs.calculAide.button.btnDeleteScriptLabel' | translate}}
+</mg-button>
+```
+
+To solve this issue, you need to use ng-bind the force the i18n render in slot.
+
+```js
+$onInit() {
+  this.button = this.$translate.instant('dispositifs.calculAide.button.btnDeleteScript');
+}
+```
+
+```html
+<mg-button>
+  <mg-icon icon="trash"></mg-icon>
+  <span ng-bind="$ctrl.button"></span>
+</mg-button>
+```
