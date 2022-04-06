@@ -63,6 +63,13 @@ export class MgIcon {
   @State() classList: ClassList = new ClassList(['mg-icon']);
 
   /**
+   * getIcon
+   *
+   * @returns {HTMLElement} icon html
+   */
+  private getIcon = (): HTMLElement => icons[this.icon]();
+
+  /**
    * Check if props are well configured on init
    *
    * @returns {void}
@@ -82,7 +89,7 @@ export class MgIcon {
   render(): HTMLElement {
     return (
       <svg class={this.classList.join()} aria-hidden="true" focusable="false" viewBox="0 0 16 16">
-        {icons[this.icon]()}
+        {this.getIcon()}
       </svg>
     );
   }
