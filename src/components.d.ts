@@ -800,6 +800,24 @@ export namespace Components {
          */
         "variant": string;
     }
+    interface MgModal {
+        /**
+          * Define if modal has a cross button
+         */
+        "closeButton": boolean;
+        /**
+          * Define if modal is hidden
+         */
+        "hide": boolean;
+        /**
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+         */
+        "identifier": string;
+        /**
+          * Displayed modal title required
+         */
+        "modalTitle": string;
+    }
     interface MgPagination {
         /**
           * Component current page
@@ -1010,6 +1028,12 @@ declare global {
         prototype: HTMLMgMessageElement;
         new (): HTMLMgMessageElement;
     };
+    interface HTMLMgModalElement extends Components.MgModal, HTMLStencilElement {
+    }
+    var HTMLMgModalElement: {
+        prototype: HTMLMgModalElement;
+        new (): HTMLMgModalElement;
+    };
     interface HTMLMgPaginationElement extends Components.MgPagination, HTMLStencilElement {
     }
     var HTMLMgPaginationElement: {
@@ -1056,6 +1080,7 @@ declare global {
         "mg-input-title": HTMLMgInputTitleElement;
         "mg-input-toggle": HTMLMgInputToggleElement;
         "mg-message": HTMLMgMessageElement;
+        "mg-modal": HTMLMgModalElement;
         "mg-pagination": HTMLMgPaginationElement;
         "mg-popover": HTMLMgPopoverElement;
         "mg-tabs": HTMLMgTabsElement;
@@ -1855,6 +1880,32 @@ declare namespace LocalJSX {
          */
         "variant"?: string;
     }
+    interface MgModal {
+        /**
+          * Define if modal has a cross button
+         */
+        "closeButton"?: boolean;
+        /**
+          * Define if modal is hidden
+         */
+        "hide"?: boolean;
+        /**
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+         */
+        "identifier"?: string;
+        /**
+          * Displayed modal title required
+         */
+        "modalTitle": string;
+        /**
+          * Emmited event when modal is hidden
+         */
+        "onComponent-hide"?: (event: CustomEvent<string>) => void;
+        /**
+          * Emmited event when modal is diplayed
+         */
+        "onComponent-show"?: (event: CustomEvent<string>) => void;
+    }
     interface MgPagination {
         /**
           * Component current page
@@ -1993,6 +2044,7 @@ declare namespace LocalJSX {
         "mg-input-title": MgInputTitle;
         "mg-input-toggle": MgInputToggle;
         "mg-message": MgMessage;
+        "mg-modal": MgModal;
         "mg-pagination": MgPagination;
         "mg-popover": MgPopover;
         "mg-tabs": MgTabs;
@@ -2019,6 +2071,7 @@ declare module "@stencil/core" {
             "mg-input-title": LocalJSX.MgInputTitle & JSXBase.HTMLAttributes<HTMLMgInputTitleElement>;
             "mg-input-toggle": LocalJSX.MgInputToggle & JSXBase.HTMLAttributes<HTMLMgInputToggleElement>;
             "mg-message": LocalJSX.MgMessage & JSXBase.HTMLAttributes<HTMLMgMessageElement>;
+            "mg-modal": LocalJSX.MgModal & JSXBase.HTMLAttributes<HTMLMgModalElement>;
             "mg-pagination": LocalJSX.MgPagination & JSXBase.HTMLAttributes<HTMLMgPaginationElement>;
             "mg-popover": LocalJSX.MgPopover & JSXBase.HTMLAttributes<HTMLMgPopoverElement>;
             "mg-tabs": LocalJSX.MgTabs & JSXBase.HTMLAttributes<HTMLMgTabsElement>;

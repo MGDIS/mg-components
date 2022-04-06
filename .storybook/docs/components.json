@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-04-01T08:03:11",
+  "timestamp": "2022-04-06T13:29:26",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.14.1",
@@ -219,6 +219,7 @@
       "parts": [],
       "dependents": [
         "mg-message",
+        "mg-modal",
         "mg-pagination",
         "mg-popover"
       ],
@@ -230,6 +231,9 @@
           "mg-icon"
         ],
         "mg-message": [
+          "mg-button"
+        ],
+        "mg-modal": [
           "mg-button"
         ],
         "mg-pagination": [
@@ -458,6 +462,7 @@
         "mg-input-textarea",
         "mg-input-toggle",
         "mg-message",
+        "mg-modal",
         "mg-pagination",
         "mg-popover",
         "mg-tabs"
@@ -495,6 +500,9 @@
           "mg-icon"
         ],
         "mg-message": [
+          "mg-icon"
+        ],
+        "mg-modal": [
           "mg-icon"
         ],
         "mg-pagination": [
@@ -3851,6 +3859,130 @@
         "mg-message": [
           "mg-icon",
           "mg-button"
+        ],
+        "mg-button": [
+          "mg-icon"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/molecules/mg-modal/mg-modal.tsx",
+      "encapsulation": "shadow",
+      "tag": "mg-modal",
+      "readme": "This molecule refers to the [PDA9-63](https://jira.mgdis.fr/browse/PDA9-63).\n",
+      "docs": "This molecule refers to the [PDA9-63](https://jira.mgdis.fr/browse/PDA9-63).",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "closeButton",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "close-button",
+          "reflectToAttr": false,
+          "docs": "Define if modal has a cross button",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "hide",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "hide",
+          "reflectToAttr": false,
+          "docs": "Define if modal is hidden",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "identifier",
+          "type": "string",
+          "mutable": false,
+          "attr": "identifier",
+          "reflectToAttr": false,
+          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
+          "docsTags": [],
+          "default": "createID('mg-modal')",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "modalTitle",
+          "type": "string",
+          "mutable": false,
+          "attr": "modal-title",
+          "reflectToAttr": false,
+          "docs": "Displayed modal title\nrequired",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "component-hide",
+          "detail": "string",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emmited event when modal is hidden",
+          "docsTags": []
+        },
+        {
+          "event": "component-show",
+          "detail": "string",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emmited event when modal is diplayed",
+          "docsTags": []
+        }
+      ],
+      "listeners": [
+        {
+          "event": "keydown",
+          "target": "window",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "mg-button",
+        "mg-icon"
+      ],
+      "dependencyGraph": {
+        "mg-modal": [
+          "mg-button",
+          "mg-icon"
         ],
         "mg-button": [
           "mg-icon"

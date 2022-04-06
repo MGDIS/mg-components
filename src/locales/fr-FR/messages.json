@@ -27,6 +27,9 @@
   "message": {
     "closeButton": "Fermer le message"
   },
+  "modal": {
+    "closeButton": "Fermer la modal"
+  },
   "popover": {
     "closeButton": "Fermer"
   },
