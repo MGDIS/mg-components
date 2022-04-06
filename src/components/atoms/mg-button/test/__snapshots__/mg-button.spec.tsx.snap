@@ -37,9 +37,7 @@ exports[`mg-button Should render an danger button isIcon false 1`] = `
 <mg-button>
   <!---->
   <button aria-label="label" class="mg-button mg-button--danger" id="identifier">
-    <div class="mg-button__content">
-      Text button
-    </div>
+    Text button
   </button>
 </mg-button>
 `;
@@ -48,9 +46,7 @@ exports[`mg-button Should render an danger button isIcon true 1`] = `
 <mg-button>
   <!---->
   <button aria-label="label" class="mg-button mg-button--danger mg-button--icon" id="identifier">
-    <div class="mg-button__content">
-      Text button
-    </div>
+    Text button
   </button>
 </mg-button>
 `;
@@ -59,9 +55,7 @@ exports[`mg-button Should render an danger-alt button isIcon false 1`] = `
 <mg-button>
   <!---->
   <button aria-label="label" class="mg-button mg-button--danger-alt" id="identifier">
-    <div class="mg-button__content">
-      Text button
-    </div>
+    Text button
   </button>
 </mg-button>
 `;
@@ -70,9 +64,7 @@ exports[`mg-button Should render an danger-alt button isIcon true 1`] = `
 <mg-button>
   <!---->
   <button aria-label="label" class="mg-button mg-button--danger-alt mg-button--icon" id="identifier">
-    <div class="mg-button__content">
-      Text button
-    </div>
+    Text button
   </button>
 </mg-button>
 `;
@@ -81,9 +73,7 @@ exports[`mg-button Should render an flat button isIcon false 1`] = `
 <mg-button>
   <!---->
   <button aria-label="label" class="mg-button mg-button--flat" id="identifier">
-    <div class="mg-button__content">
-      Text button
-    </div>
+    Text button
   </button>
 </mg-button>
 `;
@@ -92,9 +82,7 @@ exports[`mg-button Should render an flat button isIcon true 1`] = `
 <mg-button>
   <!---->
   <button aria-label="label" class="mg-button mg-button--flat mg-button--icon" id="identifier">
-    <div class="mg-button__content">
-      Text button
-    </div>
+    Text button
   </button>
 </mg-button>
 `;
@@ -103,9 +91,7 @@ exports[`mg-button Should render an info button isIcon false 1`] = `
 <mg-button>
   <!---->
   <button aria-label="label" class="mg-button mg-button--info" id="identifier">
-    <div class="mg-button__content">
-      Text button
-    </div>
+    Text button
   </button>
 </mg-button>
 `;
@@ -114,9 +100,7 @@ exports[`mg-button Should render an info button isIcon true 1`] = `
 <mg-button>
   <!---->
   <button aria-label="label" class="mg-button mg-button--icon mg-button--info" id="identifier">
-    <div class="mg-button__content">
-      Text button
-    </div>
+    Text button
   </button>
 </mg-button>
 `;
@@ -125,9 +109,7 @@ exports[`mg-button Should render an primary button isIcon false 1`] = `
 <mg-button>
   <!---->
   <button aria-label="label" class="mg-button mg-button--primary" id="identifier">
-    <div class="mg-button__content">
-      Text button
-    </div>
+    Text button
   </button>
 </mg-button>
 `;
@@ -136,9 +118,7 @@ exports[`mg-button Should render an primary button isIcon true 1`] = `
 <mg-button>
   <!---->
   <button aria-label="label" class="mg-button mg-button--icon mg-button--primary" id="identifier">
-    <div class="mg-button__content">
-      Text button
-    </div>
+    Text button
   </button>
 </mg-button>
 `;
@@ -147,9 +127,7 @@ exports[`mg-button Should render an secondary button isIcon false 1`] = `
 <mg-button>
   <!---->
   <button aria-label="label" class="mg-button mg-button--secondary" id="identifier">
-    <div class="mg-button__content">
-      Text button
-    </div>
+    Text button
   </button>
 </mg-button>
 `;
@@ -158,9 +136,7 @@ exports[`mg-button Should render an secondary button isIcon true 1`] = `
 <mg-button>
   <!---->
   <button aria-label="label" class="mg-button mg-button--icon mg-button--secondary" id="identifier">
-    <div class="mg-button__content">
-      Text button
-    </div>
+    Text button
   </button>
 </mg-button>
 `;
@@ -169,9 +145,7 @@ exports[`mg-button prevent double click should NOT disable button after click 1`
 <mg-button>
   <!---->
   <button class="mg-button mg-button--primary" id="identifier">
-    <div class="mg-button__content">
-      Text button
-    </div>
+    Text button
   </button>
 </mg-button>
 `;
@@ -180,9 +154,7 @@ exports[`mg-button prevent double click should NOT disable button after click 2`
 <mg-button>
   <!---->
   <button class="mg-button mg-button--primary" id="identifier">
-    <div class="mg-button__content">
-      Text button
-    </div>
+    Text button
   </button>
 </mg-button>
 `;
@@ -191,9 +163,7 @@ exports[`mg-button prevent double click should NOT disable button after click 3`
 <mg-button>
   <!---->
   <button class="mg-button mg-button--primary" id="identifier">
-    <div class="mg-button__content">
-      Text button
-    </div>
+    Text button
   </button>
 </mg-button>
 `;
@@ -202,9 +172,7 @@ exports[`mg-button prevent double click should disable button after click 1`] = 
 <mg-button>
   <!---->
   <button class="mg-button mg-button--primary" id="identifier">
-    <div class="mg-button__content">
-      Text button
-    </div>
+    Text button
   </button>
 </mg-button>
 `;
@@ -214,9 +182,7 @@ exports[`mg-button prevent double click should disable button after click 2`] = 
   <!---->
   <button aria-disabled="" class="mg-button mg-button--loading mg-button--primary" id="identifier">
     <mg-icon icon="loader" spin=""></mg-icon>
-    <div class="mg-button__content">
-      Text button
-    </div>
+    Text button
   </button>
 </mg-button>
 `;
@@ -225,9 +191,7 @@ exports[`mg-button prevent double click should disable button after click 3`] = 
 <mg-button>
   <!---->
   <button class="mg-button mg-button--primary" id="identifier">
-    <div class="mg-button__content">
-      Text button
-    </div>
+    Text button
   </button>
 </mg-button>
 `;
@@ -236,9 +200,7 @@ exports[`mg-button prevent double click should not have fn when disabled 1`] = `
 <mg-button>
   <!---->
   <button aria-disabled="" class="mg-button mg-button--primary" id="identifier">
-    <div class="mg-button__content">
-      Text button
-    </div>
+    Text button
   </button>
 </mg-button>
 `;

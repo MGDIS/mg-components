@@ -36,7 +36,7 @@ mg-popover {
     position: absolute;
     width: 2rem;
     height: 2rem;
-    z-index: 9999;
+    z-index: -1;
     // Decoration
     background: inherit;
   }

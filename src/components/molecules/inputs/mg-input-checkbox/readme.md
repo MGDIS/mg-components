@@ -30,6 +30,19 @@ This molecule refers to the [PDA9-70](https://jira.mgdis.fr/browse/PDA9-70).
 | `value-change` | Emitted event when value change | `CustomEvent<CheckboxValue[]>` |
 
 
+## Methods
+
+### `displayError() => Promise<void>`
+
+Public method to display errors
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+
 ## Dependencies
 
 ### Depends on

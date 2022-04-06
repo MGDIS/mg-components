@@ -250,16 +250,14 @@ exports[`mg-input-text Should render with slot. 1`] = `
   <mg-button slot="append-input">
     <!---->
     <button aria-label="search" class="mg-button mg-button--primary" id="identifier">
-      <div class="mg-button__content">
-        <mg-icon>
-          <mock:shadow-root>
-            <svg aria-hidden="true" class="mg-icon mg-icon--magnifying-glass mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-              <path d="M11.24,9.52A5.17,5.17,0,0,0,9.51,2.41l-.17-.09A5.18,5.18,0,0,0,4,11.18a5.16,5.16,0,0,0,5.54.11L12.3,14a1,1,0,0,0,1.41,0l.33-.33a1,1,0,0,0,0-1.41Zm-4.4.5A3.19,3.19,0,1,1,10,6.8v.06A3.19,3.19,0,0,1,6.84,10Z" fill="currentColor"></path>
-            </svg>
-          </mock:shadow-root>
-        </mg-icon>
-        Search
-      </div>
+      <mg-icon>
+        <mock:shadow-root>
+          <svg aria-hidden="true" class="mg-icon mg-icon--magnifying-glass mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+            <path d="M11.24,9.52A5.17,5.17,0,0,0,9.51,2.41l-.17-.09A5.18,5.18,0,0,0,4,11.18a5.16,5.16,0,0,0,5.54.11L12.3,14a1,1,0,0,0,1.41,0l.33-.33a1,1,0,0,0,0-1.41Zm-4.4.5A3.19,3.19,0,1,1,10,6.8v.06A3.19,3.19,0,0,1,6.84,10Z" fill="currentColor"></path>
+          </svg>
+        </mock:shadow-root>
+      </mg-icon>
+      Search
     </button>
   </mg-button>
 </mg-input-text>
@@ -347,6 +345,45 @@ exports[`mg-input-text Should trigger events 1`] = `
         <mg-character-left identifier="identifier-character-left" maxlength="400"></mg-character-left>
         <div class="mg-input__help-text" id="identifier-help-text">
           My help text
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-text>
+`;
+
+exports[`mg-input-text display error with displayError component's public method 1`] = `
+<mg-input-text>
+  <mock:shadow-root>
+    <div class="mg-input mg-input--text mg-input--width-full">
+      <mg-input-title identifier="identifier" required="">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input">
+          <input aria-describedby="" class="mg-input__box" id="identifier" maxlength="400" name="identifier" required="" type="text">
+          <slot name="append-input"></slot>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-text>
+`;
+
+exports[`mg-input-text display error with displayError component's public method 2`] = `
+<mg-input-text>
+  <mock:shadow-root>
+    <div class="is-not-valid mg-input mg-input--text mg-input--width-full">
+      <mg-input-title identifier="identifier" required="">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input">
+          <input aria-describedby="identifier-error" class="mg-input__box" id="identifier" maxlength="400" name="identifier" required="" type="text">
+          <slot name="append-input"></slot>
+        </div>
+        <div aria-live="assertive" class="mg-input__error" id="identifier-error">
+          Ce champ est obligatoire.
         </div>
       </div>
     </div>

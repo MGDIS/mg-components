@@ -35,6 +35,9 @@ $toggle-item-container-padding-vertical: 0.5rem;
   line-height: inherit;
 
   cursor: pointer;
+  &:disabled {
+    cursor: default;
+  }
 }
 
 .mg-input__toggle-item-container {

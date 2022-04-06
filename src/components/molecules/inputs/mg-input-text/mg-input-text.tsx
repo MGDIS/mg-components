@@ -171,6 +171,17 @@ export class MgInputText {
   }
 
   /**
+   * Public method to display errors
+   *
+   * @returns {Promise<void>}
+   */
+  @Method()
+  async displayError(): Promise<void> {
+    this.checkValidity();
+    this.checkError();
+  }
+
+  /**
    * Handle input event
    *
    * @returns {void}

@@ -35,6 +35,18 @@ describe('mg-input-numeric', () => {
       expect(root).toMatchSnapshot();
     });
 
+    test('Should update display value when value props change', async () => {
+      const page = await getPage({ label: 'label', identifier: 'identifier', type });
+      const element = page.doc.querySelector('mg-input-numeric');
+
+      expect(page.root).toMatchSnapshot();
+
+      element.value = '10';
+      await page.waitForChanges();
+
+      expect(page.root).toMatchSnapshot();
+    });
+
     test.each([
       <mg-button slot="append-input" label="search" identifier="button-identifier">
         <mg-icon icon="calculator"></mg-icon> Calculate
@@ -212,6 +224,29 @@ describe('mg-input-numeric', () => {
       input.dispatchEvent(new CustomEvent('input', { bubbles: true }));
       await page.waitForChanges();
       expect(page.rootInstance.valueChange.emit).toHaveBeenCalledWith(parseFloat(inputValue));
+    });
+
+    test("display error with displayError component's public method", async () => {
+      const page = await getPage({ label: 'label', identifier: 'identifier', required: true, types });
+
+      expect(page.root).toMatchSnapshot();
+
+      const element = page.doc.querySelector('mg-input-numeric');
+      const input = element.shadowRoot.querySelector('input');
+
+      //mock validity
+      input.checkValidity = jest.fn(() => false);
+      Object.defineProperty(input, 'validity', {
+        get: jest.fn(() => ({
+          valueMissing: true,
+        })),
+      });
+
+      await element.displayError();
+
+      await page.waitForChanges();
+
+      expect(page.root).toMatchSnapshot();
     });
   });
 

@@ -10,7 +10,7 @@ This molecule refers to the [PDA9-484](https://jira.mgdis.fr/browse/PDA9-484).
 | `expanded`                | `expanded`       | Panel is opened                                                                                             | `boolean` | `false`                |
 | `identifier`              | `identifier`     | Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created. | `string`  | `createID('mg-panel')` |
 | `panelTitle` _(required)_ | `panel-title`    | Panel title                                                                                                 | `string`  | `undefined`            |
-| `titleEditable`           | `title-editable` | Panel is editabled                                                                                          | `boolean` | `false`                |
+| `titleEditable`           | `title-editable` | Panel title is editabled                                                                                    | `boolean` | `false`                |
 
 
 ## Events

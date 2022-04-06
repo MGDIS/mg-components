@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-03-30T16:26:11",
+  "timestamp": "2022-04-06T12:23:01",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.14.1",
@@ -74,7 +74,7 @@
           "reflectToAttr": false,
           "docs": "Define button variant",
           "docsTags": [],
-          "default": "variants[variants.length - 1]",
+          "default": "variants[0]",
           "values": [
             {
               "type": "string"
@@ -789,7 +789,23 @@
           "required": true
         }
       ],
-      "methods": [],
+      "methods": [
+        {
+          "name": "displayError",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "displayError() => Promise<void>",
+          "parameters": [],
+          "docs": "Public method to display errors",
+          "docsTags": [
+            {
+              "name": "returns"
+            }
+          ]
+        }
+      ],
       "events": [
         {
           "event": "value-change",
@@ -1077,7 +1093,23 @@
           "required": false
         }
       ],
-      "methods": [],
+      "methods": [
+        {
+          "name": "displayError",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "displayError() => Promise<void>",
+          "parameters": [],
+          "docs": "Public method to display errors",
+          "docsTags": [
+            {
+              "name": "returns"
+            }
+          ]
+        }
+      ],
       "events": [
         {
           "event": "value-change",
@@ -1461,7 +1493,23 @@
           "required": false
         }
       ],
-      "methods": [],
+      "methods": [
+        {
+          "name": "displayError",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "displayError() => Promise<void>",
+          "parameters": [],
+          "docs": "Public method to display errors",
+          "docsTags": [
+            {
+              "name": "returns"
+            }
+          ]
+        }
+      ],
       "events": [
         {
           "event": "value-change",
@@ -1763,7 +1811,23 @@
           "required": false
         }
       ],
-      "methods": [],
+      "methods": [
+        {
+          "name": "displayError",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "displayError() => Promise<void>",
+          "parameters": [],
+          "docs": "Public method to display errors",
+          "docsTags": [
+            {
+              "name": "returns"
+            }
+          ]
+        }
+      ],
       "events": [
         {
           "event": "value-change",
@@ -2054,7 +2118,23 @@
           "required": false
         }
       ],
-      "methods": [],
+      "methods": [
+        {
+          "name": "displayError",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "displayError() => Promise<void>",
+          "parameters": [],
+          "docs": "Public method to display errors",
+          "docsTags": [
+            {
+              "name": "returns"
+            }
+          ]
+        }
+      ],
       "events": [
         {
           "event": "value-change",
@@ -2407,7 +2487,23 @@
           "required": false
         }
       ],
-      "methods": [],
+      "methods": [
+        {
+          "name": "displayError",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "displayError() => Promise<void>",
+          "parameters": [],
+          "docs": "Public method to display errors",
+          "docsTags": [
+            {
+              "name": "returns"
+            }
+          ]
+        }
+      ],
       "events": [
         {
           "event": "value-change",
@@ -2836,6 +2932,21 @@
       ],
       "methods": [
         {
+          "name": "displayError",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "displayError() => Promise<void>",
+          "parameters": [],
+          "docs": "Public method to display errors",
+          "docsTags": [
+            {
+              "name": "returns"
+            }
+          ]
+        },
+        {
           "name": "setFocus",
           "returns": {
             "type": "Promise<void>",
@@ -3256,7 +3367,23 @@
           "required": false
         }
       ],
-      "methods": [],
+      "methods": [
+        {
+          "name": "displayError",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "displayError() => Promise<void>",
+          "parameters": [],
+          "docs": "Public method to display errors",
+          "docsTags": [
+            {
+              "name": "returns"
+            }
+          ]
+        }
+      ],
       "events": [
         {
           "event": "value-change",
@@ -3973,7 +4100,7 @@
           "mutable": false,
           "attr": "title-editable",
           "reflectToAttr": false,
-          "docs": "Panel is editabled",
+          "docs": "Panel title is editabled",
           "docsTags": [],
           "default": "false",
           "values": [

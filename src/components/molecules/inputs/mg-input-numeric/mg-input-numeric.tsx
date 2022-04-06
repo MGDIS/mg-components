@@ -1,4 +1,4 @@
-import { Component, Element, Event, h, Prop, EventEmitter, State, Watch } from '@stencil/core';
+import { Component, Element, Event, h, Prop, EventEmitter, State, Watch, Method } from '@stencil/core';
 import { MgInput } from '../MgInput';
 import { InputClass, Width } from '../MgInput.conf';
 import { types, InputError } from './mg-input-numeric.conf';
@@ -194,15 +194,36 @@ export class MgInputNumeric {
   @State() errorMessage: string;
 
   /**
-   * Displayed value in input
-   * Change on focus/blur
+   * Define if input has focus
    */
-  @State() displayValue: string;
+  @State() hasFocus = false;
 
   /**
    * Emmited event when value change
    */
   @Event({ eventName: 'value-change' }) valueChange: EventEmitter<number>;
+
+  /**
+   * Public method to display errors
+   *
+   * @returns {Promise<void>}
+   */
+  @Method()
+  async displayError(): Promise<void> {
+    this.checkValidity();
+    this.checkError();
+  }
+
+  /**
+   * Displayed value in input
+   * Change on focus/blur
+   *
+   * @returns {string} display value
+   */
+  private displayValue(): string {
+    if (this.hasFocus) return this.value;
+    else return this.readonlyValue;
+  }
 
   /**
    * Handle input event
@@ -221,7 +242,7 @@ export class MgInputNumeric {
    * @returns {void}
    */
   private handleFocus = (): void => {
-    this.displayValue = this.value;
+    this.hasFocus = true;
   };
 
   /**
@@ -233,8 +254,7 @@ export class MgInputNumeric {
     // Check validity
     this.checkValidity();
     this.checkError();
-    // Display readonly value
-    this.displayValue = this.readonlyValue;
+    this.hasFocus = false;
   };
 
   /**
@@ -342,8 +362,6 @@ export class MgInputNumeric {
    */
   componentWillLoad(): ReturnType<typeof setTimeout> {
     this.validateValue(this.value);
-    // Set displayed value
-    this.displayValue = this.readonlyValue;
     this.validateType(this.type);
     this.validateIntegerLength(this.integerLength);
     this.validateDecimalLength(this.decimalLength);
@@ -386,7 +404,7 @@ export class MgInputNumeric {
         <input
           type="text"
           class="mg-input__box"
-          value={this.displayValue}
+          value={this.displayValue()}
           id={this.identifier}
           name={this.name}
           placeholder={this.placeholder}

@@ -48,6 +48,16 @@ Horizontal spacing is not managed by the component, it must be defined in slot i
 
 ## Methods
 
+### `displayError() => Promise<void>`
+
+Public method to display errors
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
 ### `setFocus() => Promise<void>`
 
 Public method to play input focus

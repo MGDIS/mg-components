@@ -155,9 +155,7 @@ export class MgButton {
         onClick={this.handleClick}
       >
         {this.loading && <mg-icon icon="loader" spin></mg-icon>}
-        <div class="mg-button__content">
-          <slot></slot>
-        </div>
+        <slot></slot>
       </button>
     );
   }

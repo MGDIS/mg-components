@@ -27,7 +27,7 @@ export class MgBadge {
   /**
    * Define button variant
    */
-  @Prop() variant: string = variants[variants.length - 1];
+  @Prop() variant: string = variants[0]; // info
   @Watch('variant')
   validateVariant(newValue: string): void {
     if (!variants.includes(newValue)) {
