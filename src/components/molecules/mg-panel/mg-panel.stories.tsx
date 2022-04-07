@@ -19,7 +19,7 @@ const Template = args => {
   // return element
   return (
     <mg-panel {...args} panel-title={panelTitle} title-editable={titleEditable}>
-      <div slot="content">Content</div>
+      <div>Content</div>
       <div slot="header-right">
         <mg-button variant="secondary">
           <mg-icon icon="file-upload"></mg-icon> Upload

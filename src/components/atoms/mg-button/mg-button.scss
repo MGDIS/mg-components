@@ -14,8 +14,8 @@ $button-column-gap: 0.6rem;
   }
   &.mg-button--#{$name} {
     // Decoration
-    border-color: var(--mg-button-border-color, hsl(var(#{$backgroundColor}-h), var(#{$backgroundColor}-s), var(#{$backgroundColor}-l))); /* IE FIX */
-    border-color: var(--mg-button-border-color, hsl(var(#{$backgroundColor}-h), var(#{$backgroundColor}-s), calc(var(#{$backgroundColor}-l) - 10%)));
+    border-color: hsl(var(#{$backgroundColor}-h), var(#{$backgroundColor}-s), var(#{$backgroundColor}-l)); /* IE FIX */
+    border-color: hsl(var(#{$backgroundColor}-h), var(#{$backgroundColor}-s), calc(var(#{$backgroundColor}-l) - 10%));
     // Font
     color: hsl(var(#{$fontColor}));
     // Background
@@ -86,6 +86,9 @@ $button-column-gap: 0.6rem;
     border-top-left-radius: var(--mg-button-border-radius-top-left, var(--mg-button-icon-border-radius));
     border-bottom-right-radius: var(--mg-button-border-radius-bottom-right, var(--mg-button-icon-border-radius));
     border-bottom-left-radius: var(--mg-button-border-radius-bottom-left, var(--mg-button-icon-border-radius));
+    // font
+    font-size: var(--font-size);
+    line-height: var(--font-size);
   }
 
   // Gradient style

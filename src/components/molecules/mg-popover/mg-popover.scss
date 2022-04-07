@@ -15,7 +15,7 @@ mg-popover {
   // Decoration
   border-radius: 0.5rem;
   background-color: hsl(var(--mg-popover-background-color));
-  box-shadow: 0 0.3rem 0.8rem 0 rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-shadow);
   // Font
   color: hsl(var(--mg-popover-font-color));
 

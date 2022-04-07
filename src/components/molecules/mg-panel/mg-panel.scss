@@ -1,10 +1,9 @@
 $header-padding: 0.3rem;
 
 .mg-panel {
-  background: hsl(var(--color-light));
-  background: linear-gradient(110deg, hsl(192, 17%, 94%) 0%, hsl(200, 14%, 92%) 50%, hsl(var(--color-light)) 100%);
+  background-color: hsl(var(--mg-panel-background));
   border-radius: var(--mg-panel-border-radius);
-  box-shadow: 0 0.3rem 0.8rem 0 hsla(var(--color-dark), 0.2);
+  box-shadow: var(--box-shadow);
 }
 
 .mg-panel__header {

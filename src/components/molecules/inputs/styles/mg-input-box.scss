@@ -72,7 +72,6 @@
 
 .mg-input.mg-input--has-buttons-group-append {
   ::slotted([slot='append-input']) {
-    --mg-button-border-color: var(--mg-inputs-color);
     --mg-button-border-radius-top-right: 0;
     --mg-button-border-radius-bottom-right: 0;
     --mg-button-border-radius-top-left: 0; /* IE FIX */
