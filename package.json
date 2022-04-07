@@ -38,9 +38,6 @@
     "outputDirectory": "coverage",
     "outputName": "junit.xml"
   },
-  "publishConfig": {
-    "@mgdis:registry": "http://artifactory.mgdis.fr/artifactory/api/npm/npm-local/"
-  },
   "dependencies": {
     "@popperjs/core": "^2.11.2",
     "@stencil/core": "^2.14.1",
@@ -85,5 +82,5 @@
     "style-loader": "^2.0.0",
     "typescript": "^4.4.3"
   },
-  "license": "MIT"
+  "license": "BSD-3-Clause"
 }
