@@ -37,7 +37,7 @@ const Template = args => (
       </div>
       <span class="mg-message__close-button">
         <button class="mg-button mg-button--flat mg-button--icon">
-          <mg-icon icon="cross" size="small"></mg-icon>
+          <mg-icon icon="cross"></mg-icon>
         </button>
       </span>
     </div>
