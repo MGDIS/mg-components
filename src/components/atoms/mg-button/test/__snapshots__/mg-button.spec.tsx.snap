@@ -1,5 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`mg-button Should render a button, case controls 1`] = `
+<mg-button>
+  <!---->
+  <button aria-controls="element-controlled" aria-label="label" class="mg-button mg-button--primary" id="identifier">
+    Text button
+  </button>
+</mg-button>
+`;
+
+exports[`mg-button Should render a button, case expanded false 1`] = `
+<mg-button>
+  <!---->
+  <button aria-label="label" class="mg-button mg-button--primary" id="identifier">
+    Text button
+  </button>
+</mg-button>
+`;
+
+exports[`mg-button Should render a button, case expanded true 1`] = `
+<mg-button>
+  <!---->
+  <button aria-expanded="" aria-label="label" class="mg-button mg-button--primary" id="identifier">
+    Text button
+  </button>
+</mg-button>
+`;
+
 exports[`mg-button Should render an danger button isIcon false 1`] = `
 <mg-button>
   <!---->

@@ -21,7 +21,7 @@
   // Decoration
   background-color: white;
   border-radius: var(--mg-message-border-radius);
-  box-shadow: 0 0.3rem 0.8rem 0 hsla(var(--color-dark), 0.1);
+  box-shadow: var(--box-shadow);
 
   &::before {
     content: '';

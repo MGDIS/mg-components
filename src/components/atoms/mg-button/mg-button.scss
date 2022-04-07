@@ -53,7 +53,11 @@ $button-column-gap: 0.6rem;
   border-bottom-left-radius: var(--mg-button-border-radius-bottom-left, var(--mg-button-border-radius));
   cursor: pointer;
   background-image: none;
-  border: $mg-button-border-width solid;
+  border-top-width: var(--mg-button-border-top-width, $mg-button-border-width);
+  border-right-width: var(--mg-button-border-right-width, $mg-button-border-width);
+  border-bottom-width: var(--mg-button-border-bottom-width, $mg-button-border-width);
+  border-left-width: var(--mg-button-border-left-width, $mg-button-border-width);
+  border-style: solid;
   // Font
   font-family: inherit;
   text-decoration: none;
@@ -78,7 +82,13 @@ $button-column-gap: 0.6rem;
     width: var(--default-size);
     height: var(--default-size);
     // Decoration
-    border-radius: var(--mg-button-icon-border-radius);
+    border-top-right-radius: var(--mg-button-border-radius-top-right, var(--mg-button-icon-border-radius));
+    border-top-left-radius: var(--mg-button-border-radius-top-left, var(--mg-button-icon-border-radius));
+    border-bottom-right-radius: var(--mg-button-border-radius-bottom-right, var(--mg-button-icon-border-radius));
+    border-bottom-left-radius: var(--mg-button-border-radius-bottom-left, var(--mg-button-icon-border-radius));
+    // font
+    font-size: var(--font-size);
+    line-height: var(--font-size);
   }
 
   // Gradient style

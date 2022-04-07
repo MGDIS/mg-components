@@ -17,6 +17,16 @@ describe('mg-button', () => {
     });
   });
 
+  test.each([false, true])('Should render a button, case expanded %s', async expanded => {
+    const { root } = await getPage({ identifier: 'identifier', label: 'label', expanded });
+    expect(root).toMatchSnapshot();
+  });
+
+  test('Should render a button, case controls', async () => {
+    const { root } = await getPage({ identifier: 'identifier', label: 'label', controls: 'element-controlled' });
+    expect(root).toMatchSnapshot();
+  });
+
   test.each(['', 'blu', undefined])('Should throw error', async variant => {
     try {
       await getPage({ variant });

@@ -74,6 +74,16 @@ export class MgButton {
   @Prop() disableOnClick = false;
 
   /**
+   * Prop to set aria-expanded on button element
+   */
+  @Prop() expanded = false;
+
+  /**
+   * Prop to set aria-controls on button element
+   */
+  @Prop() controls: string;
+
+  /**
    * Define if button is loading, default to false.
    * Trigger when button is clicked or key-up ['enter', 'space], then value change to true.
    * It's required to reset to false when action/promise in parent is done to stop the loading state
@@ -135,7 +145,15 @@ export class MgButton {
    */
   render(): HTMLElement {
     return (
-      <button id={this.identifier} class={this.classList.join()} aria-label={this.label} aria-disabled={this.disabled} onClick={this.handleClick}>
+      <button
+        id={this.identifier}
+        class={this.classList.join()}
+        aria-label={this.label}
+        aria-disabled={this.disabled}
+        aria-expanded={this.expanded}
+        aria-controls={this.controls}
+        onClick={this.handleClick}
+      >
         {this.loading && <mg-icon icon="loader" spin></mg-icon>}
         <slot></slot>
       </button>
