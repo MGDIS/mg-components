@@ -30,6 +30,7 @@ This atom refers to the [PDA9-744](https://jira.mgdis.fr/browse/PDA9-744).
  - [mg-message](../../molecules/mg-message)
  - [mg-modal](../../molecules/mg-modal)
  - [mg-pagination](../../molecules/mg-pagination)
+ - [mg-panel](../../molecules/mg-panel)
  - [mg-popover](../../molecules/mg-popover)
  - [mg-tabs](../../molecules/mg-tabs)
 
@@ -49,6 +50,7 @@ graph TD;
   mg-message --> mg-icon
   mg-modal --> mg-icon
   mg-pagination --> mg-icon
+  mg-panel --> mg-icon
   mg-popover --> mg-icon
   mg-tabs --> mg-icon
   style mg-icon fill:#f9f,stroke:#333,stroke-width:4px

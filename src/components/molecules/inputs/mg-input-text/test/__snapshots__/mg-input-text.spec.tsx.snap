@@ -284,6 +284,48 @@ exports[`mg-input-text Should render with slot. 2`] = `
 </mg-input-text>
 `;
 
+exports[`mg-input-text Should render with slot. 3`] = `
+<mg-input-text>
+  <mock:shadow-root>
+    <div class="mg-input mg-input--has-buttons-group-append mg-input--is-input-group-append mg-input--text mg-input--width-full">
+      <mg-input-title identifier="identifier">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input">
+          <input aria-describedby="" class="mg-input__box" id="identifier" maxlength="400" name="identifier" type="search">
+          <slot name="append-input"></slot>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+  <mg-button is-icon="" slot="append-input">
+    <!---->
+    <button aria-label="cancel" class="mg-button mg-button--icon mg-button--primary" id="identifier-cancel">
+      <mg-icon>
+        <mock:shadow-root>
+          <svg aria-hidden="true" class="mg-icon mg-icon--cross mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+            <path d="M14.26 12.74 9.52 8l4.7-4.7a.29.29 0 0 0 0-.41l-1.1-1.1a.29.29 0 0 0-.41 0L8 6.48 3.26 1.74a.24.24 0 0 0-.34 0L1.74 2.91a.24.24 0 0 0 0 .34L6.48 8l-4.7 4.7a.29.29 0 0 0 0 .41l1.1 1.1a.29.29 0 0 0 .41 0L8 9.52l4.74 4.74a.24.24 0 0 0 .34 0l1.17-1.17a.24.24 0 0 0 0-.34Z" fill="currentColor"></path>
+          </svg>
+        </mock:shadow-root>
+      </mg-icon>
+    </button>
+  </mg-button>
+  <mg-button is-icon="" slot="append-input">
+    <!---->
+    <button aria-label="validate" class="mg-button mg-button--icon mg-button--primary" id="identifier-validate">
+      <mg-icon>
+        <mock:shadow-root>
+          <svg aria-hidden="true" class="mg-icon mg-icon--check mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+            <path d="M15.3,4.2L14.2,3c-0.1-0.1-0.3-0.1-0.4,0L6,10.4l-3.8-4C2.2,6.3,2.1,6.3,2,6.4L0.7,7.6c-0.1,0.1-0.1,0.2,0,0.3l5.1,5.4c0.1,0.1,0.2,0.1,0.3,0c0,0,0,0,0,0L7.4,12l0,0l7.9-7.4C15.4,4.5,15.4,4.3,15.3,4.2C15.3,4.2,15.3,4.2,15.3,4.2z" fill="currentColor"></path>
+          </svg>
+        </mock:shadow-root>
+      </mg-icon>
+    </button>
+  </mg-button>
+</mg-input-text>
+`;
+
 exports[`mg-input-text Should trigger events 1`] = `
 <mg-input-text>
   <mock:shadow-root>

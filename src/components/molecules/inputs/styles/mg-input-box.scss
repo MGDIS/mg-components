@@ -70,6 +70,24 @@
   }
 }
 
+.mg-input.mg-input--has-buttons-group-append {
+  ::slotted([slot='append-input']) {
+    --mg-button-border-radius-top-right: 0;
+    --mg-button-border-radius-bottom-right: 0;
+    --mg-button-border-radius-top-left: 0; /* IE FIX */
+    --mg-button-border-radius-bottom-left: 0; /* IE FIX */
+  }
+  ::slotted([slot='append-input']:not(:last-of-type)) {
+    --mg-button-border-right-width: 0;
+  }
+  ::slotted([slot='append-input']:last-of-type) {
+    --mg-button-border-radius-top-right: var(--mg-inputs-border-radius);
+    --mg-button-border-radius-bottom-right: var(--mg-inputs-border-radius);
+    --mg-button-border-radius-top-left: 0; /* IE FIX */
+    --mg-button-border-radius-bottom-left: 0; /* IE FIX */
+  }
+}
+
 .mg-input.mg-input--is-append-input-slot-content:not(.mg-input--readonly) ::slotted([slot='append-input']) {
   padding-top: calc((var(--default-size) - var(--mg-icon-regular-size)) / 2);
 }

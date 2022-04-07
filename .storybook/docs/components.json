@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-04-06T13:29:26",
+  "timestamp": "2022-04-07T06:16:15",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.14.1",
@@ -110,6 +110,22 @@
       "usage": {},
       "props": [
         {
+          "name": "controls",
+          "type": "string",
+          "mutable": false,
+          "attr": "controls",
+          "reflectToAttr": false,
+          "docs": "Prop to set aria-controls on button element",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "disableOnClick",
           "type": "boolean",
           "mutable": false,
@@ -133,6 +149,23 @@
           "attr": "disabled",
           "reflectToAttr": false,
           "docs": "Disable button",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "expanded",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "expanded",
+          "reflectToAttr": false,
+          "docs": "Prop to set aria-expanded on button element",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -221,6 +254,7 @@
         "mg-message",
         "mg-modal",
         "mg-pagination",
+        "mg-panel",
         "mg-popover"
       ],
       "dependencies": [
@@ -237,6 +271,9 @@
           "mg-button"
         ],
         "mg-pagination": [
+          "mg-button"
+        ],
+        "mg-panel": [
           "mg-button"
         ],
         "mg-popover": [
@@ -464,6 +501,7 @@
         "mg-message",
         "mg-modal",
         "mg-pagination",
+        "mg-panel",
         "mg-popover",
         "mg-tabs"
       ],
@@ -506,6 +544,9 @@
           "mg-icon"
         ],
         "mg-pagination": [
+          "mg-icon"
+        ],
+        "mg-panel": [
           "mg-icon"
         ],
         "mg-popover": [
@@ -2912,6 +2953,21 @@
               "name": "returns"
             }
           ]
+        },
+        {
+          "name": "setFocus",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "setFocus() => Promise<void>",
+          "parameters": [],
+          "docs": "Public method to play input focus",
+          "docsTags": [
+            {
+              "name": "returns"
+            }
+          ]
         }
       ],
       "events": [
@@ -2929,7 +2985,9 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [],
+      "dependents": [
+        "mg-panel"
+      ],
       "dependencies": [
         "mg-icon",
         "mg-tooltip",
@@ -2942,6 +3000,9 @@
           "mg-tooltip",
           "mg-input-title",
           "mg-character-left"
+        ],
+        "mg-panel": [
+          "mg-input-text"
         ]
       }
     },
@@ -4101,6 +4162,122 @@
         "mg-input-select": [
           "mg-tooltip",
           "mg-icon",
+          "mg-input-title",
+          "mg-character-left"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/molecules/mg-panel/mg-panel.tsx",
+      "encapsulation": "shadow",
+      "tag": "mg-panel",
+      "readme": "This molecule refers to the [PDA9-484](https://jira.mgdis.fr/browse/PDA9-484).\n",
+      "docs": "This molecule refers to the [PDA9-484](https://jira.mgdis.fr/browse/PDA9-484).",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "expanded",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "expanded",
+          "reflectToAttr": false,
+          "docs": "Panel is opened",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "identifier",
+          "type": "string",
+          "mutable": false,
+          "attr": "identifier",
+          "reflectToAttr": false,
+          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
+          "docsTags": [],
+          "default": "createID('mg-panel')",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "panelTitle",
+          "type": "string",
+          "mutable": true,
+          "attr": "panel-title",
+          "reflectToAttr": false,
+          "docs": "Panel title",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "titleEditable",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "title-editable",
+          "reflectToAttr": false,
+          "docs": "Panel title is editabled",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "title-change",
+          "detail": "string",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emmited event when title change",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "mg-button",
+        "mg-icon",
+        "mg-input-text"
+      ],
+      "dependencyGraph": {
+        "mg-panel": [
+          "mg-button",
+          "mg-icon",
+          "mg-input-text"
+        ],
+        "mg-button": [
+          "mg-icon"
+        ],
+        "mg-input-text": [
+          "mg-icon",
+          "mg-tooltip",
           "mg-input-title",
           "mg-character-left"
         ]

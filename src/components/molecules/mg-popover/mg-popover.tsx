@@ -207,7 +207,7 @@ export class MgPopover {
         <slot></slot>
         <div id={this.identifier} class="mg-popover">
           {!this.disabled && this.closeButton && (
-            <mg-button identifier={this.closeButtonId} is-icon variant="flat" label={messages.popover.closeButton} onClick={this.handleCloseButton}>
+            <mg-button identifier={this.closeButtonId} is-icon variant="flat" label={messages.global.close} onClick={this.handleCloseButton}>
               <mg-icon icon="cross"></mg-icon>
             </mg-button>
           )}

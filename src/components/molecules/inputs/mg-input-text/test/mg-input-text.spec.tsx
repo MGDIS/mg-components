@@ -40,6 +40,14 @@ describe('mg-input-text', () => {
       <mg-icon icon="magnifying-glass"></mg-icon> Search
     </mg-button>,
     <span slot="append-input">test</span>,
+    [
+      <mg-button is-icon slot="append-input" label="cancel" identifier="identifier-cancel">
+        <mg-icon icon="cross"></mg-icon>
+      </mg-button>,
+      <mg-button is-icon slot="append-input" label="validate" identifier="identifier-validate">
+        <mg-icon icon="check"></mg-icon>
+      </mg-button>,
+    ],
   ])('Should render with slot.', async slot => {
     const args = { label: 'label', identifier: 'identifier', type: 'search' };
 
@@ -146,6 +154,20 @@ describe('mg-input-text', () => {
         await page.waitForChanges();
         expect(page.root).toMatchSnapshot(); //Snapshot with readonly/disabled TRUE
       }
+    });
+
+    test("should trigger input focus method with setFocus component's public method", async () => {
+      const page = await getPage({ label: 'label', identifier: 'identifier' });
+      const element = page.doc.querySelector('mg-input-text');
+      const input = element.shadowRoot.querySelector('input');
+
+      input.focus = jest.fn();
+
+      await element.setFocus();
+
+      await page.waitForChanges();
+
+      expect(input.focus).toHaveBeenCalled();
     });
   });
 
