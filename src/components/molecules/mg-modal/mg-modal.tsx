@@ -79,7 +79,7 @@ export class MgModal {
   @Event({ eventName: 'component-hide' }) componentHide: EventEmitter<string>;
 
   /**
-   * Handle 'excape' key down
+   * Handle 'escape' key down
    *
    * @param {KeyboardEvent} event keydown event
    * @returns {void}
@@ -88,6 +88,7 @@ export class MgModal {
     target: 'window',
   })
   handleKeyDown(event: KeyboardEvent): void {
+    // we can use 'Escape button" when this not a blocking modal, induced by closeButton value.
     if (this.closeButton && event.key === 'Escape') {
       this.hide = true;
     }
@@ -132,7 +133,7 @@ export class MgModal {
    */
   render(): HTMLElement {
     return (
-      <div role="dialog" id={this.identifier} class={this.classList.join()} tabindex="-1" aria-labelledby={this.titleId} aria-modal="true" aria-hidden={this.hide}>
+      <section role="dialog" id={this.identifier} class={this.classList.join()} tabindex="-1" aria-labelledby={this.titleId} aria-modal="true" aria-hidden={this.hide}>
         <article class="mg-modal__dialog">
           <header class="mg-modal__header">
             {this.closeButton && (
@@ -157,7 +158,7 @@ export class MgModal {
             </footer>
           )}
         </article>
-      </div>
+      </section>
     );
   }
 }

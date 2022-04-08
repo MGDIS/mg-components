@@ -7,7 +7,7 @@ exports[`mg-modal Should render a modal with args {
 } 1`] = `
 <mg-modal>
   <mock:shadow-root>
-    <div aria-labelledby="identifier-title" aria-modal="true" class="mg-modal" id="identifier" role="dialog" tabindex="-1">
+    <section aria-labelledby="identifier-title" aria-modal="true" class="mg-modal" id="identifier" role="dialog" tabindex="-1">
       <article class="mg-modal__dialog">
         <header class="mg-modal__header">
           <mg-button class="mg-modal__close-button" is-icon="">
@@ -21,7 +21,7 @@ exports[`mg-modal Should render a modal with args {
           </h1>
         </header>
       </article>
-    </div>
+    </section>
   </mock:shadow-root>
 </mg-modal>
 `;
@@ -33,7 +33,7 @@ exports[`mg-modal Should render a modal with args {
 } 2`] = `
 <mg-modal>
   <mock:shadow-root>
-    <div aria-labelledby="identifier-title" aria-modal="true" class="mg-modal" id="identifier" role="dialog" tabindex="-1">
+    <section aria-labelledby="identifier-title" aria-modal="true" class="mg-modal" id="identifier" role="dialog" tabindex="-1">
       <article class="mg-modal__dialog">
         <header class="mg-modal__header">
           <mg-button class="mg-modal__close-button" is-icon="">
@@ -50,7 +50,7 @@ exports[`mg-modal Should render a modal with args {
           <slot name="content"></slot>
         </article>
       </article>
-    </div>
+    </section>
   </mock:shadow-root>
   <p slot="content">
     <strong>
@@ -68,7 +68,7 @@ exports[`mg-modal Should render a modal with args {
 } 3`] = `
 <mg-modal>
   <mock:shadow-root>
-    <div aria-labelledby="identifier-title" aria-modal="true" class="mg-modal" id="identifier" role="dialog" tabindex="-1">
+    <section aria-labelledby="identifier-title" aria-modal="true" class="mg-modal" id="identifier" role="dialog" tabindex="-1">
       <article class="mg-modal__dialog">
         <header class="mg-modal__header">
           <mg-button class="mg-modal__close-button" is-icon="">
@@ -85,7 +85,7 @@ exports[`mg-modal Should render a modal with args {
           <slot name="actions"></slot>
         </footer>
       </article>
-    </div>
+    </section>
   </mock:shadow-root>
   <div class="mg-group-elements mg-group-elements--align-right" slot="actions">
     <mg-button>
@@ -111,7 +111,7 @@ exports[`mg-modal Should render a modal with args {
 } 4`] = `
 <mg-modal>
   <mock:shadow-root>
-    <div aria-labelledby="identifier-title" aria-modal="true" class="mg-modal" id="identifier" role="dialog" tabindex="-1">
+    <section aria-labelledby="identifier-title" aria-modal="true" class="mg-modal" id="identifier" role="dialog" tabindex="-1">
       <article class="mg-modal__dialog">
         <header class="mg-modal__header">
           <mg-button class="mg-modal__close-button" is-icon="">
@@ -131,7 +131,7 @@ exports[`mg-modal Should render a modal with args {
           <slot name="actions"></slot>
         </footer>
       </article>
-    </div>
+    </section>
   </mock:shadow-root>
   <p slot="content">
     <strong>
@@ -164,7 +164,7 @@ exports[`mg-modal Should render a modal with args {
 } 1`] = `
 <mg-modal>
   <mock:shadow-root>
-    <div aria-hidden="" aria-labelledby="identifier-title" aria-modal="true" class="mg-modal mg-modal--hide" id="identifier" role="dialog" tabindex="-1">
+    <section aria-hidden="" aria-labelledby="identifier-title" aria-modal="true" class="mg-modal mg-modal--hide" id="identifier" role="dialog" tabindex="-1">
       <article class="mg-modal__dialog">
         <header class="mg-modal__header">
           <mg-button class="mg-modal__close-button" is-icon="">
@@ -178,7 +178,7 @@ exports[`mg-modal Should render a modal with args {
           </h1>
         </header>
       </article>
-    </div>
+    </section>
   </mock:shadow-root>
 </mg-modal>
 `;
@@ -191,7 +191,7 @@ exports[`mg-modal Should render a modal with args {
 } 2`] = `
 <mg-modal>
   <mock:shadow-root>
-    <div aria-hidden="" aria-labelledby="identifier-title" aria-modal="true" class="mg-modal mg-modal--hide" id="identifier" role="dialog" tabindex="-1">
+    <section aria-hidden="" aria-labelledby="identifier-title" aria-modal="true" class="mg-modal mg-modal--hide" id="identifier" role="dialog" tabindex="-1">
       <article class="mg-modal__dialog">
         <header class="mg-modal__header">
           <mg-button class="mg-modal__close-button" is-icon="">
@@ -208,7 +208,7 @@ exports[`mg-modal Should render a modal with args {
           <slot name="content"></slot>
         </article>
       </article>
-    </div>
+    </section>
   </mock:shadow-root>
   <p slot="content">
     <strong>
@@ -227,7 +227,7 @@ exports[`mg-modal Should render a modal with args {
 } 3`] = `
 <mg-modal>
   <mock:shadow-root>
-    <div aria-hidden="" aria-labelledby="identifier-title" aria-modal="true" class="mg-modal mg-modal--hide" id="identifier" role="dialog" tabindex="-1">
+    <section aria-hidden="" aria-labelledby="identifier-title" aria-modal="true" class="mg-modal mg-modal--hide" id="identifier" role="dialog" tabindex="-1">
       <article class="mg-modal__dialog">
         <header class="mg-modal__header">
           <mg-button class="mg-modal__close-button" is-icon="">
@@ -244,7 +244,7 @@ exports[`mg-modal Should render a modal with args {
           <slot name="actions"></slot>
         </footer>
       </article>
-    </div>
+    </section>
   </mock:shadow-root>
   <div class="mg-group-elements mg-group-elements--align-right" slot="actions">
     <mg-button>
@@ -271,7 +271,7 @@ exports[`mg-modal Should render a modal with args {
 } 4`] = `
 <mg-modal>
   <mock:shadow-root>
-    <div aria-hidden="" aria-labelledby="identifier-title" aria-modal="true" class="mg-modal mg-modal--hide" id="identifier" role="dialog" tabindex="-1">
+    <section aria-hidden="" aria-labelledby="identifier-title" aria-modal="true" class="mg-modal mg-modal--hide" id="identifier" role="dialog" tabindex="-1">
       <article class="mg-modal__dialog">
         <header class="mg-modal__header">
           <mg-button class="mg-modal__close-button" is-icon="">
@@ -291,7 +291,7 @@ exports[`mg-modal Should render a modal with args {
           <slot name="actions"></slot>
         </footer>
       </article>
-    </div>
+    </section>
   </mock:shadow-root>
   <p slot="content">
     <strong>
@@ -319,7 +319,7 @@ exports[`mg-modal Should render a modal with args {
 exports[`mg-modal Should render a modal with args { modalTitle: 'Modal Title', identifier: 'identifier' } 1`] = `
 <mg-modal>
   <mock:shadow-root>
-    <div aria-labelledby="identifier-title" aria-modal="true" class="mg-modal" id="identifier" role="dialog" tabindex="-1">
+    <section aria-labelledby="identifier-title" aria-modal="true" class="mg-modal" id="identifier" role="dialog" tabindex="-1">
       <article class="mg-modal__dialog">
         <header class="mg-modal__header">
           <h1 class="mg-modal__title" id="identifier-title">
@@ -327,7 +327,7 @@ exports[`mg-modal Should render a modal with args { modalTitle: 'Modal Title', i
           </h1>
         </header>
       </article>
-    </div>
+    </section>
   </mock:shadow-root>
 </mg-modal>
 `;
@@ -335,7 +335,7 @@ exports[`mg-modal Should render a modal with args { modalTitle: 'Modal Title', i
 exports[`mg-modal Should render a modal with args { modalTitle: 'Modal Title', identifier: 'identifier' } 2`] = `
 <mg-modal>
   <mock:shadow-root>
-    <div aria-labelledby="identifier-title" aria-modal="true" class="mg-modal" id="identifier" role="dialog" tabindex="-1">
+    <section aria-labelledby="identifier-title" aria-modal="true" class="mg-modal" id="identifier" role="dialog" tabindex="-1">
       <article class="mg-modal__dialog">
         <header class="mg-modal__header">
           <h1 class="mg-modal__title" id="identifier-title">
@@ -346,7 +346,7 @@ exports[`mg-modal Should render a modal with args { modalTitle: 'Modal Title', i
           <slot name="content"></slot>
         </article>
       </article>
-    </div>
+    </section>
   </mock:shadow-root>
   <p slot="content">
     <strong>
@@ -360,7 +360,7 @@ exports[`mg-modal Should render a modal with args { modalTitle: 'Modal Title', i
 exports[`mg-modal Should render a modal with args { modalTitle: 'Modal Title', identifier: 'identifier' } 3`] = `
 <mg-modal>
   <mock:shadow-root>
-    <div aria-labelledby="identifier-title" aria-modal="true" class="mg-modal" id="identifier" role="dialog" tabindex="-1">
+    <section aria-labelledby="identifier-title" aria-modal="true" class="mg-modal" id="identifier" role="dialog" tabindex="-1">
       <article class="mg-modal__dialog">
         <header class="mg-modal__header">
           <h1 class="mg-modal__title" id="identifier-title">
@@ -371,7 +371,7 @@ exports[`mg-modal Should render a modal with args { modalTitle: 'Modal Title', i
           <slot name="actions"></slot>
         </footer>
       </article>
-    </div>
+    </section>
   </mock:shadow-root>
   <div class="mg-group-elements mg-group-elements--align-right" slot="actions">
     <mg-button>
@@ -393,7 +393,7 @@ exports[`mg-modal Should render a modal with args { modalTitle: 'Modal Title', i
 exports[`mg-modal Should render a modal with args { modalTitle: 'Modal Title', identifier: 'identifier' } 4`] = `
 <mg-modal>
   <mock:shadow-root>
-    <div aria-labelledby="identifier-title" aria-modal="true" class="mg-modal" id="identifier" role="dialog" tabindex="-1">
+    <section aria-labelledby="identifier-title" aria-modal="true" class="mg-modal" id="identifier" role="dialog" tabindex="-1">
       <article class="mg-modal__dialog">
         <header class="mg-modal__header">
           <h1 class="mg-modal__title" id="identifier-title">
@@ -407,7 +407,7 @@ exports[`mg-modal Should render a modal with args { modalTitle: 'Modal Title', i
           <slot name="actions"></slot>
         </footer>
       </article>
-    </div>
+    </section>
   </mock:shadow-root>
   <p slot="content">
     <strong>
@@ -435,7 +435,7 @@ exports[`mg-modal Should render a modal with args { modalTitle: 'Modal Title', i
 exports[`mg-modal navigation should hide panel with button 1`] = `
 <mg-modal>
   <mock:shadow-root>
-    <div aria-labelledby="identifier-title" aria-modal="true" class="mg-modal" id="identifier" role="dialog" tabindex="-1">
+    <section aria-labelledby="identifier-title" aria-modal="true" class="mg-modal" id="identifier" role="dialog" tabindex="-1">
       <article class="mg-modal__dialog">
         <header class="mg-modal__header">
           <mg-button class="mg-modal__close-button" is-icon="">
@@ -449,7 +449,7 @@ exports[`mg-modal navigation should hide panel with button 1`] = `
           </h1>
         </header>
       </article>
-    </div>
+    </section>
   </mock:shadow-root>
 </mg-modal>
 `;
@@ -457,7 +457,7 @@ exports[`mg-modal navigation should hide panel with button 1`] = `
 exports[`mg-modal navigation should hide panel with button 2`] = `
 <mg-modal>
   <mock:shadow-root>
-    <div aria-hidden="" aria-labelledby="identifier-title" aria-modal="true" class="mg-modal mg-modal--hide" id="identifier" role="dialog" tabindex="-1">
+    <section aria-hidden="" aria-labelledby="identifier-title" aria-modal="true" class="mg-modal mg-modal--hide" id="identifier" role="dialog" tabindex="-1">
       <article class="mg-modal__dialog">
         <header class="mg-modal__header">
           <mg-button class="mg-modal__close-button" is-icon="">
@@ -471,7 +471,7 @@ exports[`mg-modal navigation should hide panel with button 2`] = `
           </h1>
         </header>
       </article>
-    </div>
+    </section>
   </mock:shadow-root>
 </mg-modal>
 `;
@@ -479,7 +479,7 @@ exports[`mg-modal navigation should hide panel with button 2`] = `
 exports[`mg-modal navigation should hide panel with escape keyboard 1`] = `
 <mg-modal>
   <mock:shadow-root>
-    <div aria-labelledby="identifier-title" aria-modal="true" class="mg-modal" id="identifier" role="dialog" tabindex="-1">
+    <section aria-labelledby="identifier-title" aria-modal="true" class="mg-modal" id="identifier" role="dialog" tabindex="-1">
       <article class="mg-modal__dialog">
         <header class="mg-modal__header">
           <mg-button class="mg-modal__close-button" is-icon="">
@@ -493,7 +493,7 @@ exports[`mg-modal navigation should hide panel with escape keyboard 1`] = `
           </h1>
         </header>
       </article>
-    </div>
+    </section>
   </mock:shadow-root>
 </mg-modal>
 `;
@@ -501,7 +501,7 @@ exports[`mg-modal navigation should hide panel with escape keyboard 1`] = `
 exports[`mg-modal navigation should hide panel with escape keyboard 2`] = `
 <mg-modal>
   <mock:shadow-root>
-    <div aria-hidden="" aria-labelledby="identifier-title" aria-modal="true" class="mg-modal mg-modal--hide" id="identifier" role="dialog" tabindex="-1">
+    <section aria-hidden="" aria-labelledby="identifier-title" aria-modal="true" class="mg-modal mg-modal--hide" id="identifier" role="dialog" tabindex="-1">
       <article class="mg-modal__dialog">
         <header class="mg-modal__header">
           <mg-button class="mg-modal__close-button" is-icon="">
@@ -515,7 +515,7 @@ exports[`mg-modal navigation should hide panel with escape keyboard 2`] = `
           </h1>
         </header>
       </article>
-    </div>
+    </section>
   </mock:shadow-root>
 </mg-modal>
 `;
@@ -523,7 +523,7 @@ exports[`mg-modal navigation should hide panel with escape keyboard 2`] = `
 exports[`mg-modal navigation should hide panel with escape keyboard 3`] = `
 <mg-modal>
   <mock:shadow-root>
-    <div aria-labelledby="identifier-title" aria-modal="true" class="mg-modal" id="identifier" role="dialog" tabindex="-1">
+    <section aria-labelledby="identifier-title" aria-modal="true" class="mg-modal" id="identifier" role="dialog" tabindex="-1">
       <article class="mg-modal__dialog">
         <header class="mg-modal__header">
           <h1 class="mg-modal__title" id="identifier-title">
@@ -531,7 +531,7 @@ exports[`mg-modal navigation should hide panel with escape keyboard 3`] = `
           </h1>
         </header>
       </article>
-    </div>
+    </section>
   </mock:shadow-root>
 </mg-modal>
 `;
@@ -539,7 +539,7 @@ exports[`mg-modal navigation should hide panel with escape keyboard 3`] = `
 exports[`mg-modal navigation should hide panel with escape keyboard 4`] = `
 <mg-modal>
   <mock:shadow-root>
-    <div aria-labelledby="identifier-title" aria-modal="true" class="mg-modal" id="identifier" role="dialog" tabindex="-1">
+    <section aria-labelledby="identifier-title" aria-modal="true" class="mg-modal" id="identifier" role="dialog" tabindex="-1">
       <article class="mg-modal__dialog">
         <header class="mg-modal__header">
           <h1 class="mg-modal__title" id="identifier-title">
@@ -547,7 +547,7 @@ exports[`mg-modal navigation should hide panel with escape keyboard 4`] = `
           </h1>
         </header>
       </article>
-    </div>
+    </section>
   </mock:shadow-root>
 </mg-modal>
 `;

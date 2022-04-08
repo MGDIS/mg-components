@@ -49,6 +49,10 @@ export namespace Components {
          */
         "expanded": boolean;
         /**
+          * Option to set aria-haspopup The aria-haspopup state informs assistive technology users that there is a popup and the type of popup it is, but provides no interactivity.
+         */
+        "haspopup": boolean | 'menu' | 'listbox' | 'tree' | 'grid' | 'dialog';
+        /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
         "identifier": string;
@@ -1162,6 +1166,10 @@ declare namespace LocalJSX {
           * Prop to set aria-expanded on button element
          */
         "expanded"?: boolean;
+        /**
+          * Option to set aria-haspopup The aria-haspopup state informs assistive technology users that there is a popup and the type of popup it is, but provides no interactivity.
+         */
+        "haspopup"?: boolean | 'menu' | 'listbox' | 'tree' | 'grid' | 'dialog';
         /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */

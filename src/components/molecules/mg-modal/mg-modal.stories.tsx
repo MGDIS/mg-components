@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-bind */
 import { h } from '@stencil/core';
 
 export default {
@@ -23,10 +24,28 @@ const Template = args => {
   delete args.modalTitle;
   // return element
   return (
-    <mg-modal {...args} close-button={closeButton} modal-title={modalTitle}>
-      {slotContent && <span slot="content" innerHTML={slotContent}></span>}
-      {slotActions && <span slot="actions" innerHTML={slotActions}></span>}
-    </mg-modal>
+    <div>
+      <mg-button
+        controls="identifier"
+        haspopup="dialog"
+        onClick={() => {
+          const mgModal = document.querySelector('mg-modal');
+          const isHide = mgModal.hide === true;
+          if (isHide) {
+            mgModal.removeAttribute('hide'); // storybook first render is an attribute then we use property
+            mgModal.hide = false;
+          } else {
+            mgModal.hide = true;
+          }
+        }}
+      >
+        Open modal
+      </mg-button>
+      <mg-modal {...args} close-button={closeButton} modal-title={modalTitle}>
+        {slotContent && <span slot="content" innerHTML={slotContent}></span>}
+        {slotActions && <span slot="actions" innerHTML={slotActions}></span>}
+      </mg-modal>
+    </div>
   );
 };
 
@@ -38,7 +57,7 @@ MgModal.args = {
   modalTitle: 'Modal title',
   identifier: 'identifier',
   closeButton: false,
-  hide: false,
+  hide: true,
 };
 
 export const WithCloseButton = Template.bind({});

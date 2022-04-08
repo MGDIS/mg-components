@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-04-07T06:16:15",
+  "timestamp": "2022-04-08T12:04:38",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.14.1",
@@ -169,6 +169,43 @@
           "docsTags": [],
           "default": "false",
           "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "haspopup",
+          "type": "\"dialog\" | \"grid\" | \"listbox\" | \"menu\" | \"tree\" | boolean",
+          "mutable": false,
+          "attr": "haspopup",
+          "reflectToAttr": false,
+          "docs": "Option to set aria-haspopup\nThe aria-haspopup state informs assistive technology users that there is a popup and the type of popup it is, but provides no interactivity.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "value": "dialog",
+              "type": "string"
+            },
+            {
+              "value": "grid",
+              "type": "string"
+            },
+            {
+              "value": "listbox",
+              "type": "string"
+            },
+            {
+              "value": "menu",
+              "type": "string"
+            },
+            {
+              "value": "tree",
+              "type": "string"
+            },
             {
               "type": "boolean"
             }

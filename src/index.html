@@ -306,6 +306,28 @@
             <mg-button onclick="document.getElementById('tp-disabled').removeAttribute('disabled')">mg-button</mg-button></mg-tooltip
           >
         </div>
+        <h4>Modal</h4>
+        <mg-button id="modal-button">Open modal</mg-button>
+        <mg-modal modal-title="Modal title" hide close-button>
+          <p slot="content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+          <div slot="actions" class="mg-group-elements mg-group-elements--align-right"><mg-button>Primary</mg-button><mg-button variant="secondary">Secondary</mg-button></div>
+        </mg-modal>
+        <script>
+          document.querySelector('#modal-button').addEventListener('click', () => {
+            const mgModal = document.querySelector('mg-modal');
+            const isHide = mgModal.hide === true || mgModal.getAttribute('hide') !== null;
+            if (isHide) {
+              mgModal.removeAttribute('hide');
+              mgModal.hide = false;
+            } else {
+              mgModal.hide = true;
+            }
+          });
+        </script>
         <h4>Popover</h4>
         <mg-popover>
           <mg-button>Display popover</mg-button>

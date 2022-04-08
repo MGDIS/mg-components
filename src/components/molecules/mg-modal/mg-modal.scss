@@ -1,24 +1,31 @@
 .mg-modal {
+  // Layout
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: hsla(var(--color-dark), 0.3); // TODO: blur
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   z-index: 1000;
+  // Appearance
+  background-color: hsla(var(--color-dark), 50%);
+  overflow-y: auto;
 
   &__dialog {
+    // Layout
     display: flex;
     flex-direction: column;
+    flex: none; /* IE FIX */
     row-gap: 3rem;
     padding: 1.5rem 2.5rem;
+    width: 60rem;
+    // Appearance
+    background-color: hsl(var(--color-light));
+    box-shadow: var(--box-shadow);
+    // Other
     border-radius: var(--mg-modal-border-radius);
-    background-color: hsla(var(--color-light));
-    box-shadow: 0 0.3rem 0.8rem 0 hsla(var(--color-dark), 0.1);
-    max-width: 60rem;
   }
 
   &__header {
@@ -26,14 +33,17 @@
   }
 
   &__title {
+    // Layout
+    margin: 0;
+    // Text
     font-family: var(--font-family-heading);
     font-size: var(--mg-modal-title-font-size);
     font-weight: 600;
-    margin: 0;
   }
 
   &__close-button {
     float: right;
+    height: var(--mg-modal-title-font-size);
     margin-top: calc((var(--default-size) - (var(--mg-modal-title-font-size) * var(--line-height))) / 2 * -1); //-6px;
     margin-right: calc((var(--default-size) - var(--mg-icon-regular-size)) / 2 * -1); //-10px;
   }
