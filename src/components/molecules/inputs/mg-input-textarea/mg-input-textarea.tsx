@@ -1,4 +1,4 @@
-import { Component, Event, h, Prop, EventEmitter, State, Method } from '@stencil/core';
+import { Component, Event, h, Prop, EventEmitter, State, Method, Watch } from '@stencil/core';
 import { MgInput } from '../MgInput';
 import { InputClass, Width } from '../MgInput.conf';
 import { createID, ClassList } from '../../../../utils/components.utils';
@@ -29,6 +29,10 @@ export class MgInputTextarea {
    * Component value
    */
   @Prop({ mutable: true, reflect: true }) value: string;
+  @Watch('value')
+  handleValue(newValue: string): void {
+    this.valueChange.emit(newValue);
+  }
 
   /**
    * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
@@ -125,12 +129,12 @@ export class MgInputTextarea {
   @Prop() helpText: string;
 
   /**
-   * Define input pattern to validate
+   * Define input valid state
    */
   @Prop({ mutable: true }) valid: boolean;
 
   /**
-   * Define input pattern error message
+   * Define input invalid state
    */
   @Prop({ mutable: true }) invalid: boolean;
 
@@ -166,7 +170,6 @@ export class MgInputTextarea {
   private handleInput = (): void => {
     this.checkValidity();
     this.value = this.input.value;
-    this.valueChange.emit(this.value);
   };
 
   /**

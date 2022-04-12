@@ -49,6 +49,7 @@ export class MgInputCheckbox {
         value: item.value,
         disabled: item.disabled,
       }));
+      this.valueChange.emit(newValue);
     } else {
       throw new Error('<mg-input-checkbox> prop "value" is required and all values must be the same type, CheckboxItem.');
     }
@@ -117,12 +118,12 @@ export class MgInputCheckbox {
   @Prop() helpText: string;
 
   /**
-   * Force valid component
+   * Define input valid state
    */
   @Prop({ mutable: true }) valid: boolean;
 
   /**
-   * Force invalid component
+   * Define input invalid state
    */
   @Prop({ mutable: true }) invalid: boolean;
 
@@ -172,7 +173,6 @@ export class MgInputCheckbox {
 
     this.value = this.checkboxItems.map(o => ({ value: o.value, title: o.title, disabled: o.disabled }));
     this.checkValidity();
-    this.valueChange.emit(this.value);
   };
 
   /**

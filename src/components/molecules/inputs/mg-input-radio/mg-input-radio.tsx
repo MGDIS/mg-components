@@ -37,6 +37,10 @@ export class MgInputRadio {
    * Component value
    */
   @Prop({ mutable: true }) value: unknown;
+  @Watch('value')
+  handleValue(newValue: unknown): void {
+    this.valueChange.emit(newValue);
+  }
 
   /**
    * Items are the possible options to select
@@ -120,12 +124,12 @@ export class MgInputRadio {
   @Prop() helpText: string;
 
   /**
-   * Force valid component
+   * Define input valid state
    */
   @Prop({ mutable: true }) valid: boolean;
 
   /**
-   * Force invalid component
+   * Define input invalid state
    */
   @Prop({ mutable: true }) invalid: boolean;
 
@@ -169,7 +173,6 @@ export class MgInputRadio {
   private handleInput = (event: InputEvent & { target: HTMLInputElement }) => {
     this.checkValidity();
     this.value = this.options[event.target.value].value;
-    this.valueChange.emit(this.value);
   };
 
   /**

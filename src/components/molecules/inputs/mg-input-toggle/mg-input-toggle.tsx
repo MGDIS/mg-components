@@ -39,6 +39,10 @@ export class MgInputToggle {
    * Component value
    */
   @Prop({ mutable: true }) value: unknown;
+  @Watch('value')
+  handleValue(newValue: unknown): void {
+    this.valueChange.emit(newValue);
+  }
 
   /**
    * Items are the possible options to select
@@ -161,7 +165,6 @@ export class MgInputToggle {
 
     // update value
     this.value = this.options[this.checked ? 1 : 0].value;
-    this.valueChange.emit(this.value);
   }
 
   /**

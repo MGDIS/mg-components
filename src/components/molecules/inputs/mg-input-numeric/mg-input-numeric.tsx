@@ -221,8 +221,7 @@ export class MgInputNumeric {
    * @returns {string} display value
    */
   private displayValue(): string {
-    if (this.hasFocus) return this.value;
-    else return this.readonlyValue;
+    return this.hasFocus ? this.value : this.readonlyValue;
   }
 
   /**

@@ -34,6 +34,8 @@ export class MgInputDate {
   validateValue(newValue: string): void {
     if (newValue !== undefined && newValue !== '' && !(typeof newValue === 'string' && dateRegExp.test(newValue))) {
       throw new Error("<mg-input-date> props 'value' doesn't match pattern: yyyy-mm-dd");
+    } else {
+      this.valueChange.emit(this.value);
     }
   }
 
@@ -91,12 +93,12 @@ export class MgInputDate {
   @Prop() helpText: string;
 
   /**
-   * Define input pattern to validate
+   * Define input valid state
    */
   @Prop({ mutable: true }) valid: boolean;
 
   /**
-   * Define input pattern error message
+   * Define input invalid state
    */
   @Prop({ mutable: true }) invalid: boolean;
 
@@ -152,7 +154,6 @@ export class MgInputDate {
   private handleInput = (): void => {
     this.checkValidity();
     this.value = this.input.value;
-    this.valueChange.emit(this.value);
   };
 
   /**
