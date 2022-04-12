@@ -66,6 +66,12 @@ export class MgInputSelect {
    * Component value
    */
   @Prop({ mutable: true }) value: unknown;
+  @Watch('value')
+  handleValue(newValue: unknown): void {
+    this.readonlyValue =
+      newValue !== null ? (allItemsAreString(this.items as string[]) ? this.input.value : (this.items as SelectOption[]).find(item => item.value === newValue).title) : null;
+    this.valueChange.emit(newValue);
+  }
 
   /**
    * Items are the possible options to select
@@ -199,6 +205,11 @@ export class MgInputSelect {
   @State() valueExist: boolean;
 
   /**
+   * Does value match any item option
+   */
+  @State() readonlyValue: string;
+
+  /**
    * Emmited event when value change
    */
   @Event({ eventName: 'value-change' }) valueChange: EventEmitter<unknown>;
@@ -219,8 +230,12 @@ export class MgInputSelect {
    */
   private handleInput = (): void => {
     this.checkValidity();
-    this.value = this.input.value !== '' ? this.options[this.input.value].value : null;
-    this.valueChange.emit(this.value);
+    this.value =
+      this.input.value !== ''
+        ? allItemsAreString(this.items as string[])
+          ? this.input.value
+          : (this.items as SelectOption[]).find(item => item.title === this.input.value).value
+        : null;
   };
 
   /**
@@ -300,7 +315,7 @@ export class MgInputSelect {
         width={this.width}
         disabled={this.disabled}
         value={this.value as string}
-        readonlyValue={undefined}
+        readonlyValue={this.readonlyValue}
         tooltip={this.tooltip}
         displayCharacterLeft={undefined}
         characterLeftTemplate={undefined}
@@ -325,17 +340,21 @@ export class MgInputSelect {
               {this.placeholder}
             </option>
           )}
-          {this.options.map((option, optionIndex) =>
+          {this.options.map(option =>
             option.group !== undefined ? (
               <optgroup label={option.group}>
-                {(option as OptGroup).options.map((optgroup, optgroupIndex) => (
-                  <option value={optgroupIndex} selected={JSON.stringify(this.value) === JSON.stringify(optgroup.value)} disabled={optgroup.disabled}>
+                {(option as OptGroup).options.map(optgroup => (
+                  <option value={optgroup.title} selected={JSON.stringify(this.value) === JSON.stringify(optgroup.value)} disabled={optgroup.disabled}>
                     {optgroup.title}
                   </option>
                 ))}
               </optgroup>
             ) : (
-              <option value={optionIndex} selected={JSON.stringify(this.value) === JSON.stringify((option as SelectOption).value)} disabled={(option as SelectOption).disabled}>
+              <option
+                value={(option as SelectOption).title}
+                selected={JSON.stringify(this.value) === JSON.stringify((option as SelectOption).value)}
+                disabled={(option as SelectOption).disabled}
+              >
                 {(option as SelectOption).title}
               </option>
             ),
