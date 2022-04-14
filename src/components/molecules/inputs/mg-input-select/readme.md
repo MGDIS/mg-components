@@ -29,9 +29,10 @@ This atom refers to the [PDA9-72](https://jira.mgdis.fr/browse/PDA9-72).
 
 ## Events
 
-| Event          | Description                     | Type                   |
-| -------------- | ------------------------------- | ---------------------- |
-| `value-change` | Emmited event when value change | `CustomEvent<unknown>` |
+| Event          | Description                         | Type                   |
+| -------------- | ----------------------------------- | ---------------------- |
+| `input-valid`  | Emited event when checking validity | `CustomEvent<boolean>` |
+| `value-change` | Emited event when value change      | `CustomEvent<unknown>` |
 
 
 ## Methods

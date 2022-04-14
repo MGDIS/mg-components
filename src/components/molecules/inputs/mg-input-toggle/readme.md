@@ -24,9 +24,10 @@ This molecule refers to the [PDA9-770](https://jira.mgdis.fr/browse/PDA9-770).
 
 ## Events
 
-| Event          | Description                     | Type                   |
-| -------------- | ------------------------------- | ---------------------- |
-| `value-change` | Emmited event when value change | `CustomEvent<unknown>` |
+| Event          | Description                         | Type                   |
+| -------------- | ----------------------------------- | ---------------------- |
+| `input-valid`  | Emited event when checking validity | `CustomEvent<boolean>` |
+| `value-change` | Emited event when value change      | `CustomEvent<unknown>` |
 
 
 ## Dependencies

@@ -168,9 +168,14 @@ export class MgInputToggle {
   }
 
   /**
-   * Emmited event when value change
+   * Emited event when value change
    */
   @Event({ eventName: 'value-change' }) valueChange: EventEmitter<unknown>;
+
+  /**
+   * Emited event when checking validity
+   */
+  @Event({ eventName: 'input-valid' }) inputValid: EventEmitter<boolean>;
 
   /**
    * Change checked value

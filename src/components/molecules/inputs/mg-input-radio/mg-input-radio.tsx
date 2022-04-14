@@ -1,4 +1,4 @@
-import { Component, Event, h, Prop, EventEmitter, State, Watch, Method } from '@stencil/core';
+import { Component, Element, Event, h, Prop, EventEmitter, State, Watch, Method } from '@stencil/core';
 import { MgInput } from '../MgInput';
 import { createID, ClassList, allItemsAreString } from '../../../../utils/components.utils';
 import { messages } from '../../../../locales';
@@ -32,6 +32,11 @@ export class MgInputRadio {
   /**************
    * Decorators *
    **************/
+
+  /**
+   * Get component DOM element
+   */
+  @Element() element: HTMLMgInputRadioElement;
 
   /**
    * Component value
@@ -154,6 +159,11 @@ export class MgInputRadio {
   @Event({ eventName: 'value-change' }) valueChange: EventEmitter<unknown>;
 
   /**
+   * Emited event when checking validity
+   */
+  @Event({ eventName: 'input-valid' }) inputValid: EventEmitter<boolean>;
+
+  /**
    * Public method to display errors
    *
    * @returns {Promise<void>}
@@ -197,6 +207,9 @@ export class MgInputRadio {
       // Set validity
       this.valid = validity;
       this.invalid = !validity;
+
+      //Send event
+      this.inputValid.emit(validity);
     }
   };
 
@@ -236,17 +249,16 @@ export class MgInputRadio {
   /**
    * Check if component props are well configured on init
    *
-   * @returns {ReturnType<typeof setTimeout>} timeout
+   * @returns {void}
    */
-  componentWillLoad(): ReturnType<typeof setTimeout> {
+  componentWillLoad(): void {
     // Check items format
     this.validateItems(this.items);
 
-    // return a promise to process action only in the FIRST render().
-    // https://stenciljs.com/docs/component-lifecycle#componentwillload
-    return setTimeout(() => {
+    // Check validity when component is ready
+    this.element.componentOnReady().then(() => {
       this.checkValidity();
-    }, 0);
+    });
   }
 
   /**

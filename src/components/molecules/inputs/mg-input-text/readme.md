@@ -41,9 +41,10 @@ Horizontal spacing is not managed by the component, it must be defined in slot i
 
 ## Events
 
-| Event          | Description                     | Type                  |
-| -------------- | ------------------------------- | --------------------- |
-| `value-change` | Emmited event when value change | `CustomEvent<string>` |
+| Event          | Description                         | Type                   |
+| -------------- | ----------------------------------- | ---------------------- |
+| `input-valid`  | Emited event when checking validity | `CustomEvent<boolean>` |
+| `value-change` | Emited event when value change      | `CustomEvent<string>`  |
 
 
 ## Methods

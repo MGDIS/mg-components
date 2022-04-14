@@ -199,9 +199,14 @@ export class MgInputNumeric {
   @State() hasFocus = false;
 
   /**
-   * Emmited event when value change
+   * Emited event when value change
    */
   @Event({ eventName: 'value-change' }) valueChange: EventEmitter<number>;
+
+  /**
+   * Emited event when checking validity
+   */
+  @Event({ eventName: 'input-valid' }) inputValid: EventEmitter<boolean>;
 
   /**
    * Public method to display errors
@@ -268,6 +273,9 @@ export class MgInputNumeric {
       // Set validity
       this.valid = validity;
       this.invalid = !validity;
+
+      //Send event
+      this.inputValid.emit(validity);
     }
   };
 
@@ -304,7 +312,7 @@ export class MgInputNumeric {
   };
 
   /**
-   * get input error code
+   * Get input error code
    *
    * @returns {null | InputError} error code
    */
@@ -357,20 +365,19 @@ export class MgInputNumeric {
   /**
    * Check if component props are well configured on init
    *
-   * @returns {ReturnType<typeof setTimeout>} timeout
+   * @returns {void}
    */
-  componentWillLoad(): ReturnType<typeof setTimeout> {
+  componentWillLoad(): void {
     this.validateValue(this.value);
     this.validateType(this.type);
     this.validateIntegerLength(this.integerLength);
     this.validateDecimalLength(this.decimalLength);
     this.validateAppendSlot();
 
-    // return a promise to process action only in the FIRST render().
-    // https://stenciljs.com/docs/component-lifecycle#componentwillload
-    return setTimeout(() => {
+    // Check validity when component is ready
+    this.element.componentOnReady().then(() => {
       this.checkValidity();
-    }, 0);
+    });
   }
 
   /**

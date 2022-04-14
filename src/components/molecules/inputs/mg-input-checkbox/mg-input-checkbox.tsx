@@ -1,4 +1,4 @@
-import { Component, Event, h, Prop, EventEmitter, State, Watch, Method } from '@stencil/core';
+import { Component, Event, Element, h, Prop, EventEmitter, State, Watch, Method } from '@stencil/core';
 import { MgInput } from '../MgInput';
 import { createID, ClassList } from '../../../../utils/components.utils';
 import { messages } from '../../../../locales';
@@ -33,6 +33,11 @@ export class MgInputCheckbox {
   /**************
    * Decorators *
    **************/
+
+  /**
+   * Get component DOM element
+   */
+  @Element() element: HTMLMgInputCheckboxElement;
 
   /**
    * Component value
@@ -148,6 +153,11 @@ export class MgInputCheckbox {
   @Event({ eventName: 'value-change' }) valueChange: EventEmitter<CheckboxValue[]>;
 
   /**
+   * Emited event when checking validity
+   */
+  @Event({ eventName: 'input-valid' }) inputValid: EventEmitter<boolean>;
+
+  /**
    * Public method to display errors
    *
    * @returns {Promise<void>}
@@ -194,6 +204,9 @@ export class MgInputCheckbox {
       // Set validity
       this.valid = validity;
       this.invalid = !validity;
+
+      //Send event
+      this.inputValid.emit(validity);
     }
   };
 
@@ -231,17 +244,16 @@ export class MgInputCheckbox {
   /**
    * Check if component props are well configured on init
    *
-   * @returns {ReturnType<typeof setTimeout>} timeout
+   * @returns {void}
    */
-  componentWillLoad(): ReturnType<typeof setTimeout> {
+  componentWillLoad(): void {
     // Check values format
     this.validateValue(this.value);
 
-    // return a promise to process action only in the FIRST render().
-    // https://stenciljs.com/docs/component-lifecycle#componentwillload
-    return setTimeout(() => {
+    // Check validity when component is ready
+    this.element.componentOnReady().then(() => {
       this.checkValidity();
-    }, 0);
+    });
   }
 
   /**
