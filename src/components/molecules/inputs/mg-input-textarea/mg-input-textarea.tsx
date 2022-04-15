@@ -54,7 +54,6 @@ export class MgInputTextarea {
 
   /**
    * Input label
-   * Required
    */
   @Prop() label!: string;
 

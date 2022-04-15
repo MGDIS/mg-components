@@ -63,5 +63,5 @@ export const WithActions = Template.bind({});
 WithActions.args = {
   ...MgMessage.args,
   variant: 'warning',
-  slotActions: `<div slot="actions" class="mg-group-elements mg-group-elements--align-right"><mg-button>Primary</mg-button><mg-button variant="secondary">Secondary</mg-button></div>`,
+  slotActions: `<div class="mg-group-elements mg-group-elements--align-right"><mg-button>Primary</mg-button><mg-button variant="secondary">Secondary</mg-button></div>`,
 };

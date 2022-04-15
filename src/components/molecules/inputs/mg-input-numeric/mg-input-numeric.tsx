@@ -77,7 +77,6 @@ export class MgInputNumeric {
 
   /**
    * Input label
-   * Required
    */
   @Prop() label!: string;
 

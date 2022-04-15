@@ -1,8 +1,8 @@
 {
-  "timestamp": "2022-04-01T08:03:11",
+  "timestamp": "2022-04-15T16:08:20",
   "compiler": {
     "name": "@stencil/core",
-    "version": "2.14.1",
+    "version": "2.15.0",
     "typescriptVersion": "4.5.4"
   },
   "components": [
@@ -365,6 +365,152 @@
       }
     },
     {
+      "filePath": "./src/components/molecules/mg-form/mg-form.tsx",
+      "encapsulation": "shadow",
+      "tag": "mg-form",
+      "readme": "# mg-form\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Define if form is disabled",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "identifier",
+          "type": "string",
+          "mutable": false,
+          "attr": "identifier",
+          "reflectToAttr": false,
+          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
+          "docsTags": [],
+          "default": "createID('mg-input-numeric')",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "invalid",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "invalid",
+          "reflectToAttr": false,
+          "docs": "Define form invalid state",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "Input name\nIf not set the value equals the identifier",
+          "docsTags": [],
+          "default": "this.identifier",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "readonly",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "readonly",
+          "reflectToAttr": false,
+          "docs": "Define if form is readonly",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "valid",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "valid",
+          "reflectToAttr": false,
+          "docs": "Define form valid state",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "displayError",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "displayError() => Promise<void>",
+          "parameters": [],
+          "docs": "Public method to display errors",
+          "docsTags": [
+            {
+              "name": "returns"
+            }
+          ]
+        }
+      ],
+      "events": [
+        {
+          "event": "form-valid",
+          "detail": "boolean",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted event on form validity check\nTells if form is valid or not",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
       "filePath": "./src/components/atoms/mg-icon/mg-icon.tsx",
       "encapsulation": "shadow",
       "tag": "mg-icon",
@@ -590,7 +736,7 @@
           "mutable": true,
           "attr": "invalid",
           "reflectToAttr": false,
-          "docs": "Force invalid component",
+          "docs": "Define input invalid state",
           "docsTags": [],
           "values": [
             {
@@ -606,7 +752,7 @@
           "mutable": false,
           "attr": "label",
           "reflectToAttr": false,
-          "docs": "Input label\nRequired",
+          "docs": "Input label",
           "docsTags": [],
           "values": [
             {
@@ -722,7 +868,7 @@
           "mutable": true,
           "attr": "valid",
           "reflectToAttr": false,
-          "docs": "Force valid component",
+          "docs": "Define input valid state",
           "docsTags": [],
           "values": [
             {
@@ -766,6 +912,15 @@
         }
       ],
       "events": [
+        {
+          "event": "input-valid",
+          "detail": "boolean",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emited event when checking validity",
+          "docsTags": []
+        },
         {
           "event": "value-change",
           "detail": "CheckboxValue[]",
@@ -861,7 +1016,7 @@
           "mutable": true,
           "attr": "invalid",
           "reflectToAttr": false,
-          "docs": "Define input pattern error message",
+          "docs": "Define input invalid state",
           "docsTags": [],
           "values": [
             {
@@ -877,7 +1032,7 @@
           "mutable": false,
           "attr": "label",
           "reflectToAttr": false,
-          "docs": "Input label\nRequired",
+          "docs": "Input label",
           "docsTags": [],
           "values": [
             {
@@ -1025,7 +1180,7 @@
           "mutable": true,
           "attr": "valid",
           "reflectToAttr": false,
-          "docs": "Define input pattern to validate",
+          "docs": "Define input valid state",
           "docsTags": [],
           "values": [
             {
@@ -1071,12 +1226,21 @@
       ],
       "events": [
         {
+          "event": "input-valid",
+          "detail": "boolean",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emited event when checking validity",
+          "docsTags": []
+        },
+        {
           "event": "value-change",
           "detail": "string",
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emmited event when value change",
+          "docs": "Emited event when value change",
           "docsTags": []
         }
       ],
@@ -1215,7 +1379,7 @@
           "mutable": false,
           "attr": "label",
           "reflectToAttr": false,
-          "docs": "Input label\nRequired",
+          "docs": "Input label",
           "docsTags": [],
           "values": [
             {
@@ -1471,12 +1635,21 @@
       ],
       "events": [
         {
+          "event": "input-valid",
+          "detail": "boolean",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emited event when checking validity",
+          "docsTags": []
+        },
+        {
           "event": "value-change",
           "detail": "number",
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emmited event when value change",
+          "docs": "Emited event when value change",
           "docsTags": []
         }
       ],
@@ -1565,7 +1738,7 @@
           "mutable": true,
           "attr": "invalid",
           "reflectToAttr": false,
-          "docs": "Define input pattern error message",
+          "docs": "Define input invalid state",
           "docsTags": [],
           "values": [
             {
@@ -1581,7 +1754,7 @@
           "mutable": false,
           "attr": "label",
           "reflectToAttr": false,
-          "docs": "Input label\nRequired",
+          "docs": "Input label",
           "docsTags": [],
           "values": [
             {
@@ -1713,7 +1886,7 @@
           "mutable": true,
           "attr": "valid",
           "reflectToAttr": false,
-          "docs": "Define input pattern to validate",
+          "docs": "Define input valid state",
           "docsTags": [],
           "values": [
             {
@@ -1789,12 +1962,21 @@
       ],
       "events": [
         {
+          "event": "input-valid",
+          "detail": "boolean",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emited event when checking validity",
+          "docsTags": []
+        },
+        {
           "event": "value-change",
           "detail": "string",
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emmited event when value change",
+          "docs": "Emited event when value change",
           "docsTags": []
         }
       ],
@@ -1900,7 +2082,7 @@
           "mutable": true,
           "attr": "invalid",
           "reflectToAttr": false,
-          "docs": "Force invalid component",
+          "docs": "Define input invalid state",
           "docsTags": [],
           "values": [
             {
@@ -1934,7 +2116,7 @@
           "mutable": false,
           "attr": "label",
           "reflectToAttr": false,
-          "docs": "Input label\nRequired",
+          "docs": "Input label",
           "docsTags": [],
           "values": [
             {
@@ -2051,7 +2233,7 @@
           "mutable": true,
           "attr": "valid",
           "reflectToAttr": false,
-          "docs": "Force valid component",
+          "docs": "Define input valid state",
           "docsTags": [],
           "values": [
             {
@@ -2095,6 +2277,15 @@
         }
       ],
       "events": [
+        {
+          "event": "input-valid",
+          "detail": "boolean",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emited event when checking validity",
+          "docsTags": []
+        },
         {
           "event": "value-change",
           "detail": "unknown",
@@ -2224,7 +2415,7 @@
           "mutable": false,
           "attr": "label",
           "reflectToAttr": false,
-          "docs": "Input label\nRequired",
+          "docs": "Input label",
           "docsTags": [],
           "values": [
             {
@@ -2465,12 +2656,21 @@
       ],
       "events": [
         {
+          "event": "input-valid",
+          "detail": "boolean",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emited event when checking validity",
+          "docsTags": []
+        },
+        {
           "event": "value-change",
           "detail": "unknown",
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emmited event when value change",
+          "docs": "Emited event when value change",
           "docsTags": []
         }
       ],
@@ -2613,7 +2813,7 @@
           "mutable": true,
           "attr": "invalid",
           "reflectToAttr": false,
-          "docs": "Define input pattern error message",
+          "docs": "Define input invalid state",
           "docsTags": [],
           "values": [
             {
@@ -2629,7 +2829,7 @@
           "mutable": false,
           "attr": "label",
           "reflectToAttr": false,
-          "docs": "Input label\nRequired",
+          "docs": "Input label",
           "docsTags": [],
           "values": [
             {
@@ -2832,7 +3032,7 @@
           "mutable": true,
           "attr": "valid",
           "reflectToAttr": false,
-          "docs": "Define input pattern to validate",
+          "docs": "Define input valid state",
           "docsTags": [],
           "values": [
             {
@@ -2908,12 +3108,21 @@
       ],
       "events": [
         {
+          "event": "input-valid",
+          "detail": "boolean",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emited event when checking validity",
+          "docsTags": []
+        },
+        {
           "event": "value-change",
           "detail": "string",
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emmited event when value change",
+          "docs": "Emited event when value change",
           "docsTags": []
         }
       ],
@@ -3035,7 +3244,7 @@
           "mutable": true,
           "attr": "invalid",
           "reflectToAttr": false,
-          "docs": "Define input pattern error message",
+          "docs": "Define input invalid state",
           "docsTags": [],
           "values": [
             {
@@ -3051,7 +3260,7 @@
           "mutable": false,
           "attr": "label",
           "reflectToAttr": false,
-          "docs": "Input label\nRequired",
+          "docs": "Input label",
           "docsTags": [],
           "values": [
             {
@@ -3249,7 +3458,7 @@
           "mutable": true,
           "attr": "valid",
           "reflectToAttr": false,
-          "docs": "Define input pattern to validate",
+          "docs": "Define input valid state",
           "docsTags": [],
           "values": [
             {
@@ -3325,12 +3534,21 @@
       ],
       "events": [
         {
+          "event": "input-valid",
+          "detail": "boolean",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emited event when checking validity",
+          "docsTags": []
+        },
+        {
           "event": "value-change",
           "detail": "string",
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emmited event when value change",
+          "docs": "Emited event when value change",
           "docsTags": []
         }
       ],
@@ -3582,7 +3800,7 @@
           "mutable": false,
           "attr": "label",
           "reflectToAttr": false,
-          "docs": "Input label\nRequired",
+          "docs": "Input label",
           "docsTags": [],
           "values": [
             {
@@ -3694,12 +3912,21 @@
       "methods": [],
       "events": [
         {
+          "event": "input-valid",
+          "detail": "boolean",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emited event when checking validity",
+          "docsTags": []
+        },
+        {
           "event": "value-change",
           "detail": "unknown",
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emmited event when value change",
+          "docs": "Emited event when value change",
           "docsTags": []
         }
       ],
@@ -3825,7 +4052,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emmited event when message is hidden",
+          "docs": "Emited event when message is hidden",
           "docsTags": []
         },
         {
@@ -3834,7 +4061,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emmited event when message is diplayed",
+          "docs": "Emited event when message is diplayed",
           "docsTags": []
         }
       ],

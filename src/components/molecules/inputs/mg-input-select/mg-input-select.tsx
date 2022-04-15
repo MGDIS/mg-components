@@ -119,7 +119,6 @@ export class MgInputSelect {
 
   /**
    * Input label
-   * Required
    */
   @Prop() label!: string;
 

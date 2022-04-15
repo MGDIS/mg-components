@@ -74,7 +74,6 @@ export class MgInputCheckbox {
 
   /**
    * Input label
-   * Required
    */
   @Prop() label!: string;
 
@@ -289,7 +288,7 @@ export class MgInputCheckbox {
               return !this.readonly || item.value;
             })
             .map(input => (
-              <li class="mg-input__input-group">
+              <li class={`mg-input__input-group${this.disabled || input.disabled ? ' mg-input__input-group--disabled' : ''}`}>
                 <input
                   type="checkbox"
                   id={input.id}

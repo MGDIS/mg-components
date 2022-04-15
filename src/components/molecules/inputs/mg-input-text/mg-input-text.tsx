@@ -53,7 +53,6 @@ export class MgInputText {
 
   /**
    * Input label
-   * Required
    */
   @Prop() label!: string;
 

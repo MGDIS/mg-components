@@ -84,7 +84,6 @@ export class MgInputRadio {
 
   /**
    * Input label
-   * Required
    */
   @Prop() label!: string;
 
@@ -290,7 +289,7 @@ export class MgInputRadio {
       >
         <ul class={`mg-input__input-group-container${this.inputVerticalList ? ' mg-input__input-group-container--vertical' : ''}`}>
           {this.options.map((input, index) => (
-            <li class="mg-input__input-group">
+            <li class={`mg-input__input-group${this.disabled || input.disabled ? ' mg-input__input-group--disabled' : ''}`}>
               <input
                 type="radio"
                 id={this.identifier + '_' + index}

@@ -24,6 +24,10 @@
       "indeterminate": "Indéterminé"
     }
   },
+  "form": {
+    "required": "Les champs marqués d'un <strong class=\"is-asterisk\">*</strong> sont obligatoires",
+    "allRequired": "Tous les champs sont obligatoires"
+  },
   "message": {
     "closeButton": "Fermer le message"
   },

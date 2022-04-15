@@ -41,6 +41,9 @@ export class MgInputToggle {
   @Prop({ mutable: true }) value: unknown;
   @Watch('value')
   handleValue(newValue: unknown): void {
+    // Swich to the right option
+    this.setChecked();
+    // Emit value-change event
     this.valueChange.emit(newValue);
   }
 
@@ -81,7 +84,6 @@ export class MgInputToggle {
 
   /**
    * Input label
-   * Required
    */
   @Prop() label!: string;
 
@@ -164,7 +166,7 @@ export class MgInputToggle {
     else this.classList.delete(this.classIsActive);
 
     // update value
-    this.value = this.options[this.checked ? 1 : 0].value;
+    this.value = this.options[newValue ? 1 : 0].value;
   }
 
   /**
@@ -179,13 +181,17 @@ export class MgInputToggle {
 
   /**
    * Change checked value
+   *
+   * @returns {void}
    */
   private toggleChecked = (): void => {
-    this.setChecked(!this.checked);
+    this.checked = !this.checked;
   };
 
   /**
    * Slots validation
+   *
+   * @returns {void}
    */
   private validateSlots = (): void => {
     const slots = Array.from(this.element.children);
@@ -201,9 +207,9 @@ export class MgInputToggle {
   /**
    * set checked state
    *
-   * @param {boolean} newValue checked value
+   * @returns {void}
    */
-  private setChecked(newValue?: boolean): void {
+  private setChecked(): void {
     // has "value" props type is not a boolean, it is bind/render as an attributes/props
     // true props will be represent by "true" string so we convert it has boolean
     // true attribute will be represent by "" string so we convert it has boolean
@@ -212,7 +218,7 @@ export class MgInputToggle {
       this.value = true;
     }
 
-    this.checked = newValue !== undefined ? newValue : this.value === this.options[1].value;
+    this.checked = this.value === this.options[1].value;
   }
 
   /*************
@@ -225,15 +231,15 @@ export class MgInputToggle {
   componentWillLoad(): void {
     // Check items format
     this.validateItems(this.items);
+    // Check slots
+    this.validateSlots();
     // init checked value
     this.setChecked();
-
     // apply handler
     this.handleIsOnOff(this.isOnOff);
     this.handleIsIcon(this.isIcon);
     this.handleReadonly(this.readonly);
     this.handleDisabled(this.disabled);
-    this.validateSlots();
   }
 
   /**

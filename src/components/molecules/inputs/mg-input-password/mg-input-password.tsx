@@ -52,7 +52,6 @@ export class MgInputPassword {
 
   /**
    * Input label
-   * Required
    */
   @Prop() label!: string;
 

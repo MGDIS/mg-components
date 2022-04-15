@@ -17,7 +17,9 @@ const getPage = args => {
 
 describe('mg-input-checkbox', () => {
   beforeEach(() => jest.useFakeTimers());
+
   afterEach(() => jest.runOnlyPendingTimers());
+
   const items: CheckboxValue[] = [
     { title: 'batman', value: true },
     { title: 'robin', value: false, disabled: true },

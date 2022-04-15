@@ -4,7 +4,8 @@
 
 fieldset.mg-input {
   border: 0;
-  margin: 0;
+  margin-left: 0;
+  margin-right: 0;
   padding: 0;
 
   input[type='radio'],
@@ -20,6 +21,12 @@ fieldset.mg-input {
 
   &.mg-input--label-on-top .mg-input__input-group-container {
     margin-top: 0.7rem;
+  }
+
+  &.is-not-valid {
+    .mg-input__input-group {
+      color: initial;
+    }
   }
 }
 
@@ -48,4 +55,10 @@ fieldset.mg-input {
 .mg-input__input-group {
   display: flex;
   align-items: top;
+
+  &.mg-input__input-group--disabled {
+    label {
+      opacity: 0.3;
+    }
+  }
 }

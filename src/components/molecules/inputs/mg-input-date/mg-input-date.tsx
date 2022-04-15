@@ -58,7 +58,6 @@ export class MgInputDate {
 
   /**
    * Input label
-   * Required
    */
   @Prop() label!: string;
 
