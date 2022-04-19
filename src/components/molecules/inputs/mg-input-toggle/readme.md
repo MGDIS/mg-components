@@ -19,7 +19,7 @@ This molecule refers to the [PDA9-770](https://jira.mgdis.fr/browse/PDA9-770).
 | `name`               | `name`         | Input name If not set the value equals the identifier                                                       | `string`                    | `this.identifier`             |
 | `readonly`           | `readonly`     | Define if input is readonly                                                                                 | `boolean`                   | `false`                       |
 | `tooltip`            | `tooltip`      | Add a tooltip message next to the input                                                                     | `string`                    | `undefined`                   |
-| `value`              | --             | Component value                                                                                             | `unknown`                   | `undefined`                   |
+| `value`              | `value`        | Component value                                                                                             | `any`                       | `undefined`                   |
 
 
 ## Events
@@ -27,7 +27,7 @@ This molecule refers to the [PDA9-770](https://jira.mgdis.fr/browse/PDA9-770).
 | Event          | Description                         | Type                   |
 | -------------- | ----------------------------------- | ---------------------- |
 | `input-valid`  | Emited event when checking validity | `CustomEvent<boolean>` |
-| `value-change` | Emited event when value change      | `CustomEvent<unknown>` |
+| `value-change` | Emited event when value change      | `CustomEvent<any>`     |
 
 
 ## Dependencies

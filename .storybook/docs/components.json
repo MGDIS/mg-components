@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-04-19T07:39:25",
+  "timestamp": "2022-04-19T09:19:13",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.15.1",
@@ -2245,14 +2245,15 @@
         },
         {
           "name": "value",
-          "type": "unknown",
+          "type": "any",
           "mutable": true,
+          "attr": "value",
           "reflectToAttr": false,
           "docs": "Component value",
           "docsTags": [],
           "values": [
             {
-              "type": "unknown"
+              "type": "any"
             }
           ],
           "optional": false,
@@ -2288,7 +2289,7 @@
         },
         {
           "event": "value-change",
-          "detail": "unknown",
+          "detail": "any",
           "bubbles": true,
           "cancelable": true,
           "composed": true,
@@ -2594,14 +2595,15 @@
         },
         {
           "name": "value",
-          "type": "unknown",
+          "type": "any",
           "mutable": true,
+          "attr": "value",
           "reflectToAttr": false,
           "docs": "Component value",
           "docsTags": [],
           "values": [
             {
-              "type": "unknown"
+              "type": "any"
             }
           ],
           "optional": false,
@@ -2666,7 +2668,7 @@
         },
         {
           "event": "value-change",
-          "detail": "unknown",
+          "detail": "any",
           "bubbles": true,
           "cancelable": true,
           "composed": true,
@@ -3895,14 +3897,15 @@
         },
         {
           "name": "value",
-          "type": "unknown",
+          "type": "any",
           "mutable": true,
+          "attr": "value",
           "reflectToAttr": false,
           "docs": "Component value",
           "docsTags": [],
           "values": [
             {
-              "type": "unknown"
+              "type": "any"
             }
           ],
           "optional": false,
@@ -3922,7 +3925,7 @@
         },
         {
           "event": "value-change",
-          "detail": "unknown",
+          "detail": "any",
           "bubbles": true,
           "cancelable": true,
           "composed": true,

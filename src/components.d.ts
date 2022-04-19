@@ -473,7 +473,7 @@ export namespace Components {
         /**
           * Component value
          */
-        "value": unknown;
+        "value": any;
     }
     interface MgInputSelect {
         /**
@@ -548,7 +548,7 @@ export namespace Components {
         /**
           * Component value
          */
-        "value": unknown;
+        "value": any;
         /**
           * Define input width
          */
@@ -807,7 +807,7 @@ export namespace Components {
         /**
           * Component value
          */
-        "value": unknown;
+        "value": any;
     }
     interface MgMessage {
         /**
@@ -1556,7 +1556,7 @@ declare namespace LocalJSX {
         /**
           * Emitted event when value change
          */
-        "onValue-change"?: (event: CustomEvent<unknown>) => void;
+        "onValue-change"?: (event: CustomEvent<any>) => void;
         /**
           * Define if input is readonly
          */
@@ -1576,7 +1576,7 @@ declare namespace LocalJSX {
         /**
           * Component value
          */
-        "value"?: unknown;
+        "value"?: any;
     }
     interface MgInputSelect {
         /**
@@ -1622,7 +1622,7 @@ declare namespace LocalJSX {
         /**
           * Emited event when value change
          */
-        "onValue-change"?: (event: CustomEvent<unknown>) => void;
+        "onValue-change"?: (event: CustomEvent<any>) => void;
         /**
           * Input placeholder. It should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text.
          */
@@ -1654,7 +1654,7 @@ declare namespace LocalJSX {
         /**
           * Component value
          */
-        "value"?: unknown;
+        "value"?: any;
         /**
           * Define input width
          */
@@ -1915,7 +1915,7 @@ declare namespace LocalJSX {
         /**
           * Emited event when value change
          */
-        "onValue-change"?: (event: CustomEvent<unknown>) => void;
+        "onValue-change"?: (event: CustomEvent<any>) => void;
         /**
           * Define if input is readonly
          */
@@ -1927,7 +1927,7 @@ declare namespace LocalJSX {
         /**
           * Component value
          */
-        "value"?: unknown;
+        "value"?: any;
     }
     interface MgMessage {
         /**

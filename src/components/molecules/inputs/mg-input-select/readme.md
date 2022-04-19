@@ -23,7 +23,7 @@ This molecule refers to the [PDA9-72](https://jira.mgdis.fr/browse/PDA9-72).
 | `required`            | `required`             | Define if input is required                                                                                                                    | `boolean`                    | `false`                             |
 | `tooltip`             | `tooltip`              | Add a tooltip message next to the input                                                                                                        | `string`                     | `undefined`                         |
 | `valid`               | `valid`                | Define input valid state                                                                                                                       | `boolean`                    | `undefined`                         |
-| `value`               | --                     | Component value                                                                                                                                | `unknown`                    | `undefined`                         |
+| `value`               | `value`                | Component value                                                                                                                                | `any`                        | `undefined`                         |
 | `width`               | `width`                | Define input width                                                                                                                             | `"full" \| 16 \| 2 \| 4`     | `undefined`                         |
 
 
@@ -32,7 +32,7 @@ This molecule refers to the [PDA9-72](https://jira.mgdis.fr/browse/PDA9-72).
 | Event          | Description                         | Type                   |
 | -------------- | ----------------------------------- | ---------------------- |
 | `input-valid`  | Emited event when checking validity | `CustomEvent<boolean>` |
-| `value-change` | Emited event when value change      | `CustomEvent<unknown>` |
+| `value-change` | Emited event when value change      | `CustomEvent<any>`     |
 
 
 ## Methods

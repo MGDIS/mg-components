@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component, Element, Event, h, Prop, State, EventEmitter, Watch, Method } from '@stencil/core';
 import { MgInput } from '../MgInput';
 import { InputClass, Width } from '../MgInput.conf';
@@ -70,9 +72,9 @@ export class MgInputSelect {
   /**
    * Component value
    */
-  @Prop({ mutable: true }) value: unknown;
+  @Prop({ mutable: true }) value: any;
   @Watch('value')
-  handleValue(newValue: unknown): void {
+  handleValue(newValue: any): void {
     this.readonlyValue =
       newValue !== null ? (allItemsAreString(this.items as string[]) ? this.input.value : (this.items as SelectOption[]).find(item => item.value === newValue).title) : null;
     this.valueChange.emit(newValue);
@@ -216,7 +218,7 @@ export class MgInputSelect {
   /**
    * Emited event when value change
    */
-  @Event({ eventName: 'value-change' }) valueChange: EventEmitter<unknown>;
+  @Event({ eventName: 'value-change' }) valueChange: EventEmitter<any>;
 
   /**
    * Emited event when checking validity

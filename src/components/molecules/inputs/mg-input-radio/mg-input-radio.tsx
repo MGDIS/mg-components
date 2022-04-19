@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component, Element, Event, h, Prop, EventEmitter, State, Watch, Method } from '@stencil/core';
 import { MgInput } from '../MgInput';
 import { createID, ClassList, allItemsAreString } from '../../../../utils/components.utils';
@@ -41,9 +43,9 @@ export class MgInputRadio {
   /**
    * Component value
    */
-  @Prop({ mutable: true }) value: unknown;
+  @Prop({ mutable: true }) value: any;
   @Watch('value')
-  handleValue(newValue: unknown): void {
+  handleValue(newValue: any): void {
     this.valueChange.emit(newValue);
   }
 
@@ -155,7 +157,7 @@ export class MgInputRadio {
   /**
    * Emitted event when value change
    */
-  @Event({ eventName: 'value-change' }) valueChange: EventEmitter<unknown>;
+  @Event({ eventName: 'value-change' }) valueChange: EventEmitter<any>;
 
   /**
    * Emited event when checking validity
