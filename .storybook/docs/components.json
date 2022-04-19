@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-04-19T06:36:52",
+  "timestamp": "2022-04-19T07:39:25",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.15.1",
@@ -398,7 +398,7 @@
           "reflectToAttr": false,
           "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
           "docsTags": [],
-          "default": "createID('mg-input-numeric')",
+          "default": "createID('mg-form')",
           "values": [
             {
               "type": "string"

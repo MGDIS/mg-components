@@ -26,7 +26,7 @@ export class MgForm {
    * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
    * If not set, it will be created.
    */
-  @Prop() identifier: string = createID('mg-input-numeric');
+  @Prop() identifier: string = createID('mg-form');
 
   /**
    * Input name
