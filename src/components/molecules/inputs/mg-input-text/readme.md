@@ -1,4 +1,4 @@
-This atom refers to the [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64).
+This molecule refers to the [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64).
 
 ## Use as search input
 

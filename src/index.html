@@ -594,10 +594,10 @@
           <script>
             const mgForm = document.querySelector('mg-form');
             const mgFormButton = document.querySelector('#can-submit');
-            mgForm.addEventListener('form-valid', ({ detail: valid }) => {
-              mgFormButton.disabled = !valid;
+            mgForm.addEventListener('form-valid', function (e) {
+              mgFormButton.disabled = !e.detail;
             });
-            setTimeout(() => {
+            setTimeout(function () {
               mgForm.displayError();
             }, 1500);
           </script>

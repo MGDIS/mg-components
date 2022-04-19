@@ -1,6 +1,11 @@
-# mg-form
+This molecule refers to the [PDA9-818](https://jira.mgdis.fr/browse/PDA9-818).
 
+## Example
 
+**Code example does not reflect all the code.**
+
+Here we have a `form-valid` event listener on the `mg-form` to define if the "submit" button should be enable or not.  
+The "Display errors" button use the `mg-form` `displayError()` method.
 
 <!-- Auto Generated Below -->
 

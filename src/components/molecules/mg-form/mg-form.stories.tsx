@@ -21,14 +21,20 @@ const args = {
  * @returns {HTMLElement} HTMLElement
  */
 
-const formValidHandler = e => {
-  console.log(e);
-};
-
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Template = (args: any): HTMLElement => {
+  let form;
+  let submit;
   return (
-    <mg-form {...args} on-form-valid={formValidHandler}>
+    <mg-form
+      {...args}
+      ref={el => {
+        form = el;
+        form.addEventListener('form-valid', e => {
+          submit.disabled = !e.detail;
+        });
+      }}
+    >
       <mg-input-checkbox
         identifier="mg-input-checkbox"
         label="mg-input-checkbox label"
@@ -56,14 +62,20 @@ const Template = (args: any): HTMLElement => {
         <span slot="item-2">oui</span>
       </mg-input-toggle>
       <div slot="actions" class="mg-group-elements mg-group-elements--align-right">
-        <mg-button id="can-submit" disabled>
+        <mg-button
+          id="can-submit"
+          disabled
+          ref={e => {
+            submit = e;
+          }}
+        >
           Submit
         </mg-button>
         <mg-button
           variant="secondary"
           // eslint-disable-next-line react/jsx-no-bind
           onClick={() => {
-            document.querySelector('mg-form').displayError();
+            form.displayError();
           }}
         >
           Display errors
