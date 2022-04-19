@@ -4,7 +4,7 @@ import { messages } from '../../../../locales';
 export default {
   component: 'mg-input-select',
   title: 'Molecules/Inputs/mg-input-select',
-  parameters: { actions: { handles: ['value-change'] } },
+  parameters: { actions: { handles: ['value-change', 'input-valid'] } },
   argTypes: {
     placeholder: {
       table: {

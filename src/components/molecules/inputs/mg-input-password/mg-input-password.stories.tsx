@@ -3,7 +3,7 @@ import { h } from '@stencil/core';
 export default {
   component: 'mg-input-password',
   title: 'Molecules/Inputs/mg-input-password',
-  parameters: { actions: { handles: ['value-change'] } },
+  parameters: { actions: { handles: ['value-change', 'input-valid'] } },
 };
 
 /**
