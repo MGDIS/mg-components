@@ -88,6 +88,9 @@
   --color-secondary-l: hsl(var(--color-neutral-l));
   --color-secondary: hsl(var(--color-neutral));
 
+  /* Shadow */
+  --box-shadow: 0 0.3rem 0.8rem 0 rgba(0, 0, 0, 0.1);
+
   /*
     Global
    */
@@ -152,6 +155,13 @@
     <mg-message>
    */
   --mg-message-border-radius: 0.3rem;
+
+  /*
+    <mg-panel>
+   */
+
+  --mg-panel-border-radius: 0.5rem;
+  --mg-panel-background: var(--color-info-h) var(--color-info-s) calc(var(--color-info-l) + 68%);
 
   /*
     Layout

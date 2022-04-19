@@ -59,8 +59,22 @@ Type: `Promise<void>`
 
 
 
+### `setFocus() => Promise<void>`
+
+Public method to play input focus
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
 
 ## Dependencies
+
+### Used by
+
+ - [mg-panel](../../mg-panel)
 
 ### Depends on
 
@@ -76,6 +90,7 @@ graph TD;
   mg-input-text --> mg-tooltip
   mg-input-text --> mg-input-title
   mg-input-text --> mg-character-left
+  mg-panel --> mg-input-text
   style mg-input-text fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

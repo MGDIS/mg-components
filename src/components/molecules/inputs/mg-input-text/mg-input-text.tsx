@@ -16,6 +16,7 @@ export class MgInputText {
 
   // classes
   private classFocus = 'is-focused';
+  private isInputGroupAppend = 'mg-input--is-input-group-append';
   private classError = InputClass.ERROR;
 
   // HTML selector
@@ -168,6 +169,16 @@ export class MgInputText {
   @Event({ eventName: 'input-valid' }) inputValid: EventEmitter<boolean>;
 
   /**
+   * Public method to play input focus
+   *
+   * @returns {Promise<void>}
+   */
+  @Method()
+  async setFocus(): Promise<void> {
+    this.input.focus();
+  }
+
+  /**
    * Public method to display errors
    *
    * @returns {Promise<void>}
@@ -276,9 +287,13 @@ export class MgInputText {
    * @returns {void}
    */
   private validateAppendSlot = (): void => {
-    const slotAppendInput: HTMLSlotElement = this.element.querySelector('[slot="append-input"]');
-    if (slotAppendInput !== null) {
-      this.classList.add(slotAppendInput.nodeName === 'MG-BUTTON' ? 'mg-input--is-input-group-append' : 'mg-input--is-append-input-slot-content');
+    const slotAppendInput: HTMLSlotElement[] = Array.from(this.element.querySelectorAll('[slot="append-input"]'));
+
+    if (slotAppendInput.length === 1) {
+      this.classList.add(slotAppendInput[0].nodeName === 'MG-BUTTON' ? this.isInputGroupAppend : 'mg-input--is-append-input-slot-content');
+    } else if (slotAppendInput.filter(slot => slot.nodeName === 'MG-BUTTON').length > 1) {
+      this.classList.add(this.isInputGroupAppend);
+      this.classList.add('mg-input--has-buttons-group-append');
     }
   };
 

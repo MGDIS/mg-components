@@ -121,13 +121,30 @@ describe('mg-input-text', () => {
 
   describe.each([true, false])('using append-input slot, case readonly %s', readonly => {
     test.each([
-      `<mg-button slot="append-input" label="search">
+      {
+        type: 'search',
+        slot: `<mg-button slot="append-input" label="search">
         <mg-icon icon="magnifying-glass"></mg-icon> Search
       </mg-button>`,
-      '<span slot="append-input">@dc.comics</span>',
-    ])('render', async slot => {
+        icon: 'magnifying-glass',
+      },
+      {
+        type: 'text',
+        slot: '<span slot="append-input">@dc.comics</span>',
+      },
+      {
+        type: 'text',
+        slot: `<mg-button is-icon slot="append-input" label="cancel" variant="secondary">
+        <mg-icon icon="cross"></mg-icon>
+      </mg-button>
+      <mg-button is-icon slot="append-input" label="validate" variant="secondary">
+        <mg-icon icon="check"></mg-icon>
+      </mg-button>
+      `,
+      },
+    ])('render', async ({ type, slot, icon }) => {
       const page = await createPage(`
-        <mg-input-text label="label" icon="magnifying-glass" placeholder="placeholder" type="search" readonly="${readonly}" value="bruce">
+        <mg-input-text label="label" ${icon && 'icon="' + icon + '"'} placeholder="placeholder" type="${type}" readonly="${readonly}" value="bruce">
           ${slot}
         </mg-input-text>
       `);

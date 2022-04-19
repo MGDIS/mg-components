@@ -33,6 +33,10 @@ export namespace Components {
     }
     interface MgButton {
         /**
+          * Prop to set aria-controls on button element
+         */
+        "controls": string;
+        /**
           * Option to set input disable on click, in order to prevent multi-click. Parent component have to remove the attribute 'disabled' when the process ends.
          */
         "disableOnClick": boolean;
@@ -40,6 +44,10 @@ export namespace Components {
           * Disable button
          */
         "disabled": boolean;
+        /**
+          * Prop to set aria-expanded on button element
+         */
+        "expanded": boolean;
         /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
@@ -629,6 +637,11 @@ export namespace Components {
          */
         "required": boolean;
         /**
+          * Public method to play input focus
+          * @returns
+         */
+        "setFocus": () => Promise<void>;
+        /**
           * Add a tooltip message next to the input
          */
         "tooltip": string;
@@ -849,6 +862,24 @@ export namespace Components {
          */
         "totalPages": number;
     }
+    interface MgPanel {
+        /**
+          * Panel is opened
+         */
+        "expanded": boolean;
+        /**
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+         */
+        "identifier": string;
+        /**
+          * Panel title
+         */
+        "panelTitle": string;
+        /**
+          * Panel title is editabled
+         */
+        "titleEditable": boolean;
+    }
     interface MgPopover {
         /**
           * Define if popover has a cross button
@@ -1053,6 +1084,12 @@ declare global {
         prototype: HTMLMgPaginationElement;
         new (): HTMLMgPaginationElement;
     };
+    interface HTMLMgPanelElement extends Components.MgPanel, HTMLStencilElement {
+    }
+    var HTMLMgPanelElement: {
+        prototype: HTMLMgPanelElement;
+        new (): HTMLMgPanelElement;
+    };
     interface HTMLMgPopoverElement extends Components.MgPopover, HTMLStencilElement {
     }
     var HTMLMgPopoverElement: {
@@ -1095,6 +1132,7 @@ declare global {
         "mg-input-toggle": HTMLMgInputToggleElement;
         "mg-message": HTMLMgMessageElement;
         "mg-pagination": HTMLMgPaginationElement;
+        "mg-panel": HTMLMgPanelElement;
         "mg-popover": HTMLMgPopoverElement;
         "mg-tabs": HTMLMgTabsElement;
         "mg-tag": HTMLMgTagElement;
@@ -1122,6 +1160,10 @@ declare namespace LocalJSX {
     }
     interface MgButton {
         /**
+          * Prop to set aria-controls on button element
+         */
+        "controls"?: string;
+        /**
           * Option to set input disable on click, in order to prevent multi-click. Parent component have to remove the attribute 'disabled' when the process ends.
          */
         "disableOnClick"?: boolean;
@@ -1129,6 +1171,10 @@ declare namespace LocalJSX {
           * Disable button
          */
         "disabled"?: boolean;
+        /**
+          * Prop to set aria-expanded on button element
+         */
+        "expanded"?: boolean;
         /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
@@ -1981,6 +2027,28 @@ declare namespace LocalJSX {
          */
         "totalPages"?: number;
     }
+    interface MgPanel {
+        /**
+          * Panel is opened
+         */
+        "expanded"?: boolean;
+        /**
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+         */
+        "identifier"?: string;
+        /**
+          * Emmited event when title change
+         */
+        "onTitle-change"?: (event: CustomEvent<string>) => void;
+        /**
+          * Panel title
+         */
+        "panelTitle": string;
+        /**
+          * Panel title is editabled
+         */
+        "titleEditable"?: boolean;
+    }
     interface MgPopover {
         /**
           * Define if popover has a cross button
@@ -2099,6 +2167,7 @@ declare namespace LocalJSX {
         "mg-input-toggle": MgInputToggle;
         "mg-message": MgMessage;
         "mg-pagination": MgPagination;
+        "mg-panel": MgPanel;
         "mg-popover": MgPopover;
         "mg-tabs": MgTabs;
         "mg-tag": MgTag;
@@ -2126,6 +2195,7 @@ declare module "@stencil/core" {
             "mg-input-toggle": LocalJSX.MgInputToggle & JSXBase.HTMLAttributes<HTMLMgInputToggleElement>;
             "mg-message": LocalJSX.MgMessage & JSXBase.HTMLAttributes<HTMLMgMessageElement>;
             "mg-pagination": LocalJSX.MgPagination & JSXBase.HTMLAttributes<HTMLMgPaginationElement>;
+            "mg-panel": LocalJSX.MgPanel & JSXBase.HTMLAttributes<HTMLMgPanelElement>;
             "mg-popover": LocalJSX.MgPopover & JSXBase.HTMLAttributes<HTMLMgPopoverElement>;
             "mg-tabs": LocalJSX.MgTabs & JSXBase.HTMLAttributes<HTMLMgTabsElement>;
             "mg-tag": LocalJSX.MgTag & JSXBase.HTMLAttributes<HTMLMgTagElement>;

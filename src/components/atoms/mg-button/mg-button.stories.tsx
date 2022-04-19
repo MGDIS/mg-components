@@ -42,6 +42,8 @@ MgButton.args = {
   disabled: false,
   disableOnClick: false,
   isIcon: false,
+  expanded: false,
+  controls: undefined,
 };
 
 export const IsIcon = Template.bind({});

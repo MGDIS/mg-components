@@ -17,11 +17,6 @@
   "input": {
     "select": {
       "placeholder": "Sélectionnez une valeur"
-    },
-    "checkbox": {
-      "true": "Oui",
-      "false": "Non",
-      "indeterminate": "Indéterminé"
     }
   },
   "form": {
@@ -31,16 +26,21 @@
   "message": {
     "closeButton": "Fermer le message"
   },
-  "popover": {
-    "closeButton": "Fermer"
-  },
   "pagination": {
     "page": "page",
     "pages": "pages",
-    "next": "suivant",
-    "previous": "précédent",
     "nextPage": "Page suivante",
     "previousPage": "Page précédente",
     "selectPage": "Sélectionner la page à afficher."
+  },
+  "panel": {
+    "editLabel": "Modifer le titre de la section."
+  },
+  "global": {
+    "validate": "Valider",
+    "cancel": "Annuler",
+    "close": "Fermer",
+    "next": "suivant",
+    "previous": "précédent"
   }
 }

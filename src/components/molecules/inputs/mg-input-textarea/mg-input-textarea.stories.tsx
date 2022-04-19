@@ -34,7 +34,7 @@ const Template = (args: any): HTMLElement => {
       label-on-top={labelOnTop}
       label-hide={labelHide}
       pattern-error-message={patternErrorMessage}
-      display-character-left={displayCharacterLeft}
+      display-character-left={displayCharacterLeft ? 'true' : 'false'}
       character-left-template={characterLeftTemplate}
       help-text={helpText}
     ></mg-input-textarea>
