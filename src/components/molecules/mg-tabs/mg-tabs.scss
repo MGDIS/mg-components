@@ -14,6 +14,7 @@
   border-bottom: 0.3rem solid transparent;
   color: hsl(var(--color-dark));
   line-height: var(--line-height);
+  cursor: pointer;
   &:disabled {
     cursor: default;
   }
