@@ -85,5 +85,5 @@ const Template = (args: any): HTMLElement => {
   );
 };
 
-export const MgInputToggle = Template.bind({});
-MgInputToggle.args = { ...args };
+export const MgForm = Template.bind({});
+MgForm.args = { ...args };
