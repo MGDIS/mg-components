@@ -290,6 +290,76 @@ exports[`mg-icon Should render arrow-up icon using warning variant 1`] = `
 </mg-icon>
 `;
 
+exports[`mg-icon Should render arrow-up-right-square icon in extra-large size 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--arrow-up-right-square mg-icon--size-extra-large" focusable="false" viewBox="0 0 16 16">
+      <path d="M14.33 3v10A1.34 1.34 0 0 1 13 14.33H3A1.34 1.34 0 0 1 1.67 13V3A1.34 1.34 0 0 1 3 1.67h10A1.34 1.34 0 0 1 14.33 3Zm-2.48.46H8.68a.67.67 0 0 0-.68.7.63.63 0 0 0 .2.47l.91.91-5.53 5.53a.33.33 0 0 0 0 .48l.87.87a.33.33 0 0 0 .48 0l5.53-5.52.91.9a.69.69 0 0 0 1 0 .71.71 0 0 0 .19-.48V4.15a.67.67 0 0 0-.67-.67Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render arrow-up-right-square icon in large size 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--arrow-up-right-square mg-icon--size-large" focusable="false" viewBox="0 0 16 16">
+      <path d="M14.33 3v10A1.34 1.34 0 0 1 13 14.33H3A1.34 1.34 0 0 1 1.67 13V3A1.34 1.34 0 0 1 3 1.67h10A1.34 1.34 0 0 1 14.33 3Zm-2.48.46H8.68a.67.67 0 0 0-.68.7.63.63 0 0 0 .2.47l.91.91-5.53 5.53a.33.33 0 0 0 0 .48l.87.87a.33.33 0 0 0 .48 0l5.53-5.52.91.9a.69.69 0 0 0 1 0 .71.71 0 0 0 .19-.48V4.15a.67.67 0 0 0-.67-.67Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render arrow-up-right-square icon in regular size 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--arrow-up-right-square mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+      <path d="M14.33 3v10A1.34 1.34 0 0 1 13 14.33H3A1.34 1.34 0 0 1 1.67 13V3A1.34 1.34 0 0 1 3 1.67h10A1.34 1.34 0 0 1 14.33 3Zm-2.48.46H8.68a.67.67 0 0 0-.68.7.63.63 0 0 0 .2.47l.91.91-5.53 5.53a.33.33 0 0 0 0 .48l.87.87a.33.33 0 0 0 .48 0l5.53-5.52.91.9a.69.69 0 0 0 1 0 .71.71 0 0 0 .19-.48V4.15a.67.67 0 0 0-.67-.67Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render arrow-up-right-square icon using danger variant 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--arrow-up-right-square mg-icon--size-regular mg-icon--variant-danger" focusable="false" viewBox="0 0 16 16">
+      <path d="M14.33 3v10A1.34 1.34 0 0 1 13 14.33H3A1.34 1.34 0 0 1 1.67 13V3A1.34 1.34 0 0 1 3 1.67h10A1.34 1.34 0 0 1 14.33 3Zm-2.48.46H8.68a.67.67 0 0 0-.68.7.63.63 0 0 0 .2.47l.91.91-5.53 5.53a.33.33 0 0 0 0 .48l.87.87a.33.33 0 0 0 .48 0l5.53-5.52.91.9a.69.69 0 0 0 1 0 .71.71 0 0 0 .19-.48V4.15a.67.67 0 0 0-.67-.67Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render arrow-up-right-square icon using info variant 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--arrow-up-right-square mg-icon--size-regular mg-icon--variant-info" focusable="false" viewBox="0 0 16 16">
+      <path d="M14.33 3v10A1.34 1.34 0 0 1 13 14.33H3A1.34 1.34 0 0 1 1.67 13V3A1.34 1.34 0 0 1 3 1.67h10A1.34 1.34 0 0 1 14.33 3Zm-2.48.46H8.68a.67.67 0 0 0-.68.7.63.63 0 0 0 .2.47l.91.91-5.53 5.53a.33.33 0 0 0 0 .48l.87.87a.33.33 0 0 0 .48 0l5.53-5.52.91.9a.69.69 0 0 0 1 0 .71.71 0 0 0 .19-.48V4.15a.67.67 0 0 0-.67-.67Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render arrow-up-right-square icon using success variant 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--arrow-up-right-square mg-icon--size-regular mg-icon--variant-success" focusable="false" viewBox="0 0 16 16">
+      <path d="M14.33 3v10A1.34 1.34 0 0 1 13 14.33H3A1.34 1.34 0 0 1 1.67 13V3A1.34 1.34 0 0 1 3 1.67h10A1.34 1.34 0 0 1 14.33 3Zm-2.48.46H8.68a.67.67 0 0 0-.68.7.63.63 0 0 0 .2.47l.91.91-5.53 5.53a.33.33 0 0 0 0 .48l.87.87a.33.33 0 0 0 .48 0l5.53-5.52.91.9a.69.69 0 0 0 1 0 .71.71 0 0 0 .19-.48V4.15a.67.67 0 0 0-.67-.67Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render arrow-up-right-square icon using warning variant 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--arrow-up-right-square mg-icon--size-regular mg-icon--variant-warning" focusable="false" viewBox="0 0 16 16">
+      <path d="M14.33 3v10A1.34 1.34 0 0 1 13 14.33H3A1.34 1.34 0 0 1 1.67 13V3A1.34 1.34 0 0 1 3 1.67h10A1.34 1.34 0 0 1 14.33 3Zm-2.48.46H8.68a.67.67 0 0 0-.68.7.63.63 0 0 0 .2.47l.91.91-5.53 5.53a.33.33 0 0 0 0 .48l.87.87a.33.33 0 0 0 .48 0l5.53-5.52.91.9a.69.69 0 0 0 1 0 .71.71 0 0 0 .19-.48V4.15a.67.67 0 0 0-.67-.67Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
 exports[`mg-icon Should render arrows-rotate icon in extra-large size 1`] = `
 <mg-icon>
   <mock:shadow-root>
