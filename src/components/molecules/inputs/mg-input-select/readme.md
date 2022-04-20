@@ -1,4 +1,4 @@
-This atom refers to the [PDA9-72](https://jira.mgdis.fr/browse/PDA9-72).
+This molecule refers to the [PDA9-72](https://jira.mgdis.fr/browse/PDA9-72).
 
 <!-- Auto Generated Below -->
 
@@ -12,7 +12,7 @@ This atom refers to the [PDA9-72](https://jira.mgdis.fr/browse/PDA9-72).
 | `identifier`          | `identifier`           | Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.                                    | `string`                     | `createID('mg-input-select')`       |
 | `invalid`             | `invalid`              | Define input invalid state                                                                                                                     | `boolean`                    | `undefined`                         |
 | `items` _(required)_  | --                     | Items are the possible options to select                                                                                                       | `SelectOption[] \| string[]` | `undefined`                         |
-| `label` _(required)_  | `label`                | Input label Required                                                                                                                           | `string`                     | `undefined`                         |
+| `label` _(required)_  | `label`                | Input label                                                                                                                                    | `string`                     | `undefined`                         |
 | `labelHide`           | `label-hide`           | Define if label is visible                                                                                                                     | `boolean`                    | `false`                             |
 | `labelOnTop`          | `label-on-top`         | Define if label is displayed on top                                                                                                            | `boolean`                    | `undefined`                         |
 | `name`                | `name`                 | Input name If not set the value equals the identifier                                                                                          | `string`                     | `this.identifier`                   |
@@ -23,15 +23,16 @@ This atom refers to the [PDA9-72](https://jira.mgdis.fr/browse/PDA9-72).
 | `required`            | `required`             | Define if input is required                                                                                                                    | `boolean`                    | `false`                             |
 | `tooltip`             | `tooltip`              | Add a tooltip message next to the input                                                                                                        | `string`                     | `undefined`                         |
 | `valid`               | `valid`                | Define input valid state                                                                                                                       | `boolean`                    | `undefined`                         |
-| `value`               | --                     | Component value                                                                                                                                | `unknown`                    | `undefined`                         |
+| `value`               | `value`                | Component value                                                                                                                                | `any`                        | `undefined`                         |
 | `width`               | `width`                | Define input width                                                                                                                             | `"full" \| 16 \| 2 \| 4`     | `undefined`                         |
 
 
 ## Events
 
-| Event          | Description                     | Type                   |
-| -------------- | ------------------------------- | ---------------------- |
-| `value-change` | Emmited event when value change | `CustomEvent<unknown>` |
+| Event          | Description                         | Type                   |
+| -------------- | ----------------------------------- | ---------------------- |
+| `input-valid`  | Emited event when checking validity | `CustomEvent<boolean>` |
+| `value-change` | Emited event when value change      | `CustomEvent<any>`     |
 
 
 ## Methods

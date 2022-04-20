@@ -1,7 +1,7 @@
 import { createPage } from '../../../../../utils/test.utils';
 
 describe('mg-checkbox', () => {
-  describe.each([`<mg-input-checkbox label="legend"></mg-input-checkbox>`])('without tooltip', html => {
+  describe.each([`<mg-input-checkbox label="legend"></mg-input-checkbox>`, `<mg-input-checkbox label="legend" disabled></mg-input-checkbox>`])('without tooltip', html => {
     test('render', async () => {
       const page = await createPage(`${html}
       <script>

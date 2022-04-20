@@ -11,9 +11,6 @@
 // Variables
 @import './variables.css';
 
-// Utilities
-@import './utilities.scss';
-
 // Main style
 @import './main.scss';
 
@@ -24,10 +21,14 @@
 @import './a11y.scss';
 
 // Form
-@import './form.scss';
+// already included by mg-form
+// @import './form.scss';
 
 // Layout
 @import './layout.scss';
+
+// Utilities
+@import './utilities.scss';
 
 /**
  * Components style
@@ -51,7 +52,8 @@
 @import '../components/atoms/mg-icon/mg-icon.scss';
 
 // <mg-input-title>
-@import '../components/atoms/mg-input-title/mg-input-title.scss';
+//! For now input style will not be included
+// @import '../components/atoms/mg-input-title/mg-input-title.scss';
 
 // <mg-tag>
 @import '../components/atoms/mg-tag/mg-tag.scss';
@@ -69,11 +71,17 @@
 // @import '../components/molecules/inputs/styles/mg-input-fieldset.scss';
 // @import '../components/molecules/inputs/styles/mg-input-width.scss';
 
+// <mg-form>
+@import '../components/molecules/mg-form/mg-form.scss';
+
 // <mg-message>
 @import '../components/molecules/mg-message/mg-message.scss';
 
 // <mg-pagination>
 @import '../components/molecules/mg-pagination/mg-pagination.scss';
+
+// <mg-popover>
+@import '../components/molecules/mg-popover/mg-popover.scss';
 
 // <mg-tabs>
 @import '../components/molecules/mg-tabs/mg-tabs.scss';

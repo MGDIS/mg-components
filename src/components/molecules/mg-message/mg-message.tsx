@@ -97,12 +97,12 @@ export class MgMessage {
   @State() hasActions = false;
 
   /**
-   * Emmited event when message is diplayed
+   * Emited event when message is diplayed
    */
   @Event({ eventName: 'component-show' }) componentShow: EventEmitter<string>;
 
   /**
-   * Emmited event when message is hidden
+   * Emited event when message is hidden
    */
   @Event({ eventName: 'component-hide' }) componentHide: EventEmitter<string>;
 

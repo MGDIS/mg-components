@@ -15,25 +15,25 @@ exports[`mg-input-checkbox Should render with args {
       <div class="mg-input__input-container">
         <div class="mg-input__input">
           <ul class="mg-input__input-group-container">
-            <li class="mg-input__input-group">
+            <li class="mg-input__input-group mg-input__input-group--disabled">
               <input aria-describedby="" checked="" disabled="" id="identifier_0" name="identifier" type="checkbox" value="true">
               <label htmlfor="identifier_0">
                 batman
               </label>
             </li>
-            <li class="mg-input__input-group">
+            <li class="mg-input__input-group mg-input__input-group--disabled">
               <input aria-describedby="" disabled="" id="identifier_1" name="identifier" type="checkbox" value="false">
               <label htmlfor="identifier_1">
                 robin
               </label>
             </li>
-            <li class="mg-input__input-group">
+            <li class="mg-input__input-group mg-input__input-group--disabled">
               <input aria-describedby="" disabled="" id="identifier_2" name="identifier" type="checkbox" value="false">
               <label htmlfor="identifier_2">
                 joker
               </label>
             </li>
-            <li class="mg-input__input-group">
+            <li class="mg-input__input-group mg-input__input-group--disabled">
               <input aria-describedby="" disabled="" id="identifier_3" indeterminate="" name="identifier" type="checkbox">
               <label htmlfor="identifier_3">
                 bane
@@ -68,7 +68,7 @@ exports[`mg-input-checkbox Should render with args {
                 batman
               </label>
             </li>
-            <li class="mg-input__input-group">
+            <li class="mg-input__input-group mg-input__input-group--disabled">
               <input aria-describedby="identifier-help-text" disabled="" id="identifier_1" name="identifier" type="checkbox" value="false">
               <label htmlfor="identifier_1">
                 robin
@@ -118,7 +118,7 @@ exports[`mg-input-checkbox Should render with args {
                 batman
               </label>
             </li>
-            <li class="mg-input__input-group">
+            <li class="mg-input__input-group mg-input__input-group--disabled">
               <input aria-describedby="" disabled="" id="identifier_1" name="identifier" type="checkbox" value="false">
               <label htmlfor="identifier_1">
                 robin
@@ -165,7 +165,7 @@ exports[`mg-input-checkbox Should render with args {
                 batman
               </label>
             </li>
-            <li class="mg-input__input-group">
+            <li class="mg-input__input-group mg-input__input-group--disabled">
               <input aria-describedby="" disabled="" id="identifier_1" name="identifier" type="checkbox" value="false">
               <label htmlfor="identifier_1">
                 robin
@@ -214,7 +214,7 @@ exports[`mg-input-checkbox Should render with args {
                 batman
               </label>
             </li>
-            <li class="mg-input__input-group">
+            <li class="mg-input__input-group mg-input__input-group--disabled">
               <input aria-describedby="" disabled="" id="identifier_1" name="identifier" type="checkbox" value="false">
               <label htmlfor="identifier_1">
                 robin
@@ -323,7 +323,7 @@ exports[`mg-input-checkbox Should render with args {
                 batman
               </label>
             </li>
-            <li class="mg-input__input-group">
+            <li class="mg-input__input-group mg-input__input-group--disabled">
               <input aria-describedby="" disabled="" id="identifier_1" name="identifier" required="" type="checkbox" value="false">
               <label htmlfor="identifier_1">
                 robin
@@ -370,7 +370,7 @@ exports[`mg-input-checkbox Should render with args {
                 batman
               </label>
             </li>
-            <li class="mg-input__input-group">
+            <li class="mg-input__input-group mg-input__input-group--disabled">
               <input aria-describedby="" disabled="" id="identifier_1" name="identifier" type="checkbox" value="false">
               <label htmlfor="identifier_1">
                 robin
@@ -415,7 +415,7 @@ exports[`mg-input-checkbox Should render with args { label: 'label', identifier:
                 batman
               </label>
             </li>
-            <li class="mg-input__input-group">
+            <li class="mg-input__input-group mg-input__input-group--disabled">
               <input aria-describedby="" disabled="" id="identifier_1" name="identifier" type="checkbox" value="false">
               <label htmlfor="identifier_1">
                 robin
@@ -457,7 +457,7 @@ exports[`mg-input-checkbox Should trigger events, case validity check false 1`] 
                 batman
               </label>
             </li>
-            <li class="mg-input__input-group">
+            <li class="mg-input__input-group mg-input__input-group--disabled">
               <input aria-describedby="identifier-help-text" disabled="" id="identifier_1" name="identifier" type="checkbox" value="false">
               <label htmlfor="identifier_1">
                 robin
@@ -502,7 +502,7 @@ exports[`mg-input-checkbox Should trigger events, case validity check false 2`] 
                 batman
               </label>
             </li>
-            <li class="mg-input__input-group">
+            <li class="mg-input__input-group mg-input__input-group--disabled">
               <input aria-describedby="identifier-help-text identifier-error" disabled="" id="identifier_1" name="identifier" type="checkbox" value="false">
               <label htmlfor="identifier_1">
                 robin
@@ -550,7 +550,7 @@ exports[`mg-input-checkbox Should trigger events, case validity check true 1`] =
                 batman
               </label>
             </li>
-            <li class="mg-input__input-group">
+            <li class="mg-input__input-group mg-input__input-group--disabled">
               <input aria-describedby="identifier-help-text" disabled="" id="identifier_1" name="identifier" type="checkbox" value="false">
               <label htmlfor="identifier_1">
                 robin
@@ -595,7 +595,7 @@ exports[`mg-input-checkbox Should trigger events, case validity check true 2`] =
                 batman
               </label>
             </li>
-            <li class="mg-input__input-group">
+            <li class="mg-input__input-group mg-input__input-group--disabled">
               <input aria-describedby="identifier-help-text" disabled="" id="identifier_1" name="identifier" type="checkbox" value="false">
               <label htmlfor="identifier_1">
                 robin
@@ -640,7 +640,7 @@ exports[`mg-input-checkbox validity, case next state is disabled display error w
                 batman
               </label>
             </li>
-            <li class="mg-input__input-group">
+            <li class="mg-input__input-group mg-input__input-group--disabled">
               <input aria-describedby="identifier-help-text" disabled="" id="identifier_1" name="identifier" required="" type="checkbox" value="false">
               <label htmlfor="identifier_1">
                 robin
@@ -685,7 +685,7 @@ exports[`mg-input-checkbox validity, case next state is disabled display error w
                 batman
               </label>
             </li>
-            <li class="mg-input__input-group">
+            <li class="mg-input__input-group mg-input__input-group--disabled">
               <input aria-describedby="identifier-help-text identifier-error" disabled="" id="identifier_1" name="identifier" required="" type="checkbox" value="false">
               <label htmlfor="identifier_1">
                 robin
@@ -733,7 +733,7 @@ exports[`mg-input-checkbox validity, case next state is disabled validity ({ val
                 batman
               </label>
             </li>
-            <li class="mg-input__input-group">
+            <li class="mg-input__input-group mg-input__input-group--disabled">
               <input aria-describedby="identifier-help-text identifier-error" disabled="" id="identifier_1" name="identifier" type="checkbox" value="false">
               <label htmlfor="identifier_1">
                 robin
@@ -775,25 +775,25 @@ exports[`mg-input-checkbox validity, case next state is disabled validity ({ val
       <div class="mg-input__input-container">
         <div class="mg-input__input">
           <ul class="mg-input__input-group-container">
-            <li class="mg-input__input-group">
+            <li class="mg-input__input-group mg-input__input-group--disabled">
               <input aria-describedby="identifier-help-text identifier-error" checked="" disabled="" id="identifier_0" name="identifier" type="checkbox" value="true">
               <label htmlfor="identifier_0">
                 batman
               </label>
             </li>
-            <li class="mg-input__input-group">
+            <li class="mg-input__input-group mg-input__input-group--disabled">
               <input aria-describedby="identifier-help-text identifier-error" disabled="" id="identifier_1" name="identifier" type="checkbox" value="false">
               <label htmlfor="identifier_1">
                 robin
               </label>
             </li>
-            <li class="mg-input__input-group">
+            <li class="mg-input__input-group mg-input__input-group--disabled">
               <input aria-describedby="identifier-help-text identifier-error" disabled="" id="identifier_2" name="identifier" type="checkbox" value="false">
               <label htmlfor="identifier_2">
                 joker
               </label>
             </li>
-            <li class="mg-input__input-group">
+            <li class="mg-input__input-group mg-input__input-group--disabled">
               <input aria-describedby="identifier-help-text identifier-error" disabled="" id="identifier_3" indeterminate="" name="identifier" type="checkbox">
               <label htmlfor="identifier_3">
                 bane
@@ -829,7 +829,7 @@ exports[`mg-input-checkbox validity, case next state is readonly display error w
                 batman
               </label>
             </li>
-            <li class="mg-input__input-group">
+            <li class="mg-input__input-group mg-input__input-group--disabled">
               <input aria-describedby="identifier-help-text" disabled="" id="identifier_1" name="identifier" required="" type="checkbox" value="false">
               <label htmlfor="identifier_1">
                 robin
@@ -874,7 +874,7 @@ exports[`mg-input-checkbox validity, case next state is readonly display error w
                 batman
               </label>
             </li>
-            <li class="mg-input__input-group">
+            <li class="mg-input__input-group mg-input__input-group--disabled">
               <input aria-describedby="identifier-help-text identifier-error" disabled="" id="identifier_1" name="identifier" required="" type="checkbox" value="false">
               <label htmlfor="identifier_1">
                 robin
@@ -922,7 +922,7 @@ exports[`mg-input-checkbox validity, case next state is readonly validity ({ val
                 batman
               </label>
             </li>
-            <li class="mg-input__input-group">
+            <li class="mg-input__input-group mg-input__input-group--disabled">
               <input aria-describedby="identifier-help-text identifier-error" disabled="" id="identifier_1" name="identifier" type="checkbox" value="false">
               <label htmlfor="identifier_1">
                 robin

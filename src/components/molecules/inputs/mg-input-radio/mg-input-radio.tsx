@@ -1,4 +1,6 @@
-import { Component, Event, h, Prop, EventEmitter, State, Watch, Method } from '@stencil/core';
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { Component, Element, Event, h, Prop, EventEmitter, State, Watch, Method } from '@stencil/core';
 import { MgInput } from '../MgInput';
 import { createID, ClassList, allItemsAreString } from '../../../../utils/components.utils';
 import { messages } from '../../../../locales';
@@ -34,9 +36,18 @@ export class MgInputRadio {
    **************/
 
   /**
+   * Get component DOM element
+   */
+  @Element() element: HTMLMgInputRadioElement;
+
+  /**
    * Component value
    */
-  @Prop({ mutable: true }) value: unknown;
+  @Prop({ mutable: true }) value: any;
+  @Watch('value')
+  handleValue(newValue: any): void {
+    this.valueChange.emit(newValue);
+  }
 
   /**
    * Items are the possible options to select
@@ -75,7 +86,6 @@ export class MgInputRadio {
 
   /**
    * Input label
-   * Required
    */
   @Prop() label!: string;
 
@@ -120,12 +130,12 @@ export class MgInputRadio {
   @Prop() helpText: string;
 
   /**
-   * Force valid component
+   * Define input valid state
    */
   @Prop({ mutable: true }) valid: boolean;
 
   /**
-   * Force invalid component
+   * Define input invalid state
    */
   @Prop({ mutable: true }) invalid: boolean;
 
@@ -147,7 +157,12 @@ export class MgInputRadio {
   /**
    * Emitted event when value change
    */
-  @Event({ eventName: 'value-change' }) valueChange: EventEmitter<unknown>;
+  @Event({ eventName: 'value-change' }) valueChange: EventEmitter<any>;
+
+  /**
+   * Emited event when checking validity
+   */
+  @Event({ eventName: 'input-valid' }) inputValid: EventEmitter<boolean>;
 
   /**
    * Public method to display errors
@@ -169,7 +184,6 @@ export class MgInputRadio {
   private handleInput = (event: InputEvent & { target: HTMLInputElement }) => {
     this.checkValidity();
     this.value = this.options[event.target.value].value;
-    this.valueChange.emit(this.value);
   };
 
   /**
@@ -194,6 +208,9 @@ export class MgInputRadio {
       // Set validity
       this.valid = validity;
       this.invalid = !validity;
+
+      //Send event
+      this.inputValid.emit(validity);
     }
   };
 
@@ -233,17 +250,16 @@ export class MgInputRadio {
   /**
    * Check if component props are well configured on init
    *
-   * @returns {ReturnType<typeof setTimeout>} timeout
+   * @returns {void}
    */
-  componentWillLoad(): ReturnType<typeof setTimeout> {
+  componentWillLoad(): void {
     // Check items format
     this.validateItems(this.items);
 
-    // return a promise to process action only in the FIRST render().
-    // https://stenciljs.com/docs/component-lifecycle#componentwillload
-    return setTimeout(() => {
+    // Check validity when component is ready
+    this.element.componentOnReady().then(() => {
       this.checkValidity();
-    }, 0);
+    });
   }
 
   /**
@@ -275,7 +291,7 @@ export class MgInputRadio {
       >
         <ul class={`mg-input__input-group-container${this.inputVerticalList ? ' mg-input__input-group-container--vertical' : ''}`}>
           {this.options.map((input, index) => (
-            <li class="mg-input__input-group">
+            <li class={`mg-input__input-group${this.disabled || input.disabled ? ' mg-input__input-group--disabled' : ''}`}>
               <input
                 type="radio"
                 id={this.identifier + '_' + index}

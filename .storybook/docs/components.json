@@ -1,8 +1,8 @@
 {
-  "timestamp": "2022-04-07T16:38:16",
+  "timestamp": "2022-04-19T09:19:13",
   "compiler": {
     "name": "@stencil/core",
-    "version": "2.14.1",
+    "version": "2.15.1",
     "typescriptVersion": "4.5.4"
   },
   "components": [
@@ -402,6 +402,152 @@
       }
     },
     {
+      "filePath": "./src/components/molecules/mg-form/mg-form.tsx",
+      "encapsulation": "shadow",
+      "tag": "mg-form",
+      "readme": "This molecule refers to the [PDA9-818](https://jira.mgdis.fr/browse/PDA9-818).\n\n## Example\n\n**Code example does not reflect all the code.**\n\nHere we have a `form-valid` event listener on the `mg-form` to define if the \"submit\" button should be enable or not.  \nThe \"Display errors\" button use the `mg-form` `displayError()` method.\n",
+      "docs": "This molecule refers to the [PDA9-818](https://jira.mgdis.fr/browse/PDA9-818).",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Define if form is disabled",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "identifier",
+          "type": "string",
+          "mutable": false,
+          "attr": "identifier",
+          "reflectToAttr": false,
+          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
+          "docsTags": [],
+          "default": "createID('mg-form')",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "invalid",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "invalid",
+          "reflectToAttr": false,
+          "docs": "Define form invalid state",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "Input name\nIf not set the value equals the identifier",
+          "docsTags": [],
+          "default": "this.identifier",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "readonly",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "readonly",
+          "reflectToAttr": false,
+          "docs": "Define if form is readonly",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "valid",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "valid",
+          "reflectToAttr": false,
+          "docs": "Define form valid state",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "displayError",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "displayError() => Promise<void>",
+          "parameters": [],
+          "docs": "Public method to display errors",
+          "docsTags": [
+            {
+              "name": "returns"
+            }
+          ]
+        }
+      ],
+      "events": [
+        {
+          "event": "form-valid",
+          "detail": "boolean",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted event on form validity check\nTells if form is valid or not",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
       "filePath": "./src/components/atoms/mg-icon/mg-icon.tsx",
       "encapsulation": "shadow",
       "tag": "mg-icon",
@@ -631,7 +777,7 @@
           "mutable": true,
           "attr": "invalid",
           "reflectToAttr": false,
-          "docs": "Force invalid component",
+          "docs": "Define input invalid state",
           "docsTags": [],
           "values": [
             {
@@ -647,7 +793,7 @@
           "mutable": false,
           "attr": "label",
           "reflectToAttr": false,
-          "docs": "Input label\nRequired",
+          "docs": "Input label",
           "docsTags": [],
           "values": [
             {
@@ -763,7 +909,7 @@
           "mutable": true,
           "attr": "valid",
           "reflectToAttr": false,
-          "docs": "Force valid component",
+          "docs": "Define input valid state",
           "docsTags": [],
           "values": [
             {
@@ -808,6 +954,15 @@
       ],
       "events": [
         {
+          "event": "input-valid",
+          "detail": "boolean",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emited event when checking validity",
+          "docsTags": []
+        },
+        {
           "event": "value-change",
           "detail": "CheckboxValue[]",
           "bubbles": true,
@@ -841,8 +996,8 @@
       "filePath": "./src/components/molecules/inputs/mg-input-date/mg-input-date.tsx",
       "encapsulation": "shadow",
       "tag": "mg-input-date",
-      "readme": "This atom refers to the [PDA9-65](https://jira.mgdis.fr/browse/PDA9-65).\n",
-      "docs": "This atom refers to the [PDA9-65](https://jira.mgdis.fr/browse/PDA9-65).",
+      "readme": "This molecule refers to the [PDA9-65](https://jira.mgdis.fr/browse/PDA9-65).\n",
+      "docs": "This molecule refers to the [PDA9-65](https://jira.mgdis.fr/browse/PDA9-65).",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -902,7 +1057,7 @@
           "mutable": true,
           "attr": "invalid",
           "reflectToAttr": false,
-          "docs": "Define input pattern error message",
+          "docs": "Define input invalid state",
           "docsTags": [],
           "values": [
             {
@@ -918,7 +1073,7 @@
           "mutable": false,
           "attr": "label",
           "reflectToAttr": false,
-          "docs": "Input label\nRequired",
+          "docs": "Input label",
           "docsTags": [],
           "values": [
             {
@@ -1066,7 +1221,7 @@
           "mutable": true,
           "attr": "valid",
           "reflectToAttr": false,
-          "docs": "Define input pattern to validate",
+          "docs": "Define input valid state",
           "docsTags": [],
           "values": [
             {
@@ -1112,12 +1267,21 @@
       ],
       "events": [
         {
+          "event": "input-valid",
+          "detail": "boolean",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emited event when checking validity",
+          "docsTags": []
+        },
+        {
           "event": "value-change",
           "detail": "string",
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emmited event when value change",
+          "docs": "Emited event when value change",
           "docsTags": []
         }
       ],
@@ -1145,8 +1309,8 @@
       "filePath": "./src/components/molecules/inputs/mg-input-numeric/mg-input-numeric.tsx",
       "encapsulation": "shadow",
       "tag": "mg-input-numeric",
-      "readme": "This atom refers to the [PDA9-181](https://jira.mgdis.fr/browse/PDA9-181).\n\n\n## 🚨 Slot\n\nHorizontal spacing is not managed by the component, it must be defined in slot implementation.\n",
-      "docs": "This atom refers to the [PDA9-181](https://jira.mgdis.fr/browse/PDA9-181).",
+      "readme": "This molecule refers to the [PDA9-181](https://jira.mgdis.fr/browse/PDA9-181).\n\n## 🚨 Slot\n\nHorizontal spacing is not managed by the component, it must be defined in slot implementation.\n",
+      "docs": "This molecule refers to the [PDA9-181](https://jira.mgdis.fr/browse/PDA9-181).",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -1256,7 +1420,7 @@
           "mutable": false,
           "attr": "label",
           "reflectToAttr": false,
-          "docs": "Input label\nRequired",
+          "docs": "Input label",
           "docsTags": [],
           "values": [
             {
@@ -1512,12 +1676,21 @@
       ],
       "events": [
         {
+          "event": "input-valid",
+          "detail": "boolean",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emited event when checking validity",
+          "docsTags": []
+        },
+        {
           "event": "value-change",
           "detail": "number",
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emmited event when value change",
+          "docs": "Emited event when value change",
           "docsTags": []
         }
       ],
@@ -1606,7 +1779,7 @@
           "mutable": true,
           "attr": "invalid",
           "reflectToAttr": false,
-          "docs": "Define input pattern error message",
+          "docs": "Define input invalid state",
           "docsTags": [],
           "values": [
             {
@@ -1622,7 +1795,7 @@
           "mutable": false,
           "attr": "label",
           "reflectToAttr": false,
-          "docs": "Input label\nRequired",
+          "docs": "Input label",
           "docsTags": [],
           "values": [
             {
@@ -1754,7 +1927,7 @@
           "mutable": true,
           "attr": "valid",
           "reflectToAttr": false,
-          "docs": "Define input pattern to validate",
+          "docs": "Define input valid state",
           "docsTags": [],
           "values": [
             {
@@ -1830,12 +2003,21 @@
       ],
       "events": [
         {
+          "event": "input-valid",
+          "detail": "boolean",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emited event when checking validity",
+          "docsTags": []
+        },
+        {
           "event": "value-change",
           "detail": "string",
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emmited event when value change",
+          "docs": "Emited event when value change",
           "docsTags": []
         }
       ],
@@ -1863,8 +2045,8 @@
       "filePath": "./src/components/molecules/inputs/mg-input-radio/mg-input-radio.tsx",
       "encapsulation": "shadow",
       "tag": "mg-input-radio",
-      "readme": "This atom refers to the [PDA9-745](https://jira.mgdis.fr/browse/PDA9-745)\n",
-      "docs": "This atom refers to the [PDA9-745](https://jira.mgdis.fr/browse/PDA9-745)",
+      "readme": "This molecule refers to the [PDA9-745](https://jira.mgdis.fr/browse/PDA9-745)\n",
+      "docs": "This molecule refers to the [PDA9-745](https://jira.mgdis.fr/browse/PDA9-745)",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -1941,7 +2123,7 @@
           "mutable": true,
           "attr": "invalid",
           "reflectToAttr": false,
-          "docs": "Force invalid component",
+          "docs": "Define input invalid state",
           "docsTags": [],
           "values": [
             {
@@ -1975,7 +2157,7 @@
           "mutable": false,
           "attr": "label",
           "reflectToAttr": false,
-          "docs": "Input label\nRequired",
+          "docs": "Input label",
           "docsTags": [],
           "values": [
             {
@@ -2092,7 +2274,7 @@
           "mutable": true,
           "attr": "valid",
           "reflectToAttr": false,
-          "docs": "Force valid component",
+          "docs": "Define input valid state",
           "docsTags": [],
           "values": [
             {
@@ -2104,14 +2286,15 @@
         },
         {
           "name": "value",
-          "type": "unknown",
+          "type": "any",
           "mutable": true,
+          "attr": "value",
           "reflectToAttr": false,
           "docs": "Component value",
           "docsTags": [],
           "values": [
             {
-              "type": "unknown"
+              "type": "any"
             }
           ],
           "optional": false,
@@ -2137,8 +2320,17 @@
       ],
       "events": [
         {
+          "event": "input-valid",
+          "detail": "boolean",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emited event when checking validity",
+          "docsTags": []
+        },
+        {
           "event": "value-change",
-          "detail": "unknown",
+          "detail": "any",
           "bubbles": true,
           "cancelable": true,
           "composed": true,
@@ -2170,8 +2362,8 @@
       "filePath": "./src/components/molecules/inputs/mg-input-select/mg-input-select.tsx",
       "encapsulation": "shadow",
       "tag": "mg-input-select",
-      "readme": "This atom refers to the [PDA9-72](https://jira.mgdis.fr/browse/PDA9-72).\n",
-      "docs": "This atom refers to the [PDA9-72](https://jira.mgdis.fr/browse/PDA9-72).",
+      "readme": "This molecule refers to the [PDA9-72](https://jira.mgdis.fr/browse/PDA9-72).\n",
+      "docs": "This molecule refers to the [PDA9-72](https://jira.mgdis.fr/browse/PDA9-72).",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -2265,7 +2457,7 @@
           "mutable": false,
           "attr": "label",
           "reflectToAttr": false,
-          "docs": "Input label\nRequired",
+          "docs": "Input label",
           "docsTags": [],
           "values": [
             {
@@ -2444,14 +2636,15 @@
         },
         {
           "name": "value",
-          "type": "unknown",
+          "type": "any",
           "mutable": true,
+          "attr": "value",
           "reflectToAttr": false,
           "docs": "Component value",
           "docsTags": [],
           "values": [
             {
-              "type": "unknown"
+              "type": "any"
             }
           ],
           "optional": false,
@@ -2506,12 +2699,21 @@
       ],
       "events": [
         {
-          "event": "value-change",
-          "detail": "unknown",
+          "event": "input-valid",
+          "detail": "boolean",
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emmited event when value change",
+          "docs": "Emited event when checking validity",
+          "docsTags": []
+        },
+        {
+          "event": "value-change",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emited event when value change",
           "docsTags": []
         }
       ],
@@ -2544,8 +2746,8 @@
       "filePath": "./src/components/molecules/inputs/mg-input-text/mg-input-text.tsx",
       "encapsulation": "shadow",
       "tag": "mg-input-text",
-      "readme": "This atom refers to the [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64).\n\n## Use as search input\n\nDue to [accessibility recommendation](https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input/search#les_champs_de_recherche_et_l%E2%80%99accessibilit%C3%A9), an `<input type=\"search\" />` must be used within a `<form role=\"search\" />` we recommend to use mg-input-text as in dedicated story.\n\n## 🚨 Slot\n\nHorizontal spacing is not managed by the component, it must be defined in slot implementation.\n",
-      "docs": "This atom refers to the [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64).",
+      "readme": "This molecule refers to the [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64).\n\n## Use as search input\n\nDue to [accessibility recommendation](https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input/search#les_champs_de_recherche_et_l%E2%80%99accessibilit%C3%A9), an `<input type=\"search\" />` must be used within a `<form role=\"search\" />` we recommend to use mg-input-text as in dedicated story.\n\n## 🚨 Slot\n\nHorizontal spacing is not managed by the component, it must be defined in slot implementation.\n",
+      "docs": "This molecule refers to the [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64).",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -2654,7 +2856,7 @@
           "mutable": true,
           "attr": "invalid",
           "reflectToAttr": false,
-          "docs": "Define input pattern error message",
+          "docs": "Define input invalid state",
           "docsTags": [],
           "values": [
             {
@@ -2670,7 +2872,7 @@
           "mutable": false,
           "attr": "label",
           "reflectToAttr": false,
-          "docs": "Input label\nRequired",
+          "docs": "Input label",
           "docsTags": [],
           "values": [
             {
@@ -2873,7 +3075,7 @@
           "mutable": true,
           "attr": "valid",
           "reflectToAttr": false,
-          "docs": "Define input pattern to validate",
+          "docs": "Define input valid state",
           "docsTags": [],
           "values": [
             {
@@ -2964,12 +3166,21 @@
       ],
       "events": [
         {
+          "event": "input-valid",
+          "detail": "boolean",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emited event when checking validity",
+          "docsTags": []
+        },
+        {
           "event": "value-change",
           "detail": "string",
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emmited event when value change",
+          "docs": "Emited event when value change",
           "docsTags": []
         }
       ],
@@ -3002,8 +3213,8 @@
       "filePath": "./src/components/molecules/inputs/mg-input-textarea/mg-input-textarea.tsx",
       "encapsulation": "shadow",
       "tag": "mg-input-textarea",
-      "readme": "This atom refers to the [PDA9-683](https://jira.mgdis.fr/browse/PDA9-683).\n",
-      "docs": "This atom refers to the [PDA9-683](https://jira.mgdis.fr/browse/PDA9-683).",
+      "readme": "This molecule refers to the [PDA9-683](https://jira.mgdis.fr/browse/PDA9-683).\n",
+      "docs": "This molecule refers to the [PDA9-683](https://jira.mgdis.fr/browse/PDA9-683).",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -3096,7 +3307,7 @@
           "mutable": true,
           "attr": "invalid",
           "reflectToAttr": false,
-          "docs": "Define input pattern error message",
+          "docs": "Define input invalid state",
           "docsTags": [],
           "values": [
             {
@@ -3112,7 +3323,7 @@
           "mutable": false,
           "attr": "label",
           "reflectToAttr": false,
-          "docs": "Input label\nRequired",
+          "docs": "Input label",
           "docsTags": [],
           "values": [
             {
@@ -3310,7 +3521,7 @@
           "mutable": true,
           "attr": "valid",
           "reflectToAttr": false,
-          "docs": "Define input pattern to validate",
+          "docs": "Define input valid state",
           "docsTags": [],
           "values": [
             {
@@ -3386,12 +3597,21 @@
       ],
       "events": [
         {
+          "event": "input-valid",
+          "detail": "boolean",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emited event when checking validity",
+          "docsTags": []
+        },
+        {
           "event": "value-change",
           "detail": "string",
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emmited event when value change",
+          "docs": "Emited event when value change",
           "docsTags": []
         }
       ],
@@ -3643,7 +3863,7 @@
           "mutable": false,
           "attr": "label",
           "reflectToAttr": false,
-          "docs": "Input label\nRequired",
+          "docs": "Input label",
           "docsTags": [],
           "values": [
             {
@@ -3738,14 +3958,15 @@
         },
         {
           "name": "value",
-          "type": "unknown",
+          "type": "any",
           "mutable": true,
+          "attr": "value",
           "reflectToAttr": false,
           "docs": "Component value",
           "docsTags": [],
           "values": [
             {
-              "type": "unknown"
+              "type": "any"
             }
           ],
           "optional": false,
@@ -3755,12 +3976,21 @@
       "methods": [],
       "events": [
         {
-          "event": "value-change",
-          "detail": "unknown",
+          "event": "input-valid",
+          "detail": "boolean",
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emmited event when value change",
+          "docs": "Emited event when checking validity",
+          "docsTags": []
+        },
+        {
+          "event": "value-change",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emited event when value change",
           "docsTags": []
         }
       ],
@@ -3886,7 +4116,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emmited event when message is hidden",
+          "docs": "Emited event when message is hidden",
           "docsTags": []
         },
         {
@@ -3895,7 +4125,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emmited event when message is diplayed",
+          "docs": "Emited event when message is diplayed",
           "docsTags": []
         }
       ],
@@ -4155,8 +4385,8 @@
       "filePath": "./src/components/molecules/mg-popover/mg-popover.tsx",
       "encapsulation": "scoped",
       "tag": "mg-popover",
-      "readme": "This atom refers to the [PDA9-504](https://jira.mgdis.fr/browse/PDA9-504).\n",
-      "docs": "This atom refers to the [PDA9-504](https://jira.mgdis.fr/browse/PDA9-504).",
+      "readme": "This molecule refers to the [PDA9-504](https://jira.mgdis.fr/browse/PDA9-504).\n",
+      "docs": "This molecule refers to the [PDA9-504](https://jira.mgdis.fr/browse/PDA9-504).",
       "docsTags": [],
       "usage": {},
       "props": [

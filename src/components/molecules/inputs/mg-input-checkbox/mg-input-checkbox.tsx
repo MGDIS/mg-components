@@ -1,4 +1,4 @@
-import { Component, Event, h, Prop, EventEmitter, State, Watch, Method } from '@stencil/core';
+import { Component, Event, Element, h, Prop, EventEmitter, State, Watch, Method } from '@stencil/core';
 import { MgInput } from '../MgInput';
 import { createID, ClassList } from '../../../../utils/components.utils';
 import { messages } from '../../../../locales';
@@ -35,6 +35,11 @@ export class MgInputCheckbox {
    **************/
 
   /**
+   * Get component DOM element
+   */
+  @Element() element: HTMLMgInputCheckboxElement;
+
+  /**
    * Component value
    * If item.value is `null`, checkbox will be indeterminate by default
    * Required
@@ -49,6 +54,7 @@ export class MgInputCheckbox {
         value: item.value,
         disabled: item.disabled,
       }));
+      this.valueChange.emit(newValue);
     } else {
       throw new Error('<mg-input-checkbox> prop "value" is required and all values must be the same type, CheckboxItem.');
     }
@@ -68,7 +74,6 @@ export class MgInputCheckbox {
 
   /**
    * Input label
-   * Required
    */
   @Prop() label!: string;
 
@@ -117,12 +122,12 @@ export class MgInputCheckbox {
   @Prop() helpText: string;
 
   /**
-   * Force valid component
+   * Define input valid state
    */
   @Prop({ mutable: true }) valid: boolean;
 
   /**
-   * Force invalid component
+   * Define input invalid state
    */
   @Prop({ mutable: true }) invalid: boolean;
 
@@ -145,6 +150,11 @@ export class MgInputCheckbox {
    * Emitted event when value change
    */
   @Event({ eventName: 'value-change' }) valueChange: EventEmitter<CheckboxValue[]>;
+
+  /**
+   * Emited event when checking validity
+   */
+  @Event({ eventName: 'input-valid' }) inputValid: EventEmitter<boolean>;
 
   /**
    * Public method to display errors
@@ -172,7 +182,6 @@ export class MgInputCheckbox {
 
     this.value = this.checkboxItems.map(o => ({ value: o.value, title: o.title, disabled: o.disabled }));
     this.checkValidity();
-    this.valueChange.emit(this.value);
   };
 
   /**
@@ -194,6 +203,9 @@ export class MgInputCheckbox {
       // Set validity
       this.valid = validity;
       this.invalid = !validity;
+
+      //Send event
+      this.inputValid.emit(validity);
     }
   };
 
@@ -231,17 +243,16 @@ export class MgInputCheckbox {
   /**
    * Check if component props are well configured on init
    *
-   * @returns {ReturnType<typeof setTimeout>} timeout
+   * @returns {void}
    */
-  componentWillLoad(): ReturnType<typeof setTimeout> {
+  componentWillLoad(): void {
     // Check values format
     this.validateValue(this.value);
 
-    // return a promise to process action only in the FIRST render().
-    // https://stenciljs.com/docs/component-lifecycle#componentwillload
-    return setTimeout(() => {
+    // Check validity when component is ready
+    this.element.componentOnReady().then(() => {
       this.checkValidity();
-    }, 0);
+    });
   }
 
   /**
@@ -277,7 +288,7 @@ export class MgInputCheckbox {
               return !this.readonly || item.value;
             })
             .map(input => (
-              <li class="mg-input__input-group">
+              <li class={`mg-input__input-group${this.disabled || input.disabled ? ' mg-input__input-group--disabled' : ''}`}>
                 <input
                   type="checkbox"
                   id={input.id}

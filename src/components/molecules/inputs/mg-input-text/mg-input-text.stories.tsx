@@ -3,7 +3,7 @@ import { h } from '@stencil/core';
 export default {
   component: 'mg-input-text',
   title: 'Molecules/Inputs/mg-input-text',
-  parameters: { actions: { handles: ['value-change'] } },
+  parameters: { actions: { handles: ['value-change', 'input-valid'] } },
 };
 
 /**

@@ -11,10 +11,12 @@
   align-items: flex-start;
   min-height: var(--default-size);
   max-width: 100%;
+  margin-bottom: var(--mg-inputs-margin-bottom, 0);
 
   /* Style when input is not valid */
   &.is-not-valid {
     color: hsl(var(--color-danger));
+
     .mg-input__box {
       border-color: hsl(var(--color-danger));
     }
