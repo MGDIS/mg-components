@@ -9,18 +9,23 @@
   bottom: 0;
   left: 0;
   z-index: 1000;
+  padding: 2rem 0px;
   // Appearance
   background-color: hsla(var(--color-dark), 50%);
-  overflow-y: auto;
 
   &__dialog {
     // Layout
     display: flex;
     flex-direction: column;
     flex: none; /* IE FIX */
+    align-self: center;
     row-gap: 3rem;
     padding: 1.5rem 2.5rem;
     width: 60rem;
+    height: fit-content;
+    max-width: 100%;
+    max-height: 100%;
+    box-sizing: border-box;
     // Appearance
     background-color: hsl(var(--color-light));
     box-shadow: var(--box-shadow);
@@ -39,6 +44,10 @@
     font-family: var(--font-family-heading);
     font-size: var(--mg-modal-title-font-size);
     font-weight: 600;
+  }
+
+  &__content {
+    overflow-y: auto;
   }
 
   &__close-button {
