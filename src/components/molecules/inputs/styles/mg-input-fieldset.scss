@@ -23,10 +23,8 @@ fieldset.mg-input {
     margin-top: 0.7rem;
   }
 
-  &.is-not-valid {
-    .mg-input__input-group {
-      color: initial;
-    }
+  &.is-not-valid .mg-input__input-group {
+    color: initial;
   }
 }
 
@@ -56,9 +54,7 @@ fieldset.mg-input {
   display: flex;
   align-items: top;
 
-  &.mg-input__input-group--disabled {
-    label {
-      opacity: 0.3;
-    }
+  &.mg-input__input-group--disabled label {
+    opacity: 0.3;
   }
 }

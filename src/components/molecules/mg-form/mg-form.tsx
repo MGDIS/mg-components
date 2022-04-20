@@ -108,9 +108,7 @@ export class MgForm {
    * @returns {void}
    */
   private checkValidity = (): void => {
-    const validity = !this.mgInputs.some(input => {
-      return input.invalid;
-    });
+    const validity = !this.mgInputs.some(input => input.invalid);
 
     this.valid = validity;
     this.invalid = !validity;

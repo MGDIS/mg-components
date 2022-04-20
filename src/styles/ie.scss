@@ -72,6 +72,15 @@
       width: 15rem !important;
       margin-right: 3rem !important;
       flex-shrink: 0 !important;
+
+      legend {
+        display: inline;
+        text-align: right;
+      }
+    }
+
+    &.mg-form--all-required .mg-input-title__required {
+      display: none;
     }
   }
 }
