@@ -23,7 +23,7 @@ export async function createPage(htmlString?: string): Promise<DesignSystemE2EPa
 
   // monkey patch screenshot function to add some extra features
   const screenshot = page.screenshot;
-  page.screenshot = async function () {
+  page.screenshot = async () => {
     return screenshot.call(page, {
       clip: {
         x: 0,

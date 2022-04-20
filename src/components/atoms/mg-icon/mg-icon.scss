@@ -1,3 +1,8 @@
+:host {
+  display: inline-flex;
+  vertical-align: middle;
+}
+
 .mg-icon {
   &[size='regular'],
   &.mg-icon--size-regular {
@@ -38,13 +43,6 @@
   &.mg-icon--variant-info {
     background-color: hsl(var(--color-info-h) var(--color-info-s) calc(var(--color-info-l) + 20%));
   }
-}
-
-mg-icon,
-.mg-icon {
-  display: inline-block;
-  vertical-align: middle;
-  line-height: 1;
 }
 
 /**
