@@ -71,6 +71,11 @@
   }
 }
 
+.mg-input.mg-input--label-on-top .mg-input__box {
+  width: auto;
+  max-width: 100%;
+}
+
 .mg-input.mg-input--has-buttons-group-append {
   ::slotted([slot='append-input']) {
     --mg-button-border-radius-top-right: 0;
