@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-04-19T09:19:13",
+  "timestamp": "2022-04-21T06:11:32",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.15.1",
@@ -4630,6 +4630,23 @@
           ],
           "optional": false,
           "required": true
+        },
+        {
+          "name": "size",
+          "type": "string",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "Define tabs size",
+          "docsTags": [],
+          "default": "'regular'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
         }
       ],
       "methods": [],

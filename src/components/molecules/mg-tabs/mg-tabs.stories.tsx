@@ -1,8 +1,16 @@
 import { h } from '@stencil/core';
 
+import { sizes } from './mg-tabs.conf';
+
 export default {
   component: 'mg-tabs',
   title: 'Molecules/mg-tabs',
+  argTypes: {
+    size: {
+      options: sizes,
+      control: { type: 'select' },
+    },
+  },
 };
 
 /**
@@ -29,6 +37,7 @@ MgTabs.args = {
   items: ['Tab 1', 'Tab 2', 'Tab 3'],
   label: 'Short tabs description. Needed for accessibility',
   activeTab: undefined,
+  size: sizes[0], // regular
 };
 
 export const MgTabsItems = Template.bind({});
@@ -44,6 +53,7 @@ MgTabsItems.args = {
     {
       label: 'Tab 2',
       badge: { value: 5, label: 'messages' },
+      disabled: true,
     },
     {
       label: 'Tab 3',

@@ -933,6 +933,10 @@ export namespace Components {
           * Tabs label. Include short tabs description. Required for accessibility
          */
         "label": string;
+        /**
+          * Define tabs size
+         */
+        "size": string;
     }
     interface MgTag {
         /**
@@ -2102,6 +2106,10 @@ declare namespace LocalJSX {
           * Tabs label. Include short tabs description. Required for accessibility
          */
         "label": string;
+        /**
+          * Define tabs size
+         */
+        "size"?: string;
     }
     interface MgTag {
         /**
