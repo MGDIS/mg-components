@@ -186,22 +186,24 @@ describe('mg-input-select', () => {
     });
   });
 
-  test.each([undefined, 300])('Ensure component fit in width: %s', async width => {
-    const page = await createPage(`
-      <mg-input-select label="label"></mg-input-select>
+  describe.each([undefined, 300])('Ensure component fit in width: %s', async width => {
+    test.each([false, true])('label-on-top: %s', async labelOnTop => {
+      const page = await createPage(`
+      <mg-input-select label="label" label-on-top="${labelOnTop}"></mg-input-select>
       <script>
         const mgInputSelect = document.querySelector('mg-input-select');
         mgInputSelect.items = ['blu', 'bli', 'bla', 'blo', 'le long libellé qui va faire sortir le champ mg-input-select de sa zone de confort'];
       </script>
     `);
 
-    const element = await page.find('mg-input-select');
+      const element = await page.find('mg-input-select');
 
-    expect(element).toHaveClass('hydrated');
+      expect(element).toHaveClass('hydrated');
 
-    if (width !== undefined) await page.setViewport({ width, height: 600 });
+      if (width !== undefined) await page.setViewport({ width, height: 600 });
 
-    const screenshot = await page.screenshot();
-    expect(screenshot).toMatchImageSnapshot();
+      const screenshot = await page.screenshot();
+      expect(screenshot).toMatchImageSnapshot();
+    });
   });
 });
