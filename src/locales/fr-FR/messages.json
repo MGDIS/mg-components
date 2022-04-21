@@ -26,6 +26,9 @@
   "message": {
     "closeButton": "Fermer le message"
   },
+  "modal": {
+    "closeButton": "Fermer la modal"
+  },
   "pagination": {
     "page": "page",
     "pages": "pages",

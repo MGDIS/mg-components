@@ -28,6 +28,7 @@ This atom refers to the [PDA9-744](https://jira.mgdis.fr/browse/PDA9-744).
  - [mg-input-textarea](../../molecules/inputs/mg-input-textarea)
  - [mg-input-toggle](../../molecules/inputs/mg-input-toggle)
  - [mg-message](../../molecules/mg-message)
+ - [mg-modal](../../molecules/mg-modal)
  - [mg-pagination](../../molecules/mg-pagination)
  - [mg-panel](../../molecules/mg-panel)
  - [mg-popover](../../molecules/mg-popover)
@@ -47,6 +48,7 @@ graph TD;
   mg-input-textarea --> mg-icon
   mg-input-toggle --> mg-icon
   mg-message --> mg-icon
+  mg-modal --> mg-icon
   mg-pagination --> mg-icon
   mg-panel --> mg-icon
   mg-popover --> mg-icon

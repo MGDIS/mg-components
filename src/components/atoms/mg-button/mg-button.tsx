@@ -84,6 +84,12 @@ export class MgButton {
   @Prop() controls: string;
 
   /**
+   * Option to set aria-haspopup
+   * The aria-haspopup state informs assistive technology users that there is a popup and the type of popup it is, but provides no interactivity.
+   */
+  @Prop() haspopup: boolean | 'menu' | 'listbox' | 'tree' | 'grid' | 'dialog' = false;
+
+  /**
    * Define if button is loading, default to false.
    * Trigger when button is clicked or key-up ['enter', 'space], then value change to true.
    * It's required to reset to false when action/promise in parent is done to stop the loading state
@@ -152,6 +158,7 @@ export class MgButton {
         aria-disabled={this.disabled}
         aria-expanded={this.expanded}
         aria-controls={this.controls}
+        aria-haspopup={this.haspopup}
         onClick={this.handleClick}
       >
         {this.loading && <mg-icon icon="loader" spin></mg-icon>}
