@@ -185,4 +185,23 @@ describe('mg-input-select', () => {
       expect(screenshot).toMatchImageSnapshot();
     });
   });
+
+  test.each([undefined, 300])('Ensure component fit in width: %s', async width => {
+    const page = await createPage(`
+      <mg-input-select label="label"></mg-input-select>
+      <script>
+        const mgInputSelect = document.querySelector('mg-input-select');
+        mgInputSelect.items = ['blu', 'bli', 'bla', 'blo', 'le long libellé qui va faire sortir le champ mg-input-select de sa zone de confort'];
+      </script>
+    `);
+
+    const element = await page.find('mg-input-select');
+
+    expect(element).toHaveClass('hydrated');
+
+    if (width !== undefined) await page.setViewport({ width, height: 600 });
+
+    const screenshot = await page.screenshot();
+    expect(screenshot).toMatchImageSnapshot();
+  });
 });
