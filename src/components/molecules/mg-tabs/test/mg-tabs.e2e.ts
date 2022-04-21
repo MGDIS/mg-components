@@ -1,32 +1,33 @@
 import { createPage } from '../../../../utils/test.utils';
+import { sizes } from '../mg-tabs.conf';
 
 const defaultSlots =
   "<div slot='tab_content-1'>Le héros peut être en chacun, même en celui qui fait une chose aussi simple et rassurante que mettre un manteau sur les épaules d'un garçon et ainsi lui faire comprendre que le monde ne s'est pas écroulé.</div><div slot='tab_content-2'>La seule façon raisonnable de vivre en ce bas monde, c'est en dehors des règles.</div>";
 
 describe('mg-tabs', () => {
-  describe('template', () => {
+  describe.each(sizes)('template', size => {
     test.each([
       { items: ['batman', 'joker'] },
       {
         items: [
           { label: 'batman', icon: 'check' },
-          { label: 'joker', icon: 'cross' },
+          { label: 'joker', icon: 'cross', disabled: true },
         ],
       },
       {
         items: [
           { label: 'batman', badge: { label: 'count', value: 1 } },
-          { label: 'joker', badge: { label: 'count', value: 1 } },
+          { label: 'joker', badge: { label: 'count', value: 1 }, disabled: true },
         ],
       },
       {
         items: [
           { label: 'batman', icon: 'check', badge: { label: 'count', value: 1 } },
-          { label: 'joker', icon: 'cross', badge: { label: 'count', value: 1 } },
+          { label: 'joker', icon: 'cross', badge: { label: 'count', value: 1 }, disabled: true },
         ],
       },
     ])('render', async ({ items }) => {
-      const page = await createPage(`<mg-tabs label="label">${defaultSlots}</mg-tabs>
+      const page = await createPage(`<mg-tabs label="label" size=${size}>${defaultSlots}</mg-tabs>
       <script>
       const mgTabs = document.querySelector('mg-tabs');
       mgTabs.items = ${JSON.stringify(items)};

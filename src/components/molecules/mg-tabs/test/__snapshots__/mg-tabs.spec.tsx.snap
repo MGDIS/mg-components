@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`mg-tabs navigation should NOT go to next tab on keyboard event Enter 1`] = `
-<mg-tabs active-tab="1">
+<mg-tabs active-tab="1" class="mg-tabs mg-tabs--size-regular">
   <!---->
   <header aria-label="Sample label" class="mg-tabs__header" role="tablist">
     <button aria-controls="pannel-1" aria-selected="true" class="mg-tabs__navigation-button mg-tabs__navigation-button--active" data-index="1" id="id-1" role="tab" tabindex="0">
@@ -25,7 +25,7 @@ exports[`mg-tabs navigation should NOT go to next tab on keyboard event Enter 1`
 `;
 
 exports[`mg-tabs navigation should NOT go to next tab on keyboard event Enter 2`] = `
-<mg-tabs active-tab="1">
+<mg-tabs active-tab="1" class="mg-tabs mg-tabs--size-regular">
   <!---->
   <header aria-label="Sample label" class="mg-tabs__header" role="tablist">
     <button aria-controls="pannel-1" aria-selected="true" class="mg-tabs__navigation-button mg-tabs__navigation-button--active" data-index="1" id="id-1" role="tab" tabindex="0">
@@ -49,7 +49,7 @@ exports[`mg-tabs navigation should NOT go to next tab on keyboard event Enter 2`
 `;
 
 exports[`mg-tabs navigation should NOT go to next tab on keyboard event Enter 3`] = `
-<mg-tabs active-tab="1">
+<mg-tabs active-tab="1" class="mg-tabs mg-tabs--size-regular">
   <!---->
   <header aria-label="Sample label" class="mg-tabs__header" role="tablist">
     <button aria-controls="pannel-1" aria-selected="true" class="mg-tabs__navigation-button mg-tabs__navigation-button--active" data-index="1" id="id-1" role="tab" tabindex="0">
@@ -73,7 +73,7 @@ exports[`mg-tabs navigation should NOT go to next tab on keyboard event Enter 3`
 `;
 
 exports[`mg-tabs navigation should NOT go to next tab on keyboard event Space 1`] = `
-<mg-tabs active-tab="1">
+<mg-tabs active-tab="1" class="mg-tabs mg-tabs--size-regular">
   <!---->
   <header aria-label="Sample label" class="mg-tabs__header" role="tablist">
     <button aria-controls="pannel-1" aria-selected="true" class="mg-tabs__navigation-button mg-tabs__navigation-button--active" data-index="1" id="id-1" role="tab" tabindex="0">
@@ -97,7 +97,7 @@ exports[`mg-tabs navigation should NOT go to next tab on keyboard event Space 1`
 `;
 
 exports[`mg-tabs navigation should NOT go to next tab on keyboard event Space 2`] = `
-<mg-tabs active-tab="1">
+<mg-tabs active-tab="1" class="mg-tabs mg-tabs--size-regular">
   <!---->
   <header aria-label="Sample label" class="mg-tabs__header" role="tablist">
     <button aria-controls="pannel-1" aria-selected="true" class="mg-tabs__navigation-button mg-tabs__navigation-button--active" data-index="1" id="id-1" role="tab" tabindex="0">
@@ -121,7 +121,7 @@ exports[`mg-tabs navigation should NOT go to next tab on keyboard event Space 2`
 `;
 
 exports[`mg-tabs navigation should NOT go to next tab on keyboard event Space 3`] = `
-<mg-tabs active-tab="1">
+<mg-tabs active-tab="1" class="mg-tabs mg-tabs--size-regular">
   <!---->
   <header aria-label="Sample label" class="mg-tabs__header" role="tablist">
     <button aria-controls="pannel-1" aria-selected="true" class="mg-tabs__navigation-button mg-tabs__navigation-button--active" data-index="1" id="id-1" role="tab" tabindex="0">
@@ -145,7 +145,7 @@ exports[`mg-tabs navigation should NOT go to next tab on keyboard event Space 3`
 `;
 
 exports[`mg-tabs navigation should go to next tab on click event 1`] = `
-<mg-tabs active-tab="1">
+<mg-tabs active-tab="1" class="mg-tabs mg-tabs--size-regular">
   <!---->
   <header aria-label="Sample label" class="mg-tabs__header" role="tablist">
     <button aria-controls="pannel-1" aria-selected="true" class="mg-tabs__navigation-button mg-tabs__navigation-button--active" data-index="1" id="id-1" role="tab" tabindex="0">
@@ -169,7 +169,7 @@ exports[`mg-tabs navigation should go to next tab on click event 1`] = `
 `;
 
 exports[`mg-tabs navigation should go to next tab on click event 2`] = `
-<mg-tabs active-tab="2">
+<mg-tabs active-tab="2" class="mg-tabs mg-tabs--size-regular">
   <!---->
   <header aria-label="Sample label" class="mg-tabs__header" role="tablist">
     <button aria-controls="pannel-1" aria-selected="false" class="mg-tabs__navigation-button" data-index="1" id="id-1" role="tab" tabindex="-1">
@@ -193,7 +193,7 @@ exports[`mg-tabs navigation should go to next tab on click event 2`] = `
 `;
 
 exports[`mg-tabs navigation should go to next tab on click event 3`] = `
-<mg-tabs active-tab="1">
+<mg-tabs active-tab="1" class="mg-tabs mg-tabs--size-regular">
   <!---->
   <header class="mg-tabs__header" role="tablist">
     <button aria-controls="pannel-1" aria-selected="true" class="mg-tabs__navigation-button mg-tabs__navigation-button--active" data-index="1" id="id-1" role="tab" tabindex="0">
@@ -221,7 +221,7 @@ exports[`mg-tabs navigation should go to next tab on click event 3`] = `
 `;
 
 exports[`mg-tabs navigation should go to next tab on click event 4`] = `
-<mg-tabs active-tab="2">
+<mg-tabs active-tab="2" class="mg-tabs mg-tabs--size-regular">
   <!---->
   <header class="mg-tabs__header" role="tablist">
     <button aria-controls="pannel-1" aria-selected="false" class="mg-tabs__navigation-button" data-index="1" id="id-1" role="tab" tabindex="-1">
@@ -249,7 +249,7 @@ exports[`mg-tabs navigation should go to next tab on click event 4`] = `
 `;
 
 exports[`mg-tabs navigation should go to next tab on keyboard event 1`] = `
-<mg-tabs active-tab="1">
+<mg-tabs active-tab="1" class="mg-tabs mg-tabs--size-regular">
   <!---->
   <header aria-label="Sample label" class="mg-tabs__header" role="tablist">
     <button aria-controls="pannel-1" aria-selected="true" class="mg-tabs__navigation-button mg-tabs__navigation-button--active" data-index="1" id="id-1" role="tab" tabindex="0">
@@ -273,7 +273,7 @@ exports[`mg-tabs navigation should go to next tab on keyboard event 1`] = `
 `;
 
 exports[`mg-tabs navigation should go to next tab on keyboard event 2`] = `
-<mg-tabs active-tab="1">
+<mg-tabs active-tab="1" class="mg-tabs mg-tabs--size-regular">
   <!---->
   <header aria-label="Sample label" class="mg-tabs__header" role="tablist">
     <button aria-controls="pannel-1" aria-selected="true" class="mg-tabs__navigation-button mg-tabs__navigation-button--active" data-index="1" id="id-1" role="tab" tabindex="0">
@@ -297,7 +297,7 @@ exports[`mg-tabs navigation should go to next tab on keyboard event 2`] = `
 `;
 
 exports[`mg-tabs navigation should go to next tab on keyboard event 3`] = `
-<mg-tabs active-tab="2">
+<mg-tabs active-tab="2" class="mg-tabs mg-tabs--size-regular">
   <!---->
   <header aria-label="Sample label" class="mg-tabs__header" role="tablist">
     <button aria-controls="pannel-1" aria-selected="false" class="mg-tabs__navigation-button" data-index="1" id="id-1" role="tab" tabindex="-1">
@@ -321,7 +321,7 @@ exports[`mg-tabs navigation should go to next tab on keyboard event 3`] = `
 `;
 
 exports[`mg-tabs navigation should go to next tab on keyboard event 4`] = `
-<mg-tabs active-tab="1">
+<mg-tabs active-tab="1" class="mg-tabs mg-tabs--size-regular">
   <!---->
   <header aria-label="Sample label" class="mg-tabs__header" role="tablist">
     <button aria-controls="pannel-1" aria-selected="true" class="mg-tabs__navigation-button mg-tabs__navigation-button--active" data-index="1" id="id-1" role="tab" tabindex="0">
@@ -345,7 +345,7 @@ exports[`mg-tabs navigation should go to next tab on keyboard event 4`] = `
 `;
 
 exports[`mg-tabs navigation should go to next tab, and keep focus if it's the last one on keyboard event 1`] = `
-<mg-tabs active-tab="1">
+<mg-tabs active-tab="1" class="mg-tabs mg-tabs--size-regular">
   <!---->
   <header aria-label="Sample label" class="mg-tabs__header" role="tablist">
     <button aria-controls="pannel-1" aria-selected="true" class="mg-tabs__navigation-button mg-tabs__navigation-button--active" data-index="1" id="id-1" role="tab" tabindex="0">
@@ -369,7 +369,7 @@ exports[`mg-tabs navigation should go to next tab, and keep focus if it's the la
 `;
 
 exports[`mg-tabs navigation should go to next tab, and keep focus if it's the last one on keyboard event 2`] = `
-<mg-tabs active-tab="1">
+<mg-tabs active-tab="1" class="mg-tabs mg-tabs--size-regular">
   <!---->
   <header aria-label="Sample label" class="mg-tabs__header" role="tablist">
     <button aria-controls="pannel-1" aria-selected="true" class="mg-tabs__navigation-button mg-tabs__navigation-button--active" data-index="1" id="id-1" role="tab" tabindex="0">
@@ -393,7 +393,7 @@ exports[`mg-tabs navigation should go to next tab, and keep focus if it's the la
 `;
 
 exports[`mg-tabs navigation should go to next tab, and keep focus if it's the last one on keyboard event 3`] = `
-<mg-tabs active-tab="2">
+<mg-tabs active-tab="2" class="mg-tabs mg-tabs--size-regular">
   <!---->
   <header aria-label="Sample label" class="mg-tabs__header" role="tablist">
     <button aria-controls="pannel-1" aria-selected="false" class="mg-tabs__navigation-button" data-index="1" id="id-1" role="tab" tabindex="-1">
@@ -417,7 +417,7 @@ exports[`mg-tabs navigation should go to next tab, and keep focus if it's the la
 `;
 
 exports[`mg-tabs navigation should go to next tab, and keep focus if it's the last one on keyboard event 4`] = `
-<mg-tabs active-tab="2">
+<mg-tabs active-tab="2" class="mg-tabs mg-tabs--size-regular">
   <!---->
   <header aria-label="Sample label" class="mg-tabs__header" role="tablist">
     <button aria-controls="pannel-1" aria-selected="false" class="mg-tabs__navigation-button" data-index="1" id="id-1" role="tab" tabindex="-1">
@@ -441,7 +441,34 @@ exports[`mg-tabs navigation should go to next tab, and keep focus if it's the la
 `;
 
 exports[`mg-tabs template display only slots with name "tab_content-*" 1`] = `
-<mg-tabs active-tab="1">
+<mg-tabs active-tab="1" class="mg-tabs mg-tabs--size-regular">
+  <!---->
+  <div hidden="">
+    dummy content
+  </div>
+  <header aria-label="Sample label" class="mg-tabs__header" role="tablist">
+    <button aria-controls="pannel-1" aria-selected="true" class="mg-tabs__navigation-button mg-tabs__navigation-button--active" data-index="1" id="identifier-1" role="tab" tabindex="0">
+      Batman
+    </button>
+    <button aria-controls="pannel-2" aria-selected="false" class="mg-tabs__navigation-button" data-index="2" id="identifier-2" role="tab" tabindex="-1">
+      Joker
+    </button>
+  </header>
+  <article aria-labelledby="identifier-1" class="mg-tabs__content-container" id="pannel-1" role="tabpanel" tabindex="0">
+    <div slot="tab_content-1">
+      Content 1
+    </div>
+  </article>
+  <article aria-labelledby="identifier-1" class="mg-tabs__content-container" hidden="" id="pannel-2" role="tabpanel" tabindex="-1">
+    <div slot="tab_content-2">
+      Content 2
+    </div>
+  </article>
+</mg-tabs>
+`;
+
+exports[`mg-tabs template display only slots with name "tab_content-*" 2`] = `
+<mg-tabs active-tab="1" class="mg-tabs mg-tabs--size-regular">
   <!---->
   <div hidden="">
     dummy content
@@ -468,7 +495,38 @@ exports[`mg-tabs template display only slots with name "tab_content-*" 1`] = `
 `;
 
 exports[`mg-tabs template display tabs with activeProps set by props 1`] = `
-<mg-tabs active-tab="2">
+<mg-tabs active-tab="2" class="mg-tabs mg-tabs--size-regular">
+  <!---->
+  <header aria-label="Sample label" class="mg-tabs__header" role="tablist">
+    <button aria-controls="pannel-1" aria-selected="false" class="mg-tabs__navigation-button" data-index="1" id="identifier-1" role="tab" tabindex="-1">
+      Tab 1
+    </button>
+    <button aria-controls="pannel-2" aria-selected="true" class="mg-tabs__navigation-button mg-tabs__navigation-button--active" data-index="2" id="identifier-2" role="tab" tabindex="0">
+      Tab 2
+    </button>
+    <button aria-controls="pannel-3" aria-selected="false" class="mg-tabs__navigation-button" data-index="3" id="identifier-3" role="tab" tabindex="-1">
+      Tab 3
+    </button>
+  </header>
+  <article aria-labelledby="identifier-2" class="mg-tabs__content-container" hidden="" id="pannel-1" role="tabpanel" tabindex="-1">
+    <div slot="tab_content-1">
+      Content 1
+    </div>
+    <div slot="tab_content-1">
+      Content 1
+    </div>
+  </article>
+  <article aria-labelledby="identifier-2" class="mg-tabs__content-container" id="pannel-2" role="tabpanel" tabindex="0">
+    <div slot="tab_content-2">
+      Content 2
+    </div>
+  </article>
+  <article aria-labelledby="identifier-2" class="mg-tabs__content-container" hidden="" id="pannel-3" role="tabpanel" tabindex="-1"></article>
+</mg-tabs>
+`;
+
+exports[`mg-tabs template display tabs with activeProps set by props 2`] = `
+<mg-tabs active-tab="2" class="mg-tabs mg-tabs--size-regular">
   <!---->
   <header aria-label="Sample label" class="mg-tabs__header" role="tablist">
     <button aria-controls="pannel-1" aria-selected="false" class="mg-tabs__navigation-button" data-index="1" id="identifier-1" role="tab" tabindex="-1">
@@ -499,7 +557,7 @@ exports[`mg-tabs template display tabs with activeProps set by props 1`] = `
 `;
 
 exports[`mg-tabs template render 1`] = `
-<mg-tabs active-tab="1">
+<mg-tabs active-tab="1" class="mg-tabs mg-tabs--size-regular">
   <!---->
   <header aria-label="Sample label" class="mg-tabs__header" role="tablist">
     <button aria-controls="pannel-1" aria-selected="true" class="mg-tabs__navigation-button mg-tabs__navigation-button--active" data-index="1" id="identifier-1" role="tab" tabindex="0">
@@ -523,7 +581,7 @@ exports[`mg-tabs template render 1`] = `
 `;
 
 exports[`mg-tabs template render 2`] = `
-<mg-tabs active-tab="1">
+<mg-tabs active-tab="1" class="mg-tabs mg-tabs--size-regular">
   <!---->
   <header aria-label="Sample label" class="mg-tabs__header" role="tablist">
     <button aria-controls="pannel-1" aria-selected="true" class="mg-tabs__navigation-button mg-tabs__navigation-button--active" data-index="1" id="identifier-1" role="tab" tabindex="0">
@@ -531,7 +589,59 @@ exports[`mg-tabs template render 2`] = `
       Batman
       <mg-badge label="messages" value="2" variant="info"></mg-badge>
     </button>
+    <button aria-controls="pannel-2" aria-selected="false" class="mg-tabs__navigation-button mg-tabs__navigation-button--disabled" data-index="2" disabled="" id="identifier-2" role="tab" tabindex="-1">
+      <mg-icon icon="cross"></mg-icon>
+      Joker
+      <mg-badge label="messages" value="2" variant="info"></mg-badge>
+    </button>
+  </header>
+  <article aria-labelledby="identifier-1" class="mg-tabs__content-container" id="pannel-1" role="tabpanel" tabindex="0">
+    <div slot="tab_content-1">
+      Content 1
+    </div>
+  </article>
+  <article aria-labelledby="identifier-1" class="mg-tabs__content-container" hidden="" id="pannel-2" role="tabpanel" tabindex="-1">
+    <div slot="tab_content-2">
+      Content 2
+    </div>
+  </article>
+</mg-tabs>
+`;
+
+exports[`mg-tabs template render 3`] = `
+<mg-tabs active-tab="1" class="mg-tabs mg-tabs--size-large">
+  <!---->
+  <header aria-label="Sample label" class="mg-tabs__header" role="tablist">
+    <button aria-controls="pannel-1" aria-selected="true" class="mg-tabs__navigation-button mg-tabs__navigation-button--active" data-index="1" id="identifier-1" role="tab" tabindex="0">
+      Batman
+    </button>
     <button aria-controls="pannel-2" aria-selected="false" class="mg-tabs__navigation-button" data-index="2" id="identifier-2" role="tab" tabindex="-1">
+      Joker
+    </button>
+  </header>
+  <article aria-labelledby="identifier-1" class="mg-tabs__content-container" id="pannel-1" role="tabpanel" tabindex="0">
+    <div slot="tab_content-1">
+      Content 1
+    </div>
+  </article>
+  <article aria-labelledby="identifier-1" class="mg-tabs__content-container" hidden="" id="pannel-2" role="tabpanel" tabindex="-1">
+    <div slot="tab_content-2">
+      Content 2
+    </div>
+  </article>
+</mg-tabs>
+`;
+
+exports[`mg-tabs template render 4`] = `
+<mg-tabs active-tab="1" class="mg-tabs mg-tabs--size-large">
+  <!---->
+  <header aria-label="Sample label" class="mg-tabs__header" role="tablist">
+    <button aria-controls="pannel-1" aria-selected="true" class="mg-tabs__navigation-button mg-tabs__navigation-button--active" data-index="1" id="identifier-1" role="tab" tabindex="0">
+      <mg-icon icon="check"></mg-icon>
+      Batman
+      <mg-badge label="messages" value="2" variant="info"></mg-badge>
+    </button>
+    <button aria-controls="pannel-2" aria-selected="false" class="mg-tabs__navigation-button mg-tabs__navigation-button--disabled" data-index="2" disabled="" id="identifier-2" role="tab" tabindex="-1">
       <mg-icon icon="cross"></mg-icon>
       Joker
       <mg-badge label="messages" value="2" variant="info"></mg-badge>

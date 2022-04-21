@@ -1,6 +1,7 @@
 import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
 import { MgTabs } from '../mg-tabs';
+import { sizes } from '../mg-tabs.conf';
 
 const getPage = (args, slots?) =>
   newSpecPage({
@@ -13,17 +14,17 @@ const defaultSlots = [() => <div slot="tab_content-1">Content 1</div>, () => <di
 const badge = { value: 2, label: 'messages' };
 
 describe('mg-tabs', () => {
-  describe('template', () => {
+  describe.each(sizes)('template', size => {
     test.each([
       [['Batman', 'Joker']],
       [
         [
           { label: 'Batman', icon: 'check', badge },
-          { label: 'Joker', icon: 'cross', badge },
+          { label: 'Joker', icon: 'cross', badge, disabled: true },
         ],
       ],
     ])('render', async items => {
-      const { root } = await getPage({ label: 'Sample label', items, identifier: 'identifier' }, defaultSlots);
+      const { root } = await getPage({ label: 'Sample label', items, identifier: 'identifier', size }, defaultSlots);
       expect(root).toMatchSnapshot();
     });
 
@@ -76,6 +77,14 @@ describe('mg-tabs', () => {
         await getPage({ label: 'Sample label', items: ['Tab 1', 'Tab 2'], activeTab }, defaultSlots);
       } catch (error) {
         expect(error.message).toMatch('<mg-tabs> prop "activeTab" must be between 1 and tabs length.');
+      }
+    });
+
+    test('should trown an error with invalid tabItem props', async () => {
+      try {
+        await getPage({ label: 'Sample label', items: ['Tab 1', 'Tab 2'], size: 'batman' }, defaultSlots);
+      } catch (error) {
+        expect(error.message).toMatch(`<mg-tabs> prop "size" must be one of : ${sizes.join(', ')}`);
       }
     });
   });

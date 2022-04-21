@@ -1,6 +1,6 @@
 import { Component, h, Host, Prop, State, Element, Watch } from '@stencil/core';
 import { createID, ClassList, allItemsAreString } from '../../../utils/components.utils';
-import { TabItem } from './mg-tabs.conf';
+import { TabItem, sizes } from './mg-tabs.conf';
 
 /**
  * type TabItem validation function
@@ -38,6 +38,18 @@ export class MgTabs {
   @Prop() label!: string;
 
   /**
+   * Define tabs size
+   */
+  @Prop() size = 'regular';
+  @Watch('size')
+  validateSize(newValue: string): void {
+    if (!sizes.includes(newValue)) {
+      throw new Error(`<mg-tabs> prop "size" must be one of : ${sizes.join(', ')}`);
+    }
+    this.classList.add(`mg-tabs--size-${this.size}`);
+  }
+
+  /**
    * Tabs items
    * Required
    */
@@ -46,7 +58,7 @@ export class MgTabs {
   validateItems(newValue: string[] | TabItem[]): void {
     // String array
     if (allItemsAreString(newValue as string[])) {
-      this.tabs = (newValue as string[]).map(item => ({ label: item }));
+      this.tabs = (newValue as string[]).map(item => ({ label: item, disabled: false }));
     }
     // Object array
     else if (newValue && (newValue as TabItem[]).every(item => isTabItem(item))) {
@@ -140,6 +152,7 @@ export class MgTabs {
     // Check tabs format
     this.validateItems(this.items);
     this.validateActiveTab(this.activeTab);
+    this.validateSize(this.size);
     this.validateSlots();
   }
 
@@ -150,7 +163,7 @@ export class MgTabs {
    */
   render(): HTMLElement {
     return (
-      <Host>
+      <Host class={this.classList.join()}>
         <header role="tablist" aria-label={this.label} class="mg-tabs__header">
           {this.tabs.map((tab, index) => {
             const tabIndex = index + 1;
@@ -158,13 +171,16 @@ export class MgTabs {
               <button
                 role="tab"
                 id={`${this.identifier}-${tabIndex}`}
-                class={`mg-tabs__navigation-button ${tabIndex === this.activeTab ? 'mg-tabs__navigation-button--active' : ''}`}
+                class={`mg-tabs__navigation-button ${tabIndex === this.activeTab ? 'mg-tabs__navigation-button--active' : ''} ${
+                  tab.disabled === true ? 'mg-tabs__navigation-button--disabled' : ''
+                }`}
                 tabindex={tabIndex === this.activeTab ? 0 : -1}
                 aria-selected={(tabIndex === this.activeTab).toString()}
                 aria-controls={`pannel-${tabIndex}`}
                 onClick={this.handleClick}
                 onKeyDown={this.handleKeydown}
                 data-index={tabIndex}
+                disabled={tab.disabled}
               >
                 {tab.icon !== undefined && <mg-icon icon={tab.icon}></mg-icon>}
                 {tab.label}
