@@ -11,23 +11,24 @@ This molecule refers to the [PDA9-70](https://jira.mgdis.fr/browse/PDA9-70).
 | `helpText`           | `help-text`           | Add a help text under the input, usually expected data format and example                                   | `string`          | `undefined`                     |
 | `identifier`         | `identifier`          | Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created. | `string`          | `createID('mg-input-checkbox')` |
 | `inputVerticalList`  | `input-vertical-list` | Define if inputs are display verticaly                                                                      | `boolean`         | `false`                         |
-| `invalid`            | `invalid`             | Force invalid component                                                                                     | `boolean`         | `undefined`                     |
-| `label` _(required)_ | `label`               | Input label Required                                                                                        | `string`          | `undefined`                     |
+| `invalid`            | `invalid`             | Define input invalid state                                                                                  | `boolean`         | `undefined`                     |
+| `label` _(required)_ | `label`               | Input label                                                                                                 | `string`          | `undefined`                     |
 | `labelHide`          | `label-hide`          | Define if label is visible                                                                                  | `boolean`         | `false`                         |
 | `labelOnTop`         | `label-on-top`        | Define if label is displayed on top                                                                         | `boolean`         | `undefined`                     |
 | `name`               | `name`                | Input name If not set the value equals the identifier                                                       | `string`          | `this.identifier`               |
 | `readonly`           | `readonly`            | Define if input is readonly                                                                                 | `boolean`         | `false`                         |
 | `required`           | `required`            | Define if input is required                                                                                 | `boolean`         | `false`                         |
 | `tooltip`            | `tooltip`             | Add a tooltip message next to the input                                                                     | `string`          | `undefined`                     |
-| `valid`              | `valid`               | Force valid component                                                                                       | `boolean`         | `undefined`                     |
+| `valid`              | `valid`               | Define input valid state                                                                                    | `boolean`         | `undefined`                     |
 | `value` _(required)_ | --                    | Component value If item.value is `null`, checkbox will be indeterminate by default Required                 | `CheckboxValue[]` | `undefined`                     |
 
 
 ## Events
 
-| Event          | Description                     | Type                           |
-| -------------- | ------------------------------- | ------------------------------ |
-| `value-change` | Emitted event when value change | `CustomEvent<CheckboxValue[]>` |
+| Event          | Description                         | Type                           |
+| -------------- | ----------------------------------- | ------------------------------ |
+| `input-valid`  | Emited event when checking validity | `CustomEvent<boolean>`         |
+| `value-change` | Emitted event when value change     | `CustomEvent<CheckboxValue[]>` |
 
 
 ## Methods

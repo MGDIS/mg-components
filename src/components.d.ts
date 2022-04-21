@@ -87,6 +87,37 @@ export namespace Components {
          */
         "template": string;
     }
+    interface MgForm {
+        /**
+          * Define if form is disabled
+         */
+        "disabled": boolean;
+        /**
+          * Public method to display errors
+          * @returns
+         */
+        "displayError": () => Promise<void>;
+        /**
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+         */
+        "identifier": string;
+        /**
+          * Define form invalid state
+         */
+        "invalid": boolean;
+        /**
+          * Input name If not set the value equals the identifier
+         */
+        "name": string;
+        /**
+          * Define if form is readonly
+         */
+        "readonly": boolean;
+        /**
+          * Define form valid state
+         */
+        "valid": boolean;
+    }
     interface MgIcon {
         /**
           * Icon to display
@@ -128,11 +159,11 @@ export namespace Components {
          */
         "inputVerticalList": boolean;
         /**
-          * Force invalid component
+          * Define input invalid state
          */
         "invalid": boolean;
         /**
-          * Input label Required
+          * Input label
          */
         "label": string;
         /**
@@ -160,7 +191,7 @@ export namespace Components {
          */
         "tooltip": string;
         /**
-          * Force valid component
+          * Define input valid state
          */
         "valid": boolean;
         /**
@@ -187,11 +218,11 @@ export namespace Components {
          */
         "identifier": string;
         /**
-          * Define input pattern error message
+          * Define input invalid state
          */
         "invalid": boolean;
         /**
-          * Input label Required
+          * Input label
          */
         "label": string;
         /**
@@ -227,7 +258,7 @@ export namespace Components {
          */
         "tooltip": string;
         /**
-          * Define input pattern to validate
+          * Define input valid state
          */
         "valid": boolean;
         /**
@@ -266,7 +297,7 @@ export namespace Components {
          */
         "invalid": boolean;
         /**
-          * Input label Required
+          * Input label
          */
         "label": string;
         /**
@@ -341,11 +372,11 @@ export namespace Components {
          */
         "identifier": string;
         /**
-          * Define input pattern error message
+          * Define input invalid state
          */
         "invalid": boolean;
         /**
-          * Input label Required
+          * Input label
          */
         "label": string;
         /**
@@ -377,7 +408,7 @@ export namespace Components {
          */
         "tooltip": string;
         /**
-          * Define input pattern to validate
+          * Define input valid state
          */
         "valid": boolean;
         /**
@@ -412,7 +443,7 @@ export namespace Components {
          */
         "inputVerticalList": boolean;
         /**
-          * Force invalid component
+          * Define input invalid state
          */
         "invalid": boolean;
         /**
@@ -420,7 +451,7 @@ export namespace Components {
          */
         "items": string[] | RadioOption[];
         /**
-          * Input label Required
+          * Input label
          */
         "label": string;
         /**
@@ -448,13 +479,13 @@ export namespace Components {
          */
         "tooltip": string;
         /**
-          * Force valid component
+          * Define input valid state
          */
         "valid": boolean;
         /**
           * Component value
          */
-        "value": unknown;
+        "value": any;
     }
     interface MgInputSelect {
         /**
@@ -483,7 +514,7 @@ export namespace Components {
          */
         "items": string[] | SelectOption[];
         /**
-          * Input label Required
+          * Input label
          */
         "label": string;
         /**
@@ -529,7 +560,7 @@ export namespace Components {
         /**
           * Component value
          */
-        "value": unknown;
+        "value": any;
         /**
           * Define input width
          */
@@ -566,11 +597,11 @@ export namespace Components {
          */
         "identifier": string;
         /**
-          * Define input pattern error message
+          * Define input invalid state
          */
         "invalid": boolean;
         /**
-          * Input label Required
+          * Input label
          */
         "label": string;
         /**
@@ -623,7 +654,7 @@ export namespace Components {
          */
         "type": 'text' | 'search';
         /**
-          * Define input pattern to validate
+          * Define input valid state
          */
         "valid": boolean;
         /**
@@ -662,11 +693,11 @@ export namespace Components {
          */
         "identifier": string;
         /**
-          * Define input pattern error message
+          * Define input invalid state
          */
         "invalid": boolean;
         /**
-          * Input label Required
+          * Input label
          */
         "label": string;
         /**
@@ -714,7 +745,7 @@ export namespace Components {
          */
         "tooltip": string;
         /**
-          * Define input pattern to validate
+          * Define input valid state
          */
         "valid": boolean;
         /**
@@ -767,7 +798,7 @@ export namespace Components {
          */
         "items": string[] | ToggleValue[];
         /**
-          * Input label Required
+          * Input label
          */
         "label": string;
         /**
@@ -793,7 +824,7 @@ export namespace Components {
         /**
           * Component value
          */
-        "value": unknown;
+        "value": any;
     }
     interface MgMessage {
         /**
@@ -991,6 +1022,12 @@ declare global {
         prototype: HTMLMgCharacterLeftElement;
         new (): HTMLMgCharacterLeftElement;
     };
+    interface HTMLMgFormElement extends Components.MgForm, HTMLStencilElement {
+    }
+    var HTMLMgFormElement: {
+        prototype: HTMLMgFormElement;
+        new (): HTMLMgFormElement;
+    };
     interface HTMLMgIconElement extends Components.MgIcon, HTMLStencilElement {
     }
     var HTMLMgIconElement: {
@@ -1109,6 +1146,7 @@ declare global {
         "mg-badge": HTMLMgBadgeElement;
         "mg-button": HTMLMgButtonElement;
         "mg-character-left": HTMLMgCharacterLeftElement;
+        "mg-form": HTMLMgFormElement;
         "mg-icon": HTMLMgIconElement;
         "mg-input-checkbox": HTMLMgInputCheckboxElement;
         "mg-input-date": HTMLMgInputDateElement;
@@ -1205,6 +1243,36 @@ declare namespace LocalJSX {
          */
         "template"?: string;
     }
+    interface MgForm {
+        /**
+          * Define if form is disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+         */
+        "identifier"?: string;
+        /**
+          * Define form invalid state
+         */
+        "invalid"?: boolean;
+        /**
+          * Input name If not set the value equals the identifier
+         */
+        "name"?: string;
+        /**
+          * Emitted event on form validity check Tells if form is valid or not
+         */
+        "onForm-valid"?: (event: CustomEvent<boolean>) => void;
+        /**
+          * Define if form is readonly
+         */
+        "readonly"?: boolean;
+        /**
+          * Define form valid state
+         */
+        "valid"?: boolean;
+    }
     interface MgIcon {
         /**
           * Icon to display
@@ -1241,11 +1309,11 @@ declare namespace LocalJSX {
          */
         "inputVerticalList"?: boolean;
         /**
-          * Force invalid component
+          * Define input invalid state
          */
         "invalid"?: boolean;
         /**
-          * Input label Required
+          * Input label
          */
         "label": string;
         /**
@@ -1260,6 +1328,10 @@ declare namespace LocalJSX {
           * Input name If not set the value equals the identifier
          */
         "name"?: string;
+        /**
+          * Emited event when checking validity
+         */
+        "onInput-valid"?: (event: CustomEvent<boolean>) => void;
         /**
           * Emitted event when value change
          */
@@ -1277,7 +1349,7 @@ declare namespace LocalJSX {
          */
         "tooltip"?: string;
         /**
-          * Force valid component
+          * Define input valid state
          */
         "valid"?: boolean;
         /**
@@ -1299,11 +1371,11 @@ declare namespace LocalJSX {
          */
         "identifier"?: string;
         /**
-          * Define input pattern error message
+          * Define input invalid state
          */
         "invalid"?: boolean;
         /**
-          * Input label Required
+          * Input label
          */
         "label": string;
         /**
@@ -1327,7 +1399,11 @@ declare namespace LocalJSX {
          */
         "name"?: string;
         /**
-          * Emmited event when value change
+          * Emited event when checking validity
+         */
+        "onInput-valid"?: (event: CustomEvent<boolean>) => void;
+        /**
+          * Emited event when value change
          */
         "onValue-change"?: (event: CustomEvent<string>) => void;
         /**
@@ -1343,7 +1419,7 @@ declare namespace LocalJSX {
          */
         "tooltip"?: string;
         /**
-          * Define input pattern to validate
+          * Define input valid state
          */
         "valid"?: boolean;
         /**
@@ -1377,7 +1453,7 @@ declare namespace LocalJSX {
          */
         "invalid"?: boolean;
         /**
-          * Input label Required
+          * Input label
          */
         "label": string;
         /**
@@ -1401,7 +1477,11 @@ declare namespace LocalJSX {
          */
         "name"?: string;
         /**
-          * Emmited event when value change
+          * Emited event when checking validity
+         */
+        "onInput-valid"?: (event: CustomEvent<boolean>) => void;
+        /**
+          * Emited event when value change
          */
         "onValue-change"?: (event: CustomEvent<number>) => void;
         /**
@@ -1451,11 +1531,11 @@ declare namespace LocalJSX {
          */
         "identifier"?: string;
         /**
-          * Define input pattern error message
+          * Define input invalid state
          */
         "invalid"?: boolean;
         /**
-          * Input label Required
+          * Input label
          */
         "label": string;
         /**
@@ -1471,7 +1551,11 @@ declare namespace LocalJSX {
          */
         "name"?: string;
         /**
-          * Emmited event when value change
+          * Emited event when checking validity
+         */
+        "onInput-valid"?: (event: CustomEvent<boolean>) => void;
+        /**
+          * Emited event when value change
          */
         "onValue-change"?: (event: CustomEvent<string>) => void;
         /**
@@ -1491,7 +1575,7 @@ declare namespace LocalJSX {
          */
         "tooltip"?: string;
         /**
-          * Define input pattern to validate
+          * Define input valid state
          */
         "valid"?: boolean;
         /**
@@ -1521,7 +1605,7 @@ declare namespace LocalJSX {
          */
         "inputVerticalList"?: boolean;
         /**
-          * Force invalid component
+          * Define input invalid state
          */
         "invalid"?: boolean;
         /**
@@ -1529,7 +1613,7 @@ declare namespace LocalJSX {
          */
         "items": string[] | RadioOption[];
         /**
-          * Input label Required
+          * Input label
          */
         "label": string;
         /**
@@ -1545,9 +1629,13 @@ declare namespace LocalJSX {
          */
         "name"?: string;
         /**
+          * Emited event when checking validity
+         */
+        "onInput-valid"?: (event: CustomEvent<boolean>) => void;
+        /**
           * Emitted event when value change
          */
-        "onValue-change"?: (event: CustomEvent<unknown>) => void;
+        "onValue-change"?: (event: CustomEvent<any>) => void;
         /**
           * Define if input is readonly
          */
@@ -1561,13 +1649,13 @@ declare namespace LocalJSX {
          */
         "tooltip"?: string;
         /**
-          * Force valid component
+          * Define input valid state
          */
         "valid"?: boolean;
         /**
           * Component value
          */
-        "value"?: unknown;
+        "value"?: any;
     }
     interface MgInputSelect {
         /**
@@ -1591,7 +1679,7 @@ declare namespace LocalJSX {
          */
         "items": string[] | SelectOption[];
         /**
-          * Input label Required
+          * Input label
          */
         "label": string;
         /**
@@ -1607,9 +1695,13 @@ declare namespace LocalJSX {
          */
         "name"?: string;
         /**
-          * Emmited event when value change
+          * Emited event when checking validity
          */
-        "onValue-change"?: (event: CustomEvent<unknown>) => void;
+        "onInput-valid"?: (event: CustomEvent<boolean>) => void;
+        /**
+          * Emited event when value change
+         */
+        "onValue-change"?: (event: CustomEvent<any>) => void;
         /**
           * Input placeholder. It should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text.
          */
@@ -1641,7 +1733,7 @@ declare namespace LocalJSX {
         /**
           * Component value
          */
-        "value"?: unknown;
+        "value"?: any;
         /**
           * Define input width
          */
@@ -1673,11 +1765,11 @@ declare namespace LocalJSX {
          */
         "identifier"?: string;
         /**
-          * Define input pattern error message
+          * Define input invalid state
          */
         "invalid"?: boolean;
         /**
-          * Input label Required
+          * Input label
          */
         "label": string;
         /**
@@ -1697,7 +1789,11 @@ declare namespace LocalJSX {
          */
         "name"?: string;
         /**
-          * Emmited event when value change
+          * Emited event when checking validity
+         */
+        "onInput-valid"?: (event: CustomEvent<boolean>) => void;
+        /**
+          * Emited event when value change
          */
         "onValue-change"?: (event: CustomEvent<string>) => void;
         /**
@@ -1729,7 +1825,7 @@ declare namespace LocalJSX {
          */
         "type"?: 'text' | 'search';
         /**
-          * Define input pattern to validate
+          * Define input valid state
          */
         "valid"?: boolean;
         /**
@@ -1763,11 +1859,11 @@ declare namespace LocalJSX {
          */
         "identifier"?: string;
         /**
-          * Define input pattern error message
+          * Define input invalid state
          */
         "invalid"?: boolean;
         /**
-          * Input label Required
+          * Input label
          */
         "label": string;
         /**
@@ -1787,7 +1883,11 @@ declare namespace LocalJSX {
          */
         "name"?: string;
         /**
-          * Emmited event when value change
+          * Emited event when checking validity
+         */
+        "onInput-valid"?: (event: CustomEvent<boolean>) => void;
+        /**
+          * Emited event when value change
          */
         "onValue-change"?: (event: CustomEvent<string>) => void;
         /**
@@ -1819,7 +1919,7 @@ declare namespace LocalJSX {
          */
         "tooltip"?: string;
         /**
-          * Define input pattern to validate
+          * Define input valid state
          */
         "valid"?: boolean;
         /**
@@ -1872,7 +1972,7 @@ declare namespace LocalJSX {
          */
         "items": string[] | ToggleValue[];
         /**
-          * Input label Required
+          * Input label
          */
         "label": string;
         /**
@@ -1888,9 +1988,13 @@ declare namespace LocalJSX {
          */
         "name"?: string;
         /**
-          * Emmited event when value change
+          * Emited event when checking validity
          */
-        "onValue-change"?: (event: CustomEvent<unknown>) => void;
+        "onInput-valid"?: (event: CustomEvent<boolean>) => void;
+        /**
+          * Emited event when value change
+         */
+        "onValue-change"?: (event: CustomEvent<any>) => void;
         /**
           * Define if input is readonly
          */
@@ -1902,7 +2006,7 @@ declare namespace LocalJSX {
         /**
           * Component value
          */
-        "value"?: unknown;
+        "value"?: any;
     }
     interface MgMessage {
         /**
@@ -1922,11 +2026,11 @@ declare namespace LocalJSX {
          */
         "identifier"?: string;
         /**
-          * Emmited event when message is hidden
+          * Emited event when message is hidden
          */
         "onComponent-hide"?: (event: CustomEvent<string>) => void;
         /**
-          * Emmited event when message is diplayed
+          * Emited event when message is diplayed
          */
         "onComponent-show"?: (event: CustomEvent<string>) => void;
         /**
@@ -2108,6 +2212,7 @@ declare namespace LocalJSX {
         "mg-badge": MgBadge;
         "mg-button": MgButton;
         "mg-character-left": MgCharacterLeft;
+        "mg-form": MgForm;
         "mg-icon": MgIcon;
         "mg-input-checkbox": MgInputCheckbox;
         "mg-input-date": MgInputDate;
@@ -2136,6 +2241,7 @@ declare module "@stencil/core" {
             "mg-badge": LocalJSX.MgBadge & JSXBase.HTMLAttributes<HTMLMgBadgeElement>;
             "mg-button": LocalJSX.MgButton & JSXBase.HTMLAttributes<HTMLMgButtonElement>;
             "mg-character-left": LocalJSX.MgCharacterLeft & JSXBase.HTMLAttributes<HTMLMgCharacterLeftElement>;
+            "mg-form": LocalJSX.MgForm & JSXBase.HTMLAttributes<HTMLMgFormElement>;
             "mg-icon": LocalJSX.MgIcon & JSXBase.HTMLAttributes<HTMLMgIconElement>;
             "mg-input-checkbox": LocalJSX.MgInputCheckbox & JSXBase.HTMLAttributes<HTMLMgInputCheckboxElement>;
             "mg-input-date": LocalJSX.MgInputDate & JSXBase.HTMLAttributes<HTMLMgInputDateElement>;

@@ -7,21 +7,23 @@
     <style>
       /* Website style */
       html {
+        background: #bada55;
         font-size: 62.5%;
         font-size: calc(1em * 0.625); /* IE fix */
       }
       body {
+        padding: 1rem;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
         font-size: 1.3rem;
         line-height: 1.4;
       }
     </style>
     <link rel="stylesheet" href="/build/variables.css" />
-    <!-- <link rel="stylesheet" href="/build/mg-components.css" /> -->
+    <link rel="stylesheet" href="/build/mg-components.css" />
     <script type="module" src="/build/mg-components.esm.js"></script>
     <script nomodule src="/build/mg-components.js"></script>
   </head>
-  <body style="padding: 1rem; background: #bada55">
+  <body>
     <main>
       <h1>MG Components</h1>
       <section>
@@ -279,7 +281,7 @@
         <div>
           <mg-input-title required>Label when required</mg-input-title>
         </div>
-        <h4>Tooltips</h4>
+        <!-- <h4>Tooltips</h4>
         <div class="mg-group-elements" style="padding: 0 0 1rem">
           <mg-tooltip
             message="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -340,12 +342,12 @@
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           </div>
           <h1 slot="title">Titre un peu plus long un peu plus long un peu plus long un peu plus long un peu plus long</h1>
-          <mg-button>Display popover</mg-button></mg-popover
-        >
+          <mg-button>Display popover</mg-button>
+        </mg-popover> -->
         <h4>Character left</h4>
         <mg-character-left maxlength="400"></mg-character-left>
         <mg-character-left maxlength="100" template="Template custom qui te dit qu'il ne reste plus que {counter} lettres!"></mg-character-left>
-        <h3>Input Text</h3>
+        <!-- <h3>Input Text</h3>
         <div class="mg-form-group">
           <mg-input-text
             placeholder="placeholder"
@@ -599,7 +601,101 @@
             { title: 'oui', value: true },
           ];
           mgInputToggleOnOffReadonlyFalse.value = true;
-        </script>
+        </script> -->
+        <section>
+          <h2>mg-form</h2>
+          <mg-form>
+            <!-- <mg-message>Blu</mg-message>
+            <div class="mg-grid">
+              <mg-input-text required class="mg-grid__col no-padding" width="2" label="Libellé" tooltip="message tooltip" value="" maxlength="2"></mg-input-text>
+              <mg-input-text class="mg-grid__col no-padding" width="2" label="Libellé" tooltip="message tooltip" value="BA" maxlength="2"></mg-input-text>
+            </div> -->
+            <mg-input-checkbox identifier="mg-input-checkbox" label="mg-input-checkbox label"></mg-input-checkbox>
+            <mg-input-date identifier="mg-input-date" label="mg-input-date label"></mg-input-date>
+            <mg-input-numeric identifier="mg-input-numeric" label="mg-input-numeric label"></mg-input-numeric>
+            <mg-input-password identifier="mg-input-password" label="mg-input-password label"></mg-input-password>
+            <mg-input-radio identifier="mg-input-radio" label="mg-input-radio label" value="blu"></mg-input-radio>
+            <mg-input-select identifier="mg-input-select" label="mg-input-select label" value="blo" tooltip="non"></mg-input-select>
+            <mg-input-text identifier="mg-input-text" label="mg-input-text label"></mg-input-text>
+            <mg-input-textarea identifier="mg-input-textarea" label="mg-input-textarea label"></mg-input-textarea>
+            <mg-input-toggle identifier="mg-input-toggle" label="mg-input-toggle label" value="oui">
+              <span slot="item-1">non</span>
+              <span slot="item-2">oui</span>
+            </mg-input-toggle>
+            <div slot="actions" class="mg-group-elements mg-group-elements--align-right">
+              <mg-button id="can-submit">Primary</mg-button>
+              <mg-button variant="secondary">Secondary</mg-button>
+            </div>
+          </mg-form>
+          <script>
+            const mgForm = document.querySelector('mg-form');
+            const mgFormButton = document.querySelector('#can-submit');
+            mgForm.addEventListener('form-valid', function (e) {
+              mgFormButton.disabled = !e.detail;
+            });
+            // setTimeout(function () {
+            //   mgForm.displayError();
+            // }, 1500);
+          </script>
+          <script>
+            const mgInputCheckbox = document.querySelector('mg-input-checkbox');
+            const mgInputDate = document.querySelector('mg-input-date');
+            const mgInputNumeric = document.querySelector('mg-input-numeric');
+            const mgInputPassword = document.querySelector('mg-input-password');
+            const mgInputRadio = document.querySelector('mg-input-radio');
+            const mgInputSelect = document.querySelector('mg-input-select');
+            const mgInputText = document.querySelector('mg-input-text');
+            const mgInputTextarea = document.querySelector('mg-input-textarea');
+            const mgInputToggle = document.querySelector('mg-input-toggle');
+
+            mgInputCheckbox.value = [
+              { title: 'oui', value: false },
+              { title: 'non', value: false },
+            ];
+            mgInputRadio.items = [
+              { title: 'blu', value: 'blu' },
+              { title: 'bli', value: 'bli' },
+              { title: 'bla', value: 'bla', disabled: true },
+              { title: 'blo', value: 'blo' },
+            ];
+            // mgInputRadio.value = mgInputRadio.items[1].value;
+            // mgInputRadio.value = 'bli';
+            mgInputSelect.items = ['blu', 'bli', 'bla', 'blo', 'le long libellé qui va faire sortir le champ mg-input-select de sa zone de confort'];
+            // mgInputSelect.value = 'bli';
+            // mgInputSelect.value = mgInputSelect.items[2];
+            mgInputToggle.items = [
+              { title: 'non', value: 'non' },
+              { title: 'oui', value: 'oui' },
+            ];
+            // mgInputToggle.value = 'non';
+            // mgInputToggle.value = mgInputToggle.items[1].value;
+          </script>
+          <script>
+            // mgInputCheckbox.value = [
+            //   { title: 'oui', value: true },
+            //   { title: 'non', value: false },
+            // ];
+            // mgInputDate.value = '2022-04-15';
+            // mgInputNumeric.value = 1234567890;
+            // mgInputPassword.value = 'p455w0rD';
+            // mgInputRadio.value = mgInputRadio.items[0];
+            // mgInputSelect.value = mgInputSelect.items[0];
+            // mgInputText.value = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
+            // mgInputTextarea.value =
+            //   'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
+            // mgInputToggle.value = mgInputToggle.items[1].value;
+          </script>
+          <script>
+            mgInputCheckbox.required = true;
+            mgInputDate.required = true;
+            mgInputNumeric.required = true;
+            mgInputPassword.required = true;
+            mgInputRadio.required = true;
+            mgInputSelect.required = true;
+            mgInputText.required = true;
+            mgInputTextarea.required = true;
+          </script>
+        </section>
         <h2>.mg-form-group</h2>
         <div class="mg-grid">
           <div class="mg-grid__col mg-grid__col-10">
@@ -664,13 +760,13 @@
           ></mg-input-text>
         </div>
       </section>
-      <section>
+      <section id="mg-grid">
         <h2>.mg-grid</h2>
         <style>
-          .mg-grid {
+          #mg-grid .mg-grid {
             margin-bottom: 0.5rem;
           }
-          .mg-grid__col {
+          #mg-grid .mg-grid__col {
             padding: 0.5rem 1.5rem;
             border: 1px solid rgba(0, 0, 0, 0.2);
             background-color: rgba(0, 0, 0, 0.1);

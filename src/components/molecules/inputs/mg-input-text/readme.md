@@ -1,4 +1,4 @@
-This atom refers to the [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64).
+This molecule refers to the [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64).
 
 ## Use as search input
 
@@ -21,8 +21,8 @@ Horizontal spacing is not managed by the component, it must be defined in slot i
 | `helpText`              | `help-text`               | Add a help text under the input, usually expected data format and example                                                                      | `string`                 | `undefined`                 |
 | `icon`                  | `icon`                    | Input icon                                                                                                                                     | `string`                 | `undefined`                 |
 | `identifier`            | `identifier`              | Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.                                    | `string`                 | `createID('mg-input-text')` |
-| `invalid`               | `invalid`                 | Define input pattern error message                                                                                                             | `boolean`                | `undefined`                 |
-| `label` _(required)_    | `label`                   | Input label Required                                                                                                                           | `string`                 | `undefined`                 |
+| `invalid`               | `invalid`                 | Define input invalid state                                                                                                                     | `boolean`                | `undefined`                 |
+| `label` _(required)_    | `label`                   | Input label                                                                                                                                    | `string`                 | `undefined`                 |
 | `labelHide`             | `label-hide`              | Define if label is visible                                                                                                                     | `boolean`                | `false`                     |
 | `labelOnTop`            | `label-on-top`            | Define if label is displayed on top                                                                                                            | `boolean`                | `undefined`                 |
 | `maxlength`             | `maxlength`               | Input max length                                                                                                                               | `number`                 | `400`                       |
@@ -34,16 +34,17 @@ Horizontal spacing is not managed by the component, it must be defined in slot i
 | `required`              | `required`                | Define if input is required                                                                                                                    | `boolean`                | `false`                     |
 | `tooltip`               | `tooltip`                 | Add a tooltip message next to the input                                                                                                        | `string`                 | `undefined`                 |
 | `type`                  | `type`                    | Input type                                                                                                                                     | `"search" \| "text"`     | `'text'`                    |
-| `valid`                 | `valid`                   | Define input pattern to validate                                                                                                               | `boolean`                | `undefined`                 |
+| `valid`                 | `valid`                   | Define input valid state                                                                                                                       | `boolean`                | `undefined`                 |
 | `value`                 | `value`                   | Component value                                                                                                                                | `string`                 | `undefined`                 |
 | `width`                 | `width`                   | Define input width                                                                                                                             | `"full" \| 16 \| 2 \| 4` | `'full'`                    |
 
 
 ## Events
 
-| Event          | Description                     | Type                  |
-| -------------- | ------------------------------- | --------------------- |
-| `value-change` | Emmited event when value change | `CustomEvent<string>` |
+| Event          | Description                         | Type                   |
+| -------------- | ----------------------------------- | ---------------------- |
+| `input-valid`  | Emited event when checking validity | `CustomEvent<boolean>` |
+| `value-change` | Emited event when value change      | `CustomEvent<string>`  |
 
 
 ## Methods

@@ -117,8 +117,17 @@ describe('mg-input-select', () => {
       ],
       selectedOption: 1,
     },
-  ])('Should trigger events for items (%s) with selectedOption (%s)', async ({ items, selectedOption }) => {
-    const args = { label: 'label', items, identifier: 'identifier', helpText: 'My help text' };
+    {
+      items: [
+        { title: 'Batman', value: { name: 'Batman', group: 'Heroes' } },
+        { title: 'Robin', value: { name: 'Robin', group: 'Heroes' } },
+        { title: 'Joker', value: { name: 'Joker', group: 'Super Vilains' } },
+        { title: 'Bane', value: { name: 'Bane', group: 'Super Vilains' } },
+      ],
+      selectedOption: 2,
+    },
+  ])('Should trigger events for (%s)', async ({ items, selectedOption }) => {
+    const args = { label: 'label', items, identifier: 'identifier', helpText: 'My help text', value: 'blu' };
     const page = await getPage(args);
 
     const element = page.doc.querySelector('mg-input-select');
@@ -139,7 +148,7 @@ describe('mg-input-select', () => {
 
     expect(page.root).toMatchSnapshot(); //Snapshot on focus
 
-    input.value = selectedOption.toString();
+    input.value = items[selectedOption]?.title || items[selectedOption] || selectedOption;
     input.dispatchEvent(new CustomEvent('input', { bubbles: true }));
     await page.waitForChanges();
     const expectedEmitValue = selectedOption !== '' ? (typeof items[selectedOption] === 'object' ? (items[selectedOption] as SelectOption).value : items[selectedOption]) : null;

@@ -27,7 +27,7 @@ export const MgTabs = Template.bind({});
 
 MgTabs.args = {
   items: ['Tab 1', 'Tab 2', 'Tab 3'],
-  label: 'Short tabs description. Needeed for accessibility',
+  label: 'Short tabs description. Needed for accessibility',
   activeTab: undefined,
 };
 

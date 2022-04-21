@@ -1,4 +1,4 @@
-import { Component, Event, h, Prop, EventEmitter, State, Method } from '@stencil/core';
+import { Component, Element, Event, h, Prop, EventEmitter, State, Method, Watch } from '@stencil/core';
 import { MgInput } from '../MgInput';
 import { InputClass, Width } from '../MgInput.conf';
 import { createID, ClassList } from '../../../../utils/components.utils';
@@ -25,9 +25,18 @@ export class MgInputPassword {
    **************/
 
   /**
+   * Get component DOM element
+   */
+  @Element() element: HTMLMgInputPasswordElement;
+
+  /**
    * Component value
    */
   @Prop({ mutable: true, reflect: true }) value: string;
+  @Watch('value')
+  handleValue(newValue: string): void {
+    this.valueChange.emit(newValue);
+  }
 
   /**
    * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
@@ -43,7 +52,6 @@ export class MgInputPassword {
 
   /**
    * Input label
-   * Required
    */
   @Prop() label!: string;
 
@@ -94,12 +102,12 @@ export class MgInputPassword {
   @Prop() helpText: string;
 
   /**
-   * Define input pattern to validate
+   * Define input valid state
    */
   @Prop({ mutable: true }) valid: boolean;
 
   /**
-   * Define input pattern error message
+   * Define input invalid state
    */
   @Prop({ mutable: true }) invalid: boolean;
 
@@ -114,9 +122,14 @@ export class MgInputPassword {
   @State() errorMessage: string;
 
   /**
-   * Emmited event when value change
+   * Emited event when value change
    */
   @Event({ eventName: 'value-change' }) valueChange: EventEmitter<string>;
+
+  /**
+   * Emited event when checking validity
+   */
+  @Event({ eventName: 'input-valid' }) inputValid: EventEmitter<boolean>;
 
   /**
    * Public method to display errors
@@ -135,7 +148,6 @@ export class MgInputPassword {
   private handleInput = (): void => {
     this.checkValidity();
     this.value = this.input.value;
-    this.valueChange.emit(this.value);
   };
 
   /**
@@ -156,6 +168,9 @@ export class MgInputPassword {
       // Set validity
       this.valid = validity;
       this.invalid = !validity;
+
+      //Send event
+      this.inputValid.emit(validity);
     }
   };
 
@@ -184,14 +199,13 @@ export class MgInputPassword {
   /**
    * Check if component props are well configured on init
    *
-   * @returns {ReturnType<typeof setTimeout>} timeout
+   * @returns {void}
    */
-  componentWillLoad(): ReturnType<typeof setTimeout> {
-    // return a promise to process action only in the FIRST render().
-    // https://stenciljs.com/docs/component-lifecycle#componentwillload
-    return setTimeout(() => {
+  componentWillLoad(): void {
+    // Check validity when component is ready
+    this.element.componentOnReady().then(() => {
       this.checkValidity();
-    }, 0);
+    });
   }
 
   /**

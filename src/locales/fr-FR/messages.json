@@ -19,6 +19,10 @@
       "placeholder": "Sélectionnez une valeur"
     }
   },
+  "form": {
+    "required": "Les champs marqués d'un <strong class=\"is-asterisk\">*</strong> sont obligatoires",
+    "allRequired": "Tous les champs sont obligatoires"
+  },
   "message": {
     "closeButton": "Fermer le message"
   },
@@ -35,7 +39,7 @@
   "panel": {
     "editLabel": "Modifer le titre de la section."
   },
-  "global": {
+  "general": {
     "validate": "Valider",
     "cancel": "Annuler",
     "close": "Fermer",

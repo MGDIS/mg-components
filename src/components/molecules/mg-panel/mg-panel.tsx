@@ -179,7 +179,7 @@ export class MgPanel {
         >
           <mg-button
             slot="append-input"
-            label={messages.global.cancel}
+            label={messages.general.cancel}
             is-icon
             variant="secondary"
             onClick={this.handleCancelEditButton}
@@ -189,7 +189,7 @@ export class MgPanel {
           </mg-button>
           <mg-button
             slot="append-input"
-            label={messages.global.validate}
+            label={messages.general.validate}
             is-icon
             variant="secondary"
             onClick={this.handleValidateEditButton}

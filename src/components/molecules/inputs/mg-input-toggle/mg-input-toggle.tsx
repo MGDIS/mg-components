@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component, Event, h, Prop, EventEmitter, State, Watch, Element } from '@stencil/core';
 import { MgInput } from '../MgInput';
 import { createID, ClassList, allItemsAreString } from '../../../../utils/components.utils';
@@ -38,7 +40,14 @@ export class MgInputToggle {
   /**
    * Component value
    */
-  @Prop({ mutable: true }) value: unknown;
+  @Prop({ mutable: true }) value: any;
+  @Watch('value')
+  handleValue(newValue: any): void {
+    // Swich to the right option
+    this.setChecked();
+    // Emit value-change event
+    this.valueChange.emit(newValue);
+  }
 
   /**
    * Items are the possible options to select
@@ -77,7 +86,6 @@ export class MgInputToggle {
 
   /**
    * Input label
-   * Required
    */
   @Prop() label!: string;
 
@@ -160,24 +168,32 @@ export class MgInputToggle {
     else this.classList.delete(this.classIsActive);
 
     // update value
-    this.value = this.options[this.checked ? 1 : 0].value;
-    this.valueChange.emit(this.value);
+    this.value = this.options[newValue ? 1 : 0].value;
   }
 
   /**
-   * Emmited event when value change
+   * Emited event when value change
    */
-  @Event({ eventName: 'value-change' }) valueChange: EventEmitter<unknown>;
+  @Event({ eventName: 'value-change' }) valueChange: EventEmitter<any>;
+
+  /**
+   * Emited event when checking validity
+   */
+  @Event({ eventName: 'input-valid' }) inputValid: EventEmitter<boolean>;
 
   /**
    * Change checked value
+   *
+   * @returns {void}
    */
   private toggleChecked = (): void => {
-    this.setChecked(!this.checked);
+    this.checked = !this.checked;
   };
 
   /**
    * Slots validation
+   *
+   * @returns {void}
    */
   private validateSlots = (): void => {
     const slots = Array.from(this.element.children);
@@ -193,9 +209,9 @@ export class MgInputToggle {
   /**
    * set checked state
    *
-   * @param {boolean} newValue checked value
+   * @returns {void}
    */
-  private setChecked(newValue?: boolean): void {
+  private setChecked(): void {
     // has "value" props type is not a boolean, it is bind/render as an attributes/props
     // true props will be represent by "true" string so we convert it has boolean
     // true attribute will be represent by "" string so we convert it has boolean
@@ -204,7 +220,7 @@ export class MgInputToggle {
       this.value = true;
     }
 
-    this.checked = newValue !== undefined ? newValue : this.value === this.options[1].value;
+    this.checked = this.value === this.options[1].value;
   }
 
   /*************
@@ -217,15 +233,15 @@ export class MgInputToggle {
   componentWillLoad(): void {
     // Check items format
     this.validateItems(this.items);
+    // Check slots
+    this.validateSlots();
     // init checked value
     this.setChecked();
-
     // apply handler
     this.handleIsOnOff(this.isOnOff);
     this.handleIsIcon(this.isIcon);
     this.handleReadonly(this.readonly);
     this.handleDisabled(this.disabled);
-    this.validateSlots();
   }
 
   /**

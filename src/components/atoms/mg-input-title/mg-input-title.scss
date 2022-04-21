@@ -1,12 +1,10 @@
-/**
- * Not scoped into `mg-input-title` because it could be used outside of an input
- * (ex: All input with a * are required)
- */
-.is-asterisk {
-  color: hsl(var(--color-danger));
-}
+@use '../../../styles/form.scss';
 
 legend.mg-input-title {
   padding-left: 0;
   padding-right: 0;
+}
+
+.mg-input-title__required {
+  display: var(--mg-input-title-display, unset);
 }

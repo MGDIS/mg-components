@@ -13,20 +13,21 @@ This molecule refers to the [PDA9-770](https://jira.mgdis.fr/browse/PDA9-770).
 | `isIcon`             | `is-icon`      | Define if toggle display icon                                                                               | `boolean`                   | `false`                       |
 | `isOnOff`            | `is-on-off`    | Define if toggle have on/off style                                                                          | `boolean`                   | `false`                       |
 | `items` _(required)_ | --             | Items are the possible options to select                                                                    | `ToggleValue[] \| string[]` | `undefined`                   |
-| `label` _(required)_ | `label`        | Input label Required                                                                                        | `string`                    | `undefined`                   |
+| `label` _(required)_ | `label`        | Input label                                                                                                 | `string`                    | `undefined`                   |
 | `labelHide`          | `label-hide`   | Define if label is visible                                                                                  | `boolean`                   | `false`                       |
 | `labelOnTop`         | `label-on-top` | Define if label is displayed on top                                                                         | `boolean`                   | `undefined`                   |
 | `name`               | `name`         | Input name If not set the value equals the identifier                                                       | `string`                    | `this.identifier`             |
 | `readonly`           | `readonly`     | Define if input is readonly                                                                                 | `boolean`                   | `false`                       |
 | `tooltip`            | `tooltip`      | Add a tooltip message next to the input                                                                     | `string`                    | `undefined`                   |
-| `value`              | --             | Component value                                                                                             | `unknown`                   | `undefined`                   |
+| `value`              | `value`        | Component value                                                                                             | `any`                       | `undefined`                   |
 
 
 ## Events
 
-| Event          | Description                     | Type                   |
-| -------------- | ------------------------------- | ---------------------- |
-| `value-change` | Emmited event when value change | `CustomEvent<unknown>` |
+| Event          | Description                         | Type                   |
+| -------------- | ----------------------------------- | ---------------------- |
+| `input-valid`  | Emited event when checking validity | `CustomEvent<boolean>` |
+| `value-change` | Emited event when value change      | `CustomEvent<any>`     |
 
 
 ## Dependencies

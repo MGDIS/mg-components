@@ -1,5 +1,4 @@
-This atom refers to the [PDA9-181](https://jira.mgdis.fr/browse/PDA9-181).
-
+This molecule refers to the [PDA9-181](https://jira.mgdis.fr/browse/PDA9-181).
 
 ## 🚨 Slot
 
@@ -18,7 +17,7 @@ Horizontal spacing is not managed by the component, it must be defined in slot i
 | `identifier`         | `identifier`     | Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.                                    | `string`                 | `createID('mg-input-numeric')` |
 | `integerLength`      | `integer-length` | Override integer length integer is the number before the decimal point                                                                         | `number`                 | `13`                           |
 | `invalid`            | `invalid`        | Define input pattern error message                                                                                                             | `boolean`                | `undefined`                    |
-| `label` _(required)_ | `label`          | Input label Required                                                                                                                           | `string`                 | `undefined`                    |
+| `label` _(required)_ | `label`          | Input label                                                                                                                                    | `string`                 | `undefined`                    |
 | `labelHide`          | `label-hide`     | Define if label is visible                                                                                                                     | `boolean`                | `false`                        |
 | `labelOnTop`         | `label-on-top`   | Define if label is displayed on top                                                                                                            | `boolean`                | `undefined`                    |
 | `max`                | `max`            | Maximum value                                                                                                                                  | `number`                 | `undefined`                    |
@@ -36,9 +35,10 @@ Horizontal spacing is not managed by the component, it must be defined in slot i
 
 ## Events
 
-| Event          | Description                     | Type                  |
-| -------------- | ------------------------------- | --------------------- |
-| `value-change` | Emmited event when value change | `CustomEvent<number>` |
+| Event          | Description                         | Type                   |
+| -------------- | ----------------------------------- | ---------------------- |
+| `input-valid`  | Emited event when checking validity | `CustomEvent<boolean>` |
+| `value-change` | Emited event when value change      | `CustomEvent<number>`  |
 
 
 ## Methods

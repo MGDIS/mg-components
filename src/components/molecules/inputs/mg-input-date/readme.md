@@ -1,4 +1,4 @@
-This atom refers to the [PDA9-65](https://jira.mgdis.fr/browse/PDA9-65).
+This molecule refers to the [PDA9-65](https://jira.mgdis.fr/browse/PDA9-65).
 
 <!-- Auto Generated Below -->
 
@@ -10,8 +10,8 @@ This atom refers to the [PDA9-65](https://jira.mgdis.fr/browse/PDA9-65).
 | `disabled`           | `disabled`     | Define if input is disabled                                                                                 | `boolean` | `false`                     |
 | `helpText`           | `help-text`    | Add a help text under the input, usually expected data format and example                                   | `string`  | `undefined`                 |
 | `identifier`         | `identifier`   | Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created. | `string`  | `createID('mg-input-date')` |
-| `invalid`            | `invalid`      | Define input pattern error message                                                                          | `boolean` | `undefined`                 |
-| `label` _(required)_ | `label`        | Input label Required                                                                                        | `string`  | `undefined`                 |
+| `invalid`            | `invalid`      | Define input invalid state                                                                                  | `boolean` | `undefined`                 |
+| `label` _(required)_ | `label`        | Input label                                                                                                 | `string`  | `undefined`                 |
 | `labelHide`          | `label-hide`   | Define if label is visible                                                                                  | `boolean` | `false`                     |
 | `labelOnTop`         | `label-on-top` | Define if label is displayed on top                                                                         | `boolean` | `undefined`                 |
 | `max`                | `max`          | Define input maximum date format: yyyy-mm-dd                                                                | `string`  | `undefined`                 |
@@ -20,15 +20,16 @@ This atom refers to the [PDA9-65](https://jira.mgdis.fr/browse/PDA9-65).
 | `readonly`           | `readonly`     | Define if input is readonly                                                                                 | `boolean` | `false`                     |
 | `required`           | `required`     | Define if input is required                                                                                 | `boolean` | `false`                     |
 | `tooltip`            | `tooltip`      | Add a tooltip message next to the input                                                                     | `string`  | `undefined`                 |
-| `valid`              | `valid`        | Define input pattern to validate                                                                            | `boolean` | `undefined`                 |
+| `valid`              | `valid`        | Define input valid state                                                                                    | `boolean` | `undefined`                 |
 | `value`              | `value`        | Component value                                                                                             | `string`  | `undefined`                 |
 
 
 ## Events
 
-| Event          | Description                     | Type                  |
-| -------------- | ------------------------------- | --------------------- |
-| `value-change` | Emmited event when value change | `CustomEvent<string>` |
+| Event          | Description                         | Type                   |
+| -------------- | ----------------------------------- | ---------------------- |
+| `input-valid`  | Emited event when checking validity | `CustomEvent<boolean>` |
+| `value-change` | Emited event when value change      | `CustomEvent<string>`  |
 
 
 ## Methods

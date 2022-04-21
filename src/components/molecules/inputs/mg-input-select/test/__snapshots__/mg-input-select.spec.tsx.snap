@@ -18,16 +18,16 @@ exports[`mg-input-select Should render with args {
             <option value="">
               Sélectionnez une valeur
             </option>
-            <option value="0">
+            <option value="blu">
               blu
             </option>
-            <option value="1">
+            <option value="bli">
               bli
             </option>
-            <option value="2">
+            <option value="blo">
               blo
             </option>
-            <option value="3">
+            <option value="bla">
               bla
             </option>
           </select>
@@ -58,16 +58,16 @@ exports[`mg-input-select Should render with args {
             <option value="">
               Sélectionnez une valeur
             </option>
-            <option value="0">
+            <option value="blu">
               blu
             </option>
-            <option value="1">
+            <option value="bli">
               bli
             </option>
-            <option value="2">
+            <option value="blo">
               blo
             </option>
-            <option value="3">
+            <option value="bla">
               bla
             </option>
           </select>
@@ -96,16 +96,16 @@ exports[`mg-input-select Should render with args {
             <option value="">
               placeholder
             </option>
-            <option value="0">
+            <option value="blu">
               blu
             </option>
-            <option value="1">
+            <option value="bli">
               bli
             </option>
-            <option value="2">
+            <option value="blo">
               blo
             </option>
-            <option value="3">
+            <option value="bla">
               bla
             </option>
           </select>
@@ -135,16 +135,16 @@ exports[`mg-input-select Should render with args {
             <option value="">
               placeholder
             </option>
-            <option value="0">
+            <option value="blu">
               blu
             </option>
-            <option value="1">
+            <option value="bli">
               bli
             </option>
-            <option value="2">
+            <option value="blo">
               blo
             </option>
-            <option value="3">
+            <option value="bla">
               bla
             </option>
           </select>
@@ -175,16 +175,16 @@ exports[`mg-input-select Should render with args {
             <option value="">
               placeholder
             </option>
-            <option value="0">
+            <option value="blu">
               blu
             </option>
-            <option value="1">
+            <option value="bli">
               bli
             </option>
-            <option value="2">
+            <option value="blo">
               blo
             </option>
-            <option value="3">
+            <option value="bla">
               bla
             </option>
           </select>
@@ -214,16 +214,16 @@ exports[`mg-input-select Should render with args {
             <option value="">
               placeholder
             </option>
-            <option value="0">
+            <option value="blu">
               blu
             </option>
-            <option value="1">
+            <option value="bli">
               bli
             </option>
-            <option value="2">
+            <option value="blo">
               blo
             </option>
-            <option value="3">
+            <option value="bla">
               bla
             </option>
           </select>
@@ -296,16 +296,16 @@ exports[`mg-input-select Should render with args {
             <option value="">
               Sélectionnez une valeur
             </option>
-            <option value="0">
+            <option value="blu">
               blu
             </option>
-            <option value="1">
+            <option value="bli">
               bli
             </option>
-            <option value="2">
+            <option value="blo">
               blo
             </option>
-            <option value="3">
+            <option value="bla">
               bla
             </option>
           </select>
@@ -343,16 +343,16 @@ exports[`mg-input-select Should render with args {
             <option value="">
               Sélectionnez une valeur
             </option>
-            <option value="0">
+            <option value="blu">
               blu
             </option>
-            <option value="1">
+            <option value="bli">
               bli
             </option>
-            <option value="2">
+            <option value="blo">
               blo
             </option>
-            <option value="3">
+            <option value="bla">
               bla
             </option>
           </select>
@@ -376,16 +376,16 @@ exports[`mg-input-select Should render with args { label: 'label', identifier: '
             <option value="">
               Sélectionnez une valeur
             </option>
-            <option value="0">
+            <option value="blu">
               blu
             </option>
-            <option value="1">
+            <option value="bli">
               bli
             </option>
-            <option value="2">
+            <option value="blo">
               blo
             </option>
-            <option value="3">
+            <option value="bla">
               bla
             </option>
           </select>
@@ -409,16 +409,16 @@ exports[`mg-input-select Should render with args { label: 'label', identifier: '
             <option value="">
               Sélectionnez une valeur
             </option>
-            <option value="0">
+            <option value="blu">
               blu
             </option>
-            <option value="1">
+            <option value="bli">
               bli
             </option>
-            <option value="2">
+            <option value="blo">
               blo
             </option>
-            <option value="3">
+            <option value="bla">
               bla
             </option>
           </select>
@@ -443,19 +443,19 @@ exports[`mg-input-select Should render with args { label: 'label', identifier: '
               Sélectionnez une valeur
             </option>
             <optgroup label="blu">
-              <option value="0">
+              <option value="blu">
                 blu
               </option>
-              <option value="1">
+              <option value="bli">
                 bli
               </option>
             </optgroup>
             <optgroup label="blo">
-              <option value="0">
+              <option value="blo">
                 blo
               </option>
             </optgroup>
-            <option value="2">
+            <option value="bla">
               bla
             </option>
           </select>
@@ -466,7 +466,7 @@ exports[`mg-input-select Should render with args { label: 'label', identifier: '
 </mg-input-select>
 `;
 
-exports[`mg-input-select Should trigger events for items ({ items: [Array], selectedOption: '' }) with selectedOption (%s) 1`] = `
+exports[`mg-input-select Should trigger events for ({ items: [Array], selectedOption: '' }) 1`] = `
 <mg-input-select>
   <mock:shadow-root>
     <div class="mg-input mg-input--select">
@@ -479,16 +479,16 @@ exports[`mg-input-select Should trigger events for items ({ items: [Array], sele
             <option value="">
               Sélectionnez une valeur
             </option>
-            <option value="0">
+            <option value="batman">
               batman
             </option>
-            <option value="1">
+            <option value="robin">
               robin
             </option>
-            <option value="2">
+            <option value="joker">
               joker
             </option>
-            <option value="3">
+            <option value="bane">
               bane
             </option>
           </select>
@@ -502,7 +502,7 @@ exports[`mg-input-select Should trigger events for items ({ items: [Array], sele
 </mg-input-select>
 `;
 
-exports[`mg-input-select Should trigger events for items ({ items: [Array], selectedOption: 0 }) with selectedOption (%s) 1`] = `
+exports[`mg-input-select Should trigger events for ({ items: [Array], selectedOption: 0 }) 1`] = `
 <mg-input-select>
   <mock:shadow-root>
     <div class="mg-input mg-input--select">
@@ -515,10 +515,10 @@ exports[`mg-input-select Should trigger events for items ({ items: [Array], sele
             <option value="">
               Sélectionnez une valeur
             </option>
-            <option value="0">
+            <option value="batman">
               batman
             </option>
-            <option value="1">
+            <option value="robin">
               robin
             </option>
           </select>
@@ -532,7 +532,7 @@ exports[`mg-input-select Should trigger events for items ({ items: [Array], sele
 </mg-input-select>
 `;
 
-exports[`mg-input-select Should trigger events for items ({ items: [Array], selectedOption: 1 }) with selectedOption (%s) 1`] = `
+exports[`mg-input-select Should trigger events for ({ items: [Array], selectedOption: 1 }) 1`] = `
 <mg-input-select>
   <mock:shadow-root>
     <div class="mg-input mg-input--select">
@@ -545,16 +545,16 @@ exports[`mg-input-select Should trigger events for items ({ items: [Array], sele
             <option value="">
               Sélectionnez une valeur
             </option>
-            <option value="0">
+            <option value="batman">
               batman
             </option>
-            <option value="1">
+            <option value="robin">
               robin
             </option>
-            <option value="2">
+            <option value="joker">
               joker
             </option>
-            <option value="3">
+            <option value="bane">
               bane
             </option>
           </select>
@@ -568,7 +568,7 @@ exports[`mg-input-select Should trigger events for items ({ items: [Array], sele
 </mg-input-select>
 `;
 
-exports[`mg-input-select Should trigger events for items ({ items: [Array], selectedOption: 1 }) with selectedOption (%s) 2`] = `
+exports[`mg-input-select Should trigger events for ({ items: [Array], selectedOption: 1 }) 2`] = `
 <mg-input-select>
   <mock:shadow-root>
     <div class="mg-input mg-input--select">
@@ -581,10 +581,10 @@ exports[`mg-input-select Should trigger events for items ({ items: [Array], sele
             <option value="">
               Sélectionnez une valeur
             </option>
-            <option value="0">
+            <option value="batman">
               batman
             </option>
-            <option value="1">
+            <option value="robin">
               robin
             </option>
           </select>
@@ -598,7 +598,7 @@ exports[`mg-input-select Should trigger events for items ({ items: [Array], sele
 </mg-input-select>
 `;
 
-exports[`mg-input-select Should trigger events for items ({ items: [Array], selectedOption: 2 }) with selectedOption (%s) 1`] = `
+exports[`mg-input-select Should trigger events for ({ items: [Array], selectedOption: 2 }) 1`] = `
 <mg-input-select>
   <mock:shadow-root>
     <div class="mg-input mg-input--select">
@@ -611,16 +611,16 @@ exports[`mg-input-select Should trigger events for items ({ items: [Array], sele
             <option value="">
               Sélectionnez une valeur
             </option>
-            <option value="0">
+            <option value="batman">
               batman
             </option>
-            <option value="1">
+            <option value="robin">
               robin
             </option>
-            <option value="2">
+            <option value="joker">
               joker
             </option>
-            <option value="3">
+            <option value="bane">
               bane
             </option>
           </select>
@@ -634,7 +634,7 @@ exports[`mg-input-select Should trigger events for items ({ items: [Array], sele
 </mg-input-select>
 `;
 
-exports[`mg-input-select Should trigger events for items ({ items: [Array], selectedOption: 3 }) with selectedOption (%s) 1`] = `
+exports[`mg-input-select Should trigger events for ({ items: [Array], selectedOption: 2 }) 2`] = `
 <mg-input-select>
   <mock:shadow-root>
     <div class="mg-input mg-input--select">
@@ -647,16 +647,52 @@ exports[`mg-input-select Should trigger events for items ({ items: [Array], sele
             <option value="">
               Sélectionnez une valeur
             </option>
-            <option value="0">
+            <option value="Batman">
+              Batman
+            </option>
+            <option value="Robin">
+              Robin
+            </option>
+            <option value="Joker">
+              Joker
+            </option>
+            <option value="Bane">
+              Bane
+            </option>
+          </select>
+        </div>
+        <div class="mg-input__help-text" id="identifier-help-text">
+          My help text
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-select>
+`;
+
+exports[`mg-input-select Should trigger events for ({ items: [Array], selectedOption: 3 }) 1`] = `
+<mg-input-select>
+  <mock:shadow-root>
+    <div class="mg-input mg-input--select">
+      <mg-input-title identifier="identifier">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input">
+          <select aria-describedby="identifier-help-text" class="mg-input__box" id="identifier" name="identifier" title="Sélectionnez une valeur">
+            <option value="">
+              Sélectionnez une valeur
+            </option>
+            <option value="batman">
               batman
             </option>
-            <option value="1">
+            <option value="robin">
               robin
             </option>
-            <option value="2">
+            <option value="joker">
               joker
             </option>
-            <option value="3">
+            <option value="bane">
               bane
             </option>
           </select>
@@ -683,16 +719,16 @@ exports[`mg-input-select display error with displayError component's public meth
             <option value="">
               Sélectionnez une valeur
             </option>
-            <option value="0">
+            <option value="batman">
               batman
             </option>
-            <option value="1">
+            <option value="robin">
               robin
             </option>
-            <option value="2">
+            <option value="joker">
               joker
             </option>
-            <option value="3">
+            <option value="bane">
               bane
             </option>
           </select>
@@ -716,16 +752,16 @@ exports[`mg-input-select display error with displayError component's public meth
             <option value="">
               Sélectionnez une valeur
             </option>
-            <option value="0">
+            <option value="batman">
               batman
             </option>
-            <option value="1">
+            <option value="robin">
               robin
             </option>
-            <option value="2">
+            <option value="joker">
               joker
             </option>
-            <option value="3">
+            <option value="bane">
               bane
             </option>
           </select>
@@ -752,16 +788,16 @@ exports[`mg-input-select validity, case next state is disabled validity ({ valid
             <option value="">
               Sélectionnez une valeur
             </option>
-            <option value="0">
+            <option value="blu">
               blu
             </option>
-            <option value="1">
+            <option value="bli">
               bli
             </option>
-            <option value="2">
+            <option value="blo">
               blo
             </option>
-            <option value="3">
+            <option value="bla">
               bla
             </option>
           </select>
@@ -788,16 +824,16 @@ exports[`mg-input-select validity, case next state is disabled validity ({ valid
             <option value="">
               Sélectionnez une valeur
             </option>
-            <option value="0">
+            <option value="blu">
               blu
             </option>
-            <option value="1">
+            <option value="bli">
               bli
             </option>
-            <option value="2">
+            <option value="blo">
               blo
             </option>
-            <option value="3">
+            <option value="bla">
               bla
             </option>
           </select>
@@ -824,16 +860,16 @@ exports[`mg-input-select validity, case next state is readonly validity ({ valid
             <option value="">
               Sélectionnez une valeur
             </option>
-            <option value="0">
+            <option value="blu">
               blu
             </option>
-            <option value="1">
+            <option value="bli">
               bli
             </option>
-            <option value="2">
+            <option value="blo">
               blo
             </option>
-            <option value="3">
+            <option value="bla">
               bla
             </option>
           </select>

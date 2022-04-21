@@ -10,6 +10,7 @@
 .mg-input__box {
   // Display
   padding: calc((var(--default-size) - var(--font-size) * var(--line-height)) / 2) var(--mg-inputs-spacer);
+  width: 100%;
   height: var(--default-size);
   box-sizing: border-box;
   // Decoration
