@@ -36,7 +36,7 @@
   "panel": {
     "editLabel": "Modifer le titre de la section."
   },
-  "global": {
+  "general": {
     "validate": "Valider",
     "cancel": "Annuler",
     "close": "Fermer",
