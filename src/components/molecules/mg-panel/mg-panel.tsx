@@ -175,7 +175,6 @@ export class MgPanel {
           displayCharacterLeft={false}
           identifier={`${this.identifier}-edition-input`}
           ref={el => (this.editInputElement = el as HTMLMgInputTextElement)}
-          width="full"
         >
           <mg-button
             slot="append-input"
