@@ -20,6 +20,8 @@ describe('mg-input-text', () => {
 
       await page.keyboard.down('Tab');
 
+      await page.waitForChanges();
+
       const screenshotFocus = await page.screenshot();
       expect(screenshotFocus).toMatchImageSnapshot();
 
@@ -27,13 +29,15 @@ describe('mg-input-text', () => {
       await input.press('KeyL');
       await input.press('KeyU');
 
+      await page.waitForChanges();
+
       const screenshotType = await page.screenshot();
       expect(screenshotType).toMatchImageSnapshot();
     });
   });
 
   test.each([true, false])('render with tooltip, case label-on-top %s', async labelOnTop => {
-    const page = await createPage(`<mg-input-text label="label" tooltip="Tooltip message" label-on-top=${labelOnTop}></mg-input-text>`);
+    const page = await createPage(`<mg-input-text label="label" tooltip="Tooltip message" label-on-top="${labelOnTop}"></mg-input-text>`);
 
     const element = await page.find('mg-input-text');
 
@@ -43,7 +47,9 @@ describe('mg-input-text', () => {
     expect(screenshot).toMatchImageSnapshot();
 
     await page.keyboard.down('Tab');
-    await page.keyboard.down('Tab');
+    if (!labelOnTop) await page.keyboard.down('Tab'); // when label on top tooltip is on fist tab (next to label)
+
+    await page.waitForChanges();
 
     const screenshotTooltip = await page.screenshot();
     expect(screenshotTooltip).toMatchImageSnapshot();
@@ -55,6 +61,7 @@ describe('mg-input-text', () => {
     `<mg-input-text label="label" value="blu" readonly></mg-input-text>`,
     `<mg-input-text label="label" value="blu" readonly label-on-top></mg-input-text>`,
     `<mg-input-text label="label" disabled></mg-input-text>`,
+    `<mg-input-text label="label" value="blu" disabled></mg-input-text>`,
   ])('Should render with template', html => {
     test('render', async () => {
       const page = await createPage(html);
@@ -78,6 +85,8 @@ describe('mg-input-text', () => {
     await page.keyboard.down('Tab');
     await page.keyboard.down('Tab');
 
+    await page.waitForChanges();
+
     const screenshot = await page.screenshot();
     expect(screenshot).toMatchImageSnapshot();
   });
@@ -98,6 +107,8 @@ describe('mg-input-text', () => {
     await input.press('1');
 
     await page.keyboard.down('Tab');
+
+    await page.waitForChanges();
 
     const screenshot = await page.screenshot();
     expect(screenshot).toMatchImageSnapshot();

@@ -61,7 +61,7 @@ describe('mg-input-select', () => {
   });
 
   test.each([true, false])('render with tooltip, case label-on-top %s', async labelOnTop => {
-    const page = await createPage(`<mg-input-select label="label" tooltip="Tooltip message" label-on-top=${labelOnTop}></mg-input-select>
+    const page = await createPage(`<mg-input-select label="label" tooltip="Tooltip message" label-on-top="${labelOnTop}"></mg-input-select>
       <script>
       const mgInputSelect = document.querySelector('mg-input-select');
       mgInputSelect.items = ['blu', 'bli', 'bla', 'blo'];
@@ -75,7 +75,7 @@ describe('mg-input-select', () => {
     expect(screenshot).toMatchImageSnapshot();
 
     await page.keyboard.down('Tab');
-    await page.keyboard.down('Tab');
+    if (!labelOnTop) await page.keyboard.down('Tab'); // when label on top tooltip is on fist tab (next to label)
 
     const screenshotTooltip = await page.screenshot();
     expect(screenshotTooltip).toMatchImageSnapshot();
@@ -87,6 +87,7 @@ describe('mg-input-select', () => {
     `<mg-input-select label="label" value="blu" readonly></mg-input-select>`,
     `<mg-input-select label="label" value="blu" readonly label-on-top></mg-input-select>`,
     `<mg-input-select label="label" disabled></mg-input-select>`,
+    `<mg-input-select label="label" value="blu" disabled></mg-input-select>`,
   ])('Should render with template', html => {
     test('render', async () => {
       const page = await createPage(`${html}

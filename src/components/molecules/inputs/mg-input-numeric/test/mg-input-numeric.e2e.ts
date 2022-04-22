@@ -39,7 +39,7 @@ describe('mg-input-numeric', () => {
   });
 
   test.each([true, false])('render with tooltip, case label-on-top %s', async labelOnTop => {
-    const page = await createPage(`<mg-input-numeric label="label" tooltip="Tooltip message" label-on-top=${labelOnTop}></mg-input-numeric>`);
+    const page = await createPage(`<mg-input-numeric label="label" tooltip="Tooltip message" label-on-top="${labelOnTop}"></mg-input-numeric>`);
 
     const element = await page.find('mg-input-numeric');
 
@@ -49,7 +49,7 @@ describe('mg-input-numeric', () => {
     expect(screenshot).toMatchImageSnapshot();
 
     await page.keyboard.down('Tab');
-    await page.keyboard.down('Tab');
+    if (!labelOnTop) await page.keyboard.down('Tab'); // when label on top tooltip is on fist tab (next to label)
 
     const screenshotTooltip = await page.screenshot();
     expect(screenshotTooltip).toMatchImageSnapshot();
@@ -60,6 +60,7 @@ describe('mg-input-numeric', () => {
     `<mg-input-numeric label="label" value="123,45"></mg-input-numeric>`,
     `<mg-input-numeric label="label" value="123,45" readonly></mg-input-numeric>`,
     `<mg-input-numeric label="label" disabled></mg-input-numeric>`,
+    `<mg-input-numeric label="label" value="123,45" disabled></mg-input-numeric>`,
   ])('Should render with template', html => {
     test('render', async () => {
       const page = await createPage(html);
