@@ -13,7 +13,7 @@ describe.each(variants)('mg-button %s', variant => {
   });
 });
 
-test.each(['<span><mg-icon icon="trash"></mg-icon>Text button</span>', '<span><mg-icon icon="trash"></mg-icon>Text button<mg-badge value="1" label="label"></mg-badge></span>'])(
+test.each(['<mg-icon icon="trash"></mg-icon>Text button', '<mg-icon icon="trash"></mg-icon>Text button<mg-badge value="1" label="label"></mg-badge>'])(
   'Should render whith icon slot',
   async slot => {
     const page = await createPage(`<mg-button>${slot}</mg-button>`);

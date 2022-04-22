@@ -120,12 +120,6 @@ $button-column-gap: 0.6rem;
     margin: auto 0;
   }
 
-  ::slotted(*:not(mg-icon)) {
-    display: flex;
-    align-items: center;
-    column-gap: $button-column-gap;
-  }
-
   &.mg-button--loading {
     & > mg-icon {
       position: absolute;
@@ -133,10 +127,16 @@ $button-column-gap: 0.6rem;
       top: 50%;
       transform: translate(-50%, -50%);
     }
-    ::slotted(*) {
+    .mg-button__content {
       opacity: 0;
     }
   }
+}
+
+.mg-button__content {
+  display: flex;
+  align-items: center;
+  column-gap: $button-column-gap;
 }
 
 mg-button {
