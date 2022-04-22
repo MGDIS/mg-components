@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Component, Element, Event, h, Prop, State, EventEmitter, Watch, Method } from '@stencil/core';
+import { Component, Event, h, Prop, State, EventEmitter, Watch, Method } from '@stencil/core';
 import { MgInput } from '../MgInput';
 import { InputClass, Width } from '../MgInput.conf';
 import { createID, ClassList, allItemsAreString } from '../../../../utils/components.utils';
@@ -63,11 +63,6 @@ export class MgInputSelect {
   /**************
    * Decorators *
    **************/
-
-  /**
-   * Get component DOM element
-   */
-  @Element() element: HTMLMgInputSelectElement;
 
   /**
    * Component value
@@ -298,16 +293,18 @@ export class MgInputSelect {
   /**
    * Check if component props are well configured on init
    *
-   * @returns {void}
+   * @returns {ReturnType<typeof setTimeout>} timeout
    */
-  componentWillLoad(): void {
+  componentWillLoad(): ReturnType<typeof setTimeout> {
     // Check items format
     this.validateItems(this.items);
 
     // Check validity when component is ready
-    this.element.componentOnReady().then(() => {
+    // return a promise to process action only in the FIRST render().
+    // https://stenciljs.com/docs/component-lifecycle#componentwillload
+    return setTimeout(() => {
       this.checkValidity();
-    });
+    }, 0);
   }
 
   /**

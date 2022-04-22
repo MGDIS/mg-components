@@ -186,7 +186,7 @@ describe('mg-input-select', () => {
     });
   });
 
-  describe.each([undefined, 300])('Ensure component fit in width: %s', async width => {
+  describe.each([undefined, 300])('Ensure component fit in width: %s', width => {
     test.each([false, true])('label-on-top: %s', async labelOnTop => {
       const page = await createPage(`
       <mg-input-select label="label" label-on-top="${labelOnTop}"></mg-input-select>
