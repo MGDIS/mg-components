@@ -1,4 +1,4 @@
-import { Component, Event, Element, h, Prop, EventEmitter, State, Method, Watch } from '@stencil/core';
+import { Component, Event, h, Prop, EventEmitter, State, Method, Watch } from '@stencil/core';
 import { MgInput } from '../MgInput';
 import { InputClass, Width } from '../MgInput.conf';
 import { createID, ClassList } from '../../../../utils/components.utils';
@@ -24,11 +24,6 @@ export class MgInputTextarea {
   /**************
    * Decorators *
    **************/
-
-  /**
-   * Get component DOM element
-   */
-  @Element() element: HTMLMgInputTextareaElement;
 
   /**
    * Component value
@@ -267,15 +262,17 @@ export class MgInputTextarea {
   /**
    * Check if component props are well configured on init
    *
-   * @returns {void}
+   * @returns {ReturnType<typeof setTimeout>} timeout
    */
-  componentWillLoad(): void {
+  componentWillLoad(): ReturnType<typeof setTimeout> {
     this.validatePattern();
 
     // Check validity when component is ready
-    this.element.componentOnReady().then(() => {
+    // return a promise to process action only in the FIRST render().
+    // https://stenciljs.com/docs/component-lifecycle#componentwillload
+    return setTimeout(() => {
       this.checkValidity();
-    });
+    }, 0);
   }
 
   /**
