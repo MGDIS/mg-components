@@ -279,13 +279,13 @@ export class MgInputCheckbox {
         errorMessage={this.errorMessage}
         isFieldset={true}
       >
-        <ul class={`mg-input__input-group-container${this.inputVerticalList ? ' mg-input__input-group-container--vertical' : ''}`}>
+        <ul class={{ 'mg-input__input-group-container': true, 'mg-input__input-group-container--vertical': this.inputVerticalList }}>
           {this.checkboxItems
             .filter(item => {
               return !this.readonly || item.value;
             })
             .map(input => (
-              <li class={`mg-input__input-group${this.disabled || input.disabled ? ' mg-input__input-group--disabled' : ''}`}>
+              <li class={{ 'mg-input__input-group': true, 'mg-input__input-group--disabled': this.disabled || input.disabled }}>
                 <input
                   type="checkbox"
                   id={input.id}
