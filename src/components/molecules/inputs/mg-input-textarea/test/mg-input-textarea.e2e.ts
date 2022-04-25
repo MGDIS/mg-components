@@ -13,6 +13,12 @@ describe('mg-input-textarea', () => {
       const element = await page.find('mg-input-textarea');
       const input = await page.find('mg-input-textarea >>> textarea');
 
+      // Hide caret for screenshots
+      await page.$eval('mg-input-textarea', elm => {
+        const input = elm.shadowRoot.querySelector('textarea');
+        input.style.caretColor = 'transparent';
+      });
+
       expect(element).toHaveClass('hydrated');
 
       const screenshot = await page.screenshot();

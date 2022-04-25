@@ -14,6 +14,12 @@ describe('mg-input-numeric', () => {
       const element = await page.find('mg-input-numeric');
       const input = await page.find('mg-input-numeric >>> input');
 
+      // Hide caret for screenshots
+      await page.$eval('mg-input-numeric', elm => {
+        const input = elm.shadowRoot.querySelector('input');
+        input.style.caretColor = 'transparent';
+      });
+
       expect(element).toHaveClass('hydrated');
 
       const screenshot = await page.screenshot();
