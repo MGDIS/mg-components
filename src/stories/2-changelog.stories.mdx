@@ -6,15 +6,33 @@ import { Meta } from '@storybook/addon-docs/blocks';
 
 ## 3.2.0
 
-### 💥 Breaking Changes
+April 26th, 2022
 
 ### ⚠️ New component
 
-- [**`<mg-modal>`**](?path=/docs/molecules-mg-modal--mg-modal) refers to [PDA9-63](https://jira.mgdis.fr/browse/PDA9-63)
 - [**`<mg-form>`**](?path=/docs/molecules-mg-form--mg-form) refers to [PDA9-818](https://jira.mgdis.fr/browse/PDA9-818)
+- [**`<mg-modal>`**](?path=/docs/molecules-mg-modal--mg-modal) refers to [PDA9-63](https://jira.mgdis.fr/browse/PDA9-63)
 - [**`<mg-panel>`**](?path=/docs/molecules-mg-panel--mg-panel) refers to [PDA9-484](https://jira.mgdis.fr/browse/PDA9-484)
 
 ### 🚀 Enhancement
+
+- Added `size` to [`<mg-tabs>`](?path=/docs/molecules-mg-tabs--mg-tabs)
+- Added icons to [`<mg-icon>`](?path=/docs/atoms-mg-icon--mg-icon), [see all the availables icons](?path=/docs/style-icons--icons)
+- Components events are now displayed in Storybook
+- Removed the `not-allowed` cursor on disabled components
+- E2E test screenshots no longer allow difference pixels
+
+### 🐛 Bug Fix
+
+- [#76](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/76) CSS buttons does not have space with icons anymore
+- [#77](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/77) mg-input-numeric : Component not re render when value is updated
+- [#79](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/79) Impossible d'afficher les mg-input en erreur au moment de la souscription
+- [#82](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/82) mg-popover triangle is visible
+- [#83](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/83) Cross icon does not appears on html messages
+- [#84](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/84) Évenement value-change de mg-input-checkbox et composant parent
+- [#86](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/86) possibilité de rendre disable le composant mg-tabs
+- [#88](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/88) make mg-input-select max-width 100%
+- [#89](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/89) mg-button disable-on-click does not display loader while disabled
 
 ## 3.1.0
 
