@@ -53,7 +53,7 @@ npm run test -- mg-icon
 
 To regenerate snapshot you must add the `-u` parameter.
 
-For E2E tests you **must** use [WSL](https://docs.microsoft.com/fr-fr/windows/wsl/install) to get the same screenshots as the GitLab CI.
+For E2E tests you **must** use [WSL](https://docs.microsoft.com/fr-fr/windows/wsl/install) or a Linux OS to get the same screenshots as the GitLab CI.
 
 To add a component, run:
 
