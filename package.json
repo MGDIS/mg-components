@@ -34,7 +34,8 @@
     "generate": "stencil generate",
     "storybook": "start-storybook -p 6006 -s www/build",
     "storybook:build": "build-storybook",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "chromatic": "npx chromatic"
   },
   "jest-junit": {
     "outputDirectory": "coverage",
@@ -64,6 +65,7 @@
     "@typescript-eslint/parser": "^4.33.0",
     "babel-loader": "^8.2.2",
     "babel-plugin-jsx-pragmatic": "^1.0.2",
+    "chromatic": "^6.5.4",
     "css-loader": "^5.2.7",
     "eslint": "^7.32.0",
     "eslint-plugin-jsdoc": "^38.0.6",
