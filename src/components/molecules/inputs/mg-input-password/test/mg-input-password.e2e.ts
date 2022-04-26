@@ -13,12 +13,20 @@ describe('mg-input-password', () => {
       const element = await page.find('mg-input-password');
       const input = await page.find('mg-input-password >>> input');
 
+      // Hide caret for screenshots
+      await page.$eval('mg-input-password', elm => {
+        const input = elm.shadowRoot.querySelector('input');
+        input.style.caretColor = 'transparent';
+      });
+
       expect(element).toHaveClass('hydrated');
 
       const screenshot = await page.screenshot();
       expect(screenshot).toMatchImageSnapshot();
 
       await page.keyboard.down('Tab');
+
+      await page.waitForChanges();
 
       const screenshotFocus = await page.screenshot();
       expect(screenshotFocus).toMatchImageSnapshot();
@@ -27,13 +35,15 @@ describe('mg-input-password', () => {
       await input.press('KeyL');
       await input.press('KeyU');
 
+      await page.waitForChanges();
+
       const screenshotType = await page.screenshot();
       expect(screenshotType).toMatchImageSnapshot();
     });
   });
 
   test.each([true, false])('render with tooltip, case label-on-top %s', async labelOnTop => {
-    const page = await createPage(`<mg-input-password label="label" tooltip="Tooltip message" label-on-top=${labelOnTop}></mg-input-password>`);
+    const page = await createPage(`<mg-input-password label="label" tooltip="Tooltip message" label-on-top="${labelOnTop}"></mg-input-password>`);
 
     const element = await page.find('mg-input-password');
 
@@ -43,7 +53,14 @@ describe('mg-input-password', () => {
     expect(screenshot).toMatchImageSnapshot();
 
     await page.keyboard.down('Tab');
-    await page.keyboard.down('Tab');
+    if (!labelOnTop) {
+      // Ensure to display tooltip
+      await page.setViewport({ width: 600, height: 65 });
+      // when label on top tooltip is on fist tab (next to label)
+      await page.keyboard.down('Tab');
+    }
+
+    await page.waitForChanges();
 
     const screenshotTooltip = await page.screenshot();
     expect(screenshotTooltip).toMatchImageSnapshot();
@@ -55,6 +72,7 @@ describe('mg-input-password', () => {
     `<mg-input-password label="label" value="blu" readonly></mg-input-password>`,
     `<mg-input-password label="label" value="blu" readonly label-on-top></mg-input-password>`,
     `<mg-input-password label="label" disabled></mg-input-password>`,
+    `<mg-input-password label="label" value="blu" disabled></mg-input-password>`,
   ])('Should render with template', html => {
     test('render', async () => {
       const page = await createPage(html);
@@ -77,6 +95,8 @@ describe('mg-input-password', () => {
 
     await page.keyboard.down('Tab');
     await page.keyboard.down('Tab');
+
+    await page.waitForChanges();
 
     const screenshot = await page.screenshot();
     expect(screenshot).toMatchImageSnapshot();

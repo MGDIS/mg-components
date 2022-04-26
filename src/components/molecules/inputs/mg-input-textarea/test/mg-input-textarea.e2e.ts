@@ -13,12 +13,20 @@ describe('mg-input-textarea', () => {
       const element = await page.find('mg-input-textarea');
       const input = await page.find('mg-input-textarea >>> textarea');
 
+      // Hide caret for screenshots
+      await page.$eval('mg-input-textarea', elm => {
+        const input = elm.shadowRoot.querySelector('textarea');
+        input.style.caretColor = 'transparent';
+      });
+
       expect(element).toHaveClass('hydrated');
 
       const screenshot = await page.screenshot();
       expect(screenshot).toMatchImageSnapshot();
 
       await page.keyboard.down('Tab');
+
+      await page.waitForChanges();
 
       const screenshotFocus = await page.screenshot();
       expect(screenshotFocus).toMatchImageSnapshot();
@@ -27,13 +35,15 @@ describe('mg-input-textarea', () => {
       await input.press('KeyL');
       await input.press('KeyU');
 
+      await page.waitForChanges();
+
       const screenshotType = await page.screenshot();
       expect(screenshotType).toMatchImageSnapshot();
     });
   });
 
   test.each([true, false])('render with tooltip, case label-on-top %s', async labelOnTop => {
-    const page = await createPage(`<mg-input-textarea label="label" tooltip="Tooltip message" label-on-top=${labelOnTop}></mg-input-textarea>`);
+    const page = await createPage(`<mg-input-textarea label="label" tooltip="Tooltip message" label-on-top="${labelOnTop}"></mg-input-textarea>`);
 
     const element = await page.find('mg-input-textarea');
 
@@ -43,7 +53,12 @@ describe('mg-input-textarea', () => {
     expect(screenshot).toMatchImageSnapshot();
 
     await page.keyboard.down('Tab');
-    await page.keyboard.down('Tab');
+    if (!labelOnTop) {
+      // when label on top tooltip is on fist tab (next to label)
+      await page.keyboard.down('Tab');
+    }
+
+    await page.waitForChanges();
 
     const screenshotTooltip = await page.screenshot();
     expect(screenshotTooltip).toMatchImageSnapshot();
@@ -55,6 +70,7 @@ describe('mg-input-textarea', () => {
     `<mg-input-textarea label="label" value="blu" readonly></mg-input-textarea>`,
     `<mg-input-textarea label="label" value="blu" readonly label-on-top></mg-input-textarea>`,
     `<mg-input-textarea label="label" disabled></mg-input-textarea>`,
+    `<mg-input-textarea label="label" value="blu" disabled></mg-input-textarea>`,
   ])('Should render with template', html => {
     test('render', async () => {
       const page = await createPage(html);
@@ -78,6 +94,8 @@ describe('mg-input-textarea', () => {
     await page.keyboard.down('Tab');
     await page.keyboard.down('Tab');
 
+    await page.waitForChanges();
+
     const screenshot = await page.screenshot();
     expect(screenshot).toMatchImageSnapshot();
   });
@@ -100,6 +118,8 @@ describe('mg-input-textarea', () => {
     await input.press('1');
 
     await page.keyboard.down('Tab');
+
+    await page.waitForChanges();
 
     const screenshot = await page.screenshot();
     expect(screenshot).toMatchImageSnapshot();

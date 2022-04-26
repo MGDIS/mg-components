@@ -19,6 +19,8 @@ describe('mg-input-date', () => {
 
       await page.keyboard.down('Tab');
 
+      await page.waitForChanges();
+
       const screenshotFocus = await page.screenshot();
       expect(screenshotFocus).toMatchImageSnapshot();
 
@@ -31,13 +33,15 @@ describe('mg-input-date', () => {
       await page.keyboard.down('8');
       await page.keyboard.down('2');
 
+      await page.waitForChanges();
+
       const screenshotType = await page.screenshot();
       expect(screenshotType).toMatchImageSnapshot();
     });
   });
 
   test.each([true, false])('render with tooltip, case label-on-top %s', async labelOnTop => {
-    const page = await createPage(`<mg-input-date label="label" tooltip="Tooltip message" label-on-top=${labelOnTop}></mg-input-date>`);
+    const page = await createPage(`<mg-input-date label="label" tooltip="Tooltip message" label-on-top="${labelOnTop}"></mg-input-date>`);
 
     const element = await page.find('mg-input-date');
 
@@ -47,9 +51,16 @@ describe('mg-input-date', () => {
     expect(screenshot).toMatchImageSnapshot();
 
     await page.keyboard.down('Tab');
-    await page.keyboard.down('Tab');
-    await page.keyboard.down('Tab');
-    await page.keyboard.down('Tab');
+    if (!labelOnTop) {
+      // Ensure to display tooltip
+      await page.setViewport({ width: 600, height: 65 });
+      // when label on top tooltip is on fist tab (next to label)
+      await page.keyboard.down('Tab');
+      await page.keyboard.down('Tab');
+      await page.keyboard.down('Tab');
+    }
+
+    await page.waitForChanges();
 
     const screenshotTooltip = await page.screenshot();
     expect(screenshotTooltip).toMatchImageSnapshot();
@@ -60,6 +71,7 @@ describe('mg-input-date', () => {
     `<mg-input-date label="label" value="1982-06-02"></mg-input-date>`,
     `<mg-input-date label="label" value="1982-06-02" readonly></mg-input-date>`,
     `<mg-input-date label="label" disabled></mg-input-date>`,
+    `<mg-input-date label="label" value="1982-06-02" disabled></mg-input-date>`,
   ])('Should render with template', html => {
     test('render', async () => {
       const page = await createPage(html);
@@ -85,6 +97,8 @@ describe('mg-input-date', () => {
     await page.keyboard.down('Tab');
     await page.keyboard.down('Tab');
 
+    await page.waitForChanges();
+
     const screenshot = await page.screenshot();
     expect(screenshot).toMatchImageSnapshot();
   });
@@ -104,6 +118,8 @@ describe('mg-input-date', () => {
     await page.keyboard.down('6');
 
     await page.keyboard.down('Tab');
+
+    await page.waitForChanges();
 
     const screenshot = await page.screenshot();
     expect(screenshot).toMatchImageSnapshot();

@@ -1,4 +1,4 @@
-import { Component, Event, Element, h, Prop, EventEmitter, State, Watch, Method } from '@stencil/core';
+import { Component, Event, h, Prop, EventEmitter, State, Watch, Method } from '@stencil/core';
 import { MgInput } from '../MgInput';
 import { createID, ClassList } from '../../../../utils/components.utils';
 import { messages } from '../../../../locales';
@@ -33,11 +33,6 @@ export class MgInputCheckbox {
   /**************
    * Decorators *
    **************/
-
-  /**
-   * Get component DOM element
-   */
-  @Element() element: HTMLMgInputCheckboxElement;
 
   /**
    * Component value
@@ -243,16 +238,18 @@ export class MgInputCheckbox {
   /**
    * Check if component props are well configured on init
    *
-   * @returns {void}
+   * @returns {ReturnType<typeof setTimeout>} timeout
    */
-  componentWillLoad(): void {
+  componentWillLoad(): ReturnType<typeof setTimeout> {
     // Check values format
     this.validateValue(this.value);
 
     // Check validity when component is ready
-    this.element.componentOnReady().then(() => {
+    // return a promise to process action only in the FIRST render().
+    // https://stenciljs.com/docs/component-lifecycle#componentwillload
+    return setTimeout(() => {
       this.checkValidity();
-    });
+    }, 0);
   }
 
   /**
@@ -282,13 +279,13 @@ export class MgInputCheckbox {
         errorMessage={this.errorMessage}
         isFieldset={true}
       >
-        <ul class={`mg-input__input-group-container${this.inputVerticalList ? ' mg-input__input-group-container--vertical' : ''}`}>
+        <ul class={{ 'mg-input__input-group-container': true, 'mg-input__input-group-container--vertical': this.inputVerticalList }}>
           {this.checkboxItems
             .filter(item => {
               return !this.readonly || item.value;
             })
             .map(input => (
-              <li class={`mg-input__input-group${this.disabled || input.disabled ? ' mg-input__input-group--disabled' : ''}`}>
+              <li class={{ 'mg-input__input-group': true, 'mg-input__input-group--disabled': this.disabled || input.disabled }}>
                 <input
                   type="checkbox"
                   id={input.id}

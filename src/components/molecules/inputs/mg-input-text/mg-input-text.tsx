@@ -304,9 +304,9 @@ export class MgInputText {
   /**
    * Check if component props are well configured on init
    *
-   * @returns {void}
+   * @returns {ReturnType<typeof setTimeout>} timeout
    */
-  componentWillLoad(): void {
+  componentWillLoad(): ReturnType<typeof setTimeout> {
     if (this.icon !== undefined) {
       this.classList.add('mg-input--has-icon');
     }
@@ -314,9 +314,11 @@ export class MgInputText {
     this.validateAppendSlot();
 
     // Check validity when component is ready
-    this.element.componentOnReady().then(() => {
+    // return a promise to process action only in the FIRST render().
+    // https://stenciljs.com/docs/component-lifecycle#componentwillload
+    return setTimeout(() => {
       this.checkValidity();
-    });
+    }, 0);
   }
 
   /**

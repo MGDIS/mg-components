@@ -18,16 +18,23 @@ describe('mg-input-radio', () => {
 
       await page.keyboard.down('Tab');
 
+      await page.waitForChanges();
+
       const screenshotFocus = await page.screenshot();
       expect(screenshotFocus).toMatchImageSnapshot();
 
-      await page.keyboard.down('Space');
+      const radio = await page.find('mg-input-radio >>> .mg-input__input-group input');
+      await radio.press('Space');
+
+      await page.waitForChanges();
 
       const screenshotList = await page.screenshot();
       expect(screenshotList).toMatchImageSnapshot();
 
       await page.keyboard.down('ArrowDown');
       await page.keyboard.down('ArrowDown');
+
+      await page.waitForChanges();
 
       const screenshotSelection = await page.screenshot();
       expect(screenshotSelection).toMatchImageSnapshot();
@@ -58,7 +65,7 @@ describe('mg-input-radio', () => {
   });
 
   test.each([true, false])('render with tooltip, case label-on-top %s', async labelOnTop => {
-    const page = await createPage(`<mg-input-radio label="legend" tooltip="Tooltip message" label-on-top=${labelOnTop}></mg-input-radio>
+    const page = await createPage(`<mg-input-radio label="legend" tooltip="Tooltip message" label-on-top="${labelOnTop}"></mg-input-radio>
       <script>
       const mgInputRadio = document.querySelector('mg-input-radio');
       mgInputRadio.items = ['batman', 'robin', 'joker', 'bane'];
@@ -72,7 +79,13 @@ describe('mg-input-radio', () => {
     expect(screenshot).toMatchImageSnapshot();
 
     await page.keyboard.down('Tab');
-    await page.keyboard.down('Tab');
+    if (!labelOnTop) {
+      // Ensure to display tooltip
+      await page.setViewport({ width: 600, height: 65 });
+      // when label on top tooltip is on fist tab (next to label)
+      await page.keyboard.down('Tab');
+    }
+    await page.waitForChanges();
 
     const screenshotTooltip = await page.screenshot();
     expect(screenshotTooltip).toMatchImageSnapshot();
@@ -99,6 +112,7 @@ describe('mg-input-radio', () => {
     `<mg-input-radio label="legend" value="batman" readonly></mg-input-radio>`,
     `<mg-input-radio label="legend" value="batman" readonly label-on-top></mg-input-radio>`,
     `<mg-input-radio label="legend" disabled></mg-input-radio>`,
+    `<mg-input-radio label="legend" value="batman" disabled></mg-input-radio>`,
   ])('Should render with template', html => {
     test('render', async () => {
       const page = await createPage(`${html}
@@ -129,6 +143,8 @@ describe('mg-input-radio', () => {
 
     await page.keyboard.down('Tab');
     await page.keyboard.down('Tab');
+
+    await page.waitForChanges();
 
     const screenshot = await page.screenshot();
     expect(screenshot).toMatchImageSnapshot();

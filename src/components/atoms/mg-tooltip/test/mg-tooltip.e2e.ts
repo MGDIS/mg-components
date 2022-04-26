@@ -34,6 +34,8 @@ describe('mg-tooltip', () => {
 
       expect(tooltip).toHaveAttribute('data-show');
 
+      await page.setViewport({ width: 400, height: 400 });
+
       const screenshot = await page.screenshot();
       expect(screenshot).toMatchImageSnapshot();
 

@@ -13,7 +13,9 @@ exports[`mg-modal Should render a modal with args {
           <mg-button class="mg-modal__close-button" is-icon="">
             <!---->
             <button aria-label="Fermer la modal" class="mg-button mg-button--flat mg-button--icon" id="identifier-close-button">
-              <mg-icon icon="cross"></mg-icon>
+              <div class="mg-button__content">
+                <mg-icon icon="cross"></mg-icon>
+              </div>
             </button>
           </mg-button>
           <h1 class="mg-modal__title" id="identifier-title">
@@ -39,7 +41,9 @@ exports[`mg-modal Should render a modal with args {
           <mg-button class="mg-modal__close-button" is-icon="">
             <!---->
             <button aria-label="Fermer la modal" class="mg-button mg-button--flat mg-button--icon" id="identifier-close-button">
-              <mg-icon icon="cross"></mg-icon>
+              <div class="mg-button__content">
+                <mg-icon icon="cross"></mg-icon>
+              </div>
             </button>
           </mg-button>
           <h1 class="mg-modal__title" id="identifier-title">
@@ -74,7 +78,9 @@ exports[`mg-modal Should render a modal with args {
           <mg-button class="mg-modal__close-button" is-icon="">
             <!---->
             <button aria-label="Fermer la modal" class="mg-button mg-button--flat mg-button--icon" id="identifier-close-button">
-              <mg-icon icon="cross"></mg-icon>
+              <div class="mg-button__content">
+                <mg-icon icon="cross"></mg-icon>
+              </div>
             </button>
           </mg-button>
           <h1 class="mg-modal__title" id="identifier-title">
@@ -91,13 +97,17 @@ exports[`mg-modal Should render a modal with args {
     <mg-button>
       <!---->
       <button class="mg-button mg-button--primary" id="identifier">
-        Primary
+        <div class="mg-button__content">
+          Primary
+        </div>
       </button>
     </mg-button>
     <mg-button>
       <!---->
       <button class="mg-button mg-button--secondary" id="identifier">
-        Secondary
+        <div class="mg-button__content">
+          Secondary
+        </div>
       </button>
     </mg-button>
   </div>
@@ -117,7 +127,9 @@ exports[`mg-modal Should render a modal with args {
           <mg-button class="mg-modal__close-button" is-icon="">
             <!---->
             <button aria-label="Fermer la modal" class="mg-button mg-button--flat mg-button--icon" id="identifier-close-button">
-              <mg-icon icon="cross"></mg-icon>
+              <div class="mg-button__content">
+                <mg-icon icon="cross"></mg-icon>
+              </div>
             </button>
           </mg-button>
           <h1 class="mg-modal__title" id="identifier-title">
@@ -143,13 +155,17 @@ exports[`mg-modal Should render a modal with args {
     <mg-button>
       <!---->
       <button class="mg-button mg-button--primary" id="identifier">
-        Primary
+        <div class="mg-button__content">
+          Primary
+        </div>
       </button>
     </mg-button>
     <mg-button>
       <!---->
       <button class="mg-button mg-button--secondary" id="identifier">
-        Secondary
+        <div class="mg-button__content">
+          Secondary
+        </div>
       </button>
     </mg-button>
   </div>
@@ -170,7 +186,9 @@ exports[`mg-modal Should render a modal with args {
           <mg-button class="mg-modal__close-button" is-icon="">
             <!---->
             <button aria-label="Fermer la modal" class="mg-button mg-button--flat mg-button--icon" id="identifier-close-button">
-              <mg-icon icon="cross"></mg-icon>
+              <div class="mg-button__content">
+                <mg-icon icon="cross"></mg-icon>
+              </div>
             </button>
           </mg-button>
           <h1 class="mg-modal__title" id="identifier-title">
@@ -197,7 +215,9 @@ exports[`mg-modal Should render a modal with args {
           <mg-button class="mg-modal__close-button" is-icon="">
             <!---->
             <button aria-label="Fermer la modal" class="mg-button mg-button--flat mg-button--icon" id="identifier-close-button">
-              <mg-icon icon="cross"></mg-icon>
+              <div class="mg-button__content">
+                <mg-icon icon="cross"></mg-icon>
+              </div>
             </button>
           </mg-button>
           <h1 class="mg-modal__title" id="identifier-title">
@@ -233,7 +253,9 @@ exports[`mg-modal Should render a modal with args {
           <mg-button class="mg-modal__close-button" is-icon="">
             <!---->
             <button aria-label="Fermer la modal" class="mg-button mg-button--flat mg-button--icon" id="identifier-close-button">
-              <mg-icon icon="cross"></mg-icon>
+              <div class="mg-button__content">
+                <mg-icon icon="cross"></mg-icon>
+              </div>
             </button>
           </mg-button>
           <h1 class="mg-modal__title" id="identifier-title">
@@ -250,13 +272,17 @@ exports[`mg-modal Should render a modal with args {
     <mg-button>
       <!---->
       <button class="mg-button mg-button--primary" id="identifier">
-        Primary
+        <div class="mg-button__content">
+          Primary
+        </div>
       </button>
     </mg-button>
     <mg-button>
       <!---->
       <button class="mg-button mg-button--secondary" id="identifier">
-        Secondary
+        <div class="mg-button__content">
+          Secondary
+        </div>
       </button>
     </mg-button>
   </div>
@@ -277,7 +303,9 @@ exports[`mg-modal Should render a modal with args {
           <mg-button class="mg-modal__close-button" is-icon="">
             <!---->
             <button aria-label="Fermer la modal" class="mg-button mg-button--flat mg-button--icon" id="identifier-close-button">
-              <mg-icon icon="cross"></mg-icon>
+              <div class="mg-button__content">
+                <mg-icon icon="cross"></mg-icon>
+              </div>
             </button>
           </mg-button>
           <h1 class="mg-modal__title" id="identifier-title">
@@ -303,13 +331,17 @@ exports[`mg-modal Should render a modal with args {
     <mg-button>
       <!---->
       <button class="mg-button mg-button--primary" id="identifier">
-        Primary
+        <div class="mg-button__content">
+          Primary
+        </div>
       </button>
     </mg-button>
     <mg-button>
       <!---->
       <button class="mg-button mg-button--secondary" id="identifier">
-        Secondary
+        <div class="mg-button__content">
+          Secondary
+        </div>
       </button>
     </mg-button>
   </div>
@@ -377,13 +409,17 @@ exports[`mg-modal Should render a modal with args { modalTitle: 'Modal Title', i
     <mg-button>
       <!---->
       <button class="mg-button mg-button--primary" id="identifier">
-        Primary
+        <div class="mg-button__content">
+          Primary
+        </div>
       </button>
     </mg-button>
     <mg-button>
       <!---->
       <button class="mg-button mg-button--secondary" id="identifier">
-        Secondary
+        <div class="mg-button__content">
+          Secondary
+        </div>
       </button>
     </mg-button>
   </div>
@@ -419,13 +455,17 @@ exports[`mg-modal Should render a modal with args { modalTitle: 'Modal Title', i
     <mg-button>
       <!---->
       <button class="mg-button mg-button--primary" id="identifier">
-        Primary
+        <div class="mg-button__content">
+          Primary
+        </div>
       </button>
     </mg-button>
     <mg-button>
       <!---->
       <button class="mg-button mg-button--secondary" id="identifier">
-        Secondary
+        <div class="mg-button__content">
+          Secondary
+        </div>
       </button>
     </mg-button>
   </div>
@@ -441,7 +481,9 @@ exports[`mg-modal navigation should hide panel with button 1`] = `
           <mg-button class="mg-modal__close-button" is-icon="">
             <!---->
             <button aria-label="Fermer la modal" class="mg-button mg-button--flat mg-button--icon" id="identifier-close-button">
-              <mg-icon icon="cross"></mg-icon>
+              <div class="mg-button__content">
+                <mg-icon icon="cross"></mg-icon>
+              </div>
             </button>
           </mg-button>
           <h1 class="mg-modal__title" id="identifier-title">
@@ -463,7 +505,9 @@ exports[`mg-modal navigation should hide panel with button 2`] = `
           <mg-button class="mg-modal__close-button" is-icon="">
             <!---->
             <button aria-label="Fermer la modal" class="mg-button mg-button--flat mg-button--icon" id="identifier-close-button">
-              <mg-icon icon="cross"></mg-icon>
+              <div class="mg-button__content">
+                <mg-icon icon="cross"></mg-icon>
+              </div>
             </button>
           </mg-button>
           <h1 class="mg-modal__title" id="identifier-title">
@@ -485,7 +529,9 @@ exports[`mg-modal navigation should hide panel with escape keyboard 1`] = `
           <mg-button class="mg-modal__close-button" is-icon="">
             <!---->
             <button aria-label="Fermer la modal" class="mg-button mg-button--flat mg-button--icon" id="identifier-close-button">
-              <mg-icon icon="cross"></mg-icon>
+              <div class="mg-button__content">
+                <mg-icon icon="cross"></mg-icon>
+              </div>
             </button>
           </mg-button>
           <h1 class="mg-modal__title" id="identifier-title">
@@ -507,7 +553,9 @@ exports[`mg-modal navigation should hide panel with escape keyboard 2`] = `
           <mg-button class="mg-modal__close-button" is-icon="">
             <!---->
             <button aria-label="Fermer la modal" class="mg-button mg-button--flat mg-button--icon" id="identifier-close-button">
-              <mg-icon icon="cross"></mg-icon>
+              <div class="mg-button__content">
+                <mg-icon icon="cross"></mg-icon>
+              </div>
             </button>
           </mg-button>
           <h1 class="mg-modal__title" id="identifier-title">

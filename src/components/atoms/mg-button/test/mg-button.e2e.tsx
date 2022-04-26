@@ -13,7 +13,7 @@ describe.each(variants)('mg-button %s', variant => {
   });
 });
 
-test.each(['<span><mg-icon icon="trash"></mg-icon>Text button</span>', '<span><mg-icon icon="trash"></mg-icon>Text button<mg-badge value="1" label="label"></mg-badge></span>'])(
+test.each(['<mg-icon icon="trash"></mg-icon>Text button', '<mg-icon icon="trash"></mg-icon>Text button<mg-badge value="1" label="label"></mg-badge>'])(
   'Should render whith icon slot',
   async slot => {
     const page = await createPage(`<mg-button>${slot}</mg-button>`);
@@ -46,13 +46,23 @@ describe.each([
     const page = await createPage(template);
     const button = await page.find('button');
 
-    const screenshot1 = await page.screenshot();
-    expect(screenshot1).toMatchImageSnapshot();
+    const screenshot = await page.screenshot();
+    expect(screenshot).toMatchImageSnapshot();
 
     await button.press('Space');
 
-    const screenshot2 = await page.screenshot();
-    expect(screenshot2).toMatchImageSnapshot();
+    // Wait for spinner to be displayed
+    await page.waitForChanges();
+
+    // Remove spinner annimation for screenshot
+    await page.$eval('mg-icon', elm => {
+      const svg = elm.shadowRoot.querySelector('svg');
+      svg.classList.remove('mg-icon--spin');
+    });
+    await page.waitForChanges();
+
+    const screenshotLoading = await page.screenshot();
+    expect(screenshotLoading).toMatchImageSnapshot();
   });
 });
 
