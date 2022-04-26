@@ -70,8 +70,11 @@ export class MgInputSelect {
   @Prop({ mutable: true }) value: any;
   @Watch('value')
   handleValue(newValue: any): void {
-    this.readonlyValue =
-      newValue !== null ? (allItemsAreString(this.items as string[]) ? this.input.value : (this.items as SelectOption[]).find(item => item.value === newValue).title) : null;
+    if (newValue !== null) {
+      this.readonlyValue = allItemsAreString(this.items as string[]) ? this.input.value : (this.items as SelectOption[]).find(item => item.value === newValue).title;
+    } else {
+      this.readonlyValue = null;
+    }
     this.valueChange.emit(newValue);
   }
 
@@ -236,12 +239,11 @@ export class MgInputSelect {
    */
   private handleInput = (): void => {
     this.checkValidity();
-    this.value =
-      this.input.value !== ''
-        ? allItemsAreString(this.items as string[])
-          ? this.input.value
-          : (this.items as SelectOption[]).find(item => item.title === this.input.value).value
-        : null;
+    if (this.input.value !== '') {
+      this.value = allItemsAreString(this.items as string[]) ? this.input.value : (this.items as SelectOption[]).find(item => item.title === this.input.value).value;
+    } else {
+      this.value = null;
+    }
   };
 
   /**
