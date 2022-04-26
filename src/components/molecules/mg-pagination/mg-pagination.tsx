@@ -165,7 +165,7 @@ export class MgPagination {
           {messages.pagination.page} {this.currentPage}
         </span>
         <span>
-          / {this.totalPages} {this.totalPages > 1 ? messages.pagination.pages : messages.pagination.pages}
+          / {this.totalPages} {this.totalPages > 1 ? messages.pagination.pages : messages.pagination.page}
         </span>
         {navigationActionButton(this.currentPage >= this.totalPages, NavigationAction.NEXT)}
       </nav>
