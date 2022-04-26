@@ -22,6 +22,5 @@ export type HTMLMgInputsElement =
   | HTMLMgInputRadioElement
   | HTMLMgInputSelectElement
   | HTMLMgInputTextElement
-  | HTMLMgInputTextElement
   | HTMLMgInputTextareaElement
   | (HTMLMgInputToggleElement & { required: true; invalid: false; displayError: () => void });
