@@ -33,6 +33,8 @@ describe('mg-panel', () => {
       await page.keyboard.down('Tab');
       await page.keyboard.down('Space');
 
+      await page.waitForChanges();
+
       const screenshotType = await page.screenshot();
       expect(screenshotType).toMatchImageSnapshot();
     });
@@ -51,6 +53,8 @@ describe('mg-panel', () => {
       const editButton = await page.find('mg-panel >>> #identifier-edit-button');
       await editButton.click();
 
+      await page.waitForChanges();
+
       const screenshot2 = await page.screenshot();
       expect(screenshot2).toMatchImageSnapshot();
 
@@ -67,6 +71,8 @@ describe('mg-panel', () => {
 
       const validateButton = await page.find('mg-panel >>> #identifier-edition-button-validate');
       await validateButton.click();
+
+      await page.waitForChanges();
 
       const screenshot3 = await page.screenshot();
       expect(screenshot3).toMatchImageSnapshot();

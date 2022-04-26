@@ -49,6 +49,8 @@ describe('mg-message', () => {
     const mgMessageHideProp = await mgMessage.getProperty('hide');
     expect(mgMessageHideProp).toBeTruthy();
 
+    await page.setViewport({ width: 600, height: 100 });
+
     const screenshot = await page.screenshot();
     expect(screenshot).toMatchImageSnapshot();
   });

@@ -1,12 +1,98 @@
 import { createPage } from '../../../../../utils/test.utils';
 
 describe('mg-checkbox', () => {
-  describe.each([`<mg-input-checkbox label="legend"></mg-input-checkbox>`, `<mg-input-checkbox label="legend" disabled></mg-input-checkbox>`])('without tooltip', html => {
+  describe.each([
+    `<mg-input-checkbox label="legend"></mg-input-checkbox>`,
+    `<mg-input-checkbox label="legend" label-on-top></mg-input-checkbox>`,
+    `<mg-input-checkbox label="legend" label-hide></mg-input-checkbox>`,
+    `<mg-input-checkbox label="legend" help-text="HelpText Message"></mg-input-checkbox>`,
+  ])('without tooltip', html => {
     test('render', async () => {
       const page = await createPage(`${html}
       <script>
       const mgInputCheckbox = document.querySelector('mg-input-checkbox');
-      mgInputCheckbox.value = [{title: 'batman', value: true}, {title: 'robin', value: false}, {title: 'joker', value: null}, {title: 'bane', value: true, disabled: true}];
+      mgInputCheckbox.value = [{title: 'Batman', value: false}, {title: 'Robin', value: false}, {title: 'Joker', value: false}, {title: 'Bane', value: false}];
+      </script>`);
+
+      const element = await page.find('mg-input-checkbox');
+
+      expect(element).toHaveClass('hydrated');
+
+      const screenshot = await page.screenshot();
+      expect(screenshot).toMatchImageSnapshot();
+
+      await page.keyboard.down('Tab');
+
+      await page.waitForChanges();
+
+      const screenshotFocus = await page.screenshot();
+      expect(screenshotFocus).toMatchImageSnapshot();
+
+      let checkbox = await page.find('mg-input-checkbox >>> .mg-input__input-group input');
+      await checkbox.press('Space');
+
+      await page.keyboard.down('Tab');
+      checkbox = await page.find('mg-input-checkbox >>> .mg-input__input-group:nth-of-type(2) input');
+      await checkbox.press('Space');
+
+      await page.keyboard.down('Tab');
+      checkbox = await page.find('mg-input-checkbox >>> .mg-input__input-group:nth-of-type(3) input');
+      await checkbox.press('Space');
+
+      await page.keyboard.down('Tab');
+      checkbox = await page.find('mg-input-checkbox >>> .mg-input__input-group:nth-of-type(4) input');
+      await checkbox.press('Space');
+
+      await page.waitForChanges();
+
+      const screenshotChecked = await page.screenshot();
+      expect(screenshotChecked).toMatchImageSnapshot();
+    });
+  });
+
+  test.each([true, false])('render with tooltip, case label-on-top %s', async labelOnTop => {
+    const page = await createPage(`<mg-input-checkbox label="legend" tooltip="Tooltip message" label-on-top="${labelOnTop}"></mg-input-checkbox>
+      <script>
+      const mgInputCheckbox = document.querySelector('mg-input-checkbox');
+      mgInputCheckbox.value = [{title: 'Batman', value: false}, {title: 'Robin', value: false}, {title: 'Joker', value: false}, {title: 'Bane', value: false}];
+      </script>`);
+
+    const element = await page.find('mg-input-checkbox');
+
+    expect(element).toHaveClass('hydrated');
+
+    const screenshot = await page.screenshot();
+    expect(screenshot).toMatchImageSnapshot();
+
+    await page.keyboard.down('Tab');
+    if (!labelOnTop) {
+      // Ensure to display tooltip
+      await page.setViewport({ width: 600, height: 65 });
+      // when label on top tooltip is on fist tab (next to label)
+      await page.keyboard.down('Tab');
+      await page.keyboard.down('Tab');
+      await page.keyboard.down('Tab');
+      await page.keyboard.down('Tab');
+    }
+
+    await page.waitForChanges();
+
+    const screenshotTooltip = await page.screenshot();
+    expect(screenshotTooltip).toMatchImageSnapshot();
+  });
+
+  describe.each([
+    `<mg-input-checkbox label="legend" readonly></mg-input-checkbox>`,
+    `<mg-input-checkbox label="legend" readonly label-on-top></mg-input-checkbox>`,
+    `<mg-input-checkbox label="legend" disabled></mg-input-checkbox>`,
+    `<mg-input-checkbox label="legend" input-vertical-list help-text="HelpText Message"></mg-input-checkbox>`,
+    `<mg-input-checkbox label="legend" input-vertical-list help-text="HelpText Message" label-on-top></mg-input-checkbox>`,
+  ])('Should render with template', html => {
+    test('render', async () => {
+      const page = await createPage(`${html}
+      <script>
+      const mgInputCheckbox = document.querySelector('mg-input-checkbox');
+      mgInputCheckbox.value = [{title: 'Batman', value: true}, {title: 'Robin', value: false}, {title: 'Joker', value: null}, {title: 'Bane', value: true, disabled: true}];
       </script>`);
 
       const element = await page.find('mg-input-checkbox');
@@ -18,28 +104,27 @@ describe('mg-checkbox', () => {
     });
   });
 
-  describe.each([
-    `<mg-input-checkbox label="legend" label-on-top help-text="HelpText Message"></mg-input-checkbox>`,
-    `<mg-input-checkbox label="legend" input-vertical-list help-text="HelpText Message"></mg-input-checkbox>`,
-    `<mg-input-checkbox label="legend" label-on-top input-vertical-list help-text="HelpText Message"></mg-input-checkbox>`,
-    `<mg-input-checkbox label="legend" label-hide></mg-input-checkbox>`,
-    `<mg-input-checkbox label="legend" tooltip="Batman is DC Comics license." required help-text="HelpText Message"></mg-input-checkbox>`,
-    `<mg-input-checkbox label="legend" tooltip="Batman is DC Comics license." required label-on-top help-text="HelpText Message"></mg-input-checkbox>`,
-  ])('without tooltip', html => {
-    test('render', async () => {
-      const page = await createPage(`${html}
-        <script>
-        const mgInputCheckbox = document.querySelector('mg-input-checkbox');
-        mgInputCheckbox.value = [{title: 'batman', value: true}, {title: 'robin', value: false}, {title: 'joker', value: null}, {title: 'bane', value: true, disabled: true}];
-        </script>`);
+  test('Should render error when leaving an empty required input', async () => {
+    const page = await createPage(`<mg-input-checkbox label="legend" help-text="HelpText Message" required></mg-input-checkbox>
+      <script>
+      const mgInputCheckbox = document.querySelector('mg-input-checkbox');
+      mgInputCheckbox.value = [{title: 'Batman', value: false}, {title: 'Robin', value: false}, {title: 'Joker', value: false}, {title: 'Bane', value: false}];
+      </script>`);
 
-      const element = await page.find('mg-input-checkbox');
+    const element = await page.find('mg-input-checkbox');
 
-      expect(element).toHaveClass('hydrated');
+    expect(element).toHaveClass('hydrated');
 
-      const screenshot = await page.screenshot();
-      expect(screenshot).toMatchImageSnapshot();
-    });
+    await page.keyboard.down('Tab');
+    await page.keyboard.down('Tab');
+    await page.keyboard.down('Tab');
+    await page.keyboard.down('Tab');
+    await page.keyboard.down('Tab');
+
+    await page.waitForChanges();
+
+    const screenshot = await page.screenshot();
+    expect(screenshot).toMatchImageSnapshot();
   });
 
   describe.each([
@@ -50,7 +135,7 @@ describe('mg-checkbox', () => {
       const page = await createPage(`<div class="mg-form-group">${html}</div>
         <script>
         const mgInputCheckbox = document.querySelector('mg-input-checkbox');
-        mgInputCheckbox.value = [{title: 'batman', value: true}, {title: 'robin', value: false}, {title: 'joker', value: null}, {title: 'bane', value: true, disabled: true}];
+        mgInputCheckbox.value = [{title: 'Batman', value: true}, {title: 'Robin', value: false}, {title: 'Joker', value: null}, {title: 'Bane', value: true, disabled: true}];
         </script>`);
 
       const element = await page.find('mg-input-checkbox');
