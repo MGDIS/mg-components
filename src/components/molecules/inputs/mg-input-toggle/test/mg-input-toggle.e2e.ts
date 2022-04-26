@@ -25,17 +25,21 @@ describe('mg-input-toggle', () => {
 
     await page.keyboard.down('Tab');
 
+    await page.waitForChanges();
+
     const screenshotFocus = await page.screenshot();
     expect(screenshotFocus).toMatchImageSnapshot();
 
     await toggle.press('Space');
 
-    await page.waitForTimeout(300);
+    await page.waitForChanges();
 
     const screenshotSelection = await page.screenshot();
     expect(screenshotSelection).toMatchImageSnapshot();
 
     await page.keyboard.down('Tab');
+
+    await page.waitForChanges();
 
     const screenshotUnSelect = await page.screenshot();
     expect(screenshotUnSelect).toMatchImageSnapshot();
@@ -80,7 +84,12 @@ describe('mg-input-toggle', () => {
     expect(screenshot).toMatchImageSnapshot();
 
     await page.keyboard.down('Tab');
-    if (!labelOnTop) await page.keyboard.down('Tab'); // when label on top tooltip is on fist tab (next to label)
+    if (!labelOnTop) {
+      // Ensure to display tooltip
+      await page.setViewport({ width: 600, height: 65 });
+      // when label on top tooltip is on fist tab (next to label)
+      await page.keyboard.down('Tab');
+    }
 
     const screenshotTooltip = await page.screenshot();
     expect(screenshotTooltip).toMatchImageSnapshot();

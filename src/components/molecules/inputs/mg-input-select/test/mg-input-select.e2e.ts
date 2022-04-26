@@ -18,10 +18,14 @@ describe('mg-input-select', () => {
 
       await page.keyboard.down('Tab');
 
+      await page.waitForChanges();
+
       const screenshotFocus = await page.screenshot();
       expect(screenshotFocus).toMatchImageSnapshot();
 
       await page.keyboard.down('Space');
+
+      await page.waitForChanges();
 
       const screenshotList = await page.screenshot();
       expect(screenshotList).toMatchImageSnapshot();
@@ -29,10 +33,14 @@ describe('mg-input-select', () => {
       await page.keyboard.down('ArrowDown');
       await page.keyboard.down('ArrowDown');
 
+      await page.waitForChanges();
+
       const screenshotSelection = await page.screenshot();
       expect(screenshotSelection).toMatchImageSnapshot();
 
       await page.keyboard.down('Enter');
+
+      await page.waitForChanges();
 
       const screenshotSelected = await page.screenshot();
       expect(screenshotSelected).toMatchImageSnapshot();
@@ -75,7 +83,14 @@ describe('mg-input-select', () => {
     expect(screenshot).toMatchImageSnapshot();
 
     await page.keyboard.down('Tab');
-    if (!labelOnTop) await page.keyboard.down('Tab'); // when label on top tooltip is on fist tab (next to label)
+    if (!labelOnTop) {
+      // Ensure to display tooltip
+      await page.setViewport({ width: 600, height: 65 });
+      // when label on top tooltip is on fist tab (next to label)
+      await page.keyboard.down('Tab');
+    }
+
+    await page.waitForChanges();
 
     const screenshotTooltip = await page.screenshot();
     expect(screenshotTooltip).toMatchImageSnapshot();
@@ -119,6 +134,8 @@ describe('mg-input-select', () => {
     await page.keyboard.down('Tab');
     await page.keyboard.down('Tab');
 
+    await page.waitForChanges();
+
     const screenshot = await page.screenshot();
     expect(screenshot).toMatchImageSnapshot();
   });
@@ -143,6 +160,8 @@ describe('mg-input-select', () => {
 
     await page.keyboard.down('Tab');
     await page.keyboard.down('Space');
+
+    await page.waitForChanges();
 
     const screenshot = await page.screenshot();
     expect(screenshot).toMatchImageSnapshot();
@@ -201,7 +220,7 @@ describe('mg-input-select', () => {
 
       expect(element).toHaveClass('hydrated');
 
-      if (width !== undefined) await page.setViewport({ width, height: 600 });
+      if (width !== undefined) await page.setViewport({ width, height: 100 });
 
       const screenshot = await page.screenshot();
       expect(screenshot).toMatchImageSnapshot();

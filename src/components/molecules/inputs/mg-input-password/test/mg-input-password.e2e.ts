@@ -13,6 +13,12 @@ describe('mg-input-password', () => {
       const element = await page.find('mg-input-password');
       const input = await page.find('mg-input-password >>> input');
 
+      // Hide caret for screenshots
+      await page.$eval('mg-input-password', elm => {
+        const input = elm.shadowRoot.querySelector('input');
+        input.style.caretColor = 'transparent';
+      });
+
       expect(element).toHaveClass('hydrated');
 
       const screenshot = await page.screenshot();
@@ -20,12 +26,16 @@ describe('mg-input-password', () => {
 
       await page.keyboard.down('Tab');
 
+      await page.waitForChanges();
+
       const screenshotFocus = await page.screenshot();
       expect(screenshotFocus).toMatchImageSnapshot();
 
       await input.press('KeyB');
       await input.press('KeyL');
       await input.press('KeyU');
+
+      await page.waitForChanges();
 
       const screenshotType = await page.screenshot();
       expect(screenshotType).toMatchImageSnapshot();
@@ -43,7 +53,14 @@ describe('mg-input-password', () => {
     expect(screenshot).toMatchImageSnapshot();
 
     await page.keyboard.down('Tab');
-    if (!labelOnTop) await page.keyboard.down('Tab'); // when label on top tooltip is on fist tab (next to label)
+    if (!labelOnTop) {
+      // Ensure to display tooltip
+      await page.setViewport({ width: 600, height: 65 });
+      // when label on top tooltip is on fist tab (next to label)
+      await page.keyboard.down('Tab');
+    }
+
+    await page.waitForChanges();
 
     const screenshotTooltip = await page.screenshot();
     expect(screenshotTooltip).toMatchImageSnapshot();
@@ -78,6 +95,8 @@ describe('mg-input-password', () => {
 
     await page.keyboard.down('Tab');
     await page.keyboard.down('Tab');
+
+    await page.waitForChanges();
 
     const screenshot = await page.screenshot();
     expect(screenshot).toMatchImageSnapshot();

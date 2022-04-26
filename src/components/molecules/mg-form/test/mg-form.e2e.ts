@@ -95,8 +95,6 @@ describe('mg-form', () => {
         ${inputsScript}
         ${inputsScriptRequired}`);
 
-      await page.setViewport({ width: 600, height: 700 });
-
       const element = await page.find('mg-form');
       expect(element).toHaveClass('hydrated');
 

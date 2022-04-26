@@ -23,6 +23,8 @@ describe('mg-checkbox', () => {
 
       await page.keyboard.down('Tab');
 
+      await page.waitForChanges();
+
       const screenshotFocus = await page.screenshot();
       expect(screenshotFocus).toMatchImageSnapshot();
 
@@ -40,6 +42,8 @@ describe('mg-checkbox', () => {
       await page.keyboard.down('Tab');
       checkbox = await page.find('mg-input-checkbox >>> .mg-input__input-group:nth-of-type(4) input');
       await checkbox.press('Space');
+
+      await page.waitForChanges();
 
       const screenshotChecked = await page.screenshot();
       expect(screenshotChecked).toMatchImageSnapshot();
@@ -62,12 +66,16 @@ describe('mg-checkbox', () => {
 
     await page.keyboard.down('Tab');
     if (!labelOnTop) {
-      // when label on top tooltip is on fist tab (next to label)}
+      // Ensure to display tooltip
+      await page.setViewport({ width: 600, height: 65 });
+      // when label on top tooltip is on fist tab (next to label)
       await page.keyboard.down('Tab');
       await page.keyboard.down('Tab');
       await page.keyboard.down('Tab');
       await page.keyboard.down('Tab');
     }
+
+    await page.waitForChanges();
 
     const screenshotTooltip = await page.screenshot();
     expect(screenshotTooltip).toMatchImageSnapshot();
@@ -112,6 +120,8 @@ describe('mg-checkbox', () => {
     await page.keyboard.down('Tab');
     await page.keyboard.down('Tab');
     await page.keyboard.down('Tab');
+
+    await page.waitForChanges();
 
     const screenshot = await page.screenshot();
     expect(screenshot).toMatchImageSnapshot();

@@ -18,16 +18,23 @@ describe('mg-input-radio', () => {
 
       await page.keyboard.down('Tab');
 
+      await page.waitForChanges();
+
       const screenshotFocus = await page.screenshot();
       expect(screenshotFocus).toMatchImageSnapshot();
 
-      await page.keyboard.down('Space');
+      const radio = await page.find('mg-input-radio >>> .mg-input__input-group input');
+      await radio.press('Space');
+
+      await page.waitForChanges();
 
       const screenshotList = await page.screenshot();
       expect(screenshotList).toMatchImageSnapshot();
 
       await page.keyboard.down('ArrowDown');
       await page.keyboard.down('ArrowDown');
+
+      await page.waitForChanges();
 
       const screenshotSelection = await page.screenshot();
       expect(screenshotSelection).toMatchImageSnapshot();
@@ -72,7 +79,13 @@ describe('mg-input-radio', () => {
     expect(screenshot).toMatchImageSnapshot();
 
     await page.keyboard.down('Tab');
-    if (!labelOnTop) await page.keyboard.down('Tab'); // when label on top tooltip is on fist tab (next to label)
+    if (!labelOnTop) {
+      // Ensure to display tooltip
+      await page.setViewport({ width: 600, height: 65 });
+      // when label on top tooltip is on fist tab (next to label)
+      await page.keyboard.down('Tab');
+    }
+    await page.waitForChanges();
 
     const screenshotTooltip = await page.screenshot();
     expect(screenshotTooltip).toMatchImageSnapshot();
@@ -130,6 +143,8 @@ describe('mg-input-radio', () => {
 
     await page.keyboard.down('Tab');
     await page.keyboard.down('Tab');
+
+    await page.waitForChanges();
 
     const screenshot = await page.screenshot();
     expect(screenshot).toMatchImageSnapshot();

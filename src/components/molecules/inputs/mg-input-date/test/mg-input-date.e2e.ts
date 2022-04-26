@@ -19,6 +19,8 @@ describe('mg-input-date', () => {
 
       await page.keyboard.down('Tab');
 
+      await page.waitForChanges();
+
       const screenshotFocus = await page.screenshot();
       expect(screenshotFocus).toMatchImageSnapshot();
 
@@ -30,6 +32,8 @@ describe('mg-input-date', () => {
       await page.keyboard.down('9');
       await page.keyboard.down('8');
       await page.keyboard.down('2');
+
+      await page.waitForChanges();
 
       const screenshotType = await page.screenshot();
       expect(screenshotType).toMatchImageSnapshot();
@@ -48,11 +52,15 @@ describe('mg-input-date', () => {
 
     await page.keyboard.down('Tab');
     if (!labelOnTop) {
+      // Ensure to display tooltip
+      await page.setViewport({ width: 600, height: 65 });
       // when label on top tooltip is on fist tab (next to label)
       await page.keyboard.down('Tab');
       await page.keyboard.down('Tab');
       await page.keyboard.down('Tab');
     }
+
+    await page.waitForChanges();
 
     const screenshotTooltip = await page.screenshot();
     expect(screenshotTooltip).toMatchImageSnapshot();
@@ -89,6 +97,8 @@ describe('mg-input-date', () => {
     await page.keyboard.down('Tab');
     await page.keyboard.down('Tab');
 
+    await page.waitForChanges();
+
     const screenshot = await page.screenshot();
     expect(screenshot).toMatchImageSnapshot();
   });
@@ -108,6 +118,8 @@ describe('mg-input-date', () => {
     await page.keyboard.down('6');
 
     await page.keyboard.down('Tab');
+
+    await page.waitForChanges();
 
     const screenshot = await page.screenshot();
     expect(screenshot).toMatchImageSnapshot();
