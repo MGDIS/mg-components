@@ -1,8 +1,8 @@
 const chromaticProjectId = '626149b307606d003ada26b4';
 
 /**
- * generate chromatic url from git branch or chromatic build hash
- * @param {string} target git branch or chromatic build hash
+ * create chromatic url from git branch or version tag commit hash
+ * @param {string} target git branch or version tag commit hash
  * @returns {string}
  */
 const getChromaticPermalink = (target) =>  `https://${target}--${chromaticProjectId}.chromatic.com`;
