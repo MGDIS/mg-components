@@ -1,4 +1,26 @@
-This molecule refers to the [PDA9-181](https://jira.mgdis.fr/browse/PDA9-181).
+## Design
+
+**RG-01** : Un champ montant est un champ numérique. Par défaut il est limité à 16 caractères (virgule comprise).
+
+**RG-02** : Il n'est pas possible de saisir des caractères autre que des chiffres, "," ou "."
+
+**RG-03** : L'arrondi se fait à deux chiffres après la virgule.
+
+**RG-04** : Il est impossible de saisir plus de deux chiffres après la virgule.
+
+**RG-05** : Il est possible de préciser une unité à la suite du champ pour les entiers et les décimaux. Pour les monétaires, le symbole de la devise est positionné dans la zone de saisie, à la suite de la valeur.
+
+TODO ajouter les règles pour les valeurs min & max
+
+### Placements
+
+![placement](/img/components/mg-input-numeric/placements.png)
+
+### Positionnement de l'unité
+
+![placement](/img/components/mg-input-numeric/unite.png)
+
+A gérer via la mise en place du composant en utilisant un caractère "espace" avant le terme de l'unité
 
 ## 🚨 Slot
 

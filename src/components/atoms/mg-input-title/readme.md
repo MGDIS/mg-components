@@ -1,4 +1,31 @@
-This atom refers to [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64), [PDA9-723](https://jira.mgdis.fr/browse/PDA9-723).
+## Design
+
+### Libellé
+
+- le libellé est situé à gauche du champ de saisie.
+- l'alignement du texte est à droite.
+- le libellé peut être sur une ou plusieurs lignes.
+- le libellé peut être positionné au dessus du champ de saisie.
+
+### Label on top
+
+![espacements-labelTop.png](/img/components/mg-input/espacements-labelTop.png)
+ le "i" sera positionné à côté du libellé dans une prochaine version, pour le moment il suit l'input
+
+ ### Polices
+
+![polices.png](/img/components/mg-input/polices.png)
+
+### Styles / states
+
+![styles.png](/img/components/mg-input/styles.png)
+
+### Formulaire
+
+#### Espacements
+
+![form-espacements.png](/img/components/mg-input/form-espacements.png)
+
 
 <!-- Auto Generated Below -->
 

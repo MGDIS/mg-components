@@ -1,4 +1,19 @@
-This molecule refers to the [PDA9-683](https://jira.mgdis.fr/browse/PDA9-683).
+## Design
+
+### Indication du nombre de caractères restants
+
+- lorsque le focus est sur le champ de saisie, un message s'affiche en dessous
+- le message est : "<nbCar> caractères disponibles", <nbCar> étant un compteur qui se met à jour dynamiquement en fonction de la saisie
+- lorsque le focus n'est plus sur le champ de saisie, le message disparaît
+
+### Valeur
+
+- par défaut limitée 4000 caractères de type alpha numérique.
+
+### Dimensions
+
+- la hauteur du composant est par défaut de 3 lignes de texte (cette valeur est configurable)
+- le champ est retaillable en cliquant en bas à droite de la zone de saisie
 
 <!-- Auto Generated Below -->
 

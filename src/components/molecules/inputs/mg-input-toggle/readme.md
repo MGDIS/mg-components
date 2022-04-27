@@ -1,4 +1,24 @@
-This molecule refers to the [PDA9-770](https://jira.mgdis.fr/browse/PDA9-770).
+## Design
+
+**RUX-1** : Le clic sur toute la zone du composant fait alterner la valeur sélectionnée.
+
+**RUX-2** : La première valeur est toujours sélectionnée par défaut.
+
+**RUX-3** : Quand la propriété "on/off" est utilisée, la première valeur est toujours la valeur désactivée et le style est adapté.
+
+**RUX-4** : Les valeurs doivent être retranscrites par du texte ou des icones.
+
+### Usages
+
+![](/img/components/mg-input-toggle/usages.png)
+
+### Spécifications
+
+![](/img/components/mg-input-toggle/specs.png)
+
+### Readonly
+
+![](/img/components/mg-input-toggle/readonly.png)
 
 <!-- Auto Generated Below -->
 

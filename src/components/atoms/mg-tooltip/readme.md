@@ -1,5 +1,66 @@
-This atom refers to the [PDA9-313](https://jira.mgdis.fr/browse/PDA9-313).
+## Design
 
+Les infobulles sont des messages qui permettent d’obtenir une information complémentaire sur un élément.
+Elles se présentent sous la forme d’un message qui apparaît au survol et à la prise de focus clavier d’un élément.
+Les infobulles sont dites « personnalisées » lorsqu’elles ne sont pas construites sur la base du code HTML standard prévu pour ces éléments par la spécification : l’attribut title.
+Notre composant "infobulle personnalisée" est appelé ici "tooltip"
+
+**RUX-01** : La tooltip doit s’afficher lorsque l’élément qui en permet l’affichage :
+
+Est survolé par la souris.
+Prend le focus clavier.
+
+**RUX-02** : La tooltip doit être masquée lorsque l’élément qui en permet l’affichage :
+
+N’est plus survolé par la souris.
+Perd le focus clavier.
+Une pression de la touche Échap doit permettre de masquer l’infobulle.
+
+**RUX-03** : L’infobulle doit rester affichée lorsque son contenu est survolé par la souris.
+
+**RUX-04** : La tooltip peut être placée au dessus, à droite, en dessous, à gauche de l'élément qu'elle décrit.
+
+Par défaut, le message s'affiche en bas de l'élément.
+
+**RUX-05** : Si l'élément est situé au bord de l'écran, la tooltip se décale pour être toujours visible.
+
+### Formes
+
+![formes-tooltip](/img/components/mg-tooltip/formes-tooltip.png)
+
+### Fonts
+
+![font-tooltip](/img/components/mg-tooltip/font-tooltip.png)
+
+### Espacements
+
+![espacements-tooltip](/img/components/mg-tooltip/espacements-tooltip.png)
+
+### Alignements
+
+![alignements-tooltip](/img/components/mg-tooltip/alignements-tooltip.png)
+
+### Positionnement
+
+![tooltip-1](/img/components/mg-tooltip/positionnement-tooltip-1.png)
+![tooltip-2](/img/components/mg-tooltip/positionnement-tooltip-2.png)
+
+### Couleurs
+
+![tooltip-couleurs](/img/components/mg-tooltip/tooltip-couleurs.png)
+![tooltip-couleurs](/img/components/mg-tooltip/tooltip-couleurs.png)
+
+### Tailles
+
+![tailles-tooltip](/img/components/mg-tooltip/tailles-tooltip.png)
+
+### Animation
+
+![Tooltip](/img/components/mg-tooltip/Tooltip.gif)
+
+## Code
+
+<iframe src="https://626149b307606d003ada26b4-rsbukjlhvz.chromatic.com/?path=/story/atoms-mg-tooltip--mg-tooltip&full=1&shortcuts=false&singleStory=true" width="100%" height="600"></iframe>
 <!-- Auto Generated Below -->
 
 

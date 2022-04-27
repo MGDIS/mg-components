@@ -1,5 +1,28 @@
-This atom refers to the [PDA9-637](https://jira.mgdis.fr/browse/PDA9-637).
+## Design
 
+### Wording
+
+Le terme utilisé pour le statut correspond au participe passé du terme du bouton qui le déclenche (le terme du bouton doit être à l'infinitif cf. PDA9-67).
+
+Exemples :
+- Bouton "Publier" > Statut "Publié"
+- Bouton "Désactiver" > Statut "Désactivé"
+
+Le genre du statut doit être contextuel.
+Ex : pour des listes de valeurs, on ne mettra pas le statut au féminin systématiquement mais suivant les valeurs > si on est sur une liste de motifs, on mettra le statut au masculin, si on est sur une liste de catégories on mettra au féminin...
+
+### Style
+
+![style](/img/components/mg-tag/specs.png)
+
+### Utilisation
+
+- Primary: Etats de la demande sur l'EU
+- Secondary: Brouillon
+- Sucess: Partagé, Recevable, Vérifié, Favorable
+- Warning: Désactivé
+- Danger: Non vérifié
+- Info: Publié, Activé
 <!-- Auto Generated Below -->
 
 

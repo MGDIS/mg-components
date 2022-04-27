@@ -1,4 +1,10 @@
-This molecule refers to the [PDA9-65](https://jira.mgdis.fr/browse/PDA9-65).
+## Design
+
+**RUX** : Le comportement est celui natif du navigateur.
+
+### Style
+
+Calendrier et déclencheur: Le style est celui natif du navigateur.
 
 <!-- Auto Generated Below -->
 

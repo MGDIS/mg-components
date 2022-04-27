@@ -1,4 +1,38 @@
-This molecule refers to the [PDA9-604](https://jira.mgdis.fr/browse/PDA9-604).
+## Design
+
+### Espacements:
+
+- Standard : @base = 10px
+- Large : @base = 18px
+
+#### Entre le bord et les éléments de l'onglet
+
+![](/img/components/mg-tabs/espacements-internes.png)
+
+#### Entre les éléments internes
+
+![](/img/components/mg-tabs/espacements-elements-internes.png)
+
+- si uniquement du texte, pas d'espacements supplémentaires,
+- si pas de badge : pas d'espacement supplémentaire à droite
+- si uniquement icone : pas d'espacement supplémentaire à droite
+
+
+#### Entre les onglets : pas de marges
+
+![](/img/components/mg-tabs/espacements-onglets.png)
+
+### Tailles
+
+![](/img/components/mg-tabs/tailles.png)
+
+### Etats
+
+![](/img/components/mg-tabs/etats.png)
+
+### Responsive
+#### Retours à la ligne (gestion actuelle)
+![](/img/components/mg-tabs/responsive-inline.png)
 
 <!-- Auto Generated Below -->
 
