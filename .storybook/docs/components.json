@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-04-26T13:22:02",
+  "timestamp": "2022-04-27T10:06:30",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.15.1",
@@ -4819,7 +4819,17 @@
         }
       ],
       "methods": [],
-      "events": [],
+      "events": [
+        {
+          "event": "active-tab-change",
+          "detail": "number",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emited event when active tab change",
+          "docsTags": []
+        }
+      ],
       "listeners": [],
       "styles": [],
       "slots": [],

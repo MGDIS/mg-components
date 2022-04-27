@@ -11,6 +11,7 @@ export default {
       control: { type: 'select' },
     },
   },
+  parameters: { actions: { handles: ['active-tab-change'] } },
 };
 
 /**

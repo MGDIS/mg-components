@@ -2166,6 +2166,10 @@ declare namespace LocalJSX {
          */
         "label": string;
         /**
+          * Emited event when active tab change
+         */
+        "onActive-tab-change"?: (event: CustomEvent<number>) => void;
+        /**
           * Define tabs size
          */
         "size"?: string;
