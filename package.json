@@ -34,7 +34,8 @@
     "generate": "stencil generate",
     "storybook": "start-storybook -p 6006 -s www/build",
     "storybook:build": "build-storybook",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "chromatic": "npx chromatic"
   },
   "jest-junit": {
     "outputDirectory": "coverage",
