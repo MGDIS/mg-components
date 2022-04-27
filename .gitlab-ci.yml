@@ -11,6 +11,7 @@ stages:
   - dist
   - artifact
   - review
+  - chromatic-publish
   - release
   - bot-publish
   - deploy
@@ -46,17 +47,6 @@ outdated:
     # Check the npm outdated output
     # break-build not yet
     - gitlabci-npm-outdated
-
-chromatic_publish:
-  stage: test
-  rules:
-    # only tags
-    - if: $CI_COMMIT_TAG
-      when: always
-  extends:
-    - .install
-  script:
-    - npm run chromatic --project-token=$CHROMATIC_PROJECT_TOKEN
 
 test:
   stage: test
@@ -105,6 +95,16 @@ dist:
       - package.json
       - dist
       - loader
+
+chromatic-publish:
+  stage: chromatic-publish
+  rules:
+    # only tags
+    - if: $CI_COMMIT_TAG
+  extends:
+    - .install
+  script:
+    - npm run chromatic --project-token=$CHROMATIC_PROJECT_TOKEN
 
 artifact:
   stage: artifact
