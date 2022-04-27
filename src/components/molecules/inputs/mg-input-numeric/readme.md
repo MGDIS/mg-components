@@ -14,11 +14,11 @@ TODO ajouter les règles pour les valeurs min & max
 
 ### Placements
 
-![placement](/img/components/mg-input-numeric/placements.png)
+![placement](./img/components/mg-input-numeric/placements.png)
 
 ### Positionnement de l'unité
 
-![placement](/img/components/mg-input-numeric/unite.png)
+![placement](./img/components/mg-input-numeric/unite.png)
 
 A gérer via la mise en place du composant en utilisant un caractère "espace" avant le terme de l'unité
 

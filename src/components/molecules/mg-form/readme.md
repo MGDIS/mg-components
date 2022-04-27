@@ -1,10 +1,10 @@
 ## Design
 
-![form](/img/components/mg-form/form.png)
+![form](./img/components/mg-form/form.png)
 
 ### Structure
 
-![structure](/img/components/mg-form/structure.png)
+![structure](./img/components/mg-form/structure.png)
 
 - zone pour message à caractère obligatoire
 - zone champs (prévoir grille)

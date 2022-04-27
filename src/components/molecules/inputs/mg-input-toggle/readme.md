@@ -10,15 +10,15 @@
 
 ### Usages
 
-![](/img/components/mg-input-toggle/usages.png)
+![](./img/components/mg-input-toggle/usages.png)
 
 ### Spécifications
 
-![](/img/components/mg-input-toggle/specs.png)
+![](./img/components/mg-input-toggle/specs.png)
 
 ### Readonly
 
-![](/img/components/mg-input-toggle/readonly.png)
+![](./img/components/mg-input-toggle/readonly.png)
 
 <!-- Auto Generated Below -->
 

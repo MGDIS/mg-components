@@ -17,52 +17,52 @@ au clic sur le bouton de fermeture en haut à droite
 
 **RUX-05** : il est possible de masquer le header (titre + bouton fermer)
 
-![](/img/components/mg-popover/2affichages.png)
+![](./img/components/mg-popover/2affichages.png)
 
 ### Formes
 
-![](/img/components/mg-popover/formes-popover.png)
+![](./img/components/mg-popover/formes-popover.png)
 
 ### Fonts
 
-![](/img/components/mg-popover/font-popover.png)
+![](./img/components/mg-popover/font-popover.png)
 
 ### Espacements
 
-![](/img/components/mg-popover/espacements-popover-1.png)
+![](./img/components/mg-popover/espacements-popover-1.png)
 
 #### Entre les bords et le contenu
 
-![](/img/components/mg-popover/espacements-popover-2.png)
+![](./img/components/mg-popover/espacements-popover-2.png)
 
 #### Entre le header et le contenu
 
-![](/img/components/mg-popover/espacements-popover-3.png)
+![](./img/components/mg-popover/espacements-popover-3.png)
 
 #### Entre le header et le bouton fermé
 
-![](/img/components/mg-popover/espacements-popover-4.png)
+![](./img/components/mg-popover/espacements-popover-4.png)
 
 ### Alignements
 
-![](/img/components/mg-popover/alignements-popover.png)
+![](./img/components/mg-popover/alignements-popover.png)
 
 ### Positionnements
 
-![](/img/components/mg-popover/positionement-popover.png)
-![](/img/components/mg-popover/positionement-triangle.png)
+![](./img/components/mg-popover/positionement-popover.png)
+![](./img/components/mg-popover/positionement-triangle.png)
 
 ### Couleurs
 
-![](/img/components/mg-popover/couleurs-popover.png)
+![](./img/components/mg-popover/couleurs-popover.png)
 
 ### Tailles
 
-![](/img/components/mg-popover/Tailles-popover.png)
+![](./img/components/mg-popover/Tailles-popover.png)
 
 ### Shadow
 
-![](/img/components/mg-popover/shadow-popover.png)
+![](./img/components/mg-popover/shadow-popover.png)
 
 <!-- Auto Generated Below -->
 

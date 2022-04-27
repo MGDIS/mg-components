@@ -2,19 +2,19 @@
 
 ### Composantes
 
-![](/img/components/mg-pagination/pagination-components.png)
+![](./img/components/mg-pagination/pagination-components.png)
 
 ### Nombre d'éléments affichés
 
-![](/img/components/mg-pagination/pagination-nbelem.png)
+![](./img/components/mg-pagination/pagination-nbelem.png)
 
 ### Compteur d'éléments
 
-![](/img/components/mg-pagination/pagination-counter.png)
+![](./img/components/mg-pagination/pagination-counter.png)
 
 ### Navigation des pages
 
-![](/img/components/mg-pagination/page-navig.png)
+![](./img/components/mg-pagination/page-navig.png)
 
 <!-- Auto Generated Below -->
 

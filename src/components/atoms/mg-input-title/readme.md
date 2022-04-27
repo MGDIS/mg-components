@@ -9,22 +9,22 @@
 
 ### Label on top
 
-![espacements-labelTop.png](/img/components/mg-input/espacements-labelTop.png)
+![espacements-labelTop.png](./img/components/mg-input/espacements-labelTop.png)
  le "i" sera positionné à côté du libellé dans une prochaine version, pour le moment il suit l'input
 
  ### Polices
 
-![polices.png](/img/components/mg-input/polices.png)
+![polices.png](./img/components/mg-input/polices.png)
 
 ### Styles / states
 
-![styles.png](/img/components/mg-input/styles.png)
+![styles.png](./img/components/mg-input/styles.png)
 
 ### Formulaire
 
 #### Espacements
 
-![form-espacements.png](/img/components/mg-input/form-espacements.png)
+![form-espacements.png](./img/components/mg-input/form-espacements.png)
 
 
 <!-- Auto Generated Below -->

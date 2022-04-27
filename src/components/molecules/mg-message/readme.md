@@ -15,56 +15,56 @@
 
 ### Standard
 
-![](/img/components/mg-message/templates-standard.png)
+![](./img/components/mg-message/templates-standard.png)
 
 ### Actions
 
-![](/img/components/mg-message/templates-actions.png)
+![](./img/components/mg-message/templates-actions.png)
 
 ### Fermer
 
 
-![](/img/components/mg-message/templates-fermer.png)
+![](./img/components/mg-message/templates-fermer.png)
 
 ### Détails
 
-![](/img/components/mg-message/templates-details.png)
+![](./img/components/mg-message/templates-details.png)
 
 ### Détails + action(s)
 
-![](/img/components/mg-message/templates-details%2Bactions.png)
+![](./img/components/mg-message/templates-details%2Bactions.png)
 
 ### Formes et couleurs
 
-![](/img/components/mg-message/formes-couleurs.png)
+![](./img/components/mg-message/formes-couleurs.png)
 
 ### Tailles
 
-![](/img/components/mg-message/tailles.png)
+![](./img/components/mg-message/tailles.png)
 ### Espacements
 
 #### Standard
 
-![](/img/components/mg-message/espacements-standard.png)
+![](./img/components/mg-message/espacements-standard.png)
 
 #### Actions
 
-![](/img/components/mg-message/espacements-actions.png)
+![](./img/components/mg-message/espacements-actions.png)
 
 #### Fermer
 
-![](/img/components/mg-message/espacements-fermer.png)
+![](./img/components/mg-message/espacements-fermer.png)
 
 #### Détails
 
-![](/img/components/mg-message/espacements-details.png)
+![](./img/components/mg-message/espacements-details.png)
 
 #### Détails + Actions
 
-![](/img/components/mg-message/espacements-details%2Bactions.png)
+![](./img/components/mg-message/espacements-details%2Bactions.png)
 ### Polices
 
-![](/img/components/mg-message/polices.png)
+![](./img/components/mg-message/polices.png)
 
 
 <!-- Auto Generated Below -->

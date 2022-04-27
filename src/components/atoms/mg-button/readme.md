@@ -21,21 +21,21 @@ Tant que le traitement n'est pas terminé, le bouton reste désactivé et un "lo
 
 ### base
 
-![base](/img/components/mg-button/base.png)
+![base](./img/components/mg-button/base.png)
 
 ### main styles
 
-![main-styles](/img/components/mg-button/main-styles.png)
+![main-styles](./img/components/mg-button/main-styles.png)
 
 ### colors and states
 
-![states](/img/components/mg-button/états.png)
+![states](./img/components/mg-button/états.png)
 
-![states-colors](/img/components/mg-button/states-colors.png)
+![states-colors](./img/components/mg-button/states-colors.png)
 
 ### Display buttons side by side
 
-![plusieursBoutons](/img/components/mg-button/plusieursBoutons.png)
+![plusieursBoutons](./img/components/mg-button/plusieursBoutons.png)
 
 <!-- Auto Generated Below -->
 

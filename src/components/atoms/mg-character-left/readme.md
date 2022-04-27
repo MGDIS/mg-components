@@ -12,7 +12,7 @@ lorsque les messages sont affichés sous le champ l'ordre est le suivant :
 - lorsque le focus est sur le champ de saisie, un message s'affiche en dessous. le message est : "<nbCar> caractères disponibles", <nbCar> étant un compteur qui se met à jour dynamiquement en fonction de la saisie.
 - lorsque le focus n'est plus sur le champ de saisie, le message disparaît.
 
-![](/img/components/mg-character-left/nombre%20caracteres%20restants.png)
+![](./img/components/mg-character-left/nombre%20caracteres%20restants.png)
 
 ### Valeur
 

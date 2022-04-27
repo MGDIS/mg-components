@@ -13,7 +13,7 @@ Ex : pour des listes de valeurs, on ne mettra pas le statut au féminin systéma
 
 ### Style
 
-![style](/img/components/mg-tag/specs.png)
+![style](./img/components/mg-tag/specs.png)
 
 ### Utilisation
 

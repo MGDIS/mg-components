@@ -36,47 +36,47 @@ Dans le cas d'une action ciblée, l'ico peut aider à la compréhension voir mê
 Dans le cas d'un choix de confirmation/annulation : pas nécessaire voire superflu > le terme suffit "Enregistrer/Annuler",
 Ex : si je mets un check devant le terme "Supprimer" qui est le bouton de validation d'une suppression, le check renvoie à du positif alors que l'action de suppression est négative, et le bouton Annuler également, donc pour ne pas ajouter à la confusion ne pas mettre d'icone...
 
-![](/img/components/mg-modal/modale.png)
+![](./img/components/mg-modal/modale.png)
 
 ### Formes
 
-![](/img/components/mg-modal/formes-modale.png)
+![](./img/components/mg-modal/formes-modale.png)
 
 ### Fonts
 
-![](/img/components/mg-modal/font-modale.png)
+![](./img/components/mg-modal/font-modale.png)
 
 ### Espacements
 ### Espacements entre les bords et le contenu
 
-![](/img/components/mg-modal/espacements-modale-1.png)
+![](./img/components/mg-modal/espacements-modale-1.png)
 
 
 ### Espacements entre le titre, le texte et les boutons
 
-![](/img/components/mg-modal/espacements-modale-2.png)
-![](/img/components/mg-modal/espacements-modale-3.png)
+![](./img/components/mg-modal/espacements-modale-2.png)
+![](./img/components/mg-modal/espacements-modale-3.png)
 
 ### Espacements entre le titre et le bouton croix
 
-![](/img/components/mg-modal/espacements-modale-4.png)
-![](/img/components/mg-modal/espacements-modale-45.png)
+![](./img/components/mg-modal/espacements-modale-4.png)
+![](./img/components/mg-modal/espacements-modale-45.png)
 
 ### Alignements
 
-![](/img/components/mg-modal/alignements-modale.png)
+![](./img/components/mg-modal/alignements-modale.png)
 
 ### Tailles
 
-![](/img/components/mg-modal/tailles-modale.png)
+![](./img/components/mg-modal/tailles-modale.png)
 
 ### Couleurs
 
-![](/img/components/mg-modal/couleurs-modale.png)
+![](./img/components/mg-modal/couleurs-modale.png)
 
 ### Backdrop
 
-![](/img/components/mg-modal/backdrop.png)
+![](./img/components/mg-modal/backdrop.png)
 
 - Couleur : blanc
 - Intensité : 5

@@ -9,7 +9,7 @@
 
 Le style du bouton radio actif est celui du navigateur.
 
-![style](/img/components/mg-input-radio/specs.png)
+![style](./img/components/mg-input-radio/specs.png)
 
 <!-- Auto Generated Below -->
 
