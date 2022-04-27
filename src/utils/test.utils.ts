@@ -10,27 +10,27 @@ export type DesignSystemE2EPage = E2EPage & Pick<PuppeteerPage, 'screenshot' | '
  * @returns {Promise<DesignSystemE2EPage>} page
  */
 export async function createPage(htmlString?: string): Promise<DesignSystemE2EPage> {
-  const options = {
-    html: `<link rel="stylesheet" href="http://localhost:3333/build/variables.css" /><meta charset="UTF-8">${htmlString}`,
-    viewportWidth: 600,
-  };
-
+  const defaultSize = 600;
   const page = (await newE2EPage()) as DesignSystemE2EPage;
-  const viewport = Object.assign({ height: page.viewport().height }, { width: options.viewportWidth });
-  await page.setViewport(viewport);
-  await page.setContent(options.html, { waitUntil: 'networkidle0' });
+  await page.setViewport({ width: defaultSize, height: defaultSize });
+  await page.setContent(`<link rel="stylesheet" href="http://localhost:3333/build/variables.css" /><meta charset="UTF-8">${htmlString}`, { waitUntil: 'networkidle0' });
   await page.evaluateHandle('document.fonts.ready');
 
   // monkey patch screenshot function to add some extra features
   const screenshot = page.screenshot;
   page.screenshot = async () => {
+    let width = page.viewport().width;
+    let height = page.viewport().height;
+    // if viewport has not been redefined
+    if (page.viewport().width === defaultSize && page.viewport().height === defaultSize) {
+      const htmlElement = await page.$('html');
+      const boundingBox = await htmlElement.boundingBox();
+      width = Math.round(boundingBox.width);
+      height = Math.round(boundingBox.height);
+    }
+
     return screenshot.call(page, {
-      clip: {
-        x: 0,
-        y: 0,
-        width: page.viewport().width,
-        height: page.viewport().height,
-      },
+      clip: { x: 0, y: 0, width, height },
     });
   };
 

@@ -25,17 +25,21 @@ describe('mg-input-toggle', () => {
 
     await page.keyboard.down('Tab');
 
+    await page.waitForChanges();
+
     const screenshotFocus = await page.screenshot();
     expect(screenshotFocus).toMatchImageSnapshot();
 
     await toggle.press('Space');
 
-    await page.waitForTimeout(300);
+    await page.waitForChanges();
 
     const screenshotSelection = await page.screenshot();
     expect(screenshotSelection).toMatchImageSnapshot();
 
     await page.keyboard.down('Tab');
+
+    await page.waitForChanges();
 
     const screenshotUnSelect = await page.screenshot();
     expect(screenshotUnSelect).toMatchImageSnapshot();
@@ -66,7 +70,7 @@ describe('mg-input-toggle', () => {
   });
 
   test.each([true, false])('render with tooltip, case label-on-top %s', async labelOnTop => {
-    const page = await createPage(`<mg-input-toggle label="label" tooltip="Tooltip message" label-on-top=${labelOnTop}>${defaultSlots}</mg-input-toggle>
+    const page = await createPage(`<mg-input-toggle label="label" tooltip="Tooltip message" label-on-top="${labelOnTop}">${defaultSlots}</mg-input-toggle>
       <script>
       const mgInputToggle = document.querySelector('mg-input-toggle');
       mgInputToggle.items = [{title: 'batman', value: false}, {title: 'joker', value: true}];
@@ -80,7 +84,12 @@ describe('mg-input-toggle', () => {
     expect(screenshot).toMatchImageSnapshot();
 
     await page.keyboard.down('Tab');
-    await page.keyboard.down('Tab');
+    if (!labelOnTop) {
+      // Ensure to display tooltip
+      await page.setViewport({ width: 600, height: 65 });
+      // when label on top tooltip is on fist tab (next to label)
+      await page.keyboard.down('Tab');
+    }
 
     const screenshotTooltip = await page.screenshot();
     expect(screenshotTooltip).toMatchImageSnapshot();
@@ -92,6 +101,7 @@ describe('mg-input-toggle', () => {
     `<mg-input-toggle label="label" value="true" readonly>${defaultSlots}</mg-input-toggle>`,
     `<mg-input-toggle label="label" value="true" readonly label-on-top>${defaultSlots}</mg-input-toggle>`,
     `<mg-input-toggle label="label" disabled>${defaultSlots}</mg-input-toggle>`,
+    `<mg-input-toggle label="label" value="true" disabled>${defaultSlots}</mg-input-toggle>`,
   ])('Should render with template', async html => {
     const page = await createPage(`${html}
       <script>

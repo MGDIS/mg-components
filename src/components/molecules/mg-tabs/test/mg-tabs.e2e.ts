@@ -7,23 +7,23 @@ const defaultSlots =
 describe('mg-tabs', () => {
   describe.each(sizes)('template', size => {
     test.each([
-      { items: ['batman', 'joker'] },
+      { items: ['Batman', 'Joker'] },
       {
         items: [
-          { label: 'batman', icon: 'check' },
-          { label: 'joker', icon: 'cross', disabled: true },
+          { label: 'Batman', icon: 'check' },
+          { label: 'Joker', icon: 'cross', disabled: true },
         ],
       },
       {
         items: [
-          { label: 'batman', badge: { label: 'count', value: 1 } },
-          { label: 'joker', badge: { label: 'count', value: 1 }, disabled: true },
+          { label: 'Batman', badge: { label: 'count', value: 1 } },
+          { label: 'Joker', badge: { label: 'count', value: 1 }, disabled: true },
         ],
       },
       {
         items: [
-          { label: 'batman', icon: 'check', badge: { label: 'count', value: 1 } },
-          { label: 'joker', icon: 'cross', badge: { label: 'count', value: 1 }, disabled: true },
+          { label: 'Batman', icon: 'check', badge: { label: 'count', value: 99 } },
+          { label: 'Joker', icon: 'cross', badge: { label: 'count', value: 99 }, disabled: true },
         ],
       },
     ])('render', async ({ items }) => {
@@ -48,28 +48,32 @@ describe('mg-tabs', () => {
       const page = await createPage(`<mg-tabs label="label">${defaultSlots}</mg-tabs>
       <script>
       const mgTabs = document.querySelector('mg-tabs');
-      mgTabs.items = ['batman', 'joker'];
+      mgTabs.items = ['Batman', 'Joker'];
       </script>
       `);
       page.keyboard.down('Tab');
+      await page.waitForChanges();
 
-      const screenshot1 = await page.screenshot();
-      expect(screenshot1).toMatchImageSnapshot();
+      const screenshot = await page.screenshot();
+      expect(screenshot).toMatchImageSnapshot();
 
       await page.keyboard.down('ArrowRight');
+      await page.waitForChanges();
 
-      const screenshot2 = await page.screenshot();
-      expect(screenshot2).toMatchImageSnapshot();
+      const screenshotRight = await page.screenshot();
+      expect(screenshotRight).toMatchImageSnapshot();
 
       await page.keyboard.down('ArrowLeft');
+      await page.waitForChanges();
 
-      const screenshot3 = await page.screenshot();
-      expect(screenshot3).toMatchImageSnapshot();
+      const screenshotLeft = await page.screenshot();
+      expect(screenshotLeft).toMatchImageSnapshot();
 
       page.keyboard.down('Tab');
+      await page.waitForChanges();
 
-      const screenshot4 = await page.screenshot();
-      expect(screenshot4).toMatchImageSnapshot();
+      const screenshotLeave = await page.screenshot();
+      expect(screenshotLeave).toMatchImageSnapshot();
     });
   });
 });

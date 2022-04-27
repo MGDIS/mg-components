@@ -163,47 +163,51 @@ export class MgTabs {
    */
   render(): HTMLElement {
     return (
-      <Host class={this.classList.join()}>
-        <header role="tablist" aria-label={this.label} class="mg-tabs__header">
-          {this.tabs.map((tab, index) => {
+      <Host>
+        <div class={this.classList.join()}>
+          <header role="tablist" aria-label={this.label} class="mg-tabs__header">
+            {this.tabs.map((tab, index) => {
+              const tabIndex = index + 1;
+              return (
+                <button
+                  role="tab"
+                  id={`${this.identifier}-${tabIndex}`}
+                  class={{
+                    'mg-tabs__navigation-button': true,
+                    'mg-tabs__navigation-button--active': tabIndex === this.activeTab,
+                    'mg-tabs__navigation-button--disabled': tab.disabled,
+                  }}
+                  tabindex={tabIndex === this.activeTab ? 0 : -1}
+                  aria-selected={(tabIndex === this.activeTab).toString()}
+                  aria-controls={`pannel-${tabIndex}`}
+                  onClick={this.handleClick}
+                  onKeyDown={this.handleKeydown}
+                  data-index={tabIndex}
+                  disabled={tab.disabled}
+                >
+                  {tab.icon !== undefined && <mg-icon icon={tab.icon}></mg-icon>}
+                  {tab.label}
+                  {tab.badge !== undefined && <mg-badge variant="info" value={tab.badge.value} label={tab.badge.label}></mg-badge>}
+                </button>
+              );
+            })}
+          </header>
+          {this.tabs.map((_tab, index) => {
             const tabIndex = index + 1;
             return (
-              <button
-                role="tab"
-                id={`${this.identifier}-${tabIndex}`}
-                class={`mg-tabs__navigation-button ${tabIndex === this.activeTab ? 'mg-tabs__navigation-button--active' : ''} ${
-                  tab.disabled === true ? 'mg-tabs__navigation-button--disabled' : ''
-                }`}
+              <article
+                role="tabpanel"
+                id={`pannel-${tabIndex}`}
+                hidden={tabIndex !== this.activeTab}
+                aria-labelledby={`${this.identifier}-${this.activeTab}`}
                 tabindex={tabIndex === this.activeTab ? 0 : -1}
-                aria-selected={(tabIndex === this.activeTab).toString()}
-                aria-controls={`pannel-${tabIndex}`}
-                onClick={this.handleClick}
-                onKeyDown={this.handleKeydown}
-                data-index={tabIndex}
-                disabled={tab.disabled}
+                class="mg-tabs__content-container"
               >
-                {tab.icon !== undefined && <mg-icon icon={tab.icon}></mg-icon>}
-                {tab.label}
-                {tab.badge !== undefined && <mg-badge variant="info" value={tab.badge.value} label={tab.badge.label}></mg-badge>}
-              </button>
+                <slot name={`tab_content-${tabIndex}`}></slot>
+              </article>
             );
           })}
-        </header>
-        {this.tabs.map((_tab, index) => {
-          const tabIndex = index + 1;
-          return (
-            <article
-              role="tabpanel"
-              id={`pannel-${tabIndex}`}
-              hidden={tabIndex !== this.activeTab}
-              aria-labelledby={`${this.identifier}-${this.activeTab}`}
-              tabindex={tabIndex === this.activeTab ? 0 : -1}
-              class="mg-tabs__content-container"
-            >
-              <slot name={`tab_content-${tabIndex}`}></slot>
-            </article>
-          );
-        })}
+        </div>
       </Host>
     );
   }

@@ -31,8 +31,8 @@ $border-bottom-size: 0.3rem;
     cursor: default;
     opacity: 30%;
   }
-  &:hover,
-  &:focus {
+  &:hover:not(:disabled),
+  &:focus:not(:disabled) {
     background-color: hsla(var(--color-info-h), var(--color-info-s), var(--color-info-l), 10%);
   }
   &.mg-tabs__navigation-button--active {

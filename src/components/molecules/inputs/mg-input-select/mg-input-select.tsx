@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Component, Element, Event, h, Prop, State, EventEmitter, Watch, Method } from '@stencil/core';
+import { Component, Event, h, Prop, State, EventEmitter, Watch, Method } from '@stencil/core';
 import { MgInput } from '../MgInput';
 import { InputClass, Width } from '../MgInput.conf';
 import { createID, ClassList, allItemsAreString } from '../../../../utils/components.utils';
@@ -65,18 +65,16 @@ export class MgInputSelect {
    **************/
 
   /**
-   * Get component DOM element
-   */
-  @Element() element: HTMLMgInputSelectElement;
-
-  /**
    * Component value
    */
   @Prop({ mutable: true }) value: any;
   @Watch('value')
   handleValue(newValue: any): void {
-    this.readonlyValue =
-      newValue !== null ? (allItemsAreString(this.items as string[]) ? this.input.value : (this.items as SelectOption[]).find(item => item.value === newValue).title) : null;
+    if (newValue !== null) {
+      this.readonlyValue = allItemsAreString(this.items as string[]) ? this.input.value : (this.items as SelectOption[]).find(item => item.value === newValue).title;
+    } else {
+      this.readonlyValue = null;
+    }
     this.valueChange.emit(newValue);
   }
 
@@ -241,12 +239,11 @@ export class MgInputSelect {
    */
   private handleInput = (): void => {
     this.checkValidity();
-    this.value =
-      this.input.value !== ''
-        ? allItemsAreString(this.items as string[])
-          ? this.input.value
-          : (this.items as SelectOption[]).find(item => item.title === this.input.value).value
-        : null;
+    if (this.input.value !== '') {
+      this.value = allItemsAreString(this.items as string[]) ? this.input.value : (this.items as SelectOption[]).find(item => item.title === this.input.value).value;
+    } else {
+      this.value = null;
+    }
   };
 
   /**
@@ -298,16 +295,18 @@ export class MgInputSelect {
   /**
    * Check if component props are well configured on init
    *
-   * @returns {void}
+   * @returns {ReturnType<typeof setTimeout>} timeout
    */
-  componentWillLoad(): void {
+  componentWillLoad(): ReturnType<typeof setTimeout> {
     // Check items format
     this.validateItems(this.items);
 
     // Check validity when component is ready
-    this.element.componentOnReady().then(() => {
+    // return a promise to process action only in the FIRST render().
+    // https://stenciljs.com/docs/component-lifecycle#componentwillload
+    return setTimeout(() => {
       this.checkValidity();
-    });
+    }, 0);
   }
 
   /**

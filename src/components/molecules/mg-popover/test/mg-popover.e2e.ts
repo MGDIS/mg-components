@@ -47,6 +47,8 @@ describe('mg-popover', () => {
 
       expect(popover).toHaveAttribute('data-show');
 
+      await page.setViewport({ width: 800, height: 300 });
+
       const screenshot = await page.screenshot();
       expect(screenshot).toMatchImageSnapshot();
 
@@ -71,7 +73,10 @@ describe('mg-popover', () => {
     });
   });
 
-  describe.each(['', '<h2 slot="title">Titre un peu plus long un peu plus long un peu plus long un peu plus long un peu plus long</h2>'])('with or without title', title => {
+  describe.each([
+    '',
+    '<h2 slot="title">Titre un peu plus long un peu plus long un peu plus long un peu plus long un peu plus long un peu plus long un peu plus long un peu plus long un peu plus long un peu plus long un peu plus long</h2>',
+  ])('with or without title', title => {
     test('Should render with close button', async () => {
       const page = await createPage(
         `<mg-popover display close-button>
@@ -91,6 +96,8 @@ describe('mg-popover', () => {
       const mgPopover = await page.find('mg-popover');
 
       expect(mgPopover).toHaveClass('hydrated');
+
+      await page.setViewport({ width: 500, height: 300 });
 
       const screenshot = await page.screenshot();
       expect(screenshot).toMatchImageSnapshot();

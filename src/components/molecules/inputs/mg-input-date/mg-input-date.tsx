@@ -1,4 +1,4 @@
-import { Component, Element, Event, EventEmitter, h, Prop, State, Watch, Method } from '@stencil/core';
+import { Component, Event, EventEmitter, h, Prop, State, Watch, Method } from '@stencil/core';
 import { MgInput } from '../MgInput';
 import { InputError } from './mg-input-date.conf';
 import { createID, ClassList } from '../../../../utils/components.utils';
@@ -25,11 +25,6 @@ export class MgInputDate {
   /**************
    * Decorators *
    **************/
-
-  /**
-   * Get component DOM element
-   */
-  @Element() element: HTMLMgInputDateElement;
 
   /**
    * Component value
@@ -274,17 +269,19 @@ export class MgInputDate {
   /**
    * Check if component props are well configured on init
    *
-   * @returns {void}
+   * @returns {ReturnType<typeof setTimeout>} timeout
    */
-  componentWillLoad(): void {
+  componentWillLoad(): ReturnType<typeof setTimeout> {
     this.validateValue(this.value);
     this.validateMin(this.min);
     this.validateMax(this.max);
 
     // Check validity when component is ready
-    this.element.componentOnReady().then(() => {
+    // return a promise to process action only in the FIRST render().
+    // https://stenciljs.com/docs/component-lifecycle#componentwillload
+    return setTimeout(() => {
       this.checkValidity();
-    });
+    }, 0);
   }
 
   /**

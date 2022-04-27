@@ -199,7 +199,7 @@
           mgTabs.items = [
             { label: 'Tab 1', icon: 'check', badge: { value: 1, label: 'messages' } },
             { label: 'Tab 2', icon: 'cross', badge: { value: 3, label: 'messages' } },
-            { label: 'Tab 3' },
+            { label: 'Tab 3', disabled: true },
           ];
         </script>
       </section>
@@ -214,7 +214,7 @@
       </section>
       <section>
         <h2>Panel</h2>
-        <mg-panel panel-title="panel title" title-editabled>
+        <mg-panel panel-title="panel title" title-editable>
           <div>Content</div>
           <div slot="header-right">
             <mg-button variant="secondary"> <mg-icon icon="file-upload"></mg-icon> Upload </mg-button>
