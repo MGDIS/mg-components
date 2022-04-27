@@ -14,6 +14,13 @@ This molecule refers to the [PDA9-604](https://jira.mgdis.fr/browse/PDA9-604).
 | `size`               | `size`       | Define tabs size                                                                                            | `string`                | `'regular'`           |
 
 
+## Events
+
+| Event               | Description                         | Type                  |
+| ------------------- | ----------------------------------- | --------------------- |
+| `active-tab-change` | Emited event when active tab change | `CustomEvent<number>` |
+
+
 ## Dependencies
 
 ### Depends on
