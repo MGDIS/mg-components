@@ -48,6 +48,13 @@
 | `size`               | `size`       | Define tabs size                                                                                            | `string`                | `'regular'`           |
 
 
+## Events
+
+| Event               | Description                         | Type                  |
+| ------------------- | ----------------------------------- | --------------------- |
+| `active-tab-change` | Emited event when active tab change | `CustomEvent<number>` |
+
+
 ## Dependencies
 
 ### Depends on

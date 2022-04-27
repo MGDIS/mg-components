@@ -1,4 +1,4 @@
-import { Component, h, Host, Prop, State, Element, Watch } from '@stencil/core';
+import { Component, Event, EventEmitter, h, Host, Prop, State, Element, Watch } from '@stencil/core';
 import { createID, ClassList, allItemsAreString } from '../../../utils/components.utils';
 import { TabItem, sizes } from './mg-tabs.conf';
 
@@ -75,8 +75,10 @@ export class MgTabs {
   @Prop({ reflect: true, mutable: true }) activeTab = 1;
   @Watch('activeTab')
   validateActiveTab(newValue: number): void {
-    if (Number(newValue) < 1 || Number(newValue) > this.tabs.length) {
+    if (newValue < 1 || newValue > this.tabs.length) {
       throw new Error('<mg-tabs> prop "activeTab" must be between 1 and tabs length.');
+    } else {
+      this.activeTabChange.emit(newValue);
     }
   }
 
@@ -89,6 +91,11 @@ export class MgTabs {
    * Component classes
    */
   @State() classList: ClassList = new ClassList(['mg-tabs']);
+
+  /**
+   * Emited event when active tab change
+   */
+  @Event({ eventName: 'active-tab-change' }) activeTabChange: EventEmitter<number>;
 
   /**
    * Handle click events on tabs

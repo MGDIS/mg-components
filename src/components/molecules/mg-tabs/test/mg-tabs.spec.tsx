@@ -13,6 +13,8 @@ const defaultSlots = [() => <div slot="tab_content-1">Content 1</div>, () => <di
 
 const badge = { value: 2, label: 'messages' };
 
+const key = { next: 'ArrowRight', prev: 'ArrowLeft' };
+
 describe('mg-tabs', () => {
   describe.each(sizes)('template', size => {
     test.each([
@@ -97,11 +99,14 @@ describe('mg-tabs', () => {
       let activeTab = page.doc.querySelector('.mg-tabs__navigation-button--active');
       expect(activeTab).toHaveProperty('id', 'id-1');
 
+      jest.spyOn(page.rootInstance.activeTabChange, 'emit');
+
       const nextTab = page.doc.querySelector('#id-2');
       nextTab.dispatchEvent(new CustomEvent('click', { bubbles: true }));
       await page.waitForChanges();
 
       expect(page.root).toMatchSnapshot();
+      expect(page.rootInstance.activeTabChange.emit).toHaveBeenCalledWith(2);
 
       activeTab = page.doc.querySelector('.mg-tabs__navigation-button--active');
       expect(activeTab).toHaveProperty('id', 'id-2');
@@ -123,18 +128,20 @@ describe('mg-tabs', () => {
       let activeTab = page.doc.querySelector('.mg-tabs__navigation-button--active');
       expect(activeTab).toHaveProperty('id', 'id-1');
 
+      jest.spyOn(page.rootInstance.activeTabChange, 'emit');
+
       const nextTab = page.doc.querySelector('#id-2 mg-icon');
       nextTab.dispatchEvent(new CustomEvent('click', { bubbles: true }));
       await page.waitForChanges();
 
       expect(page.root).toMatchSnapshot();
+      expect(page.rootInstance.activeTabChange.emit).toHaveBeenCalledWith(2);
 
       activeTab = page.doc.querySelector('.mg-tabs__navigation-button--active');
       expect(activeTab).toHaveProperty('id', 'id-2');
     });
 
     test('should go to next tab on keyboard event', async () => {
-      const key = { next: 'ArrowRight', prev: 'ArrowLeft' };
       const page = await getPage({ label: 'Sample label', items: ['batman', 'joker'], identifier: 'id' }, defaultSlots);
       expect(page.root).toMatchSnapshot();
 
@@ -147,6 +154,8 @@ describe('mg-tabs', () => {
 
       expect(page.root).toMatchSnapshot();
 
+      jest.spyOn(page.rootInstance.activeTabChange, 'emit');
+
       activeTab.dispatchEvent(new KeyboardEvent('keydown', { key: key.next }));
       await page.waitForChanges();
 
@@ -154,7 +163,8 @@ describe('mg-tabs', () => {
 
       activeTab = page.doc.querySelector('.mg-tabs__navigation-button--active');
       expect(activeTab).toHaveProperty('id', 'id-2');
-      expect(activeTab.focus).toHaveBeenCalled();
+      expect(activeTab.focus).toHaveBeenCalledTimes(1);
+      expect(page.rootInstance.activeTabChange.emit).toHaveBeenCalledWith(2);
 
       activeTab.dispatchEvent(new KeyboardEvent('keydown', { key: key.prev }));
       await page.waitForChanges();
@@ -163,11 +173,11 @@ describe('mg-tabs', () => {
 
       activeTab = page.doc.querySelector('.mg-tabs__navigation-button--active');
       expect(activeTab).toHaveProperty('id', 'id-1');
-      expect(activeTab.focus).toHaveBeenCalled();
+      expect(activeTab.focus).toHaveBeenCalledTimes(1);
+      expect(page.rootInstance.activeTabChange.emit).toHaveBeenCalledWith(1);
     });
 
     test("should go to next tab, and keep focus if it's the last one on keyboard event", async () => {
-      const key = { next: 'ArrowRight', prev: 'ArrowRight' };
       const page = await getPage({ label: 'Sample label', items: ['batman', 'joker'], identifier: 'id' }, defaultSlots);
       expect(page.root).toMatchSnapshot();
 
@@ -180,6 +190,8 @@ describe('mg-tabs', () => {
 
       expect(page.root).toMatchSnapshot();
 
+      jest.spyOn(page.rootInstance.activeTabChange, 'emit');
+
       activeTab.dispatchEvent(new KeyboardEvent('keydown', { key: key.next }));
       await page.waitForChanges();
 
@@ -188,8 +200,9 @@ describe('mg-tabs', () => {
       activeTab = page.doc.querySelector('.mg-tabs__navigation-button--active');
       expect(activeTab).toHaveProperty('id', 'id-2');
       expect(activeTab.focus).toHaveBeenCalledTimes(1);
+      expect(page.rootInstance.activeTabChange.emit).toHaveBeenCalledWith(2);
 
-      activeTab.dispatchEvent(new KeyboardEvent('keydown', { key: key.prev }));
+      activeTab.dispatchEvent(new KeyboardEvent('keydown', { key: key.next }));
       await page.waitForChanges();
 
       expect(page.root).toMatchSnapshot();
@@ -197,6 +210,7 @@ describe('mg-tabs', () => {
       activeTab = page.doc.querySelector('.mg-tabs__navigation-button--active');
       expect(activeTab).toHaveProperty('id', 'id-2');
       expect(activeTab.focus).toHaveBeenCalledTimes(1);
+      expect(page.rootInstance.activeTabChange.emit).toHaveBeenCalledWith(2);
     });
 
     test.each(['Space', 'Enter'])('should NOT go to next tab on keyboard event %s', async key => {
@@ -213,13 +227,16 @@ describe('mg-tabs', () => {
 
       expect(page.root).toMatchSnapshot();
 
-      activeTab.dispatchEvent(new KeyboardEvent('keydown', { key: key }));
+      jest.spyOn(page.rootInstance.activeTabChange, 'emit');
+
+      activeTab.dispatchEvent(new KeyboardEvent('keydown', { key }));
       await page.waitForChanges();
 
       expect(page.root).toMatchSnapshot();
 
       activeTab = element.querySelector('.mg-tabs__navigation-button--active');
       expect(activeTab).toHaveProperty('id', 'id-1');
+      expect(page.rootInstance.activeTabChange.emit).not.toHaveBeenCalled();
     });
   });
 });
