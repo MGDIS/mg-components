@@ -1,11 +1,9 @@
-const chromaticProjectId = '626149b307606d003ada26b4';
-
 /**
  * create chromatic url from git branch or version tag commit hash
  * @param {string} target git branch or version tag commit hash
  * @returns {string}
  */
-const getChromaticPermalink = (target) =>  `https://${target}--${chromaticProjectId}.chromatic.com`;
+const getChromaticPermalink = (target) =>  `https://${target}--626149b307606d003ada26b4.chromatic.com`;
 
 module.exports = {
   stories: ['../src/**/*.stories.@(tsx|mdx)'],

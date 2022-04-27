@@ -990,6 +990,83 @@ exports[`mg-icon Should render chevron-up icon using warning variant 1`] = `
 </mg-icon>
 `;
 
+exports[`mg-icon Should render conversation icon in extra-large size 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--conversation mg-icon--size-extra-large" focusable="false" viewBox="0 0 16 16">
+      <path d="M8,1.67A6.37,6.37,0,0,0,3.6,3.42l-.91-.91a.6.6,0,0,0-.85,0h0a.58.58,0,0,0-.18.43V6.37A.61.61,0,0,0,2.24,7H5.68a.62.62,0,0,0,.62-.62A.69.69,0,0,0,6.12,6L5.05,4.87a4.29,4.29,0,1,1,.1,6.36.3.3,0,0,0-.41,0l-1,1a.3.3,0,0,0,0,.42h0A6.33,6.33,0,1,0,8,1.67Z" fill="currentColor"></path>
+      <path d="M9.85,9.3l-.36.36a.3.3,0,0,1-.43,0L7.45,8V5.15a.3.3,0,0,1,.3-.3h.5a.3.3,0,0,1,.3.3V7.58l1.3,1.3A.31.31,0,0,1,9.85,9.3Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render conversation icon in large size 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--conversation mg-icon--size-large" focusable="false" viewBox="0 0 16 16">
+      <path d="M8,1.67A6.37,6.37,0,0,0,3.6,3.42l-.91-.91a.6.6,0,0,0-.85,0h0a.58.58,0,0,0-.18.43V6.37A.61.61,0,0,0,2.24,7H5.68a.62.62,0,0,0,.62-.62A.69.69,0,0,0,6.12,6L5.05,4.87a4.29,4.29,0,1,1,.1,6.36.3.3,0,0,0-.41,0l-1,1a.3.3,0,0,0,0,.42h0A6.33,6.33,0,1,0,8,1.67Z" fill="currentColor"></path>
+      <path d="M9.85,9.3l-.36.36a.3.3,0,0,1-.43,0L7.45,8V5.15a.3.3,0,0,1,.3-.3h.5a.3.3,0,0,1,.3.3V7.58l1.3,1.3A.31.31,0,0,1,9.85,9.3Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render conversation icon in regular size 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--conversation mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+      <path d="M8,1.67A6.37,6.37,0,0,0,3.6,3.42l-.91-.91a.6.6,0,0,0-.85,0h0a.58.58,0,0,0-.18.43V6.37A.61.61,0,0,0,2.24,7H5.68a.62.62,0,0,0,.62-.62A.69.69,0,0,0,6.12,6L5.05,4.87a4.29,4.29,0,1,1,.1,6.36.3.3,0,0,0-.41,0l-1,1a.3.3,0,0,0,0,.42h0A6.33,6.33,0,1,0,8,1.67Z" fill="currentColor"></path>
+      <path d="M9.85,9.3l-.36.36a.3.3,0,0,1-.43,0L7.45,8V5.15a.3.3,0,0,1,.3-.3h.5a.3.3,0,0,1,.3.3V7.58l1.3,1.3A.31.31,0,0,1,9.85,9.3Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render conversation icon using danger variant 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--conversation mg-icon--size-regular mg-icon--variant-danger" focusable="false" viewBox="0 0 16 16">
+      <path d="M8,1.67A6.37,6.37,0,0,0,3.6,3.42l-.91-.91a.6.6,0,0,0-.85,0h0a.58.58,0,0,0-.18.43V6.37A.61.61,0,0,0,2.24,7H5.68a.62.62,0,0,0,.62-.62A.69.69,0,0,0,6.12,6L5.05,4.87a4.29,4.29,0,1,1,.1,6.36.3.3,0,0,0-.41,0l-1,1a.3.3,0,0,0,0,.42h0A6.33,6.33,0,1,0,8,1.67Z" fill="currentColor"></path>
+      <path d="M9.85,9.3l-.36.36a.3.3,0,0,1-.43,0L7.45,8V5.15a.3.3,0,0,1,.3-.3h.5a.3.3,0,0,1,.3.3V7.58l1.3,1.3A.31.31,0,0,1,9.85,9.3Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render conversation icon using info variant 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--conversation mg-icon--size-regular mg-icon--variant-info" focusable="false" viewBox="0 0 16 16">
+      <path d="M8,1.67A6.37,6.37,0,0,0,3.6,3.42l-.91-.91a.6.6,0,0,0-.85,0h0a.58.58,0,0,0-.18.43V6.37A.61.61,0,0,0,2.24,7H5.68a.62.62,0,0,0,.62-.62A.69.69,0,0,0,6.12,6L5.05,4.87a4.29,4.29,0,1,1,.1,6.36.3.3,0,0,0-.41,0l-1,1a.3.3,0,0,0,0,.42h0A6.33,6.33,0,1,0,8,1.67Z" fill="currentColor"></path>
+      <path d="M9.85,9.3l-.36.36a.3.3,0,0,1-.43,0L7.45,8V5.15a.3.3,0,0,1,.3-.3h.5a.3.3,0,0,1,.3.3V7.58l1.3,1.3A.31.31,0,0,1,9.85,9.3Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render conversation icon using success variant 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--conversation mg-icon--size-regular mg-icon--variant-success" focusable="false" viewBox="0 0 16 16">
+      <path d="M8,1.67A6.37,6.37,0,0,0,3.6,3.42l-.91-.91a.6.6,0,0,0-.85,0h0a.58.58,0,0,0-.18.43V6.37A.61.61,0,0,0,2.24,7H5.68a.62.62,0,0,0,.62-.62A.69.69,0,0,0,6.12,6L5.05,4.87a4.29,4.29,0,1,1,.1,6.36.3.3,0,0,0-.41,0l-1,1a.3.3,0,0,0,0,.42h0A6.33,6.33,0,1,0,8,1.67Z" fill="currentColor"></path>
+      <path d="M9.85,9.3l-.36.36a.3.3,0,0,1-.43,0L7.45,8V5.15a.3.3,0,0,1,.3-.3h.5a.3.3,0,0,1,.3.3V7.58l1.3,1.3A.31.31,0,0,1,9.85,9.3Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render conversation icon using warning variant 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--conversation mg-icon--size-regular mg-icon--variant-warning" focusable="false" viewBox="0 0 16 16">
+      <path d="M8,1.67A6.37,6.37,0,0,0,3.6,3.42l-.91-.91a.6.6,0,0,0-.85,0h0a.58.58,0,0,0-.18.43V6.37A.61.61,0,0,0,2.24,7H5.68a.62.62,0,0,0,.62-.62A.69.69,0,0,0,6.12,6L5.05,4.87a4.29,4.29,0,1,1,.1,6.36.3.3,0,0,0-.41,0l-1,1a.3.3,0,0,0,0,.42h0A6.33,6.33,0,1,0,8,1.67Z" fill="currentColor"></path>
+      <path d="M9.85,9.3l-.36.36a.3.3,0,0,1-.43,0L7.45,8V5.15a.3.3,0,0,1,.3-.3h.5a.3.3,0,0,1,.3.3V7.58l1.3,1.3A.31.31,0,0,1,9.85,9.3Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
 exports[`mg-icon Should render cross icon in extra-large size 1`] = `
 <mg-icon>
   <mock:shadow-root>
@@ -2336,6 +2413,76 @@ exports[`mg-icon Should render plus-circle icon using warning variant 1`] = `
   <mock:shadow-root>
     <svg aria-hidden="true" class="mg-icon mg-icon--plus-circle mg-icon--size-regular mg-icon--variant-warning" focusable="false" viewBox="0 0 16 16">
       <path d="M8,0.7C4,0.7,0.7,4,0.7,8S4,15.3,8,15.3S15.3,12,15.3,8l0,0C15.3,4,12,0.7,8,0.7  C8,0.7,8,0.7,8,0.7z M12.3,8.8c0,0.2-0.2,0.4-0.4,0.4H9.2v2.7c0,0.2-0.2,0.4-0.4,0.4H7.2c-0.2,0-0.4-0.2-0.3-0.4V9.2H4.1  C3.9,9.2,3.7,9,3.7,8.8V7.2c0-0.2,0.2-0.4,0.4-0.3h2.7V4.1c0-0.2,0.2-0.4,0.3-0.4h1.7c0.2,0,0.4,0.2,0.4,0.4v2.7h2.7  c0.2,0,0.4,0.2,0.4,0.3L12.3,8.8z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render share icon in extra-large size 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--share mg-icon--size-extra-large" focusable="false" viewBox="0 0 16 16">
+      <path d="M13.43,10.67a2,2,0,0,0-2.42.18L5.64,8.28a2.11,2.11,0,0,0,0-.56L11,5.15a2,2,0,0,0,2.42.18,2,2,0,1,0-3.08-1.57L4.83,6.4l-.11-.09a2,2,0,1,0,.12,3.3l5.51,2.63a2,2,0,1,0,3.08-1.57Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render share icon in large size 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--share mg-icon--size-large" focusable="false" viewBox="0 0 16 16">
+      <path d="M13.43,10.67a2,2,0,0,0-2.42.18L5.64,8.28a2.11,2.11,0,0,0,0-.56L11,5.15a2,2,0,0,0,2.42.18,2,2,0,1,0-3.08-1.57L4.83,6.4l-.11-.09a2,2,0,1,0,.12,3.3l5.51,2.63a2,2,0,1,0,3.08-1.57Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render share icon in regular size 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--share mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+      <path d="M13.43,10.67a2,2,0,0,0-2.42.18L5.64,8.28a2.11,2.11,0,0,0,0-.56L11,5.15a2,2,0,0,0,2.42.18,2,2,0,1,0-3.08-1.57L4.83,6.4l-.11-.09a2,2,0,1,0,.12,3.3l5.51,2.63a2,2,0,1,0,3.08-1.57Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render share icon using danger variant 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--share mg-icon--size-regular mg-icon--variant-danger" focusable="false" viewBox="0 0 16 16">
+      <path d="M13.43,10.67a2,2,0,0,0-2.42.18L5.64,8.28a2.11,2.11,0,0,0,0-.56L11,5.15a2,2,0,0,0,2.42.18,2,2,0,1,0-3.08-1.57L4.83,6.4l-.11-.09a2,2,0,1,0,.12,3.3l5.51,2.63a2,2,0,1,0,3.08-1.57Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render share icon using info variant 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--share mg-icon--size-regular mg-icon--variant-info" focusable="false" viewBox="0 0 16 16">
+      <path d="M13.43,10.67a2,2,0,0,0-2.42.18L5.64,8.28a2.11,2.11,0,0,0,0-.56L11,5.15a2,2,0,0,0,2.42.18,2,2,0,1,0-3.08-1.57L4.83,6.4l-.11-.09a2,2,0,1,0,.12,3.3l5.51,2.63a2,2,0,1,0,3.08-1.57Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render share icon using success variant 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--share mg-icon--size-regular mg-icon--variant-success" focusable="false" viewBox="0 0 16 16">
+      <path d="M13.43,10.67a2,2,0,0,0-2.42.18L5.64,8.28a2.11,2.11,0,0,0,0-.56L11,5.15a2,2,0,0,0,2.42.18,2,2,0,1,0-3.08-1.57L4.83,6.4l-.11-.09a2,2,0,1,0,.12,3.3l5.51,2.63a2,2,0,1,0,3.08-1.57Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render share icon using warning variant 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--share mg-icon--size-regular mg-icon--variant-warning" focusable="false" viewBox="0 0 16 16">
+      <path d="M13.43,10.67a2,2,0,0,0-2.42.18L5.64,8.28a2.11,2.11,0,0,0,0-.56L11,5.15a2,2,0,0,0,2.42.18,2,2,0,1,0-3.08-1.57L4.83,6.4l-.11-.09a2,2,0,1,0,.12,3.3l5.51,2.63a2,2,0,1,0,3.08-1.57Z" fill="currentColor"></path>
     </svg>
   </mock:shadow-root>
 </mg-icon>
