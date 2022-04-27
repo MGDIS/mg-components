@@ -1,4 +1,14 @@
-This molecule refers to the [PDA9-818](https://jira.mgdis.fr/browse/PDA9-818).
+## Design
+
+![form](/img/components/mg-form/form.png)
+
+### Structure
+
+![structure](/img/components/mg-form/structure.png)
+
+- zone pour message à caractère obligatoire
+- zone champs (prévoir grille)
+- zone actions (submit, cancel)
 
 ## Example
 

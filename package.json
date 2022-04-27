@@ -32,10 +32,9 @@
     "test:e2e": "stencil test --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
-    "storybook": "start-storybook -p 6006 -s www/build",
+    "storybook": "start-storybook -p 6006",
     "storybook:build": "build-storybook",
-    "prepare": "husky install",
-    "chromatic": "npx chromatic"
+    "prepare": "husky install"
   },
   "jest-junit": {
     "outputDirectory": "coverage",

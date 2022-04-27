@@ -1,4 +1,15 @@
-This molecule refers to the [PDA9-745](https://jira.mgdis.fr/browse/PDA9-745)
+## Design
+
+- Toujours utilisé dans un groupe avec minimum 2 options
+- 1 seule option sélectionnée possible parmi toute les options du groupe
+- Le libellé est cliquable et sélectionne l'option
+- Le groupe peut être intialisé avec aucune valeur par défaut
+
+### Style
+
+Le style du bouton radio actif est celui du navigateur.
+
+![style](/img/components/mg-input-radio/specs.png)
 
 <!-- Auto Generated Below -->
 

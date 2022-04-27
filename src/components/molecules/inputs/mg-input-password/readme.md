@@ -1,4 +1,6 @@
-This molecule refers to the [PDA9-769](https://jira.mgdis.fr/browse/PDA9-769)
+## Design
+
+L'affichage standard des "boules" à la place des caractères est le standard (suivant rendu du navigateur utilisé)
 
 <!-- Auto Generated Below -->
 

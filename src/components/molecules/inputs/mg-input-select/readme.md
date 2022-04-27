@@ -1,4 +1,11 @@
-This molecule refers to the [PDA9-72](https://jira.mgdis.fr/browse/PDA9-72).
+## Design
+
+**RUX-01** : Le comportement est celui natif du navigateur
+
+**RUX-02** : Le placeholder de la liste est Sélectionnez une valeur
+
+**RUI-01** : Le style et la position du chevron à droite du champ sont ceux du natif du navigateur.
+L'espacement entre le texte et le chevron est d'au moins 10px.
 
 <!-- Auto Generated Below -->
 

@@ -1,4 +1,71 @@
-This molecule refers to the [PDA9-140](https://jira.mgdis.fr/browse/PDA9-140).
+## Design
+
+**RG-01** : L'élément peut être fermé unitairement (à l'aide d'un croix dans sa partie supérieure droite).
+
+**RG-02** : L'élément peut afficher une ou des informations (texte, lien, images, ...)
+
+**RG-03** : L'élément peut être de 4 types différents selon le message à indiquer:
+- validation (vert)
+- information (bleu)
+- avertissement (orange)
+- erreur (rouge)
+
+**RG-04** : Lors de la mise en place d'un déclencheur (bouton...) qui peut provoquer l'affichage de messages. Par défaut, l'exécution du déclencheur efface les messages précédents dans l'écran du même type
+
+
+### Standard
+
+![](/img/components/mg-message/templates-standard.png)
+
+### Actions
+
+![](/img/components/mg-message/templates-actions.png)
+
+### Fermer
+
+
+![](/img/components/mg-message/templates-fermer.png)
+
+### Détails
+
+![](/img/components/mg-message/templates-details.png)
+
+### Détails + action(s)
+
+![](/img/components/mg-message/templates-details%2Bactions.png)
+
+### Formes et couleurs
+
+![](/img/components/mg-message/formes-couleurs.png)
+
+### Tailles
+
+![](/img/components/mg-message/tailles.png)
+### Espacements
+
+#### Standard
+
+![](/img/components/mg-message/espacements-standard.png)
+
+#### Actions
+
+![](/img/components/mg-message/espacements-actions.png)
+
+#### Fermer
+
+![](/img/components/mg-message/espacements-fermer.png)
+
+#### Détails
+
+![](/img/components/mg-message/espacements-details.png)
+
+#### Détails + Actions
+
+![](/img/components/mg-message/espacements-details%2Bactions.png)
+### Polices
+
+![](/img/components/mg-message/polices.png)
+
 
 <!-- Auto Generated Below -->
 

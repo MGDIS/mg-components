@@ -1,4 +1,17 @@
-This molecule refers to the [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64).
+## Design
+
+### Indication du nombre de caractères restants
+
+- lorsque le focus est sur le champ de saisie, un message s'affiche en dessous
+- le message est : "<nbCar> caractères disponibles", <nbCar> étant un compteur qui se met à jour dynamiquement en fonction de la saisie
+- lorsque le focus n'est plus sur le champ de saisie, le message disparaît
+
+![spec](/img/components/mg-input-text/caracteres%20aide%20a%20la%20saisie.png)
+
+### Valeur
+
+- par défaut limitée 400 caractères de type alpha numérique
+- lorsque le champ est utilisé pour saisir une référence, la saisie est limitée à 36 caractères et n'autorise pas les caractères spéciaux
 
 ## Use as search input
 
