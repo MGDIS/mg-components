@@ -104,7 +104,7 @@ chromatic-publish:
   extends:
     - .install
   script:
-    - npm run chromatic --project-token=$CHROMATIC_PROJECT_TOKEN --auto-accept-changes
+    - npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN --auto-accept-changes
 
 artifact:
   stage: artifact
