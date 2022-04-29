@@ -1,0 +1,118 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Molecules/Inputs/mg-input" />
+
+# Inputs
+
+## UX
+
+### Libellé
+
+- le libellé est situé à gauche du champ de saisie
+- l'alignement du texte est à droite
+- le libellé peut être sur une ou plusieurs lignes
+- le libellé peut être positionné au dessus du champ de saisie
+
+### Valeur saisie incorrecte
+
+- le libellé du champ est affiché en rouge
+- le cadre de la zone de saisie est affiché en rouge
+- un message d'alerte est affiché en rouge en dessous de la zone de saisie
+- si un "i" informatif suit le champ, il est affiché en rouge
+
+### Aide à la saisie
+
+lorsque le focus est sur le champ de saisie, un message s'affiche en dessous
+le message qui s'affiche indique le format attendu par le champ de saisie ("exemple : adressemail@gmail.com" ou "format attendu : JJ / MM / AAAA (ex : 13/04/2019)
+
+### Ordre des messages
+
+lorsque les messages sont affichés sous le champ l'ordre est le suivant :
+
+1. nombre de caractères restants
+2. aide à la saisie
+3. erreur
+
+### Placeholder
+
+le placeholder ne doit pas être utilisé comme une aide à la saisie
+♿ RGAA : Le placeholder n’est pas considéré comme une étiquette valide au regard du RGAA donc n'est pas soumis à un ratio pour le contraste.
+
+### Lecture seule
+
+la valeur n'est plus modifiable
+le champ de saisie ne possède plus de bordure ni de fond
+la valeur est affichée en gras
+s'il n'y a pas de valeur renseignée, rien n'est affiché
+
+### Champ requis
+
+l'astérisque est affichée quel que soit l'état du champ : en saisie, en lecture seule, désactivé
+
+## UI
+
+### Standard
+
+#### Tailles
+
+![](./inputs/doc/img/tailles.png)
+
+#### Espacements
+
+![](./inputs/doc/img/espacements.png)
+
+##### Messages
+
+![](./inputs/doc/img/espacements-messages.png)
+
+##### Libellé au dessus
+
+![](./inputs/doc/img/espacements-labelTop.png)
+le "i" sera positionné à côté du libellé dans une prochaine version, pour le moment il suit l'input
+
+#### Placements
+
+![](./inputs/doc/img/placements.png)
+
+##### Messages
+
+![](./inputs/doc/img/placements-messages.png)
+
+##### Libellé au dessus
+
+![](./inputs/doc/img/placements-labelTop.png)
+le "i" sera positionné à côté du libellé dans une prochaine version, pour le moment il suit l'input
+
+#### Formes
+
+![](./inputs/doc/img/formes.png)
+
+##### Messages
+
+#### Polices
+
+![](./inputs/doc/img/polices.png)
+
+##### Messages
+
+![](./inputs/doc/img/polices-messages.png)
+
+#### Styles / états
+
+![](./inputs/doc/img/styles.png)
+
+##### Messages
+
+![](./inputs/doc/img/styles-messages.png)
+
+##### En erreur
+
+![](./inputs/doc/img/styles-erreurs.png)
+
+### Utilisation dans un contexte
+
+#### Formulaire
+
+##### Espacements
+
+![](./inputs/doc/img/form-espacements.png)

@@ -7,7 +7,9 @@ Uniquement 2 valeurs possibles.
 
 Le style de la case à cocher active est celui du navigateur.
 
-![specs](./img/components/mg-input-checkbox/specs.png)
+TODO espacement avec le 'i' de 20px et non 30px
+
+![specs](./mg-input-checkbox/doc/img/specs.png)
 
 <!-- Auto Generated Below -->
 

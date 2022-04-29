@@ -7,32 +7,31 @@
 
 #### Entre le bord et les éléments de l'onglet
 
-![](./img/components/mg-tabs/espacements-internes.png)
+![](./mg-tabs/doc/img/espacements-internes.png)
 
 #### Entre les éléments internes
 
-![](./img/components/mg-tabs/espacements-elements-internes.png)
+![](./mg-tabs/doc/img/espacements-elements-internes.png)
 
 - si uniquement du texte, pas d'espacements supplémentaires,
 - si pas de badge : pas d'espacement supplémentaire à droite
 - si uniquement icone : pas d'espacement supplémentaire à droite
 
-
 #### Entre les onglets : pas de marges
 
-![](./img/components/mg-tabs/espacements-onglets.png)
+![](./mg-tabs/doc/img/espacements-onglets.png)
 
 ### Tailles
 
-![](./img/components/mg-tabs/tailles.png)
+![](./mg-tabs/doc/img/tailles.png)
 
 ### Etats
 
-![](./img/components/mg-tabs/etats.png)
+![](./mg-tabs/doc/img/etats.png)
 
 ### Responsive
 #### Retours à la ligne (gestion actuelle)
-![](./img/components/mg-tabs/responsive-inline.png)
+![](./mg-tabs/doc/img/responsive-inline.png)
 
 <!-- Auto Generated Below -->
 

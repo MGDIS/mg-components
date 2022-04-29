@@ -6,43 +6,43 @@ Lorsque le volet est déplié, l'icone est inversé verticalement.
 
 **RUX-02** : La zone droite du header peut accueillir tous composants.
 
-![](./img/components/mg-panel/volet.png)
+![](./mg-panel/doc/img/volet.png)
 
 ### Composants
 
-![](./img/components/mg-panel/composants.png)
+![](./mg-panel/doc/img/composants.png)
 
 ### Tailles
 
-![](./img/components/mg-panel/tailles.png)
+![](./mg-panel/doc/img/tailles.png)
 
 ### Espacements
 
-![](./img/components/mg-panel/espacements.png)
+![](./mg-panel/doc/img/espacements.png)
 
 ### Alignements
 
-![](./img/components/mg-panel/alignements.png)
+![](./mg-panel/doc/img/alignements.png)
 
 ### Styles
 
-![](./img/components/mg-panel/styles.png)
+![](./mg-panel/doc/img/styles.png)
 
 ### Titre modifiable
 
-![](./img/components/mg-panel/titre-modifiable.png)
+![](./mg-panel/doc/img/titre-modifiable.png)
 
 #### Composants
 
-![](./img/components/mg-panel/titreModifiable-composants.png)
+![](./mg-panel/doc/img/titreModifiable-composants.png)
 
 #### Espacements
 
-![](./img/components/mg-panel/titreModifiable-espacements.png)
+![](./mg-panel/doc/img/titreModifiable-espacements.png)
 
 ### Responsive
 
-![](./img/components/mg-panel/responsive.png)
+![](./mg-panel/doc/img/responsive.png)
 
 <!-- Auto Generated Below -->
 

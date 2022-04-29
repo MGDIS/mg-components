@@ -4,9 +4,9 @@
 
 Tailles (px) :
 
-- 16x16 défaut
-- 24x24
-- 32x32
+- 16x16 regular
+- 24x24 large
+- 36x36 extra-large
 
 Couleur : du texte de la page (majoritairement @color-dark)
 
@@ -20,52 +20,8 @@ Règle ok pour toutes sauf le bleu de info, mais les pictos info seuls sont affi
 
 ### Nommage des fichiers
 
-- Séparateur : "-" (tiret 6)
-De base les pictos sont la version "filled", mais pas besoin de le préciser dans le nommage
-- Variante : "-outline"
-Si variante de picto avec un fond qui est un cercle plein > ajouter "-circle" ex : check-circle, check-circle-outline
-
-### Assets
-
-- [arrow-down](./img/components/mg-icon/arrow-down.svg)
-- [arrow-left](./img/components/mg-icon/arrow-left.svg)
-- [arrow-right](./img/components/mg-icon/arrow-right.svg)
-- [arrow-up](./img/components/mg-icon/arrow-up.svg)
-- [arrow-up-right-square](./img/components/mg-icon/arrow-up-right-square.svg)
-- [arrows-rotate](./img/components/mg-icon/arrows-rotate.svg)
-- [ban](./img/components/mg-icon/ban.svg)
-- [calculator	](./img/components/mg-icon/calculator.svg)
-- [check](./img/components/mg-icon/check.svg)
-- [check-circle](./img/components/mg-icon/check-circle.svg)
-- [chevron-down](./img/components/mg-icon/chevron-down.svg)
-- [chevron-left](./img/components/mg-icon/chevron-left.svg)
-- [chevron-right](./img/components/mg-icon/chevron-right.svg)
-- [chevron-up](./img/components/mg-icon/chevron-up.svg)
-- [conversation](./img/components/mg-icon/conversation.svg)
-- [cross](./img/components/mg-icon/cross.svg)
-- [cross-circle](./img/components/mg-icon/cross-circle.svg)
-- [download	](./img/components/mg-icon/download.svg)
-- [exclamation-circle](./img/components/mg-icon/exclamation-circle.svg)
-- [exclamation-triangle](./img/components/mg-icon/exclamation-triangle.svg)
-- [file-cog](./img/components/mg-icon/file-cog.svg)
-- [file-text](./img/components/mg-icon/file-text.svg)
-- [file-upload](./img/components/mg-icon/file-upload.svg)
-- [floppy-disk](./img/components/mg-icon/floppy-disk.svg)
-- [history](./img/components/mg-icon/history.svg)
-- [info-circle](./img/components/mg-icon/info-circle.svg)
-- [loader](./img/components/mg-icon/loader.svg)
-- [log-in](./img/components/mg-icon/log-in.svg)
-- [log-out](./img/components/mg-icon/log-out.svg)
-- [magnifying-glass](./img/components/mg-icon/magnifying-glass.svg)
-- [paper-plane](./img/components/mg-icon/paper-plane.svg)
-- [paper-plane-slash](./img/components/mg-icon/paper-plane-slash.svg)
-- [pen](./img/components/mg-icon/pen.svg)
-- [pen-fancy](./img/components/mg-icon/pen-fancy.svg)
-- [plus-circle](./img/components/mg-icon/plus-circle.svg)
-- [trash](./img/components/mg-icon/trash.svg)
-- [share](./img/components/mg-icon/share.svg)
-- [user-plus](./img/components/mg-icon/user-plus.svg)
-- [users](./img/components/mg-icon/users.svg)
+- Séparateur : "-" (tiret 6). De base les pictos sont la version "filled", mais pas besoin de le préciser dans le nommage
+- Variante : "-outline". Si variante de picto avec un fond qui est un cercle plein > ajouter "-circle" ex : check-circle, check-circle-outline
 
 <!-- Auto Generated Below -->
 

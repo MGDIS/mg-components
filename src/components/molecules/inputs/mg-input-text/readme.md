@@ -6,7 +6,7 @@
 - le message est : "<nbCar> caractères disponibles", <nbCar> étant un compteur qui se met à jour dynamiquement en fonction de la saisie
 - lorsque le focus n'est plus sur le champ de saisie, le message disparaît
 
-![spec](./img/components/mg-input-text/caracteres%20aide%20a%20la%20saisie.png)
+![spec](./mg-input-text/doc/img/caracteres-aide-a-la-saisie.png)
 
 ### Valeur
 

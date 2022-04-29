@@ -26,37 +26,37 @@ Par défaut, le message s'affiche en bas de l'élément.
 
 ### Formes
 
-![formes-tooltip](./img/components/mg-tooltip/formes-tooltip.png)
+![formes-tooltip](./mg-tooltip/doc/img/formes-tooltip.png)
 
 ### Fonts
 
-![font-tooltip](./img/components/mg-tooltip/font-tooltip.png)
+![font-tooltip](./mg-tooltip/doc/img/font-tooltip.png)
 
 ### Espacements
 
-![espacements-tooltip](./img/components/mg-tooltip/espacements-tooltip.png)
+![espacements-tooltip](./mg-tooltip/doc/img/espacements-tooltip.png)
 
 ### Alignements
 
-![alignements-tooltip](./img/components/mg-tooltip/alignements-tooltip.png)
+![alignements-tooltip](./mg-tooltip/doc/img/alignements-tooltip.png)
 
 ### Positionnement
 
-![tooltip-1](./img/components/mg-tooltip/positionnement-tooltip-1.png)
-![tooltip-2](./img/components/mg-tooltip/positionnement-tooltip-2.png)
+![tooltip-1](./mg-tooltip/doc/img/positionnement-tooltip-1.png)
+![tooltip-2](./mg-tooltip/doc/img/positionnement-tooltip-2.png)
 
 ### Couleurs
 
-![tooltip-couleurs](./img/components/mg-tooltip/tooltip-couleurs.png)
-![tooltip-couleurs](./img/components/mg-tooltip/tooltip-couleurs.png)
+![tooltip-couleurs](./mg-tooltip/doc/img/tooltip-couleurs.png)
+![tooltip-couleurs](./mg-tooltip/doc/img/tooltip-couleurs.png)
 
 ### Tailles
 
-![tailles-tooltip](./img/components/mg-tooltip/tailles-tooltip.png)
+![tailles-tooltip](./mg-tooltip/doc/img/tailles-tooltip.png)
 
 ### Animation
 
-![Tooltip](./img/components/mg-tooltip/Tooltip.gif)
+![Tooltip](./mg-tooltip/doc/img/Tooltip.gif)
 
 ## Code
 
