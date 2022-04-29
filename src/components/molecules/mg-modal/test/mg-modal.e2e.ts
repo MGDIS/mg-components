@@ -121,7 +121,7 @@ describe('mg-modal', () => {
       const screenshot2 = await page.screenshot();
       expect(screenshot2).toMatchImageSnapshot();
 
-      const closeButton = await page.find('mg-modal >>> .mg-modal__close-button');
+      const closeButton = await page.find('mg-modal >>> mg-button');
 
       closeButton.triggerEvent('click');
       await page.waitForChanges();

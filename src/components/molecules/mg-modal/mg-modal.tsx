@@ -137,9 +137,11 @@ export class MgModal {
         <article class="mg-modal__dialog">
           <header class="mg-modal__header">
             {this.closeButton && (
-              <mg-button identifier={this.closeButtonId} is-icon variant="flat" label={messages.modal.closeButton} onClick={this.handleClose} class="mg-modal__close-button">
-                <mg-icon icon="cross"></mg-icon>
-              </mg-button>
+              <span class="mg-modal__close-button">
+                <mg-button identifier={this.closeButtonId} is-icon variant="flat" label={messages.modal.closeButton} onClick={this.handleClose}>
+                  <mg-icon icon="cross"></mg-icon>
+                </mg-button>
+              </span>
             )}
             <h1 class="mg-modal__title" id={this.titleId}>
               {this.modalTitle}
