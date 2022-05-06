@@ -22,6 +22,8 @@
   - [ ] Added Link to PDA9 in component readme.md
   - [ ] PDA9 RGs listed in component
   - [ ] Story linked into related PDA9
+- [ ] package.json
+  - [ ] Add exports shortcut 
 
 ## Reviewers
 
