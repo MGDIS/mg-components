@@ -9,7 +9,7 @@ lorsque les messages sont affichés sous le champ l'ordre est le suivant :
 
 ### Indication du nombre de caractères restants
 
-- lorsque le focus est sur le champ de saisie, un message s'affiche en dessous. le message est : "<nbCar> caractères disponibles", <nbCar> étant un compteur qui se met à jour dynamiquement en fonction de la saisie.
+- lorsque le focus est sur le champ de saisie, un message s'affiche en dessous. le message est : "`<nbCar>` caractères disponibles", `<nbCar>` étant un compteur qui se met à jour dynamiquement en fonction de la saisie.
 - lorsque le focus n'est plus sur le champ de saisie, le message disparaît.
 
 ![](./mg-character-left/doc/img/nombre-caracteres-restants.png)

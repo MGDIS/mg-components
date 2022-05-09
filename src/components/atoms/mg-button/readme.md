@@ -6,18 +6,15 @@ Ex : Validation, Enregistrement
 **RUX 02**: Un bouton d'action secondaire est représenté avec la dominante blanche
 Ex : Annulation, Ajout dans une liste
 
-**RUX 03**: Un bouton de traitement métier est représenté avec la dominante bleue
-Ex : Lancement d'un traitement
+**RUX 03**: L'icône n'est pas obligatoire.
 
-**RUX 04**: L'icône précède le libellé du bouton, il n'est pas obligatoire.
-
-**RUX 05**: Un bouton peut ne contenir qu'une icône (et pas de libellé), dans ce cas, si l'icone n'est pas assez explicite, une tooltip doit être affichée au survol et indiquer textuellement l'action du bouton.
+**RUX 04**: Un bouton peut ne contenir qu'une icône (et pas de libellé), dans ce cas, si l'icone n'est pas assez explicite, une tooltip doit être affichée au survol et indiquer textuellement l'action du bouton.
  Ce cas ne concerne pas les boutons "communs" comme Valider, Annuler...etc.
 
-**RUX 06**: Un bouton qui lance un traitement potentiellement long passe en mode disabled on click le temps du traitement.
+**RUX 05**: Un bouton qui lance un traitement potentiellement long passe en mode disabled on click le temps du traitement.
 Tant que le traitement n'est pas terminé, le bouton reste désactivé et un "loader" remplace le contenu.
 
-**RUX 07**: Si plusieurs boutons sont placés les uns à côté des autres, ceux-ci sont séparés par une marge (10px).
+**RUX 06**: Si plusieurs boutons sont placés les uns à côté des autres, ceux-ci sont séparés par une marge (10px).
 
 ### base
 

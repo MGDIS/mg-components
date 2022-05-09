@@ -10,8 +10,6 @@
 
 **RG-05** : Il est possible de préciser une unité à la suite du champ pour les entiers et les décimaux. Pour les monétaires, le symbole de la devise est positionné dans la zone de saisie, à la suite de la valeur.
 
-TODO ajouter les règles pour les valeurs min & max
-
 ### Placements
 
 ![placement](./mg-input-numeric/doc/img/placements.png)

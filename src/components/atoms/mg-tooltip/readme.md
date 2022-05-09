@@ -48,7 +48,6 @@ Par défaut, le message s'affiche en bas de l'élément.
 ### Couleurs
 
 ![tooltip-couleurs](./mg-tooltip/doc/img/tooltip-couleurs.png)
-![tooltip-couleurs](./mg-tooltip/doc/img/tooltip-couleurs.png)
 
 ### Tailles
 

@@ -2,15 +2,13 @@
 
 ### Libellé
 
-- le libellé est situé à gauche du champ de saisie.
+- le libellé peut être positionné à gauche ou au dessus du champ de saisie.
 - l'alignement du texte est à droite.
 - le libellé peut être sur une ou plusieurs lignes.
-- le libellé peut être positionné au dessus du champ de saisie.
 
 ### Label on top
 
 ![espacements-labelTop.png](./mg-input-title/doc/img/espacements-labelTop.png)
- le "i" sera positionné à côté du libellé dans une prochaine version, pour le moment il suit l'input
 
  ### Polices
 

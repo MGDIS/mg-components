@@ -15,7 +15,7 @@ Un popover est plus enrichi qu'une tooltip mais moins bloquant qu'une modale
 
 **RUX-04** : la taille de la fenêtre est déterminée par le contenu (prévoir une taille max pour éviter des écueils)
 
-**RUX-05** : il est possible de masquer le header (titre + bouton fermer)
+**RUX-05** : le titre et le bouton fermer sont optionnels
 
 ![](./mg-popover/doc/img/2affichages.png)
 
