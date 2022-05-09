@@ -158,7 +158,7 @@ export class MgPanel {
     if (this.titleEditable && !this.isEditing) {
       return [
         collapseButton(),
-        <mg-button is-icon variant="secondary" label={messages.panel.editLabel} onClick={this.handleEditButton} identifier={`${this.identifier}-edit-button`}>
+        <mg-button is-icon variant="flat" label={messages.panel.editLabel} onClick={this.handleEditButton} identifier={`${this.identifier}-edit-button`}>
           <mg-icon icon="pen"></mg-icon>
         </mg-button>,
       ];
