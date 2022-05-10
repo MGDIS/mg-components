@@ -4,11 +4,11 @@
 
 **RUX-02** : Le badge affiche un chiffre/nombre ou un caractère de ponctuation.
 
-![screenshot](./mg-badge/doc/img/screenshot-2.png)
+![](./mg-badge/doc/img/screenshot-2.png)
 
 ## Styles
 
-![styles](./mg-badge/doc/img/styles.png)
+![](./mg-badge/doc/img/styles.png)
 
 <!-- Auto Generated Below -->
 

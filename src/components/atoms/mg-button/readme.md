@@ -5,21 +5,21 @@ Ex : Validation, Enregistrement
 
 ### base
 
-![base](./mg-button/doc/img/base.png)
+![](./mg-button/doc/img/base.png)
 
 ### main styles
 
-![main-styles](./mg-button/doc/img/main-styles.png)
+![](./mg-button/doc/img/main-styles.png)
 
 ### colors and states
 
-![states](./mg-button/doc/img/états.png)
+![](./mg-button/doc/img/etats.png)
 
-![states-colors](./mg-button/doc/img/states-colors.png)
+![](./mg-button/doc/img/states-colors.png)
 
 ### Display buttons side by side
 
-![plusieursBoutons](./mg-button/doc/img/plusieursBoutons.png)
+![](./mg-button/doc/img/plusieurs-boutons.png)
 
 <!-- Auto Generated Below -->
 

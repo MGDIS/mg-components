@@ -58,7 +58,7 @@ Un popover est plus enrichi qu'une tooltip mais moins bloquant qu'une modale
 
 ### Tailles
 
-![](./mg-popover/doc/img/Tailles-popover.png)
+![](./mg-popover/doc/img/tailles-popover.png)
 
 ### Shadow
 

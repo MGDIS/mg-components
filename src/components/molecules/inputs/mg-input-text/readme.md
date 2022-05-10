@@ -6,12 +6,11 @@
 - le message est : "<nbCar> caractères disponibles", <nbCar> étant un compteur qui se met à jour dynamiquement en fonction de la saisie
 - lorsque le focus n'est plus sur le champ de saisie, le message disparaît
 
-![spec](./mg-input-text/doc/img/caracteres-aide-a-la-saisie.png)
+![](./mg-input-text/doc/img/caracteres-aide-a-la-saisie.png)
 
 ### Valeur
 
-- par défaut limitée 400 caractères de type alpha numérique
-- lorsque le champ est utilisé pour saisir une référence, la saisie est limitée à 36 caractères et n'autorise pas les caractères spéciaux
+- par défaut limitée 400 caractères de type alpha numérique.
 
 ## Use as search input
 

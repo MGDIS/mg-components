@@ -12,11 +12,11 @@
 
 ### Placements
 
-![placement](./mg-input-numeric/doc/img/placements.png)
+![](./mg-input-numeric/doc/img/placements.png)
 
 ### Positionnement de l'unité
 
-![placement](./mg-input-numeric/doc/img/unite.png)
+![](./mg-input-numeric/doc/img/unite.png)
 
 A gérer via la mise en place du composant en utilisant un caractère "espace" avant le terme de l'unité
 

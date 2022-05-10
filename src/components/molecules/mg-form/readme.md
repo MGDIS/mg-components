@@ -1,13 +1,13 @@
 ## Design
 
-![form](./mg-form/doc/img/form.png)
+![](./mg-form/doc/img/form.png)
 
 ### Structure
 
-![structure](./mg-form/doc/img/structure.png)
+![](./mg-form/doc/img/structure.png)
 
 - zone pour message à caractère obligatoire
-- zone champs (prévoir grille)
+- zone champs
 - zone actions (submit, cancel)
 
 ## Example

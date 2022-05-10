@@ -34,11 +34,11 @@ Lorsque le volet est déplié, l'icone est inversé verticalement.
 
 #### Composants
 
-![](./mg-panel/doc/img/titreModifiable-composants.png)
+![](./mg-panel/doc/img/titre-modifiable-composants.png)
 
 #### Espacements
 
-![](./mg-panel/doc/img/titreModifiable-espacements.png)
+![](./mg-panel/doc/img/titre-modifiable-espacements.png)
 
 ### Responsive
 

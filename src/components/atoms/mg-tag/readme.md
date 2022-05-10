@@ -2,7 +2,7 @@
 
 ### Style
 
-![style](./mg-tag/doc/img/specs.png)
+![](./mg-tag/doc/img/specs.png)
 
 <!-- Auto Generated Below -->
 

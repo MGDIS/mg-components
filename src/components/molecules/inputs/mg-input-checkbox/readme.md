@@ -9,7 +9,7 @@ Le style de la case à cocher active est celui du navigateur.
 
 TODO espacement avec le 'i' de 20px et non 30px
 
-![specs](./mg-input-checkbox/doc/img/specs.png)
+![](./mg-input-checkbox/doc/img/specs.png)
 
 <!-- Auto Generated Below -->
 

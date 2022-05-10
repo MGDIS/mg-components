@@ -8,21 +8,21 @@
 
 ### Label on top
 
-![espacements-labelTop.png](./mg-input-title/doc/img/espacements-labelTop.png)
+![](./mg-input-title/doc/img/espacements-label-top.png)
 
  ### Polices
 
-![polices.png](./mg-input-title/doc/img/polices.png)
+![](./mg-input-title/doc/img/polices.png)
 
 ### Styles / states
 
-![styles.png](./mg-input-title/doc/img/styles.png)
+![](./mg-input-title/doc/img/styles.png)
 
 ### Formulaire
 
 #### Espacements
 
-![form-espacements.png](./mg-input-title/doc/img/form-espacements.png)
+![](./mg-input-title/doc/img/form-espacements.png)
 
 
 <!-- Auto Generated Below -->

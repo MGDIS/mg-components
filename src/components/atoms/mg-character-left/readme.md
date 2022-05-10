@@ -14,11 +14,6 @@ lorsque les messages sont affichés sous le champ l'ordre est le suivant :
 
 ![](./mg-character-left/doc/img/nombre-caracteres-restants.png)
 
-### Valeur
-
-- par défaut limitée 400 caractères de type alpha numérique.
-- lorsque le champ est utilisé pour saisir une référence, la saisie est limitée à 36 caractères et n'autorise pas les caractères spéciaux.
-
 <!-- Auto Generated Below -->
 
 

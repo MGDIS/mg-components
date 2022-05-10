@@ -26,40 +26,37 @@ Par défaut, le message s'affiche en bas de l'élément.
 
 ### Formes
 
-![formes-tooltip](./mg-tooltip/doc/img/formes-tooltip.png)
+![](./mg-tooltip/doc/img/formes-tooltip.png)
 
 ### Fonts
 
-![font-tooltip](./mg-tooltip/doc/img/font-tooltip.png)
+![](./mg-tooltip/doc/img/font-tooltip.png)
 
 ### Espacements
 
-![espacements-tooltip](./mg-tooltip/doc/img/espacements-tooltip.png)
+![](./mg-tooltip/doc/img/espacements-tooltip.png)
 
 ### Alignements
 
-![alignements-tooltip](./mg-tooltip/doc/img/alignements-tooltip.png)
+![](./mg-tooltip/doc/img/alignements-tooltip.png)
 
 ### Positionnement
 
-![tooltip-1](./mg-tooltip/doc/img/positionnement-tooltip-1.png)
-![tooltip-2](./mg-tooltip/doc/img/positionnement-tooltip-2.png)
+![](./mg-tooltip/doc/img/positionnement-tooltip-1.png)
+![](./mg-tooltip/doc/img/positionnement-tooltip-2.png)
 
 ### Couleurs
 
-![tooltip-couleurs](./mg-tooltip/doc/img/tooltip-couleurs.png)
+![](./mg-tooltip/doc/img/tooltip-couleurs.png)
 
 ### Tailles
 
-![tailles-tooltip](./mg-tooltip/doc/img/tailles-tooltip.png)
+![](./mg-tooltip/doc/img/tailles-tooltip.png)
 
 ### Animation
 
-![Tooltip](./mg-tooltip/doc/img/Tooltip.gif)
+![](./mg-tooltip/doc/img/tooltip.gif)
 
-## Code
-
-<iframe src="https://626149b307606d003ada26b4-rsbukjlhvz.chromatic.com/?path=/story/atoms-mg-tooltip--mg-tooltip&full=1&shortcuts=false&singleStory=true" width="100%" height="600"></iframe>
 <!-- Auto Generated Below -->
 
 

@@ -9,7 +9,7 @@
 
 Le style du bouton radio actif est celui du navigateur.
 
-![style](./mg-input-radio/doc/img/specs.png)
+![](./mg-input-radio/doc/img/specs.png)
 
 TODO espacement avec le 'i' de 20px et non 30px
 
