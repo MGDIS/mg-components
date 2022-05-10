@@ -10,7 +10,7 @@
 
 **RG-02** : Au clic sur la croix, la fenêtre se ferme et aucun traitement n'est effectué.
 
-**RG-03** : Au clic sur le bouton d'annulation ou lors de l'appui de la touche <Echap>, la fenêtre se ferme et aucun traitement n'est effectué.
+**RG-03** : Au clic sur le bouton d'annulation ou lors de l'appui de la touche `<Echap>`, la fenêtre se ferme et aucun traitement n'est effectué.
 
 **RG-04** : Au clic sur le bouton de validation, le traitement est effectué et la fenêtre se ferme.
 
