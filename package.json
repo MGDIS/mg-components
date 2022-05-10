@@ -23,7 +23,7 @@
     "start": "stencil build --dev --watch --serve",
     "lint": "run-s lint:es lint:prettier",
     "lint:fix": "run-s lint:es:fix lint:prettier:fix",
-    "lint:es": "eslint src/**/*.{ts,tsx}",
+    "lint:es": "eslint src/**/*.{ts,tsx,js}",
     "lint:es:fix": "eslint src/**/*.{ts,tsx} --fix",
     "lint:prettier": "prettier --check **/*.{ts,tsx,scss,html,mdx,json}",
     "lint:prettier:fix": "prettier --write **/*.{ts,tsx,scss,html,mdx,json}",

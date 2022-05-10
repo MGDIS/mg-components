@@ -3,19 +3,6 @@
 **RUX 01**: Un bouton d'action principale est majoritairement unique à l'écran, les autres boutons doivent être affichés en "secondaire", cela pour mettre en avant l'action principale.
 Ex : Validation, Enregistrement
 
-**RUX 02**: Un bouton d'action secondaire est représenté avec la dominante blanche
-Ex : Annulation, Ajout dans une liste
-
-**RUX 03**: L'icône n'est pas obligatoire.
-
-**RUX 04**: Un bouton peut ne contenir qu'une icône (et pas de libellé), dans ce cas, si l'icone n'est pas assez explicite, une tooltip doit être affichée au survol et indiquer textuellement l'action du bouton.
- Ce cas ne concerne pas les boutons "communs" comme Valider, Annuler...etc.
-
-**RUX 05**: Un bouton qui lance un traitement potentiellement long passe en mode disabled on click le temps du traitement.
-Tant que le traitement n'est pas terminé, le bouton reste désactivé et un "loader" remplace le contenu.
-
-**RUX 06**: Si plusieurs boutons sont placés les uns à côté des autres, ceux-ci sont séparés par une marge (10px).
-
 ### base
 
 ![base](./mg-button/doc/img/base.png)

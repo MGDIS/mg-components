@@ -8,10 +8,6 @@
 
 ![](./mg-pagination/doc/img/pagination-nbelem.png)
 
-### Compteur d'éléments
-
-![](./mg-pagination/doc/img/pagination-counter.png)
-
 ### Navigation des pages
 
 ![](./mg-pagination/doc/img/page-navig.png)
