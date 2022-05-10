@@ -17,8 +17,12 @@ const getPage = (args, slot?) => {
 };
 
 describe('mg-panel', () => {
+  beforeAll(() => (global.HTMLInputElement.prototype.focus = jest.fn()));
+  afterAll(() => delete global.HTMLInputElement.prototype.focus);
+
   beforeEach(() => jest.useFakeTimers());
   afterEach(() => jest.runOnlyPendingTimers());
+
   test.each([
     { identifier: 'identifier', panelTitle: 'panel title' },
     { identifier: 'identifier', panelTitle: 'panel title', expanded: true },
@@ -63,6 +67,7 @@ describe('mg-panel', () => {
         expect(page.root).toMatchSnapshot();
 
         editButton.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+        jest.runOnlyPendingTimers();
         await page.waitForChanges();
 
         expect(page.root).toMatchSnapshot();
@@ -99,6 +104,7 @@ describe('mg-panel', () => {
       const afterInputAction = mgPanel.shadowRoot.querySelector(`#identifier-edition-button-${lastAction}`);
 
       afterInputAction.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+      jest.runOnlyPendingTimers();
       await page.waitForChanges();
 
       expect(page.root).toMatchSnapshot();
@@ -138,6 +144,7 @@ describe('mg-panel', () => {
       const afterInputAction = mgPanel.shadowRoot.querySelector(`#identifier-edition-button-validate`);
 
       afterInputAction.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+      jest.runOnlyPendingTimers();
       await page.waitForChanges();
 
       expect(page.root).toMatchSnapshot();
