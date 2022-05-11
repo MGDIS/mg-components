@@ -53,10 +53,6 @@ Par défaut, le message s'affiche en bas de l'élément.
 
 ![](./mg-tooltip/doc/img/tailles-tooltip.png)
 
-### Animation
-
-![](./mg-tooltip/doc/img/tooltip.gif)
-
 <!-- Auto Generated Below -->
 
 

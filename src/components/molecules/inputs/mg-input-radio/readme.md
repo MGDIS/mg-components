@@ -11,8 +11,6 @@ Le style du bouton radio actif est celui du navigateur.
 
 ![](./mg-input-radio/doc/img/specs.png)
 
-TODO espacement avec le 'i' de 20px et non 30px
-
 <!-- Auto Generated Below -->
 
 

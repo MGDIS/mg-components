@@ -19,7 +19,7 @@
 **RG-06** : La modale permet de focaliser l'attention sur ce qu'elle demande : une confirmation ou une annulation.
 En ce sens le reste de l'écran ne doit pas être accessible :
 
-- il apparaît flouté
+- il est masqué par un backdrop.
 - le clic sur le backdrop ne ferme pas la fenêtre
 
 **RG-01** : Le titre de la fenêtre est écrit avec un nom
@@ -78,9 +78,7 @@ Ex : si je mets un check devant le terme "Supprimer" qui est le bouton de valida
 
 ![](./mg-modal/doc/img/backdrop.png)
 
-TODO le screen du backdrop n'ai pas a jour
-
-- Couleur : blanc
+- Couleur : noir
 - Intensité : 5
 - Luminosité : 3
 

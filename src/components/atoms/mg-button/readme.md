@@ -3,6 +3,10 @@
 **RUX 01**: Un bouton d'action principale est majoritairement unique à l'écran, les autres boutons doivent être affichés en "secondaire", cela pour mettre en avant l'action principale.
 Ex : Validation, Enregistrement
 
+**RUX 02**: Une tooltip doit être affichée au survol lorsque le bouton n'affiche qu'une icône non explicite sans libellé. La tooltip doit indiquer textuellement l'action du bouton.
+
+**RUX 03**: Un bouton qui lance un traitement potentiellement long est désactivé et affiche un loader le temps du traitement.
+
 ### base
 
 ![](./mg-button/doc/img/base.png)
@@ -10,12 +14,6 @@ Ex : Validation, Enregistrement
 ### main styles
 
 ![](./mg-button/doc/img/main-styles.png)
-
-### colors and states
-
-![](./mg-button/doc/img/etats.png)
-
-![](./mg-button/doc/img/states-colors.png)
 
 ### Display buttons side by side
 
