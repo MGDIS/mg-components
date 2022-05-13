@@ -1,4 +1,18 @@
-This atom refers to [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64), [PDA9-723](https://jira.mgdis.fr/browse/PDA9-723).
+## Design
+
+### Ordre des messages
+
+lorsque les messages sont affichés sous le champ l'ordre est le suivant :
+1. nombre de caractères restants
+2. aide à la saisie
+3. erreur
+
+### Indication du nombre de caractères restants
+
+- lorsque le focus est sur le champ de saisie, un message s'affiche en dessous. le message est : "`<nbCar>` caractères disponibles", `<nbCar>` étant un compteur qui se met à jour dynamiquement en fonction de la saisie.
+- lorsque le focus n'est plus sur le champ de saisie, le message disparaît.
+
+![](./mg-character-left/doc/img/nombre-caracteres-restants.png)
 
 <!-- Auto Generated Below -->
 

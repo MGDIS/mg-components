@@ -1,4 +1,14 @@
-This atom refers to the [PDA9-315](https://jira.mgdis.fr/browse/PDA9-315).
+## Design
+
+**RUX-01** : Le badge est placé toujours par-dessus ou à côté de l'élément sur lequel il porte.
+
+**RUX-02** : Le badge affiche un chiffre/nombre ou un caractère de ponctuation.
+
+![](./mg-badge/doc/img/screenshot-2.png)
+
+## Styles
+
+![](./mg-badge/doc/img/styles.png)
 
 <!-- Auto Generated Below -->
 

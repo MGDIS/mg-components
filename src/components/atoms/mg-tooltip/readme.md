@@ -1,4 +1,57 @@
-This atom refers to the [PDA9-313](https://jira.mgdis.fr/browse/PDA9-313).
+## Design
+
+Les infobulles sont des messages qui permettent d’obtenir une information complémentaire sur un élément.
+Elles se présentent sous la forme d’un message qui apparaît au survol et à la prise de focus clavier d’un élément.
+Les infobulles sont dites « personnalisées » lorsqu’elles ne sont pas construites sur la base du code HTML standard prévu pour ces éléments par la spécification : l’attribut title.
+Notre composant "infobulle personnalisée" est appelé ici "tooltip"
+
+**RUX-01** : La tooltip doit s’afficher lorsque l’élément qui en permet l’affichage :
+
+Est survolé par la souris.
+Prend le focus clavier.
+
+**RUX-02** : La tooltip doit être masquée lorsque l’élément qui en permet l’affichage :
+
+N’est plus survolé par la souris.
+Perd le focus clavier.
+Une pression de la touche Échap doit permettre de masquer l’infobulle.
+
+**RUX-03** : L’infobulle doit rester affichée lorsque son contenu est survolé par la souris.
+
+**RUX-04** : La tooltip peut être placée au dessus, à droite, en dessous, à gauche de l'élément qu'elle décrit.
+
+Par défaut, le message s'affiche en bas de l'élément.
+
+**RUX-05** : Si l'élément est situé au bord de l'écran, la tooltip se décale pour être toujours visible.
+
+### Formes
+
+![](./mg-tooltip/doc/img/formes-tooltip.png)
+
+### Fonts
+
+![](./mg-tooltip/doc/img/font-tooltip.png)
+
+### Espacements
+
+![](./mg-tooltip/doc/img/espacements-tooltip.png)
+
+### Alignements
+
+![](./mg-tooltip/doc/img/alignements-tooltip.png)
+
+### Positionnement
+
+![](./mg-tooltip/doc/img/positionnement-tooltip-1.png)
+![](./mg-tooltip/doc/img/positionnement-tooltip-2.png)
+
+### Couleurs
+
+![](./mg-tooltip/doc/img/tooltip-couleurs.png)
+
+### Tailles
+
+![](./mg-tooltip/doc/img/tailles-tooltip.png)
 
 <!-- Auto Generated Below -->
 

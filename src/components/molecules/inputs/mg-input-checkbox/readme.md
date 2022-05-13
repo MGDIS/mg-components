@@ -1,4 +1,13 @@
-This molecule refers to the [PDA9-70](https://jira.mgdis.fr/browse/PDA9-70).
+## Design
+
+Notion de valeur VRAI/FAUX.
+Uniquement 2 valeurs possibles.
+
+### Style
+
+Le style de la case à cocher active est celui du navigateur.
+
+![](./mg-input-checkbox/doc/img/specs.png)
 
 <!-- Auto Generated Below -->
 

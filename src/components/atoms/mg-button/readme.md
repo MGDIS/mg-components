@@ -1,4 +1,23 @@
-This atom refers to the [PDA9-67](https://jira.mgdis.fr/browse/PDA9-67).
+## Design
+
+**RUX 01**: Un bouton d'action principale est majoritairement unique à l'écran, les autres boutons doivent être affichés en "secondaire", cela pour mettre en avant l'action principale.
+Ex : Validation, Enregistrement
+
+**RUX 02**: Une tooltip doit être affichée au survol lorsque le bouton n'affiche qu'une icône non explicite sans libellé. La tooltip doit indiquer textuellement l'action du bouton.
+
+**RUX 03**: Un bouton qui lance un traitement potentiellement long est désactivé et affiche un loader le temps du traitement.
+
+### base
+
+![](./mg-button/doc/img/base.png)
+
+### main styles
+
+![](./mg-button/doc/img/main-styles.png)
+
+### Display buttons side by side
+
+![](./mg-button/doc/img/plusieurs-boutons.png)
 
 <!-- Auto Generated Below -->
 

@@ -1,4 +1,16 @@
-This molecule refers to the [PDA9-787](https://jira.mgdis.fr/browse/PDA9-787).
+## Design
+
+### Composantes
+
+![](./mg-pagination/doc/img/pagination-components.png)
+
+### Nombre d'éléments affichés
+
+![](./mg-pagination/doc/img/pagination-nbelem.png)
+
+### Navigation des pages
+
+![](./mg-pagination/doc/img/page-navig.png)
 
 <!-- Auto Generated Below -->
 

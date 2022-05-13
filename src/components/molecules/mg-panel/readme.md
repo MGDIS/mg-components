@@ -1,4 +1,48 @@
-This molecule refers to the [PDA9-484](https://jira.mgdis.fr/browse/PDA9-484).
+## Design
+
+**RUX-01** : La zone gauche du header affiche le libellé de l'item, cette zone est cliquable et permet de déplier/replier le volet.
+Si aucun contenu n'est disponible, le volet ne peut être déplié.
+Lorsque le volet est déplié, l'icone est inversé verticalement.
+
+**RUX-02** : La zone droite du header peut accueillir tous composants.
+
+![](./mg-panel/doc/img/volet.png)
+
+### Composants
+
+![](./mg-panel/doc/img/composants.png)
+
+### Tailles
+
+![](./mg-panel/doc/img/tailles.png)
+
+### Espacements
+
+![](./mg-panel/doc/img/espacements.png)
+
+### Alignements
+
+![](./mg-panel/doc/img/alignements.png)
+
+### Styles
+
+![](./mg-panel/doc/img/styles.png)
+
+### Titre modifiable
+
+![](./mg-panel/doc/img/titre-modifiable.png)
+
+#### Composants
+
+![](./mg-panel/doc/img/titre-modifiable-composants.png)
+
+#### Espacements
+
+![](./mg-panel/doc/img/titre-modifiable-espacements.png)
+
+### Responsive
+
+![](./mg-panel/doc/img/responsive.png)
 
 <!-- Auto Generated Below -->
 

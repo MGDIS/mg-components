@@ -1,4 +1,27 @@
-This atom refers to the [PDA9-744](https://jira.mgdis.fr/browse/PDA9-744).
+## Design
+
+### Standard
+
+Tailles (px) :
+
+- 16x16 regular
+- 24x24 large
+- 36x36 extra-large
+
+Couleur : du texte de la page (majoritairement @color-dark)
+
+### Utilisation seul avec couleur informative
+
+L'utilisation d'un picto seul portant une couleur informative doit afficher la couleur en fond pour des raisons d'accessibilité.
+
+Les couleurs à utiliser sont des dérivées des couleurs standards, dont le luminosité est augmenté de 20%.
+
+Règle ok pour toutes sauf le bleu de info, mais les pictos info seuls sont affichés dans la couleur de la police la plupart du temps.
+
+### Nommage des fichiers
+
+- Séparateur : "-" (tiret 6). De base les pictos sont la version "filled", mais pas besoin de le préciser dans le nommage
+- Variante : "-outline". Si variante de picto avec un fond qui est un cercle plein > ajouter "-circle" ex : check-circle, check-circle-outline
 
 <!-- Auto Generated Below -->
 
