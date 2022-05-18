@@ -12,6 +12,23 @@ const slot = `
   </div>
 `;
 
+const slot2 = `
+  <div>Content</div>
+  <div slot="header-right" style="display: flex;justify-content: space-between;align-items: center;width: 100%;">
+    <div>
+      <mg-badge variant="primary" value="1"></mg-badge>
+    </div>
+    <div>
+      <mg-button variant="secondary">
+        <mg-icon icon="file-upload"></mg-icon> Upload
+      </mg-button>
+      <mg-button is-icon variant="secondary" label="delete">
+        <mg-icon icon="trash"></mg-icon>
+      </mg-button>
+    </div>
+  </div>
+`;
+
 describe('mg-panel', () => {
   describe.each([
     `<mg-panel label="label" panel-title="panel title" >${slot}</mg-panel>`,
@@ -19,6 +36,8 @@ describe('mg-panel', () => {
     `<mg-panel label="label" panel-title="panel title" title-editable>${slot}</mg-panel>`,
     `<mg-panel label="label" panel-title="very long panel title very long panel title very long panel title very long panel title very long panel title very long panel title very long panel title very long panel title">${slot}</mg-panel>`,
     `<mg-panel label="label" panel-title="very long panel title very long panel title very long panel title very long panel title very long panel title very long panel title very long panel title very long panel title" title-editable>${slot}</mg-panel>`,
+    `<mg-panel label="label" panel-title="panel title" >${slot2}</mg-panel>`,
+    `<mg-panel label="label" panel-title="very long panel title very long panel title very long panel title very long panel title very long panel title very long panel title very long panel title very long panel title" title-editable>${slot2}</mg-panel>`,
   ])('without tooltip', html => {
     test('render', async () => {
       const page = await createPage(html);

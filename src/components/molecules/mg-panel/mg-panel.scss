@@ -17,8 +17,11 @@ $header-padding: 0.3rem;
 .mg-panel__header-left,
 .mg-panel__header-right {
   display: flex;
-  flex-grow: 1;
   margin: $header-padding 0;
+}
+
+.mg-panel__header-right {
+  flex: 1 auto;
 }
 
 .mg-panel__header-left mg-input-text {
