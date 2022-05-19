@@ -20,6 +20,10 @@ $header-padding: 0.3rem;
   margin: $header-padding 0;
 }
 
+.mg-panel__header-left--full {
+  flex: 1 1 auto;
+}
+
 .mg-panel__header-right {
   flex: 1 auto;
 }
