@@ -53,6 +53,19 @@ describe('mg-panel', () => {
       }
     });
 
+    test.each([true, false])('Should NOT collapse panel, case expandToggleDisabled = true', async expanded => {
+      const page = await getPage({ identifier: 'identifier', panelTitle: 'panel title', expanded, expandToggleDisabled: true });
+      const mgPanel = page.doc.querySelector('mg-panel');
+      const collapseButton = mgPanel.shadowRoot.querySelector('.mg-panel__collapse-button');
+
+      expect(page.root).toMatchSnapshot();
+
+      collapseButton.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+      await page.waitForChanges();
+
+      expect(page.root).toMatchSnapshot();
+    });
+
     test.each([true, false])('Should toggle edit panel title', async titleEditable => {
       const page = await getPage({ identifier: 'identifier', panelTitle: 'panel title', titleEditable });
       const mgPanel = page.doc.querySelector('mg-panel');

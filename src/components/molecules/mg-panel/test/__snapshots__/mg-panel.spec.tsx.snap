@@ -120,6 +120,142 @@ exports[`mg-panel Should render with args { identifier: 'identifier', panelTitle
 </mg-panel>
 `;
 
+exports[`mg-panel navigation Should NOT collapse panel, case expandToggleDisabled = true 1`] = `
+<mg-panel>
+  <mock:shadow-root>
+    <section class="mg-panel" id="identifier">
+      <header class="mg-panel__header" id="identifier-header">
+        <div class="mg-panel__header-left">
+          <mg-button class="mg-panel__collapse-button">
+            <!---->
+            <button aria-controls="identifier-content" aria-disabled="" aria-expanded="" class="mg-button mg-button--flat" id="identifier-collapse-button">
+              <div class="mg-button__content">
+                <mg-icon>
+                  <mock:shadow-root>
+                    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-up mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+                      <path d="M8.57,3.79l6.53,6.52a.81.81,0,0,1,0,1.14h0l-.76.77a.81.81,0,0,1-1.14,0L8,7,2.8,12.22a.81.81,0,0,1-1.14,0L.9,11.45a.8.8,0,0,1,0-1.13h0L7.43,3.79a.79.79,0,0,1,1.13,0Z" fill="currentColor"></path>
+                    </svg>
+                  </mock:shadow-root>
+                </mg-icon>
+                panel title
+              </div>
+            </button>
+          </mg-button>
+        </div>
+        <div class="mg-panel__header-right">
+          <slot name="header-right"></slot>
+        </div>
+      </header>
+      <article aria-labelledby="identifier-header" class="mg-panel__content" id="identifier-content">
+        <slot></slot>
+      </article>
+    </section>
+  </mock:shadow-root>
+</mg-panel>
+`;
+
+exports[`mg-panel navigation Should NOT collapse panel, case expandToggleDisabled = true 2`] = `
+<mg-panel>
+  <mock:shadow-root>
+    <section class="mg-panel" id="identifier">
+      <header class="mg-panel__header" id="identifier-header">
+        <div class="mg-panel__header-left">
+          <mg-button class="mg-panel__collapse-button">
+            <!---->
+            <button aria-controls="identifier-content" aria-disabled="" aria-expanded="" class="mg-button mg-button--flat" id="identifier-collapse-button">
+              <div class="mg-button__content">
+                <mg-icon>
+                  <mock:shadow-root>
+                    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-up mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+                      <path d="M8.57,3.79l6.53,6.52a.81.81,0,0,1,0,1.14h0l-.76.77a.81.81,0,0,1-1.14,0L8,7,2.8,12.22a.81.81,0,0,1-1.14,0L.9,11.45a.8.8,0,0,1,0-1.13h0L7.43,3.79a.79.79,0,0,1,1.13,0Z" fill="currentColor"></path>
+                    </svg>
+                  </mock:shadow-root>
+                </mg-icon>
+                panel title
+              </div>
+            </button>
+          </mg-button>
+        </div>
+        <div class="mg-panel__header-right">
+          <slot name="header-right"></slot>
+        </div>
+      </header>
+      <article aria-labelledby="identifier-header" class="mg-panel__content" id="identifier-content">
+        <slot></slot>
+      </article>
+    </section>
+  </mock:shadow-root>
+</mg-panel>
+`;
+
+exports[`mg-panel navigation Should NOT collapse panel, case expandToggleDisabled = true 3`] = `
+<mg-panel>
+  <mock:shadow-root>
+    <section class="mg-panel" id="identifier">
+      <header class="mg-panel__header" id="identifier-header">
+        <div class="mg-panel__header-left">
+          <mg-button class="mg-panel__collapse-button">
+            <!---->
+            <button aria-controls="identifier-content" aria-disabled="" class="mg-button mg-button--flat" id="identifier-collapse-button">
+              <div class="mg-button__content">
+                <mg-icon>
+                  <mock:shadow-root>
+                    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+                      <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
+                    </svg>
+                  </mock:shadow-root>
+                </mg-icon>
+                panel title
+              </div>
+            </button>
+          </mg-button>
+        </div>
+        <div class="mg-panel__header-right">
+          <slot name="header-right"></slot>
+        </div>
+      </header>
+      <article aria-labelledby="identifier-header" class="mg-panel__content" hidden="" id="identifier-content">
+        <slot></slot>
+      </article>
+    </section>
+  </mock:shadow-root>
+</mg-panel>
+`;
+
+exports[`mg-panel navigation Should NOT collapse panel, case expandToggleDisabled = true 4`] = `
+<mg-panel>
+  <mock:shadow-root>
+    <section class="mg-panel" id="identifier">
+      <header class="mg-panel__header" id="identifier-header">
+        <div class="mg-panel__header-left">
+          <mg-button class="mg-panel__collapse-button">
+            <!---->
+            <button aria-controls="identifier-content" aria-disabled="" class="mg-button mg-button--flat" id="identifier-collapse-button">
+              <div class="mg-button__content">
+                <mg-icon>
+                  <mock:shadow-root>
+                    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+                      <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
+                    </svg>
+                  </mock:shadow-root>
+                </mg-icon>
+                panel title
+              </div>
+            </button>
+          </mg-button>
+        </div>
+        <div class="mg-panel__header-right">
+          <slot name="header-right"></slot>
+        </div>
+      </header>
+      <article aria-labelledby="identifier-header" class="mg-panel__content" hidden="" id="identifier-content">
+        <slot></slot>
+      </article>
+    </section>
+  </mock:shadow-root>
+</mg-panel>
+`;
+
 exports[`mg-panel navigation Should toggle collapse panel 1`] = `
 <mg-panel>
   <mock:shadow-root>

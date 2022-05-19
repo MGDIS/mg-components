@@ -36,6 +36,8 @@ describe('mg-panel', () => {
     `<mg-panel label="label" panel-title="very long panel title very long panel title very long panel title very long panel title very long panel title very long panel title very long panel title very long panel title" title-editable>${slot}</mg-panel>`,
     `<mg-panel label="label" panel-title="panel title" >${slot2}</mg-panel>`,
     `<mg-panel label="label" panel-title="very long panel title very long panel title very long panel title very long panel title very long panel title very long panel title very long panel title very long panel title" title-editable>${slot2}</mg-panel>`,
+    `<mg-panel label="label" panel-title="panel title" expand-toggle-disabled expanded>${slot}</mg-panel>`,
+    `<mg-panel label="label" panel-title="panel title" expand-toggle-disabled>${slot}</mg-panel>`,
   ])('without tooltip', html => {
     test('render', async () => {
       const page = await createPage(html);
