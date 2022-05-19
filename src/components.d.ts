@@ -902,6 +902,14 @@ export namespace Components {
          */
         "panelTitle": string;
         /**
+          * Panel title pattern
+         */
+        "panelTitlePattern": string;
+        /**
+          * Panel title pattern error message
+         */
+        "panelTitlePatternErrorMessage": string;
+        /**
           * Panel title is editabled
          */
         "titleEditable": boolean;
@@ -2115,6 +2123,14 @@ declare namespace LocalJSX {
           * Panel title
          */
         "panelTitle": string;
+        /**
+          * Panel title pattern
+         */
+        "panelTitlePattern"?: string;
+        /**
+          * Panel title pattern error message
+         */
+        "panelTitlePatternErrorMessage"?: string;
         /**
           * Panel title is editabled
          */

@@ -52,6 +52,60 @@ exports[`mg-panel Should render with args {
 </mg-panel>
 `;
 
+exports[`mg-panel Should render with args {
+  identifier: 'identifier',
+  panelTitle: 'panel title',
+  titleEditable: true,
+  panelTitlePattern: /joker/,
+  panelTitlePatternErrorMessage: "You can't enter a bad guy !"
+}: 1`] = `
+<mg-panel>
+  <mock:shadow-root>
+    <section class="mg-panel" id="identifier">
+      <header class="mg-panel__header" id="identifier-header">
+        <div class="mg-panel__header-left">
+          <mg-button class="mg-panel__collapse-button">
+            <!---->
+            <button aria-controls="identifier-content" class="mg-button mg-button--flat" id="identifier-collapse-button">
+              <div class="mg-button__content">
+                <mg-icon>
+                  <mock:shadow-root>
+                    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+                      <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
+                    </svg>
+                  </mock:shadow-root>
+                </mg-icon>
+                panel title
+              </div>
+            </button>
+          </mg-button>
+          <mg-button is-icon="">
+            <!---->
+            <button aria-label="Modifer le titre de la section." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
+              <div class="mg-button__content">
+                <mg-icon>
+                  <mock:shadow-root>
+                    <svg aria-hidden="true" class="mg-icon mg-icon--pen mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+                      <path d="M1.67,11.69v2.64h2.64l7.78-7.78-2.64-2.64L1.67,11.69ZM14.13,4.51c.27-.28,.27-.72,0-1h0l-1.65-1.64c-.28-.27-.72-.27-1,0h0l-1.28,1.29,2.64,2.64,1.29-1.29Z" fill="currentColor"></path>
+                    </svg>
+                  </mock:shadow-root>
+                </mg-icon>
+              </div>
+            </button>
+          </mg-button>
+        </div>
+        <div class="mg-panel__header-right">
+          <slot name="header-right"></slot>
+        </div>
+      </header>
+      <article aria-labelledby="identifier-header" class="mg-panel__content" hidden="" id="identifier-content">
+        <slot></slot>
+      </article>
+    </section>
+  </mock:shadow-root>
+</mg-panel>
+`;
+
 exports[`mg-panel Should render with args { identifier: 'identifier', panelTitle: 'panel title' }: 1`] = `
 <mg-panel>
   <mock:shadow-root>
@@ -240,6 +294,254 @@ exports[`mg-panel navigation Should NOT collapse panel, case expandToggleDisable
                   </mock:shadow-root>
                 </mg-icon>
                 panel title
+              </div>
+            </button>
+          </mg-button>
+        </div>
+        <div class="mg-panel__header-right">
+          <slot name="header-right"></slot>
+        </div>
+      </header>
+      <article aria-labelledby="identifier-header" class="mg-panel__content" hidden="" id="identifier-content">
+        <slot></slot>
+      </article>
+    </section>
+  </mock:shadow-root>
+</mg-panel>
+`;
+
+exports[`mg-panel navigation Should NOT update panel title, case input new value does NOT match pattern 1`] = `
+<mg-panel>
+  <mock:shadow-root>
+    <section class="mg-panel" id="identifier">
+      <header class="mg-panel__header" id="identifier-header">
+        <div class="mg-panel__header-left">
+          <mg-button class="mg-panel__collapse-button">
+            <!---->
+            <button aria-controls="identifier-content" class="mg-button mg-button--flat" id="identifier-collapse-button">
+              <div class="mg-button__content">
+                <mg-icon>
+                  <mock:shadow-root>
+                    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+                      <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
+                    </svg>
+                  </mock:shadow-root>
+                </mg-icon>
+                panel title
+              </div>
+            </button>
+          </mg-button>
+          <mg-button is-icon="">
+            <!---->
+            <button aria-label="Modifer le titre de la section." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
+              <div class="mg-button__content">
+                <mg-icon>
+                  <mock:shadow-root>
+                    <svg aria-hidden="true" class="mg-icon mg-icon--pen mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+                      <path d="M1.67,11.69v2.64h2.64l7.78-7.78-2.64-2.64L1.67,11.69ZM14.13,4.51c.27-.28,.27-.72,0-1h0l-1.65-1.64c-.28-.27-.72-.27-1,0h0l-1.28,1.29,2.64,2.64,1.29-1.29Z" fill="currentColor"></path>
+                    </svg>
+                  </mock:shadow-root>
+                </mg-icon>
+              </div>
+            </button>
+          </mg-button>
+        </div>
+        <div class="mg-panel__header-right">
+          <slot name="header-right"></slot>
+        </div>
+      </header>
+      <article aria-labelledby="identifier-header" class="mg-panel__content" hidden="" id="identifier-content">
+        <slot></slot>
+      </article>
+    </section>
+  </mock:shadow-root>
+</mg-panel>
+`;
+
+exports[`mg-panel navigation Should NOT update panel title, case input new value does NOT match pattern 2`] = `
+<mg-panel>
+  <mock:shadow-root>
+    <section class="mg-panel" id="identifier">
+      <header class="mg-panel__header" id="identifier-header">
+        <div class="mg-panel__header-left">
+          <mg-button class="mg-panel__collapse-button">
+            <!---->
+            <button aria-controls="identifier-content" class="mg-button mg-button--flat" id="identifier-collapse-button">
+              <div class="mg-button__content">
+                <mg-icon>
+                  <mock:shadow-root>
+                    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+                      <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
+                    </svg>
+                  </mock:shadow-root>
+                </mg-icon>
+              </div>
+            </button>
+          </mg-button>
+          <mg-input-text label-hide="" pattern-error-message="You can't enter a bad guy !" value="panel title">
+            <mock:shadow-root>
+              <div class="mg-input mg-input--has-buttons-group-append mg-input--is-input-group-append mg-input--text mg-input--width-full">
+                <mg-input-title class="sr-only" identifier="identifier-edition-input">
+                  Modifer le titre de la section.
+                </mg-input-title>
+                <div class="mg-input__input-container">
+                  <div class="mg-input__input">
+                    <input aria-describedby="" class="mg-input__box" id="identifier-edition-input" maxlength="400" name="identifier-edition-input" pattern="^(?!(joker)$)[a-z A-Z0-9s]+$" type="text" value="panel title">
+                    <slot name="append-input"></slot>
+                  </div>
+                </div>
+              </div>
+            </mock:shadow-root>
+            <mg-button is-icon="" slot="append-input">
+              <!---->
+              <button aria-label="Annuler" class="mg-button mg-button--icon mg-button--secondary" id="identifier-edition-button-cancel">
+                <div class="mg-button__content">
+                  <mg-icon>
+                    <mock:shadow-root>
+                      <svg aria-hidden="true" class="mg-icon mg-icon--cross mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+                        <path d="M14.26 12.74 9.52 8l4.7-4.7a.29.29 0 0 0 0-.41l-1.1-1.1a.29.29 0 0 0-.41 0L8 6.48 3.26 1.74a.24.24 0 0 0-.34 0L1.74 2.91a.24.24 0 0 0 0 .34L6.48 8l-4.7 4.7a.29.29 0 0 0 0 .41l1.1 1.1a.29.29 0 0 0 .41 0L8 9.52l4.74 4.74a.24.24 0 0 0 .34 0l1.17-1.17a.24.24 0 0 0 0-.34Z" fill="currentColor"></path>
+                      </svg>
+                    </mock:shadow-root>
+                  </mg-icon>
+                </div>
+              </button>
+            </mg-button>
+            <mg-button is-icon="" slot="append-input">
+              <!---->
+              <button aria-label="Valider" class="mg-button mg-button--icon mg-button--secondary" id="identifier-edition-button-validate">
+                <div class="mg-button__content">
+                  <mg-icon>
+                    <mock:shadow-root>
+                      <svg aria-hidden="true" class="mg-icon mg-icon--check mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+                        <path d="M15.3,4.2L14.2,3c-0.1-0.1-0.3-0.1-0.4,0L6,10.4l-3.8-4C2.2,6.3,2.1,6.3,2,6.4L0.7,7.6c-0.1,0.1-0.1,0.2,0,0.3l5.1,5.4c0.1,0.1,0.2,0.1,0.3,0c0,0,0,0,0,0L7.4,12l0,0l7.9-7.4C15.4,4.5,15.4,4.3,15.3,4.2C15.3,4.2,15.3,4.2,15.3,4.2z" fill="currentColor"></path>
+                      </svg>
+                    </mock:shadow-root>
+                  </mg-icon>
+                </div>
+              </button>
+            </mg-button>
+          </mg-input-text>
+        </div>
+        <div class="mg-panel__header-right">
+          <slot name="header-right"></slot>
+        </div>
+      </header>
+      <article aria-labelledby="identifier-header" class="mg-panel__content" hidden="" id="identifier-content">
+        <slot></slot>
+      </article>
+    </section>
+  </mock:shadow-root>
+</mg-panel>
+`;
+
+exports[`mg-panel navigation Should NOT update panel title, case input new value does NOT match pattern 3`] = `
+<mg-panel>
+  <mock:shadow-root>
+    <section class="mg-panel" id="identifier">
+      <header class="mg-panel__header" id="identifier-header">
+        <div class="mg-panel__header-left">
+          <mg-button class="mg-panel__collapse-button">
+            <!---->
+            <button aria-controls="identifier-content" class="mg-button mg-button--flat" id="identifier-collapse-button">
+              <div class="mg-button__content">
+                <mg-icon>
+                  <mock:shadow-root>
+                    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+                      <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
+                    </svg>
+                  </mock:shadow-root>
+                </mg-icon>
+              </div>
+            </button>
+          </mg-button>
+          <mg-input-text label-hide="" pattern-error-message="You can't enter a bad guy !" value="joker">
+            <mock:shadow-root>
+              <div class="is-not-valid mg-input mg-input--has-buttons-group-append mg-input--is-input-group-append mg-input--text mg-input--width-full">
+                <mg-input-title class="sr-only" identifier="identifier-edition-input">
+                  Modifer le titre de la section.
+                </mg-input-title>
+                <div class="mg-input__input-container">
+                  <div class="mg-input__input">
+                    <input aria-describedby="" class="mg-input__box" id="identifier-edition-input" maxlength="400" name="identifier-edition-input" pattern="^(?!(joker)$)[a-z A-Z0-9s]+$" type="text" value="joker">
+                    <slot name="append-input"></slot>
+                  </div>
+                </div>
+              </div>
+            </mock:shadow-root>
+            <mg-button is-icon="" slot="append-input">
+              <!---->
+              <button aria-label="Annuler" class="mg-button mg-button--icon mg-button--secondary" id="identifier-edition-button-cancel">
+                <div class="mg-button__content">
+                  <mg-icon>
+                    <mock:shadow-root>
+                      <svg aria-hidden="true" class="mg-icon mg-icon--cross mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+                        <path d="M14.26 12.74 9.52 8l4.7-4.7a.29.29 0 0 0 0-.41l-1.1-1.1a.29.29 0 0 0-.41 0L8 6.48 3.26 1.74a.24.24 0 0 0-.34 0L1.74 2.91a.24.24 0 0 0 0 .34L6.48 8l-4.7 4.7a.29.29 0 0 0 0 .41l1.1 1.1a.29.29 0 0 0 .41 0L8 9.52l4.74 4.74a.24.24 0 0 0 .34 0l1.17-1.17a.24.24 0 0 0 0-.34Z" fill="currentColor"></path>
+                      </svg>
+                    </mock:shadow-root>
+                  </mg-icon>
+                </div>
+              </button>
+            </mg-button>
+            <mg-button is-icon="" slot="append-input">
+              <!---->
+              <button aria-label="Valider" class="mg-button mg-button--icon mg-button--secondary" id="identifier-edition-button-validate">
+                <div class="mg-button__content">
+                  <mg-icon>
+                    <mock:shadow-root>
+                      <svg aria-hidden="true" class="mg-icon mg-icon--check mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+                        <path d="M15.3,4.2L14.2,3c-0.1-0.1-0.3-0.1-0.4,0L6,10.4l-3.8-4C2.2,6.3,2.1,6.3,2,6.4L0.7,7.6c-0.1,0.1-0.1,0.2,0,0.3l5.1,5.4c0.1,0.1,0.2,0.1,0.3,0c0,0,0,0,0,0L7.4,12l0,0l7.9-7.4C15.4,4.5,15.4,4.3,15.3,4.2C15.3,4.2,15.3,4.2,15.3,4.2z" fill="currentColor"></path>
+                      </svg>
+                    </mock:shadow-root>
+                  </mg-icon>
+                </div>
+              </button>
+            </mg-button>
+          </mg-input-text>
+        </div>
+        <div class="mg-panel__header-right">
+          <slot name="header-right"></slot>
+        </div>
+      </header>
+      <article aria-labelledby="identifier-header" class="mg-panel__content" hidden="" id="identifier-content">
+        <slot></slot>
+      </article>
+    </section>
+  </mock:shadow-root>
+</mg-panel>
+`;
+
+exports[`mg-panel navigation Should NOT update panel title, case input new value does NOT match pattern 4`] = `
+<mg-panel>
+  <mock:shadow-root>
+    <section class="mg-panel" id="identifier">
+      <header class="mg-panel__header" id="identifier-header">
+        <div class="mg-panel__header-left">
+          <mg-button class="mg-panel__collapse-button">
+            <!---->
+            <button aria-controls="identifier-content" class="mg-button mg-button--flat" id="identifier-collapse-button">
+              <div class="mg-button__content">
+                <mg-icon>
+                  <mock:shadow-root>
+                    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+                      <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
+                    </svg>
+                  </mock:shadow-root>
+                </mg-icon>
+                panel title
+              </div>
+            </button>
+          </mg-button>
+          <mg-button is-icon="">
+            <!---->
+            <button aria-label="Modifer le titre de la section." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
+              <div class="mg-button__content">
+                <mg-icon>
+                  <mock:shadow-root>
+                    <svg aria-hidden="true" class="mg-icon mg-icon--pen mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+                      <path d="M1.67,11.69v2.64h2.64l7.78-7.78-2.64-2.64L1.67,11.69ZM14.13,4.51c.27-.28,.27-.72,0-1h0l-1.65-1.64c-.28-.27-.72-.27-1,0h0l-1.28,1.29,2.64,2.64,1.29-1.29Z" fill="currentColor"></path>
+                    </svg>
+                  </mock:shadow-root>
+                </mg-icon>
               </div>
             </button>
           </mg-button>

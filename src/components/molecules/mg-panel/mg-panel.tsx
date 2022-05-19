@@ -35,6 +35,25 @@ export class MgPanel {
   }
 
   /**
+   * Panel title pattern
+   */
+  @Prop({ mutable: true }) panelTitlePattern: string;
+  @Watch('panelTitlePattern')
+  validatePanelTitlePattern(newValue: string): void {
+    if (newValue && !this.titleEditable) {
+      throw new Error('<mg-panel> prop "titleEditable" must be set to `true`.');
+    }
+    if (newValue && this.panelTitlePatternErrorMessage === undefined) {
+      throw new Error('<mg-panel> prop "panelTitlePattern" must be paired with the prop "panelTitlePatternErrorMessage".');
+    }
+  }
+
+  /**
+   * Panel title pattern error message
+   */
+  @Prop({ mutable: true }) panelTitlePatternErrorMessage: string;
+
+  /**
    * Panel is opened
    */
   @Prop({ mutable: true }) expanded = false;
@@ -132,14 +151,25 @@ export class MgPanel {
    * @returns {void}
    */
   private handleValidateEditButton = (): void => {
-    if (this.updatedPanelTitle !== undefined) this.panelTitle = this.updatedPanelTitle;
+    if (this.editInputElement.valid) {
+      if (this.updatedPanelTitle !== undefined) this.panelTitle = this.updatedPanelTitle;
 
-    this.toggleIsEditing();
+      this.toggleIsEditing();
+    }
   };
 
   /*************
    * Lifecycle *
    *************/
+
+  /**
+   * Check if props are well configured on init
+   *
+   * @returns {void}
+   */
+  componentWillLoad(): void {
+    this.validatePanelTitlePattern(this.panelTitlePattern);
+  }
 
   /**
    * Header left conditional render
@@ -181,6 +211,8 @@ export class MgPanel {
           value={this.panelTitle}
           onValue-change={this.handleUpdateTitle}
           displayCharacterLeft={false}
+          pattern={this.panelTitlePattern}
+          pattern-error-message={this.panelTitlePatternErrorMessage}
           identifier={`${this.identifier}-edition-input`}
           ref={el => (this.editInputElement = el as HTMLMgInputTextElement)}
         >
