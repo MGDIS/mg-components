@@ -232,7 +232,7 @@ export class MgPanel {
     return (
       <section class={this.classList.join()} id={this.identifier}>
         <header class="mg-panel__header" id={`${this.identifier}-header`}>
-          <div class="mg-panel__header-left">{this.headerLeft()}</div>
+          <div class={`mg-panel__header-left ${this.isEditing ? 'mg-panel__header-left--full' : ''}`}>{this.headerLeft()}</div>
           <div class="mg-panel__header-right">
             <slot name="header-right"></slot>
           </div>

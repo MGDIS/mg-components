@@ -445,7 +445,7 @@ exports[`mg-panel navigation Should toggle edit panel title 2`] = `
   <mock:shadow-root>
     <section class="mg-panel" id="identifier">
       <header class="mg-panel__header" id="identifier-header">
-        <div class="mg-panel__header-left">
+        <div class="mg-panel__header-left mg-panel__header-left--full">
           <mg-button class="mg-panel__collapse-button">
             <!---->
             <button aria-controls="identifier-content" class="mg-button mg-button--flat" id="identifier-collapse-button">
@@ -651,7 +651,7 @@ exports[`mg-panel navigation should NOT update panel title, case no enter in inp
   <mock:shadow-root>
     <section class="mg-panel" id="identifier">
       <header class="mg-panel__header" id="identifier-header">
-        <div class="mg-panel__header-left">
+        <div class="mg-panel__header-left mg-panel__header-left--full">
           <mg-button class="mg-panel__collapse-button">
             <!---->
             <button aria-controls="identifier-content" class="mg-button mg-button--flat" id="identifier-collapse-button">
@@ -823,7 +823,7 @@ exports[`mg-panel navigation should update panel title, case cancel 2`] = `
   <mock:shadow-root>
     <section class="mg-panel" id="identifier">
       <header class="mg-panel__header" id="identifier-header">
-        <div class="mg-panel__header-left">
+        <div class="mg-panel__header-left mg-panel__header-left--full">
           <mg-button class="mg-panel__collapse-button">
             <!---->
             <button aria-controls="identifier-content" class="mg-button mg-button--flat" id="identifier-collapse-button">
@@ -995,7 +995,7 @@ exports[`mg-panel navigation should update panel title, case validate 2`] = `
   <mock:shadow-root>
     <section class="mg-panel" id="identifier">
       <header class="mg-panel__header" id="identifier-header">
-        <div class="mg-panel__header-left">
+        <div class="mg-panel__header-left mg-panel__header-left--full">
           <mg-button class="mg-panel__collapse-button">
             <!---->
             <button aria-controls="identifier-content" class="mg-button mg-button--flat" id="identifier-collapse-button">
