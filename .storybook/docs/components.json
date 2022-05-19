@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-05-09T07:35:06",
+  "timestamp": "2022-05-18T14:28:30",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.15.1",
@@ -4443,6 +4443,23 @@
       "docsTags": [],
       "usage": {},
       "props": [
+        {
+          "name": "expandToggleDisabled",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "expand-toggle-disabled",
+          "reflectToAttr": false,
+          "docs": "Disable possibility to toggle expand",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
         {
           "name": "expanded",
           "type": "boolean",

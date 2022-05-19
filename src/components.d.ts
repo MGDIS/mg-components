@@ -886,6 +886,10 @@ export namespace Components {
     }
     interface MgPanel {
         /**
+          * Disable possibility to toggle expand
+         */
+        "expandToggleDisabled": boolean;
+        /**
           * Panel is opened
          */
         "expanded": boolean;
@@ -2091,6 +2095,10 @@ declare namespace LocalJSX {
         "totalPages"?: number;
     }
     interface MgPanel {
+        /**
+          * Disable possibility to toggle expand
+         */
+        "expandToggleDisabled"?: boolean;
         /**
           * Panel is opened
          */

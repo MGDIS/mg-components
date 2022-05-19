@@ -40,6 +40,11 @@ export class MgPanel {
   @Prop({ mutable: true }) expanded = false;
 
   /**
+   * Disable possibility to toggle expand
+   */
+  @Prop({ mutable: true }) expandToggleDisabled = false;
+
+  /**
    * Panel title is editabled
    */
   @Prop() titleEditable = false;
@@ -87,7 +92,9 @@ export class MgPanel {
    * @returns {void}
    */
   private handleCollapseButton = (): void => {
-    this.expanded = !this.expanded;
+    if (!this.expandToggleDisabled) {
+      this.expanded = !this.expanded;
+    }
   };
 
   /**
@@ -149,6 +156,7 @@ export class MgPanel {
         identifier={`${this.identifier}-collapse-button`}
         expanded={this.expanded}
         controls={`${this.identifier}-content`}
+        disabled={this.expandToggleDisabled}
       >
         <mg-icon icon={this.expanded ? 'chevron-up' : 'chevron-down'}></mg-icon>
         {!this.isEditing && this.panelTitle}
