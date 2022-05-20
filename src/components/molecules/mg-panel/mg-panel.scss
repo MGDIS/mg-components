@@ -11,7 +11,7 @@ $header-padding: 0.3rem;
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 0 1rem 0 $header-padding;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .mg-panel__header-left,

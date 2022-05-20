@@ -96,5 +96,41 @@ describe('mg-panel', () => {
       const screenshot3 = await page.screenshot();
       expect(screenshot3).toMatchImageSnapshot();
     });
+
+    test.each([
+      `<mg-panel identifier="identifier" panel-title="panel" title-editable title-pattern="^(?!(joker)$)[a-z A-Z0-9\s]+$" title-pattern-error-message="You can't enter a bad guy !">${slot}</mg-panel>`,
+      ,
+    ])('Should NOT update panel title, case input new value does NOT match pattern', async html => {
+      const page = await createPage(html);
+
+      const editButton = await page.find('mg-panel >>> #identifier-edit-button');
+      await editButton.click();
+
+      await page.waitForChanges();
+
+      const screenshot = await page.screenshot();
+      expect(screenshot).toMatchImageSnapshot();
+
+      const input = await page.find('mg-panel >>> mg-input-text >>> input');
+
+      await input.press('Backspace');
+      await input.press('Backspace');
+      await input.press('Backspace');
+      await input.press('Backspace');
+      await input.press('Backspace');
+      await input.press('KeyJ');
+      await input.press('KeyO');
+      await input.press('KeyK');
+      await input.press('KeyE');
+      await input.press('KeyR');
+
+      const validateButton = await page.find('mg-panel >>> #identifier-edition-button-validate');
+      await validateButton.click();
+
+      await page.waitForChanges();
+
+      const screenshot2 = await page.screenshot();
+      expect(screenshot2).toMatchImageSnapshot();
+    });
   });
 });
