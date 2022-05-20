@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-05-19T07:21:42",
+  "timestamp": "2022-05-20T06:54:55",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.15.1",
@@ -4511,10 +4511,27 @@
           "required": true
         },
         {
-          "name": "panelTitlePattern",
+          "name": "titleEditable",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "title-editable",
+          "reflectToAttr": false,
+          "docs": "Panel title is editabled",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "titlePattern",
           "type": "string",
           "mutable": true,
-          "attr": "panel-title-pattern",
+          "attr": "title-pattern",
           "reflectToAttr": false,
           "docs": "Panel title pattern",
           "docsTags": [],
@@ -4527,33 +4544,16 @@
           "required": false
         },
         {
-          "name": "panelTitlePatternErrorMessage",
+          "name": "titlePatternErrorMessage",
           "type": "string",
           "mutable": true,
-          "attr": "panel-title-pattern-error-message",
+          "attr": "title-pattern-error-message",
           "reflectToAttr": false,
           "docs": "Panel title pattern error message",
           "docsTags": [],
           "values": [
             {
               "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "titleEditable",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "title-editable",
-          "reflectToAttr": false,
-          "docs": "Panel title is editabled",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
             }
           ],
           "optional": false,

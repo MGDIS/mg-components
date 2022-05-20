@@ -81,7 +81,7 @@ describe('mg-panel', () => {
     });
 
     test.each([
-      `<mg-panel identifier="identifier" panel-title="panel" title-editable panel-title-pattern="^(?!(joker)$)[a-z A-Z0-9\s]+$" panel-title-pattern-error-message="You can't enter a bad guy !">${slot}</mg-panel>`,
+      `<mg-panel identifier="identifier" panel-title="panel" title-editable title-pattern="^(?!(joker)$)[a-z A-Z0-9\s]+$" title-pattern-error-message="You can't enter a bad guy !">${slot}</mg-panel>`,
       ,
     ])('Should NOT update panel title, case input new value does NOT match pattern', async html => {
       const page = await createPage(html);

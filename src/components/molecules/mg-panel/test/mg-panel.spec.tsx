@@ -27,7 +27,7 @@ describe('mg-panel', () => {
     { identifier: 'identifier', panelTitle: 'panel title' },
     { identifier: 'identifier', panelTitle: 'panel title', expanded: true },
     { identifier: 'identifier', panelTitle: 'panel title', titleEditable: true },
-    { identifier: 'identifier', panelTitle: 'panel title', titleEditable: true, panelTitlePattern: /joker/, panelTitlePatternErrorMessage: "You can't enter a bad guy !" },
+    { identifier: 'identifier', panelTitle: 'panel title', titleEditable: true, titlePattern: /joker/, titlePatternErrorMessage: "You can't enter a bad guy !" },
   ])('Should render with args %s:', async args => {
     const { root } = await getPage(args);
     expect(root).toMatchSnapshot();
@@ -35,14 +35,14 @@ describe('mg-panel', () => {
 
   describe('errors', () => {
     test.each([
-      { props: { identifier: 'identifier', panelTitle: 'panel title', panelTitlePattern: /joker/ }, error: '<mg-panel> prop "titleEditable" must be set to `true`.' },
+      { props: { identifier: 'identifier', panelTitle: 'panel title', titlePattern: /joker/ }, error: '<mg-panel> prop "titleEditable" must be set to `true`.' },
       {
-        props: { identifier: 'identifier', panelTitle: 'panel title', titleEditable: true, panelTitlePattern: '^(?!(joker)$)[a-z A-Z0-9s]+$' },
-        error: '<mg-panel> prop "panelTitlePattern" must be paired with the prop "panelTitlePatternErrorMessage".',
+        props: { identifier: 'identifier', panelTitle: 'panel title', titleEditable: true, titlePattern: '^(?!(joker)$)[a-z A-Z0-9s]+$' },
+        error: '<mg-panel> prop "titlePattern" must be paired with the prop "titlePatternErrorMessage".',
       },
       {
-        props: { identifier: 'identifier', panelTitle: 'panel title', titleEditable: true, panelTitlePattern: '^(?!(joker)$)[a-z A-Z0-9s]+$', panelTitlePatternErrorMessage: '' },
-        error: '<mg-panel> prop "panelTitlePattern" must be paired with the prop "panelTitlePatternErrorMessage".',
+        props: { identifier: 'identifier', panelTitle: 'panel title', titleEditable: true, titlePattern: '^(?!(joker)$)[a-z A-Z0-9s]+$', titlePatternErrorMessage: '' },
+        error: '<mg-panel> prop "titlePattern" must be paired with the prop "titlePatternErrorMessage".',
       },
     ])('Should throw error when props association are unauthorized %s:', async ({ props, error }) => {
       try {
@@ -191,8 +191,8 @@ describe('mg-panel', () => {
         identifier: 'identifier',
         panelTitle: 'panel title',
         titleEditable: true,
-        panelTitlePattern: '^(?!(joker)$)[a-z A-Z0-9s]+$',
-        panelTitlePatternErrorMessage: "You can't enter a bad guy !",
+        titlePattern: '^(?!(joker)$)[a-z A-Z0-9s]+$',
+        titlePatternErrorMessage: "You can't enter a bad guy !",
       };
       const page = await getPage(args);
       const mgPanel = page.doc.querySelector('mg-panel');

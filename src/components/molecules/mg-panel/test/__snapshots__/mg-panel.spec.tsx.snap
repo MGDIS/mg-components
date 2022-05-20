@@ -56,8 +56,8 @@ exports[`mg-panel Should render with args {
   identifier: 'identifier',
   panelTitle: 'panel title',
   titleEditable: true,
-  panelTitlePattern: /joker/,
-  panelTitlePatternErrorMessage: "You can't enter a bad guy !"
+  titlePattern: /joker/,
+  titlePatternErrorMessage: "You can't enter a bad guy !"
 }: 1`] = `
 <mg-panel>
   <mock:shadow-root>

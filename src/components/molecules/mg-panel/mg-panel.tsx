@@ -37,21 +37,21 @@ export class MgPanel {
   /**
    * Panel title pattern
    */
-  @Prop({ mutable: true }) panelTitlePattern: string;
-  @Watch('panelTitlePattern')
-  validatePanelTitlePattern(newValue: string): void {
+  @Prop({ mutable: true }) titlePattern: string;
+  @Watch('titlePattern')
+  validatetitlePattern(newValue: string): void {
     if (newValue && !this.titleEditable) {
       throw new Error('<mg-panel> prop "titleEditable" must be set to `true`.');
     }
-    if (newValue && this.panelTitlePatternErrorMessage === undefined) {
-      throw new Error('<mg-panel> prop "panelTitlePattern" must be paired with the prop "panelTitlePatternErrorMessage".');
+    if (newValue && this.titlePatternErrorMessage === undefined) {
+      throw new Error('<mg-panel> prop "titlePattern" must be paired with the prop "titlePatternErrorMessage".');
     }
   }
 
   /**
    * Panel title pattern error message
    */
-  @Prop({ mutable: true }) panelTitlePatternErrorMessage: string;
+  @Prop({ mutable: true }) titlePatternErrorMessage: string;
 
   /**
    * Panel is opened
@@ -168,7 +168,7 @@ export class MgPanel {
    * @returns {void}
    */
   componentWillLoad(): void {
-    this.validatePanelTitlePattern(this.panelTitlePattern);
+    this.validatetitlePattern(this.titlePattern);
   }
 
   /**
@@ -211,8 +211,8 @@ export class MgPanel {
           value={this.panelTitle}
           onValue-change={this.handleUpdateTitle}
           displayCharacterLeft={false}
-          pattern={this.panelTitlePattern}
-          pattern-error-message={this.panelTitlePatternErrorMessage}
+          pattern={this.titlePattern}
+          pattern-error-message={this.titlePatternErrorMessage}
           identifier={`${this.identifier}-edition-input`}
           ref={el => (this.editInputElement = el as HTMLMgInputTextElement)}
         >

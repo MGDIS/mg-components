@@ -902,17 +902,17 @@ export namespace Components {
          */
         "panelTitle": string;
         /**
-          * Panel title pattern
-         */
-        "panelTitlePattern": string;
-        /**
-          * Panel title pattern error message
-         */
-        "panelTitlePatternErrorMessage": string;
-        /**
           * Panel title is editabled
          */
         "titleEditable": boolean;
+        /**
+          * Panel title pattern
+         */
+        "titlePattern": string;
+        /**
+          * Panel title pattern error message
+         */
+        "titlePatternErrorMessage": string;
     }
     interface MgPopover {
         /**
@@ -2124,17 +2124,17 @@ declare namespace LocalJSX {
          */
         "panelTitle": string;
         /**
-          * Panel title pattern
-         */
-        "panelTitlePattern"?: string;
-        /**
-          * Panel title pattern error message
-         */
-        "panelTitlePatternErrorMessage"?: string;
-        /**
           * Panel title is editabled
          */
         "titleEditable"?: boolean;
+        /**
+          * Panel title pattern
+         */
+        "titlePattern"?: string;
+        /**
+          * Panel title pattern error message
+         */
+        "titlePatternErrorMessage"?: string;
     }
     interface MgPopover {
         /**
