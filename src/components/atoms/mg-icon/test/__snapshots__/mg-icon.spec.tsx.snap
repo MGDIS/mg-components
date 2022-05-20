@@ -990,6 +990,76 @@ exports[`mg-icon Should render chevron-up icon using warning variant 1`] = `
 </mg-icon>
 `;
 
+exports[`mg-icon Should render clock icon in extra-large size 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--clock mg-icon--size-extra-large" focusable="false" viewBox="0 0 16 16">
+      <path d="M8,.67C3.95,.67,.67,3.95,.67,8s3.28,7.33,7.33,7.33,7.33-3.28,7.33-7.33h0C15.33,3.95,12.05,.67,8,.67h0Zm1.69,10.33l-2.61-1.88c-.09-.07-.14-.17-.14-.28V3.84c0-.19,.16-.35,.35-.36h1.42c.2,0,.35,.16,.36,.36V7.93l1.87,1.37c.16,.1,.2,.32,.09,.47v.02h-.01l-.83,1.15c-.12,.15-.34,.18-.5,.06Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render clock icon in large size 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--clock mg-icon--size-large" focusable="false" viewBox="0 0 16 16">
+      <path d="M8,.67C3.95,.67,.67,3.95,.67,8s3.28,7.33,7.33,7.33,7.33-3.28,7.33-7.33h0C15.33,3.95,12.05,.67,8,.67h0Zm1.69,10.33l-2.61-1.88c-.09-.07-.14-.17-.14-.28V3.84c0-.19,.16-.35,.35-.36h1.42c.2,0,.35,.16,.36,.36V7.93l1.87,1.37c.16,.1,.2,.32,.09,.47v.02h-.01l-.83,1.15c-.12,.15-.34,.18-.5,.06Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render clock icon in regular size 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--clock mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+      <path d="M8,.67C3.95,.67,.67,3.95,.67,8s3.28,7.33,7.33,7.33,7.33-3.28,7.33-7.33h0C15.33,3.95,12.05,.67,8,.67h0Zm1.69,10.33l-2.61-1.88c-.09-.07-.14-.17-.14-.28V3.84c0-.19,.16-.35,.35-.36h1.42c.2,0,.35,.16,.36,.36V7.93l1.87,1.37c.16,.1,.2,.32,.09,.47v.02h-.01l-.83,1.15c-.12,.15-.34,.18-.5,.06Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render clock icon using danger variant 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--clock mg-icon--size-regular mg-icon--variant-danger" focusable="false" viewBox="0 0 16 16">
+      <path d="M8,.67C3.95,.67,.67,3.95,.67,8s3.28,7.33,7.33,7.33,7.33-3.28,7.33-7.33h0C15.33,3.95,12.05,.67,8,.67h0Zm1.69,10.33l-2.61-1.88c-.09-.07-.14-.17-.14-.28V3.84c0-.19,.16-.35,.35-.36h1.42c.2,0,.35,.16,.36,.36V7.93l1.87,1.37c.16,.1,.2,.32,.09,.47v.02h-.01l-.83,1.15c-.12,.15-.34,.18-.5,.06Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render clock icon using info variant 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--clock mg-icon--size-regular mg-icon--variant-info" focusable="false" viewBox="0 0 16 16">
+      <path d="M8,.67C3.95,.67,.67,3.95,.67,8s3.28,7.33,7.33,7.33,7.33-3.28,7.33-7.33h0C15.33,3.95,12.05,.67,8,.67h0Zm1.69,10.33l-2.61-1.88c-.09-.07-.14-.17-.14-.28V3.84c0-.19,.16-.35,.35-.36h1.42c.2,0,.35,.16,.36,.36V7.93l1.87,1.37c.16,.1,.2,.32,.09,.47v.02h-.01l-.83,1.15c-.12,.15-.34,.18-.5,.06Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render clock icon using success variant 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--clock mg-icon--size-regular mg-icon--variant-success" focusable="false" viewBox="0 0 16 16">
+      <path d="M8,.67C3.95,.67,.67,3.95,.67,8s3.28,7.33,7.33,7.33,7.33-3.28,7.33-7.33h0C15.33,3.95,12.05,.67,8,.67h0Zm1.69,10.33l-2.61-1.88c-.09-.07-.14-.17-.14-.28V3.84c0-.19,.16-.35,.35-.36h1.42c.2,0,.35,.16,.36,.36V7.93l1.87,1.37c.16,.1,.2,.32,.09,.47v.02h-.01l-.83,1.15c-.12,.15-.34,.18-.5,.06Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
+exports[`mg-icon Should render clock icon using warning variant 1`] = `
+<mg-icon>
+  <mock:shadow-root>
+    <svg aria-hidden="true" class="mg-icon mg-icon--clock mg-icon--size-regular mg-icon--variant-warning" focusable="false" viewBox="0 0 16 16">
+      <path d="M8,.67C3.95,.67,.67,3.95,.67,8s3.28,7.33,7.33,7.33,7.33-3.28,7.33-7.33h0C15.33,3.95,12.05,.67,8,.67h0Zm1.69,10.33l-2.61-1.88c-.09-.07-.14-.17-.14-.28V3.84c0-.19,.16-.35,.35-.36h1.42c.2,0,.35,.16,.36,.36V7.93l1.87,1.37c.16,.1,.2,.32,.09,.47v.02h-.01l-.83,1.15c-.12,.15-.34,.18-.5,.06Z" fill="currentColor"></path>
+    </svg>
+  </mock:shadow-root>
+</mg-icon>
+`;
+
 exports[`mg-icon Should render conversation icon in extra-large size 1`] = `
 <mg-icon>
   <mock:shadow-root>
