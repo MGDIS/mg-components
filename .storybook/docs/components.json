@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-04-29T09:04:40",
+  "timestamp": "2022-05-20T06:54:55",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.15.1",
@@ -4444,6 +4444,23 @@
       "usage": {},
       "props": [
         {
+          "name": "expandToggleDisabled",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "expand-toggle-disabled",
+          "reflectToAttr": false,
+          "docs": "Disable possibility to toggle expand",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "expanded",
           "type": "boolean",
           "mutable": true,
@@ -4505,6 +4522,38 @@
           "values": [
             {
               "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "titlePattern",
+          "type": "string",
+          "mutable": true,
+          "attr": "title-pattern",
+          "reflectToAttr": false,
+          "docs": "Panel title pattern",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "titlePatternErrorMessage",
+          "type": "string",
+          "mutable": true,
+          "attr": "title-pattern-error-message",
+          "reflectToAttr": false,
+          "docs": "Panel title pattern error message",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
             }
           ],
           "optional": false,

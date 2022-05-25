@@ -11,14 +11,21 @@ $header-padding: 0.3rem;
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 0 1rem 0 $header-padding;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .mg-panel__header-left,
 .mg-panel__header-right {
   display: flex;
-  flex-grow: 1;
   margin: $header-padding 0;
+}
+
+.mg-panel__header-left--full {
+  flex: 1 1 auto;
+}
+
+.mg-panel__header-right {
+  flex: 1 auto;
 }
 
 .mg-panel__header-left mg-input-text {
