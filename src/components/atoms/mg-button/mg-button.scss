@@ -97,6 +97,7 @@ $button-column-gap: 0.6rem;
   @include style-gradient('danger', 'danger', 'neutral');
   @include style-gradient('danger-alt', 'neutral', 'danger');
   @include style-gradient('info', 'info', 'neutral');
+  @include style-gradient('success', 'success', 'dark');
 
   // Flat style
   &.mg-button--flat {
