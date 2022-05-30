@@ -274,7 +274,7 @@ export class MgInputToggle {
         <button
           type="button"
           role="switch"
-          aria-checked={this.checked}
+          aria-checked={this.checked.toString()}
           aria-readonly={this.disabled || this.readonly}
           id={this.identifier}
           class="mg-input__button-toggle"

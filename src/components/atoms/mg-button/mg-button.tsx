@@ -155,7 +155,7 @@ export class MgButton {
         id={this.identifier}
         class={this.classList.join()}
         aria-label={this.label}
-        aria-disabled={this.disabled}
+        aria-disabled={this.disabled.toString()}
         aria-expanded={this.expanded}
         aria-controls={this.controls}
         aria-haspopup={this.haspopup}
