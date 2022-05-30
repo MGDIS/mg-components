@@ -165,6 +165,28 @@ exports[`mg-button Should render an secondary button isIcon true 1`] = `
 </mg-button>
 `;
 
+exports[`mg-button Should render an success button isIcon false 1`] = `
+<mg-button>
+  <!---->
+  <button aria-label="label" class="mg-button mg-button--success" id="identifier">
+    <div class="mg-button__content">
+      Text button
+    </div>
+  </button>
+</mg-button>
+`;
+
+exports[`mg-button Should render an success button isIcon true 1`] = `
+<mg-button>
+  <!---->
+  <button aria-label="label" class="mg-button mg-button--icon mg-button--success" id="identifier">
+    <div class="mg-button__content">
+      Text button
+    </div>
+  </button>
+</mg-button>
+`;
+
 exports[`mg-button prevent double click should NOT disable button after click 1`] = `
 <mg-button>
   <!---->
