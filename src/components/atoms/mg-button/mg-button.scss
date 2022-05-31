@@ -28,9 +28,9 @@ $button-column-gap: 0.6rem;
 
     // Hover
     // Only apply if not disabled
-    &:hover:not([disabled], [aria-disabled], .disabled),
-    &:focus:not([disabled], [aria-disabled], .disabled),
-    &:active:not([disabled], [aria-disabled], .disabled) {
+    &:hover:not([disabled], [aria-disabled='true'], .disabled),
+    &:focus:not([disabled], [aria-disabled='true'], .disabled),
+    &:active:not([disabled], [aria-disabled='true'], .disabled) {
       background: hsl(var(#{$backgroundColor}-h), var(#{$backgroundColor}-s), var(#{$backgroundColor}-l));
     }
   }
@@ -68,7 +68,7 @@ $button-column-gap: 0.6rem;
 
   // Disabled style
   &[disabled],
-  &[aria-disabled],
+  &[aria-disabled='true'],
   &.disabled {
     opacity: var(--mg-button-disabled-opacity);
     cursor: default;
@@ -106,9 +106,9 @@ $button-column-gap: 0.6rem;
 
     // Hover
     // Only apply if not disabled
-    &:hover:not([disabled], [aria-disabled], .disabled),
-    &:focus:not([disabled], [aria-disabled], .disabled),
-    &:active:not([disabled], [aria-disabled], .disabled) {
+    &:hover:not([disabled], [aria-disabled='true'], .disabled),
+    &:focus:not([disabled], [aria-disabled='true'], .disabled),
+    &:active:not([disabled], [aria-disabled='true'], .disabled) {
       background: hsla(var(--color-dark), 0.1);
     }
   }
