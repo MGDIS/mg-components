@@ -74,6 +74,12 @@ describe('mg-panel', () => {
 
       await page.waitForChanges();
 
+      // Hide caret for screenshots
+      await page.$eval('mg-panel', elm => {
+        const input = elm.shadowRoot.querySelector('mg-input-text').shadowRoot.querySelector('input');
+        input.style.caretColor = 'transparent';
+      });
+
       const screenshot2 = await page.screenshot();
       expect(screenshot2).toMatchImageSnapshot();
 
@@ -107,6 +113,12 @@ describe('mg-panel', () => {
       await editButton.click();
 
       await page.waitForChanges();
+
+      // Hide caret for screenshots
+      await page.$eval('mg-panel', elm => {
+        const input = elm.shadowRoot.querySelector('mg-input-text').shadowRoot.querySelector('input');
+        input.style.caretColor = 'transparent';
+      });
 
       const screenshot = await page.screenshot();
       expect(screenshot).toMatchImageSnapshot();
