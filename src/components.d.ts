@@ -2116,6 +2116,10 @@ declare namespace LocalJSX {
          */
         "identifier"?: string;
         /**
+          * Emmited event when expanded change
+         */
+        "onExpanded-change"?: (event: CustomEvent<boolean>) => void;
+        /**
           * Emmited event when title change
          */
         "onTitle-change"?: (event: CustomEvent<string>) => void;

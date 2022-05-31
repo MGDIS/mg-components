@@ -54,24 +54,26 @@ describe('mg-panel', () => {
   });
 
   describe('navigation', () => {
-    test.each([true, false])('Should toggle collapse panel', async expanded => {
+    test.each([true, false])('Should toggle collapse panel, expanded %s', async expanded => {
       const page = await getPage({ identifier: 'identifier', panelTitle: 'panel title', expanded });
       const mgPanel = page.doc.querySelector('mg-panel');
       const collapseButton = mgPanel.shadowRoot.querySelector('.mg-panel__collapse-button');
 
+      const spy = jest.spyOn(page.rootInstance.expandedChange, 'emit');
+
       expect(page.root).toMatchSnapshot();
 
-      if (expanded) {
-        collapseButton.dispatchEvent(new CustomEvent('click', { bubbles: true }));
-        await page.waitForChanges();
+      collapseButton.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+      await page.waitForChanges();
 
-        expect(page.root).toMatchSnapshot();
+      expect(page.root).toMatchSnapshot();
 
-        collapseButton.dispatchEvent(new CustomEvent('click', { bubbles: true }));
-        await page.waitForChanges();
+      collapseButton.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+      await page.waitForChanges();
 
-        expect(page.root).toMatchSnapshot();
-      }
+      expect(page.root).toMatchSnapshot();
+
+      expect(spy).toBeCalledTimes(2);
     });
 
     test.each([true, false])('Should NOT collapse panel, case expandToggleDisabled = true', async expanded => {

@@ -18,9 +18,10 @@ This molecule refers to the [PDA9-484](https://jira.mgdis.fr/browse/PDA9-484).
 
 ## Events
 
-| Event          | Description                     | Type                  |
-| -------------- | ------------------------------- | --------------------- |
-| `title-change` | Emmited event when title change | `CustomEvent<string>` |
+| Event             | Description                        | Type                   |
+| ----------------- | ---------------------------------- | ---------------------- |
+| `expanded-change` | Emmited event when expanded change | `CustomEvent<boolean>` |
+| `title-change`    | Emmited event when title change    | `CustomEvent<string>`  |
 
 
 ## Dependencies

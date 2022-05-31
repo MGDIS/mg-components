@@ -88,6 +88,11 @@ export class MgPanel {
    */
   @Event({ eventName: 'title-change' }) titleChange: EventEmitter<string>;
 
+  /**
+   * Emmited event when expanded change
+   */
+  @Event({ eventName: 'expanded-change' }) expandedChange: EventEmitter<boolean>;
+
   /************
    * Methods *
    ************/
@@ -114,6 +119,7 @@ export class MgPanel {
     if (!this.expandToggleDisabled) {
       this.expanded = !this.expanded;
     }
+    this.expandedChange.emit(this.expanded);
   };
 
   /**
