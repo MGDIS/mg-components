@@ -57,6 +57,10 @@ export class MgPanel {
    * Panel is opened
    */
   @Prop({ mutable: true }) expanded = false;
+  @Watch('expanded')
+  handleExpanded(newValue: boolean): void {
+    this.expandedChange.emit(newValue);
+  }
 
   /**
    * Disable possibility to toggle expand
@@ -87,6 +91,11 @@ export class MgPanel {
    * Emmited event when title change
    */
   @Event({ eventName: 'title-change' }) titleChange: EventEmitter<string>;
+
+  /**
+   * Emmited event when expanded change
+   */
+  @Event({ eventName: 'expanded-change' }) expandedChange: EventEmitter<boolean>;
 
   /************
    * Methods *

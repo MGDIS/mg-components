@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-05-30T15:00:12",
+  "timestamp": "2022-05-31T12:47:12",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.15.1",
@@ -4562,6 +4562,15 @@
       ],
       "methods": [],
       "events": [
+        {
+          "event": "expanded-change",
+          "detail": "boolean",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emmited event when expanded change",
+          "docsTags": []
+        },
         {
           "event": "title-change",
           "detail": "string",
