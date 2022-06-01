@@ -57,6 +57,10 @@ export class MgPanel {
    * Panel is opened
    */
   @Prop({ mutable: true }) expanded = false;
+  @Watch('expanded')
+  handleExpanded(newValue: boolean): void {
+    this.expandedChange.emit(newValue);
+  }
 
   /**
    * Disable possibility to toggle expand
@@ -119,7 +123,6 @@ export class MgPanel {
     if (!this.expandToggleDisabled) {
       this.expanded = !this.expanded;
     }
-    this.expandedChange.emit(this.expanded);
   };
 
   /**
