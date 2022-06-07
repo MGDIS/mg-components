@@ -46,7 +46,9 @@ describe('mg-popover', () => {
     { eventIn: 'click', eventOut: 'clickBtn' },
     { eventIn: 'click', eventOut: { code: 'Escape' } },
     { eventIn: 'click', eventOut: 'clickCross' },
-  ])('Should manage display on events', async ({ eventIn, eventOut }) => {
+    { eventIn: 'click', eventOut: 'clickDocument' },
+    { eventIn: 'click', eventOut: 'clickPopover' },
+  ])('Should manage display on events %s', async ({ eventIn, eventOut }) => {
     const args = { identifier: 'identifier', closeButton: true };
     const page = await getPage(args, [
       <h2 slot="title">Blu bli blo bla</h2>,
@@ -65,6 +67,7 @@ describe('mg-popover', () => {
 
     interactiveElement.dispatchEvent(new CustomEvent(eventIn, { bubbles: true }));
     await page.waitForChanges();
+    jest.runAllTimers();
 
     expect(popover).toHaveAttribute('data-show');
 
@@ -73,13 +76,21 @@ describe('mg-popover', () => {
         interactiveElement.dispatchEvent(new Event('click', { bubbles: true }));
       } else if (eventOut === 'clickCross') {
         popoverButton.dispatchEvent(new Event('click', { bubbles: true }));
+      } else if (eventOut === 'clickDocument') {
+        document.dispatchEvent(new Event('click', { bubbles: true }));
+      } else if (eventOut === 'clickPopover') {
+        popover.dispatchEvent(new Event('click', { bubbles: true }));
       }
     } else {
       mgPopover.dispatchEvent(new KeyboardEvent('keydown', { code: eventOut.code }));
     }
     await page.waitForChanges();
 
-    expect(popover).not.toHaveAttribute('data-show');
+    if (eventOut === 'clickPopover') {
+      expect(popover).toHaveAttribute('data-show');
+    } else {
+      expect(popover).not.toHaveAttribute('data-show');
+    }
   });
 
   test.each([false, true])('Should not toggle display when disabled', async display => {
