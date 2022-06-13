@@ -737,7 +737,7 @@ export namespace Components {
          */
         "required": boolean;
         /**
-          * Define input pattern error message
+          * Define the number of visible text lines for the control
          */
         "rows": number;
         /**
@@ -1927,7 +1927,7 @@ declare namespace LocalJSX {
          */
         "required"?: boolean;
         /**
-          * Define input pattern error message
+          * Define the number of visible text lines for the control
          */
         "rows"?: number;
         /**

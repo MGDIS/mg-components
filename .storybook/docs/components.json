@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-06-13T08:17:12",
+  "timestamp": "2022-06-13T08:59:23",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.15.1",
@@ -3533,7 +3533,7 @@
           "mutable": false,
           "attr": "rows",
           "reflectToAttr": false,
-          "docs": "Define input pattern error message",
+          "docs": "Define the number of visible text lines for the control",
           "docsTags": [],
           "default": "3",
           "values": [

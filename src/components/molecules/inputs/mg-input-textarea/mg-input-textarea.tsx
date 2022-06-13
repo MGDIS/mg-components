@@ -104,7 +104,7 @@ export class MgInputTextarea {
   @Prop() patternErrorMessage: string;
 
   /**
-   * Define input pattern error message
+   * Define the number of visible text lines for the control
    */
   @Prop() rows = 3;
 
