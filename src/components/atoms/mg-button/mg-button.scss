@@ -14,12 +14,10 @@ $button-column-gap: 0.6rem;
   }
   &.mg-button--#{$name} {
     // Decoration
-    border-color: hsl(var(#{$backgroundColor}-h), var(#{$backgroundColor}-s), var(#{$backgroundColor}-l)); /* IE FIX */
-    border-color: hsl(var(#{$backgroundColor}-h), var(#{$backgroundColor}-s), calc(var(#{$backgroundColor}-l) - 10%));
+    border-color: hsl(var(#{$backgroundColor}-h), var(#{$backgroundColor}-s), calc(var(#{$backgroundColor}-l) - var(--mg-button-border-variation) * 10%));
     // Font
     color: hsl(var(#{$fontColor}));
     // Background
-    background: hsl(var(#{$backgroundColor}-h), var(#{$backgroundColor}-s), var(#{$backgroundColor}-l)); /* IE FIX */
     background: linear-gradient(
       to bottom,
       hsl(var(#{$backgroundColor}-h), var(#{$backgroundColor}-s), var(#{$backgroundColor}-l)),
