@@ -71,6 +71,7 @@ describe('mg-input-textarea', () => {
     `<mg-input-textarea label="label" value="blu" readonly label-on-top></mg-input-textarea>`,
     `<mg-input-textarea label="label" disabled></mg-input-textarea>`,
     `<mg-input-textarea label="label" value="blu" disabled></mg-input-textarea>`,
+    `<mg-input-textarea label="label" value="resizable" resizable="both"></mg-input-textarea>`,
   ])('Should render with template', html => {
     test('render', async () => {
       const page = await createPage(html);

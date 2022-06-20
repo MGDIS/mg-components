@@ -26,6 +26,9 @@ describe('mg-input-textarea', () => {
     { label: 'label', identifier: 'identifier', readonly: true, value: 'blu' },
     { label: 'label', identifier: 'identifier', tooltip: 'My Tooltip Message' },
     { label: 'label', identifier: 'identifier', tooltip: 'My Tooltip Message', labelOnTop: true },
+    { label: 'label', identifier: 'identifier', resizable: 'both' },
+    { label: 'label', identifier: 'identifier', resizable: 'vertical' },
+    { label: 'label', identifier: 'identifier', resizable: 'horizontal' },
   ])('Should render with args %s:', async args => {
     const { root } = await getPage(args);
     expect(root).toMatchSnapshot();

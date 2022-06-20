@@ -8,6 +8,16 @@
 .mg-input {
   .mg-input__box {
     height: auto;
+    resize: none;
+    &.mg-input__box--resizable {
+      resize: both;
+    }
+    &.mg-input__box--resizable-horizontal {
+      resize: horizontal;
+    }
+    &.mg-input__box--resizable-vertical {
+      resize: vertical;
+    }
   }
 }
 
