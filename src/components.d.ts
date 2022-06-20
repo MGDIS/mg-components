@@ -737,6 +737,10 @@ export namespace Components {
          */
         "required": boolean;
         /**
+          * Define if input is resizable
+         */
+        "resizable": 'none' | 'both' | 'horizontal' | 'vertical';
+        /**
           * Define the number of visible text lines for the control
          */
         "rows": number;
@@ -1986,6 +1990,10 @@ declare namespace LocalJSX {
           * Define if input is required
          */
         "required"?: boolean;
+        /**
+          * Define if input is resizable
+         */
+        "resizable"?: 'none' | 'both' | 'horizontal' | 'vertical';
         /**
           * Define the number of visible text lines for the control
          */

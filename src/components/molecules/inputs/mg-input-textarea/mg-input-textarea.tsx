@@ -139,6 +139,11 @@ export class MgInputTextarea {
   @Prop({ mutable: true }) invalid: boolean;
 
   /**
+   * Define if input is resizable
+   */
+  @Prop() resizable: 'none' | 'both' | 'horizontal' | 'vertical' = 'none';
+
+  /**
    * Component classes
    */
   @State() classList: ClassList = new ClassList(['mg-input--textarea']);
@@ -303,7 +308,12 @@ export class MgInputTextarea {
         isFieldset={false}
       >
         <textarea
-          class="mg-input__box"
+          class={{
+            'mg-input__box': true,
+            'mg-input__box--resizable': this.resizable === 'both',
+            'mg-input__box--resizable-horizontal': this.resizable === 'horizontal',
+            'mg-input__box--resizable-vertical': this.resizable === 'vertical',
+          }}
           value={this.value}
           id={this.identifier}
           name={this.name}

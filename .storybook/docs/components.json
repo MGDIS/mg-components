@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-06-13T14:10:11",
+  "timestamp": "2022-06-20T07:50:33",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.16.1",
@@ -3522,6 +3522,36 @@
           "values": [
             {
               "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "resizable",
+          "type": "\"both\" | \"horizontal\" | \"none\" | \"vertical\"",
+          "mutable": false,
+          "attr": "resizable",
+          "reflectToAttr": false,
+          "docs": "Define if input is resizable",
+          "docsTags": [],
+          "default": "'none'",
+          "values": [
+            {
+              "value": "both",
+              "type": "string"
+            },
+            {
+              "value": "horizontal",
+              "type": "string"
+            },
+            {
+              "value": "none",
+              "type": "string"
+            },
+            {
+              "value": "vertical",
+              "type": "string"
             }
           ],
           "optional": false,
