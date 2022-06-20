@@ -6,7 +6,7 @@ exports[`mg-badge value ! 1`] = `
     <span class="mg-badge mg-badge--info">
       !
       <span class="sr-only">
-        batman
+        Batman
       </span>
     </span>
   </mock:shadow-root>
@@ -19,7 +19,7 @@ exports[`mg-badge value ? 1`] = `
     <span class="mg-badge mg-badge--info">
       ?
       <span class="sr-only">
-        batman
+        Batman
       </span>
     </span>
   </mock:shadow-root>
@@ -32,7 +32,7 @@ exports[`mg-badge value 1 1`] = `
     <span class="mg-badge mg-badge--info">
       1
       <span class="sr-only">
-        batman
+        Batman
       </span>
     </span>
   </mock:shadow-root>
@@ -45,7 +45,7 @@ exports[`mg-badge value 100 1`] = `
     <span class="mg-badge mg-badge--info">
       100
       <span class="sr-only">
-        batman
+        Batman
       </span>
     </span>
   </mock:shadow-root>
@@ -58,7 +58,7 @@ exports[`mg-badge variant danger outiline false 1`] = `
     <span class="mg-badge mg-badge--danger">
       1
       <span class="sr-only">
-        batman
+        Batman
       </span>
     </span>
   </mock:shadow-root>
@@ -71,7 +71,7 @@ exports[`mg-badge variant danger outiline true 1`] = `
     <span class="mg-badge mg-badge--danger mg-badge--outline">
       1
       <span class="sr-only">
-        batman
+        Batman
       </span>
     </span>
   </mock:shadow-root>
@@ -84,7 +84,7 @@ exports[`mg-badge variant info outiline false 1`] = `
     <span class="mg-badge mg-badge--info">
       1
       <span class="sr-only">
-        batman
+        Batman
       </span>
     </span>
   </mock:shadow-root>
@@ -97,7 +97,7 @@ exports[`mg-badge variant info outiline true 1`] = `
     <span class="mg-badge mg-badge--info mg-badge--outline">
       1
       <span class="sr-only">
-        batman
+        Batman
       </span>
     </span>
   </mock:shadow-root>
@@ -110,7 +110,7 @@ exports[`mg-badge variant primary outiline false 1`] = `
     <span class="mg-badge mg-badge--primary">
       1
       <span class="sr-only">
-        batman
+        Batman
       </span>
     </span>
   </mock:shadow-root>
@@ -123,7 +123,7 @@ exports[`mg-badge variant primary outiline true 1`] = `
     <span class="mg-badge mg-badge--outline mg-badge--primary">
       1
       <span class="sr-only">
-        batman
+        Batman
       </span>
     </span>
   </mock:shadow-root>
@@ -136,7 +136,7 @@ exports[`mg-badge variant secondary outiline false 1`] = `
     <span class="mg-badge mg-badge--secondary">
       1
       <span class="sr-only">
-        batman
+        Batman
       </span>
     </span>
   </mock:shadow-root>
@@ -149,7 +149,7 @@ exports[`mg-badge variant secondary outiline true 1`] = `
     <span class="mg-badge mg-badge--outline mg-badge--secondary">
       1
       <span class="sr-only">
-        batman
+        Batman
       </span>
     </span>
   </mock:shadow-root>
@@ -162,7 +162,7 @@ exports[`mg-badge variant success outiline false 1`] = `
     <span class="mg-badge mg-badge--success">
       1
       <span class="sr-only">
-        batman
+        Batman
       </span>
     </span>
   </mock:shadow-root>
@@ -175,7 +175,7 @@ exports[`mg-badge variant success outiline true 1`] = `
     <span class="mg-badge mg-badge--outline mg-badge--success">
       1
       <span class="sr-only">
-        batman
+        Batman
       </span>
     </span>
   </mock:shadow-root>
@@ -188,7 +188,7 @@ exports[`mg-badge variant warning outiline false 1`] = `
     <span class="mg-badge mg-badge--warning">
       1
       <span class="sr-only">
-        batman
+        Batman
       </span>
     </span>
   </mock:shadow-root>
@@ -201,7 +201,7 @@ exports[`mg-badge variant warning outiline true 1`] = `
     <span class="mg-badge mg-badge--outline mg-badge--warning">
       1
       <span class="sr-only">
-        batman
+        Batman
       </span>
     </span>
   </mock:shadow-root>
