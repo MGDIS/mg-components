@@ -49,6 +49,8 @@ describe('mg-popover', () => {
     { eventIn: 'click', eventOut: 'clickDocument' },
     { eventIn: 'click', eventOut: 'clickPopover' },
   ])('Should manage display on events %s', async ({ eventIn, eventOut }) => {
+    jest.clearAllTimers();
+
     const args = { identifier: 'identifier', closeButton: true };
     const page = await getPage(args, [
       <h2 slot="title">Blu bli blo bla</h2>,
