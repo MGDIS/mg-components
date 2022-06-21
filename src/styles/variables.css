@@ -111,6 +111,7 @@
   --mg-button-icon-border-radius: var(--default-size);
   --mg-button-disabled-opacity: 0.6;
   --mg-button-gradient: 1; /* Can only be 1 or 0 to enable disable gradient */
+  --mg-button-border-variation: 1; /* Can only be 1 or 0 to enable disable border variation */
 
   /* Primary */
   --mg-button-primary-color-h: var(--color-dark-h);
