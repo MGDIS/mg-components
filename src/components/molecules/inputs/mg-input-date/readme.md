@@ -1,8 +1,8 @@
-## Design
+## Behavior
 
 **RUX** : Le comportement est celui natif du navigateur.
 
-### Style
+### Theming
 
 Calendrier et déclencheur: Le style est celui natif du navigateur.
 

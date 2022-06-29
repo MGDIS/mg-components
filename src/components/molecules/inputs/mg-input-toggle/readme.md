@@ -1,4 +1,4 @@
-## Design
+## Usage
 
 **RUX-1** : Le clic sur toute la zone du composant fait alterner la valeur sélectionnée.
 
@@ -8,17 +8,17 @@
 
 **RUX-4** : Les valeurs doivent être retranscrites par du texte ou des icones.
 
-### Usages
+### Types
 
-![](./mg-input-toggle/doc/img/usages.png)
+![](./mg-input-toggle/doc/img/mg-input-toggle-use.png)
 
-### Spécifications
+### Specs
 
-![](./mg-input-toggle/doc/img/specs.png)
+![](./mg-input-toggle/doc/img/mg-input-toggle-specs.png)
 
 ### Readonly
 
-![](./mg-input-toggle/doc/img/readonly.png)
+![](./mg-input-toggle/doc/img/mg-input-toggle-readonly.png)
 
 <!-- Auto Generated Below -->
 

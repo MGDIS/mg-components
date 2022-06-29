@@ -1,10 +1,6 @@
-## Design
+## Anatomy
 
-![](./mg-form/doc/img/form.png)
-
-### Structure
-
-![](./mg-form/doc/img/structure.png)
+![](./mg-form/doc/img/mg-form-anatomy.png)
 
 - zone pour message à caractère obligatoire
 - zone champs

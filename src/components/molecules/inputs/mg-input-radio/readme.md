@@ -1,15 +1,17 @@
-## Design
+## Usage
 
 - Toujours utilisé dans un groupe avec minimum 2 options
 - 1 seule option sélectionnée possible parmi toute les options du groupe
 - Le libellé est cliquable et sélectionne l'option
 - Le groupe peut être intialisé avec aucune valeur par défaut
 
-### Style
+### Theming
 
 Le style du bouton radio actif est celui du navigateur.
 
-![](./mg-input-radio/doc/img/specs.png)
+## Specs
+
+![](./mg-input-radio/doc/img/mg-input-radio-specs.png)
 
 <!-- Auto Generated Below -->
 

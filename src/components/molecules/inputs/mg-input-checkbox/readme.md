@@ -1,13 +1,15 @@
-## Design
+## Usage
 
 Notion de valeur VRAI/FAUX.
 Uniquement 2 valeurs possibles.
 
-### Style
+### Theming
 
 Le style de la case à cocher active est celui du navigateur.
 
-![](./mg-input-checkbox/doc/img/specs.png)
+## Specs
+
+![](./mg-input-checkbox/doc/img/mg-input-checkbox-specs.png)
 
 <!-- Auto Generated Below -->
 

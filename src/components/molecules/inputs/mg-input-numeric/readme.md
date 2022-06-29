@@ -1,4 +1,4 @@
-## Design
+## Usage
 
 **RG-01** : Un champ montant est un champ numérique. Par défaut il est limité à 16 caractères (virgule comprise).
 
@@ -10,13 +10,15 @@
 
 **RG-05** : Il est possible de préciser une unité à la suite du champ pour les entiers et les décimaux. Pour les monétaires, le symbole de la devise est positionné dans la zone de saisie, à la suite de la valeur.
 
+## Specs
+
 ### Placements
 
-![](./mg-input-numeric/doc/img/placements.png)
+![](./mg-input-numeric/doc/img/mg-input-numeric-positioning.png)
 
 ### Positionnement de l'unité
 
-![](./mg-input-numeric/doc/img/unite.png)
+![](./mg-input-numeric/doc/img/mg-input-numeric-unit.png)
 
 A gérer via la mise en place du composant en utilisant un caractère "espace" avant le terme de l'unité
 
