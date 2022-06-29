@@ -1,6 +1,9 @@
-## Design
+## Usage
+
+### Types
 
 **RG-01** : L'élément peut être de 4 types différents selon le message à indiquer:
+
 - validation (vert)
 - information (bleu)
 - avertissement (orange)
@@ -8,45 +11,9 @@
 
 **RG-02** : Lors de la mise en place d'un déclencheur (bouton...) qui peut provoquer l'affichage de messages. Par défaut, l'exécution du déclencheur efface les messages précédents dans l'écran du même type
 
+## Specs
 
-### Standard
-
-![](./mg-message/doc/img/templates-standard.png)
-
-### Actions
-
-![](./mg-message/doc/img/templates-actions.png)
-
-### Fermer
-
-
-![](./mg-message/doc/img/templates-fermer.png)
-
-### Formes et couleurs
-
-![](./mg-message/doc/img/formes-couleurs.png)
-
-### Tailles
-
-![](./mg-message/doc/img/tailles.png)
-### Espacements
-
-#### Standard
-
-![](./mg-message/doc/img/espacements-standard.png)
-
-#### Actions
-
-![](./mg-message/doc/img/espacements-actions.png)
-
-#### Fermer
-
-![](./mg-message/doc/img/espacements-fermer.png)
-
-### Polices
-
-![](./mg-message/doc/img/polices.png)
-
+![](./mg-message/doc/img/mg-message-specs.png)
 
 <!-- Auto Generated Below -->
 

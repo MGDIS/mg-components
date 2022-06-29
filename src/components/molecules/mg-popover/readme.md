@@ -1,6 +1,8 @@
-## Design 
+## Usage
 
 Un popover est plus enrichi qu'une tooltip mais moins bloquant qu'une modale
+
+## Behavior
 
 **RUX-01** : la fenêtre est affichée au clic sur son déclencheur
 
@@ -17,52 +19,37 @@ Un popover est plus enrichi qu'une tooltip mais moins bloquant qu'une modale
 
 **RUX-05** : le titre et le bouton fermer sont optionnels
 
-![](./mg-popover/doc/img/2affichages.png)
-
-### Formes
-
-![](./mg-popover/doc/img/formes-popover.png)
+## Specs
 
 ### Fonts
 
 ![](./mg-popover/doc/img/font-popover.png)
 
-### Espacements
+### Spacing
 
-![](./mg-popover/doc/img/espacements-popover-1.png)
+![](./mg-popover/doc/img/mg-popover-spacing.png)
 
-#### Entre les bords et le contenu
+### Sizing
 
-![](./mg-popover/doc/img/espacements-popover-2.png)
-
-#### Entre le header et le contenu
-
-![](./mg-popover/doc/img/espacements-popover-3.png)
-
-#### Entre le header et le bouton fermé
-
-![](./mg-popover/doc/img/espacements-popover-4.png)
+![](./mg-popover/doc/img/mg-popover-sizing.png)
 
 ### Alignements
 
-![](./mg-popover/doc/img/alignements-popover.png)
+![](./mg-popover/doc/img/mg-popover-align.png)
 
 ### Positionnements
 
-![](./mg-popover/doc/img/positionement-popover.png)
-![](./mg-popover/doc/img/positionement-triangle.png)
+#### Item
 
-### Couleurs
+![](./mg-popover/doc/img/mg-popover-position.png)
 
-![](./mg-popover/doc/img/couleurs-popover.png)
+#### Screen
 
-### Tailles
+![](./mg-popover/doc/img/mg-popover-position-screen.png)
 
-![](./mg-popover/doc/img/tailles-popover.png)
+### Style
 
-### Shadow
-
-![](./mg-popover/doc/img/shadow-popover.png)
+![](./mg-popover/doc/img/mg-popover-style.png)
 
 <!-- Auto Generated Below -->
 

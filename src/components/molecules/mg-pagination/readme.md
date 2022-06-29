@@ -1,16 +1,10 @@
-## Design
+## Anatomy
 
-### Composantes
+![](./mg-pagination/doc/img/mg-pagination-nav-anatomy.png)
 
-![](./mg-pagination/doc/img/pagination-components.png)
+## Specs
 
-### Nombre d'éléments affichés
-
-![](./mg-pagination/doc/img/pagination-nbelem.png)
-
-### Navigation des pages
-
-![](./mg-pagination/doc/img/page-navig.png)
+![](./mg-pagination/doc/img/mg-pagination-nav-specs.png)
 
 <!-- Auto Generated Below -->
 

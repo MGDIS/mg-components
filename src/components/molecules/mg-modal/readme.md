@@ -1,4 +1,4 @@
-## Design
+## Anatomy
 
 **RG-01** : Une modale possède :
 
@@ -7,6 +7,8 @@
 - un corps composé de champs ou d'un message
 - un bouton de validation
 - un bouton d'annulation
+
+## Behavior
 
 **RG-02** : Au clic sur la croix, la fenêtre se ferme et aucun traitement n'est effectué.
 
@@ -36,47 +38,49 @@ Dans le cas d'une action ciblée, l'ico peut aider à la compréhension voir mê
 Dans le cas d'un choix de confirmation/annulation : pas nécessaire voire superflu > le terme suffit "Enregistrer/Annuler",
 Ex : si je mets un check devant le terme "Supprimer" qui est le bouton de validation d'une suppression, le check renvoie à du positif alors que l'action de suppression est négative, et le bouton Annuler également, donc pour ne pas ajouter à la confusion ne pas mettre d'icone...
 
-![](./mg-modal/doc/img/modale.png)
+![](./mg-modal/doc/img/mg-modal.png)
+
+## Specs
 
 ### Formes
 
-![](./mg-modal/doc/img/formes-modale.png)
+![](./mg-modal/doc/img/mg-modal-shapes.png)
 
 ### Fonts
 
-![](./mg-modal/doc/img/font-modale.png)
+![](./mg-modal/doc/img/mg-modal-fonts.png)
 
 ### Espacements
+
 ### Espacements entre les bords et le contenu
 
-![](./mg-modal/doc/img/espacements-modale-1.png)
-
+![](./mg-modal/doc/img/mg-modal-spaces-borders.png)
 
 ### Espacements entre le titre, le texte et les boutons
 
-![](./mg-modal/doc/img/espacements-modale-2.png)
-![](./mg-modal/doc/img/espacements-modale-3.png)
+![](./mg-modal/doc/img/mg-modal-spaces-slot.png)
+![](./mg-modal/doc/img/mg-modal-spaces-slot-title.png)
 
 ### Espacements entre le titre et le bouton croix
 
-![](./mg-modal/doc/img/espacements-modale-4.png)
-![](./mg-modal/doc/img/espacements-modale-45.png)
+![](./mg-modal/doc/img/mg-modal-spaces-title.png)
+![](./mg-modal/doc/img/mg-modal-spaces-title-multiline.png)
 
 ### Alignements
 
-![](./mg-modal/doc/img/alignements-modale.png)
+![](./mg-modal/doc/img/mg-modal-alignments.png)
 
 ### Tailles
 
-![](./mg-modal/doc/img/tailles-modale.png)
+![](./mg-modal/doc/img/mg-modal-sizes.png)
 
 ### Couleurs
 
-![](./mg-modal/doc/img/couleurs-modale.png)
+![](./mg-modal/doc/img/mg-modal-colors.png)
 
 ### Backdrop
 
-![](./mg-modal/doc/img/backdrop.png)
+![](./mg-modal/doc/img/mg-modal-backdrop.png)
 
 - Couleur : noir
 - Intensité : 5
