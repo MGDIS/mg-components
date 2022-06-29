@@ -1,8 +1,10 @@
-## Design
+## Specs
 
-### Style
+![](./mg-tag/doc/img/mg-tag-specs.png)
 
-![](./mg-tag/doc/img/specs.png)
+## Theming
+
+![](./mg-tag/doc/img/mg-tag-theming.png)
 
 <!-- Auto Generated Below -->
 

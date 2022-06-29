@@ -18,6 +18,8 @@ Les couleurs à utiliser sont des dérivées des couleurs standards, dont le lum
 
 Règle ok pour toutes sauf le bleu de info, mais les pictos info seuls sont affichés dans la couleur de la police la plupart du temps.
 
+![](./mg-icon/doc/img/mg-icon-color-bg.png)
+
 ### Nommage des fichiers
 
 - Séparateur : "-" (tiret 6). De base les pictos sont la version "filled", mais pas besoin de le préciser dans le nommage

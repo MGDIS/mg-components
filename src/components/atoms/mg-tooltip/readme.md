@@ -1,9 +1,11 @@
-## Design
+## Usage
 
 Les infobulles sont des messages qui permettent d’obtenir une information complémentaire sur un élément.
 Elles se présentent sous la forme d’un message qui apparaît au survol et à la prise de focus clavier d’un élément.
 Les infobulles sont dites « personnalisées » lorsqu’elles ne sont pas construites sur la base du code HTML standard prévu pour ces éléments par la spécification : l’attribut title.
 Notre composant "infobulle personnalisée" est appelé ici "tooltip"
+
+## Behavior
 
 **RUX-01** : La tooltip doit s’afficher lorsque l’élément qui en permet l’affichage :
 
@@ -24,34 +26,38 @@ Par défaut, le message s'affiche en bas de l'élément.
 
 **RUX-05** : Si l'élément est situé au bord de l'écran, la tooltip se décale pour être toujours visible.
 
+## Specs
+
 ### Formes
 
-![](./mg-tooltip/doc/img/formes-tooltip.png)
+![](./mg-tooltip/doc/img/mg-tooltip-shape.png)
 
 ### Fonts
 
-![](./mg-tooltip/doc/img/font-tooltip.png)
+![](./mg-tooltip/doc/img/mg-tooltip-font.png)
 
 ### Espacements
 
-![](./mg-tooltip/doc/img/espacements-tooltip.png)
+![](./mg-tooltip/doc/img/mg-tooltip-spaces.png)
 
 ### Alignements
 
-![](./mg-tooltip/doc/img/alignements-tooltip.png)
+![](./mg-tooltip/doc/img/mg-tooltip-alignments-text.png)
 
 ### Positionnement
 
-![](./mg-tooltip/doc/img/positionnement-tooltip-1.png)
-![](./mg-tooltip/doc/img/positionnement-tooltip-2.png)
+Triangle is always centered on the call component
+
+![](./mg-tooltip/doc/img/mg-tooltip-positioning.png)
+![](./mg-tooltip/doc/img/mg-tooltip-positioning2.png)
 
 ### Couleurs
 
-![](./mg-tooltip/doc/img/tooltip-couleurs.png)
+![](./mg-tooltip/doc/img/mg-tooltip-colors.png)
 
 ### Tailles
 
-![](./mg-tooltip/doc/img/tailles-tooltip.png)
+![](./mg-tooltip/doc/img/mg-tooltip-sizing.png)
 
 <!-- Auto Generated Below -->
 

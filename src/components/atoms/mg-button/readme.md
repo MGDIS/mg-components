@@ -1,4 +1,4 @@
-## Design
+## Usage
 
 **RUX 01**: Un bouton d'action principale est majoritairement unique à l'écran, les autres boutons doivent être affichés en "secondaire", cela pour mettre en avant l'action principale.
 Ex : Validation, Enregistrement
@@ -7,17 +7,17 @@ Ex : Validation, Enregistrement
 
 **RUX 03**: Un bouton qui lance un traitement potentiellement long est désactivé et affiche un loader le temps du traitement.
 
-### base
+## Specs
 
-![](./mg-button/doc/img/base.png)
+![](./mg-button/doc/img/mg-button-specs.png)
 
-### main styles
+## Placement
 
-![](./mg-button/doc/img/main-styles.png)
+![](./mg-button/doc/img/mg-button-placement.png)
 
-### Display buttons side by side
+## Theming
 
-![](./mg-button/doc/img/plusieurs-boutons.png)
+![](./mg-button/doc/img/mg-button-styles.png)
 
 <!-- Auto Generated Below -->
 

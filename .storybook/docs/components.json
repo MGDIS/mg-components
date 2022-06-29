@@ -1,8 +1,8 @@
 {
-  "timestamp": "2022-06-22T14:02:36",
+  "timestamp": "2022-06-29T06:46:26",
   "compiler": {
     "name": "@stencil/core",
-    "version": "2.16.1",
+    "version": "2.17.0",
     "typescriptVersion": "4.5.4"
   },
   "components": [
@@ -10,8 +10,8 @@
       "filePath": "./src/components/atoms/mg-badge/mg-badge.tsx",
       "encapsulation": "shadow",
       "tag": "mg-badge",
-      "readme": "## Design\n\n**RUX-01** : Le badge est placé toujours par-dessus ou à côté de l'élément sur lequel il porte.\n\n**RUX-02** : Le badge affiche un chiffre/nombre ou un caractère de ponctuation.\n\n![](./mg-badge/doc/img/screenshot-2.png)\n\n## Styles\n\n![](./mg-badge/doc/img/styles.png)\n",
-      "docs": "**RUX-01** : Le badge est placé toujours par-dessus ou à côté de l'élément sur lequel il porte.\n\n**RUX-02** : Le badge affiche un chiffre/nombre ou un caractère de ponctuation.\n\n![](./mg-badge/doc/img/screenshot-2.png)",
+      "readme": "## Design\n\n**RUX-01** : Le badge est placé toujours par-dessus ou à côté de l'élément sur lequel il porte.\n\n**RUX-02** : Le badge affiche un chiffre/nombre ou un caractère de ponctuation.\n\n## Specs\n\n![](./mg-badge/doc/img/mg-badge-specs.png)\n\n## Theming\n\n![](./mg-badge/doc/img/mg-badge-styles.png)\n",
+      "docs": "**RUX-01** : Le badge est placé toujours par-dessus ou à côté de l'élément sur lequel il porte.\n\n**RUX-02** : Le badge affiche un chiffre/nombre ou un caractère de ponctuation.",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -104,7 +104,7 @@
       "filePath": "./src/components/atoms/mg-button/mg-button.tsx",
       "encapsulation": "scoped",
       "tag": "mg-button",
-      "readme": "## Design\n\n**RUX 01**: Un bouton d'action principale est majoritairement unique à l'écran, les autres boutons doivent être affichés en \"secondaire\", cela pour mettre en avant l'action principale.\nEx : Validation, Enregistrement\n\n**RUX 02**: Une tooltip doit être affichée au survol lorsque le bouton n'affiche qu'une icône non explicite sans libellé. La tooltip doit indiquer textuellement l'action du bouton.\n\n**RUX 03**: Un bouton qui lance un traitement potentiellement long est désactivé et affiche un loader le temps du traitement.\n\n### base\n\n![](./mg-button/doc/img/base.png)\n\n### main styles\n\n![](./mg-button/doc/img/main-styles.png)\n\n### Display buttons side by side\n\n![](./mg-button/doc/img/plusieurs-boutons.png)\n",
+      "readme": "## Usage\n\n**RUX 01**: Un bouton d'action principale est majoritairement unique à l'écran, les autres boutons doivent être affichés en \"secondaire\", cela pour mettre en avant l'action principale.\nEx : Validation, Enregistrement\n\n**RUX 02**: Une tooltip doit être affichée au survol lorsque le bouton n'affiche qu'une icône non explicite sans libellé. La tooltip doit indiquer textuellement l'action du bouton.\n\n**RUX 03**: Un bouton qui lance un traitement potentiellement long est désactivé et affiche un loader le temps du traitement.\n\n## Specs\n\n![](./mg-button/doc/img/mg-button-specs.png)\n\n## Placement\n\n![](./mg-button/doc/img/mg-button-placement.png)\n\n## Theming\n\n![](./mg-button/doc/img/mg-button-styles.png)\n",
       "docs": "**RUX 01**: Un bouton d'action principale est majoritairement unique à l'écran, les autres boutons doivent être affichés en \"secondaire\", cela pour mettre en avant l'action principale.\nEx : Validation, Enregistrement\n\n**RUX 02**: Une tooltip doit être affichée au survol lorsque le bouton n'affiche qu'une icône non explicite sans libellé. La tooltip doit indiquer textuellement l'action du bouton.\n\n**RUX 03**: Un bouton qui lance un traitement potentiellement long est désactivé et affiche un loader le temps du traitement.",
       "docsTags": [],
       "usage": {},
@@ -592,7 +592,7 @@
       "filePath": "./src/components/atoms/mg-icon/mg-icon.tsx",
       "encapsulation": "shadow",
       "tag": "mg-icon",
-      "readme": "## Design\n\n### Standard\n\nTailles (px) :\n\n- 16x16 regular\n- 24x24 large\n- 36x36 extra-large\n\nCouleur : du texte de la page (majoritairement @color-dark)\n\n### Utilisation seul avec couleur informative\n\nL'utilisation d'un picto seul portant une couleur informative doit afficher la couleur en fond pour des raisons d'accessibilité.\n\nLes couleurs à utiliser sont des dérivées des couleurs standards, dont le luminosité est augmenté de 20%.\n\nRègle ok pour toutes sauf le bleu de info, mais les pictos info seuls sont affichés dans la couleur de la police la plupart du temps.\n\n### Nommage des fichiers\n\n- Séparateur : \"-\" (tiret 6). De base les pictos sont la version \"filled\", mais pas besoin de le préciser dans le nommage\n- Variante : \"-outline\". Si variante de picto avec un fond qui est un cercle plein > ajouter \"-circle\" ex : check-circle, check-circle-outline\n",
+      "readme": "## Design\n\n### Standard\n\nTailles (px) :\n\n- 16x16 regular\n- 24x24 large\n- 36x36 extra-large\n\nCouleur : du texte de la page (majoritairement @color-dark)\n\n### Utilisation seul avec couleur informative\n\nL'utilisation d'un picto seul portant une couleur informative doit afficher la couleur en fond pour des raisons d'accessibilité.\n\nLes couleurs à utiliser sont des dérivées des couleurs standards, dont le luminosité est augmenté de 20%.\n\nRègle ok pour toutes sauf le bleu de info, mais les pictos info seuls sont affichés dans la couleur de la police la plupart du temps.\n\n![](./mg-icon/doc/img/mg-icon-color-bg.png)\n\n### Nommage des fichiers\n\n- Séparateur : \"-\" (tiret 6). De base les pictos sont la version \"filled\", mais pas besoin de le préciser dans le nommage\n- Variante : \"-outline\". Si variante de picto avec un fond qui est un cercle plein > ajouter \"-circle\" ex : check-circle, check-circle-outline\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -4938,8 +4938,8 @@
       "filePath": "./src/components/atoms/mg-tag/mg-tag.tsx",
       "encapsulation": "shadow",
       "tag": "mg-tag",
-      "readme": "## Design\n\n### Style\n\n![](./mg-tag/doc/img/specs.png)\n",
-      "docs": "",
+      "readme": "## Specs\n\n![](./mg-tag/doc/img/mg-tag-specs.png)\n\n## Theming\n\n![](./mg-tag/doc/img/mg-tag-theming.png)\n",
+      "docs": "![](./mg-tag/doc/img/mg-tag-specs.png)",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -4991,8 +4991,8 @@
       "filePath": "./src/components/atoms/mg-tooltip/mg-tooltip.tsx",
       "encapsulation": "scoped",
       "tag": "mg-tooltip",
-      "readme": "## Design\n\nLes infobulles sont des messages qui permettent d’obtenir une information complémentaire sur un élément.\nElles se présentent sous la forme d’un message qui apparaît au survol et à la prise de focus clavier d’un élément.\nLes infobulles sont dites « personnalisées » lorsqu’elles ne sont pas construites sur la base du code HTML standard prévu pour ces éléments par la spécification : l’attribut title.\nNotre composant \"infobulle personnalisée\" est appelé ici \"tooltip\"\n\n**RUX-01** : La tooltip doit s’afficher lorsque l’élément qui en permet l’affichage :\n\nEst survolé par la souris.\nPrend le focus clavier.\n\n**RUX-02** : La tooltip doit être masquée lorsque l’élément qui en permet l’affichage :\n\nN’est plus survolé par la souris.\nPerd le focus clavier.\nUne pression de la touche Échap doit permettre de masquer l’infobulle.\n\n**RUX-03** : L’infobulle doit rester affichée lorsque son contenu est survolé par la souris.\n\n**RUX-04** : La tooltip peut être placée au dessus, à droite, en dessous, à gauche de l'élément qu'elle décrit.\n\nPar défaut, le message s'affiche en bas de l'élément.\n\n**RUX-05** : Si l'élément est situé au bord de l'écran, la tooltip se décale pour être toujours visible.\n\n### Formes\n\n![](./mg-tooltip/doc/img/formes-tooltip.png)\n\n### Fonts\n\n![](./mg-tooltip/doc/img/font-tooltip.png)\n\n### Espacements\n\n![](./mg-tooltip/doc/img/espacements-tooltip.png)\n\n### Alignements\n\n![](./mg-tooltip/doc/img/alignements-tooltip.png)\n\n### Positionnement\n\n![](./mg-tooltip/doc/img/positionnement-tooltip-1.png)\n![](./mg-tooltip/doc/img/positionnement-tooltip-2.png)\n\n### Couleurs\n\n![](./mg-tooltip/doc/img/tooltip-couleurs.png)\n\n### Tailles\n\n![](./mg-tooltip/doc/img/tailles-tooltip.png)\n",
-      "docs": "Les infobulles sont des messages qui permettent d’obtenir une information complémentaire sur un élément.\nElles se présentent sous la forme d’un message qui apparaît au survol et à la prise de focus clavier d’un élément.\nLes infobulles sont dites « personnalisées » lorsqu’elles ne sont pas construites sur la base du code HTML standard prévu pour ces éléments par la spécification : l’attribut title.\nNotre composant \"infobulle personnalisée\" est appelé ici \"tooltip\"\n\n**RUX-01** : La tooltip doit s’afficher lorsque l’élément qui en permet l’affichage :\n\nEst survolé par la souris.\nPrend le focus clavier.\n\n**RUX-02** : La tooltip doit être masquée lorsque l’élément qui en permet l’affichage :\n\nN’est plus survolé par la souris.\nPerd le focus clavier.\nUne pression de la touche Échap doit permettre de masquer l’infobulle.\n\n**RUX-03** : L’infobulle doit rester affichée lorsque son contenu est survolé par la souris.\n\n**RUX-04** : La tooltip peut être placée au dessus, à droite, en dessous, à gauche de l'élément qu'elle décrit.\n\nPar défaut, le message s'affiche en bas de l'élément.\n\n**RUX-05** : Si l'élément est situé au bord de l'écran, la tooltip se décale pour être toujours visible.",
+      "readme": "## Usage\n\nLes infobulles sont des messages qui permettent d’obtenir une information complémentaire sur un élément.\nElles se présentent sous la forme d’un message qui apparaît au survol et à la prise de focus clavier d’un élément.\nLes infobulles sont dites « personnalisées » lorsqu’elles ne sont pas construites sur la base du code HTML standard prévu pour ces éléments par la spécification : l’attribut title.\nNotre composant \"infobulle personnalisée\" est appelé ici \"tooltip\"\n\n## Behavior\n\n**RUX-01** : La tooltip doit s’afficher lorsque l’élément qui en permet l’affichage :\n\nEst survolé par la souris.\nPrend le focus clavier.\n\n**RUX-02** : La tooltip doit être masquée lorsque l’élément qui en permet l’affichage :\n\nN’est plus survolé par la souris.\nPerd le focus clavier.\nUne pression de la touche Échap doit permettre de masquer l’infobulle.\n\n**RUX-03** : L’infobulle doit rester affichée lorsque son contenu est survolé par la souris.\n\n**RUX-04** : La tooltip peut être placée au dessus, à droite, en dessous, à gauche de l'élément qu'elle décrit.\n\nPar défaut, le message s'affiche en bas de l'élément.\n\n**RUX-05** : Si l'élément est situé au bord de l'écran, la tooltip se décale pour être toujours visible.\n\n## Specs\n\n### Formes\n\n![](./mg-tooltip/doc/img/mg-tooltip-shape.png)\n\n### Fonts\n\n![](./mg-tooltip/doc/img/mg-tooltip-font.png)\n\n### Espacements\n\n![](./mg-tooltip/doc/img/mg-tooltip-spaces.png)\n\n### Alignements\n\n![](./mg-tooltip/doc/img/mg-tooltip-alignments-text.png)\n\n### Positionnement\n\nTriangle is always centered on the call component\n\n![](./mg-tooltip/doc/img/mg-tooltip-positioning.png)\n![](./mg-tooltip/doc/img/mg-tooltip-positioning2.png)\n\n### Couleurs\n\n![](./mg-tooltip/doc/img/mg-tooltip-colors.png)\n\n### Tailles\n\n![](./mg-tooltip/doc/img/mg-tooltip-sizing.png)\n",
+      "docs": "Les infobulles sont des messages qui permettent d’obtenir une information complémentaire sur un élément.\nElles se présentent sous la forme d’un message qui apparaît au survol et à la prise de focus clavier d’un élément.\nLes infobulles sont dites « personnalisées » lorsqu’elles ne sont pas construites sur la base du code HTML standard prévu pour ces éléments par la spécification : l’attribut title.\nNotre composant \"infobulle personnalisée\" est appelé ici \"tooltip\"",
       "docsTags": [],
       "usage": {},
       "props": [
