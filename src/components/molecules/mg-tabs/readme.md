@@ -1,6 +1,6 @@
 ## Anatomy
 
-![mg-tabs-anatomy](/uploads/56581a181f2dc9621bef75a529c70132/mg-tabs-anatomy.png)
+![](./mg-tabs/doc/img/mg-tabs-anatomy.png)
 
 ## Specs
 
@@ -9,7 +9,7 @@
 - Standard : @base = 10px
 - Large : @base = 18px
 
-![mg-tabs-spacing](/uploads/5a5767df1f8f107f44cf5b8143f4fbb4/mg-tabs-spacing.png)
+![](./mg-tabs/doc/img/mg-tabs-spacing.png)
 
 - si uniquement du texte, pas d'espacements supplémentaires,
 - si pas de badge : pas d'espacement supplémentaire à droite
@@ -17,17 +17,17 @@
 
 ### Sizing
 
-![mg-tabs-sizing](/uploads/ffefba144b12dfff1addd32124dcc348/mg-tabs-sizing.png)
+![](./mg-tabs/doc/img/mg-tabs-sizing.png)
 
 ### States
 
-![mg-tabs-states](/uploads/93f49cc54a8062be8f7edeabdb2b8c80/mg-tabs-states.png)
+![](./mg-tabs/doc/img/mg-tabs-states.png)
 
 ### Responsive
 
 #### Retours à la ligne (gestion actuelle)
 
-![](./mg-tabs/doc/img/responsive-inline.png)
+![](./mg-tabs/doc/img/mg-tabs-responsive.png)
 
 <!-- Auto Generated Below -->
 

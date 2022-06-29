@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-06-29T08:13:49",
+  "timestamp": "2022-06-29T10:29:26",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.17.0",
@@ -3714,7 +3714,7 @@
       "filePath": "./src/components/atoms/mg-input-title/mg-input-title.tsx",
       "encapsulation": "scoped",
       "tag": "mg-input-title",
-      "readme": "## Design\n\n### Libellé\n\n- le libellé peut être positionné à gauche ou au dessus du champ de saisie.\n- l'alignement du texte est à droite.\n- le libellé peut être sur une ou plusieurs lignes.\n\n### Label on top\n\n![](./mg-input-title/doc/img/espacements-label-top.png)\n\n ### Polices\n\n![](./mg-input-title/doc/img/polices.png)\n\n### Styles / states\n\n![](./mg-input-title/doc/img/styles.png)\n\n### Formulaire\n\n#### Espacements\n\n![](./mg-input-title/doc/img/form-espacements.png)\n\n",
+      "readme": "## Design\n\n### Libellé\n\n- le libellé peut être positionné à gauche ou au dessus du champ de saisie.\n- l'alignement du texte est à droite.\n- le libellé peut être sur une ou plusieurs lignes.\n\n### Label on top\n\n![](./mg-input-title/doc/img/mg-input-title-label-top.png)\n\n### Fonts\n\n![](./mg-input-title/doc/img/mg-input-title-fonts.png)\n\n### Styles / states\n\n![](./mg-input-title/doc/img/mg-input-title-states.png)\n\n### Formulaire\n\n#### Espacements\n\n![](./mg-input-title/doc/img/mg-input-title-spacing.png)\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -4815,8 +4815,8 @@
       "filePath": "./src/components/molecules/mg-tabs/mg-tabs.tsx",
       "encapsulation": "scoped",
       "tag": "mg-tabs",
-      "readme": "## Anatomy\n\n![mg-tabs-anatomy](/uploads/56581a181f2dc9621bef75a529c70132/mg-tabs-anatomy.png)\n\n## Specs\n\n### Espacements:\n\n- Standard : @base = 10px\n- Large : @base = 18px\n\n![mg-tabs-spacing](/uploads/5a5767df1f8f107f44cf5b8143f4fbb4/mg-tabs-spacing.png)\n\n- si uniquement du texte, pas d'espacements supplémentaires,\n- si pas de badge : pas d'espacement supplémentaire à droite\n- si uniquement icone : pas d'espacement supplémentaire à droite\n\n### Sizing\n\n![mg-tabs-sizing](/uploads/ffefba144b12dfff1addd32124dcc348/mg-tabs-sizing.png)\n\n### States\n\n![mg-tabs-states](/uploads/93f49cc54a8062be8f7edeabdb2b8c80/mg-tabs-states.png)\n\n### Responsive\n\n#### Retours à la ligne (gestion actuelle)\n\n![](./mg-tabs/doc/img/responsive-inline.png)\n",
-      "docs": "![mg-tabs-anatomy](/uploads/56581a181f2dc9621bef75a529c70132/mg-tabs-anatomy.png)",
+      "readme": "## Anatomy\n\n![](./mg-tabs/doc/img/mg-tabs-anatomy.png)\n\n## Specs\n\n### Espacements:\n\n- Standard : @base = 10px\n- Large : @base = 18px\n\n![](./mg-tabs/doc/img/mg-tabs-spacing.png)\n\n- si uniquement du texte, pas d'espacements supplémentaires,\n- si pas de badge : pas d'espacement supplémentaire à droite\n- si uniquement icone : pas d'espacement supplémentaire à droite\n\n### Sizing\n\n![](./mg-tabs/doc/img/mg-tabs-sizing.png)\n\n### States\n\n![](./mg-tabs/doc/img/mg-tabs-states.png)\n\n### Responsive\n\n#### Retours à la ligne (gestion actuelle)\n\n![](./mg-tabs/doc/img/mg-tabs-responsive.png)\n",
+      "docs": "![](./mg-tabs/doc/img/mg-tabs-anatomy.png)",
       "docsTags": [],
       "usage": {},
       "props": [
