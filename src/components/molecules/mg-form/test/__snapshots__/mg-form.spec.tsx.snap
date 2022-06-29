@@ -210,7 +210,7 @@ exports[`mg-form Should display components errors (readonly: false) 1`] = `
         </mg-input-title>
         <div class="mg-input__input-container">
           <div class="mg-input__input">
-            <button class="mg-input__button-toggle" id="mg-input-toggle" role="switch" type="button">
+            <button aria-checked="false" class="mg-input__button-toggle" id="mg-input-toggle" role="switch" type="button">
               <span aria-hidden="true" class="mg-input__toggle-item-container">
                 <slot name="item-1"></slot>
               </span>
@@ -357,7 +357,7 @@ exports[`mg-form Should display components errors (readonly: true) 1`] = `
         </mg-input-title>
         <div class="mg-input__input-container">
           <div class="mg-input__input">
-            <button aria-readonly="" class="mg-input__button-toggle" disabled="" id="mg-input-toggle" role="switch" type="button">
+            <button aria-checked="false" aria-readonly="" class="mg-input__button-toggle" disabled="" id="mg-input-toggle" role="switch" type="button">
               <span aria-hidden="true" class="mg-input__toggle-item-container">
                 <slot name="item-1"></slot>
               </span>
@@ -562,7 +562,7 @@ exports[`mg-form Should render with args { args: [Object] }: 1`] = `
         </mg-input-title>
         <div class="mg-input__input-container">
           <div class="mg-input__input">
-            <button class="mg-input__button-toggle" id="mg-input-toggle" role="switch" type="button">
+            <button aria-checked="false" class="mg-input__button-toggle" id="mg-input-toggle" role="switch" type="button">
               <span aria-hidden="true" class="mg-input__toggle-item-container">
                 <slot name="item-1"></slot>
               </span>
@@ -706,7 +706,7 @@ exports[`mg-form Should render with args { args: [Object] }: 2`] = `
         </mg-input-title>
         <div class="mg-input__input-container">
           <div class="mg-input__input">
-            <button aria-readonly="" class="mg-input__button-toggle" disabled="" id="mg-input-toggle" role="switch" type="button">
+            <button aria-checked="false" aria-readonly="" class="mg-input__button-toggle" disabled="" id="mg-input-toggle" role="switch" type="button">
               <span aria-hidden="true" class="mg-input__toggle-item-container">
                 <slot name="item-1"></slot>
               </span>
@@ -910,7 +910,7 @@ exports[`mg-form Should render with args { args: [Object] }: 3`] = `
         </mg-input-title>
         <div class="mg-input__input-container">
           <div class="mg-input__input">
-            <button aria-readonly="" class="mg-input__button-toggle" disabled="" id="mg-input-toggle" role="switch" type="button">
+            <button aria-checked="false" aria-readonly="" class="mg-input__button-toggle" disabled="" id="mg-input-toggle" role="switch" type="button">
               <span aria-hidden="true" class="mg-input__toggle-item-container">
                 <slot name="item-1"></slot>
               </span>
@@ -1118,7 +1118,7 @@ exports[`mg-form Should render with args { args: [Object], requiredIndex: 'all' 
         </mg-input-title>
         <div class="mg-input__input-container">
           <div class="mg-input__input">
-            <button class="mg-input__button-toggle" id="mg-input-toggle" role="switch" type="button">
+            <button aria-checked="false" class="mg-input__button-toggle" id="mg-input-toggle" role="switch" type="button">
               <span aria-hidden="true" class="mg-input__toggle-item-container">
                 <slot name="item-1"></slot>
               </span>
@@ -1330,7 +1330,7 @@ exports[`mg-form Should render with args { args: [Object], requiredIndex: 'one' 
         </mg-input-title>
         <div class="mg-input__input-container">
           <div class="mg-input__input">
-            <button class="mg-input__button-toggle" id="mg-input-toggle" role="switch" type="button">
+            <button aria-checked="false" class="mg-input__button-toggle" id="mg-input-toggle" role="switch" type="button">
               <span aria-hidden="true" class="mg-input__toggle-item-container">
                 <slot name="item-1"></slot>
               </span>

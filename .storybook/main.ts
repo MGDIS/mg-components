@@ -45,6 +45,9 @@ const getPathFromOffset = (path: Path, offset: number): Path => {
 module.exports = {
   stories: ['../src/**/*.stories.@(tsx|mdx)'],
   addons: ['@storybook/addon-essentials', '@pxtrn/storybook-addon-docs-stencil', '@storybook/addon-a11y'],
+  core: {
+    disableTelemetry: true,
+  },
   staticDirs: () => {
     // to keep doc images in components folders we need to dynamically set static dir path, as storybook can't get a wilcard path like **/img/** for assets
     // as webpack do a "cp" command to dublicate 'from' folder, we need a uniq 'to' folder name

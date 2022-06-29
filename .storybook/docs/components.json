@@ -1,8 +1,8 @@
 {
-  "timestamp": "2022-05-11T12:46:44",
+  "timestamp": "2022-06-22T14:02:36",
   "compiler": {
     "name": "@stencil/core",
-    "version": "2.15.1",
+    "version": "2.16.1",
     "typescriptVersion": "4.5.4"
   },
   "components": [
@@ -3528,12 +3528,42 @@
           "required": false
         },
         {
+          "name": "resizable",
+          "type": "\"both\" | \"horizontal\" | \"none\" | \"vertical\"",
+          "mutable": false,
+          "attr": "resizable",
+          "reflectToAttr": false,
+          "docs": "Define if input is resizable",
+          "docsTags": [],
+          "default": "'none'",
+          "values": [
+            {
+              "value": "both",
+              "type": "string"
+            },
+            {
+              "value": "horizontal",
+              "type": "string"
+            },
+            {
+              "value": "none",
+              "type": "string"
+            },
+            {
+              "value": "vertical",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "rows",
           "type": "number",
           "mutable": false,
           "attr": "rows",
           "reflectToAttr": false,
-          "docs": "Define input pattern error message",
+          "docs": "Define the number of visible text lines for the control",
           "docsTags": [],
           "default": "3",
           "values": [
@@ -4444,6 +4474,23 @@
       "usage": {},
       "props": [
         {
+          "name": "expandToggleDisabled",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "expand-toggle-disabled",
+          "reflectToAttr": false,
+          "docs": "Disable possibility to toggle expand",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "expanded",
           "type": "boolean",
           "mutable": true,
@@ -4509,10 +4556,51 @@
           ],
           "optional": false,
           "required": false
+        },
+        {
+          "name": "titlePattern",
+          "type": "string",
+          "mutable": true,
+          "attr": "title-pattern",
+          "reflectToAttr": false,
+          "docs": "Panel title pattern",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "titlePatternErrorMessage",
+          "type": "string",
+          "mutable": true,
+          "attr": "title-pattern-error-message",
+          "reflectToAttr": false,
+          "docs": "Panel title pattern error message",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
         }
       ],
       "methods": [],
       "events": [
+        {
+          "event": "expanded-change",
+          "detail": "boolean",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emmited event when expanded change",
+          "docsTags": []
+        },
         {
           "event": "title-change",
           "detail": "string",

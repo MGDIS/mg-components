@@ -17,9 +17,22 @@ const Template = args => {
   delete args.panelTitle;
   const titleEditable = args.titleEditable;
   delete args.titleEditable;
+  const expandToggleDisabled = args.expandToggleDisabled;
+  delete args.expandToggleDisabled;
+  const titlePattern = args.titlePattern;
+  delete args.titlePattern;
+  const titlePatternErrorMessage = args.titlePatternErrorMessage;
+  delete args.titlePatternErrorMessage;
   // return element
   return (
-    <mg-panel {...args} panel-title={panelTitle} title-editable={titleEditable}>
+    <mg-panel
+      {...args}
+      panel-title={panelTitle}
+      title-editable={titleEditable}
+      expand-toggle-disabled={expandToggleDisabled}
+      title-pattern={titlePattern}
+      title-pattern-error-message={titlePatternErrorMessage}
+    >
       <div>Content</div>
       <div slot="header-right">
         <mg-button variant="secondary">
@@ -39,4 +52,5 @@ MgPanel.args = {
   panelTitle: 'title',
   expanded: false,
   titleEditable: true,
+  expandToggleDisabled: true,
 };

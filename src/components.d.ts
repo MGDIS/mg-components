@@ -737,7 +737,11 @@ export namespace Components {
          */
         "required": boolean;
         /**
-          * Define input pattern error message
+          * Define if input is resizable
+         */
+        "resizable": 'none' | 'both' | 'horizontal' | 'vertical';
+        /**
+          * Define the number of visible text lines for the control
          */
         "rows": number;
         /**
@@ -886,6 +890,10 @@ export namespace Components {
     }
     interface MgPanel {
         /**
+          * Disable possibility to toggle expand
+         */
+        "expandToggleDisabled": boolean;
+        /**
           * Panel is opened
          */
         "expanded": boolean;
@@ -901,6 +909,14 @@ export namespace Components {
           * Panel title is editabled
          */
         "titleEditable": boolean;
+        /**
+          * Panel title pattern
+         */
+        "titlePattern": string;
+        /**
+          * Panel title pattern error message
+         */
+        "titlePatternErrorMessage": string;
     }
     interface MgPopover {
         /**
@@ -1006,6 +1022,66 @@ export namespace Components {
     | 'left-start'
     | 'left-end';
     }
+}
+export interface MgFormCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMgFormElement;
+}
+export interface MgInputCheckboxCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMgInputCheckboxElement;
+}
+export interface MgInputDateCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMgInputDateElement;
+}
+export interface MgInputNumericCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMgInputNumericElement;
+}
+export interface MgInputPasswordCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMgInputPasswordElement;
+}
+export interface MgInputRadioCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMgInputRadioElement;
+}
+export interface MgInputSelectCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMgInputSelectElement;
+}
+export interface MgInputTextCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMgInputTextElement;
+}
+export interface MgInputTextareaCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMgInputTextareaElement;
+}
+export interface MgInputToggleCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMgInputToggleElement;
+}
+export interface MgMessageCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMgMessageElement;
+}
+export interface MgModalCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMgModalElement;
+}
+export interface MgPaginationCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMgPaginationElement;
+}
+export interface MgPanelCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMgPanelElement;
+}
+export interface MgTabsCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMgTabsElement;
 }
 declare global {
     interface HTMLMgBadgeElement extends Components.MgBadge, HTMLStencilElement {
@@ -1267,7 +1343,7 @@ declare namespace LocalJSX {
         /**
           * Emitted event on form validity check Tells if form is valid or not
          */
-        "onForm-valid"?: (event: CustomEvent<boolean>) => void;
+        "onForm-valid"?: (event: MgFormCustomEvent<boolean>) => void;
         /**
           * Define if form is readonly
          */
@@ -1335,11 +1411,11 @@ declare namespace LocalJSX {
         /**
           * Emited event when checking validity
          */
-        "onInput-valid"?: (event: CustomEvent<boolean>) => void;
+        "onInput-valid"?: (event: MgInputCheckboxCustomEvent<boolean>) => void;
         /**
           * Emitted event when value change
          */
-        "onValue-change"?: (event: CustomEvent<CheckboxValue[]>) => void;
+        "onValue-change"?: (event: MgInputCheckboxCustomEvent<CheckboxValue[]>) => void;
         /**
           * Define if input is readonly
          */
@@ -1405,11 +1481,11 @@ declare namespace LocalJSX {
         /**
           * Emited event when checking validity
          */
-        "onInput-valid"?: (event: CustomEvent<boolean>) => void;
+        "onInput-valid"?: (event: MgInputDateCustomEvent<boolean>) => void;
         /**
           * Emited event when value change
          */
-        "onValue-change"?: (event: CustomEvent<string>) => void;
+        "onValue-change"?: (event: MgInputDateCustomEvent<string>) => void;
         /**
           * Define if input is readonly
          */
@@ -1483,11 +1559,11 @@ declare namespace LocalJSX {
         /**
           * Emited event when checking validity
          */
-        "onInput-valid"?: (event: CustomEvent<boolean>) => void;
+        "onInput-valid"?: (event: MgInputNumericCustomEvent<boolean>) => void;
         /**
           * Emited event when value change
          */
-        "onValue-change"?: (event: CustomEvent<number>) => void;
+        "onValue-change"?: (event: MgInputNumericCustomEvent<number>) => void;
         /**
           * Input placeholder. It should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text.
          */
@@ -1557,11 +1633,11 @@ declare namespace LocalJSX {
         /**
           * Emited event when checking validity
          */
-        "onInput-valid"?: (event: CustomEvent<boolean>) => void;
+        "onInput-valid"?: (event: MgInputPasswordCustomEvent<boolean>) => void;
         /**
           * Emited event when value change
          */
-        "onValue-change"?: (event: CustomEvent<string>) => void;
+        "onValue-change"?: (event: MgInputPasswordCustomEvent<string>) => void;
         /**
           * Input placeholder. It should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text.
          */
@@ -1635,11 +1711,11 @@ declare namespace LocalJSX {
         /**
           * Emited event when checking validity
          */
-        "onInput-valid"?: (event: CustomEvent<boolean>) => void;
+        "onInput-valid"?: (event: MgInputRadioCustomEvent<boolean>) => void;
         /**
           * Emitted event when value change
          */
-        "onValue-change"?: (event: CustomEvent<any>) => void;
+        "onValue-change"?: (event: MgInputRadioCustomEvent<any>) => void;
         /**
           * Define if input is readonly
          */
@@ -1701,11 +1777,11 @@ declare namespace LocalJSX {
         /**
           * Emited event when checking validity
          */
-        "onInput-valid"?: (event: CustomEvent<boolean>) => void;
+        "onInput-valid"?: (event: MgInputSelectCustomEvent<boolean>) => void;
         /**
           * Emited event when value change
          */
-        "onValue-change"?: (event: CustomEvent<any>) => void;
+        "onValue-change"?: (event: MgInputSelectCustomEvent<any>) => void;
         /**
           * Input placeholder. It should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text.
          */
@@ -1795,11 +1871,11 @@ declare namespace LocalJSX {
         /**
           * Emited event when checking validity
          */
-        "onInput-valid"?: (event: CustomEvent<boolean>) => void;
+        "onInput-valid"?: (event: MgInputTextCustomEvent<boolean>) => void;
         /**
           * Emited event when value change
          */
-        "onValue-change"?: (event: CustomEvent<string>) => void;
+        "onValue-change"?: (event: MgInputTextCustomEvent<string>) => void;
         /**
           * Define input pattern to validate
          */
@@ -1889,11 +1965,11 @@ declare namespace LocalJSX {
         /**
           * Emited event when checking validity
          */
-        "onInput-valid"?: (event: CustomEvent<boolean>) => void;
+        "onInput-valid"?: (event: MgInputTextareaCustomEvent<boolean>) => void;
         /**
           * Emited event when value change
          */
-        "onValue-change"?: (event: CustomEvent<string>) => void;
+        "onValue-change"?: (event: MgInputTextareaCustomEvent<string>) => void;
         /**
           * Define input pattern to validate
          */
@@ -1915,7 +1991,11 @@ declare namespace LocalJSX {
          */
         "required"?: boolean;
         /**
-          * Define input pattern error message
+          * Define if input is resizable
+         */
+        "resizable"?: 'none' | 'both' | 'horizontal' | 'vertical';
+        /**
+          * Define the number of visible text lines for the control
          */
         "rows"?: number;
         /**
@@ -1994,11 +2074,11 @@ declare namespace LocalJSX {
         /**
           * Emited event when checking validity
          */
-        "onInput-valid"?: (event: CustomEvent<boolean>) => void;
+        "onInput-valid"?: (event: MgInputToggleCustomEvent<boolean>) => void;
         /**
           * Emited event when value change
          */
-        "onValue-change"?: (event: CustomEvent<any>) => void;
+        "onValue-change"?: (event: MgInputToggleCustomEvent<any>) => void;
         /**
           * Define if input is readonly
          */
@@ -2032,11 +2112,11 @@ declare namespace LocalJSX {
         /**
           * Emited event when message is hidden
          */
-        "onComponent-hide"?: (event: CustomEvent<string>) => void;
+        "onComponent-hide"?: (event: MgMessageCustomEvent<string>) => void;
         /**
           * Emited event when message is diplayed
          */
-        "onComponent-show"?: (event: CustomEvent<string>) => void;
+        "onComponent-show"?: (event: MgMessageCustomEvent<string>) => void;
         /**
           * Message variant
          */
@@ -2062,11 +2142,11 @@ declare namespace LocalJSX {
         /**
           * Emmited event when modal is hidden
          */
-        "onComponent-hide"?: (event: CustomEvent<string>) => void;
+        "onComponent-hide"?: (event: MgModalCustomEvent<string>) => void;
         /**
           * Emmited event when modal is diplayed
          */
-        "onComponent-show"?: (event: CustomEvent<string>) => void;
+        "onComponent-show"?: (event: MgModalCustomEvent<string>) => void;
     }
     interface MgPagination {
         /**
@@ -2084,13 +2164,17 @@ declare namespace LocalJSX {
         /**
           * Emmited event when current page change
          */
-        "onCurrent-page-change"?: (event: CustomEvent<number>) => void;
+        "onCurrent-page-change"?: (event: MgPaginationCustomEvent<number>) => void;
         /**
           * Component total pages
          */
         "totalPages"?: number;
     }
     interface MgPanel {
+        /**
+          * Disable possibility to toggle expand
+         */
+        "expandToggleDisabled"?: boolean;
         /**
           * Panel is opened
          */
@@ -2100,9 +2184,13 @@ declare namespace LocalJSX {
          */
         "identifier"?: string;
         /**
+          * Emmited event when expanded change
+         */
+        "onExpanded-change"?: (event: MgPanelCustomEvent<boolean>) => void;
+        /**
           * Emmited event when title change
          */
-        "onTitle-change"?: (event: CustomEvent<string>) => void;
+        "onTitle-change"?: (event: MgPanelCustomEvent<string>) => void;
         /**
           * Panel title
          */
@@ -2111,6 +2199,14 @@ declare namespace LocalJSX {
           * Panel title is editabled
          */
         "titleEditable"?: boolean;
+        /**
+          * Panel title pattern
+         */
+        "titlePattern"?: string;
+        /**
+          * Panel title pattern error message
+         */
+        "titlePatternErrorMessage"?: string;
     }
     interface MgPopover {
         /**
@@ -2168,7 +2264,7 @@ declare namespace LocalJSX {
         /**
           * Emited event when active tab change
          */
-        "onActive-tab-change"?: (event: CustomEvent<number>) => void;
+        "onActive-tab-change"?: (event: MgTabsCustomEvent<number>) => void;
         /**
           * Define tabs size
          */

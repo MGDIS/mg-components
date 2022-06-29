@@ -27,30 +27,66 @@ describe('mg-panel', () => {
     { identifier: 'identifier', panelTitle: 'panel title' },
     { identifier: 'identifier', panelTitle: 'panel title', expanded: true },
     { identifier: 'identifier', panelTitle: 'panel title', titleEditable: true },
+    { identifier: 'identifier', panelTitle: 'panel title', titleEditable: true, titlePattern: /joker/, titlePatternErrorMessage: "You can't enter a bad guy !" },
   ])('Should render with args %s:', async args => {
     const { root } = await getPage(args);
     expect(root).toMatchSnapshot();
   });
 
+  describe('errors', () => {
+    test.each([
+      { props: { identifier: 'identifier', panelTitle: 'panel title', titlePattern: /joker/ }, error: '<mg-panel> prop "titleEditable" must be set to `true`.' },
+      {
+        props: { identifier: 'identifier', panelTitle: 'panel title', titleEditable: true, titlePattern: '^(?!(joker)$)[a-z A-Z0-9s]+$' },
+        error: '<mg-panel> prop "titlePattern" must be paired with the prop "titlePatternErrorMessage".',
+      },
+      {
+        props: { identifier: 'identifier', panelTitle: 'panel title', titleEditable: true, titlePattern: '^(?!(joker)$)[a-z A-Z0-9s]+$', titlePatternErrorMessage: '' },
+        error: '<mg-panel> prop "titlePattern" must be paired with the prop "titlePatternErrorMessage".',
+      },
+    ])('Should throw error when props association are unauthorized %s:', async ({ props, error }) => {
+      try {
+        await getPage(props);
+      } catch (e) {
+        expect(e.message).toBe(error);
+      }
+    });
+  });
+
   describe('navigation', () => {
-    test.each([true, false])('Should toggle collapse panel', async expanded => {
+    test.each([true, false])('Should toggle collapse panel, expanded %s', async expanded => {
       const page = await getPage({ identifier: 'identifier', panelTitle: 'panel title', expanded });
+      const mgPanel = page.doc.querySelector('mg-panel');
+      const collapseButton = mgPanel.shadowRoot.querySelector('.mg-panel__collapse-button');
+
+      const spy = jest.spyOn(page.rootInstance.expandedChange, 'emit');
+
+      expect(page.root).toMatchSnapshot();
+
+      collapseButton.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+      await page.waitForChanges();
+
+      expect(page.root).toMatchSnapshot();
+
+      collapseButton.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+      await page.waitForChanges();
+
+      expect(page.root).toMatchSnapshot();
+
+      expect(spy).toBeCalledTimes(2);
+    });
+
+    test.each([true, false])('Should NOT collapse panel, case expandToggleDisabled = true', async expanded => {
+      const page = await getPage({ identifier: 'identifier', panelTitle: 'panel title', expanded, expandToggleDisabled: true });
       const mgPanel = page.doc.querySelector('mg-panel');
       const collapseButton = mgPanel.shadowRoot.querySelector('.mg-panel__collapse-button');
 
       expect(page.root).toMatchSnapshot();
 
-      if (expanded) {
-        collapseButton.dispatchEvent(new CustomEvent('click', { bubbles: true }));
-        await page.waitForChanges();
+      collapseButton.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+      await page.waitForChanges();
 
-        expect(page.root).toMatchSnapshot();
-
-        collapseButton.dispatchEvent(new CustomEvent('click', { bubbles: true }));
-        await page.waitForChanges();
-
-        expect(page.root).toMatchSnapshot();
-      }
+      expect(page.root).toMatchSnapshot();
     });
 
     test.each([true, false])('Should toggle edit panel title', async titleEditable => {
@@ -92,7 +128,6 @@ describe('mg-panel', () => {
 
       const mgInputText = mgPanel.shadowRoot.querySelector('mg-input-text');
       const input = mgInputText.shadowRoot.querySelector('input');
-      await page.waitForChanges();
 
       input.value = updatedPanelTitle;
       input.dispatchEvent(new CustomEvent('input', { bubbles: true }));
@@ -136,7 +171,6 @@ describe('mg-panel', () => {
 
       const mgInputText = mgPanel.shadowRoot.querySelector('mg-input-text');
       const input = mgInputText.shadowRoot.querySelector('input');
-      await page.waitForChanges();
 
       input.dispatchEvent(new CustomEvent('blur', { bubbles: true }));
       await page.waitForChanges();
@@ -151,6 +185,68 @@ describe('mg-panel', () => {
 
       expect(mgPanel.panelTitle).toBe(args.panelTitle);
       expect(page.rootInstance.titleChange.emit).not.toHaveBeenCalledWith(updatedPanelTitle);
+    });
+
+    test('Should NOT update panel title, case input new value does NOT match pattern', async () => {
+      const updatedPanelTitle = 'joker';
+      const args = {
+        identifier: 'identifier',
+        panelTitle: 'panel title',
+        titleEditable: true,
+        titlePattern: '^(?!(joker)$)[a-z A-Z0-9s]+$',
+        titlePatternErrorMessage: "You can't enter a bad guy !",
+      };
+      const page = await getPage(args);
+      const mgPanel = page.doc.querySelector('mg-panel');
+      const editButton = mgPanel.shadowRoot.querySelector('#identifier-edit-button');
+
+      expect(page.root).toMatchSnapshot();
+
+      jest.spyOn(page.rootInstance.titleChange, 'emit');
+
+      // first switch to title edition
+      editButton.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+      await page.waitForChanges();
+
+      expect(page.root).toMatchSnapshot();
+
+      const mgInputText = mgPanel.shadowRoot.querySelector('mg-input-text');
+      const input = mgInputText.shadowRoot.querySelector('input');
+      input.checkValidity = jest.fn(() => false);
+      Object.defineProperty(input, 'validity', {
+        get: jest.fn(() => ({
+          patternMismatch: false,
+        })),
+      });
+
+      // second update title with a falsy update title
+      input.value = updatedPanelTitle;
+      input.dispatchEvent(new CustomEvent('input', { bubbles: true }));
+      await page.waitForChanges();
+
+      input.dispatchEvent(new CustomEvent('blur', { bubbles: true }));
+      await page.waitForChanges();
+
+      // and click on validate button
+      const afterInputAction = mgPanel.shadowRoot.querySelector(`#identifier-edition-button-validate`);
+
+      afterInputAction.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+      jest.runOnlyPendingTimers();
+      await page.waitForChanges();
+
+      expect(page.root).toMatchSnapshot();
+
+      expect(mgPanel.panelTitle).toBe(args.panelTitle);
+      expect(page.rootInstance.titleChange.emit).not.toHaveBeenCalledWith(updatedPanelTitle);
+
+      // finaly return to default view by clicking on cancel button
+      const cancelAction = mgPanel.shadowRoot.querySelector(`#identifier-edition-button-cancel`);
+
+      cancelAction.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+      jest.runOnlyPendingTimers();
+      await page.waitForChanges();
+
+      expect(page.root).toMatchSnapshot();
     });
   });
 });

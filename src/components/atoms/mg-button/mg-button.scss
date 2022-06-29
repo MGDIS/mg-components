@@ -14,12 +14,10 @@ $button-column-gap: 0.6rem;
   }
   &.mg-button--#{$name} {
     // Decoration
-    border-color: hsl(var(#{$backgroundColor}-h), var(#{$backgroundColor}-s), var(#{$backgroundColor}-l)); /* IE FIX */
-    border-color: hsl(var(#{$backgroundColor}-h), var(#{$backgroundColor}-s), calc(var(#{$backgroundColor}-l) - 10%));
+    border-color: hsl(var(#{$backgroundColor}-h), var(#{$backgroundColor}-s), calc(var(#{$backgroundColor}-l) - var(--mg-button-border-variation) * 10%));
     // Font
     color: hsl(var(#{$fontColor}));
     // Background
-    background: hsl(var(#{$backgroundColor}-h), var(#{$backgroundColor}-s), var(#{$backgroundColor}-l)); /* IE FIX */
     background: linear-gradient(
       to bottom,
       hsl(var(#{$backgroundColor}-h), var(#{$backgroundColor}-s), var(#{$backgroundColor}-l)),
@@ -28,9 +26,9 @@ $button-column-gap: 0.6rem;
 
     // Hover
     // Only apply if not disabled
-    &:hover:not([disabled], [aria-disabled], .disabled),
-    &:focus:not([disabled], [aria-disabled], .disabled),
-    &:active:not([disabled], [aria-disabled], .disabled) {
+    &:hover:not([disabled], [aria-disabled='true'], .disabled),
+    &:focus:not([disabled], [aria-disabled='true'], .disabled),
+    &:active:not([disabled], [aria-disabled='true'], .disabled) {
       background: hsl(var(#{$backgroundColor}-h), var(#{$backgroundColor}-s), var(#{$backgroundColor}-l));
     }
   }
@@ -68,7 +66,7 @@ $button-column-gap: 0.6rem;
 
   // Disabled style
   &[disabled],
-  &[aria-disabled],
+  &[aria-disabled='true'],
   &.disabled {
     opacity: var(--mg-button-disabled-opacity);
     cursor: default;
@@ -97,6 +95,7 @@ $button-column-gap: 0.6rem;
   @include style-gradient('danger', 'danger', 'neutral');
   @include style-gradient('danger-alt', 'neutral', 'danger');
   @include style-gradient('info', 'info', 'neutral');
+  @include style-gradient('success', 'success', 'dark');
 
   // Flat style
   &.mg-button--flat {
@@ -105,9 +104,9 @@ $button-column-gap: 0.6rem;
 
     // Hover
     // Only apply if not disabled
-    &:hover:not([disabled], [aria-disabled], .disabled),
-    &:focus:not([disabled], [aria-disabled], .disabled),
-    &:active:not([disabled], [aria-disabled], .disabled) {
+    &:hover:not([disabled], [aria-disabled='true'], .disabled),
+    &:focus:not([disabled], [aria-disabled='true'], .disabled),
+    &:active:not([disabled], [aria-disabled='true'], .disabled) {
       background: hsla(var(--color-dark), 0.1);
     }
   }

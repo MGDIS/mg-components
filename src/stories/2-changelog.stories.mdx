@@ -4,17 +4,35 @@ import { Meta } from '@storybook/addon-docs/blocks';
 
 # Changelog
 
-## 3.3.0
+## 3.4.0
 
-A long time ago in a galaxy far, far away...
-
-### ⚠️ New component
+July ???, 2022
 
 ### 🚀 Enhancement
 
-- Added `active-tab-change` event on [`<mg-tabs>`](?path=/docs/molecules-mg-tabs--mg-tabs)
+- Added `resizable` props on [**`<mg-input-textarea>`**](?path=/docs/molecules-inputs-mg-input-textarea--mg-input-textarea)
+
+## 3.3.0
+
+June 13rd, 2022
+
+### 🚀 Enhancement
+
+- [**`<mg-panel>`**](?path=/docs/molecules-mg-panel--mg-panel)
+  - Added `expanded-change` event
+  - Added `title-pattern`, `title-pattern-error-message` and `expand-toggle-disabled` props
+  - Changed edit button variant
+- [**`<mg-tabs>`**](?path=/docs/molecules-mg-tabs--mg-tabs)
+  - Added `active-tab-change` event
+  - Changed font sizes
+- Added `success` variant on [**`<mg-button>`**](?path=/docs/atoms-mg-button--mg-button)
+- Changed backdrop color on [**`<mg-modal>`**](?path=/docs/atoms-mg-modal--mg-modal)
+- Added icons to [**`<mg-icon>`**](?path=/docs/atoms-mg-icon--mg-icon), [see all the availables icons](?path=/docs/style-icons--icons)
 
 ### 🐛 Bug Fix
+
+- [#94](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/94) Accessibility issues on multiple components
+- [#105](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/105) mg-panel: Adapt left part of the component
 
 ## 3.2.0
 
@@ -28,8 +46,8 @@ April 26th, 2022
 
 ### 🚀 Enhancement
 
-- Added `size` to [`<mg-tabs>`](?path=/docs/molecules-mg-tabs--mg-tabs)
-- Added icons to [`<mg-icon>`](?path=/docs/atoms-mg-icon--mg-icon), [see all the availables icons](?path=/docs/style-icons--icons)
+- Added `size` to [**`<mg-tabs>`**](?path=/docs/molecules-mg-tabs--mg-tabs)
+- Added icons to [**`<mg-icon>`**](?path=/docs/atoms-mg-icon--mg-icon), [see all the availables icons](?path=/docs/style-icons--icons)
 - Components events are now displayed in Storybook
 - Removed the `not-allowed` cursor on disabled components
 - E2E test screenshots no longer allow difference pixels
@@ -68,11 +86,11 @@ March 21st, 2022
 
 ### 🚀 Enhancement
 
-- Added icons to [`<mg-icon>`](?path=/docs/atoms-mg-icon--mg-icon), [see all the availables icons](?path=/docs/style-icons--icons)
-- Added `component-hide` & `component-show` events on [`<mg-message>`](?path=/docs/molecules-mg-message--mg-message)
+- Added icons to [**`<mg-icon>`**](?path=/docs/atoms-mg-icon--mg-icon), [see all the availables icons](?path=/docs/style-icons--icons)
+- Added `component-hide` & `component-show` events on [**`<mg-message>`**](?path=/docs/molecules-mg-message--mg-message)
 - Added `width` attribute on `<mg-input-...>` to override default behavior
 - Added `append-input` slot on `<mg-input-numeric>` & `<mg-input-text>`
-- Added `type` and `icon` attributes on [`<mg-input-text>`](?path=/story/molecules-inputs-mg-input-text--search) to get an a search input
+- Added `type` and `icon` attributes on [**`<mg-input-text>`**](?path=/story/molecules-inputs-mg-input-text--search) to get an a search input
 
 ### 🐛 Bug Fix
 

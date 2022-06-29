@@ -35,9 +35,37 @@ export class MgPanel {
   }
 
   /**
+   * Panel title pattern
+   */
+  @Prop({ mutable: true }) titlePattern: string;
+  @Watch('titlePattern')
+  validatetitlePattern(newValue: string): void {
+    if (newValue && !this.titleEditable) {
+      throw new Error('<mg-panel> prop "titleEditable" must be set to `true`.');
+    }
+    if (newValue && this.titlePatternErrorMessage === undefined) {
+      throw new Error('<mg-panel> prop "titlePattern" must be paired with the prop "titlePatternErrorMessage".');
+    }
+  }
+
+  /**
+   * Panel title pattern error message
+   */
+  @Prop({ mutable: true }) titlePatternErrorMessage: string;
+
+  /**
    * Panel is opened
    */
   @Prop({ mutable: true }) expanded = false;
+  @Watch('expanded')
+  handleExpanded(newValue: boolean): void {
+    this.expandedChange.emit(newValue);
+  }
+
+  /**
+   * Disable possibility to toggle expand
+   */
+  @Prop({ mutable: true }) expandToggleDisabled = false;
 
   /**
    * Panel title is editabled
@@ -64,6 +92,11 @@ export class MgPanel {
    */
   @Event({ eventName: 'title-change' }) titleChange: EventEmitter<string>;
 
+  /**
+   * Emmited event when expanded change
+   */
+  @Event({ eventName: 'expanded-change' }) expandedChange: EventEmitter<boolean>;
+
   /************
    * Methods *
    ************/
@@ -87,7 +120,9 @@ export class MgPanel {
    * @returns {void}
    */
   private handleCollapseButton = (): void => {
-    this.expanded = !this.expanded;
+    if (!this.expandToggleDisabled) {
+      this.expanded = !this.expanded;
+    }
   };
 
   /**
@@ -125,14 +160,25 @@ export class MgPanel {
    * @returns {void}
    */
   private handleValidateEditButton = (): void => {
-    if (this.updatedPanelTitle !== undefined) this.panelTitle = this.updatedPanelTitle;
+    if (this.editInputElement.valid) {
+      if (this.updatedPanelTitle !== undefined) this.panelTitle = this.updatedPanelTitle;
 
-    this.toggleIsEditing();
+      this.toggleIsEditing();
+    }
   };
 
   /*************
    * Lifecycle *
    *************/
+
+  /**
+   * Check if props are well configured on init
+   *
+   * @returns {void}
+   */
+  componentWillLoad(): void {
+    this.validatetitlePattern(this.titlePattern);
+  }
 
   /**
    * Header left conditional render
@@ -149,6 +195,7 @@ export class MgPanel {
         identifier={`${this.identifier}-collapse-button`}
         expanded={this.expanded}
         controls={`${this.identifier}-content`}
+        disabled={this.expandToggleDisabled}
       >
         <mg-icon icon={this.expanded ? 'chevron-up' : 'chevron-down'}></mg-icon>
         {!this.isEditing && this.panelTitle}
@@ -173,6 +220,8 @@ export class MgPanel {
           value={this.panelTitle}
           onValue-change={this.handleUpdateTitle}
           displayCharacterLeft={false}
+          pattern={this.titlePattern}
+          pattern-error-message={this.titlePatternErrorMessage}
           identifier={`${this.identifier}-edition-input`}
           ref={el => (this.editInputElement = el as HTMLMgInputTextElement)}
         >
@@ -224,7 +273,7 @@ export class MgPanel {
     return (
       <section class={this.classList.join()} id={this.identifier}>
         <header class="mg-panel__header" id={`${this.identifier}-header`}>
-          <div class="mg-panel__header-left">{this.headerLeft()}</div>
+          <div class={`mg-panel__header-left ${this.isEditing ? 'mg-panel__header-left--full' : ''}`}>{this.headerLeft()}</div>
           <div class="mg-panel__header-right">
             <slot name="header-right"></slot>
           </div>

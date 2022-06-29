@@ -49,19 +49,23 @@ Lorsque le volet est déplié, l'icone est inversé verticalement.
 
 ## Properties
 
-| Property                  | Attribute        | Description                                                                                                 | Type      | Default                |
-| ------------------------- | ---------------- | ----------------------------------------------------------------------------------------------------------- | --------- | ---------------------- |
-| `expanded`                | `expanded`       | Panel is opened                                                                                             | `boolean` | `false`                |
-| `identifier`              | `identifier`     | Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created. | `string`  | `createID('mg-panel')` |
-| `panelTitle` _(required)_ | `panel-title`    | Panel title                                                                                                 | `string`  | `undefined`            |
-| `titleEditable`           | `title-editable` | Panel title is editabled                                                                                    | `boolean` | `false`                |
+| Property                   | Attribute                     | Description                                                                                                 | Type      | Default                |
+| -------------------------- | ----------------------------- | ----------------------------------------------------------------------------------------------------------- | --------- | ---------------------- |
+| `expandToggleDisabled`     | `expand-toggle-disabled`      | Disable possibility to toggle expand                                                                        | `boolean` | `false`                |
+| `expanded`                 | `expanded`                    | Panel is opened                                                                                             | `boolean` | `false`                |
+| `identifier`               | `identifier`                  | Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created. | `string`  | `createID('mg-panel')` |
+| `panelTitle` _(required)_  | `panel-title`                 | Panel title                                                                                                 | `string`  | `undefined`            |
+| `titleEditable`            | `title-editable`              | Panel title is editabled                                                                                    | `boolean` | `false`                |
+| `titlePattern`             | `title-pattern`               | Panel title pattern                                                                                         | `string`  | `undefined`            |
+| `titlePatternErrorMessage` | `title-pattern-error-message` | Panel title pattern error message                                                                           | `string`  | `undefined`            |
 
 
 ## Events
 
-| Event          | Description                     | Type                  |
-| -------------- | ------------------------------- | --------------------- |
-| `title-change` | Emmited event when title change | `CustomEvent<string>` |
+| Event             | Description                        | Type                   |
+| ----------------- | ---------------------------------- | ---------------------- |
+| `expanded-change` | Emmited event when expanded change | `CustomEvent<boolean>` |
+| `title-change`    | Emmited event when title change    | `CustomEvent<string>`  |
 
 
 ## Dependencies

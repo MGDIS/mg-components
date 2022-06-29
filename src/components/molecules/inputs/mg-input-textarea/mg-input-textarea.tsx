@@ -104,7 +104,7 @@ export class MgInputTextarea {
   @Prop() patternErrorMessage: string;
 
   /**
-   * Define input pattern error message
+   * Define the number of visible text lines for the control
    */
   @Prop() rows = 3;
 
@@ -137,6 +137,11 @@ export class MgInputTextarea {
    * Define input invalid state
    */
   @Prop({ mutable: true }) invalid: boolean;
+
+  /**
+   * Define if input is resizable
+   */
+  @Prop() resizable: 'none' | 'both' | 'horizontal' | 'vertical' = 'none';
 
   /**
    * Component classes
@@ -303,7 +308,12 @@ export class MgInputTextarea {
         isFieldset={false}
       >
         <textarea
-          class="mg-input__box"
+          class={{
+            'mg-input__box': true,
+            'mg-input__box--resizable': this.resizable === 'both',
+            'mg-input__box--resizable-horizontal': this.resizable === 'horizontal',
+            'mg-input__box--resizable-vertical': this.resizable === 'vertical',
+          }}
           value={this.value}
           id={this.identifier}
           name={this.name}
