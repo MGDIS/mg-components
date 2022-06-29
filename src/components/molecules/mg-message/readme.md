@@ -2,14 +2,14 @@
 
 ### Types
 
-**RG-01** : L'élément peut être de 4 types différents selon le message à indiquer:
+The element can be of four different types depending on the message to be indicated:
 
-- validation (vert)
-- information (bleu)
-- avertissement (orange)
-- erreur (rouge)
+- validation (green)
+- information (blue)
+- warning (orange)
+- error (red)
 
-**RG-02** : Lors de la mise en place d'un déclencheur (bouton...) qui peut provoquer l'affichage de messages. Par défaut, l'exécution du déclencheur efface les messages précédents dans l'écran du même type
+When a trigger (button...) is set up, it can trigger the display of a message. By default, the execution of the trigger erases the previous messages in the screen of the same type.
 
 ## Specs
 

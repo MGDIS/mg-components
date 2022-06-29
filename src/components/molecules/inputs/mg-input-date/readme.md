@@ -1,10 +1,10 @@
 ## Behavior
 
-**RUX** : Le comportement est celui natif du navigateur.
+The behavior is the native behavior of the browser.
 
 ### Theming
 
-Calendrier et déclencheur: Le style est celui natif du navigateur.
+Calendar and trigger: The style is the native one of the browser.
 
 <!-- Auto Generated Below -->
 

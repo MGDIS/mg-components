@@ -1,6 +1,6 @@
 ## Design
 
-L'affichage standard des "boules" à la place des caractères est le standard (suivant rendu du navigateur utilisé)
+The standard display of "bullets" instead of characters is the standard one (depending on the rendering of the used browser)
 
 <!-- Auto Generated Below -->
 

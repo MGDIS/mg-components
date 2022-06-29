@@ -1,16 +1,19 @@
 ## Design
 
-### Ordre des messages
+### Message order
 
-lorsque les messages sont affichés sous le champ l'ordre est le suivant :
-1. nombre de caractères restants
-2. aide à la saisie
-3. erreur
+When messages are displayed under the field the order is as follows:
 
-### Indication du nombre de caractères restants
+1. number of characters remaining
+2. input help
+3. error
 
-- lorsque le focus est sur le champ de saisie, un message s'affiche en dessous. le message est : "`<nbCar>` caractères disponibles", `<nbCar>` étant un compteur qui se met à jour dynamiquement en fonction de la saisie.
-- lorsque le focus n'est plus sur le champ de saisie, le message disparaît.
+### Indication of the number of characters remaining
+
+When the focus is on the input field, a message is displayed underneath. The message is: "`<nbCar>` characters available", `<nbCar>` being a counter that updates dynamically according to the input.
+When the focus is no longer on the input field, the message disappears.
+
+Translated with www.DeepL.com/Translator (free version)
 
 ![](./mg-character-left/doc/img/nombre-caracteres-restants.png)
 

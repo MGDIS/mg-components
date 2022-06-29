@@ -1,8 +1,8 @@
 ## Design
 
-Le badge est placé toujours par-dessus ou à côté de l'élément sur lequel il porte.
+The badge is always placed on top of or next to the element it is about.
 
-Le badge affiche un chiffre/nombre ou un caractère de ponctuation.
+The badge displays a number or a punctuation character.
 
 ## Specs
 

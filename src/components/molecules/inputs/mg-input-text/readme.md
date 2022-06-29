@@ -1,20 +1,20 @@
 ## Design
 
-### Indication du nombre de caractères restants
+### Indication of the number of characters left
 
-- lorsque le focus est sur le champ de saisie, un message s'affiche en dessous
-- le message est : "<nbCar> caractères disponibles", <nbCar> étant un compteur qui se met à jour dynamiquement en fonction de la saisie
-- lorsque le focus n'est plus sur le champ de saisie, le message disparaît
+- when the focus is on the input field, a message is displayed below
+- the message is: "<nbCar> characters left", <nbCar> being a counter that updates dynamically according to the input
+- when the focus is no longer on the input field, the message disappears
 
 ![](./mg-input-text/doc/img/mg-input-text-messages.png)
 
-### Valeur
+### Default value
 
-- par défaut limitée 400 caractères de type alpha numérique.
+- default limited to 400 alpha numeric characters.
 
 ## Use as search input
 
-Due to [accessibility recommendation](https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input/search#les_champs_de_recherche_et_l%E2%80%99accessibilit%C3%A9), an `<input type="search" />` must be used within a `<form role="search" />` we recommend to use mg-input-text as in dedicated story.
+Due to [accessibility recommendation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input/search#search_form_labels_and_accessibility), an `<input type="search" />` must be used within a `<form role="search" />` we recommend to use mg-input-text as from dedicated story.
 
 ## 🚨 Slot
 

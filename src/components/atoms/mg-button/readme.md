@@ -1,11 +1,13 @@
 ## Usage
 
-**RUX 01**: Un bouton d'action principale est majoritairement unique à l'écran, les autres boutons doivent être affichés en "secondaire", cela pour mettre en avant l'action principale.
-Ex : Validation, Enregistrement
+A primary action button is mostly unique on the screen, the other buttons must be displayed as "secondary", to highlight the primary action.
+Ex: Validation, Save
 
-**RUX 02**: Une tooltip doit être affichée au survol lorsque le bouton n'affiche qu'une icône non explicite sans libellé. La tooltip doit indiquer textuellement l'action du bouton.
+A tooltip must be displayed on hover when the button displays only a non-explicit icon without a label. The tooltip must indicate the action of the button.
 
-**RUX 03**: Un bouton qui lance un traitement potentiellement long est désactivé et affiche un loader le temps du traitement.
+A button that launches a potentially long process is disabled and displays a loader for the duration of the process.
+
+Translated with www.DeepL.com/Translator (free version)
 
 ## Specs
 

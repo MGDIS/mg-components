@@ -1,42 +1,42 @@
 ## Anatomy
 
-**RG-01** : Une modale possède :
+A modal has :
 
-- une croix en haut à droite
-- un titre
-- un corps composé de champs ou d'un message
-- un bouton de validation
-- un bouton d'annulation
+- a closing cross at the top right corner
+- a title
+- a body composed of fields or a message
+- a validation button
+- a cancel button
 
 ## Behavior
 
-**RG-02** : Au clic sur la croix, la fenêtre se ferme et aucun traitement n'est effectué.
+When clicking on the cross, the window closes and no processing is done.
 
-**RG-03** : Au clic sur le bouton d'annulation ou lors de l'appui de la touche `<Echap>`, la fenêtre se ferme et aucun traitement n'est effectué.
+When the cancel button is clicked or when the `<Escape>` key is pressed, the window closes and no processing is done.
 
-**RG-04** : Au clic sur le bouton de validation, le traitement est effectué et la fenêtre se ferme.
+When the validation button is clicked, processing is performed and the window closes.
 
-**RG-05** : Tant que l'utilisateur n'utilise pas sur un de ces 3 boutons, la modale ne se ferme pas.
+As long as the user does not press one of these three buttons, the modal does not close.
 
-**RG-06** : La modale permet de focaliser l'attention sur ce qu'elle demande : une confirmation ou une annulation.
-En ce sens le reste de l'écran ne doit pas être accessible :
+The modal allows to focus the attention on what it asks: a confirmation or a cancellation.
+In this sense the rest of the screen should not be accessible:
 
-- il est masqué par un backdrop.
-- le clic sur le backdrop ne ferme pas la fenêtre
+- it is hidden by a backdrop.
+- clicking on the backdrop does not close the window
 
-**RG-01** : Le titre de la fenêtre est écrit avec un nom
-Ex : Ajout de la valeur
+The title of the window is written with a name
+Ex : Add value
 
-**RG-02** : Le libellé du bouton de validation est le verbe à l'infinitif de l'action en cours.
-Eviter le verbe "Valider" si un plus explicite est possible
-Ex : "Ajouter" pour l'ajout d'une valeur
-"Supprimer" pour la suppression d'une valeur
-"Modifier" pour la modification d'une valeur
+The wording of the validation button is the infinitive verb of the current action.
+Avoid the verb "Validate" if a more explicit one is possible.
+Ex : "Add" for adding a value
+"Delete" to delete a value
+"Modify" to modify a value
 
-**RG-03** : Icone ou pas icone sur les boutons d'action ?
-Dans le cas d'une action ciblée, l'ico peut aider à la compréhension voir même rassurer > icone check qui valide l'action.
-Dans le cas d'un choix de confirmation/annulation : pas nécessaire voire superflu > le terme suffit "Enregistrer/Annuler",
-Ex : si je mets un check devant le terme "Supprimer" qui est le bouton de validation d'une suppression, le check renvoie à du positif alors que l'action de suppression est négative, et le bouton Annuler également, donc pour ne pas ajouter à la confusion ne pas mettre d'icone...
+Icon or not icon on the action buttons ?
+In the case of a targeted action, the ico can help to understand or even reassure > check icon that validates the action.
+In the case of a confirmation/cancellation choice: not necessary or even superfluous > the term "Save/Cancel" is enough,
+Ex: if I put a check in front of the term "Delete" which is the validation button of a deletion, the check refers to positive while the action of deletion is negative, and the Cancel button also, so not to add to the confusion not to put an icon ...
 
 ![](./mg-modal/doc/img/mg-modal.png)
 
@@ -82,9 +82,9 @@ Ex : si je mets un check devant le terme "Supprimer" qui est le bouton de valida
 
 ![](./mg-modal/doc/img/mg-modal-backdrop.png)
 
-- Couleur : noir
-- Intensité : 5
-- Luminosité : 3
+- Color : black
+- Intensity: 5
+- Brightness : 3
 
 <!-- Auto Generated Below -->
 

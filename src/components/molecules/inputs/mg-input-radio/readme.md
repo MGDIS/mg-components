@@ -1,13 +1,13 @@
 ## Usage
 
-- Toujours utilisé dans un groupe avec minimum 2 options
-- 1 seule option sélectionnée possible parmi toute les options du groupe
-- Le libellé est cliquable et sélectionne l'option
-- Le groupe peut être intialisé avec aucune valeur par défaut
+- Always used in a group with minimum 2 options
+- Only one selected option is possible from all the options in the group
+- The label is clickable and selects the option
+- The group can be initialized without any default value
 
 ### Theming
 
-Le style du bouton radio actif est celui du navigateur.
+The style of the active radio button is the browser one.
 
 ## Specs
 

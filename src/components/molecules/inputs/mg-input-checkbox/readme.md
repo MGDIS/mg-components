@@ -1,11 +1,11 @@
 ## Usage
 
-Notion de valeur VRAI/FAUX.
-Uniquement 2 valeurs possibles.
+True/False value notion.
+Only 2 possible values.
 
 ### Theming
 
-Le style de la case à cocher active est celui du navigateur.
+The style of the active checkbox is the browser style.
 
 ## Specs
 

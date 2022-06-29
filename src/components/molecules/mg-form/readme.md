@@ -2,9 +2,9 @@
 
 ![](./mg-form/doc/img/mg-form-anatomy.png)
 
-- zone pour message à caractère obligatoire
-- zone champs
-- zone actions (submit, cancel)
+- zone for required message
+- field area
+- actions area (submit, cancel)
 
 ## Example
 
