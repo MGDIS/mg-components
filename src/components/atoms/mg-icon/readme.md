@@ -25,8 +25,6 @@ Rule ok for all except info blue, but info only pictos are displayed in the font
 - Separator: "-" (dash 6). Basically the pictos are the "filled" version, but you don't need to specify it in the naming
 - Variant: "-outline". If picto variant with a background that is a full circle > add "-circle" ex : check-circle, check-circle-outline
 
-Translated with www.DeepL.com/Translator (free version)
-
 <!-- Auto Generated Below -->
 
 

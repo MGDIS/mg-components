@@ -7,8 +7,6 @@ A tooltip must be displayed on hover when the button displays only a non-explici
 
 A button that launches a potentially long process is disabled and displays a loader for the duration of the process.
 
-Translated with www.DeepL.com/Translator (free version)
-
 ## Specs
 
 ![](./mg-button/doc/img/mg-button-specs.png)

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-06-29T13:10:10",
+  "timestamp": "2022-06-29T13:30:27",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.17.0",
@@ -104,8 +104,8 @@
       "filePath": "./src/components/atoms/mg-button/mg-button.tsx",
       "encapsulation": "scoped",
       "tag": "mg-button",
-      "readme": "## Usage\n\nA primary action button is mostly unique on the screen, the other buttons must be displayed as \"secondary\", to highlight the primary action.\nEx: Validation, Save\n\nA tooltip must be displayed on hover when the button displays only a non-explicit icon without a label. The tooltip must indicate the action of the button.\n\nA button that launches a potentially long process is disabled and displays a loader for the duration of the process.\n\nTranslated with www.DeepL.com/Translator (free version)\n\n## Specs\n\n![](./mg-button/doc/img/mg-button-specs.png)\n\n## Placement\n\n![](./mg-button/doc/img/mg-button-placement.png)\n\n## Theming\n\n![](./mg-button/doc/img/mg-button-styles.png)\n",
-      "docs": "A primary action button is mostly unique on the screen, the other buttons must be displayed as \"secondary\", to highlight the primary action.\nEx: Validation, Save\n\nA tooltip must be displayed on hover when the button displays only a non-explicit icon without a label. The tooltip must indicate the action of the button.\n\nA button that launches a potentially long process is disabled and displays a loader for the duration of the process.\n\nTranslated with www.DeepL.com/Translator (free version)",
+      "readme": "## Usage\n\nA primary action button is mostly unique on the screen, the other buttons must be displayed as \"secondary\", to highlight the primary action.\nEx: Validation, Save\n\nA tooltip must be displayed on hover when the button displays only a non-explicit icon without a label. The tooltip must indicate the action of the button.\n\nA button that launches a potentially long process is disabled and displays a loader for the duration of the process.\n\n## Specs\n\n![](./mg-button/doc/img/mg-button-specs.png)\n\n## Placement\n\n![](./mg-button/doc/img/mg-button-placement.png)\n\n## Theming\n\n![](./mg-button/doc/img/mg-button-styles.png)\n",
+      "docs": "A primary action button is mostly unique on the screen, the other buttons must be displayed as \"secondary\", to highlight the primary action.\nEx: Validation, Save\n\nA tooltip must be displayed on hover when the button displays only a non-explicit icon without a label. The tooltip must indicate the action of the button.\n\nA button that launches a potentially long process is disabled and displays a loader for the duration of the process.",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -322,7 +322,7 @@
       "filePath": "./src/components/atoms/mg-character-left/mg-character-left.tsx",
       "encapsulation": "scoped",
       "tag": "mg-character-left",
-      "readme": "## Design\n\n### Message order\n\nWhen messages are displayed under the field the order is as follows:\n\n1. number of characters remaining\n2. input help\n3. error\n\n### Indication of the number of characters remaining\n\nWhen the focus is on the input field, a message is displayed underneath. The message is: \"`<nbCar>` characters available\", `<nbCar>` being a counter that updates dynamically according to the input.\nWhen the focus is no longer on the input field, the message disappears.\n\nTranslated with www.DeepL.com/Translator (free version)\n\n![](./mg-character-left/doc/img/nombre-caracteres-restants.png)\n",
+      "readme": "## Design\n\n### Message order\n\nWhen messages are displayed under the field the order is as follows:\n\n1. number of characters remaining\n2. input help\n3. error\n\n### Indication of the number of characters remaining\n\nWhen the focus is on the input field, a message is displayed underneath. The message is: \"`<nbCar>` characters available\", `<nbCar>` being a counter that updates dynamically according to the input.\nWhen the focus is no longer on the input field, the message disappears.\n\n![](./mg-character-left/doc/img/nombre-caracteres-restants.png)\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -592,7 +592,7 @@
       "filePath": "./src/components/atoms/mg-icon/mg-icon.tsx",
       "encapsulation": "shadow",
       "tag": "mg-icon",
-      "readme": "## Design\n\n### Standard\n\nSizes (px) :\n\n- 16x16 regular\n- 24x24 large\n- 36x36 extra-large\n\nColor: text of the page (mostly @color-dark)\n\n### Use alone with informative color\n\nThe use of a picto alone with an informative color must display the color in the background for accessibility reasons.\n\nThe colors to be used are variations of the standard colors, with the brightness increased by 20%.\n\nRule ok for all except info blue, but info only pictos are displayed in the font color most of the time.\n\n![](./mg-icon/doc/img/mg-icon-color-bg.png)\n\n### File naming\n\n- Separator: \"-\" (dash 6). Basically the pictos are the \"filled\" version, but you don't need to specify it in the naming\n- Variant: \"-outline\". If picto variant with a background that is a full circle > add \"-circle\" ex : check-circle, check-circle-outline\n\nTranslated with www.DeepL.com/Translator (free version)\n",
+      "readme": "## Design\n\n### Standard\n\nSizes (px) :\n\n- 16x16 regular\n- 24x24 large\n- 36x36 extra-large\n\nColor: text of the page (mostly @color-dark)\n\n### Use alone with informative color\n\nThe use of a picto alone with an informative color must display the color in the background for accessibility reasons.\n\nThe colors to be used are variations of the standard colors, with the brightness increased by 20%.\n\nRule ok for all except info blue, but info only pictos are displayed in the font color most of the time.\n\n![](./mg-icon/doc/img/mg-icon-color-bg.png)\n\n### File naming\n\n- Separator: \"-\" (dash 6). Basically the pictos are the \"filled\" version, but you don't need to specify it in the naming\n- Variant: \"-outline\". If picto variant with a background that is a full circle > add \"-circle\" ex : check-circle, check-circle-outline\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
