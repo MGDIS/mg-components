@@ -7,24 +7,24 @@ Notre composant "infobulle personnalisée" est appelé ici "tooltip"
 
 ## Behavior
 
-**RUX-01** : La tooltip doit s’afficher lorsque l’élément qui en permet l’affichage :
+La tooltip doit s’afficher lorsque l’élément qui en permet l’affichage :
 
 Est survolé par la souris.
 Prend le focus clavier.
 
-**RUX-02** : La tooltip doit être masquée lorsque l’élément qui en permet l’affichage :
+La tooltip doit être masquée lorsque l’élément qui en permet l’affichage :
 
 N’est plus survolé par la souris.
 Perd le focus clavier.
 Une pression de la touche Échap doit permettre de masquer l’infobulle.
 
-**RUX-03** : L’infobulle doit rester affichée lorsque son contenu est survolé par la souris.
+L’infobulle doit rester affichée lorsque son contenu est survolé par la souris.
 
-**RUX-04** : La tooltip peut être placée au dessus, à droite, en dessous, à gauche de l'élément qu'elle décrit.
+La tooltip peut être placée au dessus, à droite, en dessous, à gauche de l'élément qu'elle décrit.
 
 Par défaut, le message s'affiche en bas de l'élément.
 
-**RUX-05** : Si l'élément est situé au bord de l'écran, la tooltip se décale pour être toujours visible.
+Si l'élément est situé au bord de l'écran, la tooltip se décale pour être toujours visible.
 
 ## Specs
 

@@ -4,20 +4,20 @@ Un popover est plus enrichi qu'une tooltip mais moins bloquant qu'une modale
 
 ## Behavior
 
-**RUX-01** : la fenêtre est affichée au clic sur son déclencheur
+la fenêtre est affichée au clic sur son déclencheur
 
-**RUX-02** : la fenêtre est affichée à côté de son déclencheur, le plus souvent en dessous. Un triangle (en css) fait le lien entre le déclencheur et la fenêtre.
+la fenêtre est affichée à côté de son déclencheur, le plus souvent en dessous. Un triangle (en css) fait le lien entre le déclencheur et la fenêtre.
 
-**RUX-03** : la fenêtre se ferme:
+la fenêtre se ferme:
 
 - au clic sur son déclencheur ou
 - au clic en dehors de la fenêtre ou
 - à la pression de la touche ECHAP
 - au clic sur le bouton de fermeture en haut à droite
 
-**RUX-04** : la taille de la fenêtre est déterminée par le contenu (prévoir une taille max pour éviter des écueils)
+la taille de la fenêtre est déterminée par le contenu (prévoir une taille max pour éviter des écueils)
 
-**RUX-05** : le titre et le bouton fermer sont optionnels
+le titre et le bouton fermer sont optionnels
 
 ## Specs
 

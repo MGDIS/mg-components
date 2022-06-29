@@ -1,8 +1,8 @@
 ## Design
 
-**RUX-01** : Le badge est placé toujours par-dessus ou à côté de l'élément sur lequel il porte.
+Le badge est placé toujours par-dessus ou à côté de l'élément sur lequel il porte.
 
-**RUX-02** : Le badge affiche un chiffre/nombre ou un caractère de ponctuation.
+Le badge affiche un chiffre/nombre ou un caractère de ponctuation.
 
 ## Specs
 

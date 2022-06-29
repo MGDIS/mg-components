@@ -1,10 +1,10 @@
 ## Behavior
 
-**RUX-01** : La zone gauche du header affiche le libellé de l'item, cette zone est cliquable et permet de déplier/replier le volet.
+La zone gauche du header affiche le libellé de l'item, cette zone est cliquable et permet de déplier/replier le volet.
 Si aucun contenu n'est disponible, le volet ne peut être déplié.
 Lorsque le volet est déplié, l'icone est inversé verticalement.
 
-**RUX-02** : La zone droite du header peut accueillir tous composants.
+La zone droite du header peut accueillir tous composants.
 
 ## Anatomy
 

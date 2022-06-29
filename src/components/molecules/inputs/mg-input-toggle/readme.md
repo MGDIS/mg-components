@@ -1,12 +1,12 @@
 ## Usage
 
-**RUX-1** : Le clic sur toute la zone du composant fait alterner la valeur sélectionnée.
+Le clic sur toute la zone du composant fait alterner la valeur sélectionnée.
 
-**RUX-2** : La première valeur est toujours sélectionnée par défaut.
+La première valeur est toujours sélectionnée par défaut.
 
-**RUX-3** : Quand la propriété "on/off" est utilisée, la première valeur est toujours la valeur désactivée et le style est adapté.
+Quand la propriété "on/off" est utilisée, la première valeur est toujours la valeur désactivée et le style est adapté.
 
-**RUX-4** : Les valeurs doivent être retranscrites par du texte ou des icones.
+Les valeurs doivent être retranscrites par du texte ou des icones.
 
 ### Types
 
