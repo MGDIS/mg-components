@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-06-29T10:35:11",
+  "timestamp": "2022-06-29T11:08:18",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.17.0",
@@ -2791,7 +2791,7 @@
       "filePath": "./src/components/molecules/inputs/mg-input-text/mg-input-text.tsx",
       "encapsulation": "shadow",
       "tag": "mg-input-text",
-      "readme": "## Design\n\n### Indication du nombre de caractères restants\n\n- lorsque le focus est sur le champ de saisie, un message s'affiche en dessous\n- le message est : \"<nbCar> caractères disponibles\", <nbCar> étant un compteur qui se met à jour dynamiquement en fonction de la saisie\n- lorsque le focus n'est plus sur le champ de saisie, le message disparaît\n\n![](./mg-input-text/doc/img/caracteres-aide-a-la-saisie.png)\n\n### Valeur\n\n- par défaut limitée 400 caractères de type alpha numérique.\n\n## Use as search input\n\nDue to [accessibility recommendation](https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input/search#les_champs_de_recherche_et_l%E2%80%99accessibilit%C3%A9), an `<input type=\"search\" />` must be used within a `<form role=\"search\" />` we recommend to use mg-input-text as in dedicated story.\n\n## 🚨 Slot\n\nHorizontal spacing is not managed by the component, it must be defined in slot implementation.\n",
+      "readme": "## Design\n\n### Indication du nombre de caractères restants\n\n- lorsque le focus est sur le champ de saisie, un message s'affiche en dessous\n- le message est : \"<nbCar> caractères disponibles\", <nbCar> étant un compteur qui se met à jour dynamiquement en fonction de la saisie\n- lorsque le focus n'est plus sur le champ de saisie, le message disparaît\n\n![](./mg-input-text/doc/img/mg-input-text-messages.png)\n\n### Valeur\n\n- par défaut limitée 400 caractères de type alpha numérique.\n\n## Use as search input\n\nDue to [accessibility recommendation](https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input/search#les_champs_de_recherche_et_l%E2%80%99accessibilit%C3%A9), an `<input type=\"search\" />` must be used within a `<form role=\"search\" />` we recommend to use mg-input-text as in dedicated story.\n\n## 🚨 Slot\n\nHorizontal spacing is not managed by the component, it must be defined in slot implementation.\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
