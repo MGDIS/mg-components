@@ -4,16 +4,16 @@
 
 ## Specs
 
-### Espacements:
+### Spacing
 
 - Standard : @base = 10px
 - Large : @base = 18px
 
 ![](./mg-tabs/doc/img/mg-tabs-spacing.png)
 
-- si uniquement du texte, pas d'espacements supplémentaires,
-- si pas de badge : pas d'espacement supplémentaire à droite
-- si uniquement icone : pas d'espacement supplémentaire à droite
+- if only text, no extra spacing,
+- if no badge : no extra spacing on the right
+- if only icon : no extra spacing on the right
 
 ### Sizing
 
@@ -25,7 +25,7 @@
 
 ### Responsive
 
-#### Retours à la ligne (gestion actuelle)
+#### Line breaks (current management)
 
 ![](./mg-tabs/doc/img/mg-tabs-responsive.png)
 

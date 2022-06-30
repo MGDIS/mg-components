@@ -2,28 +2,28 @@
 
 ### Standard
 
-Tailles (px) :
+Sizes (px) :
 
 - 16x16 regular
 - 24x24 large
 - 36x36 extra-large
 
-Couleur : du texte de la page (majoritairement @color-dark)
+Color: text of the page (usually @color-dark)
 
-### Utilisation seul avec couleur informative
+### Use alone with informative color
 
-L'utilisation d'un picto seul portant une couleur informative doit afficher la couleur en fond pour des raisons d'accessibilité.
+When using a pictograph alone with an informative color, the color must be displayed in the background for accessibility reasons.
 
-Les couleurs à utiliser sont des dérivées des couleurs standards, dont le luminosité est augmenté de 20%.
+The colors to be used are variations of the standard colors, with the brightness increased by 20%.
 
-Règle ok pour toutes sauf le bleu de info, mais les pictos info seuls sont affichés dans la couleur de la police la plupart du temps.
+Rule applicable for all except "info" blue. "Info" pictographs without text are usually displayed in the font color.
 
 ![](./mg-icon/doc/img/mg-icon-color-bg.png)
 
-### Nommage des fichiers
+### File naming
 
-- Séparateur : "-" (tiret 6). De base les pictos sont la version "filled", mais pas besoin de le préciser dans le nommage
-- Variante : "-outline". Si variante de picto avec un fond qui est un cercle plein > ajouter "-circle" ex : check-circle, check-circle-outline
+- Separator: "-" (dash). By default, the pictographs are the "filled" version, but this doesn't need to be specified in the naming
+- Variant: "-outline". If pictograph variant has a background that has a full circle > add "-circle" ex : check-circle, check-circle-outline
 
 <!-- Auto Generated Below -->
 

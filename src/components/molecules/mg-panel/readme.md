@@ -1,10 +1,10 @@
 ## Behavior
 
-La zone gauche du header affiche le libellé de l'item, cette zone est cliquable et permet de déplier/replier le volet.
-Si aucun contenu n'est disponible, le volet ne peut être déplié.
-Lorsque le volet est déplié, l'icone est inversé verticalement.
+The left zone of the header displays the item label, this zone is clickable and allows the user to unfold/fold the panel.
+If no content is available, the panel cannot be unfolded.
+When the panel is unfolded, the icon is vertically inverted.
 
-La zone droite du header peut accueillir tous composants.
+The right area of the header can accommodate any component.
 
 ## Anatomy
 
@@ -20,7 +20,7 @@ La zone droite du header peut accueillir tous composants.
 
 ![](./mg-panel/doc/img/mg-panel-spacing.png)
 
-### Alignements
+### Alignments
 
 ![](./mg-panel/doc/img/mg-panel-align.png)
 

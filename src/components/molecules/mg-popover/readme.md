@@ -1,23 +1,23 @@
 ## Usage
 
-Un popover est plus enrichi qu'une tooltip mais moins bloquant qu'une modale
+A popover is more enhanced than a tooltip but less blocking than a modal.
 
 ## Behavior
 
-la fenêtre est affichée au clic sur son déclencheur
+The window is displayed when clicking on its trigger.
 
-la fenêtre est affichée à côté de son déclencheur, le plus souvent en dessous. Un triangle (en css) fait le lien entre le déclencheur et la fenêtre.
+The window is displayed next to its trigger, usually below it. A triangle (in css) makes the link between the trigger and the window.
 
-la fenêtre se ferme:
+The window closes:
 
-- au clic sur son déclencheur ou
-- au clic en dehors de la fenêtre ou
-- à la pression de la touche ECHAP
-- au clic sur le bouton de fermeture en haut à droite
+- when clicking on its trigger
+- clicking outside the window
+- when the ESC key is pressed
+- when clicking on the close button at the top right corner
 
-la taille de la fenêtre est déterminée par le contenu (prévoir une taille max pour éviter des écueils)
+The size of the window is determined by the content (set a maximum size to avoid problems).
 
-le titre et le bouton fermer sont optionnels
+The title and the close button are optional.
 
 ## Specs
 
@@ -33,11 +33,11 @@ le titre et le bouton fermer sont optionnels
 
 ![](./mg-popover/doc/img/mg-popover-sizing.png)
 
-### Alignements
+### Alignments
 
 ![](./mg-popover/doc/img/mg-popover-align.png)
 
-### Positionnements
+### Positioning
 
 #### Item
 

@@ -1,11 +1,11 @@
 ## Design
 
-Le comportement est celui natif du navigateur
+The behavior is the native behavior of the browser
 
-Le placeholder de la liste est Sélectionnez une valeur
+The placeholder of the list is "Select a value".
 
-**RUI-01** : Le style et la position du chevron à droite du champ sont ceux du natif du navigateur.
-L'espacement entre le texte et le chevron est d'au moins 10px.
+The style and position of the chevron on the right of the field are those of the native browser.
+The spacing between the text and the chevron is at least 10px.
 
 <!-- Auto Generated Below -->
 

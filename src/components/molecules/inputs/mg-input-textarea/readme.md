@@ -1,19 +1,19 @@
 ## Design
 
-### Indication du nombre de caractères restants
+### Indication of the number of characters left
 
-- lorsque le focus est sur le champ de saisie, un message s'affiche en dessous
-- le message est : "<nbCar> caractères disponibles", <nbCar> étant un compteur qui se met à jour dynamiquement en fonction de la saisie
-- lorsque le focus n'est plus sur le champ de saisie, le message disparaît
+- when the focus is on the input field, a message is displayed below
+- the message is: "<nbCar> characters left", <nbCar> being a counter that updates dynamically according to the input
+- when the focus is no longer on the input field, the message disappears
 
-### Valeur
+### Value
 
-- par défaut limitée 4000 caractères de type alpha numérique.
+- by default limited to 4000 alpha numeric characters.
 
 ### Dimensions
 
-- la hauteur du composant est par défaut de 3 lignes de texte (cette valeur est configurable)
-- le champ est retaillable en cliquant en bas à droite de la zone de saisie
+- the height of the component is by default 3 lines of text (this value is configurable)
+- the field can be resized by clicking on the bottom right of the input field
 
 <!-- Auto Generated Below -->
 

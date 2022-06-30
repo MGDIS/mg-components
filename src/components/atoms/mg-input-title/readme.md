@@ -1,10 +1,10 @@
 ## Design
 
-### Libellé
+### Label
 
-- le libellé peut être positionné à gauche ou au dessus du champ de saisie.
-- l'alignement du texte est à droite.
-- le libellé peut être sur une ou plusieurs lignes.
+- the label can be positioned on the left or above the input field.
+- the text is to be right aligned
+- the label can be on one or more lines.
 
 ### Label on top
 
@@ -18,9 +18,9 @@
 
 ![](./mg-input-title/doc/img/mg-input-title-states.png)
 
-### Formulaire
+### Form
 
-#### Espacements
+#### Spacing
 
 ![](./mg-input-title/doc/img/mg-input-title-spacing.png)
 

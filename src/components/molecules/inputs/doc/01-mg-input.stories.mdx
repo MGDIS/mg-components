@@ -1,53 +1,49 @@
-import { Meta } from '@storybook/addon-docs/blocks';
-
-<Meta title="Molecules/Inputs/mg-input" />
-
 # Inputs
 
 ## UX
 
-### Libellé
+### Label
 
-- le libellé est situé à gauche du champ de saisie
-- l'alignement du texte est à droite
-- le libellé peut être sur une ou plusieurs lignes
-- le libellé peut être positionné au dessus du champ de saisie
+- the label is located on the left of the input field
+- the text is to be right aligned
+- the label can be on one or more lines
+- the label can be positioned above the input field
 
-### Valeur saisie incorrecte
+### Incorrect value entered
 
-- le libellé du champ est affiché en rouge
-- le cadre de la zone de saisie est affiché en rouge
-- un message d'alerte est affiché en rouge en dessous de la zone de saisie
-- si un "i" informatif suit le champ, il est affiché en rouge
+- the field label is displayed in red
+- the frame of the input field is displayed in red
+- an alert message is displayed in red below the input field
+- if an informative "i" follows the field, it is displayed in red
 
-### Aide à la saisie
+### Input help
 
-lorsque le focus est sur le champ de saisie, un message s'affiche en dessous
-le message qui s'affiche indique le format attendu par le champ de saisie ("exemple : adressemail@gmail.com" ou "format attendu : JJ / MM / AAAA (ex : 13/04/2019)
+When the focus is on the input field, a message is displayed below.
+The message displayed indicates the format expected by the input field ("example: email@provider.com" or "expected format: DD/MM/YYYY (ex: 13/04/2019)
 
-### Ordre des messages
+### Message order
 
-lorsque les messages sont affichés sous le champ l'ordre est le suivant :
+When the messages are displayed under the field the order is as follows:
 
-1. nombre de caractères restants
-2. aide à la saisie
-3. erreur
+1. number of characters left
+2. input help
+3. error
 
 ### Placeholder
 
-le placeholder ne doit pas être utilisé comme une aide à la saisie
-♿ RGAA : Le placeholder n’est pas considéré comme une étiquette valide au regard du RGAA donc n'est pas soumis à un ratio pour le contraste.
+The placeholder should not be used as an input help.
+♿ RGAA: The placeholder is not considered a valid label under the RGAA so is not subject to a contrast ratio.
 
-### Lecture seule
+### Read only
 
-la valeur n'est plus modifiable
-le champ de saisie ne possède plus de bordure ni de fond
-la valeur est affichée en gras
-s'il n'y a pas de valeur renseignée, rien n'est affiché
+The value is no longer editable.
+The input field no longer has a border or background.
+The value is displayed in bold.
+If there is no value entered, nothing is displayed.
 
-### Champ requis
+### Required field
 
-l'astérisque est affichée quel que soit l'état du champ : en saisie, en lecture seule, désactivé
+The asterisk is displayed regardless of the status of the field: input, read-only, disabled.
 
 ## Specs
 
@@ -62,9 +58,9 @@ l'astérisque est affichée quel que soit l'état du champ : en saisie, en lectu
 #### Placements
 
 ![](./inputs/doc/img/mg-input-base-alignments.png)
-le "i" sera positionné à côté du libellé dans une prochaine version, pour le moment il suit l'input
+The "i" will be positioned next to the label in a future version, for the moment it follows the input.
 
-#### Formes
+#### Forms
 
 ![](./inputs/doc/img/mg-input-base-shapes.png)
 
@@ -78,7 +74,7 @@ le "i" sera positionné à côté du libellé dans une prochaine version, pour l
 
 ![](./inputs/doc/img/mg-input-base-messages-fonts.png)
 
-#### Styles / états
+#### Styles / states
 
 ![](./inputs/doc/img/mg-input-base-styles.png)
 
@@ -86,7 +82,7 @@ le "i" sera positionné à côté du libellé dans une prochaine version, pour l
 
 ![](./inputs/doc/img/mg-input-base-messages.png)
 
-##### En erreur
+##### Errors
 
 ![](./inputs/doc/img/mg-input-base-errors.png)
 

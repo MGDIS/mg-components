@@ -1,34 +1,34 @@
 ## Usage
 
-Les infobulles sont des messages qui permettent d’obtenir une information complémentaire sur un élément.
-Elles se présentent sous la forme d’un message qui apparaît au survol et à la prise de focus clavier d’un élément.
-Les infobulles sont dites « personnalisées » lorsqu’elles ne sont pas construites sur la base du code HTML standard prévu pour ces éléments par la spécification : l’attribut title.
-Notre composant "infobulle personnalisée" est appelé ici "tooltip"
+Tooltips are messages that provide additional information about an element.
+They are presented as a message that appears when an element is hovered over or when the keyboard is focused.
+Tooltips are called "custom" when they are not built on the basis of the standard HTML code provided for these elements by the specification: the title attribute.
+Our "custom tooltip" component is called "tooltip" here.
 
 ## Behavior
 
-La tooltip doit s’afficher lorsque l’élément qui en permet l’affichage :
+The tooltip must be displayed when the element that allows its display :
 
-Est survolé par la souris.
-Prend le focus clavier.
+Is hovered over by the mouse.
+Takes the keyboard focus.
 
-La tooltip doit être masquée lorsque l’élément qui en permet l’affichage :
+The tooltip must be hidden when the element that allows its display :
 
-N’est plus survolé par la souris.
-Perd le focus clavier.
-Une pression de la touche Échap doit permettre de masquer l’infobulle.
+Is no longer hovered over by the mouse.
+Loses the keyboard focus.
+Pressing the Escape key must hide the tooltip.
 
-L’infobulle doit rester affichée lorsque son contenu est survolé par la souris.
+The tooltip must remain displayed when its content is hovered over by the mouse.
 
-La tooltip peut être placée au dessus, à droite, en dessous, à gauche de l'élément qu'elle décrit.
+The tooltip can be placed above, to the right, below or to the left of the element it describes.
 
-Par défaut, le message s'affiche en bas de l'élément.
+By default, the message is displayed at the bottom of the element.
 
-Si l'élément est situé au bord de l'écran, la tooltip se décale pour être toujours visible.
+If the element is located at the edge of the screen, the tooltip is shifted to be always visible.
 
 ## Specs
 
-### Formes
+### Shapes
 
 ![](./mg-tooltip/doc/img/mg-tooltip-shape.png)
 
@@ -36,26 +36,26 @@ Si l'élément est situé au bord de l'écran, la tooltip se décale pour être 
 
 ![](./mg-tooltip/doc/img/mg-tooltip-font.png)
 
-### Espacements
+### Spacing
 
 ![](./mg-tooltip/doc/img/mg-tooltip-spaces.png)
 
-### Alignements
+### Alignments
 
 ![](./mg-tooltip/doc/img/mg-tooltip-alignments-text.png)
 
-### Positionnement
+### Positioning
 
 Triangle is always centered on the call component
 
 ![](./mg-tooltip/doc/img/mg-tooltip-positioning.png)
 ![](./mg-tooltip/doc/img/mg-tooltip-positioning2.png)
 
-### Couleurs
+### Colors
 
 ![](./mg-tooltip/doc/img/mg-tooltip-colors.png)
 
-### Tailles
+### Sizes
 
 ![](./mg-tooltip/doc/img/mg-tooltip-sizing.png)
 

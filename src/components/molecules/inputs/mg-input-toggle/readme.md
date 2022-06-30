@@ -1,12 +1,12 @@
 ## Usage
 
-Le clic sur toute la zone du composant fait alterner la valeur sélectionnée.
+Clicking anywhere on the entire component area toggles the selected value.
 
-La première valeur est toujours sélectionnée par défaut.
+The first value is always selected by default.
 
-Quand la propriété "on/off" est utilisée, la première valeur est toujours la valeur désactivée et le style est adapté.
+When the "on/off" property is used, the first value is always the disabled value and the style is adjusted.
 
-Les valeurs doivent être retranscrites par du texte ou des icones.
+The values must be transcribed by texts or icons.
 
 ### Types
 

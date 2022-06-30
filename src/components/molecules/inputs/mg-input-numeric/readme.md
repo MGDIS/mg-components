@@ -1,26 +1,26 @@
 ## Usage
 
-**RG-01** : Un champ montant est un champ numérique. Par défaut il est limité à 16 caractères (virgule comprise).
+An amount field is a numeric field. By default it is limited to 16 characters (including comma).
 
-**RG-02** : Il n'est pas possible de saisir des caractères autre que des chiffres, "," ou "."
+It is not possible to enter characters other than numbers, "," or ".".
 
-**RG-03** : L'arrondi se fait à deux chiffres après la virgule.
+Rounding is to two digits after the decimal point.
 
-**RG-04** : Il est impossible de saisir plus de deux chiffres après la virgule.
+It is not possible to enter more than two digits after the decimal point.
 
-**RG-05** : Il est possible de préciser une unité à la suite du champ pour les entiers et les décimaux. Pour les monétaires, le symbole de la devise est positionné dans la zone de saisie, à la suite de la valeur.
+It is possible to specify a unit after the field for integers and decimals. For currencies, the symbol is positioned in the input field, following the value.
 
 ## Specs
 
-### Placements
+### Positioning
 
 ![](./mg-input-numeric/doc/img/mg-input-numeric-positioning.png)
 
-### Positionnement de l'unité
+### Unit positioning
 
 ![](./mg-input-numeric/doc/img/mg-input-numeric-unit.png)
 
-A gérer via la mise en place du composant en utilisant un caractère "espace" avant le terme de l'unité
+To be managed when setting up the component by using a "space" character before the term of the unit
 
 ## 🚨 Slot
 
