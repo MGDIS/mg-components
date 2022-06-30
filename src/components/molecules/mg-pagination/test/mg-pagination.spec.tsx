@@ -28,6 +28,12 @@ describe('mg-pagination', () => {
         expect(page.root).toMatchSnapshot();
       }
     });
+
+    test('Should set custom label', async () => {
+      const totalPages = 2;
+      const page = await getPage({ totalPages, identifier: 'id', label: 'custom label' });
+      expect(page.root).toMatchSnapshot();
+    });
   });
 
   describe('errors', () => {

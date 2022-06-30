@@ -888,7 +888,7 @@ exports[`mg-input-radio display error with displayError component's public metho
           My help text
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
-          Ce champ est obligatoire.
+          This field is required.
         </div>
       </div>
     </fieldset>
@@ -933,7 +933,7 @@ exports[`mg-input-radio validity, case next state is disabled validity ({ validi
           </ul>
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
-          Ce champ est obligatoire.
+          This field is required.
         </div>
       </div>
     </fieldset>
@@ -978,7 +978,7 @@ exports[`mg-input-radio validity, case next state is disabled validity ({ validi
           </ul>
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
-          Ce champ est obligatoire.
+          This field is required.
         </div>
       </div>
     </fieldset>
@@ -1023,7 +1023,7 @@ exports[`mg-input-radio validity, case next state is readonly validity ({ validi
           </ul>
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
-          Ce champ est obligatoire.
+          This field is required.
         </div>
       </div>
     </fieldset>

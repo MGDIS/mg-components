@@ -1,7 +1,7 @@
 import { Component, Element, Event, EventEmitter, h, Prop, State, Watch } from '@stencil/core';
 import { createID, ClassList } from '../../../utils/components.utils';
 import { variants } from './mg-message.conf';
-import { messages } from '../../../locales';
+import { initLocales } from '../../../locales';
 
 @Component({
   tag: 'mg-message',
@@ -17,6 +17,9 @@ export class MgMessage {
 
   // Stored timer setted when hide action is run from setTimeOut
   private storedTimer: ReturnType<typeof setTimeout> = null;
+
+  // Locales
+  private messages;
 
   /**************
    * Decorators *
@@ -162,6 +165,8 @@ export class MgMessage {
     }
     this.validateDelay(this.delay);
     this.validateHide(this.hide);
+    // Get locales
+    this.messages = initLocales(this.element).messages;
   }
 
   /**
@@ -188,7 +193,7 @@ export class MgMessage {
         </div>
         {this.closeButton && (
           <span class="mg-message__close-button">
-            <mg-button identifier={this.closeButtonId} is-icon variant="flat" label={messages.message.closeButton} onClick={this.handleClose}>
+            <mg-button identifier={this.closeButtonId} is-icon variant="flat" label={this.messages.message.closeButton} onClick={this.handleClose}>
               <mg-icon icon="cross"></mg-icon>
             </mg-button>
           </span>

@@ -1,7 +1,7 @@
-import { Component, Event, h, Prop, EventEmitter, State, Watch, Method } from '@stencil/core';
+import { Component, Element, Event, h, Prop, EventEmitter, State, Watch, Method } from '@stencil/core';
 import { MgInput } from '../MgInput';
 import { createID, ClassList } from '../../../../utils/components.utils';
-import { messages } from '../../../../locales';
+import { initLocales } from '../../../../locales';
 import { CheckboxItem, CheckboxValue } from './mg-input-checkbox.conf';
 import { InputClass } from '../MgInput.conf';
 
@@ -30,9 +30,17 @@ export class MgInputCheckbox {
   // HTML selector
   private inputs: HTMLInputElement[] = [];
 
+  // Locales
+  private messages;
+
   /**************
    * Decorators *
    **************/
+
+  /**
+   * Get component DOM element
+   */
+  @Element() element: HTMLMgInputCheckboxElement;
 
   /**
    * Component value
@@ -213,7 +221,7 @@ export class MgInputCheckbox {
     // Set error message
     this.errorMessage = undefined;
     if (!this.valid && invalidElement.validity.valueMissing) {
-      this.errorMessage = messages.errors.required;
+      this.errorMessage = this.messages.errors.required;
     }
 
     // Update class
@@ -243,7 +251,8 @@ export class MgInputCheckbox {
   componentWillLoad(): ReturnType<typeof setTimeout> {
     // Check values format
     this.validateValue(this.value);
-
+    // Get locales
+    this.messages = initLocales(this.element).messages;
     // Check validity when component is ready
     // return a promise to process action only in the FIRST render().
     // https://stenciljs.com/docs/component-lifecycle#componentwillload

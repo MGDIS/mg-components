@@ -3,7 +3,7 @@ import { newSpecPage } from '@stencil/core/testing';
 import { MgInputText } from '../mg-input-text';
 import { MgButton } from '../../../../atoms/mg-button/mg-button';
 import { MgIcon } from '../../../../atoms/mg-icon/mg-icon';
-import { messages } from '../../../../../locales';
+import messages from '../../../../../locales/en/messages.json';
 
 const getPage = (args, content?) => {
   const page = newSpecPage({

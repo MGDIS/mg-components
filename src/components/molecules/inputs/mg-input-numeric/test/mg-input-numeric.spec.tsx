@@ -3,7 +3,7 @@ import { newSpecPage } from '@stencil/core/testing';
 import { MgInputNumeric } from '../mg-input-numeric';
 import { MgButton } from '../../../../atoms/mg-button/mg-button';
 import { MgIcon } from '../../../../atoms/mg-icon/mg-icon';
-import { messages } from '../../../../../locales';
+import messages from '../../../../../locales/en/messages.json';
 import { localeCurrency, localeNumber } from '../../../../../utils/locale.utils';
 import { types } from '../mg-input-numeric.conf';
 
@@ -176,20 +176,20 @@ describe('mg-input-numeric', () => {
       if (args.min !== undefined && args.max === undefined) {
         expect(page.rootInstance.errorMessage).toEqual(
           messages.errors.numeric.min
-            .replace('{min}', `${type === 'currency' ? localeCurrency(args.min) : localeNumber(args.min)}`)
-            .replace('{max}', `${type === 'currency' ? localeCurrency(args.max) : localeNumber(args.max)}`),
+            .replace('{min}', `${type === 'currency' ? localeCurrency(args.min, 'en', 'USD') : localeNumber(args.min, 'en')}`)
+            .replace('{max}', `${type === 'currency' ? localeCurrency(args.max, 'en', 'USD') : localeNumber(args.max, 'en')}`),
         );
       } else if (args.min === undefined && args.max !== undefined) {
         expect(page.rootInstance.errorMessage).toEqual(
           messages.errors.numeric.max
-            .replace('{min}', `${type === 'currency' ? localeCurrency(args.min) : localeNumber(args.min)}`)
-            .replace('{max}', `${type === 'currency' ? localeCurrency(args.max) : localeNumber(args.max)}`),
+            .replace('{min}', `${type === 'currency' ? localeCurrency(args.min, 'en', 'USD') : localeNumber(args.min, 'en')}`)
+            .replace('{max}', `${type === 'currency' ? localeCurrency(args.max, 'en', 'USD') : localeNumber(args.max, 'en')}`),
         );
       } else if (args.min !== undefined && args.max !== undefined) {
         expect(page.rootInstance.errorMessage).toEqual(
           messages.errors.numeric.minMax
-            .replace('{min}', `${type === 'currency' ? localeCurrency(args.min) : localeNumber(args.min)}`)
-            .replace('{max}', `${type === 'currency' ? localeCurrency(args.max) : localeNumber(args.max)}`),
+            .replace('{min}', `${type === 'currency' ? localeCurrency(args.min, 'en', 'USD') : localeNumber(args.min, 'en')}`)
+            .replace('{max}', `${type === 'currency' ? localeCurrency(args.max, 'en', 'USD') : localeNumber(args.max, 'en')}`),
         );
       }
 

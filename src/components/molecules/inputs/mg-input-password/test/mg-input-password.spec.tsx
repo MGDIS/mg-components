@@ -1,7 +1,7 @@
 import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
 import { MgInputPassword } from '../mg-input-password';
-import { messages } from '../../../../../locales';
+import messages from '../../../../../locales/en/messages.json';
 
 const getPage = args => {
   const page = newSpecPage({

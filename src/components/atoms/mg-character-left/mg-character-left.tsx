@@ -1,5 +1,5 @@
-import { Component, h, Prop, Watch } from '@stencil/core';
-import { messages } from '../../../locales';
+import { Component, Element, h, Prop, Watch } from '@stencil/core';
+import { initLocales } from '../../../locales';
 
 @Component({
   tag: 'mg-character-left',
@@ -18,6 +18,11 @@ export class MgCharacterLeft {
    **************/
 
   /**
+   * Get component DOM element
+   */
+  @Element() element: HTMLMgCharacterLeftElement;
+
+  /**
    * Sets an `id` attribute.
    * Needed by the input for accessibility `aria-decribedby`.
    */
@@ -27,7 +32,7 @@ export class MgCharacterLeft {
    * Template to display remaining characters.
    * Must have {counter} inside
    */
-  @Prop() template: string = messages.nbCharLeft;
+  @Prop({ mutable: true }) template: string;
   @Watch('template')
   validateTemplate(newValue: string): void {
     if (typeof newValue !== 'string' || newValue === '' || newValue.indexOf(this.mustacheCounter) === -1) {
@@ -70,8 +75,14 @@ export class MgCharacterLeft {
    * @returns {void}
    */
   componentWillLoad(): void {
-    this.validateTemplate(this.template);
     this.validateMaxlength(this.maxlength);
+    // Validate template if defined, otherwise get default message
+    if (this.template !== undefined) {
+      this.validateTemplate(this.template);
+    } else {
+      const { messages } = initLocales(this.element);
+      this.template = messages.nbCharLeft;
+    }
   }
 
   /**

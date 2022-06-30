@@ -2,7 +2,7 @@ import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
 import { MgInputRadio } from '../mg-input-radio';
 import { RadioOption } from '../mg-input-radio.conf';
-import { messages } from '../../../../../locales';
+import messages from '../../../../../locales/en/messages.json';
 
 const getPage = args => {
   const page = newSpecPage({

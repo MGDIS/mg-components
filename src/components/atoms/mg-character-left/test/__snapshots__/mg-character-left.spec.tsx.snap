@@ -6,7 +6,7 @@ exports[`mg-character-left Should render nb char left for blu blu blu blu blu re
     <strong>
       104
     </strong>
-    caractères disponibles.
+    characters left.
   </span>
 </mg-character-left>
 `;
@@ -17,7 +17,7 @@ exports[`mg-character-left Should render nb char left for blu blu blu blu blu re
     <strong>
       215
     </strong>
-    caractères disponibles.
+    characters left.
   </span>
 </mg-character-left>
 `;
@@ -28,7 +28,7 @@ exports[`mg-character-left Should render nb char left for blu blu blu blu blu re
     <strong>
       181
     </strong>
-    caractères disponibles.
+    characters left.
   </span>
 </mg-character-left>
 `;
@@ -39,7 +39,7 @@ exports[`mg-character-left Should render nb char left for blu renders 1`] = `
     <strong>
       120
     </strong>
-    caractères disponibles.
+    characters left.
   </span>
 </mg-character-left>
 `;
@@ -50,7 +50,7 @@ exports[`mg-character-left Should render nb char left for blu renders 2`] = `
     <strong>
       231
     </strong>
-    caractères disponibles.
+    characters left.
   </span>
 </mg-character-left>
 `;
@@ -61,7 +61,7 @@ exports[`mg-character-left Should render nb char left for blu renders 3`] = `
     <strong>
       197
     </strong>
-    caractères disponibles.
+    characters left.
   </span>
 </mg-character-left>
 `;
@@ -72,7 +72,7 @@ exports[`mg-character-left Should render nb char left for blublu renders 1`] = `
     <strong>
       117
     </strong>
-    caractères disponibles.
+    characters left.
   </span>
 </mg-character-left>
 `;
@@ -83,7 +83,7 @@ exports[`mg-character-left Should render nb char left for blublu renders 2`] = `
     <strong>
       228
     </strong>
-    caractères disponibles.
+    characters left.
   </span>
 </mg-character-left>
 `;
@@ -94,7 +94,7 @@ exports[`mg-character-left Should render nb char left for blublu renders 3`] = `
     <strong>
       194
     </strong>
-    caractères disponibles.
+    characters left.
   </span>
 </mg-character-left>
 `;

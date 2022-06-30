@@ -526,7 +526,7 @@ exports[`mg-input-checkbox Should trigger events, case validity check false 2`] 
           My help text
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
-          Ce champ est obligatoire.
+          This field is required.
         </div>
       </div>
     </fieldset>
@@ -709,7 +709,7 @@ exports[`mg-input-checkbox validity, case next state is disabled display error w
           My help text
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
-          Ce champ est obligatoire.
+          This field is required.
         </div>
       </div>
     </fieldset>
@@ -757,7 +757,7 @@ exports[`mg-input-checkbox validity, case next state is disabled validity ({ val
           My help text
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
-          Ce champ est obligatoire.
+          This field is required.
         </div>
       </div>
     </fieldset>
@@ -805,7 +805,7 @@ exports[`mg-input-checkbox validity, case next state is disabled validity ({ val
           My help text
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
-          Ce champ est obligatoire.
+          This field is required.
         </div>
       </div>
     </fieldset>
@@ -898,7 +898,7 @@ exports[`mg-input-checkbox validity, case next state is readonly display error w
           My help text
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
-          Ce champ est obligatoire.
+          This field is required.
         </div>
       </div>
     </fieldset>
@@ -946,7 +946,7 @@ exports[`mg-input-checkbox validity, case next state is readonly validity ({ val
           My help text
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
-          Ce champ est obligatoire.
+          This field is required.
         </div>
       </div>
     </fieldset>
@@ -976,7 +976,7 @@ exports[`mg-input-checkbox validity, case next state is readonly validity ({ val
           My help text
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
-          Ce champ est obligatoire.
+          This field is required.
         </div>
       </div>
     </fieldset>

@@ -2,7 +2,7 @@ import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
 import { MgInputSelect } from '../mg-input-select';
 import { SelectOption } from '../mg-input-select.conf';
-import { messages } from '../../../../../locales';
+import messages from '../../../../../locales/en/messages.json';
 
 const getPage = async args => {
   const page = newSpecPage({

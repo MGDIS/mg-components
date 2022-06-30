@@ -1,7 +1,7 @@
 import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
 import { MgInputDate } from '../mg-input-date';
-import { messages } from '../../../../../locales';
+import messages from '../../../../../locales/en/messages.json';
 import { localeDate } from '../../../../../utils/locale.utils';
 
 const getPage = args => {
@@ -127,7 +127,7 @@ describe('mg-input-date', () => {
       } else if (valueMissing) {
         expect(page.rootInstance.errorMessage).toEqual(messages.errors.required);
       } else if (badInput) {
-        expect(page.rootInstance.errorMessage).toEqual(messages.errors.date.badInput.replace('{min}', min !== undefined ? localeDate(min) : '01/01/1900'));
+        expect(page.rootInstance.errorMessage).toEqual(messages.errors.date.badInput.replace('{min}', localeDate(min !== undefined ? min : '1900-01-01', 'en')));
       }
       expect(page.rootInstance.valid).toEqual(validity);
       expect(page.rootInstance.invalid).toEqual(!validity);
@@ -167,13 +167,13 @@ describe('mg-input-date', () => {
     await page.waitForChanges();
 
     if (args.min !== undefined && args.max === undefined) {
-      expect(page.rootInstance.errorMessage).toEqual(messages.errors.date.min.replace('{min}', localeDate(date.middle)));
+      expect(page.rootInstance.errorMessage).toEqual(messages.errors.date.min.replace('{min}', localeDate(date.middle, 'en')));
     } else if (args.min === undefined && args.max !== undefined) {
-      expect(page.rootInstance.errorMessage).toEqual(messages.errors.date.max.replace('{max}', localeDate(date.middle)));
+      expect(page.rootInstance.errorMessage).toEqual(messages.errors.date.max.replace('{max}', localeDate(date.middle, 'en')));
     } else if (args.min !== undefined && args.max !== undefined && args.value === date.first) {
-      expect(page.rootInstance.errorMessage).toEqual(messages.errors.date.minMax.replace('{min}', localeDate(date.middle)).replace('{max}', localeDate(date.last)));
+      expect(page.rootInstance.errorMessage).toEqual(messages.errors.date.minMax.replace('{min}', localeDate(date.middle, 'en')).replace('{max}', localeDate(date.last, 'en')));
     } else if (args.min !== undefined && args.max !== undefined && args.value === date.last) {
-      expect(page.rootInstance.errorMessage).toEqual(messages.errors.date.minMax.replace('{min}', localeDate(date.first)).replace('{max}', localeDate(date.middle)));
+      expect(page.rootInstance.errorMessage).toEqual(messages.errors.date.minMax.replace('{min}', localeDate(date.first, 'en')).replace('{max}', localeDate(date.middle, 'en')));
     }
 
     expect(page.rootInstance.valid).toBeFalsy();

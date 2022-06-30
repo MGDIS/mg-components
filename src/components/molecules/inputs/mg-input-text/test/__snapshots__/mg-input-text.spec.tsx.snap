@@ -385,7 +385,7 @@ exports[`mg-input-text display error with displayError component's public method
           <slot name="append-input"></slot>
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
-          Ce champ est obligatoire.
+          This field is required.
         </div>
       </div>
     </div>
@@ -406,7 +406,7 @@ exports[`mg-input-text validity, case next state is disabled validity ({ validit
           <slot name="append-input"></slot>
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
-          Ce champ est obligatoire.
+          This field is required.
         </div>
       </div>
     </div>
@@ -427,7 +427,7 @@ exports[`mg-input-text validity, case next state is disabled validity ({ validit
           <slot name="append-input"></slot>
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
-          Ce champ est obligatoire.
+          This field is required.
         </div>
       </div>
     </div>
@@ -448,7 +448,7 @@ exports[`mg-input-text validity, case next state is readonly validity ({ validit
           <slot name="append-input"></slot>
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
-          Ce champ est obligatoire.
+          This field is required.
         </div>
       </div>
     </div>

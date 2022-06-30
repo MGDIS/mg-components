@@ -15,7 +15,7 @@ exports[`mg-input-numeric type currency Should render with args {
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <input aria-describedby="" class="mg-input__box" disabled="" id="identifier" name="identifier" type="text" value="1 234 567 890,00&nbsp;€">
+          <input aria-describedby="" class="mg-input__box" disabled="" id="identifier" name="identifier" type="text" value="$1,234,567,890.00">
           <slot name="append-input"></slot>
         </div>
       </div>
@@ -133,7 +133,7 @@ exports[`mg-input-numeric type currency Should render with args {
       </mg-input-title>
       <div class="mg-input__input-container">
         <strong>
-          1 234 567 890,00&nbsp;€
+          $1,234,567,890.00
         </strong>
         <slot name="append-input"></slot>
       </div>
@@ -329,7 +329,7 @@ exports[`mg-input-numeric type currency Should update display value when value p
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <input aria-describedby="" class="mg-input__box" id="identifier" name="identifier" type="text" value="10,00&nbsp;€">
+          <input aria-describedby="" class="mg-input__box" id="identifier" name="identifier" type="text" value="$10.00">
           <slot name="append-input"></slot>
         </div>
       </div>
@@ -369,7 +369,7 @@ exports[`mg-input-numeric type currency display error with displayError componen
           <slot name="append-input"></slot>
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
-          Ce champ est obligatoire.
+          This field is required.
         </div>
       </div>
     </div>
@@ -390,7 +390,7 @@ exports[`mg-input-numeric type currency validity, case next state is disabled va
           <slot name="append-input"></slot>
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
-          Ce champ est obligatoire.
+          This field is required.
         </div>
       </div>
     </div>
@@ -411,7 +411,7 @@ exports[`mg-input-numeric type currency validity, case next state is disabled va
           <slot name="append-input"></slot>
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
-          Ce champ est obligatoire.
+          This field is required.
         </div>
       </div>
     </div>
@@ -432,7 +432,7 @@ exports[`mg-input-numeric type currency validity, case next state is readonly va
           <slot name="append-input"></slot>
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
-          Ce champ est obligatoire.
+          This field is required.
         </div>
       </div>
     </div>
@@ -471,7 +471,7 @@ exports[`mg-input-numeric type decimal Should render with args {
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <input aria-describedby="" class="mg-input__box" disabled="" id="identifier" name="identifier" type="text" value="1 234 567 890">
+          <input aria-describedby="" class="mg-input__box" disabled="" id="identifier" name="identifier" type="text" value="1,234,567,890">
           <slot name="append-input"></slot>
         </div>
       </div>
@@ -589,7 +589,7 @@ exports[`mg-input-numeric type decimal Should render with args {
       </mg-input-title>
       <div class="mg-input__input-container">
         <strong>
-          1 234 567 890
+          1,234,567,890
         </strong>
         <slot name="append-input"></slot>
       </div>
@@ -825,7 +825,7 @@ exports[`mg-input-numeric type decimal display error with displayError component
           <slot name="append-input"></slot>
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
-          Ce champ est obligatoire.
+          This field is required.
         </div>
       </div>
     </div>
@@ -846,7 +846,7 @@ exports[`mg-input-numeric type decimal validity, case next state is disabled val
           <slot name="append-input"></slot>
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
-          Ce champ est obligatoire.
+          This field is required.
         </div>
       </div>
     </div>
@@ -867,7 +867,7 @@ exports[`mg-input-numeric type decimal validity, case next state is disabled val
           <slot name="append-input"></slot>
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
-          Ce champ est obligatoire.
+          This field is required.
         </div>
       </div>
     </div>
@@ -888,7 +888,7 @@ exports[`mg-input-numeric type decimal validity, case next state is readonly val
           <slot name="append-input"></slot>
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
-          Ce champ est obligatoire.
+          This field is required.
         </div>
       </div>
     </div>
@@ -927,7 +927,7 @@ exports[`mg-input-numeric type integer Should render with args {
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <input aria-describedby="" class="mg-input__box" disabled="" id="identifier" name="identifier" type="text" value="1 234 567 890">
+          <input aria-describedby="" class="mg-input__box" disabled="" id="identifier" name="identifier" type="text" value="1,234,567,890">
           <slot name="append-input"></slot>
         </div>
       </div>
@@ -1045,7 +1045,7 @@ exports[`mg-input-numeric type integer Should render with args {
       </mg-input-title>
       <div class="mg-input__input-container">
         <strong>
-          1 234 567 890
+          1,234,567,890
         </strong>
         <slot name="append-input"></slot>
       </div>
@@ -1281,7 +1281,7 @@ exports[`mg-input-numeric type integer display error with displayError component
           <slot name="append-input"></slot>
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
-          Ce champ est obligatoire.
+          This field is required.
         </div>
       </div>
     </div>
@@ -1302,7 +1302,7 @@ exports[`mg-input-numeric type integer validity, case next state is disabled val
           <slot name="append-input"></slot>
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
-          Ce champ est obligatoire.
+          This field is required.
         </div>
       </div>
     </div>
@@ -1323,7 +1323,7 @@ exports[`mg-input-numeric type integer validity, case next state is disabled val
           <slot name="append-input"></slot>
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
-          Ce champ est obligatoire.
+          This field is required.
         </div>
       </div>
     </div>
@@ -1344,7 +1344,7 @@ exports[`mg-input-numeric type integer validity, case next state is readonly val
           <slot name="append-input"></slot>
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
-          Ce champ est obligatoire.
+          This field is required.
         </div>
       </div>
     </div>

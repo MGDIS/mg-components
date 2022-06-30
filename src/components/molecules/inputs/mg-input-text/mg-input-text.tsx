@@ -2,7 +2,7 @@ import { Component, Event, h, Prop, EventEmitter, State, Element, Method, Watch 
 import { MgInput } from '../MgInput';
 import { InputClass, Width } from '../MgInput.conf';
 import { createID, ClassList } from '../../../../utils/components.utils';
-import { messages } from '../../../../locales';
+import { initLocales } from '../../../../locales';
 
 @Component({
   tag: 'mg-input-text',
@@ -21,6 +21,9 @@ export class MgInputText {
 
   // HTML selector
   private input: HTMLInputElement;
+
+  // Locales
+  private messages;
 
   /**************
    * Decorators *
@@ -255,7 +258,7 @@ export class MgInputText {
     }
     // required
     else if (!this.valid && this.input.validity.valueMissing) {
-      this.errorMessage = messages.errors.required;
+      this.errorMessage = this.messages.errors.required;
     }
     // Update class
     if (this.valid) {
@@ -312,7 +315,8 @@ export class MgInputText {
     }
     this.validatePattern();
     this.validateAppendSlot();
-
+    // Get locales
+    this.messages = initLocales(this.element).messages;
     // Check validity when component is ready
     // return a promise to process action only in the FIRST render().
     // https://stenciljs.com/docs/component-lifecycle#componentwillload

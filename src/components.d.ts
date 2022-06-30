@@ -268,6 +268,10 @@ export namespace Components {
     }
     interface MgInputNumeric {
         /**
+          * Define currency
+         */
+        "currency": string;
+        /**
           * Override decimal length decimal is the number after the decimal point
          */
         "decimalLength": number;
@@ -1508,6 +1512,10 @@ declare namespace LocalJSX {
         "value"?: string;
     }
     interface MgInputNumeric {
+        /**
+          * Define currency
+         */
+        "currency"?: string;
         /**
           * Override decimal length decimal is the number after the decimal point
          */

@@ -254,7 +254,7 @@ exports[`mg-input-textarea display error with displayError component's public me
         <div class="mg-input__input"><textarea aria-describedby="identifier-error" class="mg-input__box" id="identifier" maxlength="4000" name="identifier" required="" rows="3"></textarea>
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
-          Ce champ est obligatoire.
+          This field is required.
         </div>
       </div>
     </div>
@@ -273,7 +273,7 @@ exports[`mg-input-textarea validity, case next state is disabled validity ({ val
         <div class="mg-input__input"><textarea aria-describedby="identifier-error" class="mg-input__box" id="identifier" maxlength="4000" name="identifier" rows="3"></textarea>
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
-          Ce champ est obligatoire.
+          This field is required.
         </div>
       </div>
     </div>
@@ -292,7 +292,7 @@ exports[`mg-input-textarea validity, case next state is disabled validity ({ val
         <div class="mg-input__input"><textarea aria-describedby="identifier-error" class="mg-input__box" disabled="" id="identifier" maxlength="4000" name="identifier" rows="3"></textarea>
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
-          Ce champ est obligatoire.
+          This field is required.
         </div>
       </div>
     </div>
@@ -311,7 +311,7 @@ exports[`mg-input-textarea validity, case next state is readonly validity ({ val
         <div class="mg-input__input"><textarea aria-describedby="identifier-error" class="mg-input__box" id="identifier" maxlength="4000" name="identifier" rows="3"></textarea>
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
-          Ce champ est obligatoire.
+          This field is required.
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import { Component, Element, Event, EventEmitter, h, Method, Prop, State } from '@stencil/core';
 import { createID, ClassList } from '../../../utils/components.utils';
-import { messages } from '../../../locales';
+import { initLocales } from '../../../locales';
 import { HTMLMgInputsElement } from '../inputs/MgInput.conf';
 
 @Component({
@@ -15,6 +15,9 @@ export class MgForm {
 
   private mgInputs: HTMLMgInputsElement[];
   private requiredMessage: string;
+
+  // Locales
+  private messages;
 
   /**************
    * Decorators *
@@ -93,12 +96,12 @@ export class MgForm {
     // All fields are required
     // mg-input-toggle can not be required
     if (requiredInputs.length > 0 && requiredInputs.length === this.mgInputs.filter(input => input.nodeName !== 'MG-INPUT-TOGGLE').length) {
-      this.requiredMessage = messages.form.allRequired;
+      this.requiredMessage = this.messages.form.allRequired;
       this.classList.add('mg-form--all-required');
     }
     // Some fields are required
     else if (requiredInputs.length > 0) {
-      this.requiredMessage = messages.form.required;
+      this.requiredMessage = this.messages.form.required;
     }
   };
 
@@ -128,6 +131,9 @@ export class MgForm {
   componentWillLoad(): void {
     // Get slotted mgIputs
     this.mgInputs = Array.from(this.element.querySelectorAll('*')).filter((node: Node) => node.nodeName.startsWith('MG-INPUT-')) as HTMLMgInputsElement[];
+
+    // Get locales
+    this.messages = initLocales(this.element).messages;
 
     // Define required message
     this.setRequiredMessage();
