@@ -8,7 +8,7 @@
 
 ### Value
 
-- by default limited to 4000 characters of alpha numeric type.
+- by default limited to 4000 alpha numeric characters.
 
 ### Dimensions
 

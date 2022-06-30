@@ -3,7 +3,7 @@
 ### Label
 
 - the label can be positioned on the left or above the input field.
-- the text alignment is on the right.
+- the text is to be right aligned
 - the label can be on one or more lines.
 
 ### Label on top

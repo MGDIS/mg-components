@@ -8,7 +8,7 @@ Rounding is to two digits after the decimal point.
 
 It is not possible to enter more than two digits after the decimal point.
 
-It is possible to specify an unit after the field for integers and decimals. For currencies, the symbol is positioned in the input field, following the value.
+It is possible to specify a unit after the field for integers and decimals. For currencies, the symbol is positioned in the input field, following the value.
 
 ## Specs
 
@@ -20,7 +20,7 @@ It is possible to specify an unit after the field for integers and decimals. For
 
 ![](./mg-input-numeric/doc/img/mg-input-numeric-unit.png)
 
-To manage when setting up the component by using a "space" character before the term of the unit
+To be managed when setting up the component by using a "space" character before the term of the unit
 
 ## 🚨 Slot
 

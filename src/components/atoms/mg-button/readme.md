@@ -1,9 +1,9 @@
 ## Usage
 
-A primary action button is mostly unique on the screen, the other buttons must be displayed as "secondary", to highlight the primary action.
+A primary action button is, in most cases, unique on the screen, the other buttons must be displayed as "secondary", to highlight the primary action.
 Ex: Validation, Save
 
-A tooltip must be displayed on hover when the button displays only a non-explicit icon without a label. The tooltip must indicate the action of the button.
+A tooltip must be displayed on hover when the button only displays a non-explicit icon, and has no label. The tooltip must indicate the action of the button.
 
 A button that launches a potentially long process is disabled and displays a loader for the duration of the process.
 

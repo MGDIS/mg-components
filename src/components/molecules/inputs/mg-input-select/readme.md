@@ -1,6 +1,6 @@
 ## Design
 
-The behavior is the native one of the browser
+The behavior is the native behavior of the browser
 
 The placeholder of the list is "Select a value".
 

@@ -1,6 +1,6 @@
 ## Design
 
-The badge is always placed on top of or next to the element it is about.
+The badge is always placed on top of, or next to the element it is for.
 
 The badge displays a number or a punctuation character.
 

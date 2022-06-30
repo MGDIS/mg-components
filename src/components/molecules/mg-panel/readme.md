@@ -1,8 +1,8 @@
 ## Behavior
 
-The left zone of the header displays the item label, this zone is clickable and allows to unfold/fold the panel.
-If no content is available, the pane cannot be unfolded.
-When the pane is unfolded, the icon is vertically inverted.
+The left zone of the header displays the item label, this zone is clickable and allows the user to unfold/fold the panel.
+If no content is available, the panel cannot be unfolded.
+When the panel is unfolded, the icon is vertically inverted.
 
 The right area of the header can accommodate any component.
 

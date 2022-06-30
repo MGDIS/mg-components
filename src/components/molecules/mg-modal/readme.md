@@ -18,13 +18,13 @@ When the validation button is clicked, processing is performed and the window cl
 
 As long as the user does not press one of these three buttons, the modal does not close.
 
-The modal allows to focus the attention on what it asks: a confirmation or a cancellation.
+The modal allows focusing the attention on what it is asking: a confirmation or a cancellation.
 In this sense the rest of the screen should not be accessible:
 
 - it is hidden by a backdrop.
 - clicking on the backdrop does not close the window
 
-The title of the window is written with a name
+The title of the window has a written name
 Ex : Add value
 
 The wording of the validation button is the infinitive verb of the current action.
@@ -34,9 +34,9 @@ Ex : "Add" for adding a value
 "Modify" to modify a value
 
 Icon or not icon on the action buttons ?
-In the case of a targeted action, the ico can help to understand or even reassure > check icon that validates the action.
+In the case of a targeted action, the icon can help to understand or even reassure > check icon that validates the action.
 In the case of a confirmation/cancellation choice: not necessary or even superfluous > the term "Save/Cancel" is enough,
-Ex: if I put a check in front of the term "Delete" which is the validation button of a deletion, the check refers to positive while the action of deletion is negative, and the Cancel button also, so not to add to the confusion not to put an icon ...
+Ex: if I put a check in front of the term "Delete" which is the validation button of a deletion, the check refers to positive while the action of deletion is negative, and the Cancel button also, so not to add to the confusion, do not put an icon ...
 
 ![](./mg-modal/doc/img/mg-modal.png)
 

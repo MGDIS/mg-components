@@ -10,11 +10,11 @@
 
 ### Default value
 
-- default limited to 400 alpha numeric characters.
+- by default limited to 400 alpha numeric characters.
 
 ## Use as search input
 
-Due to [accessibility recommendation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input/search#search_form_labels_and_accessibility), an `<input type="search" />` must be used within a `<form role="search" />` we recommend to use mg-input-text as from dedicated story.
+Due to [accessibility recommendation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input/search#search_form_labels_and_accessibility), an `<input type="search" />` must be used within a `<form role="search" />` we recommend using mg-input-text as in dedicated story.
 
 ## 🚨 Slot
 

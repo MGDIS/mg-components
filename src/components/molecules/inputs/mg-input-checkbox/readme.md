@@ -5,7 +5,7 @@ Only 2 possible values.
 
 ### Theming
 
-The style of the active checkbox is the browser style.
+The style of the active checkbox is the browser's style.
 
 ## Specs
 

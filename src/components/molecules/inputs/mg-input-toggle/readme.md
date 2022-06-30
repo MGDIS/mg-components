@@ -1,6 +1,6 @@
 ## Usage
 
-Clicking on the entire component area toggles the selected value.
+Clicking anywhere on the entire component area toggles the selected value.
 
 The first value is always selected by default.
 

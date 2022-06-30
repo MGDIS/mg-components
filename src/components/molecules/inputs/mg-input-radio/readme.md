@@ -7,7 +7,7 @@
 
 ### Theming
 
-The style of the active radio button is the browser one.
+The style of the active radio button is that of the browser.
 
 ## Specs
 
