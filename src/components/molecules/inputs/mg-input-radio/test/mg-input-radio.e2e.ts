@@ -130,24 +130,26 @@ describe('mg-input-radio', () => {
     });
   });
 
-  test('Should render error when leaving an empty required input', async () => {
-    const page = await createPage(`<mg-input-radio label="legend" help-text="HelpText Message" required></mg-input-radio>
+  describe.each([`<mg-input-radio label="legend" required></mg-input-radio>`, `<mg-input-radio label="legend" required lang="fr"></mg-input-radio>`])('%s', html => {
+    test('Should render error when leaving an empty required input', async () => {
+      const page = await createPage(`${html}
       <script>
       const mgInputRadio = document.querySelector('mg-input-radio');
       mgInputRadio.items = ['batman', 'robin', 'joker', 'bane'];
       </script>`);
 
-    const element = await page.find('mg-input-radio');
+      const element = await page.find('mg-input-radio');
 
-    expect(element).toHaveClass('hydrated');
+      expect(element).toHaveClass('hydrated');
 
-    await page.keyboard.down('Tab');
-    await page.keyboard.down('Tab');
+      await page.keyboard.down('Tab');
+      await page.keyboard.down('Tab');
 
-    await page.waitForChanges();
+      await page.waitForChanges();
 
-    const screenshot = await page.screenshot();
-    expect(screenshot).toMatchImageSnapshot();
+      const screenshot = await page.screenshot();
+      expect(screenshot).toMatchImageSnapshot();
+    });
   });
 
   describe.each([

@@ -306,10 +306,10 @@ export class MgInputSelect {
    * @returns {ReturnType<typeof setTimeout>} timeout
    */
   componentWillLoad(): ReturnType<typeof setTimeout> {
-    // Check items format
-    this.validateItems(this.items);
     // Get locales
     this.messages = initLocales(this.element).messages;
+    // Validate
+    this.validateItems(this.items);
     // Set default placeholder
     if (this.placeholder === undefined || this.placeholder === '') {
       this.placeholder = this.messages.input.select.placeholder;

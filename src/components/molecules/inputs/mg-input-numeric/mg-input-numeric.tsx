@@ -28,7 +28,7 @@ export class MgInputNumeric {
   private input: HTMLInputElement;
 
   // Locales
-  private locale;
+  private locale: string;
   private messages;
 
   /**************
@@ -379,15 +379,16 @@ export class MgInputNumeric {
    * @returns {ReturnType<typeof setTimeout>} timeout
    */
   componentWillLoad(): ReturnType<typeof setTimeout> {
+    // Get locales
+    const locales = initLocales(this.element);
+    this.locale = locales.locale;
+    this.messages = locales.messages;
+    // Validate
     this.validateValue(this.value);
     this.validateType(this.type);
     this.validateIntegerLength(this.integerLength);
     this.validateDecimalLength(this.decimalLength);
     this.validateAppendSlot();
-    // Get locales
-    const locales = initLocales(this.element);
-    this.locale = locales.locale;
-    this.messages = locales.messages;
     // Check validity when component is ready
     // return a promise to process action only in the FIRST render().
     // https://stenciljs.com/docs/component-lifecycle#componentwillload

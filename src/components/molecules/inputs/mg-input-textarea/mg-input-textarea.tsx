@@ -278,9 +278,10 @@ export class MgInputTextarea {
    * @returns {ReturnType<typeof setTimeout>} timeout
    */
   componentWillLoad(): ReturnType<typeof setTimeout> {
-    this.validatePattern();
     // Get locales
     this.messages = initLocales(this.element).messages;
+    // Validate
+    this.validatePattern();
     // Check validity when component is ready
     // return a promise to process action only in the FIRST render().
     // https://stenciljs.com/docs/component-lifecycle#componentwillload

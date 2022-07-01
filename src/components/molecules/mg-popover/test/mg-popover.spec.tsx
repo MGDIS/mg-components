@@ -29,6 +29,8 @@ describe('mg-popover', () => {
     { identifier: 'identifier', display: true },
     { identifier: 'identifier', closeButton: true },
     { identifier: 'identifier', display: true },
+    { identifier: 'identifier', closeButton: true, lang: 'fr' },
+    { identifier: 'identifier', closeButton: true, lang: 'xx' },
   ])('Should render with element', async args => {
     const { root } = await getPage(args, [
       <h2 slot="title">Blu bli blo bla</h2>,

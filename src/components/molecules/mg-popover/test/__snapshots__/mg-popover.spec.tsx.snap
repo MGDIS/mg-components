@@ -107,3 +107,69 @@ exports[`mg-popover Should render with element 4`] = `
   </div>
 </mg-popover>
 `;
+
+exports[`mg-popover Should render with element 5`] = `
+<mg-popover lang="fr">
+  <!---->
+  <mg-button aria-controls="identifier" aria-expanded="false">
+    <!---->
+    <button aria-disabled="false" class="mg-button mg-button--primary" id="identifier-btn">
+      <div class="mg-button__content">
+        mg-button
+      </div>
+    </button>
+  </mg-button>
+  <div class="mg-popover" id="identifier" style="position: absolute; left: 0; top: 0; margin: 0;">
+    <mg-button is-icon="">
+      <!---->
+      <button aria-disabled="false" aria-label="Fermer" class="mg-button mg-button--flat mg-button--icon">
+        <div class="mg-button__content">
+          <mg-icon icon="cross"></mg-icon>
+        </div>
+      </button>
+    </mg-button>
+    <div class="mg-popover__title">
+      <h2 slot="title">
+        Blu bli blo bla
+      </h2>
+    </div>
+    <p slot="content">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+    <div class="mg-popover__arrow" data-popper-arrow style="position: absolute;"></div>
+  </div>
+</mg-popover>
+`;
+
+exports[`mg-popover Should render with element 6`] = `
+<mg-popover lang="xx">
+  <!---->
+  <mg-button aria-controls="identifier" aria-expanded="false">
+    <!---->
+    <button aria-disabled="false" class="mg-button mg-button--primary" id="identifier-btn">
+      <div class="mg-button__content">
+        mg-button
+      </div>
+    </button>
+  </mg-button>
+  <div class="mg-popover" id="identifier" style="position: absolute; left: 0; top: 0; margin: 0;">
+    <mg-button is-icon="">
+      <!---->
+      <button aria-disabled="false" aria-label="Close" class="mg-button mg-button--flat mg-button--icon">
+        <div class="mg-button__content">
+          <mg-icon icon="cross"></mg-icon>
+        </div>
+      </button>
+    </mg-button>
+    <div class="mg-popover__title">
+      <h2 slot="title">
+        Blu bli blo bla
+      </h2>
+    </div>
+    <p slot="content">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+    <div class="mg-popover__arrow" data-popper-arrow style="position: absolute;"></div>
+  </div>
+</mg-popover>
+`;

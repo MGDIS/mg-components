@@ -34,6 +34,12 @@ describe('mg-pagination', () => {
       const page = await getPage({ totalPages, identifier: 'id', label: 'custom label' });
       expect(page.root).toMatchSnapshot();
     });
+
+    test.each(['fr', 'xx'])('with locale: %s', async lang => {
+      const totalPages = 2;
+      const page = await getPage({ totalPages, identifier: 'id', lang });
+      expect(page.root).toMatchSnapshot();
+    });
   });
 
   describe('errors', () => {

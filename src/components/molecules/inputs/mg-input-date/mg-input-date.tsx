@@ -281,13 +281,14 @@ export class MgInputDate {
    * @returns {ReturnType<typeof setTimeout>} timeout
    */
   componentWillLoad(): ReturnType<typeof setTimeout> {
-    this.validateValue(this.value);
-    this.validateMin(this.min);
-    this.validateMax(this.max);
     // Get locales
     const locales = initLocales(this.element);
     this.locale = locales.locale;
     this.messages = locales.messages;
+    // Validate
+    this.validateValue(this.value);
+    this.validateMin(this.min);
+    this.validateMax(this.max);
     // Check validity when component is ready
     // return a promise to process action only in the FIRST render().
     // https://stenciljs.com/docs/component-lifecycle#componentwillload

@@ -45,4 +45,11 @@ describe('mg-character-left', () => {
     await page.waitForChanges();
     expect(element.textContent).toEqual(messages.nbCharLeft.replace('{counter}', `${maxlength - characters.length}`));
   });
+
+  test.each(['fr', 'xx'])('Should render component with locale: %s', async lang => {
+    const maxlength = 400;
+    const characters = 'blu blu';
+    const { root } = await getPage({ characters, maxlength, lang });
+    expect(root).toMatchSnapshot();
+  });
 });

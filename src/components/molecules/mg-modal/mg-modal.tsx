@@ -120,6 +120,9 @@ export class MgModal {
    * @returns {void}
    */
   componentWillLoad(): void {
+    // Get locales
+    this.messages = initLocales(this.element).messages;
+    // Validate
     this.hasActions = this.element.querySelector('[slot="actions"]') !== null;
     this.hasContent = this.element.querySelector('[slot="content"]') !== null;
     if (this.closeButton) {
@@ -127,8 +130,6 @@ export class MgModal {
     }
     this.titleId = `${this.identifier}-title`;
     this.validateHide(this.hide);
-    // Get locales
-    this.messages = initLocales(this.element).messages;
   }
 
   /**

@@ -30,6 +30,11 @@ describe('mg-input-numeric', () => {
       { label: 'label', identifier: 'identifier', type, disabled: true, value: '1234567890' },
       { label: 'label', identifier: 'identifier', type, tooltip: 'My Tooltip Message' },
       { label: 'label', identifier: 'identifier', type, tooltip: 'My Tooltip Message', labelOnTop: true },
+      { label: 'label', identifier: 'identifier', type, value: '1234567890', currency: 'EUR' },
+      { label: 'label', identifier: 'identifier', type, value: '1234567890', lang: 'fr' },
+      { label: 'label', identifier: 'identifier', type, value: '1234567890', lang: 'xx' },
+      { label: 'label', identifier: 'identifier', type, readonly: true, value: '1234567890', lang: 'fr' },
+      { label: 'label', identifier: 'identifier', type, readonly: true, value: '1234567890', lang: 'xx' },
     ])('Should render with args %s:', async args => {
       const { root } = await getPage(args);
       expect(root).toMatchSnapshot();
@@ -227,7 +232,7 @@ describe('mg-input-numeric', () => {
     });
 
     test("display error with displayError component's public method", async () => {
-      const page = await getPage({ label: 'label', identifier: 'identifier', required: true, types });
+      const page = await getPage({ label: 'label', identifier: 'identifier', required: true });
 
       expect(page.root).toMatchSnapshot();
 
@@ -256,5 +261,25 @@ describe('mg-input-numeric', () => {
     } catch (err) {
       expect(err.message).toMatch('<mg-input-numeric> prop "type" must be one of :');
     }
+  });
+
+  test.each(['fr', 'xx'])('display error message with locale: %s', async lang => {
+    const page = await getPage({ label: 'label', identifier: 'identifier', required: true, lang });
+    const element = page.doc.querySelector('mg-input-numeric');
+    const input = element.shadowRoot.querySelector('input');
+
+    //mock validity
+    input.checkValidity = jest.fn(() => false);
+    Object.defineProperty(input, 'validity', {
+      get: jest.fn(() => ({
+        valueMissing: true,
+      })),
+    });
+
+    await element.displayError();
+
+    await page.waitForChanges();
+
+    expect(page.root).toMatchSnapshot();
   });
 });

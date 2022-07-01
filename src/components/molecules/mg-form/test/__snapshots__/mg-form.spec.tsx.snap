@@ -1351,3 +1351,467 @@ exports[`mg-form Should render with args { args: [Object], requiredIndex: 'one' 
   </mg-input-toggle>
 </mg-form>
 `;
+
+exports[`mg-form display error message with locale: fr 1`] = `
+<mg-form lang="fr">
+  <mock:shadow-root>
+    <form class="mg-form mg-form--all-required" id="identifier" name="identifier">
+      <p>
+        Tous les champs sont obligatoires
+      </p>
+      <slot></slot>
+      <slot name="actions"></slot>
+    </form>
+  </mock:shadow-root>
+  <mg-input-checkbox>
+    <mock:shadow-root>
+      <fieldset class="is-not-valid mg-input mg-input--checkbox">
+        <mg-input-title identifier="mg-input-checkbox" is-legend="" required="">
+          mg-input-checkbox label
+        </mg-input-title>
+        <div class="mg-input__input-container">
+          <div class="mg-input__input">
+            <ul class="mg-input__input-group-container">
+              <li class="mg-input__input-group">
+                <input aria-describedby="mg-input-checkbox-error" checked="" id="mg-input-checkbox_0" name="mg-input-checkbox" required="" type="checkbox" value="true">
+                <label htmlfor="mg-input-checkbox_0">
+                  oui
+                </label>
+              </li>
+              <li class="mg-input__input-group">
+                <input aria-describedby="mg-input-checkbox-error" id="mg-input-checkbox_1" name="mg-input-checkbox" required="" type="checkbox" value="false">
+                <label htmlfor="mg-input-checkbox_1">
+                  non
+                </label>
+              </li>
+            </ul>
+          </div>
+          <div aria-live="assertive" class="mg-input__error" id="mg-input-checkbox-error">
+            Ce champ est obligatoire.
+          </div>
+        </div>
+      </fieldset>
+    </mock:shadow-root>
+  </mg-input-checkbox>
+  <mg-input-date>
+    <mock:shadow-root>
+      <div class="is-not-valid mg-input mg-input--date">
+        <mg-input-title identifier="mg-input-date" required="">
+          mg-input-date label
+        </mg-input-title>
+        <div class="mg-input__input-container">
+          <div class="mg-input__input">
+            <input aria-describedby="mg-input-date-error" class="mg-input__box" id="mg-input-date" name="mg-input-date" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required="" type="date">
+          </div>
+          <div aria-live="assertive" class="mg-input__error" id="mg-input-date-error">
+            Ce champ est obligatoire.
+          </div>
+        </div>
+      </div>
+    </mock:shadow-root>
+  </mg-input-date>
+  <mg-input-numeric>
+    <mock:shadow-root>
+      <div class="is-not-valid mg-input mg-input--numeric mg-input--numeric--decimal">
+        <mg-input-title identifier="mg-input-numeric" required="">
+          mg-input-numeric label
+        </mg-input-title>
+        <div class="mg-input__input-container">
+          <div class="mg-input__input">
+            <input aria-describedby="mg-input-numeric-error" class="mg-input__box" id="mg-input-numeric" name="mg-input-numeric" required="" type="text">
+            <slot name="append-input"></slot>
+          </div>
+          <div aria-live="assertive" class="mg-input__error" id="mg-input-numeric-error">
+            Ce champ est obligatoire.
+          </div>
+        </div>
+      </div>
+    </mock:shadow-root>
+  </mg-input-numeric>
+  <mg-input-password>
+    <mock:shadow-root>
+      <div class="is-not-valid mg-input mg-input--password mg-input--width-full">
+        <mg-input-title identifier="mg-input-password" required="">
+          mg-input-password label
+        </mg-input-title>
+        <div class="mg-input__input-container">
+          <div class="mg-input__input">
+            <input aria-describedby="mg-input-password-error" class="mg-input__box" id="mg-input-password" name="mg-input-password" required="" type="password">
+          </div>
+          <div aria-live="assertive" class="mg-input__error" id="mg-input-password-error">
+            Ce champ est obligatoire.
+          </div>
+        </div>
+      </div>
+    </mock:shadow-root>
+  </mg-input-password>
+  <mg-input-radio>
+    <mock:shadow-root>
+      <fieldset class="is-not-valid mg-input mg-input--radio">
+        <mg-input-title identifier="mg-input-radio" is-legend="" required="">
+          mg-input-radio label
+        </mg-input-title>
+        <div class="mg-input__input-container">
+          <div class="mg-input__input">
+            <ul class="mg-input__input-group-container">
+              <li class="mg-input__input-group">
+                <input aria-describedby="mg-input-radio-error" id="mg-input-radio_0" name="mg-input-radio" required="" type="radio" value="0">
+                <label htmlfor="mg-input-radio_0">
+                  blu
+                </label>
+              </li>
+              <li class="mg-input__input-group">
+                <input aria-describedby="mg-input-radio-error" id="mg-input-radio_1" name="mg-input-radio" required="" type="radio" value="1">
+                <label htmlfor="mg-input-radio_1">
+                  bli
+                </label>
+              </li>
+              <li class="mg-input__input-group">
+                <input aria-describedby="mg-input-radio-error" id="mg-input-radio_2" name="mg-input-radio" required="" type="radio" value="2">
+                <label htmlfor="mg-input-radio_2">
+                  bla
+                </label>
+              </li>
+              <li class="mg-input__input-group">
+                <input aria-describedby="mg-input-radio-error" id="mg-input-radio_3" name="mg-input-radio" required="" type="radio" value="3">
+                <label htmlfor="mg-input-radio_3">
+                  blo
+                </label>
+              </li>
+            </ul>
+          </div>
+          <div aria-live="assertive" class="mg-input__error" id="mg-input-radio-error">
+            Ce champ est obligatoire.
+          </div>
+        </div>
+      </fieldset>
+    </mock:shadow-root>
+  </mg-input-radio>
+  <mg-input-select>
+    <mock:shadow-root>
+      <div class="is-not-valid mg-input mg-input--select">
+        <mg-input-title identifier="mg-input-select" required="">
+          mg-input-select label
+        </mg-input-title>
+        <div class="mg-input__input-container">
+          <div class="mg-input__input">
+            <select aria-describedby="mg-input-select-error" class="mg-input__box" id="mg-input-select" name="mg-input-select" required="" title="Sélectionnez une valeur">
+              <option value="">
+                Sélectionnez une valeur
+              </option>
+              <option value="blu">
+                blu
+              </option>
+              <option value="bli">
+                bli
+              </option>
+              <option value="bla">
+                bla
+              </option>
+              <option value="blo">
+                blo
+              </option>
+            </select>
+          </div>
+          <div aria-live="assertive" class="mg-input__error" id="mg-input-select-error">
+            Ce champ est obligatoire.
+          </div>
+        </div>
+      </div>
+    </mock:shadow-root>
+  </mg-input-select>
+  <mg-input-text>
+    <mock:shadow-root>
+      <div class="is-not-valid mg-input mg-input--text mg-input--width-full">
+        <mg-input-title identifier="mg-input-text" required="">
+          mg-input-text label
+        </mg-input-title>
+        <div class="mg-input__input-container">
+          <div class="mg-input__input">
+            <input aria-describedby="mg-input-text-error" class="mg-input__box" id="mg-input-text" maxlength="400" name="mg-input-text" required="" type="text">
+            <slot name="append-input"></slot>
+          </div>
+          <div aria-live="assertive" class="mg-input__error" id="mg-input-text-error">
+            Ce champ est obligatoire.
+          </div>
+        </div>
+      </div>
+    </mock:shadow-root>
+  </mg-input-text>
+  <mg-input-textarea>
+    <mock:shadow-root>
+      <div class="is-not-valid mg-input mg-input--textarea mg-input--width-full">
+        <mg-input-title identifier="mg-input-textarea" required="">
+          mg-input-textarea label
+        </mg-input-title>
+        <div class="mg-input__input-container">
+          <div class="mg-input__input"><textarea aria-describedby="mg-input-textarea-error" class="mg-input__box" id="mg-input-textarea" maxlength="4000" name="mg-input-textarea" required="" rows="3"></textarea>
+          </div>
+          <div aria-live="assertive" class="mg-input__error" id="mg-input-textarea-error">
+            Ce champ est obligatoire.
+          </div>
+        </div>
+      </div>
+    </mock:shadow-root>
+  </mg-input-textarea>
+  <mg-input-toggle required="">
+    <mock:shadow-root>
+      <div class="mg-input mg-input--toggle">
+        <mg-input-title identifier="mg-input-toggle">
+          mg-input-toggle label
+        </mg-input-title>
+        <div class="mg-input__input-container">
+          <div class="mg-input__input">
+            <button aria-checked="false" class="mg-input__button-toggle" id="mg-input-toggle" role="switch" type="button">
+              <span aria-hidden="true" class="mg-input__toggle-item-container">
+                <slot name="item-1"></slot>
+              </span>
+              <span aria-hidden="true" class="mg-input__toggle-item-container">
+                <slot name="item-2"></slot>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </mock:shadow-root>
+    <span slot="item-1" title="non">
+      non
+    </span>
+    <span slot="item-2" title="oui">
+      oui
+    </span>
+  </mg-input-toggle>
+</mg-form>
+`;
+
+exports[`mg-form display error message with locale: xx 1`] = `
+<mg-form lang="xx">
+  <mock:shadow-root>
+    <form class="mg-form mg-form--all-required" id="identifier" name="identifier">
+      <p>
+        All fields are required
+      </p>
+      <slot></slot>
+      <slot name="actions"></slot>
+    </form>
+  </mock:shadow-root>
+  <mg-input-checkbox>
+    <mock:shadow-root>
+      <fieldset class="is-not-valid mg-input mg-input--checkbox">
+        <mg-input-title identifier="mg-input-checkbox" is-legend="" required="">
+          mg-input-checkbox label
+        </mg-input-title>
+        <div class="mg-input__input-container">
+          <div class="mg-input__input">
+            <ul class="mg-input__input-group-container">
+              <li class="mg-input__input-group">
+                <input aria-describedby="mg-input-checkbox-error" checked="" id="mg-input-checkbox_0" name="mg-input-checkbox" required="" type="checkbox" value="true">
+                <label htmlfor="mg-input-checkbox_0">
+                  oui
+                </label>
+              </li>
+              <li class="mg-input__input-group">
+                <input aria-describedby="mg-input-checkbox-error" id="mg-input-checkbox_1" name="mg-input-checkbox" required="" type="checkbox" value="false">
+                <label htmlfor="mg-input-checkbox_1">
+                  non
+                </label>
+              </li>
+            </ul>
+          </div>
+          <div aria-live="assertive" class="mg-input__error" id="mg-input-checkbox-error">
+            This field is required.
+          </div>
+        </div>
+      </fieldset>
+    </mock:shadow-root>
+  </mg-input-checkbox>
+  <mg-input-date>
+    <mock:shadow-root>
+      <div class="is-not-valid mg-input mg-input--date">
+        <mg-input-title identifier="mg-input-date" required="">
+          mg-input-date label
+        </mg-input-title>
+        <div class="mg-input__input-container">
+          <div class="mg-input__input">
+            <input aria-describedby="mg-input-date-error" class="mg-input__box" id="mg-input-date" name="mg-input-date" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required="" type="date">
+          </div>
+          <div aria-live="assertive" class="mg-input__error" id="mg-input-date-error">
+            This field is required.
+          </div>
+        </div>
+      </div>
+    </mock:shadow-root>
+  </mg-input-date>
+  <mg-input-numeric>
+    <mock:shadow-root>
+      <div class="is-not-valid mg-input mg-input--numeric mg-input--numeric--decimal">
+        <mg-input-title identifier="mg-input-numeric" required="">
+          mg-input-numeric label
+        </mg-input-title>
+        <div class="mg-input__input-container">
+          <div class="mg-input__input">
+            <input aria-describedby="mg-input-numeric-error" class="mg-input__box" id="mg-input-numeric" name="mg-input-numeric" required="" type="text">
+            <slot name="append-input"></slot>
+          </div>
+          <div aria-live="assertive" class="mg-input__error" id="mg-input-numeric-error">
+            This field is required.
+          </div>
+        </div>
+      </div>
+    </mock:shadow-root>
+  </mg-input-numeric>
+  <mg-input-password>
+    <mock:shadow-root>
+      <div class="is-not-valid mg-input mg-input--password mg-input--width-full">
+        <mg-input-title identifier="mg-input-password" required="">
+          mg-input-password label
+        </mg-input-title>
+        <div class="mg-input__input-container">
+          <div class="mg-input__input">
+            <input aria-describedby="mg-input-password-error" class="mg-input__box" id="mg-input-password" name="mg-input-password" required="" type="password">
+          </div>
+          <div aria-live="assertive" class="mg-input__error" id="mg-input-password-error">
+            This field is required.
+          </div>
+        </div>
+      </div>
+    </mock:shadow-root>
+  </mg-input-password>
+  <mg-input-radio>
+    <mock:shadow-root>
+      <fieldset class="is-not-valid mg-input mg-input--radio">
+        <mg-input-title identifier="mg-input-radio" is-legend="" required="">
+          mg-input-radio label
+        </mg-input-title>
+        <div class="mg-input__input-container">
+          <div class="mg-input__input">
+            <ul class="mg-input__input-group-container">
+              <li class="mg-input__input-group">
+                <input aria-describedby="mg-input-radio-error" id="mg-input-radio_0" name="mg-input-radio" required="" type="radio" value="0">
+                <label htmlfor="mg-input-radio_0">
+                  blu
+                </label>
+              </li>
+              <li class="mg-input__input-group">
+                <input aria-describedby="mg-input-radio-error" id="mg-input-radio_1" name="mg-input-radio" required="" type="radio" value="1">
+                <label htmlfor="mg-input-radio_1">
+                  bli
+                </label>
+              </li>
+              <li class="mg-input__input-group">
+                <input aria-describedby="mg-input-radio-error" id="mg-input-radio_2" name="mg-input-radio" required="" type="radio" value="2">
+                <label htmlfor="mg-input-radio_2">
+                  bla
+                </label>
+              </li>
+              <li class="mg-input__input-group">
+                <input aria-describedby="mg-input-radio-error" id="mg-input-radio_3" name="mg-input-radio" required="" type="radio" value="3">
+                <label htmlfor="mg-input-radio_3">
+                  blo
+                </label>
+              </li>
+            </ul>
+          </div>
+          <div aria-live="assertive" class="mg-input__error" id="mg-input-radio-error">
+            This field is required.
+          </div>
+        </div>
+      </fieldset>
+    </mock:shadow-root>
+  </mg-input-radio>
+  <mg-input-select>
+    <mock:shadow-root>
+      <div class="is-not-valid mg-input mg-input--select">
+        <mg-input-title identifier="mg-input-select" required="">
+          mg-input-select label
+        </mg-input-title>
+        <div class="mg-input__input-container">
+          <div class="mg-input__input">
+            <select aria-describedby="mg-input-select-error" class="mg-input__box" id="mg-input-select" name="mg-input-select" required="" title="Select a value">
+              <option value="">
+                Select a value
+              </option>
+              <option value="blu">
+                blu
+              </option>
+              <option value="bli">
+                bli
+              </option>
+              <option value="bla">
+                bla
+              </option>
+              <option value="blo">
+                blo
+              </option>
+            </select>
+          </div>
+          <div aria-live="assertive" class="mg-input__error" id="mg-input-select-error">
+            This field is required.
+          </div>
+        </div>
+      </div>
+    </mock:shadow-root>
+  </mg-input-select>
+  <mg-input-text>
+    <mock:shadow-root>
+      <div class="is-not-valid mg-input mg-input--text mg-input--width-full">
+        <mg-input-title identifier="mg-input-text" required="">
+          mg-input-text label
+        </mg-input-title>
+        <div class="mg-input__input-container">
+          <div class="mg-input__input">
+            <input aria-describedby="mg-input-text-error" class="mg-input__box" id="mg-input-text" maxlength="400" name="mg-input-text" required="" type="text">
+            <slot name="append-input"></slot>
+          </div>
+          <div aria-live="assertive" class="mg-input__error" id="mg-input-text-error">
+            This field is required.
+          </div>
+        </div>
+      </div>
+    </mock:shadow-root>
+  </mg-input-text>
+  <mg-input-textarea>
+    <mock:shadow-root>
+      <div class="is-not-valid mg-input mg-input--textarea mg-input--width-full">
+        <mg-input-title identifier="mg-input-textarea" required="">
+          mg-input-textarea label
+        </mg-input-title>
+        <div class="mg-input__input-container">
+          <div class="mg-input__input"><textarea aria-describedby="mg-input-textarea-error" class="mg-input__box" id="mg-input-textarea" maxlength="4000" name="mg-input-textarea" required="" rows="3"></textarea>
+          </div>
+          <div aria-live="assertive" class="mg-input__error" id="mg-input-textarea-error">
+            This field is required.
+          </div>
+        </div>
+      </div>
+    </mock:shadow-root>
+  </mg-input-textarea>
+  <mg-input-toggle required="">
+    <mock:shadow-root>
+      <div class="mg-input mg-input--toggle">
+        <mg-input-title identifier="mg-input-toggle">
+          mg-input-toggle label
+        </mg-input-title>
+        <div class="mg-input__input-container">
+          <div class="mg-input__input">
+            <button aria-checked="false" class="mg-input__button-toggle" id="mg-input-toggle" role="switch" type="button">
+              <span aria-hidden="true" class="mg-input__toggle-item-container">
+                <slot name="item-1"></slot>
+              </span>
+              <span aria-hidden="true" class="mg-input__toggle-item-container">
+                <slot name="item-2"></slot>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </mock:shadow-root>
+    <span slot="item-1" title="non">
+      non
+    </span>
+    <span slot="item-2" title="oui">
+      oui
+    </span>
+  </mg-input-toggle>
+</mg-form>
+`;

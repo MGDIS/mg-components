@@ -249,10 +249,10 @@ export class MgInputCheckbox {
    * @returns {ReturnType<typeof setTimeout>} timeout
    */
   componentWillLoad(): ReturnType<typeof setTimeout> {
-    // Check values format
-    this.validateValue(this.value);
     // Get locales
     this.messages = initLocales(this.element).messages;
+    // Validate
+    this.validateValue(this.value);
     // Check validity when component is ready
     // return a promise to process action only in the FIRST render().
     // https://stenciljs.com/docs/component-lifecycle#componentwillload

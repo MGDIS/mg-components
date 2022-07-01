@@ -185,9 +185,10 @@ export class MgPanel {
    * @returns {void}
    */
   componentWillLoad(): void {
-    this.validatetitlePattern(this.titlePattern);
     // Get locales
     this.messages = initLocales(this.element).messages;
+    // Validate
+    this.validatetitlePattern(this.titlePattern);
   }
 
   /**

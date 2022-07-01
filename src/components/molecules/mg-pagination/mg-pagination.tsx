@@ -135,10 +135,11 @@ export class MgPagination {
    * @returns {void}
    */
   componentWillLoad(): void {
-    this.validateTotalPages(this.totalPages);
-    this.validateCurrentPage(this.currentPage);
     // Get locales
     this.messages = initLocales(this.element).messages;
+    // Validate
+    this.validateTotalPages(this.totalPages);
+    this.validateCurrentPage(this.currentPage);
     // Set default label
     if (this.label === undefined || this.label === '') {
       this.label = this.messages.pagination.label;

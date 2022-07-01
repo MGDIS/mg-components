@@ -624,6 +624,102 @@ exports[`mg-input-checkbox Should trigger events, case validity check true 2`] =
 </mg-input-checkbox>
 `;
 
+exports[`mg-input-checkbox validity, case next state is disabled Should render component with locale: fr 1`] = `
+<mg-input-checkbox lang="fr">
+  <mock:shadow-root>
+    <fieldset class="is-not-valid mg-input mg-input--checkbox">
+      <mg-input-title identifier="identifier" is-legend="" required="">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input">
+          <ul class="mg-input__input-group-container">
+            <li class="mg-input__input-group">
+              <input aria-describedby="identifier-help-text identifier-error" id="identifier_0" name="identifier" required="" type="checkbox" value="false">
+              <label htmlfor="identifier_0">
+                batman
+              </label>
+            </li>
+            <li class="mg-input__input-group mg-input__input-group--disabled">
+              <input aria-describedby="identifier-help-text identifier-error" disabled="" id="identifier_1" name="identifier" required="" type="checkbox" value="false">
+              <label htmlfor="identifier_1">
+                robin
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="identifier-help-text identifier-error" id="identifier_2" name="identifier" required="" type="checkbox" value="false">
+              <label htmlfor="identifier_2">
+                joker
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="identifier-help-text identifier-error" id="identifier_3" indeterminate="" name="identifier" required="" type="checkbox">
+              <label htmlfor="identifier_3">
+                bane
+              </label>
+            </li>
+          </ul>
+        </div>
+        <div class="mg-input__help-text" id="identifier-help-text">
+          My help text
+        </div>
+        <div aria-live="assertive" class="mg-input__error" id="identifier-error">
+          Ce champ est obligatoire.
+        </div>
+      </div>
+    </fieldset>
+  </mock:shadow-root>
+</mg-input-checkbox>
+`;
+
+exports[`mg-input-checkbox validity, case next state is disabled Should render component with locale: xx 1`] = `
+<mg-input-checkbox lang="xx">
+  <mock:shadow-root>
+    <fieldset class="is-not-valid mg-input mg-input--checkbox">
+      <mg-input-title identifier="identifier" is-legend="" required="">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input">
+          <ul class="mg-input__input-group-container">
+            <li class="mg-input__input-group">
+              <input aria-describedby="identifier-help-text identifier-error" id="identifier_0" name="identifier" required="" type="checkbox" value="false">
+              <label htmlfor="identifier_0">
+                batman
+              </label>
+            </li>
+            <li class="mg-input__input-group mg-input__input-group--disabled">
+              <input aria-describedby="identifier-help-text identifier-error" disabled="" id="identifier_1" name="identifier" required="" type="checkbox" value="false">
+              <label htmlfor="identifier_1">
+                robin
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="identifier-help-text identifier-error" id="identifier_2" name="identifier" required="" type="checkbox" value="false">
+              <label htmlfor="identifier_2">
+                joker
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="identifier-help-text identifier-error" id="identifier_3" indeterminate="" name="identifier" required="" type="checkbox">
+              <label htmlfor="identifier_3">
+                bane
+              </label>
+            </li>
+          </ul>
+        </div>
+        <div class="mg-input__help-text" id="identifier-help-text">
+          My help text
+        </div>
+        <div aria-live="assertive" class="mg-input__error" id="identifier-error">
+          This field is required.
+        </div>
+      </div>
+    </fieldset>
+  </mock:shadow-root>
+</mg-input-checkbox>
+`;
+
 exports[`mg-input-checkbox validity, case next state is disabled display error with displayError component's public method 1`] = `
 <mg-input-checkbox>
   <mock:shadow-root>
@@ -795,6 +891,102 @@ exports[`mg-input-checkbox validity, case next state is disabled validity ({ val
             </li>
             <li class="mg-input__input-group mg-input__input-group--disabled">
               <input aria-describedby="identifier-help-text identifier-error" disabled="" id="identifier_3" indeterminate="" name="identifier" type="checkbox">
+              <label htmlfor="identifier_3">
+                bane
+              </label>
+            </li>
+          </ul>
+        </div>
+        <div class="mg-input__help-text" id="identifier-help-text">
+          My help text
+        </div>
+        <div aria-live="assertive" class="mg-input__error" id="identifier-error">
+          This field is required.
+        </div>
+      </div>
+    </fieldset>
+  </mock:shadow-root>
+</mg-input-checkbox>
+`;
+
+exports[`mg-input-checkbox validity, case next state is readonly Should render component with locale: fr 1`] = `
+<mg-input-checkbox lang="fr">
+  <mock:shadow-root>
+    <fieldset class="is-not-valid mg-input mg-input--checkbox">
+      <mg-input-title identifier="identifier" is-legend="" required="">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input">
+          <ul class="mg-input__input-group-container">
+            <li class="mg-input__input-group">
+              <input aria-describedby="identifier-help-text identifier-error" id="identifier_0" name="identifier" required="" type="checkbox" value="false">
+              <label htmlfor="identifier_0">
+                batman
+              </label>
+            </li>
+            <li class="mg-input__input-group mg-input__input-group--disabled">
+              <input aria-describedby="identifier-help-text identifier-error" disabled="" id="identifier_1" name="identifier" required="" type="checkbox" value="false">
+              <label htmlfor="identifier_1">
+                robin
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="identifier-help-text identifier-error" id="identifier_2" name="identifier" required="" type="checkbox" value="false">
+              <label htmlfor="identifier_2">
+                joker
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="identifier-help-text identifier-error" id="identifier_3" indeterminate="" name="identifier" required="" type="checkbox">
+              <label htmlfor="identifier_3">
+                bane
+              </label>
+            </li>
+          </ul>
+        </div>
+        <div class="mg-input__help-text" id="identifier-help-text">
+          My help text
+        </div>
+        <div aria-live="assertive" class="mg-input__error" id="identifier-error">
+          Ce champ est obligatoire.
+        </div>
+      </div>
+    </fieldset>
+  </mock:shadow-root>
+</mg-input-checkbox>
+`;
+
+exports[`mg-input-checkbox validity, case next state is readonly Should render component with locale: xx 1`] = `
+<mg-input-checkbox lang="xx">
+  <mock:shadow-root>
+    <fieldset class="is-not-valid mg-input mg-input--checkbox">
+      <mg-input-title identifier="identifier" is-legend="" required="">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input">
+          <ul class="mg-input__input-group-container">
+            <li class="mg-input__input-group">
+              <input aria-describedby="identifier-help-text identifier-error" id="identifier_0" name="identifier" required="" type="checkbox" value="false">
+              <label htmlfor="identifier_0">
+                batman
+              </label>
+            </li>
+            <li class="mg-input__input-group mg-input__input-group--disabled">
+              <input aria-describedby="identifier-help-text identifier-error" disabled="" id="identifier_1" name="identifier" required="" type="checkbox" value="false">
+              <label htmlfor="identifier_1">
+                robin
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="identifier-help-text identifier-error" id="identifier_2" name="identifier" required="" type="checkbox" value="false">
+              <label htmlfor="identifier_2">
+                joker
+              </label>
+            </li>
+            <li class="mg-input__input-group">
+              <input aria-describedby="identifier-help-text identifier-error" id="identifier_3" indeterminate="" name="identifier" required="" type="checkbox">
               <label htmlfor="identifier_3">
                 bane
               </label>

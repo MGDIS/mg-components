@@ -72,6 +72,7 @@ describe('mg-input-date', () => {
     `<mg-input-date label="label" value="1982-06-02" readonly></mg-input-date>`,
     `<mg-input-date label="label" disabled></mg-input-date>`,
     `<mg-input-date label="label" value="1982-06-02" disabled></mg-input-date>`,
+    `<mg-input-date label="label" value="1982-06-02" readonly lang="fr"></mg-input-date>`,
   ])('Should render with template', html => {
     test('render', async () => {
       const page = await createPage(html);
@@ -85,22 +86,24 @@ describe('mg-input-date', () => {
     });
   });
 
-  test('Should render error when leaving an empty required input', async () => {
-    const page = await createPage(`<mg-input-date label="label" required></mg-input-date>`);
+  describe.each([`<mg-input-date label="label" required></mg-input-date>`, `<mg-input-date label="label" lang="fr" required></mg-input-date>`])('%s', html => {
+    test('Should render error when leaving an empty required input', async () => {
+      const page = await createPage(html);
 
-    const element = await page.find('mg-input-date');
+      const element = await page.find('mg-input-date');
 
-    expect(element).toHaveClass('hydrated');
+      expect(element).toHaveClass('hydrated');
 
-    await page.keyboard.down('Tab');
-    await page.keyboard.down('Tab');
-    await page.keyboard.down('Tab');
-    await page.keyboard.down('Tab');
+      await page.keyboard.down('Tab');
+      await page.keyboard.down('Tab');
+      await page.keyboard.down('Tab');
+      await page.keyboard.down('Tab');
 
-    await page.waitForChanges();
+      await page.waitForChanges();
 
-    const screenshot = await page.screenshot();
-    expect(screenshot).toMatchImageSnapshot();
+      const screenshot = await page.screenshot();
+      expect(screenshot).toMatchImageSnapshot();
+    });
   });
 
   test('Should render error when leaving input with a wrong date', async () => {

@@ -28,6 +28,8 @@ describe('mg-panel', () => {
     { identifier: 'identifier', panelTitle: 'panel title', expanded: true },
     { identifier: 'identifier', panelTitle: 'panel title', titleEditable: true },
     { identifier: 'identifier', panelTitle: 'panel title', titleEditable: true, titlePattern: /joker/, titlePatternErrorMessage: "You can't enter a bad guy !" },
+    { identifier: 'identifier', panelTitle: 'panel title', titleEditable: true, lang: 'fr' },
+    { identifier: 'identifier', panelTitle: 'panel title', titleEditable: true, lang: 'xx' },
   ])('Should render with args %s:', async args => {
     const { root } = await getPage(args);
     expect(root).toMatchSnapshot();

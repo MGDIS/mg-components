@@ -155,6 +155,9 @@ export class MgMessage {
    * Check if component props are well configured on init
    */
   componentWillLoad(): void {
+    // Get locales
+    this.messages = initLocales(this.element).messages;
+    // Validate
     this.validateVariant(this.variant);
     // Check if close button is an can be activated
     this.hasActions = this.element.querySelector('[slot="actions"]') !== null;
@@ -165,8 +168,6 @@ export class MgMessage {
     }
     this.validateDelay(this.delay);
     this.validateHide(this.hide);
-    // Get locales
-    this.messages = initLocales(this.element).messages;
   }
 
   /**

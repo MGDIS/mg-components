@@ -706,6 +706,78 @@ exports[`mg-input-select Should trigger events for ({ items: [Array], selectedOp
 </mg-input-select>
 `;
 
+exports[`mg-input-select display error message with locale: fr 1`] = `
+<mg-input-select lang="fr">
+  <mock:shadow-root>
+    <div class="is-not-valid mg-input mg-input--select">
+      <mg-input-title identifier="identifier" required="">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input">
+          <select aria-describedby="identifier-error" class="mg-input__box" id="identifier" name="identifier" required="" title="Sélectionnez une valeur">
+            <option value="">
+              Sélectionnez une valeur
+            </option>
+            <option value="batman">
+              batman
+            </option>
+            <option value="robin">
+              robin
+            </option>
+            <option value="joker">
+              joker
+            </option>
+            <option value="bane">
+              bane
+            </option>
+          </select>
+        </div>
+        <div aria-live="assertive" class="mg-input__error" id="identifier-error">
+          Ce champ est obligatoire.
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-select>
+`;
+
+exports[`mg-input-select display error message with locale: xx 1`] = `
+<mg-input-select lang="xx">
+  <mock:shadow-root>
+    <div class="is-not-valid mg-input mg-input--select">
+      <mg-input-title identifier="identifier" required="">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input">
+          <select aria-describedby="identifier-error" class="mg-input__box" id="identifier" name="identifier" required="" title="Select a value">
+            <option value="">
+              Select a value
+            </option>
+            <option value="batman">
+              batman
+            </option>
+            <option value="robin">
+              robin
+            </option>
+            <option value="joker">
+              joker
+            </option>
+            <option value="bane">
+              bane
+            </option>
+          </select>
+        </div>
+        <div aria-live="assertive" class="mg-input__error" id="identifier-error">
+          This field is required.
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-select>
+`;
+
 exports[`mg-input-select display error with displayError component's public method 1`] = `
 <mg-input-select>
   <mock:shadow-root>

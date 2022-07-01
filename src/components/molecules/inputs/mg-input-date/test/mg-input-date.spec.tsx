@@ -31,9 +31,11 @@ describe('mg-input-date', () => {
     { label: 'label', identifier: 'identifier', labelOnTop: true },
     { label: 'label', identifier: 'identifier', readonly: true },
     { label: 'label', identifier: 'identifier', readonly: true, labelOnTop: true, tooltip: 'Tooltip message' },
-    { label: 'label', identifier: 'identifier', readonly: true, value: '2021-10-15' },
+    { label: 'label', identifier: 'identifier', readonly: true, value: '2022-06-02' },
     { label: 'label', identifier: 'identifier', tooltip: 'My Tooltip Message' },
     { label: 'label', identifier: 'identifier', tooltip: 'My Tooltip Message', labelOnTop: true },
+    { label: 'label', identifier: 'identifier', readonly: true, value: '2022-06-02', lang: 'fr' },
+    { label: 'label', identifier: 'identifier', readonly: true, value: '2022-06-02', lang: 'xx' },
   ])('Should render with args %s:', async args => {
     const { root } = await getPage(args);
     expect(root).toMatchSnapshot();
@@ -205,6 +207,26 @@ describe('mg-input-date', () => {
 
     expect(page.root).toMatchSnapshot();
 
+    const element = page.doc.querySelector('mg-input-date');
+    const input = element.shadowRoot.querySelector('input');
+
+    //mock validity
+    input.checkValidity = jest.fn(() => false);
+    Object.defineProperty(input, 'validity', {
+      get: jest.fn(() => ({
+        valueMissing: true,
+      })),
+    });
+
+    await element.displayError();
+
+    await page.waitForChanges();
+
+    expect(page.root).toMatchSnapshot();
+  });
+
+  test.each(['fr', 'xx'])('display error message with locale: %s', async lang => {
+    const page = await getPage({ label: 'label', identifier: 'identifier', required: true, lang });
     const element = page.doc.querySelector('mg-input-date');
     const input = element.shadowRoot.querySelector('input');
 

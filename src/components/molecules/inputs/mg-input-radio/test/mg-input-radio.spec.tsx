@@ -235,4 +235,26 @@ describe('mg-input-radio', () => {
 
     expect(page.root).toMatchSnapshot();
   });
+
+  test.each(['fr', 'xx'])('display error message with locale: %s', async lang => {
+    const page = await getPage({ label: 'label', identifier: 'identifier', items: ['batman', 'robin', 'joker', 'bane'], helpText: 'My help text', required: true, lang });
+    const element = page.doc.querySelector('mg-input-radio');
+    const allInputs = element.shadowRoot.querySelectorAll('input');
+
+    //mock validity
+    allInputs.forEach(input => {
+      input.checkValidity = jest.fn(() => false);
+      Object.defineProperty(input, 'validity', {
+        get: jest.fn(() => ({
+          valueMissing: true,
+        })),
+      });
+    });
+
+    await element.displayError();
+
+    await page.waitForChanges();
+
+    expect(page.root).toMatchSnapshot();
+  });
 });

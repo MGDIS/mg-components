@@ -310,13 +310,14 @@ export class MgInputText {
    * @returns {ReturnType<typeof setTimeout>} timeout
    */
   componentWillLoad(): ReturnType<typeof setTimeout> {
+    // Get locales
+    this.messages = initLocales(this.element).messages;
+    // Validate
     if (this.icon !== undefined) {
       this.classList.add('mg-input--has-icon');
     }
     this.validatePattern();
     this.validateAppendSlot();
-    // Get locales
-    this.messages = initLocales(this.element).messages;
     // Check validity when component is ready
     // return a promise to process action only in the FIRST render().
     // https://stenciljs.com/docs/component-lifecycle#componentwillload

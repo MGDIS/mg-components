@@ -1,5 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`mg-character-left Should render component with locale: fr 1`] = `
+<mg-character-left lang="fr">
+  <span aria-live="polite">
+    <strong>
+      393
+    </strong>
+    caractères disponibles.
+  </span>
+</mg-character-left>
+`;
+
+exports[`mg-character-left Should render component with locale: xx 1`] = `
+<mg-character-left lang="xx">
+  <span aria-live="polite">
+    <strong>
+      393
+    </strong>
+    characters left.
+  </span>
+</mg-character-left>
+`;
+
 exports[`mg-character-left Should render nb char left for blu blu blu blu blu renders 1`] = `
 <mg-character-left>
   <span aria-live="polite">

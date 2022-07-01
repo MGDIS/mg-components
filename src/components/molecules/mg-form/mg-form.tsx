@@ -129,11 +129,11 @@ export class MgForm {
    * @returns {void}
    */
   componentWillLoad(): void {
-    // Get slotted mgIputs
-    this.mgInputs = Array.from(this.element.querySelectorAll('*')).filter((node: Node) => node.nodeName.startsWith('MG-INPUT-')) as HTMLMgInputsElement[];
-
     // Get locales
     this.messages = initLocales(this.element).messages;
+
+    // Get slotted mgIputs
+    this.mgInputs = Array.from(this.element.querySelectorAll('*')).filter((node: Node) => node.nodeName.startsWith('MG-INPUT-')) as HTMLMgInputsElement[];
 
     // Define required message
     this.setRequiredMessage();

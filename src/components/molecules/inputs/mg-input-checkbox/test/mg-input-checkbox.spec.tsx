@@ -208,5 +208,31 @@ describe('mg-input-checkbox', () => {
 
       expect(page.root).toMatchSnapshot();
     });
+
+    test.each(['fr', 'xx'])('Should render component with locale: %s', async lang => {
+      const value = cloneDeep(items);
+      value[0].value = false;
+
+      const page = await getPage({ label: 'label', identifier: 'identifier', value, helpText: 'My help text', required: true, lang });
+
+      const element = page.doc.querySelector('mg-input-checkbox');
+      const allInputs = element.shadowRoot.querySelectorAll('input');
+
+      //mock validity
+      allInputs.forEach(input => {
+        input.checkValidity = jest.fn(() => false);
+        Object.defineProperty(input, 'validity', {
+          get: jest.fn(() => ({
+            valueMissing: true,
+          })),
+        });
+      });
+
+      await element.displayError();
+
+      await page.waitForChanges();
+
+      expect(page.root).toMatchSnapshot();
+    });
   });
 });
