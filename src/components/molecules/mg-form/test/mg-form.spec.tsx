@@ -111,4 +111,39 @@ describe('mg-form', () => {
 
     expect(page.root).toMatchSnapshot();
   });
+
+  test.each(['fr', 'xx'])('display error message with locale: %s', async lang => {
+    const args = { identifier: 'identifier', lang };
+
+    const slot = getSlottedContent();
+    // Set all elements required
+    slot.forEach(s => {
+      s.$attrs$.required = true;
+    });
+
+    const page = await getPage(args, slot);
+    const mgForm = page.doc.querySelector('mg-form');
+
+    // Mock all input validity
+    const mgInputs = Array.from(mgForm.querySelectorAll('*')).filter(
+      (node: Node) => node.nodeName.startsWith('MG-INPUT-') && node.nodeName !== 'MG-INPUT-TOGGLE',
+    ) as HTMLMgInputsElement[];
+    mgInputs.forEach(input => {
+      const shadowInputs = input.shadowRoot.querySelectorAll('input, textarea, select') as NodeListOf<HTMLInputElement>;
+      shadowInputs.forEach(input => {
+        input.checkValidity = jest.fn(() => false);
+        Object.defineProperty(input, 'validity', {
+          get: jest.fn(() => ({
+            valueMissing: true,
+          })),
+        });
+      });
+    });
+
+    await mgForm.displayError();
+
+    await page.waitForChanges();
+
+    expect(page.root).toMatchSnapshot();
+  });
 });

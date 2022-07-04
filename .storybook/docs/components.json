@@ -1,8 +1,8 @@
 {
-  "timestamp": "2022-07-04T08:47:23",
+  "timestamp": "2022-07-04T11:03:26",
   "compiler": {
     "name": "@stencil/core",
-    "version": "2.16.1",
+    "version": "2.17.0",
     "typescriptVersion": "4.5.4"
   },
   "components": [
@@ -379,12 +379,11 @@
         {
           "name": "template",
           "type": "string",
-          "mutable": false,
+          "mutable": true,
           "attr": "template",
           "reflectToAttr": false,
           "docs": "Template to display remaining characters.\nMust have {counter} inside",
           "docsTags": [],
-          "default": "messages.nbCharLeft",
           "values": [
             {
               "type": "string"
@@ -1359,6 +1358,23 @@
       "docsTags": [],
       "usage": {},
       "props": [
+        {
+          "name": "currency",
+          "type": "string",
+          "mutable": false,
+          "attr": "currency",
+          "reflectToAttr": false,
+          "docs": "Define currency",
+          "docsTags": [],
+          "default": "'USD'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
         {
           "name": "decimalLength",
           "type": "number",
@@ -2565,12 +2581,11 @@
         {
           "name": "placeholder",
           "type": "string",
-          "mutable": false,
+          "mutable": true,
           "attr": "placeholder",
           "reflectToAttr": false,
           "docs": "Input placeholder.\nIt should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text.",
           "docsTags": [],
-          "default": "messages.input.select.placeholder",
           "values": [
             {
               "type": "string"
@@ -4393,12 +4408,11 @@
         {
           "name": "label",
           "type": "string",
-          "mutable": false,
+          "mutable": true,
           "attr": "label",
           "reflectToAttr": false,
           "docs": "Panignation label. Is a short description.\nCustomize default value can be usefull to improve accessibility",
           "docsTags": [],
-          "default": "'pagination'",
           "values": [
             {
               "type": "string"

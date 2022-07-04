@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Component, Event, h, Prop, State, EventEmitter, Watch, Method } from '@stencil/core';
+import { Component, Element, Event, h, Prop, State, EventEmitter, Watch, Method } from '@stencil/core';
 import { MgInput } from '../MgInput';
 import { InputClass, Width } from '../MgInput.conf';
 import { createID, ClassList, allItemsAreString } from '../../../../utils/components.utils';
-import { messages } from '../../../../locales';
+import { initLocales } from '../../../../locales';
 import { SelectOption, OptGroup } from './mg-input-select.conf';
 
 /**
@@ -60,9 +60,17 @@ export class MgInputSelect {
   // HTML selector
   private input: HTMLSelectElement;
 
+  // Locales
+  private messages;
+
   /**************
    * Decorators *
    **************/
+
+  /**
+   * Get component DOM element
+   */
+  @Element() element: HTMLMgInputSelectElement;
 
   /**
    * Component value
@@ -136,7 +144,7 @@ export class MgInputSelect {
    * Input placeholder.
    * It should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text.
    */
-  @Prop() placeholder: string = messages.input.select.placeholder;
+  @Prop({ mutable: true }) placeholder: string;
 
   /**
    * Option to remove placeholder
@@ -277,7 +285,7 @@ export class MgInputSelect {
     // Set error message
     this.errorMessage = undefined;
     if (!this.valid && this.input.validity.valueMissing) {
-      this.errorMessage = messages.errors.required;
+      this.errorMessage = this.messages.errors.required;
     }
 
     // Update class
@@ -298,9 +306,14 @@ export class MgInputSelect {
    * @returns {ReturnType<typeof setTimeout>} timeout
    */
   componentWillLoad(): ReturnType<typeof setTimeout> {
-    // Check items format
+    // Get locales
+    this.messages = initLocales(this.element).messages;
+    // Validate
     this.validateItems(this.items);
-
+    // Set default placeholder
+    if (this.placeholder === undefined || this.placeholder === '') {
+      this.placeholder = this.messages.input.select.placeholder;
+    }
     // Check validity when component is ready
     // return a promise to process action only in the FIRST render().
     // https://stenciljs.com/docs/component-lifecycle#componentwillload

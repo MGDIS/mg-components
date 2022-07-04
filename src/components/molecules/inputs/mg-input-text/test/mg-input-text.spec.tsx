@@ -3,7 +3,7 @@ import { newSpecPage } from '@stencil/core/testing';
 import { MgInputText } from '../mg-input-text';
 import { MgButton } from '../../../../atoms/mg-button/mg-button';
 import { MgIcon } from '../../../../atoms/mg-icon/mg-icon';
-import { messages } from '../../../../../locales';
+import messages from '../../../../../locales/en/messages.json';
 
 const getPage = (args, content?) => {
   const page = newSpecPage({
@@ -176,6 +176,26 @@ describe('mg-input-text', () => {
 
     expect(page.root).toMatchSnapshot();
 
+    const element = page.doc.querySelector('mg-input-text');
+    const input = element.shadowRoot.querySelector('input');
+
+    //mock validity
+    input.checkValidity = jest.fn(() => false);
+    Object.defineProperty(input, 'validity', {
+      get: jest.fn(() => ({
+        valueMissing: true,
+      })),
+    });
+
+    await element.displayError();
+
+    await page.waitForChanges();
+
+    expect(page.root).toMatchSnapshot();
+  });
+
+  test.each(['fr', 'xx'])('display error message with locale: %s', async lang => {
+    const page = await getPage({ label: 'label', identifier: 'identifier', required: true, lang });
     const element = page.doc.querySelector('mg-input-text');
     const input = element.shadowRoot.querySelector('input');
 

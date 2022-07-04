@@ -15,7 +15,7 @@
 | ------------- | -------------- | ----------------------------------------------------------------------------------------------------------- | -------- | --------------------------- |
 | `currentPage` | `current-page` | Component current page                                                                                      | `number` | `1`                         |
 | `identifier`  | `identifier`   | Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created. | `string` | `createID('mg-pagination')` |
-| `label`       | `label`        | Panignation label. Is a short description. Customize default value can be usefull to improve accessibility  | `string` | `'pagination'`              |
+| `label`       | `label`        | Panignation label. Is a short description. Customize default value can be usefull to improve accessibility  | `string` | `undefined`                 |
 | `totalPages`  | `total-pages`  | Component total pages                                                                                       | `number` | `1`                         |
 
 

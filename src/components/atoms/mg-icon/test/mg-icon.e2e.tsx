@@ -36,7 +36,10 @@ describe('mg-icon', () => {
   describe.each(variants)('variant %s', variant => {
     describe.each(sizes)('size %s', size => {
       test('renders', async () => {
-        const page = await createPage(`<mg-icon icon="check-circle" size="${size}" variant="${variant}"></mg-icon>`);
+        // Needed style for viewport < 20px
+        const page = await createPage(
+          `<style>mg-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}</style><mg-icon icon="check-circle" size="${size}" variant="${variant}"></mg-icon>`,
+        );
 
         const element = await page.find('mg-icon');
         expect(element).toHaveClass('hydrated');

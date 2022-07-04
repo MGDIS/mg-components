@@ -27,9 +27,9 @@ exports[`mg-input-date Should render with args {
   label: 'label',
   identifier: 'identifier',
   readonly: true,
-  value: '2021-10-15'
+  value: '2022-06-02'
 }: 1`] = `
-<mg-input-date value="2021-10-15">
+<mg-input-date value="2022-06-02">
   <mock:shadow-root>
     <div class="mg-input mg-input--date mg-input--readonly">
       <mg-input-title identifier="identifier">
@@ -37,7 +37,53 @@ exports[`mg-input-date Should render with args {
       </mg-input-title>
       <div class="mg-input__input-container">
         <strong>
-          15/10/2021
+          6/2/2022
+        </strong>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-date>
+`;
+
+exports[`mg-input-date Should render with args {
+  label: 'label',
+  identifier: 'identifier',
+  readonly: true,
+  value: '2022-06-02',
+  lang: 'fr'
+}: 1`] = `
+<mg-input-date lang="fr" value="2022-06-02">
+  <mock:shadow-root>
+    <div class="mg-input mg-input--date mg-input--readonly">
+      <mg-input-title identifier="identifier">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <strong>
+          02/06/2022
+        </strong>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-date>
+`;
+
+exports[`mg-input-date Should render with args {
+  label: 'label',
+  identifier: 'identifier',
+  readonly: true,
+  value: '2022-06-02',
+  lang: 'xx'
+}: 1`] = `
+<mg-input-date lang="xx" value="2022-06-02">
+  <mock:shadow-root>
+    <div class="mg-input mg-input--date mg-input--readonly">
+      <mg-input-title identifier="identifier">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <strong>
+          6/2/2022
         </strong>
       </div>
     </div>
@@ -184,6 +230,46 @@ exports[`mg-input-date Should trigger events 1`] = `
 </mg-input-date>
 `;
 
+exports[`mg-input-date display error message with locale: fr 1`] = `
+<mg-input-date lang="fr">
+  <mock:shadow-root>
+    <div class="is-not-valid mg-input mg-input--date">
+      <mg-input-title identifier="identifier" required="">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input">
+          <input aria-describedby="identifier-error" class="mg-input__box" id="identifier" name="identifier" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required="" type="date">
+        </div>
+        <div aria-live="assertive" class="mg-input__error" id="identifier-error">
+          Ce champ est obligatoire.
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-date>
+`;
+
+exports[`mg-input-date display error message with locale: xx 1`] = `
+<mg-input-date lang="xx">
+  <mock:shadow-root>
+    <div class="is-not-valid mg-input mg-input--date">
+      <mg-input-title identifier="identifier" required="">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input">
+          <input aria-describedby="identifier-error" class="mg-input__box" id="identifier" name="identifier" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required="" type="date">
+        </div>
+        <div aria-live="assertive" class="mg-input__error" id="identifier-error">
+          This field is required.
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-date>
+`;
+
 exports[`mg-input-date display error with displayError component's public method 1`] = `
 <mg-input-date>
   <mock:shadow-root>
@@ -213,7 +299,7 @@ exports[`mg-input-date display error with displayError component's public method
           <input aria-describedby="identifier-error" class="mg-input__box" id="identifier" name="identifier" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required="" type="date">
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
-          Ce champ est obligatoire.
+          This field is required.
         </div>
       </div>
     </div>
@@ -233,7 +319,7 @@ exports[`mg-input-date validity, case next state is disabled validity ({ validit
           <input aria-describedby="identifier-error" class="mg-input__box" id="identifier" name="identifier" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" type="date">
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
-          Ce champ est obligatoire.
+          This field is required.
         </div>
       </div>
     </div>
@@ -253,7 +339,7 @@ exports[`mg-input-date validity, case next state is disabled validity ({ validit
           <input aria-describedby="identifier-error" class="mg-input__box" disabled="" id="identifier" name="identifier" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" type="date">
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
-          Ce champ est obligatoire.
+          This field is required.
         </div>
       </div>
     </div>
@@ -273,7 +359,7 @@ exports[`mg-input-date validity, case next state is readonly validity ({ validit
           <input aria-describedby="identifier-error" class="mg-input__box" id="identifier" name="identifier" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" type="date">
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
-          Ce champ est obligatoire.
+          This field is required.
         </div>
       </div>
     </div>

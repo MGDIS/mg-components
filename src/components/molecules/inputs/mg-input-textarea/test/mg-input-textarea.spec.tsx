@@ -1,7 +1,7 @@
 import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
 import { MgInputTextarea } from '../mg-input-textarea';
-import { messages } from '../../../../../locales';
+import messages from '../../../../../locales/en/messages.json';
 
 const getPage = args => {
   const page = newSpecPage({
@@ -139,6 +139,26 @@ describe('mg-input-textarea', () => {
 
     expect(page.root).toMatchSnapshot();
 
+    const element = page.doc.querySelector('mg-input-textarea');
+    const input = element.shadowRoot.querySelector('textarea');
+
+    //mock validity
+    input.checkValidity = jest.fn(() => false);
+    Object.defineProperty(input, 'validity', {
+      get: jest.fn(() => ({
+        valueMissing: true,
+      })),
+    });
+
+    await element.displayError();
+
+    await page.waitForChanges();
+
+    expect(page.root).toMatchSnapshot();
+  });
+
+  test.each(['fr', 'xx'])('display error message with locale: %s', async lang => {
+    const page = await getPage({ label: 'label', identifier: 'identifier', required: true, lang });
     const element = page.doc.querySelector('mg-input-textarea');
     const input = element.shadowRoot.querySelector('textarea');
 

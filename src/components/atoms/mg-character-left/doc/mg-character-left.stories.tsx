@@ -1,5 +1,5 @@
 import { h } from '@stencil/core';
-import { messages } from '../../../../locales';
+import messages from '../../../../locales/en/messages.json';
 
 export default {
   component: 'mg-character-left',

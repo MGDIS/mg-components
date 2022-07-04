@@ -27,7 +27,113 @@ exports[`mg-panel Should render with args {
           </mg-button>
           <mg-button is-icon="">
             <!---->
-            <button aria-disabled="false" aria-label="Modifer le titre de la section." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
+            <button aria-disabled="false" aria-label="Edit section title." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
+              <div class="mg-button__content">
+                <mg-icon>
+                  <mock:shadow-root>
+                    <svg aria-hidden="true" class="mg-icon mg-icon--pen mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+                      <path d="M1.67,11.69v2.64h2.64l7.78-7.78-2.64-2.64L1.67,11.69ZM14.13,4.51c.27-.28,.27-.72,0-1h0l-1.65-1.64c-.28-.27-.72-.27-1,0h0l-1.28,1.29,2.64,2.64,1.29-1.29Z" fill="currentColor"></path>
+                    </svg>
+                  </mock:shadow-root>
+                </mg-icon>
+              </div>
+            </button>
+          </mg-button>
+        </div>
+        <div class="mg-panel__header-right">
+          <slot name="header-right"></slot>
+        </div>
+      </header>
+      <article aria-labelledby="identifier-header" class="mg-panel__content" hidden="" id="identifier-content">
+        <slot></slot>
+      </article>
+    </section>
+  </mock:shadow-root>
+</mg-panel>
+`;
+
+exports[`mg-panel Should render with args {
+  identifier: 'identifier',
+  panelTitle: 'panel title',
+  titleEditable: true,
+  lang: 'fr'
+}: 1`] = `
+<mg-panel lang="fr">
+  <mock:shadow-root>
+    <section class="mg-panel" id="identifier">
+      <header class="mg-panel__header" id="identifier-header">
+        <div class="mg-panel__header-left">
+          <mg-button class="mg-panel__collapse-button">
+            <!---->
+            <button aria-controls="identifier-content" aria-disabled="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
+              <div class="mg-button__content">
+                <mg-icon>
+                  <mock:shadow-root>
+                    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+                      <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
+                    </svg>
+                  </mock:shadow-root>
+                </mg-icon>
+                panel title
+              </div>
+            </button>
+          </mg-button>
+          <mg-button is-icon="">
+            <!---->
+            <button aria-disabled="false" aria-label="Modifier le titre de la section." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
+              <div class="mg-button__content">
+                <mg-icon>
+                  <mock:shadow-root>
+                    <svg aria-hidden="true" class="mg-icon mg-icon--pen mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+                      <path d="M1.67,11.69v2.64h2.64l7.78-7.78-2.64-2.64L1.67,11.69ZM14.13,4.51c.27-.28,.27-.72,0-1h0l-1.65-1.64c-.28-.27-.72-.27-1,0h0l-1.28,1.29,2.64,2.64,1.29-1.29Z" fill="currentColor"></path>
+                    </svg>
+                  </mock:shadow-root>
+                </mg-icon>
+              </div>
+            </button>
+          </mg-button>
+        </div>
+        <div class="mg-panel__header-right">
+          <slot name="header-right"></slot>
+        </div>
+      </header>
+      <article aria-labelledby="identifier-header" class="mg-panel__content" hidden="" id="identifier-content">
+        <slot></slot>
+      </article>
+    </section>
+  </mock:shadow-root>
+</mg-panel>
+`;
+
+exports[`mg-panel Should render with args {
+  identifier: 'identifier',
+  panelTitle: 'panel title',
+  titleEditable: true,
+  lang: 'xx'
+}: 1`] = `
+<mg-panel lang="xx">
+  <mock:shadow-root>
+    <section class="mg-panel" id="identifier">
+      <header class="mg-panel__header" id="identifier-header">
+        <div class="mg-panel__header-left">
+          <mg-button class="mg-panel__collapse-button">
+            <!---->
+            <button aria-controls="identifier-content" aria-disabled="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
+              <div class="mg-button__content">
+                <mg-icon>
+                  <mock:shadow-root>
+                    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+                      <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
+                    </svg>
+                  </mock:shadow-root>
+                </mg-icon>
+                panel title
+              </div>
+            </button>
+          </mg-button>
+          <mg-button is-icon="">
+            <!---->
+            <button aria-disabled="false" aria-label="Edit section title." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
               <div class="mg-button__content">
                 <mg-icon>
                   <mock:shadow-root>
@@ -81,7 +187,7 @@ exports[`mg-panel Should render with args {
           </mg-button>
           <mg-button is-icon="">
             <!---->
-            <button aria-disabled="false" aria-label="Modifer le titre de la section." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
+            <button aria-disabled="false" aria-label="Edit section title." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
               <div class="mg-button__content">
                 <mg-icon>
                   <mock:shadow-root>
@@ -333,7 +439,7 @@ exports[`mg-panel navigation Should NOT update panel title, case input new value
           </mg-button>
           <mg-button is-icon="">
             <!---->
-            <button aria-disabled="false" aria-label="Modifer le titre de la section." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
+            <button aria-disabled="false" aria-label="Edit section title." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
               <div class="mg-button__content">
                 <mg-icon>
                   <mock:shadow-root>
@@ -382,7 +488,7 @@ exports[`mg-panel navigation Should NOT update panel title, case input new value
             <mock:shadow-root>
               <div class="mg-input mg-input--has-buttons-group-append mg-input--is-input-group-append mg-input--text mg-input--width-full">
                 <mg-input-title class="sr-only" identifier="identifier-edition-input">
-                  Modifer le titre de la section.
+                  Edit section title.
                 </mg-input-title>
                 <div class="mg-input__input-container">
                   <div class="mg-input__input">
@@ -394,7 +500,7 @@ exports[`mg-panel navigation Should NOT update panel title, case input new value
             </mock:shadow-root>
             <mg-button is-icon="" slot="append-input">
               <!---->
-              <button aria-disabled="false" aria-label="Annuler" class="mg-button mg-button--icon mg-button--secondary" id="identifier-edition-button-cancel">
+              <button aria-disabled="false" aria-label="Cancel" class="mg-button mg-button--icon mg-button--secondary" id="identifier-edition-button-cancel">
                 <div class="mg-button__content">
                   <mg-icon>
                     <mock:shadow-root>
@@ -408,7 +514,7 @@ exports[`mg-panel navigation Should NOT update panel title, case input new value
             </mg-button>
             <mg-button is-icon="" slot="append-input">
               <!---->
-              <button aria-disabled="false" aria-label="Valider" class="mg-button mg-button--icon mg-button--secondary" id="identifier-edition-button-validate">
+              <button aria-disabled="false" aria-label="Confirm" class="mg-button mg-button--icon mg-button--secondary" id="identifier-edition-button-validate">
                 <div class="mg-button__content">
                   <mg-icon>
                     <mock:shadow-root>
@@ -458,7 +564,7 @@ exports[`mg-panel navigation Should NOT update panel title, case input new value
             <mock:shadow-root>
               <div class="is-not-valid mg-input mg-input--has-buttons-group-append mg-input--is-input-group-append mg-input--text mg-input--width-full">
                 <mg-input-title class="sr-only" identifier="identifier-edition-input">
-                  Modifer le titre de la section.
+                  Edit section title.
                 </mg-input-title>
                 <div class="mg-input__input-container">
                   <div class="mg-input__input">
@@ -470,7 +576,7 @@ exports[`mg-panel navigation Should NOT update panel title, case input new value
             </mock:shadow-root>
             <mg-button is-icon="" slot="append-input">
               <!---->
-              <button aria-disabled="false" aria-label="Annuler" class="mg-button mg-button--icon mg-button--secondary" id="identifier-edition-button-cancel">
+              <button aria-disabled="false" aria-label="Cancel" class="mg-button mg-button--icon mg-button--secondary" id="identifier-edition-button-cancel">
                 <div class="mg-button__content">
                   <mg-icon>
                     <mock:shadow-root>
@@ -484,7 +590,7 @@ exports[`mg-panel navigation Should NOT update panel title, case input new value
             </mg-button>
             <mg-button is-icon="" slot="append-input">
               <!---->
-              <button aria-disabled="false" aria-label="Valider" class="mg-button mg-button--icon mg-button--secondary" id="identifier-edition-button-validate">
+              <button aria-disabled="false" aria-label="Confirm" class="mg-button mg-button--icon mg-button--secondary" id="identifier-edition-button-validate">
                 <div class="mg-button__content">
                   <mg-icon>
                     <mock:shadow-root>
@@ -533,7 +639,7 @@ exports[`mg-panel navigation Should NOT update panel title, case input new value
           </mg-button>
           <mg-button is-icon="">
             <!---->
-            <button aria-disabled="false" aria-label="Modifer le titre de la section." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
+            <button aria-disabled="false" aria-label="Edit section title." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
               <div class="mg-button__content">
                 <mg-icon>
                   <mock:shadow-root>
@@ -785,7 +891,7 @@ exports[`mg-panel navigation Should toggle edit panel title 1`] = `
           </mg-button>
           <mg-button is-icon="">
             <!---->
-            <button aria-disabled="false" aria-label="Modifer le titre de la section." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
+            <button aria-disabled="false" aria-label="Edit section title." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
               <div class="mg-button__content">
                 <mg-icon>
                   <mock:shadow-root>
@@ -834,7 +940,7 @@ exports[`mg-panel navigation Should toggle edit panel title 2`] = `
             <mock:shadow-root>
               <div class="mg-input mg-input--has-buttons-group-append mg-input--is-input-group-append mg-input--text mg-input--width-full">
                 <mg-input-title class="sr-only" identifier="identifier-edition-input">
-                  Modifer le titre de la section.
+                  Edit section title.
                 </mg-input-title>
                 <div class="mg-input__input-container">
                   <div class="mg-input__input">
@@ -846,7 +952,7 @@ exports[`mg-panel navigation Should toggle edit panel title 2`] = `
             </mock:shadow-root>
             <mg-button is-icon="" slot="append-input">
               <!---->
-              <button aria-disabled="false" aria-label="Annuler" class="mg-button mg-button--icon mg-button--secondary" id="identifier-edition-button-cancel">
+              <button aria-disabled="false" aria-label="Cancel" class="mg-button mg-button--icon mg-button--secondary" id="identifier-edition-button-cancel">
                 <div class="mg-button__content">
                   <mg-icon>
                     <mock:shadow-root>
@@ -860,7 +966,7 @@ exports[`mg-panel navigation Should toggle edit panel title 2`] = `
             </mg-button>
             <mg-button is-icon="" slot="append-input">
               <!---->
-              <button aria-disabled="false" aria-label="Valider" class="mg-button mg-button--icon mg-button--secondary" id="identifier-edition-button-validate">
+              <button aria-disabled="false" aria-label="Confirm" class="mg-button mg-button--icon mg-button--secondary" id="identifier-edition-button-validate">
                 <div class="mg-button__content">
                   <mg-icon>
                     <mock:shadow-root>
@@ -909,7 +1015,7 @@ exports[`mg-panel navigation Should toggle edit panel title 3`] = `
           </mg-button>
           <mg-button is-icon="">
             <!---->
-            <button aria-disabled="false" aria-label="Modifer le titre de la section." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
+            <button aria-disabled="false" aria-label="Edit section title." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
               <div class="mg-button__content">
                 <mg-icon>
                   <mock:shadow-root>
@@ -991,7 +1097,7 @@ exports[`mg-panel navigation should NOT update panel title, case no enter in inp
           </mg-button>
           <mg-button is-icon="">
             <!---->
-            <button aria-disabled="false" aria-label="Modifer le titre de la section." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
+            <button aria-disabled="false" aria-label="Edit section title." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
               <div class="mg-button__content">
                 <mg-icon>
                   <mock:shadow-root>
@@ -1040,7 +1146,7 @@ exports[`mg-panel navigation should NOT update panel title, case no enter in inp
             <mock:shadow-root>
               <div class="mg-input mg-input--has-buttons-group-append mg-input--is-input-group-append mg-input--text mg-input--width-full">
                 <mg-input-title class="sr-only" identifier="identifier-edition-input">
-                  Modifer le titre de la section.
+                  Edit section title.
                 </mg-input-title>
                 <div class="mg-input__input-container">
                   <div class="mg-input__input">
@@ -1052,7 +1158,7 @@ exports[`mg-panel navigation should NOT update panel title, case no enter in inp
             </mock:shadow-root>
             <mg-button is-icon="" slot="append-input">
               <!---->
-              <button aria-disabled="false" aria-label="Annuler" class="mg-button mg-button--icon mg-button--secondary" id="identifier-edition-button-cancel">
+              <button aria-disabled="false" aria-label="Cancel" class="mg-button mg-button--icon mg-button--secondary" id="identifier-edition-button-cancel">
                 <div class="mg-button__content">
                   <mg-icon>
                     <mock:shadow-root>
@@ -1066,7 +1172,7 @@ exports[`mg-panel navigation should NOT update panel title, case no enter in inp
             </mg-button>
             <mg-button is-icon="" slot="append-input">
               <!---->
-              <button aria-disabled="false" aria-label="Valider" class="mg-button mg-button--icon mg-button--secondary" id="identifier-edition-button-validate">
+              <button aria-disabled="false" aria-label="Confirm" class="mg-button mg-button--icon mg-button--secondary" id="identifier-edition-button-validate">
                 <div class="mg-button__content">
                   <mg-icon>
                     <mock:shadow-root>
@@ -1115,7 +1221,7 @@ exports[`mg-panel navigation should NOT update panel title, case no enter in inp
           </mg-button>
           <mg-button is-icon="">
             <!---->
-            <button aria-disabled="false" aria-label="Modifer le titre de la section." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
+            <button aria-disabled="false" aria-label="Edit section title." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
               <div class="mg-button__content">
                 <mg-icon>
                   <mock:shadow-root>
@@ -1163,7 +1269,7 @@ exports[`mg-panel navigation should update panel title, case cancel 1`] = `
           </mg-button>
           <mg-button is-icon="">
             <!---->
-            <button aria-disabled="false" aria-label="Modifer le titre de la section." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
+            <button aria-disabled="false" aria-label="Edit section title." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
               <div class="mg-button__content">
                 <mg-icon>
                   <mock:shadow-root>
@@ -1212,7 +1318,7 @@ exports[`mg-panel navigation should update panel title, case cancel 2`] = `
             <mock:shadow-root>
               <div class="mg-input mg-input--has-buttons-group-append mg-input--is-input-group-append mg-input--text mg-input--width-full">
                 <mg-input-title class="sr-only" identifier="identifier-edition-input">
-                  Modifer le titre de la section.
+                  Edit section title.
                 </mg-input-title>
                 <div class="mg-input__input-container">
                   <div class="mg-input__input">
@@ -1224,7 +1330,7 @@ exports[`mg-panel navigation should update panel title, case cancel 2`] = `
             </mock:shadow-root>
             <mg-button is-icon="" slot="append-input">
               <!---->
-              <button aria-disabled="false" aria-label="Annuler" class="mg-button mg-button--icon mg-button--secondary" id="identifier-edition-button-cancel">
+              <button aria-disabled="false" aria-label="Cancel" class="mg-button mg-button--icon mg-button--secondary" id="identifier-edition-button-cancel">
                 <div class="mg-button__content">
                   <mg-icon>
                     <mock:shadow-root>
@@ -1238,7 +1344,7 @@ exports[`mg-panel navigation should update panel title, case cancel 2`] = `
             </mg-button>
             <mg-button is-icon="" slot="append-input">
               <!---->
-              <button aria-disabled="false" aria-label="Valider" class="mg-button mg-button--icon mg-button--secondary" id="identifier-edition-button-validate">
+              <button aria-disabled="false" aria-label="Confirm" class="mg-button mg-button--icon mg-button--secondary" id="identifier-edition-button-validate">
                 <div class="mg-button__content">
                   <mg-icon>
                     <mock:shadow-root>
@@ -1287,7 +1393,7 @@ exports[`mg-panel navigation should update panel title, case cancel 3`] = `
           </mg-button>
           <mg-button is-icon="">
             <!---->
-            <button aria-disabled="false" aria-label="Modifer le titre de la section." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
+            <button aria-disabled="false" aria-label="Edit section title." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
               <div class="mg-button__content">
                 <mg-icon>
                   <mock:shadow-root>
@@ -1335,7 +1441,7 @@ exports[`mg-panel navigation should update panel title, case validate 1`] = `
           </mg-button>
           <mg-button is-icon="">
             <!---->
-            <button aria-disabled="false" aria-label="Modifer le titre de la section." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
+            <button aria-disabled="false" aria-label="Edit section title." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
               <div class="mg-button__content">
                 <mg-icon>
                   <mock:shadow-root>
@@ -1384,7 +1490,7 @@ exports[`mg-panel navigation should update panel title, case validate 2`] = `
             <mock:shadow-root>
               <div class="mg-input mg-input--has-buttons-group-append mg-input--is-input-group-append mg-input--text mg-input--width-full">
                 <mg-input-title class="sr-only" identifier="identifier-edition-input">
-                  Modifer le titre de la section.
+                  Edit section title.
                 </mg-input-title>
                 <div class="mg-input__input-container">
                   <div class="mg-input__input">
@@ -1396,7 +1502,7 @@ exports[`mg-panel navigation should update panel title, case validate 2`] = `
             </mock:shadow-root>
             <mg-button is-icon="" slot="append-input">
               <!---->
-              <button aria-disabled="false" aria-label="Annuler" class="mg-button mg-button--icon mg-button--secondary" id="identifier-edition-button-cancel">
+              <button aria-disabled="false" aria-label="Cancel" class="mg-button mg-button--icon mg-button--secondary" id="identifier-edition-button-cancel">
                 <div class="mg-button__content">
                   <mg-icon>
                     <mock:shadow-root>
@@ -1410,7 +1516,7 @@ exports[`mg-panel navigation should update panel title, case validate 2`] = `
             </mg-button>
             <mg-button is-icon="" slot="append-input">
               <!---->
-              <button aria-disabled="false" aria-label="Valider" class="mg-button mg-button--icon mg-button--secondary" id="identifier-edition-button-validate">
+              <button aria-disabled="false" aria-label="Confirm" class="mg-button mg-button--icon mg-button--secondary" id="identifier-edition-button-validate">
                 <div class="mg-button__content">
                   <mg-icon>
                     <mock:shadow-root>
@@ -1459,7 +1565,7 @@ exports[`mg-panel navigation should update panel title, case validate 3`] = `
           </mg-button>
           <mg-button is-icon="">
             <!---->
-            <button aria-disabled="false" aria-label="Modifer le titre de la section." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
+            <button aria-disabled="false" aria-label="Edit section title." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
               <div class="mg-button__content">
                 <mg-icon>
                   <mock:shadow-root>
