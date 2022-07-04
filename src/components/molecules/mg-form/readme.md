@@ -2,7 +2,7 @@
 
 ![](./mg-form/doc/img/mg-form-anatomy.png)
 
-- zone for required message
+- zone for required message (12px)
 - field area
 - actions area (submit, cancel)
 
