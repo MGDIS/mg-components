@@ -53,11 +53,11 @@
   --color-info: var(--color-info-h), var(--color-info-s), var(--color-info-l);
 
   /* Danger */
-  /* #df242c; */
-  /* rgb(223, 36, 44); */
-  --color-danger-h: 357;
-  --color-danger-s: 74.5%;
-  --color-danger-l: 50.8%;
+  /* #db1f29; */
+  /* rgb(219, 31, 41); */
+  --color-danger-h: 356.8;
+  --color-danger-s: 75.2%;
+  --color-danger-l: 49%;
   --color-danger: var(--color-danger-h), var(--color-danger-s), var(--color-danger-l);
 
   /* Dark */
