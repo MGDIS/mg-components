@@ -4,6 +4,7 @@
 
 Sizes (px) :
 
+- 12x12 small
 - 16x16 regular
 - 24x24 large
 - 36x36 extra-large

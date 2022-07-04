@@ -293,7 +293,7 @@ export const icons: unknown = {
 /**
  * List of all possibles sizes
  */
-export const sizes: string[] = ['regular', 'large', 'extra-large'];
+export const sizes: string[] = ['small', 'regular', 'large', 'extra-large'];
 
 /**
  * List of all possibles variants

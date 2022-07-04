@@ -1,8 +1,8 @@
 {
-  "timestamp": "2022-06-30T09:23:36",
+  "timestamp": "2022-07-04T08:47:23",
   "compiler": {
     "name": "@stencil/core",
-    "version": "2.17.0",
+    "version": "2.16.1",
     "typescriptVersion": "4.5.4"
   },
   "components": [
@@ -592,7 +592,7 @@
       "filePath": "./src/components/atoms/mg-icon/mg-icon.tsx",
       "encapsulation": "shadow",
       "tag": "mg-icon",
-      "readme": "## Design\n\n### Standard\n\nSizes (px) :\n\n- 16x16 regular\n- 24x24 large\n- 36x36 extra-large\n\nColor: text of the page (usually @color-dark)\n\n### Use alone with informative color\n\nWhen using a pictograph alone with an informative color, the color must be displayed in the background for accessibility reasons.\n\nThe colors to be used are variations of the standard colors, with the brightness increased by 20%.\n\nRule applicable for all except \"info\" blue. \"Info\" pictographs without text are usually displayed in the font color.\n\n![](./mg-icon/doc/img/mg-icon-color-bg.png)\n\n### File naming\n\n- Separator: \"-\" (dash). By default, the pictographs are the \"filled\" version, but this doesn't need to be specified in the naming\n- Variant: \"-outline\". If pictograph variant has a background that has a full circle > add \"-circle\" ex : check-circle, check-circle-outline\n",
+      "readme": "## Design\n\n### Standard\n\nSizes (px) :\n\n- 12x12 small\n- 16x16 regular\n- 24x24 large\n- 36x36 extra-large\n\nColor: text of the page (usually @color-dark)\n\n### Use alone with informative color\n\nWhen using a pictograph alone with an informative color, the color must be displayed in the background for accessibility reasons.\n\nThe colors to be used are variations of the standard colors, with the brightness increased by 20%.\n\nRule applicable for all except \"info\" blue. \"Info\" pictographs without text are usually displayed in the font color.\n\n![](./mg-icon/doc/img/mg-icon-color-bg.png)\n\n### File naming\n\n- Separator: \"-\" (dash). By default, the pictographs are the \"filled\" version, but this doesn't need to be specified in the naming\n- Variant: \"-outline\". If pictograph variant has a background that has a full circle > add \"-circle\" ex : check-circle, check-circle-outline\n",
       "docs": "",
       "docsTags": [],
       "usage": {},

@@ -99,6 +99,7 @@
   /*
     <mg-icon>
    */
+  --mg-icon-small-size: 1.2rem;
   --mg-icon-regular-size: 1.6rem;
   --mg-icon-large-size: 2.4rem;
   --mg-icon-extra-large-size: 3.6rem;
