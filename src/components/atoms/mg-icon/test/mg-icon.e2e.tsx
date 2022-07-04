@@ -1,7 +1,18 @@
 import { createPage } from '../../../../utils/test.utils';
 import { icons, sizes, variants } from '../mg-icon.conf';
 
-const setViewportSize = (size: string): number => (size === 'large' ? 24 : size === 'extra-large' ? 36 : 16);
+const setViewportSize = (size: string): number => {
+  switch (size) {
+    case 'small':
+      return 12;
+    case 'large':
+      return 24;
+    case 'extra-large':
+      return 36;
+    default:
+      return 16;
+  }
+};
 
 describe('mg-icon', () => {
   describe.each(Object.keys(icons))('icon %s', icon => {
