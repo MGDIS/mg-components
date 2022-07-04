@@ -1,8 +1,8 @@
-import { Component, Event, h, Prop, EventEmitter, State, Method, Watch } from '@stencil/core';
+import { Component, Element, Event, h, Prop, EventEmitter, State, Method, Watch } from '@stencil/core';
 import { MgInput } from '../MgInput';
 import { InputClass, Width } from '../MgInput.conf';
 import { createID, ClassList } from '../../../../utils/components.utils';
-import { messages } from '../../../../locales';
+import { initLocales } from '../../../../locales';
 
 @Component({
   tag: 'mg-input-textarea',
@@ -21,9 +21,17 @@ export class MgInputTextarea {
   // HTML selector
   private input: HTMLTextAreaElement;
 
+  // Locales
+  private messages;
+
   /**************
    * Decorators *
    **************/
+
+  /**
+   * Get component DOM element
+   */
+  @Element() element: HTMLMgInputTextareaElement;
 
   /**
    * Component value
@@ -236,7 +244,7 @@ export class MgInputTextarea {
     }
     // required
     else if (!this.valid && this.input.validity.valueMissing) {
-      this.errorMessage = messages.errors.required;
+      this.errorMessage = this.messages.errors.required;
     }
     // Update class
     if (this.valid) {
@@ -270,8 +278,10 @@ export class MgInputTextarea {
    * @returns {ReturnType<typeof setTimeout>} timeout
    */
   componentWillLoad(): ReturnType<typeof setTimeout> {
+    // Get locales
+    this.messages = initLocales(this.element).messages;
+    // Validate
     this.validatePattern();
-
     // Check validity when component is ready
     // return a promise to process action only in the FIRST render().
     // https://stenciljs.com/docs/component-lifecycle#componentwillload

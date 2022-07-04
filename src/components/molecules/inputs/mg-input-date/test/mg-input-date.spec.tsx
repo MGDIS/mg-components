@@ -1,7 +1,7 @@
 import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
 import { MgInputDate } from '../mg-input-date';
-import { messages } from '../../../../../locales';
+import messages from '../../../../../locales/en/messages.json';
 import { localeDate } from '../../../../../utils/locale.utils';
 
 const getPage = args => {
@@ -31,9 +31,11 @@ describe('mg-input-date', () => {
     { label: 'label', identifier: 'identifier', labelOnTop: true },
     { label: 'label', identifier: 'identifier', readonly: true },
     { label: 'label', identifier: 'identifier', readonly: true, labelOnTop: true, tooltip: 'Tooltip message' },
-    { label: 'label', identifier: 'identifier', readonly: true, value: '2021-10-15' },
+    { label: 'label', identifier: 'identifier', readonly: true, value: '2022-06-02' },
     { label: 'label', identifier: 'identifier', tooltip: 'My Tooltip Message' },
     { label: 'label', identifier: 'identifier', tooltip: 'My Tooltip Message', labelOnTop: true },
+    { label: 'label', identifier: 'identifier', readonly: true, value: '2022-06-02', lang: 'fr' },
+    { label: 'label', identifier: 'identifier', readonly: true, value: '2022-06-02', lang: 'xx' },
   ])('Should render with args %s:', async args => {
     const { root } = await getPage(args);
     expect(root).toMatchSnapshot();
@@ -127,7 +129,7 @@ describe('mg-input-date', () => {
       } else if (valueMissing) {
         expect(page.rootInstance.errorMessage).toEqual(messages.errors.required);
       } else if (badInput) {
-        expect(page.rootInstance.errorMessage).toEqual(messages.errors.date.badInput.replace('{min}', min !== undefined ? localeDate(min) : '01/01/1900'));
+        expect(page.rootInstance.errorMessage).toEqual(messages.errors.date.badInput.replace('{min}', localeDate(min !== undefined ? min : '1900-01-01', 'en')));
       }
       expect(page.rootInstance.valid).toEqual(validity);
       expect(page.rootInstance.invalid).toEqual(!validity);
@@ -167,13 +169,13 @@ describe('mg-input-date', () => {
     await page.waitForChanges();
 
     if (args.min !== undefined && args.max === undefined) {
-      expect(page.rootInstance.errorMessage).toEqual(messages.errors.date.min.replace('{min}', localeDate(date.middle)));
+      expect(page.rootInstance.errorMessage).toEqual(messages.errors.date.min.replace('{min}', localeDate(date.middle, 'en')));
     } else if (args.min === undefined && args.max !== undefined) {
-      expect(page.rootInstance.errorMessage).toEqual(messages.errors.date.max.replace('{max}', localeDate(date.middle)));
+      expect(page.rootInstance.errorMessage).toEqual(messages.errors.date.max.replace('{max}', localeDate(date.middle, 'en')));
     } else if (args.min !== undefined && args.max !== undefined && args.value === date.first) {
-      expect(page.rootInstance.errorMessage).toEqual(messages.errors.date.minMax.replace('{min}', localeDate(date.middle)).replace('{max}', localeDate(date.last)));
+      expect(page.rootInstance.errorMessage).toEqual(messages.errors.date.minMax.replace('{min}', localeDate(date.middle, 'en')).replace('{max}', localeDate(date.last, 'en')));
     } else if (args.min !== undefined && args.max !== undefined && args.value === date.last) {
-      expect(page.rootInstance.errorMessage).toEqual(messages.errors.date.minMax.replace('{min}', localeDate(date.first)).replace('{max}', localeDate(date.middle)));
+      expect(page.rootInstance.errorMessage).toEqual(messages.errors.date.minMax.replace('{min}', localeDate(date.first, 'en')).replace('{max}', localeDate(date.middle, 'en')));
     }
 
     expect(page.rootInstance.valid).toBeFalsy();
@@ -205,6 +207,26 @@ describe('mg-input-date', () => {
 
     expect(page.root).toMatchSnapshot();
 
+    const element = page.doc.querySelector('mg-input-date');
+    const input = element.shadowRoot.querySelector('input');
+
+    //mock validity
+    input.checkValidity = jest.fn(() => false);
+    Object.defineProperty(input, 'validity', {
+      get: jest.fn(() => ({
+        valueMissing: true,
+      })),
+    });
+
+    await element.displayError();
+
+    await page.waitForChanges();
+
+    expect(page.root).toMatchSnapshot();
+  });
+
+  test.each(['fr', 'xx'])('display error message with locale: %s', async lang => {
+    const page = await getPage({ label: 'label', identifier: 'identifier', required: true, lang });
     const element = page.doc.querySelector('mg-input-date');
     const input = element.shadowRoot.querySelector('input');
 

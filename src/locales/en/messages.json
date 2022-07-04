@@ -1,0 +1,50 @@
+{
+  "errors": {
+    "required": "This field is required.",
+    "date": {
+      "badInput": "The date format must be <span aria-hidden=\"true\">mm/dd/yyyy</span><span class=\"sr-only\">m m / d d / y y y y</span> and the date must be greater than {min}",
+      "min": "The date cannot be earlier than {min}",
+      "max": "The date cannot be later than {max}",
+      "minMax": "The date must be between {min} and {max}"
+    },
+    "numeric": {
+      "min": "The value cannot be less than {min}",
+      "max": "The value cannot be greater than {max}",
+      "minMax": "The value must be between {min} et {max}"
+    }
+  },
+  "nbCharLeft": "{counter} characters left.",
+  "input": {
+    "select": {
+      "placeholder": "Select a value"
+    }
+  },
+  "form": {
+    "required": "Fields with a <strong class=\"is-asterisk\">*</strong> are required",
+    "allRequired": "All fields are required"
+  },
+  "message": {
+    "closeButton": "Close message"
+  },
+  "modal": {
+    "closeButton": "Close modal"
+  },
+  "pagination": {
+    "label": "Pagination",
+    "page": "page",
+    "pages": "pages",
+    "nextPage": "Next page",
+    "previousPage": "Previous page",
+    "selectPage": "Select the page to display."
+  },
+  "panel": {
+    "editLabel": "Edit section title."
+  },
+  "general": {
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "close": "Close",
+    "next": "next",
+    "previous": "previous"
+  }
+}

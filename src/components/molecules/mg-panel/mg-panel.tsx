@@ -1,6 +1,6 @@
-import { Component, h, Prop, State, EventEmitter, Watch, Event } from '@stencil/core';
+import { Component, Element, h, Prop, State, EventEmitter, Watch, Event } from '@stencil/core';
 import { createID, ClassList } from '../../../utils/components.utils';
-import { messages } from '../../../locales';
+import { initLocales } from '../../../locales';
 
 @Component({
   tag: 'mg-panel',
@@ -15,9 +15,17 @@ export class MgPanel {
   // HTML selector
   private editInputElement: HTMLMgInputTextElement;
 
+  // Locales
+  private messages;
+
   /**************
    * Decorators *
    **************/
+
+  /**
+   * Get component DOM element
+   */
+  @Element() element: HTMLMgPanelElement;
 
   /**
    * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
@@ -177,6 +185,9 @@ export class MgPanel {
    * @returns {void}
    */
   componentWillLoad(): void {
+    // Get locales
+    this.messages = initLocales(this.element).messages;
+    // Validate
     this.validatetitlePattern(this.titlePattern);
   }
 
@@ -205,7 +216,7 @@ export class MgPanel {
     if (this.titleEditable && !this.isEditing) {
       return [
         collapseButton(),
-        <mg-button is-icon variant="flat" label={messages.panel.editLabel} onClick={this.handleEditButton} identifier={`${this.identifier}-edit-button`}>
+        <mg-button is-icon variant="flat" label={this.messages.panel.editLabel} onClick={this.handleEditButton} identifier={`${this.identifier}-edit-button`}>
           <mg-icon icon="pen"></mg-icon>
         </mg-button>,
       ];
@@ -215,7 +226,7 @@ export class MgPanel {
       return [
         collapseButton(),
         <mg-input-text
-          label={messages.panel.editLabel}
+          label={this.messages.panel.editLabel}
           label-hide
           value={this.panelTitle}
           onValue-change={this.handleUpdateTitle}
@@ -227,7 +238,7 @@ export class MgPanel {
         >
           <mg-button
             slot="append-input"
-            label={messages.general.cancel}
+            label={this.messages.general.cancel}
             is-icon
             variant="secondary"
             onClick={this.handleCancelEditButton}
@@ -237,7 +248,7 @@ export class MgPanel {
           </mg-button>
           <mg-button
             slot="append-input"
-            label={messages.general.validate}
+            label={this.messages.general.confirm}
             is-icon
             variant="secondary"
             onClick={this.handleValidateEditButton}

@@ -5,7 +5,7 @@
       "badInput": "Le format de la date doit être du type <span aria-hidden=\"true\">jj/mm/aaaa</span><span class=\"sr-only\">j j / m m / a a a a</span> et la date supérieure au {min}",
       "min": "La date ne peut pas être antérieure au {min}",
       "max": "La date ne peut pas être postérieure au {max}",
-      "minMax": "La date doit être comprise entre {min} et {max}"
+      "minMax": "La date doit être comprise entre le {min} et le {max}"
     },
     "numeric": {
       "min": "La valeur ne peut pas être inférieure à {min}",
@@ -27,9 +27,10 @@
     "closeButton": "Fermer le message"
   },
   "modal": {
-    "closeButton": "Fermer la modal"
+    "closeButton": "Fermer la modale"
   },
   "pagination": {
+    "label": "Pagination",
     "page": "page",
     "pages": "pages",
     "nextPage": "Page suivante",
@@ -37,10 +38,10 @@
     "selectPage": "Sélectionner la page à afficher."
   },
   "panel": {
-    "editLabel": "Modifer le titre de la section."
+    "editLabel": "Modifier le titre de la section."
   },
   "general": {
-    "validate": "Valider",
+    "confirm": "Valider",
     "cancel": "Annuler",
     "close": "Fermer",
     "next": "suivant",

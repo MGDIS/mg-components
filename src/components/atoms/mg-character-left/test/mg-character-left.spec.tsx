@@ -1,7 +1,7 @@
 import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
 import { MgCharacterLeft } from '../mg-character-left';
-import { messages } from '../../../../locales';
+import messages from '../../../../locales/en/messages.json';
 
 const getPage = args =>
   newSpecPage({
@@ -25,19 +25,11 @@ describe('mg-character-left', () => {
     }
   });
 
-  test.each(['without mustache', undefined])('Sould not renter with template %S', async template => {
+  test.each(['without mustache', '', undefined])('Sould not renter with template %S', async template => {
     try {
       await getPage({ characters: 'blu', maxlength: 400, template });
     } catch (err) {
       expect(err.message).toContain('<mg-character-left> prop "template" must contain "{counter}".');
-    }
-  });
-
-  test('Should throw error without maxlength', async () => {
-    try {
-      await getPage({});
-    } catch (err) {
-      expect(err.message).toMatch('<mg-character-left> prop "maxlength" is required');
     }
   });
 
@@ -52,5 +44,12 @@ describe('mg-character-left', () => {
     element.setAttribute('characters', characters);
     await page.waitForChanges();
     expect(element.textContent).toEqual(messages.nbCharLeft.replace('{counter}', `${maxlength - characters.length}`));
+  });
+
+  test.each(['fr', 'xx'])('Should render component with locale: %s', async lang => {
+    const maxlength = 400;
+    const characters = 'blu blu';
+    const { root } = await getPage({ characters, maxlength, lang });
+    expect(root).toMatchSnapshot();
   });
 });
