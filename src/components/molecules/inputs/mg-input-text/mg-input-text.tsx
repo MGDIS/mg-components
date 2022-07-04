@@ -25,6 +25,9 @@ export class MgInputText {
   // Locales
   private messages;
 
+  // hasError
+  private hasError = false;
+
   /**************
    * Decorators *
    **************/
@@ -190,6 +193,7 @@ export class MgInputText {
   async displayError(): Promise<void> {
     this.checkValidity();
     this.checkError();
+    this.hasError = this.invalid;
   }
 
   /**
@@ -199,6 +203,10 @@ export class MgInputText {
    */
   private handleInput = (): void => {
     this.checkValidity();
+    if (this.hasError) {
+      this.checkError();
+      this.hasError = this.invalid;
+    }
     this.value = this.input.value;
   };
 
@@ -221,9 +229,8 @@ export class MgInputText {
     // Manage focus
     this.classList.delete(this.classFocus);
     this.classList = new ClassList(this.classList.classes);
-    // Check validity
-    this.checkValidity();
-    this.checkError();
+    // Display Error
+    this.displayError();
   };
 
   /**

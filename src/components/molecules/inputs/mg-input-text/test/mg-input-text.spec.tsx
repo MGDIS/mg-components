@@ -213,4 +213,37 @@ describe('mg-input-text', () => {
 
     expect(page.root).toMatchSnapshot();
   });
+
+  test('Should remove error on input', async () => {
+    const page = await getPage({ label: 'label', identifier: 'identifier', required: true });
+    const element = page.doc.querySelector('mg-input-text');
+    const input = element.shadowRoot.querySelector('input');
+
+    //mock validity
+    const mockValidity = jest.fn().mockReturnValueOnce(false).mockReturnValueOnce(true);
+    const mockGet = jest
+      .fn()
+      .mockReturnValueOnce({
+        valueMissing: true,
+      })
+      .mockReturnValueOnce({
+        valueMissing: false,
+      });
+    input.checkValidity = mockValidity;
+    Object.defineProperty(input, 'validity', {
+      get: mockGet,
+    });
+
+    await element.displayError();
+
+    await page.waitForChanges();
+
+    expect(page.rootInstance.hasError).toBeTruthy();
+
+    input.value = 'blu';
+    input.dispatchEvent(new CustomEvent('input', { bubbles: true }));
+    await page.waitForChanges();
+
+    expect(page.rootInstance.hasError).toBeFalsy();
+  });
 });
