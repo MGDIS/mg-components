@@ -31,6 +31,9 @@ export class MgInputNumeric {
   private locale: string;
   private messages;
 
+  // hasError (triggered by blur event)
+  private hasError = false;
+
   /**************
    * Decorators *
    **************/
@@ -65,7 +68,7 @@ export class MgInputNumeric {
       // emit numeric value
       this.numericValue = this.value !== '' && this.value !== null ? parseFloat(this.value.replace(',', '.')) : null;
       this.valueChange.emit(this.numericValue);
-      // Set readOnlyValue
+      // Set readonlyValue
       this.readonlyValue = this.numericValue !== null ? this.formatValue(this.numericValue) : '';
     }
   }
@@ -228,6 +231,7 @@ export class MgInputNumeric {
   async displayError(): Promise<void> {
     this.checkValidity();
     this.checkError();
+    this.hasError = this.invalid;
   }
 
   /**
@@ -248,6 +252,9 @@ export class MgInputNumeric {
   private handleInput = (): void => {
     // Check validity
     this.checkValidity();
+    if (this.hasError) {
+      this.checkError();
+    }
     this.value = this.input.value;
   };
 
@@ -266,9 +273,8 @@ export class MgInputNumeric {
    * @returns {void}
    */
   private handleBlur = (): void => {
-    // Check validity
-    this.checkValidity();
-    this.checkError();
+    // Display Error
+    this.displayError();
     this.hasFocus = false;
   };
 

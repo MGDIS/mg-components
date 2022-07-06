@@ -23,6 +23,9 @@ export class MgInputPassword {
   // Locales
   private messages;
 
+  // hasError (triggered by blur event)
+  private hasError = false;
+
   /**************
    * Decorators *
    **************/
@@ -143,6 +146,7 @@ export class MgInputPassword {
   async displayError(): Promise<void> {
     this.checkValidity();
     this.checkError();
+    this.hasError = this.invalid;
   }
 
   /**
@@ -150,6 +154,9 @@ export class MgInputPassword {
    */
   private handleInput = (): void => {
     this.checkValidity();
+    if (this.hasError) {
+      this.checkError();
+    }
     this.value = this.input.value;
   };
 
@@ -157,8 +164,7 @@ export class MgInputPassword {
    * Handle blur event
    */
   private handleBlur = (): void => {
-    this.checkValidity();
-    this.checkError();
+    this.displayError();
   };
 
   /**

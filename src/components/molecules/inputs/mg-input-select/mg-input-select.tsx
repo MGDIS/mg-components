@@ -63,6 +63,9 @@ export class MgInputSelect {
   // Locales
   private messages;
 
+  // hasError (triggered by blur event)
+  private hasError = false;
+
   /**************
    * Decorators *
    **************/
@@ -240,6 +243,7 @@ export class MgInputSelect {
   async displayError(): Promise<void> {
     this.checkValidity();
     this.checkError();
+    this.hasError = this.invalid;
   }
 
   /**
@@ -247,6 +251,9 @@ export class MgInputSelect {
    */
   private handleInput = (): void => {
     this.checkValidity();
+    if (this.hasError) {
+      this.checkError();
+    }
     if (this.input.value !== '') {
       this.value = allItemsAreString(this.items as string[]) ? this.input.value : (this.items as SelectOption[]).find(item => item.title === this.input.value).value;
     } else {
@@ -258,8 +265,7 @@ export class MgInputSelect {
    * Handle blur event
    */
   private handleBlur = (): void => {
-    this.checkValidity();
-    this.checkError();
+    this.displayError();
   };
 
   /**

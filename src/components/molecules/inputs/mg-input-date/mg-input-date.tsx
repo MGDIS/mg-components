@@ -26,6 +26,9 @@ export class MgInputDate {
   private messages;
   private locale: string;
 
+  // hasError (triggered by blur event)
+  private hasError = false;
+
   /**************
    * Decorators *
    **************/
@@ -159,6 +162,7 @@ export class MgInputDate {
   async displayError(): Promise<void> {
     this.checkValidity();
     this.checkError();
+    this.hasError = this.invalid;
   }
 
   /**
@@ -166,6 +170,9 @@ export class MgInputDate {
    */
   private handleInput = (): void => {
     this.checkValidity();
+    if (this.hasError) {
+      this.checkError();
+    }
     this.value = this.input.value;
   };
 
@@ -173,8 +180,7 @@ export class MgInputDate {
    * Handle blur event
    */
   private handleBlur = (): void => {
-    this.checkValidity();
-    this.checkError();
+    this.displayError();
   };
 
   /**
