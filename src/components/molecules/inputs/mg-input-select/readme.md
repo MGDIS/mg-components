@@ -22,6 +22,7 @@ The spacing between the text and the chevron is at least 10px.
 | `label` _(required)_  | `label`                | Input label                                                                                                                                    | `string`                     | `undefined`                   |
 | `labelHide`           | `label-hide`           | Define if label is visible                                                                                                                     | `boolean`                    | `false`                       |
 | `labelOnTop`          | `label-on-top`         | Define if label is displayed on top                                                                                                            | `boolean`                    | `undefined`                   |
+| `mgWidth`             | `mg-width`             | Define input width                                                                                                                             | `"full" \| 16 \| 2 \| 4`     | `undefined`                   |
 | `name`                | `name`                 | Input name If not set the value equals the identifier                                                                                          | `string`                     | `this.identifier`             |
 | `placeholder`         | `placeholder`          | Input placeholder. It should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text. | `string`                     | `undefined`                   |
 | `placeholderDisabled` | `placeholder-disabled` | Option to disable placeholder                                                                                                                  | `boolean`                    | `false`                       |
@@ -31,7 +32,6 @@ The spacing between the text and the chevron is at least 10px.
 | `tooltip`             | `tooltip`              | Add a tooltip message next to the input                                                                                                        | `string`                     | `undefined`                   |
 | `valid`               | `valid`                | Define input valid state                                                                                                                       | `boolean`                    | `undefined`                   |
 | `value`               | `value`                | Component value                                                                                                                                | `any`                        | `undefined`                   |
-| `width`               | `width`                | Define input width                                                                                                                             | `"full" \| 16 \| 2 \| 4`     | `undefined`                   |
 
 
 ## Events

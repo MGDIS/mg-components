@@ -92,7 +92,7 @@ export class MgInputPassword {
   /**
    * Define input width
    */
-  @Prop() width: Width = 'full';
+  @Prop() mgWidth: Width = 'full';
 
   /**
    * Add a tooltip message next to the input
@@ -230,7 +230,7 @@ export class MgInputPassword {
         labelHide={this.labelHide}
         required={this.required}
         readonly={this.readonly}
-        width={this.width}
+        mgWidth={this.mgWidth}
         disabled={this.disabled}
         value={this.value}
         readonlyValue={this.value !== undefined ? '•'.repeat(this.value.length) : undefined}

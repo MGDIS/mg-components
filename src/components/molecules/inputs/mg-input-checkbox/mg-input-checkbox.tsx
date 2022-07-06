@@ -276,7 +276,7 @@ export class MgInputCheckbox {
         labelHide={this.labelHide}
         required={this.required}
         readonly={undefined}
-        width={undefined}
+        mgWidth={undefined}
         disabled={this.disabled}
         value={this.value && this.value.toString()}
         readonlyValue={undefined}

@@ -3,6 +3,12 @@ import { h } from '@stencil/core';
 export default {
   component: 'mg-input-textarea',
   title: 'Molecules/Inputs/mg-input-textarea',
+  argTypes: {
+    mgWidth: {
+      options: [2, 4, 16, 'full'],
+      control: { type: 'select' },
+    },
+  },
   parameters: { actions: { handles: ['value-change', 'input-valid'] } },
 };
 
@@ -27,6 +33,8 @@ const Template = (args: any): HTMLElement => {
   delete args.characterLeftTemplate;
   const helpText = args.helpText;
   delete args.helpText;
+  const mgWidth = args.mgWidth;
+  delete args.mgWidth;
   // return element
   return (
     <mg-input-textarea
@@ -37,6 +45,7 @@ const Template = (args: any): HTMLElement => {
       display-character-left={displayCharacterLeft ? 'true' : 'false'}
       character-left-template={characterLeftTemplate}
       help-text={helpText}
+      mg-width={mgWidth}
     ></mg-input-textarea>
   );
 };
@@ -60,6 +69,7 @@ MgInputTextarea.args = {
   pattern: undefined,
   patternErrorMessage: undefined,
   rows: 3,
+  mgWidth: 'full',
   // Tooltip
   tooltip: 'This is a tooltip',
   // Nb Char Left

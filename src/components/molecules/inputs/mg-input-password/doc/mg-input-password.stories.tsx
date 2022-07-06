@@ -3,6 +3,12 @@ import { h } from '@stencil/core';
 export default {
   component: 'mg-input-password',
   title: 'Molecules/Inputs/mg-input-password',
+  argTypes: {
+    mgWidth: {
+      options: [2, 4, 16, 'full'],
+      control: { type: 'select' },
+    },
+  },
   parameters: { actions: { handles: ['value-change', 'input-valid'] } },
 };
 
@@ -21,8 +27,10 @@ const Template = (args: any): HTMLElement => {
   delete args.labelHide;
   const helpText = args.helpText;
   delete args.helpText;
+  const mgWidth = args.mgWidth;
+  delete args.mgWidth;
   // return element
-  return <mg-input-password {...args} label-on-top={labelOnTop} label-hide={labelHide} help-text={helpText}></mg-input-password>;
+  return <mg-input-password {...args} label-on-top={labelOnTop} label-hide={labelHide} help-text={helpText} mg-width={mgWidth}></mg-input-password>;
 };
 
 /**
@@ -46,6 +54,7 @@ MgInputPassword.args = {
   required: true,
   disabled: false,
   readonly: false,
+  mgWidth: 'full',
   // Tooltip
   tooltip: 'This is a tooltip',
   // Help Text

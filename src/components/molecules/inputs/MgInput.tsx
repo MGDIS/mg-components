@@ -42,7 +42,7 @@ const manageClasses = (props: MgInputProps): void => {
 
   if (props.readonly) props.classList.add('mg-input--readonly');
 
-  if (props.width !== undefined) props.classList.add(`mg-input--width-${props.width}`);
+  if (props.mgWidth !== undefined) props.classList.add(`mg-input--width-${props.mgWidth}`);
 
   if (props.readonly || props.disabled) {
     props.classList.delete(InputClass.ERROR);
@@ -74,7 +74,7 @@ interface MgInputProps {
   readonlyValue: string;
   required: boolean;
   readonly: boolean;
-  width: Width;
+  mgWidth: Width;
   disabled: boolean;
   // Tooltip
   tooltip: string;

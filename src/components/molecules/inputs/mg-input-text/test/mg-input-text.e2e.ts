@@ -184,7 +184,7 @@ describe('mg-input-text', () => {
 
   describe.each([16, 4, 2])('with custom width: %s', width => {
     test.each([false, true])('with label on top: %s', async labelOnTop => {
-      const page = await createPage(`<mg-input-text label="label" width="${width}" label-on-top="${labelOnTop}"></mg-input-text>`);
+      const page = await createPage(`<mg-input-text label="label" mg-width="${width}" label-on-top="${labelOnTop}"></mg-input-text>`);
 
       const element = await page.find('mg-input-text');
 

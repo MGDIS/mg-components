@@ -312,7 +312,7 @@ export class MgInputDate {
         labelHide={this.labelHide}
         required={this.required}
         readonly={this.readonly}
-        width={undefined}
+        mgWidth={undefined}
         disabled={this.disabled}
         value={this.value}
         readonlyValue={localeDate(this.value, this.locale)}

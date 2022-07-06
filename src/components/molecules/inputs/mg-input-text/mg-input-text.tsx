@@ -109,7 +109,7 @@ export class MgInputText {
   /**
    * Define input width
    */
-  @Prop() width: Width = 'full';
+  @Prop() mgWidth: Width = 'full';
 
   /**
    * Define input pattern to validate
@@ -341,7 +341,7 @@ export class MgInputText {
         labelHide={this.labelHide}
         required={this.required}
         readonly={this.readonly}
-        width={this.width}
+        mgWidth={this.mgWidth}
         disabled={this.disabled}
         value={this.value}
         readonlyValue={undefined}

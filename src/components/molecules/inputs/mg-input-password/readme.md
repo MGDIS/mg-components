@@ -16,6 +16,7 @@ The standard display of "bullets" instead of characters is the standard one (dep
 | `label` _(required)_ | `label`        | Input label                                                                                                                                    | `string`                 | `undefined`                     |
 | `labelHide`          | `label-hide`   | Define if label is visible                                                                                                                     | `boolean`                | `false`                         |
 | `labelOnTop`         | `label-on-top` | Define if label is displayed on top                                                                                                            | `boolean`                | `undefined`                     |
+| `mgWidth`            | `mg-width`     | Define input width                                                                                                                             | `"full" \| 16 \| 2 \| 4` | `'full'`                        |
 | `name`               | `name`         | Input name If not set the value equals the identifier                                                                                          | `string`                 | `this.identifier`               |
 | `placeholder`        | `placeholder`  | Input placeholder. It should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text. | `string`                 | `undefined`                     |
 | `readonly`           | `readonly`     | Define if input is readonly                                                                                                                    | `boolean`                | `false`                         |
@@ -23,7 +24,6 @@ The standard display of "bullets" instead of characters is the standard one (dep
 | `tooltip`            | `tooltip`      | Add a tooltip message next to the input                                                                                                        | `string`                 | `undefined`                     |
 | `valid`              | `valid`        | Define input valid state                                                                                                                       | `boolean`                | `undefined`                     |
 | `value`              | `value`        | Component value                                                                                                                                | `string`                 | `undefined`                     |
-| `width`              | `width`        | Define input width                                                                                                                             | `"full" \| 16 \| 2 \| 4` | `'full'`                        |
 
 
 ## Events
