@@ -4,14 +4,18 @@ import messages from '../../../../../locales/en/messages.json';
 export default {
   component: 'mg-input-select',
   title: 'Molecules/Inputs/mg-input-select',
-  parameters: { actions: { handles: ['value-change', 'input-valid'] } },
   argTypes: {
     placeholder: {
       table: {
         defaultValue: { summary: messages.input.select.placeholder },
       },
     },
+    mgWidth: {
+      options: [undefined, 2, 4, 16, 'full'],
+      control: { type: 'select' },
+    },
   },
+  parameters: { actions: { handles: ['value-change', 'input-valid'] } },
 };
 
 /**
@@ -33,6 +37,8 @@ const Template = (args: any): HTMLElement => {
   delete args.placeholderDisabled;
   const placeholderHide = args.placeholderHide;
   delete args.placeholderHide;
+  const mgWidth = args.mgWidth;
+  delete args.mgWidth;
   // return element
   return (
     <mg-input-select
@@ -42,6 +48,7 @@ const Template = (args: any): HTMLElement => {
       help-text={helpText}
       placeholder-hide={placeholderHide}
       placeholder-disabled={placeholderDisabled}
+      mg-width={mgWidth}
     ></mg-input-select>
   );
 };
@@ -61,6 +68,7 @@ MgInputSelect.args = {
   readonly: false,
   disabled: false,
   items: ['blu', 'bli', 'blo', 'bla'],
+  mgWidth: undefined,
   // Tooltip
   tooltip: 'This is a tooltip',
   // Help Text

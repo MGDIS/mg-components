@@ -124,7 +124,7 @@ export class MgInputNumeric {
   /**
    * Define input width
    */
-  @Prop() width: Width;
+  @Prop() mgWidth: Width;
 
   /**
    * Add a tooltip message next to the input
@@ -418,7 +418,7 @@ export class MgInputNumeric {
         labelHide={this.labelHide}
         required={this.required}
         readonly={this.readonly}
-        width={this.width}
+        mgWidth={this.mgWidth}
         disabled={this.disabled}
         value={this.value}
         readonlyValue={this.readonlyValue}

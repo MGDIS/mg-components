@@ -102,7 +102,7 @@ export class MgInputTextarea {
   /**
    * Define input width
    */
-  @Prop() width: Width = 'full';
+  @Prop() mgWidth: Width = 'full';
 
   /**
    * Define input pattern to validate
@@ -312,7 +312,7 @@ export class MgInputTextarea {
         labelHide={this.labelHide}
         required={this.required}
         readonly={this.readonly}
-        width={this.width}
+        mgWidth={this.mgWidth}
         disabled={this.disabled}
         value={this.value}
         readonlyValue={undefined}

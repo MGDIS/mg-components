@@ -44,6 +44,7 @@ Horizontal spacing is not managed by the component, it must be defined in slot i
 | `labelHide`          | `label-hide`     | Define if label is visible                                                                                                                     | `boolean`                | `false`                        |
 | `labelOnTop`         | `label-on-top`   | Define if label is displayed on top                                                                                                            | `boolean`                | `undefined`                    |
 | `max`                | `max`            | Maximum value                                                                                                                                  | `number`                 | `undefined`                    |
+| `mgWidth`            | `mg-width`       | Define input width                                                                                                                             | `"full" \| 16 \| 2 \| 4` | `undefined`                    |
 | `min`                | `min`            | Minimum value                                                                                                                                  | `number`                 | `undefined`                    |
 | `name`               | `name`           | Input name If not set the value equals the identifier                                                                                          | `string`                 | `this.identifier`              |
 | `placeholder`        | `placeholder`    | Input placeholder. It should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text. | `string`                 | `undefined`                    |
@@ -53,7 +54,6 @@ Horizontal spacing is not managed by the component, it must be defined in slot i
 | `type`               | `type`           | Define numeric type                                                                                                                            | `string`                 | `types[0]`                     |
 | `valid`              | `valid`          | Define input pattern to validate                                                                                                               | `boolean`                | `undefined`                    |
 | `value`              | `value`          | Component value                                                                                                                                | `string`                 | `undefined`                    |
-| `width`              | `width`          | Define input width                                                                                                                             | `"full" \| 16 \| 2 \| 4` | `undefined`                    |
 
 
 ## Events

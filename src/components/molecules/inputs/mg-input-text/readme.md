@@ -38,6 +38,7 @@ Horizontal spacing is not managed by the component, it must be defined in slot i
 | `labelHide`             | `label-hide`              | Define if label is visible                                                                                                                     | `boolean`                | `false`                     |
 | `labelOnTop`            | `label-on-top`            | Define if label is displayed on top                                                                                                            | `boolean`                | `undefined`                 |
 | `maxlength`             | `maxlength`               | Input max length                                                                                                                               | `number`                 | `400`                       |
+| `mgWidth`               | `mg-width`                | Define input width                                                                                                                             | `"full" \| 16 \| 2 \| 4` | `'full'`                    |
 | `name`                  | `name`                    | Input name If not set the value equals the identifier                                                                                          | `string`                 | `this.identifier`           |
 | `pattern`               | `pattern`                 | Define input pattern to validate                                                                                                               | `string`                 | `undefined`                 |
 | `patternErrorMessage`   | `pattern-error-message`   | Define input pattern error message                                                                                                             | `string`                 | `undefined`                 |
@@ -48,7 +49,6 @@ Horizontal spacing is not managed by the component, it must be defined in slot i
 | `type`                  | `type`                    | Input type                                                                                                                                     | `"search" \| "text"`     | `'text'`                    |
 | `valid`                 | `valid`                   | Define input valid state                                                                                                                       | `boolean`                | `undefined`                 |
 | `value`                 | `value`                   | Component value                                                                                                                                | `string`                 | `undefined`                 |
-| `width`                 | `width`                   | Define input width                                                                                                                             | `"full" \| 16 \| 2 \| 4` | `'full'`                    |
 
 
 ## Events

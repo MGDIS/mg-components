@@ -259,7 +259,7 @@ export class MgInputToggle {
         labelHide={this.labelHide}
         required={undefined}
         readonly={undefined}
-        width={undefined}
+        mgWidth={undefined}
         disabled={this.disabled}
         value={this.value as string}
         readonlyValue={undefined}
