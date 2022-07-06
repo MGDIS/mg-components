@@ -24,6 +24,9 @@ export class MgInputTextarea {
   // Locales
   private messages;
 
+  // hasError (triggered by blur event)
+  private hasError = false;
+
   /**************
    * Decorators *
    **************/
@@ -180,12 +183,17 @@ export class MgInputTextarea {
   async displayError(): Promise<void> {
     this.checkValidity();
     this.checkError();
+    this.hasError = this.invalid;
   }
 
   /**
    * Handle input event
    */
   private handleInput = (): void => {
+    if (this.hasError) {
+      this.checkValidity();
+      this.checkError();
+    }
     this.value = this.input.value;
   };
 
@@ -204,9 +212,8 @@ export class MgInputTextarea {
     // Manage focus
     this.classList.delete(this.classFocus);
     this.classList = new ClassList(this.classList.classes);
-    // Check validity
-    this.checkValidity();
-    this.checkError();
+    // Display Error
+    this.displayError();
   };
 
   /**
