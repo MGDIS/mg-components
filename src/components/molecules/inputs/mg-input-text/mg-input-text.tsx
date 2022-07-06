@@ -25,7 +25,7 @@ export class MgInputText {
   // Locales
   private messages;
 
-  // hasError
+  // hasError (triggered by blur event)
   private hasError = false;
 
   /**************
@@ -205,7 +205,6 @@ export class MgInputText {
     this.checkValidity();
     if (this.hasError) {
       this.checkError();
-      this.hasError = this.invalid;
     }
     this.value = this.input.value;
   };
