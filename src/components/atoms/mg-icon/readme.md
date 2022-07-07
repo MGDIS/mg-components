@@ -9,7 +9,7 @@ Sizes (px) :
 - 24x24 large
 - 36x36 extra-large
 
-Color: text of the page (usually @color-dark)
+Color: text of the page (usually [@color-dark](?path=/docs/style-colors--page))
 
 ### Use alone with informative color
 
