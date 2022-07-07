@@ -3,12 +3,12 @@
 exports[`mg-input-numeric display error message with locale: fr 1`] = `
 <mg-input-numeric lang="fr">
   <mock:shadow-root>
-    <div class="is-not-valid mg-input mg-input--numeric mg-input--numeric--decimal">
+    <div class="mg-input mg-input--numeric mg-input--numeric--decimal">
       <mg-input-title identifier="identifier" required="">
         label
       </mg-input-title>
       <div class="mg-input__input-container">
-        <div class="mg-input__input">
+        <div class="mg-input__input mg-input__input--has-error">
           <input aria-describedby="identifier-error" class="mg-input__box" id="identifier" name="identifier" required="" type="text">
           <slot name="append-input"></slot>
         </div>
@@ -24,12 +24,12 @@ exports[`mg-input-numeric display error message with locale: fr 1`] = `
 exports[`mg-input-numeric display error message with locale: xx 1`] = `
 <mg-input-numeric lang="xx">
   <mock:shadow-root>
-    <div class="is-not-valid mg-input mg-input--numeric mg-input--numeric--decimal">
+    <div class="mg-input mg-input--numeric mg-input--numeric--decimal">
       <mg-input-title identifier="identifier" required="">
         label
       </mg-input-title>
       <div class="mg-input__input-container">
-        <div class="mg-input__input">
+        <div class="mg-input__input mg-input__input--has-error">
           <input aria-describedby="identifier-error" class="mg-input__box" id="identifier" name="identifier" required="" type="text">
           <slot name="append-input"></slot>
         </div>
@@ -523,12 +523,12 @@ exports[`mg-input-numeric type currency display error with displayError componen
 exports[`mg-input-numeric type currency display error with displayError component's public method 2`] = `
 <mg-input-numeric>
   <mock:shadow-root>
-    <div class="is-not-valid mg-input mg-input--numeric mg-input--numeric--decimal">
+    <div class="mg-input mg-input--numeric mg-input--numeric--decimal">
       <mg-input-title identifier="identifier" required="">
         label
       </mg-input-title>
       <div class="mg-input__input-container">
-        <div class="mg-input__input">
+        <div class="mg-input__input mg-input__input--has-error">
           <input aria-describedby="identifier-error" class="mg-input__box" id="identifier" name="identifier" required="" type="text">
           <slot name="append-input"></slot>
         </div>
@@ -544,12 +544,12 @@ exports[`mg-input-numeric type currency display error with displayError componen
 exports[`mg-input-numeric type currency validity, case next state is disabled validity ({ validity: false, valueMissing: true }), valueMissing (%s) 1`] = `
 <mg-input-numeric>
   <mock:shadow-root>
-    <div class="is-not-valid mg-input mg-input--numeric mg-input--numeric--currency">
+    <div class="mg-input mg-input--numeric mg-input--numeric--currency">
       <mg-input-title identifier="identifier">
         label
       </mg-input-title>
       <div class="mg-input__input-container">
-        <div class="mg-input__input">
+        <div class="mg-input__input mg-input__input--has-error">
           <input aria-describedby="identifier-error" class="mg-input__box" id="identifier" name="identifier" type="text">
           <slot name="append-input"></slot>
         </div>
@@ -570,12 +570,9 @@ exports[`mg-input-numeric type currency validity, case next state is disabled va
         label
       </mg-input-title>
       <div class="mg-input__input-container">
-        <div class="mg-input__input">
+        <div class="mg-input__input mg-input__input--has-error">
           <input aria-describedby="identifier-error" class="mg-input__box" disabled="" id="identifier" name="identifier" type="text">
           <slot name="append-input"></slot>
-        </div>
-        <div aria-live="assertive" class="mg-input__error" id="identifier-error">
-          This field is required.
         </div>
       </div>
     </div>
@@ -586,12 +583,12 @@ exports[`mg-input-numeric type currency validity, case next state is disabled va
 exports[`mg-input-numeric type currency validity, case next state is readonly validity ({ validity: false, valueMissing: true }), valueMissing (%s) 1`] = `
 <mg-input-numeric>
   <mock:shadow-root>
-    <div class="is-not-valid mg-input mg-input--numeric mg-input--numeric--currency">
+    <div class="mg-input mg-input--numeric mg-input--numeric--currency">
       <mg-input-title identifier="identifier">
         label
       </mg-input-title>
       <div class="mg-input__input-container">
-        <div class="mg-input__input">
+        <div class="mg-input__input mg-input__input--has-error">
           <input aria-describedby="identifier-error" class="mg-input__box" id="identifier" name="identifier" type="text">
           <slot name="append-input"></slot>
         </div>
@@ -1101,12 +1098,12 @@ exports[`mg-input-numeric type decimal display error with displayError component
 exports[`mg-input-numeric type decimal display error with displayError component's public method 2`] = `
 <mg-input-numeric>
   <mock:shadow-root>
-    <div class="is-not-valid mg-input mg-input--numeric mg-input--numeric--decimal">
+    <div class="mg-input mg-input--numeric mg-input--numeric--decimal">
       <mg-input-title identifier="identifier" required="">
         label
       </mg-input-title>
       <div class="mg-input__input-container">
-        <div class="mg-input__input">
+        <div class="mg-input__input mg-input__input--has-error">
           <input aria-describedby="identifier-error" class="mg-input__box" id="identifier" name="identifier" required="" type="text">
           <slot name="append-input"></slot>
         </div>
@@ -1122,12 +1119,12 @@ exports[`mg-input-numeric type decimal display error with displayError component
 exports[`mg-input-numeric type decimal validity, case next state is disabled validity ({ validity: false, valueMissing: true }), valueMissing (%s) 1`] = `
 <mg-input-numeric>
   <mock:shadow-root>
-    <div class="is-not-valid mg-input mg-input--numeric mg-input--numeric--decimal">
+    <div class="mg-input mg-input--numeric mg-input--numeric--decimal">
       <mg-input-title identifier="identifier">
         label
       </mg-input-title>
       <div class="mg-input__input-container">
-        <div class="mg-input__input">
+        <div class="mg-input__input mg-input__input--has-error">
           <input aria-describedby="identifier-error" class="mg-input__box" id="identifier" name="identifier" type="text">
           <slot name="append-input"></slot>
         </div>
@@ -1148,12 +1145,9 @@ exports[`mg-input-numeric type decimal validity, case next state is disabled val
         label
       </mg-input-title>
       <div class="mg-input__input-container">
-        <div class="mg-input__input">
+        <div class="mg-input__input mg-input__input--has-error">
           <input aria-describedby="identifier-error" class="mg-input__box" disabled="" id="identifier" name="identifier" type="text">
           <slot name="append-input"></slot>
-        </div>
-        <div aria-live="assertive" class="mg-input__error" id="identifier-error">
-          This field is required.
         </div>
       </div>
     </div>
@@ -1164,12 +1158,12 @@ exports[`mg-input-numeric type decimal validity, case next state is disabled val
 exports[`mg-input-numeric type decimal validity, case next state is readonly validity ({ validity: false, valueMissing: true }), valueMissing (%s) 1`] = `
 <mg-input-numeric>
   <mock:shadow-root>
-    <div class="is-not-valid mg-input mg-input--numeric mg-input--numeric--decimal">
+    <div class="mg-input mg-input--numeric mg-input--numeric--decimal">
       <mg-input-title identifier="identifier">
         label
       </mg-input-title>
       <div class="mg-input__input-container">
-        <div class="mg-input__input">
+        <div class="mg-input__input mg-input__input--has-error">
           <input aria-describedby="identifier-error" class="mg-input__box" id="identifier" name="identifier" type="text">
           <slot name="append-input"></slot>
         </div>
@@ -1679,12 +1673,12 @@ exports[`mg-input-numeric type integer display error with displayError component
 exports[`mg-input-numeric type integer display error with displayError component's public method 2`] = `
 <mg-input-numeric>
   <mock:shadow-root>
-    <div class="is-not-valid mg-input mg-input--numeric mg-input--numeric--decimal">
+    <div class="mg-input mg-input--numeric mg-input--numeric--decimal">
       <mg-input-title identifier="identifier" required="">
         label
       </mg-input-title>
       <div class="mg-input__input-container">
-        <div class="mg-input__input">
+        <div class="mg-input__input mg-input__input--has-error">
           <input aria-describedby="identifier-error" class="mg-input__box" id="identifier" name="identifier" required="" type="text">
           <slot name="append-input"></slot>
         </div>
@@ -1700,12 +1694,12 @@ exports[`mg-input-numeric type integer display error with displayError component
 exports[`mg-input-numeric type integer validity, case next state is disabled validity ({ validity: false, valueMissing: true }), valueMissing (%s) 1`] = `
 <mg-input-numeric>
   <mock:shadow-root>
-    <div class="is-not-valid mg-input mg-input--numeric mg-input--numeric--integer">
+    <div class="mg-input mg-input--numeric mg-input--numeric--integer">
       <mg-input-title identifier="identifier">
         label
       </mg-input-title>
       <div class="mg-input__input-container">
-        <div class="mg-input__input">
+        <div class="mg-input__input mg-input__input--has-error">
           <input aria-describedby="identifier-error" class="mg-input__box" id="identifier" name="identifier" type="text">
           <slot name="append-input"></slot>
         </div>
@@ -1726,12 +1720,9 @@ exports[`mg-input-numeric type integer validity, case next state is disabled val
         label
       </mg-input-title>
       <div class="mg-input__input-container">
-        <div class="mg-input__input">
+        <div class="mg-input__input mg-input__input--has-error">
           <input aria-describedby="identifier-error" class="mg-input__box" disabled="" id="identifier" name="identifier" type="text">
           <slot name="append-input"></slot>
-        </div>
-        <div aria-live="assertive" class="mg-input__error" id="identifier-error">
-          This field is required.
         </div>
       </div>
     </div>
@@ -1742,12 +1733,12 @@ exports[`mg-input-numeric type integer validity, case next state is disabled val
 exports[`mg-input-numeric type integer validity, case next state is readonly validity ({ validity: false, valueMissing: true }), valueMissing (%s) 1`] = `
 <mg-input-numeric>
   <mock:shadow-root>
-    <div class="is-not-valid mg-input mg-input--numeric mg-input--numeric--integer">
+    <div class="mg-input mg-input--numeric mg-input--numeric--integer">
       <mg-input-title identifier="identifier">
         label
       </mg-input-title>
       <div class="mg-input__input-container">
-        <div class="mg-input__input">
+        <div class="mg-input__input mg-input__input--has-error">
           <input aria-describedby="identifier-error" class="mg-input__box" id="identifier" name="identifier" type="text">
           <slot name="append-input"></slot>
         </div>

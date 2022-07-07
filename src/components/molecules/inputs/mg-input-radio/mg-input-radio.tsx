@@ -5,7 +5,6 @@ import { MgInput } from '../MgInput';
 import { createID, ClassList, allItemsAreString } from '../../../../utils/components.utils';
 import { initLocales } from '../../../../locales';
 import { RadioOption } from './mg-input-radio.conf';
-import { InputClass } from '../MgInput.conf';
 
 /**
  * type Option validation function
@@ -24,9 +23,6 @@ export class MgInputRadio {
   /************
    * Internal *
    ************/
-
-  // classes
-  private classError = InputClass.ERROR;
 
   // HTML selector
   private inputs: HTMLInputElement[] = [];
@@ -229,13 +225,6 @@ export class MgInputRadio {
     this.errorMessage = undefined;
     if (!this.valid && invalidElement.validity.valueMissing) {
       this.errorMessage = this.messages.errors.required;
-    }
-
-    // Update class
-    if (this.valid) {
-      this.classList.delete(this.classError);
-    } else {
-      this.classList.add(this.classError);
     }
   };
 

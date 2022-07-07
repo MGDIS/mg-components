@@ -1,5 +1,5 @@
 import { FunctionalComponent, h, VNode, FunctionalUtilities } from '@stencil/core';
-import { Width, InputClass } from './MgInput.conf';
+import { Width } from './MgInput.conf';
 import { ClassList } from '../../../utils/components.utils';
 
 /**
@@ -43,10 +43,6 @@ const manageClasses = (props: MgInputProps): void => {
   if (props.readonly) props.classList.add('mg-input--readonly');
 
   if (props.mgWidth !== undefined) props.classList.add(`mg-input--width-${props.mgWidth}`);
-
-  if (props.readonly || props.disabled) {
-    props.classList.delete(InputClass.ERROR);
-  }
 };
 
 /**
@@ -201,7 +197,7 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props: MgInputProps, 
         </div>
       ) : (
         <div class="mg-input__input-container">
-          <div class="mg-input__input">
+          <div class={{ 'mg-input__input': true, 'mg-input__input--has-error': props.errorMessage !== undefined }}>
             {children}
             {!props.labelOnTop && props.tooltip && getTooltip()}
           </div>
@@ -209,7 +205,9 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props: MgInputProps, 
             <mg-character-left identifier={characterLeftId} characters={props.value} maxlength={props.maxlength} template={props.characterLeftTemplate}></mg-character-left>
           )}
           {props.helpText && <div id={helpTextId} class="mg-input__help-text" innerHTML={props.helpText}></div>}
-          {props.errorMessage && <div id={helpTextErrorId} class="mg-input__error" innerHTML={props.errorMessage} aria-live="assertive"></div>}
+          {props.errorMessage && !props.readonly && !props.disabled && (
+            <div id={helpTextErrorId} class="mg-input__error" innerHTML={props.errorMessage} aria-live="assertive"></div>
+          )}
         </div>
       )}
     </TagName>

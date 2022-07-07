@@ -1,6 +1,6 @@
 import { Component, Element, Event, h, Prop, EventEmitter, State, Watch, Method } from '@stencil/core';
 import { MgInput } from '../MgInput';
-import { InputClass, Width } from '../MgInput.conf';
+import { Width } from '../MgInput.conf';
 import { types, InputError } from './mg-input-numeric.conf';
 import { createID, ClassList } from '../../../../utils/components.utils';
 import { initLocales } from '../../../../locales/';
@@ -20,9 +20,6 @@ export class MgInputNumeric {
   private storedValue: string;
   private numericValue: number;
   private readonlyValue: string;
-
-  // Classes
-  private classError: string = InputClass.ERROR;
 
   // HTML selector
   private input: HTMLInputElement;
@@ -322,9 +319,6 @@ export class MgInputNumeric {
     // Update class
     if (!this.valid) {
       this.setErrorMessage();
-      this.classList.add(this.classError);
-    } else {
-      this.classList.delete(this.classError);
     }
   };
 

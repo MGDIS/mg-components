@@ -55,8 +55,8 @@
   /* Danger */
   /* #db1f29; */
   /* rgb(219, 31, 41); */
-  --color-danger-h: 356.8;
-  --color-danger-s: 75.2%;
+  --color-danger-h: 357;
+  --color-danger-s: 75%;
   --color-danger-l: 49%;
   --color-danger: var(--color-danger-h), var(--color-danger-s), var(--color-danger-l);
 
@@ -188,6 +188,9 @@
   --mg-inputs-border-radius: 0.3rem;
   --mg-inputs-color: #b5c2c9;
   --mg-inputs-spacer: 1rem;
+
+  /* Error message background */
+  --mg-inputs-error-bg-color: var(--color-danger-h), calc(var(--color-danger-s) + 5%), calc(var(--color-danger-l) + 49%);
 
   /* Input focus shadow */
   /* #b5c2c9 */
