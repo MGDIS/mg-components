@@ -26,11 +26,12 @@ export class MgTag {
   validateVariant(newValue: string, oldValue?: string): void {
     if (!variants.includes(newValue)) {
       throw new Error(`<mg-tag> prop "variant" must be one of : ${variants.join(', ')}.`);
+    } else {
+      if (oldValue !== undefined) {
+        this.classList.delete(`mg-tag--${oldValue}`);
+      }
+      this.classList.add(`mg-tag--${newValue}`);
     }
-    if (oldValue !== undefined) {
-      this.classList.delete(`mg-tag--${oldValue}`);
-    }
-    this.classList.add(`mg-tag--${newValue}`);
   }
 
   /**

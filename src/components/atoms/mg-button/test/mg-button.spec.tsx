@@ -27,6 +27,24 @@ describe('mg-button', () => {
     expect(root).toMatchSnapshot();
   });
 
+  test('Should replace classes on variant changes', async () => {
+    const page = await getPage({ identifier: 'identifier', variant: 'primary', label: 'label' });
+    const element = page.doc.querySelector('mg-button');
+    let classPrimary = element.querySelector('.mg-button--primary');
+
+    expect(classPrimary).not.toBeNull();
+
+    // Change variant
+    element.variant = 'danger';
+    await page.waitForChanges();
+
+    classPrimary = element.querySelector('.mg-button--primary');
+    const classDanger = element.querySelector('.mg-button--danger');
+
+    expect(classPrimary).toBeNull();
+    expect(classDanger).not.toBeNull();
+  });
+
   test.each(['', 'blu', undefined])('Should throw error', async variant => {
     try {
       await getPage({ variant });

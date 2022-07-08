@@ -60,7 +60,7 @@ exports[`mg-form Should display components errors (readonly: false) 1`] = `
   </mg-input-date>
   <mg-input-numeric>
     <mock:shadow-root>
-      <div class="mg-input mg-input--numeric mg-input--numeric--decimal">
+      <div class="mg-input mg-input--numeric">
         <mg-input-title identifier="mg-input-numeric" required="">
           mg-input-numeric label
         </mg-input-title>
@@ -277,7 +277,7 @@ exports[`mg-form Should display components errors (readonly: true) 1`] = `
   </mg-input-date>
   <mg-input-numeric>
     <mock:shadow-root>
-      <div class="mg-input mg-input--numeric mg-input--numeric--decimal mg-input--readonly">
+      <div class="mg-input mg-input--numeric mg-input--readonly">
         <mg-input-title identifier="mg-input-numeric" required="">
           mg-input-numeric label
         </mg-input-title>
@@ -430,7 +430,7 @@ exports[`mg-form Should render with args { args: [Object] }: 1`] = `
   </mg-input-date>
   <mg-input-numeric>
     <mock:shadow-root>
-      <div class="mg-input mg-input--numeric mg-input--numeric--decimal">
+      <div class="mg-input mg-input--numeric">
         <mg-input-title identifier="mg-input-numeric">
           mg-input-numeric label
         </mg-input-title>
@@ -626,7 +626,7 @@ exports[`mg-form Should render with args { args: [Object] }: 2`] = `
   </mg-input-date>
   <mg-input-numeric>
     <mock:shadow-root>
-      <div class="mg-input mg-input--numeric mg-input--numeric--decimal mg-input--readonly">
+      <div class="mg-input mg-input--numeric mg-input--readonly">
         <mg-input-title identifier="mg-input-numeric">
           mg-input-numeric label
         </mg-input-title>
@@ -778,7 +778,7 @@ exports[`mg-form Should render with args { args: [Object] }: 3`] = `
   </mg-input-date>
   <mg-input-numeric>
     <mock:shadow-root>
-      <div class="mg-input mg-input--numeric mg-input--numeric--decimal">
+      <div class="mg-input mg-input--numeric">
         <mg-input-title identifier="mg-input-numeric">
           mg-input-numeric label
         </mg-input-title>
@@ -986,7 +986,7 @@ exports[`mg-form Should render with args { args: [Object], requiredIndex: 'all' 
   </mg-input-date>
   <mg-input-numeric>
     <mock:shadow-root>
-      <div class="mg-input mg-input--numeric mg-input--numeric--decimal">
+      <div class="mg-input mg-input--numeric">
         <mg-input-title identifier="mg-input-numeric" required="">
           mg-input-numeric label
         </mg-input-title>
@@ -1198,7 +1198,7 @@ exports[`mg-form Should render with args { args: [Object], requiredIndex: 'one' 
   </mg-input-date>
   <mg-input-numeric>
     <mock:shadow-root>
-      <div class="mg-input mg-input--numeric mg-input--numeric--decimal">
+      <div class="mg-input mg-input--numeric">
         <mg-input-title identifier="mg-input-numeric">
           mg-input-numeric label
         </mg-input-title>
@@ -1412,7 +1412,7 @@ exports[`mg-form display error message with locale: fr 1`] = `
   </mg-input-date>
   <mg-input-numeric>
     <mock:shadow-root>
-      <div class="mg-input mg-input--numeric mg-input--numeric--decimal">
+      <div class="mg-input mg-input--numeric">
         <mg-input-title identifier="mg-input-numeric" required="">
           mg-input-numeric label
         </mg-input-title>
@@ -1644,7 +1644,7 @@ exports[`mg-form display error message with locale: xx 1`] = `
   </mg-input-date>
   <mg-input-numeric>
     <mock:shadow-root>
-      <div class="mg-input mg-input--numeric mg-input--numeric--decimal">
+      <div class="mg-input mg-input--numeric">
         <mg-input-title identifier="mg-input-numeric" required="">
           mg-input-numeric label
         </mg-input-title>

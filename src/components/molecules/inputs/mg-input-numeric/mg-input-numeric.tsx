@@ -142,7 +142,6 @@ export class MgInputNumeric {
     if (!types.includes(newValue)) {
       throw new Error(`<mg-input-numeric> prop "type" must be one of : ${types.join(', ')}`);
     }
-    this.classList.add(`mg-input--numeric--${this.type}`);
   }
 
   /**
