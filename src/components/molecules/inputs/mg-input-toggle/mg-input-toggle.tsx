@@ -27,6 +27,8 @@ export class MgInputToggle {
   private classReadonly = 'mg-input--toggle-readonly';
   private classDisabled = 'mg-input--toggle-disabled';
   private classIsActive = 'mg-input--toggle-is-active';
+  private classOnOff = 'mg-input--toggle-on-off';
+  private classIcon = 'mg-input--toggle-icon';
 
   /**************
    * Decorators *
@@ -105,7 +107,8 @@ export class MgInputToggle {
   @Prop() isOnOff = false;
   @Watch('isOnOff')
   handleIsOnOff(newValue: boolean): void {
-    if (newValue) this.classList.add(`mg-input--toggle-on-off`);
+    if (newValue) this.classList.add(this.classOnOff);
+    else this.classList.delete(this.classOnOff);
   }
 
   /**
@@ -114,7 +117,8 @@ export class MgInputToggle {
   @Prop() isIcon = false;
   @Watch('isIcon')
   handleIsIcon(newValue: boolean): void {
-    if (newValue) this.classList.add(`mg-input--toggle-icon`);
+    if (newValue) this.classList.add(this.classIcon);
+    else this.classList.delete(this.classIcon);
   }
 
   /**

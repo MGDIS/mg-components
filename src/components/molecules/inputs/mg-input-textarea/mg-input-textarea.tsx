@@ -1,6 +1,6 @@
 import { Component, Element, Event, h, Prop, EventEmitter, State, Method, Watch } from '@stencil/core';
 import { MgInput } from '../MgInput';
-import { InputClass, Width } from '../MgInput.conf';
+import { Width } from '../MgInput.conf';
 import { createID, ClassList } from '../../../../utils/components.utils';
 import { initLocales } from '../../../../locales';
 
@@ -16,7 +16,6 @@ export class MgInputTextarea {
 
   // classes
   private classFocus = 'is-focused';
-  private classError = InputClass.ERROR;
 
   // HTML selector
   private input: HTMLTextAreaElement;
@@ -252,12 +251,6 @@ export class MgInputTextarea {
     // required
     else if (!this.valid && this.input.validity.valueMissing) {
       this.errorMessage = this.messages.errors.required;
-    }
-    // Update class
-    if (this.valid) {
-      this.classList.delete(this.classError);
-    } else {
-      this.classList.add(this.classError);
     }
   };
 

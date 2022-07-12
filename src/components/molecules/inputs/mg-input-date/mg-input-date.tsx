@@ -4,7 +4,6 @@ import { InputError } from './mg-input-date.conf';
 import { createID, ClassList } from '../../../../utils/components.utils';
 import { localeDate, dateRegExp } from '../../../../utils/locale.utils';
 import { initLocales } from '../../../../locales';
-import { InputClass } from '../MgInput.conf';
 
 @Component({
   tag: 'mg-input-date',
@@ -15,9 +14,6 @@ export class MgInputDate {
   /************
    * Internal *
    ************/
-
-  // classes
-  private classError = InputClass.ERROR;
 
   // HTML selector
   private input: HTMLInputElement;
@@ -271,9 +267,6 @@ export class MgInputDate {
     this.errorMessage = undefined;
     if (!this.valid) {
       this.setErrorMessage();
-      this.classList.add(this.classError);
-    } else {
-      this.classList.delete(this.classError);
     }
   };
 

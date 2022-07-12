@@ -27,6 +27,48 @@ describe('mg-icon', () => {
     expect(root).toMatchSnapshot();
   });
 
+  test('Should replace classes on icon changes', async () => {
+    const page = await getPage({ icon: 'chevron-up', variant: 'success' });
+    const element = page.doc.querySelector('mg-icon');
+    let classChevronUp = element.shadowRoot.querySelector('.mg-icon--chevron-up');
+    let classSizeRegular = element.shadowRoot.querySelector('.mg-icon--size-regular');
+    let classVariantSuccess = element.shadowRoot.querySelector('.mg-icon--variant-success');
+
+    expect(classChevronUp).not.toBeNull();
+    expect(classSizeRegular).not.toBeNull();
+    expect(classVariantSuccess).not.toBeNull();
+
+    // Change icon
+    element.icon = 'chevron-down';
+    await page.waitForChanges();
+
+    classChevronUp = element.shadowRoot.querySelector('.mg-icon--chevron-up');
+    const classChevronDown = element.shadowRoot.querySelector('.mg-icon--chevron-down');
+
+    expect(classChevronUp).toBeNull();
+    expect(classChevronDown).not.toBeNull();
+
+    // Change size
+    element.size = 'large';
+    await page.waitForChanges();
+
+    classSizeRegular = element.shadowRoot.querySelector('.mg-icon--size-regular');
+    const classSizeLarge = element.shadowRoot.querySelector('.mg-icon--size-large');
+
+    expect(classSizeRegular).toBeNull();
+    expect(classSizeLarge).not.toBeNull();
+
+    // Change variant
+    element.variant = 'danger';
+    await page.waitForChanges();
+
+    classVariantSuccess = element.shadowRoot.querySelector('.mg-icon--variant-success');
+    const classVariantDanger = element.shadowRoot.querySelector('.mg-icon--variant-danger');
+
+    expect(classVariantSuccess).toBeNull();
+    expect(classVariantDanger).not.toBeNull();
+  });
+
   test.each(['', 'blu', undefined])('Should throw error with invalid icon property : %s', async icon => {
     try {
       await getPage({ icon });

@@ -3,7 +3,6 @@ import { MgInput } from '../MgInput';
 import { createID, ClassList } from '../../../../utils/components.utils';
 import { initLocales } from '../../../../locales';
 import { CheckboxItem, CheckboxValue } from './mg-input-checkbox.conf';
-import { InputClass } from '../MgInput.conf';
 
 /**
  * type CheckboxItem validation function
@@ -23,9 +22,6 @@ export class MgInputCheckbox {
   /************
    * Internal *
    ************/
-
-  // classes
-  private classError = InputClass.ERROR;
 
   // HTML selector
   private inputs: HTMLInputElement[] = [];
@@ -104,10 +100,6 @@ export class MgInputCheckbox {
    * Define if input is readonly
    */
   @Prop() readonly = false;
-  @Watch('readonly')
-  handleReadOnly(): void {
-    this.classList.delete(this.classError);
-  }
 
   /**
    * Define if input is disabled
@@ -222,13 +214,6 @@ export class MgInputCheckbox {
     this.errorMessage = undefined;
     if (!this.valid && invalidElement.validity.valueMissing) {
       this.errorMessage = this.messages.errors.required;
-    }
-
-    // Update class
-    if (this.valid) {
-      this.classList.delete(this.classError);
-    } else {
-      this.classList.add(this.classError);
     }
   };
 
