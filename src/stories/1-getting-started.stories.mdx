@@ -16,27 +16,6 @@ Add MG Components to your project.
 npm install -D @mgdis/mg-components
 ```
 
-Now, depending if your project needs IE support or not, the import is different.
-
-##### IE support
-
-Import the lib by adding this code in the `main.js` file:
-
-```js
-import { applyPolyfills, defineCustomElements } from '@mgdis/mg-components/loader';
-
-// Tells VueJS to ignore Elements from the design system
-Vue.config.ignoredElements = [/mg-\w*/];
-// Bind the custom elements to the window object
-applyPolyfills().then(() => {
-  defineCustomElements();
-});
-```
-
-This import will provide all the needed polyfills for IE. The `mg-components` components are now globally available in you project, no need to import them individually in your Vue.js views or components.
-
-##### without IE support
-
 Add the following line in the client `jest.conf.js`:
 
 ```js
