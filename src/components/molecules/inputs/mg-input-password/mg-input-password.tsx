@@ -233,7 +233,6 @@ export class MgInputPassword {
         readonlyValue={this.value !== undefined ? '•'.repeat(this.value.length) : undefined}
         tooltip={this.tooltip}
         displayCharacterLeft={false}
-        characterLeftTemplate={undefined}
         maxlength={undefined}
         helpText={this.helpText}
         errorMessage={this.errorMessage}

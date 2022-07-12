@@ -278,7 +278,6 @@ export class MgInputRadio {
         readonlyValue={this.value as string}
         tooltip={this.tooltip}
         displayCharacterLeft={undefined}
-        characterLeftTemplate={undefined}
         maxlength={undefined}
         helpText={this.helpText}
         errorMessage={this.errorMessage}

@@ -417,7 +417,6 @@ export class MgInputNumeric {
         readonlyValue={this.readonlyValue}
         tooltip={this.tooltip}
         displayCharacterLeft={undefined}
-        characterLeftTemplate={undefined}
         maxlength={undefined}
         helpText={this.helpText}
         errorMessage={this.errorMessage}

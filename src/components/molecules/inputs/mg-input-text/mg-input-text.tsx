@@ -15,8 +15,7 @@ export class MgInputText {
    ************/
 
   // classes
-  private classFocus = 'is-focused';
-  private isInputGroupAppend = 'mg-input--is-input-group-append';
+  private classIsInputGroupAppend = 'mg-input--is-input-group-append';
 
   // HTML selector
   private input: HTMLInputElement;
@@ -134,11 +133,6 @@ export class MgInputText {
   @Prop() displayCharacterLeft = true;
 
   /**
-   * Template to use for characters left sentence
-   */
-  @Prop() characterLeftTemplate: string;
-
-  /**
    * Add a help text under the input, usually expected data format and example
    */
   @Prop() helpText: string;
@@ -209,25 +203,11 @@ export class MgInputText {
   };
 
   /**
-   * Handle focus event
-   *
-   * @returns {void}
-   */
-  private handleFocus = (): void => {
-    this.classList.add(this.classFocus);
-    this.classList = new ClassList(this.classList.classes);
-  };
-
-  /**
    * Handle blur event
    *
    * @returns {void}
    */
   private handleBlur = (): void => {
-    // Manage focus
-    this.classList.delete(this.classFocus);
-    this.classList = new ClassList(this.classList.classes);
-    // Display Error
     this.displayError();
   };
 
@@ -292,9 +272,9 @@ export class MgInputText {
     const slotAppendInput: HTMLSlotElement[] = Array.from(this.element.querySelectorAll('[slot="append-input"]'));
 
     if (slotAppendInput.length === 1) {
-      this.classList.add(slotAppendInput[0].nodeName === 'MG-BUTTON' ? this.isInputGroupAppend : 'mg-input--is-append-input-slot-content');
+      this.classList.add(slotAppendInput[0].nodeName === 'MG-BUTTON' ? this.classIsInputGroupAppend : 'mg-input--is-append-input-slot-content');
     } else if (slotAppendInput.filter(slot => slot.nodeName === 'MG-BUTTON').length > 1) {
-      this.classList.add(this.isInputGroupAppend);
+      this.classList.add(this.classIsInputGroupAppend);
       this.classList.add('mg-input--has-buttons-group-append');
     }
   };
@@ -346,7 +326,6 @@ export class MgInputText {
         readonlyValue={undefined}
         tooltip={this.tooltip}
         displayCharacterLeft={this.displayCharacterLeft}
-        characterLeftTemplate={this.characterLeftTemplate}
         maxlength={this.maxlength}
         helpText={this.helpText}
         errorMessage={this.errorMessage}
@@ -366,7 +345,6 @@ export class MgInputText {
           required={this.required}
           pattern={this.pattern}
           onInput={this.handleInput}
-          onFocus={this.handleFocus}
           onBlur={this.handleBlur}
           ref={el => (this.input = el as HTMLInputElement)}
         />

@@ -60,8 +60,9 @@ exports[`mg-input-text Should render with args {
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <input aria-describedby="" class="mg-input__box" id="identifier" maxlength="400" name="identifier" type="text">
+          <input aria-describedby="identifier-character-left" class="mg-input__box" id="identifier" maxlength="400" name="identifier" type="text">
           <slot name="append-input"></slot>
+          <mg-character-left identifier="identifier-character-left" maxlength="400"></mg-character-left>
           <mg-tooltip identifier="identifier-tooltip" message="My Tooltip Message">
             <mg-icon>
               <mock:shadow-root>
@@ -103,8 +104,9 @@ exports[`mg-input-text Should render with args {
       </div>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <input aria-describedby="" class="mg-input__box" id="identifier" maxlength="400" name="identifier" type="text">
+          <input aria-describedby="identifier-character-left" class="mg-input__box" id="identifier" maxlength="400" name="identifier" type="text">
           <slot name="append-input"></slot>
+          <mg-character-left identifier="identifier-character-left" maxlength="400"></mg-character-left>
         </div>
       </div>
     </div>
@@ -133,8 +135,9 @@ exports[`mg-input-text Should render with args {
               </svg>
             </mock:shadow-root>
           </mg-icon>
-          <input aria-describedby="" class="mg-input__box" id="identifier" maxlength="400" name="identifier" type="search">
+          <input aria-describedby="identifier-character-left" class="mg-input__box" id="identifier" maxlength="400" name="identifier" type="search">
           <slot name="append-input"></slot>
+          <mg-character-left identifier="identifier-character-left" maxlength="400"></mg-character-left>
         </div>
       </div>
     </div>
@@ -151,8 +154,9 @@ exports[`mg-input-text Should render with args { label: 'label', identifier: 'id
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <input aria-describedby="" class="mg-input__box" id="identifier" maxlength="400" name="identifier" type="text">
+          <input aria-describedby="identifier-character-left" class="mg-input__box" id="identifier" maxlength="400" name="identifier" type="text">
           <slot name="append-input"></slot>
+          <mg-character-left identifier="identifier-character-left" maxlength="400"></mg-character-left>
         </div>
       </div>
     </div>
@@ -169,8 +173,9 @@ exports[`mg-input-text Should render with args { label: 'label', identifier: 'id
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <input aria-describedby="" class="mg-input__box" id="identifier" maxlength="400" name="identifier" type="text">
+          <input aria-describedby="identifier-character-left" class="mg-input__box" id="identifier" maxlength="400" name="identifier" type="text">
           <slot name="append-input"></slot>
+          <mg-character-left identifier="identifier-character-left" maxlength="400"></mg-character-left>
         </div>
       </div>
     </div>
@@ -189,8 +194,9 @@ exports[`mg-input-text Should render with args { label: 'label', identifier: 'id
       </div>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <input aria-describedby="" class="mg-input__box" id="identifier" maxlength="400" name="identifier" type="text">
+          <input aria-describedby="identifier-character-left" class="mg-input__box" id="identifier" maxlength="400" name="identifier" type="text">
           <slot name="append-input"></slot>
+          <mg-character-left identifier="identifier-character-left" maxlength="400"></mg-character-left>
         </div>
       </div>
     </div>
@@ -223,8 +229,9 @@ exports[`mg-input-text Should render with args { label: 'label', identifier: 'id
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <input aria-describedby="" class="mg-input__box" id="identifier" maxlength="400" name="identifier" type="search">
+          <input aria-describedby="identifier-character-left" class="mg-input__box" id="identifier" maxlength="400" name="identifier" type="search">
           <slot name="append-input"></slot>
+          <mg-character-left identifier="identifier-character-left" maxlength="400"></mg-character-left>
         </div>
       </div>
     </div>
@@ -241,8 +248,9 @@ exports[`mg-input-text Should render with slot. 1`] = `
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <input aria-describedby="" class="mg-input__box" id="identifier" maxlength="400" name="identifier" type="search">
+          <input aria-describedby="identifier-character-left" class="mg-input__box" id="identifier" maxlength="400" name="identifier" type="search">
           <slot name="append-input"></slot>
+          <mg-character-left identifier="identifier-character-left" maxlength="400"></mg-character-left>
         </div>
       </div>
     </div>
@@ -274,8 +282,9 @@ exports[`mg-input-text Should render with slot. 2`] = `
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <input aria-describedby="" class="mg-input__box" id="identifier" maxlength="400" name="identifier" type="search">
+          <input aria-describedby="identifier-character-left" class="mg-input__box" id="identifier" maxlength="400" name="identifier" type="search">
           <slot name="append-input"></slot>
+          <mg-character-left identifier="identifier-character-left" maxlength="400"></mg-character-left>
         </div>
       </div>
     </div>
@@ -295,8 +304,9 @@ exports[`mg-input-text Should render with slot. 3`] = `
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <input aria-describedby="" class="mg-input__box" id="identifier" maxlength="400" name="identifier" type="search">
+          <input aria-describedby="identifier-character-left" class="mg-input__box" id="identifier" maxlength="400" name="identifier" type="search">
           <slot name="append-input"></slot>
+          <mg-character-left identifier="identifier-character-left" maxlength="400"></mg-character-left>
         </div>
       </div>
     </div>
@@ -335,7 +345,7 @@ exports[`mg-input-text Should render with slot. 3`] = `
 exports[`mg-input-text Should trigger events 1`] = `
 <mg-input-text>
   <mock:shadow-root>
-    <div class="is-focused mg-input mg-input--text mg-input--width-full">
+    <div class="mg-input mg-input--text mg-input--width-full">
       <mg-input-title identifier="identifier">
         label
       </mg-input-title>
@@ -343,8 +353,8 @@ exports[`mg-input-text Should trigger events 1`] = `
         <div class="mg-input__input">
           <input aria-describedby="identifier-character-left identifier-help-text" class="mg-input__box" id="identifier" maxlength="400" name="identifier" type="text">
           <slot name="append-input"></slot>
+          <mg-character-left identifier="identifier-character-left" maxlength="400"></mg-character-left>
         </div>
-        <mg-character-left identifier="identifier-character-left" maxlength="400"></mg-character-left>
         <div class="mg-input__help-text" id="identifier-help-text">
           My help text
         </div>
@@ -363,8 +373,9 @@ exports[`mg-input-text display error message with locale: fr 1`] = `
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input mg-input__input--has-error">
-          <input aria-describedby="identifier-error" class="mg-input__box" id="identifier" maxlength="400" name="identifier" required="" type="text">
+          <input aria-describedby="identifier-character-left identifier-error" class="mg-input__box" id="identifier" maxlength="400" name="identifier" required="" type="text">
           <slot name="append-input"></slot>
+          <mg-character-left identifier="identifier-character-left" maxlength="400"></mg-character-left>
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
           Ce champ est obligatoire.
@@ -384,8 +395,9 @@ exports[`mg-input-text display error message with locale: xx 1`] = `
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input mg-input__input--has-error">
-          <input aria-describedby="identifier-error" class="mg-input__box" id="identifier" maxlength="400" name="identifier" required="" type="text">
+          <input aria-describedby="identifier-character-left identifier-error" class="mg-input__box" id="identifier" maxlength="400" name="identifier" required="" type="text">
           <slot name="append-input"></slot>
+          <mg-character-left identifier="identifier-character-left" maxlength="400"></mg-character-left>
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
           This field is required.
@@ -405,8 +417,9 @@ exports[`mg-input-text display error with displayError component's public method
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <input aria-describedby="" class="mg-input__box" id="identifier" maxlength="400" name="identifier" required="" type="text">
+          <input aria-describedby="identifier-character-left" class="mg-input__box" id="identifier" maxlength="400" name="identifier" required="" type="text">
           <slot name="append-input"></slot>
+          <mg-character-left identifier="identifier-character-left" maxlength="400"></mg-character-left>
         </div>
       </div>
     </div>
@@ -423,8 +436,9 @@ exports[`mg-input-text display error with displayError component's public method
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input mg-input__input--has-error">
-          <input aria-describedby="identifier-error" class="mg-input__box" id="identifier" maxlength="400" name="identifier" required="" type="text">
+          <input aria-describedby="identifier-character-left identifier-error" class="mg-input__box" id="identifier" maxlength="400" name="identifier" required="" type="text">
           <slot name="append-input"></slot>
+          <mg-character-left identifier="identifier-character-left" maxlength="400"></mg-character-left>
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
           This field is required.
@@ -444,8 +458,9 @@ exports[`mg-input-text validity, case next state is disabled validity ({ validit
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input mg-input__input--has-error">
-          <input aria-describedby="identifier-error" class="mg-input__box" id="identifier" maxlength="400" name="identifier" type="text">
+          <input aria-describedby="identifier-character-left identifier-error" class="mg-input__box" id="identifier" maxlength="400" name="identifier" type="text">
           <slot name="append-input"></slot>
+          <mg-character-left identifier="identifier-character-left" maxlength="400"></mg-character-left>
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
           This field is required.
@@ -465,8 +480,9 @@ exports[`mg-input-text validity, case next state is disabled validity ({ validit
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input mg-input__input--has-error">
-          <input aria-describedby="identifier-error" class="mg-input__box" disabled="" id="identifier" maxlength="400" name="identifier" type="text">
+          <input aria-describedby="identifier-character-left identifier-error" class="mg-input__box" disabled="" id="identifier" maxlength="400" name="identifier" type="text">
           <slot name="append-input"></slot>
+          <mg-character-left identifier="identifier-character-left" maxlength="400"></mg-character-left>
         </div>
       </div>
     </div>
@@ -483,8 +499,9 @@ exports[`mg-input-text validity, case next state is readonly validity ({ validit
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input mg-input__input--has-error">
-          <input aria-describedby="identifier-error" class="mg-input__box" id="identifier" maxlength="400" name="identifier" type="text">
+          <input aria-describedby="identifier-character-left identifier-error" class="mg-input__box" id="identifier" maxlength="400" name="identifier" type="text">
           <slot name="append-input"></slot>
+          <mg-character-left identifier="identifier-character-left" maxlength="400"></mg-character-left>
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
           This field is required.

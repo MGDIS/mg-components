@@ -1,7 +1,6 @@
 @use '../styles/mg-input.scss';
 @use '../styles/mg-input-box.scss';
 @use '../styles/mg-input-width.scss';
-@use '../styles/mg-input-charleft.scss';
 @use '../../../../styles/a11y.scss';
 
 /**
@@ -22,5 +21,21 @@
 
   .mg-input__box {
     padding-left: calc(var(--mg-icon-regular-size) + var(--mg-inputs-spacer) * 2);
+  }
+}
+
+/**
+* Character left
+*/
+.mg-input__input {
+  position: relative;
+
+  mg-character-left {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    opacity: 0.6;
+    transform: translateY(-50%);
+    font-size: 1.1rem;
   }
 }

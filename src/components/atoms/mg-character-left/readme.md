@@ -25,7 +25,6 @@ When the focus is no longer on the input field, the message disappears.
 | `characters`             | `characters` | Sets the characters to count                                                     | `string` | `''`        |
 | `identifier`             | `identifier` | Sets an `id` attribute. Needed by the input for accessibility `aria-decribedby`. | `string` | `undefined` |
 | `maxlength` _(required)_ | `maxlength`  | Add maximum length                                                               | `number` | `undefined` |
-| `template`               | `template`   | Template to display remaining characters. Must have {counter} inside             | `string` | `undefined` |
 
 
 ## Dependencies

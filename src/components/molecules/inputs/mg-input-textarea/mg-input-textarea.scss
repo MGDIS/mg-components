@@ -1,7 +1,6 @@
 @use '../styles/mg-input.scss';
 @use '../styles/mg-input-box.scss';
 @use '../styles/mg-input-width.scss';
-@use '../styles/mg-input-charleft.scss';
 @use '../../../../styles/a11y.scss';
 
 /* Component Custom Style */
@@ -17,6 +16,21 @@
     }
     &.mg-input__box--resizable-vertical {
       resize: vertical;
+    }
+  }
+
+  /**
+  * Character left
+  */
+  .mg-input__input {
+    position: relative;
+
+    mg-character-left {
+      position: absolute;
+      bottom: 0.5rem;
+      right: 1rem;
+      font-size: 1.1rem;
+      opacity: 0.6;
     }
   }
 }

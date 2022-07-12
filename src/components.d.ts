@@ -82,10 +82,6 @@ export namespace Components {
           * Add maximum length
          */
         "maxlength": number;
-        /**
-          * Template to display remaining characters. Must have {counter} inside
-         */
-        "template": string;
     }
     interface MgForm {
         /**
@@ -572,10 +568,6 @@ export namespace Components {
     }
     interface MgInputText {
         /**
-          * Template to use for characters left sentence
-         */
-        "characterLeftTemplate": string;
-        /**
           * Define if input is disabled
          */
         "disabled": boolean;
@@ -671,10 +663,6 @@ export namespace Components {
         "value": string;
     }
     interface MgInputTextarea {
-        /**
-          * Template to use for characters left sentence
-         */
-        "characterLeftTemplate": string;
         /**
           * Define if input is disabled
          */
@@ -1322,10 +1310,6 @@ declare namespace LocalJSX {
           * Add maximum length
          */
         "maxlength": number;
-        /**
-          * Template to display remaining characters. Must have {counter} inside
-         */
-        "template"?: string;
     }
     interface MgForm {
         /**
@@ -1829,10 +1813,6 @@ declare namespace LocalJSX {
     }
     interface MgInputText {
         /**
-          * Template to use for characters left sentence
-         */
-        "characterLeftTemplate"?: string;
-        /**
           * Define if input is disabled
          */
         "disabled"?: boolean;
@@ -1926,10 +1906,6 @@ declare namespace LocalJSX {
         "value"?: string;
     }
     interface MgInputTextarea {
-        /**
-          * Template to use for characters left sentence
-         */
-        "characterLeftTemplate"?: string;
         /**
           * Define if input is disabled
          */

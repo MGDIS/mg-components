@@ -269,7 +269,6 @@ export class MgInputToggle {
         readonlyValue={undefined}
         tooltip={!this.readonly && this.tooltip}
         displayCharacterLeft={undefined}
-        characterLeftTemplate={undefined}
         maxlength={undefined}
         helpText={this.helpText}
         errorMessage={undefined}

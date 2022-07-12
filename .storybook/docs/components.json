@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-07-08T13:45:56",
+  "timestamp": "2022-07-12T17:32:58",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.17.0",
@@ -375,22 +375,6 @@
           ],
           "optional": false,
           "required": true
-        },
-        {
-          "name": "template",
-          "type": "string",
-          "mutable": true,
-          "attr": "template",
-          "reflectToAttr": false,
-          "docs": "Template to display remaining characters.\nMust have {counter} inside",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
         }
       ],
       "methods": [],
@@ -2812,22 +2796,6 @@
       "usage": {},
       "props": [
         {
-          "name": "characterLeftTemplate",
-          "type": "string",
-          "mutable": false,
-          "attr": "character-left-template",
-          "reflectToAttr": false,
-          "docs": "Template to use for characters left sentence",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
           "name": "disabled",
           "type": "boolean",
           "mutable": false,
@@ -3278,22 +3246,6 @@
       "docsTags": [],
       "usage": {},
       "props": [
-        {
-          "name": "characterLeftTemplate",
-          "type": "string",
-          "mutable": false,
-          "attr": "character-left-template",
-          "reflectToAttr": false,
-          "docs": "Template to use for characters left sentence",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
         {
           "name": "disabled",
           "type": "boolean",

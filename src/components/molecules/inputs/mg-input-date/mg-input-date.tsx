@@ -317,7 +317,6 @@ export class MgInputDate {
         readonlyValue={localeDate(this.value, this.locale)}
         tooltip={this.tooltip}
         displayCharacterLeft={undefined}
-        characterLeftTemplate={undefined}
         maxlength={undefined}
         helpText={this.helpText}
         errorMessage={this.errorMessage}

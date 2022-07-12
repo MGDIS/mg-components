@@ -14,9 +14,6 @@ export class MgInputTextarea {
    * Internal *
    ************/
 
-  // classes
-  private classFocus = 'is-focused';
-
   // HTML selector
   private input: HTMLTextAreaElement;
 
@@ -129,11 +126,6 @@ export class MgInputTextarea {
   @Prop() displayCharacterLeft = true;
 
   /**
-   * Template to use for characters left sentence
-   */
-  @Prop() characterLeftTemplate: string;
-
-  /**
    * Add a help text under the input, usually expected data format and example
    */
   @Prop() helpText: string;
@@ -197,21 +189,9 @@ export class MgInputTextarea {
   };
 
   /**
-   * Handle focus event
-   */
-  private handleFocus = (): void => {
-    this.classList.add(this.classFocus);
-    this.classList = new ClassList(this.classList.classes);
-  };
-
-  /**
    * Handle blur event
    */
   private handleBlur = (): void => {
-    // Manage focus
-    this.classList.delete(this.classFocus);
-    this.classList = new ClassList(this.classList.classes);
-    // Display Error
     this.displayError();
   };
 
@@ -311,7 +291,6 @@ export class MgInputTextarea {
         readonlyValue={undefined}
         tooltip={this.tooltip}
         displayCharacterLeft={this.displayCharacterLeft}
-        characterLeftTemplate={this.characterLeftTemplate}
         maxlength={this.maxlength}
         helpText={this.helpText}
         errorMessage={this.errorMessage}
@@ -334,7 +313,6 @@ export class MgInputTextarea {
           disabled={this.disabled}
           required={this.required}
           onInput={this.handleInput}
-          onFocus={this.handleFocus}
           onBlur={this.handleBlur}
           ref={el => (this.input = el as HTMLTextAreaElement)}
         ></textarea>
