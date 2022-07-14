@@ -4,8 +4,6 @@
 
 This project centralize MGDIS standalone Web Components using [Stencil](https://stenciljs.com/).
 
-All components refer to [PDA9-61 Spec](https://jira.mgdis.fr/browse/PDA9-61).
-
 ## Stencil
 
 Stencil is a compiler for building fast web apps using Web Components.
@@ -16,18 +14,11 @@ Stencil components are just Web Components, so they work in any major framework 
 
 ## Getting Started
 
-To run MG Components, clone this repo to a new directory:
-
-```bash
-git clone https://gitlab.mgdis.fr/core/core-ui/mg-components
-cd mg-components
-```
-
-and run:
+To run MG Components, clone this repository, go to your new directory and run:
 
 ```bash
 npm ci
-npm start
+npm run start
 ```
 
 To build for production, run:
@@ -49,9 +40,10 @@ npm run test:e2e
 
 # filter on filename
 npm run test -- mg-icon
+npm run test:unit -- mg-icon
 ```
 
-To regenerate snapshot you must add the `-u` parameter.
+<!-- Not working for now: To regenerate snapshot you must add the `-u` parameter. -->
 
 For E2E tests you **must** use [WSL](https://docs.microsoft.com/fr-fr/windows/wsl/install) or a Linux OS to get the same screenshots as the GitLab CI.
 
@@ -69,32 +61,11 @@ npm run generate molecules/mg-message
 
 ## Naming Components
 
-When creating new component tags, we recommend _not_ using `stencil` in the component name (ex: `<stencil-datepicker>`). This is because the generated component has little to nothing to do with Stencil; it's just a web component!
-
-Instead, use a prefix that fits your company or any name for a group of related components. For example, all of the MGDIS generated web components use the prefix `mg`.
+All of the MGDIS generated web components must use the prefix `mg`.
 
 ## Using this library
 
-There are three strategies we recommend for using web components built with Stencil.
-
-The first step for all three of these strategies is to [publish to NPM](https://docs.npmjs.com/getting-started/publishing-npm-packages).
-
-### Script tag
-
-- Put a script tag similar to this `<script src='https://unpkg.com/mg-button@0.0.1/dist/mg-button.esm.js'></script>` in the head of your index.html
-- Then you can use the element anywhere in your template, JSX, html etc
-
-### Node Modules
-
-- Run `npm install @mgdis/mg-button --save`
-- Put a script tag similar to this `<script src='node_modules/mg-button/dist/mg-button.esm.js'></script>` in the head of your index.html
-- Then you can use the element anywhere in your template, JSX, html etc
-
-### In a stencil-starter app
-
-- Run `npm install @mgdis/mg-button --save`
-- Add an import to the npm packages `import @mgdis/mg-button;`
-- Then you can use the element anywhere in your template, JSX, html etc
+You will find how to use the library instructions in the [Getting Started section](src/stories/1-getting-started.stories.mdx).
 
 ## Style
 
