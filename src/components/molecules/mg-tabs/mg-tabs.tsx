@@ -13,7 +13,6 @@ const isTabItem = (tab: TabItem): boolean => typeof tab === 'object' && typeof t
 @Component({
   tag: 'mg-tabs',
   styleUrl: 'mg-tabs.scss',
-  scoped: true /* IE FIX: use shadow DOM when IE droped */,
 })
 export class MgTabs {
   /**************
@@ -118,11 +117,9 @@ export class MgTabs {
     const parent = event.target.parentElement;
 
     // change selected id from key code
-    // /* IE FIX */ delete 'Right'
-    if (['ArrowRight', 'Right'].includes(event.key)) {
+    if (event.key === 'ArrowRight') {
       tabId++;
-      // /* IE FIX */ delete 'Left'
-    } else if (['ArrowLeft', 'Left'].includes(event.key)) {
+    } else if (event.key === 'ArrowLeft') {
       tabId--;
     }
 
