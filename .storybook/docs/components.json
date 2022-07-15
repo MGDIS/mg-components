@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-07-01T13:19:29",
+  "timestamp": "2022-07-12T20:01:40",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.17.0",
@@ -4827,7 +4827,7 @@
     },
     {
       "filePath": "./src/components/molecules/mg-tabs/mg-tabs.tsx",
-      "encapsulation": "scoped",
+      "encapsulation": "none",
       "tag": "mg-tabs",
       "readme": "This molecule refers to the [PDA9-604](https://jira.mgdis.fr/browse/PDA9-604).\n",
       "docs": "This molecule refers to the [PDA9-604](https://jira.mgdis.fr/browse/PDA9-604).",
