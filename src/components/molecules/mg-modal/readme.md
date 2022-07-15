@@ -80,11 +80,7 @@ Ex: if I put a check in front of the term "Delete" which is the validation butto
 
 ### Backdrop
 
-![](./mg-modal/doc/img/mg-modal-backdrop.png)
-
-- Color : black
-- Intensity: 5
-- Brightness : 3
+Color: [@color-light](?path=/docs/style-colors--page) with an opacity set to 85%.
 
 <!-- Auto Generated Below -->
 
