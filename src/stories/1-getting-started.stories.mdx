@@ -16,27 +16,6 @@ Add MG Components to your project.
 npm install -D @mgdis/mg-components
 ```
 
-Now, depending if your project needs IE support or not, the import is different.
-
-##### IE support
-
-Import the lib by adding this code in the `main.js` file:
-
-```js
-import { applyPolyfills, defineCustomElements } from '@mgdis/mg-components/loader';
-
-// Tells VueJS to ignore Elements from the design system
-Vue.config.ignoredElements = [/mg-\w*/];
-// Bind the custom elements to the window object
-applyPolyfills().then(() => {
-  defineCustomElements();
-});
-```
-
-This import will provide all the needed polyfills for IE. The `mg-components` components are now globally available in you project, no need to import them individually in your Vue.js views or components.
-
-##### without IE support
-
 Add the following line in the client `jest.conf.js`:
 
 ```js
@@ -46,11 +25,11 @@ transformIgnorePatterns: ['/node_modules/@mgdis/(?!mg-components)'],
 Import the needed components in your views/components like this:
 
 ```js
-import '@mgdis/mg-components/dist/components/mg-input-text';
-import '@mgdis/mg-components/dist/components/mg-input-date';
-import '@mgdis/mg-components/dist/components/mg-input-textarea';
-import '@mgdis/mg-components/dist/components/mg-button';
-import '@mgdis/mg-components/dist/components/mg-message';
+import '@mgdis/mg-components/mg-input-text';
+import '@mgdis/mg-components/mg-input-date';
+import '@mgdis/mg-components/mg-input-textarea';
+import '@mgdis/mg-components/mg-button';
+import '@mgdis/mg-components/mg-message';
 ```
 
 ##### Import stylesheet
@@ -59,7 +38,7 @@ You need now to import the components style by adding the mg-components variable
 
 ```html
 <style>
-  @use '~@mgdis/mg-components/dist/mg-components/variables.css';
+  @use '~@mgdis/mg-components/variables.css';
 </style>
 ```
 
@@ -67,7 +46,7 @@ and/or
 
 ```html
 <style>
-  @use '~@mgdis/mg-components/dist/mg-components/mg-components.css';
+  @use '~@mgdis/mg-components/mg-components.css';
 </style>
 ```
 
@@ -138,8 +117,8 @@ The `mg-components` components are now globally available in you project, no nee
 You need now to import the components style by adding the mg-components variables or directly the stylesheet who came with in the `app.js` file :
 
 ```js
-import '@mgdis/mg-components/dist/mg-components/variables.css';
-import '@mgdis/mg-components/dist/mg-components/mg-components.css';
+import '@mgdis/mg-components/variables.css';
+import '@mgdis/mg-components/mg-components.css';
 ```
 
 #### Use the lib

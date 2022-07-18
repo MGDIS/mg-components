@@ -4,13 +4,8 @@ import { sass } from '@stencil/sass';
 export const config: Config = {
   namespace: 'mg-components',
   globalStyle: 'src/styles/global.scss',
-  buildEs5: true,
   devServer: {
     openBrowser: false,
-  },
-  extras: {
-    cssVarsShim: true,
-    shadowDomShim: true,
   },
   outputTargets: [
     {
