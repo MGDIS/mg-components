@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-07-18T19:07:07",
+  "timestamp": "2022-07-18T21:23:54",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.17.0",
@@ -2750,7 +2750,7 @@
       "filePath": "./src/components/molecules/inputs/mg-input-text/mg-input-text.tsx",
       "encapsulation": "shadow",
       "tag": "mg-input-text",
-      "readme": "## Design\n\n### Indication of the number of characters left\n\n- when the focus is on the input field, a message is displayed below\n- the message is: \"<nbCar> characters left\", <nbCar> being a counter that updates dynamically according to the input\n- when the focus is no longer on the input field, the message disappears\n\n![](./mg-input-text/doc/img/mg-input-text-messages.png)\n\n### Default value\n\n- by default limited to 400 alpha numeric characters.\n\n## Use as search input\n\nDue to [accessibility recommendation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input/search#search_form_labels_and_accessibility), an `<input type=\"search\" />` must be used within a `<form role=\"search\" />` we recommend using mg-input-text as in dedicated story.\n\n## 🚨 Slot\n\nHorizontal spacing is not managed by the component, it must be defined in slot implementation.\n",
+      "readme": "## Design\n\n### Indication of the number of characters left\n\n- when the focus is on the input field, the `mg-character-left` component is displayed\n- when the focus is no longer on the input field, the message disappears\n- by default limited to 400 alpha numeric characters\n\n#### Font\n\n![](./mg-input-text/doc/img/mg-input-text-fonts.png)\n\nOpen Sans, regular, 11px  \nColor: [@color-dark](?path=/docs/style-colors--page), opacity : 0.6\n\n#### Spacing\n\n![](./mg-input-text/doc/img/mg-input-text-spacing.png)\n\n#### Position\n\n![](./mg-input-text/doc/img/mg-input-text-position.png)\n\nPosition : center\n\n## Use as search input\n\nDue to [accessibility recommendation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input/search#search_form_labels_and_accessibility), an `<input type=\"search\" />` must be used within a `<form role=\"search\" />` we recommend using mg-input-text as in dedicated story.\n\n## 🚨 Slot\n\nHorizontal spacing is not managed by the component, it must be defined in slot implementation.\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -3201,7 +3201,7 @@
       "filePath": "./src/components/molecules/inputs/mg-input-textarea/mg-input-textarea.tsx",
       "encapsulation": "shadow",
       "tag": "mg-input-textarea",
-      "readme": "## Design\n\n### Indication of the number of characters left\n\n- when the focus is on the input field, a message is displayed below\n- the message is: \"<nbCar> characters left\", <nbCar> being a counter that updates dynamically according to the input\n- when the focus is no longer on the input field, the message disappears\n\n### Value\n\n- by default limited to 4000 alpha numeric characters.\n\n### Dimensions\n\n- the height of the component is by default 3 lines of text (this value is configurable)\n- the field can be resized by clicking on the bottom right of the input field\n",
+      "readme": "## Design\n\n### Indication of the number of characters left\n\n- when the focus is on the input field, the `mg-character-left` component is displayed\n- when the focus is no longer on the input field, the message disappears\n- by default limited to 4000 alpha numeric characters\n\n#### Font\n\nOpen Sans, regular, 11px  \nColor: [@color-dark](?path=/docs/style-colors--page), opacity : 0.6\n\n#### Spacing\n\n![](./mg-input-textarea/doc/img/mg-input-textarea-spacing.png)\n\n### Dimensions\n\n- the height of the component is by default 3 lines of text (this value is configurable)\n- the input field, by default, cannot be resized\n",
       "docs": "",
       "docsTags": [],
       "usage": {},

@@ -2,15 +2,26 @@
 
 ### Indication of the number of characters left
 
-- when the focus is on the input field, a message is displayed below
-- the message is: "<nbCar> characters left", <nbCar> being a counter that updates dynamically according to the input
+- when the focus is on the input field, the `mg-character-left` component is displayed
 - when the focus is no longer on the input field, the message disappears
+- by default limited to 400 alpha numeric characters
 
-![](./mg-input-text/doc/img/mg-input-text-messages.png)
+#### Font
 
-### Default value
+![](./mg-input-text/doc/img/mg-input-text-fonts.png)
 
-- by default limited to 400 alpha numeric characters.
+Open Sans, regular, 11px  
+Color: [@color-dark](?path=/docs/style-colors--page), opacity : 0.6
+
+#### Spacing
+
+![](./mg-input-text/doc/img/mg-input-text-spacing.png)
+
+#### Position
+
+![](./mg-input-text/doc/img/mg-input-text-position.png)
+
+Position : center
 
 ## Use as search input
 
