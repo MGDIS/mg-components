@@ -406,6 +406,7 @@ export class MgInputNumeric {
       <MgInput
         identifier={this.identifier}
         classList={this.classList}
+        ariaDescribedbyIDs={[]}
         label={this.label}
         labelOnTop={this.labelOnTop}
         labelHide={this.labelHide}
@@ -416,8 +417,6 @@ export class MgInputNumeric {
         value={this.value}
         readonlyValue={this.readonlyValue}
         tooltip={this.tooltip}
-        displayCharacterLeft={undefined}
-        maxlength={undefined}
         helpText={this.helpText}
         errorMessage={this.errorMessage}
         isFieldset={false}

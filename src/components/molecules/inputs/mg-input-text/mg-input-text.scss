@@ -1,17 +1,17 @@
 @use '../styles/mg-input.scss';
 @use '../styles/mg-input-box.scss';
 @use '../styles/mg-input-width.scss';
+@use '../styles/mg-input-character-left.scss';
 @use '../../../../styles/a11y.scss';
 
 /**
 * Icon in input
 */
-.mg-input.mg-input--has-icon .mg-input__input {
-  position: relative;
+.mg-input.mg-input--has-icon .mg-input__with-character-left {
   & > mg-icon {
     // layout
     position: absolute;
-    top: calc((var(--default-size) - var(--mg-icon-regular-size)));
+    top: 50%;
     left: var(--mg-inputs-spacer);
     // text
     color: var(--mg-inputs-color);
@@ -27,15 +27,26 @@
 /**
 * Character left
 */
-.mg-input__input {
+.mg-input__with-character-left {
   position: relative;
+  display: inline-flex;
+  width: 100%;
+
+  .mg-input.is-focused & .mg-input__box {
+    padding-right: calc(var(--mg-character-left-message-length) * 1ch + 0.8rem);
+  }
 
   mg-character-left {
     position: absolute;
+    display: none;
     top: 50%;
     right: 1rem;
     opacity: 0.6;
     transform: translateY(-50%);
     font-size: 1.1rem;
+
+    .mg-input.is-focused & {
+      display: block;
+    }
   }
 }

@@ -222,6 +222,7 @@ export class MgInputPassword {
       <MgInput
         identifier={this.identifier}
         classList={this.classList}
+        ariaDescribedbyIDs={[]}
         label={this.label}
         labelOnTop={this.labelOnTop}
         labelHide={this.labelHide}
@@ -232,8 +233,6 @@ export class MgInputPassword {
         value={this.value}
         readonlyValue={this.value !== undefined ? '•'.repeat(this.value.length) : undefined}
         tooltip={this.tooltip}
-        displayCharacterLeft={false}
-        maxlength={undefined}
         helpText={this.helpText}
         errorMessage={this.errorMessage}
         isFieldset={false}

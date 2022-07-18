@@ -258,6 +258,7 @@ export class MgInputToggle {
       <MgInput
         identifier={this.identifier}
         classList={this.classList}
+        ariaDescribedbyIDs={[]}
         label={this.label}
         labelOnTop={this.labelOnTop}
         labelHide={this.labelHide}
@@ -268,8 +269,6 @@ export class MgInputToggle {
         value={this.value as string}
         readonlyValue={undefined}
         tooltip={!this.readonly && this.tooltip}
-        displayCharacterLeft={undefined}
-        maxlength={undefined}
         helpText={this.helpText}
         errorMessage={undefined}
         isFieldset={false}

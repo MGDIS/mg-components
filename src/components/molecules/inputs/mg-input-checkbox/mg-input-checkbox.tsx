@@ -256,6 +256,7 @@ export class MgInputCheckbox {
       <MgInput
         identifier={this.identifier}
         classList={this.classList}
+        ariaDescribedbyIDs={[]}
         label={this.label}
         labelOnTop={this.labelOnTop}
         labelHide={this.labelHide}
@@ -266,8 +267,6 @@ export class MgInputCheckbox {
         value={this.value && this.value.toString()}
         readonlyValue={undefined}
         tooltip={!this.readonly && this.tooltip}
-        displayCharacterLeft={undefined}
-        maxlength={undefined}
         helpText={this.helpText}
         errorMessage={this.errorMessage}
         isFieldset={true}

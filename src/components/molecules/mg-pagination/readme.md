@@ -44,7 +44,6 @@ graph TD;
   mg-input-select --> mg-tooltip
   mg-input-select --> mg-icon
   mg-input-select --> mg-input-title
-  mg-input-select --> mg-character-left
   style mg-pagination fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

@@ -1,11 +1,13 @@
 @use '../styles/mg-input.scss';
 @use '../styles/mg-input-box.scss';
 @use '../styles/mg-input-width.scss';
+@use '../styles/mg-input-character-left.scss';
 @use '../../../../styles/a11y.scss';
 
 /* Component Custom Style */
 .mg-input {
   .mg-input__box {
+    display: block;
     height: auto;
     resize: none;
     &.mg-input__box--resizable {
@@ -18,19 +20,23 @@
       resize: vertical;
     }
   }
+}
 
-  /**
+/**
   * Character left
   */
-  .mg-input__input {
-    position: relative;
 
-    mg-character-left {
-      position: absolute;
-      bottom: 0.5rem;
-      right: 1rem;
-      font-size: 1.1rem;
-      opacity: 0.6;
+.mg-input__with-character-left {
+  width: 100%;
+
+  mg-character-left {
+    display: block;
+    visibility: hidden;
+    margin-top: 0.2rem;
+    text-align: end;
+
+    .mg-input.is-focused & {
+      visibility: visible;
     }
   }
 }

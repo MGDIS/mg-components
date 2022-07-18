@@ -30,6 +30,7 @@ describe('mg-input-text', () => {
     { label: 'label', identifier: 'identifier', readonly: true, value: 'blu' },
     { label: 'label', identifier: 'identifier', tooltip: 'My Tooltip Message' },
     { label: 'label', identifier: 'identifier', tooltip: 'My Tooltip Message', labelOnTop: true },
+    { label: 'label', identifier: 'identifier', displayCharacterLeft: false },
   ])('Should render with args %s:', async args => {
     const { root } = await getPage(args);
     expect(root).toMatchSnapshot();
@@ -101,6 +102,7 @@ describe('mg-input-text', () => {
 
     input.dispatchEvent(new CustomEvent('focus', { bubbles: true }));
     await page.waitForChanges();
+    expect(page.rootInstance.classList.has('is-focused')).toBeTruthy();
 
     expect(page.root).toMatchSnapshot(); //Snapshot on focus
 
@@ -108,6 +110,10 @@ describe('mg-input-text', () => {
     input.dispatchEvent(new CustomEvent('input', { bubbles: true }));
     await page.waitForChanges();
     expect(page.rootInstance.valueChange.emit).toHaveBeenCalledWith(inputValue);
+
+    input.dispatchEvent(new CustomEvent('blur', { bubbles: true }));
+    await page.waitForChanges();
+    expect(page.rootInstance.classList.has('is-focused')).toBeFalsy();
   });
 
   describe.each(['readonly', 'disabled'])('validity, case next state is %s', nextState => {
