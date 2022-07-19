@@ -75,7 +75,8 @@ To bind a non string value in a web component we have to use the Vue.js [`.prop`
 <mg-input-text :value="user.firstname" :label="$t('firstname')" @value-change="user.firstname = $event.target.value"></mg-input-text>
 ```
 
-If this syntax is too verbose for you, you can use the directive `v-mg-model` used in the [template-example](https://gitlab.mgdis.fr/nodejs/template-example/-/tree/master/client/src/directives/mg-model.js), the syntax will become:
+TODO: update URL at next CORE release
+If this syntax is too verbose for you, you can use the directive `v-mg-model` used in the [mg-model directive](http://core.pages.mgdis.fr/core-back/core/docs/), the syntax will become:
 
 ```html
 <mg-input-text v-mg-model="user.firstname" :label="$t('firstname')"></mg-input-text>
@@ -152,17 +153,12 @@ You can have troubles with i18n render in slots. In some cases, with the example
 </mg-button>
 ```
 
-To solve this issue, you need to use ng-bind the force the i18n render in slot.
-
-```js
-$onInit() {
-  this.button = this.$translate.instant('dispositifs.calculAide.button.btnDeleteScript');
-}
-```
+TODO: update URL at next CORE release
+To solve this issue, you need to use the [mg-model directive](http://core.pages.mgdis.fr/core-back/core/docs/) to force the i18n render in slot.
 
 ```html
 <mg-button>
   <mg-icon icon="trash"></mg-icon>
-  <span ng-bind="$ctrl.button"></span>
+  <span mg-translate="'dispositifs.calculAide.button.btnDeleteScriptLabel'"></span>
 </mg-button>
 ```

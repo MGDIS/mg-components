@@ -125,7 +125,7 @@ export class MgPopover {
       ...options,
       modifiers: [...options.modifiers, { name: 'eventListeners', enabled: false }],
     }));
-    // Remove even listener
+    // Remove event listener
     document.removeEventListener('click', this.clickOutside, false);
   };
 

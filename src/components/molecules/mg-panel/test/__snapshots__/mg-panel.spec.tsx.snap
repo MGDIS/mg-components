@@ -25,7 +25,7 @@ exports[`mg-panel Should render with args {
               </div>
             </button>
           </mg-button>
-          <mg-button is-icon="">
+          <mg-button class="mg-panel__edit-button" is-icon="">
             <!---->
             <button aria-disabled="false" aria-label="Edit section title." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
               <div class="mg-button__content">
@@ -78,7 +78,7 @@ exports[`mg-panel Should render with args {
               </div>
             </button>
           </mg-button>
-          <mg-button is-icon="">
+          <mg-button class="mg-panel__edit-button" is-icon="">
             <!---->
             <button aria-disabled="false" aria-label="Modifier le titre de la section." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
               <div class="mg-button__content">
@@ -131,7 +131,7 @@ exports[`mg-panel Should render with args {
               </div>
             </button>
           </mg-button>
-          <mg-button is-icon="">
+          <mg-button class="mg-panel__edit-button" is-icon="">
             <!---->
             <button aria-disabled="false" aria-label="Edit section title." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
               <div class="mg-button__content">
@@ -185,7 +185,7 @@ exports[`mg-panel Should render with args {
               </div>
             </button>
           </mg-button>
-          <mg-button is-icon="">
+          <mg-button class="mg-panel__edit-button" is-icon="">
             <!---->
             <button aria-disabled="false" aria-label="Edit section title." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
               <div class="mg-button__content">
@@ -437,7 +437,7 @@ exports[`mg-panel navigation Should NOT update panel title, case input new value
               </div>
             </button>
           </mg-button>
-          <mg-button is-icon="">
+          <mg-button class="mg-panel__edit-button" is-icon="">
             <!---->
             <button aria-disabled="false" aria-label="Edit section title." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
               <div class="mg-button__content">
@@ -637,7 +637,7 @@ exports[`mg-panel navigation Should NOT update panel title, case input new value
               </div>
             </button>
           </mg-button>
-          <mg-button is-icon="">
+          <mg-button class="mg-panel__edit-button" is-icon="">
             <!---->
             <button aria-disabled="false" aria-label="Edit section title." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
               <div class="mg-button__content">
@@ -889,7 +889,7 @@ exports[`mg-panel navigation Should toggle edit panel title 1`] = `
               </div>
             </button>
           </mg-button>
-          <mg-button is-icon="">
+          <mg-button class="mg-panel__edit-button" is-icon="">
             <!---->
             <button aria-disabled="false" aria-label="Edit section title." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
               <div class="mg-button__content">
@@ -1013,7 +1013,7 @@ exports[`mg-panel navigation Should toggle edit panel title 3`] = `
               </div>
             </button>
           </mg-button>
-          <mg-button is-icon="">
+          <mg-button class="mg-panel__edit-button" is-icon="">
             <!---->
             <button aria-disabled="false" aria-label="Edit section title." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
               <div class="mg-button__content">
@@ -1095,7 +1095,7 @@ exports[`mg-panel navigation should NOT update panel title, case no enter in inp
               </div>
             </button>
           </mg-button>
-          <mg-button is-icon="">
+          <mg-button class="mg-panel__edit-button" is-icon="">
             <!---->
             <button aria-disabled="false" aria-label="Edit section title." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
               <div class="mg-button__content">
@@ -1219,7 +1219,7 @@ exports[`mg-panel navigation should NOT update panel title, case no enter in inp
               </div>
             </button>
           </mg-button>
-          <mg-button is-icon="">
+          <mg-button class="mg-panel__edit-button" is-icon="">
             <!---->
             <button aria-disabled="false" aria-label="Edit section title." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
               <div class="mg-button__content">
@@ -1267,7 +1267,7 @@ exports[`mg-panel navigation should update panel title, case cancel 1`] = `
               </div>
             </button>
           </mg-button>
-          <mg-button is-icon="">
+          <mg-button class="mg-panel__edit-button" is-icon="">
             <!---->
             <button aria-disabled="false" aria-label="Edit section title." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
               <div class="mg-button__content">
@@ -1391,7 +1391,7 @@ exports[`mg-panel navigation should update panel title, case cancel 3`] = `
               </div>
             </button>
           </mg-button>
-          <mg-button is-icon="">
+          <mg-button class="mg-panel__edit-button" is-icon="">
             <!---->
             <button aria-disabled="false" aria-label="Edit section title." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
               <div class="mg-button__content">
@@ -1439,7 +1439,7 @@ exports[`mg-panel navigation should update panel title, case validate 1`] = `
               </div>
             </button>
           </mg-button>
-          <mg-button is-icon="">
+          <mg-button class="mg-panel__edit-button" is-icon="">
             <!---->
             <button aria-disabled="false" aria-label="Edit section title." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
               <div class="mg-button__content">
@@ -1563,7 +1563,7 @@ exports[`mg-panel navigation should update panel title, case validate 3`] = `
               </div>
             </button>
           </mg-button>
-          <mg-button is-icon="">
+          <mg-button class="mg-panel__edit-button" is-icon="">
             <!---->
             <button aria-disabled="false" aria-label="Edit section title." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
               <div class="mg-button__content">

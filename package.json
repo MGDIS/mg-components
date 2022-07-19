@@ -114,5 +114,8 @@
     "ts-node": "^10.7.0",
     "typescript": "^4.4.3"
   },
-  "license": "BSD-3-Clause"
+  "license": "BSD-3-Clause",
+  "volta": {
+    "node": "14.20.0"
+  }
 }

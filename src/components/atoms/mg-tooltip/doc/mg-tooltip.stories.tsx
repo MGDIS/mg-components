@@ -1,10 +1,23 @@
 import { h } from '@stencil/core';
+import { placements } from '../mg-tooltip.conf';
 
 export default {
   component: 'mg-tooltip',
   title: 'Atoms/mg-tooltip',
   parameters: {
     layout: 'centered',
+  },
+  argTypes: {
+    placement: {
+      options: placements,
+      control: { type: 'select' },
+      table: {
+        defaultValue: { summary: placements[0] },
+      },
+    },
+    value: {
+      control: { type: 'text' },
+    },
   },
 };
 
@@ -19,7 +32,7 @@ export const MgTooltip = Template.bind({});
 MgTooltip.args = {
   identifier: 'identifier',
   message: 'This is a tooltip message',
-  placement: 'bottom',
+  placement: placements[0],
   display: false,
   disabled: false,
 };

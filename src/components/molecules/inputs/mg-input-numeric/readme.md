@@ -12,7 +12,7 @@ It is possible to specify a unit after the field for integers and decimals. For 
 
 ## Specs
 
-### Positioning
+### Positioning (right exemple)
 
 ![](./mg-input-numeric/doc/img/mg-input-numeric-positioning.png)
 

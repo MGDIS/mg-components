@@ -6,6 +6,10 @@
 - field area
 - actions area (submit, cancel)
 
+#### Spacing
+
+![](./mg-form/doc/img/mg-form-spacing.png)
+
 ## Example
 
 **Code example does not reflect all the code.**

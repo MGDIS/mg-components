@@ -6,10 +6,6 @@
 - the text is to be right aligned
 - the label can be on one or more lines.
 
-### Label on top
-
-![](./mg-input-title/doc/img/mg-input-title-label-top.png)
-
 ### Fonts
 
 ![](./mg-input-title/doc/img/mg-input-title-fonts.png)
@@ -17,12 +13,6 @@
 ### Styles / states
 
 ![](./mg-input-title/doc/img/mg-input-title-states.png)
-
-### Form
-
-#### Spacing
-
-![](./mg-input-title/doc/img/mg-input-title-spacing.png)
 
 <!-- Auto Generated Below -->
 
