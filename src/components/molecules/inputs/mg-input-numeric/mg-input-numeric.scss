@@ -5,6 +5,6 @@
 
 .mg-input {
   .mg-input__box {
-    text-align: right;
+    text-align: var(--mg-inputs-text-align, right);
   }
 }
