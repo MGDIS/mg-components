@@ -69,7 +69,7 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.2",
-    "@stencil/core": "^2.17.0",
+    "@stencil/core": "^2.17.1",
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
