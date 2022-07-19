@@ -328,6 +328,7 @@ export class MgInputSelect {
       <MgInput
         identifier={this.identifier}
         classList={this.classList}
+        ariaDescribedbyIDs={[]}
         label={this.label}
         labelOnTop={this.labelOnTop}
         labelHide={this.labelHide}
@@ -338,9 +339,6 @@ export class MgInputSelect {
         value={this.value as string}
         readonlyValue={this.readonlyValue}
         tooltip={this.tooltip}
-        displayCharacterLeft={undefined}
-        characterLeftTemplate={undefined}
-        maxlength={undefined}
         helpText={this.helpText}
         errorMessage={this.errorMessage}
         isFieldset={false}

@@ -65,7 +65,6 @@ Type: `Promise<void>`
 - [mg-tooltip](../../../atoms/mg-tooltip)
 - [mg-icon](../../../atoms/mg-icon)
 - [mg-input-title](../../../atoms/mg-input-title)
-- [mg-character-left](../../../atoms/mg-character-left)
 
 ### Graph
 ```mermaid
@@ -73,7 +72,6 @@ graph TD;
   mg-input-radio --> mg-tooltip
   mg-input-radio --> mg-icon
   mg-input-radio --> mg-input-title
-  mg-input-radio --> mg-character-left
   style mg-input-radio fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

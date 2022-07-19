@@ -267,6 +267,7 @@ export class MgInputRadio {
       <MgInput
         identifier={this.identifier}
         classList={this.classList}
+        ariaDescribedbyIDs={[]}
         label={this.label}
         labelOnTop={this.labelOnTop}
         labelHide={this.labelHide}
@@ -277,9 +278,6 @@ export class MgInputRadio {
         value={this.value as string}
         readonlyValue={this.value as string}
         tooltip={this.tooltip}
-        displayCharacterLeft={undefined}
-        characterLeftTemplate={undefined}
-        maxlength={undefined}
         helpText={this.helpText}
         errorMessage={this.errorMessage}
         isFieldset={true}

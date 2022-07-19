@@ -29,8 +29,6 @@ const Template = (args: any): HTMLElement => {
   delete args.patternErrorMessage;
   const displayCharacterLeft = args.displayCharacterLeft;
   delete args.displayCharacterLeft;
-  const characterLeftTemplate = args.characterLeftTemplate;
-  delete args.characterLeftTemplate;
   const helpText = args.helpText;
   delete args.helpText;
   const mgWidth = args.mgWidth;
@@ -43,7 +41,6 @@ const Template = (args: any): HTMLElement => {
       label-hide={labelHide}
       pattern-error-message={patternErrorMessage}
       display-character-left={displayCharacterLeft ? 'true' : 'false'}
-      character-left-template={characterLeftTemplate}
       help-text={helpText}
       mg-width={mgWidth}
     ></mg-input-textarea>
@@ -74,7 +71,6 @@ MgInputTextarea.args = {
   tooltip: 'This is a tooltip',
   // Nb Char Left
   displayCharacterLeft: true,
-  characterLeftTemplate: '{counter} characters left.',
   // Help Text
   helpText: 'Help text with html <strong>bold</strong>, <em>italic</em>.',
 };

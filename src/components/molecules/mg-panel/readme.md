@@ -68,9 +68,9 @@ graph TD;
   mg-panel --> mg-input-text
   mg-button --> mg-icon
   mg-input-text --> mg-icon
+  mg-input-text --> mg-character-left
   mg-input-text --> mg-tooltip
   mg-input-text --> mg-input-title
-  mg-input-text --> mg-character-left
   style mg-panel fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

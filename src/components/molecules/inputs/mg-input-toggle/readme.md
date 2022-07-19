@@ -57,7 +57,6 @@ The values must be transcribed by texts or icons.
 - [mg-tooltip](../../../atoms/mg-tooltip)
 - [mg-icon](../../../atoms/mg-icon)
 - [mg-input-title](../../../atoms/mg-input-title)
-- [mg-character-left](../../../atoms/mg-character-left)
 
 ### Graph
 ```mermaid
@@ -65,7 +64,6 @@ graph TD;
   mg-input-toggle --> mg-tooltip
   mg-input-toggle --> mg-icon
   mg-input-toggle --> mg-input-title
-  mg-input-toggle --> mg-character-left
   style mg-input-toggle fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
