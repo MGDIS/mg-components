@@ -12,11 +12,19 @@ July ???, 2022
 
 - Drop IE support 🍾
 - Library default language is now `en`, with matching currency `USD`.
+- Rename **`<mg-input-*>`** `width` property to `mg-width` to prevent a11y audit feedback.
+- Removed **`<mg-character-left>`** `template` attribute, component new design (e.g. 400/400) does not need it anymore. **`<mg-input-text>`** and **`<mg-input-textarea>`** matching attribute `character-left-template` is also removed.
 - **`<mg-icon>`** icon `arrows-rotate` renamed to `arrows-rotate-backward`
 
 ### 🚀 Enhancement
 
-- Added `resizable` props on [**`<mg-input-textarea>`**](?path=/docs/molecules-inputs-mg-input-textarea--mg-input-textarea)
+- **PDA9 Specs are now in our Storybook.**
+- **i18n**: messages are availables in english and french. Based on the `lang` attribute.
+- Changed **`<mg-input-*>`** error behavior.
+- Changed danger color to `#db1f29`.
+- Added `resizable` props on [**`<mg-input-textarea>`**](?path=/docs/molecules-inputs-mg-input-textarea--mg-input-textarea).
+- Added `small` (12px) icon size to [**`<mg-icon>`**](?path=/docs/atoms-mg-icon--mg-icon).
+- Added icons to [**`<mg-icon>`**](?path=/docs/atoms-mg-icon--mg-icon), [see all the availables icons](?path=/docs/style-icons--icons).
 
 ## 3.3.0
 

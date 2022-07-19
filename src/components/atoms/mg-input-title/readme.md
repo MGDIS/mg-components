@@ -1,4 +1,28 @@
-This atom refers to [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64), [PDA9-723](https://jira.mgdis.fr/browse/PDA9-723).
+## Design
+
+### Label
+
+- the label can be positioned on the left or above the input field.
+- the text is to be right aligned
+- the label can be on one or more lines.
+
+### Label on top
+
+![](./mg-input-title/doc/img/mg-input-title-label-top.png)
+
+### Fonts
+
+![](./mg-input-title/doc/img/mg-input-title-fonts.png)
+
+### Styles / states
+
+![](./mg-input-title/doc/img/mg-input-title-states.png)
+
+### Form
+
+#### Spacing
+
+![](./mg-input-title/doc/img/mg-input-title-spacing.png)
 
 <!-- Auto Generated Below -->
 

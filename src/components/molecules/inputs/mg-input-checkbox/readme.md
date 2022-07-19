@@ -1,4 +1,15 @@
-This molecule refers to the [PDA9-70](https://jira.mgdis.fr/browse/PDA9-70).
+## Usage
+
+True/False value notion.
+Only 2 possible values.
+
+### Theming
+
+The style of the active checkbox is the browser's style.
+
+## Specs
+
+![](./mg-input-checkbox/doc/img/mg-input-checkbox-specs.png)
 
 <!-- Auto Generated Below -->
 
@@ -51,7 +62,6 @@ Type: `Promise<void>`
 - [mg-tooltip](../../../atoms/mg-tooltip)
 - [mg-icon](../../../atoms/mg-icon)
 - [mg-input-title](../../../atoms/mg-input-title)
-- [mg-character-left](../../../atoms/mg-character-left)
 
 ### Graph
 ```mermaid
@@ -59,7 +69,6 @@ graph TD;
   mg-input-checkbox --> mg-tooltip
   mg-input-checkbox --> mg-icon
   mg-input-checkbox --> mg-input-title
-  mg-input-checkbox --> mg-character-left
   style mg-input-checkbox fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

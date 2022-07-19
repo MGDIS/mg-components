@@ -30,6 +30,7 @@ describe('mg-input-text', () => {
     { label: 'label', identifier: 'identifier', readonly: true, value: 'blu' },
     { label: 'label', identifier: 'identifier', tooltip: 'My Tooltip Message' },
     { label: 'label', identifier: 'identifier', tooltip: 'My Tooltip Message', labelOnTop: true },
+    { label: 'label', identifier: 'identifier', displayCharacterLeft: false },
   ])('Should render with args %s:', async args => {
     const { root } = await getPage(args);
     expect(root).toMatchSnapshot();
@@ -212,5 +213,49 @@ describe('mg-input-text', () => {
     await page.waitForChanges();
 
     expect(page.root).toMatchSnapshot();
+  });
+
+  test('Should remove error on input', async () => {
+    const page = await getPage({ label: 'label', identifier: 'identifier', required: true });
+    const element = page.doc.querySelector('mg-input-text');
+    const input = element.shadowRoot.querySelector('input');
+
+    //mock validity
+    input.checkValidity = jest.fn().mockReturnValueOnce(false).mockReturnValueOnce(true).mockReturnValueOnce(true);
+    Object.defineProperty(input, 'validity', {
+      get: jest
+        .fn()
+        .mockReturnValueOnce({
+          valueMissing: true,
+        })
+        .mockReturnValueOnce({
+          valueMissing: true,
+        })
+        .mockReturnValueOnce({
+          valueMissing: false,
+        })
+        .mockReturnValueOnce({
+          valueMissing: false,
+        }),
+    });
+
+    await element.displayError();
+
+    await page.waitForChanges();
+
+    expect(page.rootInstance.hasError).toBeTruthy();
+    expect(page.rootInstance.errorMessage).toEqual(messages.errors.required);
+
+    input.value = 'blu';
+    input.dispatchEvent(new CustomEvent('input', { bubbles: true }));
+    await page.waitForChanges();
+
+    expect(page.rootInstance.hasError).toBeTruthy();
+    expect(page.rootInstance.errorMessage).toBeUndefined();
+
+    input.dispatchEvent(new CustomEvent('blur', { bubbles: true }));
+    await page.waitForChanges();
+
+    expect(page.rootInstance.hasError).toBeFalsy();
   });
 });

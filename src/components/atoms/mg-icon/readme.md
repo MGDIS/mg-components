@@ -1,4 +1,30 @@
-This atom refers to the [PDA9-744](https://jira.mgdis.fr/browse/PDA9-744).
+## Design
+
+### Standard
+
+Sizes (px) :
+
+- 12x12 small
+- 16x16 regular
+- 24x24 large
+- 36x36 extra-large
+
+Color: text of the page (usually [@color-dark](?path=/docs/style-colors--page))
+
+### Use alone with informative color
+
+When using a pictograph alone with an informative color, the color must be displayed in the background for accessibility reasons.
+
+The colors to be used are variations of the standard colors, with the brightness increased by 20%.
+
+Rule applicable for all except "info" blue. "Info" pictographs without text are usually displayed in the font color.
+
+![](./mg-icon/doc/img/mg-icon-color-bg.png)
+
+### File naming
+
+- Separator: "-" (dash). By default, the pictographs are the "filled" version, but this doesn't need to be specified in the naming
+- Variant: "-outline". If pictograph variant has a background that has a full circle > add "-circle" ex : check-circle, check-circle-outline
 
 <!-- Auto Generated Below -->
 

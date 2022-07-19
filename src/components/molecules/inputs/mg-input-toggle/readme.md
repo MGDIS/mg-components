@@ -1,4 +1,24 @@
-This molecule refers to the [PDA9-770](https://jira.mgdis.fr/browse/PDA9-770).
+## Usage
+
+Clicking anywhere on the entire component area toggles the selected value.
+
+The first value is always selected by default.
+
+When the "on/off" property is used, the first value is always the disabled value and the style is adjusted.
+
+The values must be transcribed by texts or icons.
+
+### Types
+
+![](./mg-input-toggle/doc/img/mg-input-toggle-use.png)
+
+### Specs
+
+![](./mg-input-toggle/doc/img/mg-input-toggle-specs.png)
+
+### Readonly
+
+![](./mg-input-toggle/doc/img/mg-input-toggle-readonly.png)
 
 <!-- Auto Generated Below -->
 
@@ -37,7 +57,6 @@ This molecule refers to the [PDA9-770](https://jira.mgdis.fr/browse/PDA9-770).
 - [mg-tooltip](../../../atoms/mg-tooltip)
 - [mg-icon](../../../atoms/mg-icon)
 - [mg-input-title](../../../atoms/mg-input-title)
-- [mg-character-left](../../../atoms/mg-character-left)
 
 ### Graph
 ```mermaid
@@ -45,7 +64,6 @@ graph TD;
   mg-input-toggle --> mg-tooltip
   mg-input-toggle --> mg-icon
   mg-input-toggle --> mg-input-title
-  mg-input-toggle --> mg-character-left
   style mg-input-toggle fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

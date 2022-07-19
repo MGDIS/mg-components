@@ -5,7 +5,6 @@ import { MgInput } from '../MgInput';
 import { createID, ClassList, allItemsAreString } from '../../../../utils/components.utils';
 import { initLocales } from '../../../../locales';
 import { RadioOption } from './mg-input-radio.conf';
-import { InputClass } from '../MgInput.conf';
 
 /**
  * type Option validation function
@@ -24,9 +23,6 @@ export class MgInputRadio {
   /************
    * Internal *
    ************/
-
-  // classes
-  private classError = InputClass.ERROR;
 
   // HTML selector
   private inputs: HTMLInputElement[] = [];
@@ -230,13 +226,6 @@ export class MgInputRadio {
     if (!this.valid && invalidElement.validity.valueMissing) {
       this.errorMessage = this.messages.errors.required;
     }
-
-    // Update class
-    if (this.valid) {
-      this.classList.delete(this.classError);
-    } else {
-      this.classList.add(this.classError);
-    }
   };
 
   /**
@@ -278,19 +267,17 @@ export class MgInputRadio {
       <MgInput
         identifier={this.identifier}
         classList={this.classList}
+        ariaDescribedbyIDs={[]}
         label={this.label}
         labelOnTop={this.labelOnTop}
         labelHide={this.labelHide}
         required={this.required}
         disabled={this.disabled}
         readonly={this.readonly}
-        width={undefined}
+        mgWidth={undefined}
         value={this.value as string}
         readonlyValue={this.value as string}
         tooltip={this.tooltip}
-        displayCharacterLeft={undefined}
-        characterLeftTemplate={undefined}
-        maxlength={undefined}
         helpText={this.helpText}
         errorMessage={this.errorMessage}
         isFieldset={true}

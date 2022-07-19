@@ -1,4 +1,32 @@
-This molecule refers to the [PDA9-484](https://jira.mgdis.fr/browse/PDA9-484).
+## Behavior
+
+The left zone of the header displays the item label, this zone is clickable and allows the user to unfold/fold the panel.
+If no content is available, the panel cannot be unfolded.
+When the panel is unfolded, the icon is vertically inverted.
+
+The right area of the header can accommodate any component.
+
+## Anatomy
+
+![](./mg-panel/doc/img/mg-panel-anatomy.png)
+
+## Specs
+
+### Sizing
+
+![](./mg-panel/doc/img/mg-panel-sizing.png)
+
+### Spacing
+
+![](./mg-panel/doc/img/mg-panel-spacing.png)
+
+### Alignments
+
+![](./mg-panel/doc/img/mg-panel-align.png)
+
+### Styles
+
+![](./mg-panel/doc/img/mg-panel-style.png)
 
 <!-- Auto Generated Below -->
 
@@ -40,9 +68,9 @@ graph TD;
   mg-panel --> mg-input-text
   mg-button --> mg-icon
   mg-input-text --> mg-icon
+  mg-input-text --> mg-character-left
   mg-input-text --> mg-tooltip
   mg-input-text --> mg-input-title
-  mg-input-text --> mg-character-left
   style mg-panel fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

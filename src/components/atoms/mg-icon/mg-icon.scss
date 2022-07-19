@@ -4,6 +4,12 @@
 }
 
 .mg-icon {
+  &[size='small'],
+  &.mg-icon--size-small {
+    width: var(--mg-icon-small-size);
+    height: var(--mg-icon-small-size);
+  }
+
   &[size='regular'],
   &.mg-icon--size-regular {
     width: var(--mg-icon-regular-size);

@@ -43,11 +43,12 @@ export class MgBadge {
   validateVariant(newValue: string, oldValue?: string): void {
     if (!variants.includes(newValue)) {
       throw new Error(`<mg-badge> prop "variant" must be one of : ${variants.join(', ')}.`);
+    } else {
+      if (oldValue !== undefined) {
+        this.classList.delete(`mg-badge--${oldValue}`);
+      }
+      this.classList.add(`mg-badge--${newValue}`);
     }
-    if (oldValue !== undefined) {
-      this.classList.delete(`mg-badge--${oldValue}`);
-    }
-    this.classList.add(`mg-badge--${this.variant}`);
   }
 
   /**
@@ -56,7 +57,7 @@ export class MgBadge {
   @Prop() outline: boolean;
   @Watch('outline')
   validateOutline(newValue: boolean): void {
-    if (newValue) this.classList.add(`mg-badge--outline`);
+    if (newValue) this.classList.add(this.classOutline);
     else this.classList.delete(this.classOutline);
   }
 

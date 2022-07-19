@@ -13,6 +13,10 @@ export class MgMessage {
    * Internal *
    ************/
 
+  // classes
+  private classHide = 'mg-message--hide';
+
+  // IDs
   private closeButtonId = '';
 
   // Stored timer setted when hide action is run from setTimeOut
@@ -53,11 +57,12 @@ export class MgMessage {
   validateVariant(newValue: string, oldValue?: string): void {
     if (!variants.includes(newValue)) {
       throw new Error(`<mg-message> prop "variant" must be one of : ${variants.join(', ')}`);
+    } else {
+      if (oldValue !== undefined) {
+        this.classList.delete(`mg-message--${oldValue}`);
+      }
+      this.classList.add(`mg-message--${newValue}`);
     }
-    if (oldValue !== undefined) {
-      this.classList.delete(`mg-message--${oldValue}`);
-    }
-    this.classList.add(`mg-message--${this.variant}`);
   }
 
   /**
@@ -81,10 +86,10 @@ export class MgMessage {
   validateHide(newValue: boolean): void {
     if (newValue) {
       this.componentHide.emit();
-      this.classList.add('mg-message--hide');
+      this.classList.add(this.classHide);
     } else {
       this.componentShow.emit();
-      this.classList.delete('mg-message--hide');
+      this.classList.delete(this.classHide);
     }
     this.hideWithDelay();
   }

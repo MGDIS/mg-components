@@ -1,4 +1,10 @@
-This molecule refers to the [PDA9-818](https://jira.mgdis.fr/browse/PDA9-818).
+## Anatomy
+
+![](./mg-form/doc/img/mg-form-anatomy.png)
+
+- zone for required message (12px)
+- field area
+- actions area (submit, cancel)
 
 ## Example
 

@@ -492,7 +492,9 @@ exports[`mg-panel navigation Should NOT update panel title, case input new value
                 </mg-input-title>
                 <div class="mg-input__input-container">
                   <div class="mg-input__input">
-                    <input aria-describedby="" class="mg-input__box" id="identifier-edition-input" maxlength="400" name="identifier-edition-input" pattern="^(?!(joker)$)[a-z A-Z0-9s]+$" type="text" value="panel title">
+                    <div class="mg-input__with-character-left" style="--mg-character-left-message-length: 0;">
+                      <input aria-describedby="identifier-edition-input-character-left" class="mg-input__box" id="identifier-edition-input" maxlength="400" name="identifier-edition-input" pattern="^(?!(joker)$)[a-z A-Z0-9s]+$" type="text" value="panel title">
+                    </div>
                     <slot name="append-input"></slot>
                   </div>
                 </div>
@@ -562,13 +564,15 @@ exports[`mg-panel navigation Should NOT update panel title, case input new value
           </mg-button>
           <mg-input-text label-hide="" pattern-error-message="You can't enter a bad guy !" value="joker">
             <mock:shadow-root>
-              <div class="is-not-valid mg-input mg-input--has-buttons-group-append mg-input--is-input-group-append mg-input--text mg-input--width-full">
+              <div class="mg-input mg-input--has-buttons-group-append mg-input--is-input-group-append mg-input--text mg-input--width-full">
                 <mg-input-title class="sr-only" identifier="identifier-edition-input">
                   Edit section title.
                 </mg-input-title>
                 <div class="mg-input__input-container">
                   <div class="mg-input__input">
-                    <input aria-describedby="" class="mg-input__box" id="identifier-edition-input" maxlength="400" name="identifier-edition-input" pattern="^(?!(joker)$)[a-z A-Z0-9s]+$" type="text" value="joker">
+                    <div class="mg-input__with-character-left" style="--mg-character-left-message-length: 0;">
+                      <input aria-describedby="identifier-edition-input-character-left" class="mg-input__box" id="identifier-edition-input" maxlength="400" name="identifier-edition-input" pattern="^(?!(joker)$)[a-z A-Z0-9s]+$" type="text" value="joker">
+                    </div>
                     <slot name="append-input"></slot>
                   </div>
                 </div>
@@ -710,7 +714,7 @@ exports[`mg-panel navigation Should toggle collapse panel, expanded false 2`] = 
               <div class="mg-button__content">
                 <mg-icon>
                   <mock:shadow-root>
-                    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--chevron-up mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+                    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-up mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                       <path d="M8.57,3.79l6.53,6.52a.81.81,0,0,1,0,1.14h0l-.76.77a.81.81,0,0,1-1.14,0L8,7,2.8,12.22a.81.81,0,0,1-1.14,0L.9,11.45a.8.8,0,0,1,0-1.13h0L7.43,3.79a.79.79,0,0,1,1.13,0Z" fill="currentColor"></path>
                     </svg>
                   </mock:shadow-root>
@@ -744,7 +748,7 @@ exports[`mg-panel navigation Should toggle collapse panel, expanded false 3`] = 
               <div class="mg-button__content">
                 <mg-icon>
                   <mock:shadow-root>
-                    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--chevron-up mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+                    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                       <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
                     </svg>
                   </mock:shadow-root>
@@ -812,7 +816,7 @@ exports[`mg-panel navigation Should toggle collapse panel, expanded true 2`] = `
               <div class="mg-button__content">
                 <mg-icon>
                   <mock:shadow-root>
-                    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--chevron-up mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+                    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                       <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
                     </svg>
                   </mock:shadow-root>
@@ -846,7 +850,7 @@ exports[`mg-panel navigation Should toggle collapse panel, expanded true 3`] = `
               <div class="mg-button__content">
                 <mg-icon>
                   <mock:shadow-root>
-                    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--chevron-up mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+                    <svg aria-hidden="true" class="mg-icon mg-icon--chevron-up mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                       <path d="M8.57,3.79l6.53,6.52a.81.81,0,0,1,0,1.14h0l-.76.77a.81.81,0,0,1-1.14,0L8,7,2.8,12.22a.81.81,0,0,1-1.14,0L.9,11.45a.8.8,0,0,1,0-1.13h0L7.43,3.79a.79.79,0,0,1,1.13,0Z" fill="currentColor"></path>
                     </svg>
                   </mock:shadow-root>
@@ -944,7 +948,9 @@ exports[`mg-panel navigation Should toggle edit panel title 2`] = `
                 </mg-input-title>
                 <div class="mg-input__input-container">
                   <div class="mg-input__input">
-                    <input aria-describedby="" class="mg-input__box" id="identifier-edition-input" maxlength="400" name="identifier-edition-input" type="text" value="panel title">
+                    <div class="mg-input__with-character-left" style="--mg-character-left-message-length: 0;">
+                      <input aria-describedby="identifier-edition-input-character-left" class="mg-input__box" id="identifier-edition-input" maxlength="400" name="identifier-edition-input" type="text" value="panel title">
+                    </div>
                     <slot name="append-input"></slot>
                   </div>
                 </div>
@@ -1150,7 +1156,9 @@ exports[`mg-panel navigation should NOT update panel title, case no enter in inp
                 </mg-input-title>
                 <div class="mg-input__input-container">
                   <div class="mg-input__input">
-                    <input aria-describedby="" class="mg-input__box" id="identifier-edition-input" maxlength="400" name="identifier-edition-input" type="text" value="panel title">
+                    <div class="mg-input__with-character-left" style="--mg-character-left-message-length: 0;">
+                      <input aria-describedby="identifier-edition-input-character-left" class="mg-input__box" id="identifier-edition-input" maxlength="400" name="identifier-edition-input" type="text" value="panel title">
+                    </div>
                     <slot name="append-input"></slot>
                   </div>
                 </div>
@@ -1322,7 +1330,9 @@ exports[`mg-panel navigation should update panel title, case cancel 2`] = `
                 </mg-input-title>
                 <div class="mg-input__input-container">
                   <div class="mg-input__input">
-                    <input aria-describedby="" class="mg-input__box" id="identifier-edition-input" maxlength="400" name="identifier-edition-input" type="text" value="panel title">
+                    <div class="mg-input__with-character-left" style="--mg-character-left-message-length: 0;">
+                      <input aria-describedby="identifier-edition-input-character-left" class="mg-input__box" id="identifier-edition-input" maxlength="400" name="identifier-edition-input" type="text" value="panel title">
+                    </div>
                     <slot name="append-input"></slot>
                   </div>
                 </div>
@@ -1494,7 +1504,9 @@ exports[`mg-panel navigation should update panel title, case validate 2`] = `
                 </mg-input-title>
                 <div class="mg-input__input-container">
                   <div class="mg-input__input">
-                    <input aria-describedby="" class="mg-input__box" id="identifier-edition-input" maxlength="400" name="identifier-edition-input" type="text" value="panel title">
+                    <div class="mg-input__with-character-left" style="--mg-character-left-message-length: 0;">
+                      <input aria-describedby="identifier-edition-input-character-left" class="mg-input__box" id="identifier-edition-input" maxlength="400" name="identifier-edition-input" type="text" value="panel title">
+                    </div>
                     <slot name="append-input"></slot>
                   </div>
                 </div>

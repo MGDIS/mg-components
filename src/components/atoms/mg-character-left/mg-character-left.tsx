@@ -11,7 +11,7 @@ export class MgCharacterLeft {
    * Internal *
    ************/
 
-  private mustacheCounter = '{counter}';
+  private messages;
 
   /**************
    * Decorators *
@@ -29,18 +29,6 @@ export class MgCharacterLeft {
   @Prop() identifier: string;
 
   /**
-   * Template to display remaining characters.
-   * Must have {counter} inside
-   */
-  @Prop({ mutable: true }) template: string;
-  @Watch('template')
-  validateTemplate(newValue: string): void {
-    if (typeof newValue !== 'string' || newValue === '' || newValue.indexOf(this.mustacheCounter) === -1) {
-      throw new Error(`<mg-character-left> prop "template" must contain "${this.mustacheCounter}".`);
-    }
-  }
-
-  /**
    * Sets the characters to count
    */
   @Prop() characters = '';
@@ -56,15 +44,6 @@ export class MgCharacterLeft {
     }
   }
 
-  /**
-   * Calculate number character left
-   *
-   * @returns {string} message
-   */
-  private getMessage = (): string => {
-    return this.template.replace(this.mustacheCounter, `<strong>${this.maxlength - this.characters.length}</strong>`);
-  };
-
   /*************
    * Lifecycle *
    *************/
@@ -76,13 +55,7 @@ export class MgCharacterLeft {
    */
   componentWillLoad(): void {
     this.validateMaxlength(this.maxlength);
-    // Validate template if defined, otherwise get default message
-    if (this.template !== undefined) {
-      this.validateTemplate(this.template);
-    } else {
-      const { messages } = initLocales(this.element);
-      this.template = messages.nbCharLeft;
-    }
+    this.messages = initLocales(this.element).messages;
   }
 
   /**
@@ -91,6 +64,13 @@ export class MgCharacterLeft {
    * @returns {HTMLElement} HTML Element
    */
   render(): HTMLElement {
-    return <span id={this.identifier} innerHTML={this.getMessage()} aria-live="polite"></span>;
+    return (
+      <span id={this.identifier} aria-live="polite">
+        <span aria-hidden="true">
+          {this.maxlength - this.characters.length}/{this.maxlength}
+        </span>
+        <span class="sr-only">{this.messages.nbCharLeft.replace('{counter}', this.maxlength - this.characters.length)}</span>
+      </span>
+    );
   }
 }

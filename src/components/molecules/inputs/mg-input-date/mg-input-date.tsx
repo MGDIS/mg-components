@@ -4,7 +4,6 @@ import { InputError } from './mg-input-date.conf';
 import { createID, ClassList } from '../../../../utils/components.utils';
 import { localeDate, dateRegExp } from '../../../../utils/locale.utils';
 import { initLocales } from '../../../../locales';
-import { InputClass } from '../MgInput.conf';
 
 @Component({
   tag: 'mg-input-date',
@@ -16,15 +15,15 @@ export class MgInputDate {
    * Internal *
    ************/
 
-  // classes
-  private classError = InputClass.ERROR;
-
   // HTML selector
   private input: HTMLInputElement;
 
   // Locales
   private messages;
   private locale: string;
+
+  // hasError (triggered by blur event)
+  private hasError = false;
 
   /**************
    * Decorators *
@@ -159,6 +158,7 @@ export class MgInputDate {
   async displayError(): Promise<void> {
     this.checkValidity();
     this.checkError();
+    this.hasError = this.invalid;
   }
 
   /**
@@ -166,6 +166,9 @@ export class MgInputDate {
    */
   private handleInput = (): void => {
     this.checkValidity();
+    if (this.hasError) {
+      this.checkError();
+    }
     this.value = this.input.value;
   };
 
@@ -173,8 +176,7 @@ export class MgInputDate {
    * Handle blur event
    */
   private handleBlur = (): void => {
-    this.checkValidity();
-    this.checkError();
+    this.displayError();
   };
 
   /**
@@ -265,9 +267,6 @@ export class MgInputDate {
     this.errorMessage = undefined;
     if (!this.valid) {
       this.setErrorMessage();
-      this.classList.add(this.classError);
-    } else {
-      this.classList.delete(this.classError);
     }
   };
 
@@ -307,19 +306,17 @@ export class MgInputDate {
       <MgInput
         identifier={this.identifier}
         classList={this.classList}
+        ariaDescribedbyIDs={[]}
         label={this.label}
         labelOnTop={this.labelOnTop}
         labelHide={this.labelHide}
         required={this.required}
         readonly={this.readonly}
-        width={undefined}
+        mgWidth={undefined}
         disabled={this.disabled}
         value={this.value}
         readonlyValue={localeDate(this.value, this.locale)}
         tooltip={this.tooltip}
-        displayCharacterLeft={undefined}
-        characterLeftTemplate={undefined}
-        maxlength={undefined}
         helpText={this.helpText}
         errorMessage={this.errorMessage}
         isFieldset={false}

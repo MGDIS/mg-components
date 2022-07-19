@@ -1,6 +1,6 @@
 import { Component, Element, Event, h, Prop, EventEmitter, State, Method, Watch } from '@stencil/core';
 import { MgInput } from '../MgInput';
-import { InputClass, Width } from '../MgInput.conf';
+import { Width } from '../MgInput.conf';
 import { createID, ClassList } from '../../../../utils/components.utils';
 import { initLocales } from '../../../../locales';
 
@@ -14,14 +14,14 @@ export class MgInputPassword {
    * Internal *
    ************/
 
-  // classes
-  private classError = InputClass.ERROR;
-
   // HTML selector
   private input: HTMLInputElement;
 
   // Locales
   private messages;
+
+  // hasError (triggered by blur event)
+  private hasError = false;
 
   /**************
    * Decorators *
@@ -92,7 +92,7 @@ export class MgInputPassword {
   /**
    * Define input width
    */
-  @Prop() width: Width = 'full';
+  @Prop() mgWidth: Width = 'full';
 
   /**
    * Add a tooltip message next to the input
@@ -143,6 +143,7 @@ export class MgInputPassword {
   async displayError(): Promise<void> {
     this.checkValidity();
     this.checkError();
+    this.hasError = this.invalid;
   }
 
   /**
@@ -150,6 +151,9 @@ export class MgInputPassword {
    */
   private handleInput = (): void => {
     this.checkValidity();
+    if (this.hasError) {
+      this.checkError();
+    }
     this.value = this.input.value;
   };
 
@@ -157,8 +161,7 @@ export class MgInputPassword {
    * Handle blur event
    */
   private handleBlur = (): void => {
-    this.checkValidity();
-    this.checkError();
+    this.displayError();
   };
 
   /**
@@ -186,12 +189,6 @@ export class MgInputPassword {
     // required
     if (!this.valid && this.input.validity.valueMissing) {
       this.errorMessage = this.messages.errors.required;
-    }
-    // Update class
-    if (this.valid) {
-      this.classList.delete(this.classError);
-    } else {
-      this.classList.add(this.classError);
     }
   };
 
@@ -225,19 +222,17 @@ export class MgInputPassword {
       <MgInput
         identifier={this.identifier}
         classList={this.classList}
+        ariaDescribedbyIDs={[]}
         label={this.label}
         labelOnTop={this.labelOnTop}
         labelHide={this.labelHide}
         required={this.required}
         readonly={this.readonly}
-        width={this.width}
+        mgWidth={this.mgWidth}
         disabled={this.disabled}
         value={this.value}
         readonlyValue={this.value !== undefined ? '•'.repeat(this.value.length) : undefined}
         tooltip={this.tooltip}
-        displayCharacterLeft={false}
-        characterLeftTemplate={undefined}
-        maxlength={undefined}
         helpText={this.helpText}
         errorMessage={this.errorMessage}
         isFieldset={false}

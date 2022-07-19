@@ -1,4 +1,19 @@
-This molecule refers to the [PDA9-140](https://jira.mgdis.fr/browse/PDA9-140).
+## Usage
+
+### Types
+
+The element can be of four different types depending on the message to be indicated:
+
+- validation (green)
+- information (blue)
+- warning (orange)
+- error (red)
+
+When a trigger (button...) is set up, it can trigger the display of a message. By default, the execution of the trigger erases the previous messages in the screen of the same type.
+
+## Specs
+
+![](./mg-message/doc/img/mg-message-specs.png)
 
 <!-- Auto Generated Below -->
 

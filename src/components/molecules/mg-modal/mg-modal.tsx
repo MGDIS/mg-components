@@ -12,6 +12,10 @@ export class MgModal {
    * Internal *
    ************/
 
+  // Classes
+  private classHide = 'mg-modal--hide';
+
+  // IDs
   private closeButtonId = '';
   private titleId = '';
 
@@ -49,10 +53,10 @@ export class MgModal {
   validateHide(newValue: boolean): void {
     if (newValue) {
       this.componentHide.emit();
-      this.classList.add('mg-modal--hide');
+      this.classList.add(this.classHide);
     } else {
       this.componentShow.emit();
-      this.classList.delete('mg-modal--hide');
+      this.classList.delete(this.classHide);
     }
   }
 

@@ -1,4 +1,10 @@
-This molecule refers to the [PDA9-787](https://jira.mgdis.fr/browse/PDA9-787).
+## Anatomy
+
+![](./mg-pagination/doc/img/mg-pagination-nav-anatomy.png)
+
+## Specs
+
+![](./mg-pagination/doc/img/mg-pagination-nav-specs.png)
 
 <!-- Auto Generated Below -->
 
@@ -38,7 +44,6 @@ graph TD;
   mg-input-select --> mg-tooltip
   mg-input-select --> mg-icon
   mg-input-select --> mg-input-title
-  mg-input-select --> mg-character-left
   style mg-pagination fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

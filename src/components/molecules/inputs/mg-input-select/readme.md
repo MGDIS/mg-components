@@ -1,4 +1,11 @@
-This molecule refers to the [PDA9-72](https://jira.mgdis.fr/browse/PDA9-72).
+## Design
+
+The behavior is the native behavior of the browser
+
+The placeholder of the list is "Select a value".
+
+The style and position of the chevron on the right of the field are those of the native browser.
+The spacing between the text and the chevron is at least 10px.
 
 <!-- Auto Generated Below -->
 
@@ -15,6 +22,7 @@ This molecule refers to the [PDA9-72](https://jira.mgdis.fr/browse/PDA9-72).
 | `label` _(required)_  | `label`                | Input label                                                                                                                                    | `string`                     | `undefined`                   |
 | `labelHide`           | `label-hide`           | Define if label is visible                                                                                                                     | `boolean`                    | `false`                       |
 | `labelOnTop`          | `label-on-top`         | Define if label is displayed on top                                                                                                            | `boolean`                    | `undefined`                   |
+| `mgWidth`             | `mg-width`             | Define input width                                                                                                                             | `"full" \| 16 \| 2 \| 4`     | `undefined`                   |
 | `name`                | `name`                 | Input name If not set the value equals the identifier                                                                                          | `string`                     | `this.identifier`             |
 | `placeholder`         | `placeholder`          | Input placeholder. It should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text. | `string`                     | `undefined`                   |
 | `placeholderDisabled` | `placeholder-disabled` | Option to disable placeholder                                                                                                                  | `boolean`                    | `false`                       |
@@ -24,7 +32,6 @@ This molecule refers to the [PDA9-72](https://jira.mgdis.fr/browse/PDA9-72).
 | `tooltip`             | `tooltip`              | Add a tooltip message next to the input                                                                                                        | `string`                     | `undefined`                   |
 | `valid`               | `valid`                | Define input valid state                                                                                                                       | `boolean`                    | `undefined`                   |
 | `value`               | `value`                | Component value                                                                                                                                | `any`                        | `undefined`                   |
-| `width`               | `width`                | Define input width                                                                                                                             | `"full" \| 16 \| 2 \| 4`     | `undefined`                   |
 
 
 ## Events
@@ -59,7 +66,6 @@ Type: `Promise<void>`
 - [mg-tooltip](../../../atoms/mg-tooltip)
 - [mg-icon](../../../atoms/mg-icon)
 - [mg-input-title](../../../atoms/mg-input-title)
-- [mg-character-left](../../../atoms/mg-character-left)
 
 ### Graph
 ```mermaid
@@ -67,7 +73,6 @@ graph TD;
   mg-input-select --> mg-tooltip
   mg-input-select --> mg-icon
   mg-input-select --> mg-input-title
-  mg-input-select --> mg-character-left
   mg-pagination --> mg-input-select
   style mg-input-select fill:#f9f,stroke:#333,stroke-width:4px
 ```

@@ -1,4 +1,63 @@
-This atom refers to the [PDA9-313](https://jira.mgdis.fr/browse/PDA9-313).
+## Usage
+
+Tooltips are messages that provide additional information about an element.
+They are presented as a message that appears when an element is hovered over or when the keyboard is focused.
+Tooltips are called "custom" when they are not built on the basis of the standard HTML code provided for these elements by the specification: the title attribute.
+Our "custom tooltip" component is called "tooltip" here.
+
+## Behavior
+
+The tooltip must be displayed when the element that allows its display :
+
+Is hovered over by the mouse.
+Takes the keyboard focus.
+
+The tooltip must be hidden when the element that allows its display :
+
+Is no longer hovered over by the mouse.
+Loses the keyboard focus.
+Pressing the Escape key must hide the tooltip.
+
+The tooltip must remain displayed when its content is hovered over by the mouse.
+
+The tooltip can be placed above, to the right, below or to the left of the element it describes.
+
+By default, the message is displayed at the bottom of the element.
+
+If the element is located at the edge of the screen, the tooltip is shifted to be always visible.
+
+## Specs
+
+### Shapes
+
+![](./mg-tooltip/doc/img/mg-tooltip-shape.png)
+
+### Fonts
+
+![](./mg-tooltip/doc/img/mg-tooltip-font.png)
+
+### Spacing
+
+![](./mg-tooltip/doc/img/mg-tooltip-spaces.png)
+
+### Alignments
+
+![](./mg-tooltip/doc/img/mg-tooltip-alignments-text.png)
+
+### Positioning
+
+Triangle is always centered on the call component
+
+![](./mg-tooltip/doc/img/mg-tooltip-positioning.png)
+![](./mg-tooltip/doc/img/mg-tooltip-positioning2.png)
+
+### Colors
+
+![](./mg-tooltip/doc/img/mg-tooltip-colors.png)
+
+### Sizes
+
+![](./mg-tooltip/doc/img/mg-tooltip-sizing.png)
 
 <!-- Auto Generated Below -->
 

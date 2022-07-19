@@ -1,4 +1,16 @@
-This atom refers to the [PDA9-315](https://jira.mgdis.fr/browse/PDA9-315).
+## Design
+
+The badge is always placed on top of, or next to the element it is for.
+
+The badge displays a number or a punctuation character.
+
+## Specs
+
+![](./mg-badge/doc/img/mg-badge-specs.png)
+
+## Theming
+
+![](./mg-badge/doc/img/mg-badge-styles.png)
 
 <!-- Auto Generated Below -->
 

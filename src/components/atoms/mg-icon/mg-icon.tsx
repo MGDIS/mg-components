@@ -13,11 +13,15 @@ export class MgIcon {
    */
   @Prop() icon: string;
   @Watch('icon')
-  validateIcon(newValue: string): void {
+  validateIcon(newValue: string, oldValue?: string): void {
     if (!Object.keys(icons).includes(newValue)) {
       throw new Error(`<mg-icon> prop "icon" must be one of : ${Object.keys(icons).join(', ')}`);
+    } else {
+      if (oldValue !== undefined) {
+        this.classList.delete(`mg-icon--${oldValue}`);
+      }
+      this.classList.add(`mg-icon--${newValue}`);
     }
-    this.classList.add(`mg-icon--${this.icon}`);
   }
 
   /**
@@ -25,11 +29,15 @@ export class MgIcon {
    */
   @Prop() size = 'regular';
   @Watch('size')
-  validateSize(newValue: string): void {
+  validateSize(newValue: string, oldValue?: string): void {
     if (!sizes.includes(newValue)) {
       throw new Error(`<mg-icon> prop "size" must be one of : ${sizes.join(', ')}`);
+    } else {
+      if (oldValue !== undefined) {
+        this.classList.delete(`mg-icon--size-${oldValue}`);
+      }
+      this.classList.add(`mg-icon--size-${newValue}`);
     }
-    this.classList.add(`mg-icon--size-${this.size}`);
   }
 
   /**
@@ -38,11 +46,14 @@ export class MgIcon {
    */
   @Prop() variant: string;
   @Watch('variant')
-  validateVariant(newValue: string): void {
+  validateVariant(newValue: string, oldValue?: string): void {
     if (newValue !== undefined && !variants.includes(newValue)) {
       throw new Error(`<mg-icon> prop "variant" must be one of : ${variants.join(', ')}`);
     } else if (newValue !== undefined) {
-      this.classList.add(`mg-icon--variant-${this.variant}`);
+      if (oldValue !== undefined) {
+        this.classList.delete(`mg-icon--variant-${oldValue}`);
+      }
+      this.classList.add(`mg-icon--variant-${newValue}`);
     }
   }
 
@@ -54,6 +65,8 @@ export class MgIcon {
   handleSpin(newValue: boolean): void {
     if (newValue) {
       this.classList.add('mg-icon--spin');
+    } else {
+      this.classList.delete('mg-icon--spin');
     }
   }
 

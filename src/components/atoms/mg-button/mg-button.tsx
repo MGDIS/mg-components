@@ -28,11 +28,15 @@ export class MgButton {
    */
   @Prop() variant: string = variants[0]; // Primary
   @Watch('variant')
-  validateVariant(newValue: string): void {
+  validateVariant(newValue: string, oldValue?: string): void {
     if (!variants.includes(newValue)) {
       throw new Error(`<mg-button> prop "variant" must be one of : ${variants.join(', ')}`);
+    } else {
+      if (oldValue !== undefined) {
+        this.classList.delete(`mg-button--${oldValue}`);
+      }
+      this.classList.add(`mg-button--${newValue}`);
     }
-    this.classList.add(`mg-button--${this.variant}`);
   }
 
   /**

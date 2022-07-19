@@ -1,4 +1,26 @@
-This molecule refers to the [PDA9-181](https://jira.mgdis.fr/browse/PDA9-181).
+## Usage
+
+An amount field is a numeric field. By default it is limited to 16 characters (including comma).
+
+It is not possible to enter characters other than numbers, "," or ".".
+
+Rounding is to two digits after the decimal point.
+
+It is not possible to enter more than two digits after the decimal point.
+
+It is possible to specify a unit after the field for integers and decimals. For currencies, the symbol is positioned in the input field, following the value.
+
+## Specs
+
+### Positioning
+
+![](./mg-input-numeric/doc/img/mg-input-numeric-positioning.png)
+
+### Unit positioning
+
+![](./mg-input-numeric/doc/img/mg-input-numeric-unit.png)
+
+To be managed when setting up the component by using a "space" character before the term of the unit
 
 ## 🚨 Slot
 
@@ -22,6 +44,7 @@ Horizontal spacing is not managed by the component, it must be defined in slot i
 | `labelHide`          | `label-hide`     | Define if label is visible                                                                                                                     | `boolean`                | `false`                        |
 | `labelOnTop`         | `label-on-top`   | Define if label is displayed on top                                                                                                            | `boolean`                | `undefined`                    |
 | `max`                | `max`            | Maximum value                                                                                                                                  | `number`                 | `undefined`                    |
+| `mgWidth`            | `mg-width`       | Define input width                                                                                                                             | `"full" \| 16 \| 2 \| 4` | `undefined`                    |
 | `min`                | `min`            | Minimum value                                                                                                                                  | `number`                 | `undefined`                    |
 | `name`               | `name`           | Input name If not set the value equals the identifier                                                                                          | `string`                 | `this.identifier`              |
 | `placeholder`        | `placeholder`    | Input placeholder. It should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text. | `string`                 | `undefined`                    |
@@ -31,7 +54,6 @@ Horizontal spacing is not managed by the component, it must be defined in slot i
 | `type`               | `type`           | Define numeric type                                                                                                                            | `string`                 | `types[0]`                     |
 | `valid`              | `valid`          | Define input pattern to validate                                                                                                               | `boolean`                | `undefined`                    |
 | `value`              | `value`          | Component value                                                                                                                                | `string`                 | `undefined`                    |
-| `width`              | `width`          | Define input width                                                                                                                             | `"full" \| 16 \| 2 \| 4` | `undefined`                    |
 
 
 ## Events
@@ -62,7 +84,6 @@ Type: `Promise<void>`
 - [mg-tooltip](../../../atoms/mg-tooltip)
 - [mg-icon](../../../atoms/mg-icon)
 - [mg-input-title](../../../atoms/mg-input-title)
-- [mg-character-left](../../../atoms/mg-character-left)
 
 ### Graph
 ```mermaid
@@ -70,7 +91,6 @@ graph TD;
   mg-input-numeric --> mg-tooltip
   mg-input-numeric --> mg-icon
   mg-input-numeric --> mg-input-title
-  mg-input-numeric --> mg-character-left
   style mg-input-numeric fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

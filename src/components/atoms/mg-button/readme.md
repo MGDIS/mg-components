@@ -1,4 +1,23 @@
-This atom refers to the [PDA9-67](https://jira.mgdis.fr/browse/PDA9-67).
+## Usage
+
+A primary action button is, in most cases, unique on the screen, the other buttons must be displayed as "secondary", to highlight the primary action.
+Ex: Validation, Save
+
+A tooltip must be displayed on hover when the button only displays a non-explicit icon, and has no label. The tooltip must indicate the action of the button.
+
+A button that launches a potentially long process is disabled and displays a loader for the duration of the process.
+
+## Specs
+
+![](./mg-button/doc/img/mg-button-specs.png)
+
+## Placement
+
+![](./mg-button/doc/img/mg-button-placement.png)
+
+## Theming
+
+![](./mg-button/doc/img/mg-button-styles.png)
 
 <!-- Auto Generated Below -->
 

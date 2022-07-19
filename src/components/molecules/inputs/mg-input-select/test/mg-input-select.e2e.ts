@@ -192,7 +192,7 @@ describe('mg-input-select', () => {
   describe.each(['full', 16])('with custom width: %s', width => {
     test.each([false, true])('with label on top: %s', async labelOnTop => {
       const page = await createPage(`
-        <mg-input-select label="label" width="${width}" label-on-top="${labelOnTop}"></mg-input-select>
+        <mg-input-select label="label" mg-width="${width}" label-on-top="${labelOnTop}"></mg-input-select>
         <script>
           const mgInputSelect = document.querySelector('mg-input-select');
           mgInputSelect.items = ['blu', 'bli', 'bla', 'blo'];

@@ -82,10 +82,6 @@ export namespace Components {
           * Add maximum length
          */
         "maxlength": number;
-        /**
-          * Template to display remaining characters. Must have {counter} inside
-         */
-        "template": string;
     }
     interface MgForm {
         /**
@@ -317,6 +313,10 @@ export namespace Components {
          */
         "max": number;
         /**
+          * Define input width
+         */
+        "mgWidth": Width;
+        /**
           * Minimum value
          */
         "min": number;
@@ -352,10 +352,6 @@ export namespace Components {
           * Component value
          */
         "value": string;
-        /**
-          * Define input width
-         */
-        "width": Width;
     }
     interface MgInputPassword {
         /**
@@ -392,6 +388,10 @@ export namespace Components {
          */
         "labelOnTop": boolean;
         /**
+          * Define input width
+         */
+        "mgWidth": Width;
+        /**
           * Input name If not set the value equals the identifier
          */
         "name": string;
@@ -419,10 +419,6 @@ export namespace Components {
           * Component value
          */
         "value": string;
-        /**
-          * Define input width
-         */
-        "width": Width;
     }
     interface MgInputRadio {
         /**
@@ -530,6 +526,10 @@ export namespace Components {
          */
         "labelOnTop": boolean;
         /**
+          * Define input width
+         */
+        "mgWidth": Width;
+        /**
           * Input name If not set the value equals the identifier
          */
         "name": string;
@@ -565,16 +565,8 @@ export namespace Components {
           * Component value
          */
         "value": any;
-        /**
-          * Define input width
-         */
-        "width": Width;
     }
     interface MgInputText {
-        /**
-          * Template to use for characters left sentence
-         */
-        "characterLeftTemplate": string;
         /**
           * Define if input is disabled
          */
@@ -621,6 +613,10 @@ export namespace Components {
          */
         "maxlength": number;
         /**
+          * Define input width
+         */
+        "mgWidth": Width;
+        /**
           * Input name If not set the value equals the identifier
          */
         "name": string;
@@ -665,16 +661,8 @@ export namespace Components {
           * Component value
          */
         "value": string;
-        /**
-          * Define input width
-         */
-        "width": Width;
     }
     interface MgInputTextarea {
-        /**
-          * Template to use for characters left sentence
-         */
-        "characterLeftTemplate": string;
         /**
           * Define if input is disabled
          */
@@ -716,6 +704,10 @@ export namespace Components {
           * Input max length
          */
         "maxlength": number;
+        /**
+          * Define input width
+         */
+        "mgWidth": Width;
         /**
           * Input name If not set the value equals the identifier
          */
@@ -760,10 +752,6 @@ export namespace Components {
           * Component value
          */
         "value": string;
-        /**
-          * Define input width
-         */
-        "width": Width;
     }
     interface MgInputTitle {
         /**
@@ -1322,10 +1310,6 @@ declare namespace LocalJSX {
           * Add maximum length
          */
         "maxlength": number;
-        /**
-          * Template to display remaining characters. Must have {counter} inside
-         */
-        "template"?: string;
     }
     interface MgForm {
         /**
@@ -1557,6 +1541,10 @@ declare namespace LocalJSX {
          */
         "max"?: number;
         /**
+          * Define input width
+         */
+        "mgWidth"?: Width;
+        /**
           * Minimum value
          */
         "min"?: number;
@@ -1600,10 +1588,6 @@ declare namespace LocalJSX {
           * Component value
          */
         "value"?: string;
-        /**
-          * Define input width
-         */
-        "width"?: Width;
     }
     interface MgInputPassword {
         /**
@@ -1634,6 +1618,10 @@ declare namespace LocalJSX {
           * Define if label is displayed on top
          */
         "labelOnTop"?: boolean;
+        /**
+          * Define input width
+         */
+        "mgWidth"?: Width;
         /**
           * Input name If not set the value equals the identifier
          */
@@ -1670,10 +1658,6 @@ declare namespace LocalJSX {
           * Component value
          */
         "value"?: string;
-        /**
-          * Define input width
-         */
-        "width"?: Width;
     }
     interface MgInputRadio {
         /**
@@ -1779,6 +1763,10 @@ declare namespace LocalJSX {
          */
         "labelOnTop"?: boolean;
         /**
+          * Define input width
+         */
+        "mgWidth"?: Width;
+        /**
           * Input name If not set the value equals the identifier
          */
         "name"?: string;
@@ -1822,16 +1810,8 @@ declare namespace LocalJSX {
           * Component value
          */
         "value"?: any;
-        /**
-          * Define input width
-         */
-        "width"?: Width;
     }
     interface MgInputText {
-        /**
-          * Template to use for characters left sentence
-         */
-        "characterLeftTemplate"?: string;
         /**
           * Define if input is disabled
          */
@@ -1872,6 +1852,10 @@ declare namespace LocalJSX {
           * Input max length
          */
         "maxlength"?: number;
+        /**
+          * Define input width
+         */
+        "mgWidth"?: Width;
         /**
           * Input name If not set the value equals the identifier
          */
@@ -1920,16 +1904,8 @@ declare namespace LocalJSX {
           * Component value
          */
         "value"?: string;
-        /**
-          * Define input width
-         */
-        "width"?: Width;
     }
     interface MgInputTextarea {
-        /**
-          * Template to use for characters left sentence
-         */
-        "characterLeftTemplate"?: string;
         /**
           * Define if input is disabled
          */
@@ -1966,6 +1942,10 @@ declare namespace LocalJSX {
           * Input max length
          */
         "maxlength"?: number;
+        /**
+          * Define input width
+         */
+        "mgWidth"?: Width;
         /**
           * Input name If not set the value equals the identifier
          */
@@ -2018,10 +1998,6 @@ declare namespace LocalJSX {
           * Component value
          */
         "value"?: string;
-        /**
-          * Define input width
-         */
-        "width"?: Width;
     }
     interface MgInputTitle {
         /**

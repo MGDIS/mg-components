@@ -13,15 +13,6 @@
   max-width: 100%;
   margin-bottom: var(--mg-inputs-margin-bottom, 0);
 
-  /* Style when input is not valid */
-  &.is-not-valid {
-    color: hsl(var(--color-danger));
-
-    .mg-input__box {
-      border-color: hsl(var(--color-danger));
-    }
-  }
-
   /* Label */
   mg-input-title {
     // Display
@@ -86,6 +77,12 @@
   mg-icon {
     display: flex;
   }
+
+  .mg-input__help-text,
+  .mg-input__error {
+    text-align: start;
+    font-size: 1.2rem;
+  }
 }
 
 .mg-input__input {
@@ -95,9 +92,24 @@
     margin-top: calc((var(--default-size) - var(--mg-icon-regular-size)) / 2);
   }
 
+  &.mg-input__input--has-error {
+    .mg-input__box {
+      border-color: hsl(var(--color-danger));
+    }
+  }
+
   /* Manage space between input and first message */
-  & + * {
-    text-align: start;
+  & + .mg-input__help-text,
+  & + .mg-input__error {
     margin-top: 0.5rem;
   }
+}
+
+.mg-input__error {
+  display: inline-block;
+  margin-top: 0.2rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 0.3rem;
+  background: hsl(var(--mg-inputs-error-bg-color));
+  color: hsl(var(--color-danger));
 }
