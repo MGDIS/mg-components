@@ -306,6 +306,7 @@ export class MgInputDate {
       <MgInput
         identifier={this.identifier}
         classList={this.classList}
+        ariaDescribedbyIDs={[]}
         label={this.label}
         labelOnTop={this.labelOnTop}
         labelHide={this.labelHide}
@@ -316,9 +317,6 @@ export class MgInputDate {
         value={this.value}
         readonlyValue={localeDate(this.value, this.locale)}
         tooltip={this.tooltip}
-        displayCharacterLeft={undefined}
-        characterLeftTemplate={undefined}
-        maxlength={undefined}
         helpText={this.helpText}
         errorMessage={this.errorMessage}
         isFieldset={false}

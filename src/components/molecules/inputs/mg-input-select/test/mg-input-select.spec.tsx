@@ -112,6 +112,13 @@ describe('mg-input-select', () => {
     },
     {
       items: [
+        { title: 'blu', value: undefined },
+        { title: 'bli', value: 42 },
+      ],
+      selectedOption: 0,
+    },
+    {
+      items: [
         { title: 'batman', value: { name: 'Batman' } },
         { title: 'robin', value: { name: 'Robin' } },
       ],

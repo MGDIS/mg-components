@@ -16,7 +16,11 @@ export class MgInputText {
 
   // classes
   private classFocus = 'is-focused';
-  private isInputGroupAppend = 'mg-input--is-input-group-append';
+  private classIsInputGroupAppend = 'mg-input--is-input-group-append';
+  private classHasIcon = 'mg-input--has-icon';
+
+  // IDs
+  private characterLeftId;
 
   // HTML selector
   private input: HTMLInputElement;
@@ -71,6 +75,14 @@ export class MgInputText {
    * Input icon
    */
   @Prop() icon: string;
+  @Watch('icon')
+  validateIcon(newValue: string): void {
+    if (newValue !== undefined) {
+      this.classList.add(this.classHasIcon);
+    } else {
+      this.classList.delete(this.classHasIcon);
+    }
+  }
 
   /**
    * Define if label is displayed on top
@@ -132,11 +144,6 @@ export class MgInputText {
    * Define if component should display character left
    */
   @Prop() displayCharacterLeft = true;
-
-  /**
-   * Template to use for characters left sentence
-   */
-  @Prop() characterLeftTemplate: string;
 
   /**
    * Add a help text under the input, usually expected data format and example
@@ -292,9 +299,9 @@ export class MgInputText {
     const slotAppendInput: HTMLSlotElement[] = Array.from(this.element.querySelectorAll('[slot="append-input"]'));
 
     if (slotAppendInput.length === 1) {
-      this.classList.add(slotAppendInput[0].nodeName === 'MG-BUTTON' ? this.isInputGroupAppend : 'mg-input--is-append-input-slot-content');
+      this.classList.add(slotAppendInput[0].nodeName === 'MG-BUTTON' ? this.classIsInputGroupAppend : 'mg-input--is-append-input-slot-content');
     } else if (slotAppendInput.filter(slot => slot.nodeName === 'MG-BUTTON').length > 1) {
-      this.classList.add(this.isInputGroupAppend);
+      this.classList.add(this.classIsInputGroupAppend);
       this.classList.add('mg-input--has-buttons-group-append');
     }
   };
@@ -311,10 +318,9 @@ export class MgInputText {
   componentWillLoad(): ReturnType<typeof setTimeout> {
     // Get locales
     this.messages = initLocales(this.element).messages;
+    this.characterLeftId = `${this.identifier}-character-left`;
     // Validate
-    if (this.icon !== undefined) {
-      this.classList.add('mg-input--has-icon');
-    }
+    this.validateIcon(this.icon);
     this.validatePattern();
     this.validateAppendSlot();
     // Check validity when component is ready
@@ -335,6 +341,7 @@ export class MgInputText {
       <MgInput
         identifier={this.identifier}
         classList={this.classList}
+        ariaDescribedbyIDs={[this.characterLeftId]}
         label={this.label}
         labelOnTop={this.labelOnTop}
         labelHide={this.labelHide}
@@ -345,31 +352,41 @@ export class MgInputText {
         value={this.value}
         readonlyValue={undefined}
         tooltip={this.tooltip}
-        displayCharacterLeft={this.displayCharacterLeft}
-        characterLeftTemplate={this.characterLeftTemplate}
-        maxlength={this.maxlength}
         helpText={this.helpText}
         errorMessage={this.errorMessage}
         isFieldset={false}
       >
-        {this.icon !== undefined && <mg-icon icon={this.icon}></mg-icon>}
-        <input
-          type={this.type}
-          class="mg-input__box"
-          value={this.value}
-          id={this.identifier}
-          name={this.name}
-          placeholder={this.placeholder}
-          title={this.placeholder}
-          maxlength={this.maxlength}
-          disabled={this.disabled}
-          required={this.required}
-          pattern={this.pattern}
-          onInput={this.handleInput}
-          onFocus={this.handleFocus}
-          onBlur={this.handleBlur}
-          ref={el => (this.input = el as HTMLInputElement)}
-        />
+        <div
+          class="mg-input__with-character-left"
+          style={{
+            '--mg-character-left-message-length': (this.displayCharacterLeft
+              ? (this.maxlength - (this.value || '').length).toString().length + this.maxlength.toString().length + 1
+              : 0
+            ).toString(),
+          }}
+        >
+          {this.icon !== undefined && <mg-icon icon={this.icon}></mg-icon>}
+          <input
+            type={this.type}
+            class="mg-input__box"
+            value={this.value}
+            id={this.identifier}
+            name={this.name}
+            placeholder={this.placeholder}
+            title={this.placeholder}
+            maxlength={this.maxlength}
+            disabled={this.disabled}
+            required={this.required}
+            pattern={this.pattern}
+            onInput={this.handleInput}
+            onFocus={this.handleFocus}
+            onBlur={this.handleBlur}
+            ref={el => (this.input = el as HTMLInputElement)}
+          />
+          {this.displayCharacterLeft && this.maxlength && (
+            <mg-character-left identifier={this.characterLeftId} characters={this.value} maxlength={this.maxlength}></mg-character-left>
+          )}
+        </div>
         <slot name="append-input"></slot>
       </MgInput>
     );

@@ -29,6 +29,7 @@ describe('mg-input-textarea', () => {
     { label: 'label', identifier: 'identifier', resizable: 'both' },
     { label: 'label', identifier: 'identifier', resizable: 'vertical' },
     { label: 'label', identifier: 'identifier', resizable: 'horizontal' },
+    { label: 'label', identifier: 'identifier', displayCharacterLeft: false },
   ])('Should render with args %s:', async args => {
     const { root } = await getPage(args);
     expect(root).toMatchSnapshot();

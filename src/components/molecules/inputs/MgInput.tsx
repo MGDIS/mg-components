@@ -74,14 +74,12 @@ interface MgInputProps {
   disabled: boolean;
   // Tooltip
   tooltip: string;
-  // Nb Char Left
-  displayCharacterLeft: boolean;
-  characterLeftTemplate: string;
-  maxlength: number;
   // Help Text
   helpText: string;
   // Error Message
   errorMessage: string;
+  // ariaDescribedbyIDs
+  ariaDescribedbyIDs: string[];
 }
 
 /**
@@ -111,13 +109,7 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props: MgInputProps, 
   /**
    * a11y IDs
    */
-  const ariaDescribedbyIDs: Set<string> = new Set();
-
-  // Character Left
-  const characterLeftId = `${props.identifier}-character-left`;
-  if (props.classList.has('is-focused') && props.displayCharacterLeft) {
-    ariaDescribedbyIDs.add(characterLeftId);
-  }
+  const ariaDescribedbyIDs: Set<string> = new Set(props.ariaDescribedbyIDs);
 
   // Help text
   const helpTextId = `${props.identifier}-help-text`;
@@ -201,9 +193,6 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props: MgInputProps, 
             {children}
             {!props.labelOnTop && props.tooltip && getTooltip()}
           </div>
-          {props.displayCharacterLeft && props.maxlength && props.classList.has('is-focused') && (
-            <mg-character-left identifier={characterLeftId} characters={props.value} maxlength={props.maxlength} template={props.characterLeftTemplate}></mg-character-left>
-          )}
           {props.helpText && <div id={helpTextId} class="mg-input__help-text" innerHTML={props.helpText}></div>}
           {props.errorMessage && !props.readonly && !props.disabled && (
             <div id={helpTextErrorId} class="mg-input__error" innerHTML={props.errorMessage} aria-live="assertive"></div>

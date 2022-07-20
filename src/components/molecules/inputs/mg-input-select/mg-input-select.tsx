@@ -13,7 +13,7 @@ import { SelectOption, OptGroup } from './mg-input-select.conf';
  * @param {SelectOption} option select option
  * @returns {boolean} select option type is valid
  */
-const isOption = (option: SelectOption): boolean => typeof option === 'object' && typeof option.title === 'string' && option.value !== undefined;
+const isOption = (option: SelectOption): boolean => typeof option === 'object' && typeof option.title === 'string';
 
 /**
  * Group options
@@ -328,6 +328,7 @@ export class MgInputSelect {
       <MgInput
         identifier={this.identifier}
         classList={this.classList}
+        ariaDescribedbyIDs={[]}
         label={this.label}
         labelOnTop={this.labelOnTop}
         labelHide={this.labelHide}
@@ -338,9 +339,6 @@ export class MgInputSelect {
         value={this.value as string}
         readonlyValue={this.readonlyValue}
         tooltip={this.tooltip}
-        displayCharacterLeft={undefined}
-        characterLeftTemplate={undefined}
-        maxlength={undefined}
         helpText={this.helpText}
         errorMessage={this.errorMessage}
         isFieldset={false}

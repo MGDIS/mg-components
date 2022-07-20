@@ -1,0 +1,63 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="CSS Variables" />
+
+# CSS Variables
+
+To customize our components we are using [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties).
+
+Global CSS variables [can be find here](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/blob/master/src/styles/variables.css).
+
+## How to customize
+
+CSS variable customization must be done after `variables.css` import.
+
+### Global
+
+For a global customization you will prefer to use the `:root` selector:
+
+```CSS
+:root {
+  /* font */
+  --font-size: 1.4rem;
+  --line-height: 1.5;
+  --font-family: 'Ubuntu';
+  --font-family-heading: 'Ubuntu';
+  /* mg-button */
+  --mg-button-border-radius: calc(var(--default-size) / 2);
+  /* mg-tooltip */
+  --mg-tooltip-border-radius: 1rem;
+  --mg-tooltip-background-color: 342, 100%, 97%;
+  ...
+}
+```
+
+### Localized
+
+When your web component needs to be costomized only on a Localized area, you will prefer to use a CSS selector:
+
+```html
+<!-- Style -->
+<style>
+  .message-without-radius {
+    --mg-message-border-radius: 0;
+  }
+</style>
+
+<!-- On component -->
+<mg-message class="message-without-radius">This message should not have radius</mg-message>
+
+<!-- or on a defined area -->
+<div class="message-without-radius">
+  <mg-message>This message should not have radius</mg-message>
+  <mg-message>This message also</mg-message>
+</div>
+```
+
+## More variables
+
+`variable.css` file does not contain all the variables.
+
+Components like [`mg-form`](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/blob/master/src/components/molecules/mg-form/mg-form.scss) will define variables to set how `mg-inputs` will be displayed.
+
+Other components like [`mg-button`](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/blob/master/src/components/atoms/mg-button/mg-button.scss#L19) or [`mg-inputs`](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/blob/master/src/components/molecules/inputs/styles/mg-input-box.scss#L25) can be customized using CSS variables but are using the fallback value.
