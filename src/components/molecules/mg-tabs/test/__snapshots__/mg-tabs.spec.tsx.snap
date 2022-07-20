@@ -17,7 +17,7 @@ exports[`mg-tabs navigation should NOT go to next tab on keyboard event Enter 1`
         Content 1
       </div>
     </article>
-    <article aria-labelledby="id-1" class="mg-tabs__content-container" hidden="" id="pannel-2" role="tabpanel" tabindex="-1">
+    <article aria-labelledby="id-2" class="mg-tabs__content-container" hidden="" id="pannel-2" role="tabpanel" tabindex="-1">
       <div slot="tab_content-2">
         Content 2
       </div>
@@ -43,7 +43,7 @@ exports[`mg-tabs navigation should NOT go to next tab on keyboard event Enter 2`
         Content 1
       </div>
     </article>
-    <article aria-labelledby="id-1" class="mg-tabs__content-container" hidden="" id="pannel-2" role="tabpanel" tabindex="-1">
+    <article aria-labelledby="id-2" class="mg-tabs__content-container" hidden="" id="pannel-2" role="tabpanel" tabindex="-1">
       <div slot="tab_content-2">
         Content 2
       </div>
@@ -69,7 +69,7 @@ exports[`mg-tabs navigation should NOT go to next tab on keyboard event Enter 3`
         Content 1
       </div>
     </article>
-    <article aria-labelledby="id-1" class="mg-tabs__content-container" hidden="" id="pannel-2" role="tabpanel" tabindex="-1">
+    <article aria-labelledby="id-2" class="mg-tabs__content-container" hidden="" id="pannel-2" role="tabpanel" tabindex="-1">
       <div slot="tab_content-2">
         Content 2
       </div>
@@ -95,7 +95,7 @@ exports[`mg-tabs navigation should NOT go to next tab on keyboard event Space 1`
         Content 1
       </div>
     </article>
-    <article aria-labelledby="id-1" class="mg-tabs__content-container" hidden="" id="pannel-2" role="tabpanel" tabindex="-1">
+    <article aria-labelledby="id-2" class="mg-tabs__content-container" hidden="" id="pannel-2" role="tabpanel" tabindex="-1">
       <div slot="tab_content-2">
         Content 2
       </div>
@@ -121,7 +121,7 @@ exports[`mg-tabs navigation should NOT go to next tab on keyboard event Space 2`
         Content 1
       </div>
     </article>
-    <article aria-labelledby="id-1" class="mg-tabs__content-container" hidden="" id="pannel-2" role="tabpanel" tabindex="-1">
+    <article aria-labelledby="id-2" class="mg-tabs__content-container" hidden="" id="pannel-2" role="tabpanel" tabindex="-1">
       <div slot="tab_content-2">
         Content 2
       </div>
@@ -147,7 +147,7 @@ exports[`mg-tabs navigation should NOT go to next tab on keyboard event Space 3`
         Content 1
       </div>
     </article>
-    <article aria-labelledby="id-1" class="mg-tabs__content-container" hidden="" id="pannel-2" role="tabpanel" tabindex="-1">
+    <article aria-labelledby="id-2" class="mg-tabs__content-container" hidden="" id="pannel-2" role="tabpanel" tabindex="-1">
       <div slot="tab_content-2">
         Content 2
       </div>
@@ -173,7 +173,7 @@ exports[`mg-tabs navigation should go to next tab on click event 1`] = `
         Content 1
       </div>
     </article>
-    <article aria-labelledby="id-1" class="mg-tabs__content-container" hidden="" id="pannel-2" role="tabpanel" tabindex="-1">
+    <article aria-labelledby="id-2" class="mg-tabs__content-container" hidden="" id="pannel-2" role="tabpanel" tabindex="-1">
       <div slot="tab_content-2">
         Content 2
       </div>
@@ -194,7 +194,7 @@ exports[`mg-tabs navigation should go to next tab on click event 2`] = `
         joker
       </button>
     </header>
-    <article aria-labelledby="id-2" class="mg-tabs__content-container" hidden="" id="pannel-1" role="tabpanel" tabindex="-1">
+    <article aria-labelledby="id-1" class="mg-tabs__content-container" hidden="" id="pannel-1" role="tabpanel" tabindex="-1">
       <div slot="tab_content-1">
         Content 1
       </div>
@@ -229,7 +229,7 @@ exports[`mg-tabs navigation should go to next tab on click event 3`] = `
         Content 1
       </div>
     </article>
-    <article aria-labelledby="id-1" class="mg-tabs__content-container" hidden="" id="pannel-2" role="tabpanel" tabindex="-1">
+    <article aria-labelledby="id-2" class="mg-tabs__content-container" hidden="" id="pannel-2" role="tabpanel" tabindex="-1">
       <div slot="tab_content-2">
         Content 2
       </div>
@@ -254,7 +254,7 @@ exports[`mg-tabs navigation should go to next tab on click event 4`] = `
         <mg-badge label="messages" value="2" variant="info"></mg-badge>
       </button>
     </header>
-    <article aria-labelledby="id-2" class="mg-tabs__content-container" hidden="" id="pannel-1" role="tabpanel" tabindex="-1">
+    <article aria-labelledby="id-1" class="mg-tabs__content-container" hidden="" id="pannel-1" role="tabpanel" tabindex="-1">
       <div slot="tab_content-1">
         Content 1
       </div>
@@ -285,7 +285,7 @@ exports[`mg-tabs navigation should go to next tab on keyboard event 1`] = `
         Content 1
       </div>
     </article>
-    <article aria-labelledby="id-1" class="mg-tabs__content-container" hidden="" id="pannel-2" role="tabpanel" tabindex="-1">
+    <article aria-labelledby="id-2" class="mg-tabs__content-container" hidden="" id="pannel-2" role="tabpanel" tabindex="-1">
       <div slot="tab_content-2">
         Content 2
       </div>
@@ -311,7 +311,7 @@ exports[`mg-tabs navigation should go to next tab on keyboard event 2`] = `
         Content 1
       </div>
     </article>
-    <article aria-labelledby="id-1" class="mg-tabs__content-container" hidden="" id="pannel-2" role="tabpanel" tabindex="-1">
+    <article aria-labelledby="id-2" class="mg-tabs__content-container" hidden="" id="pannel-2" role="tabpanel" tabindex="-1">
       <div slot="tab_content-2">
         Content 2
       </div>
@@ -332,7 +332,7 @@ exports[`mg-tabs navigation should go to next tab on keyboard event 3`] = `
         joker
       </button>
     </header>
-    <article aria-labelledby="id-2" class="mg-tabs__content-container" hidden="" id="pannel-1" role="tabpanel" tabindex="-1">
+    <article aria-labelledby="id-1" class="mg-tabs__content-container" hidden="" id="pannel-1" role="tabpanel" tabindex="-1">
       <div slot="tab_content-1">
         Content 1
       </div>
@@ -363,7 +363,7 @@ exports[`mg-tabs navigation should go to next tab on keyboard event 4`] = `
         Content 1
       </div>
     </article>
-    <article aria-labelledby="id-1" class="mg-tabs__content-container" hidden="" id="pannel-2" role="tabpanel" tabindex="-1">
+    <article aria-labelledby="id-2" class="mg-tabs__content-container" hidden="" id="pannel-2" role="tabpanel" tabindex="-1">
       <div slot="tab_content-2">
         Content 2
       </div>
@@ -372,16 +372,19 @@ exports[`mg-tabs navigation should go to next tab on keyboard event 4`] = `
 </mg-tabs>
 `;
 
-exports[`mg-tabs navigation should go to next tab, and keep focus if it's the last one on keyboard event 1`] = `
+exports[`mg-tabs navigation should go to next visible tab, and keep focus if it's the last one on keyboard event 1`] = `
 <mg-tabs active-tab="1">
   <!---->
   <div class="mg-tabs mg-tabs--size-regular">
     <header aria-label="Sample label" class="mg-tabs__header" role="tablist">
       <button aria-controls="pannel-1" aria-selected="true" class="mg-tabs__navigation-button mg-tabs__navigation-button--active" data-index="1" id="id-1" role="tab" tabindex="0">
-        batman
+        Batman
       </button>
       <button aria-controls="pannel-2" aria-selected="false" class="mg-tabs__navigation-button" data-index="2" id="id-2" role="tab" tabindex="-1">
-        joker
+        Batman
+      </button>
+      <button aria-controls="pannel-3" aria-selected="false" class="mg-tabs__navigation-button mg-tabs__navigation-button--hidden" data-index="3" id="id-3" role="tab" tabindex="-1">
+        Batman
       </button>
     </header>
     <article aria-labelledby="id-1" class="mg-tabs__content-container" id="pannel-1" role="tabpanel" tabindex="0">
@@ -389,25 +392,33 @@ exports[`mg-tabs navigation should go to next tab, and keep focus if it's the la
         Content 1
       </div>
     </article>
-    <article aria-labelledby="id-1" class="mg-tabs__content-container" hidden="" id="pannel-2" role="tabpanel" tabindex="-1">
+    <article aria-labelledby="id-2" class="mg-tabs__content-container" hidden="" id="pannel-2" role="tabpanel" tabindex="-1">
       <div slot="tab_content-2">
         Content 2
+      </div>
+    </article>
+    <article aria-labelledby="id-3" class="mg-tabs__content-container" hidden="" id="pannel-3" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-3">
+        Content 3
       </div>
     </article>
   </div>
 </mg-tabs>
 `;
 
-exports[`mg-tabs navigation should go to next tab, and keep focus if it's the last one on keyboard event 2`] = `
+exports[`mg-tabs navigation should go to next visible tab, and keep focus if it's the last one on keyboard event 2`] = `
 <mg-tabs active-tab="1">
   <!---->
   <div class="mg-tabs mg-tabs--size-regular">
     <header aria-label="Sample label" class="mg-tabs__header" role="tablist">
       <button aria-controls="pannel-1" aria-selected="true" class="mg-tabs__navigation-button mg-tabs__navigation-button--active" data-index="1" id="id-1" role="tab" tabindex="0">
-        batman
+        Batman
       </button>
       <button aria-controls="pannel-2" aria-selected="false" class="mg-tabs__navigation-button" data-index="2" id="id-2" role="tab" tabindex="-1">
-        joker
+        Batman
+      </button>
+      <button aria-controls="pannel-3" aria-selected="false" class="mg-tabs__navigation-button mg-tabs__navigation-button--hidden" data-index="3" id="id-3" role="tab" tabindex="-1">
+        Batman
       </button>
     </header>
     <article aria-labelledby="id-1" class="mg-tabs__content-container" id="pannel-1" role="tabpanel" tabindex="0">
@@ -415,28 +426,36 @@ exports[`mg-tabs navigation should go to next tab, and keep focus if it's the la
         Content 1
       </div>
     </article>
-    <article aria-labelledby="id-1" class="mg-tabs__content-container" hidden="" id="pannel-2" role="tabpanel" tabindex="-1">
+    <article aria-labelledby="id-2" class="mg-tabs__content-container" hidden="" id="pannel-2" role="tabpanel" tabindex="-1">
       <div slot="tab_content-2">
         Content 2
+      </div>
+    </article>
+    <article aria-labelledby="id-3" class="mg-tabs__content-container" hidden="" id="pannel-3" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-3">
+        Content 3
       </div>
     </article>
   </div>
 </mg-tabs>
 `;
 
-exports[`mg-tabs navigation should go to next tab, and keep focus if it's the last one on keyboard event 3`] = `
+exports[`mg-tabs navigation should go to next visible tab, and keep focus if it's the last one on keyboard event 3`] = `
 <mg-tabs active-tab="2">
   <!---->
   <div class="mg-tabs mg-tabs--size-regular">
     <header aria-label="Sample label" class="mg-tabs__header" role="tablist">
       <button aria-controls="pannel-1" aria-selected="false" class="mg-tabs__navigation-button" data-index="1" id="id-1" role="tab" tabindex="-1">
-        batman
+        Batman
       </button>
       <button aria-controls="pannel-2" aria-selected="true" class="mg-tabs__navigation-button mg-tabs__navigation-button--active" data-index="2" id="id-2" role="tab" tabindex="0">
-        joker
+        Batman
+      </button>
+      <button aria-controls="pannel-3" aria-selected="false" class="mg-tabs__navigation-button mg-tabs__navigation-button--hidden" data-index="3" id="id-3" role="tab" tabindex="-1">
+        Batman
       </button>
     </header>
-    <article aria-labelledby="id-2" class="mg-tabs__content-container" hidden="" id="pannel-1" role="tabpanel" tabindex="-1">
+    <article aria-labelledby="id-1" class="mg-tabs__content-container" hidden="" id="pannel-1" role="tabpanel" tabindex="-1">
       <div slot="tab_content-1">
         Content 1
       </div>
@@ -446,23 +465,31 @@ exports[`mg-tabs navigation should go to next tab, and keep focus if it's the la
         Content 2
       </div>
     </article>
+    <article aria-labelledby="id-3" class="mg-tabs__content-container" hidden="" id="pannel-3" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-3">
+        Content 3
+      </div>
+    </article>
   </div>
 </mg-tabs>
 `;
 
-exports[`mg-tabs navigation should go to next tab, and keep focus if it's the last one on keyboard event 4`] = `
+exports[`mg-tabs navigation should go to next visible tab, and keep focus if it's the last one on keyboard event 4`] = `
 <mg-tabs active-tab="2">
   <!---->
   <div class="mg-tabs mg-tabs--size-regular">
     <header aria-label="Sample label" class="mg-tabs__header" role="tablist">
       <button aria-controls="pannel-1" aria-selected="false" class="mg-tabs__navigation-button" data-index="1" id="id-1" role="tab" tabindex="-1">
-        batman
+        Batman
       </button>
       <button aria-controls="pannel-2" aria-selected="true" class="mg-tabs__navigation-button mg-tabs__navigation-button--active" data-index="2" id="id-2" role="tab" tabindex="0">
-        joker
+        Batman
+      </button>
+      <button aria-controls="pannel-3" aria-selected="false" class="mg-tabs__navigation-button mg-tabs__navigation-button--hidden" data-index="3" id="id-3" role="tab" tabindex="-1">
+        Batman
       </button>
     </header>
-    <article aria-labelledby="id-2" class="mg-tabs__content-container" hidden="" id="pannel-1" role="tabpanel" tabindex="-1">
+    <article aria-labelledby="id-1" class="mg-tabs__content-container" hidden="" id="pannel-1" role="tabpanel" tabindex="-1">
       <div slot="tab_content-1">
         Content 1
       </div>
@@ -470,6 +497,147 @@ exports[`mg-tabs navigation should go to next tab, and keep focus if it's the la
     <article aria-labelledby="id-2" class="mg-tabs__content-container" id="pannel-2" role="tabpanel" tabindex="0">
       <div slot="tab_content-2">
         Content 2
+      </div>
+    </article>
+    <article aria-labelledby="id-3" class="mg-tabs__content-container" hidden="" id="pannel-3" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-3">
+        Content 3
+      </div>
+    </article>
+  </div>
+</mg-tabs>
+`;
+
+exports[`mg-tabs navigation should go to next visible tab, and keep focus if it's the last one on keyboard event 5`] = `
+<mg-tabs active-tab="1">
+  <!---->
+  <div class="mg-tabs mg-tabs--size-regular">
+    <header aria-label="Sample label" class="mg-tabs__header" role="tablist">
+      <button aria-controls="pannel-1" aria-selected="true" class="mg-tabs__navigation-button mg-tabs__navigation-button--active" data-index="1" id="id-1" role="tab" tabindex="0">
+        Batman
+      </button>
+      <button aria-controls="pannel-2" aria-selected="false" class="mg-tabs__navigation-button" data-index="2" id="id-2" role="tab" tabindex="-1">
+        Batman
+      </button>
+      <button aria-controls="pannel-3" aria-selected="false" class="mg-tabs__navigation-button mg-tabs__navigation-button--disabled" data-index="3" disabled="" id="id-3" role="tab" tabindex="-1">
+        Batman
+      </button>
+    </header>
+    <article aria-labelledby="id-1" class="mg-tabs__content-container" id="pannel-1" role="tabpanel" tabindex="0">
+      <div slot="tab_content-1">
+        Content 1
+      </div>
+    </article>
+    <article aria-labelledby="id-2" class="mg-tabs__content-container" hidden="" id="pannel-2" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-2">
+        Content 2
+      </div>
+    </article>
+    <article aria-labelledby="id-3" class="mg-tabs__content-container" hidden="" id="pannel-3" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-3">
+        Content 3
+      </div>
+    </article>
+  </div>
+</mg-tabs>
+`;
+
+exports[`mg-tabs navigation should go to next visible tab, and keep focus if it's the last one on keyboard event 6`] = `
+<mg-tabs active-tab="1">
+  <!---->
+  <div class="mg-tabs mg-tabs--size-regular">
+    <header aria-label="Sample label" class="mg-tabs__header" role="tablist">
+      <button aria-controls="pannel-1" aria-selected="true" class="mg-tabs__navigation-button mg-tabs__navigation-button--active" data-index="1" id="id-1" role="tab" tabindex="0">
+        Batman
+      </button>
+      <button aria-controls="pannel-2" aria-selected="false" class="mg-tabs__navigation-button" data-index="2" id="id-2" role="tab" tabindex="-1">
+        Batman
+      </button>
+      <button aria-controls="pannel-3" aria-selected="false" class="mg-tabs__navigation-button mg-tabs__navigation-button--disabled" data-index="3" disabled="" id="id-3" role="tab" tabindex="-1">
+        Batman
+      </button>
+    </header>
+    <article aria-labelledby="id-1" class="mg-tabs__content-container" id="pannel-1" role="tabpanel" tabindex="0">
+      <div slot="tab_content-1">
+        Content 1
+      </div>
+    </article>
+    <article aria-labelledby="id-2" class="mg-tabs__content-container" hidden="" id="pannel-2" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-2">
+        Content 2
+      </div>
+    </article>
+    <article aria-labelledby="id-3" class="mg-tabs__content-container" hidden="" id="pannel-3" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-3">
+        Content 3
+      </div>
+    </article>
+  </div>
+</mg-tabs>
+`;
+
+exports[`mg-tabs navigation should go to next visible tab, and keep focus if it's the last one on keyboard event 7`] = `
+<mg-tabs active-tab="2">
+  <!---->
+  <div class="mg-tabs mg-tabs--size-regular">
+    <header aria-label="Sample label" class="mg-tabs__header" role="tablist">
+      <button aria-controls="pannel-1" aria-selected="false" class="mg-tabs__navigation-button" data-index="1" id="id-1" role="tab" tabindex="-1">
+        Batman
+      </button>
+      <button aria-controls="pannel-2" aria-selected="true" class="mg-tabs__navigation-button mg-tabs__navigation-button--active" data-index="2" id="id-2" role="tab" tabindex="0">
+        Batman
+      </button>
+      <button aria-controls="pannel-3" aria-selected="false" class="mg-tabs__navigation-button mg-tabs__navigation-button--disabled" data-index="3" disabled="" id="id-3" role="tab" tabindex="-1">
+        Batman
+      </button>
+    </header>
+    <article aria-labelledby="id-1" class="mg-tabs__content-container" hidden="" id="pannel-1" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-1">
+        Content 1
+      </div>
+    </article>
+    <article aria-labelledby="id-2" class="mg-tabs__content-container" id="pannel-2" role="tabpanel" tabindex="0">
+      <div slot="tab_content-2">
+        Content 2
+      </div>
+    </article>
+    <article aria-labelledby="id-3" class="mg-tabs__content-container" hidden="" id="pannel-3" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-3">
+        Content 3
+      </div>
+    </article>
+  </div>
+</mg-tabs>
+`;
+
+exports[`mg-tabs navigation should go to next visible tab, and keep focus if it's the last one on keyboard event 8`] = `
+<mg-tabs active-tab="2">
+  <!---->
+  <div class="mg-tabs mg-tabs--size-regular">
+    <header aria-label="Sample label" class="mg-tabs__header" role="tablist">
+      <button aria-controls="pannel-1" aria-selected="false" class="mg-tabs__navigation-button" data-index="1" id="id-1" role="tab" tabindex="-1">
+        Batman
+      </button>
+      <button aria-controls="pannel-2" aria-selected="true" class="mg-tabs__navigation-button mg-tabs__navigation-button--active" data-index="2" id="id-2" role="tab" tabindex="0">
+        Batman
+      </button>
+      <button aria-controls="pannel-3" aria-selected="false" class="mg-tabs__navigation-button mg-tabs__navigation-button--disabled" data-index="3" disabled="" id="id-3" role="tab" tabindex="-1">
+        Batman
+      </button>
+    </header>
+    <article aria-labelledby="id-1" class="mg-tabs__content-container" hidden="" id="pannel-1" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-1">
+        Content 1
+      </div>
+    </article>
+    <article aria-labelledby="id-2" class="mg-tabs__content-container" id="pannel-2" role="tabpanel" tabindex="0">
+      <div slot="tab_content-2">
+        Content 2
+      </div>
+    </article>
+    <article aria-labelledby="id-3" class="mg-tabs__content-container" hidden="" id="pannel-3" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-3">
+        Content 3
       </div>
     </article>
   </div>
@@ -496,7 +664,7 @@ exports[`mg-tabs template display only slots with name "tab_content-*" 1`] = `
         Content 1
       </div>
     </article>
-    <article aria-labelledby="identifier-1" class="mg-tabs__content-container" hidden="" id="pannel-2" role="tabpanel" tabindex="-1">
+    <article aria-labelledby="identifier-2" class="mg-tabs__content-container" hidden="" id="pannel-2" role="tabpanel" tabindex="-1">
       <div slot="tab_content-2">
         Content 2
       </div>
@@ -525,7 +693,7 @@ exports[`mg-tabs template display only slots with name "tab_content-*" 2`] = `
         Content 1
       </div>
     </article>
-    <article aria-labelledby="identifier-1" class="mg-tabs__content-container" hidden="" id="pannel-2" role="tabpanel" tabindex="-1">
+    <article aria-labelledby="identifier-2" class="mg-tabs__content-container" hidden="" id="pannel-2" role="tabpanel" tabindex="-1">
       <div slot="tab_content-2">
         Content 2
       </div>
@@ -549,10 +717,7 @@ exports[`mg-tabs template display tabs with activeProps set by props 1`] = `
         Tab 3
       </button>
     </header>
-    <article aria-labelledby="identifier-2" class="mg-tabs__content-container" hidden="" id="pannel-1" role="tabpanel" tabindex="-1">
-      <div slot="tab_content-1">
-        Content 1
-      </div>
+    <article aria-labelledby="identifier-1" class="mg-tabs__content-container" hidden="" id="pannel-1" role="tabpanel" tabindex="-1">
       <div slot="tab_content-1">
         Content 1
       </div>
@@ -562,7 +727,11 @@ exports[`mg-tabs template display tabs with activeProps set by props 1`] = `
         Content 2
       </div>
     </article>
-    <article aria-labelledby="identifier-2" class="mg-tabs__content-container" hidden="" id="pannel-3" role="tabpanel" tabindex="-1"></article>
+    <article aria-labelledby="identifier-3" class="mg-tabs__content-container" hidden="" id="pannel-3" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-3">
+        Content 3
+      </div>
+    </article>
   </div>
 </mg-tabs>
 `;
@@ -582,10 +751,7 @@ exports[`mg-tabs template display tabs with activeProps set by props 2`] = `
         Tab 3
       </button>
     </header>
-    <article aria-labelledby="identifier-2" class="mg-tabs__content-container" hidden="" id="pannel-1" role="tabpanel" tabindex="-1">
-      <div slot="tab_content-1">
-        Content 1
-      </div>
+    <article aria-labelledby="identifier-1" class="mg-tabs__content-container" hidden="" id="pannel-1" role="tabpanel" tabindex="-1">
       <div slot="tab_content-1">
         Content 1
       </div>
@@ -595,7 +761,11 @@ exports[`mg-tabs template display tabs with activeProps set by props 2`] = `
         Content 2
       </div>
     </article>
-    <article aria-labelledby="identifier-2" class="mg-tabs__content-container" hidden="" id="pannel-3" role="tabpanel" tabindex="-1"></article>
+    <article aria-labelledby="identifier-3" class="mg-tabs__content-container" hidden="" id="pannel-3" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-3">
+        Content 3
+      </div>
+    </article>
   </div>
 </mg-tabs>
 `;
@@ -611,15 +781,23 @@ exports[`mg-tabs template render 1`] = `
       <button aria-controls="pannel-2" aria-selected="false" class="mg-tabs__navigation-button" data-index="2" id="identifier-2" role="tab" tabindex="-1">
         Joker
       </button>
+      <button aria-controls="pannel-3" aria-selected="false" class="mg-tabs__navigation-button" data-index="3" id="identifier-3" role="tab" tabindex="-1">
+        Bane
+      </button>
     </header>
     <article aria-labelledby="identifier-1" class="mg-tabs__content-container" id="pannel-1" role="tabpanel" tabindex="0">
       <div slot="tab_content-1">
         Content 1
       </div>
     </article>
-    <article aria-labelledby="identifier-1" class="mg-tabs__content-container" hidden="" id="pannel-2" role="tabpanel" tabindex="-1">
+    <article aria-labelledby="identifier-2" class="mg-tabs__content-container" hidden="" id="pannel-2" role="tabpanel" tabindex="-1">
       <div slot="tab_content-2">
         Content 2
+      </div>
+    </article>
+    <article aria-labelledby="identifier-3" class="mg-tabs__content-container" hidden="" id="pannel-3" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-3">
+        Content 3
       </div>
     </article>
   </div>
@@ -641,15 +819,25 @@ exports[`mg-tabs template render 2`] = `
         Joker
         <mg-badge label="messages" value="2" variant="info"></mg-badge>
       </button>
+      <button aria-controls="pannel-3" aria-selected="false" class="mg-tabs__navigation-button mg-tabs__navigation-button--hidden" data-index="3" id="identifier-3" role="tab" tabindex="-1">
+        <mg-icon icon="trash"></mg-icon>
+        Bane
+        <mg-badge label="messages" value="2" variant="info"></mg-badge>
+      </button>
     </header>
     <article aria-labelledby="identifier-1" class="mg-tabs__content-container" id="pannel-1" role="tabpanel" tabindex="0">
       <div slot="tab_content-1">
         Content 1
       </div>
     </article>
-    <article aria-labelledby="identifier-1" class="mg-tabs__content-container" hidden="" id="pannel-2" role="tabpanel" tabindex="-1">
+    <article aria-labelledby="identifier-2" class="mg-tabs__content-container" hidden="" id="pannel-2" role="tabpanel" tabindex="-1">
       <div slot="tab_content-2">
         Content 2
+      </div>
+    </article>
+    <article aria-labelledby="identifier-3" class="mg-tabs__content-container" hidden="" id="pannel-3" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-3">
+        Content 3
       </div>
     </article>
   </div>
@@ -667,15 +855,23 @@ exports[`mg-tabs template render 3`] = `
       <button aria-controls="pannel-2" aria-selected="false" class="mg-tabs__navigation-button" data-index="2" id="identifier-2" role="tab" tabindex="-1">
         Joker
       </button>
+      <button aria-controls="pannel-3" aria-selected="false" class="mg-tabs__navigation-button" data-index="3" id="identifier-3" role="tab" tabindex="-1">
+        Bane
+      </button>
     </header>
     <article aria-labelledby="identifier-1" class="mg-tabs__content-container" id="pannel-1" role="tabpanel" tabindex="0">
       <div slot="tab_content-1">
         Content 1
       </div>
     </article>
-    <article aria-labelledby="identifier-1" class="mg-tabs__content-container" hidden="" id="pannel-2" role="tabpanel" tabindex="-1">
+    <article aria-labelledby="identifier-2" class="mg-tabs__content-container" hidden="" id="pannel-2" role="tabpanel" tabindex="-1">
       <div slot="tab_content-2">
         Content 2
+      </div>
+    </article>
+    <article aria-labelledby="identifier-3" class="mg-tabs__content-container" hidden="" id="pannel-3" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-3">
+        Content 3
       </div>
     </article>
   </div>
@@ -697,15 +893,25 @@ exports[`mg-tabs template render 4`] = `
         Joker
         <mg-badge label="messages" value="2" variant="info"></mg-badge>
       </button>
+      <button aria-controls="pannel-3" aria-selected="false" class="mg-tabs__navigation-button mg-tabs__navigation-button--hidden" data-index="3" id="identifier-3" role="tab" tabindex="-1">
+        <mg-icon icon="trash"></mg-icon>
+        Bane
+        <mg-badge label="messages" value="2" variant="info"></mg-badge>
+      </button>
     </header>
     <article aria-labelledby="identifier-1" class="mg-tabs__content-container" id="pannel-1" role="tabpanel" tabindex="0">
       <div slot="tab_content-1">
         Content 1
       </div>
     </article>
-    <article aria-labelledby="identifier-1" class="mg-tabs__content-container" hidden="" id="pannel-2" role="tabpanel" tabindex="-1">
+    <article aria-labelledby="identifier-2" class="mg-tabs__content-container" hidden="" id="pannel-2" role="tabpanel" tabindex="-1">
       <div slot="tab_content-2">
         Content 2
+      </div>
+    </article>
+    <article aria-labelledby="identifier-3" class="mg-tabs__content-container" hidden="" id="pannel-3" role="tabpanel" tabindex="-1">
+      <div slot="tab_content-3">
+        Content 3
       </div>
     </article>
   </div>
