@@ -9,7 +9,13 @@ const getPage = (args, slots?) =>
     template: () => <mg-tabs {...args}>{slots && slots.map(content => content && content())}</mg-tabs>,
   });
 
-const defaultSlots = [() => <div slot="tab_content-1">Content 1</div>, () => <div slot="tab_content-2">Content 2</div>];
+const createSlots = (slotNumber = 2) => {
+  const slots = [];
+  for (let i = 1; slotNumber > slots.length; i++) {
+    slots.push(() => <div slot={`tab_content-${i}`}>{`Content ${i}`}</div>);
+  }
+  return slots;
+};
 
 const badge = { value: 2, label: 'messages' };
 
@@ -18,25 +24,26 @@ const key = { next: 'ArrowRight', prev: 'ArrowLeft' };
 describe('mg-tabs', () => {
   describe.each(sizes)('template', size => {
     test.each([
-      [['Batman', 'Joker']],
+      [['Batman', 'Joker', 'Bane']],
       [
         [
           { label: 'Batman', icon: 'check', badge },
-          { label: 'Joker', icon: 'cross', badge, disabled: true },
+          { label: 'Joker', icon: 'cross', badge, status: 'disabled' },
+          { label: 'Bane', icon: 'trash', badge, status: 'hidden' },
         ],
       ],
     ])('render', async items => {
-      const { root } = await getPage({ label: 'Sample label', items, identifier: 'identifier', size }, defaultSlots);
+      const { root } = await getPage({ label: 'Sample label', items, identifier: 'identifier', size }, createSlots(3));
       expect(root).toMatchSnapshot();
     });
 
     test('display only slots with name "tab_content-*"', async () => {
-      const { root } = await getPage({ label: 'Sample label', items: ['Batman', 'Joker'], identifier: 'identifier' }, [...defaultSlots, () => <div>dummy content</div>]);
+      const { root } = await getPage({ label: 'Sample label', items: ['Batman', 'Joker'], identifier: 'identifier' }, [...createSlots(), () => <div>dummy content</div>]);
       expect(root).toMatchSnapshot();
     });
 
     test('display tabs with activeProps set by props', async () => {
-      const { root } = await getPage({ label: 'Sample label', items: ['Tab 1', 'Tab 2', 'Tab 3'], identifier: 'identifier', activeTab: 2 }, [...defaultSlots, defaultSlots[0]]);
+      const { root } = await getPage({ label: 'Sample label', items: ['Tab 1', 'Tab 2', 'Tab 3'], identifier: 'identifier', activeTab: 2 }, createSlots(3));
       expect(root).toMatchSnapshot();
     });
   });
@@ -44,7 +51,7 @@ describe('mg-tabs', () => {
   describe('errors', () => {
     test.each(['', undefined])('Should throw error with invalid label property : %s', async value => {
       try {
-        await getPage({ label: value, items: ['Batman', 'Joker'] }, defaultSlots);
+        await getPage({ label: value, items: ['Batman', 'Joker'] }, createSlots());
       } catch (err) {
         expect(err.message).toMatch('<mg-input> prop "label" is required');
       }
@@ -60,13 +67,13 @@ describe('mg-tabs', () => {
       [[{ label: undefined, icon: 'batman' }, { label: 'batman' }]],
     ])('Should throw error with invalid items property', async items => {
       try {
-        await getPage({ label: 'Sample label', items }, defaultSlots);
+        await getPage({ label: 'Sample label', items }, createSlots());
       } catch (error) {
         expect(error.message).toMatch('<mg-tabs> prop "items" is required and all items must be the same type: TabItem.');
       }
     });
 
-    test.each([[[]], [[defaultSlots[0]]], [[undefined, defaultSlots[1]], [[...defaultSlots, defaultSlots[0]]]]])('should trown an error with invalid slots', async slots => {
+    test.each([[[]], [createSlots(1)], [[undefined, createSlots(2)[1]], [createSlots(3)]]])('should trown an error with invalid slots', async slots => {
       try {
         await getPage({ label: 'Sample label', items: ['Tab 1', 'Tab 2'] }, slots);
       } catch (error) {
@@ -76,7 +83,7 @@ describe('mg-tabs', () => {
 
     test.each([0, 3])('should trown an error with invalid tabItem props', async activeTab => {
       try {
-        await getPage({ label: 'Sample label', items: ['Tab 1', 'Tab 2'], activeTab }, defaultSlots);
+        await getPage({ label: 'Sample label', items: ['Tab 1', 'Tab 2'], activeTab }, createSlots());
       } catch (error) {
         expect(error.message).toMatch('<mg-tabs> prop "activeTab" must be between 1 and tabs length.');
       }
@@ -84,7 +91,7 @@ describe('mg-tabs', () => {
 
     test('should trown an error with invalid tabItem props', async () => {
       try {
-        await getPage({ label: 'Sample label', items: ['Tab 1', 'Tab 2'], size: 'batman' }, defaultSlots);
+        await getPage({ label: 'Sample label', items: ['Tab 1', 'Tab 2'], size: 'batman' }, createSlots());
       } catch (error) {
         expect(error.message).toMatch(`<mg-tabs> prop "size" must be one of : ${sizes.join(', ')}`);
       }
@@ -93,7 +100,7 @@ describe('mg-tabs', () => {
 
   describe('navigation', () => {
     test('should go to next tab on click event', async () => {
-      const page = await getPage({ label: 'Sample label', items: ['batman', 'joker'], identifier: 'id' }, defaultSlots);
+      const page = await getPage({ label: 'Sample label', items: ['batman', 'joker'], identifier: 'id' }, createSlots());
       expect(page.root).toMatchSnapshot();
 
       let activeTab = page.doc.querySelector('.mg-tabs__navigation-button--active');
@@ -121,7 +128,7 @@ describe('mg-tabs', () => {
           ],
           identifier: 'id',
         },
-        defaultSlots,
+        createSlots(),
       );
       expect(page.root).toMatchSnapshot();
 
@@ -142,7 +149,7 @@ describe('mg-tabs', () => {
     });
 
     test('should go to next tab on keyboard event', async () => {
-      const page = await getPage({ label: 'Sample label', items: ['batman', 'joker'], identifier: 'id' }, defaultSlots);
+      const page = await getPage({ label: 'Sample label', items: ['batman', 'joker'], identifier: 'id' }, createSlots());
       expect(page.root).toMatchSnapshot();
 
       page.doc.querySelectorAll('button').forEach(button => (button.focus = jest.fn()));
@@ -177,8 +184,13 @@ describe('mg-tabs', () => {
       expect(page.rootInstance.activeTabChange.emit).toHaveBeenCalledWith(1);
     });
 
-    test("should go to next tab, and keep focus if it's the last one on keyboard event", async () => {
-      const page = await getPage({ label: 'Sample label', items: ['batman', 'joker'], identifier: 'id' }, defaultSlots);
+    test.each(['hidden', 'disabled'])("should go to next visible tab, and keep focus if it's the last one on keyboard event", async status => {
+      const items = [
+        { label: 'Batman', status: 'visible' },
+        { label: 'Batman', status: 'visible' },
+        { label: 'Batman', status },
+      ];
+      const page = await getPage({ label: 'Sample label', items, identifier: 'id' }, createSlots(3));
       expect(page.root).toMatchSnapshot();
 
       page.doc.querySelectorAll('button').forEach(button => (button.focus = jest.fn()));
@@ -214,7 +226,7 @@ describe('mg-tabs', () => {
     });
 
     test.each(['Space', 'Enter'])('should NOT go to next tab on keyboard event %s', async key => {
-      const page = await getPage({ label: 'Sample label', items: ['batman', 'joker'], identifier: 'id' }, defaultSlots);
+      const page = await getPage({ label: 'Sample label', items: ['batman', 'joker'], identifier: 'id' }, createSlots());
       expect(page.root).toMatchSnapshot();
 
       const element = page.doc.querySelector('mg-tabs');
