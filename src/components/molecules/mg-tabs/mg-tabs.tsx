@@ -143,9 +143,7 @@ export class MgTabs {
    * @param {number} index to get
    * @returns {number} index
    */
-  private getTabIndex(index) {
-    return index + this.startIndex;
-  }
+  private getTabIndex = (index: number): number => index + this.startIndex;
 
   /**
    * Handle click events on tabs
