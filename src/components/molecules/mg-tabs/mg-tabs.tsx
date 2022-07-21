@@ -19,8 +19,9 @@ export class MgTabs {
    * Internal *
    ************/
 
-  private tabPanel = 'pannel';
+  private tabPanel = 'panel';
   private startIndex = 1;
+  private buttonTabBaseClass = 'mg-tabs__navigation-button';
 
   /**************
    * Decorators *
@@ -85,7 +86,6 @@ export class MgTabs {
       throw new Error('<mg-tabs> prop "activeTab" must be between 1 and tabs length.');
     } else {
       this.setActiveTab(newValue);
-      this.activeTabChange.emit(newValue);
     }
   }
 
@@ -110,14 +110,16 @@ export class MgTabs {
    * @param {number} tabKey item tab key to set to ACTIVE status
    * @returns {void}
    */
-  private setActiveTab(tabKey: number): void {
+  private setActiveTab = (tabKey: number): void => {
     // reset active tabs
     this.tabs.forEach(tab => {
       if (this.tabHasGivenStatus(tab, Status.ACTIVE)) tab.status = Status.VISIBLE;
     });
     // set active tab from given tab key
     this.tabs[tabKey - this.startIndex].status = Status.ACTIVE;
-  }
+    // emit change active tab key event
+    this.activeTabChange.emit(tabKey);
+  };
 
   /**
    * Method to know if given tab has the given status
@@ -156,6 +158,15 @@ export class MgTabs {
   };
 
   /**
+   * get navigation button class from given status
+   *
+   * @param {Status} status button tab status
+   * @param {boolean} isSelector set if we need a CSS selector with the dot '.' at the begin. default value = false.
+   * @returns {string} button class/selector variant
+   */
+  private getNavigationButtonClass = (status: Status, isSelector = false): string => `${isSelector ? '.' : ''}${this.buttonTabBaseClass}--${status}`;
+
+  /**
    * Handle keyboard event on tabs
    *
    * @param {MouseEvent} event mouse event
@@ -173,9 +184,8 @@ export class MgTabs {
     }
 
     // get selected tab if NOT hidden, disabled
-    const getNavigationButtonClass = status => `.mg-tabs__navigation-button--${status}`;
     const selectedTab: HTMLElement = parent.querySelector(
-      `[data-index="${tabId}"]:not(${[getNavigationButtonClass(Status.HIDDEN), getNavigationButtonClass(Status.DISABLED)].join()})`,
+      `[data-index="${tabId}"]:not(${[this.getNavigationButtonClass(Status.HIDDEN, true), this.getNavigationButtonClass(Status.DISABLED, true)].join()})`,
     );
 
     // apply selected tab if exist
@@ -227,10 +237,10 @@ export class MgTabs {
                 role="tab"
                 id={this.getElementId(this.identifier, index)}
                 class={{
-                  'mg-tabs__navigation-button': true,
-                  'mg-tabs__navigation-button--active': this.tabHasGivenStatus(tab, Status.ACTIVE),
-                  'mg-tabs__navigation-button--disabled': this.tabHasGivenStatus(tab, Status.DISABLED),
-                  'mg-tabs__navigation-button--hidden': this.tabHasGivenStatus(tab, Status.HIDDEN),
+                  [`${this.buttonTabBaseClass}`]: true,
+                  [`${this.getNavigationButtonClass(Status.ACTIVE)}`]: this.tabHasGivenStatus(tab, Status.ACTIVE),
+                  [`${this.getNavigationButtonClass(Status.DISABLED)}`]: this.tabHasGivenStatus(tab, Status.DISABLED),
+                  [`${this.getNavigationButtonClass(Status.HIDDEN)}`]: this.tabHasGivenStatus(tab, Status.HIDDEN),
                 }}
                 tabindex={this.tabHasGivenStatus(tab, Status.ACTIVE) ? 0 : -1}
                 aria-selected={this.tabHasGivenStatus(tab, Status.ACTIVE).toString()}
