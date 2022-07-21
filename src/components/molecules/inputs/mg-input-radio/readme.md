@@ -2,7 +2,7 @@
 
 - Always used in a group with minimum 2 options
 - Only one selected option is possible from all the options in the group
-- The label is clickable and selects the option
+- The label option is clickable and selects the option
 - The group can be initialized without any default value
 
 ### Theming

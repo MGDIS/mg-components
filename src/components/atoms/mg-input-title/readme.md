@@ -2,9 +2,7 @@
 
 ### Label
 
-- the label can be positioned on the left or above the input field.
-- the text is to be right aligned
-- the label can be on one or more lines.
+The label can be on more than one line.
 
 ### Styles
 

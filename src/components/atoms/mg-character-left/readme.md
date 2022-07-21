@@ -1,6 +1,6 @@
 ## Design
 
-![](./mg-character-left/doc/img/mg-character-left.png)
+This component display the number of characters left beside the max value length: `{{number of characters left}}/{{max value length}}`
 
 <!-- Auto Generated Below -->
 

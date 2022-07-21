@@ -9,7 +9,6 @@
 #### Font
 
 ![](./mg-input-text/doc/img/mg-input-text-fonts.png)
-![](./mg-input-text/doc/img/mg-input-text-char-left.png)
 
 Open Sans, regular, 11px  
 Color: [@color-dark](?path=/docs/style-colors--page), opacity : 0.6
@@ -28,13 +27,12 @@ Position : center
 
 Due to [accessibility recommendation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input/search#search_form_labels_and_accessibility), an `<input type="search" />` must be used within a `<form role="search" />` we recommend using mg-input-text as in dedicated story.
 
-## 🚨 Slot
+The "search" role can only be used when the input field is the main website search field. 
 
-Horizontal spacing is not managed by the component, it must be defined in slot implementation.
+## Slot
 
-## a11y
+The spacing between the field and the slot content is not managed by the component, it must be defined in slot implementation.
 
-The role "search" can only be used when the input is the website main search field. 
 
 <!-- Auto Generated Below -->
 

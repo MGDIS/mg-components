@@ -18,7 +18,7 @@ Color: [@color-dark](?path=/docs/style-colors--page), opacity : 0.6
 ### Dimensions
 
 - the height of the component is by default 3 lines of text (this value is configurable)
-- the input field, by default, cannot be resized
+- by default, the input field cannot be resized
 
 <!-- Auto Generated Below -->
 
