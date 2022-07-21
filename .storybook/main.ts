@@ -8,7 +8,7 @@ type Path = string;
  * @param {Path[]} folders previsous folders list
  * @returns {Path[]} updated folders list
  */
-const listFoldersFrom = (path: Path, folders = []): Path[] => {
+const listFoldersFrom = (path: Path, folders: Path[] = []): Path[] => {
   // get path child
   const pathChild = fs.readdirSync(path);
 
@@ -44,7 +44,7 @@ const getPathFromOffset = (path: Path, offset: number): Path => {
 
 module.exports = {
   stories: ['../src/**/*.stories.@(tsx|mdx)'],
-  addons: ['@storybook/addon-essentials', '@pxtrn/storybook-addon-docs-stencil', '@storybook/addon-a11y'],
+  addons: ['@storybook/addon-essentials', '@pxtrn/storybook-addon-docs-stencil', '@storybook/addon-a11y', '@storybook/addon-postcss'],
   core: {
     disableTelemetry: true,
   },
