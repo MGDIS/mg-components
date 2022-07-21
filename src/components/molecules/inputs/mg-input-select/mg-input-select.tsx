@@ -13,7 +13,7 @@ import { SelectOption, OptGroup } from './mg-input-select.conf';
  * @param {SelectOption} option select option
  * @returns {boolean} select option type is valid
  */
-const isOption = (option: SelectOption): boolean => typeof option === 'object' && typeof option.title === 'string' && option.value !== undefined;
+const isOption = (option: SelectOption): boolean => typeof option === 'object' && typeof option.title === 'string';
 
 /**
  * Group options
