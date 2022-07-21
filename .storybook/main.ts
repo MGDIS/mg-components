@@ -44,7 +44,7 @@ const getPathFromOffset = (path: Path, offset: number): Path => {
 
 module.exports = {
   stories: ['../src/**/*.stories.@(tsx|mdx)'],
-  addons: ['@storybook/addon-essentials', '@pxtrn/storybook-addon-docs-stencil', '@storybook/addon-a11y', '@storybook/addon-postcss'],
+  addons: ['@storybook/addon-essentials', '@pxtrn/storybook-addon-docs-stencil', '@storybook/addon-a11y'],
   core: {
     disableTelemetry: true,
   },

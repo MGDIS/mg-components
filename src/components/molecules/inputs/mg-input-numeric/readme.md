@@ -16,6 +16,10 @@ It is possible to specify a unit after the field for integers and decimals. For 
 
 ![](./mg-input-numeric/doc/img/mg-input-numeric-positioning.png)
 
+### Positioning (left with custom css variable)
+
+![](./mg-input-numeric/doc/img/mg-input-numeric-positioning-2.png)
+
 ### Unit positioning
 
 ![](./mg-input-numeric/doc/img/mg-input-numeric-unit.png)

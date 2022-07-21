@@ -1,11 +1,6 @@
 ## Design
 
-### Indication of the number of characters remaining
-
-When the focus is on the input field, a message is displayed underneath. The message is: "`<nbCar>` characters available.", `<nbCar>` being a counter that updates dynamically according to the input.
-When the focus is no longer on the input field, the message disappears.
-
-![](./mg-character-left/doc/img/nombre-caracteres-restants.png)
+![](./mg-character-left/doc/img/mg-character-left.png)
 
 <!-- Auto Generated Below -->
 

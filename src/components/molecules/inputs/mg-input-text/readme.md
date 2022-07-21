@@ -32,6 +32,10 @@ Due to [accessibility recommendation](https://developer.mozilla.org/en-US/docs/W
 
 Horizontal spacing is not managed by the component, it must be defined in slot implementation.
 
+## a11y
+
+The role "search" can only be used when the input is the website main search field. 
+
 <!-- Auto Generated Below -->
 
 
