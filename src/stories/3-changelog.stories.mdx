@@ -4,9 +4,9 @@ import { Meta } from '@storybook/addon-docs/blocks';
 
 # Changelog
 
-## 4.0.0
+## 4.0.0 🍁
 
-July ???, 2022
+July 22nd, 2022
 
 ### 💥 Breaking Changes
 
@@ -20,11 +20,25 @@ July ???, 2022
 
 - **PDA9 Specs are now in our Storybook.**
 - **i18n**: messages are availables in english and french. Based on the `lang` attribute.
-- Changed **`<mg-input-*>`** error behavior.
+- **`<mg-input-*>`**
+  - Changed **`<mg-input-*>`** error behavior.
+  - Content default alignment can be changed using `--mg-inputs-text-align` CSS variable.
 - Changed danger color to `#db1f29`.
 - Added `resizable` props on [**`<mg-input-textarea>`**](?path=/docs/molecules-inputs-mg-input-textarea--mg-input-textarea).
 - Added `small` (12px) icon size to [**`<mg-icon>`**](?path=/docs/atoms-mg-icon--mg-icon).
+- [**`<mg-button>`**](?path=/docs/atoms-mg-button--mg-button) border color can be changed using CSS variables.
+- Changed backdrop color opacity on [**`<mg-modal>`**](?path=/docs/atoms-mg-modal--mg-modal)
 - Added icons to [**`<mg-icon>`**](?path=/docs/atoms-mg-icon--mg-icon), [see all the availables icons](?path=/docs/style-icons--icons).
+- Changed required message font size on [**`<mg-form>`**](?path=/docs/molecules-mg-form--mg-form)
+- Changed [**`<mg-character-left>`**](?path=/docs/atoms-mg-character-left--mg-character-left) layout
+- Added [documentation about CSS variable](?path=/story/css-variables--page)
+
+### 🐛 Bug Fix
+
+- [#109](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/109) mg-tag : Possibility to dynamically change variant and outline
+- [#111](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/111) Add a way to remove border from mg-button's primary colors
+- [#116](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/116) Select input handle value fail when value is undefined
+- [#118](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/118) mg-button :variant does not change
 
 ## 3.3.0
 
