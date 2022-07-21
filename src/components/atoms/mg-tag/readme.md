@@ -1,4 +1,10 @@
-This atom refers to the [PDA9-637](https://jira.mgdis.fr/browse/PDA9-637).
+## Specs
+
+![](./mg-tag/doc/img/mg-tag-specs.png)
+
+## Theming
+
+![](./mg-tag/doc/img/mg-tag-theming.png)
 
 <!-- Auto Generated Below -->
 

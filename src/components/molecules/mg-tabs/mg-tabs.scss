@@ -40,6 +40,9 @@ $border-bottom-size: 0.3rem;
     border-bottom-color: hsl(var(--color-info));
     font-weight: 700;
   }
+  &.mg-tabs__navigation-button--hidden {
+    display: none;
+  }
 }
 
 .mg-tabs__content-container:focus-visible {

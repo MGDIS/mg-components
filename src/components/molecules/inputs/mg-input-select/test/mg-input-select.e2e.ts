@@ -120,24 +120,26 @@ describe('mg-input-select', () => {
     });
   });
 
-  test('Should render error when leaving an empty required input', async () => {
-    const page = await createPage(`<mg-input-select label="label" required></mg-input-select>
+  describe.each([`<mg-input-select label="label" required></mg-input-select>`, `<mg-input-select label="label" required lang="fr"></mg-input-select>`])('%s', html => {
+    test('Should render error when leaving an empty required input', async () => {
+      const page = await createPage(`${html}
       <script>
       const mgInputSelect = document.querySelector('mg-input-select');
       mgInputSelect.items = ['blu', 'bli', 'bla', 'blo'];
       </script>`);
 
-    const element = await page.find('mg-input-select');
+      const element = await page.find('mg-input-select');
 
-    expect(element).toHaveClass('hydrated');
+      expect(element).toHaveClass('hydrated');
 
-    await page.keyboard.down('Tab');
-    await page.keyboard.down('Tab');
+      await page.keyboard.down('Tab');
+      await page.keyboard.down('Tab');
 
-    await page.waitForChanges();
+      await page.waitForChanges();
 
-    const screenshot = await page.screenshot();
-    expect(screenshot).toMatchImageSnapshot();
+      const screenshot = await page.screenshot();
+      expect(screenshot).toMatchImageSnapshot();
+    });
   });
 
   test('Should render a grouped list', async () => {
@@ -190,7 +192,7 @@ describe('mg-input-select', () => {
   describe.each(['full', 16])('with custom width: %s', width => {
     test.each([false, true])('with label on top: %s', async labelOnTop => {
       const page = await createPage(`
-        <mg-input-select label="label" width="${width}" label-on-top="${labelOnTop}"></mg-input-select>
+        <mg-input-select label="label" mg-width="${width}" label-on-top="${labelOnTop}"></mg-input-select>
         <script>
           const mgInputSelect = document.querySelector('mg-input-select');
           mgInputSelect.items = ['blu', 'bli', 'bla', 'blo'];

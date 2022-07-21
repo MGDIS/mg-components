@@ -1,7 +1,7 @@
 import { Component, Element, Event, EventEmitter, h, Prop, State, Watch } from '@stencil/core';
 import { createID, ClassList } from '../../../utils/components.utils';
 import { variants } from './mg-message.conf';
-import { messages } from '../../../locales';
+import { initLocales } from '../../../locales';
 
 @Component({
   tag: 'mg-message',
@@ -13,10 +13,17 @@ export class MgMessage {
    * Internal *
    ************/
 
+  // classes
+  private classHide = 'mg-message--hide';
+
+  // IDs
   private closeButtonId = '';
 
   // Stored timer setted when hide action is run from setTimeOut
   private storedTimer: ReturnType<typeof setTimeout> = null;
+
+  // Locales
+  private messages;
 
   /**************
    * Decorators *
@@ -50,11 +57,12 @@ export class MgMessage {
   validateVariant(newValue: string, oldValue?: string): void {
     if (!variants.includes(newValue)) {
       throw new Error(`<mg-message> prop "variant" must be one of : ${variants.join(', ')}`);
+    } else {
+      if (oldValue !== undefined) {
+        this.classList.delete(`mg-message--${oldValue}`);
+      }
+      this.classList.add(`mg-message--${newValue}`);
     }
-    if (oldValue !== undefined) {
-      this.classList.delete(`mg-message--${oldValue}`);
-    }
-    this.classList.add(`mg-message--${this.variant}`);
   }
 
   /**
@@ -78,10 +86,10 @@ export class MgMessage {
   validateHide(newValue: boolean): void {
     if (newValue) {
       this.componentHide.emit();
-      this.classList.add('mg-message--hide');
+      this.classList.add(this.classHide);
     } else {
       this.componentShow.emit();
-      this.classList.delete('mg-message--hide');
+      this.classList.delete(this.classHide);
     }
     this.hideWithDelay();
   }
@@ -152,6 +160,9 @@ export class MgMessage {
    * Check if component props are well configured on init
    */
   componentWillLoad(): void {
+    // Get locales
+    this.messages = initLocales(this.element).messages;
+    // Validate
     this.validateVariant(this.variant);
     // Check if close button is an can be activated
     this.hasActions = this.element.querySelector('[slot="actions"]') !== null;
@@ -188,7 +199,7 @@ export class MgMessage {
         </div>
         {this.closeButton && (
           <span class="mg-message__close-button">
-            <mg-button identifier={this.closeButtonId} is-icon variant="flat" label={messages.message.closeButton} onClick={this.handleClose}>
+            <mg-button identifier={this.closeButtonId} is-icon variant="flat" label={this.messages.message.closeButton} onClick={this.handleClose}>
               <mg-icon icon="cross"></mg-icon>
             </mg-button>
           </span>

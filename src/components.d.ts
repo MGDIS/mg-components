@@ -11,7 +11,9 @@ import { Width } from "./components/molecules/inputs/MgInput.conf";
 import { RadioOption } from "./components/molecules/inputs/mg-input-radio/mg-input-radio.conf";
 import { SelectOption } from "./components/molecules/inputs/mg-input-select/mg-input-select.conf";
 import { ToggleValue } from "./components/molecules/inputs/mg-input-toggle/mg-input-toggle.conf";
+import { Placement } from "./components/molecules/mg-popover/mg-popover.conf";
 import { TabItem } from "./components/molecules/mg-tabs/mg-tabs.conf";
+import { Placement as Placement1 } from "./components/atoms/mg-tooltip/mg-tooltip.conf";
 export namespace Components {
     interface MgBadge {
         /**
@@ -82,10 +84,6 @@ export namespace Components {
           * Add maximum length
          */
         "maxlength": number;
-        /**
-          * Template to display remaining characters. Must have {counter} inside
-         */
-        "template": string;
     }
     interface MgForm {
         /**
@@ -268,6 +266,10 @@ export namespace Components {
     }
     interface MgInputNumeric {
         /**
+          * Define currency
+         */
+        "currency": string;
+        /**
           * Override decimal length decimal is the number after the decimal point
          */
         "decimalLength": number;
@@ -313,6 +315,10 @@ export namespace Components {
          */
         "max": number;
         /**
+          * Define input width
+         */
+        "mgWidth": Width;
+        /**
           * Minimum value
          */
         "min": number;
@@ -348,10 +354,6 @@ export namespace Components {
           * Component value
          */
         "value": string;
-        /**
-          * Define input width
-         */
-        "width": Width;
     }
     interface MgInputPassword {
         /**
@@ -388,6 +390,10 @@ export namespace Components {
          */
         "labelOnTop": boolean;
         /**
+          * Define input width
+         */
+        "mgWidth": Width;
+        /**
           * Input name If not set the value equals the identifier
          */
         "name": string;
@@ -415,10 +421,6 @@ export namespace Components {
           * Component value
          */
         "value": string;
-        /**
-          * Define input width
-         */
-        "width": Width;
     }
     interface MgInputRadio {
         /**
@@ -526,6 +528,10 @@ export namespace Components {
          */
         "labelOnTop": boolean;
         /**
+          * Define input width
+         */
+        "mgWidth": Width;
+        /**
           * Input name If not set the value equals the identifier
          */
         "name": string;
@@ -561,16 +567,8 @@ export namespace Components {
           * Component value
          */
         "value": any;
-        /**
-          * Define input width
-         */
-        "width": Width;
     }
     interface MgInputText {
-        /**
-          * Template to use for characters left sentence
-         */
-        "characterLeftTemplate": string;
         /**
           * Define if input is disabled
          */
@@ -617,6 +615,10 @@ export namespace Components {
          */
         "maxlength": number;
         /**
+          * Define input width
+         */
+        "mgWidth": Width;
+        /**
           * Input name If not set the value equals the identifier
          */
         "name": string;
@@ -661,16 +663,8 @@ export namespace Components {
           * Component value
          */
         "value": string;
-        /**
-          * Define input width
-         */
-        "width": Width;
     }
     interface MgInputTextarea {
-        /**
-          * Template to use for characters left sentence
-         */
-        "characterLeftTemplate": string;
         /**
           * Define if input is disabled
          */
@@ -713,6 +707,10 @@ export namespace Components {
          */
         "maxlength": number;
         /**
+          * Define input width
+         */
+        "mgWidth": Width;
+        /**
           * Input name If not set the value equals the identifier
          */
         "name": string;
@@ -737,6 +735,10 @@ export namespace Components {
          */
         "required": boolean;
         /**
+          * Define if input is resizable
+         */
+        "resizable": 'none' | 'both' | 'horizontal' | 'vertical';
+        /**
           * Define the number of visible text lines for the control
          */
         "rows": number;
@@ -752,10 +754,6 @@ export namespace Components {
           * Component value
          */
         "value": string;
-        /**
-          * Define input width
-         */
-        "width": Width;
     }
     interface MgInputTitle {
         /**
@@ -934,21 +932,7 @@ export namespace Components {
         /**
           * Popover placement
          */
-        "placement": | 'auto'
-    | 'auto-start'
-    | 'auto-end'
-    | 'top'
-    | 'top-start'
-    | 'top-end'
-    | 'bottom'
-    | 'bottom-start'
-    | 'bottom-end'
-    | 'right'
-    | 'right-start'
-    | 'right-end'
-    | 'left'
-    | 'left-start'
-    | 'left-end';
+        "placement": Placement;
     }
     interface MgTabs {
         /**
@@ -1002,22 +986,68 @@ export namespace Components {
         /**
           * Tooltip placement
          */
-        "placement": | 'auto'
-    | 'auto-start'
-    | 'auto-end'
-    | 'top'
-    | 'top-start'
-    | 'top-end'
-    | 'bottom'
-    | 'bottom-start'
-    | 'bottom-end'
-    | 'right'
-    | 'right-start'
-    | 'right-end'
-    | 'left'
-    | 'left-start'
-    | 'left-end';
+        "placement": Placement1;
     }
+}
+export interface MgFormCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMgFormElement;
+}
+export interface MgInputCheckboxCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMgInputCheckboxElement;
+}
+export interface MgInputDateCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMgInputDateElement;
+}
+export interface MgInputNumericCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMgInputNumericElement;
+}
+export interface MgInputPasswordCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMgInputPasswordElement;
+}
+export interface MgInputRadioCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMgInputRadioElement;
+}
+export interface MgInputSelectCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMgInputSelectElement;
+}
+export interface MgInputTextCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMgInputTextElement;
+}
+export interface MgInputTextareaCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMgInputTextareaElement;
+}
+export interface MgInputToggleCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMgInputToggleElement;
+}
+export interface MgMessageCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMgMessageElement;
+}
+export interface MgModalCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMgModalElement;
+}
+export interface MgPaginationCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMgPaginationElement;
+}
+export interface MgPanelCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMgPanelElement;
+}
+export interface MgTabsCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMgTabsElement;
 }
 declare global {
     interface HTMLMgBadgeElement extends Components.MgBadge, HTMLStencilElement {
@@ -1254,10 +1284,6 @@ declare namespace LocalJSX {
           * Add maximum length
          */
         "maxlength": number;
-        /**
-          * Template to display remaining characters. Must have {counter} inside
-         */
-        "template"?: string;
     }
     interface MgForm {
         /**
@@ -1279,7 +1305,7 @@ declare namespace LocalJSX {
         /**
           * Emitted event on form validity check Tells if form is valid or not
          */
-        "onForm-valid"?: (event: CustomEvent<boolean>) => void;
+        "onForm-valid"?: (event: MgFormCustomEvent<boolean>) => void;
         /**
           * Define if form is readonly
          */
@@ -1347,11 +1373,11 @@ declare namespace LocalJSX {
         /**
           * Emited event when checking validity
          */
-        "onInput-valid"?: (event: CustomEvent<boolean>) => void;
+        "onInput-valid"?: (event: MgInputCheckboxCustomEvent<boolean>) => void;
         /**
           * Emitted event when value change
          */
-        "onValue-change"?: (event: CustomEvent<CheckboxValue[]>) => void;
+        "onValue-change"?: (event: MgInputCheckboxCustomEvent<CheckboxValue[]>) => void;
         /**
           * Define if input is readonly
          */
@@ -1417,11 +1443,11 @@ declare namespace LocalJSX {
         /**
           * Emited event when checking validity
          */
-        "onInput-valid"?: (event: CustomEvent<boolean>) => void;
+        "onInput-valid"?: (event: MgInputDateCustomEvent<boolean>) => void;
         /**
           * Emited event when value change
          */
-        "onValue-change"?: (event: CustomEvent<string>) => void;
+        "onValue-change"?: (event: MgInputDateCustomEvent<string>) => void;
         /**
           * Define if input is readonly
          */
@@ -1444,6 +1470,10 @@ declare namespace LocalJSX {
         "value"?: string;
     }
     interface MgInputNumeric {
+        /**
+          * Define currency
+         */
+        "currency"?: string;
         /**
           * Override decimal length decimal is the number after the decimal point
          */
@@ -1485,6 +1515,10 @@ declare namespace LocalJSX {
          */
         "max"?: number;
         /**
+          * Define input width
+         */
+        "mgWidth"?: Width;
+        /**
           * Minimum value
          */
         "min"?: number;
@@ -1495,11 +1529,11 @@ declare namespace LocalJSX {
         /**
           * Emited event when checking validity
          */
-        "onInput-valid"?: (event: CustomEvent<boolean>) => void;
+        "onInput-valid"?: (event: MgInputNumericCustomEvent<boolean>) => void;
         /**
           * Emited event when value change
          */
-        "onValue-change"?: (event: CustomEvent<number>) => void;
+        "onValue-change"?: (event: MgInputNumericCustomEvent<number>) => void;
         /**
           * Input placeholder. It should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text.
          */
@@ -1528,10 +1562,6 @@ declare namespace LocalJSX {
           * Component value
          */
         "value"?: string;
-        /**
-          * Define input width
-         */
-        "width"?: Width;
     }
     interface MgInputPassword {
         /**
@@ -1563,17 +1593,21 @@ declare namespace LocalJSX {
          */
         "labelOnTop"?: boolean;
         /**
+          * Define input width
+         */
+        "mgWidth"?: Width;
+        /**
           * Input name If not set the value equals the identifier
          */
         "name"?: string;
         /**
           * Emited event when checking validity
          */
-        "onInput-valid"?: (event: CustomEvent<boolean>) => void;
+        "onInput-valid"?: (event: MgInputPasswordCustomEvent<boolean>) => void;
         /**
           * Emited event when value change
          */
-        "onValue-change"?: (event: CustomEvent<string>) => void;
+        "onValue-change"?: (event: MgInputPasswordCustomEvent<string>) => void;
         /**
           * Input placeholder. It should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text.
          */
@@ -1598,10 +1632,6 @@ declare namespace LocalJSX {
           * Component value
          */
         "value"?: string;
-        /**
-          * Define input width
-         */
-        "width"?: Width;
     }
     interface MgInputRadio {
         /**
@@ -1647,11 +1677,11 @@ declare namespace LocalJSX {
         /**
           * Emited event when checking validity
          */
-        "onInput-valid"?: (event: CustomEvent<boolean>) => void;
+        "onInput-valid"?: (event: MgInputRadioCustomEvent<boolean>) => void;
         /**
           * Emitted event when value change
          */
-        "onValue-change"?: (event: CustomEvent<any>) => void;
+        "onValue-change"?: (event: MgInputRadioCustomEvent<any>) => void;
         /**
           * Define if input is readonly
          */
@@ -1707,17 +1737,21 @@ declare namespace LocalJSX {
          */
         "labelOnTop"?: boolean;
         /**
+          * Define input width
+         */
+        "mgWidth"?: Width;
+        /**
           * Input name If not set the value equals the identifier
          */
         "name"?: string;
         /**
           * Emited event when checking validity
          */
-        "onInput-valid"?: (event: CustomEvent<boolean>) => void;
+        "onInput-valid"?: (event: MgInputSelectCustomEvent<boolean>) => void;
         /**
           * Emited event when value change
          */
-        "onValue-change"?: (event: CustomEvent<any>) => void;
+        "onValue-change"?: (event: MgInputSelectCustomEvent<any>) => void;
         /**
           * Input placeholder. It should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text.
          */
@@ -1750,16 +1784,8 @@ declare namespace LocalJSX {
           * Component value
          */
         "value"?: any;
-        /**
-          * Define input width
-         */
-        "width"?: Width;
     }
     interface MgInputText {
-        /**
-          * Template to use for characters left sentence
-         */
-        "characterLeftTemplate"?: string;
         /**
           * Define if input is disabled
          */
@@ -1801,17 +1827,21 @@ declare namespace LocalJSX {
          */
         "maxlength"?: number;
         /**
+          * Define input width
+         */
+        "mgWidth"?: Width;
+        /**
           * Input name If not set the value equals the identifier
          */
         "name"?: string;
         /**
           * Emited event when checking validity
          */
-        "onInput-valid"?: (event: CustomEvent<boolean>) => void;
+        "onInput-valid"?: (event: MgInputTextCustomEvent<boolean>) => void;
         /**
           * Emited event when value change
          */
-        "onValue-change"?: (event: CustomEvent<string>) => void;
+        "onValue-change"?: (event: MgInputTextCustomEvent<string>) => void;
         /**
           * Define input pattern to validate
          */
@@ -1848,16 +1878,8 @@ declare namespace LocalJSX {
           * Component value
          */
         "value"?: string;
-        /**
-          * Define input width
-         */
-        "width"?: Width;
     }
     interface MgInputTextarea {
-        /**
-          * Template to use for characters left sentence
-         */
-        "characterLeftTemplate"?: string;
         /**
           * Define if input is disabled
          */
@@ -1895,17 +1917,21 @@ declare namespace LocalJSX {
          */
         "maxlength"?: number;
         /**
+          * Define input width
+         */
+        "mgWidth"?: Width;
+        /**
           * Input name If not set the value equals the identifier
          */
         "name"?: string;
         /**
           * Emited event when checking validity
          */
-        "onInput-valid"?: (event: CustomEvent<boolean>) => void;
+        "onInput-valid"?: (event: MgInputTextareaCustomEvent<boolean>) => void;
         /**
           * Emited event when value change
          */
-        "onValue-change"?: (event: CustomEvent<string>) => void;
+        "onValue-change"?: (event: MgInputTextareaCustomEvent<string>) => void;
         /**
           * Define input pattern to validate
          */
@@ -1927,6 +1953,10 @@ declare namespace LocalJSX {
          */
         "required"?: boolean;
         /**
+          * Define if input is resizable
+         */
+        "resizable"?: 'none' | 'both' | 'horizontal' | 'vertical';
+        /**
           * Define the number of visible text lines for the control
          */
         "rows"?: number;
@@ -1942,10 +1972,6 @@ declare namespace LocalJSX {
           * Component value
          */
         "value"?: string;
-        /**
-          * Define input width
-         */
-        "width"?: Width;
     }
     interface MgInputTitle {
         /**
@@ -2006,11 +2032,11 @@ declare namespace LocalJSX {
         /**
           * Emited event when checking validity
          */
-        "onInput-valid"?: (event: CustomEvent<boolean>) => void;
+        "onInput-valid"?: (event: MgInputToggleCustomEvent<boolean>) => void;
         /**
           * Emited event when value change
          */
-        "onValue-change"?: (event: CustomEvent<any>) => void;
+        "onValue-change"?: (event: MgInputToggleCustomEvent<any>) => void;
         /**
           * Define if input is readonly
          */
@@ -2044,11 +2070,11 @@ declare namespace LocalJSX {
         /**
           * Emited event when message is hidden
          */
-        "onComponent-hide"?: (event: CustomEvent<string>) => void;
+        "onComponent-hide"?: (event: MgMessageCustomEvent<string>) => void;
         /**
           * Emited event when message is diplayed
          */
-        "onComponent-show"?: (event: CustomEvent<string>) => void;
+        "onComponent-show"?: (event: MgMessageCustomEvent<string>) => void;
         /**
           * Message variant
          */
@@ -2074,11 +2100,11 @@ declare namespace LocalJSX {
         /**
           * Emmited event when modal is hidden
          */
-        "onComponent-hide"?: (event: CustomEvent<string>) => void;
+        "onComponent-hide"?: (event: MgModalCustomEvent<string>) => void;
         /**
           * Emmited event when modal is diplayed
          */
-        "onComponent-show"?: (event: CustomEvent<string>) => void;
+        "onComponent-show"?: (event: MgModalCustomEvent<string>) => void;
     }
     interface MgPagination {
         /**
@@ -2096,7 +2122,7 @@ declare namespace LocalJSX {
         /**
           * Emmited event when current page change
          */
-        "onCurrent-page-change"?: (event: CustomEvent<number>) => void;
+        "onCurrent-page-change"?: (event: MgPaginationCustomEvent<number>) => void;
         /**
           * Component total pages
          */
@@ -2118,11 +2144,11 @@ declare namespace LocalJSX {
         /**
           * Emmited event when expanded change
          */
-        "onExpanded-change"?: (event: CustomEvent<boolean>) => void;
+        "onExpanded-change"?: (event: MgPanelCustomEvent<boolean>) => void;
         /**
           * Emmited event when title change
          */
-        "onTitle-change"?: (event: CustomEvent<string>) => void;
+        "onTitle-change"?: (event: MgPanelCustomEvent<string>) => void;
         /**
           * Panel title
          */
@@ -2160,21 +2186,7 @@ declare namespace LocalJSX {
         /**
           * Popover placement
          */
-        "placement"?: | 'auto'
-    | 'auto-start'
-    | 'auto-end'
-    | 'top'
-    | 'top-start'
-    | 'top-end'
-    | 'bottom'
-    | 'bottom-start'
-    | 'bottom-end'
-    | 'right'
-    | 'right-start'
-    | 'right-end'
-    | 'left'
-    | 'left-start'
-    | 'left-end';
+        "placement"?: Placement;
     }
     interface MgTabs {
         /**
@@ -2196,7 +2208,7 @@ declare namespace LocalJSX {
         /**
           * Emited event when active tab change
          */
-        "onActive-tab-change"?: (event: CustomEvent<number>) => void;
+        "onActive-tab-change"?: (event: MgTabsCustomEvent<number>) => void;
         /**
           * Define tabs size
          */
@@ -2232,21 +2244,7 @@ declare namespace LocalJSX {
         /**
           * Tooltip placement
          */
-        "placement"?: | 'auto'
-    | 'auto-start'
-    | 'auto-end'
-    | 'top'
-    | 'top-start'
-    | 'top-end'
-    | 'bottom'
-    | 'bottom-start'
-    | 'bottom-end'
-    | 'right'
-    | 'right-start'
-    | 'right-end'
-    | 'left'
-    | 'left-start'
-    | 'left-end';
+        "placement"?: Placement1;
     }
     interface IntrinsicElements {
         "mg-badge": MgBadge;

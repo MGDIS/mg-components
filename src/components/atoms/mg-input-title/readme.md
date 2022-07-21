@@ -1,4 +1,12 @@
-This atom refers to [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64), [PDA9-723](https://jira.mgdis.fr/browse/PDA9-723).
+## Design
+
+### Label
+
+The label can be on more than one line.
+
+### Styles
+
+![](./mg-input-title/doc/img/mg-input-title.png)
 
 <!-- Auto Generated Below -->
 

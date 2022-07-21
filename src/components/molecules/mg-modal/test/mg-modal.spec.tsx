@@ -31,6 +31,8 @@ describe('mg-modal', () => {
       { modalTitle: 'Modal Title', identifier: 'identifier' },
       { modalTitle: 'Modal Title', identifier: 'identifier', closeButton: true },
       { modalTitle: 'Modal Title', identifier: 'identifier', closeButton: true, hide: true },
+      { modalTitle: 'Modal Title', identifier: 'identifier', closeButton: true, lang: 'fr' },
+      { modalTitle: 'Modal Title', identifier: 'identifier', closeButton: true, lang: 'xx' },
     ])('with args %s', async args => {
       const { root } = await getPage({ ...args }, slots);
       expect(root).toMatchSnapshot();

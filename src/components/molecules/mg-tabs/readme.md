@@ -1,4 +1,33 @@
-This molecule refers to the [PDA9-604](https://jira.mgdis.fr/browse/PDA9-604).
+## Anatomy
+
+![](./mg-tabs/doc/img/mg-tabs-anatomy.png)
+
+## Specs
+
+### Spacing
+
+- Standard : @base = 10px
+- Large : @base = 18px
+
+![](./mg-tabs/doc/img/mg-tabs-spacing.png)
+
+- if only text, no extra spacing,
+- if no badge : no extra spacing on the right
+- if only icon : no extra spacing on the right
+
+### Sizing
+
+![](./mg-tabs/doc/img/mg-tabs-sizing.png)
+
+### States
+
+![](./mg-tabs/doc/img/mg-tabs-states.png)
+
+### Responsive
+
+#### Line breaks (current management)
+
+![](./mg-tabs/doc/img/mg-tabs-responsive.png)
 
 <!-- Auto Generated Below -->
 

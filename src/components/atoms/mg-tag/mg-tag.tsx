@@ -7,16 +7,31 @@ import { ClassList } from '../../../utils/components.utils';
   shadow: true,
 })
 export class MgTag {
+  /************
+   * Internal *
+   ************/
+
+  // classes
+  private classOutline = `mg-tag--outline`;
+
+  /**************
+   * Decorators *
+   **************/
+
   /**
    * Define button variant
    */
-  @Prop() variant: string = variants[0]; // info
+  @Prop() variant: string = variants[0]; // primary
   @Watch('variant')
-  validateVariant(newValue: string): void {
+  validateVariant(newValue: string, oldValue?: string): void {
     if (!variants.includes(newValue)) {
       throw new Error(`<mg-tag> prop "variant" must be one of : ${variants.join(', ')}.`);
+    } else {
+      if (oldValue !== undefined) {
+        this.classList.delete(`mg-tag--${oldValue}`);
+      }
+      this.classList.add(`mg-tag--${newValue}`);
     }
-    this.classList.add(`mg-tag--${this.variant}`);
   }
 
   /**
@@ -25,7 +40,8 @@ export class MgTag {
   @Prop() outline: boolean;
   @Watch('outline')
   validateOutline(newValue: boolean): void {
-    if (newValue) this.classList.add(`mg-tag--outline`);
+    if (newValue) this.classList.add(this.classOutline);
+    else this.classList.delete(this.classOutline);
   }
 
   /**

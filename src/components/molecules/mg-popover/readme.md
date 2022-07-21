@@ -1,4 +1,55 @@
-This molecule refers to the [PDA9-504](https://jira.mgdis.fr/browse/PDA9-504).
+## Usage
+
+A popover is more enhanced than a tooltip but less blocking than a modal.
+
+## Behavior
+
+The window is displayed when clicking on its trigger.
+
+The window is displayed next to its trigger, usually below it. A triangle (in css) makes the link between the trigger and the window.
+
+The window closes:
+
+- when clicking on its trigger
+- clicking outside the window
+- when the ESC key is pressed
+- when clicking on the close button at the top right corner
+
+The size of the window is determined by the content (set a maximum size to avoid problems).
+
+The title and the close button are optional.
+
+## Specs
+
+### Fonts
+
+![](./mg-popover/doc/img/mg-popover-fonts.png)
+
+### Spacing
+
+![](./mg-popover/doc/img/mg-popover-spacing.png)
+
+### Sizing
+
+![](./mg-popover/doc/img/mg-popover-sizing.png)
+
+### Alignments
+
+![](./mg-popover/doc/img/mg-popover-align.png)
+
+### Positioning
+
+#### Item
+
+![](./mg-popover/doc/img/mg-popover-position.png)
+
+#### Screen
+
+![](./mg-popover/doc/img/mg-popover-position-screen.png)
+
+### Style
+
+![](./mg-popover/doc/img/mg-popover-style.png)
 
 <!-- Auto Generated Below -->
 

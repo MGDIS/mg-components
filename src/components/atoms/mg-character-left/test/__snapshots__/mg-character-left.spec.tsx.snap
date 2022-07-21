@@ -1,12 +1,40 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`mg-character-left Should render component with locale: fr 1`] = `
+<mg-character-left lang="fr">
+  <span aria-live="polite">
+    <span aria-hidden="true">
+      393/400
+    </span>
+    <span class="sr-only">
+      393 caractères disponibles.
+    </span>
+  </span>
+</mg-character-left>
+`;
+
+exports[`mg-character-left Should render component with locale: xx 1`] = `
+<mg-character-left lang="xx">
+  <span aria-live="polite">
+    <span aria-hidden="true">
+      393/400
+    </span>
+    <span class="sr-only">
+      393 characters left.
+    </span>
+  </span>
+</mg-character-left>
+`;
+
 exports[`mg-character-left Should render nb char left for blu blu blu blu blu renders 1`] = `
 <mg-character-left>
   <span aria-live="polite">
-    <strong>
-      104
-    </strong>
-    caractères disponibles.
+    <span aria-hidden="true">
+      104/123
+    </span>
+    <span class="sr-only">
+      104 characters left.
+    </span>
   </span>
 </mg-character-left>
 `;
@@ -14,10 +42,12 @@ exports[`mg-character-left Should render nb char left for blu blu blu blu blu re
 exports[`mg-character-left Should render nb char left for blu blu blu blu blu renders 2`] = `
 <mg-character-left>
   <span aria-live="polite">
-    <strong>
-      215
-    </strong>
-    caractères disponibles.
+    <span aria-hidden="true">
+      215/234
+    </span>
+    <span class="sr-only">
+      215 characters left.
+    </span>
   </span>
 </mg-character-left>
 `;
@@ -25,10 +55,12 @@ exports[`mg-character-left Should render nb char left for blu blu blu blu blu re
 exports[`mg-character-left Should render nb char left for blu blu blu blu blu renders 3`] = `
 <mg-character-left>
   <span aria-live="polite">
-    <strong>
-      181
-    </strong>
-    caractères disponibles.
+    <span aria-hidden="true">
+      181/200
+    </span>
+    <span class="sr-only">
+      181 characters left.
+    </span>
   </span>
 </mg-character-left>
 `;
@@ -36,10 +68,12 @@ exports[`mg-character-left Should render nb char left for blu blu blu blu blu re
 exports[`mg-character-left Should render nb char left for blu renders 1`] = `
 <mg-character-left>
   <span aria-live="polite">
-    <strong>
-      120
-    </strong>
-    caractères disponibles.
+    <span aria-hidden="true">
+      120/123
+    </span>
+    <span class="sr-only">
+      120 characters left.
+    </span>
   </span>
 </mg-character-left>
 `;
@@ -47,10 +81,12 @@ exports[`mg-character-left Should render nb char left for blu renders 1`] = `
 exports[`mg-character-left Should render nb char left for blu renders 2`] = `
 <mg-character-left>
   <span aria-live="polite">
-    <strong>
-      231
-    </strong>
-    caractères disponibles.
+    <span aria-hidden="true">
+      231/234
+    </span>
+    <span class="sr-only">
+      231 characters left.
+    </span>
   </span>
 </mg-character-left>
 `;
@@ -58,10 +94,12 @@ exports[`mg-character-left Should render nb char left for blu renders 2`] = `
 exports[`mg-character-left Should render nb char left for blu renders 3`] = `
 <mg-character-left>
   <span aria-live="polite">
-    <strong>
-      197
-    </strong>
-    caractères disponibles.
+    <span aria-hidden="true">
+      197/200
+    </span>
+    <span class="sr-only">
+      197 characters left.
+    </span>
   </span>
 </mg-character-left>
 `;
@@ -69,10 +107,12 @@ exports[`mg-character-left Should render nb char left for blu renders 3`] = `
 exports[`mg-character-left Should render nb char left for blublu renders 1`] = `
 <mg-character-left>
   <span aria-live="polite">
-    <strong>
-      117
-    </strong>
-    caractères disponibles.
+    <span aria-hidden="true">
+      117/123
+    </span>
+    <span class="sr-only">
+      117 characters left.
+    </span>
   </span>
 </mg-character-left>
 `;
@@ -80,10 +120,12 @@ exports[`mg-character-left Should render nb char left for blublu renders 1`] = `
 exports[`mg-character-left Should render nb char left for blublu renders 2`] = `
 <mg-character-left>
   <span aria-live="polite">
-    <strong>
-      228
-    </strong>
-    caractères disponibles.
+    <span aria-hidden="true">
+      228/234
+    </span>
+    <span class="sr-only">
+      228 characters left.
+    </span>
   </span>
 </mg-character-left>
 `;
@@ -91,10 +133,12 @@ exports[`mg-character-left Should render nb char left for blublu renders 2`] = `
 exports[`mg-character-left Should render nb char left for blublu renders 3`] = `
 <mg-character-left>
   <span aria-live="polite">
-    <strong>
-      194
-    </strong>
-    caractères disponibles.
+    <span aria-hidden="true">
+      194/200
+    </span>
+    <span class="sr-only">
+      194 characters left.
+    </span>
   </span>
 </mg-character-left>
 `;

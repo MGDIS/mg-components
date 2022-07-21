@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Component, Event, h, Prop, State, EventEmitter, Watch, Method } from '@stencil/core';
+import { Component, Element, Event, h, Prop, State, EventEmitter, Watch, Method } from '@stencil/core';
 import { MgInput } from '../MgInput';
-import { InputClass, Width } from '../MgInput.conf';
+import { Width } from '../MgInput.conf';
 import { createID, ClassList, allItemsAreString } from '../../../../utils/components.utils';
-import { messages } from '../../../../locales';
+import { initLocales } from '../../../../locales';
 import { SelectOption, OptGroup } from './mg-input-select.conf';
 
 /**
@@ -13,7 +13,7 @@ import { SelectOption, OptGroup } from './mg-input-select.conf';
  * @param {SelectOption} option select option
  * @returns {boolean} select option type is valid
  */
-const isOption = (option: SelectOption): boolean => typeof option === 'object' && typeof option.title === 'string' && option.value !== undefined;
+const isOption = (option: SelectOption): boolean => typeof option === 'object' && typeof option.title === 'string';
 
 /**
  * Group options
@@ -54,15 +54,23 @@ export class MgInputSelect {
    * Internal *
    ************/
 
-  // classes
-  private classError = InputClass.ERROR;
-
   // HTML selector
   private input: HTMLSelectElement;
+
+  // Locales
+  private messages;
+
+  // hasError (triggered by blur event)
+  private hasError = false;
 
   /**************
    * Decorators *
    **************/
+
+  /**
+   * Get component DOM element
+   */
+  @Element() element: HTMLMgInputSelectElement;
 
   /**
    * Component value
@@ -136,7 +144,7 @@ export class MgInputSelect {
    * Input placeholder.
    * It should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text.
    */
-  @Prop() placeholder: string = messages.input.select.placeholder;
+  @Prop({ mutable: true }) placeholder: string;
 
   /**
    * Option to remove placeholder
@@ -166,7 +174,7 @@ export class MgInputSelect {
   /**
    * Define input width
    */
-  @Prop() width: Width;
+  @Prop() mgWidth: Width;
 
   /**
    * Add a tooltip message next to the input
@@ -232,6 +240,7 @@ export class MgInputSelect {
   async displayError(): Promise<void> {
     this.checkValidity();
     this.checkError();
+    this.hasError = this.invalid;
   }
 
   /**
@@ -239,6 +248,9 @@ export class MgInputSelect {
    */
   private handleInput = (): void => {
     this.checkValidity();
+    if (this.hasError) {
+      this.checkError();
+    }
     if (this.input.value !== '') {
       this.value = allItemsAreString(this.items as string[]) ? this.input.value : (this.items as SelectOption[]).find(item => item.title === this.input.value).value;
     } else {
@@ -250,8 +262,7 @@ export class MgInputSelect {
    * Handle blur event
    */
   private handleBlur = (): void => {
-    this.checkValidity();
-    this.checkError();
+    this.displayError();
   };
 
   /**
@@ -277,14 +288,7 @@ export class MgInputSelect {
     // Set error message
     this.errorMessage = undefined;
     if (!this.valid && this.input.validity.valueMissing) {
-      this.errorMessage = messages.errors.required;
-    }
-
-    // Update class
-    if (this.valid) {
-      this.classList.delete(this.classError);
-    } else {
-      this.classList.add(this.classError);
+      this.errorMessage = this.messages.errors.required;
     }
   };
 
@@ -298,9 +302,14 @@ export class MgInputSelect {
    * @returns {ReturnType<typeof setTimeout>} timeout
    */
   componentWillLoad(): ReturnType<typeof setTimeout> {
-    // Check items format
+    // Get locales
+    this.messages = initLocales(this.element).messages;
+    // Validate
     this.validateItems(this.items);
-
+    // Set default placeholder
+    if (this.placeholder === undefined || this.placeholder === '') {
+      this.placeholder = this.messages.input.select.placeholder;
+    }
     // Check validity when component is ready
     // return a promise to process action only in the FIRST render().
     // https://stenciljs.com/docs/component-lifecycle#componentwillload
@@ -319,19 +328,17 @@ export class MgInputSelect {
       <MgInput
         identifier={this.identifier}
         classList={this.classList}
+        ariaDescribedbyIDs={[]}
         label={this.label}
         labelOnTop={this.labelOnTop}
         labelHide={this.labelHide}
         required={this.required}
         readonly={this.readonly}
-        width={this.width}
+        mgWidth={this.mgWidth}
         disabled={this.disabled}
         value={this.value as string}
         readonlyValue={this.readonlyValue}
         tooltip={this.tooltip}
-        displayCharacterLeft={undefined}
-        characterLeftTemplate={undefined}
-        maxlength={undefined}
         helpText={this.helpText}
         errorMessage={this.errorMessage}
         isFieldset={false}

@@ -87,25 +87,27 @@ describe('mg-form', () => {
     });
   });
 
-  describe.each([inputsScriptRequiredAll, inputsScriptRequiredSome])('Should render required and errors', inputsScriptRequired => {
-    test('Should render errors', async () => {
-      const page = await createPage(`<mg-form>
+  describe.each(['<mg-form>', '<mg-form lang="fr">'])('With different locale', startTag => {
+    describe.each([inputsScriptRequiredAll, inputsScriptRequiredSome])('Should render required and errors', inputsScriptRequired => {
+      test('Should render errors', async () => {
+        const page = await createPage(`${startTag}
         ${inputs}
         </mg-form>
         ${inputsScript}
         ${inputsScriptRequired}`);
 
-      const element = await page.find('mg-form');
-      expect(element).toHaveClass('hydrated');
+        const element = await page.find('mg-form');
+        expect(element).toHaveClass('hydrated');
 
-      const screenshot = await page.screenshot();
-      expect(screenshot).toMatchImageSnapshot();
+        const screenshot = await page.screenshot();
+        expect(screenshot).toMatchImageSnapshot();
 
-      await element.callMethod('displayError');
-      await page.waitForChanges();
+        await element.callMethod('displayError');
+        await page.waitForChanges();
 
-      const screenshotErrors = await page.screenshot();
-      expect(screenshotErrors).toMatchImageSnapshot();
+        const screenshotErrors = await page.screenshot();
+        expect(screenshotErrors).toMatchImageSnapshot();
+      });
     });
   });
 });

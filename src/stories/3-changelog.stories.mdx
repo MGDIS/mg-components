@@ -1,0 +1,276 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Changelog" />
+
+# Changelog
+
+## 4.0.0 🍁
+
+July 22nd, 2022
+
+### 💥 Breaking Changes
+
+- Drop IE support 🍾
+- Library default language is now `en`, with matching currency `USD`.
+- Rename **`<mg-input-*>`** `width` property to `mg-width` to prevent a11y audit feedback.
+- Removed **`<mg-character-left>`** `template` attribute, component new design (e.g. 400/400) does not need it anymore. **`<mg-input-text>`** and **`<mg-input-textarea>`** matching attribute `character-left-template` is also removed.
+- **`<mg-icon>`** icon `arrows-rotate` renamed to `arrows-rotate-backward`
+
+### 🚀 Enhancement
+
+- **PDA9 Specs are now in our Storybook.**
+- **i18n**: messages are availables in english and french. Based on the `lang` attribute.
+- **`<mg-input-*>`**
+  - Changed **`<mg-input-*>`** error behavior.
+  - Content default alignment can be changed using `--mg-inputs-text-align` CSS variable.
+- Changed danger color to `#db1f29`.
+- Added `resizable` props on [**`<mg-input-textarea>`**](?path=/docs/molecules-inputs-mg-input-textarea--mg-input-textarea).
+- Added `small` (12px) icon size to [**`<mg-icon>`**](?path=/docs/atoms-mg-icon--mg-icon).
+- [**`<mg-button>`**](?path=/docs/atoms-mg-button--mg-button) border color can be changed using CSS variables.
+- Changed backdrop color opacity on [**`<mg-modal>`**](?path=/docs/atoms-mg-modal--mg-modal)
+- Added icons to [**`<mg-icon>`**](?path=/docs/atoms-mg-icon--mg-icon), [see all the availables icons](?path=/docs/style-icons--icons).
+- Changed required message font size on [**`<mg-form>`**](?path=/docs/molecules-mg-form--mg-form)
+- Changed [**`<mg-character-left>`**](?path=/docs/atoms-mg-character-left--mg-character-left) layout
+- Added [documentation about CSS variable](?path=/story/css-variables--page)
+
+### 🐛 Bug Fix
+
+- [#109](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/109) mg-tag : Possibility to dynamically change variant and outline
+- [#111](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/111) Add a way to remove border from mg-button's primary colors
+- [#116](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/116) Select input handle value fail when value is undefined
+- [#118](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/118) mg-button :variant does not change
+
+## 3.3.0
+
+June 13rd, 2022
+
+### 🚀 Enhancement
+
+- [**`<mg-panel>`**](?path=/docs/molecules-mg-panel--mg-panel)
+  - Added `expanded-change` event
+  - Added `title-pattern`, `title-pattern-error-message` and `expand-toggle-disabled` props
+  - Changed edit button variant
+- [**`<mg-tabs>`**](?path=/docs/molecules-mg-tabs--mg-tabs)
+  - Added `active-tab-change` event
+  - Changed font sizes
+- Added `success` variant on [**`<mg-button>`**](?path=/docs/atoms-mg-button--mg-button)
+- Changed backdrop color on [**`<mg-modal>`**](?path=/docs/atoms-mg-modal--mg-modal)
+- Added icons to [**`<mg-icon>`**](?path=/docs/atoms-mg-icon--mg-icon), [see all the availables icons](?path=/docs/style-icons--icons)
+
+### 🐛 Bug Fix
+
+- [#94](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/94) Accessibility issues on multiple components
+- [#105](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/105) mg-panel: Adapt left part of the component
+
+## 3.2.0
+
+April 26th, 2022
+
+### ⚠️ New component
+
+- [**`<mg-form>`**](?path=/docs/molecules-mg-form--mg-form) refers to [PDA9-818](https://jira.mgdis.fr/browse/PDA9-818)
+- [**`<mg-modal>`**](?path=/docs/molecules-mg-modal--mg-modal) refers to [PDA9-63](https://jira.mgdis.fr/browse/PDA9-63)
+- [**`<mg-panel>`**](?path=/docs/molecules-mg-panel--mg-panel) refers to [PDA9-484](https://jira.mgdis.fr/browse/PDA9-484)
+
+### 🚀 Enhancement
+
+- Added `size` to [**`<mg-tabs>`**](?path=/docs/molecules-mg-tabs--mg-tabs)
+- Added icons to [**`<mg-icon>`**](?path=/docs/atoms-mg-icon--mg-icon), [see all the availables icons](?path=/docs/style-icons--icons)
+- Components events are now displayed in Storybook
+- Removed the `not-allowed` cursor on disabled components
+- E2E test screenshots no longer allow difference pixels
+
+### 🐛 Bug Fix
+
+- [#76](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/76) CSS buttons does not have space with icons anymore
+- [#77](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/77) mg-input-numeric : Component not re render when value is updated
+- [#79](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/79) Impossible d'afficher les mg-input en erreur au moment de la souscription
+- [#82](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/82) mg-popover triangle is visible
+- [#83](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/83) Cross icon does not appears on html messages
+- [#84](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/84) Évenement value-change de mg-input-checkbox et composant parent
+- [#86](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/86) possibilité de rendre disable le composant mg-tabs
+- [#88](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/88) make mg-input-select max-width 100%
+- [#89](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/89) mg-button disable-on-click does not display loader while disabled
+
+## 3.1.0
+
+April 7th, 2022
+
+### 🚀 Enhancement
+
+- Library is now available from a public CDN (https://cdn.jsdelivr.net/npm/@mgdis/mg-components/)
+
+## 3.0.0
+
+March 21st, 2022
+
+### 💥 Breaking Changes
+
+- Components properties are not reflected anymore to prevent errors with boolean values. For exemple to change the disabled property of a component in Vue.js you can do `disabled.prop="maVarDisabled"`.
+
+### ⚠️ New component
+
+- [**`<mg-popover>`**](?path=/docs/molecules-mg-popover--mg-popover) refers to [PDA9-504](https://jira.mgdis.fr/browse/PDA9-504)
+
+### 🚀 Enhancement
+
+- Added icons to [**`<mg-icon>`**](?path=/docs/atoms-mg-icon--mg-icon), [see all the availables icons](?path=/docs/style-icons--icons)
+- Added `component-hide` & `component-show` events on [**`<mg-message>`**](?path=/docs/molecules-mg-message--mg-message)
+- Added `width` attribute on `<mg-input-...>` to override default behavior
+- Added `append-input` slot on `<mg-input-numeric>` & `<mg-input-text>`
+- Added `type` and `icon` attributes on [**`<mg-input-text>`**](?path=/story/molecules-inputs-mg-input-text--search) to get an a search input
+
+### 🐛 Bug Fix
+
+- [#44](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/44) Read ISO 8601 date-time format with mg-input-date
+- [#46](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/46) mg-pagination - Missing currentPage change event
+- [#47](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/47) mg-tabs content display Firefox dotted border when clicked
+- [#48](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/48) Control on mg-input-date-field
+- [#49](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/49) mg-badge - change padding to 4px horizontal
+- [#50](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/50) Storybook - remove semicolon at the end of code example
+- [#51](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/51) Toggle component value
+- [#52](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/52) Add the possibility to remove the placeholder option in a mg-input-select
+- [#53](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/53) Change the type of SelectOption.value
+- [#56](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/56) mg-input-date - "effacer" displays error in console and value can't be retrieved
+- [#59](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/59) Impossible de récupérer la validité d'un composant mg-input après @blur ou @value-change
+- [#61](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/61) mg-button : action can be triggered with a disabled button (fix of the fix)
+- [#67](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/67) Composant mg-input-xxxx en erreur même si il est readOnly ou required
+- [#68](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/68) mg-input-toggle Le style appliqué ne correspond pas a la valeur renseignée au premier rendu
+
+## 2.1.0
+
+February 18th, 2022
+
+### ⚠️ New components
+
+- [**`<mg-pagination>`**](?path=/docs/molecules-mg-pagination--mg-pagination) refers to [PDA9-787](https://jira.mgdis.fr/browse/PDA9-787)
+- [**`<mg-tabs>`**](?path=/docs/molecules-mg-tabs--mg-tabs) refers to [PDA9-604](https://jira.mgdis.fr/browse/PDA9-604)
+- [**`<mg-badge>`**](?path=/docs/atoms-mg-badge--mg-badge) refers to [PDA9-315](https://jira.mgdis.fr/browse/PDA9-315)
+
+### 🚀 Enhancement
+
+- In addition to the `SCSS`, variables are now also available with a `CSS` file.
+- Added icons to [**`<mg-icon>`**](?path=/docs/atoms-mg-icon--mg-icon), [see all the availables icons](?path=/docs/style-icons--icons)
+
+### 🐛 Bug Fix
+
+- [#35](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/35) mg-input-password does not take all available space
+- [#36](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/36) Value-changed event is call twice when toggle is switch on
+- [#37](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/37) Align text into inputs
+- [#38](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/38) Remove animation text on mg-input-toggle
+- [#39](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/39) Tooltip placement with label-on-top and .mg-form-group
+- [#40](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/40) Make link with .mg-button class look like a button
+- [#41](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/41) mg-button disable-on-click load again after being set to disable
+- [#42](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/42) mg-tooltip does not display on disabled mg-button
+
+## 2.0.0
+
+January 28th, 2022
+
+### 💥 Breaking Changes
+
+- [**`<mg-icon>`**](?path=/docs/atoms-mg-icon--mg-icon)
+  - icons names changed following naming convention described in [PDA9-744](https://jira.mgdis.fr/browse/PDA9-744)
+  - icons sizes are now `regular` (default), `large` and `extra-large`
+- Custom event names are now in kebab-case: `valueChange` changed to `value-change`
+
+### ⚠️ New components
+
+- [**`<mg-input-checkbox>`**](?path=/docs/molecules-inputs-mg-input-checkbox--mg-input-checkbox) refers to [PDA9-70](https://jira.mgdis.fr/browse/PDA9-70)
+- [**`<mg-input-password>`**](?path=/story/molecules-inputs-mg-input-password--mg-input-password) refers to [PDA9-769](https://jira.mgdis.fr/browse/PDA9-769)
+- [**`<mg-input-toggle>`**](?/path=story/molecules-inputs-mg-input-toggle--mg-input-toggle) refers to [PDA9-770](https://jira.mgdis.fr/browse/PDA9-770)
+
+All inputs also refers to [PDA9-723](https://jira.mgdis.fr/browse/PDA9-723).
+
+### 🚀 Enhancement
+
+- [**`<mg-icon>`**](?path=/docs/atoms-mg-icon--mg-icon) for accessibility, sometimes we need to add a background on icons, it is now possible with the attribute `variant`
+- [**`<mg-input-message>`**](?path=/story/molecules-mg-message--mg-message&args=closeButton:true;delay:10) can now be hidden after a defined delay using the `delay` attribute
+- [**`<mg-input-...>`**](?path=/story/molecules-inputs-mg-input-date--mg-input-date&args=labelOnTop:true) Tooltip icon moved next to label when used with the attribute `label-on-top`
+
+### 🐛 Bug Fix
+
+- [#22](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/22) [#32](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/32) Remove errors during test
+- [#25](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/25) Tooltip does not hide on IE
+- [#28](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/28) Tooltip not display with `<mg-button>` in slot on keyboard event
+- [#29](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/29) Tooltip hide behind tag with background-color
+- [#30](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/30) Add the possibility to display tooltip with conditions
+- [#31](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/31) mg-input-checkbox change tooltip margin top calc
+- [#33](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/33) mg-button : Action can be triggered with a disabled button
+- [#34](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/34) Custom events not working with vue3 projects
+
+## 1.0.1
+
+January 7th, 2022
+
+### 🐛 Bug Fix
+
+- [#23](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/23) Storybook error on grid page
+
+## 1.0.0
+
+January 6th, 2022
+
+### ⚠️ MG components release
+
+First release of the component library 🎉
+
+#### Atoms
+
+- [**`<mg-button>`**](?path=/docs/atoms-mg-button--mg-button) refers to [PDA9-67](https://jira.mgdis.fr/browse/PDA9-67)
+- [**`<mg-character-left>`**](?path=/docs/atoms-mg-character-left--mg-character-left) refers to [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64), [PDA9-723](https://jira.mgdis.fr/browse/PDA9-723) (1)
+- [**`<mg-icon>`**](?path=/docs/atoms-mg-icon--mg-icon) refers to [PDA9-744](https://jira.mgdis.fr/browse/PDA9-744)
+- [**`<mg-input-title>`**](?path=/docs/atoms-mg-input-title--mg-input-title) refers to [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64), [PDA9-723](https://jira.mgdis.fr/browse/PDA9-723) (1)
+- [**`<mg-tag>`**](?path=/docs/atoms-mg-tag--mg-tag) refers to [PDA9-637](https://jira.mgdis.fr/browse/PDA9-637)
+- [**`<mg-tooltip>`**](?path=/docs/atoms-mg-tooltip--mg-tooltip) refers to [PDA9-313](https://jira.mgdis.fr/browse/PDA9-313)
+
+(1) : Used in inputs molecules.
+
+#### Molecules
+
+- [**`<mg-message>`**](?path=/docs/molecules-mg-message--mg-message) refers to [PDA9-140](https://jira.mgdis.fr/browse/PDA9-140)
+
+##### Inputs
+
+- [**`<mg-input-date>`**](?path=/docs/molecules-inputs-mg-input-date--mg-input-date) refers to [PDA9-65](https://jira.mgdis.fr/browse/PDA9-65)
+- [**`<mg-input-numeric>`**](?path=/docs/molecules-inputs-mg-input-numeric--mg-input-numeric) refers to [PDA9-181](https://jira.mgdis.fr/browse/PDA9-181)
+- [**`<mg-input-radio>`**](?path=/story/molecules-mg-input-radio--mg-input-radio) refers to [PDA9-745](ttps://jira.mgdis.fr/browse/PDA9-745)
+- [**`<mg-input-select>`**](?path=/docs/molecules-inputs-mg-input-select--mg-input-select) refers to [PDA9-72](https://jira.mgdis.fr/browse/PDA9-72)
+- [**`<mg-input-text>`**](?path=/docs/molecules-inputs-mg-input-text--mg-input-text) refers to [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64)
+- [**`<mg-input-textarea>`**](?path=/docs/molecules-inputs-mg-input-textarea--mg-input-textarea) refers to [PDA9-683](https://jira.mgdis.fr/browse/PDA9-683)
+
+All inputs also refers to [PDA9-723](https://jira.mgdis.fr/browse/PDA9-723).
+
+##### Stories
+
+Dedicated stories to show how to setup :
+
+- [Email](?path=/docs/molecules-inputs-mg-input-text--email) refers to [PDA9-329](https://jira.mgdis.fr/browse/PDA9-329)
+- [Emails](?path=/docs/molecules-inputs-mg-input-text--emails) refers to [PDA9-330](https://jira.mgdis.fr/browse/PDA9-330)
+- [RNA](?path=/docs/molecules-inputs-mg-input-text--rna) refers to [PDA9-384](https://jira.mgdis.fr/browse/PDA9-384)
+- [URL](?path=/docs/molecules-inputs-mg-input-text--url) refers to [PDA9-380](https://jira.mgdis.fr/browse/PDA9-380)
+
+#### More stories
+
+- A dedicated story to show [all the availables icons](?path=/docs/style-icons--icons)
+
+##### Stylesheet
+
+MG Components also provide a stylesheet.
+
+- A dedicated story to [typography](?path=/docs/style-typography--typography)
+- A dedicated story to [grids](?path=/story/style-layout-grid--grid)
+
+The stylesheet to make native elements look like our design system expectations.
+
+- [`.mg-button`](?path=/docs/style-buttons--buttons) refers to [PDA9-67](https://jira.mgdis.fr/browse/PDA9-67)
+- [`.mg-message`](?path=/docs/style-messages--messages) refers to [PDA9-67](https://jira.mgdis.fr/browse/PDA9-67)
+- [`.mg-tag`](?path=/docs/style-tags--tags) refers to [PDA9-67](https://jira.mgdis.fr/browse/PDA9-67)
+
+# Conventions
+
+- **🚀 Enhancement** for new features
+- **⚠️ Pushed to master** for releases
+- **🐛 Bug Fix** for fixing existing bugs
+- **🔩 Dependency Updates** for updating dependency modules
+- **💥 Breaking Changes** for incompatible updates into library

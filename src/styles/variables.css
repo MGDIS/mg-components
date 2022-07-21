@@ -53,11 +53,11 @@
   --color-info: var(--color-info-h), var(--color-info-s), var(--color-info-l);
 
   /* Danger */
-  /* #df242c; */
-  /* rgb(223, 36, 44); */
+  /* #db1f29; */
+  /* rgb(219, 31, 41); */
   --color-danger-h: 357;
-  --color-danger-s: 74.5%;
-  --color-danger-l: 50.8%;
+  --color-danger-s: 75%;
+  --color-danger-l: 49%;
   --color-danger: var(--color-danger-h), var(--color-danger-s), var(--color-danger-l);
 
   /* Dark */
@@ -99,6 +99,7 @@
   /*
     <mg-icon>
    */
+  --mg-icon-small-size: 1.2rem;
   --mg-icon-regular-size: 1.6rem;
   --mg-icon-large-size: 2.4rem;
   --mg-icon-extra-large-size: 3.6rem;
@@ -111,6 +112,7 @@
   --mg-button-icon-border-radius: var(--default-size);
   --mg-button-disabled-opacity: 0.6;
   --mg-button-gradient: 1; /* Can only be 1 or 0 to enable disable gradient */
+  --mg-button-border-variation: 1; /* Can only be 1 or 0 to enable disable border variation */
 
   /* Primary */
   --mg-button-primary-color-h: var(--color-dark-h);
@@ -161,7 +163,7 @@
    */
   --mg-modal-border-radius: 0.5rem;
   --mg-modal-title-font-size: 1.8rem;
-  --mg-modal-content-font-size: 1.3rem;
+  --mg-modal-content-font-size: 1.2rem;
 
   /*
     <mg-panel>
@@ -186,6 +188,9 @@
   --mg-inputs-border-radius: 0.3rem;
   --mg-inputs-color: #b5c2c9;
   --mg-inputs-spacer: 1rem;
+
+  /* Error message background */
+  --mg-inputs-error-bg-color: var(--color-danger-h), calc(var(--color-danger-s) + 5%), calc(var(--color-danger-l) + 49%);
 
   /* Input focus shadow */
   /* #b5c2c9 */

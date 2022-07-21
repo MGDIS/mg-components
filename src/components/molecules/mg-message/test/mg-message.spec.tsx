@@ -17,7 +17,12 @@ const getPage = (args, content) =>
 
 describe('mg-message', () => {
   describe.each(variants)('Should render a %s message', variant => {
-    test.each([{ identifier: 'identifier' }, { identifier: 'identifier', closeButton: true }])('with args %s', async args => {
+    test.each([
+      { identifier: 'identifier' },
+      { identifier: 'identifier', closeButton: true },
+      { identifier: 'identifier', closeButton: true, lang: 'fr' },
+      { identifier: 'identifier', closeButton: true, lang: 'xx' },
+    ])('with args %s', async args => {
       const { root } = await getPage({ ...args, variant }, getDefaultContent());
       expect(root).toMatchSnapshot();
     });

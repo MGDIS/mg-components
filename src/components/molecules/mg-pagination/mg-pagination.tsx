@@ -1,7 +1,7 @@
-import { Component, h, Prop, Watch, Event, EventEmitter } from '@stencil/core';
+import { Component, Element, h, Prop, Watch, Event, EventEmitter } from '@stencil/core';
 import { createID } from '../../../utils/components.utils';
 import { NavigationAction } from './mg-pagination.conf';
-import { messages } from './../../../locales';
+import { initLocales } from './../../../locales';
 
 /**
  * Range generator
@@ -31,9 +31,21 @@ const range = (start: number, end: number, step = 1): number[] => Array.from(Arr
   shadow: true,
 })
 export class MgPagination {
+  /************
+   * Internal *
+   ************/
+
+  // Locales
+  private messages;
+
   /**************
    * Decorators *
    **************/
+
+  /**
+   * Get component DOM element
+   */
+  @Element() element: HTMLMgPaginationElement;
 
   /**
    * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
@@ -45,7 +57,7 @@ export class MgPagination {
    * Panignation label. Is a short description.
    * Customize default value can be usefull to improve accessibility
    */
-  @Prop() label = 'pagination';
+  @Prop({ mutable: true }) label: string;
 
   /**
    * Component total pages
@@ -123,8 +135,15 @@ export class MgPagination {
    * @returns {void}
    */
   componentWillLoad(): void {
+    // Get locales
+    this.messages = initLocales(this.element).messages;
+    // Validate
     this.validateTotalPages(this.totalPages);
     this.validateCurrentPage(this.currentPage);
+    // Set default label
+    if (this.label === undefined || this.label === '') {
+      this.label = this.messages.pagination.label;
+    }
   }
 
   /**
@@ -137,14 +156,14 @@ export class MgPagination {
       <mg-button
         identifier={`${this.identifier}-button-${action}`}
         class="mg-pagination__button"
-        label={messages.pagination[`${action}Page`]}
+        label={this.messages.pagination[`${action}Page`]}
         // eslint-disable-next-line react/jsx-no-bind
         onClick={() => this.handleGoToPage(action)}
         disabled={disabled}
         variant="flat"
       >
         {action === NavigationAction.PREVIOUS && <mg-icon icon="chevron-left"></mg-icon>}
-        {messages.general[action]}
+        {this.messages.general[action]}
         {action === NavigationAction.NEXT && <mg-icon icon="chevron-right"></mg-icon>}
       </mg-button>
     );
@@ -155,17 +174,17 @@ export class MgPagination {
         <mg-input-select
           identifier={`${this.identifier}-select`}
           items={range(1, this.totalPages).map(page => page.toString())}
-          label={messages.pagination.selectPage}
+          label={this.messages.pagination.selectPage}
           label-hide={true}
           on-value-change={this.handleSelect}
           value={this.currentPage.toString()}
           placeholder-hide
         ></mg-input-select>
         <span class="sr-only">
-          {messages.pagination.page} {this.currentPage}
+          {this.messages.pagination.page} {this.currentPage}
         </span>
         <span>
-          / {this.totalPages} {this.totalPages > 1 ? messages.pagination.pages : messages.pagination.page}
+          / {this.totalPages} {this.totalPages > 1 ? this.messages.pagination.pages : this.messages.pagination.page}
         </span>
         {navigationActionButton(this.currentPage >= this.totalPages, NavigationAction.NEXT)}
       </nav>

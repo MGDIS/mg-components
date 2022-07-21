@@ -86,20 +86,22 @@ describe('mg-input-password', () => {
     });
   });
 
-  test('Should render error when leaving an empty required input', async () => {
-    const page = await createPage(`<mg-input-password label="label" required></mg-input-password>`);
+  describe.each([`<mg-input-password label="label" required></mg-input-password>`, `<mg-input-password label="label" required lang="fr"></mg-input-password>`])('%s', html => {
+    test('Should render error when leaving an empty required input', async () => {
+      const page = await createPage(html);
 
-    const element = await page.find('mg-input-password');
+      const element = await page.find('mg-input-password');
 
-    expect(element).toHaveClass('hydrated');
+      expect(element).toHaveClass('hydrated');
 
-    await page.keyboard.down('Tab');
-    await page.keyboard.down('Tab');
+      await page.keyboard.down('Tab');
+      await page.keyboard.down('Tab');
 
-    await page.waitForChanges();
+      await page.waitForChanges();
 
-    const screenshot = await page.screenshot();
-    expect(screenshot).toMatchImageSnapshot();
+      const screenshot = await page.screenshot();
+      expect(screenshot).toMatchImageSnapshot();
+    });
   });
 
   describe.each([
@@ -120,7 +122,7 @@ describe('mg-input-password', () => {
 
   describe.each([16])('with custom width: %s', width => {
     test.each([false, true])('with label on top: %s', async labelOnTop => {
-      const page = await createPage(`<mg-input-password label="label" width="${width}" label-on-top="${labelOnTop}"></mg-input-password>`);
+      const page = await createPage(`<mg-input-password label="label" mg-width="${width}" label-on-top="${labelOnTop}"></mg-input-password>`);
 
       const element = await page.find('mg-input-password');
 

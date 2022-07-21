@@ -1,7 +1,8 @@
 import { Component, Element, Host, h, Prop, Watch } from '@stencil/core';
 import { createID } from '../../../utils/components.utils';
 import { Instance as PopperInstance, createPopper } from '@popperjs/core';
-import { messages } from '../../../locales';
+import { initLocales } from '../../../locales';
+import { Placement } from './mg-popover.conf';
 
 @Component({
   tag: 'mg-popover',
@@ -16,6 +17,9 @@ export class MgPopover {
   private popper: PopperInstance;
   private popover: HTMLElement;
   private closeButtonId = '';
+
+  // Locales
+  private messages;
 
   /**************
    * Decorators *
@@ -35,22 +39,7 @@ export class MgPopover {
   /**
    * Popover placement
    */
-  @Prop() placement:
-    | 'auto'
-    | 'auto-start'
-    | 'auto-end'
-    | 'top'
-    | 'top-start'
-    | 'top-end'
-    | 'bottom'
-    | 'bottom-start'
-    | 'bottom-end'
-    | 'right'
-    | 'right-start'
-    | 'right-end'
-    | 'left'
-    | 'left-start'
-    | 'left-end' = 'bottom';
+  @Prop() placement: Placement = 'bottom';
 
   /**
    * Define if popover has a cross button
@@ -122,7 +111,7 @@ export class MgPopover {
       ...options,
       modifiers: [...options.modifiers, { name: 'eventListeners', enabled: false }],
     }));
-    // Remove even listener
+    // Remove event listener
     document.removeEventListener('click', this.clickOutside, false);
   };
 
@@ -138,6 +127,16 @@ export class MgPopover {
   /*************
    * Lifecycle *
    *************/
+
+  /**
+   * Check if component props are well configured on init
+   *
+   * @returns {void} timeout
+   */
+  componentWillLoad(): void {
+    // Get locales
+    this.messages = initLocales(this.element).messages;
+  }
 
   /**
    * Check if component props are well configured on init
@@ -203,7 +202,7 @@ export class MgPopover {
         <slot></slot>
         <div id={this.identifier} class="mg-popover">
           {!this.disabled && this.closeButton && (
-            <mg-button identifier={this.closeButtonId} is-icon variant="flat" label={messages.general.close} onClick={this.handleCloseButton}>
+            <mg-button identifier={this.closeButtonId} is-icon variant="flat" label={this.messages.general.close} onClick={this.handleCloseButton}>
               <mg-icon icon="cross"></mg-icon>
             </mg-button>
           )}

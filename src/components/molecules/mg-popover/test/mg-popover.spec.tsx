@@ -2,6 +2,7 @@ import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
 import { MgPopover } from '../mg-popover';
 import { MgButton } from '../../../atoms/mg-button/mg-button';
+import { placements } from '../mg-popover.conf';
 
 // fix popper console.error in test
 // it is generated in @popperjs/core/dist/cjs/popper.js l.1859
@@ -26,9 +27,12 @@ const getPage = (args, element) =>
 describe('mg-popover', () => {
   test.each([
     { identifier: 'identifier' },
+    { identifier: 'identifier', placement: placements[0] },
     { identifier: 'identifier', display: true },
     { identifier: 'identifier', closeButton: true },
     { identifier: 'identifier', display: true },
+    { identifier: 'identifier', closeButton: true, lang: 'fr' },
+    { identifier: 'identifier', closeButton: true, lang: 'xx' },
   ])('Should render with element', async args => {
     const { root } = await getPage(args, [
       <h2 slot="title">Blu bli blo bla</h2>,
@@ -49,6 +53,8 @@ describe('mg-popover', () => {
     { eventIn: 'click', eventOut: 'clickDocument' },
     { eventIn: 'click', eventOut: 'clickPopover' },
   ])('Should manage display on events %s', async ({ eventIn, eventOut }) => {
+    jest.clearAllTimers();
+
     const args = { identifier: 'identifier', closeButton: true };
     const page = await getPage(args, [
       <h2 slot="title">Blu bli blo bla</h2>,

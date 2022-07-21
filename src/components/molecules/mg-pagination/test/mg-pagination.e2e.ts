@@ -20,8 +20,8 @@ describe('mg-pagination', () => {
         await nextButton.click();
         await page.waitForChanges();
 
-        const screenshot2 = await page.screenshot();
-        expect(screenshot2).toMatchImageSnapshot();
+        const screenshotAction = await page.screenshot();
+        expect(screenshotAction).toMatchImageSnapshot();
       }
     });
 
@@ -32,23 +32,23 @@ describe('mg-pagination', () => {
       await page.keyboard.down('Tab');
       await page.waitForChanges();
 
-      const screenshot1 = await page.screenshot();
-      expect(screenshot1).toMatchImageSnapshot();
+      const screenshot = await page.screenshot();
+      expect(screenshot).toMatchImageSnapshot();
 
       // take focus on mg-input-select
       await page.keyboard.down('Tab');
       await page.waitForChanges();
 
-      const screenshot2 = await page.screenshot();
-      expect(screenshot2).toMatchImageSnapshot();
+      const screenshotTab = await page.screenshot();
+      expect(screenshotTab).toMatchImageSnapshot();
 
       // change mg-input-select to value 3
       await page.keyboard.down('ArrowDown');
       await page.keyboard.down('ArrowDown');
       await page.waitForChanges();
 
-      const screenshot4 = await page.screenshot();
-      expect(screenshot4).toMatchImageSnapshot();
+      const screenshotArrowDown = await page.screenshot();
+      expect(screenshotArrowDown).toMatchImageSnapshot();
 
       // take focus on previous button
       await page.keyboard.down('Shift');
@@ -56,16 +56,29 @@ describe('mg-pagination', () => {
       await page.keyboard.up('Shift');
       await page.waitForChanges();
 
-      const screenshot5 = await page.screenshot();
-      expect(screenshot5).toMatchImageSnapshot();
+      const screenshotShiftTabShift = await page.screenshot();
+      expect(screenshotShiftTabShift).toMatchImageSnapshot();
 
       // take focus on next
       await page.keyboard.down('Tab');
       await page.keyboard.down('Tab');
       await page.waitForChanges();
 
-      const screenshot6 = await page.screenshot();
-      expect(screenshot6).toMatchImageSnapshot();
+      const screenshotTabTab = await page.screenshot();
+      expect(screenshotTabTab).toMatchImageSnapshot();
+    });
+  });
+
+  describe('locales', () => {
+    test.each(['fr'])('render with locale: %s', async lang => {
+      const page = await createPage(`<mg-pagination total-pages=5 lang="${lang}"></mg-pagination>`);
+
+      const element = await page.find('mg-pagination');
+
+      expect(element).toHaveClass('hydrated');
+
+      const screenshot = await page.screenshot();
+      expect(screenshot).toMatchImageSnapshot();
     });
   });
 });

@@ -1,9 +1,9 @@
 import { Component, Element, Event, h, Prop, EventEmitter, State, Watch, Method } from '@stencil/core';
 import { MgInput } from '../MgInput';
-import { InputClass, Width } from '../MgInput.conf';
+import { Width } from '../MgInput.conf';
 import { types, InputError } from './mg-input-numeric.conf';
 import { createID, ClassList } from '../../../../utils/components.utils';
-import { messages } from '../../../../locales';
+import { initLocales } from '../../../../locales/';
 import { localeCurrency, localeNumber } from '../../../../utils/locale.utils';
 
 @Component({
@@ -21,11 +21,15 @@ export class MgInputNumeric {
   private numericValue: number;
   private readonlyValue: string;
 
-  // Classes
-  private classError: string = InputClass.ERROR;
-
   // HTML selector
   private input: HTMLInputElement;
+
+  // Locales
+  private locale: string;
+  private messages;
+
+  // hasError (triggered by blur event)
+  private hasError = false;
 
   /**************
    * Decorators *
@@ -61,7 +65,7 @@ export class MgInputNumeric {
       // emit numeric value
       this.numericValue = this.value !== '' && this.value !== null ? parseFloat(this.value.replace(',', '.')) : null;
       this.valueChange.emit(this.numericValue);
-      // Set readOnlyValue
+      // Set readonlyValue
       this.readonlyValue = this.numericValue !== null ? this.formatValue(this.numericValue) : '';
     }
   }
@@ -117,7 +121,7 @@ export class MgInputNumeric {
   /**
    * Define input width
    */
-  @Prop() width: Width;
+  @Prop() mgWidth: Width;
 
   /**
    * Add a tooltip message next to the input
@@ -138,8 +142,12 @@ export class MgInputNumeric {
     if (!types.includes(newValue)) {
       throw new Error(`<mg-input-numeric> prop "type" must be one of : ${types.join(', ')}`);
     }
-    this.classList.add(`mg-input--numeric--${this.type}`);
   }
+
+  /**
+   * Define currency
+   */
+  @Prop() currency = 'USD';
 
   /**
    * Maximum value
@@ -219,6 +227,7 @@ export class MgInputNumeric {
   async displayError(): Promise<void> {
     this.checkValidity();
     this.checkError();
+    this.hasError = this.invalid;
   }
 
   /**
@@ -239,6 +248,9 @@ export class MgInputNumeric {
   private handleInput = (): void => {
     // Check validity
     this.checkValidity();
+    if (this.hasError) {
+      this.checkError();
+    }
     this.value = this.input.value;
   };
 
@@ -257,9 +269,8 @@ export class MgInputNumeric {
    * @returns {void}
    */
   private handleBlur = (): void => {
-    // Check validity
-    this.checkValidity();
-    this.checkError();
+    // Display Error
+    this.displayError();
     this.hasFocus = false;
   };
 
@@ -289,9 +300,9 @@ export class MgInputNumeric {
   private setErrorMessage = (): void => {
     const inputError = this.getInputError();
     if (inputError === InputError.REQUIRED) {
-      this.errorMessage = messages.errors[inputError];
+      this.errorMessage = this.messages.errors[inputError];
     } else {
-      this.errorMessage = messages.errors.numeric[inputError].replace('{min}', `${this.formatValue(this.min)}`).replace('{max}', `${this.formatValue(this.max)}`);
+      this.errorMessage = this.messages.errors.numeric[inputError].replace('{min}', `${this.formatValue(this.min)}`).replace('{max}', `${this.formatValue(this.max)}`);
     }
   };
 
@@ -307,9 +318,6 @@ export class MgInputNumeric {
     // Update class
     if (!this.valid) {
       this.setErrorMessage();
-      this.classList.add(this.classError);
-    } else {
-      this.classList.delete(this.classError);
     }
   };
 
@@ -346,7 +354,7 @@ export class MgInputNumeric {
    * @param {number} value value to format
    * @returns {string} formated local value
    */
-  private formatValue = (value: number): string => (this.type === 'currency' ? localeCurrency(value) : localeNumber(value));
+  private formatValue = (value: number): string => (this.type === 'currency' ? localeCurrency(value, this.locale, this.currency) : localeNumber(value, this.locale));
 
   /**
    * Validate append slot
@@ -370,12 +378,16 @@ export class MgInputNumeric {
    * @returns {ReturnType<typeof setTimeout>} timeout
    */
   componentWillLoad(): ReturnType<typeof setTimeout> {
+    // Get locales
+    const locales = initLocales(this.element);
+    this.locale = locales.locale;
+    this.messages = locales.messages;
+    // Validate
     this.validateValue(this.value);
     this.validateType(this.type);
     this.validateIntegerLength(this.integerLength);
     this.validateDecimalLength(this.decimalLength);
     this.validateAppendSlot();
-
     // Check validity when component is ready
     // return a promise to process action only in the FIRST render().
     // https://stenciljs.com/docs/component-lifecycle#componentwillload
@@ -394,19 +406,17 @@ export class MgInputNumeric {
       <MgInput
         identifier={this.identifier}
         classList={this.classList}
+        ariaDescribedbyIDs={[]}
         label={this.label}
         labelOnTop={this.labelOnTop}
         labelHide={this.labelHide}
         required={this.required}
         readonly={this.readonly}
-        width={this.width}
+        mgWidth={this.mgWidth}
         disabled={this.disabled}
         value={this.value}
         readonlyValue={this.readonlyValue}
         tooltip={this.tooltip}
-        displayCharacterLeft={undefined}
-        characterLeftTemplate={undefined}
-        maxlength={undefined}
         helpText={this.helpText}
         errorMessage={this.errorMessage}
         isFieldset={false}

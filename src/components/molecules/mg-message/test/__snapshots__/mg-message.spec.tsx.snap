@@ -36,7 +36,63 @@ exports[`mg-message Should render a danger message with args { identifier: 'iden
         </span>
       </div>
       <span class="mg-message__close-button">
+        <mg-button identifier="identifier-close-button" is-icon="" label="Close message" variant="flat">
+          <mg-icon icon="cross"></mg-icon>
+        </mg-button>
+      </span>
+    </div>
+  </mock:shadow-root>
+  <p>
+    <strong>
+      Strong
+    </strong>
+    content!
+  </p>
+</mg-message>
+`;
+
+exports[`mg-message Should render a danger message with args { identifier: 'identifier', closeButton: true, lang: 'fr' } 1`] = `
+<mg-message lang="fr">
+  <mock:shadow-root>
+    <div class="mg-message mg-message--close-button mg-message--danger" id="identifier" role="alert">
+      <span class="mg-message__icon">
+        <mg-icon icon="exclamation-circle"></mg-icon>
+      </span>
+      <div class="mg-message__content">
+        <span class="mg-message__content-slot">
+          <slot></slot>
+        </span>
+      </div>
+      <span class="mg-message__close-button">
         <mg-button identifier="identifier-close-button" is-icon="" label="Fermer le message" variant="flat">
+          <mg-icon icon="cross"></mg-icon>
+        </mg-button>
+      </span>
+    </div>
+  </mock:shadow-root>
+  <p>
+    <strong>
+      Strong
+    </strong>
+    content!
+  </p>
+</mg-message>
+`;
+
+exports[`mg-message Should render a danger message with args { identifier: 'identifier', closeButton: true, lang: 'xx' } 1`] = `
+<mg-message lang="xx">
+  <mock:shadow-root>
+    <div class="mg-message mg-message--close-button mg-message--danger" id="identifier" role="alert">
+      <span class="mg-message__icon">
+        <mg-icon icon="exclamation-circle"></mg-icon>
+      </span>
+      <div class="mg-message__content">
+        <span class="mg-message__content-slot">
+          <slot></slot>
+        </span>
+      </div>
+      <span class="mg-message__close-button">
+        <mg-button identifier="identifier-close-button" is-icon="" label="Close message" variant="flat">
           <mg-icon icon="cross"></mg-icon>
         </mg-button>
       </span>
@@ -87,7 +143,63 @@ exports[`mg-message Should render a info message with args { identifier: 'identi
         </span>
       </div>
       <span class="mg-message__close-button">
+        <mg-button identifier="identifier-close-button" is-icon="" label="Close message" variant="flat">
+          <mg-icon icon="cross"></mg-icon>
+        </mg-button>
+      </span>
+    </div>
+  </mock:shadow-root>
+  <p>
+    <strong>
+      Strong
+    </strong>
+    content!
+  </p>
+</mg-message>
+`;
+
+exports[`mg-message Should render a info message with args { identifier: 'identifier', closeButton: true, lang: 'fr' } 1`] = `
+<mg-message lang="fr">
+  <mock:shadow-root>
+    <div class="mg-message mg-message--close-button mg-message--info" id="identifier" role="status">
+      <span class="mg-message__icon">
+        <mg-icon icon="info-circle"></mg-icon>
+      </span>
+      <div class="mg-message__content">
+        <span class="mg-message__content-slot">
+          <slot></slot>
+        </span>
+      </div>
+      <span class="mg-message__close-button">
         <mg-button identifier="identifier-close-button" is-icon="" label="Fermer le message" variant="flat">
+          <mg-icon icon="cross"></mg-icon>
+        </mg-button>
+      </span>
+    </div>
+  </mock:shadow-root>
+  <p>
+    <strong>
+      Strong
+    </strong>
+    content!
+  </p>
+</mg-message>
+`;
+
+exports[`mg-message Should render a info message with args { identifier: 'identifier', closeButton: true, lang: 'xx' } 1`] = `
+<mg-message lang="xx">
+  <mock:shadow-root>
+    <div class="mg-message mg-message--close-button mg-message--info" id="identifier" role="status">
+      <span class="mg-message__icon">
+        <mg-icon icon="info-circle"></mg-icon>
+      </span>
+      <div class="mg-message__content">
+        <span class="mg-message__content-slot">
+          <slot></slot>
+        </span>
+      </div>
+      <span class="mg-message__close-button">
+        <mg-button identifier="identifier-close-button" is-icon="" label="Close message" variant="flat">
           <mg-icon icon="cross"></mg-icon>
         </mg-button>
       </span>
@@ -138,7 +250,63 @@ exports[`mg-message Should render a success message with args { identifier: 'ide
         </span>
       </div>
       <span class="mg-message__close-button">
+        <mg-button identifier="identifier-close-button" is-icon="" label="Close message" variant="flat">
+          <mg-icon icon="cross"></mg-icon>
+        </mg-button>
+      </span>
+    </div>
+  </mock:shadow-root>
+  <p>
+    <strong>
+      Strong
+    </strong>
+    content!
+  </p>
+</mg-message>
+`;
+
+exports[`mg-message Should render a success message with args { identifier: 'identifier', closeButton: true, lang: 'fr' } 1`] = `
+<mg-message lang="fr">
+  <mock:shadow-root>
+    <div class="mg-message mg-message--close-button mg-message--success" id="identifier" role="alert">
+      <span class="mg-message__icon">
+        <mg-icon icon="check-circle"></mg-icon>
+      </span>
+      <div class="mg-message__content">
+        <span class="mg-message__content-slot">
+          <slot></slot>
+        </span>
+      </div>
+      <span class="mg-message__close-button">
         <mg-button identifier="identifier-close-button" is-icon="" label="Fermer le message" variant="flat">
+          <mg-icon icon="cross"></mg-icon>
+        </mg-button>
+      </span>
+    </div>
+  </mock:shadow-root>
+  <p>
+    <strong>
+      Strong
+    </strong>
+    content!
+  </p>
+</mg-message>
+`;
+
+exports[`mg-message Should render a success message with args { identifier: 'identifier', closeButton: true, lang: 'xx' } 1`] = `
+<mg-message lang="xx">
+  <mock:shadow-root>
+    <div class="mg-message mg-message--close-button mg-message--success" id="identifier" role="alert">
+      <span class="mg-message__icon">
+        <mg-icon icon="check-circle"></mg-icon>
+      </span>
+      <div class="mg-message__content">
+        <span class="mg-message__content-slot">
+          <slot></slot>
+        </span>
+      </div>
+      <span class="mg-message__close-button">
+        <mg-button identifier="identifier-close-button" is-icon="" label="Close message" variant="flat">
           <mg-icon icon="cross"></mg-icon>
         </mg-button>
       </span>
@@ -189,7 +357,63 @@ exports[`mg-message Should render a warning message with args { identifier: 'ide
         </span>
       </div>
       <span class="mg-message__close-button">
+        <mg-button identifier="identifier-close-button" is-icon="" label="Close message" variant="flat">
+          <mg-icon icon="cross"></mg-icon>
+        </mg-button>
+      </span>
+    </div>
+  </mock:shadow-root>
+  <p>
+    <strong>
+      Strong
+    </strong>
+    content!
+  </p>
+</mg-message>
+`;
+
+exports[`mg-message Should render a warning message with args { identifier: 'identifier', closeButton: true, lang: 'fr' } 1`] = `
+<mg-message lang="fr">
+  <mock:shadow-root>
+    <div class="mg-message mg-message--close-button mg-message--warning" id="identifier" role="alert">
+      <span class="mg-message__icon">
+        <mg-icon icon="exclamation-triangle"></mg-icon>
+      </span>
+      <div class="mg-message__content">
+        <span class="mg-message__content-slot">
+          <slot></slot>
+        </span>
+      </div>
+      <span class="mg-message__close-button">
         <mg-button identifier="identifier-close-button" is-icon="" label="Fermer le message" variant="flat">
+          <mg-icon icon="cross"></mg-icon>
+        </mg-button>
+      </span>
+    </div>
+  </mock:shadow-root>
+  <p>
+    <strong>
+      Strong
+    </strong>
+    content!
+  </p>
+</mg-message>
+`;
+
+exports[`mg-message Should render a warning message with args { identifier: 'identifier', closeButton: true, lang: 'xx' } 1`] = `
+<mg-message lang="xx">
+  <mock:shadow-root>
+    <div class="mg-message mg-message--close-button mg-message--warning" id="identifier" role="alert">
+      <span class="mg-message__icon">
+        <mg-icon icon="exclamation-triangle"></mg-icon>
+      </span>
+      <div class="mg-message__content">
+        <span class="mg-message__content-slot">
+          <slot></slot>
+        </span>
+      </div>
+      <span class="mg-message__close-button">
+        <mg-button identifier="identifier-close-button" is-icon="" label="Close message" variant="flat">
           <mg-icon icon="cross"></mg-icon>
         </mg-button>
       </span>

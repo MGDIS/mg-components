@@ -10,7 +10,6 @@
 .mg-input__box {
   // Display
   padding: calc((var(--default-size) - var(--font-size) * var(--line-height)) / 2) var(--mg-inputs-spacer);
-  width: 100%;
   height: var(--default-size);
   box-sizing: border-box;
   // Decoration
@@ -23,6 +22,7 @@
   font-family: inherit;
   color: hsl(var(--color-dark));
   font-size: var(--font-size);
+  text-align: var(--mg-inputs-text-align, left);
 
   // placeholder
   &::placeholder {
@@ -80,8 +80,6 @@
   ::slotted([slot='append-input']) {
     --mg-button-border-radius-top-right: 0;
     --mg-button-border-radius-bottom-right: 0;
-    --mg-button-border-radius-top-left: 0; /* IE FIX */
-    --mg-button-border-radius-bottom-left: 0; /* IE FIX */
   }
   ::slotted([slot='append-input']:not(:last-of-type)) {
     --mg-button-border-right-width: 0;
@@ -89,8 +87,6 @@
   ::slotted([slot='append-input']:last-of-type) {
     --mg-button-border-radius-top-right: var(--mg-inputs-border-radius);
     --mg-button-border-radius-bottom-right: var(--mg-inputs-border-radius);
-    --mg-button-border-radius-top-left: 0; /* IE FIX */
-    --mg-button-border-radius-bottom-left: 0; /* IE FIX */
   }
 }
 

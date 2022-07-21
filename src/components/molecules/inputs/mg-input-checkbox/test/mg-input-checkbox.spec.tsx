@@ -2,7 +2,7 @@ import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
 import { cloneDeep } from '../../../../../utils/test.utils';
 import { MgInputCheckbox } from '../mg-input-checkbox';
-import { messages } from '../../../../../locales';
+import messages from '../../../../../locales/en/messages.json';
 import { CheckboxValue } from '../mg-input-checkbox.conf';
 
 const getPage = args => {
@@ -188,6 +188,32 @@ describe('mg-input-checkbox', () => {
       const page = await getPage({ label: 'label', identifier: 'identifier', value, helpText: 'My help text', required: true });
 
       expect(page.root).toMatchSnapshot();
+
+      const element = page.doc.querySelector('mg-input-checkbox');
+      const allInputs = element.shadowRoot.querySelectorAll('input');
+
+      //mock validity
+      allInputs.forEach(input => {
+        input.checkValidity = jest.fn(() => false);
+        Object.defineProperty(input, 'validity', {
+          get: jest.fn(() => ({
+            valueMissing: true,
+          })),
+        });
+      });
+
+      await element.displayError();
+
+      await page.waitForChanges();
+
+      expect(page.root).toMatchSnapshot();
+    });
+
+    test.each(['fr', 'xx'])('Should render component with locale: %s', async lang => {
+      const value = cloneDeep(items);
+      value[0].value = false;
+
+      const page = await getPage({ label: 'label', identifier: 'identifier', value, helpText: 'My help text', required: true, lang });
 
       const element = page.doc.querySelector('mg-input-checkbox');
       const allInputs = element.shadowRoot.querySelectorAll('input');

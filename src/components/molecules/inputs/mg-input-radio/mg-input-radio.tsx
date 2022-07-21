@@ -1,11 +1,10 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Component, Event, h, Prop, EventEmitter, State, Watch, Method } from '@stencil/core';
+import { Component, Element, Event, h, Prop, EventEmitter, State, Watch, Method } from '@stencil/core';
 import { MgInput } from '../MgInput';
 import { createID, ClassList, allItemsAreString } from '../../../../utils/components.utils';
-import { messages } from '../../../../locales';
+import { initLocales } from '../../../../locales';
 import { RadioOption } from './mg-input-radio.conf';
-import { InputClass } from '../MgInput.conf';
 
 /**
  * type Option validation function
@@ -25,15 +24,20 @@ export class MgInputRadio {
    * Internal *
    ************/
 
-  // classes
-  private classError = InputClass.ERROR;
-
   // HTML selector
   private inputs: HTMLInputElement[] = [];
+
+  // Locales
+  private messages;
 
   /**************
    * Decorators *
    **************/
+
+  /**
+   * Get component DOM element
+   */
+  @Element() element: HTMLMgInputRadioElement;
 
   /**
    * Component value
@@ -220,14 +224,7 @@ export class MgInputRadio {
     // Set error message
     this.errorMessage = undefined;
     if (!this.valid && invalidElement.validity.valueMissing) {
-      this.errorMessage = messages.errors.required;
-    }
-
-    // Update class
-    if (this.valid) {
-      this.classList.delete(this.classError);
-    } else {
-      this.classList.add(this.classError);
+      this.errorMessage = this.messages.errors.required;
     }
   };
 
@@ -248,9 +245,10 @@ export class MgInputRadio {
    * @returns {ReturnType<typeof setTimeout>} timeout
    */
   componentWillLoad(): ReturnType<typeof setTimeout> {
-    // Check items format
+    // Get locales
+    this.messages = initLocales(this.element).messages;
+    // Validate
     this.validateItems(this.items);
-
     // Check validity when component is ready
     // return a promise to process action only in the FIRST render().
     // https://stenciljs.com/docs/component-lifecycle#componentwillload
@@ -269,19 +267,17 @@ export class MgInputRadio {
       <MgInput
         identifier={this.identifier}
         classList={this.classList}
+        ariaDescribedbyIDs={[]}
         label={this.label}
         labelOnTop={this.labelOnTop}
         labelHide={this.labelHide}
         required={this.required}
         disabled={this.disabled}
         readonly={this.readonly}
-        width={undefined}
+        mgWidth={undefined}
         value={this.value as string}
         readonlyValue={this.value as string}
         tooltip={this.tooltip}
-        displayCharacterLeft={undefined}
-        characterLeftTemplate={undefined}
-        maxlength={undefined}
         helpText={this.helpText}
         errorMessage={this.errorMessage}
         isFieldset={true}

@@ -1,10 +1,9 @@
-import { Component, Event, EventEmitter, h, Prop, State, Watch, Method } from '@stencil/core';
+import { Component, Element, Event, EventEmitter, h, Prop, State, Watch, Method } from '@stencil/core';
 import { MgInput } from '../MgInput';
 import { InputError } from './mg-input-date.conf';
 import { createID, ClassList } from '../../../../utils/components.utils';
 import { localeDate, dateRegExp } from '../../../../utils/locale.utils';
-import { messages } from '../../../../locales';
-import { InputClass } from '../MgInput.conf';
+import { initLocales } from '../../../../locales';
 
 @Component({
   tag: 'mg-input-date',
@@ -16,15 +15,24 @@ export class MgInputDate {
    * Internal *
    ************/
 
-  // classes
-  private classError = InputClass.ERROR;
-
   // HTML selector
   private input: HTMLInputElement;
+
+  // Locales
+  private messages;
+  private locale: string;
+
+  // hasError (triggered by blur event)
+  private hasError = false;
 
   /**************
    * Decorators *
    **************/
+
+  /**
+   * Get component DOM element
+   */
+  @Element() element: HTMLMgInputDateElement;
 
   /**
    * Component value
@@ -150,6 +158,7 @@ export class MgInputDate {
   async displayError(): Promise<void> {
     this.checkValidity();
     this.checkError();
+    this.hasError = this.invalid;
   }
 
   /**
@@ -157,6 +166,9 @@ export class MgInputDate {
    */
   private handleInput = (): void => {
     this.checkValidity();
+    if (this.hasError) {
+      this.checkError();
+    }
     this.value = this.input.value;
   };
 
@@ -164,8 +176,7 @@ export class MgInputDate {
    * Handle blur event
    */
   private handleBlur = (): void => {
-    this.checkValidity();
-    this.checkError();
+    this.displayError();
   };
 
   /**
@@ -233,16 +244,16 @@ export class MgInputDate {
     const inputError = this.getInputError();
     // required
     if (inputError === InputError.REQUIRED) {
-      this.errorMessage = messages.errors[inputError];
+      this.errorMessage = this.messages.errors[inputError];
     }
     // min, max & minMax
     else if ([InputError.MIN, InputError.MAX, InputError.MINMAX].includes(inputError)) {
-      this.errorMessage = messages.errors.date[inputError].replace('{min}', localeDate(this.min)).replace('{max}', localeDate(this.max));
+      this.errorMessage = this.messages.errors.date[inputError].replace('{min}', localeDate(this.min, this.locale)).replace('{max}', localeDate(this.max, this.locale));
     }
     // wrong date format
     // element.validity.badInput is default error message
     else {
-      this.errorMessage = messages.errors.date.badInput.replace('{min}', this.min?.length > 0 ? localeDate(this.min) : localeDate('1900-01-01'));
+      this.errorMessage = this.messages.errors.date.badInput.replace('{min}', this.min?.length > 0 ? localeDate(this.min, this.locale) : localeDate('1900-01-01', this.locale));
     }
   };
 
@@ -256,9 +267,6 @@ export class MgInputDate {
     this.errorMessage = undefined;
     if (!this.valid) {
       this.setErrorMessage();
-      this.classList.add(this.classError);
-    } else {
-      this.classList.delete(this.classError);
     }
   };
 
@@ -272,10 +280,14 @@ export class MgInputDate {
    * @returns {ReturnType<typeof setTimeout>} timeout
    */
   componentWillLoad(): ReturnType<typeof setTimeout> {
+    // Get locales
+    const locales = initLocales(this.element);
+    this.locale = locales.locale;
+    this.messages = locales.messages;
+    // Validate
     this.validateValue(this.value);
     this.validateMin(this.min);
     this.validateMax(this.max);
-
     // Check validity when component is ready
     // return a promise to process action only in the FIRST render().
     // https://stenciljs.com/docs/component-lifecycle#componentwillload
@@ -294,19 +306,17 @@ export class MgInputDate {
       <MgInput
         identifier={this.identifier}
         classList={this.classList}
+        ariaDescribedbyIDs={[]}
         label={this.label}
         labelOnTop={this.labelOnTop}
         labelHide={this.labelHide}
         required={this.required}
         readonly={this.readonly}
-        width={undefined}
+        mgWidth={undefined}
         disabled={this.disabled}
         value={this.value}
-        readonlyValue={localeDate(this.value)}
+        readonlyValue={localeDate(this.value, this.locale)}
         tooltip={this.tooltip}
-        displayCharacterLeft={undefined}
-        characterLeftTemplate={undefined}
-        maxlength={undefined}
         helpText={this.helpText}
         errorMessage={this.errorMessage}
         isFieldset={false}

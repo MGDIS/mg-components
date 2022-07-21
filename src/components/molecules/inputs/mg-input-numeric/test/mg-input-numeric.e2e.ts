@@ -79,6 +79,12 @@ describe('mg-input-numeric', () => {
     `<mg-input-numeric label="label" value="123,45" readonly></mg-input-numeric>`,
     `<mg-input-numeric label="label" disabled></mg-input-numeric>`,
     `<mg-input-numeric label="label" value="123,45" disabled></mg-input-numeric>`,
+    `<mg-input-numeric label="label" value="123,45" lang="fr"></mg-input-numeric>`,
+    `<mg-input-numeric label="label" value="123,45" lang="fr" type="currency"></mg-input-numeric>`,
+    `<mg-input-numeric label="label" value="123,45" lang="fr" type="currency" currency="EUR"></mg-input-numeric>`,
+    `<mg-input-numeric label="label" value="123,45" readonly lang="fr"></mg-input-numeric>`,
+    `<mg-input-numeric label="label" value="123,45" readonly lang="fr" type="currency"></mg-input-numeric>`,
+    `<mg-input-numeric label="label" value="123,45" readonly lang="fr" type="currency" currency="EUR"></mg-input-numeric>`,
   ])('Should render with template', html => {
     test('render', async () => {
       const page = await createPage(html);
@@ -119,20 +125,22 @@ describe('mg-input-numeric', () => {
     expect(screenshot).toMatchImageSnapshot();
   });
 
-  test('Should render error when leaving an empty required input', async () => {
-    const page = await createPage(`<mg-input-numeric label="label" required></mg-input-numeric>`);
+  describe.each([`<mg-input-numeric label="label" required></mg-input-numeric>`, `<mg-input-numeric label="label" required lang="fr"></mg-input-numeric>`])('%s', html => {
+    test('Should render error when leaving an empty required input', async () => {
+      const page = await createPage(html);
 
-    const element = await page.find('mg-input-numeric');
+      const element = await page.find('mg-input-numeric');
 
-    expect(element).toHaveClass('hydrated');
+      expect(element).toHaveClass('hydrated');
 
-    await page.keyboard.down('Tab');
-    await page.keyboard.down('Tab');
+      await page.keyboard.down('Tab');
+      await page.keyboard.down('Tab');
 
-    await page.waitForChanges();
+      await page.waitForChanges();
 
-    const screenshot = await page.screenshot();
-    expect(screenshot).toMatchImageSnapshot();
+      const screenshot = await page.screenshot();
+      expect(screenshot).toMatchImageSnapshot();
+    });
   });
 
   describe.each([
@@ -236,7 +244,7 @@ describe('mg-input-numeric', () => {
 
   describe.each(['full', 16, 4, 2])('with custom width: %s', width => {
     test.each([false, true])('with label on top: %s', async labelOnTop => {
-      const page = await createPage(`<mg-input-numeric label="label" width="${width}" label-on-top="${labelOnTop}"></mg-input-numeric>`);
+      const page = await createPage(`<mg-input-numeric label="label" mg-width="${width}" label-on-top="${labelOnTop}"></mg-input-numeric>`);
 
       const element = await page.find('mg-input-numeric');
 

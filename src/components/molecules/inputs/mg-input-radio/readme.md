@@ -1,4 +1,17 @@
-This molecule refers to the [PDA9-745](https://jira.mgdis.fr/browse/PDA9-745)
+## Usage
+
+- Always used in a group with minimum 2 options
+- Only one selected option is possible from all the options in the group
+- The label option is clickable and selects the option
+- The group can be initialized without any default value
+
+### Theming
+
+The style of the active radio button is that of the browser.
+
+## Specs
+
+![](./mg-input-radio/doc/img/mg-input-radio-specs.png)
 
 <!-- Auto Generated Below -->
 
@@ -52,7 +65,6 @@ Type: `Promise<void>`
 - [mg-tooltip](../../../atoms/mg-tooltip)
 - [mg-icon](../../../atoms/mg-icon)
 - [mg-input-title](../../../atoms/mg-input-title)
-- [mg-character-left](../../../atoms/mg-character-left)
 
 ### Graph
 ```mermaid
@@ -60,7 +72,6 @@ graph TD;
   mg-input-radio --> mg-tooltip
   mg-input-radio --> mg-icon
   mg-input-radio --> mg-input-title
-  mg-input-radio --> mg-character-left
   style mg-input-radio fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

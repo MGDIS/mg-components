@@ -1,5 +1,5 @@
 import { FunctionalComponent, h, VNode, FunctionalUtilities } from '@stencil/core';
-import { Width, InputClass } from './MgInput.conf';
+import { Width } from './MgInput.conf';
 import { ClassList } from '../../../utils/components.utils';
 
 /**
@@ -42,11 +42,7 @@ const manageClasses = (props: MgInputProps): void => {
 
   if (props.readonly) props.classList.add('mg-input--readonly');
 
-  if (props.width !== undefined) props.classList.add(`mg-input--width-${props.width}`);
-
-  if (props.readonly || props.disabled) {
-    props.classList.delete(InputClass.ERROR);
-  }
+  if (props.mgWidth !== undefined) props.classList.add(`mg-input--width-${props.mgWidth}`);
 };
 
 /**
@@ -74,18 +70,16 @@ interface MgInputProps {
   readonlyValue: string;
   required: boolean;
   readonly: boolean;
-  width: Width;
+  mgWidth: Width;
   disabled: boolean;
   // Tooltip
   tooltip: string;
-  // Nb Char Left
-  displayCharacterLeft: boolean;
-  characterLeftTemplate: string;
-  maxlength: number;
   // Help Text
   helpText: string;
   // Error Message
   errorMessage: string;
+  // ariaDescribedbyIDs
+  ariaDescribedbyIDs: string[];
 }
 
 /**
@@ -115,13 +109,7 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props: MgInputProps, 
   /**
    * a11y IDs
    */
-  const ariaDescribedbyIDs: Set<string> = new Set();
-
-  // Character Left
-  const characterLeftId = `${props.identifier}-character-left`;
-  if (props.classList.has('is-focused') && props.displayCharacterLeft) {
-    ariaDescribedbyIDs.add(characterLeftId);
-  }
+  const ariaDescribedbyIDs: Set<string> = new Set(props.ariaDescribedbyIDs);
 
   // Help text
   const helpTextId = `${props.identifier}-help-text`;
@@ -201,15 +189,14 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props: MgInputProps, 
         </div>
       ) : (
         <div class="mg-input__input-container">
-          <div class="mg-input__input">
+          <div class={{ 'mg-input__input': true, 'mg-input__input--has-error': props.errorMessage !== undefined }}>
             {children}
             {!props.labelOnTop && props.tooltip && getTooltip()}
           </div>
-          {props.displayCharacterLeft && props.maxlength && props.classList.has('is-focused') && (
-            <mg-character-left identifier={characterLeftId} characters={props.value} maxlength={props.maxlength} template={props.characterLeftTemplate}></mg-character-left>
-          )}
           {props.helpText && <div id={helpTextId} class="mg-input__help-text" innerHTML={props.helpText}></div>}
-          {props.errorMessage && <div id={helpTextErrorId} class="mg-input__error" innerHTML={props.errorMessage} aria-live="assertive"></div>}
+          {props.errorMessage && !props.readonly && !props.disabled && (
+            <div id={helpTextErrorId} class="mg-input__error" innerHTML={props.errorMessage} aria-live="assertive"></div>
+          )}
         </div>
       )}
     </TagName>

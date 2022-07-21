@@ -1,6 +1,6 @@
 import { Component, h, Prop, State, Watch, Element, Event, EventEmitter, Listen } from '@stencil/core';
 import { createID, ClassList } from '../../../utils/components.utils';
-import { messages } from '../../../locales';
+import { initLocales } from '../../../locales';
 
 @Component({
   tag: 'mg-modal',
@@ -12,8 +12,15 @@ export class MgModal {
    * Internal *
    ************/
 
+  // Classes
+  private classHide = 'mg-modal--hide';
+
+  // IDs
   private closeButtonId = '';
   private titleId = '';
+
+  // Locales
+  private messages;
 
   /**************
    * Decorators *
@@ -46,10 +53,10 @@ export class MgModal {
   validateHide(newValue: boolean): void {
     if (newValue) {
       this.componentHide.emit();
-      this.classList.add('mg-modal--hide');
+      this.classList.add(this.classHide);
     } else {
       this.componentShow.emit();
-      this.classList.delete('mg-modal--hide');
+      this.classList.delete(this.classHide);
     }
   }
 
@@ -117,6 +124,9 @@ export class MgModal {
    * @returns {void}
    */
   componentWillLoad(): void {
+    // Get locales
+    this.messages = initLocales(this.element).messages;
+    // Validate
     this.hasActions = this.element.querySelector('[slot="actions"]') !== null;
     this.hasContent = this.element.querySelector('[slot="content"]') !== null;
     if (this.closeButton) {
@@ -138,7 +148,7 @@ export class MgModal {
           <header class="mg-modal__header">
             {this.closeButton && (
               <span class="mg-modal__close-button">
-                <mg-button identifier={this.closeButtonId} is-icon variant="flat" label={messages.modal.closeButton} onClick={this.handleClose}>
+                <mg-button identifier={this.closeButtonId} is-icon variant="flat" label={this.messages.modal.closeButton} onClick={this.handleClose}>
                   <mg-icon icon="cross"></mg-icon>
                 </mg-button>
               </span>

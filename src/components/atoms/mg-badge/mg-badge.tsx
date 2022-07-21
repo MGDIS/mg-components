@@ -7,6 +7,17 @@ import { ClassList } from '../../../utils/components.utils';
   shadow: true,
 })
 export class MgBadge {
+  /************
+   * Internal *
+   ************/
+
+  // classes
+  private classOutline = `mg-badge--outline`;
+
+  /**************
+   * Decorators *
+   **************/
+
   /**
    * Badge value
    */
@@ -29,11 +40,15 @@ export class MgBadge {
    */
   @Prop() variant: string = variants[0]; // info
   @Watch('variant')
-  validateVariant(newValue: string): void {
+  validateVariant(newValue: string, oldValue?: string): void {
     if (!variants.includes(newValue)) {
       throw new Error(`<mg-badge> prop "variant" must be one of : ${variants.join(', ')}.`);
+    } else {
+      if (oldValue !== undefined) {
+        this.classList.delete(`mg-badge--${oldValue}`);
+      }
+      this.classList.add(`mg-badge--${newValue}`);
     }
-    this.classList.add(`mg-badge--${this.variant}`);
   }
 
   /**
@@ -42,7 +57,8 @@ export class MgBadge {
   @Prop() outline: boolean;
   @Watch('outline')
   validateOutline(newValue: boolean): void {
-    if (newValue) this.classList.add(`mg-badge--outline`);
+    if (newValue) this.classList.add(this.classOutline);
+    else this.classList.delete(this.classOutline);
   }
 
   /**

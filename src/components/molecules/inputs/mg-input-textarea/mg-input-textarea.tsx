@@ -1,8 +1,8 @@
-import { Component, Event, h, Prop, EventEmitter, State, Method, Watch } from '@stencil/core';
+import { Component, Element, Event, h, Prop, EventEmitter, State, Method, Watch } from '@stencil/core';
 import { MgInput } from '../MgInput';
-import { InputClass, Width } from '../MgInput.conf';
+import { Width } from '../MgInput.conf';
 import { createID, ClassList } from '../../../../utils/components.utils';
-import { messages } from '../../../../locales';
+import { initLocales } from '../../../../locales';
 
 @Component({
   tag: 'mg-input-textarea',
@@ -16,14 +16,28 @@ export class MgInputTextarea {
 
   // classes
   private classFocus = 'is-focused';
-  private classError = InputClass.ERROR;
+  private classHasDisplayCharacterLeft = 'mg-input--has-display-character-left';
+
+  // IDs
+  private characterLeftId;
 
   // HTML selector
   private input: HTMLTextAreaElement;
 
+  // Locales
+  private messages;
+
+  // hasError (triggered by blur event)
+  private hasError = false;
+
   /**************
    * Decorators *
    **************/
+
+  /**
+   * Get component DOM element
+   */
+  @Element() element: HTMLMgInputTextareaElement;
 
   /**
    * Component value
@@ -91,7 +105,7 @@ export class MgInputTextarea {
   /**
    * Define input width
    */
-  @Prop() width: Width = 'full';
+  @Prop() mgWidth: Width = 'full';
 
   /**
    * Define input pattern to validate
@@ -117,11 +131,14 @@ export class MgInputTextarea {
    * Define if component should display character left
    */
   @Prop() displayCharacterLeft = true;
-
-  /**
-   * Template to use for characters left sentence
-   */
-  @Prop() characterLeftTemplate: string;
+  @Watch('displayCharacterLeft')
+  validateDisplayCharacterLeft(newValue: boolean): void {
+    if (newValue) {
+      this.classList.add(this.classHasDisplayCharacterLeft);
+    } else {
+      this.classList.delete(this.classHasDisplayCharacterLeft);
+    }
+  }
 
   /**
    * Add a help text under the input, usually expected data format and example
@@ -137,6 +154,11 @@ export class MgInputTextarea {
    * Define input invalid state
    */
   @Prop({ mutable: true }) invalid: boolean;
+
+  /**
+   * Define if input is resizable
+   */
+  @Prop() resizable: 'none' | 'both' | 'horizontal' | 'vertical' = 'none';
 
   /**
    * Component classes
@@ -167,12 +189,17 @@ export class MgInputTextarea {
   async displayError(): Promise<void> {
     this.checkValidity();
     this.checkError();
+    this.hasError = this.invalid;
   }
 
   /**
    * Handle input event
    */
   private handleInput = (): void => {
+    if (this.hasError) {
+      this.checkValidity();
+      this.checkError();
+    }
     this.value = this.input.value;
   };
 
@@ -191,9 +218,8 @@ export class MgInputTextarea {
     // Manage focus
     this.classList.delete(this.classFocus);
     this.classList = new ClassList(this.classList.classes);
-    // Check validity
-    this.checkValidity();
-    this.checkError();
+    // Display Error
+    this.displayError();
   };
 
   /**
@@ -231,13 +257,7 @@ export class MgInputTextarea {
     }
     // required
     else if (!this.valid && this.input.validity.valueMissing) {
-      this.errorMessage = messages.errors.required;
-    }
-    // Update class
-    if (this.valid) {
-      this.classList.delete(this.classError);
-    } else {
-      this.classList.add(this.classError);
+      this.errorMessage = this.messages.errors.required;
     }
   };
 
@@ -265,8 +285,12 @@ export class MgInputTextarea {
    * @returns {ReturnType<typeof setTimeout>} timeout
    */
   componentWillLoad(): ReturnType<typeof setTimeout> {
+    // Get locales
+    this.messages = initLocales(this.element).messages;
+    this.characterLeftId = `${this.identifier}-character-left`;
+    // Validate
+    this.validateDisplayCharacterLeft(this.displayCharacterLeft);
     this.validatePattern();
-
     // Check validity when component is ready
     // return a promise to process action only in the FIRST render().
     // https://stenciljs.com/docs/component-lifecycle#componentwillload
@@ -285,39 +309,47 @@ export class MgInputTextarea {
       <MgInput
         identifier={this.identifier}
         classList={this.classList}
+        ariaDescribedbyIDs={[this.characterLeftId]}
         label={this.label}
         labelOnTop={this.labelOnTop}
         labelHide={this.labelHide}
         required={this.required}
         readonly={this.readonly}
-        width={this.width}
+        mgWidth={this.mgWidth}
         disabled={this.disabled}
         value={this.value}
         readonlyValue={undefined}
         tooltip={this.tooltip}
-        displayCharacterLeft={this.displayCharacterLeft}
-        characterLeftTemplate={this.characterLeftTemplate}
-        maxlength={this.maxlength}
         helpText={this.helpText}
         errorMessage={this.errorMessage}
         isFieldset={false}
       >
-        <textarea
-          class="mg-input__box"
-          value={this.value}
-          id={this.identifier}
-          name={this.name}
-          placeholder={this.placeholder}
-          title={this.placeholder}
-          rows={this.rows}
-          maxlength={this.maxlength}
-          disabled={this.disabled}
-          required={this.required}
-          onInput={this.handleInput}
-          onFocus={this.handleFocus}
-          onBlur={this.handleBlur}
-          ref={el => (this.input = el as HTMLTextAreaElement)}
-        ></textarea>
+        <div class="mg-input__with-character-left">
+          <textarea
+            class={{
+              'mg-input__box': true,
+              'mg-input__box--resizable': this.resizable === 'both',
+              'mg-input__box--resizable-horizontal': this.resizable === 'horizontal',
+              'mg-input__box--resizable-vertical': this.resizable === 'vertical',
+            }}
+            value={this.value}
+            id={this.identifier}
+            name={this.name}
+            placeholder={this.placeholder}
+            title={this.placeholder}
+            rows={this.rows}
+            maxlength={this.maxlength}
+            disabled={this.disabled}
+            required={this.required}
+            onInput={this.handleInput}
+            onFocus={this.handleFocus}
+            onBlur={this.handleBlur}
+            ref={el => (this.input = el as HTMLTextAreaElement)}
+          ></textarea>
+          {this.displayCharacterLeft && this.maxlength && (
+            <mg-character-left identifier={this.characterLeftId} characters={this.value} maxlength={this.maxlength}></mg-character-left>
+          )}
+        </div>
       </MgInput>
     );
   }

@@ -22,15 +22,11 @@ fieldset.mg-input {
   &.mg-input--label-on-top .mg-input__input-group-container {
     margin-top: 0.7rem;
   }
-
-  &.is-not-valid .mg-input__input-group {
-    color: initial;
-  }
 }
 
 .mg-input__input-container {
   mg-tooltip {
-    margin-left: 2rem;
+    margin-left: 3rem;
   }
 }
 

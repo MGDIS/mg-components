@@ -3,7 +3,7 @@ import { newSpecPage } from '@stencil/core/testing';
 import { MgInputNumeric } from '../mg-input-numeric';
 import { MgButton } from '../../../../atoms/mg-button/mg-button';
 import { MgIcon } from '../../../../atoms/mg-icon/mg-icon';
-import { messages } from '../../../../../locales';
+import messages from '../../../../../locales/en/messages.json';
 import { localeCurrency, localeNumber } from '../../../../../utils/locale.utils';
 import { types } from '../mg-input-numeric.conf';
 
@@ -30,6 +30,11 @@ describe('mg-input-numeric', () => {
       { label: 'label', identifier: 'identifier', type, disabled: true, value: '1234567890' },
       { label: 'label', identifier: 'identifier', type, tooltip: 'My Tooltip Message' },
       { label: 'label', identifier: 'identifier', type, tooltip: 'My Tooltip Message', labelOnTop: true },
+      { label: 'label', identifier: 'identifier', type, value: '1234567890', currency: 'EUR' },
+      { label: 'label', identifier: 'identifier', type, value: '1234567890', lang: 'fr' },
+      { label: 'label', identifier: 'identifier', type, value: '1234567890', lang: 'xx' },
+      { label: 'label', identifier: 'identifier', type, readonly: true, value: '1234567890', lang: 'fr' },
+      { label: 'label', identifier: 'identifier', type, readonly: true, value: '1234567890', lang: 'xx' },
     ])('Should render with args %s:', async args => {
       const { root } = await getPage(args);
       expect(root).toMatchSnapshot();
@@ -176,20 +181,20 @@ describe('mg-input-numeric', () => {
       if (args.min !== undefined && args.max === undefined) {
         expect(page.rootInstance.errorMessage).toEqual(
           messages.errors.numeric.min
-            .replace('{min}', `${type === 'currency' ? localeCurrency(args.min) : localeNumber(args.min)}`)
-            .replace('{max}', `${type === 'currency' ? localeCurrency(args.max) : localeNumber(args.max)}`),
+            .replace('{min}', `${type === 'currency' ? localeCurrency(args.min, 'en', 'USD') : localeNumber(args.min, 'en')}`)
+            .replace('{max}', `${type === 'currency' ? localeCurrency(args.max, 'en', 'USD') : localeNumber(args.max, 'en')}`),
         );
       } else if (args.min === undefined && args.max !== undefined) {
         expect(page.rootInstance.errorMessage).toEqual(
           messages.errors.numeric.max
-            .replace('{min}', `${type === 'currency' ? localeCurrency(args.min) : localeNumber(args.min)}`)
-            .replace('{max}', `${type === 'currency' ? localeCurrency(args.max) : localeNumber(args.max)}`),
+            .replace('{min}', `${type === 'currency' ? localeCurrency(args.min, 'en', 'USD') : localeNumber(args.min, 'en')}`)
+            .replace('{max}', `${type === 'currency' ? localeCurrency(args.max, 'en', 'USD') : localeNumber(args.max, 'en')}`),
         );
       } else if (args.min !== undefined && args.max !== undefined) {
         expect(page.rootInstance.errorMessage).toEqual(
           messages.errors.numeric.minMax
-            .replace('{min}', `${type === 'currency' ? localeCurrency(args.min) : localeNumber(args.min)}`)
-            .replace('{max}', `${type === 'currency' ? localeCurrency(args.max) : localeNumber(args.max)}`),
+            .replace('{min}', `${type === 'currency' ? localeCurrency(args.min, 'en', 'USD') : localeNumber(args.min, 'en')}`)
+            .replace('{max}', `${type === 'currency' ? localeCurrency(args.max, 'en', 'USD') : localeNumber(args.max, 'en')}`),
         );
       }
 
@@ -227,7 +232,7 @@ describe('mg-input-numeric', () => {
     });
 
     test("display error with displayError component's public method", async () => {
-      const page = await getPage({ label: 'label', identifier: 'identifier', required: true, types });
+      const page = await getPage({ label: 'label', identifier: 'identifier', required: true });
 
       expect(page.root).toMatchSnapshot();
 
@@ -256,5 +261,69 @@ describe('mg-input-numeric', () => {
     } catch (err) {
       expect(err.message).toMatch('<mg-input-numeric> prop "type" must be one of :');
     }
+  });
+
+  test.each(['fr', 'xx'])('display error message with locale: %s', async lang => {
+    const page = await getPage({ label: 'label', identifier: 'identifier', required: true, lang });
+    const element = page.doc.querySelector('mg-input-numeric');
+    const input = element.shadowRoot.querySelector('input');
+
+    //mock validity
+    input.checkValidity = jest.fn(() => false);
+    Object.defineProperty(input, 'validity', {
+      get: jest.fn(() => ({
+        valueMissing: true,
+      })),
+    });
+
+    await element.displayError();
+
+    await page.waitForChanges();
+
+    expect(page.root).toMatchSnapshot();
+  });
+
+  test('Should remove error on input', async () => {
+    const page = await getPage({ label: 'label', identifier: 'identifier', required: true });
+    const element = page.doc.querySelector('mg-input-numeric');
+    const input = element.shadowRoot.querySelector('input');
+
+    //mock validity
+    input.checkValidity = jest.fn().mockReturnValueOnce(false).mockReturnValueOnce(false).mockReturnValueOnce(true).mockReturnValueOnce(true);
+    Object.defineProperty(input, 'validity', {
+      get: jest
+        .fn()
+        .mockReturnValueOnce({
+          valueMissing: true,
+        })
+        .mockReturnValueOnce({
+          valueMissing: true,
+        })
+        .mockReturnValueOnce({
+          valueMissing: false,
+        })
+        .mockReturnValueOnce({
+          valueMissing: false,
+        }),
+    });
+
+    await element.displayError();
+
+    await page.waitForChanges();
+
+    expect(page.rootInstance.hasError).toBeTruthy();
+    expect(page.rootInstance.errorMessage).toEqual(messages.errors.required);
+
+    input.value = 'blu';
+    input.dispatchEvent(new CustomEvent('input', { bubbles: true }));
+    await page.waitForChanges();
+
+    expect(page.rootInstance.hasError).toBeTruthy();
+    expect(page.rootInstance.errorMessage).toBeUndefined();
+
+    input.dispatchEvent(new CustomEvent('blur', { bubbles: true }));
+    await page.waitForChanges();
+
+    expect(page.rootInstance.hasError).toBeFalsy();
   });
 });

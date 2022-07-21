@@ -1,4 +1,10 @@
-This molecule refers to the [PDA9-787](https://jira.mgdis.fr/browse/PDA9-787).
+## Anatomy
+
+![](./mg-pagination/doc/img/mg-pagination-nav-anatomy.png)
+
+## Specs
+
+![](./mg-pagination/doc/img/mg-pagination-nav-specs.png)
 
 <!-- Auto Generated Below -->
 
@@ -9,7 +15,7 @@ This molecule refers to the [PDA9-787](https://jira.mgdis.fr/browse/PDA9-787).
 | ------------- | -------------- | ----------------------------------------------------------------------------------------------------------- | -------- | --------------------------- |
 | `currentPage` | `current-page` | Component current page                                                                                      | `number` | `1`                         |
 | `identifier`  | `identifier`   | Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created. | `string` | `createID('mg-pagination')` |
-| `label`       | `label`        | Panignation label. Is a short description. Customize default value can be usefull to improve accessibility  | `string` | `'pagination'`              |
+| `label`       | `label`        | Panignation label. Is a short description. Customize default value can be usefull to improve accessibility  | `string` | `undefined`                 |
 | `totalPages`  | `total-pages`  | Component total pages                                                                                       | `number` | `1`                         |
 
 
@@ -38,7 +44,6 @@ graph TD;
   mg-input-select --> mg-tooltip
   mg-input-select --> mg-icon
   mg-input-select --> mg-input-title
-  mg-input-select --> mg-character-left
   style mg-pagination fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

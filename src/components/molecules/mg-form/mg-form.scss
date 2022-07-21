@@ -10,4 +10,8 @@
   &.mg-form--all-required {
     --mg-input-title-display: none;
   }
+
+  & > p {
+    font-size: 1.2rem;
+  }
 }

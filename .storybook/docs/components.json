@@ -1,8 +1,8 @@
 {
-  "timestamp": "2022-06-13T08:59:23",
+  "timestamp": "2022-07-21T21:54:33",
   "compiler": {
     "name": "@stencil/core",
-    "version": "2.15.1",
+    "version": "2.17.1",
     "typescriptVersion": "4.5.4"
   },
   "components": [
@@ -10,8 +10,8 @@
       "filePath": "./src/components/atoms/mg-badge/mg-badge.tsx",
       "encapsulation": "shadow",
       "tag": "mg-badge",
-      "readme": "This atom refers to the [PDA9-315](https://jira.mgdis.fr/browse/PDA9-315).\n",
-      "docs": "This atom refers to the [PDA9-315](https://jira.mgdis.fr/browse/PDA9-315).",
+      "readme": "## Design\n\nThe badge is always placed on top of, or next to the element it is for.\n\nThe badge displays a number or a punctuation character.\n\n## Specs\n\n![](./mg-badge/doc/img/mg-badge-specs.png)\n\n## Theming\n\n![](./mg-badge/doc/img/mg-badge-styles.png)\n",
+      "docs": "The badge is always placed on top of, or next to the element it is for.\n\nThe badge displays a number or a punctuation character.",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -104,8 +104,8 @@
       "filePath": "./src/components/atoms/mg-button/mg-button.tsx",
       "encapsulation": "scoped",
       "tag": "mg-button",
-      "readme": "This atom refers to the [PDA9-67](https://jira.mgdis.fr/browse/PDA9-67).\n",
-      "docs": "This atom refers to the [PDA9-67](https://jira.mgdis.fr/browse/PDA9-67).",
+      "readme": "## Usage\n\nA primary action button is, in most cases, unique on the screen, the other buttons must be displayed as \"secondary\", to highlight the primary action.\nEx: Validation, Save\n\nA tooltip must be displayed on hover when the button only displays a non-explicit icon, and has no label. The tooltip must indicate the action of the button.\n\nA button that launches a potentially long process is disabled and displays a loader for the duration of the process.\n\n## Specs\n\n![](./mg-button/doc/img/mg-button-specs.png)\n\n## Placement\n\n![](./mg-button/doc/img/mg-button-placement.png)\n\nTo manage the space between two buttons you can use the helper [.mg-group-elements](/?path=/docs/style-buttons--buttons)\n\n## Theming\n\n![](./mg-button/doc/img/mg-button-styles.png)\n",
+      "docs": "A primary action button is, in most cases, unique on the screen, the other buttons must be displayed as \"secondary\", to highlight the primary action.\nEx: Validation, Save\n\nA tooltip must be displayed on hover when the button only displays a non-explicit icon, and has no label. The tooltip must indicate the action of the button.\n\nA button that launches a potentially long process is disabled and displays a loader for the duration of the process.",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -322,8 +322,8 @@
       "filePath": "./src/components/atoms/mg-character-left/mg-character-left.tsx",
       "encapsulation": "scoped",
       "tag": "mg-character-left",
-      "readme": "This atom refers to [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64), [PDA9-723](https://jira.mgdis.fr/browse/PDA9-723).\n",
-      "docs": "This atom refers to [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64), [PDA9-723](https://jira.mgdis.fr/browse/PDA9-723).",
+      "readme": "## Design\n\nThis component display the number of characters left beside the max value length: `{{number of characters left}}/{{max value length}}`\n",
+      "docs": "This component display the number of characters left beside the max value length: `{{number of characters left}}/{{max value length}}`",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -375,23 +375,6 @@
           ],
           "optional": false,
           "required": true
-        },
-        {
-          "name": "template",
-          "type": "string",
-          "mutable": false,
-          "attr": "template",
-          "reflectToAttr": false,
-          "docs": "Template to display remaining characters.\nMust have {counter} inside",
-          "docsTags": [],
-          "default": "messages.nbCharLeft",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
         }
       ],
       "methods": [],
@@ -401,43 +384,15 @@
       "slots": [],
       "parts": [],
       "dependents": [
-        "mg-input-checkbox",
-        "mg-input-date",
-        "mg-input-numeric",
-        "mg-input-password",
-        "mg-input-radio",
-        "mg-input-select",
         "mg-input-text",
-        "mg-input-textarea",
-        "mg-input-toggle"
+        "mg-input-textarea"
       ],
       "dependencies": [],
       "dependencyGraph": {
-        "mg-input-checkbox": [
-          "mg-character-left"
-        ],
-        "mg-input-date": [
-          "mg-character-left"
-        ],
-        "mg-input-numeric": [
-          "mg-character-left"
-        ],
-        "mg-input-password": [
-          "mg-character-left"
-        ],
-        "mg-input-radio": [
-          "mg-character-left"
-        ],
-        "mg-input-select": [
-          "mg-character-left"
-        ],
         "mg-input-text": [
           "mg-character-left"
         ],
         "mg-input-textarea": [
-          "mg-character-left"
-        ],
-        "mg-input-toggle": [
           "mg-character-left"
         ]
       }
@@ -446,8 +401,8 @@
       "filePath": "./src/components/molecules/mg-form/mg-form.tsx",
       "encapsulation": "shadow",
       "tag": "mg-form",
-      "readme": "This molecule refers to the [PDA9-818](https://jira.mgdis.fr/browse/PDA9-818).\n\n## Example\n\n**Code example does not reflect all the code.**\n\nHere we have a `form-valid` event listener on the `mg-form` to define if the \"submit\" button should be enable or not.  \nThe \"Display errors\" button use the `mg-form` `displayError()` method.\n",
-      "docs": "This molecule refers to the [PDA9-818](https://jira.mgdis.fr/browse/PDA9-818).",
+      "readme": "## Anatomy\n\n![](./mg-form/doc/img/mg-form-anatomy.png)\n\n- zone for required message (12px)\n- field area\n- actions area (submit, cancel)\n\n#### Spacing\n\n![](./mg-form/doc/img/mg-form-spacing.png)\n\n## Example\n\n**Code example does not reflect all the code.**\n\nHere we have a `form-valid` event listener on the `mg-form` to define if the \"submit\" button should be enable or not.  \nThe \"Display errors\" button use the `mg-form` `displayError()` method.\n",
+      "docs": "![](./mg-form/doc/img/mg-form-anatomy.png)\n\n- zone for required message (12px)\n- field area\n- actions area (submit, cancel)",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -592,8 +547,8 @@
       "filePath": "./src/components/atoms/mg-icon/mg-icon.tsx",
       "encapsulation": "shadow",
       "tag": "mg-icon",
-      "readme": "This atom refers to the [PDA9-744](https://jira.mgdis.fr/browse/PDA9-744).\n",
-      "docs": "This atom refers to the [PDA9-744](https://jira.mgdis.fr/browse/PDA9-744).",
+      "readme": "## Design\n\n### Standard\n\nSizes (px) :\n\n- 12x12 small\n- 16x16 regular\n- 24x24 large\n- 36x36 extra-large\n\nColor: text of the page (usually [@color-dark](?path=/docs/style-colors--page))\n\n### Use alone with informative color\n\nWhen using a pictograph alone with an informative color, the color must be displayed in the background for accessibility reasons.\n\nThe colors to be used are variations of the standard colors, with the brightness increased by 20%.\n\nRule applicable for all except \"info\" blue. \"Info\" pictographs without text are usually displayed in the font color.\n\n![](./mg-icon/doc/img/mg-icon-color-bg.png)\n\n### File naming\n\n- Separator: \"-\" (dash). By default, the pictographs are the \"filled\" version, but this doesn't need to be specified in the naming\n- Variant: \"-outline\". If pictograph variant has a background that has a full circle > add \"-circle\" ex : check-circle, check-circle-outline\n",
+      "docs": "",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -744,8 +699,8 @@
       "filePath": "./src/components/molecules/inputs/mg-input-checkbox/mg-input-checkbox.tsx",
       "encapsulation": "shadow",
       "tag": "mg-input-checkbox",
-      "readme": "This molecule refers to the [PDA9-70](https://jira.mgdis.fr/browse/PDA9-70).\n",
-      "docs": "This molecule refers to the [PDA9-70](https://jira.mgdis.fr/browse/PDA9-70).",
+      "readme": "## Usage\n\nTrue/False value notion.\nOnly 2 possible values.\n\n### Theming\n\nThe style of the active checkbox is the browser's style.\n\n## Specs\n\n![](./mg-input-checkbox/doc/img/mg-input-checkbox-specs.png)\n",
+      "docs": "True/False value notion.\nOnly 2 possible values.",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -1025,15 +980,13 @@
       "dependencies": [
         "mg-tooltip",
         "mg-icon",
-        "mg-input-title",
-        "mg-character-left"
+        "mg-input-title"
       ],
       "dependencyGraph": {
         "mg-input-checkbox": [
           "mg-tooltip",
           "mg-icon",
-          "mg-input-title",
-          "mg-character-left"
+          "mg-input-title"
         ]
       }
     },
@@ -1041,8 +994,8 @@
       "filePath": "./src/components/molecules/inputs/mg-input-date/mg-input-date.tsx",
       "encapsulation": "shadow",
       "tag": "mg-input-date",
-      "readme": "This molecule refers to the [PDA9-65](https://jira.mgdis.fr/browse/PDA9-65).\n",
-      "docs": "This molecule refers to the [PDA9-65](https://jira.mgdis.fr/browse/PDA9-65).",
+      "readme": "## Behavior\n\nThe behavior is the native behavior of the browser.\n\n### Theming\n\nCalendar and trigger: The style is the browser's native style.\n",
+      "docs": "The behavior is the native behavior of the browser.",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -1338,15 +1291,13 @@
       "dependencies": [
         "mg-tooltip",
         "mg-icon",
-        "mg-input-title",
-        "mg-character-left"
+        "mg-input-title"
       ],
       "dependencyGraph": {
         "mg-input-date": [
           "mg-tooltip",
           "mg-icon",
-          "mg-input-title",
-          "mg-character-left"
+          "mg-input-title"
         ]
       }
     },
@@ -1354,11 +1305,28 @@
       "filePath": "./src/components/molecules/inputs/mg-input-numeric/mg-input-numeric.tsx",
       "encapsulation": "shadow",
       "tag": "mg-input-numeric",
-      "readme": "This molecule refers to the [PDA9-181](https://jira.mgdis.fr/browse/PDA9-181).\n\n## 🚨 Slot\n\nHorizontal spacing is not managed by the component, it must be defined in slot implementation.\n",
-      "docs": "This molecule refers to the [PDA9-181](https://jira.mgdis.fr/browse/PDA9-181).",
+      "readme": "## Usage\n\nAn amount field is a numeric field.  \nBy default it is limited to 16 characters (including comma).\n\nIt is not possible to enter characters other than numbers, \",\" or \".\".\n\nRounding is to two digits after the decimal point.  \nIt is not possible to enter more than two digits after the decimal point.\n\nIt is possible to specify a unit after the field for integers and decimals. For currencies, the symbol is positioned in the input field.\n\n## Specs\n\n### Positioning\n\nBy default, the value is right aligned.\n\n![](./mg-input-numeric/doc/img/mg-input-numeric-positioning-default.png)\n\nYou can change the CSS variable `--mg-inputs-text-align` to left align.\n\n![](./mg-input-numeric/doc/img/mg-input-numeric-positioning-custom.png)\n\n## Slot\n\nThe spacing between the field and the slot content is not managed by the component, it must be defined in slot implementation.\n\n### Unit positioning\n\n![](./mg-input-numeric/doc/img/mg-input-numeric-unit.png)\n\nUnit term must be placed into the field slot using a \"space\" character before the unit term.\n",
+      "docs": "An amount field is a numeric field.  \nBy default it is limited to 16 characters (including comma).\n\nIt is not possible to enter characters other than numbers, \",\" or \".\".\n\nRounding is to two digits after the decimal point.  \nIt is not possible to enter more than two digits after the decimal point.\n\nIt is possible to specify a unit after the field for integers and decimals. For currencies, the symbol is positioned in the input field.",
       "docsTags": [],
       "usage": {},
       "props": [
+        {
+          "name": "currency",
+          "type": "string",
+          "mutable": false,
+          "attr": "currency",
+          "reflectToAttr": false,
+          "docs": "Define currency",
+          "docsTags": [],
+          "default": "'USD'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
         {
           "name": "decimalLength",
           "type": "number",
@@ -1525,6 +1493,35 @@
           "required": false
         },
         {
+          "name": "mgWidth",
+          "type": "\"full\" | 16 | 2 | 4",
+          "mutable": false,
+          "attr": "mg-width",
+          "reflectToAttr": false,
+          "docs": "Define input width",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "full",
+              "type": "string"
+            },
+            {
+              "value": "16",
+              "type": "number"
+            },
+            {
+              "value": "2",
+              "type": "number"
+            },
+            {
+              "value": "4",
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "min",
           "type": "number",
           "mutable": false,
@@ -1671,35 +1668,6 @@
           ],
           "optional": false,
           "required": false
-        },
-        {
-          "name": "width",
-          "type": "\"full\" | 16 | 2 | 4",
-          "mutable": false,
-          "attr": "width",
-          "reflectToAttr": false,
-          "docs": "Define input width",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "full",
-              "type": "string"
-            },
-            {
-              "value": "16",
-              "type": "number"
-            },
-            {
-              "value": "2",
-              "type": "number"
-            },
-            {
-              "value": "4",
-              "type": "number"
-            }
-          ],
-          "optional": false,
-          "required": false
         }
       ],
       "methods": [
@@ -1747,15 +1715,13 @@
       "dependencies": [
         "mg-tooltip",
         "mg-icon",
-        "mg-input-title",
-        "mg-character-left"
+        "mg-input-title"
       ],
       "dependencyGraph": {
         "mg-input-numeric": [
           "mg-tooltip",
           "mg-icon",
-          "mg-input-title",
-          "mg-character-left"
+          "mg-input-title"
         ]
       }
     },
@@ -1763,8 +1729,8 @@
       "filePath": "./src/components/molecules/inputs/mg-input-password/mg-input-password.tsx",
       "encapsulation": "shadow",
       "tag": "mg-input-password",
-      "readme": "This molecule refers to the [PDA9-769](https://jira.mgdis.fr/browse/PDA9-769)\n",
-      "docs": "This molecule refers to the [PDA9-769](https://jira.mgdis.fr/browse/PDA9-769)",
+      "readme": "## Design\n\nThe standard display of \"bullets\" instead of characters is the standard one (depending on the rendering of the used browser).\n",
+      "docs": "The standard display of \"bullets\" instead of characters is the standard one (depending on the rendering of the used browser).",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -1884,6 +1850,36 @@
           "required": false
         },
         {
+          "name": "mgWidth",
+          "type": "\"full\" | 16 | 2 | 4",
+          "mutable": false,
+          "attr": "mg-width",
+          "reflectToAttr": false,
+          "docs": "Define input width",
+          "docsTags": [],
+          "default": "'full'",
+          "values": [
+            {
+              "value": "full",
+              "type": "string"
+            },
+            {
+              "value": "16",
+              "type": "number"
+            },
+            {
+              "value": "2",
+              "type": "number"
+            },
+            {
+              "value": "4",
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "name",
           "type": "string",
           "mutable": false,
@@ -1997,36 +1993,6 @@
           ],
           "optional": false,
           "required": false
-        },
-        {
-          "name": "width",
-          "type": "\"full\" | 16 | 2 | 4",
-          "mutable": false,
-          "attr": "width",
-          "reflectToAttr": false,
-          "docs": "Define input width",
-          "docsTags": [],
-          "default": "'full'",
-          "values": [
-            {
-              "value": "full",
-              "type": "string"
-            },
-            {
-              "value": "16",
-              "type": "number"
-            },
-            {
-              "value": "2",
-              "type": "number"
-            },
-            {
-              "value": "4",
-              "type": "number"
-            }
-          ],
-          "optional": false,
-          "required": false
         }
       ],
       "methods": [
@@ -2074,15 +2040,13 @@
       "dependencies": [
         "mg-tooltip",
         "mg-icon",
-        "mg-input-title",
-        "mg-character-left"
+        "mg-input-title"
       ],
       "dependencyGraph": {
         "mg-input-password": [
           "mg-tooltip",
           "mg-icon",
-          "mg-input-title",
-          "mg-character-left"
+          "mg-input-title"
         ]
       }
     },
@@ -2090,8 +2054,8 @@
       "filePath": "./src/components/molecules/inputs/mg-input-radio/mg-input-radio.tsx",
       "encapsulation": "shadow",
       "tag": "mg-input-radio",
-      "readme": "This molecule refers to the [PDA9-745](https://jira.mgdis.fr/browse/PDA9-745)\n",
-      "docs": "This molecule refers to the [PDA9-745](https://jira.mgdis.fr/browse/PDA9-745)",
+      "readme": "## Usage\n\n- Always used in a group with minimum 2 options\n- Only one selected option is possible from all the options in the group\n- The label option is clickable and selects the option\n- The group can be initialized without any default value\n\n### Theming\n\nThe style of the active radio button is that of the browser.\n\n## Specs\n\n![](./mg-input-radio/doc/img/mg-input-radio-specs.png)\n",
+      "docs": "- Always used in a group with minimum 2 options\n- Only one selected option is possible from all the options in the group\n- The label option is clickable and selects the option\n- The group can be initialized without any default value",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -2391,15 +2355,13 @@
       "dependencies": [
         "mg-tooltip",
         "mg-icon",
-        "mg-input-title",
-        "mg-character-left"
+        "mg-input-title"
       ],
       "dependencyGraph": {
         "mg-input-radio": [
           "mg-tooltip",
           "mg-icon",
-          "mg-input-title",
-          "mg-character-left"
+          "mg-input-title"
         ]
       }
     },
@@ -2407,8 +2369,8 @@
       "filePath": "./src/components/molecules/inputs/mg-input-select/mg-input-select.tsx",
       "encapsulation": "shadow",
       "tag": "mg-input-select",
-      "readme": "This molecule refers to the [PDA9-72](https://jira.mgdis.fr/browse/PDA9-72).\n",
-      "docs": "This molecule refers to the [PDA9-72](https://jira.mgdis.fr/browse/PDA9-72).",
+      "readme": "## Design\n\nThe placeholder of the list is \"Select a value\".\n\nThe behavior, style and position of the chevron on the right of the field are those of the native browser.\nThe spacing between the text and the chevron is at least 10px.\n",
+      "docs": "The placeholder of the list is \"Select a value\".\n\nThe behavior, style and position of the chevron on the right of the field are those of the native browser.\nThe spacing between the text and the chevron is at least 10px.",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -2546,6 +2508,35 @@
           "required": false
         },
         {
+          "name": "mgWidth",
+          "type": "\"full\" | 16 | 2 | 4",
+          "mutable": false,
+          "attr": "mg-width",
+          "reflectToAttr": false,
+          "docs": "Define input width",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "full",
+              "type": "string"
+            },
+            {
+              "value": "16",
+              "type": "number"
+            },
+            {
+              "value": "2",
+              "type": "number"
+            },
+            {
+              "value": "4",
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "name",
           "type": "string",
           "mutable": false,
@@ -2565,12 +2556,11 @@
         {
           "name": "placeholder",
           "type": "string",
-          "mutable": false,
+          "mutable": true,
           "attr": "placeholder",
           "reflectToAttr": false,
           "docs": "Input placeholder.\nIt should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text.",
           "docsTags": [],
-          "default": "messages.input.select.placeholder",
           "values": [
             {
               "type": "string"
@@ -2694,35 +2684,6 @@
           ],
           "optional": false,
           "required": false
-        },
-        {
-          "name": "width",
-          "type": "\"full\" | 16 | 2 | 4",
-          "mutable": false,
-          "attr": "width",
-          "reflectToAttr": false,
-          "docs": "Define input width",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "full",
-              "type": "string"
-            },
-            {
-              "value": "16",
-              "type": "number"
-            },
-            {
-              "value": "2",
-              "type": "number"
-            },
-            {
-              "value": "4",
-              "type": "number"
-            }
-          ],
-          "optional": false,
-          "required": false
         }
       ],
       "methods": [
@@ -2772,15 +2733,13 @@
       "dependencies": [
         "mg-tooltip",
         "mg-icon",
-        "mg-input-title",
-        "mg-character-left"
+        "mg-input-title"
       ],
       "dependencyGraph": {
         "mg-input-select": [
           "mg-tooltip",
           "mg-icon",
-          "mg-input-title",
-          "mg-character-left"
+          "mg-input-title"
         ],
         "mg-pagination": [
           "mg-input-select"
@@ -2791,27 +2750,11 @@
       "filePath": "./src/components/molecules/inputs/mg-input-text/mg-input-text.tsx",
       "encapsulation": "shadow",
       "tag": "mg-input-text",
-      "readme": "This molecule refers to the [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64).\n\n## Use as search input\n\nDue to [accessibility recommendation](https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input/search#les_champs_de_recherche_et_l%E2%80%99accessibilit%C3%A9), an `<input type=\"search\" />` must be used within a `<form role=\"search\" />` we recommend to use mg-input-text as in dedicated story.\n\n## 🚨 Slot\n\nHorizontal spacing is not managed by the component, it must be defined in slot implementation.\n",
-      "docs": "This molecule refers to the [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64).",
+      "readme": "## Design\n\n### Indication of the number of characters left\n\n- when the focus is on the input field, the `mg-character-left` component is displayed\n- when the focus is no longer on the input field, the message disappears\n- by default limited to 400 alpha numeric characters\n\n#### Font\n\n![](./mg-input-text/doc/img/mg-input-text-fonts.png)\n\nOpen Sans, regular, 11px  \nColor: [@color-dark](?path=/docs/style-colors--page), opacity : 0.6\n\n#### Spacing\n\n![](./mg-input-text/doc/img/mg-input-text-spacing.png)\n\n#### Position\n\n![](./mg-input-text/doc/img/mg-input-text-position.png)\n\nPosition : center\n\n## Use as search input\n\nDue to [accessibility recommendation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input/search#search_form_labels_and_accessibility), an `<input type=\"search\" />` must be used within a `<form role=\"search\" />` we recommend using mg-input-text as in dedicated story.\n\nThe \"search\" role can only be used when the input field is the main website search field. \n\n## Slot\n\nThe spacing between the field and the slot content is not managed by the component, it must be defined in slot implementation.\n\n",
+      "docs": "",
       "docsTags": [],
       "usage": {},
       "props": [
-        {
-          "name": "characterLeftTemplate",
-          "type": "string",
-          "mutable": false,
-          "attr": "character-left-template",
-          "reflectToAttr": false,
-          "docs": "Template to use for characters left sentence",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
         {
           "name": "disabled",
           "type": "boolean",
@@ -2971,6 +2914,36 @@
           "default": "400",
           "values": [
             {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "mgWidth",
+          "type": "\"full\" | 16 | 2 | 4",
+          "mutable": false,
+          "attr": "mg-width",
+          "reflectToAttr": false,
+          "docs": "Define input width",
+          "docsTags": [],
+          "default": "'full'",
+          "values": [
+            {
+              "value": "full",
+              "type": "string"
+            },
+            {
+              "value": "16",
+              "type": "number"
+            },
+            {
+              "value": "2",
+              "type": "number"
+            },
+            {
+              "value": "4",
               "type": "number"
             }
           ],
@@ -3145,36 +3118,6 @@
           ],
           "optional": false,
           "required": false
-        },
-        {
-          "name": "width",
-          "type": "\"full\" | 16 | 2 | 4",
-          "mutable": false,
-          "attr": "width",
-          "reflectToAttr": false,
-          "docs": "Define input width",
-          "docsTags": [],
-          "default": "'full'",
-          "values": [
-            {
-              "value": "full",
-              "type": "string"
-            },
-            {
-              "value": "16",
-              "type": "number"
-            },
-            {
-              "value": "2",
-              "type": "number"
-            },
-            {
-              "value": "4",
-              "type": "number"
-            }
-          ],
-          "optional": false,
-          "required": false
         }
       ],
       "methods": [
@@ -3238,16 +3181,16 @@
       ],
       "dependencies": [
         "mg-icon",
+        "mg-character-left",
         "mg-tooltip",
-        "mg-input-title",
-        "mg-character-left"
+        "mg-input-title"
       ],
       "dependencyGraph": {
         "mg-input-text": [
           "mg-icon",
+          "mg-character-left",
           "mg-tooltip",
-          "mg-input-title",
-          "mg-character-left"
+          "mg-input-title"
         ],
         "mg-panel": [
           "mg-input-text"
@@ -3258,27 +3201,11 @@
       "filePath": "./src/components/molecules/inputs/mg-input-textarea/mg-input-textarea.tsx",
       "encapsulation": "shadow",
       "tag": "mg-input-textarea",
-      "readme": "This molecule refers to the [PDA9-683](https://jira.mgdis.fr/browse/PDA9-683).\n",
-      "docs": "This molecule refers to the [PDA9-683](https://jira.mgdis.fr/browse/PDA9-683).",
+      "readme": "## Design\n\n### Indication of the number of characters left\n\n- when the focus is on the input field, the `mg-character-left` component is displayed\n- when the focus is no longer on the input field, the message disappears\n- by default limited to 4000 alpha numeric characters\n\n#### Font\n\nOpen Sans, regular, 11px  \nColor: [@color-dark](?path=/docs/style-colors--page), opacity : 0.6\n\n#### Spacing\n\n![](./mg-input-textarea/doc/img/mg-input-textarea-spacing.png)\n\n### Dimensions\n\n- the height of the component is by default 3 lines of text (this value is configurable)\n- by default, the input field cannot be resized\n",
+      "docs": "",
       "docsTags": [],
       "usage": {},
       "props": [
-        {
-          "name": "characterLeftTemplate",
-          "type": "string",
-          "mutable": false,
-          "attr": "character-left-template",
-          "reflectToAttr": false,
-          "docs": "Template to use for characters left sentence",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
         {
           "name": "disabled",
           "type": "boolean",
@@ -3429,6 +3356,36 @@
           "required": false
         },
         {
+          "name": "mgWidth",
+          "type": "\"full\" | 16 | 2 | 4",
+          "mutable": false,
+          "attr": "mg-width",
+          "reflectToAttr": false,
+          "docs": "Define input width",
+          "docsTags": [],
+          "default": "'full'",
+          "values": [
+            {
+              "value": "full",
+              "type": "string"
+            },
+            {
+              "value": "16",
+              "type": "number"
+            },
+            {
+              "value": "2",
+              "type": "number"
+            },
+            {
+              "value": "4",
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "name",
           "type": "string",
           "mutable": false,
@@ -3528,6 +3485,36 @@
           "required": false
         },
         {
+          "name": "resizable",
+          "type": "\"both\" | \"horizontal\" | \"none\" | \"vertical\"",
+          "mutable": false,
+          "attr": "resizable",
+          "reflectToAttr": false,
+          "docs": "Define if input is resizable",
+          "docsTags": [],
+          "default": "'none'",
+          "values": [
+            {
+              "value": "both",
+              "type": "string"
+            },
+            {
+              "value": "horizontal",
+              "type": "string"
+            },
+            {
+              "value": "none",
+              "type": "string"
+            },
+            {
+              "value": "vertical",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "rows",
           "type": "number",
           "mutable": false,
@@ -3591,36 +3578,6 @@
           ],
           "optional": false,
           "required": false
-        },
-        {
-          "name": "width",
-          "type": "\"full\" | 16 | 2 | 4",
-          "mutable": false,
-          "attr": "width",
-          "reflectToAttr": false,
-          "docs": "Define input width",
-          "docsTags": [],
-          "default": "'full'",
-          "values": [
-            {
-              "value": "full",
-              "type": "string"
-            },
-            {
-              "value": "16",
-              "type": "number"
-            },
-            {
-              "value": "2",
-              "type": "number"
-            },
-            {
-              "value": "4",
-              "type": "number"
-            }
-          ],
-          "optional": false,
-          "required": false
         }
       ],
       "methods": [
@@ -3666,17 +3623,17 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
+        "mg-character-left",
         "mg-tooltip",
         "mg-icon",
-        "mg-input-title",
-        "mg-character-left"
+        "mg-input-title"
       ],
       "dependencyGraph": {
         "mg-input-textarea": [
+          "mg-character-left",
           "mg-tooltip",
           "mg-icon",
-          "mg-input-title",
-          "mg-character-left"
+          "mg-input-title"
         ]
       }
     },
@@ -3684,8 +3641,8 @@
       "filePath": "./src/components/atoms/mg-input-title/mg-input-title.tsx",
       "encapsulation": "scoped",
       "tag": "mg-input-title",
-      "readme": "This atom refers to [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64), [PDA9-723](https://jira.mgdis.fr/browse/PDA9-723).\n",
-      "docs": "This atom refers to [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64), [PDA9-723](https://jira.mgdis.fr/browse/PDA9-723).",
+      "readme": "## Design\n\n### Label\n\nThe label can be on more than one line.\n\n### Styles\n\n![](./mg-input-title/doc/img/mg-input-title.png)\n",
+      "docs": "",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -3791,8 +3748,8 @@
       "filePath": "./src/components/molecules/inputs/mg-input-toggle/mg-input-toggle.tsx",
       "encapsulation": "shadow",
       "tag": "mg-input-toggle",
-      "readme": "This molecule refers to the [PDA9-770](https://jira.mgdis.fr/browse/PDA9-770).\n",
-      "docs": "This molecule refers to the [PDA9-770](https://jira.mgdis.fr/browse/PDA9-770).",
+      "readme": "## Usage\n\nClicking anywhere on the entire component area toggles the selected value.\n\nThe first value is always selected by default.\n\nWhen the \"on/off\" property is used, the first value is always the disabled value and the style is adjusted.\n\nThe values must be transcribed by texts or icons.\n\n### Types\n\n![](./mg-input-toggle/doc/img/mg-input-toggle-use.png)\n\n### Specs\n\n![](./mg-input-toggle/doc/img/mg-input-toggle-specs.png)\n\n### Readonly\n\n![](./mg-input-toggle/doc/img/mg-input-toggle-readonly.png)\n",
+      "docs": "Clicking anywhere on the entire component area toggles the selected value.\n\nThe first value is always selected by default.\n\nWhen the \"on/off\" property is used, the first value is always the disabled value and the style is adjusted.\n\nThe values must be transcribed by texts or icons.",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -4047,15 +4004,13 @@
       "dependencies": [
         "mg-tooltip",
         "mg-icon",
-        "mg-input-title",
-        "mg-character-left"
+        "mg-input-title"
       ],
       "dependencyGraph": {
         "mg-input-toggle": [
           "mg-tooltip",
           "mg-icon",
-          "mg-input-title",
-          "mg-character-left"
+          "mg-input-title"
         ]
       }
     },
@@ -4063,8 +4018,8 @@
       "filePath": "./src/components/molecules/mg-message/mg-message.tsx",
       "encapsulation": "shadow",
       "tag": "mg-message",
-      "readme": "This molecule refers to the [PDA9-140](https://jira.mgdis.fr/browse/PDA9-140).\n",
-      "docs": "This molecule refers to the [PDA9-140](https://jira.mgdis.fr/browse/PDA9-140).",
+      "readme": "## Usage\n\n### Types\n\nThe element can be of four different types depending on the message to be indicated:\n\n- validation (green)\n- information (blue)\n- warning (orange)\n- error (red)\n\nWhen a trigger (button...) is set up, it can trigger the display of a message. By default, the execution of the trigger erases the previous messages in the screen of the same type.\n\n## Specs\n\n![](./mg-message/doc/img/mg-message-specs.png)\n",
+      "docs": "",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -4197,8 +4152,8 @@
       "filePath": "./src/components/molecules/mg-modal/mg-modal.tsx",
       "encapsulation": "shadow",
       "tag": "mg-modal",
-      "readme": "This molecule refers to the [PDA9-63](https://jira.mgdis.fr/browse/PDA9-63).\n",
-      "docs": "This molecule refers to the [PDA9-63](https://jira.mgdis.fr/browse/PDA9-63).",
+      "readme": "## Anatomy\n\nA modal has :\n\n- a closing cross at the top right corner\n- a title\n- a body composed of fields or a message\n- a validation button\n- a cancel button\n\n## Behavior\n\nWhen clicking on the cross, the cancel button or the `<Escape>` key is pressed the modal closes and no processing is done.\n\nWhen the validation button is clicked, processing is performed and the modal closes.\n\nAs long as the user does not press one of these three buttons, the modal does not close.\n\nThe modal allows focusing the attention on what it is asking: a confirmation or a cancellation.  \nIn this sense the rest of the screen should not be accessible:\n\n- it is hidden by a backdrop\n- clicking on the backdrop does not close the modal\n\nThe title of the modal has a written name.\nEx : Add value\n\nThe wording of the validation button is the infinitive verb of the current action.  \nAvoid the verb \"Validate\" if a more explicit one is possible.  \nEx : \"Add\" for adding a value, \"Delete\" to delete a value, \"Modify\" to modify a value.\n\n### Icon or not icon on the action buttons ?\n\nIn the case of a targeted action, the icon can help to understand or even reassure > check icon that validates the action.\n\nIn the case of a confirmation/cancellation choice: not necessary or even superfluous > the term \"Save/Cancel\" is enough.\n\nEx: if I put a check in front of the term \"Delete\" which is the validation button of a deletion, the check refers to positive while the action of deletion is negative, and the Cancel button also, so not to add to the confusion, do not put an icon...\n\n## Specs\n\n### Shapes\n\n![](./mg-modal/doc/img/mg-modal-shapes.png)\n\n### Fonts\n\n![](./mg-modal/doc/img/mg-modal-fonts.png)\n\n### Spacing\n\n#### Spacing between edges and content\n\n![](./mg-modal/doc/img/mg-modal-spaces-borders.png)\n\n#### Spacing between title, text and buttons\n\n![](./mg-modal/doc/img/mg-modal-spaces-slot.png)\n![](./mg-modal/doc/img/mg-modal-spaces-slot-title.png)\n\n#### Spacing between the title and the cross button\n\n![](./mg-modal/doc/img/mg-modal-spaces-title.png)\n![](./mg-modal/doc/img/mg-modal-spaces-title-multiline.png)\n\n### Alignments\n\n![](./mg-modal/doc/img/mg-modal-alignments.png)\n\n### Sizes\n\n![](./mg-modal/doc/img/mg-modal-sizes.png)\n\n### Colors\n\n![](./mg-modal/doc/img/mg-modal-colors.png)\n\n### Backdrop\n\nColor: [@color-light](?path=/docs/style-colors--page) with an opacity set to 85%.\n",
+      "docs": "A modal has :\n\n- a closing cross at the top right corner\n- a title\n- a body composed of fields or a message\n- a validation button\n- a cancel button",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -4321,8 +4276,8 @@
       "filePath": "./src/components/molecules/mg-pagination/mg-pagination.tsx",
       "encapsulation": "shadow",
       "tag": "mg-pagination",
-      "readme": "This molecule refers to the [PDA9-787](https://jira.mgdis.fr/browse/PDA9-787).\n",
-      "docs": "This molecule refers to the [PDA9-787](https://jira.mgdis.fr/browse/PDA9-787).",
+      "readme": "## Anatomy\n\n![](./mg-pagination/doc/img/mg-pagination-nav-anatomy.png)\n\n## Specs\n\n![](./mg-pagination/doc/img/mg-pagination-nav-specs.png)\n",
+      "docs": "![](./mg-pagination/doc/img/mg-pagination-nav-anatomy.png)",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -4363,12 +4318,11 @@
         {
           "name": "label",
           "type": "string",
-          "mutable": false,
+          "mutable": true,
           "attr": "label",
           "reflectToAttr": false,
           "docs": "Panignation label. Is a short description.\nCustomize default value can be usefull to improve accessibility",
           "docsTags": [],
-          "default": "'pagination'",
           "values": [
             {
               "type": "string"
@@ -4429,8 +4383,7 @@
         "mg-input-select": [
           "mg-tooltip",
           "mg-icon",
-          "mg-input-title",
-          "mg-character-left"
+          "mg-input-title"
         ]
       }
     },
@@ -4438,8 +4391,8 @@
       "filePath": "./src/components/molecules/mg-panel/mg-panel.tsx",
       "encapsulation": "shadow",
       "tag": "mg-panel",
-      "readme": "This molecule refers to the [PDA9-484](https://jira.mgdis.fr/browse/PDA9-484).\n",
-      "docs": "This molecule refers to the [PDA9-484](https://jira.mgdis.fr/browse/PDA9-484).",
+      "readme": "## Behavior\n\nThe left zone of the header displays the item label, this zone is clickable and allows the user to unfold/fold the panel.\nIf no content is available, the panel cannot be unfolded.\nWhen the panel is unfolded, the icon is vertically inverted.\n\nThe right area of the header can accommodate any component.\n\n## Anatomy\n\n![](./mg-panel/doc/img/mg-panel-anatomy.png)\n\n## Specs\n\n### Sizing\n\n![](./mg-panel/doc/img/mg-panel-sizing.png)\n\n### Spacing\n\n![](./mg-panel/doc/img/mg-panel-spacing.png)\n\n### Alignments\n\n![](./mg-panel/doc/img/mg-panel-align.png)\n\n### Styles\n\n![](./mg-panel/doc/img/mg-panel-style.png)\n",
+      "docs": "The left zone of the header displays the item label, this zone is clickable and allows the user to unfold/fold the panel.\nIf no content is available, the panel cannot be unfolded.\nWhen the panel is unfolded, the icon is vertically inverted.\n\nThe right area of the header can accommodate any component.",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -4602,9 +4555,9 @@
         ],
         "mg-input-text": [
           "mg-icon",
+          "mg-character-left",
           "mg-tooltip",
-          "mg-input-title",
-          "mg-character-left"
+          "mg-input-title"
         ]
       }
     },
@@ -4612,8 +4565,8 @@
       "filePath": "./src/components/molecules/mg-popover/mg-popover.tsx",
       "encapsulation": "scoped",
       "tag": "mg-popover",
-      "readme": "This molecule refers to the [PDA9-504](https://jira.mgdis.fr/browse/PDA9-504).\n",
-      "docs": "This molecule refers to the [PDA9-504](https://jira.mgdis.fr/browse/PDA9-504).",
+      "readme": "## Usage\n\nA popover is more enhanced than a tooltip but less blocking than a modal.\n\n## Behavior\n\nThe window is displayed when clicking on its trigger.\n\nThe window is displayed next to its trigger, usually below it. A triangle (in css) makes the link between the trigger and the window.\n\nThe window closes:\n\n- when clicking on its trigger\n- clicking outside the window\n- when the ESC key is pressed\n- when clicking on the close button at the top right corner\n\nThe size of the window is determined by the content (set a maximum size to avoid problems).\n\nThe title and the close button are optional.\n\n## Specs\n\n### Fonts\n\n![](./mg-popover/doc/img/mg-popover-fonts.png)\n\n### Spacing\n\n![](./mg-popover/doc/img/mg-popover-spacing.png)\n\n### Sizing\n\n![](./mg-popover/doc/img/mg-popover-sizing.png)\n\n### Alignments\n\n![](./mg-popover/doc/img/mg-popover-align.png)\n\n### Positioning\n\n#### Item\n\n![](./mg-popover/doc/img/mg-popover-position.png)\n\n#### Screen\n\n![](./mg-popover/doc/img/mg-popover-position-screen.png)\n\n### Style\n\n![](./mg-popover/doc/img/mg-popover-style.png)\n",
+      "docs": "A popover is more enhanced than a tooltip but less blocking than a modal.",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -4783,10 +4736,10 @@
     },
     {
       "filePath": "./src/components/molecules/mg-tabs/mg-tabs.tsx",
-      "encapsulation": "scoped",
+      "encapsulation": "none",
       "tag": "mg-tabs",
-      "readme": "This molecule refers to the [PDA9-604](https://jira.mgdis.fr/browse/PDA9-604).\n",
-      "docs": "This molecule refers to the [PDA9-604](https://jira.mgdis.fr/browse/PDA9-604).",
+      "readme": "## Anatomy\n\n![](./mg-tabs/doc/img/mg-tabs-anatomy.png)\n\n## Specs\n\n### Spacing\n\n- Standard : @base = 10px\n- Large : @base = 18px\n\n![](./mg-tabs/doc/img/mg-tabs-spacing.png)\n\n- if only text, no extra spacing,\n- if no badge : no extra spacing on the right\n- if only icon : no extra spacing on the right\n\n### Sizing\n\n![](./mg-tabs/doc/img/mg-tabs-sizing.png)\n\n### States\n\n![](./mg-tabs/doc/img/mg-tabs-states.png)\n\n### Responsive\n\n#### Line breaks (current management)\n\n![](./mg-tabs/doc/img/mg-tabs-responsive.png)\n",
+      "docs": "![](./mg-tabs/doc/img/mg-tabs-anatomy.png)",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -4908,8 +4861,8 @@
       "filePath": "./src/components/atoms/mg-tag/mg-tag.tsx",
       "encapsulation": "shadow",
       "tag": "mg-tag",
-      "readme": "This atom refers to the [PDA9-637](https://jira.mgdis.fr/browse/PDA9-637).\n",
-      "docs": "This atom refers to the [PDA9-637](https://jira.mgdis.fr/browse/PDA9-637).",
+      "readme": "## Specs\n\n![](./mg-tag/doc/img/mg-tag-specs.png)\n\n## Theming\n\n![](./mg-tag/doc/img/mg-tag-theming.png)\n",
+      "docs": "![](./mg-tag/doc/img/mg-tag-specs.png)",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -4961,8 +4914,8 @@
       "filePath": "./src/components/atoms/mg-tooltip/mg-tooltip.tsx",
       "encapsulation": "scoped",
       "tag": "mg-tooltip",
-      "readme": "This atom refers to the [PDA9-313](https://jira.mgdis.fr/browse/PDA9-313).\n",
-      "docs": "This atom refers to the [PDA9-313](https://jira.mgdis.fr/browse/PDA9-313).",
+      "readme": "## Usage\n\nTooltips are messages that provide additional information about an element.\nThey are presented as a message that appears when an element is hovered over or when the keyboard is focused.\nTooltips are called \"custom\" when they are not built on the basis of the standard HTML code provided for these elements by the specification: the title attribute.\nOur \"custom tooltip\" component is called \"tooltip\" here.\n\n## Behavior\n\nThe tooltip must be displayed when the element that allows its display :\n\n- Is hovered over by the mouse.\n- Takes the keyboard focus.\n\nThe tooltip must be hidden when the element that allows its display :\n\n- Is no longer hovered over by the mouse.\n- Loses the keyboard focus.\n- Pressing the Escape key must hide the tooltip.\n\nThe tooltip must remain displayed when its content is hovered over by the mouse.\n\nThe tooltip can be placed above, to the right, below or to the left of the element it describes.\n\nBy default, the message is displayed at the bottom of the element.\n\nIf the element is located at the edge of the screen, the tooltip is shifted to be always visible.\n\n## Specs\n\n### Shapes\n\n![](./mg-tooltip/doc/img/mg-tooltip-shape.png)\n\n### Fonts\n\n![](./mg-tooltip/doc/img/mg-tooltip-font.png)\n\n### Spacing\n\n![](./mg-tooltip/doc/img/mg-tooltip-spaces.png)\n\n### Alignments\n\n![](./mg-tooltip/doc/img/mg-tooltip-alignments-text.png)\n\n### Positioning\n\nTriangle is always centered on the call component\n\n![](./mg-tooltip/doc/img/mg-tooltip-positioning.png)\n![](./mg-tooltip/doc/img/mg-tooltip-positioning2.png)\n\n### Colors\n\n![](./mg-tooltip/doc/img/mg-tooltip-colors.png)\n\n### Sizes\n\n![](./mg-tooltip/doc/img/mg-tooltip-sizing.png)\n",
+      "docs": "Tooltips are messages that provide additional information about an element.\nThey are presented as a message that appears when an element is hovered over or when the keyboard is focused.\nTooltips are called \"custom\" when they are not built on the basis of the standard HTML code provided for these elements by the specification: the title attribute.\nOur \"custom tooltip\" component is called \"tooltip\" here.",
       "docsTags": [],
       "usage": {},
       "props": [

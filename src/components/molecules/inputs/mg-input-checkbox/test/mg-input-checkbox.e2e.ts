@@ -104,27 +104,32 @@ describe('mg-checkbox', () => {
     });
   });
 
-  test('Should render error when leaving an empty required input', async () => {
-    const page = await createPage(`<mg-input-checkbox label="legend" help-text="HelpText Message" required></mg-input-checkbox>
+  describe.each([
+    `<mg-input-checkbox label="legend" help-text="HelpText Message" required></mg-input-checkbox>`,
+    `<mg-input-checkbox label="legend" help-text="Message d'aide" lang="fr" required></mg-input-checkbox>`,
+  ])('%s', html => {
+    test('Should render error when leaving an empty required input', async () => {
+      const page = await createPage(`${html}
       <script>
       const mgInputCheckbox = document.querySelector('mg-input-checkbox');
       mgInputCheckbox.value = [{title: 'Batman', value: false}, {title: 'Robin', value: false}, {title: 'Joker', value: false}, {title: 'Bane', value: false}];
       </script>`);
 
-    const element = await page.find('mg-input-checkbox');
+      const element = await page.find('mg-input-checkbox');
 
-    expect(element).toHaveClass('hydrated');
+      expect(element).toHaveClass('hydrated');
 
-    await page.keyboard.down('Tab');
-    await page.keyboard.down('Tab');
-    await page.keyboard.down('Tab');
-    await page.keyboard.down('Tab');
-    await page.keyboard.down('Tab');
+      await page.keyboard.down('Tab');
+      await page.keyboard.down('Tab');
+      await page.keyboard.down('Tab');
+      await page.keyboard.down('Tab');
+      await page.keyboard.down('Tab');
 
-    await page.waitForChanges();
+      await page.waitForChanges();
 
-    const screenshot = await page.screenshot();
-    expect(screenshot).toMatchImageSnapshot();
+      const screenshot = await page.screenshot();
+      expect(screenshot).toMatchImageSnapshot();
+    });
   });
 
   describe.each([
