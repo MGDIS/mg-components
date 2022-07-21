@@ -126,9 +126,7 @@ export class MgTabs {
    * @param {Status} status status to valide
    * @returns {boolean} status comparaison
    */
-  private tabHasGivenStatus(tab: TabItem, status: Status): boolean {
-    return tab.status === status;
-  }
+  private tabHasGivenStatus = (tab: TabItem, status: Status): boolean => tab.status === status;
 
   /**
    * Method to get element id from index
