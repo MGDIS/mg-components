@@ -2,6 +2,7 @@ import { Component, Element, Host, h, Prop, Watch } from '@stencil/core';
 import { createID } from '../../../utils/components.utils';
 import { Instance as PopperInstance, createPopper } from '@popperjs/core';
 import { initLocales } from '../../../locales';
+import { Placement } from './mg-popover.conf';
 
 @Component({
   tag: 'mg-popover',
@@ -38,22 +39,7 @@ export class MgPopover {
   /**
    * Popover placement
    */
-  @Prop() placement:
-    | 'auto'
-    | 'auto-start'
-    | 'auto-end'
-    | 'top'
-    | 'top-start'
-    | 'top-end'
-    | 'bottom'
-    | 'bottom-start'
-    | 'bottom-end'
-    | 'right'
-    | 'right-start'
-    | 'right-end'
-    | 'left'
-    | 'left-start'
-    | 'left-end' = 'bottom';
+  @Prop() placement: Placement = 'bottom';
 
   /**
    * Define if popover has a cross button

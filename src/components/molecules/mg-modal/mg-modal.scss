@@ -45,11 +45,6 @@
     font-weight: 600;
   }
 
-  &__content {
-    overflow-y: auto;
-    font-size: 1.2rem;
-  }
-
   &__close-button {
     float: right;
     height: var(--mg-modal-title-font-size);
@@ -59,6 +54,7 @@
 
   .mg-modal__content ::slotted(*) {
     font-size: var(--mg-modal-content-font-size);
+    overflow-y: auto;
   }
 
   &.mg-modal--hide {

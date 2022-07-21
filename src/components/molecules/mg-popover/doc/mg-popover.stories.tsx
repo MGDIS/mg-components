@@ -1,4 +1,5 @@
 import { h } from '@stencil/core';
+import { placements } from '../mg-popover.conf';
 
 export default {
   component: 'mg-popover',
@@ -6,6 +7,15 @@ export default {
   parameters: {
     layout: 'centered',
     docs: { iframeHeight: 600 },
+  },
+  argTypes: {
+    placement: {
+      options: placements,
+      control: { type: 'select' },
+      table: {
+        defaultValue: { summary: placements[0] },
+      },
+    },
   },
 };
 
