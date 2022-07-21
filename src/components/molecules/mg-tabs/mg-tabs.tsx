@@ -135,9 +135,7 @@ export class MgTabs {
    * @param {number} index to generate id
    * @returns {string} generated element id
    */
-  private getElementId(element: string, index: number) {
-    return `${element}-${this.getTabIndex(index)}`;
-  }
+  private getElementId = (element: string, index: number): string => `${element}-${this.getTabIndex(index)}`;
 
   /**
    * Method to get tab index
