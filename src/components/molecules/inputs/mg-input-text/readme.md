@@ -27,9 +27,12 @@ Position : center
 
 Due to [accessibility recommendation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input/search#search_form_labels_and_accessibility), an `<input type="search" />` must be used within a `<form role="search" />` we recommend using mg-input-text as in dedicated story.
 
-## 🚨 Slot
+The "search" role can only be used when the input field is the main website search field. 
 
-Horizontal spacing is not managed by the component, it must be defined in slot implementation.
+## Slot
+
+The spacing between the field and the slot content is not managed by the component, it must be defined in slot implementation.
+
 
 <!-- Auto Generated Below -->
 

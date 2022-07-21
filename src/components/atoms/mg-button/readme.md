@@ -15,6 +15,8 @@ A button that launches a potentially long process is disabled and displays a loa
 
 ![](./mg-button/doc/img/mg-button-placement.png)
 
+To manage the space between two buttons you can use the helper [.mg-group-elements](/?path=/docs/style-buttons--buttons)
+
 ## Theming
 
 ![](./mg-button/doc/img/mg-button-styles.png)

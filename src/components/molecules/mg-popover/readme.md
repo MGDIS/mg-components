@@ -23,7 +23,7 @@ The title and the close button are optional.
 
 ### Fonts
 
-![](./mg-popover/doc/img/font-popover.png)
+![](./mg-popover/doc/img/mg-popover-fonts.png)
 
 ### Spacing
 

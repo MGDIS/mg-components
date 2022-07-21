@@ -8,42 +8,33 @@ import { Meta } from '@storybook/addon-docs/blocks';
 
 ### Label
 
-- the label is located on the left of the input field
-- the text is to be right aligned
-- the label can be on one or more lines
-- the label can be positioned above the input field
-
-### Incorrect value entered
-
-- the field label is displayed in red
-- the frame of the input field is displayed in red
-- an alert message is displayed in red below the input field
-- if an informative "i" follows the field, it is displayed in red
+- The label is located on the left of the input field.
+- The text is to be right aligned.
+- The label can be on one or more lines.
+- The label can be positioned above the input field.
 
 ### Input help
 
-When the focus is on the input field, a message is displayed below.
 The message displayed indicates the format expected by the input field "example: email@provider.com" or "expected format: DD/MM/YYYY (ex: 13/04/2019)"
 
 ### Message order
 
 When the messages are displayed under the field the order is as follows:
 
-1. number of characters left
-2. input help
-3. error
+1. input help
+2. error
 
 ### Placeholder
 
-The placeholder should not be used as an input help.
+The placeholder should not be used as an input help.  
 ♿ RGAA: The placeholder is not considered a valid label under the RGAA so is not subject to a contrast ratio.
 
 ### Read only
 
-The value is no longer editable.
-The input field no longer has a border or background.
-The value is displayed in bold.
-If there is no value entered, nothing is displayed.
+- The value is no longer editable.
+- The input field no longer has a border or background.
+- The value is displayed in bold.
+- If there is no value entered, nothing is displayed.
 
 ### Required field
 
@@ -51,51 +42,22 @@ The asterisk is displayed regardless of the status of the field: input, read-onl
 
 ## Specs
 
-### Sizing
+![](./inputs/doc/img/mg-input-base.png)
 
-![](./inputs/doc/img/mg-input-base-sizing.png)
+### Placements
 
-### Spacing
+The "i" is positioned next to the input field or next to the label when the label is on top.
 
-![](./inputs/doc/img/mg-input-base-spacing.png)
+### Value positioning
 
-#### Placements
+By default, the value is left aligned, you can change the CSS variable `--mg-inputs-text-align` to right align.
 
-![](./inputs/doc/img/mg-input-base-alignments.png)
-The "i" will be positioned next to the label in a future version, for the moment it follows the input.
-
-#### Forms
-
-![](./inputs/doc/img/mg-input-base-shapes.png)
-
-#### Fonts
-
-![](./inputs/doc/img/mg-input-base-fonts.png)
-
-##### Messages
-
-![](./inputs/doc/img/mg-input-base-messages-fonts.png)
-
-#### Styles / states
-
-![](./inputs/doc/img/mg-input-base-styles.png)
-
-##### Messages
-
-![](./inputs/doc/img/mg-input-base-messages.png)
-
-##### Errors
-
-![](./inputs/doc/img/mg-input-base-errors.png)
+### Errors
 
 Input field border and error message text are in [@color-danger](?path=/docs/style-colors--page).  
 Error message background is a variant of [@color-danger](?path=/docs/style-colors--page) : #FEF6F6 or HSL (357,80%,98%).
 
 ## Behavior
-
-### Form
-
-![](./inputs/doc/img/mg-input-base-behavior.png)
 
 ### Errors
 

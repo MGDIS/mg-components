@@ -3,6 +3,7 @@ import { newSpecPage } from '@stencil/core/testing';
 import { MgTooltip } from '../mg-tooltip';
 import { MgButton } from '../../mg-button/mg-button';
 import { MgIcon } from '../../mg-icon/mg-icon';
+import { placements } from '../mg-tooltip.conf';
 
 // fix popper console.error in test
 // it is generated in @popperjs/core/dist/cjs/popper.js l.1859
@@ -33,6 +34,12 @@ describe('mg-tooltip', () => {
       expect(root).toMatchSnapshot();
     },
   );
+
+  test('Should render with element with given placement', async () => {
+    const args = { identifier: 'identifier', message: 'My tooltip message', placement: placements[0] };
+    const { root } = await getPage(args, <span>span</span>);
+    expect(root).toMatchSnapshot();
+  });
 
   describe.each([
     { eventIn: 'mouseenter', eventOut: 'mouseleave' },

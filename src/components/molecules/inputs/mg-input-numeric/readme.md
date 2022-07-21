@@ -1,30 +1,36 @@
 ## Usage
 
-An amount field is a numeric field. By default it is limited to 16 characters (including comma).
+An amount field is a numeric field.  
+By default it is limited to 16 characters (including comma).
 
 It is not possible to enter characters other than numbers, "," or ".".
 
-Rounding is to two digits after the decimal point.
-
+Rounding is to two digits after the decimal point.  
 It is not possible to enter more than two digits after the decimal point.
 
-It is possible to specify a unit after the field for integers and decimals. For currencies, the symbol is positioned in the input field, following the value.
+It is possible to specify a unit after the field for integers and decimals. For currencies, the symbol is positioned in the input field.
 
 ## Specs
 
 ### Positioning
 
-![](./mg-input-numeric/doc/img/mg-input-numeric-positioning.png)
+By default, the value is right aligned.
+
+![](./mg-input-numeric/doc/img/mg-input-numeric-positioning-default.png)
+
+You can change the CSS variable `--mg-inputs-text-align` to left align.
+
+![](./mg-input-numeric/doc/img/mg-input-numeric-positioning-custom.png)
+
+## Slot
+
+The spacing between the field and the slot content is not managed by the component, it must be defined in slot implementation.
 
 ### Unit positioning
 
 ![](./mg-input-numeric/doc/img/mg-input-numeric-unit.png)
 
-To be managed when setting up the component by using a "space" character before the term of the unit
-
-## 🚨 Slot
-
-Horizontal spacing is not managed by the component, it must be defined in slot implementation.
+Unit term must be placed into the field slot using a "space" character before the unit term.
 
 <!-- Auto Generated Below -->
 

@@ -8,7 +8,7 @@ type Path = string;
  * @param {Path[]} folders previsous folders list
  * @returns {Path[]} updated folders list
  */
-const listFoldersFrom = (path: Path, folders = []): Path[] => {
+const listFoldersFrom = (path: Path, folders: Path[] = []): Path[] => {
   // get path child
   const pathChild = fs.readdirSync(path);
 

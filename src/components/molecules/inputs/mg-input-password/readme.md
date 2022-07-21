@@ -1,6 +1,6 @@
 ## Design
 
-The standard display of "bullets" instead of characters is the standard one (depending on the rendering of the used browser)
+The standard display of "bullets" instead of characters is the standard one (depending on the rendering of the used browser).
 
 <!-- Auto Generated Below -->
 

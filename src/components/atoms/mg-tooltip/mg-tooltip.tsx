@@ -1,6 +1,7 @@
 import { Component, Element, h, Host, Prop, Watch } from '@stencil/core';
 import { createID } from '../../../utils/components.utils';
 import { Instance as PopperInstance, createPopper } from '@popperjs/core';
+import { Placement } from './mg-tooltip.conf';
 
 @Component({
   tag: 'mg-tooltip',
@@ -38,22 +39,7 @@ export class MgTooltip {
   /**
    * Tooltip placement
    */
-  @Prop() placement:
-    | 'auto'
-    | 'auto-start'
-    | 'auto-end'
-    | 'top'
-    | 'top-start'
-    | 'top-end'
-    | 'bottom'
-    | 'bottom-start'
-    | 'bottom-end'
-    | 'right'
-    | 'right-start'
-    | 'right-end'
-    | 'left'
-    | 'left-start'
-    | 'left-end' = 'bottom';
+  @Prop() placement: Placement = 'bottom';
 
   /**
    * Display tooltip

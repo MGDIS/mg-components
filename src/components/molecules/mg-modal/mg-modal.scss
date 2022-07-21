@@ -45,10 +45,6 @@
     font-weight: 600;
   }
 
-  &__content {
-    overflow-y: auto;
-  }
-
   &__close-button {
     float: right;
     height: var(--mg-modal-title-font-size);
@@ -56,8 +52,11 @@
     margin-right: calc((var(--default-size) - var(--mg-icon-regular-size)) / 2 * -1); //-10px;
   }
 
-  .mg-modal__content ::slotted(*) {
-    font-size: var(--mg-modal-content-font-size);
+  .mg-modal__content {
+    overflow-y: auto;
+    &::slotted(*) {
+      font-size: var(--mg-modal-content-font-size);
+    }
   }
 
   &.mg-modal--hide {

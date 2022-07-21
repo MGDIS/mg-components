@@ -9,14 +9,14 @@ Our "custom tooltip" component is called "tooltip" here.
 
 The tooltip must be displayed when the element that allows its display :
 
-Is hovered over by the mouse.
-Takes the keyboard focus.
+- Is hovered over by the mouse.
+- Takes the keyboard focus.
 
 The tooltip must be hidden when the element that allows its display :
 
-Is no longer hovered over by the mouse.
-Loses the keyboard focus.
-Pressing the Escape key must hide the tooltip.
+- Is no longer hovered over by the mouse.
+- Loses the keyboard focus.
+- Pressing the Escape key must hide the tooltip.
 
 The tooltip must remain displayed when its content is hovered over by the mouse.
 

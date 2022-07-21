@@ -2,27 +2,11 @@
 
 ### Label
 
-- the label can be positioned on the left or above the input field.
-- the text is to be right aligned
-- the label can be on one or more lines.
+The label can be on more than one line.
 
-### Label on top
+### Styles
 
-![](./mg-input-title/doc/img/mg-input-title-label-top.png)
-
-### Fonts
-
-![](./mg-input-title/doc/img/mg-input-title-fonts.png)
-
-### Styles / states
-
-![](./mg-input-title/doc/img/mg-input-title-states.png)
-
-### Form
-
-#### Spacing
-
-![](./mg-input-title/doc/img/mg-input-title-spacing.png)
+![](./mg-input-title/doc/img/mg-input-title.png)
 
 <!-- Auto Generated Below -->
 

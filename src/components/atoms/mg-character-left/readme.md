@@ -1,19 +1,6 @@
 ## Design
 
-### Message order
-
-When messages are displayed under the field the order is as follows:
-
-1. number of characters remaining
-2. input help
-3. error
-
-### Indication of the number of characters remaining
-
-When the focus is on the input field, a message is displayed underneath. The message is: "`<nbCar>` characters available", `<nbCar>` being a counter that updates dynamically according to the input.
-When the focus is no longer on the input field, the message disappears.
-
-![](./mg-character-left/doc/img/nombre-caracteres-restants.png)
+This component display the number of characters left beside the max value length: `{{number of characters left}}/{{max value length}}`
 
 <!-- Auto Generated Below -->
 
