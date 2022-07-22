@@ -32,17 +32,9 @@
   - [ ] Set release date
   - [ ] Update version
 - [ ] Check version in `package.json`
+- [ ] `npm i` to update `package-lock.json`
 - [ ] Check chromatic artifact version in `.storybook/main.ts`
-- [ ] Check if exports shortcut have been added to `package.json`
-```json
-{
-  ...,
-  "exports": {
-    ...,
-    "./mg-button": "./dist/components/mg-button.js",
-  }
-}
-```
+
 # Merged
 
 - [ ] Create version tag with changelog (https://gitlab.mgdis.fr/core/core-ui/mg-components/-/tags)

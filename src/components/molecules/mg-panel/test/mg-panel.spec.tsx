@@ -59,7 +59,7 @@ describe('mg-panel', () => {
     test.each([true, false])('Should toggle collapse panel, expanded %s', async expanded => {
       const page = await getPage({ identifier: 'identifier', panelTitle: 'panel title', expanded });
       const mgPanel = page.doc.querySelector('mg-panel');
-      const collapseButton = mgPanel.shadowRoot.querySelector('.mg-panel__collapse-button');
+      const collapseButton = mgPanel.shadowRoot.querySelector('mg-button:first-of-type');
 
       const spy = jest.spyOn(page.rootInstance.expandedChange, 'emit');
 
@@ -81,7 +81,7 @@ describe('mg-panel', () => {
     test.each([true, false])('Should NOT collapse panel, case expandToggleDisabled = true', async expanded => {
       const page = await getPage({ identifier: 'identifier', panelTitle: 'panel title', expanded, expandToggleDisabled: true });
       const mgPanel = page.doc.querySelector('mg-panel');
-      const collapseButton = mgPanel.shadowRoot.querySelector('.mg-panel__collapse-button');
+      const collapseButton = mgPanel.shadowRoot.querySelector('mg-button:first-of-type');
 
       expect(page.root).toMatchSnapshot();
 

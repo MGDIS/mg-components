@@ -10,7 +10,7 @@ exports[`mg-panel Should render with args {
     <section class="mg-panel" id="identifier">
       <header class="mg-panel__header" id="identifier-header">
         <div class="mg-panel__header-left">
-          <mg-button class="mg-panel__collapse-button">
+          <mg-button>
             <!---->
             <button aria-controls="identifier-content" aria-disabled="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
@@ -25,7 +25,7 @@ exports[`mg-panel Should render with args {
               </div>
             </button>
           </mg-button>
-          <mg-button class="mg-panel__edit-button" is-icon="">
+          <mg-button is-icon="">
             <!---->
             <button aria-disabled="false" aria-label="Edit section title." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
               <div class="mg-button__content">
@@ -63,7 +63,7 @@ exports[`mg-panel Should render with args {
     <section class="mg-panel" id="identifier">
       <header class="mg-panel__header" id="identifier-header">
         <div class="mg-panel__header-left">
-          <mg-button class="mg-panel__collapse-button">
+          <mg-button>
             <!---->
             <button aria-controls="identifier-content" aria-disabled="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
@@ -78,7 +78,7 @@ exports[`mg-panel Should render with args {
               </div>
             </button>
           </mg-button>
-          <mg-button class="mg-panel__edit-button" is-icon="">
+          <mg-button is-icon="">
             <!---->
             <button aria-disabled="false" aria-label="Modifier le titre de la section." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
               <div class="mg-button__content">
@@ -116,7 +116,7 @@ exports[`mg-panel Should render with args {
     <section class="mg-panel" id="identifier">
       <header class="mg-panel__header" id="identifier-header">
         <div class="mg-panel__header-left">
-          <mg-button class="mg-panel__collapse-button">
+          <mg-button>
             <!---->
             <button aria-controls="identifier-content" aria-disabled="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
@@ -131,7 +131,7 @@ exports[`mg-panel Should render with args {
               </div>
             </button>
           </mg-button>
-          <mg-button class="mg-panel__edit-button" is-icon="">
+          <mg-button is-icon="">
             <!---->
             <button aria-disabled="false" aria-label="Edit section title." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
               <div class="mg-button__content">
@@ -170,7 +170,7 @@ exports[`mg-panel Should render with args {
     <section class="mg-panel" id="identifier">
       <header class="mg-panel__header" id="identifier-header">
         <div class="mg-panel__header-left">
-          <mg-button class="mg-panel__collapse-button">
+          <mg-button>
             <!---->
             <button aria-controls="identifier-content" aria-disabled="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
@@ -185,7 +185,7 @@ exports[`mg-panel Should render with args {
               </div>
             </button>
           </mg-button>
-          <mg-button class="mg-panel__edit-button" is-icon="">
+          <mg-button is-icon="">
             <!---->
             <button aria-disabled="false" aria-label="Edit section title." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
               <div class="mg-button__content">
@@ -218,7 +218,7 @@ exports[`mg-panel Should render with args { identifier: 'identifier', panelTitle
     <section class="mg-panel" id="identifier">
       <header class="mg-panel__header" id="identifier-header">
         <div class="mg-panel__header-left">
-          <mg-button class="mg-panel__collapse-button">
+          <mg-button>
             <!---->
             <button aria-controls="identifier-content" aria-disabled="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
@@ -252,7 +252,7 @@ exports[`mg-panel Should render with args { identifier: 'identifier', panelTitle
     <section class="mg-panel" id="identifier">
       <header class="mg-panel__header" id="identifier-header">
         <div class="mg-panel__header-left">
-          <mg-button class="mg-panel__collapse-button">
+          <mg-button>
             <!---->
             <button aria-controls="identifier-content" aria-disabled="false" aria-expanded="" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
@@ -286,7 +286,7 @@ exports[`mg-panel navigation Should NOT collapse panel, case expandToggleDisable
     <section class="mg-panel" id="identifier">
       <header class="mg-panel__header" id="identifier-header">
         <div class="mg-panel__header-left">
-          <mg-button class="mg-panel__collapse-button">
+          <mg-button>
             <!---->
             <button aria-controls="identifier-content" aria-disabled="true" aria-expanded="" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
@@ -320,7 +320,7 @@ exports[`mg-panel navigation Should NOT collapse panel, case expandToggleDisable
     <section class="mg-panel" id="identifier">
       <header class="mg-panel__header" id="identifier-header">
         <div class="mg-panel__header-left">
-          <mg-button class="mg-panel__collapse-button">
+          <mg-button>
             <!---->
             <button aria-controls="identifier-content" aria-disabled="true" aria-expanded="" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
@@ -354,7 +354,7 @@ exports[`mg-panel navigation Should NOT collapse panel, case expandToggleDisable
     <section class="mg-panel" id="identifier">
       <header class="mg-panel__header" id="identifier-header">
         <div class="mg-panel__header-left">
-          <mg-button class="mg-panel__collapse-button">
+          <mg-button>
             <!---->
             <button aria-controls="identifier-content" aria-disabled="true" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
@@ -388,7 +388,7 @@ exports[`mg-panel navigation Should NOT collapse panel, case expandToggleDisable
     <section class="mg-panel" id="identifier">
       <header class="mg-panel__header" id="identifier-header">
         <div class="mg-panel__header-left">
-          <mg-button class="mg-panel__collapse-button">
+          <mg-button>
             <!---->
             <button aria-controls="identifier-content" aria-disabled="true" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
@@ -422,7 +422,7 @@ exports[`mg-panel navigation Should NOT update panel title, case input new value
     <section class="mg-panel" id="identifier">
       <header class="mg-panel__header" id="identifier-header">
         <div class="mg-panel__header-left">
-          <mg-button class="mg-panel__collapse-button">
+          <mg-button>
             <!---->
             <button aria-controls="identifier-content" aria-disabled="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
@@ -437,7 +437,7 @@ exports[`mg-panel navigation Should NOT update panel title, case input new value
               </div>
             </button>
           </mg-button>
-          <mg-button class="mg-panel__edit-button" is-icon="">
+          <mg-button is-icon="">
             <!---->
             <button aria-disabled="false" aria-label="Edit section title." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
               <div class="mg-button__content">
@@ -470,7 +470,7 @@ exports[`mg-panel navigation Should NOT update panel title, case input new value
     <section class="mg-panel" id="identifier">
       <header class="mg-panel__header" id="identifier-header">
         <div class="mg-panel__header-left mg-panel__header-left--full">
-          <mg-button class="mg-panel__collapse-button">
+          <mg-button>
             <!---->
             <button aria-controls="identifier-content" aria-disabled="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
@@ -548,7 +548,7 @@ exports[`mg-panel navigation Should NOT update panel title, case input new value
     <section class="mg-panel" id="identifier">
       <header class="mg-panel__header" id="identifier-header">
         <div class="mg-panel__header-left mg-panel__header-left--full">
-          <mg-button class="mg-panel__collapse-button">
+          <mg-button>
             <!---->
             <button aria-controls="identifier-content" aria-disabled="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
@@ -626,7 +626,7 @@ exports[`mg-panel navigation Should NOT update panel title, case input new value
     <section class="mg-panel" id="identifier">
       <header class="mg-panel__header" id="identifier-header">
         <div class="mg-panel__header-left">
-          <mg-button class="mg-panel__collapse-button">
+          <mg-button>
             <!---->
             <button aria-controls="identifier-content" aria-disabled="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
@@ -641,7 +641,7 @@ exports[`mg-panel navigation Should NOT update panel title, case input new value
               </div>
             </button>
           </mg-button>
-          <mg-button class="mg-panel__edit-button" is-icon="">
+          <mg-button is-icon="">
             <!---->
             <button aria-disabled="false" aria-label="Edit section title." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
               <div class="mg-button__content">
@@ -674,7 +674,7 @@ exports[`mg-panel navigation Should toggle collapse panel, expanded false 1`] = 
     <section class="mg-panel" id="identifier">
       <header class="mg-panel__header" id="identifier-header">
         <div class="mg-panel__header-left">
-          <mg-button class="mg-panel__collapse-button">
+          <mg-button>
             <!---->
             <button aria-controls="identifier-content" aria-disabled="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
@@ -708,7 +708,7 @@ exports[`mg-panel navigation Should toggle collapse panel, expanded false 2`] = 
     <section class="mg-panel" id="identifier">
       <header class="mg-panel__header" id="identifier-header">
         <div class="mg-panel__header-left">
-          <mg-button class="mg-panel__collapse-button">
+          <mg-button>
             <!---->
             <button aria-controls="identifier-content" aria-disabled="false" aria-expanded="" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
@@ -742,7 +742,7 @@ exports[`mg-panel navigation Should toggle collapse panel, expanded false 3`] = 
     <section class="mg-panel" id="identifier">
       <header class="mg-panel__header" id="identifier-header">
         <div class="mg-panel__header-left">
-          <mg-button class="mg-panel__collapse-button">
+          <mg-button>
             <!---->
             <button aria-controls="identifier-content" aria-disabled="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
@@ -776,7 +776,7 @@ exports[`mg-panel navigation Should toggle collapse panel, expanded true 1`] = `
     <section class="mg-panel" id="identifier">
       <header class="mg-panel__header" id="identifier-header">
         <div class="mg-panel__header-left">
-          <mg-button class="mg-panel__collapse-button">
+          <mg-button>
             <!---->
             <button aria-controls="identifier-content" aria-disabled="false" aria-expanded="" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
@@ -810,7 +810,7 @@ exports[`mg-panel navigation Should toggle collapse panel, expanded true 2`] = `
     <section class="mg-panel" id="identifier">
       <header class="mg-panel__header" id="identifier-header">
         <div class="mg-panel__header-left">
-          <mg-button class="mg-panel__collapse-button">
+          <mg-button>
             <!---->
             <button aria-controls="identifier-content" aria-disabled="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
@@ -844,7 +844,7 @@ exports[`mg-panel navigation Should toggle collapse panel, expanded true 3`] = `
     <section class="mg-panel" id="identifier">
       <header class="mg-panel__header" id="identifier-header">
         <div class="mg-panel__header-left">
-          <mg-button class="mg-panel__collapse-button">
+          <mg-button>
             <!---->
             <button aria-controls="identifier-content" aria-disabled="false" aria-expanded="" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
@@ -878,7 +878,7 @@ exports[`mg-panel navigation Should toggle edit panel title 1`] = `
     <section class="mg-panel" id="identifier">
       <header class="mg-panel__header" id="identifier-header">
         <div class="mg-panel__header-left">
-          <mg-button class="mg-panel__collapse-button">
+          <mg-button>
             <!---->
             <button aria-controls="identifier-content" aria-disabled="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
@@ -893,7 +893,7 @@ exports[`mg-panel navigation Should toggle edit panel title 1`] = `
               </div>
             </button>
           </mg-button>
-          <mg-button class="mg-panel__edit-button" is-icon="">
+          <mg-button is-icon="">
             <!---->
             <button aria-disabled="false" aria-label="Edit section title." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
               <div class="mg-button__content">
@@ -926,7 +926,7 @@ exports[`mg-panel navigation Should toggle edit panel title 2`] = `
     <section class="mg-panel" id="identifier">
       <header class="mg-panel__header" id="identifier-header">
         <div class="mg-panel__header-left mg-panel__header-left--full">
-          <mg-button class="mg-panel__collapse-button">
+          <mg-button>
             <!---->
             <button aria-controls="identifier-content" aria-disabled="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
@@ -1004,7 +1004,7 @@ exports[`mg-panel navigation Should toggle edit panel title 3`] = `
     <section class="mg-panel" id="identifier">
       <header class="mg-panel__header" id="identifier-header">
         <div class="mg-panel__header-left">
-          <mg-button class="mg-panel__collapse-button">
+          <mg-button>
             <!---->
             <button aria-controls="identifier-content" aria-disabled="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
@@ -1019,7 +1019,7 @@ exports[`mg-panel navigation Should toggle edit panel title 3`] = `
               </div>
             </button>
           </mg-button>
-          <mg-button class="mg-panel__edit-button" is-icon="">
+          <mg-button is-icon="">
             <!---->
             <button aria-disabled="false" aria-label="Edit section title." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
               <div class="mg-button__content">
@@ -1052,7 +1052,7 @@ exports[`mg-panel navigation Should toggle edit panel title 4`] = `
     <section class="mg-panel" id="identifier">
       <header class="mg-panel__header" id="identifier-header">
         <div class="mg-panel__header-left">
-          <mg-button class="mg-panel__collapse-button">
+          <mg-button>
             <!---->
             <button aria-controls="identifier-content" aria-disabled="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
@@ -1086,7 +1086,7 @@ exports[`mg-panel navigation should NOT update panel title, case no enter in inp
     <section class="mg-panel" id="identifier">
       <header class="mg-panel__header" id="identifier-header">
         <div class="mg-panel__header-left">
-          <mg-button class="mg-panel__collapse-button">
+          <mg-button>
             <!---->
             <button aria-controls="identifier-content" aria-disabled="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
@@ -1101,7 +1101,7 @@ exports[`mg-panel navigation should NOT update panel title, case no enter in inp
               </div>
             </button>
           </mg-button>
-          <mg-button class="mg-panel__edit-button" is-icon="">
+          <mg-button is-icon="">
             <!---->
             <button aria-disabled="false" aria-label="Edit section title." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
               <div class="mg-button__content">
@@ -1134,7 +1134,7 @@ exports[`mg-panel navigation should NOT update panel title, case no enter in inp
     <section class="mg-panel" id="identifier">
       <header class="mg-panel__header" id="identifier-header">
         <div class="mg-panel__header-left mg-panel__header-left--full">
-          <mg-button class="mg-panel__collapse-button">
+          <mg-button>
             <!---->
             <button aria-controls="identifier-content" aria-disabled="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
@@ -1212,7 +1212,7 @@ exports[`mg-panel navigation should NOT update panel title, case no enter in inp
     <section class="mg-panel" id="identifier">
       <header class="mg-panel__header" id="identifier-header">
         <div class="mg-panel__header-left">
-          <mg-button class="mg-panel__collapse-button">
+          <mg-button>
             <!---->
             <button aria-controls="identifier-content" aria-disabled="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
@@ -1227,7 +1227,7 @@ exports[`mg-panel navigation should NOT update panel title, case no enter in inp
               </div>
             </button>
           </mg-button>
-          <mg-button class="mg-panel__edit-button" is-icon="">
+          <mg-button is-icon="">
             <!---->
             <button aria-disabled="false" aria-label="Edit section title." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
               <div class="mg-button__content">
@@ -1260,7 +1260,7 @@ exports[`mg-panel navigation should update panel title, case cancel 1`] = `
     <section class="mg-panel" id="identifier">
       <header class="mg-panel__header" id="identifier-header">
         <div class="mg-panel__header-left">
-          <mg-button class="mg-panel__collapse-button">
+          <mg-button>
             <!---->
             <button aria-controls="identifier-content" aria-disabled="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
@@ -1275,7 +1275,7 @@ exports[`mg-panel navigation should update panel title, case cancel 1`] = `
               </div>
             </button>
           </mg-button>
-          <mg-button class="mg-panel__edit-button" is-icon="">
+          <mg-button is-icon="">
             <!---->
             <button aria-disabled="false" aria-label="Edit section title." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
               <div class="mg-button__content">
@@ -1308,7 +1308,7 @@ exports[`mg-panel navigation should update panel title, case cancel 2`] = `
     <section class="mg-panel" id="identifier">
       <header class="mg-panel__header" id="identifier-header">
         <div class="mg-panel__header-left mg-panel__header-left--full">
-          <mg-button class="mg-panel__collapse-button">
+          <mg-button>
             <!---->
             <button aria-controls="identifier-content" aria-disabled="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
@@ -1386,7 +1386,7 @@ exports[`mg-panel navigation should update panel title, case cancel 3`] = `
     <section class="mg-panel" id="identifier">
       <header class="mg-panel__header" id="identifier-header">
         <div class="mg-panel__header-left">
-          <mg-button class="mg-panel__collapse-button">
+          <mg-button>
             <!---->
             <button aria-controls="identifier-content" aria-disabled="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
@@ -1401,7 +1401,7 @@ exports[`mg-panel navigation should update panel title, case cancel 3`] = `
               </div>
             </button>
           </mg-button>
-          <mg-button class="mg-panel__edit-button" is-icon="">
+          <mg-button is-icon="">
             <!---->
             <button aria-disabled="false" aria-label="Edit section title." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
               <div class="mg-button__content">
@@ -1434,7 +1434,7 @@ exports[`mg-panel navigation should update panel title, case validate 1`] = `
     <section class="mg-panel" id="identifier">
       <header class="mg-panel__header" id="identifier-header">
         <div class="mg-panel__header-left">
-          <mg-button class="mg-panel__collapse-button">
+          <mg-button>
             <!---->
             <button aria-controls="identifier-content" aria-disabled="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
@@ -1449,7 +1449,7 @@ exports[`mg-panel navigation should update panel title, case validate 1`] = `
               </div>
             </button>
           </mg-button>
-          <mg-button class="mg-panel__edit-button" is-icon="">
+          <mg-button is-icon="">
             <!---->
             <button aria-disabled="false" aria-label="Edit section title." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
               <div class="mg-button__content">
@@ -1482,7 +1482,7 @@ exports[`mg-panel navigation should update panel title, case validate 2`] = `
     <section class="mg-panel" id="identifier">
       <header class="mg-panel__header" id="identifier-header">
         <div class="mg-panel__header-left mg-panel__header-left--full">
-          <mg-button class="mg-panel__collapse-button">
+          <mg-button>
             <!---->
             <button aria-controls="identifier-content" aria-disabled="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
@@ -1560,7 +1560,7 @@ exports[`mg-panel navigation should update panel title, case validate 3`] = `
     <section class="mg-panel" id="identifier">
       <header class="mg-panel__header" id="identifier-header">
         <div class="mg-panel__header-left">
-          <mg-button class="mg-panel__collapse-button">
+          <mg-button>
             <!---->
             <button aria-controls="identifier-content" aria-disabled="false" class="mg-button mg-button--flat" id="identifier-collapse-button">
               <div class="mg-button__content">
@@ -1575,7 +1575,7 @@ exports[`mg-panel navigation should update panel title, case validate 3`] = `
               </div>
             </button>
           </mg-button>
-          <mg-button class="mg-panel__edit-button" is-icon="">
+          <mg-button is-icon="">
             <!---->
             <button aria-disabled="false" aria-label="Edit section title." class="mg-button mg-button--flat mg-button--icon" id="identifier-edit-button">
               <div class="mg-button__content">
