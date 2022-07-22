@@ -202,7 +202,7 @@ export class MgPanel {
       <mg-button
         onClick={this.handleCollapseButton}
         variant="flat"
-        class="mg-panel__collapse-button"
+        // class="mg-panel__collapse-button"
         identifier={`${this.identifier}-collapse-button`}
         expanded={this.expanded}
         controls={`${this.identifier}-content`}
@@ -219,7 +219,7 @@ export class MgPanel {
         <mg-button
           is-icon
           variant="flat"
-          class="mg-panel__edit-button"
+          // class="mg-panel__edit-button"
           label={this.messages.panel.editLabel}
           onClick={this.handleEditButton}
           identifier={`${this.identifier}-edit-button`}

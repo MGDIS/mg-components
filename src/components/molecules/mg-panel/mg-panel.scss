@@ -32,15 +32,14 @@ $header-padding: 0.3rem;
   flex-grow: 1;
 }
 
-.mg-panel__collapse-button .mg-button {
-  font-family: var(--font-family-heading);
-  font-size: 1.4rem;
-  font-weight: 500;
-}
-
-.mg-panel__collapse-button,
-.mg-panel__edit-button {
+.mg-panel__header-left mg-button:not([slot='append-input']) {
   margin: 0 $header-padding 0 0;
+
+  & > *:first-of-type {
+    font-family: var(--font-family-heading);
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
 }
 
 .mg-panel__content {
