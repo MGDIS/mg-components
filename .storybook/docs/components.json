@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-07-22T19:19:06",
+  "timestamp": "2022-07-26T09:46:26",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.17.1",
@@ -91,10 +91,14 @@
       "slots": [],
       "parts": [],
       "dependents": [
+        "mg-nav",
         "mg-tabs"
       ],
       "dependencies": [],
       "dependencyGraph": {
+        "mg-nav": [
+          "mg-badge"
+        ],
         "mg-tabs": [
           "mg-badge"
         ]
@@ -638,6 +642,7 @@
         "mg-input-toggle",
         "mg-message",
         "mg-modal",
+        "mg-nav",
         "mg-pagination",
         "mg-panel",
         "mg-popover",
@@ -679,6 +684,9 @@
           "mg-icon"
         ],
         "mg-modal": [
+          "mg-icon"
+        ],
+        "mg-nav": [
           "mg-icon"
         ],
         "mg-pagination": [
@@ -4269,6 +4277,112 @@
         ],
         "mg-button": [
           "mg-icon"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/molecules/mg-nav/mg-nav.tsx",
+      "encapsulation": "none",
+      "tag": "mg-nav",
+      "readme": "## Anatomy\n\n![](./mg-tabs/doc/img/mg-tabs-anatomy.png)\n\n## Specs\n\n### Spacing\n\n- Standard : @base = 10px\n- Large : @base = 18px\n\n![](./mg-tabs/doc/img/mg-tabs-spacing.png)\n\n- if only text, no extra spacing,\n- if no badge : no extra spacing on the right\n- if only icon : no extra spacing on the right\n\n### Sizing\n\n![](./mg-tabs/doc/img/mg-tabs-sizing.png)\n\n### States\n\n![](./mg-tabs/doc/img/mg-tabs-states.png)\n\n### Responsive\n\n#### Line breaks (current management)\n\n![](./mg-tabs/doc/img/mg-tabs-responsive.png)\n",
+      "docs": "![](./mg-tabs/doc/img/mg-tabs-anatomy.png)",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "activeItem",
+          "type": "number",
+          "mutable": true,
+          "attr": "active-item",
+          "reflectToAttr": true,
+          "docs": "Active tab number\ndefault: first is 1",
+          "docsTags": [],
+          "default": "1",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "identifier",
+          "type": "string",
+          "mutable": false,
+          "attr": "identifier",
+          "reflectToAttr": false,
+          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
+          "docsTags": [],
+          "default": "createID('mg-nav')",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "items",
+          "type": "NavItem[] | string[]",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "Nav items\nRequired",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "NavItem[]"
+            },
+            {
+              "type": "string[]"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "Nav label. Include short nav description.\nRequired for accessibility",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "active-item-change",
+          "detail": "number",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emited event when active nav item change",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "mg-icon",
+        "mg-badge"
+      ],
+      "dependencyGraph": {
+        "mg-nav": [
+          "mg-icon",
+          "mg-badge"
         ]
       }
     },

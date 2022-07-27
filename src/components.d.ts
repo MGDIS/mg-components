@@ -11,6 +11,7 @@ import { Width } from "./components/molecules/inputs/MgInput.conf";
 import { RadioOption } from "./components/molecules/inputs/mg-input-radio/mg-input-radio.conf";
 import { SelectOption } from "./components/molecules/inputs/mg-input-select/mg-input-select.conf";
 import { ToggleValue } from "./components/molecules/inputs/mg-input-toggle/mg-input-toggle.conf";
+import { NavItem } from "./components/molecules/mg-nav/mg-nav.conf";
 import { Placement } from "./components/molecules/mg-popover/mg-popover.conf";
 import { TabItem } from "./components/molecules/mg-tabs/mg-tabs.conf";
 import { Placement as Placement1 } from "./components/atoms/mg-tooltip/mg-tooltip.conf";
@@ -864,6 +865,24 @@ export namespace Components {
          */
         "modalTitle": string;
     }
+    interface MgNav {
+        /**
+          * Active tab number default: first is 1
+         */
+        "activeItem": number;
+        /**
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+         */
+        "identifier": string;
+        /**
+          * Nav items Required
+         */
+        "items": string[] | NavItem[];
+        /**
+          * Nav label. Include short nav description. Required for accessibility
+         */
+        "label": string;
+    }
     interface MgPagination {
         /**
           * Component current page
@@ -1037,6 +1056,10 @@ export interface MgModalCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLMgModalElement;
 }
+export interface MgNavCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMgNavElement;
+}
 export interface MgPaginationCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLMgPaginationElement;
@@ -1152,6 +1175,12 @@ declare global {
         prototype: HTMLMgModalElement;
         new (): HTMLMgModalElement;
     };
+    interface HTMLMgNavElement extends Components.MgNav, HTMLStencilElement {
+    }
+    var HTMLMgNavElement: {
+        prototype: HTMLMgNavElement;
+        new (): HTMLMgNavElement;
+    };
     interface HTMLMgPaginationElement extends Components.MgPagination, HTMLStencilElement {
     }
     var HTMLMgPaginationElement: {
@@ -1206,6 +1235,7 @@ declare global {
         "mg-input-toggle": HTMLMgInputToggleElement;
         "mg-message": HTMLMgMessageElement;
         "mg-modal": HTMLMgModalElement;
+        "mg-nav": HTMLMgNavElement;
         "mg-pagination": HTMLMgPaginationElement;
         "mg-panel": HTMLMgPanelElement;
         "mg-popover": HTMLMgPopoverElement;
@@ -2106,6 +2136,28 @@ declare namespace LocalJSX {
          */
         "onComponent-show"?: (event: MgModalCustomEvent<string>) => void;
     }
+    interface MgNav {
+        /**
+          * Active tab number default: first is 1
+         */
+        "activeItem"?: number;
+        /**
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+         */
+        "identifier"?: string;
+        /**
+          * Nav items Required
+         */
+        "items": string[] | NavItem[];
+        /**
+          * Nav label. Include short nav description. Required for accessibility
+         */
+        "label": string;
+        /**
+          * Emited event when active nav item change
+         */
+        "onActive-item-change"?: (event: MgNavCustomEvent<number>) => void;
+    }
     interface MgPagination {
         /**
           * Component current page
@@ -2264,6 +2316,7 @@ declare namespace LocalJSX {
         "mg-input-toggle": MgInputToggle;
         "mg-message": MgMessage;
         "mg-modal": MgModal;
+        "mg-nav": MgNav;
         "mg-pagination": MgPagination;
         "mg-panel": MgPanel;
         "mg-popover": MgPopover;
@@ -2293,6 +2346,7 @@ declare module "@stencil/core" {
             "mg-input-toggle": LocalJSX.MgInputToggle & JSXBase.HTMLAttributes<HTMLMgInputToggleElement>;
             "mg-message": LocalJSX.MgMessage & JSXBase.HTMLAttributes<HTMLMgMessageElement>;
             "mg-modal": LocalJSX.MgModal & JSXBase.HTMLAttributes<HTMLMgModalElement>;
+            "mg-nav": LocalJSX.MgNav & JSXBase.HTMLAttributes<HTMLMgNavElement>;
             "mg-pagination": LocalJSX.MgPagination & JSXBase.HTMLAttributes<HTMLMgPaginationElement>;
             "mg-panel": LocalJSX.MgPanel & JSXBase.HTMLAttributes<HTMLMgPanelElement>;
             "mg-popover": LocalJSX.MgPopover & JSXBase.HTMLAttributes<HTMLMgPopoverElement>;
