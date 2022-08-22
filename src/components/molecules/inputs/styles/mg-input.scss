@@ -74,7 +74,7 @@
     margin-left: var(--mg-inputs-spacer);
   }
 
-  mg-icon {
+  mg-icon:not(.mg-input__help-text mg-icon) {
     display: flex;
   }
 
