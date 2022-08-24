@@ -1,5 +1,5 @@
 import { Component, Element, h, Prop, State, Watch } from '@stencil/core';
-import { variants } from './mg-button.conf';
+import { variants, ButtonType } from './mg-button.conf';
 import { ClassList, createID } from '../../../utils/components.utils';
 
 @Component({
@@ -50,6 +50,18 @@ export class MgButton {
    * In case button text is not explicit enough
    */
   @Prop() label: string;
+
+  /**
+   * Define button type
+   * Default: 'submit', as HTMLButtonElement type is submit by default
+   */
+  @Prop() type: ButtonType = 'submit';
+
+  /**
+   * Define form id to attach button with
+   * If this attribute is not set, the <button> is associated with its ancestor <form> element.
+   */
+  @Prop({ mutable: true }) form: string;
 
   /**
    * Disable button
@@ -158,12 +170,16 @@ export class MgButton {
       <button
         id={this.identifier}
         class={this.classList.join()}
+        type={this.type}
         aria-label={this.label}
         aria-disabled={this.disabled.toString()}
         aria-expanded={this.expanded}
         aria-controls={this.controls}
         aria-haspopup={this.haspopup}
         onClick={this.handleClick}
+        // has stencil does not support form attribute on button, we set the attribute from the ref
+        // https://github.com/ionic-team/stencil/issues/2703#issuecomment-1050943715
+        ref={btn => this.form && btn.setAttribute('form', this.form)}
       >
         {this.loading && <mg-icon icon="loader" spin></mg-icon>}
         <div class="mg-button__content">

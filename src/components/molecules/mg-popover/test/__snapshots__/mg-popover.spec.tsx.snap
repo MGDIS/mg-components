@@ -5,7 +5,7 @@ exports[`mg-popover Should render with element 1`] = `
   <!---->
   <mg-button aria-controls="identifier" aria-expanded="false">
     <!---->
-    <button aria-disabled="false" class="mg-button mg-button--primary" id="identifier-btn">
+    <button aria-disabled="false" class="mg-button mg-button--primary" id="identifier-btn" type="submit">
       <div class="mg-button__content">
         mg-button
       </div>
@@ -30,7 +30,7 @@ exports[`mg-popover Should render with element 2`] = `
   <!---->
   <mg-button aria-controls="identifier" aria-expanded="false">
     <!---->
-    <button aria-disabled="false" class="mg-button mg-button--primary" id="identifier-btn">
+    <button aria-disabled="false" class="mg-button mg-button--primary" id="identifier-btn" type="submit">
       <div class="mg-button__content">
         mg-button
       </div>
@@ -55,7 +55,7 @@ exports[`mg-popover Should render with element 3`] = `
   <!---->
   <mg-button aria-controls="identifier" aria-expanded="true">
     <!---->
-    <button aria-disabled="false" class="mg-button mg-button--primary" id="identifier-btn">
+    <button aria-disabled="false" class="mg-button mg-button--primary" id="identifier-btn" type="submit">
       <div class="mg-button__content">
         mg-button
       </div>
@@ -80,7 +80,7 @@ exports[`mg-popover Should render with element 4`] = `
   <!---->
   <mg-button aria-controls="identifier" aria-expanded="false">
     <!---->
-    <button aria-disabled="false" class="mg-button mg-button--primary" id="identifier-btn">
+    <button aria-disabled="false" class="mg-button mg-button--primary" id="identifier-btn" type="submit">
       <div class="mg-button__content">
         mg-button
       </div>
@@ -89,7 +89,7 @@ exports[`mg-popover Should render with element 4`] = `
   <div class="mg-popover" id="identifier" style="position: absolute; left: 0; top: 0; margin: 0;">
     <mg-button is-icon="">
       <!---->
-      <button aria-disabled="false" aria-label="Close" class="mg-button mg-button--flat mg-button--icon">
+      <button aria-disabled="false" aria-label="Close" class="mg-button mg-button--flat mg-button--icon" type="submit">
         <div class="mg-button__content">
           <mg-icon icon="cross"></mg-icon>
         </div>
@@ -113,7 +113,7 @@ exports[`mg-popover Should render with element 5`] = `
   <!---->
   <mg-button aria-controls="identifier" aria-expanded="true">
     <!---->
-    <button aria-disabled="false" class="mg-button mg-button--primary" id="identifier-btn">
+    <button aria-disabled="false" class="mg-button mg-button--primary" id="identifier-btn" type="submit">
       <div class="mg-button__content">
         mg-button
       </div>
@@ -138,7 +138,7 @@ exports[`mg-popover Should render with element 6`] = `
   <!---->
   <mg-button aria-controls="identifier" aria-expanded="false">
     <!---->
-    <button aria-disabled="false" class="mg-button mg-button--primary" id="identifier-btn">
+    <button aria-disabled="false" class="mg-button mg-button--primary" id="identifier-btn" type="submit">
       <div class="mg-button__content">
         mg-button
       </div>
@@ -147,7 +147,7 @@ exports[`mg-popover Should render with element 6`] = `
   <div class="mg-popover" id="identifier" style="position: absolute; left: 0; top: 0; margin: 0;">
     <mg-button is-icon="">
       <!---->
-      <button aria-disabled="false" aria-label="Fermer" class="mg-button mg-button--flat mg-button--icon">
+      <button aria-disabled="false" aria-label="Fermer" class="mg-button mg-button--flat mg-button--icon" type="submit">
         <div class="mg-button__content">
           <mg-icon icon="cross"></mg-icon>
         </div>
@@ -171,7 +171,7 @@ exports[`mg-popover Should render with element 7`] = `
   <!---->
   <mg-button aria-controls="identifier" aria-expanded="false">
     <!---->
-    <button aria-disabled="false" class="mg-button mg-button--primary" id="identifier-btn">
+    <button aria-disabled="false" class="mg-button mg-button--primary" id="identifier-btn" type="submit">
       <div class="mg-button__content">
         mg-button
       </div>
@@ -180,7 +180,7 @@ exports[`mg-popover Should render with element 7`] = `
   <div class="mg-popover" id="identifier" style="position: absolute; left: 0; top: 0; margin: 0;">
     <mg-button is-icon="">
       <!---->
-      <button aria-disabled="false" aria-label="Close" class="mg-button mg-button--flat mg-button--icon">
+      <button aria-disabled="false" aria-label="Close" class="mg-button mg-button--flat mg-button--icon" type="submit">
         <div class="mg-button__content">
           <mg-icon icon="cross"></mg-icon>
         </div>

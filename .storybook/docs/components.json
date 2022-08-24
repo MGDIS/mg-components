@@ -177,6 +177,22 @@
           "required": false
         },
         {
+          "name": "form",
+          "type": "string",
+          "mutable": true,
+          "attr": "form",
+          "reflectToAttr": false,
+          "docs": "Define form id to attach button with\nIf this attribute is not set, the <button> is associated with its ancestor <form> element.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "haspopup",
           "type": "\"dialog\" | \"grid\" | \"listbox\" | \"menu\" | \"tree\" | boolean",
           "mutable": false,
@@ -257,6 +273,32 @@
           "docsTags": [],
           "values": [
             {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "type",
+          "type": "\"button\" | \"reset\" | \"submit\"",
+          "mutable": false,
+          "attr": "type",
+          "reflectToAttr": false,
+          "docs": "Define button type\nDefault: 'submit', as HTMLButtonElement type is submit by default",
+          "docsTags": [],
+          "default": "'submit'",
+          "values": [
+            {
+              "value": "button",
+              "type": "string"
+            },
+            {
+              "value": "reset",
+              "type": "string"
+            },
+            {
+              "value": "submit",
               "type": "string"
             }
           ],
@@ -525,6 +567,15 @@
         }
       ],
       "events": [
+        {
+          "event": "form-submit",
+          "detail": "boolean",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted event on form submit",
+          "docsTags": []
+        },
         {
           "event": "form-valid",
           "detail": "boolean",

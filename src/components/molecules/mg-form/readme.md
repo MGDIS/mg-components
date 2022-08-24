@@ -34,9 +34,10 @@ The "Display errors" button use the `mg-form` `displayError()` method.
 
 ## Events
 
-| Event        | Description                                                        | Type                   |
-| ------------ | ------------------------------------------------------------------ | ---------------------- |
-| `form-valid` | Emitted event on form validity check Tells if form is valid or not | `CustomEvent<boolean>` |
+| Event         | Description                                                        | Type                   |
+| ------------- | ------------------------------------------------------------------ | ---------------------- |
+| `form-submit` | Emitted event on form submit                                       | `CustomEvent<boolean>` |
+| `form-valid`  | Emitted event on form validity check Tells if form is valid or not | `CustomEvent<boolean>` |
 
 
 ## Methods

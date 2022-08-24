@@ -1,5 +1,5 @@
 import { h } from '@stencil/core';
-import { variants } from '../mg-button.conf';
+import { variants, buttonTypes } from '../mg-button.conf';
 import { icons } from '../../mg-icon/mg-icon.conf';
 
 export default {
@@ -11,6 +11,13 @@ export default {
       control: { type: 'select' },
       table: {
         defaultValue: { summary: variants[0] },
+      },
+    },
+    type: {
+      options: buttonTypes,
+      control: { type: 'select' },
+      table: {
+        defaultValue: { summary: buttonTypes[0] },
       },
     },
   },
@@ -44,6 +51,7 @@ MgButton.args = {
   isIcon: false,
   expanded: false,
   controls: undefined,
+  type: buttonTypes[0],
 };
 
 export const IsIcon = Template.bind({});

@@ -3,7 +3,7 @@ import { h } from '@stencil/core';
 export default {
   component: 'mg-form',
   title: 'Molecules/mg-form',
-  parameters: { actions: { handles: ['form-valid'] } },
+  parameters: { actions: { handles: ['form-valid', 'form-submit'] } },
 };
 
 const args = {
@@ -32,6 +32,9 @@ const Template = (args: any): HTMLElement => {
         form = el;
         form.addEventListener('form-valid', e => {
           submit.disabled = !e.detail;
+        });
+        form.addEventListener('form-submit', () => {
+          window.alert('Your form was submitted');
         });
       }}
     >
@@ -73,6 +76,7 @@ const Template = (args: any): HTMLElement => {
         </mg-button>
         <mg-button
           variant="secondary"
+          type="button"
           // eslint-disable-next-line react/jsx-no-bind
           onClick={() => {
             form.displayError();
