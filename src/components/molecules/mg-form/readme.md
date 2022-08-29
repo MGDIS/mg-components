@@ -10,6 +10,17 @@
 
 ![](./mg-form/doc/img/mg-form-spacing.png)
 
+To edit space bewteen the title and the input you must do as follow:
+
+```html
+<style>.mg-form--custom-grid {
+  --mg-form-inputs-title-width: 50rem //add here your custom value
+}</style>
+<mg-form class="mg-form--custom-grid">
+  <!-- your content -->
+</mgform>
+```
+
 ## Example
 
 **Code example does not reflect all the code.**
