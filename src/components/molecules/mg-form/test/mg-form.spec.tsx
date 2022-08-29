@@ -164,7 +164,6 @@ describe('mg-form', () => {
     const mgForm = page.doc.querySelector('mg-form');
     const form = mgForm.shadowRoot.querySelector('form');
     const mgButton = page.doc.querySelector('mg-button');
-    form.onsubmit;
 
     const formSpy = jest.spyOn(form, 'dispatchEvent');
     const mgFormSpy = jest.spyOn(page.rootInstance.formSubmit, 'emit');
