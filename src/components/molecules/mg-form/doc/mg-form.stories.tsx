@@ -34,7 +34,7 @@ const Template = (args: any): HTMLElement => {
           submit.disabled = !e.detail;
         });
         form.addEventListener('form-submit', () => {
-          window.alert('Your form was submitted');
+          window.alert('Your form has been submitted');
         });
       }}
     >

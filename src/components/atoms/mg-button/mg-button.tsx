@@ -58,7 +58,7 @@ export class MgButton {
   @Prop() type: ButtonType = 'submit';
 
   /**
-   * Define form id to attach button with
+   * Define form id to attach button with.
    * If this attribute is not set, the <button> is associated with its ancestor <form> element.
    */
   @Prop({ mutable: true }) form: string;
