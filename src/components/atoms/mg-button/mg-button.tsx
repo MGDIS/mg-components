@@ -54,7 +54,7 @@ export class MgButton {
   /**
    * Disable button
    */
-  @Prop({ mutable: true }) disabled = false;
+  @Prop({ mutable: true }) disabled: boolean;
   @Watch('disabled')
   disabledHandler(isDisabled: boolean): void {
     // Remove loading when enable
@@ -80,7 +80,7 @@ export class MgButton {
   /**
    * Prop to set aria-expanded on button element
    */
-  @Prop() expanded = false;
+  @Prop() expanded: boolean;
 
   /**
    * Prop to set aria-controls on button element
@@ -91,7 +91,7 @@ export class MgButton {
    * Option to set aria-haspopup
    * The aria-haspopup state informs assistive technology users that there is a popup and the type of popup it is, but provides no interactivity.
    */
-  @Prop() haspopup: boolean | 'menu' | 'listbox' | 'tree' | 'grid' | 'dialog' = false;
+  @Prop() haspopup: boolean | 'menu' | 'listbox' | 'tree' | 'grid' | 'dialog';
 
   /**
    * Define if button is loading, default to false.
@@ -159,10 +159,10 @@ export class MgButton {
         id={this.identifier}
         class={this.classList.join()}
         aria-label={this.label}
-        aria-disabled={this.disabled.toString()}
-        aria-expanded={this.expanded}
+        aria-disabled={this.disabled !== undefined && this.disabled.toString()}
+        aria-expanded={this.expanded !== undefined && this.expanded.toString()}
         aria-controls={this.controls}
-        aria-haspopup={this.haspopup}
+        aria-haspopup={this.haspopup !== undefined && this.haspopup.toString()}
         onClick={this.handleClick}
       >
         {this.loading && <mg-icon icon="loader" spin></mg-icon>}
