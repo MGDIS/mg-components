@@ -43,7 +43,6 @@ To manage the space between two buttons you can use the helper [.mg-group-elemen
 
 ### Used by
 
- - [mg-details](../../molecules/mg-details)
  - [mg-message](../../molecules/mg-message)
  - [mg-modal](../../molecules/mg-modal)
  - [mg-pagination](../../molecules/mg-pagination)
@@ -58,7 +57,6 @@ To manage the space between two buttons you can use the helper [.mg-group-elemen
 ```mermaid
 graph TD;
   mg-button --> mg-icon
-  mg-details --> mg-button
   mg-message --> mg-button
   mg-modal --> mg-button
   mg-pagination --> mg-button

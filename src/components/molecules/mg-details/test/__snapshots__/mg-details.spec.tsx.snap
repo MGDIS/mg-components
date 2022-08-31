@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mg-details with args {
+  toggleClosed: 'Show details',
+  toggleOpened: 'Hide details',
+  expanded: true
+} 1`] = `
+<mg-details>
+  <mock:shadow-root>
+    <details class="mg-details" open="">
+      <summary>
+        <slot name="summary"></slot>
+        <span class="mg-details__toggle">
+          <mg-icon icon="chevron-up"></mg-icon>
+          Hide details
+        </span>
+      </summary>
+      <div class="mg-details__details">
+        <slot name="details"></slot>
+      </div>
+    </details>
+  </mock:shadow-root>
+  <span slot="summary">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  </span>
+  <p slot="details">
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </p>
+</mg-details>
+`;
+
+exports[`mg-details with args { toggleClosed: 'Show details', toggleOpened: 'Hide details' } 1`] = `
+<mg-details>
+  <mock:shadow-root>
+    <details class="mg-details">
+      <summary>
+        <slot name="summary"></slot>
+        <span class="mg-details__toggle">
+          <mg-icon icon="chevron-down"></mg-icon>
+          Show details
+        </span>
+      </summary>
+      <div class="mg-details__details">
+        <slot name="details"></slot>
+      </div>
+    </details>
+  </mock:shadow-root>
+  <span slot="summary">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  </span>
+  <p slot="details">
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </p>
+</mg-details>
+`;

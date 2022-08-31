@@ -1,0 +1,14 @@
+.mg-details summary {
+  display: flex;
+  align-items: baseline;
+  cursor: pointer;
+}
+
+.mg-details__toggle {
+  margin-left: 1.5rem;
+  flex-shrink: 0;
+}
+
+.mg-details__details {
+  margin-top: 1.5rem;
+}
