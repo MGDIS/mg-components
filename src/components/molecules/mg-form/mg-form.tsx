@@ -146,8 +146,9 @@ export class MgForm {
         if (this.readonly) input.readonly = true;
         else if (this.disabled) input.disabled = true;
         else input.addEventListener('input-valid', this.checkValidity);
-
-        await input.componentOnReady?.(); // prevent error with VueJS first render
+        try {
+          await input.componentOnReady();
+        } catch {} // prevent error with VueJS first render
       }),
     ).then(() => {
       this.checkValidity();
