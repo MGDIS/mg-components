@@ -132,13 +132,13 @@ export class MgForm {
     // Get locales
     this.messages = initLocales(this.element).messages;
 
-    // Get slotted mgIputs
+    // Get slotted mgInputs
     this.mgInputs = Array.from(this.element.querySelectorAll('*')).filter((node: Node) => node.nodeName.startsWith('MG-INPUT-')) as HTMLMgInputsElement[];
 
     // Define required message
     this.setRequiredMessage();
 
-    // Check validity when slotted mgImputs are ready
+    // Check validity when slotted mgInputs are ready
     Promise.all(
       this.mgInputs.map(async input => {
         // Set inputs readonly or disabled based on form configuration
@@ -147,7 +147,7 @@ export class MgForm {
         else if (this.disabled) input.disabled = true;
         else input.addEventListener('input-valid', this.checkValidity);
 
-        await input.componentOnReady();
+        await input.componentOnReady?.(); // prevent error with VueJS first render
       }),
     ).then(() => {
       this.checkValidity();
