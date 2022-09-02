@@ -13,6 +13,7 @@ const isTabItem = (tab: TabItem): boolean => typeof tab === 'object' && typeof t
 @Component({
   tag: 'mg-tabs',
   styleUrl: 'mg-tabs.scss',
+  shadow: true,
 })
 export class MgTabs {
   /************
