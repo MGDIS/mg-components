@@ -85,6 +85,22 @@ describe('mg-form', () => {
       const screenshot = await page.screenshot();
       expect(screenshot).toMatchImageSnapshot();
     });
+
+    test('Should render with custom style', async () => {
+      const page = await createPage(`${startTag}
+        ${inputs}
+        </mg-form>
+        ${inputsScript}
+        ${inputsScriptSetValues}
+        ${inputsScriptRequiredSome}`);
+
+      await page.$eval('mg-form', el => {
+        el.setAttribute('style', '--mg-form-inputs-title-width: 25rem;');
+      });
+
+      const screenshot = await page.screenshot();
+      expect(screenshot).toMatchImageSnapshot();
+    });
   });
 
   describe.each(['<mg-form>', '<mg-form lang="fr">'])('With different locale', startTag => {
