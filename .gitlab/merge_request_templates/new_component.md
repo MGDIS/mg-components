@@ -1,27 +1,17 @@
-# Summary
-
-(Describe the component, add its link to the PDA9)
-
-## Screenshots
-
-(Add screenshots)
+# Component name
 
 ## Checklist
 
 - [ ] Storybook
   - [ ] Component stories
   - [ ] Changelog story updated
+  - [ ] Documentation in component readme.md
 - [ ] Tests
   - [ ] Unit tests
   - [ ] E2E tests
 - [ ] Browser tests
   - [ ] Chrome
   - [ ] Firefox
-  - [ ] IE11
-- [ ] Doc
-  - [ ] Added Link to PDA9 in component readme.md
-  - [ ] PDA9 RGs listed in component
-  - [ ] Story linked into related PDA9
 
 ## Reviewers
 

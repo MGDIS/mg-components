@@ -27,6 +27,11 @@ describe('mg-button', () => {
     expect(root).toMatchSnapshot();
   });
 
+  test.each([true, false])('Should render a button, case haspopup %s', async haspopup => {
+    const { root } = await getPage({ identifier: 'identifier', label: 'label', haspopup });
+    expect(root).toMatchSnapshot();
+  });
+
   test('Should replace classes on variant changes', async () => {
     const page = await getPage({ identifier: 'identifier', variant: 'primary', label: 'label' });
     const element = page.doc.querySelector('mg-button');

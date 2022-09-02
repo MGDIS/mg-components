@@ -73,7 +73,7 @@ export class MgPanel {
   /**
    * Disable possibility to toggle expand
    */
-  @Prop({ mutable: true }) expandToggleDisabled = false;
+  @Prop({ mutable: true }) expandToggleDisabled: boolean;
 
   /**
    * Panel title is editabled

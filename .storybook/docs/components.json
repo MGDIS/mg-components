@@ -150,7 +150,6 @@
           "reflectToAttr": false,
           "docs": "Disable button",
           "docsTags": [],
-          "default": "false",
           "values": [
             {
               "type": "boolean"
@@ -167,7 +166,6 @@
           "reflectToAttr": false,
           "docs": "Prop to set aria-expanded on button element",
           "docsTags": [],
-          "default": "false",
           "values": [
             {
               "type": "boolean"
@@ -184,7 +182,6 @@
           "reflectToAttr": false,
           "docs": "Option to set aria-haspopup\nThe aria-haspopup state informs assistive technology users that there is a popup and the type of popup it is, but provides no interactivity.",
           "docsTags": [],
-          "default": "false",
           "values": [
             {
               "value": "dialog",
@@ -394,6 +391,91 @@
         ],
         "mg-input-textarea": [
           "mg-character-left"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/molecules/mg-details/mg-details.tsx",
+      "encapsulation": "shadow",
+      "tag": "mg-details",
+      "readme": "## Properties\n \n![](./mg-details/doc/img/mg-details-components.png)\n\n- **summary** and **details** are slots which allow html content\n- **toggle** is defined by mg-icon plus a custom text\n  - mg-icon _chevron-down_ is used for the close state\n  - mg-icon _chevron-up_ is used for the open state\n\n## Behavior\n\n### Action\n\nThe complete zone including the _summary_ and the _toggle_ is clickable and toggles the state of the component.\n \n![](./mg-details/doc/img/mg-details-behavior.png)\n\n### Position\n\n_Toggle_ follows the _summary_ and is always on the top right.\n \n![](./mg-details/doc/img/mg-details-position.png)\n\n### Responsive\n\nIn mobile resolution, the text of the _toggle_ is hidden\n \n![](./mg-details/doc/img/mg-details-responsive.png)\n\n## Specs\n\n### Spacing\n \n![](./mg-details/doc/img/mg-details-spacing.png)\n",
+      "docs": "![](./mg-details/doc/img/mg-details-components.png)\n\n- **summary** and **details** are slots which allow html content\n- **toggle** is defined by mg-icon plus a custom text\n  - mg-icon _chevron-down_ is used for the close state\n  - mg-icon _chevron-up_ is used for the open state",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "expanded",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "expanded",
+          "reflectToAttr": false,
+          "docs": "Define if details are diplayed",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "toggleClosed",
+          "type": "string",
+          "mutable": false,
+          "attr": "toggle-closed",
+          "reflectToAttr": false,
+          "docs": "Displayed title when details are closed",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "toggleOpened",
+          "type": "string",
+          "mutable": false,
+          "attr": "toggle-opened",
+          "reflectToAttr": false,
+          "docs": "Displayed title when details are opened",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "expanded-change",
+          "detail": "boolean",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emmited event when expanded change",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "mg-icon"
+      ],
+      "dependencyGraph": {
+        "mg-details": [
+          "mg-icon"
         ]
       }
     },
@@ -627,6 +709,7 @@
       "parts": [],
       "dependents": [
         "mg-button",
+        "mg-details",
         "mg-input-checkbox",
         "mg-input-date",
         "mg-input-numeric",
@@ -646,6 +729,9 @@
       "dependencies": [],
       "dependencyGraph": {
         "mg-button": [
+          "mg-icon"
+        ],
+        "mg-details": [
           "mg-icon"
         ],
         "mg-input-checkbox": [
@@ -4404,7 +4490,6 @@
           "reflectToAttr": false,
           "docs": "Disable possibility to toggle expand",
           "docsTags": [],
-          "default": "false",
           "values": [
             {
               "type": "boolean"

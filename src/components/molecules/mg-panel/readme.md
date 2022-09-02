@@ -35,7 +35,7 @@ The right area of the header can accommodate any component.
 
 | Property                   | Attribute                     | Description                                                                                                 | Type      | Default                |
 | -------------------------- | ----------------------------- | ----------------------------------------------------------------------------------------------------------- | --------- | ---------------------- |
-| `expandToggleDisabled`     | `expand-toggle-disabled`      | Disable possibility to toggle expand                                                                        | `boolean` | `false`                |
+| `expandToggleDisabled`     | `expand-toggle-disabled`      | Disable possibility to toggle expand                                                                        | `boolean` | `undefined`            |
 | `expanded`                 | `expanded`                    | Panel is opened                                                                                             | `boolean` | `false`                |
 | `identifier`               | `identifier`                  | Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created. | `string`  | `createID('mg-panel')` |
 | `panelTitle` _(required)_  | `panel-title`                 | Panel title                                                                                                 | `string`  | `undefined`            |
