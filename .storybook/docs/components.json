@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-09-01T16:18:54",
+  "timestamp": "2022-09-02T09:03:53",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.17.4",
@@ -4714,7 +4714,17 @@
         }
       ],
       "methods": [],
-      "events": [],
+      "events": [
+        {
+          "event": "display-change",
+          "detail": "boolean",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emited event when display value change",
+          "docsTags": []
+        }
+      ],
       "listeners": [],
       "styles": [],
       "slots": [],

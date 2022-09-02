@@ -147,6 +147,14 @@ To bind a value in a web component we have to use the Angular.js [`ng-prop-`](ht
 <mg-input-text ng-prop-value="user.firstname" label="Firstname" ng-on-value-change="user.firstname = $event.target.value"></mg-input-text>
 ```
 
+##### Custom Events
+
+When you want to get the fired **custom event data from a web-component** with the [`ng-on-`](https://docs.angularjs.org/api/ng/directive/ngOn) directive you need to parse the native event instead the jQuery wrapped event like so:
+
+```html
+<mg-popover ng-on-display-change="$ctrl.myMethod($event.originalEvent.detail)"></mg-popover>
+```
+
 ##### Common issues
 
 ###### Slot render

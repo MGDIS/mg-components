@@ -1045,6 +1045,10 @@ export interface MgPanelCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLMgPanelElement;
 }
+export interface MgPopoverCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMgPopoverElement;
+}
 export interface MgTabsCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLMgTabsElement;
@@ -2183,6 +2187,10 @@ declare namespace LocalJSX {
           * Sets an `id` attribute. Needed by the input for accessibility `aria-decribedby`.
          */
         "identifier"?: string;
+        /**
+          * Emited event when display value change
+         */
+        "onDisplay-change"?: (event: MgPopoverCustomEvent<boolean>) => void;
         /**
           * Popover placement
          */

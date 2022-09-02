@@ -65,6 +65,13 @@ The title and the close button are optional.
 | `placement`   | `placement`    | Popover placement                                                                | `"auto" \| "auto-end" \| "auto-start" \| "bottom" \| "bottom-end" \| "bottom-start" \| "left" \| "left-end" \| "left-start" \| "right" \| "right-end" \| "right-start" \| "top" \| "top-end" \| "top-start"` | `'bottom'`               |
 
 
+## Events
+
+| Event            | Description                            | Type                   |
+| ---------------- | -------------------------------------- | ---------------------- |
+| `display-change` | Emited event when display value change | `CustomEvent<boolean>` |
+
+
 ## Dependencies
 
 ### Depends on
