@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-09-02T09:03:53",
+  "timestamp": "2022-09-02T12:27:04",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.17.4",
@@ -4831,7 +4831,7 @@
     },
     {
       "filePath": "./src/components/molecules/mg-tabs/mg-tabs.tsx",
-      "encapsulation": "none",
+      "encapsulation": "shadow",
       "tag": "mg-tabs",
       "readme": "## Anatomy\n\n![](./mg-tabs/doc/img/mg-tabs-anatomy.png)\n\n## Specs\n\n### Spacing\n\n- Standard : @base = 10px\n- Large : @base = 18px\n\n![](./mg-tabs/doc/img/mg-tabs-spacing.png)\n\n- if only text, no extra spacing,\n- if no badge : no extra spacing on the right\n- if only icon : no extra spacing on the right\n\n### Sizing\n\n![](./mg-tabs/doc/img/mg-tabs-sizing.png)\n\n### States\n\n![](./mg-tabs/doc/img/mg-tabs-states.png)\n\n### Responsive\n\n#### Line breaks (current management)\n\n![](./mg-tabs/doc/img/mg-tabs-responsive.png)\n",
       "docs": "![](./mg-tabs/doc/img/mg-tabs-anatomy.png)",
