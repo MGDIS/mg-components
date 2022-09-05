@@ -185,7 +185,7 @@ export class MgForm {
     this.mgButtons.forEach(mgButton => {
       // submit buttons should trigger form submition
       const button = mgButton.querySelector('button');
-      if (button.getAttribute('type') === 'submit') {
+      if (['submit', null].includes(button.getAttribute('type'))) {
         mgButton.addEventListener('click', () => {
           this.form.dispatchEvent(new CustomEvent('submit', { bubbles: true }));
         });

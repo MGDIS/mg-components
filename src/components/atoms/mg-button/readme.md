@@ -7,6 +7,8 @@ A tooltip must be displayed on hover when the button only displays a non-explici
 
 A button that launches a potentially long process is disabled and displays a loader for the duration of the process.
 
+A button with undefined type in a form will natively have a [submit type](https://developer.mozilla.org/fr/docs/Web/HTML/Element/Button#attributs) and trigger form submission. So on non-submission buttons you need to explicitely set the type attribute as "button".
+
 ## Specs
 
 ![](./mg-button/doc/img/mg-button-specs.png)
@@ -32,12 +34,12 @@ To manage the space between two buttons you can use the helper [.mg-group-elemen
 | `disableOnClick` | `disable-on-click` | Option to set input disable on click, in order to prevent multi-click. Parent component have to remove the attribute 'disabled' when the process ends.                   | `boolean`                                                        | `false`                 |
 | `disabled`       | `disabled`         | Disable button                                                                                                                                                           | `boolean`                                                        | `false`                 |
 | `expanded`       | `expanded`         | Prop to set aria-expanded on button element                                                                                                                              | `boolean`                                                        | `false`                 |
-| `form`           | `form`             | Define form id to attach button with If this attribute is not set, the <button> is associated with its ancestor <form> element.                                          | `string`                                                         | `undefined`             |
+| `form`           | `form`             | Define form id to attach button with. If this attribute is not set, the <button> is associated with its ancestor <form> element.                                         | `string`                                                         | `undefined`             |
 | `haspopup`       | `haspopup`         | Option to set aria-haspopup The aria-haspopup state informs assistive technology users that there is a popup and the type of popup it is, but provides no interactivity. | `"dialog" \| "grid" \| "listbox" \| "menu" \| "tree" \| boolean` | `false`                 |
 | `identifier`     | `identifier`       | Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.                                                              | `string`                                                         | `createID('mg-button')` |
 | `isIcon`         | `is-icon`          | Define if button is round. Used for icon button.                                                                                                                         | `boolean`                                                        | `false`                 |
 | `label`          | `label`            | aria-label In case button text is not explicit enough                                                                                                                    | `string`                                                         | `undefined`             |
-| `type`           | `type`             | Define button type Default: 'submit', as HTMLButtonElement type is submit by default                                                                                     | `"button" \| "reset" \| "submit"`                                | `'submit'`              |
+| `type`           | `type`             | Define button type Default: 'submit', as HTMLButtonElement type is submit by default                                                                                     | `"button" \| "reset" \| "submit"`                                | `undefined`             |
 | `variant`        | `variant`          | Define button variant                                                                                                                                                    | `string`                                                         | `variants[0]`           |
 
 

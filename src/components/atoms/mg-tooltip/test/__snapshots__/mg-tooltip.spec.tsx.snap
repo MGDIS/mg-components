@@ -48,7 +48,7 @@ exports[`mg-tooltip Should manage display on events enter with { eventIn: 'focus
   <!---->
   <mg-button>
     <!---->
-    <button aria-describedby="identifier" aria-disabled="false" class="mg-button mg-button--primary" id="identifier-mg-button" type="submit">
+    <button aria-describedby="identifier" aria-disabled="false" class="mg-button mg-button--primary" id="identifier-mg-button">
       <div class="mg-button__content">
         mg-button
       </div>
@@ -109,7 +109,7 @@ exports[`mg-tooltip Should manage display on events enter with { eventIn: 'mouse
   <!---->
   <mg-button>
     <!---->
-    <button aria-describedby="identifier" aria-disabled="false" class="mg-button mg-button--primary" id="identifier-mg-button" type="submit">
+    <button aria-describedby="identifier" aria-disabled="false" class="mg-button mg-button--primary" id="identifier-mg-button">
       <div class="mg-button__content">
         mg-button
       </div>
@@ -170,7 +170,7 @@ exports[`mg-tooltip Should render with element 4`] = `
   <!---->
   <mg-button>
     <!---->
-    <button aria-describedby="identifier" aria-disabled="false" class="mg-button mg-button--primary" id="identifier" type="submit" style="position: absolute; left: 0; top: 0; margin: 0;">
+    <button aria-describedby="identifier" aria-disabled="false" class="mg-button mg-button--primary" id="identifier" style="position: absolute; left: 0; top: 0; margin: 0;">
       <div class="mg-button__content">
         mg-button
       </div>

@@ -55,7 +55,7 @@ export class MgButton {
    * Define button type
    * Default: 'submit', as HTMLButtonElement type is submit by default
    */
-  @Prop() type: ButtonType = 'submit';
+  @Prop() type: ButtonType;
 
   /**
    * Define form id to attach button with.
