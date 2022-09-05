@@ -74,10 +74,6 @@
     margin-left: var(--mg-inputs-spacer);
   }
 
-  mg-icon:not(.mg-input__help-text mg-icon) {
-    display: flex;
-  }
-
   .mg-input__help-text,
   .mg-input__error {
     text-align: start;
@@ -112,4 +108,11 @@
   border-radius: 0.3rem;
   background: hsl(var(--mg-inputs-error-bg-color));
   color: hsl(var(--color-danger));
+}
+
+mg-icon {
+  .mg-input__input &,
+  .mg-input__error & {
+    display: flex;
+  }
 }

@@ -85,6 +85,7 @@ describe('mg-input-numeric', () => {
     `<mg-input-numeric label="label" value="123,45" readonly lang="fr"></mg-input-numeric>`,
     `<mg-input-numeric label="label" value="123,45" readonly lang="fr" type="currency"></mg-input-numeric>`,
     `<mg-input-numeric label="label" value="123,45" readonly lang="fr" type="currency" currency="EUR"></mg-input-numeric>`,
+    `<mg-input-numeric label="label" value="123,45" help-text='<mg-icon icon="user" size="small"></mg-icon> Welcome batman'></mg-input-numeric>`,
   ])('Should render with template', html => {
     test('render', async () => {
       const page = await createPage(html);
