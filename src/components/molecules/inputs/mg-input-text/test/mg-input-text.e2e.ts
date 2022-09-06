@@ -73,6 +73,7 @@ describe('mg-input-text', () => {
     `<mg-input-text label="label" value="blu" readonly label-on-top></mg-input-text>`,
     `<mg-input-text label="label" disabled></mg-input-text>`,
     `<mg-input-text label="label" value="blu" disabled></mg-input-text>`,
+    `<mg-input-text label="label" value="batman" help-text='<mg-icon icon="user" size="small"></mg-icon> Welcome batman'></mg-input-text>`,
   ])('Should render with template', html => {
     test('render', async () => {
       const page = await createPage(html);

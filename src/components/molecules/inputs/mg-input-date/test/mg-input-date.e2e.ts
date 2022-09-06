@@ -73,6 +73,7 @@ describe('mg-input-date', () => {
     `<mg-input-date label="label" disabled></mg-input-date>`,
     `<mg-input-date label="label" value="1982-06-02" disabled></mg-input-date>`,
     `<mg-input-date label="label" value="1982-06-02" readonly lang="fr"></mg-input-date>`,
+    `<mg-input-date label="label" help-text='<mg-icon icon="user" size="small"></mg-icon> Welcome batman'></mg-input-date>`,
   ])('Should render with template', html => {
     test('render', async () => {
       const page = await createPage(html);
