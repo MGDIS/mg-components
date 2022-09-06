@@ -168,11 +168,11 @@ You can have troubles with i18n render in slots. In some cases, with the example
 </mg-button>
 ```
 
-To solve this issue, you need to use the [mg-model directive](http://core.pages.mgdis.fr/core-back/core/docs/mg-components-helpers/mg-translate-angular) to force the i18n render in slot.
+To solve this issue, you need to use the [mg-model directive](http://core.pages.mgdis.fr/core-back/core/docs/mg-components-helpers/mg-text-content-angular) to force the i18n render in slot.
 
 ```html
 <mg-button>
   <mg-icon icon="trash"></mg-icon>
-  <span mg-translate="'dispositifs.calculAide.button.btnDeleteScriptLabel'"></span>
+  <span mg-text-content="$ctrl.$translate.instant('dispositifs.calculAide.button.btnDeleteScriptLabel')"></span>
 </mg-button>
 ```
