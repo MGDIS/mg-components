@@ -70,6 +70,28 @@ describe('mg-input-toggle', () => {
     expect(screenshot).toMatchImageSnapshot();
   });
 
+  test.each([undefined, false, true])('Render and toggle value whith reverse checked logic', async value => {
+    const page = await createPage(`${`<mg-input-toggle label="label">${defaultSlots}</mg-input-toggle>`}
+      <script>
+      const mgInputToggle = document.querySelector('mg-input-toggle');
+      mgInputToggle.items = [{title: 'batman', value: true}, {title: 'joker', value: false}];
+      mgInputToggle.value = ${value};
+      </script>`);
+
+    const element = await page.find('mg-input-toggle');
+    const button = await page.find('mg-input-toggle >>> button');
+
+    expect(element).toHaveClass('hydrated');
+
+    const screenshot = await page.screenshot();
+    expect(screenshot).toMatchImageSnapshot();
+
+    await button.click();
+
+    const screenshot2 = await page.screenshot();
+    expect(screenshot2).toMatchImageSnapshot();
+  });
+
   test.each([true, false])('render with tooltip, case label-on-top %s', async labelOnTop => {
     const page = await createPage(`<mg-input-toggle label="label" tooltip="Tooltip message" label-on-top="${labelOnTop}">${defaultSlots}</mg-input-toggle>
       <script>
