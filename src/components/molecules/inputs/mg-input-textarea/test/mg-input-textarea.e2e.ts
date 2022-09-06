@@ -2,10 +2,10 @@ import { createPage } from '../../../../../utils/test.utils';
 
 describe('mg-input-textarea', () => {
   describe.each([
-    `<mg-input-textarea label="label"></mg-input-textareaarea>`,
-    `<mg-input-textarea label="label" label-on-top></mg-input-textareaarea>`,
-    `<mg-input-textarea label="label" label-hide></mg-input-textareaarea>`,
-    `<mg-input-textarea label="label" placeholder="placeholder" help-text="HelpText Message"></mg-input-textareaarea>`,
+    `<mg-input-textarea label="label"></mg-input-textarea>`,
+    `<mg-input-textarea label="label" label-on-top></mg-input-textarea>`,
+    `<mg-input-textarea label="label" label-hide></mg-input-textarea>`,
+    `<mg-input-textarea label="label" placeholder="placeholder" help-text="HelpText Message"></mg-input-textarea>`,
   ])('without tooltip', html => {
     test('render', async () => {
       const page = await createPage(html);
@@ -43,7 +43,7 @@ describe('mg-input-textarea', () => {
   });
 
   test.each([true, false])('render with tooltip, case label-on-top %s', async labelOnTop => {
-    const page = await createPage(`<mg-input-textarea label="label" tooltip="Tooltip message" label-on-top="${labelOnTop}"></mg-input-textareaarea>`);
+    const page = await createPage(`<mg-input-textarea label="label" tooltip="Tooltip message" label-on-top="${labelOnTop}"></mg-input-textarea>`);
 
     const element = await page.find('mg-input-textarea');
 
@@ -65,13 +65,14 @@ describe('mg-input-textarea', () => {
   });
 
   describe.each([
-    `<mg-input-textarea label="label" readonly></mg-input-textareaarea>`,
-    `<mg-input-textarea label="label" value="blu"></mg-input-textareaarea>`,
-    `<mg-input-textarea label="label" value="blu" readonly></mg-input-textareaarea>`,
-    `<mg-input-textarea label="label" value="blu" readonly label-on-top></mg-input-textareaarea>`,
-    `<mg-input-textarea label="label" disabled></mg-input-textareaarea>`,
-    `<mg-input-textarea label="label" value="blu" disabled></mg-input-textareaarea>`,
-    `<mg-input-textarea label="label" value="resizable" resizable="both"></mg-input-textareaarea>`,
+    `<mg-input-textarea label="label" readonly></mg-input-textarea>`,
+    `<mg-input-textarea label="label" value="blu"></mg-input-textarea>`,
+    `<mg-input-textarea label="label" value="blu" readonly></mg-input-textarea>`,
+    `<mg-input-textarea label="label" value="blu" readonly label-on-top></mg-input-textarea>`,
+    `<mg-input-textarea label="label" disabled></mg-input-textarea>`,
+    `<mg-input-textarea label="label" value="blu" disabled></mg-input-textarea>`,
+    `<mg-input-textarea label="label" value="resizable" resizable="both"></mg-input-textarea>`,
+    `<mg-input-textarea label="label" value="batman" help-text='<mg-icon icon="user" size="small"></mg-icon> Welcome batman'></mg-input-textarea>`,
   ])('Should render with template', html => {
     test('render', async () => {
       const page = await createPage(html);
@@ -105,7 +106,7 @@ describe('mg-input-textarea', () => {
 
   test('Should render error when leaving input with a non matching pattern value', async () => {
     const page = await createPage(
-      `<mg-input-textarea label="label" pattern="[a-z]*" pattern-error-message="Vous ne pouvez saisir que des lettres minuscules."></mg-input-textareaarea>`,
+      `<mg-input-textarea label="label" pattern="[a-z]*" pattern-error-message="Vous ne pouvez saisir que des lettres minuscules."></mg-input-textarea>`,
     );
 
     const element = await page.find('mg-input-textarea');
@@ -129,8 +130,8 @@ describe('mg-input-textarea', () => {
   });
 
   describe.each([
-    '<mg-input-textarea label="long label long label long label long label long label long label long label long label long label long label long label" tooltip="tooltip message"></mg-input-textareaarea>',
-    '<mg-input-textarea label="long label long label long label long label long label long label long label long label long label long label long label" tooltip="tooltip message" label-on-top></mg-input-textareaarea>',
+    '<mg-input-textarea label="long label long label long label long label long label long label long label long label long label long label long label" tooltip="tooltip message"></mg-input-textarea>',
+    '<mg-input-textarea label="long label long label long label long label long label long label long label long label long label long label long label" tooltip="tooltip message" label-on-top></mg-input-textarea>',
   ])('inside a div.mg-form-group', html => {
     test('render', async () => {
       const page = await createPage(`<div class="mg-form-group">${html}</div>`);
@@ -146,7 +147,7 @@ describe('mg-input-textarea', () => {
 
   describe.each([16])('with custom width: %s', width => {
     test.each([false, true])('with label on top: %s', async labelOnTop => {
-      const page = await createPage(`<mg-input-textarea label="label" mg-width="${width}" label-on-top="${labelOnTop}"></mg-input-textareaarea>`);
+      const page = await createPage(`<mg-input-textarea label="label" mg-width="${width}" label-on-top="${labelOnTop}"></mg-input-textarea>`);
 
       const element = await page.find('mg-input-textarea');
 
