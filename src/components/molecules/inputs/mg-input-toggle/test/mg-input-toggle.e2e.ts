@@ -54,6 +54,7 @@ describe('mg-input-toggle', () => {
     `<mg-input-toggle label="label" label-hide>${defaultSlots}</mg-input-toggle>`,
     `<mg-input-toggle label="label" is-on-off readonly><span slot="item-1">Off</span><span slot="item-2">On</span></mg-input-toggle>`,
     `<mg-input-toggle label="label" placeholder="placeholder" help-text="HelpText Message">${defaultSlots}</mg-input-toggle>`,
+    `<mg-input-toggle label="label" help-text='<mg-icon icon="user" size="small"></mg-icon> Welcome batman'>${defaultSlots}</mg-input-toggle>`,
   ])('Render without tooltip', async html => {
     const page = await createPage(`${html}
       <script>

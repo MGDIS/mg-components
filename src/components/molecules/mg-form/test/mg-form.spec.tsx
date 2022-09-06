@@ -1,6 +1,8 @@
 import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
 import { MgForm } from '../mg-form';
+import { MgButton } from '../../../atoms/mg-button/mg-button';
+import { buttonTypes } from '../../../atoms/mg-button/mg-button.conf';
 import { MgInputCheckbox } from '../../inputs/mg-input-checkbox/mg-input-checkbox';
 import { MgInputDate } from '../../inputs/mg-input-date/mg-input-date';
 import { MgInputNumeric } from '../../inputs/mg-input-numeric/mg-input-numeric';
@@ -14,7 +16,7 @@ import { HTMLMgInputsElement } from '../../inputs/MgInput.conf';
 
 const getPage = (args, content?) => {
   const page = newSpecPage({
-    components: [MgForm, MgInputCheckbox, MgInputDate, MgInputNumeric, MgInputPassword, MgInputRadio, MgInputSelect, MgInputText, MgInputTextarea, MgInputToggle],
+    components: [MgForm, MgInputCheckbox, MgInputDate, MgInputNumeric, MgInputPassword, MgInputRadio, MgInputSelect, MgInputText, MgInputTextarea, MgInputToggle, MgButton],
     template: () => <mg-form {...args}>{content}</mg-form>,
   });
 
@@ -145,5 +147,41 @@ describe('mg-form', () => {
     await page.waitForChanges();
 
     expect(page.root).toMatchSnapshot();
+  });
+
+  test.each([undefined, ...buttonTypes])('Should only emit "submit" event for <mg-button type="submit", case type is %s>', async type => {
+    const args = { identifier: 'identifier', lang: 'fr' };
+
+    const slot = [
+      ...getSlottedContent(),
+      <div slot="actions">
+        <mg-button type={type}>Submit</mg-button>
+      </div>,
+    ];
+
+    const page = await getPage(args, slot);
+
+    const mgForm = page.doc.querySelector('mg-form');
+    const form = mgForm.shadowRoot.querySelector('form');
+    const mgButton = page.doc.querySelector('mg-button');
+
+    const formSpy = jest.spyOn(form, 'dispatchEvent');
+    const mgFormSpy = jest.spyOn(page.rootInstance.formSubmit, 'emit');
+
+    mgButton.dispatchEvent(new Event('click', { bubbles: true }));
+
+    await page.waitForChanges();
+
+    if ([undefined, 'submit'].includes(type)) {
+      expect(formSpy).toHaveBeenCalledWith(
+        expect.objectContaining({
+          type: 'submit',
+        }),
+      );
+      expect(mgFormSpy).toHaveBeenCalled();
+    } else {
+      expect(formSpy).not.toHaveBeenCalled();
+      expect(mgFormSpy).not.toHaveBeenCalled();
+    }
   });
 });

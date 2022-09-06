@@ -14,7 +14,11 @@ export class MgForm {
    ************/
 
   private mgInputs: HTMLMgInputsElement[];
+  private mgButtons: HTMLMgButtonElement[];
   private requiredMessage: string;
+
+  // HTML selector
+  private form: HTMLFormElement;
 
   // Locales
   private messages;
@@ -69,6 +73,11 @@ export class MgForm {
   @Event({ eventName: 'form-valid' }) formValid: EventEmitter<boolean>;
 
   /**
+   * Emitted event on form submit
+   */
+  @Event({ eventName: 'form-submit' }) formSubmit: EventEmitter<boolean>;
+
+  /**
    * Public method to display errors
    *
    * @returns {Promise<void>}
@@ -119,6 +128,11 @@ export class MgForm {
     this.formValid.emit(validity);
   };
 
+  private handleFormSubmit = (event: SubmitEvent) => {
+    event.preventDefault();
+    this.formSubmit.emit();
+  };
+
   /*************
    * Lifecycle *
    *************/
@@ -134,6 +148,14 @@ export class MgForm {
 
     // Get slotted mgInputs
     this.mgInputs = Array.from(this.element.querySelectorAll('*')).filter((node: Node) => node.nodeName.startsWith('MG-INPUT-')) as HTMLMgInputsElement[];
+
+    // Get slotted mgButtons
+    this.mgButtons = Array.from(this.element.querySelectorAll('*')).filter((node: Node) => node.nodeName.startsWith('MG-BUTTON')) as HTMLMgButtonElement[];
+
+    // Set button form identifier
+    this.mgButtons.forEach(mgButton => {
+      mgButton.setAttribute('form', this.identifier);
+    });
 
     // Define required message
     this.setRequiredMessage();
@@ -156,13 +178,30 @@ export class MgForm {
   }
 
   /**
+   * Add slot listeners
+   *
+   * @returns {void}
+   */
+  componentDidLoad(): void {
+    this.mgButtons.forEach(mgButton => {
+      // submit buttons should trigger form submition
+      const button = mgButton.querySelector('button');
+      if (['submit', null].includes(button.getAttribute('type'))) {
+        mgButton.addEventListener('click', () => {
+          this.form.dispatchEvent(new CustomEvent('submit', { bubbles: true }));
+        });
+      }
+    });
+  }
+
+  /**
    * Render
    *
    * @returns {HTMLElement} HTML Element
    */
   render(): HTMLElement {
     return (
-      <form class={this.classList.join()} id={this.identifier} name={this.name}>
+      <form class={this.classList.join()} id={this.identifier} name={this.name} ref={el => (this.form = el as HTMLFormElement)} onSubmit={this.handleFormSubmit}>
         {this.requiredMessage && <p innerHTML={this.requiredMessage}></p>}
         <slot></slot>
         {!this.readonly && !this.disabled && <slot name="actions"></slot>}
