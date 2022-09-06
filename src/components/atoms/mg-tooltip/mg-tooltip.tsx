@@ -146,7 +146,7 @@ export class MgTooltip {
       });
     });
 
-    ['mouseleave', 'blur', 'keydown'].forEach(event => {
+    ['blur', 'keydown'].forEach(event => {
       tooltipedElement.addEventListener(event, (e: UIEvent & KeyboardEvent) => {
         // we continue to process ONLY for KeyboardEvents 'Escape'
         if (e.type === 'keydown' && e.code !== 'Escape') {
@@ -154,6 +154,10 @@ export class MgTooltip {
         }
         if (!this.disabled) this.display = false;
       });
+    });
+
+    this.element.addEventListener('mouseleave', () => {
+      if (!this.disabled) this.display = false;
     });
 
     this.handleDisplay(this.display);

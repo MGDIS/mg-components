@@ -49,7 +49,7 @@ describe('mg-tooltip', () => {
 
       expect(tooltip).toHaveAttribute('data-show');
 
-      mgIcon.triggerEvent('mouseleave');
+      mgTooltip.triggerEvent('mouseleave');
       await page.waitForChanges();
 
       expect(tooltip).not.toHaveAttribute('data-show');

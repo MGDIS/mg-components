@@ -63,7 +63,11 @@ describe('mg-tooltip', () => {
       expect(page.root).toMatchSnapshot();
       expect(tooltip).toHaveAttribute('data-show');
 
-      linkedTooltipElement.dispatchEvent(new CustomEvent(eventOut, { bubbles: true }));
+      if (eventOut === 'mouseleave') {
+        mgTooltip.dispatchEvent(new CustomEvent(eventOut, { bubbles: true }));
+      } else {
+        linkedTooltipElement.dispatchEvent(new CustomEvent(eventOut, { bubbles: true }));
+      }
       await page.waitForChanges();
 
       expect(tooltip).not.toHaveAttribute('data-show');
