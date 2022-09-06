@@ -3,7 +3,7 @@ import { h } from '@stencil/core';
 export default {
   component: 'mg-panel',
   title: 'Molecules/mg-panel',
-  parameters: { actions: { handles: ['title-change'] } },
+  parameters: { actions: { handles: ['title-change', 'expanded-change'] } },
 };
 
 /**
@@ -52,5 +52,5 @@ MgPanel.args = {
   panelTitle: 'title',
   expanded: false,
   titleEditable: true,
-  expandToggleDisabled: true,
+  expandToggleDisabled: false,
 };

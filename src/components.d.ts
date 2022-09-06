@@ -85,6 +85,20 @@ export namespace Components {
          */
         "maxlength": number;
     }
+    interface MgDetails {
+        /**
+          * Define if details are diplayed
+         */
+        "expanded": boolean;
+        /**
+          * Displayed title when details are closed
+         */
+        "toggleClosed": string;
+        /**
+          * Displayed title when details are opened
+         */
+        "toggleOpened": string;
+    }
     interface MgForm {
         /**
           * Define if form is disabled
@@ -989,6 +1003,10 @@ export namespace Components {
         "placement": Placement1;
     }
 }
+export interface MgDetailsCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMgDetailsElement;
+}
 export interface MgFormCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLMgFormElement;
@@ -1045,6 +1063,10 @@ export interface MgPanelCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLMgPanelElement;
 }
+export interface MgPopoverCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMgPopoverElement;
+}
 export interface MgTabsCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLMgTabsElement;
@@ -1067,6 +1089,12 @@ declare global {
     var HTMLMgCharacterLeftElement: {
         prototype: HTMLMgCharacterLeftElement;
         new (): HTMLMgCharacterLeftElement;
+    };
+    interface HTMLMgDetailsElement extends Components.MgDetails, HTMLStencilElement {
+    }
+    var HTMLMgDetailsElement: {
+        prototype: HTMLMgDetailsElement;
+        new (): HTMLMgDetailsElement;
     };
     interface HTMLMgFormElement extends Components.MgForm, HTMLStencilElement {
     }
@@ -1192,6 +1220,7 @@ declare global {
         "mg-badge": HTMLMgBadgeElement;
         "mg-button": HTMLMgButtonElement;
         "mg-character-left": HTMLMgCharacterLeftElement;
+        "mg-details": HTMLMgDetailsElement;
         "mg-form": HTMLMgFormElement;
         "mg-icon": HTMLMgIconElement;
         "mg-input-checkbox": HTMLMgInputCheckboxElement;
@@ -1284,6 +1313,24 @@ declare namespace LocalJSX {
           * Add maximum length
          */
         "maxlength": number;
+    }
+    interface MgDetails {
+        /**
+          * Define if details are diplayed
+         */
+        "expanded"?: boolean;
+        /**
+          * Emmited event when expanded change
+         */
+        "onExpanded-change"?: (event: MgDetailsCustomEvent<boolean>) => void;
+        /**
+          * Displayed title when details are closed
+         */
+        "toggleClosed"?: string;
+        /**
+          * Displayed title when details are opened
+         */
+        "toggleOpened"?: string;
     }
     interface MgForm {
         /**
@@ -2184,6 +2231,10 @@ declare namespace LocalJSX {
          */
         "identifier"?: string;
         /**
+          * Emited event when display value change
+         */
+        "onDisplay-change"?: (event: MgPopoverCustomEvent<boolean>) => void;
+        /**
           * Popover placement
          */
         "placement"?: Placement;
@@ -2250,6 +2301,7 @@ declare namespace LocalJSX {
         "mg-badge": MgBadge;
         "mg-button": MgButton;
         "mg-character-left": MgCharacterLeft;
+        "mg-details": MgDetails;
         "mg-form": MgForm;
         "mg-icon": MgIcon;
         "mg-input-checkbox": MgInputCheckbox;
@@ -2279,6 +2331,7 @@ declare module "@stencil/core" {
             "mg-badge": LocalJSX.MgBadge & JSXBase.HTMLAttributes<HTMLMgBadgeElement>;
             "mg-button": LocalJSX.MgButton & JSXBase.HTMLAttributes<HTMLMgButtonElement>;
             "mg-character-left": LocalJSX.MgCharacterLeft & JSXBase.HTMLAttributes<HTMLMgCharacterLeftElement>;
+            "mg-details": LocalJSX.MgDetails & JSXBase.HTMLAttributes<HTMLMgDetailsElement>;
             "mg-form": LocalJSX.MgForm & JSXBase.HTMLAttributes<HTMLMgFormElement>;
             "mg-icon": LocalJSX.MgIcon & JSXBase.HTMLAttributes<HTMLMgIconElement>;
             "mg-input-checkbox": LocalJSX.MgInputCheckbox & JSXBase.HTMLAttributes<HTMLMgInputCheckboxElement>;

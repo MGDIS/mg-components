@@ -67,6 +67,7 @@ MgInputTextarea.args = {
   patternErrorMessage: undefined,
   rows: 3,
   mgWidth: 'full',
+  resizable: 'none',
   // Tooltip
   tooltip: 'This is a tooltip',
   // Nb Char Left

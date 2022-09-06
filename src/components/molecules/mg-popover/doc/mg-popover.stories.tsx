@@ -7,6 +7,7 @@ export default {
   parameters: {
     layout: 'centered',
     docs: { iframeHeight: 600 },
+    actions: { handles: ['display-change'] },
   },
   argTypes: {
     placement: {

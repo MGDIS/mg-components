@@ -35,7 +35,9 @@
     <link rel="stylesheet" href="/build/variables.css" />
     <link rel="stylesheet" href="/build/mg-components.css" />
     <script type="module" src="/build/mg-components.esm.js"></script>
-    <script nomodule src="/build/mg-components.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mgdis/mg-components@4/dist/mg-components/variables.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mgdis/mg-components@4/dist/mg-components/mg-components.css" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@mgdis/mg-components@4.0.1/dist/mg-components/mg-components.esm.js"></script> -->
   </head>
   <body>
     <main>
@@ -245,6 +247,16 @@
             </mg-button>
           </div>
         </mg-panel>
+      </section>
+      <section>
+        <h2>Details</h2>
+        <mg-details toggle-closed="Show details" toggle-opened="Hide details">
+          <span slot="summary"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </span>
+          <p slot="details">
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </mg-details>
       </section>
       <section>
         <h2>Tags</h2>

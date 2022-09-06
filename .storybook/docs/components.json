@@ -1,8 +1,8 @@
 {
-  "timestamp": "2022-08-22T15:35:36",
+  "timestamp": "2022-09-02T12:27:04",
   "compiler": {
     "name": "@stencil/core",
-    "version": "2.17.1",
+    "version": "2.17.4",
     "typescriptVersion": "4.5.4"
   },
   "components": [
@@ -150,7 +150,6 @@
           "reflectToAttr": false,
           "docs": "Disable button",
           "docsTags": [],
-          "default": "false",
           "values": [
             {
               "type": "boolean"
@@ -167,7 +166,6 @@
           "reflectToAttr": false,
           "docs": "Prop to set aria-expanded on button element",
           "docsTags": [],
-          "default": "false",
           "values": [
             {
               "type": "boolean"
@@ -184,7 +182,6 @@
           "reflectToAttr": false,
           "docs": "Option to set aria-haspopup\nThe aria-haspopup state informs assistive technology users that there is a popup and the type of popup it is, but provides no interactivity.",
           "docsTags": [],
-          "default": "false",
           "values": [
             {
               "value": "dialog",
@@ -398,10 +395,95 @@
       }
     },
     {
+      "filePath": "./src/components/molecules/mg-details/mg-details.tsx",
+      "encapsulation": "shadow",
+      "tag": "mg-details",
+      "readme": "## Properties\n \n![](./mg-details/doc/img/mg-details-components.png)\n\n- **summary** and **details** are slots which allow html content\n- **toggle** is defined by mg-icon plus a custom text\n  - mg-icon _chevron-down_ is used for the close state\n  - mg-icon _chevron-up_ is used for the open state\n\n## Behavior\n\n### Action\n\nThe complete zone including the _summary_ and the _toggle_ is clickable and toggles the state of the component.\n \n![](./mg-details/doc/img/mg-details-behavior.png)\n\n### Position\n\n_Toggle_ follows the _summary_ and is always on the top right.\n \n![](./mg-details/doc/img/mg-details-position.png)\n\n### Responsive\n\nIn mobile resolution, the text of the _toggle_ is hidden\n \n![](./mg-details/doc/img/mg-details-responsive.png)\n\n## Specs\n\n### Spacing\n \n![](./mg-details/doc/img/mg-details-spacing.png)\n",
+      "docs": "![](./mg-details/doc/img/mg-details-components.png)\n\n- **summary** and **details** are slots which allow html content\n- **toggle** is defined by mg-icon plus a custom text\n  - mg-icon _chevron-down_ is used for the close state\n  - mg-icon _chevron-up_ is used for the open state",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "expanded",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "expanded",
+          "reflectToAttr": false,
+          "docs": "Define if details are diplayed",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "toggleClosed",
+          "type": "string",
+          "mutable": false,
+          "attr": "toggle-closed",
+          "reflectToAttr": false,
+          "docs": "Displayed title when details are closed",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "toggleOpened",
+          "type": "string",
+          "mutable": false,
+          "attr": "toggle-opened",
+          "reflectToAttr": false,
+          "docs": "Displayed title when details are opened",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "expanded-change",
+          "detail": "boolean",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emmited event when expanded change",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "mg-icon"
+      ],
+      "dependencyGraph": {
+        "mg-details": [
+          "mg-icon"
+        ]
+      }
+    },
+    {
       "filePath": "./src/components/molecules/mg-form/mg-form.tsx",
       "encapsulation": "shadow",
       "tag": "mg-form",
-      "readme": "## Anatomy\n\n![](./mg-form/doc/img/mg-form-anatomy.png)\n\n- zone for required message (12px)\n- field area\n- actions area (submit, cancel)\n\n#### Spacing\n\n![](./mg-form/doc/img/mg-form-spacing.png)\n\n## Example\n\n**Code example does not reflect all the code.**\n\nHere we have a `form-valid` event listener on the `mg-form` to define if the \"submit\" button should be enable or not.  \nThe \"Display errors\" button use the `mg-form` `displayError()` method.\n",
+      "readme": "## Anatomy\n\n![](./mg-form/doc/img/mg-form-anatomy.png)\n\n- zone for required message (12px)\n- field area\n- actions area (submit, cancel)\n\n#### Spacing\n\n![](./mg-form/doc/img/mg-form-spacing.png)\n\nTo edit space bewteen the title and the input you must do as follow:\n\n```html\n<style>.mg-form--custom-grid {\n  --mg-form-inputs-title-width: 50rem //add here your custom value\n}</style>\n<mg-form class=\"mg-form--custom-grid\">\n  <!-- your content -->\n</mgform>\n```\n\n## Example\n\n**Code example does not reflect all the code.**\n\nHere we have a `form-valid` event listener on the `mg-form` to define if the \"submit\" button should be enable or not.  \nThe \"Display errors\" button use the `mg-form` `displayError()` method.\n",
       "docs": "![](./mg-form/doc/img/mg-form-anatomy.png)\n\n- zone for required message (12px)\n- field area\n- actions area (submit, cancel)",
       "docsTags": [],
       "usage": {},
@@ -627,6 +709,7 @@
       "parts": [],
       "dependents": [
         "mg-button",
+        "mg-details",
         "mg-input-checkbox",
         "mg-input-date",
         "mg-input-numeric",
@@ -646,6 +729,9 @@
       "dependencies": [],
       "dependencyGraph": {
         "mg-button": [
+          "mg-icon"
+        ],
+        "mg-details": [
           "mg-icon"
         ],
         "mg-input-checkbox": [
@@ -4404,7 +4490,6 @@
           "reflectToAttr": false,
           "docs": "Disable possibility to toggle expand",
           "docsTags": [],
-          "default": "false",
           "values": [
             {
               "type": "boolean"
@@ -4714,7 +4799,17 @@
         }
       ],
       "methods": [],
-      "events": [],
+      "events": [
+        {
+          "event": "display-change",
+          "detail": "boolean",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emited event when display value change",
+          "docsTags": []
+        }
+      ],
       "listeners": [],
       "styles": [],
       "slots": [],
@@ -4736,7 +4831,7 @@
     },
     {
       "filePath": "./src/components/molecules/mg-tabs/mg-tabs.tsx",
-      "encapsulation": "none",
+      "encapsulation": "shadow",
       "tag": "mg-tabs",
       "readme": "## Anatomy\n\n![](./mg-tabs/doc/img/mg-tabs-anatomy.png)\n\n## Specs\n\n### Spacing\n\n- Standard : @base = 10px\n- Large : @base = 18px\n\n![](./mg-tabs/doc/img/mg-tabs-spacing.png)\n\n- if only text, no extra spacing,\n- if no badge : no extra spacing on the right\n- if only icon : no extra spacing on the right\n\n### Sizing\n\n![](./mg-tabs/doc/img/mg-tabs-sizing.png)\n\n### States\n\n![](./mg-tabs/doc/img/mg-tabs-states.png)\n\n### Responsive\n\n#### Line breaks (current management)\n\n![](./mg-tabs/doc/img/mg-tabs-responsive.png)\n",
       "docs": "![](./mg-tabs/doc/img/mg-tabs-anatomy.png)",

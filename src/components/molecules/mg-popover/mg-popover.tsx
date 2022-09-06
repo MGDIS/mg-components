@@ -1,4 +1,4 @@
-import { Component, Element, Host, h, Prop, Watch } from '@stencil/core';
+import { Component, Element, Host, h, Prop, Watch, EventEmitter, Event } from '@stencil/core';
 import { createID } from '../../../utils/components.utils';
 import { Instance as PopperInstance, createPopper } from '@popperjs/core';
 import { initLocales } from '../../../locales';
@@ -57,12 +57,18 @@ export class MgPopover {
     } else {
       this.hide();
     }
+    this.displayChange.emit(newVal);
   }
 
   /**
    * Disable popover
    */
   @Prop({ mutable: true }) disabled = false;
+
+  /**
+   * Emited event when display value change
+   */
+  @Event({ eventName: 'display-change' }) displayChange: EventEmitter<boolean>;
 
   /**
    * Check if clicked outside of component
