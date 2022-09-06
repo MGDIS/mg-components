@@ -160,7 +160,7 @@ export class MgForm {
     // Define required message
     this.setRequiredMessage();
 
-    // Check validity when slotted mgImputs are ready
+    // Check validity when slotted mgInputs are ready
     Promise.all(
       this.mgInputs.map(async input => {
         // Set inputs readonly or disabled based on form configuration
@@ -168,8 +168,9 @@ export class MgForm {
         if (this.readonly) input.readonly = true;
         else if (this.disabled) input.disabled = true;
         else input.addEventListener('input-valid', this.checkValidity);
-
-        await input.componentOnReady();
+        try {
+          await input.componentOnReady();
+        } catch {} // prevent error with VueJS first render
       }),
     ).then(() => {
       this.checkValidity();

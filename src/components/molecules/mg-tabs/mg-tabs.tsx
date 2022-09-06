@@ -1,4 +1,4 @@
-import { Component, Event, EventEmitter, h, Host, Prop, State, Element, Watch } from '@stencil/core';
+import { Component, Event, EventEmitter, h, Prop, State, Element, Watch } from '@stencil/core';
 import { createID, ClassList, allItemsAreString } from '../../../utils/components.utils';
 import { TabItem, sizes, Status } from './mg-tabs.conf';
 
@@ -13,6 +13,7 @@ const isTabItem = (tab: TabItem): boolean => typeof tab === 'object' && typeof t
 @Component({
   tag: 'mg-tabs',
   styleUrl: 'mg-tabs.scss',
+  shadow: true,
 })
 export class MgTabs {
   /************
@@ -229,47 +230,45 @@ export class MgTabs {
    */
   render(): HTMLElement {
     return (
-      <Host>
-        <div class={this.classList.join()}>
-          <header role="tablist" aria-label={this.label} class="mg-tabs__header">
-            {this.tabs.map((tab, index) => (
-              <button
-                role="tab"
-                id={this.getElementId(this.identifier, index)}
-                class={{
-                  [`${this.buttonTabBaseClass}`]: true,
-                  [`${this.getNavigationButtonClass(Status.ACTIVE)}`]: this.tabHasGivenStatus(tab, Status.ACTIVE),
-                  [`${this.getNavigationButtonClass(Status.DISABLED)}`]: this.tabHasGivenStatus(tab, Status.DISABLED),
-                  [`${this.getNavigationButtonClass(Status.HIDDEN)}`]: this.tabHasGivenStatus(tab, Status.HIDDEN),
-                }}
-                tabindex={this.tabHasGivenStatus(tab, Status.ACTIVE) ? 0 : -1}
-                aria-selected={this.tabHasGivenStatus(tab, Status.ACTIVE).toString()}
-                aria-controls={this.getElementId(this.tabPanel, index)}
-                onClick={this.handleClick}
-                onKeyDown={this.handleKeydown}
-                data-index={this.getTabIndex(index)}
-                disabled={this.tabHasGivenStatus(tab, Status.DISABLED)}
-              >
-                {tab.icon !== undefined && <mg-icon icon={tab.icon}></mg-icon>}
-                {tab.label}
-                {tab.badge !== undefined && <mg-badge variant="info" value={tab.badge.value} label={tab.badge.label}></mg-badge>}
-              </button>
-            ))}
-          </header>
+      <div class={this.classList.join()}>
+        <header role="tablist" aria-label={this.label} class="mg-tabs__header">
           {this.tabs.map((tab, index) => (
-            <article
-              role="tabpanel"
-              id={this.getElementId(this.tabPanel, index)}
-              hidden={!this.tabHasGivenStatus(tab, Status.ACTIVE)}
-              aria-labelledby={this.getElementId(this.identifier, index)}
+            <button
+              role="tab"
+              id={this.getElementId(this.identifier, index)}
+              class={{
+                [`${this.buttonTabBaseClass}`]: true,
+                [`${this.getNavigationButtonClass(Status.ACTIVE)}`]: this.tabHasGivenStatus(tab, Status.ACTIVE),
+                [`${this.getNavigationButtonClass(Status.DISABLED)}`]: this.tabHasGivenStatus(tab, Status.DISABLED),
+                [`${this.getNavigationButtonClass(Status.HIDDEN)}`]: this.tabHasGivenStatus(tab, Status.HIDDEN),
+              }}
               tabindex={this.tabHasGivenStatus(tab, Status.ACTIVE) ? 0 : -1}
-              class="mg-tabs__content-container"
+              aria-selected={this.tabHasGivenStatus(tab, Status.ACTIVE).toString()}
+              aria-controls={this.getElementId(this.tabPanel, index)}
+              onClick={this.handleClick}
+              onKeyDown={this.handleKeydown}
+              data-index={this.getTabIndex(index)}
+              disabled={this.tabHasGivenStatus(tab, Status.DISABLED)}
             >
-              <slot name={this.getElementId('tab_content', index)}></slot>
-            </article>
+              {tab.icon !== undefined && <mg-icon icon={tab.icon}></mg-icon>}
+              {tab.label}
+              {tab.badge !== undefined && <mg-badge variant="info" value={tab.badge.value} label={tab.badge.label}></mg-badge>}
+            </button>
           ))}
-        </div>
-      </Host>
+        </header>
+        {this.tabs.map((tab, index) => (
+          <article
+            role="tabpanel"
+            id={this.getElementId(this.tabPanel, index)}
+            hidden={!this.tabHasGivenStatus(tab, Status.ACTIVE)}
+            aria-labelledby={this.getElementId(this.identifier, index)}
+            tabindex={this.tabHasGivenStatus(tab, Status.ACTIVE) ? 0 : -1}
+            class="mg-tabs__content-container"
+          >
+            <slot name={this.getElementId('tab_content', index)}></slot>
+          </article>
+        ))}
+      </div>
     );
   }
 }

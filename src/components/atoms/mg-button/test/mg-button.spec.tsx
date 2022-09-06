@@ -27,6 +27,11 @@ describe('mg-button', () => {
     expect(root).toMatchSnapshot();
   });
 
+  test.each([true, false])('Should render a button, case haspopup %s', async haspopup => {
+    const { root } = await getPage({ identifier: 'identifier', label: 'label', haspopup });
+    expect(root).toMatchSnapshot();
+  });
+
   test.each(buttonTypes)('Should render a button, case type %s', async type => {
     const { root } = await getPage({ identifier: 'identifier', label: 'label', type });
     expect(root).toMatchSnapshot();

@@ -42,8 +42,8 @@ const Template = args => {
         Open modal
       </mg-button>
       <mg-modal {...args} close-button={closeButton} modal-title={modalTitle}>
-        {slotContent && <span slot="content" innerHTML={slotContent}></span>}
-        {slotActions && <span slot="actions" innerHTML={slotActions}></span>}
+        {slotContent && <div slot="content" innerHTML={slotContent}></div>}
+        {slotActions && <div slot="actions" innerHTML={slotActions}></div>}
       </mg-modal>
     </div>
   );
@@ -52,7 +52,7 @@ const Template = args => {
 export const MgModal = Template.bind({});
 
 MgModal.args = {
-  slotContent: `<p slot="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>`,
+  slotContent: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>`,
   slotActions: ``,
   modalTitle: 'Modal title',
   identifier: 'identifier',
@@ -72,5 +72,5 @@ export const WithActions = Template.bind({});
 WithActions.args = {
   ...MgModal.args,
   closeButton: true,
-  slotActions: `<div slot="actions" class="mg-group-elements mg-group-elements--align-right"><mg-button>Primary</mg-button><mg-button variant="secondary">Secondary</mg-button></div>`,
+  slotActions: `<div class="mg-group-elements mg-group-elements--align-right"><mg-button>Primary</mg-button><mg-button variant="secondary">Secondary</mg-button></div>`,
 };

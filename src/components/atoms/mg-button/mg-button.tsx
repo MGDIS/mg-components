@@ -66,7 +66,7 @@ export class MgButton {
   /**
    * Disable button
    */
-  @Prop({ mutable: true }) disabled = false;
+  @Prop({ mutable: true }) disabled: boolean;
   @Watch('disabled')
   disabledHandler(isDisabled: boolean): void {
     // Remove loading when enable
@@ -92,7 +92,7 @@ export class MgButton {
   /**
    * Prop to set aria-expanded on button element
    */
-  @Prop() expanded = false;
+  @Prop() expanded: boolean;
 
   /**
    * Prop to set aria-controls on button element
@@ -103,7 +103,7 @@ export class MgButton {
    * Option to set aria-haspopup
    * The aria-haspopup state informs assistive technology users that there is a popup and the type of popup it is, but provides no interactivity.
    */
-  @Prop() haspopup: boolean | 'menu' | 'listbox' | 'tree' | 'grid' | 'dialog' = false;
+  @Prop() haspopup: boolean | 'menu' | 'listbox' | 'tree' | 'grid' | 'dialog';
 
   /**
    * Define if button is loading, default to false.
@@ -172,10 +172,10 @@ export class MgButton {
         class={this.classList.join()}
         type={this.type}
         aria-label={this.label}
-        aria-disabled={this.disabled.toString()}
-        aria-expanded={this.expanded}
+        aria-disabled={this.disabled !== undefined && this.disabled.toString()}
+        aria-expanded={this.expanded !== undefined && this.expanded.toString()}
         aria-controls={this.controls}
-        aria-haspopup={this.haspopup}
+        aria-haspopup={this.haspopup !== undefined && this.haspopup.toString()}
         onClick={this.handleClick}
         // has stencil does not support form attribute on button, we set the attribute from the ref
         // https://github.com/ionic-team/stencil/issues/2703#issuecomment-1050943715
