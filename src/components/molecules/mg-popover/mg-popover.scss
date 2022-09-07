@@ -68,10 +68,8 @@ mg-popover {
   }
 }
 
-.mg-popover__title {
-  ::slotted(*) {
-    margin: 0 0 1rem;
-    font-size: var(--mg-popover-title-font-size);
-    font-weight: 600;
-  }
+.mg-popover__title ::slotted([slot='title']) {
+  margin: 0 0 1rem;
+  font-size: var(--mg-popover-title-font-size);
+  font-weight: 600;
 }
