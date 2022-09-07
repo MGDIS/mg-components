@@ -6,6 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { BadgeType } from "./components/atoms/mg-badge/mg-badge.conf";
+import { ButtonType } from "./components/atoms/mg-button/mg-button.conf";
 import { CheckboxValue } from "./components/molecules/inputs/mg-input-checkbox/mg-input-checkbox.conf";
 import { Width } from "./components/molecules/inputs/MgInput.conf";
 import { RadioOption } from "./components/molecules/inputs/mg-input-radio/mg-input-radio.conf";
@@ -51,6 +52,10 @@ export namespace Components {
          */
         "expanded": boolean;
         /**
+          * Define form id to attach button with. If this attribute is not set, the <button> is associated with its ancestor <form> element.
+         */
+        "form": string;
+        /**
           * Option to set aria-haspopup The aria-haspopup state informs assistive technology users that there is a popup and the type of popup it is, but provides no interactivity.
          */
         "haspopup": boolean | 'menu' | 'listbox' | 'tree' | 'grid' | 'dialog';
@@ -66,6 +71,10 @@ export namespace Components {
           * aria-label In case button text is not explicit enough
          */
         "label": string;
+        /**
+          * Define button type Default: 'submit', as HTMLButtonElement type is submit by default
+         */
+        "type": ButtonType;
         /**
           * Define button variant
          */
@@ -1293,6 +1302,10 @@ declare namespace LocalJSX {
          */
         "expanded"?: boolean;
         /**
+          * Define form id to attach button with. If this attribute is not set, the <button> is associated with its ancestor <form> element.
+         */
+        "form"?: string;
+        /**
           * Option to set aria-haspopup The aria-haspopup state informs assistive technology users that there is a popup and the type of popup it is, but provides no interactivity.
          */
         "haspopup"?: boolean | 'menu' | 'listbox' | 'tree' | 'grid' | 'dialog';
@@ -1308,6 +1321,10 @@ declare namespace LocalJSX {
           * aria-label In case button text is not explicit enough
          */
         "label"?: string;
+        /**
+          * Define button type Default: 'submit', as HTMLButtonElement type is submit by default
+         */
+        "type"?: ButtonType;
         /**
           * Define button variant
          */
@@ -1362,6 +1379,10 @@ declare namespace LocalJSX {
           * Input name If not set the value equals the identifier
          */
         "name"?: string;
+        /**
+          * Emitted event on form submit
+         */
+        "onForm-submit"?: (event: MgFormCustomEvent<boolean>) => void;
         /**
           * Emitted event on form validity check Tells if form is valid or not
          */

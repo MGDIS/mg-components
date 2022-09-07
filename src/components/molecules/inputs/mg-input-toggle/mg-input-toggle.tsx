@@ -216,15 +216,24 @@ export class MgInputToggle {
    * @returns {void}
    */
   private setChecked(): void {
-    // has "value" props type is not a boolean, it is bind/render as an attributes/props
-    // true props will be represent by "true" string so we convert it has boolean
-    // true attribute will be represent by "" string so we convert it has boolean
-    // https://stenciljs.com/docs/properties
-    if (['', 'true'].includes(this.value as string) && this.options.find(option => option.value) !== undefined) {
-      this.value = true;
-    }
+    const optionTrueValueIndex = this.options.map(option => option.value).findIndex(value => value === true);
 
-    this.checked = this.value === this.options[1].value;
+    if ([0, 1].includes(optionTrueValueIndex)) {
+      // has "value" props type is not a boolean, it is bind/render as an attributes/props
+      // true props will be represent by "true" string so we convert it has boolean
+      // true attribute will be represent by "" string so we convert it has boolean
+      // https://stenciljs.com/docs/properties
+      if (['', 'true'].includes(this.value as string) && this.options.find(option => option.value) !== undefined) {
+        this.value = true;
+      }
+
+      // when options are boolean values and ordered as [true,false] instead [false,true]
+      // we need to reversed the checked value logic
+      const selectedValue = this.value === this.options[optionTrueValueIndex].value;
+      this.checked = optionTrueValueIndex === 0 ? !selectedValue : selectedValue;
+    } else {
+      this.checked = this.value === this.options[1].value;
+    }
   }
 
   /*************
