@@ -49,7 +49,7 @@ describe('mg-tooltip', () => {
 
       expect(tooltip).toHaveAttribute('data-show');
 
-      mgTooltip.triggerEvent('mouseleave');
+      mgIcon.triggerEvent('mouseleave');
       await page.waitForChanges();
 
       expect(tooltip).not.toHaveAttribute('data-show');
@@ -99,5 +99,36 @@ describe('mg-tooltip', () => {
 
       expect(tooltip).not.toHaveAttribute('data-show');
     });
+  });
+
+  test('Should keep tooltip displaied when hover with mouse after focus event', async () => {
+    const page = await createPage('<mg-tooltip identifier="identifier" message="Batman tooltip"><mg-icon icon="user"></mg-icon></mg-tooltip>');
+
+    const tooltipedElement = await page.find('mg-icon');
+    const tooltipElement = await page.find('[role="tooltip"]');
+
+    // 1. take focus on tooltipedElement and display tooltip
+    tooltipedElement.triggerEvent('focus');
+    await page.waitForChanges();
+
+    expect(tooltipElement).toHaveAttribute('data-show');
+
+    // 2. mouseenter on tooltipedElement and tooltip stay displaied
+    tooltipedElement.triggerEvent('mouseenter');
+    await page.waitForChanges();
+
+    expect(tooltipElement).toHaveAttribute('data-show');
+
+    // 3. mouseleave on tooltipedElement and tooltip stay displaied
+    tooltipedElement.triggerEvent('mouseleave');
+    await page.waitForChanges();
+
+    expect(tooltipElement).toHaveAttribute('data-show');
+
+    // 4. presse tab key and tooltip is hidden
+    tooltipedElement.triggerEvent('blur');
+    await page.waitForChanges();
+
+    expect(tooltipElement).not.toHaveAttribute('data-show');
   });
 });

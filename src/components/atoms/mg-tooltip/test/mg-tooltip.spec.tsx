@@ -26,6 +26,9 @@ const getPage = (args, element) =>
   });
 
 describe('mg-tooltip', () => {
+  beforeEach(() => jest.useFakeTimers());
+  afterEach(() => jest.runOnlyPendingTimers());
+
   test.each([<span>span</span>, <button aria-describedby="blu">button</button>, <mg-icon icon="check-circle"></mg-icon>, <mg-button identifier="identifier">mg-button</mg-button>])(
     'Should render with element',
     async element => {
@@ -63,11 +66,12 @@ describe('mg-tooltip', () => {
       expect(page.root).toMatchSnapshot();
       expect(tooltip).toHaveAttribute('data-show');
 
+      linkedTooltipElement.dispatchEvent(new CustomEvent(eventOut, { bubbles: true }));
+
       if (eventOut === 'mouseleave') {
-        mgTooltip.dispatchEvent(new CustomEvent(eventOut, { bubbles: true }));
-      } else {
-        linkedTooltipElement.dispatchEvent(new CustomEvent(eventOut, { bubbles: true }));
+        jest.runOnlyPendingTimers();
       }
+
       await page.waitForChanges();
 
       expect(tooltip).not.toHaveAttribute('data-show');
@@ -152,5 +156,49 @@ describe('mg-tooltip', () => {
 
       expect(tooltip).not.toHaveAttribute('data-show');
     });
+  });
+
+  test('Should keep displaied tooltip when hover it', async () => {
+    const element = <span>span</span>;
+    const eventIn = 'mouseenter';
+    const eventOut = 'mouseleave';
+    const args = { identifier: 'identifier', message: 'blu' };
+    const page = await getPage(args, element);
+    const mgTooltip = page.doc.querySelector('mg-tooltip');
+    const linkedTooltipElement = mgTooltip.querySelector(`[aria-describedby*='${args.identifier}']`);
+    const tooltip = mgTooltip.querySelector(`#${args.identifier}`);
+
+    // 1. hover tooltipedElement and display tooltip
+    linkedTooltipElement.dispatchEvent(new CustomEvent(eventIn, { bubbles: true }));
+    await page.waitForChanges();
+
+    expect(page.root).toMatchSnapshot();
+    expect(tooltip).toHaveAttribute('data-show');
+
+    // 2.1 leave tooltipedElement and tooltip stay displaied
+    linkedTooltipElement.dispatchEvent(new CustomEvent(eventOut, { bubbles: true }));
+    await page.waitForChanges();
+
+    expect(tooltip).toHaveAttribute('data-show');
+
+    // 2.2 hover on tooltipedElement and tooltip stay displaied
+    tooltip.dispatchEvent(new CustomEvent(eventIn, { bubbles: true }));
+    await page.waitForChanges();
+
+    // 2.3 flush promise to keep tooltip display thanks to guard
+    jest.advanceTimersByTime(200);
+    await page.waitForChanges();
+
+    expect(tooltip).toHaveAttribute('data-show');
+
+    // 3 leave tooltipElement
+    tooltip.dispatchEvent(new CustomEvent(eventOut, { bubbles: true }));
+    await page.waitForChanges();
+
+    // 3.2 flush promise to pass tooltip guard and hide it
+    jest.advanceTimersByTime(200);
+    await page.waitForChanges();
+
+    expect(tooltip).not.toHaveAttribute('data-show');
   });
 });
