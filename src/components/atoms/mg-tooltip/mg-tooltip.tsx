@@ -94,7 +94,14 @@ export class MgTooltip {
     }));
   };
 
-  private setDisplay = (newValue, condition = true): void => {
+  /**
+   * Method to set display prop
+   *
+   * @param {boolean} newValue display prop new value
+   * @param {boolean} condition additionnal condition to apply display prop newValue
+   * @returns {void}
+   */
+  private setDisplay = (newValue: boolean, condition = true): void => {
     if (!this.disabled && condition) this.display = newValue;
   };
 
