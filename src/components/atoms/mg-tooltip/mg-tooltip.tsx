@@ -1,7 +1,7 @@
 import { Component, Element, h, Host, Prop, Watch } from '@stencil/core';
 import { createID } from '../../../utils/components.utils';
 import { Instance as PopperInstance, createPopper } from '@popperjs/core';
-import { Placement } from './mg-tooltip.conf';
+import { Placement, Guard } from './mg-tooltip.conf';
 
 @Component({
   tag: 'mg-tooltip',
@@ -15,6 +15,9 @@ export class MgTooltip {
 
   private popper: PopperInstance;
   private tooltip: HTMLElement;
+
+  // tooltip actions guards
+  private guard: Guard;
 
   /**************
    * Decorators *
@@ -91,6 +94,49 @@ export class MgTooltip {
     }));
   };
 
+  /**
+   * Method to set display prop
+   *
+   * @param {boolean} newValue display prop new value
+   * @param {boolean} condition additionnal condition to apply display prop newValue
+   * @returns {void}
+   */
+  private setDisplay = (newValue: boolean, condition = true): void => {
+    if (!this.disabled && condition) this.display = newValue;
+  };
+
+  /**
+   * Action for tooltip element and tooltiped element mouse listener
+   *
+   * @param {Guard} elementGuard tooltip element guard
+   * @param {boolean} isMouseenter mouseenter validation
+   * @param {Guard} conditionalGuard guard condition
+   * @returns {void}
+   */
+  private tooltipMouseListenerAction = (elementGuard: Guard, isMouseenter: boolean, conditionalGuard: Guard): void => {
+    // we mutate elementGuard
+    if (this.guard !== Guard.FOCUS) {
+      this.guard = elementGuard;
+      if (!isMouseenter) {
+        setTimeout(() => {
+          this.setDisplay(isMouseenter, this.guard !== conditionalGuard);
+          this.resetGuard();
+        }, 100);
+      } else if (isMouseenter && elementGuard === Guard.HOVER_TOOLTIPED_ELEMENT) {
+        this.setDisplay(isMouseenter);
+      }
+    }
+  };
+
+  /**
+   * Method to reset guard value
+   *
+   * @returns {void}
+   */
+  private resetGuard = (): void => {
+    this.guard = undefined;
+  };
+
   /*************
    * Lifecycle *
    *************/
@@ -139,20 +185,33 @@ export class MgTooltip {
       ],
     });
 
-    // Add events
-    ['mouseenter', 'focus'].forEach(event => {
-      tooltipedElement.addEventListener(event, () => {
-        if (!this.disabled) this.display = true;
-      });
+    // Manage tooltipedElement focus/blur events
+    tooltipedElement.addEventListener('focus', () => {
+      this.guard = Guard.FOCUS;
+      this.setDisplay(true);
     });
 
-    ['mouseleave', 'blur', 'keydown'].forEach(event => {
+    ['blur', 'keydown'].forEach(event => {
       tooltipedElement.addEventListener(event, (e: UIEvent & KeyboardEvent) => {
         // we continue to process ONLY for KeyboardEvents 'Escape'
         if (e.type === 'keydown' && e.code !== 'Escape') {
           return;
         }
-        if (!this.disabled) this.display = false;
+        this.resetGuard();
+        this.setDisplay(false);
+      });
+    });
+
+    // manage tooltipElement & tooltipedElement mouseenter/mouseleave events
+    ['mouseenter', 'mouseleave'].forEach(event => {
+      const isMouseenter = event === 'mouseenter';
+      [
+        { element: this.tooltip, action: () => this.tooltipMouseListenerAction(Guard.HOVER_TOOLTIP_ELEMENT, isMouseenter, Guard.HOVER_TOOLTIPED_ELEMENT) },
+        { element: tooltipedElement, action: () => this.tooltipMouseListenerAction(Guard.HOVER_TOOLTIPED_ELEMENT, isMouseenter, Guard.HOVER_TOOLTIP_ELEMENT) },
+      ].forEach(({ element, action }) => {
+        element.addEventListener(event, () => {
+          action();
+        });
       });
     });
 
