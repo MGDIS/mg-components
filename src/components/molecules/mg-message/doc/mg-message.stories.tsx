@@ -1,4 +1,5 @@
 import { h } from '@stencil/core';
+import { filterArgs } from '../../../../../.storybook/utils';
 import { variants } from '../mg-message.conf';
 
 export default {
@@ -17,26 +18,18 @@ export default {
 };
 
 /**
- * 1. camelCase arguments must be written in the template, for exemple labelOnTop must be placed in the template as label-on-top={args.labelOnTop}
- * 2. boolean arguments with a default true value must be added like display-character-left={args.displayCharacterLeft ? 'true' : 'false'}
+ * Template
+ *
+ * @param {any} args component arguments
+ * @returns {HTMLElement} HTMLElement
  */
-
-const Template = args => {
-  // Extract slot so it won't be render as an attribute
-  const slotContent = args.slotContent;
-  delete args.slotContent;
-  const slotActions = args.slotActions;
-  delete args.slotActions;
-  const closeButton = args.closeButton;
-  delete args.closeButton;
-  // return element
-  return (
-    <mg-message {...args} close-button={closeButton}>
-      {slotContent && <span innerHTML={slotContent}></span>}
-      {slotActions && <span slot="actions" innerHTML={slotActions}></span>}
-    </mg-message>
-  );
-};
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Template = (args: any): HTMLElement => (
+  <mg-message {...filterArgs(args, { variant: variants[0] })}>
+    {args.slotContent && <span innerHTML={args.slotContent}></span>}
+    {args.slotActions && <span slot="actions" innerHTML={args.slotActions}></span>}
+  </mg-message>
+);
 
 export const MgMessage = Template.bind({});
 

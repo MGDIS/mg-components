@@ -25,6 +25,7 @@ export const parameters = {
           parser: 'babel',
           plugins: [prettierBabel],
         })
+        .replaceAll('="mg__storybook__filter"', '') // Used to remove `=''` in code example
         .slice(0, -2), // use to remove semicolon at code example end. semi: false still display a semicolon at start.
   },
   options: {

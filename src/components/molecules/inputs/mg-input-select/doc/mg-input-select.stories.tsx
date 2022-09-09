@@ -1,4 +1,5 @@
 import { h } from '@stencil/core';
+import { filterArgs } from '../../../../../../.storybook/utils';
 import messages from '../../../../../locales/en/messages.json';
 
 export default {
@@ -26,32 +27,7 @@ export default {
  * @returns {HTMLElement} HTMLElement
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Template = (args: any): HTMLElement => {
-  const labelOnTop = args.labelOnTop;
-  delete args.labelOnTop;
-  const labelHide = args.labelHide;
-  delete args.labelHide;
-  const helpText = args.helpText;
-  delete args.helpText;
-  const placeholderDisabled = args.placeholderDisabled;
-  delete args.placeholderDisabled;
-  const placeholderHide = args.placeholderHide;
-  delete args.placeholderHide;
-  const mgWidth = args.mgWidth;
-  delete args.mgWidth;
-  // return element
-  return (
-    <mg-input-select
-      {...args}
-      label-on-top={labelOnTop}
-      label-hide={labelHide}
-      help-text={helpText}
-      placeholder-hide={placeholderHide}
-      placeholder-disabled={placeholderDisabled}
-      mg-width={mgWidth}
-    ></mg-input-select>
-  );
-};
+const Template = (args: any): HTMLElement => <mg-input-select {...filterArgs(args, { placeholder: messages.input.select.placeholder })}></mg-input-select>;
 
 export const MgInputSelect = Template.bind({});
 MgInputSelect.args = {
@@ -74,6 +50,7 @@ MgInputSelect.args = {
   // Help Text
   helpText: 'Help text with html <strong>bold</strong>, <em>italic</em>.',
   // Placeholder
+  placeholder: undefined,
   placeholderHide: false,
   placeholderDisabled: false,
 };
