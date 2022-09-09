@@ -1,5 +1,5 @@
 import { Component, Element, h, Prop } from '@stencil/core';
-import { isHn } from '../../../utils/components.utils';
+import { isTagName } from '../../../utils/components.utils';
 
 @Component({
   tag: 'mg-illustrated-message',
@@ -31,8 +31,13 @@ export class MgIllustratedMessage {
    * @returns {void}
    */
   componentDidLoad(): void {
-    if (!isHn(this.element.querySelector('[slot="title"]'))) {
-      throw new Error(`<mg-illustrated-message> Slotted title must be a heading.`);
+    const headingTags = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+    const imageTags = ['img', 'svg'];
+
+    if (!isTagName(this.element.querySelector('[slot="title"]'), headingTags)) {
+      throw new Error(`<mg-illustrated-message> Slotted title must be a heading: ${headingTags.join(', ')}`);
+    } else if (!isTagName(this.element.querySelector('[slot="illustration"]'), imageTags)) {
+      throw new Error(`<mg-illustrated-message> Slotted illustration must be an image: ${imageTags.join(', ')}`);
     }
   }
 

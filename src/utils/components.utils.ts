@@ -85,8 +85,9 @@ export function allItemsAreString(items: string[]): boolean {
  * Check if element is a heading
  *
  * @param {Element} element slotted element
+ * @param {string[]} tagNames allowed tag names list
  * @returns {boolean} element is a heading
  */
-export function isHn(element: Element): boolean {
-  return ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(element?.tagName.toLowerCase());
+export function isTagName(element: Element, tagNames: string[]): boolean {
+  return tagNames.includes(element?.tagName.toLowerCase());
 }

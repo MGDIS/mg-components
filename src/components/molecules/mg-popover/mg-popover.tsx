@@ -1,5 +1,5 @@
 import { Component, Element, Host, h, Prop, Watch, EventEmitter, Event } from '@stencil/core';
-import { createID, isHn } from '../../../utils/components.utils';
+import { createID, isTagName } from '../../../utils/components.utils';
 import { Instance as PopperInstance, createPopper } from '@popperjs/core';
 import { initLocales } from '../../../locales';
 import { Placement } from './mg-popover.conf';
@@ -150,9 +150,11 @@ export class MgPopover {
    * @returns {void}
    */
   componentDidLoad(): void {
+    const headingTags = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+
     const slotedTitleElement = this.element.querySelector('[slot="title"]');
-    if (slotedTitleElement && !isHn(slotedTitleElement)) {
-      throw new Error(`<mg-popover> Slotted title must be a heading.`);
+    if (slotedTitleElement && !isTagName(slotedTitleElement, headingTags)) {
+      throw new Error(`<mg-popover> Slotted title must be a heading: ${headingTags.join(', ')}`);
     }
 
     // Set close button id

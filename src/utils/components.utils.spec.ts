@@ -1,4 +1,4 @@
-import { createID, ClassList, allItemsAreString, isHn } from './components.utils';
+import { createID, ClassList, allItemsAreString, isTagName } from './components.utils';
 
 describe('components.utils', () => {
   describe('createID', () => {
@@ -55,7 +55,7 @@ describe('components.utils', () => {
     });
   });
 
-  describe('isHn', () => {
+  describe('isTagName', () => {
     test.each([
       { querySelector: 'h1', expected: true },
       { querySelector: 'span', expected: false },
@@ -64,7 +64,7 @@ describe('components.utils', () => {
       const div = document.createElement('div');
       div.innerHTML = '<h1></h1><span></span>';
       const elm = div.querySelector(querySelector);
-      expect(isHn(elm as HTMLElement)).toEqual(expected);
+      expect(isTagName(elm as HTMLElement, ['h1'])).toEqual(expected);
     });
   });
 });
