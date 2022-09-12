@@ -14,12 +14,7 @@ export default {
  * @returns {HTMLElement} HTMLElement
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Template = (args: any): HTMLElement => (
-  <div>
-    <mg-input-checkbox {...filterArgs(args)}></mg-input-checkbox>
-    {`\<!-- blu --\>`}
-  </div>
-);
+const Template = (args: any): HTMLElement => <mg-input-checkbox {...filterArgs(args)}></mg-input-checkbox>;
 
 export const MgInputCheckbox = Template.bind({});
 MgInputCheckbox.args = {

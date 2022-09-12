@@ -19,14 +19,20 @@ export const parameters = {
   docs: {
     extractArgTypes,
     extractComponentDescription,
-    transformSource: input =>
-      prettier
+    transformSource: input => {
+      let codeExample = prettier
         .format(input, {
           parser: 'babel',
           plugins: [prettierBabel],
         })
-        .replaceAll('="mg__storybook__filter"', '') // Used to remove `=''` in code example
-        .slice(0, -2), // use to remove semicolon at code example end. semi: false still display a semicolon at start.
+        .replaceAll('="mg__storybook__boolean-true"', '') // Used to remove `=''` in code example
+        .slice(0, -2); // use to remove semicolon at code example end. semi: false still display a semicolon at start.}
+      // Check if component has a comment to display
+      const regex = /mg__storybook__comment="([a-zA-Z0-9:;\.\s\(\)\-\,!\/\\]*)"/gi;
+      const match = regex.exec(codeExample);
+      // return code example
+      return match ? `<>${match[1]}${codeExample.replace(regex, '')}</>` : codeExample;
+    },
   },
   options: {
     storySort: {
