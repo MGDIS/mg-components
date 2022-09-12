@@ -1,4 +1,5 @@
 import { h } from '@stencil/core';
+import { filterArgs } from '../../../../../.storybook/utils';
 
 export default {
   component: 'mg-pagination',
@@ -7,19 +8,13 @@ export default {
 };
 
 /**
- * 1. camelCase arguments must be written in the template, for exemple labelOnTop must be placed in the template as label-on-top={args.labelOnTop}
- * 2. boolean arguments with a default true value must be added like display-character-left={args.displayCharacterLeft ? 'true' : 'false'}
+ * Template
+ *
+ * @param {any} args component arguments
+ * @returns {HTMLElement} HTMLElement
  */
-
-const Template = args => {
-  // Extract slot so it won't be render as an attribute
-  const totalPages = args.totalPages;
-  delete args.totalPages;
-  const currentPage = args.currentPage;
-  delete args.currentPage;
-  // return element
-  return <mg-pagination {...args} total-pages={totalPages} current-page={currentPage}></mg-pagination>;
-};
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Template = (args: any): HTMLElement => <mg-pagination {...filterArgs(args)}></mg-pagination>;
 
 export const MgPagination = Template.bind({});
 

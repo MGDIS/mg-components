@@ -1,4 +1,5 @@
 import { h } from '@stencil/core';
+import { filterArgs } from '../../../../../.storybook/utils';
 import { variants } from '../mg-badge.conf';
 
 export default {
@@ -18,11 +19,14 @@ export default {
   },
 };
 
-const Template = args => {
-  // Extract slot so it won't be render as an attribute
-  // return element
-  return <mg-badge {...args}></mg-badge>;
-};
+/**
+ * Template
+ *
+ * @param {any} args component arguments
+ * @returns {HTMLElement} HTMLElement
+ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Template = (args: any): HTMLElement => <mg-badge {...filterArgs(args, { variant: variants[0] })}></mg-badge>;
 
 export const MgBadge = Template.bind({});
 MgBadge.args = {

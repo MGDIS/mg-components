@@ -1,4 +1,5 @@
 import { h } from '@stencil/core';
+import { filterArgs } from '../../../../../.storybook/utils';
 
 export default {
   component: 'mg-details',
@@ -7,28 +8,18 @@ export default {
 };
 
 /**
- * 1. camelCase arguments must be written in the template, for exemple labelOnTop must be placed in the template as label-on-top={args.labelOnTop}
- * 2. boolean arguments with a default true value must be added like display-character-left={args.displayCharacterLeft ? 'true' : 'false'}
+ * Template
+ *
+ * @param {any} args component arguments
+ * @returns {HTMLElement} HTMLElement
  */
-
-const Template = args => {
-  // Extract slot so it won't be render as an attribute
-  const slotSummary = args.slotSummary;
-  delete args.slotSummary;
-  const slotDetails = args.slotDetails;
-  delete args.slotDetails;
-  const toggleClosed = args.toggleClosed;
-  delete args.toggleClosed;
-  const toggleOpened = args.toggleOpened;
-  delete args.toggleOpened;
-  // return element
-  return (
-    <mg-details {...args} toggle-closed={toggleClosed} toggle-opened={toggleOpened}>
-      {slotSummary && <span slot="summary" innerHTML={slotSummary}></span>}
-      {slotDetails && <p slot="details" innerHTML={slotDetails}></p>}
-    </mg-details>
-  );
-};
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Template = (args: any): HTMLElement => (
+  <mg-details {...filterArgs(args)}>
+    {args.slotSummary && <span slot="summary" innerHTML={args.slotSummary}></span>}
+    {args.slotDetails && <p slot="details" innerHTML={args.slotDetails}></p>}
+  </mg-details>
+);
 
 export const MgDetails = Template.bind({});
 

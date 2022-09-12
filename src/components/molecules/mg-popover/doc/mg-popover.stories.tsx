@@ -1,4 +1,5 @@
 import { h } from '@stencil/core';
+import { filterArgs } from '../../../../../.storybook/utils';
 import { placements } from '../mg-popover.conf';
 
 export default {
@@ -14,34 +15,26 @@ export default {
       options: placements,
       control: { type: 'select' },
       table: {
-        defaultValue: { summary: placements[0] },
+        defaultValue: { summary: 'bottom' },
       },
     },
   },
 };
 
 /**
- * 1. camelCase arguments must be written in the template, for exemple labelOnTop must be placed in the template as label-on-top={args.labelOnTop}
- * 2. boolean arguments with a default true value must be added like display-character-left={args.displayCharacterLeft ? 'true' : 'false'}
+ * Template
+ *
+ * @param {any} args component arguments
+ * @returns {HTMLElement} HTMLElement
  */
-
-const Template = args => {
-  // Extract slot so it won't be render as an attribute
-  const slotTitle = args.slotTitle;
-  delete args.slotTitle;
-  const slotContent = args.slotContent;
-  delete args.slotContent;
-  const closeButton = args.closeButton;
-  delete args.closeButton;
-  // return element
-  return (
-    <mg-popover {...args} close-button={closeButton}>
-      <mg-button>Button</mg-button>
-      {slotTitle && <h2 slot="title">{slotTitle}</h2>}
-      {slotContent && <p slot="content">{slotContent}</p>}
-    </mg-popover>
-  );
-};
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Template = (args: any): HTMLElement => (
+  <mg-popover {...filterArgs(args, { placement: 'bottom' })}>
+    <mg-button>Button</mg-button>
+    {args.slotTitle && <h2 slot="title">{args.slotTitle}</h2>}
+    {args.slotContent && <p slot="content">{args.slotContent}</p>}
+  </mg-popover>
+);
 
 export const MgPopover = Template.bind({});
 
@@ -52,4 +45,5 @@ MgPopover.args = {
   closeButton: false,
   disabled: false,
   display: false,
+  placement: undefined,
 };
