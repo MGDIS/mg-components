@@ -23,3 +23,9 @@ export const placements = [
  * Placement type from placements
  */
 export type Placement = typeof placements[number];
+
+export enum Guard {
+  FOCUS = 'focus',
+  HOVER_TOOLTIP_ELEMENT = 'hoverTooltipGuard',
+  HOVER_TOOLTIPED_ELEMENT = 'hoverTooltipedGuard',
+}

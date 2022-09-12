@@ -1,4 +1,4 @@
-import { Meta } from '@storybook/addon-docs/blocks';
+import { Meta } from '@storybook/addon-docs';
 
 <Meta title="Get Started" />
 
@@ -11,8 +11,8 @@ import { Meta } from '@storybook/addon-docs/blocks';
 You can install the library using jsDelivr CDN by adding those script in the HTML header.
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@mgdis/mg-components@4/dist/mg-components/mg-components.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mgdis/mg-components@4/dist/mg-components/variables.css" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/@mgdis/mg-components@4/dist/mg-components/mg-components.esm.js"></script>
 ```
 
 ### Vue.js
@@ -53,13 +53,15 @@ You need now to import the components style by adding the mg-components variable
 
 [Read more about our CSS variables](?path=/story/css-variables--page).
 
-and/or
+You also can import the mg-components CSS file if you want to use our grid layout or some helpers.
 
 ```html
 <style>
   @use '~@mgdis/mg-components/dist/mg-components/mg-components.css';
 </style>
 ```
+
+If you are already using a CSS framwork you may face some problem.
 
 #### Use the lib
 
@@ -126,7 +128,7 @@ You need now to import the components style by adding the mg-components variable
 
 ```js
 import '@mgdis/mg-components/dist/mg-components/variables.css';
-import '@mgdis/mg-components/dist/mg-components/mg-components.css';
+import '@mgdis/mg-components/dist/mg-components/mg-components.css'; // if needed
 ```
 
 #### Use the lib
@@ -147,6 +149,14 @@ To bind a value in a web component we have to use the Angular.js [`ng-prop-`](ht
 <mg-input-text ng-prop-value="user.firstname" label="Firstname" ng-on-value-change="user.firstname = $event.target.value"></mg-input-text>
 ```
 
+##### Custom Events
+
+When you want to get the fired **custom event data from a web-component** with the [`ng-on-`](https://docs.angularjs.org/api/ng/directive/ngOn) directive you need to parse the native event instead the jQuery wrapped event like so:
+
+```html
+<mg-popover ng-on-display-change="$ctrl.myMethod($event.originalEvent.detail)"></mg-popover>
+```
+
 ##### Common issues
 
 ###### Slot render
@@ -160,11 +170,11 @@ You can have troubles with i18n render in slots. In some cases, with the example
 </mg-button>
 ```
 
-To solve this issue, you need to use the [mg-model directive](http://core.pages.mgdis.fr/core-back/core/docs/mg-components-helpers/mg-translate-angular) to force the i18n render in slot.
+To solve this issue, you need to use the [mg-model directive](http://core.pages.mgdis.fr/core-back/core/docs/mg-components-helpers/mg-text-content-angular) to force the i18n render in slot.
 
 ```html
 <mg-button>
   <mg-icon icon="trash"></mg-icon>
-  <span mg-translate="'dispositifs.calculAide.button.btnDeleteScriptLabel'"></span>
+  <span mg-text-content="$ctrl.$translate.instant('dispositifs.calculAide.button.btnDeleteScriptLabel')"></span>
 </mg-button>
 ```

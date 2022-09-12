@@ -6,6 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { BadgeType } from "./components/atoms/mg-badge/mg-badge.conf";
+import { ButtonType } from "./components/atoms/mg-button/mg-button.conf";
 import { CheckboxValue } from "./components/molecules/inputs/mg-input-checkbox/mg-input-checkbox.conf";
 import { Width } from "./components/molecules/inputs/MgInput.conf";
 import { RadioOption } from "./components/molecules/inputs/mg-input-radio/mg-input-radio.conf";
@@ -51,6 +52,10 @@ export namespace Components {
          */
         "expanded": boolean;
         /**
+          * Define form id to attach button with. If this attribute is not set, the <button> is associated with its ancestor <form> element.
+         */
+        "form": string;
+        /**
           * Option to set aria-haspopup The aria-haspopup state informs assistive technology users that there is a popup and the type of popup it is, but provides no interactivity.
          */
         "haspopup": boolean | 'menu' | 'listbox' | 'tree' | 'grid' | 'dialog';
@@ -66,6 +71,10 @@ export namespace Components {
           * aria-label In case button text is not explicit enough
          */
         "label": string;
+        /**
+          * Define button type Default: 'submit', as HTMLButtonElement type is submit by default
+         */
+        "type": ButtonType;
         /**
           * Define button variant
          */
@@ -84,6 +93,20 @@ export namespace Components {
           * Add maximum length
          */
         "maxlength": number;
+    }
+    interface MgDetails {
+        /**
+          * Define if details are diplayed
+         */
+        "expanded": boolean;
+        /**
+          * Displayed title when details are closed
+         */
+        "toggleClosed": string;
+        /**
+          * Displayed title when details are opened
+         */
+        "toggleOpened": string;
     }
     interface MgForm {
         /**
@@ -133,6 +156,12 @@ export namespace Components {
           * Define icon variant Add a background to the icon based on variant color
          */
         "variant": string;
+    }
+    interface MgIllustratedMessage {
+        /**
+          * Define illustration size
+         */
+        "size": 'regular' | 'small';
     }
     interface MgInputCheckbox {
         /**
@@ -989,6 +1018,10 @@ export namespace Components {
         "placement": Placement1;
     }
 }
+export interface MgDetailsCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMgDetailsElement;
+}
 export interface MgFormCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLMgFormElement;
@@ -1045,6 +1078,10 @@ export interface MgPanelCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLMgPanelElement;
 }
+export interface MgPopoverCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMgPopoverElement;
+}
 export interface MgTabsCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLMgTabsElement;
@@ -1068,6 +1105,12 @@ declare global {
         prototype: HTMLMgCharacterLeftElement;
         new (): HTMLMgCharacterLeftElement;
     };
+    interface HTMLMgDetailsElement extends Components.MgDetails, HTMLStencilElement {
+    }
+    var HTMLMgDetailsElement: {
+        prototype: HTMLMgDetailsElement;
+        new (): HTMLMgDetailsElement;
+    };
     interface HTMLMgFormElement extends Components.MgForm, HTMLStencilElement {
     }
     var HTMLMgFormElement: {
@@ -1079,6 +1122,12 @@ declare global {
     var HTMLMgIconElement: {
         prototype: HTMLMgIconElement;
         new (): HTMLMgIconElement;
+    };
+    interface HTMLMgIllustratedMessageElement extends Components.MgIllustratedMessage, HTMLStencilElement {
+    }
+    var HTMLMgIllustratedMessageElement: {
+        prototype: HTMLMgIllustratedMessageElement;
+        new (): HTMLMgIllustratedMessageElement;
     };
     interface HTMLMgInputCheckboxElement extends Components.MgInputCheckbox, HTMLStencilElement {
     }
@@ -1192,8 +1241,10 @@ declare global {
         "mg-badge": HTMLMgBadgeElement;
         "mg-button": HTMLMgButtonElement;
         "mg-character-left": HTMLMgCharacterLeftElement;
+        "mg-details": HTMLMgDetailsElement;
         "mg-form": HTMLMgFormElement;
         "mg-icon": HTMLMgIconElement;
+        "mg-illustrated-message": HTMLMgIllustratedMessageElement;
         "mg-input-checkbox": HTMLMgInputCheckboxElement;
         "mg-input-date": HTMLMgInputDateElement;
         "mg-input-numeric": HTMLMgInputNumericElement;
@@ -1251,6 +1302,10 @@ declare namespace LocalJSX {
          */
         "expanded"?: boolean;
         /**
+          * Define form id to attach button with. If this attribute is not set, the <button> is associated with its ancestor <form> element.
+         */
+        "form"?: string;
+        /**
           * Option to set aria-haspopup The aria-haspopup state informs assistive technology users that there is a popup and the type of popup it is, but provides no interactivity.
          */
         "haspopup"?: boolean | 'menu' | 'listbox' | 'tree' | 'grid' | 'dialog';
@@ -1266,6 +1321,10 @@ declare namespace LocalJSX {
           * aria-label In case button text is not explicit enough
          */
         "label"?: string;
+        /**
+          * Define button type Default: 'submit', as HTMLButtonElement type is submit by default
+         */
+        "type"?: ButtonType;
         /**
           * Define button variant
          */
@@ -1285,6 +1344,24 @@ declare namespace LocalJSX {
          */
         "maxlength": number;
     }
+    interface MgDetails {
+        /**
+          * Define if details are diplayed
+         */
+        "expanded"?: boolean;
+        /**
+          * Emmited event when expanded change
+         */
+        "onExpanded-change"?: (event: MgDetailsCustomEvent<boolean>) => void;
+        /**
+          * Displayed title when details are closed
+         */
+        "toggleClosed"?: string;
+        /**
+          * Displayed title when details are opened
+         */
+        "toggleOpened"?: string;
+    }
     interface MgForm {
         /**
           * Define if form is disabled
@@ -1302,6 +1379,10 @@ declare namespace LocalJSX {
           * Input name If not set the value equals the identifier
          */
         "name"?: string;
+        /**
+          * Emitted event on form submit
+         */
+        "onForm-submit"?: (event: MgFormCustomEvent<boolean>) => void;
         /**
           * Emitted event on form validity check Tells if form is valid or not
          */
@@ -1332,6 +1413,12 @@ declare namespace LocalJSX {
           * Define icon variant Add a background to the icon based on variant color
          */
         "variant"?: string;
+    }
+    interface MgIllustratedMessage {
+        /**
+          * Define illustration size
+         */
+        "size"?: 'regular' | 'small';
     }
     interface MgInputCheckbox {
         /**
@@ -2184,6 +2271,10 @@ declare namespace LocalJSX {
          */
         "identifier"?: string;
         /**
+          * Emited event when display value change
+         */
+        "onDisplay-change"?: (event: MgPopoverCustomEvent<boolean>) => void;
+        /**
           * Popover placement
          */
         "placement"?: Placement;
@@ -2250,8 +2341,10 @@ declare namespace LocalJSX {
         "mg-badge": MgBadge;
         "mg-button": MgButton;
         "mg-character-left": MgCharacterLeft;
+        "mg-details": MgDetails;
         "mg-form": MgForm;
         "mg-icon": MgIcon;
+        "mg-illustrated-message": MgIllustratedMessage;
         "mg-input-checkbox": MgInputCheckbox;
         "mg-input-date": MgInputDate;
         "mg-input-numeric": MgInputNumeric;
@@ -2279,8 +2372,10 @@ declare module "@stencil/core" {
             "mg-badge": LocalJSX.MgBadge & JSXBase.HTMLAttributes<HTMLMgBadgeElement>;
             "mg-button": LocalJSX.MgButton & JSXBase.HTMLAttributes<HTMLMgButtonElement>;
             "mg-character-left": LocalJSX.MgCharacterLeft & JSXBase.HTMLAttributes<HTMLMgCharacterLeftElement>;
+            "mg-details": LocalJSX.MgDetails & JSXBase.HTMLAttributes<HTMLMgDetailsElement>;
             "mg-form": LocalJSX.MgForm & JSXBase.HTMLAttributes<HTMLMgFormElement>;
             "mg-icon": LocalJSX.MgIcon & JSXBase.HTMLAttributes<HTMLMgIconElement>;
+            "mg-illustrated-message": LocalJSX.MgIllustratedMessage & JSXBase.HTMLAttributes<HTMLMgIllustratedMessageElement>;
             "mg-input-checkbox": LocalJSX.MgInputCheckbox & JSXBase.HTMLAttributes<HTMLMgInputCheckboxElement>;
             "mg-input-date": LocalJSX.MgInputDate & JSXBase.HTMLAttributes<HTMLMgInputDateElement>;
             "mg-input-numeric": LocalJSX.MgInputNumeric & JSXBase.HTMLAttributes<HTMLMgInputNumericElement>;

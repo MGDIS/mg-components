@@ -71,6 +71,8 @@ describe('mg-popover', () => {
     const popover = mgPopover.querySelector(`#${args.identifier}`);
     const popoverButton = popover.querySelector(`mg-button`);
 
+    const displayChangeSpy = jest.spyOn(page.rootInstance.displayChange, 'emit');
+
     interactiveElement.dispatchEvent(new CustomEvent(eventIn, { bubbles: true }));
     await page.waitForChanges();
     jest.runAllTimers();
@@ -94,8 +96,10 @@ describe('mg-popover', () => {
 
     if (eventOut === 'clickPopover') {
       expect(popover).toHaveAttribute('data-show');
+      expect(displayChangeSpy).toHaveBeenCalledWith(true);
     } else {
       expect(popover).not.toHaveAttribute('data-show');
+      expect(displayChangeSpy).toHaveBeenCalledWith(false);
     }
   });
 
@@ -116,6 +120,8 @@ describe('mg-popover', () => {
     const popover = mgPopover.querySelector(`#${args.identifier}`);
     const popoverButton = popover.querySelector(`mg-button`);
 
+    const displayChangeSpy = jest.spyOn(page.rootInstance.displayChange, 'emit');
+
     expect(popoverButton).toBeNull();
 
     if (display) expect(popover).toHaveAttribute('data-show');
@@ -132,6 +138,8 @@ describe('mg-popover', () => {
 
     if (display) expect(popover).toHaveAttribute('data-show');
     else expect(popover).not.toHaveAttribute('data-show');
+
+    expect(displayChangeSpy).not.toHaveBeenCalled();
   });
 
   test('Should throw error if slot title element is not a heading', async () => {
@@ -147,7 +155,7 @@ describe('mg-popover', () => {
         <mg-button identifier="identifier-btn">mg-button</mg-button>,
       ]);
     } catch (err) {
-      expect(err.message).toContain('<mg-popover> Slotted title must be a heading:  ');
+      expect(err.message).toContain('<mg-popover> Slotted title must be a heading: ');
     }
   });
 });

@@ -14,7 +14,11 @@ export class MgForm {
    ************/
 
   private mgInputs: HTMLMgInputsElement[];
+  private mgButtons: HTMLMgButtonElement[];
   private requiredMessage: string;
+
+  // HTML selector
+  private form: HTMLFormElement;
 
   // Locales
   private messages;
@@ -69,6 +73,11 @@ export class MgForm {
   @Event({ eventName: 'form-valid' }) formValid: EventEmitter<boolean>;
 
   /**
+   * Emitted event on form submit
+   */
+  @Event({ eventName: 'form-submit' }) formSubmit: EventEmitter<boolean>;
+
+  /**
    * Public method to display errors
    *
    * @returns {Promise<void>}
@@ -119,6 +128,11 @@ export class MgForm {
     this.formValid.emit(validity);
   };
 
+  private handleFormSubmit = (event: SubmitEvent) => {
+    event.preventDefault();
+    this.formSubmit.emit();
+  };
+
   /*************
    * Lifecycle *
    *************/
@@ -132,13 +146,21 @@ export class MgForm {
     // Get locales
     this.messages = initLocales(this.element).messages;
 
-    // Get slotted mgIputs
+    // Get slotted mgInputs
     this.mgInputs = Array.from(this.element.querySelectorAll('*')).filter((node: Node) => node.nodeName.startsWith('MG-INPUT-')) as HTMLMgInputsElement[];
+
+    // Get slotted mgButtons
+    this.mgButtons = Array.from(this.element.querySelectorAll('*')).filter((node: Node) => node.nodeName.startsWith('MG-BUTTON')) as HTMLMgButtonElement[];
+
+    // Set button form identifier
+    this.mgButtons.forEach(mgButton => {
+      mgButton.setAttribute('form', this.identifier);
+    });
 
     // Define required message
     this.setRequiredMessage();
 
-    // Check validity when slotted mgImputs are ready
+    // Check validity when slotted mgInputs are ready
     Promise.all(
       this.mgInputs.map(async input => {
         // Set inputs readonly or disabled based on form configuration
@@ -146,11 +168,29 @@ export class MgForm {
         if (this.readonly) input.readonly = true;
         else if (this.disabled) input.disabled = true;
         else input.addEventListener('input-valid', this.checkValidity);
-
-        await input.componentOnReady();
+        try {
+          await input.componentOnReady();
+        } catch {} // prevent error with VueJS first render
       }),
     ).then(() => {
       this.checkValidity();
+    });
+  }
+
+  /**
+   * Add slot listeners
+   *
+   * @returns {void}
+   */
+  componentDidLoad(): void {
+    this.mgButtons.forEach(mgButton => {
+      // submit buttons should trigger form submition
+      const button = mgButton.querySelector('button');
+      if (['submit', null].includes(button.getAttribute('type'))) {
+        mgButton.addEventListener('click', () => {
+          this.form.dispatchEvent(new CustomEvent('submit', { bubbles: true }));
+        });
+      }
     });
   }
 
@@ -161,7 +201,7 @@ export class MgForm {
    */
   render(): HTMLElement {
     return (
-      <form class={this.classList.join()} id={this.identifier} name={this.name}>
+      <form class={this.classList.join()} id={this.identifier} name={this.name} ref={el => (this.form = el as HTMLFormElement)} onSubmit={this.handleFormSubmit}>
         {this.requiredMessage && <p innerHTML={this.requiredMessage}></p>}
         <slot></slot>
         {!this.readonly && !this.disabled && <slot name="actions"></slot>}

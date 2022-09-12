@@ -87,6 +87,7 @@ describe('mg-checkbox', () => {
     `<mg-input-checkbox label="legend" disabled></mg-input-checkbox>`,
     `<mg-input-checkbox label="legend" input-vertical-list help-text="HelpText Message"></mg-input-checkbox>`,
     `<mg-input-checkbox label="legend" input-vertical-list help-text="HelpText Message" label-on-top></mg-input-checkbox>`,
+    `<mg-input-checkbox label="legend" help-text='<mg-icon icon="user" size="small"></mg-icon> Welcome batman'></mg-input-checkbox>`,
   ])('Should render with template', html => {
     test('render', async () => {
       const page = await createPage(`${html}

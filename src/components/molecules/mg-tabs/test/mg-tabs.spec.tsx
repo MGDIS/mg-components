@@ -103,19 +103,20 @@ describe('mg-tabs', () => {
       const page = await getPage({ label: 'Sample label', items: ['batman', 'joker'], identifier: 'id' }, createSlots());
       expect(page.root).toMatchSnapshot();
 
-      let activeTab = page.doc.querySelector('.mg-tabs__navigation-button--active');
+      const element = page.doc.querySelector('mg-tabs');
+      let activeTab = element.shadowRoot.querySelector('.mg-tabs__navigation-button--active');
       expect(activeTab).toHaveProperty('id', 'id-1');
 
       jest.spyOn(page.rootInstance.activeTabChange, 'emit');
 
-      const nextTab = page.doc.querySelector('#id-2');
+      const nextTab = element.shadowRoot.querySelector('#id-2');
       nextTab.dispatchEvent(new CustomEvent('click', { bubbles: true }));
       await page.waitForChanges();
 
       expect(page.root).toMatchSnapshot();
       expect(page.rootInstance.activeTabChange.emit).toHaveBeenCalledWith(2);
 
-      activeTab = page.doc.querySelector('.mg-tabs__navigation-button--active');
+      activeTab = element.shadowRoot.querySelector('.mg-tabs__navigation-button--active');
       expect(activeTab).toHaveProperty('id', 'id-2');
     });
 
@@ -132,19 +133,20 @@ describe('mg-tabs', () => {
       );
       expect(page.root).toMatchSnapshot();
 
-      let activeTab = page.doc.querySelector('.mg-tabs__navigation-button--active');
+      const element = page.doc.querySelector('mg-tabs');
+      let activeTab = element.shadowRoot.querySelector('.mg-tabs__navigation-button--active');
       expect(activeTab).toHaveProperty('id', 'id-1');
 
       jest.spyOn(page.rootInstance.activeTabChange, 'emit');
 
-      const nextTab = page.doc.querySelector('#id-2 mg-icon');
+      const nextTab = element.shadowRoot.querySelector('#id-2 mg-icon');
       nextTab.dispatchEvent(new CustomEvent('click', { bubbles: true }));
       await page.waitForChanges();
 
       expect(page.root).toMatchSnapshot();
       expect(page.rootInstance.activeTabChange.emit).toHaveBeenCalledWith(2);
 
-      activeTab = page.doc.querySelector('.mg-tabs__navigation-button--active');
+      activeTab = element.shadowRoot.querySelector('.mg-tabs__navigation-button--active');
       expect(activeTab).toHaveProperty('id', 'id-2');
     });
 
@@ -152,9 +154,10 @@ describe('mg-tabs', () => {
       const page = await getPage({ label: 'Sample label', items: ['batman', 'joker'], identifier: 'id' }, createSlots());
       expect(page.root).toMatchSnapshot();
 
-      page.doc.querySelectorAll('button').forEach(button => (button.focus = jest.fn()));
+      const element = page.doc.querySelector('mg-tabs');
+      element.shadowRoot.querySelectorAll('button').forEach(button => (button.focus = jest.fn()));
 
-      let activeTab: HTMLLIElement = page.doc.querySelector('.mg-tabs__navigation-button--active');
+      let activeTab: HTMLLIElement = element.shadowRoot.querySelector('.mg-tabs__navigation-button--active');
 
       activeTab.dispatchEvent(new CustomEvent('focus', { bubbles: true }));
       await page.waitForChanges();
@@ -168,7 +171,7 @@ describe('mg-tabs', () => {
 
       expect(page.root).toMatchSnapshot();
 
-      activeTab = page.doc.querySelector('.mg-tabs__navigation-button--active');
+      activeTab = element.shadowRoot.querySelector('.mg-tabs__navigation-button--active');
       expect(activeTab).toHaveProperty('id', 'id-2');
       expect(activeTab.focus).toHaveBeenCalledTimes(1);
       expect(page.rootInstance.activeTabChange.emit).toHaveBeenCalledWith(2);
@@ -178,7 +181,7 @@ describe('mg-tabs', () => {
 
       expect(page.root).toMatchSnapshot();
 
-      activeTab = page.doc.querySelector('.mg-tabs__navigation-button--active');
+      activeTab = element.shadowRoot.querySelector('.mg-tabs__navigation-button--active');
       expect(activeTab).toHaveProperty('id', 'id-1');
       expect(activeTab.focus).toHaveBeenCalledTimes(1);
       expect(page.rootInstance.activeTabChange.emit).toHaveBeenCalledWith(1);
@@ -193,9 +196,11 @@ describe('mg-tabs', () => {
       const page = await getPage({ label: 'Sample label', items, identifier: 'id' }, createSlots(3));
       expect(page.root).toMatchSnapshot();
 
-      page.doc.querySelectorAll('button').forEach(button => (button.focus = jest.fn()));
+      const element = page.doc.querySelector('mg-tabs');
 
-      let activeTab: HTMLLIElement = page.doc.querySelector('.mg-tabs__navigation-button--active');
+      element.shadowRoot.querySelectorAll('button').forEach(button => (button.focus = jest.fn()));
+
+      let activeTab: HTMLLIElement = element.shadowRoot.querySelector('.mg-tabs__navigation-button--active');
 
       activeTab.dispatchEvent(new CustomEvent('focus', { bubbles: true }));
       await page.waitForChanges();
@@ -209,7 +214,7 @@ describe('mg-tabs', () => {
 
       expect(page.root).toMatchSnapshot();
 
-      activeTab = page.doc.querySelector('.mg-tabs__navigation-button--active');
+      activeTab = element.shadowRoot.querySelector('.mg-tabs__navigation-button--active');
       expect(activeTab).toHaveProperty('id', 'id-2');
       expect(activeTab.focus).toHaveBeenCalledTimes(1);
       expect(page.rootInstance.activeTabChange.emit).toHaveBeenCalledWith(2);
@@ -219,7 +224,7 @@ describe('mg-tabs', () => {
 
       expect(page.root).toMatchSnapshot();
 
-      activeTab = page.doc.querySelector('.mg-tabs__navigation-button--active');
+      activeTab = element.shadowRoot.querySelector('.mg-tabs__navigation-button--active');
       expect(activeTab).toHaveProperty('id', 'id-2');
       expect(activeTab.focus).toHaveBeenCalledTimes(1);
       expect(page.rootInstance.activeTabChange.emit).toHaveBeenCalledWith(2);
@@ -230,9 +235,9 @@ describe('mg-tabs', () => {
       expect(page.root).toMatchSnapshot();
 
       const element = page.doc.querySelector('mg-tabs');
-      element.querySelectorAll('button').forEach(button => (button.focus = jest.fn()));
+      element.shadowRoot.querySelectorAll('button').forEach(button => (button.focus = jest.fn()));
 
-      let activeTab: HTMLLIElement = element.querySelector('.mg-tabs__navigation-button--active');
+      let activeTab: HTMLLIElement = element.shadowRoot.querySelector('.mg-tabs__navigation-button--active');
 
       activeTab.dispatchEvent(new CustomEvent('focus', { bubbles: true }));
       await page.waitForChanges();
@@ -246,7 +251,7 @@ describe('mg-tabs', () => {
 
       expect(page.root).toMatchSnapshot();
 
-      activeTab = element.querySelector('.mg-tabs__navigation-button--active');
+      activeTab = element.shadowRoot.querySelector('.mg-tabs__navigation-button--active');
       expect(activeTab).toHaveProperty('id', 'id-1');
       expect(page.rootInstance.activeTabChange.emit).not.toHaveBeenCalled();
     });

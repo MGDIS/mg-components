@@ -73,6 +73,7 @@ describe('mg-input-password', () => {
     `<mg-input-password label="label" value="blu" readonly label-on-top></mg-input-password>`,
     `<mg-input-password label="label" disabled></mg-input-password>`,
     `<mg-input-password label="label" value="blu" disabled></mg-input-password>`,
+    `<mg-input-password label="label" value="batman" help-text='<mg-icon icon="user" size="small"></mg-icon> Welcome batman'></mg-input-password>`,
   ])('Should render with template', html => {
     test('render', async () => {
       const page = await createPage(html);

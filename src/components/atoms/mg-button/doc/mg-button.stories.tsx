@@ -1,6 +1,7 @@
 import { h } from '@stencil/core';
-import { variants } from '../mg-button.conf';
+import { variants, buttonTypes } from '../mg-button.conf';
 import { icons } from '../../mg-icon/mg-icon.conf';
+import { filterArgs } from '../../../../../.storybook/utils';
 
 export default {
   component: 'mg-button',
@@ -13,24 +14,21 @@ export default {
         defaultValue: { summary: variants[0] },
       },
     },
+    type: {
+      options: [undefined, ...buttonTypes],
+      control: { type: 'select' },
+    },
   },
 };
 
-const Template = args => {
-  // Extract slot so it won't be render as an attribute
-  const slot = args.slot;
-  delete args.slot;
-  const disableOnClick = args.disableOnClick;
-  delete args.disableOnClick;
-  const isIcon = args.isIcon;
-  delete args.isIcon;
-  // return element
-  return (
-    <mg-button {...args} disable-on-click={disableOnClick} is-icon={isIcon}>
-      {slot}
-    </mg-button>
-  );
-};
+/**
+ * Template
+ *
+ * @param {any} args component arguments
+ * @returns {HTMLElement} HTMLElement
+ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Template = (args: any): HTMLElement => <mg-button {...filterArgs(args, { variant: variants[0] })}>{args.slot}</mg-button>;
 
 export const MgButton = Template.bind({});
 
@@ -44,6 +42,7 @@ MgButton.args = {
   isIcon: false,
   expanded: false,
   controls: undefined,
+  type: undefined,
 };
 
 export const IsIcon = Template.bind({});

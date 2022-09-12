@@ -1,4 +1,5 @@
 import { h } from '@stencil/core';
+import { filterArgs } from '../../../../../.storybook/utils';
 import { placements } from '../mg-tooltip.conf';
 
 export default {
@@ -12,17 +13,21 @@ export default {
       options: placements,
       control: { type: 'select' },
       table: {
-        defaultValue: { summary: placements[0] },
+        defaultValue: { summary: 'bottom' },
       },
-    },
-    value: {
-      control: { type: 'text' },
     },
   },
 };
 
-const Template = args => (
-  <mg-tooltip {...args}>
+/**
+ * Template
+ *
+ * @param {any} args component arguments
+ * @returns {HTMLElement} HTMLElement
+ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Template = (args: any): HTMLElement => (
+  <mg-tooltip {...filterArgs(args, { placement: 'bottom' })}>
     <mg-icon icon="info-circle"></mg-icon>
   </mg-tooltip>
 );
@@ -32,13 +37,20 @@ export const MgTooltip = Template.bind({});
 MgTooltip.args = {
   identifier: 'identifier',
   message: 'This is a tooltip message',
-  placement: placements[0],
+  placement: undefined,
   display: false,
   disabled: false,
 };
 
-const TemplateButton = args => (
-  <mg-tooltip {...args}>
+/**
+ * Template
+ *
+ * @param {any} args component arguments
+ * @returns {HTMLElement} HTMLElement
+ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const TemplateButton = (args: any): HTMLElement => (
+  <mg-tooltip {...filterArgs(args, { placement: 'bottom' })}>
     <mg-button>Action</mg-button>
   </mg-tooltip>
 );
@@ -49,8 +61,15 @@ MgTooltipOnButton.args = {
   ...MgTooltip.args,
 };
 
-const TemplateSpan = args => (
-  <mg-tooltip {...args}>
+/**
+ * Template
+ *
+ * @param {any} args component arguments
+ * @returns {HTMLElement} HTMLElement
+ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const TemplateSpan = (args: any): HTMLElement => (
+  <mg-tooltip {...filterArgs(args, { placement: 'bottom' })}>
     <span>any text</span>
   </mg-tooltip>
 );

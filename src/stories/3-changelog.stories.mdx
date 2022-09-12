@@ -1,8 +1,36 @@
-import { Meta } from '@storybook/addon-docs/blocks';
+import { Meta } from '@storybook/addon-docs';
 
 <Meta title="Changelog" />
 
 # Changelog
+
+## 4.1.0 🍗
+
+September 12th, 2022
+
+### ⚠️ New component
+
+- [**`<mg-details>`**](?path=/docs/molecules-mg-details--mg-details)
+- [**`<mg-illustrated-message>`**](?path=/docs/molecules-mg-illustrated-message--mg-illustrated-message)
+
+### 🚀 Enhancement
+
+- Storybook component code example improvements:
+  - boolean true values are displayed without the empty String: `=""`
+  - when a props is using its default value the attribute is not displayed
+  - when a component has object props we display a message to remind it won't be rendered
+- Added icons to [**`<mg-icon>`**](?path=/docs/atoms-mg-icon--mg-icon), [see all the availables icons](?path=/docs/style-icons--icons).
+
+### 🐛 Bug Fix
+
+- [#114](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/114) AngularJS components are not rendered correctly within ng-if nor ng-repeat
+- [#123](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/123) mg-popover scroll with the page in the modal
+- [#128](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/128) mg-form does not tolerate when it's child `<mg-input>` DOMelements are dynamicly constructed with Vue's `<component>` directive
+- [#131](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/131) mg-form - make it possible to define the spacing
+- [#132](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/132) Using icons in input help text result in unintended line breaks
+- [#137](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/137) mg-button cannot be configured to not submit the parent form
+- [#144](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/144) mg-input-toggle - impossible to set value as false on second item
+- [#148](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/148) tooltip need to stay on hover
 
 ## 4.0.1 🏃‍♂️
 
