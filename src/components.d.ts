@@ -157,6 +157,12 @@ export namespace Components {
          */
         "variant": string;
     }
+    interface MgIllustratedMessage {
+        /**
+          * Define illustration size
+         */
+        "size": 'regular' | 'small';
+    }
     interface MgInputCheckbox {
         /**
           * Define if input is disabled
@@ -1117,6 +1123,12 @@ declare global {
         prototype: HTMLMgIconElement;
         new (): HTMLMgIconElement;
     };
+    interface HTMLMgIllustratedMessageElement extends Components.MgIllustratedMessage, HTMLStencilElement {
+    }
+    var HTMLMgIllustratedMessageElement: {
+        prototype: HTMLMgIllustratedMessageElement;
+        new (): HTMLMgIllustratedMessageElement;
+    };
     interface HTMLMgInputCheckboxElement extends Components.MgInputCheckbox, HTMLStencilElement {
     }
     var HTMLMgInputCheckboxElement: {
@@ -1232,6 +1244,7 @@ declare global {
         "mg-details": HTMLMgDetailsElement;
         "mg-form": HTMLMgFormElement;
         "mg-icon": HTMLMgIconElement;
+        "mg-illustrated-message": HTMLMgIllustratedMessageElement;
         "mg-input-checkbox": HTMLMgInputCheckboxElement;
         "mg-input-date": HTMLMgInputDateElement;
         "mg-input-numeric": HTMLMgInputNumericElement;
@@ -1400,6 +1413,12 @@ declare namespace LocalJSX {
           * Define icon variant Add a background to the icon based on variant color
          */
         "variant"?: string;
+    }
+    interface MgIllustratedMessage {
+        /**
+          * Define illustration size
+         */
+        "size"?: 'regular' | 'small';
     }
     interface MgInputCheckbox {
         /**
@@ -2325,6 +2344,7 @@ declare namespace LocalJSX {
         "mg-details": MgDetails;
         "mg-form": MgForm;
         "mg-icon": MgIcon;
+        "mg-illustrated-message": MgIllustratedMessage;
         "mg-input-checkbox": MgInputCheckbox;
         "mg-input-date": MgInputDate;
         "mg-input-numeric": MgInputNumeric;
@@ -2355,6 +2375,7 @@ declare module "@stencil/core" {
             "mg-details": LocalJSX.MgDetails & JSXBase.HTMLAttributes<HTMLMgDetailsElement>;
             "mg-form": LocalJSX.MgForm & JSXBase.HTMLAttributes<HTMLMgFormElement>;
             "mg-icon": LocalJSX.MgIcon & JSXBase.HTMLAttributes<HTMLMgIconElement>;
+            "mg-illustrated-message": LocalJSX.MgIllustratedMessage & JSXBase.HTMLAttributes<HTMLMgIllustratedMessageElement>;
             "mg-input-checkbox": LocalJSX.MgInputCheckbox & JSXBase.HTMLAttributes<HTMLMgInputCheckboxElement>;
             "mg-input-date": LocalJSX.MgInputDate & JSXBase.HTMLAttributes<HTMLMgInputDateElement>;
             "mg-input-numeric": LocalJSX.MgInputNumeric & JSXBase.HTMLAttributes<HTMLMgInputNumericElement>;

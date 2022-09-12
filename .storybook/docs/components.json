@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-09-08T16:39:38",
+  "timestamp": "2022-09-09T09:27:42",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.17.4",
@@ -830,6 +830,48 @@
           "mg-icon"
         ]
       }
+    },
+    {
+      "filePath": "./src/components/molecules/mg-illustrated-message/mg-illustrated-message.tsx",
+      "encapsulation": "shadow",
+      "tag": "mg-illustrated-message",
+      "readme": "## Specs\n\n### Anatomy\n\n![](./mg-illustrated-message/doc/img/mg-illustrated-message-anatomy.png) \n\nComponent is built with : \n- an illustration\n- a title\n\nOptionnally : \n- one or more _details_ slot wich accept HTML content (text, button...)\n\n### Style\n\n- _title_ : Open Sans, 20px, Regular\n- All contents are centered.\n\n### Spacing\n\n![](./mg-illustrated-message/doc/img/mg-illustrated-message-spacing.png) \n\n30px between the bottom of the _illustration_ and top of the _title_.\n20px for the top of the _details_ zone.\n\n15px between left/right border of the screen and the component\n\n### Sizing\n\nThe maximum width of the component is 475px.\n\nThe maximum height of the illustration is 335px. Illustration must keep its proportionnality.\nIllustration can be displayed in \"small\" size so its maximum height is set to 60px.\n\n![](./mg-illustrated-message/doc/img/mg-illustrated-message-sizing-small.png) \n\n## Behavior\n\nThe slotted elements (illustration, title and details) are centered horizontally in the page.\n\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "size",
+          "type": "\"regular\" | \"small\"",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "Define illustration size",
+          "docsTags": [],
+          "default": "'regular'",
+          "values": [
+            {
+              "value": "regular",
+              "type": "string"
+            },
+            {
+              "value": "small",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
     },
     {
       "filePath": "./src/components/molecules/inputs/mg-input-checkbox/mg-input-checkbox.tsx",

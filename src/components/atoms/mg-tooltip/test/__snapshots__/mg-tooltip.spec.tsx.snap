@@ -1,5 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`mg-tooltip Should keep displaied tooltip when hover it 1`] = `
+<mg-tooltip>
+  <!---->
+  <span aria-describedby="identifier" tabindex="0">
+    span
+  </span>
+  <div class="mg-tooltip" data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+    blu
+    <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
+  </div>
+</mg-tooltip>
+`;
+
 exports[`mg-tooltip Should manage display on events enter with { eventIn: 'focus', eventOut: 'blur' }, leave with %s element 1`] = `
 <mg-tooltip>
   <!---->

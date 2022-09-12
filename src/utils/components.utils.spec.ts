@@ -1,4 +1,4 @@
-import { createID, ClassList } from './components.utils';
+import { createID, ClassList, allItemsAreString, isTagName } from './components.utils';
 
 describe('components.utils', () => {
   describe('createID', () => {
@@ -13,7 +13,7 @@ describe('components.utils', () => {
   });
 
   describe('ClassList', () => {
-    test('add', () => {
+    test('Should add classes to list', () => {
       const classList = new ClassList();
       expect(classList.classes).toEqual([]);
       classList.add('blu');
@@ -43,6 +43,28 @@ describe('components.utils', () => {
     test('Should return seperated space classes list', () => {
       const classList = new ClassList(['blu', 'bli']);
       expect(classList.join()).toEqual('blu bli');
+    });
+  });
+
+  describe('allItemsAreString', () => {
+    test.each([
+      { items: ['blu', 'bli', 'blo', 'bla'], expected: true },
+      { items: ['blu', 'bli', 'blo', { value: 'bla' }], expected: false },
+    ])('Should test if all otems are string: %s', ({ items, expected }) => {
+      expect(allItemsAreString(items as string[])).toEqual(expected);
+    });
+  });
+
+  describe('isTagName', () => {
+    test.each([
+      { querySelector: 'h1', expected: true },
+      { querySelector: 'span', expected: false },
+      { querySelector: 'blu', expected: false },
+    ])('Should test if all otems are string: %s', ({ querySelector, expected }) => {
+      const div = document.createElement('div');
+      div.innerHTML = '<h1></h1><span></span>';
+      const elm = div.querySelector(querySelector);
+      expect(isTagName(elm as HTMLElement, ['h1'])).toEqual(expected);
     });
   });
 });

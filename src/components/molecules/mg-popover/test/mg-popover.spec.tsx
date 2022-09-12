@@ -155,7 +155,7 @@ describe('mg-popover', () => {
         <mg-button identifier="identifier-btn">mg-button</mg-button>,
       ]);
     } catch (err) {
-      expect(err.message).toContain('<mg-popover> Slotted title must be a heading:  ');
+      expect(err.message).toContain('<mg-popover> Slotted title must be a heading: ');
     }
   });
 });
