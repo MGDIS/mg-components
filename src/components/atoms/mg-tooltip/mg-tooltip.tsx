@@ -49,8 +49,8 @@ export class MgTooltip {
    */
   @Prop({ mutable: true }) display = false;
   @Watch('display')
-  handleDisplay(newVal: boolean): void {
-    if (newVal) {
+  handleDisplay(newValue: boolean): void {
+    if (newValue) {
       this.show();
     } else {
       this.hide();
