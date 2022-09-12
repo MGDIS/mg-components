@@ -383,7 +383,7 @@ export class MgInputText {
             onBlur={this.handleBlur}
             ref={el => (this.input = el as HTMLInputElement)}
           />
-          {this.displayCharacterLeft && this.maxlength && (
+          {this.displayCharacterLeft && this.maxlength > 0 && (
             <mg-character-left identifier={this.characterLeftId} characters={this.value} maxlength={this.maxlength}></mg-character-left>
           )}
         </div>
