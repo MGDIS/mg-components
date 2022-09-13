@@ -1,5 +1,5 @@
-import { Component, Element, Host, h, Prop, Watch } from '@stencil/core';
-import { createID } from '../../../utils/components.utils';
+import { Component, Element, Host, h, Prop, Watch, EventEmitter, Event } from '@stencil/core';
+import { createID, isTagName } from '../../../utils/components.utils';
 import { Instance as PopperInstance, createPopper } from '@popperjs/core';
 import { initLocales } from '../../../locales';
 import { Placement } from './mg-popover.conf';
@@ -51,18 +51,24 @@ export class MgPopover {
    */
   @Prop({ mutable: true }) display = false;
   @Watch('display')
-  handleDisplay(newVal: boolean): void {
-    if (newVal) {
+  handleDisplay(newValue: boolean): void {
+    if (newValue) {
       this.show();
     } else {
       this.hide();
     }
+    this.displayChange.emit(newValue);
   }
 
   /**
    * Disable popover
    */
   @Prop({ mutable: true }) disabled = false;
+
+  /**
+   * Emited event when display value change
+   */
+  @Event({ eventName: 'display-change' }) displayChange: EventEmitter<boolean>;
 
   /**
    * Check if clicked outside of component
@@ -144,11 +150,11 @@ export class MgPopover {
    * @returns {void}
    */
   componentDidLoad(): void {
-    //Check if slotted title is a heading
-    const headingElements = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+    const headingTags = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+
     const slotedTitleElement = this.element.querySelector('[slot="title"]');
-    if (slotedTitleElement !== null && !headingElements.includes(slotedTitleElement.tagName.toLowerCase())) {
-      throw new Error(`<mg-popover> Slotted title must be a heading:  ${headingElements.join(', ')}.`);
+    if (slotedTitleElement && !isTagName(slotedTitleElement, headingTags)) {
+      throw new Error(`<mg-popover> Slotted title must be a heading: ${headingTags.join(', ')}`);
     }
 
     // Set close button id

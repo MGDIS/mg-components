@@ -1,4 +1,5 @@
 import { h } from '@stencil/core';
+import { filterArgs } from '../../../../../.storybook/utils';
 
 import { sizes, Status } from '../mg-tabs.conf';
 
@@ -15,23 +16,20 @@ export default {
 };
 
 /**
- * 1. camelCase arguments must be written in the template, for exemple labelOnTop must be placed in the template as label-on-top={args.labelOnTop}
- * 2. boolean arguments with a default true value must be added like display-character-left={args.displayCharacterLeft ? 'true' : 'false'}
+ * Template
+ *
+ * @param {any} args component arguments
+ * @returns {HTMLElement} HTMLElement
  */
-
-const Template = args => {
-  // return element
-  const activeTab = args.activeTab;
-  delete args.activeTab;
-  return (
-    <mg-tabs {...args} active-tab={activeTab}>
-      <div slot="tab_content-1">Content 1</div>
-      <div slot="tab_content-2">Content 2</div>
-      <div slot="tab_content-3">Content 3</div>
-      <div slot="tab_content-4">Content 4</div>
-    </mg-tabs>
-  );
-};
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Template = (args: any): HTMLElement => (
+  <mg-tabs {...filterArgs(args, { size: sizes[0], activeTab: 1 })}>
+    <div slot="tab_content-1">Content 1</div>
+    <div slot="tab_content-2">Content 2</div>
+    <div slot="tab_content-3">Content 3</div>
+    <div slot="tab_content-4">Content 4</div>
+  </mg-tabs>
+);
 
 export const MgTabs = Template.bind({});
 

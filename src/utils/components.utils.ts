@@ -80,3 +80,14 @@ export class ClassList {
 export function allItemsAreString(items: string[]): boolean {
   return items && items.every(item => typeof item === 'string');
 }
+
+/**
+ * Check if element is a heading
+ *
+ * @param {Element} element slotted element
+ * @param {string[]} tagNames allowed tag names list
+ * @returns {boolean} element is a heading
+ */
+export function isTagName(element: Element, tagNames: string[]): boolean {
+  return tagNames.includes(element?.tagName.toLowerCase());
+}

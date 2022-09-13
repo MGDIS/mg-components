@@ -44,6 +44,7 @@ Rule applicable for all except "info" blue. "Info" pictographs without text are 
 ### Used by
 
  - [mg-button](../mg-button)
+ - [mg-details](../../molecules/mg-details)
  - [mg-input-checkbox](../../molecules/inputs/mg-input-checkbox)
  - [mg-input-date](../../molecules/inputs/mg-input-date)
  - [mg-input-numeric](../../molecules/inputs/mg-input-numeric)
@@ -65,6 +66,7 @@ Rule applicable for all except "info" blue. "Info" pictographs without text are 
 ```mermaid
 graph TD;
   mg-button --> mg-icon
+  mg-details --> mg-icon
   mg-input-checkbox --> mg-icon
   mg-input-date --> mg-icon
   mg-input-numeric --> mg-icon

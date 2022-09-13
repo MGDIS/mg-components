@@ -1,5 +1,5 @@
 import { Component, Element, h, Prop, State, Watch } from '@stencil/core';
-import { variants } from './mg-button.conf';
+import { variants, ButtonType } from './mg-button.conf';
 import { ClassList, createID } from '../../../utils/components.utils';
 
 @Component({
@@ -52,9 +52,21 @@ export class MgButton {
   @Prop() label: string;
 
   /**
+   * Define button type
+   * Default: 'submit', as HTMLButtonElement type is submit by default
+   */
+  @Prop() type: ButtonType;
+
+  /**
+   * Define form id to attach button with.
+   * If this attribute is not set, the <button> is associated with its ancestor <form> element.
+   */
+  @Prop({ mutable: true }) form: string;
+
+  /**
    * Disable button
    */
-  @Prop({ mutable: true }) disabled = false;
+  @Prop({ mutable: true }) disabled: boolean;
   @Watch('disabled')
   disabledHandler(isDisabled: boolean): void {
     // Remove loading when enable
@@ -80,7 +92,7 @@ export class MgButton {
   /**
    * Prop to set aria-expanded on button element
    */
-  @Prop() expanded = false;
+  @Prop() expanded: boolean;
 
   /**
    * Prop to set aria-controls on button element
@@ -91,7 +103,7 @@ export class MgButton {
    * Option to set aria-haspopup
    * The aria-haspopup state informs assistive technology users that there is a popup and the type of popup it is, but provides no interactivity.
    */
-  @Prop() haspopup: boolean | 'menu' | 'listbox' | 'tree' | 'grid' | 'dialog' = false;
+  @Prop() haspopup: boolean | 'menu' | 'listbox' | 'tree' | 'grid' | 'dialog';
 
   /**
    * Define if button is loading, default to false.
@@ -158,12 +170,16 @@ export class MgButton {
       <button
         id={this.identifier}
         class={this.classList.join()}
+        type={this.type}
         aria-label={this.label}
-        aria-disabled={this.disabled.toString()}
-        aria-expanded={this.expanded}
+        aria-disabled={this.disabled !== undefined && this.disabled.toString()}
+        aria-expanded={this.expanded !== undefined && this.expanded.toString()}
         aria-controls={this.controls}
-        aria-haspopup={this.haspopup}
+        aria-haspopup={this.haspopup !== undefined && this.haspopup.toString()}
         onClick={this.handleClick}
+        // has stencil does not support form attribute on button, we set the attribute from the ref
+        // https://github.com/ionic-team/stencil/issues/2703#issuecomment-1050943715
+        ref={btn => this.form && btn.setAttribute('form', this.form)}
       >
         {this.loading && <mg-icon icon="loader" spin></mg-icon>}
         <div class="mg-button__content">

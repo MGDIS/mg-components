@@ -1,0 +1,41 @@
+.mg-illustrated-message {
+  margin: auto;
+  padding: 0 1.5rem;
+  max-width: 47.5rem;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.mg-illustrated-message__illustration {
+  max-height: 33.5rem;
+
+  ::slotted([slot='illustration']) {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 33.5rem;
+  }
+
+  &.mg-illustrated-message__illustration--small {
+    max-height: 6rem;
+
+    ::slotted([slot='illustration']) {
+      max-height: 6rem;
+    }
+  }
+}
+
+.mg-illustrated-message__title {
+  margin: 3rem 0 0;
+
+  ::slotted([slot='title']) {
+    margin: 0;
+    font-size: 2rem !important;
+    font-family: var(--font-family) !important;
+    font-weight: 400;
+  }
+}
+
+.mg-illustrated-message__details ::slotted([slot='details']) {
+  margin: 2rem 0 0;
+}

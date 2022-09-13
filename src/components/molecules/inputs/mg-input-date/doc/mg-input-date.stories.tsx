@@ -1,4 +1,5 @@
 import { h } from '@stencil/core';
+import { filterArgs } from '../../../../../../.storybook/utils';
 
 export default {
   component: 'mg-input-date',
@@ -7,23 +8,13 @@ export default {
 };
 
 /**
- * 1. camelCase arguments must be written in the template, for exemple labelOnTop must be placed in the template as label-on-top={args.labelOnTop}
- * 2. boolean arguments with a default true value must be added like display-character-left={args.displayCharacterLeft ? 'true' : 'false'}
+ * Template
  *
  * @param {any} args component arguments
  * @returns {HTMLElement} HTMLElement
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Template = (args: any): HTMLElement => {
-  const labelOnTop = args.labelOnTop;
-  delete args.labelOnTop;
-  const labelHide = args.labelHide;
-  delete args.labelHide;
-  const helpText = args.helpText;
-  delete args.helpText;
-  // return element
-  return <mg-input-date {...args} label-on-top={labelOnTop} label-hide={labelHide} help-text={helpText}></mg-input-date>;
-};
+const Template = (args: any): HTMLElement => <mg-input-date {...filterArgs(args)}></mg-input-date>;
 
 const date = new Date();
 const getFormatedNumber = (number: number) => {

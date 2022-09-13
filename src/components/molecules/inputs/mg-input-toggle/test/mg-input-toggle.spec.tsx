@@ -214,6 +214,14 @@ describe('mg-input-toggle', () => {
       expected: false,
       value: true,
     },
+    {
+      items: [
+        { title: 'batman', value: true },
+        { title: 'robin', value: false },
+      ],
+      expected: true,
+      value: false,
+    },
   ])('Should trigger events for items with inputValue : %s', async ({ items, expected, value }) => {
     const args = { label: 'label', items, identifier: 'identifier', helpText: 'My help text', value };
     const page = await getPage(args, defaultSlots);

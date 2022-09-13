@@ -1,4 +1,5 @@
 import { h } from '@stencil/core';
+import { filterArgs } from '../../.storybook/utils';
 
 export default {
   title: 'Style/Helpers',
@@ -10,7 +11,14 @@ export default {
   },
 };
 
-const Template = args => (
+/**
+ * Template
+ *
+ * @param {any} args component arguments
+ * @returns {HTMLElement} HTMLElement
+ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Template = (args: any): HTMLElement => (
   <div>
     <h1>Helpers</h1>
     <h2>.mg-group-elements</h2>
@@ -24,11 +32,11 @@ const Template = args => (
     <h3>Demo</h3>
     <div class={`mg-group-elements${args.align === 'right' ? ' mg-group-elements--align-right' : ''}`}>
       <mg-button>First Button</mg-button>
-      <mg-button label="">
+      <mg-button>
         <mg-icon icon="info-circle"></mg-icon>
         Second Button
       </mg-button>
-      <mg-button is-icon label="Third button">
+      <mg-button {...filterArgs({ isIcon: true })} label="Third button">
         <mg-icon icon="info-circle"></mg-icon>
       </mg-button>
     </div>

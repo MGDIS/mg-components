@@ -1,7 +1,7 @@
 import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
 import { MgButton } from '../mg-button';
-import { variants } from '../mg-button.conf';
+import { variants, buttonTypes } from '../mg-button.conf';
 
 const getPage = (args, content = 'Text button') =>
   newSpecPage({
@@ -24,6 +24,16 @@ describe('mg-button', () => {
 
   test('Should render a button, case controls', async () => {
     const { root } = await getPage({ identifier: 'identifier', label: 'label', controls: 'element-controlled' });
+    expect(root).toMatchSnapshot();
+  });
+
+  test.each([true, false])('Should render a button, case haspopup %s', async haspopup => {
+    const { root } = await getPage({ identifier: 'identifier', label: 'label', haspopup });
+    expect(root).toMatchSnapshot();
+  });
+
+  test.each(buttonTypes)('Should render a button, case type %s', async type => {
+    const { root } = await getPage({ identifier: 'identifier', label: 'label', type });
     expect(root).toMatchSnapshot();
   });
 

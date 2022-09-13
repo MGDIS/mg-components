@@ -1,8 +1,8 @@
 {
-  "timestamp": "2022-07-26T09:46:26",
+  "timestamp": "2022-09-12T13:32:31",
   "compiler": {
     "name": "@stencil/core",
-    "version": "2.17.1",
+    "version": "2.17.4",
     "typescriptVersion": "4.5.4"
   },
   "components": [
@@ -108,8 +108,8 @@
       "filePath": "./src/components/atoms/mg-button/mg-button.tsx",
       "encapsulation": "scoped",
       "tag": "mg-button",
-      "readme": "## Usage\n\nA primary action button is, in most cases, unique on the screen, the other buttons must be displayed as \"secondary\", to highlight the primary action.\nEx: Validation, Save\n\nA tooltip must be displayed on hover when the button only displays a non-explicit icon, and has no label. The tooltip must indicate the action of the button.\n\nA button that launches a potentially long process is disabled and displays a loader for the duration of the process.\n\n## Specs\n\n![](./mg-button/doc/img/mg-button-specs.png)\n\n## Placement\n\n![](./mg-button/doc/img/mg-button-placement.png)\n\nTo manage the space between two buttons you can use the helper [.mg-group-elements](/?path=/docs/style-buttons--buttons)\n\n## Theming\n\n![](./mg-button/doc/img/mg-button-styles.png)\n",
-      "docs": "A primary action button is, in most cases, unique on the screen, the other buttons must be displayed as \"secondary\", to highlight the primary action.\nEx: Validation, Save\n\nA tooltip must be displayed on hover when the button only displays a non-explicit icon, and has no label. The tooltip must indicate the action of the button.\n\nA button that launches a potentially long process is disabled and displays a loader for the duration of the process.",
+      "readme": "## Usage\n\nA primary action button is, in most cases, unique on the screen, the other buttons must be displayed as \"secondary\", to highlight the primary action.\nEx: Validation, Save\n\nA tooltip must be displayed on hover when the button only displays a non-explicit icon, and has no label. The tooltip must indicate the action of the button.\n\nA button that launches a potentially long process is disabled and displays a loader for the duration of the process.\n\nA button with undefined type in a form will natively have a [submit type](https://developer.mozilla.org/fr/docs/Web/HTML/Element/Button#attributs) and trigger form submission. So on non-submission buttons you need to explicitely set the type attribute as \"button\".\n\n## Specs\n\n![](./mg-button/doc/img/mg-button-specs.png)\n\n## Placement\n\n![](./mg-button/doc/img/mg-button-placement.png)\n\nTo manage the space between two buttons you can use the helper [.mg-group-elements](/?path=/docs/style-buttons--buttons)\n\n## Theming\n\n![](./mg-button/doc/img/mg-button-styles.png)\n",
+      "docs": "A primary action button is, in most cases, unique on the screen, the other buttons must be displayed as \"secondary\", to highlight the primary action.\nEx: Validation, Save\n\nA tooltip must be displayed on hover when the button only displays a non-explicit icon, and has no label. The tooltip must indicate the action of the button.\n\nA button that launches a potentially long process is disabled and displays a loader for the duration of the process.\n\nA button with undefined type in a form will natively have a [submit type](https://developer.mozilla.org/fr/docs/Web/HTML/Element/Button#attributs) and trigger form submission. So on non-submission buttons you need to explicitely set the type attribute as \"button\".",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -154,7 +154,6 @@
           "reflectToAttr": false,
           "docs": "Disable button",
           "docsTags": [],
-          "default": "false",
           "values": [
             {
               "type": "boolean"
@@ -171,10 +170,25 @@
           "reflectToAttr": false,
           "docs": "Prop to set aria-expanded on button element",
           "docsTags": [],
-          "default": "false",
           "values": [
             {
               "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "form",
+          "type": "string",
+          "mutable": true,
+          "attr": "form",
+          "reflectToAttr": false,
+          "docs": "Define form id to attach button with.\nIf this attribute is not set, the <button> is associated with its ancestor <form> element.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
             }
           ],
           "optional": false,
@@ -188,7 +202,6 @@
           "reflectToAttr": false,
           "docs": "Option to set aria-haspopup\nThe aria-haspopup state informs assistive technology users that there is a popup and the type of popup it is, but provides no interactivity.",
           "docsTags": [],
-          "default": "false",
           "values": [
             {
               "value": "dialog",
@@ -261,6 +274,31 @@
           "docsTags": [],
           "values": [
             {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "type",
+          "type": "\"button\" | \"reset\" | \"submit\"",
+          "mutable": false,
+          "attr": "type",
+          "reflectToAttr": false,
+          "docs": "Define button type\nDefault: 'submit', as HTMLButtonElement type is submit by default",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "button",
+              "type": "string"
+            },
+            {
+              "value": "reset",
+              "type": "string"
+            },
+            {
+              "value": "submit",
               "type": "string"
             }
           ],
@@ -402,10 +440,95 @@
       }
     },
     {
+      "filePath": "./src/components/molecules/mg-details/mg-details.tsx",
+      "encapsulation": "shadow",
+      "tag": "mg-details",
+      "readme": "## Properties\n \n![](./mg-details/doc/img/mg-details-components.png)\n\n- **summary** and **details** are slots which allow html content\n- **toggle** is defined by mg-icon plus a custom text\n  - mg-icon _chevron-down_ is used for the close state\n  - mg-icon _chevron-up_ is used for the open state\n\n## Behavior\n\n### Action\n\nThe complete zone including the _summary_ and the _toggle_ is clickable and toggles the state of the component.\n \n![](./mg-details/doc/img/mg-details-behavior.png)\n\n### Position\n\n_Toggle_ follows the _summary_ and is always on the top right.\n \n![](./mg-details/doc/img/mg-details-position.png)\n\n### Responsive\n\nIn mobile resolution, the text of the _toggle_ is hidden\n \n![](./mg-details/doc/img/mg-details-responsive.png)\n\n## Specs\n\n### Spacing\n \n![](./mg-details/doc/img/mg-details-spacing.png)\n",
+      "docs": "![](./mg-details/doc/img/mg-details-components.png)\n\n- **summary** and **details** are slots which allow html content\n- **toggle** is defined by mg-icon plus a custom text\n  - mg-icon _chevron-down_ is used for the close state\n  - mg-icon _chevron-up_ is used for the open state",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "expanded",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "expanded",
+          "reflectToAttr": false,
+          "docs": "Define if details are diplayed",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "toggleClosed",
+          "type": "string",
+          "mutable": false,
+          "attr": "toggle-closed",
+          "reflectToAttr": false,
+          "docs": "Displayed title when details are closed",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "toggleOpened",
+          "type": "string",
+          "mutable": false,
+          "attr": "toggle-opened",
+          "reflectToAttr": false,
+          "docs": "Displayed title when details are opened",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "expanded-change",
+          "detail": "boolean",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emmited event when expanded change",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "mg-icon"
+      ],
+      "dependencyGraph": {
+        "mg-details": [
+          "mg-icon"
+        ]
+      }
+    },
+    {
       "filePath": "./src/components/molecules/mg-form/mg-form.tsx",
       "encapsulation": "shadow",
       "tag": "mg-form",
-      "readme": "## Anatomy\n\n![](./mg-form/doc/img/mg-form-anatomy.png)\n\n- zone for required message (12px)\n- field area\n- actions area (submit, cancel)\n\n#### Spacing\n\n![](./mg-form/doc/img/mg-form-spacing.png)\n\n## Example\n\n**Code example does not reflect all the code.**\n\nHere we have a `form-valid` event listener on the `mg-form` to define if the \"submit\" button should be enable or not.  \nThe \"Display errors\" button use the `mg-form` `displayError()` method.\n",
+      "readme": "## Anatomy\n\n![](./mg-form/doc/img/mg-form-anatomy.png)\n\n- zone for required message (12px)\n- field area\n- actions area (submit, cancel)\n\n#### Spacing\n\n![](./mg-form/doc/img/mg-form-spacing.png)\n\nTo edit space bewteen the title and the input you must do as follow:\n\n```html\n<style>.mg-form--custom-grid {\n  --mg-form-inputs-title-width: 50rem //add here your custom value\n}</style>\n<mg-form class=\"mg-form--custom-grid\">\n  <!-- your content -->\n</mgform>\n```\n\n## Example\n\n**Code example does not reflect all the code.**\n\nHere we have a `form-valid` event listener on the `mg-form` to define if the \"submit\" button should be enable or not.  \nThe \"Display errors\" button use the `mg-form` `displayError()` method.\n",
       "docs": "![](./mg-form/doc/img/mg-form-anatomy.png)\n\n- zone for required message (12px)\n- field area\n- actions area (submit, cancel)",
       "docsTags": [],
       "usage": {},
@@ -530,6 +653,15 @@
       ],
       "events": [
         {
+          "event": "form-submit",
+          "detail": "boolean",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted event on form submit",
+          "docsTags": []
+        },
+        {
           "event": "form-valid",
           "detail": "boolean",
           "bubbles": true,
@@ -631,6 +763,7 @@
       "parts": [],
       "dependents": [
         "mg-button",
+        "mg-details",
         "mg-input-checkbox",
         "mg-input-date",
         "mg-input-numeric",
@@ -651,6 +784,9 @@
       "dependencies": [],
       "dependencyGraph": {
         "mg-button": [
+          "mg-icon"
+        ],
+        "mg-details": [
           "mg-icon"
         ],
         "mg-input-checkbox": [
@@ -702,6 +838,48 @@
           "mg-icon"
         ]
       }
+    },
+    {
+      "filePath": "./src/components/molecules/mg-illustrated-message/mg-illustrated-message.tsx",
+      "encapsulation": "shadow",
+      "tag": "mg-illustrated-message",
+      "readme": "## Specs\n\n### Anatomy\n\n![](./mg-illustrated-message/doc/img/mg-illustrated-message-anatomy.png) \n\nComponent is built with : \n- an illustration\n- a title\n\nOptionnally : \n- one or more _details_ slot wich accept HTML content (text, button...)\n\n### Style\n\n- _title_ : Open Sans, 20px, Regular\n- All contents are centered.\n\n### Spacing\n\n![](./mg-illustrated-message/doc/img/mg-illustrated-message-spacing.png) \n\n30px between the bottom of the _illustration_ and top of the _title_.\n20px for the top of the _details_ zone.\n\n15px between left/right border of the screen and the component\n\n### Sizing\n\nThe maximum width of the component is 475px.\n\nThe maximum height of the illustration is 335px. Illustration must keep its proportionnality.\nIllustration can be displayed in \"small\" size so its maximum height is set to 60px.\n\n![](./mg-illustrated-message/doc/img/mg-illustrated-message-sizing-small.png) \n\n## Behavior\n\nThe slotted elements (illustration, title and details) are centered horizontally in the page.\n\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "size",
+          "type": "\"regular\" | \"small\"",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "Define illustration size",
+          "docsTags": [],
+          "default": "'regular'",
+          "values": [
+            {
+              "value": "regular",
+              "type": "string"
+            },
+            {
+              "value": "small",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
     },
     {
       "filePath": "./src/components/molecules/inputs/mg-input-checkbox/mg-input-checkbox.tsx",
@@ -4518,7 +4696,6 @@
           "reflectToAttr": false,
           "docs": "Disable possibility to toggle expand",
           "docsTags": [],
-          "default": "false",
           "values": [
             {
               "type": "boolean"
@@ -4828,7 +5005,17 @@
         }
       ],
       "methods": [],
-      "events": [],
+      "events": [
+        {
+          "event": "display-change",
+          "detail": "boolean",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emited event when display value change",
+          "docsTags": []
+        }
+      ],
       "listeners": [],
       "styles": [],
       "slots": [],
@@ -4850,7 +5037,7 @@
     },
     {
       "filePath": "./src/components/molecules/mg-tabs/mg-tabs.tsx",
-      "encapsulation": "none",
+      "encapsulation": "shadow",
       "tag": "mg-tabs",
       "readme": "## Anatomy\n\n![](./mg-tabs/doc/img/mg-tabs-anatomy.png)\n\n## Specs\n\n### Spacing\n\n- Standard : @base = 10px\n- Large : @base = 18px\n\n![](./mg-tabs/doc/img/mg-tabs-spacing.png)\n\n- if only text, no extra spacing,\n- if no badge : no extra spacing on the right\n- if only icon : no extra spacing on the right\n\n### Sizing\n\n![](./mg-tabs/doc/img/mg-tabs-sizing.png)\n\n### States\n\n![](./mg-tabs/doc/img/mg-tabs-states.png)\n\n### Responsive\n\n#### Line breaks (current management)\n\n![](./mg-tabs/doc/img/mg-tabs-responsive.png)\n",
       "docs": "![](./mg-tabs/doc/img/mg-tabs-anatomy.png)",

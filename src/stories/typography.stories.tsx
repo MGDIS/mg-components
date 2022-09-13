@@ -4,7 +4,14 @@ export default {
   title: 'Style/Typography',
 };
 
-const Template = args => (
+/**
+ * Template
+ *
+ * @param {any} args component arguments
+ * @returns {HTMLElement} HTMLElement
+ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Template = (args: any): HTMLElement => (
   <div>
     <h1>{args.h1}</h1>
     <h2>{args.h2}</h2>
