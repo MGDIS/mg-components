@@ -1,10 +1,10 @@
 import { h } from '@stencil/core';
 
-import { Status } from '../mg-nav.conf';
+import { Status } from '../mg-menu.conf';
 
 export default {
-  component: 'mg-nav',
-  title: 'Molecules/mg-nav',
+  component: 'mg-menu',
+  title: 'Molecules/mg-menu',
   parameters: { actions: { handles: ['active-nav-change'] } },
 };
 
@@ -17,7 +17,7 @@ const Template = args => {
   // return element
   const activeNav = args.activeNav;
   delete args.activeNav;
-  return <mg-nav {...args} active-tab={activeNav}></mg-nav>;
+  return <mg-menu {...args} active-tab={activeNav}></mg-menu>;
 };
 
 export const MgNav = Template.bind({});

@@ -173,10 +173,10 @@
   --mg-panel-background: var(--color-info-h) var(--color-info-s) calc(var(--color-info-l) + 68%);
 
   /*
-    <mg-nav>
+    <mg-menu>
    */
 
-   --mg-nav-color: var(--color-dark);
+   --mg-menu-color: var(--color-dark);
 
   /*
     Layout

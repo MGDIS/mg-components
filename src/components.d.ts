@@ -12,7 +12,7 @@ import { Width } from "./components/molecules/inputs/MgInput.conf";
 import { RadioOption } from "./components/molecules/inputs/mg-input-radio/mg-input-radio.conf";
 import { SelectOption } from "./components/molecules/inputs/mg-input-select/mg-input-select.conf";
 import { ToggleValue } from "./components/molecules/inputs/mg-input-toggle/mg-input-toggle.conf";
-import { NavItem } from "./components/molecules/mg-nav/mg-nav.conf";
+import { NavItem } from "./components/molecules/mg-menu/mg-menu.conf";
 import { Placement } from "./components/molecules/mg-popover/mg-popover.conf";
 import { TabItem } from "./components/molecules/mg-tabs/mg-tabs.conf";
 import { Placement as Placement1 } from "./components/atoms/mg-tooltip/mg-tooltip.conf";
@@ -854,6 +854,24 @@ export namespace Components {
          */
         "value": any;
     }
+    interface MgMenu {
+        /**
+          * Active tab number default: first is 1
+         */
+        "activeItem": number;
+        /**
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+         */
+        "identifier": string;
+        /**
+          * Nav items Required
+         */
+        "items": string[] | NavItem[];
+        /**
+          * Nav label. Include short nav description. Required for accessibility
+         */
+        "label": string;
+    }
     interface MgMessage {
         /**
           * Define if message has a cross button RG 01: https://jira.mgdis.fr/browse/PDA9-140
@@ -893,24 +911,6 @@ export namespace Components {
           * Displayed modal title required
          */
         "modalTitle": string;
-    }
-    interface MgNav {
-        /**
-          * Active tab number default: first is 1
-         */
-        "activeItem": number;
-        /**
-          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
-         */
-        "identifier": string;
-        /**
-          * Nav items Required
-         */
-        "items": string[] | NavItem[];
-        /**
-          * Nav label. Include short nav description. Required for accessibility
-         */
-        "label": string;
     }
     interface MgPagination {
         /**
@@ -1081,6 +1081,10 @@ export interface MgInputToggleCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLMgInputToggleElement;
 }
+export interface MgMenuCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMgMenuElement;
+}
 export interface MgMessageCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLMgMessageElement;
@@ -1088,10 +1092,6 @@ export interface MgMessageCustomEvent<T> extends CustomEvent<T> {
 export interface MgModalCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLMgModalElement;
-}
-export interface MgNavCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLMgNavElement;
 }
 export interface MgPaginationCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -1212,6 +1212,12 @@ declare global {
         prototype: HTMLMgInputToggleElement;
         new (): HTMLMgInputToggleElement;
     };
+    interface HTMLMgMenuElement extends Components.MgMenu, HTMLStencilElement {
+    }
+    var HTMLMgMenuElement: {
+        prototype: HTMLMgMenuElement;
+        new (): HTMLMgMenuElement;
+    };
     interface HTMLMgMessageElement extends Components.MgMessage, HTMLStencilElement {
     }
     var HTMLMgMessageElement: {
@@ -1223,12 +1229,6 @@ declare global {
     var HTMLMgModalElement: {
         prototype: HTMLMgModalElement;
         new (): HTMLMgModalElement;
-    };
-    interface HTMLMgNavElement extends Components.MgNav, HTMLStencilElement {
-    }
-    var HTMLMgNavElement: {
-        prototype: HTMLMgNavElement;
-        new (): HTMLMgNavElement;
     };
     interface HTMLMgPaginationElement extends Components.MgPagination, HTMLStencilElement {
     }
@@ -1284,9 +1284,9 @@ declare global {
         "mg-input-textarea": HTMLMgInputTextareaElement;
         "mg-input-title": HTMLMgInputTitleElement;
         "mg-input-toggle": HTMLMgInputToggleElement;
+        "mg-menu": HTMLMgMenuElement;
         "mg-message": HTMLMgMessageElement;
         "mg-modal": HTMLMgModalElement;
-        "mg-nav": HTMLMgNavElement;
         "mg-pagination": HTMLMgPaginationElement;
         "mg-panel": HTMLMgPanelElement;
         "mg-popover": HTMLMgPopoverElement;
@@ -2167,6 +2167,28 @@ declare namespace LocalJSX {
          */
         "value"?: any;
     }
+    interface MgMenu {
+        /**
+          * Active tab number default: first is 1
+         */
+        "activeItem"?: number;
+        /**
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+         */
+        "identifier"?: string;
+        /**
+          * Nav items Required
+         */
+        "items": string[] | NavItem[];
+        /**
+          * Nav label. Include short nav description. Required for accessibility
+         */
+        "label": string;
+        /**
+          * Emited event when active nav item change
+         */
+        "onActive-item-change"?: (event: MgMenuCustomEvent<number>) => void;
+    }
     interface MgMessage {
         /**
           * Define if message has a cross button RG 01: https://jira.mgdis.fr/browse/PDA9-140
@@ -2222,28 +2244,6 @@ declare namespace LocalJSX {
           * Emmited event when modal is diplayed
          */
         "onComponent-show"?: (event: MgModalCustomEvent<string>) => void;
-    }
-    interface MgNav {
-        /**
-          * Active tab number default: first is 1
-         */
-        "activeItem"?: number;
-        /**
-          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
-         */
-        "identifier"?: string;
-        /**
-          * Nav items Required
-         */
-        "items": string[] | NavItem[];
-        /**
-          * Nav label. Include short nav description. Required for accessibility
-         */
-        "label": string;
-        /**
-          * Emited event when active nav item change
-         */
-        "onActive-item-change"?: (event: MgNavCustomEvent<number>) => void;
     }
     interface MgPagination {
         /**
@@ -2407,9 +2407,9 @@ declare namespace LocalJSX {
         "mg-input-textarea": MgInputTextarea;
         "mg-input-title": MgInputTitle;
         "mg-input-toggle": MgInputToggle;
+        "mg-menu": MgMenu;
         "mg-message": MgMessage;
         "mg-modal": MgModal;
-        "mg-nav": MgNav;
         "mg-pagination": MgPagination;
         "mg-panel": MgPanel;
         "mg-popover": MgPopover;
@@ -2439,9 +2439,9 @@ declare module "@stencil/core" {
             "mg-input-textarea": LocalJSX.MgInputTextarea & JSXBase.HTMLAttributes<HTMLMgInputTextareaElement>;
             "mg-input-title": LocalJSX.MgInputTitle & JSXBase.HTMLAttributes<HTMLMgInputTitleElement>;
             "mg-input-toggle": LocalJSX.MgInputToggle & JSXBase.HTMLAttributes<HTMLMgInputToggleElement>;
+            "mg-menu": LocalJSX.MgMenu & JSXBase.HTMLAttributes<HTMLMgMenuElement>;
             "mg-message": LocalJSX.MgMessage & JSXBase.HTMLAttributes<HTMLMgMessageElement>;
             "mg-modal": LocalJSX.MgModal & JSXBase.HTMLAttributes<HTMLMgModalElement>;
-            "mg-nav": LocalJSX.MgNav & JSXBase.HTMLAttributes<HTMLMgNavElement>;
             "mg-pagination": LocalJSX.MgPagination & JSXBase.HTMLAttributes<HTMLMgPaginationElement>;
             "mg-panel": LocalJSX.MgPanel & JSXBase.HTMLAttributes<HTMLMgPanelElement>;
             "mg-popover": LocalJSX.MgPopover & JSXBase.HTMLAttributes<HTMLMgPopoverElement>;

@@ -1,6 +1,6 @@
 import { createPage } from '../../../../utils/test.utils';
 
-describe('mg-nav', () => {
+describe('mg-menu', () => {
   describe('template', () => {
     test.each([
       { items: ['Batman', 'Joker', 'Bane'] },
@@ -26,14 +26,14 @@ describe('mg-nav', () => {
         ],
       },
     ])('render', async ({ items }) => {
-      const page = await createPage(`<mg-nav label="label"></mg-nav>
+      const page = await createPage(`<mg-menu label="label"></mg-menu>
       <script>
-      const mgNav = document.querySelector('mg-nav');
+      const mgNav = document.querySelector('mg-menu');
       mgNav.items = ${JSON.stringify(items)};
       </script>
       `);
 
-      const element = await page.find('mg-nav');
+      const element = await page.find('mg-menu');
 
       expect(element).toHaveClass('hydrated');
 
@@ -44,9 +44,9 @@ describe('mg-nav', () => {
 
   describe('navigation', () => {
     test('should go to next tab on click event', async () => {
-      const page = await createPage(`<mg-nav label="label"></mg-nav>
+      const page = await createPage(`<mg-menu label="label"></mg-menu>
       <script>
-      const mgNav = document.querySelector('mg-nav');
+      const mgNav = document.querySelector('mg-menu');
       mgNav.items = ['Batman', 'Joker', 'Bane'];
       </script>
       `);

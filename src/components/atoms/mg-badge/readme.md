@@ -29,13 +29,13 @@ The badge displays a number or a punctuation character.
 
 ### Used by
 
- - [mg-nav](../../molecules/mg-nav)
+ - [mg-menu](../../molecules/mg-menu)
  - [mg-tabs](../../molecules/mg-tabs)
 
 ### Graph
 ```mermaid
 graph TD;
-  mg-nav --> mg-badge
+  mg-menu --> mg-badge
   mg-tabs --> mg-badge
   style mg-badge fill:#f9f,stroke:#333,stroke-width:4px
 ```

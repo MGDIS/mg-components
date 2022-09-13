@@ -54,9 +54,9 @@ Rule applicable for all except "info" blue. "Info" pictographs without text are 
  - [mg-input-text](../../molecules/inputs/mg-input-text)
  - [mg-input-textarea](../../molecules/inputs/mg-input-textarea)
  - [mg-input-toggle](../../molecules/inputs/mg-input-toggle)
+ - [mg-menu](../../molecules/mg-menu)
  - [mg-message](../../molecules/mg-message)
  - [mg-modal](../../molecules/mg-modal)
- - [mg-nav](../../molecules/mg-nav)
  - [mg-pagination](../../molecules/mg-pagination)
  - [mg-panel](../../molecules/mg-panel)
  - [mg-popover](../../molecules/mg-popover)
@@ -76,9 +76,9 @@ graph TD;
   mg-input-text --> mg-icon
   mg-input-textarea --> mg-icon
   mg-input-toggle --> mg-icon
+  mg-menu --> mg-icon
   mg-message --> mg-icon
   mg-modal --> mg-icon
-  mg-nav --> mg-icon
   mg-pagination --> mg-icon
   mg-panel --> mg-icon
   mg-popover --> mg-icon

@@ -1,6 +1,6 @@
-import { Component, Event, EventEmitter, h, Host, Prop, State, Element, Watch } from '@stencil/core';
+import { Component, Event, EventEmitter, h, Prop, State, Element, Watch } from '@stencil/core';
 import { createID, ClassList, allItemsAreString } from '../../../utils/components.utils';
-import { NavItem, Status } from './mg-nav.conf';
+import { NavItem, Status } from './mg-menu.conf';
 
 /**
  * type NavItem validation function
@@ -11,16 +11,16 @@ import { NavItem, Status } from './mg-nav.conf';
 const isNavItem = (tab: NavItem): boolean => typeof tab === 'object' && typeof tab.label === 'string';
 
 @Component({
-  tag: 'mg-nav',
-  styleUrl: 'mg-nav.scss',
+  tag: 'mg-menu',
+  styleUrl: 'mg-menu.scss',
 })
-export class MgTabs {
+export class MgMenu {
   /************
    * Internal *
    ************/
 
   private startIndex = 1;
-  private buttonTabBaseClass = 'mg-nav__item-button';
+  private buttonMenuBaseClass = 'mg-menu__item-button';
 
   /**************
    * Decorators *
@@ -29,13 +29,13 @@ export class MgTabs {
   /**
    * Get component DOM element
    */
-  @Element() element: HTMLMgNavElement;
+  @Element() element: HTMLMgMenuElement;
 
   /**
    * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
    * If not set, it will be created.
    */
-  @Prop() identifier: string = createID('mg-nav');
+  @Prop() identifier: string = createID('mg-menu');
 
   /**
    * Nav label. Include short nav description.
@@ -58,7 +58,7 @@ export class MgTabs {
     else if (newValue && (newValue as NavItem[]).every(item => isNavItem(item))) {
       this.nav = newValue as NavItem[];
     } else {
-      throw new Error('<mg-nav> prop "items" is required and all items must be the same type: NavItem.');
+      throw new Error('<mg-menu> prop "items" is required and all items must be the same type: NavItem.');
     }
   }
 
@@ -70,7 +70,7 @@ export class MgTabs {
   @Watch('activeItem')
   validateActiveItem(newValue: number): void {
     if (newValue < 1 || newValue > this.nav.length) {
-      throw new Error('<mg-nav> prop "activeItem" must be between 1 and tabs length.');
+      throw new Error('<mg-menu> prop "activeItem" must be between 1 and tabs length.');
     } else {
       this.setActiveItem(newValue);
     }
@@ -84,7 +84,7 @@ export class MgTabs {
   /**
    * Component classes
    */
-  @State() classList: ClassList = new ClassList(['mg-nav']);
+  @State() classList: ClassList = new ClassList(['mg-menu']);
 
   /**
    * Emited event when active nav item change
@@ -142,7 +142,7 @@ export class MgTabs {
    * @param {boolean} isSelector set if we need a CSS selector with the dot '.' at the begin. default value = false.
    * @returns {string} button class/selector variant
    */
-  private getNavItemButtonClass = (status: Status, isSelector = false): string => `${isSelector ? '.' : ''}${this.buttonTabBaseClass}--${status}`;
+  private getNavItemButtonClass = (status: Status, isSelector = false): string => `${isSelector ? '.' : ''}${this.buttonMenuBaseClass}--${status}`;
 
   /**
    * Handle keyboard event on tabs
@@ -191,34 +191,32 @@ export class MgTabs {
    */
   render(): HTMLElement {
     return (
-      <Host>
-        <nav role="navigation" aria-label={this.label} class={this.classList.join()}>
-          <ul class="mg-nav__item-list">
-            {this.nav.map((item, index) => (
-              <li>
-                <button
-                  id={`${this.identifier}-${this.getItemIndex(index)}`}
-                  class={{
-                    [`${this.buttonTabBaseClass}`]: true,
-                    [`${this.getNavItemButtonClass(Status.ACTIVE)}`]: this.navItemHasGivenStatus(item, Status.ACTIVE),
-                    [`${this.getNavItemButtonClass(Status.HIDDEN)}`]: this.navItemHasGivenStatus(item, Status.HIDDEN),
-                    [`${this.getNavItemButtonClass(Status.DISABLED)}`]: this.navItemHasGivenStatus(item, Status.DISABLED),
-                  }}
-                  aria-expanded={this.navItemHasGivenStatus(item, Status.ACTIVE).toString()}
-                  onClick={this.handleClick}
-                  onKeyDown={this.handleKeydown}
-                  data-index={this.getItemIndex(index)}
-                  disabled={this.navItemHasGivenStatus(item, Status.DISABLED)}
-                >
-                  {item.icon !== undefined && <mg-icon icon={item.icon}></mg-icon>}
-                  {item.label}
-                  {item.badge !== undefined && <mg-badge variant="info" value={item.badge.value} label={item.badge.label}></mg-badge>}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </Host>
+      <nav role="navigation" aria-label={this.label} class={this.classList.join()}>
+        <ul class="mg-menu__item-list">
+          {this.nav.map((item, index) => (
+            <li>
+              <button
+                id={`${this.identifier}-${this.getItemIndex(index)}`}
+                class={{
+                  [`${this.buttonMenuBaseClass}`]: true,
+                  [`${this.getNavItemButtonClass(Status.ACTIVE)}`]: this.navItemHasGivenStatus(item, Status.ACTIVE),
+                  [`${this.getNavItemButtonClass(Status.HIDDEN)}`]: this.navItemHasGivenStatus(item, Status.HIDDEN),
+                  [`${this.getNavItemButtonClass(Status.DISABLED)}`]: this.navItemHasGivenStatus(item, Status.DISABLED),
+                }}
+                aria-expanded={this.navItemHasGivenStatus(item, Status.ACTIVE).toString()}
+                onClick={this.handleClick}
+                onKeyDown={this.handleKeydown}
+                data-index={this.getItemIndex(index)}
+                disabled={this.navItemHasGivenStatus(item, Status.DISABLED)}
+              >
+                {item.icon !== undefined && <mg-icon icon={item.icon}></mg-icon>}
+                {item.label}
+                {item.badge !== undefined && <mg-badge variant="info" value={item.badge.value} label={item.badge.label}></mg-badge>}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </nav>
     );
   }
 }

@@ -1,18 +1,18 @@
 import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
-import { MgTabs } from '../mg-nav';
+import { MgTabs } from '../mg-menu';
 
 const getPage = (args, slots?) =>
   newSpecPage({
     components: [MgTabs],
-    template: () => <mg-nav {...args}>{slots && slots.map(content => content && content())}</mg-nav>,
+    template: () => <mg-menu {...args}>{slots && slots.map(content => content && content())}</mg-menu>,
   });
 
 const badge = { value: 2, label: 'messages' };
 
 const key = { next: 'ArrowRight', prev: 'ArrowLeft' };
 
-describe('mg-nav', () => {
+describe('mg-menu', () => {
   describe('template', () => {
     test.each([
       [['Batman', 'Joker', 'Bane']],
@@ -60,7 +60,7 @@ describe('mg-nav', () => {
       try {
         await getPage({ label: 'Sample label', items });
       } catch (error) {
-        expect(error.message).toMatch('<mg-nav> prop "items" is required and all items must be the same type: TabItem.');
+        expect(error.message).toMatch('<mg-menu> prop "items" is required and all items must be the same type: TabItem.');
       }
     });
 
@@ -68,7 +68,7 @@ describe('mg-nav', () => {
       try {
         await getPage({ label: 'Sample label', items: ['Tab 1', 'Tab 2'], activeTab });
       } catch (error) {
-        expect(error.message).toMatch('<mg-nav> prop "activeTab" must be between 1 and tabs length.');
+        expect(error.message).toMatch('<mg-menu> prop "activeTab" must be between 1 and tabs length.');
       }
     });
 
@@ -76,7 +76,7 @@ describe('mg-nav', () => {
       try {
         await getPage({ label: 'Sample label', items: ['Tab 1', 'Tab 2'], size: 'batman' });
       } catch (error) {
-        expect(error.message).toMatch(`<mg-nav> prop "size" must be one of : ${sizes.join(', ')}`);
+        expect(error.message).toMatch(`<mg-menu> prop "size" must be one of : ${sizes.join(', ')}`);
       }
     });
   });
@@ -86,7 +86,7 @@ describe('mg-nav', () => {
       const page = await getPage({ label: 'Sample label', items: ['batman', 'joker'], identifier: 'id' });
       expect(page.root).toMatchSnapshot();
 
-      let activeTab = page.doc.querySelector('.mg-nav__navigation-button--active');
+      let activeTab = page.doc.querySelector('.mg-menu__navigation-button--active');
       expect(activeTab).toHaveProperty('id', 'id-1');
 
       jest.spyOn(page.rootInstance.activeTabChange, 'emit');
@@ -98,7 +98,7 @@ describe('mg-nav', () => {
       expect(page.root).toMatchSnapshot();
       expect(page.rootInstance.activeTabChange.emit).toHaveBeenCalledWith(2);
 
-      activeTab = page.doc.querySelector('.mg-nav__navigation-button--active');
+      activeTab = page.doc.querySelector('.mg-menu__navigation-button--active');
       expect(activeTab).toHaveProperty('id', 'id-2');
     });
 
@@ -112,7 +112,7 @@ describe('mg-nav', () => {
       });
       expect(page.root).toMatchSnapshot();
 
-      let activeTab = page.doc.querySelector('.mg-nav__navigation-button--active');
+      let activeTab = page.doc.querySelector('.mg-menu__navigation-button--active');
       expect(activeTab).toHaveProperty('id', 'id-1');
 
       jest.spyOn(page.rootInstance.activeTabChange, 'emit');
@@ -124,7 +124,7 @@ describe('mg-nav', () => {
       expect(page.root).toMatchSnapshot();
       expect(page.rootInstance.activeTabChange.emit).toHaveBeenCalledWith(2);
 
-      activeTab = page.doc.querySelector('.mg-nav__navigation-button--active');
+      activeTab = page.doc.querySelector('.mg-menu__navigation-button--active');
       expect(activeTab).toHaveProperty('id', 'id-2');
     });
 
@@ -134,7 +134,7 @@ describe('mg-nav', () => {
 
       page.doc.querySelectorAll('button').forEach(button => (button.focus = jest.fn()));
 
-      let activeTab: HTMLLIElement = page.doc.querySelector('.mg-nav__navigation-button--active');
+      let activeTab: HTMLLIElement = page.doc.querySelector('.mg-menu__navigation-button--active');
 
       activeTab.dispatchEvent(new CustomEvent('focus', { bubbles: true }));
       await page.waitForChanges();
@@ -148,7 +148,7 @@ describe('mg-nav', () => {
 
       expect(page.root).toMatchSnapshot();
 
-      activeTab = page.doc.querySelector('.mg-nav__navigation-button--active');
+      activeTab = page.doc.querySelector('.mg-menu__navigation-button--active');
       expect(activeTab).toHaveProperty('id', 'id-2');
       expect(activeTab.focus).toHaveBeenCalledTimes(1);
       expect(page.rootInstance.activeTabChange.emit).toHaveBeenCalledWith(2);
@@ -158,7 +158,7 @@ describe('mg-nav', () => {
 
       expect(page.root).toMatchSnapshot();
 
-      activeTab = page.doc.querySelector('.mg-nav__navigation-button--active');
+      activeTab = page.doc.querySelector('.mg-menu__navigation-button--active');
       expect(activeTab).toHaveProperty('id', 'id-1');
       expect(activeTab.focus).toHaveBeenCalledTimes(1);
       expect(page.rootInstance.activeTabChange.emit).toHaveBeenCalledWith(1);
@@ -175,7 +175,7 @@ describe('mg-nav', () => {
 
       page.doc.querySelectorAll('button').forEach(button => (button.focus = jest.fn()));
 
-      let activeTab: HTMLLIElement = page.doc.querySelector('.mg-nav__navigation-button--active');
+      let activeTab: HTMLLIElement = page.doc.querySelector('.mg-menu__navigation-button--active');
 
       activeTab.dispatchEvent(new CustomEvent('focus', { bubbles: true }));
       await page.waitForChanges();
@@ -189,7 +189,7 @@ describe('mg-nav', () => {
 
       expect(page.root).toMatchSnapshot();
 
-      activeTab = page.doc.querySelector('.mg-nav__navigation-button--active');
+      activeTab = page.doc.querySelector('.mg-menu__navigation-button--active');
       expect(activeTab).toHaveProperty('id', 'id-2');
       expect(activeTab.focus).toHaveBeenCalledTimes(1);
       expect(page.rootInstance.activeTabChange.emit).toHaveBeenCalledWith(2);
@@ -199,7 +199,7 @@ describe('mg-nav', () => {
 
       expect(page.root).toMatchSnapshot();
 
-      activeTab = page.doc.querySelector('.mg-nav__navigation-button--active');
+      activeTab = page.doc.querySelector('.mg-menu__navigation-button--active');
       expect(activeTab).toHaveProperty('id', 'id-2');
       expect(activeTab.focus).toHaveBeenCalledTimes(1);
       expect(page.rootInstance.activeTabChange.emit).toHaveBeenCalledWith(2);
@@ -209,10 +209,10 @@ describe('mg-nav', () => {
       const page = await getPage({ label: 'Sample label', items: ['batman', 'joker'], identifier: 'id' });
       expect(page.root).toMatchSnapshot();
 
-      const element = page.doc.querySelector('mg-nav');
+      const element = page.doc.querySelector('mg-menu');
       element.querySelectorAll('button').forEach(button => (button.focus = jest.fn()));
 
-      let activeTab: HTMLLIElement = element.querySelector('.mg-nav__navigation-button--active');
+      let activeTab: HTMLLIElement = element.querySelector('.mg-menu__navigation-button--active');
 
       activeTab.dispatchEvent(new CustomEvent('focus', { bubbles: true }));
       await page.waitForChanges();
@@ -226,7 +226,7 @@ describe('mg-nav', () => {
 
       expect(page.root).toMatchSnapshot();
 
-      activeTab = element.querySelector('.mg-nav__navigation-button--active');
+      activeTab = element.querySelector('.mg-menu__navigation-button--active');
       expect(activeTab).toHaveProperty('id', 'id-1');
       expect(page.rootInstance.activeTabChange.emit).not.toHaveBeenCalled();
     });
