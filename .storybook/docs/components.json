@@ -1,9 +1,9 @@
 {
-  "timestamp": "2022-09-12T13:32:31",
+  "timestamp": "2022-09-13T16:03:31",
   "compiler": {
     "name": "@stencil/core",
-    "version": "2.17.4",
-    "typescriptVersion": "4.5.4"
+    "version": "2.18.0",
+    "typescriptVersion": "4.7.4"
   },
   "components": [
     {
@@ -4569,7 +4569,7 @@
       "filePath": "./src/components/molecules/mg-panel/mg-panel.tsx",
       "encapsulation": "shadow",
       "tag": "mg-panel",
-      "readme": "## Behavior\n\nThe left zone of the header displays the item label, this zone is clickable and allows the user to unfold/fold the panel.\nIf no content is available, the panel cannot be unfolded.\nWhen the panel is unfolded, the icon is vertically inverted.\n\nThe right area of the header can accommodate any component.\n\n## Anatomy\n\n![](./mg-panel/doc/img/mg-panel-anatomy.png)\n\n## Specs\n\n### Sizing\n\n![](./mg-panel/doc/img/mg-panel-sizing.png)\n\n### Spacing\n\n![](./mg-panel/doc/img/mg-panel-spacing.png)\n\n### Alignments\n\n![](./mg-panel/doc/img/mg-panel-align.png)\n\n### Styles\n\n![](./mg-panel/doc/img/mg-panel-style.png)\n",
+      "readme": "## Behavior\n\nThe left zone of the header displays the item label, this zone is clickable and allows the user to unfold/fold the panel.\nIf no content is available, the panel cannot be unfolded.\nWhen the panel is unfolded, the icon is vertically inverted.\n\nThe right area of the header can accommodate any component.\n\n## Anatomy\n\n![](./mg-panel/doc/img/mg-panel-anatomy.png)\n\n## Specs\n\n### Sizing\n\n![](./mg-panel/doc/img/mg-panel-sizing.png)\n\n### Spacing\n\n![](./mg-panel/doc/img/mg-panel-spacing.png)\n\nSlot content padding can be customized using the --mg-panel-content-padding CSS variable, default is 15px.\n\n### Alignments\n\n![](./mg-panel/doc/img/mg-panel-align.png)\n\n### Styles\n\n![](./mg-panel/doc/img/mg-panel-style.png)\n",
       "docs": "The left zone of the header displays the item label, this zone is clickable and allows the user to unfold/fold the panel.\nIf no content is available, the panel cannot be unfolded.\nWhen the panel is unfolded, the icon is vertically inverted.\n\nThe right area of the header can accommodate any component.",
       "docsTags": [],
       "usage": {},

@@ -38,6 +38,7 @@ describe('mg-panel', () => {
     `<mg-panel label="label" panel-title="very long panel title very long panel title very long panel title very long panel title very long panel title very long panel title very long panel title very long panel title" title-editable>${slot2}</mg-panel>`,
     `<mg-panel label="label" panel-title="panel title" expand-toggle-disabled expanded>${slot}</mg-panel>`,
     `<mg-panel label="label" panel-title="panel title" expand-toggle-disabled>${slot}</mg-panel>`,
+    `<mg-panel label="label" panel-title="panel title" expanded style="--mg-panel-content-padding: 0"><div>Content without padding.</div></mg-panel>`,
   ])('template', html => {
     test('render', async () => {
       const page = await createPage(html);

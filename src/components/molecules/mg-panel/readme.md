@@ -20,6 +20,8 @@ The right area of the header can accommodate any component.
 
 ![](./mg-panel/doc/img/mg-panel-spacing.png)
 
+Slot content padding can be customized using the --mg-panel-content-padding CSS variable, default is 15px.
+
 ### Alignments
 
 ![](./mg-panel/doc/img/mg-panel-align.png)
