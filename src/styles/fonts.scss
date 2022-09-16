@@ -10,17 +10,18 @@
 
 @font-face {
   font-family: 'Open Sans';
+  font-weight: 500;
+  src: url('fonts/OpenSans-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Open Sans';
   font-weight: 600;
   src: url('fonts/OpenSans-SemiBold.ttf') format('truetype');
 }
 
-/**
- * Poppins
- * https://fonts.google.com/specimen/Poppins
- */
-
 @font-face {
-  font-family: 'Poppins';
-  font-weight: bold;
-  src: url('fonts/Poppins-Bold.ttf') format('truetype');
+  font-family: 'Open Sans';
+  font-weight: 700;
+  src: url('fonts/OpenSans-Bold.ttf') format('truetype');
 }
