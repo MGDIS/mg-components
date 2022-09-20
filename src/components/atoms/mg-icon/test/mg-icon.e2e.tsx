@@ -1,7 +1,7 @@
 import { createPage } from '../../../../utils/test.utils';
 import { icons, sizes, variants } from '../mg-icon.conf';
 
-const setViewportSize = (size: string): number => {
+const getIconWidth = (size: string): number => {
   switch (size) {
     case 'small':
       return 12;
@@ -15,55 +15,41 @@ const setViewportSize = (size: string): number => {
 };
 
 describe('mg-icon', () => {
-  describe.each(Object.keys(icons))('icon %s', icon => {
-    test('renders', async () => {
-      // Needed style for viewport < 20px
-      const page = await createPage(`<style>mg-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}</style><mg-icon icon="${icon}"></mg-icon>`);
+  test('renders icons', async () => {
+    const html = Object.keys(icons)
+      .map(icon => `<mg-icon icon="${icon}"></mg-icon>`)
+      .join('');
+    const page = await createPage(html);
 
-      const element = await page.find('mg-icon');
-      expect(element).toHaveClass('hydrated');
-
-      const viewport = setViewportSize('regular');
-      await page.setViewport({ width: viewport, height: viewport });
-
-      const screenshot = await page.screenshot();
-      expect(screenshot).toMatchImageSnapshot();
-    });
+    const screenshot = await page.screenshot();
+    expect(screenshot).toMatchImageSnapshot();
   });
 
-  describe.each(sizes)('size %s', size => {
-    test('renders', async () => {
-      // Needed style for viewport < 20px
-      const page = await createPage(`<style>mg-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}</style><mg-icon icon="thumb-up" size="${size}"></mg-icon>`);
+  test('renders sizes', async () => {
+    const html = sizes.map(size => `<mg-icon icon="thumb-up" size="${size}"></mg-icon>`).join('');
+    const page = await createPage(html);
 
-      const element = await page.find('mg-icon');
-      expect(element).toHaveClass('hydrated');
+    await page.setViewport({ width: 88, height: 36 });
 
-      const viewport = setViewportSize(size);
-      await page.setViewport({ width: viewport, height: viewport });
-
-      const screenshot = await page.screenshot();
-      expect(screenshot).toMatchImageSnapshot();
-    });
+    const screenshot = await page.screenshot();
+    expect(screenshot).toMatchImageSnapshot();
   });
 
-  describe.each(variants)('variant %s', variant => {
-    describe.each(sizes)('size %s', size => {
-      test('renders', async () => {
-        // Needed style for viewport < 20px
-        const page = await createPage(
-          `<style>mg-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}</style><mg-icon icon="check-circle" size="${size}" variant="${variant}"></mg-icon>`,
-        );
+  test('renders variants', async () => {
+    let html = '';
+    let width = 0;
+    for (const variant of variants) {
+      for (const size of sizes) {
+        width += getIconWidth(size) + 6;
+        html += `<mg-icon icon="check-circle" variant="${variant}" size="${size}"></mg-icon>`;
+      }
+    }
 
-        const element = await page.find('mg-icon');
-        expect(element).toHaveClass('hydrated');
+    const page = await createPage(html);
 
-        const viewport = setViewportSize(size) + 6;
-        await page.setViewport({ width: viewport, height: viewport });
+    await page.setViewport({ width, height: 42 });
 
-        const screenshot = await page.screenshot();
-        expect(screenshot).toMatchImageSnapshot();
-      });
-    });
+    const screenshot = await page.screenshot();
+    expect(screenshot).toMatchImageSnapshot();
   });
 });
