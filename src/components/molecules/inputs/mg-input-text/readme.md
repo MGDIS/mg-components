@@ -11,7 +11,7 @@
 ![](./mg-input-text/doc/img/mg-input-text-fonts.png)
 
 Open Sans, regular, 11px  
-Color: [@color-dark](?path=/docs/style-colors--page), opacity : 0.6
+Color: [@color-dark](./?path=/docs/style-colors--page), opacity : 0.6
 
 #### Spacing
 

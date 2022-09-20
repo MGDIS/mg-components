@@ -15,6 +15,12 @@ When a trigger (button...) is set up, it can trigger the display of a message. B
 
 ![](./mg-message/doc/img/mg-message-specs.png)
 
+## CSS Variables
+
+If needed some [variables](./?path=/story/css-variables--page) are available to customize the component:
+
+- `--mg-message-border-radius`: Define message border radius, default: `0.3rem`
+
 <!-- Auto Generated Below -->
 
 

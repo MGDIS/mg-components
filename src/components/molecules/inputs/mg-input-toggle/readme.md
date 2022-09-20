@@ -20,6 +20,12 @@ The values must be transcribed by texts or icons.
 
 ![](./mg-input-toggle/doc/img/mg-input-toggle-readonly.png)
 
+## CSS Variables
+
+If needed some [variables](./?path=/story/css-variables--page) are available to customize the component:
+
+- `--mg-input-toggle-border-radius-ratio`: Define input border radius ration, default: `2`
+
 <!-- Auto Generated Below -->
 
 

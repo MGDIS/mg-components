@@ -1,4 +1,5 @@
 import { h } from '@stencil/core';
+import { filterArgs } from '../../../../../.storybook/utils';
 
 export default {
   component: 'mg-illustrated-message',
@@ -13,7 +14,7 @@ export default {
 const Template = args => {
   // return element
   return (
-    <mg-illustrated-message {...args}>
+    <mg-illustrated-message {...filterArgs(args, { size: 'regular' })}>
       <svg slot="illustration" width="190" height="350" viewBox="0 0 190 350" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
