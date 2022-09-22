@@ -37,15 +37,15 @@ describe('mg-input-textarea', () => {
 
   test.each(['', undefined])('Should throw error with invalid label property : %s', async value => {
     try {
-      await getPage({ label: value });
+      await getPage({ identifier: 'identifier', label: value });
     } catch (err) {
-      expect(err.message).toMatch('<mg-input> prop "label" is required');
+      expect(err.message).toMatch('<mg-input> prop "label" is required.');
     }
   });
 
   test('Should throw an error with labelOnTop & labelHide set to true', async () => {
     try {
-      await getPage({ label: 'batman', labelOnTop: true, labelHide: true });
+      await getPage({ identifier: 'identifier', label: 'batman', labelOnTop: true, labelHide: true });
     } catch (err) {
       expect(err.message).toMatch('<mg-input> prop "labelOnTop" must not be paired with the prop "labelHide"');
     }
@@ -53,7 +53,7 @@ describe('mg-input-textarea', () => {
 
   test.each(['', undefined])('Should throw an error when pattern is used with patternErrorMessage: %s', async value => {
     try {
-      const { root } = await getPage({ label: 'blu', pattern: '[a-z]*', patternErrorMessage: value });
+      const { root } = await getPage({ identifier: 'identifier', label: 'blu', pattern: '[a-z]*', patternErrorMessage: value });
       expect(root).toMatchSnapshot();
     } catch (err) {
       expect(err.message).toMatch('<mg-input-textarea> prop "pattern" must be paired with the prop "patternErrorMessage"');

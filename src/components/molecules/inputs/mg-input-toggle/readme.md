@@ -25,21 +25,21 @@ The values must be transcribed by texts or icons.
 
 ## Properties
 
-| Property             | Attribute      | Description                                                                                                 | Type                        | Default                       |
-| -------------------- | -------------- | ----------------------------------------------------------------------------------------------------------- | --------------------------- | ----------------------------- |
-| `disabled`           | `disabled`     | Define if input is disabled                                                                                 | `boolean`                   | `false`                       |
-| `helpText`           | `help-text`    | Add a help text under the input, usually expected data format and example                                   | `string`                    | `undefined`                   |
-| `identifier`         | `identifier`   | Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created. | `string`                    | `createID('mg-input-toggle')` |
-| `isIcon`             | `is-icon`      | Define if toggle display icon                                                                               | `boolean`                   | `false`                       |
-| `isOnOff`            | `is-on-off`    | Define if toggle have on/off style                                                                          | `boolean`                   | `false`                       |
-| `items` _(required)_ | --             | Items are the possible options to select                                                                    | `ToggleValue[] \| string[]` | `undefined`                   |
-| `label` _(required)_ | `label`        | Input label                                                                                                 | `string`                    | `undefined`                   |
-| `labelHide`          | `label-hide`   | Define if label is visible                                                                                  | `boolean`                   | `false`                       |
-| `labelOnTop`         | `label-on-top` | Define if label is displayed on top                                                                         | `boolean`                   | `undefined`                   |
-| `name`               | `name`         | Input name If not set the value equals the identifier                                                       | `string`                    | `this.identifier`             |
-| `readonly`           | `readonly`     | Define if input is readonly                                                                                 | `boolean`                   | `false`                       |
-| `tooltip`            | `tooltip`      | Add a tooltip message next to the input                                                                     | `string`                    | `undefined`                   |
-| `value`              | `value`        | Component value                                                                                             | `any`                       | `undefined`                   |
+| Property                  | Attribute      | Description                                                                 | Type                        | Default           |
+| ------------------------- | -------------- | --------------------------------------------------------------------------- | --------------------------- | ----------------- |
+| `disabled`                | `disabled`     | Define if input is disabled                                                 | `boolean`                   | `false`           |
+| `helpText`                | `help-text`    | Add a help text under the input, usually expected data format and example   | `string`                    | `undefined`       |
+| `identifier` _(required)_ | `identifier`   | Identifier is used for the element ID (id is a reserved prop in Stencil.js) | `string`                    | `undefined`       |
+| `isIcon`                  | `is-icon`      | Define if toggle display icon                                               | `boolean`                   | `false`           |
+| `isOnOff`                 | `is-on-off`    | Define if toggle have on/off style                                          | `boolean`                   | `false`           |
+| `items` _(required)_      | --             | Items are the possible options to select                                    | `ToggleValue[] \| string[]` | `undefined`       |
+| `label` _(required)_      | `label`        | Input label                                                                 | `string`                    | `undefined`       |
+| `labelHide`               | `label-hide`   | Define if label is visible                                                  | `boolean`                   | `false`           |
+| `labelOnTop`              | `label-on-top` | Define if label is displayed on top                                         | `boolean`                   | `undefined`       |
+| `name`                    | `name`         | Input name If not set the value equals the identifier                       | `string`                    | `this.identifier` |
+| `readonly`                | `readonly`     | Define if input is readonly                                                 | `boolean`                   | `false`           |
+| `tooltip`                 | `tooltip`      | Add a tooltip message next to the input                                     | `string`                    | `undefined`       |
+| `value`                   | `value`        | Component value                                                             | `any`                       | `undefined`       |
 
 
 ## Events

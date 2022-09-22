@@ -57,15 +57,15 @@ describe('mg-input-select', () => {
 
   test.each(['', undefined])('Should throw error with invalid label property : %s', async value => {
     try {
-      await getPage({ label: value, items: ['blu', 'bli', 'blo', 'bla'] });
+      await getPage({ identifier: 'identifier', label: value, items: ['blu', 'bli', 'blo', 'bla'] });
     } catch (err) {
-      expect(err.message).toMatch('<mg-input> prop "label" is required');
+      expect(err.message).toMatch('<mg-input> prop "label" is required.');
     }
   });
 
   test('Should throw an error with labelOnTop & labelHide set to true', async () => {
     try {
-      await getPage({ label: 'batman', labelOnTop: true, labelHide: true, items: ['batman', 'joker'] });
+      await getPage({ identifier: 'identifier', label: 'batman', labelOnTop: true, labelHide: true, items: ['batman', 'joker'] });
     } catch (err) {
       expect(err.message).toMatch('<mg-input> prop "labelOnTop" must not be paired with the prop "labelHide"');
     }

@@ -38,6 +38,12 @@ export class MgTooltip {
    * Displayed message in the tooltip
    */
   @Prop() message!: string;
+  @Watch('message')
+  validateMessage(newValue: string): void {
+    if (typeof newValue !== 'string' || newValue.trim() === '') {
+      throw new Error('<mg-tooltip> prop "label" is required.');
+    }
+  }
 
   /**
    * Tooltip placement
@@ -216,6 +222,7 @@ export class MgTooltip {
     });
 
     this.handleDisplay(this.display);
+    this.validateMessage(this.message);
   }
 
   /**

@@ -43,17 +43,25 @@ describe('mg-input-checkbox', () => {
     expect(root).toMatchSnapshot();
   });
 
+  test.each(['', ' ', undefined])('Should not render with invalid identifier property : %s', async identifier => {
+    try {
+      await getPage({ identifier, value: cloneDeep(items) });
+    } catch (err) {
+      expect(err.message).toMatch('<mg-input> prop "identifier" is required.');
+    }
+  });
+
   test.each(['', undefined])('Should not render with invalid label property : %s', async value => {
     try {
-      await getPage({ label: value, value: cloneDeep(items) });
+      await getPage({ identifier: 'identifier', label: value, value: cloneDeep(items) });
     } catch (err) {
-      expect(err.message).toMatch('<mg-input> prop "label" is required');
+      expect(err.message).toMatch('<mg-input> prop "label" is required.');
     }
   });
 
   test('Should not render with invalid label property : %s', async () => {
     try {
-      await getPage({ label: 'label', value: ['batman', 'joker', 'bane'] });
+      await getPage({ identifier: 'identifier', label: 'label', value: ['batman', 'joker', 'bane'] });
     } catch (err) {
       expect(err.message).toMatch('<mg-input-checkbox> prop "value" is required and all values must be the same type, CheckboxItem.');
     }

@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component, Element, Event, h, Prop, EventEmitter, State, Watch, Method } from '@stencil/core';
 import { MgInput } from '../MgInput';
-import { createID, ClassList, allItemsAreString } from '../../../../utils/components.utils';
+import { ClassList, allItemsAreString } from '../../../../utils/components.utils';
 import { initLocales } from '../../../../locales';
 import { RadioOption } from './mg-input-radio.conf';
 
@@ -73,9 +73,8 @@ export class MgInputRadio {
 
   /**
    * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
-   * If not set, it will be created.
    */
-  @Prop() identifier: string = createID('mg-input-radio');
+  @Prop() identifier!: string;
 
   /**
    * Input name

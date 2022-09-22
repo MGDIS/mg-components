@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component, Event, h, Prop, EventEmitter, State, Watch, Element } from '@stencil/core';
 import { MgInput } from '../MgInput';
-import { createID, ClassList, allItemsAreString } from '../../../../utils/components.utils';
+import { ClassList, allItemsAreString } from '../../../../utils/components.utils';
 import { ToggleValue } from './mg-input-toggle.conf';
 
 /**
@@ -76,9 +76,8 @@ export class MgInputToggle {
 
   /**
    * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
-   * If not set, it will be created.
    */
-  @Prop() identifier: string = createID('mg-input-toggle');
+  @Prop() identifier!: string;
 
   /**
    * Input name

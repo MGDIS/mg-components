@@ -1,6 +1,6 @@
 import { Component, Element, h, Prop, State, Watch } from '@stencil/core';
 import { variants, ButtonType } from './mg-button.conf';
-import { ClassList, createID } from '../../../utils/components.utils';
+import { ClassList } from '../../../utils/components.utils';
 
 @Component({
   tag: 'mg-button',
@@ -41,9 +41,8 @@ export class MgButton {
 
   /**
    * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
-   * If not set, it will be created.
    */
-  @Prop() identifier: string = createID('mg-button');
+  @Prop() identifier: string;
 
   /**
    * aria-label
@@ -151,7 +150,7 @@ export class MgButton {
     this.validateVariant(this.variant);
     if (this.isIcon) {
       this.classList.add(`mg-button--icon`);
-      if (typeof this.label !== 'string' || this.label === '') {
+      if (typeof this.label !== 'string' || this.label.trim() === '') {
         throw new Error(`<mg-button> prop "label" is mandatory when prop "isIcon" is set to true.`);
       }
     }

@@ -50,6 +50,14 @@ describe('mg-badge', () => {
   });
 
   describe('errors', () => {
+    test.each(['', ' ', undefined])('Should throw error, case invalid label prop', async label => {
+      try {
+        await getPage({ value: 1, label });
+      } catch (err) {
+        expect(err.message).toContain('<mg-badge> prop "label" is required.');
+      }
+    });
+
     test.each(['', 'Batman', undefined])('Should throw error, case invalid variant prop', async variant => {
       try {
         await getPage({ variant, value: 1, label: 'Batman' });

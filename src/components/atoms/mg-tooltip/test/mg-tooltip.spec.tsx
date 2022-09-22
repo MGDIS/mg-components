@@ -44,6 +44,14 @@ describe('mg-tooltip', () => {
     expect(root).toMatchSnapshot();
   });
 
+  test.each(['', ' ', undefined])('Should throw error, case invalid message prop', async message => {
+    try {
+      await getPage({ message }, <span>span</span>);
+    } catch (err) {
+      expect(err.message).toContain('<mg-tooltip> prop "label" is required.');
+    }
+  });
+
   describe.each([
     { eventIn: 'mouseenter', eventOut: 'mouseleave' },
     { eventIn: 'focus', eventOut: 'blur' },

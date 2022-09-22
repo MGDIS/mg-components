@@ -67,15 +67,15 @@ describe('mg-input-radio', () => {
 
   test.each(['', undefined])('Should throw error with invalid label property : %s', async value => {
     try {
-      await getPage({ label: value, items: ['batman', 'robin', 'joker', 'bane'] });
+      await getPage({ identifier: 'identifier', label: value, items: ['batman', 'robin', 'joker', 'bane'] });
     } catch (err) {
-      expect(err.message).toMatch('<mg-input> prop "label" is required');
+      expect(err.message).toMatch('<mg-input> prop "label" is required.');
     }
   });
 
   test('Should throw an error with labelOnTop & labelHide set to true', async () => {
     try {
-      await getPage({ label: 'batman', labelOnTop: true, labelHide: true, items: ['batman', 'joker'] });
+      await getPage({ identifier: 'identifier', label: 'batman', labelOnTop: true, labelHide: true, items: ['batman', 'joker'] });
     } catch (err) {
       expect(err.message).toMatch('<mg-input> prop "labelOnTop" must not be paired with the prop "labelHide"');
     }
@@ -83,7 +83,7 @@ describe('mg-input-radio', () => {
 
   test.each([[['batman']], [[{ title: 'batman', value: 'u' }]]])('Should throw an error with less than 2 items, case %s', async items => {
     try {
-      await getPage({ label: 'batman', labelOnTop: true, labelHide: true, items });
+      await getPage({ identifier: 'identifier', label: 'batman', labelOnTop: true, labelHide: true, items });
     } catch (err) {
       expect(err.message).toMatch('<mg-input-radio> prop "items" require at least 2 items.');
     }

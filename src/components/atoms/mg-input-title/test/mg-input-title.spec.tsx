@@ -17,4 +17,12 @@ describe('mg-input-title', () => {
     const { root } = await getPage(args);
     expect(root).toMatchSnapshot();
   });
+
+  test.each(['', ' ', undefined])('Should throw error, case invalid identifier prop', async identifier => {
+    try {
+      await getPage({ identifier });
+    } catch (err) {
+      expect(err.message).toContain('<mg-input-title> prop "identifier" is required.');
+    }
+  });
 });

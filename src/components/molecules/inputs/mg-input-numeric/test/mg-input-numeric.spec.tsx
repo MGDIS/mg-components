@@ -65,15 +65,15 @@ describe('mg-input-numeric', () => {
 
     test.each(['', undefined])('Should throw error with invalid label property : %s', async value => {
       try {
-        await getPage({ label: value, type });
+        await getPage({ identifier: 'identifier', label: value, type });
       } catch (err) {
-        expect(err.message).toMatch('<mg-input> prop "label" is required');
+        expect(err.message).toMatch('<mg-input> prop "label" is required.');
       }
     });
 
     test('Should throw an error with labelOnTop & labelHide set to true', async () => {
       try {
-        await getPage({ label: 'batman', labelOnTop: true, labelHide: true });
+        await getPage({ identifier: 'identifier', label: 'batman', labelOnTop: true, labelHide: true });
       } catch (err) {
         expect(err.message).toMatch('<mg-input> prop "labelOnTop" must not be paired with the prop "labelHide"');
       }
@@ -81,7 +81,7 @@ describe('mg-input-numeric', () => {
 
     test('Should throw an error with non positive integer length value', async () => {
       try {
-        await getPage({ label: 'label', integerLength: 0 });
+        await getPage({ identifier: 'identifier', label: 'label', integerLength: 0 });
       } catch (err) {
         expect(err.message).toMatch('<mg-input-numeric> prop "integer-length" must be a positive number.');
       }
@@ -89,7 +89,7 @@ describe('mg-input-numeric', () => {
 
     test('Should throw an error with non positive decimal length value', async () => {
       try {
-        await getPage({ label: 'label', decimalLength: 0 });
+        await getPage({ identifier: 'identifier', label: 'label', decimalLength: 0 });
       } catch (err) {
         expect(err.message).toMatch('<mg-input-numeric> prop "decimal-length" must be a positive number, consider using prop "type" to "integer" instead.');
       }
@@ -257,7 +257,7 @@ describe('mg-input-numeric', () => {
 
   test.each(['', undefined])('Should throw error with invalid type property : %s', async type => {
     try {
-      await getPage({ label: 'Blu', type });
+      await getPage({ identifier: 'identifier', label: 'Blu', type });
     } catch (err) {
       expect(err.message).toMatch('<mg-input-numeric> prop "type" must be one of :');
     }

@@ -122,6 +122,7 @@ describe('mg-input-toggle', () => {
       try {
         await getPage(
           {
+            identifier: 'identifier',
             label: value,
             items: [
               { title: 'batman', value: false },
@@ -131,13 +132,13 @@ describe('mg-input-toggle', () => {
           defaultSlots,
         );
       } catch (err) {
-        expect(err.message).toMatch('<mg-input> prop "label" is required');
+        expect(err.message).toMatch('<mg-input> prop "label" is required.');
       }
     });
 
     test('Should throw an error with labelOnTop & labelHide set to true', async () => {
       try {
-        await getPage({ label: 'batman', labelOnTop: true, labelHide: true, items: ['batman', 'joker'] }, defaultSlots);
+        await getPage({ identifier: 'identifier', label: 'batman', labelOnTop: true, labelHide: true, items: ['batman', 'joker'] }, defaultSlots);
       } catch (err) {
         expect(err.message).toMatch('<mg-input> prop "labelOnTop" must not be paired with the prop "labelHide"');
       }
