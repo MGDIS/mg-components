@@ -1,11 +1,11 @@
 import { createPage } from '../../../../../utils/test.utils';
 
-describe('mg-checkbox', () => {
+describe('mg-input-checkbox', () => {
   describe.each([
-    `<mg-input-checkbox label="legend"></mg-input-checkbox>`,
-    `<mg-input-checkbox label="legend" label-on-top></mg-input-checkbox>`,
-    `<mg-input-checkbox label="legend" label-hide></mg-input-checkbox>`,
-    `<mg-input-checkbox label="legend" help-text="HelpText Message"></mg-input-checkbox>`,
+    `<mg-input-checkbox identifier="identifier" label="legend"></mg-input-checkbox>`,
+    `<mg-input-checkbox identifier="identifier" label="legend" label-on-top></mg-input-checkbox>`,
+    `<mg-input-checkbox identifier="identifier" label="legend" label-hide></mg-input-checkbox>`,
+    `<mg-input-checkbox identifier="identifier" label="legend" help-text="HelpText Message"></mg-input-checkbox>`,
   ])('without tooltip', html => {
     test('render', async () => {
       const page = await createPage(`${html}
@@ -51,7 +51,7 @@ describe('mg-checkbox', () => {
   });
 
   test.each([true, false])('render with tooltip, case label-on-top %s', async labelOnTop => {
-    const page = await createPage(`<mg-input-checkbox label="legend" tooltip="Tooltip message" label-on-top="${labelOnTop}"></mg-input-checkbox>
+    const page = await createPage(`<mg-input-checkbox identifier="identifier" label="legend" tooltip="Tooltip message" label-on-top="${labelOnTop}"></mg-input-checkbox>
       <script>
       const mgInputCheckbox = document.querySelector('mg-input-checkbox');
       mgInputCheckbox.value = [{title: 'Batman', value: false}, {title: 'Robin', value: false}, {title: 'Joker', value: false}, {title: 'Bane', value: false}];
@@ -82,12 +82,12 @@ describe('mg-checkbox', () => {
   });
 
   describe.each([
-    `<mg-input-checkbox label="legend" readonly></mg-input-checkbox>`,
-    `<mg-input-checkbox label="legend" readonly label-on-top></mg-input-checkbox>`,
-    `<mg-input-checkbox label="legend" disabled></mg-input-checkbox>`,
-    `<mg-input-checkbox label="legend" input-vertical-list help-text="HelpText Message"></mg-input-checkbox>`,
-    `<mg-input-checkbox label="legend" input-vertical-list help-text="HelpText Message" label-on-top></mg-input-checkbox>`,
-    `<mg-input-checkbox label="legend" help-text='<mg-icon icon="user" size="small"></mg-icon> Welcome batman'></mg-input-checkbox>`,
+    `<mg-input-checkbox identifier="identifier" label="legend" readonly></mg-input-checkbox>`,
+    `<mg-input-checkbox identifier="identifier" label="legend" readonly label-on-top></mg-input-checkbox>`,
+    `<mg-input-checkbox identifier="identifier" label="legend" disabled></mg-input-checkbox>`,
+    `<mg-input-checkbox identifier="identifier" label="legend" input-vertical-list help-text="HelpText Message"></mg-input-checkbox>`,
+    `<mg-input-checkbox identifier="identifier" label="legend" input-vertical-list help-text="HelpText Message" label-on-top></mg-input-checkbox>`,
+    `<mg-input-checkbox identifier="identifier" label="legend" help-text='<mg-icon icon="user" size="small"></mg-icon> Welcome batman'></mg-input-checkbox>`,
   ])('Should render with template', html => {
     test('render', async () => {
       const page = await createPage(`${html}
@@ -106,8 +106,8 @@ describe('mg-checkbox', () => {
   });
 
   describe.each([
-    `<mg-input-checkbox label="legend" help-text="HelpText Message" required></mg-input-checkbox>`,
-    `<mg-input-checkbox label="legend" help-text="Message d'aide" lang="fr" required></mg-input-checkbox>`,
+    `<mg-input-checkbox identifier="identifier" label="legend" help-text="HelpText Message" required></mg-input-checkbox>`,
+    `<mg-input-checkbox identifier="identifier" label="legend" help-text="Message d'aide" lang="fr" required></mg-input-checkbox>`,
   ])('%s', html => {
     test('Should render error when leaving an empty required input', async () => {
       const page = await createPage(`${html}
@@ -134,8 +134,8 @@ describe('mg-checkbox', () => {
   });
 
   describe.each([
-    '<mg-input-checkbox label="long label long label long label long label long label long label long label long label long label long label long label" tooltip="tooltip message"></mg-input-checkbox>',
-    '<mg-input-checkbox label="long label long label long label long label long label long label long label long label long label long label long label" tooltip="tooltip message" label-on-top></mg-input-checkbox>',
+    '<mg-input-checkbox identifier="identifier" label="long label long label long label long label long label long label long label long label long label long label long label" tooltip="tooltip message"></mg-input-checkbox>',
+    '<mg-input-checkbox identifier="identifier" label="long label long label long label long label long label long label long label long label long label long label long label" tooltip="tooltip message" label-on-top></mg-input-checkbox>',
   ])('inside a div.mg-form-group', html => {
     test('render', async () => {
       const page = await createPage(`<div class="mg-form-group">${html}</div>
