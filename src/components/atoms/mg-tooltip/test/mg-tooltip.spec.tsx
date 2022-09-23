@@ -49,7 +49,7 @@ describe('mg-tooltip', () => {
     try {
       await getPage({ message }, <span>span</span>);
     } catch (err) {
-      expect(err.message).toContain('<mg-tooltip> prop "label" is required.');
+      expect(err.message).toContain('<mg-tooltip> prop "message" is required.');
     }
   });
 

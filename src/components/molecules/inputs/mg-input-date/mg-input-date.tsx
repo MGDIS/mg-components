@@ -122,7 +122,9 @@ export class MgInputDate {
   @Watch('min')
   @Watch('max')
   validateMinMax(newValue: string): void {
-    this.validateDateFormat(newValue);
+    if (newValue?.length === 0 || (newValue?.length > 0 && !(typeof newValue === 'string' && dateRegExp.test(newValue)))) {
+      throw new Error("<mg-input-date> props 'min/max' doesn't match pattern: yyyy-mm-dd");
+    }
   }
 
   /**
@@ -174,18 +176,6 @@ export class MgInputDate {
   private handleBlur = (): void => {
     this.displayError();
   };
-
-  /**
-   * Date format validation
-   *
-   * @param {string} date date to validate
-   * @returns {void}
-   */
-  private validateDateFormat(date: string): void {
-    if (date?.length === 0 || (date?.length > 0 && !(typeof date === 'string' && dateRegExp.test(date)))) {
-      throw new Error("<mg-input-date> props 'min/max' doesn't match pattern: yyyy-mm-dd");
-    }
-  }
 
   /**
    * Check if input is valid
