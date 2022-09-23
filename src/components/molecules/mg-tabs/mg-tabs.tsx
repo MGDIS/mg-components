@@ -44,6 +44,12 @@ export class MgTabs {
    * Required for accessibility
    */
   @Prop() label!: string;
+  @Watch('label')
+  validateLabel(newValue: string): void {
+    if (typeof newValue !== 'string' || newValue.trim() === '') {
+      throw new Error('<mg-tabs> prop "label" is required.');
+    }
+  }
 
   /**
    * Define tabs size
@@ -217,6 +223,7 @@ export class MgTabs {
    */
   componentWillLoad(): void {
     // Check tabs format
+    this.validateLabel(this.label);
     this.validateItems(this.items);
     this.validateActiveTab(this.activeTab);
     this.validateSize(this.size);

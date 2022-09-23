@@ -39,6 +39,15 @@ describe('mg-modal', () => {
     });
   });
 
+  test.each(['', ' ', undefined])('Should not render with invalid modalTitle property: %s', async modalTitle => {
+    expect.assertions(1);
+    try {
+      await getPage({ modalTitle });
+    } catch (err) {
+      expect(err.message).toMatch('<mg-modal> prop "modalTitle" is required.');
+    }
+  });
+
   describe('navigation', () => {
     test('should hide panel with button', async () => {
       const page = await getPage({ modalTitle: 'Modal Title', identifier: 'identifier', closeButton: true });

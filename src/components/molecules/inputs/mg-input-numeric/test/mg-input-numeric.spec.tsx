@@ -63,15 +63,25 @@ describe('mg-input-numeric', () => {
       expect(root).toMatchSnapshot();
     });
 
-    test.each(['', undefined])('Should throw error with invalid label property : %s', async value => {
+    test.each(['', ' ', undefined])('Should not render with invalid identifier property: %s', async identifier => {
+      expect.assertions(1);
       try {
-        await getPage({ identifier: 'identifier', label: value, type });
+        await getPage({ identifier });
+      } catch (err) {
+        expect(err.message).toMatch('<mg-input> prop "identifier" is required.');
+      }
+    });
+    test.each(['', ' ', undefined])('Should throw error with invalid label property : %s', async label => {
+      expect.assertions(1);
+      try {
+        await getPage({ identifier: 'identifier', label, type });
       } catch (err) {
         expect(err.message).toMatch('<mg-input> prop "label" is required.');
       }
     });
 
     test('Should throw an error with labelOnTop & labelHide set to true', async () => {
+      expect.assertions(1);
       try {
         await getPage({ identifier: 'identifier', label: 'batman', labelOnTop: true, labelHide: true });
       } catch (err) {
@@ -80,6 +90,7 @@ describe('mg-input-numeric', () => {
     });
 
     test('Should throw an error with non positive integer length value', async () => {
+      expect.assertions(1);
       try {
         await getPage({ identifier: 'identifier', label: 'label', integerLength: 0 });
       } catch (err) {
@@ -88,6 +99,7 @@ describe('mg-input-numeric', () => {
     });
 
     test('Should throw an error with non positive decimal length value', async () => {
+      expect.assertions(1);
       try {
         await getPage({ identifier: 'identifier', label: 'label', decimalLength: 0 });
       } catch (err) {
@@ -255,7 +267,8 @@ describe('mg-input-numeric', () => {
     });
   });
 
-  test.each(['', undefined])('Should throw error with invalid type property : %s', async type => {
+  test.each(['', 'blu'])('Should throw error with invalid type property : %s', async type => {
+    expect.assertions(1);
     try {
       await getPage({ identifier: 'identifier', label: 'Blu', type });
     } catch (err) {

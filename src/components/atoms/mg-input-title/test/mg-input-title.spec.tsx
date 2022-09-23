@@ -19,6 +19,7 @@ describe('mg-input-title', () => {
   });
 
   test.each(['', ' ', undefined])('Should throw error, case invalid identifier prop', async identifier => {
+    expect.assertions(1);
     try {
       await getPage({ identifier });
     } catch (err) {

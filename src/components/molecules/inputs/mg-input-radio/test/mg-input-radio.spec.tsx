@@ -65,15 +65,26 @@ describe('mg-input-radio', () => {
     expect(root).toMatchSnapshot();
   });
 
-  test.each(['', undefined])('Should throw error with invalid label property : %s', async value => {
+  test.each(['', ' ', undefined])('Should not render with invalid identifier property: %s', async identifier => {
+    expect.assertions(1);
     try {
-      await getPage({ identifier: 'identifier', label: value, items: ['batman', 'robin', 'joker', 'bane'] });
+      await getPage({ identifier, items: ['batman', 'robin', 'joker', 'bane'] });
+    } catch (err) {
+      expect(err.message).toMatch('<mg-input> prop "identifier" is required.');
+    }
+  });
+
+  test.each(['', ' ', undefined])('Should throw error with invalid label property : %s', async label => {
+    expect.assertions(1);
+    try {
+      await getPage({ identifier: 'identifier', label, items: ['batman', 'robin', 'joker', 'bane'] });
     } catch (err) {
       expect(err.message).toMatch('<mg-input> prop "label" is required.');
     }
   });
 
   test('Should throw an error with labelOnTop & labelHide set to true', async () => {
+    expect.assertions(1);
     try {
       await getPage({ identifier: 'identifier', label: 'batman', labelOnTop: true, labelHide: true, items: ['batman', 'joker'] });
     } catch (err) {
@@ -82,6 +93,7 @@ describe('mg-input-radio', () => {
   });
 
   test.each([[['batman']], [[{ title: 'batman', value: 'u' }]]])('Should throw an error with less than 2 items, case %s', async items => {
+    expect.assertions(1);
     try {
       await getPage({ identifier: 'identifier', label: 'batman', labelOnTop: true, labelHide: true, items });
     } catch (err) {
@@ -103,6 +115,7 @@ describe('mg-input-radio', () => {
       ],
     ],
   ])('Should throw error with invalid items property : %s', async items => {
+    expect.assertions(1);
     try {
       await getPage({ label: 'Label', items });
     } catch (err) {

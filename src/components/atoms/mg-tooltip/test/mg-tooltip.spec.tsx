@@ -45,6 +45,7 @@ describe('mg-tooltip', () => {
   });
 
   test.each(['', ' ', undefined])('Should throw error, case invalid message prop', async message => {
+    expect.assertions(1);
     try {
       await getPage({ message }, <span>span</span>);
     } catch (err) {

@@ -43,7 +43,8 @@ describe('mg-input-checkbox', () => {
     expect(root).toMatchSnapshot();
   });
 
-  test.each(['', ' ', undefined])('Should not render with invalid identifier property : %s', async identifier => {
+  test.each(['', ' ', undefined])('Should not render with invalid identifier property: %s', async identifier => {
+    expect.assertions(1);
     try {
       await getPage({ identifier, value: cloneDeep(items) });
     } catch (err) {
@@ -51,15 +52,26 @@ describe('mg-input-checkbox', () => {
     }
   });
 
-  test.each(['', undefined])('Should not render with invalid label property : %s', async value => {
+  test.each(['', ' ', undefined])('Should not render with invalid label property: %s', async label => {
+    expect.assertions(1);
     try {
-      await getPage({ identifier: 'identifier', label: value, value: cloneDeep(items) });
+      await getPage({ identifier: 'identifier', label, value: cloneDeep(items) });
     } catch (err) {
       expect(err.message).toMatch('<mg-input> prop "label" is required.');
     }
   });
 
-  test('Should not render with invalid label property : %s', async () => {
+  test('Should not render when using labelOnTop and labelHide: %s', async () => {
+    expect.assertions(1);
+    try {
+      await getPage({ identifier: 'identifier', label: 'label', value: cloneDeep(items), labelOnTop: true, labelHide: true });
+    } catch (err) {
+      expect(err.message).toMatch('<mg-input> prop "labelOnTop" must not be paired with the prop "labelHide".');
+    }
+  });
+
+  test('Should not render with invalid value property: %s', async () => {
+    expect.assertions(1);
     try {
       await getPage({ identifier: 'identifier', label: 'label', value: ['batman', 'joker', 'bane'] });
     } catch (err) {

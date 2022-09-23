@@ -51,6 +51,7 @@ describe('mg-badge', () => {
 
   describe('errors', () => {
     test.each(['', ' ', undefined])('Should throw error, case invalid label prop', async label => {
+      expect.assertions(1);
       try {
         await getPage({ value: 1, label });
       } catch (err) {
@@ -58,7 +59,8 @@ describe('mg-badge', () => {
       }
     });
 
-    test.each(['', 'Batman', undefined])('Should throw error, case invalid variant prop', async variant => {
+    test.each(['', 'Batman'])('Should throw error, case invalid variant prop', async variant => {
+      expect.assertions(1);
       try {
         await getPage({ variant, value: 1, label: 'Batman' });
       } catch (err) {
@@ -67,6 +69,7 @@ describe('mg-badge', () => {
     });
 
     test.each(['', 'Batman', '+', '99?'])('Should throw error, case invalid value prop', async value => {
+      expect.assertions(1);
       try {
         await getPage({ value, label: 'Batman' });
       } catch (err) {

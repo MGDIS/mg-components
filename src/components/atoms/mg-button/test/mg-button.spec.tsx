@@ -60,7 +60,8 @@ describe('mg-button', () => {
     expect(classDanger).not.toBeNull();
   });
 
-  test.each(['', 'blu', undefined])('Should throw error', async variant => {
+  test.each(['', 'blu'])('Should throw error', async variant => {
+    expect.assertions(1);
     try {
       await getPage({ variant });
     } catch (err) {
@@ -69,6 +70,7 @@ describe('mg-button', () => {
   });
 
   test.each(['', ' ', undefined])('should throw error when using prop "isIcon" without a good prop "label"', async label => {
+    expect.assertions(1);
     try {
       await getPage({ isIcon: true, label });
     } catch (err) {

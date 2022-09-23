@@ -44,6 +44,7 @@ describe('mg-pagination', () => {
 
   describe('errors', () => {
     test('should throw an error, case totalPages props invalid', async () => {
+      expect.assertions(1);
       try {
         await getPage({ totalPages: 0 });
       } catch ({ message }) {
@@ -51,6 +52,7 @@ describe('mg-pagination', () => {
       }
     });
     test('should throw an error, case currentPage props invalid: 0', async () => {
+      expect.assertions(1);
       try {
         await getPage({ currentPage: 0 });
       } catch ({ message }) {
@@ -58,6 +60,7 @@ describe('mg-pagination', () => {
       }
     });
     test('should throw an error, case currentPage props invalid: currentPage > totalPages', async () => {
+      expect.assertions(1);
       try {
         await getPage({ currentPage: 2, totalPages: 1 });
       } catch ({ message }) {

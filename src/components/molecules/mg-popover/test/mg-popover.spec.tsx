@@ -143,6 +143,7 @@ describe('mg-popover', () => {
   });
 
   test('Should throw error if slot title element is not a heading', async () => {
+    expect.assertions(1);
     try {
       const args = { identifier: 'identifier', closeButton: true };
       await getPage(args, [

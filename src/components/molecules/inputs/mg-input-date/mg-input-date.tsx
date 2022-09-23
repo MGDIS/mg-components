@@ -40,7 +40,7 @@ export class MgInputDate {
   @Prop({ mutable: true, reflect: true }) value: string;
   @Watch('value')
   validateValue(newValue: string): void {
-    if (newValue !== undefined && newValue !== '' && !(typeof newValue === 'string' && dateRegExp.test(newValue))) {
+    if (newValue !== undefined && (typeof newValue !== 'string' || !dateRegExp.test(newValue))) {
       throw new Error("<mg-input-date> props 'value' doesn't match pattern: yyyy-mm-dd");
     } else {
       this.valueChange.emit(this.value);
@@ -113,18 +113,15 @@ export class MgInputDate {
    * format: yyyy-mm-dd
    */
   @Prop() min: string;
-  @Watch('min')
-  validateMin(newValue: string): void {
-    this.validateDateFormat(newValue);
-  }
 
   /**
    * Define input maximum date
    * format: yyyy-mm-dd
    */
   @Prop() max: string;
+  @Watch('min')
   @Watch('max')
-  validateMax(newValue: string): void {
+  validateMinMax(newValue: string): void {
     this.validateDateFormat(newValue);
   }
 
@@ -185,7 +182,7 @@ export class MgInputDate {
    * @returns {void}
    */
   private validateDateFormat(date: string): void {
-    if (date?.length > 0 && !(typeof date === 'string' && dateRegExp.test(date))) {
+    if (date?.length === 0 || (date?.length > 0 && !(typeof date === 'string' && dateRegExp.test(date)))) {
       throw new Error("<mg-input-date> props 'min/max' doesn't match pattern: yyyy-mm-dd");
     }
   }
@@ -285,8 +282,8 @@ export class MgInputDate {
     this.messages = locales.messages;
     // Validate
     this.validateValue(this.value);
-    this.validateMin(this.min);
-    this.validateMax(this.max);
+    this.validateMinMax(this.min);
+    this.validateMinMax(this.max);
     // Check validity when component is ready
     // return a promise to process action only in the FIRST render().
     // https://stenciljs.com/docs/component-lifecycle#componentwillload
