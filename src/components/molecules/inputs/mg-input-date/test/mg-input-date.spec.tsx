@@ -45,27 +45,39 @@ describe('mg-input-date', () => {
    * Test
    */
 
-  test.each(['', undefined])('Should throw an error with invalid label property : %s', async value => {
+  test.each(['', ' ', undefined])('Should not render with invalid identifier property: %s', async identifier => {
+    expect.assertions(1);
     try {
-      await getPage({ label: value });
+      await getPage({ identifier });
     } catch (err) {
-      expect(err.message).toMatch('<mg-input> prop "label" is required');
+      expect(err.message).toMatch('<mg-input> prop "identifier" is required.');
     }
   });
 
-  test.each(['', 2021, '31-12-2022', '2022-02-24T08:01:44.460Z'])('Should throw an error with invalid value property : %s', async value => {
+  test.each(['', ' ', undefined])('Should throw an error with invalid label property : %s', async label => {
+    expect.assertions(1);
     try {
-      await getPage({ label: 'label', value });
+      await getPage({ identifier: 'identifier', label });
     } catch (err) {
-      expect(err.message).toMatch("<mg-input-date> props 'value' doesn't match pattern: yyyy-mm-dd");
+      expect(err.message).toMatch('<mg-input> prop "label" is required.');
     }
   });
 
   test('Should throw an error with labelOnTop & labelHide set to true', async () => {
+    expect.assertions(1);
     try {
-      await getPage({ label: 'batman', labelOnTop: true, labelHide: true });
+      await getPage({ identifier: 'identifier', label: 'batman', labelOnTop: true, labelHide: true });
     } catch (err) {
-      expect(err.message).toMatch('<mg-input> prop "labelOnTop" must not be paired with the prop "labelHide"');
+      expect(err.message).toMatch('<mg-input> prop "labelOnTop" must not be paired with the prop "labelHide".');
+    }
+  });
+
+  test.each(['', 2021, '31-12-2022', '2022-02-24T08:01:44.460Z'])('Should throw an error with invalid value property : %s', async value => {
+    expect.assertions(1);
+    try {
+      await getPage({ identifier: 'identifier', label: 'label', value });
+    } catch (err) {
+      expect(err.message).toMatch("<mg-input-date> props 'value' doesn't match pattern: yyyy-mm-dd");
     }
   });
 
@@ -191,6 +203,7 @@ describe('mg-input-date', () => {
     { min: undefined, max: '01/01/2022' },
     { min: undefined, max: '2022' },
   ])('Should return error when value does not match min and max setting (%s)', async minMax => {
+    expect.assertions(1);
     try {
       await getPage({
         label: 'label',

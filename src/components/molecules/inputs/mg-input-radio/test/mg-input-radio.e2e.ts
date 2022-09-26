@@ -1,7 +1,7 @@
 import { createPage } from '../../../../../utils/test.utils';
 
 describe('mg-input-radio', () => {
-  describe.each([`<mg-input-radio label="legend"></mg-input-radio>`])('without tooltip', html => {
+  describe.each([`<mg-input-radio identifier="identifier" label="legend"></mg-input-radio>`])('without tooltip', html => {
     test('render', async () => {
       const page = await createPage(`${html}
       <script>
@@ -42,12 +42,12 @@ describe('mg-input-radio', () => {
   });
 
   describe.each([
-    `<mg-input-radio label="legend" label-on-top help-text="HelpText Message"></mg-input-radio>`,
-    `<mg-input-radio label="legend" input-vertical-list help-text="HelpText Message"></mg-input-radio>`,
-    `<mg-input-radio label="legend" label-on-top input-vertical-list help-text="HelpText Message"></mg-input-radio>`,
-    `<mg-input-radio label="legend" label-hide></mg-input-radio>`,
-    `<mg-input-radio label="legend" placeholder="placeholder" help-text="HelpText Message"></mg-input-radio>`,
-    `<mg-input-radio label="legend" placeholder="placeholder" value="batman" help-text='<mg-icon icon="user" size="small"></mg-icon> Welcome batman'></mg-input-radio>`,
+    `<mg-input-radio identifier="identifier" label="legend" label-on-top help-text="HelpText Message"></mg-input-radio>`,
+    `<mg-input-radio identifier="identifier" label="legend" input-vertical-list help-text="HelpText Message"></mg-input-radio>`,
+    `<mg-input-radio identifier="identifier" label="legend" label-on-top input-vertical-list help-text="HelpText Message"></mg-input-radio>`,
+    `<mg-input-radio identifier="identifier" label="legend" label-hide></mg-input-radio>`,
+    `<mg-input-radio identifier="identifier" label="legend" placeholder="placeholder" help-text="HelpText Message"></mg-input-radio>`,
+    `<mg-input-radio identifier="identifier" label="legend" placeholder="placeholder" value="batman" help-text='<mg-icon icon="user" size="small"></mg-icon> Welcome batman'></mg-input-radio>`,
   ])('without tooltip', html => {
     test('render', async () => {
       const page = await createPage(`${html}
@@ -66,7 +66,7 @@ describe('mg-input-radio', () => {
   });
 
   test.each([true, false])('render with tooltip, case label-on-top %s', async labelOnTop => {
-    const page = await createPage(`<mg-input-radio label="legend" tooltip="Tooltip message" label-on-top="${labelOnTop}"></mg-input-radio>
+    const page = await createPage(`<mg-input-radio identifier="identifier" label="legend" tooltip="Tooltip message" label-on-top="${labelOnTop}"></mg-input-radio>
       <script>
       const mgInputRadio = document.querySelector('mg-input-radio');
       mgInputRadio.items = ['batman', 'robin', 'joker', 'bane'];
@@ -93,7 +93,7 @@ describe('mg-input-radio', () => {
   });
 
   test('render longer intems list inline', async () => {
-    const page = await createPage(`<mg-input-radio label="legend"></mg-input-radio>
+    const page = await createPage(`<mg-input-radio identifier="identifier" label="legend"></mg-input-radio>
       <script>
       const mgInputRadio = document.querySelector('mg-input-radio');
       mgInputRadio.items = ['batman', 'robin', 'joker', 'bane', 'ironman', 'spiderman', 'captain america', 'thor', 'vision', 'antman', 'black widow', 'black panther'];
@@ -108,12 +108,12 @@ describe('mg-input-radio', () => {
   });
 
   describe.each([
-    `<mg-input-radio label="legend" readonly></mg-input-radio>`,
-    `<mg-input-radio label="legend" value="batman"></mg-input-radio>`,
-    `<mg-input-radio label="legend" value="batman" readonly></mg-input-radio>`,
-    `<mg-input-radio label="legend" value="batman" readonly label-on-top></mg-input-radio>`,
-    `<mg-input-radio label="legend" disabled></mg-input-radio>`,
-    `<mg-input-radio label="legend" value="batman" disabled></mg-input-radio>`,
+    `<mg-input-radio identifier="identifier" label="legend" readonly></mg-input-radio>`,
+    `<mg-input-radio identifier="identifier" label="legend" value="batman"></mg-input-radio>`,
+    `<mg-input-radio identifier="identifier" label="legend" value="batman" readonly></mg-input-radio>`,
+    `<mg-input-radio identifier="identifier" label="legend" value="batman" readonly label-on-top></mg-input-radio>`,
+    `<mg-input-radio identifier="identifier" label="legend" disabled></mg-input-radio>`,
+    `<mg-input-radio identifier="identifier" label="legend" value="batman" disabled></mg-input-radio>`,
   ])('Should render with template', html => {
     test('render', async () => {
       const page = await createPage(`${html}
@@ -131,7 +131,10 @@ describe('mg-input-radio', () => {
     });
   });
 
-  describe.each([`<mg-input-radio label="legend" required></mg-input-radio>`, `<mg-input-radio label="legend" required lang="fr"></mg-input-radio>`])('%s', html => {
+  describe.each([
+    `<mg-input-radio identifier="identifier" label="legend" required></mg-input-radio>`,
+    `<mg-input-radio identifier="identifier" label="legend" required lang="fr"></mg-input-radio>`,
+  ])('%s', html => {
     test('Should render error when leaving an empty required input', async () => {
       const page = await createPage(`${html}
       <script>
@@ -154,8 +157,8 @@ describe('mg-input-radio', () => {
   });
 
   describe.each([
-    '<mg-input-radio label="long label long label long label long label long label long label long label long label long label long label long label" tooltip="tooltip message"></mg-input-radio>',
-    '<mg-input-radio label="long label long label long label long label long label long label long label long label long label long label long label" tooltip="tooltip message" label-on-top></mg-input-radio>',
+    '<mg-input-radio identifier="identifier" label="long label long label long label long label long label long label long label long label long label long label long label" tooltip="tooltip message"></mg-input-radio>',
+    '<mg-input-radio identifier="identifier" label="long label long label long label long label long label long label long label long label long label long label long label" tooltip="tooltip message" label-on-top></mg-input-radio>',
   ])('inside a div.mg-form-group', html => {
     test('render', async () => {
       const page = await createPage(`<div class="mg-form-group">${html}</div>

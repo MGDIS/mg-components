@@ -1,7 +1,7 @@
 import { Component, Element, Event, h, Prop, EventEmitter, State, Method, Watch } from '@stencil/core';
 import { MgInput } from '../MgInput';
 import { Width } from '../MgInput.conf';
-import { createID, ClassList } from '../../../../utils/components.utils';
+import { ClassList } from '../../../../utils/components.utils';
 import { initLocales } from '../../../../locales';
 
 @Component({
@@ -51,9 +51,8 @@ export class MgInputTextarea {
 
   /**
    * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
-   * If not set, it will be created.
    */
-  @Prop() identifier: string = createID('mg-input-textarea');
+  @Prop() identifier!: string;
 
   /**
    * Input name

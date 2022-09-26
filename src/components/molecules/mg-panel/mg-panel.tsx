@@ -38,7 +38,10 @@ export class MgPanel {
    */
   @Prop({ mutable: true }) panelTitle!: string;
   @Watch('panelTitle')
-  handelTileChange(newValue: string): void {
+  validatePanelTitle(newValue: string): void {
+    if (typeof newValue !== 'string' || newValue.trim() === '') {
+      throw new Error('<mg-panel> prop "panelTitle" is required.');
+    }
     this.titleChange.emit(newValue);
   }
 
@@ -51,7 +54,7 @@ export class MgPanel {
     if (newValue && !this.titleEditable) {
       throw new Error('<mg-panel> prop "titleEditable" must be set to `true`.');
     }
-    if (newValue && this.titlePatternErrorMessage === undefined) {
+    if (newValue && (this.titlePatternErrorMessage === undefined || this.titlePatternErrorMessage.trim() === '')) {
       throw new Error('<mg-panel> prop "titlePattern" must be paired with the prop "titlePatternErrorMessage".');
     }
   }
@@ -189,6 +192,7 @@ export class MgPanel {
     this.messages = initLocales(this.element).messages;
     // Validate
     this.validatetitlePattern(this.titlePattern);
+    this.validatePanelTitle(this.panelTitle);
   }
 
   /**

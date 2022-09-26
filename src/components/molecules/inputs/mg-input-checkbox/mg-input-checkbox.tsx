@@ -1,6 +1,6 @@
 import { Component, Element, Event, h, Prop, EventEmitter, State, Watch, Method } from '@stencil/core';
 import { MgInput } from '../MgInput';
-import { createID, ClassList } from '../../../../utils/components.utils';
+import { ClassList } from '../../../../utils/components.utils';
 import { initLocales } from '../../../../locales';
 import { CheckboxItem, CheckboxValue } from './mg-input-checkbox.conf';
 
@@ -61,9 +61,8 @@ export class MgInputCheckbox {
 
   /**
    * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
-   * If not set, it will be created.
    */
-  @Prop() identifier: string = createID('mg-input-checkbox');
+  @Prop() identifier!: string;
 
   /**
    * Input name

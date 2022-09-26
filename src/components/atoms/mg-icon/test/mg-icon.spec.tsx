@@ -70,6 +70,7 @@ describe('mg-icon', () => {
   });
 
   test.each(['', 'blu', undefined])('Should throw error with invalid icon property : %s', async icon => {
+    expect.assertions(1);
     try {
       await getPage({ icon });
     } catch (err) {
@@ -77,7 +78,8 @@ describe('mg-icon', () => {
     }
   });
 
-  test.each(['', 'blu', undefined])('Should throw error with invalid size property : %s', async size => {
+  test.each(['', 'blu'])('Should throw error with invalid size property : %s', async size => {
+    expect.assertions(1);
     try {
       await getPage({ icon: 'check-circle', size });
     } catch (err) {
@@ -86,6 +88,7 @@ describe('mg-icon', () => {
   });
 
   test.each(['', 'blu'])('Should throw error with invalid variant property : %s', async variant => {
+    expect.assertions(1);
     try {
       await getPage({ icon: 'check-circle', variant });
     } catch (err) {

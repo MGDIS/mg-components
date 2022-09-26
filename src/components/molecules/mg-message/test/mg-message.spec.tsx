@@ -45,7 +45,8 @@ describe('mg-message', () => {
     expect(classDanger).not.toBeNull();
   });
 
-  test.each(['', 'blu', undefined])('Should throw error with invalid variant property : %s', async variant => {
+  test.each(['', 'blu'])('Should throw error with invalid variant property : %s', async variant => {
+    expect.assertions(1);
     try {
       await getPage({ identifier: 'identifier', variant }, getDefaultContent());
     } catch (err) {
@@ -54,6 +55,7 @@ describe('mg-message', () => {
   });
 
   test('Should throw error with invalid delay property : 50ms', async () => {
+    expect.assertions(1);
     try {
       await getPage({ identifier: 'identifier', delay: 1 }, getDefaultContent());
     } catch (err) {
@@ -62,6 +64,7 @@ describe('mg-message', () => {
   });
 
   test('Should throw error when using prop "close-button" with an action slot', async () => {
+    expect.assertions(1);
     try {
       await getPage({ identifier: 'identifier', closeButton: true }, [
         getDefaultContent(),

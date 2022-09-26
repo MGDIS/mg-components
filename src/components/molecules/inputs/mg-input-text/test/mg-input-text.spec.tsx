@@ -56,23 +56,35 @@ describe('mg-input-text', () => {
     expect(page.root).toMatchSnapshot();
   });
 
-  test.each(['', undefined])('Should throw error with invalid label property : %s', async value => {
+  test.each(['', ' ', undefined])('Should not render with invalid identifier property: %s', async identifier => {
+    expect.assertions(1);
     try {
-      await getPage({ label: value });
+      await getPage({ identifier });
     } catch (err) {
-      expect(err.message).toMatch('<mg-input> prop "label" is required');
+      expect(err.message).toMatch('<mg-input> prop "identifier" is required.');
+    }
+  });
+
+  test.each(['', ' ', undefined])('Should throw error with invalid label property : %s', async label => {
+    expect.assertions(1);
+    try {
+      await getPage({ identifier: 'identifier', label });
+    } catch (err) {
+      expect(err.message).toMatch('<mg-input> prop "label" is required.');
     }
   });
 
   test('Should throw an error with labelOnTop & labelHide set to true', async () => {
+    expect.assertions(1);
     try {
-      await getPage({ label: 'batman', labelOnTop: true, labelHide: true });
+      await getPage({ identifier: 'identifier', label: 'batman', labelOnTop: true, labelHide: true });
     } catch (err) {
       expect(err.message).toMatch('<mg-input> prop "labelOnTop" must not be paired with the prop "labelHide"');
     }
   });
 
   test.each(['', undefined])('Should throw an error when pattern is used with patternErrorMessage: %s', async value => {
+    expect.assertions(1);
     try {
       const { root } = await getPage({ label: 'blu', pattern: '[a-z]*', patternErrorMessage: value });
       expect(root).toMatchSnapshot();
