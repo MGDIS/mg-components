@@ -4,10 +4,10 @@ const defaultSlots = '<span slot="item-1">Choix A</span><span slot="item-2">Choi
 
 describe('mg-input-toggle', () => {
   test.each([
-    `<mg-input-toggle label="label">${defaultSlots}</mg-input-toggle>`,
-    `<mg-input-toggle label="label" is-on-off><span slot="item-1">Non</span><span slot="item-2">Oui</span></mg-input-toggle>`,
-    `<mg-input-toggle label="label" is-icon is-on-off><mg-icon icon="cross" slot="item-1"></mg-icon><mg-icon icon="check" slot="item-2"></mg-icon></mg-input-toggle>`,
-    `<mg-input-toggle label="label" identifier="toggle-long-text"><span slot="item-1">Choix A très long long long long long long long long long long long long long</span><span slot="item-2">Choix B très long long long long long long long long long long long long long</span></mg-input-toggle>`,
+    `<mg-input-toggle identifier="identifier" label="label">${defaultSlots}</mg-input-toggle>`,
+    `<mg-input-toggle identifier="identifier" label="label" is-on-off><span slot="item-1">Non</span><span slot="item-2">Oui</span></mg-input-toggle>`,
+    `<mg-input-toggle identifier="identifier" label="label" is-icon is-on-off><mg-icon icon="cross" slot="item-1"></mg-icon><mg-icon icon="check" slot="item-2"></mg-icon></mg-input-toggle>`,
+    `<mg-input-toggle identifier="identifier" label="label" identifier="toggle-long-text"><span slot="item-1">Choix A très long long long long long long long long long long long long long</span><span slot="item-2">Choix B très long long long long long long long long long long long long long</span></mg-input-toggle>`,
   ])('Keyboard navigation', async html => {
     const page = await createPage(`${html}
     <script>
@@ -46,15 +46,15 @@ describe('mg-input-toggle', () => {
   });
 
   test.each([
-    `<mg-input-toggle label="label" label-on-top help-text="HelpText Message">${defaultSlots}</mg-input-toggle>`,
-    `<mg-input-toggle label="label" input-vertical-list help-text="HelpText Message">${defaultSlots}</mg-input-toggle>`,
-    `<mg-input-toggle label="label" label-on-top input-vertical-list help-text="HelpText Message">${defaultSlots}</mg-input-toggle>`,
-    `<mg-input-toggle label="label" identifier="toggle-long-text"><span slot="item-1">Choix A très long long long long long long long long long long long long long</span><span slot="item-2">Choix B très long long long long long long long long long long long long long</span></mg-input-toggle>`,
-    `<mg-input-toggle label="label" identifier="toggle-long-text-readonly" readonly><span slot="item-1">Choix A avec text long long</span><span slot="item-2">Choix B avec text long long</span></mg-input-toggle>`,
-    `<mg-input-toggle label="label" label-hide>${defaultSlots}</mg-input-toggle>`,
-    `<mg-input-toggle label="label" is-on-off readonly><span slot="item-1">Off</span><span slot="item-2">On</span></mg-input-toggle>`,
-    `<mg-input-toggle label="label" placeholder="placeholder" help-text="HelpText Message">${defaultSlots}</mg-input-toggle>`,
-    `<mg-input-toggle label="label" help-text='<mg-icon icon="user" size="small"></mg-icon> Welcome batman'>${defaultSlots}</mg-input-toggle>`,
+    `<mg-input-toggle identifier="identifier" label="label" label-on-top help-text="HelpText Message">${defaultSlots}</mg-input-toggle>`,
+    `<mg-input-toggle identifier="identifier" label="label" input-vertical-list help-text="HelpText Message">${defaultSlots}</mg-input-toggle>`,
+    `<mg-input-toggle identifier="identifier" label="label" label-on-top input-vertical-list help-text="HelpText Message">${defaultSlots}</mg-input-toggle>`,
+    `<mg-input-toggle identifier="identifier" label="label" identifier="toggle-long-text"><span slot="item-1">Choix A très long long long long long long long long long long long long long</span><span slot="item-2">Choix B très long long long long long long long long long long long long long</span></mg-input-toggle>`,
+    `<mg-input-toggle identifier="identifier" label="label" identifier="toggle-long-text-readonly" readonly><span slot="item-1">Choix A avec text long long</span><span slot="item-2">Choix B avec text long long</span></mg-input-toggle>`,
+    `<mg-input-toggle identifier="identifier" label="label" label-hide>${defaultSlots}</mg-input-toggle>`,
+    `<mg-input-toggle identifier="identifier" label="label" is-on-off readonly><span slot="item-1">Off</span><span slot="item-2">On</span></mg-input-toggle>`,
+    `<mg-input-toggle identifier="identifier" label="label" placeholder="placeholder" help-text="HelpText Message">${defaultSlots}</mg-input-toggle>`,
+    `<mg-input-toggle identifier="identifier" label="label" help-text='<mg-icon icon="user" size="small"></mg-icon> Welcome batman'>${defaultSlots}</mg-input-toggle>`,
   ])('Render without tooltip', async html => {
     const page = await createPage(`${html}
       <script>
@@ -71,7 +71,7 @@ describe('mg-input-toggle', () => {
   });
 
   test.each([undefined, false, true])('Render and toggle value whith reverse checked logic', async value => {
-    const page = await createPage(`${`<mg-input-toggle label="label">${defaultSlots}</mg-input-toggle>`}
+    const page = await createPage(`${`<mg-input-toggle identifier="identifier" label="label">${defaultSlots}</mg-input-toggle>`}
       <script>
       const mgInputToggle = document.querySelector('mg-input-toggle');
       mgInputToggle.items = [{title: 'batman', value: true}, {title: 'joker', value: false}];
@@ -93,7 +93,7 @@ describe('mg-input-toggle', () => {
   });
 
   test.each([true, false])('render with tooltip, case label-on-top %s', async labelOnTop => {
-    const page = await createPage(`<mg-input-toggle label="label" tooltip="Tooltip message" label-on-top="${labelOnTop}">${defaultSlots}</mg-input-toggle>
+    const page = await createPage(`<mg-input-toggle identifier="identifier" label="label" tooltip="Tooltip message" label-on-top="${labelOnTop}">${defaultSlots}</mg-input-toggle>
       <script>
       const mgInputToggle = document.querySelector('mg-input-toggle');
       mgInputToggle.items = [{title: 'batman', value: false}, {title: 'joker', value: true}];
@@ -119,12 +119,12 @@ describe('mg-input-toggle', () => {
   });
 
   test.each([
-    `<mg-input-toggle label="label" readonly>${defaultSlots}</mg-input-toggle>`,
-    `<mg-input-toggle label="label" value="true">${defaultSlots}</mg-input-toggle>`,
-    `<mg-input-toggle label="label" value="true" readonly>${defaultSlots}</mg-input-toggle>`,
-    `<mg-input-toggle label="label" value="true" readonly label-on-top>${defaultSlots}</mg-input-toggle>`,
-    `<mg-input-toggle label="label" disabled>${defaultSlots}</mg-input-toggle>`,
-    `<mg-input-toggle label="label" value="true" disabled>${defaultSlots}</mg-input-toggle>`,
+    `<mg-input-toggle identifier="identifier" label="label" readonly>${defaultSlots}</mg-input-toggle>`,
+    `<mg-input-toggle identifier="identifier" label="label" value="true">${defaultSlots}</mg-input-toggle>`,
+    `<mg-input-toggle identifier="identifier" label="label" value="true" readonly>${defaultSlots}</mg-input-toggle>`,
+    `<mg-input-toggle identifier="identifier" label="label" value="true" readonly label-on-top>${defaultSlots}</mg-input-toggle>`,
+    `<mg-input-toggle identifier="identifier" label="label" disabled>${defaultSlots}</mg-input-toggle>`,
+    `<mg-input-toggle identifier="identifier" label="label" value="true" disabled>${defaultSlots}</mg-input-toggle>`,
   ])('Should render with template', async html => {
     const page = await createPage(`${html}
       <script>
@@ -141,8 +141,8 @@ describe('mg-input-toggle', () => {
   });
 
   describe.each([
-    `<mg-input-toggle label="long label long label long label long label long label long label long label long label long label long label long label" tooltip="tooltip message">${defaultSlots}</mg-input-toggle>`,
-    `<mg-input-toggle label="long label long label long label long label long label long label long label long label long label long label long label" tooltip="tooltip message" label-on-top>${defaultSlots}</mg-input-toggle>`,
+    `<mg-input-toggle identifier="identifier" label="long label long label long label long label long label long label long label long label long label long label long label" tooltip="tooltip message">${defaultSlots}</mg-input-toggle>`,
+    `<mg-input-toggle identifier="identifier" label="long label long label long label long label long label long label long label long label long label long label long label" tooltip="tooltip message" label-on-top>${defaultSlots}</mg-input-toggle>`,
   ])('inside a div.mg-form-group', html => {
     test('render', async () => {
       const page = await createPage(`<div class="mg-form-group">${html}</div>

@@ -1,7 +1,7 @@
 import { createPage } from '../../../../../utils/test.utils';
 
 describe('mg-input-select', () => {
-  describe.each([`<mg-input-select label="label"></mg-input-select>`])('without tooltip', html => {
+  describe.each([`<mg-input-select identifier="identifier" label="label"></mg-input-select>`])('without tooltip', html => {
     test('render', async () => {
       const page = await createPage(`${html}
       <script>
@@ -48,9 +48,9 @@ describe('mg-input-select', () => {
   });
 
   describe.each([
-    `<mg-input-select label="label" label-on-top></mg-input-select>`,
-    `<mg-input-select label="label" label-hide></mg-input-select>`,
-    `<mg-input-select label="label" placeholder="placeholder" help-text="HelpText Message"></mg-input-select>`,
+    `<mg-input-select identifier="identifier" label="label" label-on-top></mg-input-select>`,
+    `<mg-input-select identifier="identifier" label="label" label-hide></mg-input-select>`,
+    `<mg-input-select identifier="identifier" label="label" placeholder="placeholder" help-text="HelpText Message"></mg-input-select>`,
   ])('without tooltip', html => {
     test('render', async () => {
       const page = await createPage(`${html}
@@ -69,7 +69,7 @@ describe('mg-input-select', () => {
   });
 
   test.each([true, false])('render with tooltip, case label-on-top %s', async labelOnTop => {
-    const page = await createPage(`<mg-input-select label="label" tooltip="Tooltip message" label-on-top="${labelOnTop}"></mg-input-select>
+    const page = await createPage(`<mg-input-select identifier="identifier" label="label" tooltip="Tooltip message" label-on-top="${labelOnTop}"></mg-input-select>
       <script>
       const mgInputSelect = document.querySelector('mg-input-select');
       mgInputSelect.items = ['blu', 'bli', 'bla', 'blo'];
@@ -97,13 +97,13 @@ describe('mg-input-select', () => {
   });
 
   describe.each([
-    `<mg-input-select label="label" readonly></mg-input-select>`,
-    `<mg-input-select label="label" value="blu"></mg-input-select>`,
-    `<mg-input-select label="label" value="blu" readonly></mg-input-select>`,
-    `<mg-input-select label="label" value="blu" readonly label-on-top></mg-input-select>`,
-    `<mg-input-select label="label" disabled></mg-input-select>`,
-    `<mg-input-select label="label" value="blu" disabled></mg-input-select>`,
-    `<mg-input-select label="label" value="batman" help-text='<mg-icon icon="user" size="small"></mg-icon> Welcome batman'></mg-input-select>`,
+    `<mg-input-select identifier="identifier" label="label" readonly></mg-input-select>`,
+    `<mg-input-select identifier="identifier" label="label" value="blu"></mg-input-select>`,
+    `<mg-input-select identifier="identifier" label="label" value="blu" readonly></mg-input-select>`,
+    `<mg-input-select identifier="identifier" label="label" value="blu" readonly label-on-top></mg-input-select>`,
+    `<mg-input-select identifier="identifier" label="label" disabled></mg-input-select>`,
+    `<mg-input-select identifier="identifier" label="label" value="blu" disabled></mg-input-select>`,
+    `<mg-input-select identifier="identifier" label="label" value="batman" help-text='<mg-icon icon="user" size="small"></mg-icon> Welcome batman'></mg-input-select>`,
   ])('Should render with template', html => {
     test('render', async () => {
       const page = await createPage(`${html}
@@ -121,7 +121,10 @@ describe('mg-input-select', () => {
     });
   });
 
-  describe.each([`<mg-input-select label="label" required></mg-input-select>`, `<mg-input-select label="label" required lang="fr"></mg-input-select>`])('%s', html => {
+  describe.each([
+    `<mg-input-select identifier="identifier" label="label" required></mg-input-select>`,
+    `<mg-input-select identifier="identifier" label="label" required lang="fr"></mg-input-select>`,
+  ])('%s', html => {
     test('Should render error when leaving an empty required input', async () => {
       const page = await createPage(`${html}
       <script>
@@ -144,7 +147,7 @@ describe('mg-input-select', () => {
   });
 
   test('Should render a grouped list', async () => {
-    const page = await createPage(`<mg-input-select label="label"></mg-input-select>
+    const page = await createPage(`<mg-input-select identifier="identifier" label="label"></mg-input-select>
       <script>
       const mgInputSelect = document.querySelector('mg-input-select');
       mgInputSelect.items = [
@@ -171,8 +174,8 @@ describe('mg-input-select', () => {
   });
 
   describe.each([
-    '<mg-input-select label="long label long label long label long label long label long label long label long label long label long label long label" tooltip="tooltip message"></mg-input-select>',
-    '<mg-input-select label="long label long label long label long label long label long label long label long label long label long label long label" tooltip="tooltip message" label-on-top></mg-input-select>',
+    '<mg-input-select identifier="identifier" label="long label long label long label long label long label long label long label long label long label long label long label" tooltip="tooltip message"></mg-input-select>',
+    '<mg-input-select identifier="identifier" label="long label long label long label long label long label long label long label long label long label long label long label" tooltip="tooltip message" label-on-top></mg-input-select>',
   ])('inside a div.mg-form-group', html => {
     test('render', async () => {
       const page = await createPage(`<div class="mg-form-group">${html}</div>
@@ -193,7 +196,7 @@ describe('mg-input-select', () => {
   describe.each(['full', 16])('with custom width: %s', width => {
     test.each([false, true])('with label on top: %s', async labelOnTop => {
       const page = await createPage(`
-        <mg-input-select label="label" mg-width="${width}" label-on-top="${labelOnTop}"></mg-input-select>
+        <mg-input-select identifier="identifier" label="label" mg-width="${width}" label-on-top="${labelOnTop}"></mg-input-select>
         <script>
           const mgInputSelect = document.querySelector('mg-input-select');
           mgInputSelect.items = ['blu', 'bli', 'bla', 'blo'];
@@ -212,7 +215,7 @@ describe('mg-input-select', () => {
   describe.each([undefined, 300])('Ensure component fit in width: %s', width => {
     test.each([false, true])('label-on-top: %s', async labelOnTop => {
       const page = await createPage(`
-      <mg-input-select label="label" label-on-top="${labelOnTop}"></mg-input-select>
+      <mg-input-select identifier="identifier" label="label" label-on-top="${labelOnTop}"></mg-input-select>
       <script>
         const mgInputSelect = document.querySelector('mg-input-select');
         mgInputSelect.items = ['blu', 'bli', 'bla', 'blo', 'le long libellé qui va faire sortir le champ mg-input-select de sa zone de confort'];

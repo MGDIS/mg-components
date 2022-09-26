@@ -94,11 +94,14 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props: MgInputProps, 
   /**
    * Check required properties
    */
-  if (typeof props.label !== 'string' || props.label === '') {
-    throw new Error('<mg-input> prop "label" is required');
+  if (typeof props.identifier !== 'string' || props.identifier.trim() === '') {
+    throw new Error('<mg-input> prop "identifier" is required.');
+  }
+  if (typeof props.label !== 'string' || props.label.trim() === '') {
+    throw new Error('<mg-input> prop "label" is required.');
   }
   if (props.labelOnTop && props.labelHide) {
-    throw new Error('<mg-input> prop "labelOnTop" must not be paired with the prop "labelHide"');
+    throw new Error('<mg-input> prop "labelOnTop" must not be paired with the prop "labelHide".');
   }
 
   /**

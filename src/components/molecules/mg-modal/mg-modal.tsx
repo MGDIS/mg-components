@@ -39,6 +39,12 @@ export class MgModal {
    * required
    */
   @Prop() modalTitle!: string;
+  @Watch('modalTitle')
+  validateModalTitle(newValue: string): void {
+    if (typeof newValue !== 'string' || newValue.trim() === '') {
+      throw new Error('<mg-modal> prop "modalTitle" is required.');
+    }
+  }
 
   /**
    * Define if modal has a cross button
@@ -133,6 +139,7 @@ export class MgModal {
       this.closeButtonId = `${this.identifier}-close-button`;
     }
     this.titleId = `${this.identifier}-title`;
+    this.validateModalTitle(this.modalTitle);
     this.validateHide(this.hide);
   }
 

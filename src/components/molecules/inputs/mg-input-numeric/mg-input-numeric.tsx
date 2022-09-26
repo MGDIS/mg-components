@@ -2,7 +2,7 @@ import { Component, Element, Event, h, Prop, EventEmitter, State, Watch, Method 
 import { MgInput } from '../MgInput';
 import { Width } from '../MgInput.conf';
 import { types, InputError } from './mg-input-numeric.conf';
-import { createID, ClassList } from '../../../../utils/components.utils';
+import { ClassList } from '../../../../utils/components.utils';
 import { initLocales } from '../../../../locales/';
 import { localeCurrency, localeNumber } from '../../../../utils/locale.utils';
 
@@ -72,9 +72,8 @@ export class MgInputNumeric {
 
   /**
    * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
-   * If not set, it will be created.
    */
-  @Prop() identifier: string = createID('mg-input-numeric');
+  @Prop() identifier!: string;
 
   /**
    * Input name

@@ -15,7 +15,7 @@ const slot = `
 const slot2 = `
   <div>Content</div>
   <div slot="header-right" style="display: flex;justify-content: space-between;align-items: center;width: 100%;">
-    <mg-badge variant="primary" value="1"></mg-badge>
+    <mg-badge variant="primary" value="1" label="label"></mg-badge>
     <div>
       <mg-button variant="secondary">
         <mg-icon icon="file-upload"></mg-icon> Upload

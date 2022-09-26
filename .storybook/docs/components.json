@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-09-22T08:07:13",
+  "timestamp": "2022-09-23T13:39:12",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.18.0",
@@ -232,9 +232,8 @@
           "mutable": false,
           "attr": "identifier",
           "reflectToAttr": false,
-          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
+          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)",
           "docsTags": [],
-          "default": "createID('mg-button')",
           "values": [
             {
               "type": "string"
@@ -921,16 +920,15 @@
           "mutable": false,
           "attr": "identifier",
           "reflectToAttr": false,
-          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
+          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)",
           "docsTags": [],
-          "default": "createID('mg-input-checkbox')",
           "values": [
             {
               "type": "string"
             }
           ],
           "optional": false,
-          "required": false
+          "required": true
         },
         {
           "name": "inputVerticalList",
@@ -1216,16 +1214,15 @@
           "mutable": false,
           "attr": "identifier",
           "reflectToAttr": false,
-          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
+          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)",
           "docsTags": [],
-          "default": "createID('mg-input-date')",
           "values": [
             {
               "type": "string"
             }
           ],
           "optional": false,
-          "required": false
+          "required": true
         },
         {
           "name": "invalid",
@@ -1561,16 +1558,15 @@
           "mutable": false,
           "attr": "identifier",
           "reflectToAttr": false,
-          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
+          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)",
           "docsTags": [],
-          "default": "createID('mg-input-numeric')",
           "values": [
             {
               "type": "string"
             }
           ],
           "optional": false,
-          "required": false
+          "required": true
         },
         {
           "name": "integerLength",
@@ -1951,16 +1947,15 @@
           "mutable": false,
           "attr": "identifier",
           "reflectToAttr": false,
-          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
+          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)",
           "docsTags": [],
-          "default": "createID('mg-input-password')",
           "values": [
             {
               "type": "string"
             }
           ],
           "optional": false,
-          "required": false
+          "required": true
         },
         {
           "name": "invalid",
@@ -2276,16 +2271,15 @@
           "mutable": false,
           "attr": "identifier",
           "reflectToAttr": false,
-          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
+          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)",
           "docsTags": [],
-          "default": "createID('mg-input-radio')",
           "values": [
             {
               "type": "string"
             }
           ],
           "optional": false,
-          "required": false
+          "required": true
         },
         {
           "name": "inputVerticalList",
@@ -2591,16 +2585,15 @@
           "mutable": false,
           "attr": "identifier",
           "reflectToAttr": false,
-          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
+          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)",
           "docsTags": [],
-          "default": "createID('mg-input-select')",
           "values": [
             {
               "type": "string"
             }
           ],
           "optional": false,
-          "required": false
+          "required": true
         },
         {
           "name": "invalid",
@@ -3005,16 +2998,15 @@
           "mutable": false,
           "attr": "identifier",
           "reflectToAttr": false,
-          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
+          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)",
           "docsTags": [],
-          "default": "createID('mg-input-text')",
           "values": [
             {
               "type": "string"
             }
           ],
           "optional": false,
-          "required": false
+          "required": true
         },
         {
           "name": "invalid",
@@ -3440,16 +3432,15 @@
           "mutable": false,
           "attr": "identifier",
           "reflectToAttr": false,
-          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
+          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)",
           "docsTags": [],
-          "default": "createID('mg-input-textarea')",
           "values": [
             {
               "type": "string"
             }
           ],
           "optional": false,
-          "required": false
+          "required": true
         },
         {
           "name": "invalid",
@@ -3970,16 +3961,15 @@
           "mutable": false,
           "attr": "identifier",
           "reflectToAttr": false,
-          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
+          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)",
           "docsTags": [],
-          "default": "createID('mg-input-toggle')",
           "values": [
             {
               "type": "string"
             }
           ],
           "optional": false,
-          "required": false
+          "required": true
         },
         {
           "name": "isIcon",

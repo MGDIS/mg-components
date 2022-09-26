@@ -18,6 +18,7 @@ describe('mg-character-left', () => {
   });
 
   test('Should throw error without maxlength', async () => {
+    expect.assertions(1);
     try {
       await getPage({});
     } catch (err) {

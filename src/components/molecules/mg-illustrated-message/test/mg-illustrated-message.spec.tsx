@@ -39,6 +39,7 @@ describe('mg-illustrated-message', () => {
   });
 
   test('Should throw error if slot title element is not a heading', async () => {
+    expect.assertions(1);
     try {
       await getPage({}, <span slot="title">Lorem Ipsum</span>);
     } catch (err) {
@@ -47,6 +48,7 @@ describe('mg-illustrated-message', () => {
   });
 
   test('Should throw error if slot illustration element is not an image', async () => {
+    expect.assertions(1);
     try {
       await getPage({}, undefined, <span slot="illustration">Lorem Ipsum</span>);
     } catch (err) {
