@@ -2,8 +2,12 @@
 
 The placeholder of the list is "Select a value".
 
-The behavior, style and position of the chevron on the right of the field are those of the native browser.
+The behavior, style and position of the chevron on the right of the field are those of the native browser.  
 The spacing between the text and the chevron is at least 10px.
+
+### Sizing
+
+The width of the component is defined by the largest option of the options.
 
 <!-- Auto Generated Below -->
 
