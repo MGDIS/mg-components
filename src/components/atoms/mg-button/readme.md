@@ -23,6 +23,38 @@ To manage the space between two buttons you can use the helper [.mg-group-elemen
 
 ![](./mg-button/doc/img/mg-button-styles.png)
 
+## CSS Variables
+
+If needed some [variables](./?path=/story/css-variables--page) are available to customize the component:
+
+### Global
+
+- `--mg-button-border-radius`: define button border radius, default: `0.3rem`
+- `--mg-button-icon-border-radius`: define button border radius in icon mode, default: `--default-size`
+- `--mg-button-disabled-opacity`: define button opacity when disabled, default: `0.6`
+- `--mg-button-gradient`: define if button use gradient, possible values 0 (no gradient) or 1 (with gradient), default: `1`
+- `--mg-button-border-variation`: define if button has a border based on background color, possible values 0 (no border) or 1 (with border), default: `1`
+
+### Variant
+
+Variants `danger`, `danger-alt`, `info` and `success` can be customized by changing the global [colors](./?path=/docs/style-colors--page).
+
+#### Primary
+
+- `--mg-button-primary-color-h`: define hue color value for primary button, default: `--color-dark-h`
+- `--mg-button-primary-color-s`: define saturation color value for primary button, default: `--color-dark-s`
+- `--mg-button-primary-color-l`: define lightness color value for primary button, default: `--color-dark-l`
+- `--mg-button-primary-font-color`: define font color for primary button, default: `--color-neutral`
+
+#### Secondary
+
+- `--mg-button-secondary-color-h`: define hue color value for secondary button, default: `--color-neutral-h`
+- `--mg-button-secondary-color-s`: define saturation color value for secondary button, default: `--color-neutral-s`
+- `--mg-button-secondary-color-l`: define lightness color value for secondary button, default: `--color-neutral-l`
+- `--mg-button-secondary-font-color`: define font color for secondary button, default: `--color-dark`
+
+
+
 <!-- Auto Generated Below -->
 
 

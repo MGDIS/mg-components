@@ -11,6 +11,12 @@ The style of the active checkbox is the browser's style.
 
 ![](./mg-input-checkbox/doc/img/mg-input-checkbox-specs.png)
 
+## CSS Variables
+
+If needed some [variables](./?path=/story/css-variables--page) are available to customize the component:
+
+- `--mg-input-check-size`: Define checkbox size, default: `1.3rem`
+
 <!-- Auto Generated Below -->
 
 
