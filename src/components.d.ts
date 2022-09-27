@@ -12,7 +12,7 @@ import { Width } from "./components/molecules/inputs/MgInput.conf";
 import { RadioOption } from "./components/molecules/inputs/mg-input-radio/mg-input-radio.conf";
 import { SelectOption } from "./components/molecules/inputs/mg-input-select/mg-input-select.conf";
 import { ToggleValue } from "./components/molecules/inputs/mg-input-toggle/mg-input-toggle.conf";
-import { NavItem } from "./components/molecules/mg-menu/mg-menu.conf";
+import { Status } from "./components/molecules/menu/mg-menu-item/mg-menu-item.conf";
 import { Placement } from "./components/molecules/mg-popover/mg-popover.conf";
 import { TabItem } from "./components/molecules/mg-tabs/mg-tabs.conf";
 import { Placement as Placement1 } from "./components/atoms/mg-tooltip/mg-tooltip.conf";
@@ -854,19 +854,39 @@ export namespace Components {
          */
         "value": any;
     }
-    interface MgMenu {
-        /**
-          * Active tab number default: first is 1
-         */
-        "activeItem": number;
+    interface MgMenuHorizontal {
         /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
         "identifier": string;
         /**
-          * Nav items Required
+          * Nav label. Include short nav description. Required for accessibility
          */
-        "items": string[] | NavItem[];
+        "label": string;
+    }
+    interface MgMenuItem {
+        "badge": BadgeType & { variant?: string };
+        "expanded": boolean;
+        "href": string;
+        "icon": string;
+        /**
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+         */
+        "identifier": string;
+        "label": string;
+        "mgTabindex": number;
+        /**
+          * Define tabs size
+         */
+        "size": string;
+        "status": Status;
+    }
+    interface MgMenuVertical {
+        /**
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+         */
+        "identifier": string;
+        "isChild": boolean;
         /**
           * Nav label. Include short nav description. Required for accessibility
          */
@@ -1081,10 +1101,6 @@ export interface MgInputToggleCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLMgInputToggleElement;
 }
-export interface MgMenuCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLMgMenuElement;
-}
 export interface MgMessageCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLMgMessageElement;
@@ -1212,11 +1228,23 @@ declare global {
         prototype: HTMLMgInputToggleElement;
         new (): HTMLMgInputToggleElement;
     };
-    interface HTMLMgMenuElement extends Components.MgMenu, HTMLStencilElement {
+    interface HTMLMgMenuHorizontalElement extends Components.MgMenuHorizontal, HTMLStencilElement {
     }
-    var HTMLMgMenuElement: {
-        prototype: HTMLMgMenuElement;
-        new (): HTMLMgMenuElement;
+    var HTMLMgMenuHorizontalElement: {
+        prototype: HTMLMgMenuHorizontalElement;
+        new (): HTMLMgMenuHorizontalElement;
+    };
+    interface HTMLMgMenuItemElement extends Components.MgMenuItem, HTMLStencilElement {
+    }
+    var HTMLMgMenuItemElement: {
+        prototype: HTMLMgMenuItemElement;
+        new (): HTMLMgMenuItemElement;
+    };
+    interface HTMLMgMenuVerticalElement extends Components.MgMenuVertical, HTMLStencilElement {
+    }
+    var HTMLMgMenuVerticalElement: {
+        prototype: HTMLMgMenuVerticalElement;
+        new (): HTMLMgMenuVerticalElement;
     };
     interface HTMLMgMessageElement extends Components.MgMessage, HTMLStencilElement {
     }
@@ -1284,7 +1312,9 @@ declare global {
         "mg-input-textarea": HTMLMgInputTextareaElement;
         "mg-input-title": HTMLMgInputTitleElement;
         "mg-input-toggle": HTMLMgInputToggleElement;
-        "mg-menu": HTMLMgMenuElement;
+        "mg-menu-horizontal": HTMLMgMenuHorizontalElement;
+        "mg-menu-item": HTMLMgMenuItemElement;
+        "mg-menu-vertical": HTMLMgMenuVerticalElement;
         "mg-message": HTMLMgMessageElement;
         "mg-modal": HTMLMgModalElement;
         "mg-pagination": HTMLMgPaginationElement;
@@ -2167,27 +2197,43 @@ declare namespace LocalJSX {
          */
         "value"?: any;
     }
-    interface MgMenu {
-        /**
-          * Active tab number default: first is 1
-         */
-        "activeItem"?: number;
+    interface MgMenuHorizontal {
         /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
         "identifier"?: string;
         /**
-          * Nav items Required
+          * Nav label. Include short nav description. Required for accessibility
          */
-        "items": string[] | NavItem[];
+        "label": string;
+    }
+    interface MgMenuItem {
+        "badge"?: BadgeType & { variant?: string };
+        "expanded"?: boolean;
+        "href"?: string;
+        "icon"?: string;
+        /**
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+         */
+        "identifier"?: string;
+        "label": string;
+        "mgTabindex"?: number;
+        /**
+          * Define tabs size
+         */
+        "size"?: string;
+        "status"?: Status;
+    }
+    interface MgMenuVertical {
+        /**
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+         */
+        "identifier"?: string;
+        "isChild"?: boolean;
         /**
           * Nav label. Include short nav description. Required for accessibility
          */
         "label": string;
-        /**
-          * Emited event when active nav item change
-         */
-        "onActive-item-change"?: (event: MgMenuCustomEvent<number>) => void;
     }
     interface MgMessage {
         /**
@@ -2407,7 +2453,9 @@ declare namespace LocalJSX {
         "mg-input-textarea": MgInputTextarea;
         "mg-input-title": MgInputTitle;
         "mg-input-toggle": MgInputToggle;
-        "mg-menu": MgMenu;
+        "mg-menu-horizontal": MgMenuHorizontal;
+        "mg-menu-item": MgMenuItem;
+        "mg-menu-vertical": MgMenuVertical;
         "mg-message": MgMessage;
         "mg-modal": MgModal;
         "mg-pagination": MgPagination;
@@ -2439,7 +2487,9 @@ declare module "@stencil/core" {
             "mg-input-textarea": LocalJSX.MgInputTextarea & JSXBase.HTMLAttributes<HTMLMgInputTextareaElement>;
             "mg-input-title": LocalJSX.MgInputTitle & JSXBase.HTMLAttributes<HTMLMgInputTitleElement>;
             "mg-input-toggle": LocalJSX.MgInputToggle & JSXBase.HTMLAttributes<HTMLMgInputToggleElement>;
-            "mg-menu": LocalJSX.MgMenu & JSXBase.HTMLAttributes<HTMLMgMenuElement>;
+            "mg-menu-horizontal": LocalJSX.MgMenuHorizontal & JSXBase.HTMLAttributes<HTMLMgMenuHorizontalElement>;
+            "mg-menu-item": LocalJSX.MgMenuItem & JSXBase.HTMLAttributes<HTMLMgMenuItemElement>;
+            "mg-menu-vertical": LocalJSX.MgMenuVertical & JSXBase.HTMLAttributes<HTMLMgMenuVerticalElement>;
             "mg-message": LocalJSX.MgMessage & JSXBase.HTMLAttributes<HTMLMgMessageElement>;
             "mg-modal": LocalJSX.MgModal & JSXBase.HTMLAttributes<HTMLMgModalElement>;
             "mg-pagination": LocalJSX.MgPagination & JSXBase.HTMLAttributes<HTMLMgPaginationElement>;

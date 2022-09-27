@@ -1,5 +1,8 @@
 import { BadgeType } from '../../atoms/mg-badge/mg-badge.conf';
 
+/**
+ * Available tabs items status
+ */
 export enum Status {
   VISIBLE = 'visible',
   HIDDEN = 'hidden',

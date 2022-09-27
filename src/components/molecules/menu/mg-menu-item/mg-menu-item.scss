@@ -1,0 +1,22 @@
+@import '../../../../styles/mixins/navigation-button.scss';
+
+@include navigation-button('mg-menu-item');
+
+:host {
+  position: relative;
+  display: flex;
+  ::slotted(mg-menu-vertical) {
+    width: max-content;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate3d(0rem, 6rem, 0rem);
+  }
+}
+
+:host(.mg-menu-item--last) {
+  ::slotted(mg-menu-vertical) {
+    left: unset;
+    right: 0;
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-09-13T07:21:56",
+  "timestamp": "2022-09-26T14:50:18",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.17.4",
@@ -91,12 +91,12 @@
       "slots": [],
       "parts": [],
       "dependents": [
-        "mg-menu",
+        "mg-menu-item",
         "mg-tabs"
       ],
       "dependencies": [],
       "dependencyGraph": {
-        "mg-menu": [
+        "mg-menu-item": [
           "mg-badge"
         ],
         "mg-tabs": [
@@ -773,7 +773,7 @@
         "mg-input-text",
         "mg-input-textarea",
         "mg-input-toggle",
-        "mg-menu",
+        "mg-menu-item",
         "mg-message",
         "mg-modal",
         "mg-pagination",
@@ -816,7 +816,7 @@
         "mg-input-toggle": [
           "mg-icon"
         ],
-        "mg-menu": [
+        "mg-menu-item": [
           "mg-icon"
         ],
         "mg-message": [
@@ -4201,31 +4201,14 @@
       }
     },
     {
-      "filePath": "./src/components/molecules/mg-menu/mg-menu.tsx",
-      "encapsulation": "none",
-      "tag": "mg-menu",
+      "filePath": "./src/components/molecules/menu/mg-menu-horizontal/mg-menu-horizontal.tsx",
+      "encapsulation": "shadow",
+      "tag": "mg-menu-horizontal",
       "readme": "## Anatomy\n\n![](./mg-tabs/doc/img/mg-tabs-anatomy.png)\n\n## Specs\n\n### Spacing\n\n- Standard : @base = 10px\n- Large : @base = 18px\n\n![](./mg-tabs/doc/img/mg-tabs-spacing.png)\n\n- if only text, no extra spacing,\n- if no badge : no extra spacing on the right\n- if only icon : no extra spacing on the right\n\n### Sizing\n\n![](./mg-tabs/doc/img/mg-tabs-sizing.png)\n\n### States\n\n![](./mg-tabs/doc/img/mg-tabs-states.png)\n\n### Responsive\n\n#### Line breaks (current management)\n\n![](./mg-tabs/doc/img/mg-tabs-responsive.png)\n",
       "docs": "![](./mg-tabs/doc/img/mg-tabs-anatomy.png)",
       "docsTags": [],
       "usage": {},
       "props": [
-        {
-          "name": "activeItem",
-          "type": "number",
-          "mutable": true,
-          "attr": "active-item",
-          "reflectToAttr": true,
-          "docs": "Active tab number\ndefault: first is 1",
-          "docsTags": [],
-          "default": "1",
-          "values": [
-            {
-              "type": "number"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
         {
           "name": "identifier",
           "type": "string",
@@ -4234,7 +4217,7 @@
           "reflectToAttr": false,
           "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
           "docsTags": [],
-          "default": "createID('mg-menu')",
+          "default": "createID(this.name)",
           "values": [
             {
               "type": "string"
@@ -4242,24 +4225,6 @@
           ],
           "optional": false,
           "required": false
-        },
-        {
-          "name": "items",
-          "type": "NavItem[] | string[]",
-          "mutable": false,
-          "reflectToAttr": false,
-          "docs": "Nav items\nRequired",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "NavItem[]"
-            },
-            {
-              "type": "string[]"
-            }
-          ],
-          "optional": false,
-          "required": true
         },
         {
           "name": "label",
@@ -4279,17 +4244,183 @@
         }
       ],
       "methods": [],
-      "events": [
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/molecules/menu/mg-menu-item/mg-menu-item.tsx",
+      "encapsulation": "shadow",
+      "tag": "mg-menu-item",
+      "readme": "# mg-menu-item\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
         {
-          "event": "active-item-change",
-          "detail": "number",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "Emited event when active nav item change",
-          "docsTags": []
+          "name": "badge",
+          "type": "BadgeType & { variant?: string; }",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "BadgeType & { variant?: string; }"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "expanded",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "expanded",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "mutable": false,
+          "attr": "href",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "icon",
+          "type": "string",
+          "mutable": false,
+          "attr": "icon",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "identifier",
+          "type": "string",
+          "mutable": false,
+          "attr": "identifier",
+          "reflectToAttr": false,
+          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
+          "docsTags": [],
+          "default": "createID(this.name)",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "mgTabindex",
+          "type": "number",
+          "mutable": true,
+          "attr": "mg-tabindex",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "string",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "Define tabs size",
+          "docsTags": [],
+          "default": "'large'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "status",
+          "type": "Status.ACTIVE | Status.DISABLED | Status.HIDDEN | Status.VISIBLE",
+          "mutable": false,
+          "attr": "status",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "Status.VISIBLE",
+          "values": [
+            {
+              "type": "Status.ACTIVE"
+            },
+            {
+              "type": "Status.DISABLED"
+            },
+            {
+              "type": "Status.HIDDEN"
+            },
+            {
+              "type": "Status.VISIBLE"
+            }
+          ],
+          "optional": false,
+          "required": false
         }
       ],
+      "methods": [],
+      "events": [],
       "listeners": [],
       "styles": [],
       "slots": [],
@@ -4300,11 +4431,80 @@
         "mg-badge"
       ],
       "dependencyGraph": {
-        "mg-menu": [
+        "mg-menu-item": [
           "mg-icon",
           "mg-badge"
         ]
       }
+    },
+    {
+      "filePath": "./src/components/molecules/menu/mg-menu-vertical/mg-menu-vertical.tsx",
+      "encapsulation": "shadow",
+      "tag": "mg-menu-vertical",
+      "readme": "## Anatomy\n\n![](./mg-tabs/doc/img/mg-tabs-anatomy.png)\n\n## Specs\n\n### Spacing\n\n- Standard : @base = 10px\n- Large : @base = 18px\n\n![](./mg-tabs/doc/img/mg-tabs-spacing.png)\n\n- if only text, no extra spacing,\n- if no badge : no extra spacing on the right\n- if only icon : no extra spacing on the right\n\n### Sizing\n\n![](./mg-tabs/doc/img/mg-tabs-sizing.png)\n\n### States\n\n![](./mg-tabs/doc/img/mg-tabs-states.png)\n\n### Responsive\n\n#### Line breaks (current management)\n\n![](./mg-tabs/doc/img/mg-tabs-responsive.png)\n",
+      "docs": "![](./mg-tabs/doc/img/mg-tabs-anatomy.png)",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "identifier",
+          "type": "string",
+          "mutable": false,
+          "attr": "identifier",
+          "reflectToAttr": false,
+          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
+          "docsTags": [],
+          "default": "createID(this.name)",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "isChild",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "is-child",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "Nav label. Include short nav description.\nRequired for accessibility",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
     },
     {
       "filePath": "./src/components/molecules/mg-message/mg-message.tsx",
