@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-09-23T13:39:12",
+  "timestamp": "2022-09-26T09:21:58",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.18.0",
@@ -2541,8 +2541,8 @@
       "filePath": "./src/components/molecules/inputs/mg-input-select/mg-input-select.tsx",
       "encapsulation": "shadow",
       "tag": "mg-input-select",
-      "readme": "## Design\n\nThe placeholder of the list is \"Select a value\".\n\nThe behavior, style and position of the chevron on the right of the field are those of the native browser.\nThe spacing between the text and the chevron is at least 10px.\n",
-      "docs": "The placeholder of the list is \"Select a value\".\n\nThe behavior, style and position of the chevron on the right of the field are those of the native browser.\nThe spacing between the text and the chevron is at least 10px.",
+      "readme": "## Design\n\nThe placeholder of the list is \"Select a value\".\n\nThe behavior, style and position of the chevron on the right of the field are those of the native browser.  \nThe spacing between the text and the chevron is at least 10px.\n\n### Sizing\n\nThe width of the component is defined by the largest option of the options.\n",
+      "docs": "The placeholder of the list is \"Select a value\".\n\nThe behavior, style and position of the chevron on the right of the field are those of the native browser.  \nThe spacing between the text and the chevron is at least 10px.",
       "docsTags": [],
       "usage": {},
       "props": [
