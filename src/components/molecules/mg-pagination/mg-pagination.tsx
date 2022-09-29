@@ -155,7 +155,6 @@ export class MgPagination {
     const navigationActionButton = (disabled: boolean, action: string) => (
       <mg-button
         identifier={`${this.identifier}-button-${action}`}
-        class="mg-pagination__button"
         label={this.messages.pagination[`${action}Page`]}
         // eslint-disable-next-line react/jsx-no-bind
         onClick={() => this.handleGoToPage(action)}
@@ -169,7 +168,7 @@ export class MgPagination {
     );
 
     return (
-      <nav aria-label={this.label} id={this.identifier} class="mg-pagination__nav">
+      <nav aria-label={this.label} id={this.identifier} class="mg-pagination">
         {navigationActionButton(this.currentPage <= 1, NavigationAction.PREVIOUS)}
         <mg-input-select
           identifier={`${this.identifier}-select`}
