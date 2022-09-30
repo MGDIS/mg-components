@@ -108,29 +108,38 @@ describe('mg-input-text', () => {
     });
   });
 
-  test('Should render error when leaving input with a non matching pattern value', async () => {
-    const page = await createPage(
-      `<mg-input-text identifier="identifier" label="label" pattern="[a-z]*" pattern-error-message="Vous ne pouvez saisir que des lettres minuscules."></mg-input-text>`,
-    );
+  describe.each([16, 'full'])('Should render error when leaving input with a non matching pattern value, mg-width: %s', mgWidth => {
+    test('render', async () => {
+      const page = await createPage(
+        `<mg-input-text identifier="identifier" mg-width="${mgWidth}" label="label" pattern="[a-z]*" pattern-error-message="Vous ne pouvez saisir que des lettres minuscules."></mg-input-text>`,
+      );
 
-    const element = await page.find('mg-input-text');
-    const input = await page.find('mg-input-text >>> input');
+      const element = await page.find('mg-input-text');
+      const input = await page.find('mg-input-text >>> input');
 
-    expect(element).toHaveClass('hydrated');
+      expect(element).toHaveClass('hydrated');
 
-    await page.keyboard.down('Tab');
+      await page.keyboard.down('Tab');
 
-    await input.press('KeyB');
-    await input.press('KeyL');
-    await input.press('KeyU');
-    await input.press('1');
+      await input.press('KeyB');
+      await input.press('KeyL');
+      await input.press('KeyU');
+      await input.press('1');
 
-    await page.keyboard.down('Tab');
+      await page.keyboard.down('Tab');
 
-    await page.waitForChanges();
+      await page.waitForChanges();
 
-    const screenshot = await page.screenshot();
-    expect(screenshot).toMatchImageSnapshot();
+      const screenshot = await page.screenshot();
+      expect(screenshot).toMatchImageSnapshot();
+
+      await page.keyboard.down('Tab');
+
+      await page.waitForChanges();
+
+      const screenshotReFocus = await page.screenshot();
+      expect(screenshotReFocus).toMatchImageSnapshot();
+    });
   });
 
   describe.each([
