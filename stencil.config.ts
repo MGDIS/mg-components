@@ -4,9 +4,6 @@ import { sass } from '@stencil/sass';
 export const config: Config = {
   namespace: 'mg-components',
   globalStyle: 'src/styles/global.scss',
-  extras: {
-    cloneNodeFix: true,
-  },
   devServer: {
     openBrowser: false,
   },
@@ -26,6 +23,14 @@ export const config: Config = {
         {
           src: 'styles/fonts',
           dest: 'fonts', // export fonts
+        },
+        {
+          src: 'locales/en',
+          dest: 'locales/en',
+        },
+        {
+          src: 'locales/fr',
+          dest: 'locales/fr',
         },
       ],
     },

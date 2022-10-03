@@ -21,6 +21,12 @@ To edit space bewteen the title and the input you must do as follow:
 </mgform>
 ```
 
+## CSS Variables
+
+If needed some [variables](./?path=/story/css-variables--page) are available to customize the component:
+
+- `--mg-form-inputs-title-width`: Define slotted input label width, default: `15rem`
+
 ## Example
 
 **Code example does not reflect all the code.**

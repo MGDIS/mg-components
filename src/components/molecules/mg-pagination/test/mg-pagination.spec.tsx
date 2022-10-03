@@ -21,7 +21,7 @@ describe('mg-pagination', () => {
 
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       for (const _ of actions) {
-        const nextButton = page.root.shadowRoot.querySelector('.mg-pagination__button:last-of-type');
+        const nextButton = page.root.shadowRoot.querySelector('mg-button:last-of-type');
         nextButton.dispatchEvent(new CustomEvent('click', { bubbles: true }));
         await page.waitForChanges();
 
@@ -44,6 +44,7 @@ describe('mg-pagination', () => {
 
   describe('errors', () => {
     test('should throw an error, case totalPages props invalid', async () => {
+      expect.assertions(1);
       try {
         await getPage({ totalPages: 0 });
       } catch ({ message }) {
@@ -51,6 +52,7 @@ describe('mg-pagination', () => {
       }
     });
     test('should throw an error, case currentPage props invalid: 0', async () => {
+      expect.assertions(1);
       try {
         await getPage({ currentPage: 0 });
       } catch ({ message }) {
@@ -58,6 +60,7 @@ describe('mg-pagination', () => {
       }
     });
     test('should throw an error, case currentPage props invalid: currentPage > totalPages', async () => {
+      expect.assertions(1);
       try {
         await getPage({ currentPage: 2, totalPages: 1 });
       } catch ({ message }) {
@@ -103,7 +106,7 @@ describe('mg-pagination', () => {
       jest.spyOn(page.rootInstance.currentPageChange, 'emit');
 
       // no action with a disabled button clic
-      const pageOneFirstClick = page.root.shadowRoot.querySelector('.mg-pagination__button:first-of-type button');
+      const pageOneFirstClick = page.root.shadowRoot.querySelector('mg-button:first-of-type button');
       await pageOneFirstClick.dispatchEvent(new CustomEvent('click', { bubbles: true }));
       await page.waitForChanges();
 
@@ -111,7 +114,7 @@ describe('mg-pagination', () => {
       expect(page.rootInstance.currentPageChange.emit).not.toHaveBeenCalled();
 
       // action to go to page 2 with a next button clic
-      const pageFive = page.root.shadowRoot.querySelector('.mg-pagination__button:last-of-type button');
+      const pageFive = page.root.shadowRoot.querySelector('mg-button:last-of-type button');
       await pageFive.dispatchEvent(new CustomEvent('click', { bubbles: true }));
       await page.waitForChanges();
 
@@ -119,7 +122,7 @@ describe('mg-pagination', () => {
       expect(page.rootInstance.currentPageChange.emit).toHaveBeenCalledWith(2);
 
       // action to go to page 1 with a previous button clic
-      const pageOne = page.root.shadowRoot.querySelector('.mg-pagination__button:first-of-type button');
+      const pageOne = page.root.shadowRoot.querySelector('mg-button:first-of-type button');
       await pageOne.dispatchEvent(new CustomEvent('click', { bubbles: true }));
       await page.waitForChanges();
 

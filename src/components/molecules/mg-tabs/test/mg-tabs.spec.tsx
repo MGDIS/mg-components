@@ -49,11 +49,12 @@ describe('mg-tabs', () => {
   });
 
   describe('errors', () => {
-    test.each(['', undefined])('Should throw error with invalid label property : %s', async value => {
+    test.each(['', ' ', undefined])('Should throw error with invalid label property : %s', async label => {
+      expect.assertions(1);
       try {
-        await getPage({ label: value, items: ['Batman', 'Joker'] }, createSlots());
+        await getPage({ label, items: ['Batman', 'Joker'] }, createSlots());
       } catch (err) {
-        expect(err.message).toMatch('<mg-input> prop "label" is required');
+        expect(err.message).toMatch('<mg-tabs> prop "label" is required.');
       }
     });
 
@@ -66,34 +67,38 @@ describe('mg-tabs', () => {
       [[{ label: 'batman', icon: 'batman' }, { batman: 'batman' }]],
       [[{ label: undefined, icon: 'batman' }, { label: 'batman' }]],
     ])('Should throw error with invalid items property', async items => {
+      expect.assertions(1);
       try {
         await getPage({ label: 'Sample label', items }, createSlots());
-      } catch (error) {
-        expect(error.message).toMatch('<mg-tabs> prop "items" is required and all items must be the same type: TabItem.');
+      } catch (err) {
+        expect(err.message).toMatch('<mg-tabs> prop "items" is required and all items must be the same type: TabItem.');
       }
     });
 
     test.each([[[]], [createSlots(1)], [[undefined, createSlots(2)[1]], [createSlots(3)]]])('should trown an error with invalid slots', async slots => {
+      expect.assertions(1);
       try {
         await getPage({ label: 'Sample label', items: ['Tab 1', 'Tab 2'] }, slots);
-      } catch (error) {
-        expect(error.message).toMatch('<mg-tabs> Must have slots counts equal to tabs count.');
+      } catch (err) {
+        expect(err.message).toMatch('<mg-tabs> Must have slots counts equal to tabs count.');
       }
     });
 
     test.each([0, 3])('should trown an error with invalid tabItem props', async activeTab => {
+      expect.assertions(1);
       try {
         await getPage({ label: 'Sample label', items: ['Tab 1', 'Tab 2'], activeTab }, createSlots());
-      } catch (error) {
-        expect(error.message).toMatch('<mg-tabs> prop "activeTab" must be between 1 and tabs length.');
+      } catch (err) {
+        expect(err.message).toMatch('<mg-tabs> prop "activeTab" must be between 1 and tabs length.');
       }
     });
 
     test('should trown an error with invalid tabItem props', async () => {
+      expect.assertions(1);
       try {
         await getPage({ label: 'Sample label', items: ['Tab 1', 'Tab 2'], size: 'batman' }, createSlots());
-      } catch (error) {
-        expect(error.message).toMatch(`<mg-tabs> prop "size" must be one of : ${sizes.join(', ')}`);
+      } catch (err) {
+        expect(err.message).toMatch(`<mg-tabs> prop "size" must be one of : ${sizes.join(', ')}`);
       }
     });
   });
@@ -123,6 +128,7 @@ describe('mg-tabs', () => {
     test('should go to next tab on click event', async () => {
       const page = await getPage(
         {
+          label: 'Sample label',
           items: [
             { label: 'Batman', icon: 'check', badge },
             { label: 'Joker', icon: 'cross', badge },

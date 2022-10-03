@@ -1,4 +1,4 @@
-import { Component, h, Prop, State } from '@stencil/core';
+import { Component, h, Prop, State, Watch } from '@stencil/core';
 
 @Component({
   tag: 'mg-input-title',
@@ -10,6 +10,12 @@ export class MgInputTitle {
    * Label input id
    */
   @Prop() identifier!: string;
+  @Watch('identifier')
+  validateIdentifier(newValue: string): void {
+    if (typeof newValue !== 'string' || newValue.trim() === '') {
+      throw new Error('<mg-input-title> prop "identifier" is required.');
+    }
+  }
 
   /**
    * If input is required an asterisk is added at the end of the label
@@ -40,6 +46,7 @@ export class MgInputTitle {
    * @returns {void}
    */
   componentWillLoad(): void {
+    this.validateIdentifier(this.identifier);
     this.getTagName();
   }
 

@@ -9,8 +9,8 @@
   /* Open Sans is used for the body (mostly all texts) */
   --font-family: 'Open Sans', sans-serif;
 
-  /* Poppins is used for the headings (h1 to h6) */
-  --font-family-heading: 'Poppins', sans-serif;
+  /* Headings (h1 to h6) font can be customized */
+  --font-family-heading: var(--font-family);
 
   /* Font colors */
   --color-font-light: var(--color-light);
@@ -171,6 +171,7 @@
 
   --mg-panel-border-radius: 0.5rem;
   --mg-panel-background: var(--color-info-h) var(--color-info-s) calc(var(--color-info-l) + 68%);
+  --mg-panel-content-padding: 1.5rem;
 
   /*
     Layout

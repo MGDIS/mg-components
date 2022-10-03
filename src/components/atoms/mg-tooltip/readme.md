@@ -59,6 +59,14 @@ Triangle is always centered on the call component
 
 ![](./mg-tooltip/doc/img/mg-tooltip-sizing.png)
 
+## CSS Variables
+
+If needed some [variables](./?path=/story/css-variables--page) are available to customize the component:
+
+- `--mg-tooltip-border-radius`: Define tooltip border radius, default: `0.5rem`
+- `--mg-tooltip-background-color`: Define tooltip background color, default: `--color-dark`
+- `--mg-tooltip-font-color`: Define tooltip font color, default: `--color-font-light`
+
 <!-- Auto Generated Below -->
 
 

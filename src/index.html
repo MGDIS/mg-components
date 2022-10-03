@@ -232,8 +232,8 @@
         <mg-tabs>
           <div slot="tab_content-1">Content 1</div>
           <div slot="tab_content-2">Content 2</div>
-          <div slot="tab_content-3">Content 3</div></mg-tabs
-        >
+          <div slot="tab_content-3">Content 3</div>
+        </mg-tabs>
         <script>
           const mgTabs = document.querySelector('mg-tabs');
           mgTabs.items = [
@@ -294,28 +294,28 @@
       <section>
         <h2>Badges</h2>
         <div class="mg-group-elements" style="padding: 0 0 1rem">
-          <mg-badge variant="primary" value="1"></mg-badge>
-          <mg-badge variant="secondary" value="1"></mg-badge>
-          <mg-badge variant="danger" value="1"></mg-badge>
-          <mg-badge variant="success" value="1"></mg-badge>
-          <mg-badge variant="info" value="1"></mg-badge>
+          <mg-badge label="label" variant="primary" value="1"></mg-badge>
+          <mg-badge label="label" variant="secondary" value="1"></mg-badge>
+          <mg-badge label="label" variant="danger" value="1"></mg-badge>
+          <mg-badge label="label" variant="success" value="1"></mg-badge>
+          <mg-badge label="label" variant="info" value="1"></mg-badge>
         </div>
         <div class="mg-group-elements" style="padding: 0 0 1rem">
-          <mg-badge outline variant="primary" value="1"></mg-badge>
-          <mg-badge outline variant="secondary" value="1"></mg-badge>
-          <mg-badge outline variant="danger" value="1"></mg-badge>
-          <mg-badge outline variant="success" value="1"></mg-badge>
-          <mg-badge outline variant="info" value="1"></mg-badge>
+          <mg-badge label="label" outline variant="primary" value="1"></mg-badge>
+          <mg-badge label="label" outline variant="secondary" value="1"></mg-badge>
+          <mg-badge label="label" outline variant="danger" value="1"></mg-badge>
+          <mg-badge label="label" outline variant="success" value="1"></mg-badge>
+          <mg-badge label="label" outline variant="info" value="1"></mg-badge>
         </div>
         <div class="mg-group-elements" style="padding: 0 0 1rem">
-          <mg-badge variant="primary" value="1"></mg-badge>
-          <mg-badge variant="secondary" value="1"></mg-badge>
-          <mg-badge variant="danger" value="1"></mg-badge>
-          <mg-badge variant="success" value="1"></mg-badge>
-          <mg-badge variant="info" value="1"></mg-badge>
+          <mg-badge label="label" variant="primary" value="1"></mg-badge>
+          <mg-badge label="label" variant="secondary" value="1"></mg-badge>
+          <mg-badge label="label" variant="danger" value="1"></mg-badge>
+          <mg-badge label="label" variant="success" value="1"></mg-badge>
+          <mg-badge label="label" variant="info" value="1"></mg-badge>
         </div>
         <div class="mg-group-elements" style="padding: 0 0 1rem">
-          <mg-button>mg-button <mg-badge value="1"></mg-badge></mg-button>
+          <mg-button>mg-button <mg-badge label="label" value="1"></mg-badge></mg-button>
         </div>
       </section>
       <section>
@@ -323,13 +323,13 @@
         <h3>Atoms</h3>
         <h4>Labels</h4>
         <div>
-          <mg-input-title>Label</mg-input-title>
+          <mg-input-title identifier="identifier">Label</mg-input-title>
         </div>
         <div>
-          <mg-input-title is-legend>Legend</mg-input-title>
+          <mg-input-title identifier="identifier" is-legend>Legend</mg-input-title>
         </div>
         <div>
-          <mg-input-title required>Label when required</mg-input-title>
+          <mg-input-title identifier="identifier" required>Label when required</mg-input-title>
         </div>
         <!-- <h4>Tooltips</h4>
         <div class="mg-group-elements" style="padding: 0 0 1rem">
@@ -381,7 +381,7 @@
             }
           });
         </script>-->
-        <h4>Popover</h4>
+        <!-- <h4>Popover</h4>
         <mg-popover>
           <mg-button>Display popover</mg-button>
           <div slot="content">Coucou</div></mg-popover
@@ -394,7 +394,7 @@
           </div>
           <h1 slot="title">Titre un peu plus long un peu plus long un peu plus long un peu plus long un peu plus long</h1>
           <mg-button>Display popover</mg-button>
-        </mg-popover>
+        </mg-popover> -->
         <!--
         <h4>Character left</h4>
         <mg-character-left maxlength="400"></mg-character-left>
@@ -445,8 +445,8 @@
           value="blu"
         ></mg-input-textarea>
       -->
-        <h3>Input Select</h3>
-        <mg-input-select style="display: inline-block" placeholder-hide label="Libellé plutôt long on va dire" required></mg-input-select> <span>un texte qui suit le select</span>
+        <!-- <h3>Input Select</h3>
+        <mg-input-select placeholder-hide label="Libellé plutôt long on va dire" required identifier="blu"></mg-input-select>
         <script>
           const mgInputSelect = document.querySelector('mg-input-select');
           const mgInputSelectFullWidth = document.querySelector('mg-input-select.mg-input-width-full');
@@ -471,7 +471,7 @@
           mgInputSelect.addEventListener('value-change', e => {
             console.log(e.target.value);
           });
-        </script>
+        </script> -->
         <!--
         <h3>Input Date</h3>
         <mg-input-date
@@ -665,8 +665,8 @@
               <mg-input-text required class="mg-grid__col no-padding" mg-width="2" label="Libellé" tooltip="message tooltip" value="" maxlength="2"></mg-input-text>
               <mg-input-text class="mg-grid__col no-padding" mg-width="2" label="Libellé" tooltip="message tooltip" value="BA" maxlength="2"></mg-input-text>
             </div> -->
-            <mg-input-checkbox identifier="mg-input-checkbox" label="mg-input-checkbox label"></mg-input-checkbox>
-            <mg-input-date identifier="mg-input-date" label="mg-input-date label"></mg-input-date>
+            <mg-input-checkbox label="mg-input-checkbox label" identifier="mg-input-checkbox-id"></mg-input-checkbox>
+            <mg-input-date label="mg-input-date label" identifier="mg-input-date-id"></mg-input-date>
             <mg-input-numeric class="align-left" identifier="mg-input-numeric" label="mg-input-numeric label"></mg-input-numeric>
             <mg-input-password identifier="mg-input-password" label="mg-input-password label"></mg-input-password>
             <mg-input-radio identifier="mg-input-radio" label="mg-input-radio label" value="blu"></mg-input-radio>
@@ -775,6 +775,7 @@
           <div class="mg-grid__col mg-grid__col-10">
             <div class="mg-form-group">
               <mg-input-text
+                identifier="mg-input-text"
                 placeholder="placeholder"
                 help-text="Message du mg-input-text"
                 label="Libellé du mg-input-text"
@@ -808,6 +809,7 @@
         </div>
         <div class="mg-form-group">
           <mg-input-date
+            identifier="mg-input-date"
             placeholder="placeholder"
             help-text="Message du mg-input-date"
             label="Libellé du mg-input-date"
@@ -817,6 +819,7 @@
         </div>
         <div class="mg-form-group">
           <mg-input-numeric
+            identifier="mg-input-numeric"
             placeholder="placeholder"
             help-text="Message du mg-input-numeric"
             label="Libellé du mg-input-numeric"
@@ -826,6 +829,7 @@
         </div>
         <div class="mg-form-group">
           <mg-input-text
+            identifier="mg-input-text"
             placeholder="placeholder"
             help-text="Message du mg-input-text"
             label="Libellé du mg-input-text"

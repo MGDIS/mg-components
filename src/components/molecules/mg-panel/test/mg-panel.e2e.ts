@@ -15,7 +15,7 @@ const slot = `
 const slot2 = `
   <div>Content</div>
   <div slot="header-right" style="display: flex;justify-content: space-between;align-items: center;width: 100%;">
-    <mg-badge variant="primary" value="1"></mg-badge>
+    <mg-badge variant="primary" value="1" label="label"></mg-badge>
     <div>
       <mg-button variant="secondary">
         <mg-icon icon="file-upload"></mg-icon> Upload
@@ -38,6 +38,7 @@ describe('mg-panel', () => {
     `<mg-panel label="label" panel-title="very long panel title very long panel title very long panel title very long panel title very long panel title very long panel title very long panel title very long panel title" title-editable>${slot2}</mg-panel>`,
     `<mg-panel label="label" panel-title="panel title" expand-toggle-disabled expanded>${slot}</mg-panel>`,
     `<mg-panel label="label" panel-title="panel title" expand-toggle-disabled>${slot}</mg-panel>`,
+    `<mg-panel label="label" panel-title="panel title" expanded style="--mg-panel-content-padding: 0"><div>Content without padding.</div></mg-panel>`,
   ])('template', html => {
     test('render', async () => {
       const page = await createPage(html);

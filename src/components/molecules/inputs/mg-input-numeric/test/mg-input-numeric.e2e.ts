@@ -2,11 +2,11 @@ import { createPage } from '../../../../../utils/test.utils';
 
 describe('mg-input-numeric', () => {
   describe.each([
-    `<mg-input-numeric label="label"></mg-input-numeric>`,
-    `<mg-input-numeric label="label" label-on-top></mg-input-numeric>`,
-    `<mg-input-numeric label="label" label-hide></mg-input-numeric>`,
-    `<mg-input-numeric label="label" placeholder="placeholder" help-text="HelpText Message"></mg-input-numeric>`,
-    `<mg-input-numeric label="label" type="integer"></mg-input-numeric>`,
+    `<mg-input-numeric identifier="identifier" label="label"></mg-input-numeric>`,
+    `<mg-input-numeric identifier="identifier" label="label" label-on-top></mg-input-numeric>`,
+    `<mg-input-numeric identifier="identifier" label="label" label-hide></mg-input-numeric>`,
+    `<mg-input-numeric identifier="identifier" label="label" placeholder="placeholder" help-text="HelpText Message"></mg-input-numeric>`,
+    `<mg-input-numeric identifier="identifier" label="label" type="integer"></mg-input-numeric>`,
   ])('without tooltip', html => {
     test('render', async () => {
       const page = await createPage(html);
@@ -49,7 +49,7 @@ describe('mg-input-numeric', () => {
   });
 
   test.each([true, false])('render with tooltip, case label-on-top %s', async labelOnTop => {
-    const page = await createPage(`<mg-input-numeric label="label" tooltip="Tooltip message" label-on-top="${labelOnTop}"></mg-input-numeric>`);
+    const page = await createPage(`<mg-input-numeric identifier="identifier" label="label" tooltip="Tooltip message" label-on-top="${labelOnTop}"></mg-input-numeric>`);
 
     const element = await page.find('mg-input-numeric');
 
@@ -74,18 +74,18 @@ describe('mg-input-numeric', () => {
   });
 
   describe.each([
-    `<mg-input-numeric label="label" readonly></mg-input-numeric>`,
-    `<mg-input-numeric label="label" value="123,45"></mg-input-numeric>`,
-    `<mg-input-numeric label="label" value="123,45" readonly></mg-input-numeric>`,
-    `<mg-input-numeric label="label" disabled></mg-input-numeric>`,
-    `<mg-input-numeric label="label" value="123,45" disabled></mg-input-numeric>`,
-    `<mg-input-numeric label="label" value="123,45" lang="fr"></mg-input-numeric>`,
-    `<mg-input-numeric label="label" value="123,45" lang="fr" type="currency"></mg-input-numeric>`,
-    `<mg-input-numeric label="label" value="123,45" lang="fr" type="currency" currency="EUR"></mg-input-numeric>`,
-    `<mg-input-numeric label="label" value="123,45" readonly lang="fr"></mg-input-numeric>`,
-    `<mg-input-numeric label="label" value="123,45" readonly lang="fr" type="currency"></mg-input-numeric>`,
-    `<mg-input-numeric label="label" value="123,45" readonly lang="fr" type="currency" currency="EUR"></mg-input-numeric>`,
-    `<mg-input-numeric label="label" value="123,45" help-text='<mg-icon icon="user" size="small"></mg-icon> Welcome batman'></mg-input-numeric>`,
+    `<mg-input-numeric identifier="identifier" label="label" readonly></mg-input-numeric>`,
+    `<mg-input-numeric identifier="identifier" label="label" value="123,45"></mg-input-numeric>`,
+    `<mg-input-numeric identifier="identifier" label="label" value="123,45" readonly></mg-input-numeric>`,
+    `<mg-input-numeric identifier="identifier" label="label" disabled></mg-input-numeric>`,
+    `<mg-input-numeric identifier="identifier" label="label" value="123,45" disabled></mg-input-numeric>`,
+    `<mg-input-numeric identifier="identifier" label="label" value="123,45" lang="fr"></mg-input-numeric>`,
+    `<mg-input-numeric identifier="identifier" label="label" value="123,45" lang="fr" type="currency"></mg-input-numeric>`,
+    `<mg-input-numeric identifier="identifier" label="label" value="123,45" lang="fr" type="currency" currency="EUR"></mg-input-numeric>`,
+    `<mg-input-numeric identifier="identifier" label="label" value="123,45" readonly lang="fr"></mg-input-numeric>`,
+    `<mg-input-numeric identifier="identifier" label="label" value="123,45" readonly lang="fr" type="currency"></mg-input-numeric>`,
+    `<mg-input-numeric identifier="identifier" label="label" value="123,45" readonly lang="fr" type="currency" currency="EUR"></mg-input-numeric>`,
+    `<mg-input-numeric identifier="identifier" label="label" value="123,45" help-text='<mg-icon icon="user" size="small"></mg-icon> Welcome batman'></mg-input-numeric>`,
   ])('Should render with template', html => {
     test('render', async () => {
       const page = await createPage(html);
@@ -100,7 +100,7 @@ describe('mg-input-numeric', () => {
   });
 
   test('Should render currency symbol', async () => {
-    const page = await createPage(`<mg-input-numeric label="label" type="currency"></mg-input-numeric>`);
+    const page = await createPage(`<mg-input-numeric identifier="identifier" label="label" type="currency"></mg-input-numeric>`);
 
     const element = await page.find('mg-input-numeric');
     const input = await page.find('mg-input-numeric >>> input');
@@ -126,7 +126,10 @@ describe('mg-input-numeric', () => {
     expect(screenshot).toMatchImageSnapshot();
   });
 
-  describe.each([`<mg-input-numeric label="label" required></mg-input-numeric>`, `<mg-input-numeric label="label" required lang="fr"></mg-input-numeric>`])('%s', html => {
+  describe.each([
+    `<mg-input-numeric identifier="identifier" label="label" required></mg-input-numeric>`,
+    `<mg-input-numeric identifier="identifier" label="label" required lang="fr"></mg-input-numeric>`,
+  ])('%s', html => {
     test('Should render error when leaving an empty required input', async () => {
       const page = await createPage(html);
 
@@ -145,9 +148,9 @@ describe('mg-input-numeric', () => {
   });
 
   describe.each([
-    `<mg-input-numeric label="label" min="120"></mg-input-numeric>`,
-    `<mg-input-numeric label="label" max="100"></mg-input-numeric>`,
-    `<mg-input-numeric label="label" min="10" max="100"></mg-input-numeric>`,
+    `<mg-input-numeric identifier="identifier" label="label" min="120"></mg-input-numeric>`,
+    `<mg-input-numeric identifier="identifier" label="label" max="100"></mg-input-numeric>`,
+    `<mg-input-numeric identifier="identifier" label="label" min="10" max="100"></mg-input-numeric>`,
   ])('Should render error when value does not respect min max attributes', html => {
     test('render', async () => {
       const page = await createPage(html);
@@ -173,7 +176,7 @@ describe('mg-input-numeric', () => {
   });
 
   test('Should not allow invalid characters', async () => {
-    const page = await createPage(`<mg-input-numeric label="label"></mg-input-numeric>`);
+    const page = await createPage(`<mg-input-numeric identifier="identifier" label="label"></mg-input-numeric>`);
 
     const element = await page.find('mg-input-numeric');
     const input = await page.find('mg-input-numeric >>> input');
@@ -210,8 +213,8 @@ describe('mg-input-numeric', () => {
   });
 
   describe.each([
-    '<mg-input-numeric label="long label long label long label long label long label long label long label long label long label long label long label" tooltip="tooltip message"></mg-input-numeric>',
-    '<mg-input-numeric label="long label long label long label long label long label long label long label long label long label long label long label" tooltip="tooltip message" label-on-top></mg-input-numeric>',
+    '<mg-input-numeric identifier="identifier" label="long label long label long label long label long label long label long label long label long label long label long label" tooltip="tooltip message"></mg-input-numeric>',
+    '<mg-input-numeric identifier="identifier" label="long label long label long label long label long label long label long label long label long label long label long label" tooltip="tooltip message" label-on-top></mg-input-numeric>',
   ])('inside a div.mg-form-group', html => {
     test('render', async () => {
       const page = await createPage(`<div class="mg-form-group">${html}</div>`);
@@ -233,7 +236,7 @@ describe('mg-input-numeric', () => {
       '<span slot="append-input">km</span>',
     ])('render', async slot => {
       const page = await createPage(`
-        <mg-input-numeric label="label" readonly="${readonly}" value="1">
+        <mg-input-numeric identifier="identifier" label="label" readonly="${readonly}" value="1">
           ${slot}
         </mg-input-numeric>
       `);
@@ -245,7 +248,7 @@ describe('mg-input-numeric', () => {
 
   describe.each(['full', 16, 4, 2])('with custom width: %s', width => {
     test.each([false, true])('with label on top: %s', async labelOnTop => {
-      const page = await createPage(`<mg-input-numeric label="label" mg-width="${width}" label-on-top="${labelOnTop}"></mg-input-numeric>`);
+      const page = await createPage(`<mg-input-numeric identifier="identifier" label="label" mg-width="${width}" label-on-top="${labelOnTop}"></mg-input-numeric>`);
 
       const element = await page.find('mg-input-numeric');
 

@@ -26,6 +26,7 @@ describe('mg-details', () => {
   });
 
   test.each([{}, { toggleClosed: 'Show details' }, { toggleOpened: 'Hide details' }])('Should throw error when missing toogle messages : %s', async args => {
+    expect.assertions(1);
     try {
       await getPage(args);
     } catch (err) {

@@ -51,6 +51,14 @@ The title and the close button are optional.
 
 ![](./mg-popover/doc/img/mg-popover-style.png)
 
+## CSS Variables
+
+If needed some [variables](./?path=/story/css-variables--page) are available to customize the component:
+
+`--mg-popover-background-color`: Define popover background color, default: `var(--color-light)`
+`--mg-popover-font-color`: Define popover font color, default: `var(--color-font-dark)`
+`--mg-popover-title-font-size`: Define popover title font size, default: `1.4rem`
+
 <!-- Auto Generated Below -->
 
 

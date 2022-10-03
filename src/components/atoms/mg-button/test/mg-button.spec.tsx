@@ -10,35 +10,40 @@ const getPage = (args, content = 'Text button') =>
   });
 
 describe('mg-button', () => {
+  test('Should render a button with an id', async () => {
+    const { root } = await getPage({ identifier: 'identifier', label: 'label' });
+    expect(root).toMatchSnapshot();
+  });
+
   describe.each(variants)('Should render an %s button', variant => {
     test.each([false, true])('isIcon %s', async isIcon => {
-      const { root } = await getPage({ identifier: 'identifier', variant, isIcon, label: 'label' });
+      const { root } = await getPage({ variant, isIcon, label: 'label' });
       expect(root).toMatchSnapshot();
     });
   });
 
   test.each([false, true])('Should render a button, case expanded %s', async expanded => {
-    const { root } = await getPage({ identifier: 'identifier', label: 'label', expanded });
+    const { root } = await getPage({ label: 'label', expanded });
     expect(root).toMatchSnapshot();
   });
 
   test('Should render a button, case controls', async () => {
-    const { root } = await getPage({ identifier: 'identifier', label: 'label', controls: 'element-controlled' });
+    const { root } = await getPage({ label: 'label', controls: 'element-controlled' });
     expect(root).toMatchSnapshot();
   });
 
   test.each([true, false])('Should render a button, case haspopup %s', async haspopup => {
-    const { root } = await getPage({ identifier: 'identifier', label: 'label', haspopup });
+    const { root } = await getPage({ label: 'label', haspopup });
     expect(root).toMatchSnapshot();
   });
 
   test.each(buttonTypes)('Should render a button, case type %s', async type => {
-    const { root } = await getPage({ identifier: 'identifier', label: 'label', type });
+    const { root } = await getPage({ label: 'label', type });
     expect(root).toMatchSnapshot();
   });
 
   test('Should replace classes on variant changes', async () => {
-    const page = await getPage({ identifier: 'identifier', variant: 'primary', label: 'label' });
+    const page = await getPage({ variant: 'primary', label: 'label' });
     const element = page.doc.querySelector('mg-button');
     let classPrimary = element.querySelector('.mg-button--primary');
 
@@ -55,7 +60,8 @@ describe('mg-button', () => {
     expect(classDanger).not.toBeNull();
   });
 
-  test.each(['', 'blu', undefined])('Should throw error', async variant => {
+  test.each(['', 'blu'])('Should throw error', async variant => {
+    expect.assertions(1);
     try {
       await getPage({ variant });
     } catch (err) {
@@ -63,7 +69,8 @@ describe('mg-button', () => {
     }
   });
 
-  test.each(['', undefined])('should throw error when using prop "isIcon" without a good prop "label"', async label => {
+  test.each(['', ' ', undefined])('should throw error when using prop "isIcon" without a good prop "label"', async label => {
+    expect.assertions(1);
     try {
       await getPage({ isIcon: true, label });
     } catch (err) {
@@ -90,7 +97,7 @@ describe('mg-button', () => {
     });
 
     test('should disable button after click', async () => {
-      const page = await getPage({ identifier: 'identifier', disableOnClick: true });
+      const page = await getPage({ disableOnClick: true });
       const element = page.doc.querySelector('mg-button');
       const button = element.querySelector('button');
 
@@ -109,7 +116,6 @@ describe('mg-button', () => {
 
     test('should not have fn when disabled', async () => {
       const page = await getPage({
-        identifier: 'identifier',
         disabled: true,
         onClick: () => {
           return false;

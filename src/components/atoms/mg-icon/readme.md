@@ -9,7 +9,7 @@ Sizes (px) :
 - 24x24 large
 - 36x36 extra-large
 
-Color: text of the page (usually [@color-dark](?path=/docs/style-colors--page))
+Color: text of the page (usually [@color-dark](./?path=/docs/style-colors--page))
 
 ### Use alone with informative color
 
@@ -25,6 +25,15 @@ Rule applicable for all except "info" blue. "Info" pictographs without text are 
 
 - Separator: "-" (dash). By default, the pictographs are the "filled" version, but this doesn't need to be specified in the naming
 - Variant: "-outline". If pictograph variant has a background that has a full circle > add "-circle" ex : check-circle, check-circle-outline
+
+## CSS Variables
+
+If needed some [variables](./?path=/story/css-variables--page) are available to customize the component:
+
+- `--mg-icon-small-size`: Define small icon size, default: `1.2rem`
+- `--mg-icon-regular-size`: Define regular icon size, default: `1.6rem`
+- `--mg-icon-large-size`: Define large icon size, default: `2.4rem`
+- `--mg-icon-extra-large-size`: Define extra large icon size, default: `3.6rem`
 
 <!-- Auto Generated Below -->
 

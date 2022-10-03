@@ -47,10 +47,20 @@ describe('mg-panel', () => {
         error: '<mg-panel> prop "titlePattern" must be paired with the prop "titlePatternErrorMessage".',
       },
     ])('Should throw error when props association are unauthorized %s:', async ({ props, error }) => {
+      expect.assertions(1);
       try {
         await getPage(props);
-      } catch (e) {
-        expect(e.message).toBe(error);
+      } catch (err) {
+        expect(err.message).toBe(error);
+      }
+    });
+
+    test.each(['', ' ', undefined])('Should not render with invalid panelTitle property: %s', async panelTitle => {
+      expect.assertions(1);
+      try {
+        await getPage({ panelTitle });
+      } catch (err) {
+        expect(err.message).toMatch('<mg-panel> prop "panelTitle" is required.');
       }
     });
   });
