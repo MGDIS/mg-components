@@ -27,6 +27,14 @@ export const config: Config = {
           src: 'styles/fonts',
           dest: 'fonts', // export fonts
         },
+        {
+          src: 'locales/en',
+          dest: 'locales/en',
+        },
+        {
+          src: 'locales/fr',
+          dest: 'locales/fr',
+        },
       ],
     },
     {
