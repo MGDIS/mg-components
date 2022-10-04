@@ -22,6 +22,9 @@ export class MgModal {
   // Locales
   private messages;
 
+  // body overflow default
+  private bodyOverflow: string;
+
   /**************
    * Decorators *
    **************/
@@ -60,9 +63,11 @@ export class MgModal {
     if (newValue) {
       this.componentHide.emit();
       this.classList.add(this.classHide);
+      document.body.style.overflow = this.bodyOverflow;
     } else {
       this.componentShow.emit();
       this.classList.delete(this.classHide);
+      document.body.style.overflow = 'hidden';
     }
   }
 
@@ -130,6 +135,8 @@ export class MgModal {
    * @returns {void}
    */
   componentWillLoad(): void {
+    // Store body overflow
+    this.bodyOverflow = document.body.style.overflow;
     // Get locales
     this.messages = initLocales(this.element).messages;
     // Validate

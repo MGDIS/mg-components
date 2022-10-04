@@ -30,8 +30,8 @@ mg-popover {
     margin-left: 3rem;
   }
 
-  .mg-popover__arrow,
-  .mg-popover__arrow::before {
+  &__arrow,
+  &__arrow::before {
     // Display
     position: absolute;
     width: 2rem;
@@ -41,35 +41,35 @@ mg-popover {
     background: inherit;
   }
 
-  .mg-popover__arrow {
+  &__arrow {
     visibility: hidden;
   }
 
-  .mg-popover__arrow::before {
+  &__arrow::before {
     visibility: visible;
     content: '';
     transform: rotate(45deg);
   }
 
-  &[data-popper-placement^='top'] > .mg-popover__arrow {
+  &[data-popper-placement^='top'] > &__arrow {
     bottom: -6px;
   }
 
-  &[data-popper-placement^='bottom'] > .mg-popover__arrow {
+  &[data-popper-placement^='bottom'] > &__arrow {
     top: -6px;
   }
 
-  &[data-popper-placement^='left'] > .mg-popover__arrow {
+  &[data-popper-placement^='left'] > &__arrow {
     right: -6px;
   }
 
-  &[data-popper-placement^='right'] > .mg-popover__arrow {
+  &[data-popper-placement^='right'] > &__arrow {
     left: -6px;
   }
-}
 
-.mg-popover__title ::slotted([slot='title']) {
-  margin: 0 0 1rem;
-  font-size: var(--mg-popover-title-font-size);
-  font-weight: 600;
+  &__title ::slotted([slot='title']) {
+    margin: 0 0 1rem;
+    font-size: var(--mg-popover-title-font-size);
+    font-weight: 600;
+  }
 }
