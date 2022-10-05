@@ -236,7 +236,7 @@ exports[`mg-tabs navigation should go to next tab on click event 3`] = `
 <mg-tabs active-tab="1">
   <mock:shadow-root>
     <div class="mg-tabs mg-tabs--size-regular">
-      <header class="mg-tabs__header" role="tablist">
+      <header aria-label="Sample label" class="mg-tabs__header" role="tablist">
         <button aria-controls="panel-1" aria-selected="true" class="mg-tabs__navigation-button mg-tabs__navigation-button--active" data-index="1" id="id-1" role="tab" tabindex="0">
           <mg-icon icon="check"></mg-icon>
           Batman
@@ -269,7 +269,7 @@ exports[`mg-tabs navigation should go to next tab on click event 4`] = `
 <mg-tabs active-tab="2">
   <mock:shadow-root>
     <div class="mg-tabs mg-tabs--size-regular">
-      <header class="mg-tabs__header" role="tablist">
+      <header aria-label="Sample label" class="mg-tabs__header" role="tablist">
         <button aria-controls="panel-1" aria-selected="false" class="mg-tabs__navigation-button" data-index="1" id="id-1" role="tab" tabindex="-1">
           <mg-icon icon="check"></mg-icon>
           Batman

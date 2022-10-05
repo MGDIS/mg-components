@@ -44,7 +44,8 @@ describe('mg-tag', () => {
     expect(classOutline).not.toBeNull();
   });
 
-  test.each(['', 'blu', undefined])('Should throw error', async variant => {
+  test.each(['', 'blu'])('Should throw error', async variant => {
+    expect.assertions(1);
     try {
       await getPage({ variant }, 'wrong variant');
     } catch (err) {

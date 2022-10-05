@@ -4,14 +4,38 @@ import { Meta } from '@storybook/addon-docs';
 
 # Changelog
 
+## 4.2.0
+
+October 3rd, 2022
+
+### 🚀 Enhancement
+
+- Add available variables in components documentation.
+- Better checks on mandatory props.
+
+### 🐛 Bug Fix
+
+- [#150](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/150) mg-tabs - header does not use desired font
+- [#156](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/156) version 4.1.1: misc problems
+- [#157](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/157) mg-input-text: characters left are displayed outside of the input field when the content does not respect the validation pattern
+- [#159](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/159) mg-components fails when a component is imported directly
+
+## 4.1.1 🦄
+
+September 22nd, 2022
+
+### 🐛 Bug Fix
+
+- [#154](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/154) mg-button: Unexpected behavior when displayed conditionally
+
 ## 4.1.0 🍗
 
 September 12th, 2022
 
 ### ⚠️ New component
 
-- [**`<mg-details>`**](?path=/docs/molecules-mg-details--mg-details)
-- [**`<mg-illustrated-message>`**](?path=/docs/molecules-mg-illustrated-message--mg-illustrated-message)
+- [**`<mg-details>`**](./?path=/docs/molecules-mg-details--mg-details)
+- [**`<mg-illustrated-message>`**](./?path=/docs/molecules-mg-illustrated-message--mg-illustrated-message)
 
 ### 🚀 Enhancement
 
@@ -19,7 +43,7 @@ September 12th, 2022
   - boolean true values are displayed without the empty String: `=""`
   - when a props is using its default value the attribute is not displayed
   - when a component has object props we display a message to remind it won't be rendered
-- Added icons to [**`<mg-icon>`**](?path=/docs/atoms-mg-icon--mg-icon), [see all the availables icons](?path=/docs/style-icons--icons).
+- Added icons to [**`<mg-icon>`**](./?path=/docs/atoms-mg-icon--mg-icon), [see all the availables icons](?path=/story/style-icons--icons).
 
 ### 🐛 Bug Fix
 
@@ -38,7 +62,7 @@ July 22nd, 2022
 
 ### 🐛 Bug Fix
 
-- Fix classes problem in [**`<mg-panel>`**](?path=/docs/molecules-mg-panel--mg-panel)
+- Fix classes problem in [**`<mg-panel>`**](./?path=/docs/molecules-mg-panel--mg-panel)
 - Remove exports from `package.json`
 
 ## 4.0.0 🍁
@@ -61,14 +85,14 @@ July 22nd, 2022
   - Changed **`<mg-input-*>`** error behavior.
   - Content default alignment can be changed using `--mg-inputs-text-align` CSS variable.
 - Changed danger color to `#db1f29`.
-- Added `resizable` props on [**`<mg-input-textarea>`**](?path=/docs/molecules-inputs-mg-input-textarea--mg-input-textarea).
-- Added `small` (12px) icon size to [**`<mg-icon>`**](?path=/docs/atoms-mg-icon--mg-icon).
-- [**`<mg-button>`**](?path=/docs/atoms-mg-button--mg-button) border color can be changed using CSS variables.
-- Changed backdrop color opacity on [**`<mg-modal>`**](?path=/docs/atoms-mg-modal--mg-modal)
-- Added icons to [**`<mg-icon>`**](?path=/docs/atoms-mg-icon--mg-icon), [see all the availables icons](?path=/docs/style-icons--icons).
-- Changed required message font size on [**`<mg-form>`**](?path=/docs/molecules-mg-form--mg-form)
-- Changed [**`<mg-character-left>`**](?path=/docs/atoms-mg-character-left--mg-character-left) layout
-- Added [documentation about CSS variable](?path=/story/css-variables--page)
+- Added `resizable` props on [**`<mg-input-textarea>`**](./?path=/docs/molecules-inputs-mg-input-textarea--mg-input-textarea).
+- Added `small` (12px) icon size to [**`<mg-icon>`**](./?path=/docs/atoms-mg-icon--mg-icon).
+- [**`<mg-button>`**](./?path=/docs/atoms-mg-button--mg-button) border color can be changed using CSS variables.
+- Changed backdrop color opacity on [**`<mg-modal>`**](./?path=/docs/atoms-mg-modal--mg-modal)
+- Added icons to [**`<mg-icon>`**](./?path=/docs/atoms-mg-icon--mg-icon), [see all the availables icons](?path=/story/style-icons--icons).
+- Changed required message font size on [**`<mg-form>`**](./?path=/docs/molecules-mg-form--mg-form)
+- Changed [**`<mg-character-left>`**](./?path=/docs/atoms-mg-character-left--mg-character-left) layout
+- Added [documentation about CSS variable](./?path=/story/css-variables--page)
 
 ### 🐛 Bug Fix
 
@@ -83,16 +107,16 @@ June 13rd, 2022
 
 ### 🚀 Enhancement
 
-- [**`<mg-panel>`**](?path=/docs/molecules-mg-panel--mg-panel)
+- [**`<mg-panel>`**](./?path=/docs/molecules-mg-panel--mg-panel)
   - Added `expanded-change` event
   - Added `title-pattern`, `title-pattern-error-message` and `expand-toggle-disabled` props
   - Changed edit button variant
-- [**`<mg-tabs>`**](?path=/docs/molecules-mg-tabs--mg-tabs)
+- [**`<mg-tabs>`**](./?path=/docs/molecules-mg-tabs--mg-tabs)
   - Added `active-tab-change` event
   - Changed font sizes
-- Added `success` variant on [**`<mg-button>`**](?path=/docs/atoms-mg-button--mg-button)
-- Changed backdrop color on [**`<mg-modal>`**](?path=/docs/atoms-mg-modal--mg-modal)
-- Added icons to [**`<mg-icon>`**](?path=/docs/atoms-mg-icon--mg-icon), [see all the availables icons](?path=/docs/style-icons--icons)
+- Added `success` variant on [**`<mg-button>`**](./?path=/docs/atoms-mg-button--mg-button)
+- Changed backdrop color on [**`<mg-modal>`**](./?path=/docs/atoms-mg-modal--mg-modal)
+- Added icons to [**`<mg-icon>`**](./?path=/docs/atoms-mg-icon--mg-icon), [see all the availables icons](?path=/story/style-icons--icons)
 
 ### 🐛 Bug Fix
 
@@ -105,14 +129,14 @@ April 26th, 2022
 
 ### ⚠️ New component
 
-- [**`<mg-form>`**](?path=/docs/molecules-mg-form--mg-form) refers to [PDA9-818](https://jira.mgdis.fr/browse/PDA9-818)
-- [**`<mg-modal>`**](?path=/docs/molecules-mg-modal--mg-modal) refers to [PDA9-63](https://jira.mgdis.fr/browse/PDA9-63)
-- [**`<mg-panel>`**](?path=/docs/molecules-mg-panel--mg-panel) refers to [PDA9-484](https://jira.mgdis.fr/browse/PDA9-484)
+- [**`<mg-form>`**](./?path=/docs/molecules-mg-form--mg-form) refers to [PDA9-818](https://jira.mgdis.fr/browse/PDA9-818)
+- [**`<mg-modal>`**](./?path=/docs/molecules-mg-modal--mg-modal) refers to [PDA9-63](https://jira.mgdis.fr/browse/PDA9-63)
+- [**`<mg-panel>`**](./?path=/docs/molecules-mg-panel--mg-panel) refers to [PDA9-484](https://jira.mgdis.fr/browse/PDA9-484)
 
 ### 🚀 Enhancement
 
-- Added `size` to [**`<mg-tabs>`**](?path=/docs/molecules-mg-tabs--mg-tabs)
-- Added icons to [**`<mg-icon>`**](?path=/docs/atoms-mg-icon--mg-icon), [see all the availables icons](?path=/docs/style-icons--icons)
+- Added `size` to [**`<mg-tabs>`**](./?path=/docs/molecules-mg-tabs--mg-tabs)
+- Added icons to [**`<mg-icon>`**](./?path=/docs/atoms-mg-icon--mg-icon), [see all the availables icons](?path=/story/style-icons--icons)
 - Components events are now displayed in Storybook
 - Removed the `not-allowed` cursor on disabled components
 - E2E test screenshots no longer allow difference pixels
@@ -147,15 +171,15 @@ March 21st, 2022
 
 ### ⚠️ New component
 
-- [**`<mg-popover>`**](?path=/docs/molecules-mg-popover--mg-popover) refers to [PDA9-504](https://jira.mgdis.fr/browse/PDA9-504)
+- [**`<mg-popover>`**](./?path=/docs/molecules-mg-popover--mg-popover) refers to [PDA9-504](https://jira.mgdis.fr/browse/PDA9-504)
 
 ### 🚀 Enhancement
 
-- Added icons to [**`<mg-icon>`**](?path=/docs/atoms-mg-icon--mg-icon), [see all the availables icons](?path=/docs/style-icons--icons)
-- Added `component-hide` & `component-show` events on [**`<mg-message>`**](?path=/docs/molecules-mg-message--mg-message)
+- Added icons to [**`<mg-icon>`**](./?path=/docs/atoms-mg-icon--mg-icon), [see all the availables icons](?path=/story/style-icons--icons)
+- Added `component-hide` & `component-show` events on [**`<mg-message>`**](./?path=/docs/molecules-mg-message--mg-message)
 - Added `width` attribute on `<mg-input-...>` to override default behavior
 - Added `append-input` slot on `<mg-input-numeric>` & `<mg-input-text>`
-- Added `type` and `icon` attributes on [**`<mg-input-text>`**](?path=/story/molecules-inputs-mg-input-text--search) to get an a search input
+- Added `type` and `icon` attributes on [**`<mg-input-text>`**](./?path=/story/molecules-inputs-mg-input-text--search) to get an a search input
 
 ### 🐛 Bug Fix
 
@@ -180,14 +204,14 @@ February 18th, 2022
 
 ### ⚠️ New components
 
-- [**`<mg-pagination>`**](?path=/docs/molecules-mg-pagination--mg-pagination) refers to [PDA9-787](https://jira.mgdis.fr/browse/PDA9-787)
-- [**`<mg-tabs>`**](?path=/docs/molecules-mg-tabs--mg-tabs) refers to [PDA9-604](https://jira.mgdis.fr/browse/PDA9-604)
-- [**`<mg-badge>`**](?path=/docs/atoms-mg-badge--mg-badge) refers to [PDA9-315](https://jira.mgdis.fr/browse/PDA9-315)
+- [**`<mg-pagination>`**](./?path=/docs/molecules-mg-pagination--mg-pagination) refers to [PDA9-787](https://jira.mgdis.fr/browse/PDA9-787)
+- [**`<mg-tabs>`**](./?path=/docs/molecules-mg-tabs--mg-tabs) refers to [PDA9-604](https://jira.mgdis.fr/browse/PDA9-604)
+- [**`<mg-badge>`**](./?path=/docs/atoms-mg-badge--mg-badge) refers to [PDA9-315](https://jira.mgdis.fr/browse/PDA9-315)
 
 ### 🚀 Enhancement
 
 - In addition to the `SCSS`, variables are now also available with a `CSS` file.
-- Added icons to [**`<mg-icon>`**](?path=/docs/atoms-mg-icon--mg-icon), [see all the availables icons](?path=/docs/style-icons--icons)
+- Added icons to [**`<mg-icon>`**](./?path=/docs/atoms-mg-icon--mg-icon), [see all the availables icons](?path=/story/style-icons--icons)
 
 ### 🐛 Bug Fix
 
@@ -206,24 +230,24 @@ January 28th, 2022
 
 ### 💥 Breaking Changes
 
-- [**`<mg-icon>`**](?path=/docs/atoms-mg-icon--mg-icon)
+- [**`<mg-icon>`**](./?path=/docs/atoms-mg-icon--mg-icon)
   - icons names changed following naming convention described in [PDA9-744](https://jira.mgdis.fr/browse/PDA9-744)
   - icons sizes are now `regular` (default), `large` and `extra-large`
 - Custom event names are now in kebab-case: `valueChange` changed to `value-change`
 
 ### ⚠️ New components
 
-- [**`<mg-input-checkbox>`**](?path=/docs/molecules-inputs-mg-input-checkbox--mg-input-checkbox) refers to [PDA9-70](https://jira.mgdis.fr/browse/PDA9-70)
-- [**`<mg-input-password>`**](?path=/story/molecules-inputs-mg-input-password--mg-input-password) refers to [PDA9-769](https://jira.mgdis.fr/browse/PDA9-769)
+- [**`<mg-input-checkbox>`**](./?path=/docs/molecules-inputs-mg-input-checkbox--mg-input-checkbox) refers to [PDA9-70](https://jira.mgdis.fr/browse/PDA9-70)
+- [**`<mg-input-password>`**](./?path=/story/molecules-inputs-mg-input-password--mg-input-password) refers to [PDA9-769](https://jira.mgdis.fr/browse/PDA9-769)
 - [**`<mg-input-toggle>`**](?/path=story/molecules-inputs-mg-input-toggle--mg-input-toggle) refers to [PDA9-770](https://jira.mgdis.fr/browse/PDA9-770)
 
 All inputs also refers to [PDA9-723](https://jira.mgdis.fr/browse/PDA9-723).
 
 ### 🚀 Enhancement
 
-- [**`<mg-icon>`**](?path=/docs/atoms-mg-icon--mg-icon) for accessibility, sometimes we need to add a background on icons, it is now possible with the attribute `variant`
-- [**`<mg-input-message>`**](?path=/story/molecules-mg-message--mg-message&args=closeButton:true;delay:10) can now be hidden after a defined delay using the `delay` attribute
-- [**`<mg-input-...>`**](?path=/story/molecules-inputs-mg-input-date--mg-input-date&args=labelOnTop:true) Tooltip icon moved next to label when used with the attribute `label-on-top`
+- [**`<mg-icon>`**](./?path=/docs/atoms-mg-icon--mg-icon) for accessibility, sometimes we need to add a background on icons, it is now possible with the attribute `variant`
+- [**`<mg-input-message>`**](./?path=/story/molecules-mg-message--mg-message&args=closeButton:true;delay:10) can now be hidden after a defined delay using the `delay` attribute
+- [**`<mg-input-...>`**](./?path=/story/molecules-inputs-mg-input-date--mg-input-date&args=labelOnTop:true) Tooltip icon moved next to label when used with the attribute `label-on-top`
 
 ### 🐛 Bug Fix
 
@@ -254,27 +278,27 @@ First release of the component library 🎉
 
 #### Atoms
 
-- [**`<mg-button>`**](?path=/docs/atoms-mg-button--mg-button) refers to [PDA9-67](https://jira.mgdis.fr/browse/PDA9-67)
-- [**`<mg-character-left>`**](?path=/docs/atoms-mg-character-left--mg-character-left) refers to [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64), [PDA9-723](https://jira.mgdis.fr/browse/PDA9-723) (1)
-- [**`<mg-icon>`**](?path=/docs/atoms-mg-icon--mg-icon) refers to [PDA9-744](https://jira.mgdis.fr/browse/PDA9-744)
-- [**`<mg-input-title>`**](?path=/docs/atoms-mg-input-title--mg-input-title) refers to [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64), [PDA9-723](https://jira.mgdis.fr/browse/PDA9-723) (1)
-- [**`<mg-tag>`**](?path=/docs/atoms-mg-tag--mg-tag) refers to [PDA9-637](https://jira.mgdis.fr/browse/PDA9-637)
-- [**`<mg-tooltip>`**](?path=/docs/atoms-mg-tooltip--mg-tooltip) refers to [PDA9-313](https://jira.mgdis.fr/browse/PDA9-313)
+- [**`<mg-button>`**](./?path=/docs/atoms-mg-button--mg-button) refers to [PDA9-67](https://jira.mgdis.fr/browse/PDA9-67)
+- [**`<mg-character-left>`**](./?path=/docs/atoms-mg-character-left--mg-character-left) refers to [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64), [PDA9-723](https://jira.mgdis.fr/browse/PDA9-723) (1)
+- [**`<mg-icon>`**](./?path=/docs/atoms-mg-icon--mg-icon) refers to [PDA9-744](https://jira.mgdis.fr/browse/PDA9-744)
+- [**`<mg-input-title>`**](./?path=/docs/atoms-mg-input-title--mg-input-title) refers to [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64), [PDA9-723](https://jira.mgdis.fr/browse/PDA9-723) (1)
+- [**`<mg-tag>`**](./?path=/docs/atoms-mg-tag--mg-tag) refers to [PDA9-637](https://jira.mgdis.fr/browse/PDA9-637)
+- [**`<mg-tooltip>`**](./?path=/docs/atoms-mg-tooltip--mg-tooltip) refers to [PDA9-313](https://jira.mgdis.fr/browse/PDA9-313)
 
 (1) : Used in inputs molecules.
 
 #### Molecules
 
-- [**`<mg-message>`**](?path=/docs/molecules-mg-message--mg-message) refers to [PDA9-140](https://jira.mgdis.fr/browse/PDA9-140)
+- [**`<mg-message>`**](./?path=/docs/molecules-mg-message--mg-message) refers to [PDA9-140](https://jira.mgdis.fr/browse/PDA9-140)
 
 ##### Inputs
 
-- [**`<mg-input-date>`**](?path=/docs/molecules-inputs-mg-input-date--mg-input-date) refers to [PDA9-65](https://jira.mgdis.fr/browse/PDA9-65)
-- [**`<mg-input-numeric>`**](?path=/docs/molecules-inputs-mg-input-numeric--mg-input-numeric) refers to [PDA9-181](https://jira.mgdis.fr/browse/PDA9-181)
-- [**`<mg-input-radio>`**](?path=/story/molecules-mg-input-radio--mg-input-radio) refers to [PDA9-745](ttps://jira.mgdis.fr/browse/PDA9-745)
-- [**`<mg-input-select>`**](?path=/docs/molecules-inputs-mg-input-select--mg-input-select) refers to [PDA9-72](https://jira.mgdis.fr/browse/PDA9-72)
-- [**`<mg-input-text>`**](?path=/docs/molecules-inputs-mg-input-text--mg-input-text) refers to [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64)
-- [**`<mg-input-textarea>`**](?path=/docs/molecules-inputs-mg-input-textarea--mg-input-textarea) refers to [PDA9-683](https://jira.mgdis.fr/browse/PDA9-683)
+- [**`<mg-input-date>`**](./?path=/docs/molecules-inputs-mg-input-date--mg-input-date) refers to [PDA9-65](https://jira.mgdis.fr/browse/PDA9-65)
+- [**`<mg-input-numeric>`**](./?path=/docs/molecules-inputs-mg-input-numeric--mg-input-numeric) refers to [PDA9-181](https://jira.mgdis.fr/browse/PDA9-181)
+- [**`<mg-input-radio>`**](./?path=/story/molecules-mg-input-radio--mg-input-radio) refers to [PDA9-745](ttps://jira.mgdis.fr/browse/PDA9-745)
+- [**`<mg-input-select>`**](./?path=/docs/molecules-inputs-mg-input-select--mg-input-select) refers to [PDA9-72](https://jira.mgdis.fr/browse/PDA9-72)
+- [**`<mg-input-text>`**](./?path=/docs/molecules-inputs-mg-input-text--mg-input-text) refers to [PDA9-64](https://jira.mgdis.fr/browse/PDA9-64)
+- [**`<mg-input-textarea>`**](./?path=/docs/molecules-inputs-mg-input-textarea--mg-input-textarea) refers to [PDA9-683](https://jira.mgdis.fr/browse/PDA9-683)
 
 All inputs also refers to [PDA9-723](https://jira.mgdis.fr/browse/PDA9-723).
 
@@ -282,27 +306,27 @@ All inputs also refers to [PDA9-723](https://jira.mgdis.fr/browse/PDA9-723).
 
 Dedicated stories to show how to setup :
 
-- [Email](?path=/docs/molecules-inputs-mg-input-text--email) refers to [PDA9-329](https://jira.mgdis.fr/browse/PDA9-329)
-- [Emails](?path=/docs/molecules-inputs-mg-input-text--emails) refers to [PDA9-330](https://jira.mgdis.fr/browse/PDA9-330)
-- [RNA](?path=/docs/molecules-inputs-mg-input-text--rna) refers to [PDA9-384](https://jira.mgdis.fr/browse/PDA9-384)
-- [URL](?path=/docs/molecules-inputs-mg-input-text--url) refers to [PDA9-380](https://jira.mgdis.fr/browse/PDA9-380)
+- [Email](./?path=/docs/molecules-inputs-mg-input-text--email) refers to [PDA9-329](https://jira.mgdis.fr/browse/PDA9-329)
+- [Emails](./?path=/docs/molecules-inputs-mg-input-text--emails) refers to [PDA9-330](https://jira.mgdis.fr/browse/PDA9-330)
+- [RNA](./?path=/docs/molecules-inputs-mg-input-text--rna) refers to [PDA9-384](https://jira.mgdis.fr/browse/PDA9-384)
+- [URL](./?path=/docs/molecules-inputs-mg-input-text--url) refers to [PDA9-380](https://jira.mgdis.fr/browse/PDA9-380)
 
 #### More stories
 
-- A dedicated story to show [all the availables icons](?path=/docs/style-icons--icons)
+- A dedicated story to show [all the availables icons](?path=/story/style-icons--icons)
 
 ##### Stylesheet
 
 MG Components also provide a stylesheet.
 
-- A dedicated story to [typography](?path=/docs/style-typography--typography)
-- A dedicated story to [grids](?path=/story/style-layout-grid--grid)
+- A dedicated story to [typography](./?path=/docs/style-typography--typography)
+- A dedicated story to [grids](./?path=/story/style-layout-grid--grid)
 
 The stylesheet to make native elements look like our design system expectations.
 
-- [`.mg-button`](?path=/docs/style-buttons--buttons) refers to [PDA9-67](https://jira.mgdis.fr/browse/PDA9-67)
-- [`.mg-message`](?path=/docs/style-messages--messages) refers to [PDA9-67](https://jira.mgdis.fr/browse/PDA9-67)
-- [`.mg-tag`](?path=/docs/style-tags--tags) refers to [PDA9-67](https://jira.mgdis.fr/browse/PDA9-67)
+- [`.mg-button`](./?path=/docs/style-buttons--buttons) refers to [PDA9-67](https://jira.mgdis.fr/browse/PDA9-67)
+- [`.mg-message`](./?path=/docs/style-messages--messages) refers to [PDA9-67](https://jira.mgdis.fr/browse/PDA9-67)
+- [`.mg-tag`](./?path=/docs/style-tags--tags) refers to [PDA9-67](https://jira.mgdis.fr/browse/PDA9-67)
 
 # Conventions
 

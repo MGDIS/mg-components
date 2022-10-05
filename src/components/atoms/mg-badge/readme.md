@@ -12,6 +12,13 @@ The badge displays a number or a punctuation character.
 
 ![](./mg-badge/doc/img/mg-badge-styles.png)
 
+## CSS Variables
+
+If needed some [variables](./?path=/story/css-variables--page) are available to customize the component:
+
+- `--mg-badge-size`: define badge height and min-width, default: `1.6rem`
+- `--mg-badge-font-size`: define badge font size, default: `1.1rem`
+
 <!-- Auto Generated Below -->
 
 

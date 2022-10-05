@@ -30,7 +30,10 @@
 .mg-input__with-character-left {
   position: relative;
   display: inline-flex;
-  width: 100%;
+
+  .mg-input--width-full & {
+    width: 100%;
+  }
 
   .mg-input.is-focused & .mg-input__box {
     padding-right: calc(var(--mg-character-left-message-length) * 1ch + 0.8rem);

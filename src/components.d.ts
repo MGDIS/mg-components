@@ -63,7 +63,7 @@ export namespace Components {
          */
         "haspopup": boolean | 'menu' | 'listbox' | 'tree' | 'grid' | 'dialog';
         /**
-          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
          */
         "identifier": string;
         /**
@@ -181,7 +181,7 @@ export namespace Components {
          */
         "helpText": string;
         /**
-          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
          */
         "identifier": string;
         /**
@@ -244,7 +244,7 @@ export namespace Components {
          */
         "helpText": string;
         /**
-          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
          */
         "identifier": string;
         /**
@@ -319,7 +319,7 @@ export namespace Components {
          */
         "helpText": string;
         /**
-          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
          */
         "identifier": string;
         /**
@@ -402,7 +402,7 @@ export namespace Components {
          */
         "helpText": string;
         /**
-          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
          */
         "identifier": string;
         /**
@@ -469,7 +469,7 @@ export namespace Components {
          */
         "helpText": string;
         /**
-          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
          */
         "identifier": string;
         /**
@@ -536,7 +536,7 @@ export namespace Components {
          */
         "helpText": string;
         /**
-          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
          */
         "identifier": string;
         /**
@@ -623,7 +623,7 @@ export namespace Components {
          */
         "icon": string;
         /**
-          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
          */
         "identifier": string;
         /**
@@ -715,7 +715,7 @@ export namespace Components {
          */
         "helpText": string;
         /**
-          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
          */
         "identifier": string;
         /**
@@ -811,7 +811,7 @@ export namespace Components {
          */
         "helpText": string;
         /**
-          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
          */
         "identifier": string;
         /**
@@ -1383,7 +1383,7 @@ declare namespace LocalJSX {
          */
         "haspopup"?: boolean | 'menu' | 'listbox' | 'tree' | 'grid' | 'dialog';
         /**
-          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
          */
         "identifier"?: string;
         /**
@@ -1503,9 +1503,9 @@ declare namespace LocalJSX {
          */
         "helpText"?: string;
         /**
-          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
          */
-        "identifier"?: string;
+        "identifier": string;
         /**
           * Define if inputs are display verticaly
          */
@@ -1569,9 +1569,9 @@ declare namespace LocalJSX {
          */
         "helpText"?: string;
         /**
-          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
          */
-        "identifier"?: string;
+        "identifier": string;
         /**
           * Define input invalid state
          */
@@ -1647,9 +1647,9 @@ declare namespace LocalJSX {
          */
         "helpText"?: string;
         /**
-          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
          */
-        "identifier"?: string;
+        "identifier": string;
         /**
           * Override integer length integer is the number before the decimal point
          */
@@ -1733,9 +1733,9 @@ declare namespace LocalJSX {
          */
         "helpText"?: string;
         /**
-          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
          */
-        "identifier"?: string;
+        "identifier": string;
         /**
           * Define input invalid state
          */
@@ -1803,9 +1803,9 @@ declare namespace LocalJSX {
          */
         "helpText"?: string;
         /**
-          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
          */
-        "identifier"?: string;
+        "identifier": string;
         /**
           * Define if inputs are display verticaly
          */
@@ -1873,9 +1873,9 @@ declare namespace LocalJSX {
          */
         "helpText"?: string;
         /**
-          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
          */
-        "identifier"?: string;
+        "identifier": string;
         /**
           * Define input invalid state
          */
@@ -1963,9 +1963,9 @@ declare namespace LocalJSX {
          */
         "icon"?: string;
         /**
-          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
          */
-        "identifier"?: string;
+        "identifier": string;
         /**
           * Define input invalid state
          */
@@ -2053,9 +2053,9 @@ declare namespace LocalJSX {
          */
         "helpText"?: string;
         /**
-          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
          */
-        "identifier"?: string;
+        "identifier": string;
         /**
           * Define input invalid state
          */
@@ -2157,9 +2157,9 @@ declare namespace LocalJSX {
          */
         "helpText"?: string;
         /**
-          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
          */
-        "identifier"?: string;
+        "identifier": string;
         /**
           * Define if toggle display icon
          */

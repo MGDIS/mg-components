@@ -1,6 +1,6 @@
 {
   "name": "@mgdis/mg-components",
-  "version": "4.1.0",
+  "version": "4.2.0",
   "description": "MG Components",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
@@ -42,7 +42,7 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.2",
-    "@stencil/core": "^2.17.4",
+    "@stencil/core": "^2.18.0",
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
@@ -51,12 +51,12 @@
     "@pxtrn/storybook-addon-docs-stencil": "^6.4.1",
     "@stencil/eslint-plugin": "^0.4.0",
     "@stencil/sass": "^1.5.2",
-    "@storybook/addon-a11y": "^6.5.10",
-    "@storybook/addon-actions": "^6.5.10",
-    "@storybook/addon-docs": "^6.5.10",
-    "@storybook/addon-essentials": "^6.5.10",
-    "@storybook/addon-links": "^6.5.10",
-    "@storybook/html": "^6.5.10",
+    "@storybook/addon-a11y": "^6.5.12",
+    "@storybook/addon-actions": "^6.5.12",
+    "@storybook/addon-docs": "^6.5.12",
+    "@storybook/addon-essentials": "^6.5.12",
+    "@storybook/addon-links": "^6.5.12",
+    "@storybook/html": "^6.5.12",
     "@storybook/preset-scss": "^1.0.3",
     "@types/jest": "^26.0.24",
     "@types/jest-image-snapshot": "^4.3.1",

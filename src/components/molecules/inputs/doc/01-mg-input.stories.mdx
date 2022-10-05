@@ -54,8 +54,8 @@ By default, the value is left aligned, you can change the CSS variable `--mg-inp
 
 ### Errors
 
-Input field border and error message text are in [@color-danger](?path=/docs/style-colors--page).  
-Error message background is a variant of [@color-danger](?path=/docs/style-colors--page) : #FEF6F6 or HSL (357,80%,98%).
+Input field border and error message text are in [@color-danger](./?path=/docs/style-colors--page).  
+Error message background is a variant of [@color-danger](./?path=/docs/style-colors--page) : #FEF6F6 or HSL (357,80%,98%).
 
 ## Behavior
 
@@ -64,3 +64,18 @@ Error message background is a variant of [@color-danger](?path=/docs/style-color
 Error is triggered and displayed when we leave the input field.
 
 When we enter in an input field with an error its state is checked everytime the user update its content, when the error is fixed the message disapears.
+
+## CSS Variables
+
+If needed some [variables](./?path=/story/css-variables--page) are available to customize the component:
+
+- `--mg-inputs-text-align`: Define input text alignement, numeric input default is `right`, others inputs default is `left`
+- `--mg-inputs-border-width`: Define input border witdh, default: `0.1rem`
+- `--mg-inputs-border-radius`: Define input border radius, default: `0.3rem`
+- `--mg-inputs-color`: Define input border an placeholder color, default: `#b5c2c9`
+- `--mg-inputs-spacer`: Define input space between label, input, tooltip, etc., default: `1rem`
+- `--mg-inputs-error-bg-color`: Define input error message backround color, default: `var(--color-danger-h), calc(var(--color-danger-s) + 5%), calc(var(--color-danger-l) + 49%)`
+- `--mg-inputs-color-shadow-focus-hsl`: Define input shadow when focused, default: `188, 100%, 50%`
+- `--mg-inputs-title-width`: Define input label width, default: `15rem`
+- `--mg-inputs-margin-bottom`: Define input bottom margin, default: `1.5rem`
+- `--mg-inputs-title-horizontal-space`: Define space between label and input when inside a `mg-form`, default: `3rem`

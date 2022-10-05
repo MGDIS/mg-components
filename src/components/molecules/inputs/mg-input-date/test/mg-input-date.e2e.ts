@@ -2,10 +2,10 @@ import { createPage } from '../../../../../utils/test.utils';
 
 describe('mg-input-date', () => {
   describe.each([
-    `<mg-input-date label="label"></mg-input-date>`,
-    `<mg-input-date label="label" label-on-top></mg-input-date>`,
-    `<mg-input-date label="label" label-hide></mg-input-date>`,
-    `<mg-input-date label="label" placeholder="placeholder" help-text="HelpText Message"></mg-input-date>`,
+    `<mg-input-date identifier="identifier" label="label"></mg-input-date>`,
+    `<mg-input-date identifier="identifier" label="label" label-on-top></mg-input-date>`,
+    `<mg-input-date identifier="identifier" label="label" label-hide></mg-input-date>`,
+    `<mg-input-date identifier="identifier" label="label" placeholder="placeholder" help-text="HelpText Message"></mg-input-date>`,
   ])('without tooltip', html => {
     test('render', async () => {
       const page = await createPage(html);
@@ -41,7 +41,7 @@ describe('mg-input-date', () => {
   });
 
   test.each([true, false])('render with tooltip, case label-on-top %s', async labelOnTop => {
-    const page = await createPage(`<mg-input-date label="label" tooltip="Tooltip message" label-on-top="${labelOnTop}"></mg-input-date>`);
+    const page = await createPage(`<mg-input-date identifier="identifier" label="label" tooltip="Tooltip message" label-on-top="${labelOnTop}"></mg-input-date>`);
 
     const element = await page.find('mg-input-date');
 
@@ -67,13 +67,13 @@ describe('mg-input-date', () => {
   });
 
   describe.each([
-    `<mg-input-date label="label" readonly></mg-input-date>`,
-    `<mg-input-date label="label" value="1982-06-02"></mg-input-date>`,
-    `<mg-input-date label="label" value="1982-06-02" readonly></mg-input-date>`,
-    `<mg-input-date label="label" disabled></mg-input-date>`,
-    `<mg-input-date label="label" value="1982-06-02" disabled></mg-input-date>`,
-    `<mg-input-date label="label" value="1982-06-02" readonly lang="fr"></mg-input-date>`,
-    `<mg-input-date label="label" help-text='<mg-icon icon="user" size="small"></mg-icon> Welcome batman'></mg-input-date>`,
+    `<mg-input-date identifier="identifier" label="label" readonly></mg-input-date>`,
+    `<mg-input-date identifier="identifier" label="label" value="1982-06-02"></mg-input-date>`,
+    `<mg-input-date identifier="identifier" label="label" value="1982-06-02" readonly></mg-input-date>`,
+    `<mg-input-date identifier="identifier" label="label" disabled></mg-input-date>`,
+    `<mg-input-date identifier="identifier" label="label" value="1982-06-02" disabled></mg-input-date>`,
+    `<mg-input-date identifier="identifier" label="label" value="1982-06-02" readonly lang="fr"></mg-input-date>`,
+    `<mg-input-date identifier="identifier" label="label" help-text='<mg-icon icon="user" size="small"></mg-icon> Welcome batman'></mg-input-date>`,
   ])('Should render with template', html => {
     test('render', async () => {
       const page = await createPage(html);
@@ -87,7 +87,10 @@ describe('mg-input-date', () => {
     });
   });
 
-  describe.each([`<mg-input-date label="label" required></mg-input-date>`, `<mg-input-date label="label" lang="fr" required></mg-input-date>`])('%s', html => {
+  describe.each([
+    `<mg-input-date identifier="identifier" label="label" required></mg-input-date>`,
+    `<mg-input-date identifier="identifier" label="label" lang="fr" required></mg-input-date>`,
+  ])('%s', html => {
     test('Should render error when leaving an empty required input', async () => {
       const page = await createPage(html);
 
@@ -108,7 +111,7 @@ describe('mg-input-date', () => {
   });
 
   test('Should render error when leaving input with a wrong date', async () => {
-    const page = await createPage(`<mg-input-date label="label"></mg-input-date>`);
+    const page = await createPage(`<mg-input-date identifier="identifier" label="label"></mg-input-date>`);
 
     const element = await page.find('mg-input-date');
 
@@ -130,8 +133,8 @@ describe('mg-input-date', () => {
   });
 
   describe.each([
-    '<mg-input-date label="long label long label long label long label long label long label long label long label long label long label long label" tooltip="tooltip message"></mg-input-date>',
-    '<mg-input-date label="long label long label long label long label long label long label long label long label long label long label long label" tooltip="tooltip message" label-on-top></mg-input-date>',
+    '<mg-input-date identifier="identifier" label="long label long label long label long label long label long label long label long label long label long label long label" tooltip="tooltip message"></mg-input-date>',
+    '<mg-input-date identifier="identifier" label="long label long label long label long label long label long label long label long label long label long label long label" tooltip="tooltip message" label-on-top></mg-input-date>',
   ])('inside a div.mg-form-group', html => {
     test('render', async () => {
       const page = await createPage(`<div class="mg-form-group">${html}</div>`);

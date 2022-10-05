@@ -34,6 +34,12 @@ export class MgBadge {
    * Required for accessibility
    */
   @Prop() label!: BadgeType['label'];
+  @Watch('label')
+  validateLabel(newValue: BadgeType['label']): void {
+    if (typeof newValue !== 'string' || newValue.trim() === '') {
+      throw new Error('<mg-badge> prop "label" is required.');
+    }
+  }
 
   /**
    * Define button variant
@@ -73,6 +79,7 @@ export class MgBadge {
    */
   componentWillLoad(): void {
     this.validateValue(this.value);
+    this.validateLabel(this.label);
     this.validateVariant(this.variant);
     this.validateOutline(this.outline);
   }

@@ -55,17 +55,28 @@ describe('mg-input-select', () => {
     expect(root).toMatchSnapshot();
   });
 
-  test.each(['', undefined])('Should throw error with invalid label property : %s', async value => {
+  test.each(['', ' ', undefined])('Should not render with invalid identifier property: %s', async identifier => {
+    expect.assertions(1);
     try {
-      await getPage({ label: value, items: ['blu', 'bli', 'blo', 'bla'] });
+      await getPage({ identifier, items: ['blu', 'bli', 'blo', 'bla'] });
     } catch (err) {
-      expect(err.message).toMatch('<mg-input> prop "label" is required');
+      expect(err.message).toMatch('<mg-input> prop "identifier" is required.');
+    }
+  });
+
+  test.each(['', ' ', undefined])('Should throw error with invalid label property : %s', async label => {
+    expect.assertions(1);
+    try {
+      await getPage({ identifier: 'identifier', label, items: ['blu', 'bli', 'blo', 'bla'] });
+    } catch (err) {
+      expect(err.message).toMatch('<mg-input> prop "label" is required.');
     }
   });
 
   test('Should throw an error with labelOnTop & labelHide set to true', async () => {
+    expect.assertions(1);
     try {
-      await getPage({ label: 'batman', labelOnTop: true, labelHide: true, items: ['batman', 'joker'] });
+      await getPage({ identifier: 'identifier', label: 'batman', labelOnTop: true, labelHide: true, items: ['batman', 'joker'] });
     } catch (err) {
       expect(err.message).toMatch('<mg-input> prop "labelOnTop" must not be paired with the prop "labelHide"');
     }
@@ -74,6 +85,7 @@ describe('mg-input-select', () => {
   test.each([[['blu', { title: 'blu', value: 'blu' }]], [['blu', { blu: 'blu' }]], [[{ title: 'blu', value: 'blu' }, { blu: 'blu' }]]])(
     'Should throw error with invalid items property : %s',
     async items => {
+      expect.assertions(1);
       try {
         await getPage({ label: 'Label', items });
       } catch (err) {

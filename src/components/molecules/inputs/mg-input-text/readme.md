@@ -11,7 +11,7 @@
 ![](./mg-input-text/doc/img/mg-input-text-fonts.png)
 
 Open Sans, regular, 11px  
-Color: [@color-dark](?path=/docs/style-colors--page), opacity : 0.6
+Color: [@color-dark](./?path=/docs/style-colors--page), opacity : 0.6
 
 #### Spacing
 
@@ -39,29 +39,29 @@ The spacing between the field and the slot content is not managed by the compone
 
 ## Properties
 
-| Property               | Attribute                | Description                                                                                                                                    | Type                     | Default                     |
-| ---------------------- | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ | --------------------------- |
-| `disabled`             | `disabled`               | Define if input is disabled                                                                                                                    | `boolean`                | `false`                     |
-| `displayCharacterLeft` | `display-character-left` | Define if component should display character left                                                                                              | `boolean`                | `true`                      |
-| `helpText`             | `help-text`              | Add a help text under the input, usually expected data format and example                                                                      | `string`                 | `undefined`                 |
-| `icon`                 | `icon`                   | Input icon                                                                                                                                     | `string`                 | `undefined`                 |
-| `identifier`           | `identifier`             | Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.                                    | `string`                 | `createID('mg-input-text')` |
-| `invalid`              | `invalid`                | Define input invalid state                                                                                                                     | `boolean`                | `undefined`                 |
-| `label` _(required)_   | `label`                  | Input label                                                                                                                                    | `string`                 | `undefined`                 |
-| `labelHide`            | `label-hide`             | Define if label is visible                                                                                                                     | `boolean`                | `false`                     |
-| `labelOnTop`           | `label-on-top`           | Define if label is displayed on top                                                                                                            | `boolean`                | `undefined`                 |
-| `maxlength`            | `maxlength`              | Input max length                                                                                                                               | `number`                 | `400`                       |
-| `mgWidth`              | `mg-width`               | Define input width                                                                                                                             | `"full" \| 16 \| 2 \| 4` | `'full'`                    |
-| `name`                 | `name`                   | Input name If not set the value equals the identifier                                                                                          | `string`                 | `this.identifier`           |
-| `pattern`              | `pattern`                | Define input pattern to validate                                                                                                               | `string`                 | `undefined`                 |
-| `patternErrorMessage`  | `pattern-error-message`  | Define input pattern error message                                                                                                             | `string`                 | `undefined`                 |
-| `placeholder`          | `placeholder`            | Input placeholder. It should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text. | `string`                 | `undefined`                 |
-| `readonly`             | `readonly`               | Define if input is readonly                                                                                                                    | `boolean`                | `false`                     |
-| `required`             | `required`               | Define if input is required                                                                                                                    | `boolean`                | `false`                     |
-| `tooltip`              | `tooltip`                | Add a tooltip message next to the input                                                                                                        | `string`                 | `undefined`                 |
-| `type`                 | `type`                   | Input type                                                                                                                                     | `"search" \| "text"`     | `'text'`                    |
-| `valid`                | `valid`                  | Define input valid state                                                                                                                       | `boolean`                | `undefined`                 |
-| `value`                | `value`                  | Component value                                                                                                                                | `string`                 | `undefined`                 |
+| Property                  | Attribute                | Description                                                                                                                                    | Type                     | Default           |
+| ------------------------- | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ | ----------------- |
+| `disabled`                | `disabled`               | Define if input is disabled                                                                                                                    | `boolean`                | `false`           |
+| `displayCharacterLeft`    | `display-character-left` | Define if component should display character left                                                                                              | `boolean`                | `true`            |
+| `helpText`                | `help-text`              | Add a help text under the input, usually expected data format and example                                                                      | `string`                 | `undefined`       |
+| `icon`                    | `icon`                   | Input icon                                                                                                                                     | `string`                 | `undefined`       |
+| `identifier` _(required)_ | `identifier`             | Identifier is used for the element ID (id is a reserved prop in Stencil.js)                                                                    | `string`                 | `undefined`       |
+| `invalid`                 | `invalid`                | Define input invalid state                                                                                                                     | `boolean`                | `undefined`       |
+| `label` _(required)_      | `label`                  | Input label                                                                                                                                    | `string`                 | `undefined`       |
+| `labelHide`               | `label-hide`             | Define if label is visible                                                                                                                     | `boolean`                | `false`           |
+| `labelOnTop`              | `label-on-top`           | Define if label is displayed on top                                                                                                            | `boolean`                | `undefined`       |
+| `maxlength`               | `maxlength`              | Input max length                                                                                                                               | `number`                 | `400`             |
+| `mgWidth`                 | `mg-width`               | Define input width                                                                                                                             | `"full" \| 16 \| 2 \| 4` | `'full'`          |
+| `name`                    | `name`                   | Input name If not set the value equals the identifier                                                                                          | `string`                 | `this.identifier` |
+| `pattern`                 | `pattern`                | Define input pattern to validate                                                                                                               | `string`                 | `undefined`       |
+| `patternErrorMessage`     | `pattern-error-message`  | Define input pattern error message                                                                                                             | `string`                 | `undefined`       |
+| `placeholder`             | `placeholder`            | Input placeholder. It should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text. | `string`                 | `undefined`       |
+| `readonly`                | `readonly`               | Define if input is readonly                                                                                                                    | `boolean`                | `false`           |
+| `required`                | `required`               | Define if input is required                                                                                                                    | `boolean`                | `false`           |
+| `tooltip`                 | `tooltip`                | Add a tooltip message next to the input                                                                                                        | `string`                 | `undefined`       |
+| `type`                    | `type`                   | Input type                                                                                                                                     | `"search" \| "text"`     | `'text'`          |
+| `valid`                   | `valid`                  | Define input valid state                                                                                                                       | `boolean`                | `undefined`       |
+| `value`                   | `value`                  | Component value                                                                                                                                | `string`                 | `undefined`       |
 
 
 ## Events
