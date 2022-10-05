@@ -95,7 +95,9 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props: MgInputProps, 
    * Check required properties
    */
   if (typeof props.identifier !== 'string' || props.identifier.trim() === '') {
-    throw new Error('<mg-input> prop "identifier" is required.');
+    // TODO: throw new Error on next major (5.0.0)
+    // throw new Error('<mg-input> prop "identifier" is required.');
+    console.error('<mg-input> prop "identifier" is required.');
   }
   if (typeof props.label !== 'string' || props.label.trim() === '') {
     throw new Error('<mg-input> prop "label" is required.');

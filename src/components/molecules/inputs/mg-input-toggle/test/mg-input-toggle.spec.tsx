@@ -119,22 +119,36 @@ describe('mg-input-toggle', () => {
 
   describe('errors', () => {
     test.each(['', ' ', undefined])('Should not render with invalid identifier property: %s', async identifier => {
-      expect.assertions(1);
-      try {
-        await getPage(
-          {
-            identifier,
-            label: 'label',
-            items: [
-              { title: 'batman', value: false },
-              { title: 'joker', value: true },
-            ],
-          },
-          defaultSlots,
-        );
-      } catch (err) {
-        expect(err.message).toMatch('<mg-input> prop "identifier" is required.');
-      }
+      // TODO on 5.0.0 move back to throw new Error test (replace content with commented test)
+      // expect.assertions(1);
+      // try {
+      //   await getPage(
+      //     {
+      //       identifier,
+      //       label: 'label',
+      //       items: [
+      //         { title: 'batman', value: false },
+      //         { title: 'joker', value: true },
+      //       ],
+      //     },
+      //     defaultSlots,
+      //   );
+      // } catch (err) {
+      //   expect(err.message).toMatch('<mg-input> prop "identifier" is required.');
+      // }
+      console.error = jest.fn();
+      await getPage(
+        {
+          identifier,
+          label: 'label',
+          items: [
+            { title: 'batman', value: false },
+            { title: 'joker', value: true },
+          ],
+        },
+        defaultSlots,
+      );
+      expect(console.error).toHaveBeenCalledWith('<mg-input> prop "identifier" is required.');
     });
 
     test.each(['', ' ', undefined])('Should throw error with invalid label property : %s', async label => {

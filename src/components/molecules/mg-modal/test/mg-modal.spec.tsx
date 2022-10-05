@@ -40,12 +40,16 @@ describe('mg-modal', () => {
   });
 
   test.each(['', ' ', undefined])('Should not render with invalid modalTitle property: %s', async modalTitle => {
-    expect.assertions(1);
-    try {
-      await getPage({ modalTitle });
-    } catch (err) {
-      expect(err.message).toMatch('<mg-modal> prop "modalTitle" is required.');
-    }
+    // TODO on 5.0.0 move back to throw new Error test (replace content with commented test)
+    // expect.assertions(1);
+    // try {
+    //   await getPage({ modalTitle });
+    // } catch (err) {
+    //   expect(err.message).toMatch('<mg-modal> prop "modalTitle" is required.');
+    // }
+    console.error = jest.fn();
+    await getPage({ modalTitle });
+    expect(console.error).toHaveBeenCalledWith('<mg-modal> prop "modalTitle" is required.');
   });
 
   describe('navigation', () => {
