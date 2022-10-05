@@ -37,7 +37,9 @@ export class MgBadge {
   @Watch('label')
   validateLabel(newValue: BadgeType['label']): void {
     if (typeof newValue !== 'string' || newValue.trim() === '') {
-      throw new Error('<mg-badge> prop "label" is required.');
+      // TODO: throw new Error on next major (5.0.0)
+      // throw new Error('<mg-badge> prop "label" is required.');
+      console.error('<mg-badge> prop "label" is required.');
     }
   }
 
