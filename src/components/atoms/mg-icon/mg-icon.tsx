@@ -1,6 +1,7 @@
 import { Component, h, Prop, Watch, State } from '@stencil/core';
 import { icons, sizes, variants } from './mg-icon.conf';
 import { ClassList } from '../../../utils/components.utils';
+import { IconType } from './mg-icon.conf';
 
 @Component({
   tag: 'mg-icon',
@@ -11,7 +12,7 @@ export class MgIcon {
   /**
    * Icon to display
    */
-  @Prop() icon: string;
+  @Prop() icon: IconType['icon'];
   @Watch('icon')
   validateIcon(newValue: string, oldValue?: string): void {
     if (!Object.keys(icons).includes(newValue)) {
@@ -27,9 +28,9 @@ export class MgIcon {
   /**
    * Define icon size
    */
-  @Prop() size = 'regular';
+  @Prop() size: IconType['size'] = 'regular';
   @Watch('size')
-  validateSize(newValue: string, oldValue?: string): void {
+  validateSize(newValue: IconType['size'], oldValue?: IconType['size']): void {
     if (!sizes.includes(newValue)) {
       throw new Error(`<mg-icon> prop "size" must be one of : ${sizes.join(', ')}`);
     } else {
@@ -44,9 +45,9 @@ export class MgIcon {
    * Define icon variant
    * Add a background to the icon based on variant color
    */
-  @Prop() variant: string;
+  @Prop() variant: IconType['variant'];
   @Watch('variant')
-  validateVariant(newValue: string, oldValue?: string): void {
+  validateVariant(newValue: IconType['variant'], oldValue?: IconType['variant']): void {
     if (newValue !== undefined && !variants.includes(newValue)) {
       throw new Error(`<mg-icon> prop "variant" must be one of : ${variants.join(', ')}`);
     } else if (newValue !== undefined) {

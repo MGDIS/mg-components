@@ -1,0 +1,10 @@
+:host {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--mg-menu-background-color);
+  z-index: 1;
+}
+
+:host(.mg-menu--vertical) {
+  flex-direction: column;
+}

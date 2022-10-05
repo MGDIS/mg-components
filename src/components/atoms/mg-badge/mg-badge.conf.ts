@@ -1,9 +1,19 @@
 /**
  * List of all possibles variants
  */
-export const variants: string[] = ['info', 'primary', 'secondary', 'success', 'warning', 'danger'];
+export const variants = ['info', 'primary', 'secondary', 'success', 'warning', 'danger'] as const;
 
+/**
+ * Variant type from variants
+ */
+export type VariantType = typeof variants[number];
+
+/**
+ * Component type
+ */
 export type BadgeType = {
   value: string | number;
   label: string;
+  variant?: VariantType;
+  outline?: boolean;
 };

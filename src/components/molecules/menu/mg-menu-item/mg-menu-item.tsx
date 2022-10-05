@@ -1,7 +1,7 @@
-import { Component, h, Prop, State, Host, Watch, Element } from '@stencil/core';
+import { Component, h, Prop, State, Host, Watch, Element, Event, EventEmitter } from '@stencil/core';
 import { createID, ClassList } from '../../../../utils/components.utils';
-import { sizes, Status } from './mg-menu-item.conf';
-import { BadgeType } from '../../../atoms/mg-badge/mg-badge.conf';
+import { ElementPosition, MenuItemType, sizes, Status } from './mg-menu-item.conf';
+import { DisplayType } from '../mg-menu/mg-menu.conf';
 
 @Component({
   tag: 'mg-menu-item',
@@ -14,11 +14,12 @@ export class MgMenuItem {
    ************/
 
   private readonly name = 'mg-menu-item';
+  private readonly navigationButton = `${this.name}__navigation-button`;
 
   /**
-   * Get DOM element
+   * DOM child element
    */
-  private childMenu: HTMLMgMenuVerticalElement;
+  private childMenu: HTMLMgMenuElement;
 
   /**************
    * Decorators *
@@ -29,72 +30,96 @@ export class MgMenuItem {
    */
   @Element() element: HTMLMgMenuItemElement;
 
+  /************
+   * Props *
+   ************/
+
   /**
    * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
    * If not set, it will be created.
    */
-  @Prop() identifier: string = createID(this.name);
+  @Prop() identifier: MenuItemType['identifier'] = createID(this.name);
 
   /**
-   *
+   * Define menu-item button label
    */
-  @Prop() label!: string;
-
-  /**
-   *
-   */
-  @Prop() href: string;
-
-  /**
-   *
-   */
-  @Prop() badge: BadgeType & { variant?: string };
-
-  /**
-   *
-   */
-  @Prop() icon: string;
-
-  /**
-   *
-   */
-  @Prop({ mutable: true }) expanded = false;
-  @Watch('expanded')
-  validateexpanded(newValue: boolean): void {
-    if (this.childMenu !== undefined) {
-      if (newValue) this.childMenu.removeAttribute('hidden');
-      else this.childMenu.setAttribute('hidden', '');
+  @Prop() label!: MenuItemType['label'];
+  @Watch('label')
+  validateLabel(newValue: MenuItemType['label']): void {
+    if (!(newValue.length > 0)) {
+      throw new Error(`<${this.name}> prop "label" must be set.`);
     }
   }
 
   /**
-   *
+   * Define menu-item badge
+   * when defined menu-item contain an anchor instead of button
    */
-  @Prop({ mutable: true }) mgTabindex: number;
+  @Prop() href: MenuItemType['href'];
 
   /**
-   *
+   * Define menu-item badge
    */
-  @Prop() status: Status = Status.VISIBLE;
+  @Prop() badge: MenuItemType['badge'];
+
+  /**
+   * Define menu-item icon
+   */
+  @Prop() icon: MenuItemType['icon'];
+
+  /**
+   * Define menu-item status
+   */
+  @Prop() status: MenuItemType['status'] = Status.VISIBLE;
   @Watch('status')
-  validateActive(newValue: Status): void {
+  validateActive(newValue: MenuItemType['status']): void {
     for (const status in Status) {
-      this.navigationButtonClassList.delete(`${this.name}__navigation-button--${status}`);
+      this.navigationButtonClassList.delete(`${this.navigationButton}--${status}`);
     }
-    this.navigationButtonClassList.add(`${this.name}__navigation-button--${newValue}`);
+    this.navigationButtonClassList.add(`${this.navigationButton}--${newValue}`);
   }
 
   /**
    * Define tabs size
    */
-  @Prop() size = 'large';
+  @Prop() size: MenuItemType['size'] = 'large';
   @Watch('size')
-  validateSize(newValue: string): void {
+  validateSize(newValue: MenuItemType['size']): void {
     if (!sizes.includes(newValue)) {
       throw new Error(`<${this.name}> prop "size" must be one of : ${sizes.join(', ')}`);
     }
-    this.navigationButtonClassList.add(`${this.name}__navigation-button--size-${this.size}`);
+    this.navigationButtonClassList.add(`${this.navigationButton}--size-${this.size}`);
   }
+
+  /**
+   * Define menu-item index in parent menu
+   */
+  @Prop({ mutable: true, reflect: true }) menuIndex: MenuItemType['menuIndex'];
+
+  /**
+   * Define menu-item content expended
+   */
+  @Prop({ mutable: true }) expanded: MenuItemType['expanded'] = false;
+  @Watch('expanded')
+  validateExpanded(newValue: MenuItemType['expanded']): void {
+    if (this.childMenu !== undefined && this.childMenu !== null) {
+      if (newValue) this.childMenu.removeAttribute('hidden');
+      else this.childMenu.setAttribute('hidden', '');
+    }
+  }
+
+  /************
+   * Events *
+   ************/
+
+  /**
+   * Emited event to communicate next focused menu-item to parent
+   */
+  @Event({ eventName: 'focused-item' }) focusedItem: EventEmitter<MenuItemType['menuIndex']>;
+
+  /************
+   * States *
+   ************/
 
   /**
    * Component classes
@@ -104,42 +129,63 @@ export class MgMenuItem {
   /**
    * Component classes
    */
-  @State() navigationButtonClassList: ClassList = new ClassList([`${this.name}__navigation-button`]);
+  @State() navigationButtonClassList: ClassList = new ClassList([`${this.navigationButton}`]);
 
   /**
-   * Component parent tagname
+   * Does component have parent menu
    */
-  @State() tagName = 'button';
+  @State() contextualOrientitation: DisplayType;
 
   /**
-   * Component parent tagname
+   * Does component have child menu
    */
-  @State() hasSubmenu = false;
-  @State() hasNextMenuItem = false;
-  @State() hasPreviousMenuItem = false;
+  @State() hasSubMenu = false;
+  @Watch('hasSubMenu')
+  validateHasSubMenu(newValue: boolean): void {
+    if (newValue) {
+      if (this.element.href !== undefined) {
+        throw new Error(`<${this.name}> prop "href" is unauthorizied when element is a parent.`);
+      }
+    }
+  }
 
-  private getTagName = (): void => {
-    this.tagName = this.href !== undefined ? 'a' : 'button';
-  };
+  /************
+   * Methodes *
+   ************/
 
+  /**
+   * Toggle expanded prop value
+   */
   private toggleExpanded = (): void => {
     this.expanded = !this.expanded;
   };
 
-  private handleElementCLick = (): void => {
-    this.toggleExpanded();
+  /************
+   * Handlers *
+   ************/
+
+  /**
+   * Handle interacrtive element click
+   *
+   * @param {MouseEvent} event click on element
+   * @returns {void}
+   */
+  private handleElementCLick = (event: MouseEvent): void => {
+    if (this.hasSubMenu) {
+      this.toggleExpanded();
+    }
+    event.preventDefault();
   };
 
-  private initSubmenu = () => {
-    this.childMenu = this.element.querySelector('mg-menu-vertical');
-    this.hasSubmenu = this.childMenu !== null;
-    if (this.hasSubmenu) {
-      if (this.element.href !== undefined) {
-        throw new Error(`<${this.name}> prop "href" is unauthorizied when element is a parent.`);
-      }
-      this.childMenu.setAttribute('hidden', '');
-      this.childMenu.isChild = true;
-    }
+  /**
+   * Handle interactive element focus
+   *
+   * @param {FocusEvent} event focus on element
+   * @returns {void}
+   */
+  private handleElementFocus = (event: FocusEvent): void => {
+    this.focusedItem.emit(this.menuIndex);
+    event.preventDefault();
   };
 
   /*************
@@ -147,32 +193,43 @@ export class MgMenuItem {
    *************/
 
   /**
-   * Init tag name
+   * Validate props
    *
    * @returns {void}
    */
   componentWillLoad(): void {
-    this.getTagName();
+    // define submenu
+    this.childMenu = this.element.querySelector('mg-menu');
+    this.hasSubMenu = this.childMenu !== null;
+
+    // Validate props
+    this.validateLabel(this.label);
     this.validateSize(this.size);
     this.validateActive(this.status);
+    this.validateExpanded(this.expanded);
   }
 
   /**
-   * Check if component slots are well configured on init
+   * Check if component slots configuration
    *
    * @returns {void}
    */
   componentDidLoad(): void {
-    // manage sub-menu
-    this.initSubmenu();
-
-    this.hasNextMenuItem = this.element.nextElementSibling?.nodeName === 'MG-MENU-ITEM';
-    this.hasPreviousMenuItem = this.element.previousElementSibling?.nodeName === 'MG-MENU-ITEM';
+    // define menu-item context states
+    if (this.element.parentElement.nodeName === 'MG-MENU') {
+      this.contextualOrientitation = (this.element.parentElement as HTMLMgMenuElement).display;
+    }
+    const hasNextMenuItem = this.element.nextElementSibling?.nodeName === 'MG-MENU-ITEM';
+    const hasPreviousMenuItem = this.element.previousElementSibling?.nodeName === 'MG-MENU-ITEM';
 
     // manage last menu item
-    if (!this.hasNextMenuItem && this.hasPreviousMenuItem) {
-      this.classList.add(`${this.name}--last`);
+    if (!hasNextMenuItem && hasPreviousMenuItem && this.contextualOrientitation === DisplayType.HORIZONTAL) {
+      this.classList.add(`${this.name}--${ElementPosition.LAST}`);
     }
+
+    // manage menu items style depending to parent menu horientation
+    this.classList.add(`${this.name}--${this.contextualOrientitation}`);
+    this.navigationButtonClassList.add(`${this.navigationButton}--${this.contextualOrientitation}`);
   }
 
   /**
@@ -181,23 +238,30 @@ export class MgMenuItem {
    * @returns {HTMLElement} HTML Element
    */
   render(): HTMLElement {
-    const TagName = this.tagName;
+    const TagName: string = this.href !== undefined ? 'a' : 'button';
     return (
-      <Host id={this.identifier} role="menuitem" aria-haspopup={this.hasSubmenu.toString()} class={this.classList.join()}>
+      <Host id={this.identifier} role="menuitem" aria-haspopup={this.hasSubMenu.toString()} class={this.classList.join()}>
         <TagName
           href={this.href}
           class={this.navigationButtonClassList.join()}
-          tabindex={this.mgTabindex}
+          tabindex={[Status.DISABLED, Status.HIDDEN].includes(this.status) ? -1 : 0}
           aria-expanded={this.expanded.toString()}
           aria-current={this.status === Status.ACTIVE && 'page'}
           onClick={this.handleElementCLick}
+          onFocus={this.handleElementFocus}
         >
-          {this.icon !== undefined && <mg-icon icon={this.icon}></mg-icon>}
-          {this.label}
-          {this.badge !== undefined && <mg-badge variant={this.badge.variant || 'info'} value={this.badge.value} label={this.badge.label}></mg-badge>}
-          {this.hasSubmenu && <mg-icon icon={`chevron-${this.expanded === true ? 'up' : 'down'}`}></mg-icon>}
+          {this.icon !== undefined && <mg-icon {...this.icon}></mg-icon>}
+          <span class={`${this.navigationButton}-text`}>{this.label}</span>
+          {this.badge !== undefined && <mg-badge {...this.badge} variant={this.badge.variant || 'info'}></mg-badge>}
+          {this.hasSubMenu && (
+            <span class={`${this.navigationButton}-chevron`}>
+              <mg-icon icon={`chevron-${this.expanded === true ? 'up' : 'down'}`}></mg-icon>
+            </span>
+          )}
         </TagName>
-        <slot></slot>
+        <div class={`${this.name}__collapse-container`}>
+          <slot></slot>
+        </div>
       </Host>
     );
   }

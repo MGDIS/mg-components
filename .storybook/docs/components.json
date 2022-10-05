@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-09-26T14:50:18",
+  "timestamp": "2022-10-05T14:17:20",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.17.4",
@@ -68,7 +68,7 @@
         },
         {
           "name": "variant",
-          "type": "string",
+          "type": "\"danger\" | \"info\" | \"primary\" | \"secondary\" | \"success\" | \"warning\"",
           "mutable": false,
           "attr": "variant",
           "reflectToAttr": false,
@@ -77,6 +77,27 @@
           "default": "variants[0]",
           "values": [
             {
+              "value": "danger",
+              "type": "string"
+            },
+            {
+              "value": "info",
+              "type": "string"
+            },
+            {
+              "value": "primary",
+              "type": "string"
+            },
+            {
+              "value": "secondary",
+              "type": "string"
+            },
+            {
+              "value": "success",
+              "type": "string"
+            },
+            {
+              "value": "warning",
               "type": "string"
             }
           ],
@@ -706,7 +727,7 @@
         },
         {
           "name": "size",
-          "type": "string",
+          "type": "\"extra-large\" | \"large\" | \"regular\" | \"small\"",
           "mutable": false,
           "attr": "size",
           "reflectToAttr": false,
@@ -715,6 +736,19 @@
           "default": "'regular'",
           "values": [
             {
+              "value": "extra-large",
+              "type": "string"
+            },
+            {
+              "value": "large",
+              "type": "string"
+            },
+            {
+              "value": "regular",
+              "type": "string"
+            },
+            {
+              "value": "small",
               "type": "string"
             }
           ],
@@ -740,7 +774,7 @@
         },
         {
           "name": "variant",
-          "type": "string",
+          "type": "\"danger\" | \"info\" | \"success\" | \"warning\"",
           "mutable": false,
           "attr": "variant",
           "reflectToAttr": false,
@@ -748,6 +782,19 @@
           "docsTags": [],
           "values": [
             {
+              "value": "danger",
+              "type": "string"
+            },
+            {
+              "value": "info",
+              "type": "string"
+            },
+            {
+              "value": "success",
+              "type": "string"
+            },
+            {
+              "value": "warning",
               "type": "string"
             }
           ],
@@ -4201,14 +4248,34 @@
       }
     },
     {
-      "filePath": "./src/components/molecules/menu/mg-menu-horizontal/mg-menu-horizontal.tsx",
+      "filePath": "./src/components/molecules/menu/mg-menu/mg-menu.tsx",
       "encapsulation": "shadow",
-      "tag": "mg-menu-horizontal",
+      "tag": "mg-menu",
       "readme": "## Anatomy\n\n![](./mg-tabs/doc/img/mg-tabs-anatomy.png)\n\n## Specs\n\n### Spacing\n\n- Standard : @base = 10px\n- Large : @base = 18px\n\n![](./mg-tabs/doc/img/mg-tabs-spacing.png)\n\n- if only text, no extra spacing,\n- if no badge : no extra spacing on the right\n- if only icon : no extra spacing on the right\n\n### Sizing\n\n![](./mg-tabs/doc/img/mg-tabs-sizing.png)\n\n### States\n\n![](./mg-tabs/doc/img/mg-tabs-states.png)\n\n### Responsive\n\n#### Line breaks (current management)\n\n![](./mg-tabs/doc/img/mg-tabs-responsive.png)\n",
       "docs": "![](./mg-tabs/doc/img/mg-tabs-anatomy.png)",
       "docsTags": [],
       "usage": {},
       "props": [
+        {
+          "name": "display",
+          "type": "DisplayType.HORIZONTAL | DisplayType.VERTICAL",
+          "mutable": false,
+          "attr": "display",
+          "reflectToAttr": true,
+          "docs": "Component display orientation",
+          "docsTags": [],
+          "default": "DisplayType.HORIZONTAL",
+          "values": [
+            {
+              "type": "DisplayType.HORIZONTAL"
+            },
+            {
+              "type": "DisplayType.VERTICAL"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
         {
           "name": "identifier",
           "type": "string",
@@ -4232,7 +4299,7 @@
           "mutable": false,
           "attr": "label",
           "reflectToAttr": false,
-          "docs": "Nav label. Include short nav description.\nRequired for accessibility",
+          "docs": "Menu label. Include short menu description.\nRequired for accessibility",
           "docsTags": [],
           "values": [
             {
@@ -4264,14 +4331,36 @@
       "props": [
         {
           "name": "badge",
-          "type": "BadgeType & { variant?: string; }",
+          "type": "{ value: string | number; label: string; variant?: \"info\" | \"primary\" | \"secondary\" | \"success\" | \"warning\" | \"danger\"; outline?: boolean; }",
           "mutable": false,
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "Define menu-item badge",
           "docsTags": [],
           "values": [
             {
-              "type": "BadgeType & { variant?: string; }"
+              "type": "{ value: string"
+            },
+            {
+              "type": "number; label: string; variant?: \"info\""
+            },
+            {
+              "value": "primary",
+              "type": "string"
+            },
+            {
+              "value": "secondary",
+              "type": "string"
+            },
+            {
+              "value": "success",
+              "type": "string"
+            },
+            {
+              "value": "warning",
+              "type": "string"
+            },
+            {
+              "type": "\"danger\"; outline?: boolean; }"
             }
           ],
           "optional": false,
@@ -4283,7 +4372,7 @@
           "mutable": true,
           "attr": "expanded",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "Define menu-item content expended",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -4300,7 +4389,7 @@
           "mutable": false,
           "attr": "href",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "Define menu-item badge\nwhen defined menu-item contain an anchor instead of button",
           "docsTags": [],
           "values": [
             {
@@ -4312,15 +4401,37 @@
         },
         {
           "name": "icon",
-          "type": "string",
+          "type": "{ icon: string; size?: \"small\" | \"regular\" | \"large\" | \"extra-large\"; variant?: \"info\" | \"success\" | \"warning\" | \"danger\"; spin?: boolean; }",
           "mutable": false,
-          "attr": "icon",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "Define menu-item icon",
           "docsTags": [],
           "values": [
             {
+              "type": "{ icon: string; size?: \"small\""
+            },
+            {
+              "value": "regular",
               "type": "string"
+            },
+            {
+              "value": "large",
+              "type": "string"
+            },
+            {
+              "value": "extra-large\"; variant?: \"info",
+              "type": "string"
+            },
+            {
+              "value": "success",
+              "type": "string"
+            },
+            {
+              "value": "warning",
+              "type": "string"
+            },
+            {
+              "type": "\"danger\"; spin?: boolean; }"
             }
           ],
           "optional": false,
@@ -4349,7 +4460,7 @@
           "mutable": false,
           "attr": "label",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "Define menu-item button label",
           "docsTags": [],
           "values": [
             {
@@ -4360,12 +4471,12 @@
           "required": true
         },
         {
-          "name": "mgTabindex",
+          "name": "menuIndex",
           "type": "number",
           "mutable": true,
-          "attr": "mg-tabindex",
-          "reflectToAttr": false,
-          "docs": "",
+          "attr": "menu-index",
+          "reflectToAttr": true,
+          "docs": "Define menu-item index in parent menu",
           "docsTags": [],
           "values": [
             {
@@ -4377,7 +4488,7 @@
         },
         {
           "name": "size",
-          "type": "string",
+          "type": "\"large\" | \"medium\" | \"regular\"",
           "mutable": false,
           "attr": "size",
           "reflectToAttr": false,
@@ -4386,6 +4497,15 @@
           "default": "'large'",
           "values": [
             {
+              "value": "large",
+              "type": "string"
+            },
+            {
+              "value": "medium",
+              "type": "string"
+            },
+            {
+              "value": "regular",
               "type": "string"
             }
           ],
@@ -4398,7 +4518,7 @@
           "mutable": false,
           "attr": "status",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "Define menu-item status",
           "docsTags": [],
           "default": "Status.VISIBLE",
           "values": [
@@ -4420,7 +4540,17 @@
         }
       ],
       "methods": [],
-      "events": [],
+      "events": [
+        {
+          "event": "focused-item",
+          "detail": "number",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emited event to communicate next focused menu-item to parent",
+          "docsTags": []
+        }
+      ],
       "listeners": [],
       "styles": [],
       "slots": [],
@@ -4436,75 +4566,6 @@
           "mg-badge"
         ]
       }
-    },
-    {
-      "filePath": "./src/components/molecules/menu/mg-menu-vertical/mg-menu-vertical.tsx",
-      "encapsulation": "shadow",
-      "tag": "mg-menu-vertical",
-      "readme": "## Anatomy\n\n![](./mg-tabs/doc/img/mg-tabs-anatomy.png)\n\n## Specs\n\n### Spacing\n\n- Standard : @base = 10px\n- Large : @base = 18px\n\n![](./mg-tabs/doc/img/mg-tabs-spacing.png)\n\n- if only text, no extra spacing,\n- if no badge : no extra spacing on the right\n- if only icon : no extra spacing on the right\n\n### Sizing\n\n![](./mg-tabs/doc/img/mg-tabs-sizing.png)\n\n### States\n\n![](./mg-tabs/doc/img/mg-tabs-states.png)\n\n### Responsive\n\n#### Line breaks (current management)\n\n![](./mg-tabs/doc/img/mg-tabs-responsive.png)\n",
-      "docs": "![](./mg-tabs/doc/img/mg-tabs-anatomy.png)",
-      "docsTags": [],
-      "usage": {},
-      "props": [
-        {
-          "name": "identifier",
-          "type": "string",
-          "mutable": false,
-          "attr": "identifier",
-          "reflectToAttr": false,
-          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
-          "docsTags": [],
-          "default": "createID(this.name)",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "isChild",
-          "type": "boolean",
-          "mutable": true,
-          "attr": "is-child",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "label",
-          "type": "string",
-          "mutable": false,
-          "attr": "label",
-          "reflectToAttr": false,
-          "docs": "Nav label. Include short nav description.\nRequired for accessibility",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": true
-        }
-      ],
-      "methods": [],
-      "events": [],
-      "listeners": [],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
     },
     {
       "filePath": "./src/components/molecules/mg-message/mg-message.tsx",

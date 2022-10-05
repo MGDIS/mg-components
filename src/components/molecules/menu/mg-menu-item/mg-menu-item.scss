@@ -1,22 +1,51 @@
 @import '../../../../styles/mixins/navigation-button.scss';
 
-@include navigation-button('mg-menu-item');
+$navigation-button-sizes: (
+  'regular': (
+    'vertical': 1rem,
+    'horizontal': 2rem,
+  ),
+  'medium': (
+    'vertical': 1.5rem,
+    'horizontal': 3rem,
+  ),
+  'large': (
+    'vertical': 2.5rem,
+    'horizontal': 4rem,
+  ),
+);
+
+@include navigation-button('mg-menu-item', $navigation-button-sizes);
 
 :host {
   position: relative;
-  display: flex;
-  ::slotted(mg-menu-vertical) {
-    width: max-content;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate3d(0rem, 6rem, 0rem);
+  display: block;
+}
+
+:host(.mg-menu-item--last:not(.mg-menu-item--vertical)) {
+  .mg-menu-item__collapse-container {
+    left: unset;
+    right: 0;
   }
 }
 
-:host(.mg-menu-item--last) {
-  ::slotted(mg-menu-vertical) {
-    left: unset;
-    right: 0;
+.mg-menu-item__collapse-container {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: max-content;
+}
+
+:host(.mg-menu-item--vertical) {
+  .mg-menu-item {
+    &__collapse-container {
+      left: unset;
+      top: unset;
+      position: unset;
+      width: unset;
+    }
+    &__navigation-button-chevron {
+      margin-left: auto;
+    }
   }
 }

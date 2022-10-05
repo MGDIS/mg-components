@@ -1,6 +1,21 @@
 @import '../../../styles/mixins/navigation-button.scss';
 
-@include navigation-button('mg-tabs');
+$navigation-button-sizes: (
+  'regular': (
+    'vertical': 1rem,
+    'horizontal': 2rem,
+  ),
+  'medium': (
+    'vertical': 1.5rem,
+    'horizontal': 3rem,
+  ),
+  'large': (
+    'vertical': 2.5rem,
+    'horizontal': 4rem,
+  ),
+);
+
+@include navigation-button('mg-tabs', $navigation-button-sizes);
 
 .mg-tabs__header {
   display: flex;

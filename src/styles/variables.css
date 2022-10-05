@@ -20,6 +20,13 @@
     https://jira.mgdis.fr/browse/PDA9-690
    */
 
+  /* App */
+  /* default color-info */
+  --mg-color-app-h: var(--color-info-h);
+  --mg-color-app-s: var(--color-info-s);
+  --mg-color-app-l: var(--color-info-l);
+  --mg-color-app: var(--mg-color-app-h), var(--mg-color-app-s), var(--mg-color-app-l);
+
   /* Neutral */
   /* #fefefe; */
   /* rgb(254, 254, 254); */
@@ -214,4 +221,18 @@
     <mg-input-radio>
    */
   --mg-input-check-size: 1.3rem;
+
+  /*
+    <mg-menu-item>
+   */
+  --mg-menu-item-background-color: var(--color-light);
+  --mg-menu-item-border-color: var(--mg-color-app-h), var(--mg-color-app-s), var(--mg-color-app-l);
+  --mg-menu-item-active-font: var(--mg-color-app);
+
+  /*
+    <mg-tabs>
+   */
+  --mg-tabs-background-color: var(--color-light);
+  --mg-tabs-border-color: var(--mg-color-app-h), var(--mg-color-app-s), var(--mg-color-app-l);
+  --mg-tabs-active-font: var(--mg-color-app);
 }

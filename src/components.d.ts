@@ -7,12 +7,14 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { BadgeType } from "./components/atoms/mg-badge/mg-badge.conf";
 import { ButtonType } from "./components/atoms/mg-button/mg-button.conf";
+import { IconType } from "./components/atoms/mg-icon/mg-icon.conf";
 import { CheckboxValue } from "./components/molecules/inputs/mg-input-checkbox/mg-input-checkbox.conf";
 import { Width } from "./components/molecules/inputs/MgInput.conf";
 import { RadioOption } from "./components/molecules/inputs/mg-input-radio/mg-input-radio.conf";
 import { SelectOption } from "./components/molecules/inputs/mg-input-select/mg-input-select.conf";
 import { ToggleValue } from "./components/molecules/inputs/mg-input-toggle/mg-input-toggle.conf";
-import { Status } from "./components/molecules/menu/mg-menu-item/mg-menu-item.conf";
+import { MenuType } from "./components/molecules/menu/mg-menu/mg-menu.conf";
+import { MenuItemType } from "./components/molecules/menu/mg-menu-item/mg-menu-item.conf";
 import { Placement } from "./components/molecules/mg-popover/mg-popover.conf";
 import { TabItem } from "./components/molecules/mg-tabs/mg-tabs.conf";
 import { Placement as Placement1 } from "./components/atoms/mg-tooltip/mg-tooltip.conf";
@@ -25,7 +27,7 @@ export namespace Components {
         /**
           * Define if button is using outline style
          */
-        "outline": boolean;
+        "outline": BadgeType['outline'];
         /**
           * Badge value
          */
@@ -33,7 +35,7 @@ export namespace Components {
         /**
           * Define button variant
          */
-        "variant": string;
+        "variant": BadgeType['variant'];
     }
     interface MgButton {
         /**
@@ -144,11 +146,11 @@ export namespace Components {
         /**
           * Icon to display
          */
-        "icon": string;
+        "icon": IconType['icon'];
         /**
           * Define icon size
          */
-        "size": string;
+        "size": IconType['size'];
         /**
           * Make the icon spin
          */
@@ -156,7 +158,7 @@ export namespace Components {
         /**
           * Define icon variant Add a background to the icon based on variant color
          */
-        "variant": string;
+        "variant": IconType['variant'];
     }
     interface MgIllustratedMessage {
         /**
@@ -854,43 +856,57 @@ export namespace Components {
          */
         "value": any;
     }
-    interface MgMenuHorizontal {
+    interface MgMenu {
+        /**
+          * Component display orientation
+         */
+        "display": MenuType['display'];
         /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
-        "identifier": string;
+        "identifier": MenuType['identifier'];
         /**
-          * Nav label. Include short nav description. Required for accessibility
+          * Menu label. Include short menu description. Required for accessibility
          */
-        "label": string;
+        "label": MenuType['label'];
     }
     interface MgMenuItem {
-        "badge": BadgeType & { variant?: string };
-        "expanded": boolean;
-        "href": string;
-        "icon": string;
+        /**
+          * Define menu-item badge
+         */
+        "badge": MenuItemType['badge'];
+        /**
+          * Define menu-item content expended
+         */
+        "expanded": MenuItemType['expanded'];
+        /**
+          * Define menu-item badge when defined menu-item contain an anchor instead of button
+         */
+        "href": MenuItemType['href'];
+        /**
+          * Define menu-item icon
+         */
+        "icon": MenuItemType['icon'];
         /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
-        "identifier": string;
-        "label": string;
-        "mgTabindex": number;
+        "identifier": MenuItemType['identifier'];
+        /**
+          * Define menu-item button label
+         */
+        "label": MenuItemType['label'];
+        /**
+          * Define menu-item index in parent menu
+         */
+        "menuIndex": MenuItemType['menuIndex'];
         /**
           * Define tabs size
          */
-        "size": string;
-        "status": Status;
-    }
-    interface MgMenuVertical {
+        "size": MenuItemType['size'];
         /**
-          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+          * Define menu-item status
          */
-        "identifier": string;
-        "isChild": boolean;
-        /**
-          * Nav label. Include short nav description. Required for accessibility
-         */
-        "label": string;
+        "status": MenuItemType['status'];
     }
     interface MgMessage {
         /**
@@ -1101,6 +1117,10 @@ export interface MgInputToggleCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLMgInputToggleElement;
 }
+export interface MgMenuItemCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMgMenuItemElement;
+}
 export interface MgMessageCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLMgMessageElement;
@@ -1228,23 +1248,17 @@ declare global {
         prototype: HTMLMgInputToggleElement;
         new (): HTMLMgInputToggleElement;
     };
-    interface HTMLMgMenuHorizontalElement extends Components.MgMenuHorizontal, HTMLStencilElement {
+    interface HTMLMgMenuElement extends Components.MgMenu, HTMLStencilElement {
     }
-    var HTMLMgMenuHorizontalElement: {
-        prototype: HTMLMgMenuHorizontalElement;
-        new (): HTMLMgMenuHorizontalElement;
+    var HTMLMgMenuElement: {
+        prototype: HTMLMgMenuElement;
+        new (): HTMLMgMenuElement;
     };
     interface HTMLMgMenuItemElement extends Components.MgMenuItem, HTMLStencilElement {
     }
     var HTMLMgMenuItemElement: {
         prototype: HTMLMgMenuItemElement;
         new (): HTMLMgMenuItemElement;
-    };
-    interface HTMLMgMenuVerticalElement extends Components.MgMenuVertical, HTMLStencilElement {
-    }
-    var HTMLMgMenuVerticalElement: {
-        prototype: HTMLMgMenuVerticalElement;
-        new (): HTMLMgMenuVerticalElement;
     };
     interface HTMLMgMessageElement extends Components.MgMessage, HTMLStencilElement {
     }
@@ -1312,9 +1326,8 @@ declare global {
         "mg-input-textarea": HTMLMgInputTextareaElement;
         "mg-input-title": HTMLMgInputTitleElement;
         "mg-input-toggle": HTMLMgInputToggleElement;
-        "mg-menu-horizontal": HTMLMgMenuHorizontalElement;
+        "mg-menu": HTMLMgMenuElement;
         "mg-menu-item": HTMLMgMenuItemElement;
-        "mg-menu-vertical": HTMLMgMenuVerticalElement;
         "mg-message": HTMLMgMessageElement;
         "mg-modal": HTMLMgModalElement;
         "mg-pagination": HTMLMgPaginationElement;
@@ -1334,7 +1347,7 @@ declare namespace LocalJSX {
         /**
           * Define if button is using outline style
          */
-        "outline"?: boolean;
+        "outline"?: BadgeType['outline'];
         /**
           * Badge value
          */
@@ -1342,7 +1355,7 @@ declare namespace LocalJSX {
         /**
           * Define button variant
          */
-        "variant"?: string;
+        "variant"?: BadgeType['variant'];
     }
     interface MgButton {
         /**
@@ -1460,11 +1473,11 @@ declare namespace LocalJSX {
         /**
           * Icon to display
          */
-        "icon"?: string;
+        "icon"?: IconType['icon'];
         /**
           * Define icon size
          */
-        "size"?: string;
+        "size"?: IconType['size'];
         /**
           * Make the icon spin
          */
@@ -1472,7 +1485,7 @@ declare namespace LocalJSX {
         /**
           * Define icon variant Add a background to the icon based on variant color
          */
-        "variant"?: string;
+        "variant"?: IconType['variant'];
     }
     interface MgIllustratedMessage {
         /**
@@ -2197,43 +2210,61 @@ declare namespace LocalJSX {
          */
         "value"?: any;
     }
-    interface MgMenuHorizontal {
+    interface MgMenu {
+        /**
+          * Component display orientation
+         */
+        "display"?: MenuType['display'];
         /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
-        "identifier"?: string;
+        "identifier"?: MenuType['identifier'];
         /**
-          * Nav label. Include short nav description. Required for accessibility
+          * Menu label. Include short menu description. Required for accessibility
          */
-        "label": string;
+        "label": MenuType['label'];
     }
     interface MgMenuItem {
-        "badge"?: BadgeType & { variant?: string };
-        "expanded"?: boolean;
-        "href"?: string;
-        "icon"?: string;
+        /**
+          * Define menu-item badge
+         */
+        "badge"?: MenuItemType['badge'];
+        /**
+          * Define menu-item content expended
+         */
+        "expanded"?: MenuItemType['expanded'];
+        /**
+          * Define menu-item badge when defined menu-item contain an anchor instead of button
+         */
+        "href"?: MenuItemType['href'];
+        /**
+          * Define menu-item icon
+         */
+        "icon"?: MenuItemType['icon'];
         /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
-        "identifier"?: string;
-        "label": string;
-        "mgTabindex"?: number;
+        "identifier"?: MenuItemType['identifier'];
+        /**
+          * Define menu-item button label
+         */
+        "label": MenuItemType['label'];
+        /**
+          * Define menu-item index in parent menu
+         */
+        "menuIndex"?: MenuItemType['menuIndex'];
+        /**
+          * Emited event to communicate next focused menu-item to parent
+         */
+        "onFocused-item"?: (event: MgMenuItemCustomEvent<MenuItemType['menuIndex']>) => void;
         /**
           * Define tabs size
          */
-        "size"?: string;
-        "status"?: Status;
-    }
-    interface MgMenuVertical {
+        "size"?: MenuItemType['size'];
         /**
-          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
+          * Define menu-item status
          */
-        "identifier"?: string;
-        "isChild"?: boolean;
-        /**
-          * Nav label. Include short nav description. Required for accessibility
-         */
-        "label": string;
+        "status"?: MenuItemType['status'];
     }
     interface MgMessage {
         /**
@@ -2453,9 +2484,8 @@ declare namespace LocalJSX {
         "mg-input-textarea": MgInputTextarea;
         "mg-input-title": MgInputTitle;
         "mg-input-toggle": MgInputToggle;
-        "mg-menu-horizontal": MgMenuHorizontal;
+        "mg-menu": MgMenu;
         "mg-menu-item": MgMenuItem;
-        "mg-menu-vertical": MgMenuVertical;
         "mg-message": MgMessage;
         "mg-modal": MgModal;
         "mg-pagination": MgPagination;
@@ -2487,9 +2517,8 @@ declare module "@stencil/core" {
             "mg-input-textarea": LocalJSX.MgInputTextarea & JSXBase.HTMLAttributes<HTMLMgInputTextareaElement>;
             "mg-input-title": LocalJSX.MgInputTitle & JSXBase.HTMLAttributes<HTMLMgInputTitleElement>;
             "mg-input-toggle": LocalJSX.MgInputToggle & JSXBase.HTMLAttributes<HTMLMgInputToggleElement>;
-            "mg-menu-horizontal": LocalJSX.MgMenuHorizontal & JSXBase.HTMLAttributes<HTMLMgMenuHorizontalElement>;
+            "mg-menu": LocalJSX.MgMenu & JSXBase.HTMLAttributes<HTMLMgMenuElement>;
             "mg-menu-item": LocalJSX.MgMenuItem & JSXBase.HTMLAttributes<HTMLMgMenuItemElement>;
-            "mg-menu-vertical": LocalJSX.MgMenuVertical & JSXBase.HTMLAttributes<HTMLMgMenuVerticalElement>;
             "mg-message": LocalJSX.MgMessage & JSXBase.HTMLAttributes<HTMLMgMessageElement>;
             "mg-modal": LocalJSX.MgModal & JSXBase.HTMLAttributes<HTMLMgModalElement>;
             "mg-pagination": LocalJSX.MgPagination & JSXBase.HTMLAttributes<HTMLMgPaginationElement>;

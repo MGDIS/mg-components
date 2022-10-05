@@ -31,12 +31,12 @@ Rule applicable for all except "info" blue. "Info" pictographs without text are 
 
 ## Properties
 
-| Property  | Attribute | Description                                                             | Type      | Default     |
-| --------- | --------- | ----------------------------------------------------------------------- | --------- | ----------- |
-| `icon`    | `icon`    | Icon to display                                                         | `string`  | `undefined` |
-| `size`    | `size`    | Define icon size                                                        | `string`  | `'regular'` |
-| `spin`    | `spin`    | Make the icon spin                                                      | `boolean` | `false`     |
-| `variant` | `variant` | Define icon variant Add a background to the icon based on variant color | `string`  | `undefined` |
+| Property  | Attribute | Description                                                             | Type                                               | Default     |
+| --------- | --------- | ----------------------------------------------------------------------- | -------------------------------------------------- | ----------- |
+| `icon`    | `icon`    | Icon to display                                                         | `string`                                           | `undefined` |
+| `size`    | `size`    | Define icon size                                                        | `"extra-large" \| "large" \| "regular" \| "small"` | `'regular'` |
+| `spin`    | `spin`    | Make the icon spin                                                      | `boolean`                                          | `false`     |
+| `variant` | `variant` | Define icon variant Add a background to the icon based on variant color | `"danger" \| "info" \| "success" \| "warning"`     | `undefined` |
 
 
 ## Dependencies
