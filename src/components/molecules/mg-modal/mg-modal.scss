@@ -52,7 +52,7 @@
     margin-right: calc((var(--default-size) - var(--mg-icon-regular-size)) / 2 * -1); //-10px;
   }
 
-  .mg-modal__content {
+  &__content {
     overflow-y: auto;
     &::slotted(*) {
       font-size: var(--mg-modal-content-font-size);

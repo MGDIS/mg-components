@@ -45,12 +45,16 @@ describe('mg-tooltip', () => {
   });
 
   test.each(['', ' ', undefined])('Should throw error, case invalid message prop', async message => {
-    expect.assertions(1);
-    try {
-      await getPage({ message }, <span>span</span>);
-    } catch (err) {
-      expect(err.message).toContain('<mg-tooltip> prop "message" is required.');
-    }
+    // TODO on 5.0.0 move back to throw new Error test (replace content with commented test)
+    // expect.assertions(1);
+    // try {
+    //   await getPage({ message }, <span>span</span>);
+    // } catch (err) {
+    //   expect(err.message).toContain('<mg-tooltip> prop "message" is required.');
+    // }
+    console.error = jest.fn();
+    await getPage({ message }, <span>span</span>);
+    expect(console.error).toHaveBeenCalledWith('<mg-tooltip> prop "message" is required.');
   });
 
   describe.each([

@@ -50,12 +50,16 @@ describe('mg-tabs', () => {
 
   describe('errors', () => {
     test.each(['', ' ', undefined])('Should throw error with invalid label property : %s', async label => {
-      expect.assertions(1);
-      try {
-        await getPage({ label, items: ['Batman', 'Joker'] }, createSlots());
-      } catch (err) {
-        expect(err.message).toMatch('<mg-tabs> prop "label" is required.');
-      }
+      // TODO on 5.0.0 move back to throw new Error test (replace content with commented test)
+      // expect.assertions(1);
+      // try {
+      //   await getPage({ label, items: ['Batman', 'Joker'] }, createSlots());
+      // } catch (err) {
+      //   expect(err.message).toMatch('<mg-tabs> prop "label" is required.');
+      // }
+      console.error = jest.fn();
+      await await getPage({ label, items: ['Batman', 'Joker'] }, createSlots());
+      expect(console.error).toHaveBeenCalledWith('<mg-tabs> prop "label" is required.');
     });
 
     test.each([

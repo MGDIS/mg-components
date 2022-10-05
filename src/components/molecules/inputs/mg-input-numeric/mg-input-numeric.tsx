@@ -50,7 +50,7 @@ export class MgInputNumeric {
       // Split number and decimal
       const [integer, decimal = ''] = newValue.replace('-', '').split(/[\.,]/);
       // Regex
-      const regex = this.type === 'integer' ? /^[\-]?\d+$/ : /^[\-]?\d+[.,]?\d*$/;
+      const regex = this.type === 'integer' ? /^-?\d+$/ : /^-?\d+[.,]?\d*$/;
       // Filter input
       if (newValue === '' || (newValue.match(regex) && integer.length <= this.integerLength && decimal.length <= (this.type === 'integer' ? 0 : this.decimalLength))) {
         this.storedValue = newValue;

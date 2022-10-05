@@ -56,12 +56,16 @@ describe('mg-panel', () => {
     });
 
     test.each(['', ' ', undefined])('Should not render with invalid panelTitle property: %s', async panelTitle => {
-      expect.assertions(1);
-      try {
-        await getPage({ panelTitle });
-      } catch (err) {
-        expect(err.message).toMatch('<mg-panel> prop "panelTitle" is required.');
-      }
+      // TODO on 5.0.0 move back to throw new Error test (replace content with commented test)
+      // expect.assertions(1);
+      // try {
+      //   await getPage({ panelTitle });
+      // } catch (err) {
+      //   expect(err.message).toMatch('<mg-panel> prop "panelTitle" is required.');
+      // }
+      console.error = jest.fn();
+      await getPage({ panelTitle });
+      expect(console.error).toHaveBeenCalledWith('<mg-panel> prop "panelTitle" is required.');
     });
   });
 
