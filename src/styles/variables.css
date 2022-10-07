@@ -25,7 +25,7 @@
   --mg-color-app-h: var(--color-info-h);
   --mg-color-app-s: var(--color-info-s);
   --mg-color-app-l: var(--color-info-l);
-  --mg-color-app: var(--mg-color-app-h), var(--mg-color-app-s), var(--mg-color-app-l);
+  --mg-color-app-hsl: var(--mg-color-app-h), var(--mg-color-app-s), var(--mg-color-app-l);
 
   /* Neutral */
   /* #fefefe; */
@@ -228,12 +228,12 @@
    */
   --mg-menu-item-background-color: var(--color-light);
   --mg-menu-item-border-color: var(--mg-color-app-h), var(--mg-color-app-s), var(--mg-color-app-l);
-  --mg-menu-item-active-font: var(--mg-color-app);
+  --mg-menu-item-color-active: var(--mg-color-app-hsl);
 
   /*
     <mg-tabs>
    */
   --mg-tabs-background-color: var(--color-light);
   --mg-tabs-border-color: var(--mg-color-app-h), var(--mg-color-app-s), var(--mg-color-app-l);
-  --mg-tabs-active-font: var(--mg-color-app);
+  --mg-tabs-color-active: var(--mg-color-app-hsl);
 }

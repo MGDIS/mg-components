@@ -35,6 +35,12 @@ export class MgMenu {
    * Required for accessibility
    */
   @Prop() label!: MenuType['label'];
+  @Watch('label')
+  validateLabel(newValue: MenuType['label']): void {
+    if (!(newValue.length > 0)) {
+      throw new Error(`<${this.name}> prop "label" is required.`);
+    }
+  }
 
   /**
    * Component display orientation
@@ -65,20 +71,31 @@ export class MgMenu {
   @State() focusedMenuItem: number;
   @Watch('focusedMenuItem')
   validatefocusedMenuItem(newValue: number, oldValue: number): void {
-    if (newValue !== oldValue || (newValue === 0 && !this.isChildMenu)) {
+    if (newValue !== oldValue || newValue === 0) {
       // reset expanded on previous active menu item
       this.menuItems.forEach((item, index) => {
-        if (index !== this.focusedMenuItem) {
-          item.expanded = false;
-        }
+        this.closeMenuItem(item, index !== this.focusedMenuItem);
       });
     }
   }
 
   /**
+   * Close matching menu-item
+   *
+   * @param {HTMLMgMenuItemElement} item menu-item to close
+   * @param {boolean} condition addionnal condition
+   * @returns {void}
+   */
+  private closeMenuItem = (item: HTMLMgMenuItemElement, condition = true): void => {
+    if (!this.isChildMenu && condition) {
+      item.expanded = false;
+    }
+  };
+
+  /**
    * Store menu-items on component init and add listeners
    */
-  private initMenuItems() {
+  private initMenuItems = () => {
     // store all menu-items
     this.menuItems = Array.from(this.element.querySelectorAll(`[identifier="${this.element.identifier}"] > mg-menu-item`));
 
@@ -89,7 +106,7 @@ export class MgMenu {
         event.stopPropagation();
       });
     });
-  }
+  };
 
   /*************
    * Lifecycle *
@@ -102,6 +119,7 @@ export class MgMenu {
    */
   componentWillLoad(): void {
     this.validateDisplay(this.display);
+    this.validateLabel(this.label);
   }
 
   /**
@@ -111,7 +129,19 @@ export class MgMenu {
    */
   componentDidLoad(): void {
     this.initMenuItems();
-    this.isChildMenu = this.element.parentElement.nodeName === 'MG-MENU-ITEM';
+    this.isChildMenu = this.element.closest('mg-menu-item') !== null;
+
+    // click outside management for child vertical menu
+    if (!this.isChildMenu && this.display === DisplayType.HORIZONTAL) {
+      document.addEventListener('click', (event: MouseEvent & { target: HTMLElement }) => {
+        // if (event.target.closest(`[identifier="${this.identifier}"`) === null) {
+        if (event.target.closest('mg-menu') === null) {
+          this.menuItems.forEach(item => {
+            this.closeMenuItem(item, this.display === DisplayType.HORIZONTAL);
+          });
+        }
+      });
+    }
   }
 
   /**

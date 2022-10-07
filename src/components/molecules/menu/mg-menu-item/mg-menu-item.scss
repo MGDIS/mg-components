@@ -22,18 +22,9 @@ $navigation-button-sizes: (
   display: block;
 }
 
-:host(.mg-menu-item--last:not(.mg-menu-item--vertical)) {
-  .mg-menu-item__collapse-container {
-    left: unset;
-    right: 0;
-  }
-}
-
-.mg-menu-item__collapse-container {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: max-content;
+:host(.mg-menu-item--last) .mg-menu-item__collapse-container {
+  left: unset;
+  right: 0;
 }
 
 :host(.mg-menu-item--vertical) {
@@ -48,4 +39,15 @@ $navigation-button-sizes: (
       margin-left: auto;
     }
   }
+}
+
+:host(.mg-menu-item--horizontal) .mg-menu-item__collapse-container.mg-menu-item__collapse-container--shadow {
+  box-shadow: var(--box-shadow);
+}
+
+.mg-menu-item__collapse-container {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: max-content;
 }

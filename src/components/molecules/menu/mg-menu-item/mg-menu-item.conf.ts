@@ -39,7 +39,7 @@ export type MenuItemType = {
   size?: SizeType;
   identifier?: string;
   badge?: BadgeType;
-  icon?: IconType;
+  icon?: Omit<IconType, 'size' | 'spin'>;
   menuIndex?: number;
   expanded?: boolean;
 };

@@ -878,7 +878,7 @@ export namespace Components {
         /**
           * Define menu-item content expended
          */
-        "expanded": MenuItemType['expanded'];
+        "expanded": boolean;
         /**
           * Define menu-item badge when defined menu-item contain an anchor instead of button
          */
@@ -888,10 +888,6 @@ export namespace Components {
          */
         "icon": MenuItemType['icon'];
         /**
-          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
-         */
-        "identifier": MenuItemType['identifier'];
-        /**
           * Define menu-item button label
          */
         "label": MenuItemType['label'];
@@ -900,7 +896,7 @@ export namespace Components {
          */
         "menuIndex": MenuItemType['menuIndex'];
         /**
-          * Define tabs size
+          * Define menu-item size
          */
         "size": MenuItemType['size'];
         /**
@@ -2232,7 +2228,7 @@ declare namespace LocalJSX {
         /**
           * Define menu-item content expended
          */
-        "expanded"?: MenuItemType['expanded'];
+        "expanded"?: boolean;
         /**
           * Define menu-item badge when defined menu-item contain an anchor instead of button
          */
@@ -2241,10 +2237,6 @@ declare namespace LocalJSX {
           * Define menu-item icon
          */
         "icon"?: MenuItemType['icon'];
-        /**
-          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
-         */
-        "identifier"?: MenuItemType['identifier'];
         /**
           * Define menu-item button label
          */
@@ -2258,7 +2250,11 @@ declare namespace LocalJSX {
          */
         "onFocused-item"?: (event: MgMenuItemCustomEvent<MenuItemType['menuIndex']>) => void;
         /**
-          * Define tabs size
+          * Emited event when active menu-item change
+         */
+        "onMenu-item-selected"?: (event: MgMenuItemCustomEvent<undefined>) => void;
+        /**
+          * Define menu-item size
          */
         "size"?: MenuItemType['size'];
         /**

@@ -6,7 +6,7 @@ export const variants = ['info', 'primary', 'secondary', 'success', 'warning', '
 /**
  * Variant type from variants
  */
-export type VariantType = typeof variants[number];
+type VariantType = typeof variants[number];
 
 /**
  * Component type

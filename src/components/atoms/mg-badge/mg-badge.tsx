@@ -46,7 +46,7 @@ export class MgBadge {
    */
   @Prop() variant: BadgeType['variant'] = variants[0]; // info
   @Watch('variant')
-  validateVariant(newValue: BadgeType['variant'], oldValue?: string): void {
+  validateVariant(newValue: BadgeType['variant'], oldValue?: BadgeType['variant']): void {
     if (!variants.includes(newValue)) {
       throw new Error(`<mg-badge> prop "variant" must be one of : ${variants.join(', ')}.`);
     } else {

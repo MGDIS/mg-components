@@ -1,9 +1,9 @@
 {
-  "timestamp": "2022-10-05T14:17:20",
+  "timestamp": "2022-10-07T08:01:59",
   "compiler": {
     "name": "@stencil/core",
-    "version": "2.18.0",
-    "typescriptVersion": "4.7.4"
+    "version": "2.17.4",
+    "typescriptVersion": "4.5.4"
   },
   "components": [
     {
@@ -4241,8 +4241,8 @@
       "filePath": "./src/components/molecules/menu/mg-menu/mg-menu.tsx",
       "encapsulation": "shadow",
       "tag": "mg-menu",
-      "readme": "## Anatomy\n\n![](./mg-tabs/doc/img/mg-tabs-anatomy.png)\n\n## Specs\n\n### Spacing\n\n- Standard : @base = 10px\n- Large : @base = 18px\n\n![](./mg-tabs/doc/img/mg-tabs-spacing.png)\n\n- if only text, no extra spacing,\n- if no badge : no extra spacing on the right\n- if only icon : no extra spacing on the right\n\n### Sizing\n\n![](./mg-tabs/doc/img/mg-tabs-sizing.png)\n\n### States\n\n![](./mg-tabs/doc/img/mg-tabs-states.png)\n\n### Responsive\n\n#### Line breaks (current management)\n\n![](./mg-tabs/doc/img/mg-tabs-responsive.png)\n",
-      "docs": "![](./mg-tabs/doc/img/mg-tabs-anatomy.png)",
+      "readme": "\n",
+      "docs": "",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -4391,26 +4391,14 @@
         },
         {
           "name": "icon",
-          "type": "{ icon: string; size?: \"small\" | \"regular\" | \"large\" | \"extra-large\"; variant?: \"info\" | \"success\" | \"warning\" | \"danger\"; spin?: boolean; }",
+          "type": "{ variant?: \"info\" | \"success\" | \"warning\" | \"danger\"; icon: string; }",
           "mutable": false,
           "reflectToAttr": false,
           "docs": "Define menu-item icon",
           "docsTags": [],
           "values": [
             {
-              "type": "{ icon: string; size?: \"small\""
-            },
-            {
-              "value": "regular",
-              "type": "string"
-            },
-            {
-              "value": "large",
-              "type": "string"
-            },
-            {
-              "value": "extra-large\"; variant?: \"info",
-              "type": "string"
+              "type": "{ variant?: \"info\""
             },
             {
               "value": "success",
@@ -4421,24 +4409,7 @@
               "type": "string"
             },
             {
-              "type": "\"danger\"; spin?: boolean; }"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "identifier",
-          "type": "string",
-          "mutable": false,
-          "attr": "identifier",
-          "reflectToAttr": false,
-          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
-          "docsTags": [],
-          "default": "createID(this.name)",
-          "values": [
-            {
-              "type": "string"
+              "type": "\"danger\"; icon: string; }"
             }
           ],
           "optional": false,
@@ -4482,7 +4453,7 @@
           "mutable": false,
           "attr": "size",
           "reflectToAttr": false,
-          "docs": "Define tabs size",
+          "docs": "Define menu-item size",
           "docsTags": [],
           "default": "'large'",
           "values": [
@@ -4507,7 +4478,7 @@
           "type": "Status.ACTIVE | Status.DISABLED | Status.HIDDEN | Status.VISIBLE",
           "mutable": false,
           "attr": "status",
-          "reflectToAttr": false,
+          "reflectToAttr": true,
           "docs": "Define menu-item status",
           "docsTags": [],
           "default": "Status.VISIBLE",
@@ -4538,6 +4509,15 @@
           "cancelable": true,
           "composed": true,
           "docs": "Emited event to communicate next focused menu-item to parent",
+          "docsTags": []
+        },
+        {
+          "event": "menu-item-selected",
+          "detail": "undefined",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emited event when active menu-item change",
           "docsTags": []
         }
       ],

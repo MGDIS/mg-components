@@ -18,22 +18,22 @@ export default {
 const Template = (args: any): HTMLElement => (
   <div>
     <mg-menu {...filterArgs(args)}>
-      <mg-menu-item label="Bane"></mg-menu-item>
-      <mg-menu-item label="Joker" status={Status.DISABLED}></mg-menu-item>
-      <mg-menu-item icon={{ icon: 'user' }} label="Harley Quinn"></mg-menu-item>
-      <mg-menu-item icon={{ icon: 'user' }} label="Batman" badge={{ value: 2, label: 'hello' }}>
+      <mg-menu-item label="1 - head-1"></mg-menu-item>
+      <mg-menu-item label="1 - head-2 long" status={Status.DISABLED}></mg-menu-item>
+      <mg-menu-item icon={{ icon: 'user' }} label="1 - head-3 very long"></mg-menu-item>
+      <mg-menu-item icon={{ icon: 'user' }} label="1 - head-4" badge={{ value: 2, label: 'hello' }}>
         <mg-menu label="submenu" display={DisplayType.VERTICAL}>
-          <mg-menu-item size={'medium'} label="Batman begins"></mg-menu-item>
-          <mg-menu-item size={'medium'} icon={{ icon: 'user' }} label="The dark knight"></mg-menu-item>
-          <mg-menu-item size={'medium'} icon={{ icon: 'user' }} label="The dark knight"></mg-menu-item>
-          <mg-menu-item size={'medium'} icon={{ icon: 'user' }} label="Batman super trilogie" badge={{ value: 2, label: 'hello' }}>
+          <mg-menu-item size="medium" label="Batman begins"></mg-menu-item>
+          <mg-menu-item size="medium" icon={{ icon: 'user' }} label="2 - head 1"></mg-menu-item>
+          <mg-menu-item size="medium" icon={{ icon: 'user' }} label="2 - head 2 very long"></mg-menu-item>
+          <mg-menu-item size="medium" icon={{ icon: 'user' }} label="2 - head 3" badge={{ value: 2, label: 'hello' }}>
             <mg-menu label="submenu 2" display={DisplayType.VERTICAL}>
-              <mg-menu-item size={'regular'} label="Batman begins"></mg-menu-item>
-              <mg-menu-item size={'regular'} icon={{ icon: 'user' }} label="The dark knight"></mg-menu-item>
-              <mg-menu-item size={'regular'} icon={{ icon: 'user' }} label="The dark knight rises" badge={{ value: 2, label: 'hello' }}></mg-menu-item>
+              <mg-menu-item size="regular" label="Batman begins"></mg-menu-item>
+              <mg-menu-item size="regular" icon={{ icon: 'user' }} label="3 - head 1"></mg-menu-item>
+              <mg-menu-item size="regular" icon={{ icon: 'user' }} label="3 - head 2" badge={{ value: 2, label: 'hello' }}></mg-menu-item>
             </mg-menu>
           </mg-menu-item>
-          <mg-menu-item size={'medium'} icon={{ icon: 'user' }} label="The dark knight rises" badge={{ value: 2, label: 'hello' }}></mg-menu-item>
+          <mg-menu-item size="medium" icon={{ icon: 'user' }} label="2 - head 4" badge={{ value: 2, label: 'hello' }}></mg-menu-item>
         </mg-menu>
         {/* <div>
           compte utilisqateur
@@ -41,29 +41,29 @@ const Template = (args: any): HTMLElement => (
           <mg-button>mon compte</mg-button>
         </div> */}
       </mg-menu-item>
-      <mg-menu-item icon={{ icon: 'user' }} label="Batman" badge={{ value: 2, label: 'hello' }}>
+      <mg-menu-item icon={{ icon: 'user' }} label="1 - head-5" badge={{ value: 2, label: 'hello' }}>
         <mg-menu label="submenu" display={DisplayType.VERTICAL}>
-          <mg-menu-item size={'medium'} label="Batman begins">
+          <mg-menu-item size="medium" label="2 - head 1">
             <mg-menu label="submenu" display={DisplayType.VERTICAL}>
-              <mg-menu-item size={'medium'} icon={{ icon: 'user' }} label="Batman trilogie" badge={{ value: 2, label: 'hello' }}>
+              <mg-menu-item size="regular" icon={{ icon: 'user' }} label="3 - head 1" badge={{ value: 2, label: 'hello' }}>
                 <mg-menu label="submenu 2" display={DisplayType.VERTICAL}>
-                  <mg-menu-item size={'regular'} label="Batman begins" status={Status.ACTIVE}></mg-menu-item>
-                  <mg-menu-item size={'regular'} icon={{ icon: 'user' }} label="The dark knight"></mg-menu-item>
-                  <mg-menu-item size={'regular'} icon={{ icon: 'user' }} label="The dark knight rises" badge={{ value: 2, label: 'hello' }}></mg-menu-item>
+                  <mg-menu-item size="regular" label="4 - head 1" status={Status.ACTIVE}></mg-menu-item>
+                  <mg-menu-item size="regular" icon={{ icon: 'user' }} label="4 - head 2"></mg-menu-item>
+                  <mg-menu-item size="regular" icon={{ icon: 'user' }} label="4 - head 3" badge={{ value: 2, label: 'hello' }}></mg-menu-item>
                 </mg-menu>
               </mg-menu-item>
             </mg-menu>
           </mg-menu-item>
-          <mg-menu-item size={'medium'} icon={{ icon: 'user' }} label="The dark knight"></mg-menu-item>
-          <mg-menu-item size={'medium'} icon={{ icon: 'user' }} label="The dark knight rises" badge={{ value: 2, label: 'hello' }}></mg-menu-item>
-          <mg-menu-item size={'medium'} icon={{ icon: 'user' }} label="Batman trilogie" badge={{ value: 2, label: 'hello' }}>
+          <mg-menu-item size="medium" icon={{ icon: 'user' }} label="2 - head 2"></mg-menu-item>
+          <mg-menu-item size="medium" icon={{ icon: 'user' }} label="2 - head 3" badge={{ value: 2, label: 'hello' }}></mg-menu-item>
+          <mg-menu-item size="medium" icon={{ icon: 'user' }} label="2 - head 4 very long" badge={{ value: 2, label: 'hello' }}>
             <mg-menu label="submenu 2" display={DisplayType.VERTICAL}>
-              <mg-menu-item size={'regular'} label="Batman begins"></mg-menu-item>
-              <mg-menu-item size={'regular'} icon={{ icon: 'user' }} label="The dark knight"></mg-menu-item>
-              <mg-menu-item size={'regular'} icon={{ icon: 'user' }} label="The dark knight rises" badge={{ value: 2, label: 'hello' }}></mg-menu-item>
+              <mg-menu-item size="regular" label="Batman begins"></mg-menu-item>
+              <mg-menu-item size="regular" icon={{ icon: 'user' }} label="3 - head 1"></mg-menu-item>
+              <mg-menu-item size="regular" icon={{ icon: 'user' }} label="3 - head 2" badge={{ value: 2, label: 'hello' }}></mg-menu-item>
             </mg-menu>
           </mg-menu-item>
-          <mg-menu-item size={'medium'} icon={{ icon: 'user' }} label="The batman" badge={{ value: 2, label: 'hello' }}></mg-menu-item>
+          <mg-menu-item size="medium" icon={{ icon: 'user' }} label="2 - head 5" badge={{ value: 2, label: 'hello' }}></mg-menu-item>
         </mg-menu>
         {/* <div>
           compte utilisqateur
