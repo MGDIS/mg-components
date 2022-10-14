@@ -72,6 +72,10 @@ export namespace Components {
          */
         "label": string;
         /**
+          * Prop to set aria-pressed on button element To describe the state of a button https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Button#aria_state_information
+         */
+        "pressed": boolean;
+        /**
           * Define button type Default: 'submit', as HTMLButtonElement type is submit by default
          */
         "type": ButtonType;
@@ -1321,6 +1325,10 @@ declare namespace LocalJSX {
           * aria-label In case button text is not explicit enough
          */
         "label"?: string;
+        /**
+          * Prop to set aria-pressed on button element To describe the state of a button https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Button#aria_state_information
+         */
+        "pressed"?: boolean;
         /**
           * Define button type Default: 'submit', as HTMLButtonElement type is submit by default
          */

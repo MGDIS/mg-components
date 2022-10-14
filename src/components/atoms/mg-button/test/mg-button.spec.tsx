@@ -27,6 +27,11 @@ describe('mg-button', () => {
     expect(root).toMatchSnapshot();
   });
 
+  test.each([false, true])('Should render a button, case pressed %s', async pressed => {
+    const { root } = await getPage({ label: 'label', pressed });
+    expect(root).toMatchSnapshot();
+  });
+
   test('Should render a button, case controls', async () => {
     const { root } = await getPage({ label: 'label', controls: 'element-controlled' });
     expect(root).toMatchSnapshot();
@@ -44,20 +49,19 @@ describe('mg-button', () => {
 
   test('Should replace classes on variant changes', async () => {
     const page = await getPage({ variant: 'primary', label: 'label' });
-    const element = page.doc.querySelector('mg-button');
-    let classPrimary = element.querySelector('.mg-button--primary');
+    const element: HTMLMgButtonElement = page.doc.querySelector('mg-button.mg-button--primary');
 
-    expect(classPrimary).not.toBeNull();
+    expect(element).not.toBeNull();
 
     // Change variant
     element.variant = 'danger';
     await page.waitForChanges();
 
-    classPrimary = element.querySelector('.mg-button--primary');
-    const classDanger = element.querySelector('.mg-button--danger');
+    const classPrimary = element.className.includes('.mg-button--primary');
+    const classDanger = element.className.includes('.mg-button--danger');
 
-    expect(classPrimary).toBeNull();
-    expect(classDanger).not.toBeNull();
+    expect(classPrimary).toBeFalsy();
+    expect(classDanger).not.toBeTruthy();
   });
 
   test.each(['', 'blu'])('Should throw error', async variant => {
@@ -81,8 +85,7 @@ describe('mg-button', () => {
   describe('prevent double click', () => {
     test('should NOT disable button after click', async () => {
       const page = await getPage({ identifier: 'identifier' });
-      const element = page.doc.querySelector('mg-button');
-      const button = element.querySelector('button');
+      const button = page.doc.querySelector('mg-button');
 
       expect(page.root).toMatchSnapshot();
 
@@ -91,15 +94,15 @@ describe('mg-button', () => {
 
       expect(page.root).toMatchSnapshot();
 
-      page.rootInstance.disabled = true;
+      button.disabled = true;
+      await page.waitForChanges();
 
       expect(page.root).toMatchSnapshot();
     });
 
     test('should disable button after click', async () => {
       const page = await getPage({ disableOnClick: true });
-      const element = page.doc.querySelector('mg-button');
-      const button = element.querySelector('button');
+      const button = page.doc.querySelector('mg-button');
 
       expect(page.root).toMatchSnapshot();
 
@@ -108,7 +111,7 @@ describe('mg-button', () => {
 
       expect(page.root).toMatchSnapshot();
 
-      page.rootInstance.disabled = false;
+      button.disabled = false;
       await page.waitForChanges();
 
       expect(page.root).toMatchSnapshot();
@@ -122,7 +125,45 @@ describe('mg-button', () => {
         },
       });
 
+      const button = page.doc.querySelector('mg-button');
+
       expect(page.root).toMatchSnapshot();
+
+      button.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+      await page.waitForChanges();
+
+      const loadinClass = button.classList.contains('mg-button--loading');
+
+      expect(loadinClass).toBeFalsy();
+    });
+  });
+
+  describe.each([{ identifier: 'identifier' }, { identifier: 'identifier', disabled: true }])('keyboard', props => {
+    test.each(['Space', 'Enter', 'NumpadEnter'])('Should trigger click event on keydown', async key => {
+      const page = await getPage(props);
+      const button = page.doc.querySelector('mg-button');
+
+      const spy = jest.spyOn(button, 'dispatchEvent');
+
+      button.dispatchEvent(new KeyboardEvent('keydown', { bubbles: true, key }));
+      await page.waitForChanges();
+
+      if (props.disabled) {
+        expect(spy).not.lastCalledWith(expect.objectContaining({ type: 'click' }));
+      } else {
+        expect(spy).lastCalledWith(expect.objectContaining({ type: 'click' }));
+      }
+    });
+    test.each(['ArrowRight', 'Tab'])('Should  NOT trigger click event on keydown', async key => {
+      const page = await getPage(props);
+      const button = page.doc.querySelector('mg-button');
+
+      const spy = jest.spyOn(button, 'dispatchEvent');
+
+      button.dispatchEvent(new KeyboardEvent('keydown', { bubbles: true, key }));
+      await page.waitForChanges();
+
+      expect(spy).not.lastCalledWith(expect.objectContaining({ type: 'click' }));
     });
   });
 });

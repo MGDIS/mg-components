@@ -44,7 +44,7 @@ describe.each([
 ])('template', template => {
   test('should disable button after keyUp "Space"', async () => {
     const page = await createPage(template);
-    const button = await page.find('button');
+    const button = await page.find('mg-button');
 
     const screenshot = await page.screenshot();
     expect(screenshot).toMatchImageSnapshot();

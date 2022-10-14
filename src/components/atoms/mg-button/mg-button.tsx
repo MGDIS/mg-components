@@ -1,11 +1,11 @@
-import { Component, Element, h, Prop, State, Watch } from '@stencil/core';
+import { Component, Element, h, Prop, State, Watch, Host } from '@stencil/core';
 import { variants, ButtonType } from './mg-button.conf';
 import { ClassList } from '../../../utils/components.utils';
 
 @Component({
   tag: 'mg-button',
   styleUrl: 'mg-button.scss',
-  scoped: true,
+  shadow: true,
 })
 export class MgButton {
   /************
@@ -60,7 +60,7 @@ export class MgButton {
    * Define form id to attach button with.
    * If this attribute is not set, the <button> is associated with its ancestor <form> element.
    */
-  @Prop({ mutable: true }) form: string;
+  @Prop({ mutable: true, reflect: true }) form: string;
 
   /**
    * Disable button
@@ -97,6 +97,13 @@ export class MgButton {
    * Prop to set aria-controls on button element
    */
   @Prop() controls: string;
+
+  /**
+   * Prop to set aria-pressed on button element
+   * To describe the state of a button
+   * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Button#aria_state_information
+   */
+  @Prop() pressed: boolean;
 
   /**
    * Option to set aria-haspopup
@@ -142,6 +149,19 @@ export class MgButton {
   };
 
   /**
+   * Handle onKeydown event
+   *
+   * @param {KeyboardEvent} event keyboard event
+   * @returns {void}
+   */
+  private handleKeydown = (event: KeyboardEvent): void => {
+    if (['Space', 'Enter', 'NumpadEnter'].includes(event.key) && !this.disabled) {
+      event.preventDefault();
+      this.element.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+    }
+  };
+
+  /**
    * Check if props are well configured on init
    *
    * @returns {void}
@@ -166,7 +186,9 @@ export class MgButton {
    */
   render(): HTMLElement {
     return (
-      <button
+      <Host
+        role="button"
+        tabIndex={this.disabled ? -1 : 0}
         id={this.identifier}
         class={this.classList.join()}
         type={this.type}
@@ -175,16 +197,15 @@ export class MgButton {
         aria-expanded={this.expanded !== undefined && this.expanded.toString()}
         aria-controls={this.controls}
         aria-haspopup={this.haspopup !== undefined && this.haspopup.toString()}
+        aria-pressed={this.pressed !== undefined && this.pressed.toString()}
         onClick={this.handleClick}
-        // has stencil does not support form attribute on button, we set the attribute from the ref
-        // https://github.com/ionic-team/stencil/issues/2703#issuecomment-1050943715
-        ref={btn => this.form && btn.setAttribute('form', this.form)}
+        onKeyDown={this.handleKeydown}
       >
         {this.loading && <mg-icon icon="loader" spin></mg-icon>}
         <div class="mg-button__content">
           <slot></slot>
         </div>
-      </button>
+      </Host>
     );
   }
 }
