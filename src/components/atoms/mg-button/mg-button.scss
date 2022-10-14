@@ -125,7 +125,7 @@ $button-column-gap: 0.6rem;
   }
 
   &.mg-button--loading {
-    & > mg-icon {
+    mg-icon[icon='loader'] {
       position: absolute;
       left: 50%;
       top: 50%;
@@ -135,12 +135,12 @@ $button-column-gap: 0.6rem;
       opacity: 0;
     }
   }
-}
 
-.mg-button__content {
-  display: flex;
-  align-items: center;
-  column-gap: $button-column-gap;
+  &__content {
+    display: flex;
+    align-items: center;
+    column-gap: $button-column-gap;
+  }
 }
 
 mg-button {

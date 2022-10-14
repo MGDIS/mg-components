@@ -139,13 +139,13 @@ describe('mg-button', () => {
   });
 
   describe.each([{ identifier: 'identifier' }, { identifier: 'identifier', disabled: true }])('keyboard', props => {
-    test.each(['Space', 'Enter', 'NumpadEnter'])('Should trigger click event on keydown', async key => {
+    test.each([' ', 'Enter', 'NumpadEnter'])('Should trigger click event on keydown', async key => {
       const page = await getPage(props);
       const button = page.doc.querySelector('mg-button');
 
       const spy = jest.spyOn(button, 'dispatchEvent');
 
-      button.dispatchEvent(new KeyboardEvent('keydown', { bubbles: true, key }));
+      button.dispatchEvent(new KeyboardEvent(key === ' ' ? 'keyup' : 'keydown', { bubbles: true, key }));
       await page.waitForChanges();
 
       if (props.disabled) {
@@ -154,7 +154,7 @@ describe('mg-button', () => {
         expect(spy).lastCalledWith(expect.objectContaining({ type: 'click' }));
       }
     });
-    test.each(['ArrowRight', 'Tab'])('Should  NOT trigger click event on keydown', async key => {
+    test.each(['ArrowRight', 'Tab', ' '])('Should NOT trigger click event on keydown', async key => {
       const page = await getPage(props);
       const button = page.doc.querySelector('mg-button');
 

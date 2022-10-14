@@ -140,22 +140,36 @@ export class MgButton {
    */
   private handleClick = (event: MouseEvent): void => {
     if (this.disabled) event.stopPropagation();
-
     // Used to prevent multi-click.
-    if (this.disableOnClick && !this.disabled) {
+    else if (this.disableOnClick) {
       this.loading = true;
       this.disabled = true;
     }
   };
 
   /**
-   * Handle onKeydown event
+   * Handle onKeyDown event
    *
    * @param {KeyboardEvent} event keyboard event
    * @returns {void}
    */
   private handleKeydown = (event: KeyboardEvent): void => {
-    if (['Space', 'Enter', 'NumpadEnter'].includes(event.key) && !this.disabled) {
+    if (!this.disabled && event.key === ' ') {
+      event.preventDefault();
+    } else if (!this.disabled && ['Enter', 'NumpadEnter'].includes(event.key)) {
+      event.preventDefault();
+      this.element.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+    }
+  };
+
+  /**
+   * Handle onKeyUp event
+   *
+   * @param {KeyboardEvent} event keyboard event
+   * @returns {void}
+   */
+  private handleKeyup = (event: KeyboardEvent): void => {
+    if (!this.disabled && event.key === ' ') {
       event.preventDefault();
       this.element.dispatchEvent(new MouseEvent('click', { bubbles: true }));
     }
@@ -199,6 +213,7 @@ export class MgButton {
         aria-haspopup={this.haspopup !== undefined && this.haspopup.toString()}
         aria-pressed={this.pressed !== undefined && this.pressed.toString()}
         onClick={this.handleClick}
+        onKeyUp={this.handleKeyup}
         onKeyDown={this.handleKeydown}
       >
         {this.loading && <mg-icon icon="loader" spin></mg-icon>}
