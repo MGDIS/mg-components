@@ -1,0 +1,1673 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mg-menu events should manage focused-item event in %s menu 1`] = `
+<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--horizontal" display="horizontal" role="menubar">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" menu-index="0" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          batman
+        </span>
+        <span class="mg-menu-item__navigation-button-chevron">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" display="horizontal" hidden="" role="menu">
+      <mock:shadow-root>
+        <slot></slot>
+      </mock:shadow-root>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="0" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-1" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              batman begins
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="1" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-2" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              joker: the dark knight
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal mg-menu-item--last" menu-index="2" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-3" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              bane: the dark knight rise
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+    </mg-menu>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="1" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="2" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          joker
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal mg-menu-item--last" menu-index="2" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="3" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          bane
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+  </mg-menu-item>
+</mg-menu>
+`;
+
+exports[`mg-menu events should manage focused-item event in %s menu 2`] = `
+<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--horizontal" display="horizontal" role="menubar">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" menu-index="0" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          batman
+        </span>
+        <span class="mg-menu-item__navigation-button-chevron">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" display="horizontal" hidden="" role="menu">
+      <mock:shadow-root>
+        <slot></slot>
+      </mock:shadow-root>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="0" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-1" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              batman begins
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="1" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-2" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              joker: the dark knight
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal mg-menu-item--last" menu-index="2" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-3" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              bane: the dark knight rise
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+    </mg-menu>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="1" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="2" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          joker
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal mg-menu-item--last" menu-index="2" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="3" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          bane
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+  </mg-menu-item>
+</mg-menu>
+`;
+
+exports[`mg-menu events should manage focused-item event in %s menu 3`] = `
+<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--horizontal" display="horizontal" role="menubar">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" menu-index="0" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          batman
+        </span>
+        <span class="mg-menu-item__navigation-button-chevron">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" display="horizontal" hidden="" role="menu">
+      <mock:shadow-root>
+        <slot></slot>
+      </mock:shadow-root>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="0" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-1" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              batman begins
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="1" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-2" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              joker: the dark knight
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal mg-menu-item--last" menu-index="2" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-3" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              bane: the dark knight rise
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+    </mg-menu>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="1" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="2" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          joker
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal mg-menu-item--last" menu-index="2" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="3" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          bane
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+  </mg-menu-item>
+</mg-menu>
+`;
+
+exports[`mg-menu events should manage focused-item event in %s menu 4`] = `
+<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--horizontal" display="horizontal" role="menubar">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" menu-index="0" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          batman
+        </span>
+        <span class="mg-menu-item__navigation-button-chevron">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" display="horizontal" hidden="" role="menu">
+      <mock:shadow-root>
+        <slot></slot>
+      </mock:shadow-root>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="0" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-1" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              batman begins
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="1" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-2" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              joker: the dark knight
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal mg-menu-item--last" menu-index="2" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-3" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              bane: the dark knight rise
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+    </mg-menu>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="1" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="2" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          joker
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal mg-menu-item--last" menu-index="2" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="3" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          bane
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+  </mg-menu-item>
+</mg-menu>
+`;
+
+exports[`mg-menu events should manage focused-item event in %s menu 5`] = `
+<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--horizontal" display="horizontal" role="menubar">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" menu-index="0" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          batman
+        </span>
+        <span class="mg-menu-item__navigation-button-chevron">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" display="horizontal" hidden="" role="menu">
+      <mock:shadow-root>
+        <slot></slot>
+      </mock:shadow-root>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="0" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-1" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              batman begins
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="1" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-2" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              joker: the dark knight
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal mg-menu-item--last" menu-index="2" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-3" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              bane: the dark knight rise
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+    </mg-menu>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="1" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="2" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          joker
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal mg-menu-item--last" menu-index="2" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="3" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          bane
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+  </mg-menu-item>
+</mg-menu>
+`;
+
+exports[`mg-menu events should manage focused-item event in %s menu 6`] = `
+<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--vertical" display="vertical" role="menubar">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--vertical" menu-index="0" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="1" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          batman
+        </span>
+        <span class="mg-menu-item__navigation-button-chevron">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" display="horizontal" hidden="" role="menu">
+      <mock:shadow-root>
+        <slot></slot>
+      </mock:shadow-root>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="0" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-1" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              batman begins
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="1" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-2" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              joker: the dark knight
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal mg-menu-item--last" menu-index="2" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-3" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              bane: the dark knight rise
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+    </mg-menu>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--vertical" menu-index="1" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="2" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          joker
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--vertical" menu-index="2" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="3" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          bane
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+  </mg-menu-item>
+</mg-menu>
+`;
+
+exports[`mg-menu events should manage focused-item event in %s menu 7`] = `
+<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--vertical" display="vertical" role="menubar">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--vertical" menu-index="0" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="1" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          batman
+        </span>
+        <span class="mg-menu-item__navigation-button-chevron">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" display="horizontal" hidden="" role="menu">
+      <mock:shadow-root>
+        <slot></slot>
+      </mock:shadow-root>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="0" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-1" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              batman begins
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="1" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-2" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              joker: the dark knight
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal mg-menu-item--last" menu-index="2" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-3" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              bane: the dark knight rise
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+    </mg-menu>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--vertical" menu-index="1" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="2" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          joker
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--vertical" menu-index="2" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="3" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          bane
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+  </mg-menu-item>
+</mg-menu>
+`;
+
+exports[`mg-menu events should manage focused-item event in %s menu 8`] = `
+<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--vertical" display="vertical" role="menubar">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--vertical" menu-index="0" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="1" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          batman
+        </span>
+        <span class="mg-menu-item__navigation-button-chevron">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" display="horizontal" hidden="" role="menu">
+      <mock:shadow-root>
+        <slot></slot>
+      </mock:shadow-root>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="0" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-1" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              batman begins
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="1" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-2" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              joker: the dark knight
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal mg-menu-item--last" menu-index="2" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-3" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              bane: the dark knight rise
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+    </mg-menu>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--vertical" menu-index="1" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="2" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          joker
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--vertical" menu-index="2" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="3" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          bane
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+  </mg-menu-item>
+</mg-menu>
+`;
+
+exports[`mg-menu events should manage focused-item event in %s menu 9`] = `
+<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--vertical" display="vertical" role="menubar">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--vertical" menu-index="0" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="1" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          batman
+        </span>
+        <span class="mg-menu-item__navigation-button-chevron">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" display="horizontal" hidden="" role="menu">
+      <mock:shadow-root>
+        <slot></slot>
+      </mock:shadow-root>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="0" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-1" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              batman begins
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="1" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-2" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              joker: the dark knight
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal mg-menu-item--last" menu-index="2" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-3" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              bane: the dark knight rise
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+    </mg-menu>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--vertical" menu-index="1" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="2" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          joker
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--vertical" menu-index="2" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="3" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          bane
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+  </mg-menu-item>
+</mg-menu>
+`;
+
+exports[`mg-menu events should manage focused-item event in %s menu 10`] = `
+<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--vertical" display="vertical" role="menubar">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--vertical" menu-index="0" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="1" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          batman
+        </span>
+        <span class="mg-menu-item__navigation-button-chevron">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" display="horizontal" hidden="" role="menu">
+      <mock:shadow-root>
+        <slot></slot>
+      </mock:shadow-root>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="0" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-1" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              batman begins
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="1" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-2" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              joker: the dark knight
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal mg-menu-item--last" menu-index="2" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-3" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              bane: the dark knight rise
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+    </mg-menu>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--vertical" menu-index="1" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="2" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          joker
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--vertical" menu-index="2" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="3" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          bane
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+  </mg-menu-item>
+</mg-menu>
+`;
+
+exports[`mg-menu events should manage outside click 1`] = `
+<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--horizontal" display="horizontal" role="menubar">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" menu-index="0" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          batman
+        </span>
+        <span class="mg-menu-item__navigation-button-chevron">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" display="horizontal" hidden="" role="menu">
+      <mock:shadow-root>
+        <slot></slot>
+      </mock:shadow-root>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="0" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-1" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              batman begins
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="1" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-2" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              joker: the dark knight
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal mg-menu-item--last" menu-index="2" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-3" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              bane: the dark knight rise
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+    </mg-menu>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="1" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="2" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          joker
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal mg-menu-item--last" menu-index="2" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="3" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          bane
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+  </mg-menu-item>
+</mg-menu>
+`;
+
+exports[`mg-menu events should manage outside click 2`] = `
+<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--horizontal" display="horizontal" role="menubar">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" menu-index="0" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          batman
+        </span>
+        <span class="mg-menu-item__navigation-button-chevron">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" display="horizontal" hidden="" role="menu">
+      <mock:shadow-root>
+        <slot></slot>
+      </mock:shadow-root>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="0" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-1" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              batman begins
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="1" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-2" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              joker: the dark knight
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal mg-menu-item--last" menu-index="2" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-3" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              bane: the dark knight rise
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+    </mg-menu>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="1" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="2" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          joker
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal mg-menu-item--last" menu-index="2" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="3" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          bane
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+  </mg-menu-item>
+</mg-menu>
+`;
+
+exports[`mg-menu events should manage outside click 3`] = `
+<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--horizontal" display="horizontal" role="menubar">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" menu-index="0" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          batman
+        </span>
+        <span class="mg-menu-item__navigation-button-chevron">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" display="horizontal" hidden="" role="menu">
+      <mock:shadow-root>
+        <slot></slot>
+      </mock:shadow-root>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="0" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-1" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              batman begins
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="1" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-2" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              joker: the dark knight
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal mg-menu-item--last" menu-index="2" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-3" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              bane: the dark knight rise
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+    </mg-menu>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="1" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="2" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          joker
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal mg-menu-item--last" menu-index="2" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="3" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          bane
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+  </mg-menu-item>
+</mg-menu>
+`;
+
+exports[`mg-menu events should manage outside click 4`] = `
+<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--vertical" display="vertical" role="menubar">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--vertical" menu-index="0" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="1" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          batman
+        </span>
+        <span class="mg-menu-item__navigation-button-chevron">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" display="horizontal" hidden="" role="menu">
+      <mock:shadow-root>
+        <slot></slot>
+      </mock:shadow-root>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="0" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-1" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              batman begins
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="1" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-2" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              joker: the dark knight
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal mg-menu-item--last" menu-index="2" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-3" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              bane: the dark knight rise
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+    </mg-menu>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--vertical" menu-index="1" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="2" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          joker
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--vertical" menu-index="2" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="3" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          bane
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+  </mg-menu-item>
+</mg-menu>
+`;
+
+exports[`mg-menu events should manage outside click 5`] = `
+<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--vertical" display="vertical" role="menubar">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--vertical" menu-index="0" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="1" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          batman
+        </span>
+        <span class="mg-menu-item__navigation-button-chevron">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" display="horizontal" hidden="" role="menu">
+      <mock:shadow-root>
+        <slot></slot>
+      </mock:shadow-root>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="0" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-1" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              batman begins
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="1" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-2" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              joker: the dark knight
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal mg-menu-item--last" menu-index="2" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-3" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              bane: the dark knight rise
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+    </mg-menu>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--vertical" menu-index="1" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="2" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          joker
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--vertical" menu-index="2" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="3" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          bane
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+  </mg-menu-item>
+</mg-menu>
+`;
+
+exports[`mg-menu events should manage outside click 6`] = `
+<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--vertical" display="vertical" role="menubar">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--vertical" menu-index="0" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="1" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          batman
+        </span>
+        <span class="mg-menu-item__navigation-button-chevron">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" display="horizontal" hidden="" role="menu">
+      <mock:shadow-root>
+        <slot></slot>
+      </mock:shadow-root>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="0" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-1" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              batman begins
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="1" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-2" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              joker: the dark knight
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal mg-menu-item--last" menu-index="2" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-3" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              bane: the dark knight rise
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+    </mg-menu>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--vertical" menu-index="1" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="2" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          joker
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--vertical" menu-index="2" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="3" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          bane
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+  </mg-menu-item>
+</mg-menu>
+`;
+
+exports[`mg-menu render with args { label: 'batman menu' } 1`] = `
+<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--horizontal" display="horizontal" role="menubar">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" menu-index="0" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          batman
+        </span>
+        <span class="mg-menu-item__navigation-button-chevron">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" display="horizontal" hidden="" role="menu">
+      <mock:shadow-root>
+        <slot></slot>
+      </mock:shadow-root>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="0" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-1" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              batman begins
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="1" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-2" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              joker: the dark knight
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal mg-menu-item--last" menu-index="2" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-3" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              bane: the dark knight rise
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+    </mg-menu>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="1" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="2" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          joker
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal mg-menu-item--last" menu-index="2" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="3" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          bane
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+  </mg-menu-item>
+</mg-menu>
+`;
+
+exports[`mg-menu render with args { label: 'batman menu', display: 'horizontal' } 1`] = `
+<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--horizontal" display="horizontal" role="menubar">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" menu-index="0" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          batman
+        </span>
+        <span class="mg-menu-item__navigation-button-chevron">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" display="horizontal" hidden="" role="menu">
+      <mock:shadow-root>
+        <slot></slot>
+      </mock:shadow-root>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="0" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-1" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              batman begins
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="1" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-2" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              joker: the dark knight
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal mg-menu-item--last" menu-index="2" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-3" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              bane: the dark knight rise
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+    </mg-menu>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="1" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="2" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          joker
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal mg-menu-item--last" menu-index="2" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="3" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          bane
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+  </mg-menu-item>
+</mg-menu>
+`;
+
+exports[`mg-menu render with args { label: 'batman menu', display: 'vertical' } 1`] = `
+<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--vertical" display="vertical" role="menubar">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--vertical" menu-index="0" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="1" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          batman
+        </span>
+        <span class="mg-menu-item__navigation-button-chevron">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" display="horizontal" hidden="" role="menu">
+      <mock:shadow-root>
+        <slot></slot>
+      </mock:shadow-root>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="0" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-1" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              batman begins
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="1" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-2" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              joker: the dark knight
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal mg-menu-item--last" menu-index="2" role="menuitem" status="visible">
+        <mock:shadow-root>
+          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-3" tabindex="0">
+            <span class="mg-menu-item__navigation-button-text">
+              bane: the dark knight rise
+            </span>
+          </button>
+          <div class="false mg-menu-item__collapse-container">
+            <slot></slot>
+          </div>
+        </mock:shadow-root>
+      </mg-menu-item>
+    </mg-menu>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--vertical" menu-index="1" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="2" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          joker
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--vertical" menu-index="2" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="3" tabindex="0">
+        <span class="mg-menu-item__navigation-button-text">
+          bane
+        </span>
+      </button>
+      <div class="false mg-menu-item__collapse-container">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+  </mg-menu-item>
+</mg-menu>
+`;

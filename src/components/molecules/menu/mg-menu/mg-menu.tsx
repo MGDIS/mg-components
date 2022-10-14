@@ -1,6 +1,6 @@
 import { Component, h, Prop, State, Element, Watch, Host } from '@stencil/core';
-import { createID, ClassList } from '../../../../utils/components.utils';
-import { DisplayType, MenuType } from './mg-menu.conf';
+import { ClassList } from '../../../../utils/components.utils';
+import { Display } from './mg-menu.conf';
 
 @Component({
   tag: 'mg-menu',
@@ -25,19 +25,13 @@ export class MgMenu {
   @Element() element: HTMLMgMenuElement;
 
   /**
-   * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
-   * If not set, it will be created.
-   */
-  @Prop() identifier: MenuType['identifier'] = createID(this.name);
-
-  /**
    * Menu label. Include short menu description.
    * Required for accessibility
    */
-  @Prop() label!: MenuType['label'];
+  @Prop() label!: string;
   @Watch('label')
-  validateLabel(newValue: MenuType['label']): void {
-    if (!(newValue.length > 0)) {
+  validateLabel(newValue: MgMenu['label']): void {
+    if (newValue === undefined) {
       throw new Error(`<${this.name}> prop "label" is required.`);
     }
   }
@@ -45,13 +39,15 @@ export class MgMenu {
   /**
    * Component display orientation
    */
-  @Prop({ reflect: true }) display: MenuType['display'] = DisplayType.HORIZONTAL;
+  @Prop({ reflect: true }) display: Display = Display.HORIZONTAL;
   @Watch('display')
-  validateDisplay(newValue: MenuType['display']): void {
-    if (newValue === DisplayType.VERTICAL) {
-      this.classList.add(`${this.name}--${DisplayType.VERTICAL}`);
-    } else if (newValue === DisplayType.HORIZONTAL) {
-      this.classList.add(`${this.name}--${DisplayType.HORIZONTAL}`);
+  validateDisplay(newValue: MgMenu['display']): void {
+    if (newValue === Display.VERTICAL) {
+      this.classList.add(`${this.name}--${Display.VERTICAL}`);
+    } else if (newValue === Display.HORIZONTAL) {
+      this.classList.add(`${this.name}--${Display.HORIZONTAL}`);
+    } else {
+      throw new Error(`<${this.name}> prop "display" must be one of : ${Display.HORIZONTAL}, ${Display.VERTICAL}.`);
     }
   }
 
@@ -68,10 +64,10 @@ export class MgMenu {
   /**
    * Component focused menu-item
    */
-  @State() focusedMenuItem: number;
+  @State() focusedMenuItem = 0;
   @Watch('focusedMenuItem')
-  validatefocusedMenuItem(newValue: number, oldValue: number): void {
-    if (newValue !== oldValue || newValue === 0) {
+  validatefocusedMenuItem(newValue: MgMenu['focusedMenuItem'], oldValue: MgMenu['focusedMenuItem']): void {
+    if (newValue !== oldValue) {
       // reset expanded on previous active menu item
       this.menuItems.forEach((item, index) => {
         this.closeMenuItem(item, index !== this.focusedMenuItem);
@@ -86,7 +82,7 @@ export class MgMenu {
    * @param {boolean} condition addionnal condition
    * @returns {void}
    */
-  private closeMenuItem = (item: HTMLMgMenuItemElement, condition = true): void => {
+  private closeMenuItem = (item: HTMLMgMenuItemElement, condition: boolean): void => {
     if (!this.isChildMenu && condition) {
       item.expanded = false;
     }
@@ -95,10 +91,11 @@ export class MgMenu {
   /**
    * Store menu-items on component init and add listeners
    */
-  private initMenuItems = () => {
+  private initMenuItems = (): void => {
     // store all menu-items
-    this.menuItems = Array.from(this.element.querySelectorAll(`[identifier="${this.element.identifier}"] > mg-menu-item`));
+    this.menuItems = Array.from(this.element.children) as HTMLMgMenuItemElement[];
 
+    // add listeners on menu item and edit index
     this.menuItems.forEach((item, index) => {
       item.menuIndex = index;
       item.addEventListener('focused-item', (event: CustomEvent & { target: HTMLMgMenuItemElement }) => {
@@ -125,23 +122,27 @@ export class MgMenu {
   /**
    * Check if component slots configuration
    *
-   * @returns {void}
+   * @returns {ReturnType<typeof setTimeout>} timeout
    */
-  componentDidLoad(): void {
+  componentDidLoad(): ReturnType<typeof setTimeout> {
     this.initMenuItems();
-    this.isChildMenu = this.element.closest('mg-menu-item') !== null;
+    // update props and states after componentDidLoad hook
+    // return a promise to process action only in the FIRST render().
+    // https://stenciljs.com/docs/component-lifecycle#componentwillload
+    return setTimeout(() => {
+      this.isChildMenu = this.element.closest('mg-menu-item') !== null;
 
-    // click outside management for child vertical menu
-    if (!this.isChildMenu && this.display === DisplayType.HORIZONTAL) {
-      document.addEventListener('click', (event: MouseEvent & { target: HTMLElement }) => {
-        // if (event.target.closest(`[identifier="${this.identifier}"`) === null) {
-        if (event.target.closest('mg-menu') === null) {
-          this.menuItems.forEach(item => {
-            this.closeMenuItem(item, this.display === DisplayType.HORIZONTAL);
-          });
-        }
-      });
-    }
+      // click outside management for child vertical menu
+      if (!this.isChildMenu && this.display === Display.HORIZONTAL) {
+        document.addEventListener('click', (event: MouseEvent & { target: HTMLElement }) => {
+          if (event.target.closest('mg-menu') === null) {
+            this.menuItems.forEach(item => {
+              this.closeMenuItem(item, this.display === Display.HORIZONTAL);
+            });
+          }
+        });
+      }
+    }, 0);
   }
 
   /**
@@ -151,7 +152,7 @@ export class MgMenu {
    */
   render(): HTMLElement {
     return (
-      <Host identifier={this.identifier} role={this.isChildMenu ? 'menu' : 'menubar'} aria-label={this.label} classList={this.classList.join()}>
+      <Host role={this.isChildMenu ? 'menu' : 'menubar'} aria-label={this.label} classList={this.classList.join()}>
         <slot></slot>
       </Host>
     );

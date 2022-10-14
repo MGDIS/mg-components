@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-10-07T08:01:59",
+  "timestamp": "2022-10-14T12:27:33",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.17.4",
@@ -101,7 +101,7 @@
               "type": "string"
             }
           ],
-          "optional": false,
+          "optional": true,
           "required": false
         }
       ],
@@ -797,7 +797,7 @@
               "type": "string"
             }
           ],
-          "optional": false,
+          "optional": true,
           "required": false
         }
       ],
@@ -4248,36 +4248,19 @@
       "props": [
         {
           "name": "display",
-          "type": "DisplayType.HORIZONTAL | DisplayType.VERTICAL",
+          "type": "Display.HORIZONTAL | Display.VERTICAL",
           "mutable": false,
           "attr": "display",
           "reflectToAttr": true,
           "docs": "Component display orientation",
           "docsTags": [],
-          "default": "DisplayType.HORIZONTAL",
+          "default": "Display.HORIZONTAL",
           "values": [
             {
-              "type": "DisplayType.HORIZONTAL"
+              "type": "Display.HORIZONTAL"
             },
             {
-              "type": "DisplayType.VERTICAL"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "identifier",
-          "type": "string",
-          "mutable": false,
-          "attr": "identifier",
-          "reflectToAttr": false,
-          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)\nIf not set, it will be created.",
-          "docsTags": [],
-          "default": "createID(this.name)",
-          "values": [
-            {
-              "type": "string"
+              "type": "Display.VERTICAL"
             }
           ],
           "optional": false,
@@ -4321,7 +4304,7 @@
       "props": [
         {
           "name": "badge",
-          "type": "{ value: string | number; label: string; variant?: \"info\" | \"primary\" | \"secondary\" | \"success\" | \"warning\" | \"danger\"; outline?: boolean; }",
+          "type": "{ value: string | number; variant?: \"info\" | \"primary\" | \"secondary\" | \"success\" | \"warning\" | \"danger\"; label: string; }",
           "mutable": false,
           "reflectToAttr": false,
           "docs": "Define menu-item badge",
@@ -4331,7 +4314,7 @@
               "type": "{ value: string"
             },
             {
-              "type": "number; label: string; variant?: \"info\""
+              "type": "number; variant?: \"info\""
             },
             {
               "value": "primary",
@@ -4350,7 +4333,7 @@
               "type": "string"
             },
             {
-              "type": "\"danger\"; outline?: boolean; }"
+              "type": "\"danger\"; label: string; }"
             }
           ],
           "optional": false,
@@ -4414,6 +4397,22 @@
           ],
           "optional": false,
           "required": false
+        },
+        {
+          "name": "identifier",
+          "type": "string",
+          "mutable": false,
+          "attr": "identifier",
+          "reflectToAttr": false,
+          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
         },
         {
           "name": "label",
@@ -5345,7 +5344,7 @@
         },
         {
           "name": "size",
-          "type": "string",
+          "type": "\"large\" | \"regular\"",
           "mutable": false,
           "attr": "size",
           "reflectToAttr": false,
@@ -5354,6 +5353,11 @@
           "default": "'regular'",
           "values": [
             {
+              "value": "large",
+              "type": "string"
+            },
+            {
+              "value": "regular",
               "type": "string"
             }
           ],

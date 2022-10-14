@@ -1,16 +1,7 @@
 /**
  * Menu display type
  */
-export enum DisplayType {
+export enum Display {
   VERTICAL = 'vertical',
   HORIZONTAL = 'horizontal',
 }
-
-/**
- * Component type
- */
-export type MenuType = {
-  label: string;
-  identifier?: string;
-  display?: DisplayType;
-};

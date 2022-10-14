@@ -1,6 +1,3 @@
-import { BadgeType } from '../../../atoms/mg-badge/mg-badge.conf';
-import { IconType } from '../../../atoms/mg-icon/mg-icon.conf';
-
 /**
  * Available menu-item positions
  */
@@ -25,21 +22,6 @@ export enum Status {
 export const sizes = ['regular', 'medium', 'large'] as const;
 
 /**
- * Icon Size from sizes
+ * item Size from sizes
  */
-export type SizeType = typeof sizes[number];
-
-/**
- * Component type
- */
-export type MenuItemType = {
-  label: string;
-  status?: Status;
-  href?: string;
-  size?: SizeType;
-  identifier?: string;
-  badge?: BadgeType;
-  icon?: Omit<IconType, 'size' | 'spin'>;
-  menuIndex?: number;
-  expanded?: boolean;
-};
+export type MenuItemSizeType = typeof sizes[number];

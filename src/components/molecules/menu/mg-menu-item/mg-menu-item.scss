@@ -20,6 +20,8 @@ $navigation-button-sizes: (
 :host {
   position: relative;
   display: block;
+  background-color: hsl(var(--mg-menu-item-background-color));
+  z-index: 1;
 }
 
 :host(.mg-menu-item--last) .mg-menu-item__collapse-container {

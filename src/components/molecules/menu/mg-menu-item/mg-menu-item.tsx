@@ -1,7 +1,10 @@
 import { Component, h, Prop, State, Host, Watch, Element, Event, EventEmitter } from '@stencil/core';
 import { ClassList } from '../../../../utils/components.utils';
-import { ElementPosition, MenuItemType, sizes, Status } from './mg-menu-item.conf';
-import { DisplayType } from '../mg-menu/mg-menu.conf';
+import { MgBadge } from '../../../atoms/mg-badge/mg-badge';
+import { MgIcon } from '../../../atoms/mg-icon/mg-icon';
+import { MgMenu } from '../mg-menu/mg-menu';
+import { Display } from '../mg-menu/mg-menu.conf';
+import { ElementPosition, sizes, MenuItemSizeType, Status } from './mg-menu-item.conf';
 
 @Component({
   tag: 'mg-menu-item',
@@ -35,11 +38,22 @@ export class MgMenuItem {
    ************/
 
   /**
+   * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
+   */
+  @Prop() identifier!: string;
+  @Watch('identifier')
+  validateIdentifier(newValue: string): void {
+    if (!(newValue.length > 0)) {
+      throw new Error(`<${this.name}> prop "identifier" is required.`);
+    }
+  }
+
+  /**
    * Define menu-item button label
    */
-  @Prop() label!: MenuItemType['label'];
+  @Prop() label!: string;
   @Watch('label')
-  validateLabel(newValue: MenuItemType['label']): void {
+  validateLabel(newValue: string): void {
     if (!(newValue.length > 0)) {
       throw new Error(`<${this.name}> prop "label" is required.`);
     }
@@ -49,24 +63,24 @@ export class MgMenuItem {
    * Define menu-item badge
    * when defined menu-item contain an anchor instead of button
    */
-  @Prop() href: MenuItemType['href'];
+  @Prop() href: string;
 
   /**
    * Define menu-item badge
    */
-  @Prop() badge: MenuItemType['badge'];
+  @Prop() badge: Pick<MgBadge, 'value' | 'variant' | 'label'>;
 
   /**
    * Define menu-item icon
    */
-  @Prop() icon: MenuItemType['icon'];
+  @Prop() icon: Pick<MgIcon, 'icon' | 'variant'>;
 
   /**
    * Define menu-item status
    */
-  @Prop({ reflect: true }) status: MenuItemType['status'] = Status.VISIBLE;
+  @Prop({ reflect: true }) status: Status = Status.VISIBLE;
   @Watch('status')
-  validateActive(newValue: MenuItemType['status'], oldValue?: MenuItemType['status']): void {
+  validateActive(newValue: Status, oldValue?: Status): void {
     if (oldValue !== undefined) {
       this.navigationButtonClassList.delete(`${this.navigationButton}--${oldValue}`);
     }
@@ -76,9 +90,9 @@ export class MgMenuItem {
   /**
    * Define menu-item size
    */
-  @Prop() size: MenuItemType['size'] = 'large';
+  @Prop() size: MenuItemSizeType = 'large';
   @Watch('size')
-  validateSize(newValue: MenuItemType['size'], oldValue?: MenuItemType['size']): void {
+  validateSize(newValue: MenuItemSizeType, oldValue?: MenuItemSizeType): void {
     if (!sizes.includes(newValue)) {
       throw new Error(`<${this.name}> prop "size" must be one of : ${sizes.join(', ')}`);
     }
@@ -91,14 +105,14 @@ export class MgMenuItem {
   /**
    * Define menu-item index in parent menu
    */
-  @Prop({ mutable: true, reflect: true }) menuIndex: MenuItemType['menuIndex'];
+  @Prop({ mutable: true, reflect: true }) menuIndex: number;
 
   /**
    * Define menu-item content expended
    */
   @Prop({ mutable: true }) expanded = false;
   @Watch('expanded')
-  validateExpanded(newValue: MenuItemType['expanded']): void {
+  validateExpanded(newValue: boolean): void {
     if (this.childMenu !== undefined && this.childMenu !== null) {
       if (newValue) this.childMenu.removeAttribute('hidden');
       else this.childMenu.setAttribute('hidden', '');
@@ -112,7 +126,7 @@ export class MgMenuItem {
   /**
    * Emited event to communicate next focused menu-item to parent
    */
-  @Event({ eventName: 'focused-item' }) focusedItem: EventEmitter<MenuItemType['menuIndex']>;
+  @Event({ eventName: 'focused-item' }) focusedItem: EventEmitter<MgMenuItem['menuIndex']>;
 
   /**
    * Emited event when active menu-item change
@@ -134,9 +148,9 @@ export class MgMenuItem {
   @State() navigationButtonClassList: ClassList = new ClassList([`${this.navigationButton}`]);
 
   /**
-   * Does component have parent menu
+   * Parent menu display mode
    */
-  @State() contextualOrientitation: DisplayType;
+  @State() displayMode: MgMenu['display'];
 
   /**
    * Does component is in main menu
@@ -177,10 +191,10 @@ export class MgMenuItem {
   /**
    * Is component contextual orientation match the given orientation
    *
-   * @param {DisplayType} orientation in parent menu
-   * @returns {boolean} true is orientation match the contextualOrientitation propertie
+   * @param {MenuItemOrientationType} orientation in parent menu
+   * @returns {boolean} true is orientation match the displayMode propertie
    */
-  private isContextualOrientitation = (orientation: DisplayType): boolean => this.contextualOrientitation === orientation;
+  private isdisplayMode = (orientation: MgMenuItem['displayMode']): boolean => this.displayMode === orientation;
 
   /************
    * Handlers *
@@ -244,6 +258,7 @@ export class MgMenuItem {
     this.hasSubMenu = this.childMenu !== null;
 
     // Validate props
+    this.validateIdentifier(this.identifier);
     this.validateLabel(this.label);
     this.validateSize(this.size);
     this.validateActive(this.status);
@@ -258,7 +273,7 @@ export class MgMenuItem {
   componentDidLoad(): void {
     // define menu-item context states
     if (this.element.parentElement.nodeName === 'MG-MENU') {
-      this.contextualOrientitation = (this.element.parentElement as HTMLMgMenuElement).display;
+      this.displayMode = (this.element.parentElement as HTMLMgMenuElement).display;
     }
 
     this.isInMainMenu = this.element.offsetParent?.className.includes('mg-menu-item') === false;
@@ -266,7 +281,7 @@ export class MgMenuItem {
     const hasPreviousMenuItem = this.element.previousElementSibling?.nodeName === 'MG-MENU-ITEM';
 
     // manage last menu item
-    if (!hasNextMenuItem && hasPreviousMenuItem && this.isContextualOrientitation(DisplayType.HORIZONTAL)) {
+    if (!hasNextMenuItem && hasPreviousMenuItem && this.isdisplayMode(Display.HORIZONTAL)) {
       this.classList.add(`${this.name}--${ElementPosition.LAST}`);
     }
 
@@ -276,8 +291,8 @@ export class MgMenuItem {
     }
 
     // manage menu items style depending to parent menu horientation
-    this.classList.add(`${this.name}--${this.contextualOrientitation}`);
-    this.navigationButtonClassList.add(`${this.navigationButton}--${this.contextualOrientitation}`);
+    this.classList.add(`${this.name}--${this.displayMode}`);
+    this.navigationButtonClassList.add(`${this.navigationButton}--${this.displayMode}`);
   }
 
   /**
@@ -290,6 +305,7 @@ export class MgMenuItem {
     return (
       <Host role="menuitem" aria-haspopup={this.hasSubMenu.toString()} class={this.classList.join()}>
         <TagName
+          id={this.identifier}
           href={this.href}
           class={this.navigationButtonClassList.join()}
           tabindex={[Status.DISABLED, Status.HIDDEN].includes(this.status) ? -1 : 0}
@@ -307,9 +323,7 @@ export class MgMenuItem {
             </span>
           )}
         </TagName>
-        <div
-          class={`${this.name}__collapse-container ${this.isInMainMenu && this.isContextualOrientitation(DisplayType.HORIZONTAL) && this.name + '__collapse-container--shadow'}`}
-        >
+        <div class={`${this.name}__collapse-container ${this.isInMainMenu && this.isdisplayMode(Display.HORIZONTAL) && this.name + '__collapse-container--shadow'}`}>
           <slot></slot>
         </div>
       </Host>

@@ -1,6 +1,6 @@
 import { Component, Event, EventEmitter, h, Prop, State, Element, Watch } from '@stencil/core';
 import { createID, ClassList, allItemsAreString } from '../../../utils/components.utils';
-import { TabItem, sizes, Status } from './mg-tabs.conf';
+import { TabItem, sizes, Status, SizeType } from './mg-tabs.conf';
 
 /**
  * type TabItem validation function
@@ -45,7 +45,7 @@ export class MgTabs {
    */
   @Prop() label!: string;
   @Watch('label')
-  validateLabel(newValue: string): void {
+  validateLabel(newValue: MgTabs['label']): void {
     if (typeof newValue !== 'string' || newValue.trim() === '') {
       throw new Error('<mg-tabs> prop "label" is required.');
     }
@@ -54,9 +54,9 @@ export class MgTabs {
   /**
    * Define tabs size
    */
-  @Prop() size = 'regular';
+  @Prop() size: SizeType = 'regular';
   @Watch('size')
-  validateSize(newValue: string): void {
+  validateSize(newValue: MgTabs['size']): void {
     if (!sizes.includes(newValue)) {
       throw new Error(`<mg-tabs> prop "size" must be one of : ${sizes.join(', ')}`);
     }
@@ -69,7 +69,7 @@ export class MgTabs {
    */
   @Prop() items!: string[] | TabItem[];
   @Watch('items')
-  validateItems(newValue: string[] | TabItem[]): void {
+  validateItems(newValue: MgTabs['items']): void {
     // String array
     if (allItemsAreString(newValue as string[])) {
       this.tabs = (newValue as string[]).map(item => ({ label: item, status: Status.VISIBLE }));
@@ -88,7 +88,7 @@ export class MgTabs {
    */
   @Prop({ reflect: true, mutable: true }) activeTab = 1;
   @Watch('activeTab')
-  validateActiveTab(newValue: number): void {
+  validateActiveTab(newValue: MgTabs['activeTab']): void {
     if (newValue < 1 || newValue > this.tabs.length) {
       throw new Error('<mg-tabs> prop "activeTab" must be between 1 and tabs length.');
     } else {

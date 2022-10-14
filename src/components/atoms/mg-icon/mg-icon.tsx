@@ -1,7 +1,7 @@
 import { Component, h, Prop, Watch, State } from '@stencil/core';
 import { icons, sizes, variants } from './mg-icon.conf';
 import { ClassList } from '../../../utils/components.utils';
-import { IconType } from './mg-icon.conf';
+import { IconVariantType, IconSizeType } from './mg-icon.conf';
 
 @Component({
   tag: 'mg-icon',
@@ -12,9 +12,9 @@ export class MgIcon {
   /**
    * Icon to display
    */
-  @Prop() icon: IconType['icon'];
+  @Prop() icon: string;
   @Watch('icon')
-  validateIcon(newValue: string, oldValue?: string): void {
+  validateIcon(newValue: MgIcon['icon'], oldValue?: MgIcon['icon']): void {
     if (!Object.keys(icons).includes(newValue)) {
       throw new Error(`<mg-icon> prop "icon" must be one of : ${Object.keys(icons).join(', ')}`);
     } else {
@@ -28,9 +28,9 @@ export class MgIcon {
   /**
    * Define icon size
    */
-  @Prop() size: IconType['size'] = 'regular';
+  @Prop() size: IconSizeType = 'regular';
   @Watch('size')
-  validateSize(newValue: IconType['size'], oldValue?: IconType['size']): void {
+  validateSize(newValue: MgIcon['size'], oldValue?: MgIcon['size']): void {
     if (!sizes.includes(newValue)) {
       throw new Error(`<mg-icon> prop "size" must be one of : ${sizes.join(', ')}`);
     } else {
@@ -45,9 +45,9 @@ export class MgIcon {
    * Define icon variant
    * Add a background to the icon based on variant color
    */
-  @Prop() variant: IconType['variant'];
+  @Prop() variant?: IconVariantType;
   @Watch('variant')
-  validateVariant(newValue: IconType['variant'], oldValue?: IconType['variant']): void {
+  validateVariant(newValue: MgIcon['variant'], oldValue?: MgIcon['variant']): void {
     if (newValue !== undefined && !variants.includes(newValue)) {
       throw new Error(`<mg-icon> prop "variant" must be one of : ${variants.join(', ')}`);
     } else if (newValue !== undefined) {
@@ -63,7 +63,7 @@ export class MgIcon {
    */
   @Prop() spin = false;
   @Watch('spin')
-  handleSpin(newValue: boolean): void {
+  handleSpin(newValue: MgIcon['spin']): void {
     if (newValue) {
       this.classList.add('mg-icon--spin');
     } else {

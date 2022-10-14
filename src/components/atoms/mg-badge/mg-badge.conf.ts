@@ -6,14 +6,4 @@ export const variants = ['info', 'primary', 'secondary', 'success', 'warning', '
 /**
  * Variant type from variants
  */
-type VariantType = typeof variants[number];
-
-/**
- * Component type
- */
-export type BadgeType = {
-  value: string | number;
-  label: string;
-  variant?: VariantType;
-  outline?: boolean;
-};
+export type BadgeVariantType = typeof variants[number];

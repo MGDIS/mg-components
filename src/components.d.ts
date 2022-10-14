@@ -5,37 +5,39 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { BadgeType } from "./components/atoms/mg-badge/mg-badge.conf";
+import { BadgeVariantType } from "./components/atoms/mg-badge/mg-badge.conf";
 import { ButtonType } from "./components/atoms/mg-button/mg-button.conf";
-import { IconType } from "./components/atoms/mg-icon/mg-icon.conf";
+import { IconSizeType, IconVariantType } from "./components/atoms/mg-icon/mg-icon.conf";
 import { CheckboxValue } from "./components/molecules/inputs/mg-input-checkbox/mg-input-checkbox.conf";
 import { Width } from "./components/molecules/inputs/MgInput.conf";
 import { RadioOption } from "./components/molecules/inputs/mg-input-radio/mg-input-radio.conf";
 import { SelectOption } from "./components/molecules/inputs/mg-input-select/mg-input-select.conf";
 import { ToggleValue } from "./components/molecules/inputs/mg-input-toggle/mg-input-toggle.conf";
-import { MenuType } from "./components/molecules/menu/mg-menu/mg-menu.conf";
-import { MenuItemType } from "./components/molecules/menu/mg-menu-item/mg-menu-item.conf";
+import { Display } from "./components/molecules/menu/mg-menu/mg-menu.conf";
+import { MgBadge } from "./components/atoms/mg-badge/mg-badge";
+import { MgIcon } from "./components/atoms/mg-icon/mg-icon";
+import { MenuItemSizeType, Status } from "./components/molecules/menu/mg-menu-item/mg-menu-item.conf";
 import { Placement } from "./components/molecules/mg-popover/mg-popover.conf";
-import { TabItem } from "./components/molecules/mg-tabs/mg-tabs.conf";
+import { SizeType, TabItem } from "./components/molecules/mg-tabs/mg-tabs.conf";
 import { Placement as Placement1 } from "./components/atoms/mg-tooltip/mg-tooltip.conf";
 export namespace Components {
     interface MgBadge {
         /**
           * Badge label. Include short description. Required for accessibility
          */
-        "label": BadgeType['label'];
+        "label": string;
         /**
           * Define if button is using outline style
          */
-        "outline": BadgeType['outline'];
+        "outline": boolean;
         /**
           * Badge value
          */
-        "value": BadgeType['value'];
+        "value": string | number;
         /**
           * Define button variant
          */
-        "variant": BadgeType['variant'];
+        "variant"?: BadgeVariantType;
     }
     interface MgButton {
         /**
@@ -146,11 +148,11 @@ export namespace Components {
         /**
           * Icon to display
          */
-        "icon": IconType['icon'];
+        "icon": string;
         /**
           * Define icon size
          */
-        "size": IconType['size'];
+        "size": IconSizeType;
         /**
           * Make the icon spin
          */
@@ -158,7 +160,7 @@ export namespace Components {
         /**
           * Define icon variant Add a background to the icon based on variant color
          */
-        "variant": IconType['variant'];
+        "variant"?: IconVariantType;
     }
     interface MgIllustratedMessage {
         /**
@@ -860,21 +862,17 @@ export namespace Components {
         /**
           * Component display orientation
          */
-        "display": MenuType['display'];
-        /**
-          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
-         */
-        "identifier": MenuType['identifier'];
+        "display": Display;
         /**
           * Menu label. Include short menu description. Required for accessibility
          */
-        "label": MenuType['label'];
+        "label": string;
     }
     interface MgMenuItem {
         /**
           * Define menu-item badge
          */
-        "badge": MenuItemType['badge'];
+        "badge": Pick<MgBadge, 'value' | 'variant' | 'label'>;
         /**
           * Define menu-item content expended
          */
@@ -882,27 +880,31 @@ export namespace Components {
         /**
           * Define menu-item badge when defined menu-item contain an anchor instead of button
          */
-        "href": MenuItemType['href'];
+        "href": string;
         /**
           * Define menu-item icon
          */
-        "icon": MenuItemType['icon'];
+        "icon": Pick<MgIcon, 'icon' | 'variant'>;
+        /**
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
+         */
+        "identifier": string;
         /**
           * Define menu-item button label
          */
-        "label": MenuItemType['label'];
+        "label": string;
         /**
           * Define menu-item index in parent menu
          */
-        "menuIndex": MenuItemType['menuIndex'];
+        "menuIndex": number;
         /**
           * Define menu-item size
          */
-        "size": MenuItemType['size'];
+        "size": MenuItemSizeType;
         /**
           * Define menu-item status
          */
-        "status": MenuItemType['status'];
+        "status": Status;
     }
     interface MgMessage {
         /**
@@ -1034,7 +1036,7 @@ export namespace Components {
         /**
           * Define tabs size
          */
-        "size": string;
+        "size": SizeType;
     }
     interface MgTag {
         /**
@@ -1339,19 +1341,19 @@ declare namespace LocalJSX {
         /**
           * Badge label. Include short description. Required for accessibility
          */
-        "label": BadgeType['label'];
+        "label": string;
         /**
           * Define if button is using outline style
          */
-        "outline"?: BadgeType['outline'];
+        "outline"?: boolean;
         /**
           * Badge value
          */
-        "value": BadgeType['value'];
+        "value": string | number;
         /**
           * Define button variant
          */
-        "variant"?: BadgeType['variant'];
+        "variant"?: BadgeVariantType;
     }
     interface MgButton {
         /**
@@ -1469,11 +1471,11 @@ declare namespace LocalJSX {
         /**
           * Icon to display
          */
-        "icon"?: IconType['icon'];
+        "icon"?: string;
         /**
           * Define icon size
          */
-        "size"?: IconType['size'];
+        "size"?: IconSizeType;
         /**
           * Make the icon spin
          */
@@ -1481,7 +1483,7 @@ declare namespace LocalJSX {
         /**
           * Define icon variant Add a background to the icon based on variant color
          */
-        "variant"?: IconType['variant'];
+        "variant"?: IconVariantType;
     }
     interface MgIllustratedMessage {
         /**
@@ -2210,21 +2212,17 @@ declare namespace LocalJSX {
         /**
           * Component display orientation
          */
-        "display"?: MenuType['display'];
-        /**
-          * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
-         */
-        "identifier"?: MenuType['identifier'];
+        "display"?: Display;
         /**
           * Menu label. Include short menu description. Required for accessibility
          */
-        "label": MenuType['label'];
+        "label": string;
     }
     interface MgMenuItem {
         /**
           * Define menu-item badge
          */
-        "badge"?: MenuItemType['badge'];
+        "badge"?: Pick<MgBadge, 'value' | 'variant' | 'label'>;
         /**
           * Define menu-item content expended
          */
@@ -2232,23 +2230,27 @@ declare namespace LocalJSX {
         /**
           * Define menu-item badge when defined menu-item contain an anchor instead of button
          */
-        "href"?: MenuItemType['href'];
+        "href"?: string;
         /**
           * Define menu-item icon
          */
-        "icon"?: MenuItemType['icon'];
+        "icon"?: Pick<MgIcon, 'icon' | 'variant'>;
+        /**
+          * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
+         */
+        "identifier": string;
         /**
           * Define menu-item button label
          */
-        "label": MenuItemType['label'];
+        "label": string;
         /**
           * Define menu-item index in parent menu
          */
-        "menuIndex"?: MenuItemType['menuIndex'];
+        "menuIndex"?: number;
         /**
           * Emited event to communicate next focused menu-item to parent
          */
-        "onFocused-item"?: (event: MgMenuItemCustomEvent<MenuItemType['menuIndex']>) => void;
+        "onFocused-item"?: (event: MgMenuItemCustomEvent<MgMenuItem['menuIndex']>) => void;
         /**
           * Emited event when active menu-item change
          */
@@ -2256,11 +2258,11 @@ declare namespace LocalJSX {
         /**
           * Define menu-item size
          */
-        "size"?: MenuItemType['size'];
+        "size"?: MenuItemSizeType;
         /**
           * Define menu-item status
          */
-        "status"?: MenuItemType['status'];
+        "status"?: Status;
     }
     interface MgMessage {
         /**
@@ -2428,7 +2430,7 @@ declare namespace LocalJSX {
         /**
           * Define tabs size
          */
-        "size"?: string;
+        "size"?: SizeType;
     }
     interface MgTag {
         /**
