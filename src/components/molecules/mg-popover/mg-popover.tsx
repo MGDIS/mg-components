@@ -7,7 +7,7 @@ import { Placement } from './mg-popover.conf';
 @Component({
   tag: 'mg-popover',
   styleUrl: 'mg-popover.scss',
-  scoped: true,
+  shadow: true,
 })
 export class MgPopover {
   /************
@@ -34,7 +34,7 @@ export class MgPopover {
    * Sets an `id` attribute.
    * Needed by the input for accessibility `aria-decribedby`.
    */
-  @Prop() identifier: string = createID('mg-popover');
+  @Prop({ reflect: true }) identifier: string = createID('mg-popover');
 
   /**
    * Popover placement
@@ -77,7 +77,7 @@ export class MgPopover {
    * @returns {void}
    */
   private clickOutside = (event: MouseEvent & { target: HTMLElement }): void => {
-    if (!this.disabled && event.target.closest(`#${this.identifier}`)?.parentElement.nodeName !== 'MG-POPOVER') {
+    if (!this.disabled && event.target.closest(`mg-popover[identifier="${this.identifier}"]`) === null) {
       this.display = false;
     }
   };
@@ -152,8 +152,8 @@ export class MgPopover {
   componentDidLoad(): void {
     const headingTags = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
 
-    const slotedTitleElement = this.element.querySelector('[slot="title"]');
-    if (slotedTitleElement && !isTagName(slotedTitleElement, headingTags)) {
+    const slottedTitleElement = this.element.querySelector('[slot="title"]');
+    if (slottedTitleElement && !isTagName(slottedTitleElement, headingTags)) {
       throw new Error(`<mg-popover> Slotted title must be a heading: ${headingTags.join(', ')}`);
     }
 
@@ -163,10 +163,10 @@ export class MgPopover {
     }
 
     // Get popover content
-    this.popover = this.element.querySelector(`#${this.identifier}`);
+    this.popover = this.element.shadowRoot.querySelector(`#${this.identifier}`);
 
-    //Get interactive element
-    const interactiveElement = this.element.firstElementChild as HTMLElement;
+    //Get interactive element (first element without slot attribute)
+    const interactiveElement = this.element.querySelector(':not([slot])') as HTMLElement;
     // Add aria attributes
     interactiveElement.setAttribute('aria-controls', this.identifier);
     interactiveElement.setAttribute('aria-expanded', `${this.display}`);

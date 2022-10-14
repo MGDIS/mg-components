@@ -69,7 +69,7 @@ mg-popover {
 
   &__title ::slotted([slot='title']) {
     margin: 0 0 1rem;
-    font-size: var(--mg-popover-title-font-size);
+    font-size: var(--mg-popover-title-font-size) !important;
     font-weight: 600;
   }
 }
