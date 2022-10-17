@@ -31,9 +31,9 @@ $button-column-gap: 0.6rem;
 
     // Hover
     // Only apply if not disabled
-    &:hover:not([disabled], [aria-disabled='true'], .disabled),
-    &:focus:not([disabled], [aria-disabled='true'], .disabled),
-    &:active:not([disabled], [aria-disabled='true'], .disabled) {
+    &:hover:not([disabled], [aria-disabled='true']),
+    &:focus:not([disabled], [aria-disabled='true']),
+    &:active:not([disabled], [aria-disabled='true']) {
       background: hsl(var(#{$backgroundColor}-h), var(#{$backgroundColor}-s), var(#{$backgroundColor}-l));
     }
   }
@@ -66,13 +66,13 @@ $button-column-gap: 0.6rem;
   text-decoration: none;
   font-weight: normal;
   text-align: left;
+  line-height: calc(var(--font-size) * 1.15);
   // Other
   touch-action: manipulation;
 
   // Disabled style
   &[disabled],
-  &[aria-disabled='true'],
-  &.disabled {
+  &[aria-disabled='true'] {
     opacity: var(--mg-button-disabled-opacity);
     cursor: default;
   }
@@ -109,9 +109,9 @@ $button-column-gap: 0.6rem;
 
     // Hover
     // Only apply if not disabled
-    &:hover:not([disabled], [aria-disabled='true'], .disabled),
-    &:focus:not([disabled], [aria-disabled='true'], .disabled),
-    &:active:not([disabled], [aria-disabled='true'], .disabled) {
+    &:hover:not([disabled], [aria-disabled='true']),
+    &:focus:not([disabled], [aria-disabled='true']),
+    &:active:not([disabled], [aria-disabled='true']) {
       background: hsla(var(--color-dark), 0.1);
     }
   }
@@ -124,22 +124,22 @@ $button-column-gap: 0.6rem;
     margin: auto 0;
   }
 
-  &.mg-button--loading {
-    mg-icon[icon='loader'] {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-    }
-    .mg-button__content {
-      opacity: 0;
-    }
-  }
-
   &__content {
     display: flex;
     align-items: center;
     column-gap: $button-column-gap;
+  }
+}
+
+:host(.mg-button--loading) {
+  > mg-icon:first-of-type {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .mg-button__content {
+    opacity: 0;
   }
 }
 

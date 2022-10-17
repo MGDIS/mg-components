@@ -28,16 +28,7 @@ export default {
  * @returns {HTMLElement} HTMLElement
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Template = (args: any): HTMLElement => (
-  <mg-button
-    {...filterArgs(args, { variant: variants[0] })}
-    onClick={() => {
-      console.log('trigger mg-button click');
-    }}
-  >
-    {args.slot}
-  </mg-button>
-);
+const Template = (args: any): HTMLElement => <mg-button {...filterArgs(args, { variant: variants[0] })}>{args.slot}</mg-button>;
 
 export const MgButton = Template.bind({});
 

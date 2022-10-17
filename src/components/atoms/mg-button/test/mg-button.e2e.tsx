@@ -55,8 +55,8 @@ describe.each([
     await page.waitForChanges();
 
     // Remove spinner annimation for screenshot
-    await page.$eval('mg-icon', elm => {
-      const svg = elm.shadowRoot.querySelector('svg');
+    await page.$eval('mg-button', elm => {
+      const svg = elm.shadowRoot.querySelector('mg-icon').shadowRoot.querySelector('svg');
       svg.classList.remove('mg-icon--spin');
     });
     await page.waitForChanges();

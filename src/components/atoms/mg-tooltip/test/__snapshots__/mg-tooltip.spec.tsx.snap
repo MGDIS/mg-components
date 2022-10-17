@@ -59,13 +59,13 @@ exports[`mg-tooltip Should manage display on events enter with { eventIn: 'focus
 exports[`mg-tooltip Should manage display on events enter with { eventIn: 'focus', eventOut: 'blur' }, leave with %s element 4`] = `
 <mg-tooltip>
   <!---->
-  <mg-button>
-    <!---->
-    <button aria-describedby="identifier" class="mg-button mg-button--primary" id="identifier-mg-button">
+  <mg-button aria-describedby="identifier" class="mg-button mg-button--primary" id="identifier-mg-button" role="button" tabindex="0">
+    <mock:shadow-root>
       <div class="mg-button__content">
-        mg-button
+        <slot></slot>
       </div>
-    </button>
+    </mock:shadow-root>
+    mg-button
   </mg-button>
   <div class="mg-tooltip" data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
     blu
@@ -120,13 +120,13 @@ exports[`mg-tooltip Should manage display on events enter with { eventIn: 'mouse
 exports[`mg-tooltip Should manage display on events enter with { eventIn: 'mouseenter', eventOut: 'mouseleave' }, leave with %s element 4`] = `
 <mg-tooltip>
   <!---->
-  <mg-button>
-    <!---->
-    <button aria-describedby="identifier" class="mg-button mg-button--primary" id="identifier-mg-button">
+  <mg-button aria-describedby="identifier" class="mg-button mg-button--primary" id="identifier-mg-button" role="button" tabindex="0">
+    <mock:shadow-root>
       <div class="mg-button__content">
-        mg-button
+        <slot></slot>
       </div>
-    </button>
+    </mock:shadow-root>
+    mg-button
   </mg-button>
   <div class="mg-tooltip" data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
     blu
@@ -181,13 +181,13 @@ exports[`mg-tooltip Should render with element 3`] = `
 exports[`mg-tooltip Should render with element 4`] = `
 <mg-tooltip>
   <!---->
-  <mg-button>
-    <!---->
-    <button aria-describedby="identifier" class="mg-button mg-button--primary" id="identifier" style="position: absolute; left: 0; top: 0; margin: 0;">
+  <mg-button aria-describedby="identifier" class="mg-button mg-button--primary" data-popper-placement="bottom" data-popper-reference-hidden id="identifier" role="button" tabindex="0" style="position: absolute; left: 0; top: 0; margin: 0; right: auto; bottom: auto; transform: translate(0px, 0px);">
+    <mock:shadow-root>
       <div class="mg-button__content">
-        mg-button
+        <slot></slot>
       </div>
-    </button>
+    </mock:shadow-root>
+    mg-button
   </mg-button>
   <div class="mg-tooltip" id="identifier" role="tooltip">
     My tooltip message

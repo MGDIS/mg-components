@@ -157,7 +157,7 @@ export class MgPagination {
         identifier={`${this.identifier}-button-${action}`}
         label={this.messages.pagination[`${action}Page`]}
         // eslint-disable-next-line react/jsx-no-bind
-        onClick={() => this.handleGoToPage(action)}
+        onClick={() => !disabled && this.handleGoToPage(action)}
         disabled={disabled}
         variant="flat"
       >
