@@ -34,7 +34,7 @@ export class MgPopover {
    * Sets an `id` attribute.
    * Needed by the input for accessibility `aria-decribedby`.
    */
-  @Prop({ reflect: true }) identifier: string = createID('mg-popover');
+  @Prop() identifier: string = createID('mg-popover');
 
   /**
    * Popover placement
@@ -77,7 +77,7 @@ export class MgPopover {
    * @returns {void}
    */
   private clickOutside = (event: MouseEvent & { target: HTMLElement }): void => {
-    if (!this.disabled && event.target.closest(`mg-popover[identifier="${this.identifier}"]`) === null) {
+    if (!this.disabled && event.target.closest(`mg-popover`) !== this.element) {
       this.display = false;
     }
   };

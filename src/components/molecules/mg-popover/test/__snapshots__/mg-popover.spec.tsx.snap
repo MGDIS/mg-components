@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`mg-popover Should render with element 1`] = `
-<mg-popover identifier="identifier">
+<mg-popover>
   <mock:shadow-root>
     <slot></slot>
     <div class="mg-popover" id="identifier" style="position: absolute; left: 0; top: 0; margin: 0;">
@@ -30,7 +30,7 @@ exports[`mg-popover Should render with element 1`] = `
 `;
 
 exports[`mg-popover Should render with element 2`] = `
-<mg-popover identifier="identifier">
+<mg-popover>
   <mock:shadow-root>
     <slot></slot>
     <div class="mg-popover" id="identifier" style="position: absolute; left: 0; top: 0; margin: 0;">
@@ -59,7 +59,7 @@ exports[`mg-popover Should render with element 2`] = `
 `;
 
 exports[`mg-popover Should render with element 3`] = `
-<mg-popover identifier="identifier">
+<mg-popover>
   <mock:shadow-root>
     <slot></slot>
     <div class="mg-popover" data-show id="identifier" style="position: absolute; left: 0; top: 0; margin: 0;">
@@ -88,7 +88,7 @@ exports[`mg-popover Should render with element 3`] = `
 `;
 
 exports[`mg-popover Should render with element 4`] = `
-<mg-popover identifier="identifier">
+<mg-popover>
   <mock:shadow-root>
     <slot></slot>
     <div class="mg-popover" id="identifier" style="position: absolute; left: 0; top: 0; margin: 0;">
@@ -125,7 +125,7 @@ exports[`mg-popover Should render with element 4`] = `
 `;
 
 exports[`mg-popover Should render with element 5`] = `
-<mg-popover identifier="identifier">
+<mg-popover>
   <mock:shadow-root>
     <slot></slot>
     <div class="mg-popover" data-show id="identifier" style="position: absolute; left: 0; top: 0; margin: 0;">
@@ -154,7 +154,7 @@ exports[`mg-popover Should render with element 5`] = `
 `;
 
 exports[`mg-popover Should render with element 6`] = `
-<mg-popover identifier="identifier" lang="fr">
+<mg-popover lang="fr">
   <mock:shadow-root>
     <slot></slot>
     <div class="mg-popover" id="identifier" style="position: absolute; left: 0; top: 0; margin: 0;">
@@ -191,7 +191,7 @@ exports[`mg-popover Should render with element 6`] = `
 `;
 
 exports[`mg-popover Should render with element 7`] = `
-<mg-popover identifier="identifier" lang="xx">
+<mg-popover lang="xx">
   <mock:shadow-root>
     <slot></slot>
     <div class="mg-popover" id="identifier" style="position: absolute; left: 0; top: 0; margin: 0;">
