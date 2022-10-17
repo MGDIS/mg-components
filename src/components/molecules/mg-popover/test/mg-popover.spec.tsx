@@ -68,7 +68,7 @@ describe('mg-popover', () => {
 
     const mgPopover = page.doc.querySelector('mg-popover');
     const interactiveElement = mgPopover.querySelector(`[aria-controls*='${args.identifier}']`);
-    const popover = mgPopover.querySelector(`#${args.identifier}`);
+    const popover = mgPopover.shadowRoot.querySelector(`#${args.identifier}`);
     const popoverButton = popover.querySelector(`mg-button`);
 
     const displayChangeSpy = jest.spyOn(page.rootInstance.displayChange, 'emit');
@@ -117,7 +117,7 @@ describe('mg-popover', () => {
 
     const mgPopover = page.doc.querySelector('mg-popover');
     const interactiveElement = mgPopover.querySelector(`[aria-controls*='${args.identifier}']`);
-    const popover = mgPopover.querySelector(`#${args.identifier}`);
+    const popover = mgPopover.shadowRoot.querySelector(`#${args.identifier}`);
     const popoverButton = popover.querySelector(`mg-button`);
 
     const displayChangeSpy = jest.spyOn(page.rootInstance.displayChange, 'emit');
