@@ -45,9 +45,7 @@ export class MgModal {
   @Watch('modalTitle')
   validateModalTitle(newValue: string): void {
     if (typeof newValue !== 'string' || newValue.trim() === '') {
-      // TODO: throw new Error on next major (5.0.0)
-      // throw new Error('<mg-modal> prop "modalTitle" is required.');
-      console.error('<mg-modal> prop "modalTitle" is required.');
+      throw new Error('<mg-modal> prop "modalTitle" is required.');
     }
   }
 

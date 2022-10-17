@@ -41,9 +41,7 @@ export class MgTooltip {
   @Watch('message')
   validateMessage(newValue: string): void {
     if (typeof newValue !== 'string' || newValue.trim() === '') {
-      // TODO: throw new Error on next major (5.0.0)
-      // throw new Error('<mg-tooltip> prop "message" is required.');
-      console.error('<mg-tooltip> prop "message" is required.');
+      throw new Error('<mg-tooltip> prop "message" is required.');
     }
   }
 
