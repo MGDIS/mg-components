@@ -47,9 +47,7 @@ export class MgTabs {
   @Watch('label')
   validateLabel(newValue: string): void {
     if (typeof newValue !== 'string' || newValue.trim() === '') {
-      // TODO: throw new Error on next major (5.0.0)
-      // throw new Error('<mg-tabs> prop "label" is required.');
-      console.error('<mg-tabs> prop "label" is required.');
+      throw new Error('<mg-tabs> prop "label" is required.');
     }
   }
 

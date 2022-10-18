@@ -40,9 +40,7 @@ export class MgPanel {
   @Watch('panelTitle')
   validatePanelTitle(newValue: string): void {
     if (typeof newValue !== 'string' || newValue.trim() === '') {
-      // TODO: throw new Error on next major (5.0.0)
-      // throw new Error('<mg-panel> prop "panelTitle" is required.');
-      console.error('<mg-panel> prop "panelTitle" is required.');
+      throw new Error('<mg-panel> prop "panelTitle" is required.');
     }
     this.titleChange.emit(newValue);
   }
