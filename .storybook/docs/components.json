@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-10-17T15:25:52",
+  "timestamp": "2022-10-19T15:04:16",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.18.1",
@@ -834,11 +834,33 @@
       "filePath": "./src/components/molecules/mg-illustrated-message/mg-illustrated-message.tsx",
       "encapsulation": "shadow",
       "tag": "mg-illustrated-message",
-      "readme": "## Specs\n\n### Anatomy\n\n![](./mg-illustrated-message/doc/img/mg-illustrated-message-anatomy.png) \n\nComponent is built with : \n- an illustration\n- a title\n\nOptionnally : \n- one or more _details_ slot wich accept HTML content (text, button...)\n\n### Style\n\n- _title_ : Open Sans, 20px, Regular\n- All contents are centered.\n\n### Spacing\n\n![](./mg-illustrated-message/doc/img/mg-illustrated-message-spacing.png) \n\n30px between the bottom of the _illustration_ and top of the _title_.\n20px for the top of the _details_ zone.\n\n15px between left/right border of the screen and the component\n\n### Sizing\n\nThe maximum width of the component is 475px.\n\nThe maximum height of the illustration is 335px. Illustration must keep its proportionnality.\nIllustration can be displayed in \"small\" size so its maximum height is set to 60px.\n\n![](./mg-illustrated-message/doc/img/mg-illustrated-message-sizing-small.png) \n\n## Behavior\n\nThe slotted elements (illustration, title and details) are centered horizontally in the page.\n\n\n\n",
+      "readme": "## Specs\n\n### Vertical\n\n#### Anatomy\n\n![](./mg-illustrated-message/doc/img/mg-illustrated-message-vertical-anatomy.png)\n\nComponent is built with :\n\n- an illustration\n- a title\n\nOptionnally :\n\n- one or more _details_ slot which accept HTML content (text, button...)\n\n#### Style\n\n- _title_ : Open Sans, 20px, Regular\n- All contents are centered.\n\n#### Spacing\n\n![](./mg-illustrated-message/doc/img/mg-illustrated-message-vertical-spacing.png).\n\n30px between the bottom of the _illustration_ and top of the _title_.\n\n20px for the top of the _details_ zone.\n\n15px between left/right border of the screen and the component\n\n#### Sizing\n\nThe maximum width of the component is 475px.\n\nThe maximum height of the illustration is 335px. Illustration must keep its proportionnality.\nIllustration can be displayed in \"small\" size so its maximum height is set to 60px.\n\n![](./mg-illustrated-message/doc/img/mg-illustrated-message-vertical-sizing-small.png)\n\n### Horizontal\n\n#### Anatomy\n\n![](./mg-illustrated-message/doc/img/mg-illustrated-message-horizontal-anatomy.png)\n\n#### Spacing\n\n![](./mg-illustrated-message/doc/img/mg-illustrated-message-horizontal-spacing.png)\n\nBy default the margin is set to 40px on top and bottom. It's possible to modify this props.\n\n![](./mg-illustrated-message/doc/img/mg-illustrated-message-horizontal-spacing-2.png)\n\nBetween the image and the group title/action.\n\n#### Alignment\n\n![](./mg-illustrated-message/doc/img/mg-illustrated-message-horizontal-alignment.png)\n\nThe image/illustration and the group tittle/details/action are vertically centred between them in the background.\n\n#### Responsive\n\nWhen there is not enough space the component take is default appearance.\n\n## CSS Variables\n\nIf needed some [variables](./?path=/story/css-variables--page) are available to customize the component:\n\n- `--mg-illustrated-message-padding-vertical`: define component vertical padding, default: `4rem`\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
       "props": [
+        {
+          "name": "direction",
+          "type": "\"horizontal\" | \"vertical\"",
+          "mutable": false,
+          "attr": "direction",
+          "reflectToAttr": false,
+          "docs": "Define component orientation",
+          "docsTags": [],
+          "default": "'vertical'",
+          "values": [
+            {
+              "value": "horizontal",
+              "type": "string"
+            },
+            {
+              "value": "vertical",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
         {
           "name": "size",
           "type": "\"regular\" | \"small\"",

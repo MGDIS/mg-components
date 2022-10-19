@@ -1,8 +1,9 @@
 import { createPage } from '../../../../utils/test.utils';
 
 describe('mg-illustrated-message', () => {
-  test.each(['regular', 'small'])('renders size ', async size => {
-    const page = await createPage(`<mg-illustrated-message size="${size}">
+  describe.each(['regular', 'small'])('renders size %', size => {
+    test.each(['vertical', 'horizontal'])('renders direction %', async direction => {
+      const page = await createPage(`<mg-illustrated-message size="${size}" direction="${direction}">
     <svg slot="illustration" width="190" height="350" viewBox="0 0 190 350" xmlns="http://www.w3.org/2000/svg">
       <path
         fill-rule="evenodd"
@@ -20,10 +21,13 @@ describe('mg-illustrated-message', () => {
     </div>
   </mg-illustrated-message>`);
 
-    const element = await page.find('mg-illustrated-message');
-    expect(element).toHaveClass('hydrated');
+      const element = await page.find('mg-illustrated-message');
+      expect(element).toHaveClass('hydrated');
 
-    const screenshot = await page.screenshot();
-    expect(screenshot).toMatchImageSnapshot();
+      await page.setViewport({ width: 800, height: 800 });
+
+      const screenshot = await page.screenshot();
+      expect(screenshot).toMatchImageSnapshot();
+    });
   });
 });
