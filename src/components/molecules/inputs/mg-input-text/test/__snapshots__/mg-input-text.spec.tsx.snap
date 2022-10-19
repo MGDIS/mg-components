@@ -295,20 +295,22 @@ exports[`mg-input-text Should render with slot. 1`] = `
       </div>
     </div>
   </mock:shadow-root>
-  <mg-button slot="append-input">
-    <!---->
-    <button aria-label="search" class="mg-button mg-button--primary" id="identifier">
-      <div class="mg-button__content">
-        <mg-icon>
-          <mock:shadow-root>
-            <svg aria-hidden="true" class="mg-icon mg-icon--magnifying-glass mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-              <path d="M11.24 9.5c1.48-2.44.71-5.62-1.73-7.1-.05-.03-.11-.07-.17-.1A5.232 5.232 0 0 0 2.52 4C.94 6.38 1.6 9.59 3.98 11.17a5.142 5.142 0 0 0 5.54.1L12.3 14c.39.39 1.02.39 1.41 0l.33-.33a.996.996 0 0 0 0-1.41l-2.8-2.76Zm-4.4.5c-1.76.02-3.2-1.4-3.22-3.16-.02-1.76 1.4-3.2 3.16-3.22 1.76-.02 3.2 1.4 3.22 3.16v.06A3.193 3.193 0 0 1 6.84 10Z" fill="currentColor"></path>
-            </svg>
-          </mock:shadow-root>
-        </mg-icon>
-        Search
+  <mg-button aria-label="search" role="button" slot="append-input" tabindex="0">
+    <mock:shadow-root>
+      <div class="mg-button mg-button--primary" id="identifier">
+        <div class="mg-button__content">
+          <slot></slot>
+        </div>
       </div>
-    </button>
+    </mock:shadow-root>
+    <mg-icon>
+      <mock:shadow-root>
+        <svg aria-hidden="true" class="mg-icon mg-icon--magnifying-glass mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+          <path d="M11.24 9.5c1.48-2.44.71-5.62-1.73-7.1-.05-.03-.11-.07-.17-.1A5.232 5.232 0 0 0 2.52 4C.94 6.38 1.6 9.59 3.98 11.17a5.142 5.142 0 0 0 5.54.1L12.3 14c.39.39 1.02.39 1.41 0l.33-.33a.996.996 0 0 0 0-1.41l-2.8-2.76Zm-4.4.5c-1.76.02-3.2-1.4-3.22-3.16-.02-1.76 1.4-3.2 3.16-3.22 1.76-.02 3.2 1.4 3.22 3.16v.06A3.193 3.193 0 0 1 6.84 10Z" fill="currentColor"></path>
+        </svg>
+      </mock:shadow-root>
+    </mg-icon>
+    Search
   </mg-button>
 </mg-input-text>
 `;
@@ -355,33 +357,37 @@ exports[`mg-input-text Should render with slot. 3`] = `
       </div>
     </div>
   </mock:shadow-root>
-  <mg-button is-icon="" slot="append-input">
-    <!---->
-    <button aria-label="cancel" class="mg-button mg-button--icon mg-button--primary" id="identifier-cancel">
-      <div class="mg-button__content">
-        <mg-icon>
-          <mock:shadow-root>
-            <svg aria-hidden="true" class="mg-icon mg-icon--cross mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-              <path d="M14.26 12.74 9.52 8l4.7-4.7a.29.29 0 0 0 0-.41l-1.1-1.1a.29.29 0 0 0-.41 0L8 6.48 3.26 1.74a.24.24 0 0 0-.34 0L1.74 2.91a.24.24 0 0 0 0 .34L6.48 8l-4.7 4.7a.29.29 0 0 0 0 .41l1.1 1.1a.29.29 0 0 0 .41 0L8 9.52l4.74 4.74a.24.24 0 0 0 .34 0l1.17-1.17a.24.24 0 0 0 0-.34Z" fill="currentColor"></path>
-            </svg>
-          </mock:shadow-root>
-        </mg-icon>
+  <mg-button aria-label="cancel" is-icon="" role="button" slot="append-input" tabindex="0">
+    <mock:shadow-root>
+      <div class="mg-button mg-button--icon mg-button--primary" id="identifier-cancel">
+        <div class="mg-button__content">
+          <slot></slot>
+        </div>
       </div>
-    </button>
+    </mock:shadow-root>
+    <mg-icon>
+      <mock:shadow-root>
+        <svg aria-hidden="true" class="mg-icon mg-icon--cross mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+          <path d="M14.26 12.74 9.52 8l4.7-4.7a.29.29 0 0 0 0-.41l-1.1-1.1a.29.29 0 0 0-.41 0L8 6.48 3.26 1.74a.24.24 0 0 0-.34 0L1.74 2.91a.24.24 0 0 0 0 .34L6.48 8l-4.7 4.7a.29.29 0 0 0 0 .41l1.1 1.1a.29.29 0 0 0 .41 0L8 9.52l4.74 4.74a.24.24 0 0 0 .34 0l1.17-1.17a.24.24 0 0 0 0-.34Z" fill="currentColor"></path>
+        </svg>
+      </mock:shadow-root>
+    </mg-icon>
   </mg-button>
-  <mg-button is-icon="" slot="append-input">
-    <!---->
-    <button aria-label="validate" class="mg-button mg-button--icon mg-button--primary" id="identifier-validate">
-      <div class="mg-button__content">
-        <mg-icon>
-          <mock:shadow-root>
-            <svg aria-hidden="true" class="mg-icon mg-icon--check mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-              <path d="m15.27 4.23-1.11-1.18c-.11-.1-.27-.1-.38 0L6 10.36l-3.76-4a.187.187 0 0 0-.26 0L.71 7.6c-.07.07-.07.19 0 .26l5.12 5.41c.07.07.18.07.25 0l1.3-1.23 7.87-7.45c.1-.1.11-.26.01-.37h.01Z" fill="currentColor"></path>
-            </svg>
-          </mock:shadow-root>
-        </mg-icon>
+  <mg-button aria-label="validate" is-icon="" role="button" slot="append-input" tabindex="0">
+    <mock:shadow-root>
+      <div class="mg-button mg-button--icon mg-button--primary" id="identifier-validate">
+        <div class="mg-button__content">
+          <slot></slot>
+        </div>
       </div>
-    </button>
+    </mock:shadow-root>
+    <mg-icon>
+      <mock:shadow-root>
+        <svg aria-hidden="true" class="mg-icon mg-icon--check mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+          <path d="m15.27 4.23-1.11-1.18c-.11-.1-.27-.1-.38 0L6 10.36l-3.76-4a.187.187 0 0 0-.26 0L.71 7.6c-.07.07-.07.19 0 .26l5.12 5.41c.07.07.18.07.25 0l1.3-1.23 7.87-7.45c.1-.1.11-.26.01-.37h.01Z" fill="currentColor"></path>
+        </svg>
+      </mock:shadow-root>
+    </mg-icon>
   </mg-button>
 </mg-input-text>
 `;

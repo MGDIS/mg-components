@@ -2,13 +2,13 @@ import { createPage } from '../../../../utils/test.utils';
 
 describe('mg-input-title', () => {
   describe.each([
-    { isLegend: false, required: false, identifier: 'identifier' },
-    { isLegend: false, required: true, identifier: 'identifier' },
-    { isLegend: true, required: false, identifier: 'identifier' },
-    { isLegend: true, required: true, identifier: 'identifier' },
+    { isLegend: false, required: false },
+    { isLegend: false, required: true },
+    { isLegend: true, required: false },
+    { isLegend: true, required: true },
   ])('Screenshot with args %s', ({ isLegend, required }) => {
     test('Should render', async () => {
-      const page = await createPage(`<mg-input-title is-legend="${isLegend}" required=${required}>Label</mg-input-title>`);
+      const page = await createPage(`<mg-input-title identifier="identifier" is-legend="${isLegend}" required=${required}>Label</mg-input-title>`);
 
       const element = await page.find('mg-input-title');
       expect(element).toHaveClass('hydrated');
