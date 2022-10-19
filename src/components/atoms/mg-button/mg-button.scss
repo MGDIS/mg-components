@@ -12,7 +12,7 @@ $button-column-gap: 0.6rem;
     $backgroundColor: --color-#{$backgroundColor};
     $fontColor: --color-#{$fontColor};
   }
-  &.mg-button--#{$name} {
+  .mg-button.mg-button--#{$name} {
     // Decoration
     border-color: hsl(
       var(
@@ -28,16 +28,57 @@ $button-column-gap: 0.6rem;
       hsl(var(#{$backgroundColor}-h), var(#{$backgroundColor}-s), var(#{$backgroundColor}-l)),
       hsl(var(#{$backgroundColor}-h), var(#{$backgroundColor}-s), calc(var(#{$backgroundColor}-l) - var(--mg-button-gradient) * 10%))
     );
-
-    // Hover
-    // Only apply if not disabled
-    &:hover:not([disabled], [aria-disabled='true']),
-    &:focus:not([disabled], [aria-disabled='true']),
-    &:active:not([disabled], [aria-disabled='true']) {
+  }
+  // Only apply if not disabled
+  :host(:hover),
+  :host(:focus),
+  :host(:active) {
+    .mg-button--#{$name}:not(.mg-button--disabled) {
       background: hsl(var(#{$backgroundColor}-h), var(#{$backgroundColor}-s), var(#{$backgroundColor}-l));
     }
   }
 }
+
+@mixin font-style() {
+  text-decoration: none;
+  font-family: inherit;
+  font-weight: var(--mg-button-font-weight, normal);
+  text-align: left;
+  font-size: var(--font-size);
+}
+
+:host {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+:host(:focus-visible) {
+  outline: 0;
+  // same style as chrome
+  .mg-button:not(.mg-button--disabled) {
+    outline-color: -webkit-focus-ring-color;
+    outline-style: auto;
+    outline-width: 0.2rem;
+  }
+}
+
+// Only apply if not disabled
+:host(:hover),
+:host(:focus),
+:host(:active) {
+  .mg-button--flat:not(.mg-button--disabled) {
+    background: hsla(var(--color-dark), 0.1);
+  }
+}
+
+// Gradient style
+@include style-gradient('primary', null, null, true);
+@include style-gradient('secondary', null, null, true);
+@include style-gradient('danger', 'danger', 'neutral');
+@include style-gradient('danger-alt', 'neutral', 'danger');
+@include style-gradient('info', 'info', 'neutral');
+@include style-gradient('success', 'success', 'dark');
 
 /* Styles */
 .mg-button {
@@ -61,18 +102,13 @@ $button-column-gap: 0.6rem;
   border-bottom-width: var(--mg-button-border-bottom-width, $mg-button-border-width);
   border-left-width: var(--mg-button-border-left-width, $mg-button-border-width);
   border-style: solid;
-  // Font
-  font-family: inherit;
-  text-decoration: none;
-  font-weight: normal;
-  text-align: left;
-  line-height: calc(var(--font-size) * 1.15);
+  // Font (necessary for stylesheet only)
+  @include font-style();
   // Other
   touch-action: manipulation;
 
   // Disabled style
-  &[disabled],
-  &[aria-disabled='true'] {
+  &.mg-button--disabled {
     opacity: var(--mg-button-disabled-opacity);
     cursor: default;
   }
@@ -94,25 +130,22 @@ $button-column-gap: 0.6rem;
     line-height: var(--font-size);
   }
 
-  // Gradient style
-  @include style-gradient('primary', null, null, true);
-  @include style-gradient('secondary', null, null, true);
-  @include style-gradient('danger', 'danger', 'neutral');
-  @include style-gradient('danger-alt', 'neutral', 'danger');
-  @include style-gradient('info', 'info', 'neutral');
-  @include style-gradient('success', 'success', 'dark');
-
   // Flat style
   &.mg-button--flat {
     background: none;
     border: none;
+  }
 
-    // Hover
-    // Only apply if not disabled
-    &:hover:not([disabled], [aria-disabled='true']),
-    &:focus:not([disabled], [aria-disabled='true']),
-    &:active:not([disabled], [aria-disabled='true']) {
-      background: hsla(var(--color-dark), 0.1);
+  // loading style
+  &.mg-button--loading {
+    > mg-icon:first-of-type {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .mg-button__content {
+      opacity: 0;
     }
   }
 
@@ -124,31 +157,13 @@ $button-column-gap: 0.6rem;
     margin: auto 0;
   }
 
-  &__content {
+  slot,
+  ::slotted(*:not(mg-icon)) {
+    // Font
+    @include font-style();
+    // Display
     display: flex;
     align-items: center;
     column-gap: $button-column-gap;
   }
-}
-
-:host(.mg-button--loading) {
-  > mg-icon:first-of-type {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-  .mg-button__content {
-    opacity: 0;
-  }
-}
-
-mg-button {
-  display: inline-block;
-}
-
-.mg-button,
-mg-button {
-  vertical-align: middle;
-  max-width: 100%;
 }

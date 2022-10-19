@@ -183,10 +183,10 @@ export class MgForm {
    * @returns {void}
    */
   componentDidLoad(): void {
-    this.mgButtons.forEach(button => {
+    this.mgButtons.forEach(mgButton => {
       // submit buttons should trigger form submition;
-      if (['submit', null].includes(button.getAttribute('type'))) {
-        button.addEventListener('click', () => {
+      if (['submit', null].includes(mgButton.getAttribute('type'))) {
+        mgButton.addEventListener('click', () => {
           this.form.dispatchEvent(new CustomEvent('submit', { bubbles: true }));
         });
       }

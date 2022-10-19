@@ -4,10 +4,12 @@ exports[`mg-pagination Should render Should set custom label 1`] = `
 <mg-pagination current-page="1">
   <mock:shadow-root>
     <nav aria-label="custom label" class="mg-pagination" id="id">
-      <mg-button aria-disabled="true" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous" role="button" tabindex="-1">
+      <mg-button aria-disabled="true" aria-label="Previous page" role="button" tabindex="-1">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--disabled mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         <mg-icon>
@@ -46,10 +48,12 @@ exports[`mg-pagination Should render Should set custom label 1`] = `
       <span>
         / 2 pages
       </span>
-      <mg-button aria-disabled="false" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next" role="button" tabindex="0">
+      <mg-button aria-disabled="false" aria-label="Next page" role="button" tabindex="0">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         next
@@ -70,10 +74,12 @@ exports[`mg-pagination Should render with locale: fr 1`] = `
 <mg-pagination current-page="1" lang="fr">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button aria-disabled="true" aria-label="Page précédente" class="mg-button mg-button--flat" id="id-button-previous" role="button" tabindex="-1">
+      <mg-button aria-disabled="true" aria-label="Page précédente" role="button" tabindex="-1">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--disabled mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         <mg-icon>
@@ -112,10 +118,12 @@ exports[`mg-pagination Should render with locale: fr 1`] = `
       <span>
         / 2 pages
       </span>
-      <mg-button aria-disabled="false" aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next" role="button" tabindex="0">
+      <mg-button aria-disabled="false" aria-label="Page suivante" role="button" tabindex="0">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         suivant
@@ -136,10 +144,12 @@ exports[`mg-pagination Should render with locale: xx 1`] = `
 <mg-pagination current-page="1" lang="xx">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button aria-disabled="true" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous" role="button" tabindex="-1">
+      <mg-button aria-disabled="true" aria-label="Previous page" role="button" tabindex="-1">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--disabled mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         <mg-icon>
@@ -178,10 +188,12 @@ exports[`mg-pagination Should render with locale: xx 1`] = `
       <span>
         / 2 pages
       </span>
-      <mg-button aria-disabled="false" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next" role="button" tabindex="0">
+      <mg-button aria-disabled="false" aria-label="Next page" role="button" tabindex="0">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         next
@@ -202,10 +214,12 @@ exports[`mg-pagination Should render with totalPages 1 1`] = `
 <mg-pagination current-page="1">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button aria-disabled="true" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous" role="button" tabindex="-1">
+      <mg-button aria-disabled="true" aria-label="Previous page" role="button" tabindex="-1">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--disabled mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         <mg-icon>
@@ -241,10 +255,12 @@ exports[`mg-pagination Should render with totalPages 1 1`] = `
       <span>
         / 1 page
       </span>
-      <mg-button aria-disabled="true" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next" role="button" tabindex="-1">
+      <mg-button aria-disabled="true" aria-label="Next page" role="button" tabindex="-1">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--disabled mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         next
@@ -265,10 +281,12 @@ exports[`mg-pagination Should render with totalPages 2 1`] = `
 <mg-pagination current-page="1">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button aria-disabled="true" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous" role="button" tabindex="-1">
+      <mg-button aria-disabled="true" aria-label="Previous page" role="button" tabindex="-1">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--disabled mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         <mg-icon>
@@ -307,10 +325,12 @@ exports[`mg-pagination Should render with totalPages 2 1`] = `
       <span>
         / 2 pages
       </span>
-      <mg-button aria-disabled="false" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next" role="button" tabindex="0">
+      <mg-button aria-disabled="false" aria-label="Next page" role="button" tabindex="0">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         next
@@ -331,10 +351,12 @@ exports[`mg-pagination Should render with totalPages 2 2`] = `
 <mg-pagination current-page="2">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button aria-disabled="false" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous" role="button" tabindex="0">
+      <mg-button aria-disabled="false" aria-label="Previous page" role="button" tabindex="0">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         <mg-icon>
@@ -373,10 +395,12 @@ exports[`mg-pagination Should render with totalPages 2 2`] = `
       <span>
         / 2 pages
       </span>
-      <mg-button aria-disabled="true" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next" role="button" tabindex="-1">
+      <mg-button aria-disabled="true" aria-label="Next page" role="button" tabindex="-1">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--disabled mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         next
@@ -397,10 +421,12 @@ exports[`mg-pagination Should render with totalPages 3 1`] = `
 <mg-pagination current-page="1">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button aria-disabled="true" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous" role="button" tabindex="-1">
+      <mg-button aria-disabled="true" aria-label="Previous page" role="button" tabindex="-1">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--disabled mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         <mg-icon>
@@ -442,10 +468,12 @@ exports[`mg-pagination Should render with totalPages 3 1`] = `
       <span>
         / 3 pages
       </span>
-      <mg-button aria-disabled="false" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next" role="button" tabindex="0">
+      <mg-button aria-disabled="false" aria-label="Next page" role="button" tabindex="0">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         next
@@ -466,10 +494,12 @@ exports[`mg-pagination Should render with totalPages 3 2`] = `
 <mg-pagination current-page="2">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button aria-disabled="false" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous" role="button" tabindex="0">
+      <mg-button aria-disabled="false" aria-label="Previous page" role="button" tabindex="0">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         <mg-icon>
@@ -511,10 +541,12 @@ exports[`mg-pagination Should render with totalPages 3 2`] = `
       <span>
         / 3 pages
       </span>
-      <mg-button aria-disabled="false" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next" role="button" tabindex="0">
+      <mg-button aria-disabled="false" aria-label="Next page" role="button" tabindex="0">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         next
@@ -535,10 +567,12 @@ exports[`mg-pagination Should render with totalPages 3 3`] = `
 <mg-pagination current-page="3">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button aria-disabled="false" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous" role="button" tabindex="0">
+      <mg-button aria-disabled="false" aria-label="Previous page" role="button" tabindex="0">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         <mg-icon>
@@ -580,10 +614,12 @@ exports[`mg-pagination Should render with totalPages 3 3`] = `
       <span>
         / 3 pages
       </span>
-      <mg-button aria-disabled="true" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next" role="button" tabindex="-1">
+      <mg-button aria-disabled="true" aria-label="Next page" role="button" tabindex="-1">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--disabled mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         next
@@ -604,10 +640,12 @@ exports[`mg-pagination Should render with totalPages 10 1`] = `
 <mg-pagination current-page="1">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button aria-disabled="true" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous" role="button" tabindex="-1">
+      <mg-button aria-disabled="true" aria-label="Previous page" role="button" tabindex="-1">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--disabled mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         <mg-icon>
@@ -670,10 +708,12 @@ exports[`mg-pagination Should render with totalPages 10 1`] = `
       <span>
         / 10 pages
       </span>
-      <mg-button aria-disabled="false" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next" role="button" tabindex="0">
+      <mg-button aria-disabled="false" aria-label="Next page" role="button" tabindex="0">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         next
@@ -694,10 +734,12 @@ exports[`mg-pagination Should render with totalPages 10 2`] = `
 <mg-pagination current-page="2">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button aria-disabled="false" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous" role="button" tabindex="0">
+      <mg-button aria-disabled="false" aria-label="Previous page" role="button" tabindex="0">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         <mg-icon>
@@ -760,10 +802,12 @@ exports[`mg-pagination Should render with totalPages 10 2`] = `
       <span>
         / 10 pages
       </span>
-      <mg-button aria-disabled="false" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next" role="button" tabindex="0">
+      <mg-button aria-disabled="false" aria-label="Next page" role="button" tabindex="0">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         next
@@ -784,10 +828,12 @@ exports[`mg-pagination Should render with totalPages 10 3`] = `
 <mg-pagination current-page="3">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button aria-disabled="false" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous" role="button" tabindex="0">
+      <mg-button aria-disabled="false" aria-label="Previous page" role="button" tabindex="0">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         <mg-icon>
@@ -850,10 +896,12 @@ exports[`mg-pagination Should render with totalPages 10 3`] = `
       <span>
         / 10 pages
       </span>
-      <mg-button aria-disabled="false" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next" role="button" tabindex="0">
+      <mg-button aria-disabled="false" aria-label="Next page" role="button" tabindex="0">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         next
@@ -874,10 +922,12 @@ exports[`mg-pagination Should render with totalPages 10 4`] = `
 <mg-pagination current-page="4">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button aria-disabled="false" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous" role="button" tabindex="0">
+      <mg-button aria-disabled="false" aria-label="Previous page" role="button" tabindex="0">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         <mg-icon>
@@ -940,10 +990,12 @@ exports[`mg-pagination Should render with totalPages 10 4`] = `
       <span>
         / 10 pages
       </span>
-      <mg-button aria-disabled="false" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next" role="button" tabindex="0">
+      <mg-button aria-disabled="false" aria-label="Next page" role="button" tabindex="0">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         next
@@ -964,10 +1016,12 @@ exports[`mg-pagination Should render with totalPages 10 5`] = `
 <mg-pagination current-page="5">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button aria-disabled="false" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous" role="button" tabindex="0">
+      <mg-button aria-disabled="false" aria-label="Previous page" role="button" tabindex="0">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         <mg-icon>
@@ -1030,10 +1084,12 @@ exports[`mg-pagination Should render with totalPages 10 5`] = `
       <span>
         / 10 pages
       </span>
-      <mg-button aria-disabled="false" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next" role="button" tabindex="0">
+      <mg-button aria-disabled="false" aria-label="Next page" role="button" tabindex="0">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         next
@@ -1054,10 +1110,12 @@ exports[`mg-pagination Should render with totalPages 10 6`] = `
 <mg-pagination current-page="6">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button aria-disabled="false" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous" role="button" tabindex="0">
+      <mg-button aria-disabled="false" aria-label="Previous page" role="button" tabindex="0">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         <mg-icon>
@@ -1120,10 +1178,12 @@ exports[`mg-pagination Should render with totalPages 10 6`] = `
       <span>
         / 10 pages
       </span>
-      <mg-button aria-disabled="false" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next" role="button" tabindex="0">
+      <mg-button aria-disabled="false" aria-label="Next page" role="button" tabindex="0">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         next
@@ -1144,10 +1204,12 @@ exports[`mg-pagination Should render with totalPages 10 7`] = `
 <mg-pagination current-page="7">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button aria-disabled="false" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous" role="button" tabindex="0">
+      <mg-button aria-disabled="false" aria-label="Previous page" role="button" tabindex="0">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         <mg-icon>
@@ -1210,10 +1272,12 @@ exports[`mg-pagination Should render with totalPages 10 7`] = `
       <span>
         / 10 pages
       </span>
-      <mg-button aria-disabled="false" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next" role="button" tabindex="0">
+      <mg-button aria-disabled="false" aria-label="Next page" role="button" tabindex="0">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         next
@@ -1234,10 +1298,12 @@ exports[`mg-pagination Should render with totalPages 10 8`] = `
 <mg-pagination current-page="8">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button aria-disabled="false" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous" role="button" tabindex="0">
+      <mg-button aria-disabled="false" aria-label="Previous page" role="button" tabindex="0">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         <mg-icon>
@@ -1300,10 +1366,12 @@ exports[`mg-pagination Should render with totalPages 10 8`] = `
       <span>
         / 10 pages
       </span>
-      <mg-button aria-disabled="false" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next" role="button" tabindex="0">
+      <mg-button aria-disabled="false" aria-label="Next page" role="button" tabindex="0">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         next
@@ -1324,10 +1392,12 @@ exports[`mg-pagination Should render with totalPages 10 9`] = `
 <mg-pagination current-page="9">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button aria-disabled="false" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous" role="button" tabindex="0">
+      <mg-button aria-disabled="false" aria-label="Previous page" role="button" tabindex="0">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         <mg-icon>
@@ -1390,10 +1460,12 @@ exports[`mg-pagination Should render with totalPages 10 9`] = `
       <span>
         / 10 pages
       </span>
-      <mg-button aria-disabled="false" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next" role="button" tabindex="0">
+      <mg-button aria-disabled="false" aria-label="Next page" role="button" tabindex="0">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         next
@@ -1414,10 +1486,12 @@ exports[`mg-pagination Should render with totalPages 10 10`] = `
 <mg-pagination current-page="10">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button aria-disabled="false" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous" role="button" tabindex="0">
+      <mg-button aria-disabled="false" aria-label="Previous page" role="button" tabindex="0">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         <mg-icon>
@@ -1480,10 +1554,12 @@ exports[`mg-pagination Should render with totalPages 10 10`] = `
       <span>
         / 10 pages
       </span>
-      <mg-button aria-disabled="true" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next" role="button" tabindex="-1">
+      <mg-button aria-disabled="true" aria-label="Next page" role="button" tabindex="-1">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--disabled mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         next
@@ -1504,10 +1580,12 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
 <mg-pagination current-page="1">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button aria-disabled="true" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous" role="button" tabindex="-1">
+      <mg-button aria-disabled="true" aria-label="Previous page" role="button" tabindex="-1">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--disabled mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         <mg-icon>
@@ -1555,10 +1633,12 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
       <span>
         / 5 pages
       </span>
-      <mg-button aria-disabled="false" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next" role="button" tabindex="0">
+      <mg-button aria-disabled="false" aria-label="Next page" role="button" tabindex="0">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         next
@@ -1579,10 +1659,12 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
 <mg-pagination current-page="1">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button aria-disabled="true" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous" role="button" tabindex="-1">
+      <mg-button aria-disabled="true" aria-label="Previous page" role="button" tabindex="-1">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--disabled mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         <mg-icon>
@@ -1630,10 +1712,12 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
       <span>
         / 5 pages
       </span>
-      <mg-button aria-disabled="false" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next" role="button" tabindex="0">
+      <mg-button aria-disabled="false" aria-label="Next page" role="button" tabindex="0">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         next
@@ -1654,10 +1738,12 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
 <mg-pagination current-page="2">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button aria-disabled="false" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous" role="button" tabindex="0">
+      <mg-button aria-disabled="false" aria-label="Previous page" role="button" tabindex="0">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         <mg-icon>
@@ -1705,10 +1791,12 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
       <span>
         / 5 pages
       </span>
-      <mg-button aria-disabled="false" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next" role="button" tabindex="0">
+      <mg-button aria-disabled="false" aria-label="Next page" role="button" tabindex="0">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         next
@@ -1729,10 +1817,12 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
 <mg-pagination current-page="1">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button aria-disabled="true" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous" role="button" tabindex="-1">
+      <mg-button aria-disabled="true" aria-label="Previous page" role="button" tabindex="-1">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--disabled mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         <mg-icon>
@@ -1780,10 +1870,12 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
       <span>
         / 5 pages
       </span>
-      <mg-button aria-disabled="false" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next" role="button" tabindex="0">
+      <mg-button aria-disabled="false" aria-label="Next page" role="button" tabindex="0">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         next
@@ -1804,10 +1896,12 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 1, case to
 <mg-pagination current-page="1">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button aria-disabled="true" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous" role="button" tabindex="-1">
+      <mg-button aria-disabled="true" aria-label="Previous page" role="button" tabindex="-1">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--disabled mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         <mg-icon>
@@ -1855,10 +1949,12 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 1, case to
       <span>
         / 5 pages
       </span>
-      <mg-button aria-disabled="false" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next" role="button" tabindex="0">
+      <mg-button aria-disabled="false" aria-label="Next page" role="button" tabindex="0">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         next
@@ -1879,10 +1975,12 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 1, case to
 <mg-pagination current-page="5">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button aria-disabled="false" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous" role="button" tabindex="0">
+      <mg-button aria-disabled="false" aria-label="Previous page" role="button" tabindex="0">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         <mg-icon>
@@ -1930,10 +2028,12 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 1, case to
       <span>
         / 5 pages
       </span>
-      <mg-button aria-disabled="true" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next" role="button" tabindex="-1">
+      <mg-button aria-disabled="true" aria-label="Next page" role="button" tabindex="-1">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--disabled mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         next
@@ -1954,10 +2054,12 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 1, case to
 <mg-pagination current-page="2">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button aria-disabled="false" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous" role="button" tabindex="0">
+      <mg-button aria-disabled="false" aria-label="Previous page" role="button" tabindex="0">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         <mg-icon>
@@ -2005,10 +2107,12 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 1, case to
       <span>
         / 5 pages
       </span>
-      <mg-button aria-disabled="false" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next" role="button" tabindex="0">
+      <mg-button aria-disabled="false" aria-label="Next page" role="button" tabindex="0">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         next
@@ -2029,10 +2133,12 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 1, case to
 <mg-pagination current-page="1">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button aria-disabled="true" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous" role="button" tabindex="-1">
+      <mg-button aria-disabled="true" aria-label="Previous page" role="button" tabindex="-1">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--disabled mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         <mg-icon>
@@ -2083,10 +2189,12 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 1, case to
       <span>
         / 5 pages
       </span>
-      <mg-button aria-disabled="false" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next" role="button" tabindex="0">
+      <mg-button aria-disabled="false" aria-label="Next page" role="button" tabindex="0">
         <mock:shadow-root>
-          <div class="mg-button__content">
-            <slot></slot>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
         </mock:shadow-root>
         next

@@ -75,6 +75,13 @@ export class MgButton {
     }
     // Manage if onclick
     this.element.onclick = isDisabled ? undefined : this.onClickElementFn;
+
+    // apply style
+    if (isDisabled) {
+      this.classList.add('mg-button--disabled');
+    } else {
+      this.classList.delete('mg-button--disabled');
+    }
   }
   /**
    * Define if button is round.
@@ -156,7 +163,7 @@ export class MgButton {
   private handleKeydown = (event: KeyboardEvent): void => {
     if (!this.disabled && event.key === ' ') {
       event.preventDefault();
-    } else if (!this.disabled && ['Enter', 'NumpadEnter'].includes(event.key)) {
+    } else if (!this.disabled && ['Enter', 'NumpadEnter', 'Space'].includes(event.key)) {
       event.preventDefault();
       this.element.dispatchEvent(new MouseEvent('click', { bubbles: true }));
     }
@@ -203,8 +210,6 @@ export class MgButton {
       <Host
         role="button"
         tabIndex={this.disabled ? -1 : 0}
-        id={this.identifier}
-        class={this.classList.join()}
         type={this.type}
         aria-label={this.label}
         aria-disabled={this.disabled !== undefined && this.disabled.toString()}
@@ -216,9 +221,11 @@ export class MgButton {
         onKeyUp={this.handleKeyup}
         onKeyDown={this.handleKeydown}
       >
-        {this.loading && <mg-icon icon="loader" spin></mg-icon>}
-        <div class="mg-button__content">
-          <slot></slot>
+        <div class={this.classList.join()} id={this.identifier}>
+          {this.loading && <mg-icon icon="loader" spin></mg-icon>}
+          <div class="mg-button__content">
+            <slot></slot>
+          </div>
         </div>
       </Host>
     );

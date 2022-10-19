@@ -295,10 +295,12 @@ exports[`mg-input-text Should render with slot. 1`] = `
       </div>
     </div>
   </mock:shadow-root>
-  <mg-button aria-label="search" class="mg-button mg-button--primary" id="identifier" role="button" slot="append-input" tabindex="0">
+  <mg-button aria-label="search" role="button" slot="append-input" tabindex="0">
     <mock:shadow-root>
-      <div class="mg-button__content">
-        <slot></slot>
+      <div class="mg-button mg-button--primary" id="identifier">
+        <div class="mg-button__content">
+          <slot></slot>
+        </div>
       </div>
     </mock:shadow-root>
     <mg-icon>
@@ -355,10 +357,12 @@ exports[`mg-input-text Should render with slot. 3`] = `
       </div>
     </div>
   </mock:shadow-root>
-  <mg-button aria-label="cancel" class="mg-button mg-button--icon mg-button--primary" id="identifier-cancel" is-icon="" role="button" slot="append-input" tabindex="0">
+  <mg-button aria-label="cancel" is-icon="" role="button" slot="append-input" tabindex="0">
     <mock:shadow-root>
-      <div class="mg-button__content">
-        <slot></slot>
+      <div class="mg-button mg-button--icon mg-button--primary" id="identifier-cancel">
+        <div class="mg-button__content">
+          <slot></slot>
+        </div>
       </div>
     </mock:shadow-root>
     <mg-icon>
@@ -369,10 +373,12 @@ exports[`mg-input-text Should render with slot. 3`] = `
       </mock:shadow-root>
     </mg-icon>
   </mg-button>
-  <mg-button aria-label="validate" class="mg-button mg-button--icon mg-button--primary" id="identifier-validate" is-icon="" role="button" slot="append-input" tabindex="0">
+  <mg-button aria-label="validate" is-icon="" role="button" slot="append-input" tabindex="0">
     <mock:shadow-root>
-      <div class="mg-button__content">
-        <slot></slot>
+      <div class="mg-button mg-button--icon mg-button--primary" id="identifier-validate">
+        <div class="mg-button__content">
+          <slot></slot>
+        </div>
       </div>
     </mock:shadow-root>
     <mg-icon>

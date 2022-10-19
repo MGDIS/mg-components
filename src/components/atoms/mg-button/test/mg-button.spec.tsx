@@ -49,19 +49,20 @@ describe('mg-button', () => {
 
   test('Should replace classes on variant changes', async () => {
     const page = await getPage({ variant: 'primary', label: 'label' });
-    const element: HTMLMgButtonElement = page.doc.querySelector('mg-button.mg-button--primary');
+    const element = page.doc.querySelector('mg-button');
+    let classPrimary = element.shadowRoot.querySelector('.mg-button--primary');
 
-    expect(element).not.toBeNull();
+    expect(classPrimary).not.toBeNull();
 
     // Change variant
     element.variant = 'danger';
     await page.waitForChanges();
 
-    const classPrimary = element.className.includes('.mg-button--primary');
-    const classDanger = element.className.includes('.mg-button--danger');
+    classPrimary = element.shadowRoot.querySelector('.mg-button--primary');
+    const classDanger = element.shadowRoot.querySelector('.mg-button--danger');
 
-    expect(classPrimary).toBeFalsy();
-    expect(classDanger).not.toBeTruthy();
+    expect(classPrimary).toBeNull();
+    expect(classDanger).not.toBeNull();
   });
 
   test.each(['', 'blu'])('Should throw error', async variant => {

@@ -119,10 +119,11 @@ export class MgPagination {
    * Go to 'previous/next' page button handler
    *
    * @param {string} action navigation action
+   * @param {boolean} disabled button disable state
    * @returns {void}
    */
-  private handleGoToPage = (action: string): void => {
-    this.goToPage(action === NavigationAction.NEXT ? this.currentPage + 1 : this.currentPage - 1);
+  private handleGoToPage = (action: string, disabled: boolean): void => {
+    !disabled && this.goToPage(action === NavigationAction.NEXT ? this.currentPage + 1 : this.currentPage - 1);
   };
 
   /*************
@@ -157,7 +158,7 @@ export class MgPagination {
         identifier={`${this.identifier}-button-${action}`}
         label={this.messages.pagination[`${action}Page`]}
         // eslint-disable-next-line react/jsx-no-bind
-        onClick={() => !disabled && this.handleGoToPage(action)}
+        onClick={() => this.handleGoToPage(action, disabled)}
         disabled={disabled}
         variant="flat"
       >

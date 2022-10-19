@@ -406,10 +406,12 @@ exports[`mg-input-numeric type currency Should render with slot. 1`] = `
       </div>
     </div>
   </mock:shadow-root>
-  <mg-button aria-label="search" class="mg-button mg-button--primary" id="button-identifier" role="button" slot="append-input" tabindex="0">
+  <mg-button aria-label="search" role="button" slot="append-input" tabindex="0">
     <mock:shadow-root>
-      <div class="mg-button__content">
-        <slot></slot>
+      <div class="mg-button mg-button--primary" id="button-identifier">
+        <div class="mg-button__content">
+          <slot></slot>
+        </div>
       </div>
     </mock:shadow-root>
     <mg-icon>
@@ -981,10 +983,12 @@ exports[`mg-input-numeric type decimal Should render with slot. 1`] = `
       </div>
     </div>
   </mock:shadow-root>
-  <mg-button aria-label="search" class="mg-button mg-button--primary" id="button-identifier" role="button" slot="append-input" tabindex="0">
+  <mg-button aria-label="search" role="button" slot="append-input" tabindex="0">
     <mock:shadow-root>
-      <div class="mg-button__content">
-        <slot></slot>
+      <div class="mg-button mg-button--primary" id="button-identifier">
+        <div class="mg-button__content">
+          <slot></slot>
+        </div>
       </div>
     </mock:shadow-root>
     <mg-icon>
@@ -1556,10 +1560,12 @@ exports[`mg-input-numeric type integer Should render with slot. 1`] = `
       </div>
     </div>
   </mock:shadow-root>
-  <mg-button aria-label="search" class="mg-button mg-button--primary" id="button-identifier" role="button" slot="append-input" tabindex="0">
+  <mg-button aria-label="search" role="button" slot="append-input" tabindex="0">
     <mock:shadow-root>
-      <div class="mg-button__content">
-        <slot></slot>
+      <div class="mg-button mg-button--primary" id="button-identifier">
+        <div class="mg-button__content">
+          <slot></slot>
+        </div>
       </div>
     </mock:shadow-root>
     <mg-icon>
