@@ -18,6 +18,23 @@ Release date
 ### 🐛 Bug Fix
 -->
 
+## 5.0.0
+
+October 17th, 2022
+
+### 💥 Breaking Changes
+
+- `mg-button`, `mg-tooltip` and `mg-popover` components use now [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM).  
+  This might create some a11y issues but it fix all the issues we have with AngularJS.  
+  The use of the [mg-text-content angularJS directive](http://core.pages.mgdis.fr/core-back/core/docs/mg-components-helpers/mg-text-content-angular) is not necesary anymore.
+- Components with missing mandatory props won't render and throw error.
+- No more `variables.scss` export, only `variables.css`.
+
+### 🐛 Bug Fix
+
+- [#154](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/154) mg-button: Unexpected behavior when displayed conditionally
+- [#158](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/158) mg-tooltip: child component interpolation does not work under ng-repeat directive
+
 ## 4.2.1
 
 October 5th, 2022
