@@ -211,7 +211,7 @@ export class MgPanel {
         controls={`${this.identifier}-content`}
         disabled={this.expandToggleDisabled}
       >
-        <span class={'mg-panel__collapse-button-content'}>
+        <span class="mg-panel__collapse-button-content">
           <mg-icon icon={this.expanded ? 'chevron-up' : 'chevron-down'}></mg-icon>
           {!this.isEditing && this.panelTitle}
         </span>
