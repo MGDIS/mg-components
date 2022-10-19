@@ -13,97 +13,6 @@ exports[`mg-button Should render a button with an id 1`] = `
 </mg-button>
 `;
 
-exports[`mg-button Should render a button, case controls 1`] = `
-<mg-button aria-controls="element-controlled" aria-label="label" role="button" tabindex="0">
-  <mock:shadow-root>
-    <div class="mg-button mg-button--primary">
-      <div class="mg-button__content">
-        <slot></slot>
-      </div>
-    </div>
-  </mock:shadow-root>
-  Text button
-</mg-button>
-`;
-
-exports[`mg-button Should render a button, case expanded false 1`] = `
-<mg-button aria-expanded="false" aria-label="label" role="button" tabindex="0">
-  <mock:shadow-root>
-    <div class="mg-button mg-button--primary">
-      <div class="mg-button__content">
-        <slot></slot>
-      </div>
-    </div>
-  </mock:shadow-root>
-  Text button
-</mg-button>
-`;
-
-exports[`mg-button Should render a button, case expanded true 1`] = `
-<mg-button aria-expanded="true" aria-label="label" role="button" tabindex="0">
-  <mock:shadow-root>
-    <div class="mg-button mg-button--primary">
-      <div class="mg-button__content">
-        <slot></slot>
-      </div>
-    </div>
-  </mock:shadow-root>
-  Text button
-</mg-button>
-`;
-
-exports[`mg-button Should render a button, case haspopup false 1`] = `
-<mg-button aria-haspopup="false" aria-label="label" role="button" tabindex="0">
-  <mock:shadow-root>
-    <div class="mg-button mg-button--primary">
-      <div class="mg-button__content">
-        <slot></slot>
-      </div>
-    </div>
-  </mock:shadow-root>
-  Text button
-</mg-button>
-`;
-
-exports[`mg-button Should render a button, case haspopup true 1`] = `
-<mg-button aria-haspopup="true" aria-label="label" role="button" tabindex="0">
-  <mock:shadow-root>
-    <div class="mg-button mg-button--primary">
-      <div class="mg-button__content">
-        <slot></slot>
-      </div>
-    </div>
-  </mock:shadow-root>
-  Text button
-</mg-button>
-`;
-
-exports[`mg-button Should render a button, case pressed false 1`] = `
-<mg-button aria-label="label" aria-pressed="false" role="button" tabindex="0">
-  <mock:shadow-root>
-    <div class="mg-button mg-button--primary">
-      <div class="mg-button__content">
-        <slot></slot>
-      </div>
-    </div>
-  </mock:shadow-root>
-  Text button
-</mg-button>
-`;
-
-exports[`mg-button Should render a button, case pressed true 1`] = `
-<mg-button aria-label="label" aria-pressed="true" role="button" tabindex="0">
-  <mock:shadow-root>
-    <div class="mg-button mg-button--primary">
-      <div class="mg-button__content">
-        <slot></slot>
-      </div>
-    </div>
-  </mock:shadow-root>
-  Text button
-</mg-button>
-`;
-
 exports[`mg-button Should render a button, case type button 1`] = `
 <mg-button aria-label="label" role="button" tabindex="0" type="button">
   <mock:shadow-root>
@@ -406,6 +315,32 @@ exports[`mg-button prevent double click should disable button after click 3`] = 
 
 exports[`mg-button prevent double click should not have fn when disabled 1`] = `
 <mg-button aria-disabled="true" role="button" tabindex="-1">
+  <mock:shadow-root>
+    <div class="mg-button mg-button--disabled mg-button--primary">
+      <div class="mg-button__content">
+        <slot></slot>
+      </div>
+    </div>
+  </mock:shadow-root>
+  Text button
+</mg-button>
+`;
+
+exports[`mg-button prevent double click should not trigger disableOnClick when disabled 1`] = `
+<mg-button aria-disabled="true" disableonclick="" role="button" tabindex="-1">
+  <mock:shadow-root>
+    <div class="mg-button mg-button--disabled mg-button--primary">
+      <div class="mg-button__content">
+        <slot></slot>
+      </div>
+    </div>
+  </mock:shadow-root>
+  Text button
+</mg-button>
+`;
+
+exports[`mg-button prevent double click should not trigger disableOnClick when disabled 2`] = `
+<mg-button aria-disabled="true" disableonclick="" role="button" tabindex="-1">
   <mock:shadow-root>
     <div class="mg-button mg-button--disabled mg-button--primary">
       <div class="mg-button__content">

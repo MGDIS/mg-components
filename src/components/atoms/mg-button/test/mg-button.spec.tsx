@@ -22,26 +22,6 @@ describe('mg-button', () => {
     });
   });
 
-  test.each([false, true])('Should render a button, case expanded %s', async expanded => {
-    const { root } = await getPage({ label: 'label', expanded });
-    expect(root).toMatchSnapshot();
-  });
-
-  test.each([false, true])('Should render a button, case pressed %s', async pressed => {
-    const { root } = await getPage({ label: 'label', pressed });
-    expect(root).toMatchSnapshot();
-  });
-
-  test('Should render a button, case controls', async () => {
-    const { root } = await getPage({ label: 'label', controls: 'element-controlled' });
-    expect(root).toMatchSnapshot();
-  });
-
-  test.each([true, false])('Should render a button, case haspopup %s', async haspopup => {
-    const { root } = await getPage({ label: 'label', haspopup });
-    expect(root).toMatchSnapshot();
-  });
-
   test.each(buttonTypes)('Should render a button, case type %s', async type => {
     const { root } = await getPage({ label: 'label', type });
     expect(root).toMatchSnapshot();
@@ -118,24 +98,28 @@ describe('mg-button', () => {
       expect(page.root).toMatchSnapshot();
     });
 
-    test('should not have fn when disabled', async () => {
+    test('should not trigger disableOnClick when disabled', async () => {
       const page = await getPage({
         disabled: true,
-        onClick: () => {
-          return false;
-        },
+        disableOnCLick: true,
       });
-
-      const button = page.doc.querySelector('mg-button');
 
       expect(page.root).toMatchSnapshot();
 
+      const button = page.doc.querySelector('mg-button');
       button.dispatchEvent(new CustomEvent('click', { bubbles: true }));
       await page.waitForChanges();
 
-      const loadinClass = button.classList.contains('mg-button--loading');
+      expect(page.root).toMatchSnapshot();
+    });
 
-      expect(loadinClass).toBeFalsy();
+    test('should not have fn when disabled', async () => {
+      const page = await getPage({
+        disabled: true,
+        onClick: () => false,
+      });
+
+      expect(page.root).toMatchSnapshot();
     });
   });
 

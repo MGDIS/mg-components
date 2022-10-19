@@ -207,8 +207,8 @@ export class MgPanel {
         onClick={this.handleCollapseButton}
         variant="flat"
         identifier={`${this.identifier}-collapse-button`}
-        expanded={this.expanded}
-        controls={`${this.identifier}-content`}
+        aria-expanded={this.expanded !== undefined && this.expanded.toString()}
+        aria-controls={`${this.identifier}-content`}
         disabled={this.expandToggleDisabled}
       >
         <span class="mg-panel__collapse-button-content">

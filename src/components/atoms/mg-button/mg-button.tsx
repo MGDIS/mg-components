@@ -1,5 +1,5 @@
 import { Component, Element, h, Prop, State, Watch, Host } from '@stencil/core';
-import { variants, ButtonType } from './mg-button.conf';
+import { variants, VariantType, ButtonType } from './mg-button.conf';
 import { ClassList } from '../../../utils/components.utils';
 
 @Component({
@@ -13,6 +13,8 @@ export class MgButton {
    ************/
 
   private onClickElementFn = null;
+  private classDisabled = 'mg-button--disabled';
+  private classLoading = 'mg-button--loading';
 
   /**************
    * Decorators *
@@ -26,9 +28,9 @@ export class MgButton {
   /**
    * Define button variant
    */
-  @Prop() variant: string = variants[0]; // Primary
+  @Prop() variant: VariantType = variants[0]; // Primary
   @Watch('variant')
-  validateVariant(newValue: string, oldValue?: string): void {
+  validateVariant(newValue: VariantType, oldValue?: VariantType): void {
     if (!variants.includes(newValue)) {
       throw new Error(`<mg-button> prop "variant" must be one of : ${variants.join(', ')}`);
     } else {
@@ -52,7 +54,6 @@ export class MgButton {
 
   /**
    * Define button type
-   * Default: 'submit', as HTMLButtonElement type is submit by default
    */
   @Prop() type: ButtonType;
 
@@ -60,7 +61,7 @@ export class MgButton {
    * Define form id to attach button with.
    * If this attribute is not set, the <button> is associated with its ancestor <form> element.
    */
-  @Prop({ mutable: true, reflect: true }) form: string;
+  @Prop({ mutable: true }) form: string;
 
   /**
    * Disable button
@@ -78,9 +79,9 @@ export class MgButton {
 
     // apply style
     if (isDisabled) {
-      this.classList.add('mg-button--disabled');
+      this.classList.add(this.classDisabled);
     } else {
-      this.classList.delete('mg-button--disabled');
+      this.classList.delete(this.classDisabled);
     }
   }
   /**
@@ -96,29 +97,6 @@ export class MgButton {
   @Prop() disableOnClick = false;
 
   /**
-   * Prop to set aria-expanded on button element
-   */
-  @Prop() expanded: boolean;
-
-  /**
-   * Prop to set aria-controls on button element
-   */
-  @Prop() controls: string;
-
-  /**
-   * Prop to set aria-pressed on button element
-   * To describe the state of a button
-   * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Button#aria_state_information
-   */
-  @Prop() pressed: boolean;
-
-  /**
-   * Option to set aria-haspopup
-   * The aria-haspopup state informs assistive technology users that there is a popup and the type of popup it is, but provides no interactivity.
-   */
-  @Prop() haspopup: boolean | 'menu' | 'listbox' | 'tree' | 'grid' | 'dialog';
-
-  /**
    * Define if button is loading, default to false.
    * Trigger when button is clicked or key-up ['enter', 'space], then value change to true.
    * It's required to reset to false when action/promise in parent is done to stop the loading state
@@ -128,9 +106,9 @@ export class MgButton {
   loadingHandler(newValue: boolean): void {
     // we add loading style if it newvalue is true else we remove it
     if (newValue) {
-      this.classList.add('mg-button--loading');
+      this.classList.add(this.classLoading);
     } else {
-      this.classList.delete('mg-button--loading');
+      this.classList.delete(this.classLoading);
     }
   }
 
@@ -211,12 +189,9 @@ export class MgButton {
         role="button"
         tabIndex={this.disabled ? -1 : 0}
         type={this.type}
+        form={this.form}
         aria-label={this.label}
         aria-disabled={this.disabled !== undefined && this.disabled.toString()}
-        aria-expanded={this.expanded !== undefined && this.expanded.toString()}
-        aria-controls={this.controls}
-        aria-haspopup={this.haspopup !== undefined && this.haspopup.toString()}
-        aria-pressed={this.pressed !== undefined && this.pressed.toString()}
         onClick={this.handleClick}
         onKeyUp={this.handleKeyup}
         onKeyDown={this.handleKeydown}

@@ -137,7 +137,8 @@ $button-column-gap: 0.6rem;
   }
 
   // loading style
-  &.mg-button--loading > mg-icon:first-of-type {
+  &.mg-button--loading {
+    > mg-icon:first-of-type {
       position: absolute;
       left: 50%;
       top: 50%;

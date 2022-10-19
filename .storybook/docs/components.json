@@ -1,9 +1,9 @@
 {
-  "timestamp": "2022-10-17T15:25:52",
+  "timestamp": "2022-10-19T14:27:10",
   "compiler": {
     "name": "@stencil/core",
-    "version": "2.17.4",
-    "typescriptVersion": "4.5.4"
+    "version": "2.18.1",
+    "typescriptVersion": "4.7.4"
   },
   "components": [
     {
@@ -110,22 +110,6 @@
       "usage": {},
       "props": [
         {
-          "name": "controls",
-          "type": "string",
-          "mutable": false,
-          "attr": "controls",
-          "reflectToAttr": false,
-          "docs": "Prop to set aria-controls on button element",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
           "name": "disableOnClick",
           "type": "boolean",
           "mutable": false,
@@ -159,68 +143,16 @@
           "required": false
         },
         {
-          "name": "expanded",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "expanded",
-          "reflectToAttr": false,
-          "docs": "Prop to set aria-expanded on button element",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
           "name": "form",
           "type": "string",
           "mutable": true,
           "attr": "form",
-          "reflectToAttr": true,
+          "reflectToAttr": false,
           "docs": "Define form id to attach button with.\nIf this attribute is not set, the <button> is associated with its ancestor <form> element.",
           "docsTags": [],
           "values": [
             {
               "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "haspopup",
-          "type": "\"dialog\" | \"grid\" | \"listbox\" | \"menu\" | \"tree\" | boolean",
-          "mutable": false,
-          "attr": "haspopup",
-          "reflectToAttr": false,
-          "docs": "Option to set aria-haspopup\nThe aria-haspopup state informs assistive technology users that there is a popup and the type of popup it is, but provides no interactivity.",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "dialog",
-              "type": "string"
-            },
-            {
-              "value": "grid",
-              "type": "string"
-            },
-            {
-              "value": "listbox",
-              "type": "string"
-            },
-            {
-              "value": "menu",
-              "type": "string"
-            },
-            {
-              "value": "tree",
-              "type": "string"
-            },
-            {
-              "type": "boolean"
             }
           ],
           "optional": false,
@@ -276,28 +208,12 @@
           "required": false
         },
         {
-          "name": "pressed",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "pressed",
-          "reflectToAttr": false,
-          "docs": "Prop to set aria-pressed on button element\nTo describe the state of a button\nhttps://developer.mozilla.org/en-US/docs/Web/HTML/Element/Button#aria_state_information",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
           "name": "type",
           "type": "\"button\" | \"reset\" | \"submit\"",
           "mutable": false,
           "attr": "type",
           "reflectToAttr": false,
-          "docs": "Define button type\nDefault: 'submit', as HTMLButtonElement type is submit by default",
+          "docs": "Define button type",
           "docsTags": [],
           "values": [
             {
@@ -318,7 +234,7 @@
         },
         {
           "name": "variant",
-          "type": "string",
+          "type": "\"danger\" | \"danger-alt\" | \"flat\" | \"info\" | \"primary\" | \"secondary\" | \"success\"",
           "mutable": false,
           "attr": "variant",
           "reflectToAttr": false,
@@ -327,6 +243,31 @@
           "default": "variants[0]",
           "values": [
             {
+              "value": "danger",
+              "type": "string"
+            },
+            {
+              "value": "danger-alt",
+              "type": "string"
+            },
+            {
+              "value": "flat",
+              "type": "string"
+            },
+            {
+              "value": "info",
+              "type": "string"
+            },
+            {
+              "value": "primary",
+              "type": "string"
+            },
+            {
+              "value": "secondary",
+              "type": "string"
+            },
+            {
+              "value": "success",
               "type": "string"
             }
           ],
