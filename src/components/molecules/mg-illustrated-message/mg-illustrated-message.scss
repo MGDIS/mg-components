@@ -13,7 +13,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    max-width: none;
+    max-width: unset;
 
     .mg-illustrated-message__slots,
     .mg-illustrated-message__illustration {
