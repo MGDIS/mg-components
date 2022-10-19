@@ -28,10 +28,6 @@ describe('mg-pagination', () => {
     test('Keyboard navigation', async () => {
       const page = await createPage(`<mg-pagination total-pages=5></mg-pagination>`);
 
-      // take focus on previous button
-      await page.keyboard.down('Tab');
-      await page.waitForChanges();
-
       const screenshot = await page.screenshot();
       expect(screenshot).toMatchImageSnapshot();
 
@@ -54,6 +50,7 @@ describe('mg-pagination', () => {
       await page.keyboard.down('Shift');
       await page.keyboard.press('Tab');
       await page.keyboard.up('Shift');
+      await page.keyboard.down('Enter');
       await page.waitForChanges();
 
       const screenshotShiftTabShift = await page.screenshot();
@@ -62,6 +59,7 @@ describe('mg-pagination', () => {
       // take focus on next
       await page.keyboard.down('Tab');
       await page.keyboard.down('Tab');
+      await page.keyboard.down('Enter');
       await page.waitForChanges();
 
       const screenshotTabTab = await page.screenshot();

@@ -18,13 +18,15 @@ exports[`mg-popover Should render with element 1`] = `
   <p slot="content">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   </p>
-  <mg-button aria-controls="identifier" aria-expanded="false">
-    <!---->
-    <button class="mg-button mg-button--primary" id="identifier-btn">
-      <div class="mg-button__content">
-        mg-button
+  <mg-button aria-controls="identifier" aria-expanded="false" role="button" tabindex="0">
+    <mock:shadow-root>
+      <div class="mg-button mg-button--primary" id="identifier-btn">
+        <div class="mg-button__content">
+          <slot></slot>
+        </div>
       </div>
-    </button>
+    </mock:shadow-root>
+    mg-button
   </mg-button>
 </mg-popover>
 `;
@@ -47,13 +49,15 @@ exports[`mg-popover Should render with element 2`] = `
   <p slot="content">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   </p>
-  <mg-button aria-controls="identifier" aria-expanded="false">
-    <!---->
-    <button class="mg-button mg-button--primary" id="identifier-btn">
-      <div class="mg-button__content">
-        mg-button
+  <mg-button aria-controls="identifier" aria-expanded="false" role="button" tabindex="0">
+    <mock:shadow-root>
+      <div class="mg-button mg-button--primary" id="identifier-btn">
+        <div class="mg-button__content">
+          <slot></slot>
+        </div>
       </div>
-    </button>
+    </mock:shadow-root>
+    mg-button
   </mg-button>
 </mg-popover>
 `;
@@ -76,13 +80,15 @@ exports[`mg-popover Should render with element 3`] = `
   <p slot="content">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   </p>
-  <mg-button aria-controls="identifier" aria-expanded="true">
-    <!---->
-    <button class="mg-button mg-button--primary" id="identifier-btn">
-      <div class="mg-button__content">
-        mg-button
+  <mg-button aria-controls="identifier" aria-expanded="true" role="button" tabindex="0">
+    <mock:shadow-root>
+      <div class="mg-button mg-button--primary" id="identifier-btn">
+        <div class="mg-button__content">
+          <slot></slot>
+        </div>
       </div>
-    </button>
+    </mock:shadow-root>
+    mg-button
   </mg-button>
 </mg-popover>
 `;
@@ -92,13 +98,15 @@ exports[`mg-popover Should render with element 4`] = `
   <mock:shadow-root>
     <slot></slot>
     <div class="mg-popover" id="identifier" style="position: absolute; left: 0; top: 0; margin: 0;">
-      <mg-button is-icon="">
-        <!---->
-        <button aria-label="Close" class="mg-button mg-button--flat mg-button--icon">
-          <div class="mg-button__content">
-            <mg-icon icon="cross"></mg-icon>
+      <mg-button aria-label="Close" is-icon="" role="button" tabindex="0">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--flat mg-button--icon">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        <mg-icon icon="cross"></mg-icon>
       </mg-button>
       <div class="mg-popover__title">
         <slot name="title"></slot>
@@ -113,13 +121,15 @@ exports[`mg-popover Should render with element 4`] = `
   <p slot="content">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   </p>
-  <mg-button aria-controls="identifier" aria-expanded="false">
-    <!---->
-    <button class="mg-button mg-button--primary" id="identifier-btn">
-      <div class="mg-button__content">
-        mg-button
+  <mg-button aria-controls="identifier" aria-expanded="false" role="button" tabindex="0">
+    <mock:shadow-root>
+      <div class="mg-button mg-button--primary" id="identifier-btn">
+        <div class="mg-button__content">
+          <slot></slot>
+        </div>
       </div>
-    </button>
+    </mock:shadow-root>
+    mg-button
   </mg-button>
 </mg-popover>
 `;
@@ -142,13 +152,15 @@ exports[`mg-popover Should render with element 5`] = `
   <p slot="content">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   </p>
-  <mg-button aria-controls="identifier" aria-expanded="true">
-    <!---->
-    <button class="mg-button mg-button--primary" id="identifier-btn">
-      <div class="mg-button__content">
-        mg-button
+  <mg-button aria-controls="identifier" aria-expanded="true" role="button" tabindex="0">
+    <mock:shadow-root>
+      <div class="mg-button mg-button--primary" id="identifier-btn">
+        <div class="mg-button__content">
+          <slot></slot>
+        </div>
       </div>
-    </button>
+    </mock:shadow-root>
+    mg-button
   </mg-button>
 </mg-popover>
 `;
@@ -158,13 +170,15 @@ exports[`mg-popover Should render with element 6`] = `
   <mock:shadow-root>
     <slot></slot>
     <div class="mg-popover" id="identifier" style="position: absolute; left: 0; top: 0; margin: 0;">
-      <mg-button is-icon="">
-        <!---->
-        <button aria-label="Fermer" class="mg-button mg-button--flat mg-button--icon">
-          <div class="mg-button__content">
-            <mg-icon icon="cross"></mg-icon>
+      <mg-button aria-label="Fermer" is-icon="" role="button" tabindex="0">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--flat mg-button--icon">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        <mg-icon icon="cross"></mg-icon>
       </mg-button>
       <div class="mg-popover__title">
         <slot name="title"></slot>
@@ -179,13 +193,15 @@ exports[`mg-popover Should render with element 6`] = `
   <p slot="content">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   </p>
-  <mg-button aria-controls="identifier" aria-expanded="false">
-    <!---->
-    <button class="mg-button mg-button--primary" id="identifier-btn">
-      <div class="mg-button__content">
-        mg-button
+  <mg-button aria-controls="identifier" aria-expanded="false" role="button" tabindex="0">
+    <mock:shadow-root>
+      <div class="mg-button mg-button--primary" id="identifier-btn">
+        <div class="mg-button__content">
+          <slot></slot>
+        </div>
       </div>
-    </button>
+    </mock:shadow-root>
+    mg-button
   </mg-button>
 </mg-popover>
 `;
@@ -195,13 +211,15 @@ exports[`mg-popover Should render with element 7`] = `
   <mock:shadow-root>
     <slot></slot>
     <div class="mg-popover" id="identifier" style="position: absolute; left: 0; top: 0; margin: 0;">
-      <mg-button is-icon="">
-        <!---->
-        <button aria-label="Close" class="mg-button mg-button--flat mg-button--icon">
-          <div class="mg-button__content">
-            <mg-icon icon="cross"></mg-icon>
+      <mg-button aria-label="Close" is-icon="" role="button" tabindex="0">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--flat mg-button--icon">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        <mg-icon icon="cross"></mg-icon>
       </mg-button>
       <div class="mg-popover__title">
         <slot name="title"></slot>
@@ -216,13 +234,15 @@ exports[`mg-popover Should render with element 7`] = `
   <p slot="content">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   </p>
-  <mg-button aria-controls="identifier" aria-expanded="false">
-    <!---->
-    <button class="mg-button mg-button--primary" id="identifier-btn">
-      <div class="mg-button__content">
-        mg-button
+  <mg-button aria-controls="identifier" aria-expanded="false" role="button" tabindex="0">
+    <mock:shadow-root>
+      <div class="mg-button mg-button--primary" id="identifier-btn">
+        <div class="mg-button__content">
+          <slot></slot>
+        </div>
       </div>
-    </button>
+    </mock:shadow-root>
+    mg-button
   </mg-button>
 </mg-popover>
 `;

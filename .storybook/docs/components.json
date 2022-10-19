@@ -102,29 +102,13 @@
     },
     {
       "filePath": "./src/components/atoms/mg-button/mg-button.tsx",
-      "encapsulation": "scoped",
+      "encapsulation": "shadow",
       "tag": "mg-button",
       "readme": "## Usage\n\nA primary action button is, in most cases, unique on the screen, the other buttons must be displayed as \"secondary\", to highlight the primary action.\nEx: Validation, Save\n\nA tooltip must be displayed on hover when the button only displays a non-explicit icon, and has no label. The tooltip must indicate the action of the button.\n\nA button that launches a potentially long process is disabled and displays a loader for the duration of the process.\n\nA button with undefined type in a form will natively have a [submit type](https://developer.mozilla.org/fr/docs/Web/HTML/Element/Button#attributs) and trigger form submission. So on non-submission buttons you need to explicitely set the type attribute as \"button\".\n\n## Specs\n\n![](./mg-button/doc/img/mg-button-specs.png)\n\n## Placement\n\n![](./mg-button/doc/img/mg-button-placement.png)\n\nTo manage the space between two buttons you can use the helper [.mg-group-elements](/?path=/docs/style-buttons--buttons)\n\n## Theming\n\n![](./mg-button/doc/img/mg-button-styles.png)\n\n## CSS Variables\n\nIf needed some [variables](./?path=/story/css-variables--page) are available to customize the component:\n\n### Global\n\n- `--mg-button-border-radius`: define button border radius, default: `0.3rem`\n- `--mg-button-icon-border-radius`: define button border radius in icon mode, default: `--default-size`\n- `--mg-button-disabled-opacity`: define button opacity when disabled, default: `0.6`\n- `--mg-button-gradient`: define if button use gradient, possible values 0 (no gradient) or 1 (with gradient), default: `1`\n- `--mg-button-border-variation`: define if button has a border based on background color, possible values 0 (no border) or 1 (with border), default: `1`\n\n### Variant\n\nVariants `danger`, `danger-alt`, `info` and `success` can be customized by changing the global [colors](./?path=/docs/style-colors--page).\n\n#### Primary\n\n- `--mg-button-primary-color-h`: define hue color value for primary button, default: `--color-dark-h`\n- `--mg-button-primary-color-s`: define saturation color value for primary button, default: `--color-dark-s`\n- `--mg-button-primary-color-l`: define lightness color value for primary button, default: `--color-dark-l`\n- `--mg-button-primary-font-color`: define font color for primary button, default: `--color-neutral`\n\n#### Secondary\n\n- `--mg-button-secondary-color-h`: define hue color value for secondary button, default: `--color-neutral-h`\n- `--mg-button-secondary-color-s`: define saturation color value for secondary button, default: `--color-neutral-s`\n- `--mg-button-secondary-color-l`: define lightness color value for secondary button, default: `--color-neutral-l`\n- `--mg-button-secondary-font-color`: define font color for secondary button, default: `--color-dark`\n\n\n",
       "docs": "A primary action button is, in most cases, unique on the screen, the other buttons must be displayed as \"secondary\", to highlight the primary action.\nEx: Validation, Save\n\nA tooltip must be displayed on hover when the button only displays a non-explicit icon, and has no label. The tooltip must indicate the action of the button.\n\nA button that launches a potentially long process is disabled and displays a loader for the duration of the process.\n\nA button with undefined type in a form will natively have a [submit type](https://developer.mozilla.org/fr/docs/Web/HTML/Element/Button#attributs) and trigger form submission. So on non-submission buttons you need to explicitely set the type attribute as \"button\".",
       "docsTags": [],
       "usage": {},
       "props": [
-        {
-          "name": "controls",
-          "type": "string",
-          "mutable": false,
-          "attr": "controls",
-          "reflectToAttr": false,
-          "docs": "Prop to set aria-controls on button element",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
         {
           "name": "disableOnClick",
           "type": "boolean",
@@ -159,22 +143,6 @@
           "required": false
         },
         {
-          "name": "expanded",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "expanded",
-          "reflectToAttr": false,
-          "docs": "Prop to set aria-expanded on button element",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
           "name": "form",
           "type": "string",
           "mutable": true,
@@ -185,42 +153,6 @@
           "values": [
             {
               "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "haspopup",
-          "type": "\"dialog\" | \"grid\" | \"listbox\" | \"menu\" | \"tree\" | boolean",
-          "mutable": false,
-          "attr": "haspopup",
-          "reflectToAttr": false,
-          "docs": "Option to set aria-haspopup\nThe aria-haspopup state informs assistive technology users that there is a popup and the type of popup it is, but provides no interactivity.",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "dialog",
-              "type": "string"
-            },
-            {
-              "value": "grid",
-              "type": "string"
-            },
-            {
-              "value": "listbox",
-              "type": "string"
-            },
-            {
-              "value": "menu",
-              "type": "string"
-            },
-            {
-              "value": "tree",
-              "type": "string"
-            },
-            {
-              "type": "boolean"
             }
           ],
           "optional": false,
@@ -281,7 +213,7 @@
           "mutable": false,
           "attr": "type",
           "reflectToAttr": false,
-          "docs": "Define button type\nDefault: 'submit', as HTMLButtonElement type is submit by default",
+          "docs": "Define button type",
           "docsTags": [],
           "values": [
             {
@@ -302,7 +234,7 @@
         },
         {
           "name": "variant",
-          "type": "string",
+          "type": "\"danger\" | \"danger-alt\" | \"flat\" | \"info\" | \"primary\" | \"secondary\" | \"success\"",
           "mutable": false,
           "attr": "variant",
           "reflectToAttr": false,
@@ -311,6 +243,31 @@
           "default": "variants[0]",
           "values": [
             {
+              "value": "danger",
+              "type": "string"
+            },
+            {
+              "value": "danger-alt",
+              "type": "string"
+            },
+            {
+              "value": "flat",
+              "type": "string"
+            },
+            {
+              "value": "info",
+              "type": "string"
+            },
+            {
+              "value": "primary",
+              "type": "string"
+            },
+            {
+              "value": "secondary",
+              "type": "string"
+            },
+            {
+              "value": "success",
               "type": "string"
             }
           ],

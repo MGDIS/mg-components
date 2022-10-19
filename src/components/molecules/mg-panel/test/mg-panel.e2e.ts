@@ -36,8 +36,8 @@ describe('mg-panel', () => {
     `<mg-panel label="label" panel-title="very long panel title very long panel title very long panel title very long panel title very long panel title very long panel title very long panel title very long panel title" title-editable>${slot}</mg-panel>`,
     `<mg-panel label="label" panel-title="panel title" >${slot2}</mg-panel>`,
     `<mg-panel label="label" panel-title="very long panel title very long panel title very long panel title very long panel title very long panel title very long panel title very long panel title very long panel title" title-editable>${slot2}</mg-panel>`,
-    `<mg-panel label="label" panel-title="panel title" expand-toggle-disabled expanded>${slot}</mg-panel>`,
-    `<mg-panel label="label" panel-title="panel title" expand-toggle-disabled>${slot}</mg-panel>`,
+    `<mg-panel label="label" panel-title="panel title" expand-toggle-disabled expanded title-editable>${slot}</mg-panel>`,
+    `<mg-panel label="label" panel-title="panel title" expand-toggle-disabled title-editable>${slot}</mg-panel>`,
     `<mg-panel label="label" panel-title="panel title" expanded style="--mg-panel-content-padding: 0"><div>Content without padding.</div></mg-panel>`,
   ])('template', html => {
     test('render', async () => {
@@ -70,7 +70,7 @@ describe('mg-panel', () => {
       const screenshot = await page.screenshot();
       expect(screenshot).toMatchImageSnapshot();
 
-      const editButton = await page.find('mg-panel >>> #identifier-edit-button');
+      const editButton = await page.find('mg-panel >>> mg-button[is-icon]');
       await editButton.click();
 
       await page.waitForChanges();
@@ -95,7 +95,7 @@ describe('mg-panel', () => {
       await input.press('KeyE');
       await input.press('KeyD');
 
-      const validateButton = await page.find('mg-panel >>> #identifier-edition-button-validate');
+      const validateButton = await page.find('mg-panel >>> mg-input-text mg-button:last-of-type');
       await validateButton.click();
 
       await page.waitForChanges();
@@ -106,11 +106,10 @@ describe('mg-panel', () => {
 
     test.each([
       `<mg-panel identifier="identifier" panel-title="panel" title-editable title-pattern="^(?!(joker)$)[a-z A-Z0-9\s]+$" title-pattern-error-message="You can't enter a bad guy !">${slot}</mg-panel>`,
-      ,
     ])('Should NOT update panel title, case input new value does NOT match pattern', async html => {
       const page = await createPage(html);
 
-      const editButton = await page.find('mg-panel >>> #identifier-edit-button');
+      const editButton = await page.find('mg-panel >>> mg-button[is-icon]');
       await editButton.click();
 
       await page.waitForChanges();
@@ -137,7 +136,7 @@ describe('mg-panel', () => {
       await input.press('KeyE');
       await input.press('KeyR');
 
-      const validateButton = await page.find('mg-panel >>> #identifier-edition-button-validate');
+      const validateButton = await page.find('mg-panel >>> mg-input-text mg-button:last-of-type');
       await validateButton.click();
 
       await page.waitForChanges();

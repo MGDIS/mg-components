@@ -406,20 +406,22 @@ exports[`mg-input-numeric type currency Should render with slot. 1`] = `
       </div>
     </div>
   </mock:shadow-root>
-  <mg-button slot="append-input">
-    <!---->
-    <button aria-label="search" class="mg-button mg-button--primary" id="button-identifier">
-      <div class="mg-button__content">
-        <mg-icon>
-          <mock:shadow-root>
-            <svg aria-hidden="true" class="mg-icon mg-icon--calculator mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-              <path d="M12.83.67H3.17a.5.5 0 0 0-.5.5v13.66a.5.5 0 0 0 .5.5h9.66a.5.5 0 0 0 .5-.5V1.17a.5.5 0 0 0-.5-.5ZM5.58 13.39a.29.29 0 0 1-.28.3H4.1a.29.29 0 0 1-.3-.28v-1.2a.29.29 0 0 1 .28-.3h1.2a.29.29 0 0 1 .3.28v1.2Zm0-3.28a.29.29 0 0 1-.3.3H4.1a.29.29 0 0 1-.3-.3V8.93a.29.29 0 0 1 .28-.3h1.2a.29.29 0 0 1 .3.28v1.2Zm3.29 3.28a.29.29 0 0 1-.3.3H7.38a.29.29 0 0 1-.3-.3v-1.18a.29.29 0 0 1 .3-.3h1.19a.29.29 0 0 1 .3.3Zm0-3.28a.32.32 0 0 1-.3.3H7.38a.32.32 0 0 1-.3-.3V8.93a.29.29 0 0 1 .3-.3h1.19a.29.29 0 0 1 .3.3Zm3.33 3.28a.29.29 0 0 1-.28.3h-1.25a.29.29 0 0 1-.3-.28V8.93a.29.29 0 0 1 .28-.3h1.25a.29.29 0 0 1 .3.28v4.48Zm0-7.15a.29.29 0 0 1-.3.3H4.1a.29.29 0 0 1-.3-.3V2.61a.29.29 0 0 1 .28-.3h7.82a.29.29 0 0 1 .3.28v3.65Z" fill="currentColor"></path>
-            </svg>
-          </mock:shadow-root>
-        </mg-icon>
-        Calculate
+  <mg-button aria-label="search" role="button" slot="append-input" tabindex="0">
+    <mock:shadow-root>
+      <div class="mg-button mg-button--primary" id="button-identifier">
+        <div class="mg-button__content">
+          <slot></slot>
+        </div>
       </div>
-    </button>
+    </mock:shadow-root>
+    <mg-icon>
+      <mock:shadow-root>
+        <svg aria-hidden="true" class="mg-icon mg-icon--calculator mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+          <path d="M12.83.67H3.17a.5.5 0 0 0-.5.5v13.66a.5.5 0 0 0 .5.5h9.66a.5.5 0 0 0 .5-.5V1.17a.5.5 0 0 0-.5-.5ZM5.58 13.39a.29.29 0 0 1-.28.3H4.1a.29.29 0 0 1-.3-.28v-1.2a.29.29 0 0 1 .28-.3h1.2a.29.29 0 0 1 .3.28v1.2Zm0-3.28a.29.29 0 0 1-.3.3H4.1a.29.29 0 0 1-.3-.3V8.93a.29.29 0 0 1 .28-.3h1.2a.29.29 0 0 1 .3.28v1.2Zm3.29 3.28a.29.29 0 0 1-.3.3H7.38a.29.29 0 0 1-.3-.3v-1.18a.29.29 0 0 1 .3-.3h1.19a.29.29 0 0 1 .3.3Zm0-3.28a.32.32 0 0 1-.3.3H7.38a.32.32 0 0 1-.3-.3V8.93a.29.29 0 0 1 .3-.3h1.19a.29.29 0 0 1 .3.3Zm3.33 3.28a.29.29 0 0 1-.28.3h-1.25a.29.29 0 0 1-.3-.28V8.93a.29.29 0 0 1 .28-.3h1.25a.29.29 0 0 1 .3.28v4.48Zm0-7.15a.29.29 0 0 1-.3.3H4.1a.29.29 0 0 1-.3-.3V2.61a.29.29 0 0 1 .28-.3h7.82a.29.29 0 0 1 .3.28v3.65Z" fill="currentColor"></path>
+        </svg>
+      </mock:shadow-root>
+    </mg-icon>
+    Calculate
   </mg-button>
 </mg-input-numeric>
 `;
@@ -981,20 +983,22 @@ exports[`mg-input-numeric type decimal Should render with slot. 1`] = `
       </div>
     </div>
   </mock:shadow-root>
-  <mg-button slot="append-input">
-    <!---->
-    <button aria-label="search" class="mg-button mg-button--primary" id="button-identifier">
-      <div class="mg-button__content">
-        <mg-icon>
-          <mock:shadow-root>
-            <svg aria-hidden="true" class="mg-icon mg-icon--calculator mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-              <path d="M12.83.67H3.17a.5.5 0 0 0-.5.5v13.66a.5.5 0 0 0 .5.5h9.66a.5.5 0 0 0 .5-.5V1.17a.5.5 0 0 0-.5-.5ZM5.58 13.39a.29.29 0 0 1-.28.3H4.1a.29.29 0 0 1-.3-.28v-1.2a.29.29 0 0 1 .28-.3h1.2a.29.29 0 0 1 .3.28v1.2Zm0-3.28a.29.29 0 0 1-.3.3H4.1a.29.29 0 0 1-.3-.3V8.93a.29.29 0 0 1 .28-.3h1.2a.29.29 0 0 1 .3.28v1.2Zm3.29 3.28a.29.29 0 0 1-.3.3H7.38a.29.29 0 0 1-.3-.3v-1.18a.29.29 0 0 1 .3-.3h1.19a.29.29 0 0 1 .3.3Zm0-3.28a.32.32 0 0 1-.3.3H7.38a.32.32 0 0 1-.3-.3V8.93a.29.29 0 0 1 .3-.3h1.19a.29.29 0 0 1 .3.3Zm3.33 3.28a.29.29 0 0 1-.28.3h-1.25a.29.29 0 0 1-.3-.28V8.93a.29.29 0 0 1 .28-.3h1.25a.29.29 0 0 1 .3.28v4.48Zm0-7.15a.29.29 0 0 1-.3.3H4.1a.29.29 0 0 1-.3-.3V2.61a.29.29 0 0 1 .28-.3h7.82a.29.29 0 0 1 .3.28v3.65Z" fill="currentColor"></path>
-            </svg>
-          </mock:shadow-root>
-        </mg-icon>
-        Calculate
+  <mg-button aria-label="search" role="button" slot="append-input" tabindex="0">
+    <mock:shadow-root>
+      <div class="mg-button mg-button--primary" id="button-identifier">
+        <div class="mg-button__content">
+          <slot></slot>
+        </div>
       </div>
-    </button>
+    </mock:shadow-root>
+    <mg-icon>
+      <mock:shadow-root>
+        <svg aria-hidden="true" class="mg-icon mg-icon--calculator mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+          <path d="M12.83.67H3.17a.5.5 0 0 0-.5.5v13.66a.5.5 0 0 0 .5.5h9.66a.5.5 0 0 0 .5-.5V1.17a.5.5 0 0 0-.5-.5ZM5.58 13.39a.29.29 0 0 1-.28.3H4.1a.29.29 0 0 1-.3-.28v-1.2a.29.29 0 0 1 .28-.3h1.2a.29.29 0 0 1 .3.28v1.2Zm0-3.28a.29.29 0 0 1-.3.3H4.1a.29.29 0 0 1-.3-.3V8.93a.29.29 0 0 1 .28-.3h1.2a.29.29 0 0 1 .3.28v1.2Zm3.29 3.28a.29.29 0 0 1-.3.3H7.38a.29.29 0 0 1-.3-.3v-1.18a.29.29 0 0 1 .3-.3h1.19a.29.29 0 0 1 .3.3Zm0-3.28a.32.32 0 0 1-.3.3H7.38a.32.32 0 0 1-.3-.3V8.93a.29.29 0 0 1 .3-.3h1.19a.29.29 0 0 1 .3.3Zm3.33 3.28a.29.29 0 0 1-.28.3h-1.25a.29.29 0 0 1-.3-.28V8.93a.29.29 0 0 1 .28-.3h1.25a.29.29 0 0 1 .3.28v4.48Zm0-7.15a.29.29 0 0 1-.3.3H4.1a.29.29 0 0 1-.3-.3V2.61a.29.29 0 0 1 .28-.3h7.82a.29.29 0 0 1 .3.28v3.65Z" fill="currentColor"></path>
+        </svg>
+      </mock:shadow-root>
+    </mg-icon>
+    Calculate
   </mg-button>
 </mg-input-numeric>
 `;
@@ -1556,20 +1560,22 @@ exports[`mg-input-numeric type integer Should render with slot. 1`] = `
       </div>
     </div>
   </mock:shadow-root>
-  <mg-button slot="append-input">
-    <!---->
-    <button aria-label="search" class="mg-button mg-button--primary" id="button-identifier">
-      <div class="mg-button__content">
-        <mg-icon>
-          <mock:shadow-root>
-            <svg aria-hidden="true" class="mg-icon mg-icon--calculator mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-              <path d="M12.83.67H3.17a.5.5 0 0 0-.5.5v13.66a.5.5 0 0 0 .5.5h9.66a.5.5 0 0 0 .5-.5V1.17a.5.5 0 0 0-.5-.5ZM5.58 13.39a.29.29 0 0 1-.28.3H4.1a.29.29 0 0 1-.3-.28v-1.2a.29.29 0 0 1 .28-.3h1.2a.29.29 0 0 1 .3.28v1.2Zm0-3.28a.29.29 0 0 1-.3.3H4.1a.29.29 0 0 1-.3-.3V8.93a.29.29 0 0 1 .28-.3h1.2a.29.29 0 0 1 .3.28v1.2Zm3.29 3.28a.29.29 0 0 1-.3.3H7.38a.29.29 0 0 1-.3-.3v-1.18a.29.29 0 0 1 .3-.3h1.19a.29.29 0 0 1 .3.3Zm0-3.28a.32.32 0 0 1-.3.3H7.38a.32.32 0 0 1-.3-.3V8.93a.29.29 0 0 1 .3-.3h1.19a.29.29 0 0 1 .3.3Zm3.33 3.28a.29.29 0 0 1-.28.3h-1.25a.29.29 0 0 1-.3-.28V8.93a.29.29 0 0 1 .28-.3h1.25a.29.29 0 0 1 .3.28v4.48Zm0-7.15a.29.29 0 0 1-.3.3H4.1a.29.29 0 0 1-.3-.3V2.61a.29.29 0 0 1 .28-.3h7.82a.29.29 0 0 1 .3.28v3.65Z" fill="currentColor"></path>
-            </svg>
-          </mock:shadow-root>
-        </mg-icon>
-        Calculate
+  <mg-button aria-label="search" role="button" slot="append-input" tabindex="0">
+    <mock:shadow-root>
+      <div class="mg-button mg-button--primary" id="button-identifier">
+        <div class="mg-button__content">
+          <slot></slot>
+        </div>
       </div>
-    </button>
+    </mock:shadow-root>
+    <mg-icon>
+      <mock:shadow-root>
+        <svg aria-hidden="true" class="mg-icon mg-icon--calculator mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+          <path d="M12.83.67H3.17a.5.5 0 0 0-.5.5v13.66a.5.5 0 0 0 .5.5h9.66a.5.5 0 0 0 .5-.5V1.17a.5.5 0 0 0-.5-.5ZM5.58 13.39a.29.29 0 0 1-.28.3H4.1a.29.29 0 0 1-.3-.28v-1.2a.29.29 0 0 1 .28-.3h1.2a.29.29 0 0 1 .3.28v1.2Zm0-3.28a.29.29 0 0 1-.3.3H4.1a.29.29 0 0 1-.3-.3V8.93a.29.29 0 0 1 .28-.3h1.2a.29.29 0 0 1 .3.28v1.2Zm3.29 3.28a.29.29 0 0 1-.3.3H7.38a.29.29 0 0 1-.3-.3v-1.18a.29.29 0 0 1 .3-.3h1.19a.29.29 0 0 1 .3.3Zm0-3.28a.32.32 0 0 1-.3.3H7.38a.32.32 0 0 1-.3-.3V8.93a.29.29 0 0 1 .3-.3h1.19a.29.29 0 0 1 .3.3Zm3.33 3.28a.29.29 0 0 1-.28.3h-1.25a.29.29 0 0 1-.3-.28V8.93a.29.29 0 0 1 .28-.3h1.25a.29.29 0 0 1 .3.28v4.48Zm0-7.15a.29.29 0 0 1-.3.3H4.1a.29.29 0 0 1-.3-.3V2.61a.29.29 0 0 1 .28-.3h7.82a.29.29 0 0 1 .3.28v3.65Z" fill="currentColor"></path>
+        </svg>
+      </mock:shadow-root>
+    </mg-icon>
+    Calculate
   </mg-button>
 </mg-input-numeric>
 `;

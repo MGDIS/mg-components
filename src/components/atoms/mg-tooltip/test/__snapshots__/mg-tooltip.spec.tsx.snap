@@ -73,13 +73,15 @@ exports[`mg-tooltip Should manage display on events enter with { eventIn: 'focus
       <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
     </div>
   </mock:shadow-root>
-  <mg-button aria-describedby="identifier" tabindex="0">
-    <!---->
-    <button class="mg-button mg-button--primary" id="identifier-mg-button">
-      <div class="mg-button__content">
-        mg-button
+  <mg-button aria-describedby="identifier" role="button" tabindex="0">
+    <mock:shadow-root>
+      <div class="mg-button mg-button--primary" id="identifier-mg-button">
+        <div class="mg-button__content">
+          <slot></slot>
+        </div>
       </div>
-    </button>
+    </mock:shadow-root>
+    mg-button
   </mg-button>
 </mg-tooltip>
 `;
@@ -142,13 +144,15 @@ exports[`mg-tooltip Should manage display on events enter with { eventIn: 'mouse
       <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
     </div>
   </mock:shadow-root>
-  <mg-button aria-describedby="identifier" tabindex="0">
-    <!---->
-    <button class="mg-button mg-button--primary" id="identifier-mg-button">
-      <div class="mg-button__content">
-        mg-button
+  <mg-button aria-describedby="identifier" role="button" tabindex="0">
+    <mock:shadow-root>
+      <div class="mg-button mg-button--primary" id="identifier-mg-button">
+        <div class="mg-button__content">
+          <slot></slot>
+        </div>
       </div>
-    </button>
+    </mock:shadow-root>
+    mg-button
   </mg-button>
 </mg-tooltip>
 `;
@@ -211,13 +215,15 @@ exports[`mg-tooltip Should render with element 4`] = `
       <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
     </div>
   </mock:shadow-root>
-  <mg-button aria-describedby="identifier" tabindex="0">
-    <!---->
-    <button class="mg-button mg-button--primary" id="identifier">
-      <div class="mg-button__content">
-        mg-button
+  <mg-button aria-describedby="identifier" role="button" tabindex="0">
+    <mock:shadow-root>
+      <div class="mg-button mg-button--primary" id="identifier">
+        <div class="mg-button__content">
+          <slot></slot>
+        </div>
       </div>
-    </button>
+    </mock:shadow-root>
+    mg-button
   </mg-button>
 </mg-tooltip>
 `;
