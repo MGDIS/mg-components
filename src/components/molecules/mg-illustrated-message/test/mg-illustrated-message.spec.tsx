@@ -33,7 +33,7 @@ const getPage = (
   });
 
 describe('mg-illustrated-message', () => {
-  test.each([{}, { size: 'small' }])('with args %s', async args => {
+  test.each([{}, { size: 'small' }, { direction: 'horizontal' }])('with args %s', async args => {
     const { root } = await getPage(args);
     expect(root).toMatchSnapshot();
   });

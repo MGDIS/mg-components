@@ -147,6 +147,10 @@ export namespace Components {
     }
     interface MgIllustratedMessage {
         /**
+          * Define component orientation
+         */
+        "direction": 'vertical' | 'horizontal';
+        /**
           * Define illustration size
          */
         "size": 'regular' | 'small';
@@ -1391,6 +1395,10 @@ declare namespace LocalJSX {
         "variant"?: string;
     }
     interface MgIllustratedMessage {
+        /**
+          * Define component orientation
+         */
+        "direction"?: 'vertical' | 'horizontal';
         /**
           * Define illustration size
          */

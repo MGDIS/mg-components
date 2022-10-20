@@ -21,6 +21,11 @@ export class MgIllustratedMessage {
    */
   @Prop() size: 'regular' | 'small' = 'regular';
 
+  /**
+   * Define component orientation
+   */
+  @Prop() direction: 'vertical' | 'horizontal' = 'vertical';
+
   /*************
    * Lifecycle *
    *************/
@@ -48,7 +53,12 @@ export class MgIllustratedMessage {
    */
   render(): HTMLElement {
     return (
-      <div class="mg-illustrated-message">
+      <div
+        class={{
+          'mg-illustrated-message': true,
+          'mg-illustrated-message--horizontal': this.direction === 'horizontal',
+        }}
+      >
         <div
           class={{
             'mg-illustrated-message__illustration': true,
@@ -57,11 +67,13 @@ export class MgIllustratedMessage {
         >
           <slot name="illustration"></slot>
         </div>
-        <div class="mg-illustrated-message__title">
-          <slot name="title"></slot>
-        </div>
-        <div class="mg-illustrated-message__details">
-          <slot name="details"></slot>
+        <div class="mg-illustrated-message__slots">
+          <div class="mg-illustrated-message__title">
+            <slot name="title"></slot>
+          </div>
+          <div class="mg-illustrated-message__details">
+            <slot name="details"></slot>
+          </div>
         </div>
       </div>
     );
