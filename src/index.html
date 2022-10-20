@@ -33,7 +33,7 @@
       }
     </style>
     <link rel="stylesheet" href="/build/variables.css" />
-    <link rel="stylesheet" href="/build/mg-components.css" />
+    <!-- <link rel="stylesheet" href="/build/mg-components.css" /> -->
     <script type="module" src="/build/mg-components.esm.js"></script>
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mgdis/mg-components@4/dist/mg-components/variables.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mgdis/mg-components@4/dist/mg-components/mg-components.css" />
@@ -148,6 +148,7 @@
         </div>
         <div style="padding: 0 0 1rem">
           <mg-button variant="primary"><mg-icon icon="check-circle"></mg-icon>Court Texte <br />avec br</mg-button>
+          <mg-button variant="primary">Court Texte <br />avec br et sans icone</mg-button>
         </div>
         <div style="padding: 0 0 1rem">
           <mg-button variant="primary">
@@ -226,10 +227,40 @@
           <h3 slot="details">Je suis ton père !</h3>
           <div slot="details"><mg-button>Nooooooo</mg-button> <mg-button>Ok</mg-button></div>
         </mg-illustrated-message>
+        <mg-illustrated-message direction="horizontal">
+          <svg slot="illustration" width="190" height="350" viewBox="0 0 190 350" xmlns="http://www.w3.org/2000/svg">
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M0 0H15C23.2843 0 30 6.71573 30 15V290H40V15C40 6.71573 46.7157 0 55 0C63.2843 0 70 6.71573 70 15V275C70 277.761 67.7615 280 65 280H60V40H50V340H60V290H65C67.7615 290 70 292.239 70 295V340H80V295C80 291.158 78.5558 287.654 76.1805 285C78.5558 282.346 80 278.842 80 275V0H95C103.284 0 110 6.71573 110 15V25C110 28.8418 108.556 32.3462 106.181 35C108.556 37.6538 110 41.1582 110 45V305C110 307.761 107.761 310 105 310H100V45C100 42.2386 97.7615 40 95 40H90V325C90 333.284 96.7157 340 105 340H120V330H105C102.239 330 100 327.761 100 325V320H105C113.284 320 120 313.284 120 305V15C120 6.71573 126.716 0 135 0C143.284 0 150 6.71573 150 15V330H140V15C140 12.2386 137.761 10 135 10C132.239 10 130 12.2386 130 15V340H165C173.284 340 180 333.284 180 325V15C180 12.2386 177.761 10 175 10H170V325C170 327.761 167.761 330 165 330H160V0H175C183.284 0 190 6.71573 190 15V350H0V0ZM10 325C10 333.284 16.7157 340 25 340C33.2843 340 40 333.284 40 325V300H30V325C30 327.761 27.7615 330 25 330C22.2385 330 20 327.761 20 325V15C20 12.2386 17.7615 10 15 10H10V325ZM60 15V30H50V15C50 12.2386 52.2385 10 55 10C57.7615 10 60 12.2386 60 15ZM95 30H90V10H95C97.7615 10 100 12.2386 100 15V25C100 27.7614 97.7615 30 95 30Z"
+              fill="black"
+            />
+          </svg>
+          <h2 slot="title">Daron Crew</h2>
+          <h3 slot="details">Je suis ton père !</h3>
+          <div slot="details"><mg-button>Nooooooo</mg-button> <mg-button>Ok</mg-button></div>
+        </mg-illustrated-message>
+        <mg-illustrated-message direction="horizontal">
+          <svg slot="illustration" width="190" height="350" viewBox="0 0 190 350" xmlns="http://www.w3.org/2000/svg">
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M0 0H15C23.2843 0 30 6.71573 30 15V290H40V15C40 6.71573 46.7157 0 55 0C63.2843 0 70 6.71573 70 15V275C70 277.761 67.7615 280 65 280H60V40H50V340H60V290H65C67.7615 290 70 292.239 70 295V340H80V295C80 291.158 78.5558 287.654 76.1805 285C78.5558 282.346 80 278.842 80 275V0H95C103.284 0 110 6.71573 110 15V25C110 28.8418 108.556 32.3462 106.181 35C108.556 37.6538 110 41.1582 110 45V305C110 307.761 107.761 310 105 310H100V45C100 42.2386 97.7615 40 95 40H90V325C90 333.284 96.7157 340 105 340H120V330H105C102.239 330 100 327.761 100 325V320H105C113.284 320 120 313.284 120 305V15C120 6.71573 126.716 0 135 0C143.284 0 150 6.71573 150 15V330H140V15C140 12.2386 137.761 10 135 10C132.239 10 130 12.2386 130 15V340H165C173.284 340 180 333.284 180 325V15C180 12.2386 177.761 10 175 10H170V325C170 327.761 167.761 330 165 330H160V0H175C183.284 0 190 6.71573 190 15V350H0V0ZM10 325C10 333.284 16.7157 340 25 340C33.2843 340 40 333.284 40 325V300H30V325C30 327.761 27.7615 330 25 330C22.2385 330 20 327.761 20 325V15C20 12.2386 17.7615 10 15 10H10V325ZM60 15V30H50V15C50 12.2386 52.2385 10 55 10C57.7615 10 60 12.2386 60 15ZM95 30H90V10H95C97.7615 10 100 12.2386 100 15V25C100 27.7614 97.7615 30 95 30Z"
+              fill="black"
+            />
+          </svg>
+          <h2 slot="title">The standard Lorem Ipsum passage, used since the 1500s</h2>
+          <h3 slot="details">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </h3>
+          <div slot="details"><mg-button>Nooooooo</mg-button> <mg-button>Ok</mg-button></div>
+        </mg-illustrated-message>
       </section>
       <section>
         <h2>Tabs</h2>
-        <mg-tabs>
+        <mg-tabs label="the tab">
           <div slot="tab_content-1">Content 1</div>
           <div slot="tab_content-2">Content 2</div>
           <div slot="tab_content-3">Content 3</div>
@@ -277,6 +308,7 @@
       <section>
         <h2>Tags</h2>
         <div class="mg-group-elements" style="padding: 0 0 1rem">
+          <mg-tag variant="primary"><mg-icon icon="check-circle"></mg-icon>primary</mg-tag>
           <mg-tag variant="primary">primary</mg-tag>
           <mg-tag variant="secondary">secondary</mg-tag>
           <mg-tag variant="danger">danger</mg-tag>
@@ -331,7 +363,7 @@
         <div>
           <mg-input-title identifier="identifier" required>Label when required</mg-input-title>
         </div>
-        <!-- <h4>Tooltips</h4>
+        <h4>Tooltips</h4>
         <div class="mg-group-elements" style="padding: 0 0 1rem">
           <mg-tooltip
             message="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -357,8 +389,8 @@
           <mg-tooltip message="my tooltip mg-button" id="tp-disabled" disabled display>
             <mg-button onclick="document.getElementById('tp-disabled').removeAttribute('disabled')">mg-button</mg-button></mg-tooltip
           >
-        </div> -->
-        <!-- 
+        </div>
+        <!--
         <h4>Modal</h4>
         <mg-button id="modal-button">Open modal</mg-button>
         <mg-modal modal-title="Modal title" hide close-button>
@@ -381,11 +413,17 @@
             }
           });
         </script>-->
-        <!-- <h4>Popover</h4>
+        <h4>Popover</h4>
         <mg-popover>
           <mg-button>Display popover</mg-button>
           <div slot="content">Coucou</div></mg-popover
         >
+        <mg-popover close-button>
+          <mg-button>Display popover</mg-button>
+          <div slot="content">Lorem ipsum dolor sit amet</div>
+          <h1 slot="title">Titre Normal</h1>
+        </mg-popover>
+
         <mg-popover close-button display>
           <div slot="content">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -394,7 +432,8 @@
           </div>
           <h1 slot="title">Titre un peu plus long un peu plus long un peu plus long un peu plus long un peu plus long</h1>
           <mg-button>Display popover</mg-button>
-        </mg-popover> -->
+        </mg-popover>
+
         <!--
         <h4>Character left</h4>
         <mg-character-left maxlength="400"></mg-character-left>

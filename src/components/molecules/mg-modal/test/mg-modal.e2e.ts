@@ -110,12 +110,12 @@ describe('mg-modal', () => {
         });
       });
 
-      const mgBUtton = await page.find('mg-button');
+      const mgButton = await page.find('mg-button');
 
       const screenshot = await page.screenshot();
       expect(screenshot).toMatchImageSnapshot();
 
-      mgBUtton.triggerEvent('click');
+      mgButton.triggerEvent('click');
       await page.waitForChanges();
 
       const screenshot2 = await page.screenshot();

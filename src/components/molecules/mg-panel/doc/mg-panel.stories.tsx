@@ -17,7 +17,8 @@ export default {
 const Template = (args: any): HTMLElement => (
   <mg-panel {...filterArgs(args)}>
     <div>Content</div>
-    <div slot="header-right">
+    <div slot="header-right" style={{ width: '100%' }}>
+      <mg-badge label="1" value="1" style={{ 'margin-right': 'auto' }}></mg-badge>
       <mg-button variant="secondary">
         <mg-icon icon="file-upload"></mg-icon> Upload
       </mg-button>

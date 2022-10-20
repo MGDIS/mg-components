@@ -104,7 +104,7 @@ describe('mg-panel', () => {
     test.each([true, false])('Should toggle edit panel title', async titleEditable => {
       const page = await getPage({ identifier: 'identifier', panelTitle: 'panel title', titleEditable });
       const mgPanel = page.doc.querySelector('mg-panel');
-      const editButton = mgPanel.shadowRoot.querySelector('#identifier-edit-button');
+      const editButton = mgPanel.shadowRoot.querySelector('.mg-panel__header-left mg-button[is-icon]');
 
       expect(page.root).toMatchSnapshot();
 
@@ -122,12 +122,12 @@ describe('mg-panel', () => {
       }
     });
 
-    test.each(['cancel', 'validate'])('should update panel title, case %s', async lastAction => {
+    test.each(['first-of-type', 'last-of-type'])('should update panel title, case %s', async lastAction => {
       const updatedPanelTitle = 'Updated panel title';
       const args = { identifier: 'identifier', panelTitle: 'panel title', titleEditable: true };
       const page = await getPage(args);
       const mgPanel = page.doc.querySelector('mg-panel');
-      const editButton = mgPanel.shadowRoot.querySelector('#identifier-edit-button');
+      const editButton = mgPanel.shadowRoot.querySelector('.mg-panel__header-left mg-button[is-icon]');
 
       expect(page.root).toMatchSnapshot();
 
@@ -148,7 +148,7 @@ describe('mg-panel', () => {
       input.dispatchEvent(new CustomEvent('blur', { bubbles: true }));
       await page.waitForChanges();
 
-      const afterInputAction = mgPanel.shadowRoot.querySelector(`#identifier-edition-button-${lastAction}`);
+      const afterInputAction = mgPanel.shadowRoot.querySelector(`.mg-panel__header-left mg-input-text mg-button:${lastAction}`);
 
       afterInputAction.dispatchEvent(new CustomEvent('click', { bubbles: true }));
       jest.runOnlyPendingTimers();
@@ -156,7 +156,7 @@ describe('mg-panel', () => {
 
       expect(page.root).toMatchSnapshot();
 
-      if (lastAction === 'validate') {
+      if (lastAction === 'last-of-type') {
         expect(mgPanel.panelTitle).toBe(updatedPanelTitle);
         expect(page.rootInstance.titleChange.emit).toHaveBeenCalledWith(updatedPanelTitle);
       } else {
@@ -170,7 +170,7 @@ describe('mg-panel', () => {
       const args = { identifier: 'identifier', panelTitle: 'panel title', titleEditable: true };
       const page = await getPage(args);
       const mgPanel = page.doc.querySelector('mg-panel');
-      const editButton = mgPanel.shadowRoot.querySelector('#identifier-edit-button');
+      const editButton = mgPanel.shadowRoot.querySelector('.mg-panel__header-left mg-button[is-icon]');
 
       expect(page.root).toMatchSnapshot();
 
@@ -187,7 +187,7 @@ describe('mg-panel', () => {
       input.dispatchEvent(new CustomEvent('blur', { bubbles: true }));
       await page.waitForChanges();
 
-      const afterInputAction = mgPanel.shadowRoot.querySelector(`#identifier-edition-button-validate`);
+      const afterInputAction = mgPanel.shadowRoot.querySelector('.mg-panel__header-left mg-input-text mg-button:last-of-type');
 
       afterInputAction.dispatchEvent(new CustomEvent('click', { bubbles: true }));
       jest.runOnlyPendingTimers();
@@ -210,7 +210,7 @@ describe('mg-panel', () => {
       };
       const page = await getPage(args);
       const mgPanel = page.doc.querySelector('mg-panel');
-      const editButton = mgPanel.shadowRoot.querySelector('#identifier-edit-button');
+      const editButton = mgPanel.shadowRoot.querySelector('.mg-panel__header-left mg-button[is-icon]');
 
       expect(page.root).toMatchSnapshot();
 
@@ -240,7 +240,7 @@ describe('mg-panel', () => {
       await page.waitForChanges();
 
       // and click on validate button
-      const afterInputAction = mgPanel.shadowRoot.querySelector(`#identifier-edition-button-validate`);
+      const afterInputAction = mgPanel.shadowRoot.querySelector('.mg-panel__header-left mg-input-text mg-button:last-of-type');
 
       afterInputAction.dispatchEvent(new CustomEvent('click', { bubbles: true }));
       jest.runOnlyPendingTimers();
@@ -252,7 +252,7 @@ describe('mg-panel', () => {
       expect(page.rootInstance.titleChange.emit).not.toHaveBeenCalledWith(updatedPanelTitle);
 
       // finaly return to default view by clicking on cancel button
-      const cancelAction = mgPanel.shadowRoot.querySelector(`#identifier-edition-button-cancel`);
+      const cancelAction = mgPanel.shadowRoot.querySelector('.mg-panel__header-left mg-input-text mg-button:last-of-type');
 
       cancelAction.dispatchEvent(new CustomEvent('click', { bubbles: true }));
       jest.runOnlyPendingTimers();

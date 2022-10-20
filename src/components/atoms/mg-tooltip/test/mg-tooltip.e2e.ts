@@ -25,7 +25,7 @@ describe('mg-tooltip', () => {
 
       const mgTooltip = await page.find('mg-tooltip');
       const mgIcon = await page.find('mg-icon');
-      const tooltip = await page.find('[role="tooltip"]');
+      const tooltip = await page.find('mg-tooltip >>> .mg-tooltip');
 
       expect(mgTooltip).toHaveClass('hydrated');
 
@@ -66,7 +66,7 @@ describe('mg-tooltip', () => {
       const page = await createPage(template);
 
       const mgTooltip = await page.find('mg-tooltip');
-      const tooltip = await page.find('[role="tooltip"]');
+      const tooltip = await page.find('mg-tooltip >>> .mg-tooltip');
 
       expect(mgTooltip).toHaveClass('hydrated');
 
@@ -85,7 +85,7 @@ describe('mg-tooltip', () => {
       const page = await createPage(template);
 
       const mgTooltip = await page.find('mg-tooltip');
-      const tooltip = await page.find('[role="tooltip"]');
+      const tooltip = await page.find('mg-tooltip >>> .mg-tooltip');
 
       expect(mgTooltip).toHaveClass('hydrated');
 
@@ -105,7 +105,7 @@ describe('mg-tooltip', () => {
     const page = await createPage('<mg-tooltip identifier="identifier" message="Batman tooltip"><mg-icon icon="user"></mg-icon></mg-tooltip>');
 
     const tooltipedElement = await page.find('mg-icon');
-    const tooltipElement = await page.find('[role="tooltip"]');
+    const tooltipElement = await page.find('mg-tooltip >>> .mg-tooltip');
 
     // 1. take focus on tooltipedElement and display tooltip
     tooltipedElement.triggerEvent('focus');

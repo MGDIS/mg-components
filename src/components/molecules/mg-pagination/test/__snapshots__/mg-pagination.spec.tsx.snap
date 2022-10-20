@@ -4,20 +4,22 @@ exports[`mg-pagination Should render Should set custom label 1`] = `
 <mg-pagination current-page="1">
   <mock:shadow-root>
     <nav aria-label="custom label" class="mg-pagination" id="id">
-      <mg-button>
-        <!---->
-        <button aria-disabled="true" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous">
-          <div class="mg-button__content">
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
-            previous
+      <mg-button aria-disabled="true" aria-label="Previous page" role="button" tabindex="-1">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--disabled mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
+        previous
       </mg-button>
       <mg-input-select label-hide="" placeholder-hide="">
         <mock:shadow-root>
@@ -46,20 +48,22 @@ exports[`mg-pagination Should render Should set custom label 1`] = `
       <span>
         / 2 pages
       </span>
-      <mg-button>
-        <!---->
-        <button aria-disabled="false" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next">
-          <div class="mg-button__content">
-            next
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
+      <mg-button aria-disabled="false" aria-label="Next page" role="button" tabindex="0">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        next
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
       </mg-button>
     </nav>
   </mock:shadow-root>
@@ -70,20 +74,22 @@ exports[`mg-pagination Should render with locale: fr 1`] = `
 <mg-pagination current-page="1" lang="fr">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button>
-        <!---->
-        <button aria-disabled="true" aria-label="Page précédente" class="mg-button mg-button--flat" id="id-button-previous">
-          <div class="mg-button__content">
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
-            précédent
+      <mg-button aria-disabled="true" aria-label="Page précédente" role="button" tabindex="-1">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--disabled mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
+        précédent
       </mg-button>
       <mg-input-select label-hide="" placeholder-hide="">
         <mock:shadow-root>
@@ -112,20 +118,22 @@ exports[`mg-pagination Should render with locale: fr 1`] = `
       <span>
         / 2 pages
       </span>
-      <mg-button>
-        <!---->
-        <button aria-disabled="false" aria-label="Page suivante" class="mg-button mg-button--flat" id="id-button-next">
-          <div class="mg-button__content">
-            suivant
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
+      <mg-button aria-disabled="false" aria-label="Page suivante" role="button" tabindex="0">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        suivant
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
       </mg-button>
     </nav>
   </mock:shadow-root>
@@ -136,20 +144,22 @@ exports[`mg-pagination Should render with locale: xx 1`] = `
 <mg-pagination current-page="1" lang="xx">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button>
-        <!---->
-        <button aria-disabled="true" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous">
-          <div class="mg-button__content">
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
-            previous
+      <mg-button aria-disabled="true" aria-label="Previous page" role="button" tabindex="-1">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--disabled mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
+        previous
       </mg-button>
       <mg-input-select label-hide="" placeholder-hide="">
         <mock:shadow-root>
@@ -178,20 +188,22 @@ exports[`mg-pagination Should render with locale: xx 1`] = `
       <span>
         / 2 pages
       </span>
-      <mg-button>
-        <!---->
-        <button aria-disabled="false" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next">
-          <div class="mg-button__content">
-            next
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
+      <mg-button aria-disabled="false" aria-label="Next page" role="button" tabindex="0">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        next
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
       </mg-button>
     </nav>
   </mock:shadow-root>
@@ -202,20 +214,22 @@ exports[`mg-pagination Should render with totalPages 1 1`] = `
 <mg-pagination current-page="1">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button>
-        <!---->
-        <button aria-disabled="true" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous">
-          <div class="mg-button__content">
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
-            previous
+      <mg-button aria-disabled="true" aria-label="Previous page" role="button" tabindex="-1">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--disabled mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
+        previous
       </mg-button>
       <mg-input-select label-hide="" placeholder-hide="">
         <mock:shadow-root>
@@ -241,20 +255,22 @@ exports[`mg-pagination Should render with totalPages 1 1`] = `
       <span>
         / 1 page
       </span>
-      <mg-button>
-        <!---->
-        <button aria-disabled="true" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next">
-          <div class="mg-button__content">
-            next
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
+      <mg-button aria-disabled="true" aria-label="Next page" role="button" tabindex="-1">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--disabled mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        next
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
       </mg-button>
     </nav>
   </mock:shadow-root>
@@ -265,20 +281,22 @@ exports[`mg-pagination Should render with totalPages 2 1`] = `
 <mg-pagination current-page="1">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button>
-        <!---->
-        <button aria-disabled="true" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous">
-          <div class="mg-button__content">
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
-            previous
+      <mg-button aria-disabled="true" aria-label="Previous page" role="button" tabindex="-1">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--disabled mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
+        previous
       </mg-button>
       <mg-input-select label-hide="" placeholder-hide="">
         <mock:shadow-root>
@@ -307,20 +325,22 @@ exports[`mg-pagination Should render with totalPages 2 1`] = `
       <span>
         / 2 pages
       </span>
-      <mg-button>
-        <!---->
-        <button aria-disabled="false" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next">
-          <div class="mg-button__content">
-            next
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
+      <mg-button aria-disabled="false" aria-label="Next page" role="button" tabindex="0">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        next
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
       </mg-button>
     </nav>
   </mock:shadow-root>
@@ -331,20 +351,22 @@ exports[`mg-pagination Should render with totalPages 2 2`] = `
 <mg-pagination current-page="2">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button>
-        <!---->
-        <button aria-disabled="false" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous">
-          <div class="mg-button__content">
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
-            previous
+      <mg-button aria-disabled="false" aria-label="Previous page" role="button" tabindex="0">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
+        previous
       </mg-button>
       <mg-input-select label-hide="" placeholder-hide="">
         <mock:shadow-root>
@@ -373,20 +395,22 @@ exports[`mg-pagination Should render with totalPages 2 2`] = `
       <span>
         / 2 pages
       </span>
-      <mg-button>
-        <!---->
-        <button aria-disabled="true" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next">
-          <div class="mg-button__content">
-            next
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
+      <mg-button aria-disabled="true" aria-label="Next page" role="button" tabindex="-1">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--disabled mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        next
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
       </mg-button>
     </nav>
   </mock:shadow-root>
@@ -397,20 +421,22 @@ exports[`mg-pagination Should render with totalPages 3 1`] = `
 <mg-pagination current-page="1">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button>
-        <!---->
-        <button aria-disabled="true" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous">
-          <div class="mg-button__content">
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
-            previous
+      <mg-button aria-disabled="true" aria-label="Previous page" role="button" tabindex="-1">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--disabled mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
+        previous
       </mg-button>
       <mg-input-select label-hide="" placeholder-hide="">
         <mock:shadow-root>
@@ -442,20 +468,22 @@ exports[`mg-pagination Should render with totalPages 3 1`] = `
       <span>
         / 3 pages
       </span>
-      <mg-button>
-        <!---->
-        <button aria-disabled="false" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next">
-          <div class="mg-button__content">
-            next
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
+      <mg-button aria-disabled="false" aria-label="Next page" role="button" tabindex="0">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        next
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
       </mg-button>
     </nav>
   </mock:shadow-root>
@@ -466,20 +494,22 @@ exports[`mg-pagination Should render with totalPages 3 2`] = `
 <mg-pagination current-page="2">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button>
-        <!---->
-        <button aria-disabled="false" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous">
-          <div class="mg-button__content">
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
-            previous
+      <mg-button aria-disabled="false" aria-label="Previous page" role="button" tabindex="0">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
+        previous
       </mg-button>
       <mg-input-select label-hide="" placeholder-hide="">
         <mock:shadow-root>
@@ -511,20 +541,22 @@ exports[`mg-pagination Should render with totalPages 3 2`] = `
       <span>
         / 3 pages
       </span>
-      <mg-button>
-        <!---->
-        <button aria-disabled="false" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next">
-          <div class="mg-button__content">
-            next
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
+      <mg-button aria-disabled="false" aria-label="Next page" role="button" tabindex="0">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        next
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
       </mg-button>
     </nav>
   </mock:shadow-root>
@@ -535,20 +567,22 @@ exports[`mg-pagination Should render with totalPages 3 3`] = `
 <mg-pagination current-page="3">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button>
-        <!---->
-        <button aria-disabled="false" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous">
-          <div class="mg-button__content">
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
-            previous
+      <mg-button aria-disabled="false" aria-label="Previous page" role="button" tabindex="0">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
+        previous
       </mg-button>
       <mg-input-select label-hide="" placeholder-hide="">
         <mock:shadow-root>
@@ -580,20 +614,22 @@ exports[`mg-pagination Should render with totalPages 3 3`] = `
       <span>
         / 3 pages
       </span>
-      <mg-button>
-        <!---->
-        <button aria-disabled="true" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next">
-          <div class="mg-button__content">
-            next
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
+      <mg-button aria-disabled="true" aria-label="Next page" role="button" tabindex="-1">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--disabled mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        next
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
       </mg-button>
     </nav>
   </mock:shadow-root>
@@ -604,20 +640,22 @@ exports[`mg-pagination Should render with totalPages 10 1`] = `
 <mg-pagination current-page="1">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button>
-        <!---->
-        <button aria-disabled="true" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous">
-          <div class="mg-button__content">
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
-            previous
+      <mg-button aria-disabled="true" aria-label="Previous page" role="button" tabindex="-1">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--disabled mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
+        previous
       </mg-button>
       <mg-input-select label-hide="" placeholder-hide="">
         <mock:shadow-root>
@@ -670,20 +708,22 @@ exports[`mg-pagination Should render with totalPages 10 1`] = `
       <span>
         / 10 pages
       </span>
-      <mg-button>
-        <!---->
-        <button aria-disabled="false" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next">
-          <div class="mg-button__content">
-            next
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
+      <mg-button aria-disabled="false" aria-label="Next page" role="button" tabindex="0">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        next
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
       </mg-button>
     </nav>
   </mock:shadow-root>
@@ -694,20 +734,22 @@ exports[`mg-pagination Should render with totalPages 10 2`] = `
 <mg-pagination current-page="2">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button>
-        <!---->
-        <button aria-disabled="false" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous">
-          <div class="mg-button__content">
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
-            previous
+      <mg-button aria-disabled="false" aria-label="Previous page" role="button" tabindex="0">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
+        previous
       </mg-button>
       <mg-input-select label-hide="" placeholder-hide="">
         <mock:shadow-root>
@@ -760,20 +802,22 @@ exports[`mg-pagination Should render with totalPages 10 2`] = `
       <span>
         / 10 pages
       </span>
-      <mg-button>
-        <!---->
-        <button aria-disabled="false" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next">
-          <div class="mg-button__content">
-            next
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
+      <mg-button aria-disabled="false" aria-label="Next page" role="button" tabindex="0">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        next
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
       </mg-button>
     </nav>
   </mock:shadow-root>
@@ -784,20 +828,22 @@ exports[`mg-pagination Should render with totalPages 10 3`] = `
 <mg-pagination current-page="3">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button>
-        <!---->
-        <button aria-disabled="false" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous">
-          <div class="mg-button__content">
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
-            previous
+      <mg-button aria-disabled="false" aria-label="Previous page" role="button" tabindex="0">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
+        previous
       </mg-button>
       <mg-input-select label-hide="" placeholder-hide="">
         <mock:shadow-root>
@@ -850,20 +896,22 @@ exports[`mg-pagination Should render with totalPages 10 3`] = `
       <span>
         / 10 pages
       </span>
-      <mg-button>
-        <!---->
-        <button aria-disabled="false" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next">
-          <div class="mg-button__content">
-            next
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
+      <mg-button aria-disabled="false" aria-label="Next page" role="button" tabindex="0">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        next
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
       </mg-button>
     </nav>
   </mock:shadow-root>
@@ -874,20 +922,22 @@ exports[`mg-pagination Should render with totalPages 10 4`] = `
 <mg-pagination current-page="4">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button>
-        <!---->
-        <button aria-disabled="false" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous">
-          <div class="mg-button__content">
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
-            previous
+      <mg-button aria-disabled="false" aria-label="Previous page" role="button" tabindex="0">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
+        previous
       </mg-button>
       <mg-input-select label-hide="" placeholder-hide="">
         <mock:shadow-root>
@@ -940,20 +990,22 @@ exports[`mg-pagination Should render with totalPages 10 4`] = `
       <span>
         / 10 pages
       </span>
-      <mg-button>
-        <!---->
-        <button aria-disabled="false" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next">
-          <div class="mg-button__content">
-            next
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
+      <mg-button aria-disabled="false" aria-label="Next page" role="button" tabindex="0">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        next
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
       </mg-button>
     </nav>
   </mock:shadow-root>
@@ -964,20 +1016,22 @@ exports[`mg-pagination Should render with totalPages 10 5`] = `
 <mg-pagination current-page="5">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button>
-        <!---->
-        <button aria-disabled="false" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous">
-          <div class="mg-button__content">
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
-            previous
+      <mg-button aria-disabled="false" aria-label="Previous page" role="button" tabindex="0">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
+        previous
       </mg-button>
       <mg-input-select label-hide="" placeholder-hide="">
         <mock:shadow-root>
@@ -1030,20 +1084,22 @@ exports[`mg-pagination Should render with totalPages 10 5`] = `
       <span>
         / 10 pages
       </span>
-      <mg-button>
-        <!---->
-        <button aria-disabled="false" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next">
-          <div class="mg-button__content">
-            next
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
+      <mg-button aria-disabled="false" aria-label="Next page" role="button" tabindex="0">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        next
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
       </mg-button>
     </nav>
   </mock:shadow-root>
@@ -1054,20 +1110,22 @@ exports[`mg-pagination Should render with totalPages 10 6`] = `
 <mg-pagination current-page="6">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button>
-        <!---->
-        <button aria-disabled="false" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous">
-          <div class="mg-button__content">
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
-            previous
+      <mg-button aria-disabled="false" aria-label="Previous page" role="button" tabindex="0">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
+        previous
       </mg-button>
       <mg-input-select label-hide="" placeholder-hide="">
         <mock:shadow-root>
@@ -1120,20 +1178,22 @@ exports[`mg-pagination Should render with totalPages 10 6`] = `
       <span>
         / 10 pages
       </span>
-      <mg-button>
-        <!---->
-        <button aria-disabled="false" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next">
-          <div class="mg-button__content">
-            next
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
+      <mg-button aria-disabled="false" aria-label="Next page" role="button" tabindex="0">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        next
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
       </mg-button>
     </nav>
   </mock:shadow-root>
@@ -1144,20 +1204,22 @@ exports[`mg-pagination Should render with totalPages 10 7`] = `
 <mg-pagination current-page="7">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button>
-        <!---->
-        <button aria-disabled="false" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous">
-          <div class="mg-button__content">
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
-            previous
+      <mg-button aria-disabled="false" aria-label="Previous page" role="button" tabindex="0">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
+        previous
       </mg-button>
       <mg-input-select label-hide="" placeholder-hide="">
         <mock:shadow-root>
@@ -1210,20 +1272,22 @@ exports[`mg-pagination Should render with totalPages 10 7`] = `
       <span>
         / 10 pages
       </span>
-      <mg-button>
-        <!---->
-        <button aria-disabled="false" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next">
-          <div class="mg-button__content">
-            next
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
+      <mg-button aria-disabled="false" aria-label="Next page" role="button" tabindex="0">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        next
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
       </mg-button>
     </nav>
   </mock:shadow-root>
@@ -1234,20 +1298,22 @@ exports[`mg-pagination Should render with totalPages 10 8`] = `
 <mg-pagination current-page="8">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button>
-        <!---->
-        <button aria-disabled="false" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous">
-          <div class="mg-button__content">
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
-            previous
+      <mg-button aria-disabled="false" aria-label="Previous page" role="button" tabindex="0">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
+        previous
       </mg-button>
       <mg-input-select label-hide="" placeholder-hide="">
         <mock:shadow-root>
@@ -1300,20 +1366,22 @@ exports[`mg-pagination Should render with totalPages 10 8`] = `
       <span>
         / 10 pages
       </span>
-      <mg-button>
-        <!---->
-        <button aria-disabled="false" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next">
-          <div class="mg-button__content">
-            next
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
+      <mg-button aria-disabled="false" aria-label="Next page" role="button" tabindex="0">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        next
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
       </mg-button>
     </nav>
   </mock:shadow-root>
@@ -1324,20 +1392,22 @@ exports[`mg-pagination Should render with totalPages 10 9`] = `
 <mg-pagination current-page="9">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button>
-        <!---->
-        <button aria-disabled="false" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous">
-          <div class="mg-button__content">
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
-            previous
+      <mg-button aria-disabled="false" aria-label="Previous page" role="button" tabindex="0">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
+        previous
       </mg-button>
       <mg-input-select label-hide="" placeholder-hide="">
         <mock:shadow-root>
@@ -1390,20 +1460,22 @@ exports[`mg-pagination Should render with totalPages 10 9`] = `
       <span>
         / 10 pages
       </span>
-      <mg-button>
-        <!---->
-        <button aria-disabled="false" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next">
-          <div class="mg-button__content">
-            next
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
+      <mg-button aria-disabled="false" aria-label="Next page" role="button" tabindex="0">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        next
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
       </mg-button>
     </nav>
   </mock:shadow-root>
@@ -1414,20 +1486,22 @@ exports[`mg-pagination Should render with totalPages 10 10`] = `
 <mg-pagination current-page="10">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button>
-        <!---->
-        <button aria-disabled="false" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous">
-          <div class="mg-button__content">
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
-            previous
+      <mg-button aria-disabled="false" aria-label="Previous page" role="button" tabindex="0">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
+        previous
       </mg-button>
       <mg-input-select label-hide="" placeholder-hide="">
         <mock:shadow-root>
@@ -1480,20 +1554,22 @@ exports[`mg-pagination Should render with totalPages 10 10`] = `
       <span>
         / 10 pages
       </span>
-      <mg-button>
-        <!---->
-        <button aria-disabled="true" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next">
-          <div class="mg-button__content">
-            next
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
+      <mg-button aria-disabled="true" aria-label="Next page" role="button" tabindex="-1">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--disabled mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        next
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
       </mg-button>
     </nav>
   </mock:shadow-root>
@@ -1504,20 +1580,22 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
 <mg-pagination current-page="1">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button>
-        <!---->
-        <button aria-disabled="true" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous">
-          <div class="mg-button__content">
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
-            previous
+      <mg-button aria-disabled="true" aria-label="Previous page" role="button" tabindex="-1">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--disabled mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
+        previous
       </mg-button>
       <mg-input-select label-hide="" placeholder-hide="">
         <mock:shadow-root>
@@ -1555,20 +1633,22 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
       <span>
         / 5 pages
       </span>
-      <mg-button>
-        <!---->
-        <button aria-disabled="false" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next">
-          <div class="mg-button__content">
-            next
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
+      <mg-button aria-disabled="false" aria-label="Next page" role="button" tabindex="0">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        next
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
       </mg-button>
     </nav>
   </mock:shadow-root>
@@ -1579,20 +1659,22 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
 <mg-pagination current-page="1">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button>
-        <!---->
-        <button aria-disabled="true" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous">
-          <div class="mg-button__content">
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
-            previous
+      <mg-button aria-disabled="true" aria-label="Previous page" role="button" tabindex="-1">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--disabled mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
+        previous
       </mg-button>
       <mg-input-select label-hide="" placeholder-hide="">
         <mock:shadow-root>
@@ -1630,20 +1712,22 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
       <span>
         / 5 pages
       </span>
-      <mg-button>
-        <!---->
-        <button aria-disabled="false" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next">
-          <div class="mg-button__content">
-            next
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
+      <mg-button aria-disabled="false" aria-label="Next page" role="button" tabindex="0">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        next
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
       </mg-button>
     </nav>
   </mock:shadow-root>
@@ -1654,20 +1738,22 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
 <mg-pagination current-page="2">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button>
-        <!---->
-        <button aria-disabled="false" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous">
-          <div class="mg-button__content">
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
-            previous
+      <mg-button aria-disabled="false" aria-label="Previous page" role="button" tabindex="0">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
+        previous
       </mg-button>
       <mg-input-select label-hide="" placeholder-hide="">
         <mock:shadow-root>
@@ -1705,20 +1791,22 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
       <span>
         / 5 pages
       </span>
-      <mg-button>
-        <!---->
-        <button aria-disabled="false" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next">
-          <div class="mg-button__content">
-            next
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
+      <mg-button aria-disabled="false" aria-label="Next page" role="button" tabindex="0">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        next
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
       </mg-button>
     </nav>
   </mock:shadow-root>
@@ -1729,20 +1817,22 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
 <mg-pagination current-page="1">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button>
-        <!---->
-        <button aria-disabled="true" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous">
-          <div class="mg-button__content">
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
-            previous
+      <mg-button aria-disabled="true" aria-label="Previous page" role="button" tabindex="-1">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--disabled mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
+        previous
       </mg-button>
       <mg-input-select label-hide="" placeholder-hide="">
         <mock:shadow-root>
@@ -1780,20 +1870,22 @@ exports[`mg-pagination navigation navigate with next and previous, case totalPag
       <span>
         / 5 pages
       </span>
-      <mg-button>
-        <!---->
-        <button aria-disabled="false" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next">
-          <div class="mg-button__content">
-            next
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
+      <mg-button aria-disabled="false" aria-label="Next page" role="button" tabindex="0">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        next
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
       </mg-button>
     </nav>
   </mock:shadow-root>
@@ -1804,20 +1896,22 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 1, case to
 <mg-pagination current-page="1">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button>
-        <!---->
-        <button aria-disabled="true" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous">
-          <div class="mg-button__content">
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
-            previous
+      <mg-button aria-disabled="true" aria-label="Previous page" role="button" tabindex="-1">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--disabled mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
+        previous
       </mg-button>
       <mg-input-select label-hide="" placeholder-hide="">
         <mock:shadow-root>
@@ -1855,20 +1949,22 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 1, case to
       <span>
         / 5 pages
       </span>
-      <mg-button>
-        <!---->
-        <button aria-disabled="false" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next">
-          <div class="mg-button__content">
-            next
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
+      <mg-button aria-disabled="false" aria-label="Next page" role="button" tabindex="0">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        next
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
       </mg-button>
     </nav>
   </mock:shadow-root>
@@ -1879,20 +1975,22 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 1, case to
 <mg-pagination current-page="5">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button>
-        <!---->
-        <button aria-disabled="false" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous">
-          <div class="mg-button__content">
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
-            previous
+      <mg-button aria-disabled="false" aria-label="Previous page" role="button" tabindex="0">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
+        previous
       </mg-button>
       <mg-input-select label-hide="" placeholder-hide="">
         <mock:shadow-root>
@@ -1930,20 +2028,22 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 1, case to
       <span>
         / 5 pages
       </span>
-      <mg-button>
-        <!---->
-        <button aria-disabled="true" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next">
-          <div class="mg-button__content">
-            next
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
+      <mg-button aria-disabled="true" aria-label="Next page" role="button" tabindex="-1">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--disabled mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        next
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
       </mg-button>
     </nav>
   </mock:shadow-root>
@@ -1954,20 +2054,22 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 1, case to
 <mg-pagination current-page="2">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button>
-        <!---->
-        <button aria-disabled="false" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous">
-          <div class="mg-button__content">
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
-            previous
+      <mg-button aria-disabled="false" aria-label="Previous page" role="button" tabindex="0">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
+        previous
       </mg-button>
       <mg-input-select label-hide="" placeholder-hide="">
         <mock:shadow-root>
@@ -2005,20 +2107,22 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 1, case to
       <span>
         / 5 pages
       </span>
-      <mg-button>
-        <!---->
-        <button aria-disabled="false" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next">
-          <div class="mg-button__content">
-            next
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
+      <mg-button aria-disabled="false" aria-label="Next page" role="button" tabindex="0">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        next
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
       </mg-button>
     </nav>
   </mock:shadow-root>
@@ -2029,20 +2133,22 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 1, case to
 <mg-pagination current-page="1">
   <mock:shadow-root>
     <nav aria-label="Pagination" class="mg-pagination" id="id">
-      <mg-button>
-        <!---->
-        <button aria-disabled="true" aria-label="Previous page" class="mg-button mg-button--flat" id="id-button-previous">
-          <div class="mg-button__content">
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
-            previous
+      <mg-button aria-disabled="true" aria-label="Previous page" role="button" tabindex="-1">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--disabled mg-button--flat" id="id-button-previous">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-left mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M3.79,7.43,10.31.9a.81.81,0,0,1,1.14,0h0l.77.76a.81.81,0,0,1,0,1.14L7,8l5.18,5.2a.81.81,0,0,1,0,1.14l-.77.76a.8.8,0,0,1-1.13,0h0L3.79,8.57a.79.79,0,0,1,0-1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
+        previous
       </mg-button>
       <mg-input-select label-hide="" placeholder-hide="">
         <mock:shadow-root>
@@ -2083,20 +2189,22 @@ exports[`mg-pagination navigation navigate with select from 1 to 5 to 1, case to
       <span>
         / 5 pages
       </span>
-      <mg-button>
-        <!---->
-        <button aria-disabled="false" aria-label="Next page" class="mg-button mg-button--flat" id="id-button-next">
-          <div class="mg-button__content">
-            next
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
+      <mg-button aria-disabled="false" aria-label="Next page" role="button" tabindex="0">
+        <mock:shadow-root>
+          <div class="mg-button mg-button--flat" id="id-button-next">
+            <div class="mg-button__content">
+              <slot></slot>
+            </div>
           </div>
-        </button>
+        </mock:shadow-root>
+        next
+        <mg-icon>
+          <mock:shadow-root>
+            <svg aria-hidden="true" class="mg-icon mg-icon--chevron-right mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <path d="M12.21,8.57,5.69,15.1a.81.81,0,0,1-1.14,0h0l-.77-.76a.81.81,0,0,1,0-1.14L9,8,3.78,2.8a.81.81,0,0,1,0-1.14L4.55.9A.8.8,0,0,1,5.68.9h0l6.53,6.53a.79.79,0,0,1,0,1.13Z" fill="currentColor"></path>
+            </svg>
+          </mock:shadow-root>
+        </mg-icon>
       </mg-button>
     </nav>
   </mock:shadow-root>

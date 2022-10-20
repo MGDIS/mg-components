@@ -6,7 +6,7 @@ import { Placement, Guard } from './mg-tooltip.conf';
 @Component({
   tag: 'mg-tooltip',
   styleUrl: 'mg-tooltip.scss',
-  scoped: true,
+  shadow: true,
 })
 export class MgTooltip {
   /************
@@ -156,13 +156,13 @@ export class MgTooltip {
    */
   componentDidLoad(): void {
     // Get tooltip element
-    this.tooltip = this.element.querySelector(`#${this.identifier}`);
+    this.tooltip = this.element.shadowRoot.querySelector(`#${this.identifier}`);
 
     // get slotted element
     const slotElement = this.element.firstElementChild as HTMLElement;
     // Get interactive element
     const interactiveElements = ['a', 'button', 'input', 'textarea', 'select']; //! Might needs updates
-    const interactiveElement = this.element.querySelector(interactiveElements.join(',')) || slotElement.shadowRoot?.querySelector(interactiveElements.join(','));
+    const interactiveElement = this.element.shadowRoot.querySelector(interactiveElements.join(',')) || slotElement.shadowRoot?.querySelector(interactiveElements.join(','));
 
     // define selected element to become tooltip selector
     const tooltipedElement = interactiveElement || slotElement;

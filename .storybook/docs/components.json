@@ -1,9 +1,9 @@
 {
-  "timestamp": "2022-10-14T12:27:33",
+  "timestamp": "2022-10-20T09:48:06",
   "compiler": {
     "name": "@stencil/core",
-    "version": "2.17.4",
-    "typescriptVersion": "4.5.4"
+    "version": "2.18.1",
+    "typescriptVersion": "4.7.4"
   },
   "components": [
     {
@@ -127,29 +127,13 @@
     },
     {
       "filePath": "./src/components/atoms/mg-button/mg-button.tsx",
-      "encapsulation": "scoped",
+      "encapsulation": "shadow",
       "tag": "mg-button",
       "readme": "## Usage\n\nA primary action button is, in most cases, unique on the screen, the other buttons must be displayed as \"secondary\", to highlight the primary action.\nEx: Validation, Save\n\nA tooltip must be displayed on hover when the button only displays a non-explicit icon, and has no label. The tooltip must indicate the action of the button.\n\nA button that launches a potentially long process is disabled and displays a loader for the duration of the process.\n\nA button with undefined type in a form will natively have a [submit type](https://developer.mozilla.org/fr/docs/Web/HTML/Element/Button#attributs) and trigger form submission. So on non-submission buttons you need to explicitely set the type attribute as \"button\".\n\n## Specs\n\n![](./mg-button/doc/img/mg-button-specs.png)\n\n## Placement\n\n![](./mg-button/doc/img/mg-button-placement.png)\n\nTo manage the space between two buttons you can use the helper [.mg-group-elements](/?path=/docs/style-buttons--buttons)\n\n## Theming\n\n![](./mg-button/doc/img/mg-button-styles.png)\n\n## CSS Variables\n\nIf needed some [variables](./?path=/story/css-variables--page) are available to customize the component:\n\n### Global\n\n- `--mg-button-border-radius`: define button border radius, default: `0.3rem`\n- `--mg-button-icon-border-radius`: define button border radius in icon mode, default: `--default-size`\n- `--mg-button-disabled-opacity`: define button opacity when disabled, default: `0.6`\n- `--mg-button-gradient`: define if button use gradient, possible values 0 (no gradient) or 1 (with gradient), default: `1`\n- `--mg-button-border-variation`: define if button has a border based on background color, possible values 0 (no border) or 1 (with border), default: `1`\n\n### Variant\n\nVariants `danger`, `danger-alt`, `info` and `success` can be customized by changing the global [colors](./?path=/docs/style-colors--page).\n\n#### Primary\n\n- `--mg-button-primary-color-h`: define hue color value for primary button, default: `--color-dark-h`\n- `--mg-button-primary-color-s`: define saturation color value for primary button, default: `--color-dark-s`\n- `--mg-button-primary-color-l`: define lightness color value for primary button, default: `--color-dark-l`\n- `--mg-button-primary-font-color`: define font color for primary button, default: `--color-neutral`\n\n#### Secondary\n\n- `--mg-button-secondary-color-h`: define hue color value for secondary button, default: `--color-neutral-h`\n- `--mg-button-secondary-color-s`: define saturation color value for secondary button, default: `--color-neutral-s`\n- `--mg-button-secondary-color-l`: define lightness color value for secondary button, default: `--color-neutral-l`\n- `--mg-button-secondary-font-color`: define font color for secondary button, default: `--color-dark`\n\n\n",
       "docs": "A primary action button is, in most cases, unique on the screen, the other buttons must be displayed as \"secondary\", to highlight the primary action.\nEx: Validation, Save\n\nA tooltip must be displayed on hover when the button only displays a non-explicit icon, and has no label. The tooltip must indicate the action of the button.\n\nA button that launches a potentially long process is disabled and displays a loader for the duration of the process.\n\nA button with undefined type in a form will natively have a [submit type](https://developer.mozilla.org/fr/docs/Web/HTML/Element/Button#attributs) and trigger form submission. So on non-submission buttons you need to explicitely set the type attribute as \"button\".",
       "docsTags": [],
       "usage": {},
       "props": [
-        {
-          "name": "controls",
-          "type": "string",
-          "mutable": false,
-          "attr": "controls",
-          "reflectToAttr": false,
-          "docs": "Prop to set aria-controls on button element",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
         {
           "name": "disableOnClick",
           "type": "boolean",
@@ -184,22 +168,6 @@
           "required": false
         },
         {
-          "name": "expanded",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "expanded",
-          "reflectToAttr": false,
-          "docs": "Prop to set aria-expanded on button element",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
           "name": "form",
           "type": "string",
           "mutable": true,
@@ -210,42 +178,6 @@
           "values": [
             {
               "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "haspopup",
-          "type": "\"dialog\" | \"grid\" | \"listbox\" | \"menu\" | \"tree\" | boolean",
-          "mutable": false,
-          "attr": "haspopup",
-          "reflectToAttr": false,
-          "docs": "Option to set aria-haspopup\nThe aria-haspopup state informs assistive technology users that there is a popup and the type of popup it is, but provides no interactivity.",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "dialog",
-              "type": "string"
-            },
-            {
-              "value": "grid",
-              "type": "string"
-            },
-            {
-              "value": "listbox",
-              "type": "string"
-            },
-            {
-              "value": "menu",
-              "type": "string"
-            },
-            {
-              "value": "tree",
-              "type": "string"
-            },
-            {
-              "type": "boolean"
             }
           ],
           "optional": false,
@@ -306,7 +238,7 @@
           "mutable": false,
           "attr": "type",
           "reflectToAttr": false,
-          "docs": "Define button type\nDefault: 'submit', as HTMLButtonElement type is submit by default",
+          "docs": "Define button type",
           "docsTags": [],
           "values": [
             {
@@ -327,7 +259,7 @@
         },
         {
           "name": "variant",
-          "type": "string",
+          "type": "\"danger\" | \"danger-alt\" | \"flat\" | \"info\" | \"primary\" | \"secondary\" | \"success\"",
           "mutable": false,
           "attr": "variant",
           "reflectToAttr": false,
@@ -336,6 +268,31 @@
           "default": "variants[0]",
           "values": [
             {
+              "value": "danger",
+              "type": "string"
+            },
+            {
+              "value": "danger-alt",
+              "type": "string"
+            },
+            {
+              "value": "flat",
+              "type": "string"
+            },
+            {
+              "value": "info",
+              "type": "string"
+            },
+            {
+              "value": "primary",
+              "type": "string"
+            },
+            {
+              "value": "secondary",
+              "type": "string"
+            },
+            {
+              "value": "success",
               "type": "string"
             }
           ],
@@ -889,11 +846,33 @@
       "filePath": "./src/components/molecules/mg-illustrated-message/mg-illustrated-message.tsx",
       "encapsulation": "shadow",
       "tag": "mg-illustrated-message",
-      "readme": "## Specs\n\n### Anatomy\n\n![](./mg-illustrated-message/doc/img/mg-illustrated-message-anatomy.png) \n\nComponent is built with : \n- an illustration\n- a title\n\nOptionnally : \n- one or more _details_ slot wich accept HTML content (text, button...)\n\n### Style\n\n- _title_ : Open Sans, 20px, Regular\n- All contents are centered.\n\n### Spacing\n\n![](./mg-illustrated-message/doc/img/mg-illustrated-message-spacing.png) \n\n30px between the bottom of the _illustration_ and top of the _title_.\n20px for the top of the _details_ zone.\n\n15px between left/right border of the screen and the component\n\n### Sizing\n\nThe maximum width of the component is 475px.\n\nThe maximum height of the illustration is 335px. Illustration must keep its proportionnality.\nIllustration can be displayed in \"small\" size so its maximum height is set to 60px.\n\n![](./mg-illustrated-message/doc/img/mg-illustrated-message-sizing-small.png) \n\n## Behavior\n\nThe slotted elements (illustration, title and details) are centered horizontally in the page.\n\n\n\n",
+      "readme": "## Specs\n\n### Vertical\n\n#### Anatomy\n\n![](./mg-illustrated-message/doc/img/mg-illustrated-message-vertical-anatomy.png)\n\nComponent is built with :\n\n- an illustration\n- a title\n\nOptionnally :\n\n- one or more _details_ slot which accept HTML content (text, button...)\n\n#### Style\n\n- _title_ : Open Sans, 20px, Regular\n- All contents are centered.\n\n#### Spacing\n\n![](./mg-illustrated-message/doc/img/mg-illustrated-message-vertical-spacing.png).\n\n30px between the bottom of the _illustration_ and top of the _title_.\n\n20px for the top of the _details_ zone.\n\n15px between left/right border of the screen and the component\n\n#### Sizing\n\nThe maximum width of the component is 475px.\n\nThe maximum height of the illustration is 335px. Illustration must keep its proportionnality.\nIllustration can be displayed in \"small\" size so its maximum height is set to 60px.\n\n![](./mg-illustrated-message/doc/img/mg-illustrated-message-vertical-sizing-small.png)\n\n### Horizontal\n\n#### Anatomy\n\n![](./mg-illustrated-message/doc/img/mg-illustrated-message-horizontal-anatomy.png)\n\n#### Spacing\n\n![](./mg-illustrated-message/doc/img/mg-illustrated-message-horizontal-spacing.png)\n\nBy default the margin is set to 40px on top and bottom. It's possible to modify this props.\n\n![](./mg-illustrated-message/doc/img/mg-illustrated-message-horizontal-spacing-2.png)\n\nBetween the image and the group title/action.\n\n#### Alignment\n\n![](./mg-illustrated-message/doc/img/mg-illustrated-message-horizontal-alignment.png)\n\nThe image/illustration and the group tittle/details/action are vertically centred between them in the background.\n\n#### Responsive\n\nWhen there is not enough space the component take is default appearance.\n\n## CSS Variables\n\nIf needed some [variables](./?path=/story/css-variables--page) are available to customize the component:\n\n- `--mg-illustrated-message-padding-vertical`: define component vertical padding, default: `4rem`\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
       "props": [
+        {
+          "name": "direction",
+          "type": "\"horizontal\" | \"vertical\"",
+          "mutable": false,
+          "attr": "direction",
+          "reflectToAttr": false,
+          "docs": "Define component orientation",
+          "docsTags": [],
+          "default": "'vertical'",
+          "values": [
+            {
+              "value": "horizontal",
+              "type": "string"
+            },
+            {
+              "value": "vertical",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
         {
           "name": "size",
           "type": "\"regular\" | \"small\"",
@@ -4304,17 +4283,21 @@
       "props": [
         {
           "name": "badge",
-          "type": "{ value: string | number; variant?: \"info\" | \"primary\" | \"secondary\" | \"success\" | \"warning\" | \"danger\"; label: string; }",
+          "type": "{ label: string; value: string | number; variant?: \"info\" | \"success\" | \"primary\" | \"secondary\" | \"warning\" | \"danger\"; }",
           "mutable": false,
           "reflectToAttr": false,
           "docs": "Define menu-item badge",
           "docsTags": [],
           "values": [
             {
-              "type": "{ value: string"
+              "type": "{ label: string; value: string"
             },
             {
               "type": "number; variant?: \"info\""
+            },
+            {
+              "value": "success",
+              "type": "string"
             },
             {
               "value": "primary",
@@ -4325,15 +4308,11 @@
               "type": "string"
             },
             {
-              "value": "success",
-              "type": "string"
-            },
-            {
               "value": "warning",
               "type": "string"
             },
             {
-              "type": "\"danger\"; label: string; }"
+              "type": "\"danger\"; }"
             }
           ],
           "optional": false,
@@ -5084,7 +5063,7 @@
     },
     {
       "filePath": "./src/components/molecules/mg-popover/mg-popover.tsx",
-      "encapsulation": "scoped",
+      "encapsulation": "shadow",
       "tag": "mg-popover",
       "readme": "## Usage\n\nA popover is more enhanced than a tooltip but less blocking than a modal.\n\n## Behavior\n\nThe window is displayed when clicking on its trigger.\n\nThe window is displayed next to its trigger, usually below it. A triangle (in css) makes the link between the trigger and the window.\n\nThe window closes:\n\n- when clicking on its trigger\n- clicking outside the window\n- when the ESC key is pressed\n- when clicking on the close button at the top right corner\n\nThe size of the window is determined by the content (set a maximum size to avoid problems).\n\nThe title and the close button are optional.\n\n## Specs\n\n### Fonts\n\n![](./mg-popover/doc/img/mg-popover-fonts.png)\n\n### Spacing\n\n![](./mg-popover/doc/img/mg-popover-spacing.png)\n\n### Sizing\n\n![](./mg-popover/doc/img/mg-popover-sizing.png)\n\n### Alignments\n\n![](./mg-popover/doc/img/mg-popover-align.png)\n\n### Positioning\n\n#### Item\n\n![](./mg-popover/doc/img/mg-popover-position.png)\n\n#### Screen\n\n![](./mg-popover/doc/img/mg-popover-position-screen.png)\n\n### Style\n\n![](./mg-popover/doc/img/mg-popover-style.png)\n\n## CSS Variables\n\nIf needed some [variables](./?path=/story/css-variables--page) are available to customize the component:\n\n`--mg-popover-background-color`: Define popover background color, default: `var(--color-light)`\n`--mg-popover-font-color`: Define popover font color, default: `var(--color-font-dark)`\n`--mg-popover-title-font-size`: Define popover title font size, default: `1.4rem`\n",
       "docs": "A popover is more enhanced than a tooltip but less blocking than a modal.",
@@ -5448,7 +5427,7 @@
     },
     {
       "filePath": "./src/components/atoms/mg-tooltip/mg-tooltip.tsx",
-      "encapsulation": "scoped",
+      "encapsulation": "shadow",
       "tag": "mg-tooltip",
       "readme": "## Usage\n\nTooltips are messages that provide additional information about an element.\nThey are presented as a message that appears when an element is hovered over or when the keyboard is focused.\nTooltips are called \"custom\" when they are not built on the basis of the standard HTML code provided for these elements by the specification: the title attribute.\nOur \"custom tooltip\" component is called \"tooltip\" here.\n\n## Behavior\n\nThe tooltip must be displayed when the element that allows its display :\n\n- Is hovered over by the mouse.\n- Takes the keyboard focus.\n\nThe tooltip must be hidden when the element that allows its display :\n\n- Is no longer hovered over by the mouse.\n- Loses the keyboard focus.\n- Pressing the Escape key must hide the tooltip.\n\nThe tooltip must remain displayed when its content is hovered over by the mouse.\n\nThe tooltip can be placed above, to the right, below or to the left of the element it describes.\n\nBy default, the message is displayed at the bottom of the element.\n\nIf the element is located at the edge of the screen, the tooltip is shifted to be always visible.\n\n## Specs\n\n### Shapes\n\n![](./mg-tooltip/doc/img/mg-tooltip-shape.png)\n\n### Fonts\n\n![](./mg-tooltip/doc/img/mg-tooltip-font.png)\n\n### Spacing\n\n![](./mg-tooltip/doc/img/mg-tooltip-spaces.png)\n\n### Alignments\n\n![](./mg-tooltip/doc/img/mg-tooltip-alignments-text.png)\n\n### Positioning\n\nTriangle is always centered on the call component\n\n![](./mg-tooltip/doc/img/mg-tooltip-positioning.png)\n![](./mg-tooltip/doc/img/mg-tooltip-positioning2.png)\n\n### Colors\n\n![](./mg-tooltip/doc/img/mg-tooltip-colors.png)\n\n### Sizes\n\n![](./mg-tooltip/doc/img/mg-tooltip-sizing.png)\n\n## CSS Variables\n\nIf needed some [variables](./?path=/story/css-variables--page) are available to customize the component:\n\n- `--mg-tooltip-border-radius`: Define tooltip border radius, default: `0.5rem`\n- `--mg-tooltip-background-color`: Define tooltip background color, default: `--color-dark`\n- `--mg-tooltip-font-color`: Define tooltip font color, default: `--color-font-light`\n",
       "docs": "Tooltips are messages that provide additional information about an element.\nThey are presented as a message that appears when an element is hovered over or when the keyboard is focused.\nTooltips are called \"custom\" when they are not built on the basis of the standard HTML code provided for these elements by the specification: the title attribute.\nOur \"custom tooltip\" component is called \"tooltip\" here.",

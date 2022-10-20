@@ -18,8 +18,8 @@ export default {
 const Template = (args: any): HTMLElement => (
   <div>
     <mg-button
-      controls="identifier"
-      haspopup="dialog"
+      aria-controls="identifier"
+      aria-haspopup="dialog"
       onClick={() => {
         const mgModal = document.querySelector('mg-modal');
         const isHide = mgModal.hide === true;

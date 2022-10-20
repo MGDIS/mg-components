@@ -6,7 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { BadgeVariantType } from "./components/atoms/mg-badge/mg-badge.conf";
-import { ButtonType } from "./components/atoms/mg-button/mg-button.conf";
+import { ButtonType, VariantType } from "./components/atoms/mg-button/mg-button.conf";
 import { IconSizeType, IconVariantType } from "./components/atoms/mg-icon/mg-icon.conf";
 import { CheckboxValue } from "./components/molecules/inputs/mg-input-checkbox/mg-input-checkbox.conf";
 import { Width } from "./components/molecules/inputs/MgInput.conf";
@@ -41,10 +41,6 @@ export namespace Components {
     }
     interface MgButton {
         /**
-          * Prop to set aria-controls on button element
-         */
-        "controls": string;
-        /**
           * Option to set input disable on click, in order to prevent multi-click. Parent component have to remove the attribute 'disabled' when the process ends.
          */
         "disableOnClick": boolean;
@@ -53,17 +49,9 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
-          * Prop to set aria-expanded on button element
-         */
-        "expanded": boolean;
-        /**
           * Define form id to attach button with. If this attribute is not set, the <button> is associated with its ancestor <form> element.
          */
         "form": string;
-        /**
-          * Option to set aria-haspopup The aria-haspopup state informs assistive technology users that there is a popup and the type of popup it is, but provides no interactivity.
-         */
-        "haspopup": boolean | 'menu' | 'listbox' | 'tree' | 'grid' | 'dialog';
         /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
          */
@@ -77,13 +65,13 @@ export namespace Components {
          */
         "label": string;
         /**
-          * Define button type Default: 'submit', as HTMLButtonElement type is submit by default
+          * Define button type
          */
         "type": ButtonType;
         /**
           * Define button variant
          */
-        "variant": string;
+        "variant": VariantType;
     }
     interface MgCharacterLeft {
         /**
@@ -163,6 +151,10 @@ export namespace Components {
         "variant"?: IconVariantType;
     }
     interface MgIllustratedMessage {
+        /**
+          * Define component orientation
+         */
+        "direction": 'vertical' | 'horizontal';
         /**
           * Define illustration size
          */
@@ -1357,10 +1349,6 @@ declare namespace LocalJSX {
     }
     interface MgButton {
         /**
-          * Prop to set aria-controls on button element
-         */
-        "controls"?: string;
-        /**
           * Option to set input disable on click, in order to prevent multi-click. Parent component have to remove the attribute 'disabled' when the process ends.
          */
         "disableOnClick"?: boolean;
@@ -1369,17 +1357,9 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
-          * Prop to set aria-expanded on button element
-         */
-        "expanded"?: boolean;
-        /**
           * Define form id to attach button with. If this attribute is not set, the <button> is associated with its ancestor <form> element.
          */
         "form"?: string;
-        /**
-          * Option to set aria-haspopup The aria-haspopup state informs assistive technology users that there is a popup and the type of popup it is, but provides no interactivity.
-         */
-        "haspopup"?: boolean | 'menu' | 'listbox' | 'tree' | 'grid' | 'dialog';
         /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
          */
@@ -1393,13 +1373,13 @@ declare namespace LocalJSX {
          */
         "label"?: string;
         /**
-          * Define button type Default: 'submit', as HTMLButtonElement type is submit by default
+          * Define button type
          */
         "type"?: ButtonType;
         /**
           * Define button variant
          */
-        "variant"?: string;
+        "variant"?: VariantType;
     }
     interface MgCharacterLeft {
         /**
@@ -1486,6 +1466,10 @@ declare namespace LocalJSX {
         "variant"?: IconVariantType;
     }
     interface MgIllustratedMessage {
+        /**
+          * Define component orientation
+         */
+        "direction"?: 'vertical' | 'horizontal';
         /**
           * Define illustration size
          */

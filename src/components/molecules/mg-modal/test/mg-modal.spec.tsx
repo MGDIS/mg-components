@@ -51,7 +51,7 @@ describe('mg-modal', () => {
   describe('navigation', () => {
     test('should hide panel with button', async () => {
       const page = await getPage({ modalTitle: 'Modal Title', identifier: 'identifier', closeButton: true });
-      const closeButton = page.root.shadowRoot.querySelector('#identifier-close-button');
+      const closeButton = page.root.shadowRoot.querySelector('mg-button');
 
       expect(page.root).toMatchSnapshot();
 

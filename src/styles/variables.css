@@ -186,6 +186,12 @@
 
    --mg-menu-color: var(--color-dark);
 
+   /*
+    <mg-illustrated-message>
+   */
+
+  --mg-illustrated-message-padding-vertical: 4rem;
+
   /*
     Layout
    */

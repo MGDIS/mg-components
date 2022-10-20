@@ -1,6 +1,6 @@
 {
   "name": "@mgdis/mg-components",
-  "version": "4.2.0",
+  "version": "5.0.0",
   "description": "MG Components",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
@@ -64,7 +64,7 @@
     "@typescript-eslint/parser": "^4.33.0",
     "babel-loader": "^8.2.2",
     "babel-plugin-jsx-pragmatic": "^1.0.2",
-    "chromatic": "^6.7.1",
+    "chromatic": "^6.10.1",
     "css-loader": "^5.2.7",
     "eslint": "^7.32.0",
     "eslint-plugin-jsdoc": "^38.0.6",
