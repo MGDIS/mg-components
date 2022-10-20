@@ -27,7 +27,8 @@ October 17th, 2022
 - `mg-button`, `mg-tooltip` and `mg-popover` components use now [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM).  
   This might create some a11y issues but it fix all the issues we have with AngularJS.  
   The use of the [mg-text-content angularJS directive](http://core.pages.mgdis.fr/core-back/core/docs/mg-components-helpers/mg-text-content-angular) is not necesary anymore.
-- Components with missing mandatory props won't render and throw error.
+- `mg-button` accessibility properties (expanded, controls, haspopup) have been removed, they now must be set on the component (aria-expanded, aria-controls, aria-haspopup) as a regular button.
+- Components with missing mandatory props won't render and will throw an error.
 - No more `variables.scss` export, only `variables.css`.
 
 ### 🐛 Bug Fix
