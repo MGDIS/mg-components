@@ -37,7 +37,7 @@ describe('mg-popover', () => {
 
       const mgPopover = await page.find('mg-popover');
       const mgButton = await page.find('mg-button');
-      const popover = await page.find('.mg-popover');
+      const popover = await page.find('mg-popover >>> .mg-popover');
 
       expect(mgPopover).toHaveClass('hydrated');
 

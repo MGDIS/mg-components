@@ -6,7 +6,7 @@ import { Placement, Guard } from './mg-tooltip.conf';
 @Component({
   tag: 'mg-tooltip',
   styleUrl: 'mg-tooltip.scss',
-  scoped: true,
+  shadow: true,
 })
 export class MgTooltip {
   /************
@@ -41,9 +41,7 @@ export class MgTooltip {
   @Watch('message')
   validateMessage(newValue: string): void {
     if (typeof newValue !== 'string' || newValue.trim() === '') {
-      // TODO: throw new Error on next major (5.0.0)
-      // throw new Error('<mg-tooltip> prop "message" is required.');
-      console.error('<mg-tooltip> prop "message" is required.');
+      throw new Error('<mg-tooltip> prop "message" is required.');
     }
   }
 
@@ -158,13 +156,13 @@ export class MgTooltip {
    */
   componentDidLoad(): void {
     // Get tooltip element
-    this.tooltip = this.element.querySelector(`#${this.identifier}`);
+    this.tooltip = this.element.shadowRoot.querySelector(`#${this.identifier}`);
 
     // get slotted element
     const slotElement = this.element.firstElementChild as HTMLElement;
     // Get interactive element
     const interactiveElements = ['a', 'button', 'input', 'textarea', 'select']; //! Might needs updates
-    const interactiveElement = this.element.querySelector(interactiveElements.join(',')) || slotElement.shadowRoot?.querySelector(interactiveElements.join(','));
+    const interactiveElement = this.element.shadowRoot.querySelector(interactiveElements.join(',')) || slotElement.shadowRoot?.querySelector(interactiveElements.join(','));
 
     // define selected element to become tooltip selector
     const tooltipedElement = interactiveElement || slotElement;

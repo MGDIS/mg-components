@@ -1,41 +1,53 @@
 .mg-illustrated-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3em 7rem;
   margin: auto;
-  padding: 0 1.5rem;
+  padding: var(--mg-illustrated-message-padding-vertical) 1.5rem;
   max-width: 47.5rem;
   box-sizing: border-box;
   text-align: center;
-}
 
-.mg-illustrated-message__illustration {
-  max-height: 33.5rem;
+  &.mg-illustrated-message--horizontal {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: unset;
 
-  ::slotted([slot='illustration']) {
-    width: auto;
-    height: auto;
-    max-width: 100%;
-    max-height: 33.5rem;
-  }
-
-  &.mg-illustrated-message__illustration--small {
-    max-height: 6rem;
-
-    ::slotted([slot='illustration']) {
-      max-height: 6rem;
+    .mg-illustrated-message__slots,
+    .mg-illustrated-message__illustration {
+      max-width: 47.5rem;
     }
   }
-}
 
-.mg-illustrated-message__title {
-  margin: 3rem 0 0;
+  &__illustration {
+    max-height: 33.5rem;
 
-  ::slotted([slot='title']) {
+    ::slotted([slot='illustration']) {
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 33.5rem;
+    }
+
+    &.mg-illustrated-message__illustration--small {
+      max-height: 6rem;
+
+      ::slotted([slot='illustration']) {
+        max-height: 6rem;
+      }
+    }
+  }
+
+  &__title ::slotted([slot='title']) {
     margin: 0;
     font-size: 2rem !important;
     font-family: var(--font-family) !important;
     font-weight: 400;
   }
-}
 
-.mg-illustrated-message__details ::slotted([slot='details']) {
-  margin: 2rem 0 0;
+  &__details ::slotted([slot='details']) {
+    margin: 2rem 0 0;
+  }
 }

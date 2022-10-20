@@ -17,10 +17,6 @@ export const config: Config = {
           dest: 'variables.css', // export variable in a seperate file for component inside another framework
         },
         {
-          src: 'styles/variables.css',
-          dest: 'variables.scss', // keeping scss file to prevent breaking change
-        },
-        {
           src: 'styles/fonts',
           dest: 'fonts', // export fonts
         },

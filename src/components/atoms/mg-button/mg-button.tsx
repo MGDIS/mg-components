@@ -1,11 +1,11 @@
-import { Component, Element, h, Prop, State, Watch } from '@stencil/core';
-import { variants, ButtonType } from './mg-button.conf';
+import { Component, Element, h, Prop, State, Watch, Host } from '@stencil/core';
+import { variants, VariantType, ButtonType } from './mg-button.conf';
 import { ClassList } from '../../../utils/components.utils';
 
 @Component({
   tag: 'mg-button',
   styleUrl: 'mg-button.scss',
-  scoped: true,
+  shadow: true,
 })
 export class MgButton {
   /************
@@ -13,6 +13,8 @@ export class MgButton {
    ************/
 
   private onClickElementFn = null;
+  private classDisabled = 'mg-button--disabled';
+  private classLoading = 'mg-button--loading';
 
   /**************
    * Decorators *
@@ -26,9 +28,9 @@ export class MgButton {
   /**
    * Define button variant
    */
-  @Prop() variant: string = variants[0]; // Primary
+  @Prop() variant: VariantType = variants[0]; // Primary
   @Watch('variant')
-  validateVariant(newValue: string, oldValue?: string): void {
+  validateVariant(newValue: VariantType, oldValue?: VariantType): void {
     if (!variants.includes(newValue)) {
       throw new Error(`<mg-button> prop "variant" must be one of : ${variants.join(', ')}`);
     } else {
@@ -52,7 +54,6 @@ export class MgButton {
 
   /**
    * Define button type
-   * Default: 'submit', as HTMLButtonElement type is submit by default
    */
   @Prop() type: ButtonType;
 
@@ -75,6 +76,13 @@ export class MgButton {
     }
     // Manage if onclick
     this.element.onclick = isDisabled ? undefined : this.onClickElementFn;
+
+    // apply style
+    if (isDisabled) {
+      this.classList.add(this.classDisabled);
+    } else {
+      this.classList.delete(this.classDisabled);
+    }
   }
   /**
    * Define if button is round.
@@ -89,22 +97,6 @@ export class MgButton {
   @Prop() disableOnClick = false;
 
   /**
-   * Prop to set aria-expanded on button element
-   */
-  @Prop() expanded: boolean;
-
-  /**
-   * Prop to set aria-controls on button element
-   */
-  @Prop() controls: string;
-
-  /**
-   * Option to set aria-haspopup
-   * The aria-haspopup state informs assistive technology users that there is a popup and the type of popup it is, but provides no interactivity.
-   */
-  @Prop() haspopup: boolean | 'menu' | 'listbox' | 'tree' | 'grid' | 'dialog';
-
-  /**
    * Define if button is loading, default to false.
    * Trigger when button is clicked or key-up ['enter', 'space], then value change to true.
    * It's required to reset to false when action/promise in parent is done to stop the loading state
@@ -114,9 +106,9 @@ export class MgButton {
   loadingHandler(newValue: boolean): void {
     // we add loading style if it newvalue is true else we remove it
     if (newValue) {
-      this.classList.add('mg-button--loading');
+      this.classList.add(this.classLoading);
     } else {
-      this.classList.delete('mg-button--loading');
+      this.classList.delete(this.classLoading);
     }
   }
 
@@ -133,11 +125,38 @@ export class MgButton {
    */
   private handleClick = (event: MouseEvent): void => {
     if (this.disabled) event.stopPropagation();
-
     // Used to prevent multi-click.
-    if (this.disableOnClick && !this.disabled) {
+    else if (this.disableOnClick) {
       this.loading = true;
       this.disabled = true;
+    }
+  };
+
+  /**
+   * Handle onKeyDown event
+   *
+   * @param {KeyboardEvent} event keyboard event
+   * @returns {void}
+   */
+  private handleKeydown = (event: KeyboardEvent): void => {
+    if (!this.disabled && event.key === ' ') {
+      event.preventDefault();
+    } else if (!this.disabled && ['Enter', 'NumpadEnter', 'Space'].includes(event.key)) {
+      event.preventDefault();
+      this.element.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+    }
+  };
+
+  /**
+   * Handle onKeyUp event
+   *
+   * @param {KeyboardEvent} event keyboard event
+   * @returns {void}
+   */
+  private handleKeyup = (event: KeyboardEvent): void => {
+    if (!this.disabled && event.key === ' ') {
+      event.preventDefault();
+      this.element.dispatchEvent(new MouseEvent('click', { bubbles: true }));
     }
   };
 
@@ -166,25 +185,24 @@ export class MgButton {
    */
   render(): HTMLElement {
     return (
-      <button
-        id={this.identifier}
-        class={this.classList.join()}
+      <Host
+        role="button"
+        tabIndex={this.disabled ? -1 : 0}
         type={this.type}
+        form={this.form}
         aria-label={this.label}
         aria-disabled={this.disabled !== undefined && this.disabled.toString()}
-        aria-expanded={this.expanded !== undefined && this.expanded.toString()}
-        aria-controls={this.controls}
-        aria-haspopup={this.haspopup !== undefined && this.haspopup.toString()}
         onClick={this.handleClick}
-        // has stencil does not support form attribute on button, we set the attribute from the ref
-        // https://github.com/ionic-team/stencil/issues/2703#issuecomment-1050943715
-        ref={btn => this.form && btn.setAttribute('form', this.form)}
+        onKeyUp={this.handleKeyup}
+        onKeyDown={this.handleKeydown}
       >
-        {this.loading && <mg-icon icon="loader" spin></mg-icon>}
-        <div class="mg-button__content">
-          <slot></slot>
+        <div class={this.classList.join()} id={this.identifier}>
+          {this.loading && <mg-icon icon="loader" spin></mg-icon>}
+          <div class="mg-button__content">
+            <slot></slot>
+          </div>
         </div>
-      </button>
+      </Host>
     );
   }
 }

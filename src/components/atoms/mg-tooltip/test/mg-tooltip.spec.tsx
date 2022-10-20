@@ -45,16 +45,12 @@ describe('mg-tooltip', () => {
   });
 
   test.each(['', ' ', undefined])('Should throw error, case invalid message prop', async message => {
-    // TODO on 5.0.0 move back to throw new Error test (replace content with commented test)
-    // expect.assertions(1);
-    // try {
-    //   await getPage({ message }, <span>span</span>);
-    // } catch (err) {
-    //   expect(err.message).toContain('<mg-tooltip> prop "message" is required.');
-    // }
-    console.error = jest.fn();
-    await getPage({ message }, <span>span</span>);
-    expect(console.error).toHaveBeenCalledWith('<mg-tooltip> prop "message" is required.');
+    expect.assertions(1);
+    try {
+      await getPage({ message }, <span>span</span>);
+    } catch (err) {
+      expect(err.message).toContain('<mg-tooltip> prop "message" is required.');
+    }
   });
 
   describe.each([
@@ -71,7 +67,7 @@ describe('mg-tooltip', () => {
       const page = await getPage(args, element);
       const mgTooltip = page.doc.querySelector('mg-tooltip');
       const linkedTooltipElement = mgTooltip.querySelector(`[aria-describedby*='${args.identifier}']`);
-      const tooltip = mgTooltip.querySelector(`#${args.identifier}`);
+      const tooltip = mgTooltip.shadowRoot.querySelector(`#${args.identifier}`);
 
       linkedTooltipElement.dispatchEvent(new CustomEvent(eventIn, { bubbles: true }));
       await page.waitForChanges();
@@ -95,7 +91,7 @@ describe('mg-tooltip', () => {
       const page = await getPage(args, <span>span</span>);
       const mgTooltip = page.doc.querySelector('mg-tooltip');
       const linkedTooltipElement = mgTooltip.querySelector(`[aria-describedby*='${args.identifier}']`);
-      const tooltip = mgTooltip.querySelector(`#${args.identifier}`);
+      const tooltip = mgTooltip.shadowRoot.querySelector(`#${args.identifier}`);
 
       [eventIn, eventOut].forEach(async event => {
         linkedTooltipElement.dispatchEvent(new CustomEvent(event, { bubbles: true }));
@@ -113,7 +109,7 @@ describe('mg-tooltip', () => {
     const args = { identifier: 'identifier', message: 'batman', display };
     const page = await getPage(args, <span>batman</span>);
     const mgTooltip = page.doc.querySelector('mg-tooltip');
-    const tooltip = mgTooltip.querySelector(`#${args.identifier}`);
+    const tooltip = mgTooltip.shadowRoot.querySelector(`#${args.identifier}`);
 
     expect(page.root).toMatchSnapshot();
     if (display) {
@@ -138,7 +134,7 @@ describe('mg-tooltip', () => {
       const args = { identifier: 'identifier', message: 'batman' };
       const page = await getPage(args, <span id="batman">batman</span>);
       const mgTooltip = page.doc.querySelector('mg-tooltip');
-      const tooltip = mgTooltip.querySelector(`#${args.identifier}`);
+      const tooltip = mgTooltip.shadowRoot.querySelector(`#${args.identifier}`);
       const element = page.doc.querySelector('#batman');
 
       element.dispatchEvent(new CustomEvent('focus', { bubbles: true }));
@@ -156,7 +152,7 @@ describe('mg-tooltip', () => {
       const args = { identifier: 'identifier', message: 'batman' };
       const page = await getPage(args, <span id="batman">batman</span>);
       const mgTooltip = page.doc.querySelector('mg-tooltip');
-      const tooltip = mgTooltip.querySelector(`#${args.identifier}`);
+      const tooltip = mgTooltip.shadowRoot.querySelector(`#${args.identifier}`);
       const element = page.doc.querySelector('#batman');
 
       element.dispatchEvent(new CustomEvent('focus', { bubbles: true }));
@@ -179,7 +175,7 @@ describe('mg-tooltip', () => {
     const page = await getPage(args, element);
     const mgTooltip = page.doc.querySelector('mg-tooltip');
     const linkedTooltipElement = mgTooltip.querySelector(`[aria-describedby*='${args.identifier}']`);
-    const tooltip = mgTooltip.querySelector(`#${args.identifier}`);
+    const tooltip = mgTooltip.shadowRoot.querySelector(`#${args.identifier}`);
 
     // 1. hover tooltipedElement and display tooltip
     linkedTooltipElement.dispatchEvent(new CustomEvent(eventIn, { bubbles: true }));

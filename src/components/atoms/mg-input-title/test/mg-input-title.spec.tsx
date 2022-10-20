@@ -19,15 +19,11 @@ describe('mg-input-title', () => {
   });
 
   test.each(['', ' ', undefined])('Should throw error, case invalid identifier prop', async identifier => {
-    // TODO on 5.0.0 move back to throw new Error test (replace content with commented test)
-    //   expect.assertions(1);
-    //   try {
-    //     await getPage({ identifier });
-    //   } catch (err) {
-    //     expect(err.message).toContain('<mg-input-title> prop "identifier" is required.');
-    //   }
-    console.error = jest.fn();
-    await getPage({ identifier });
-    expect(console.error).toHaveBeenCalledWith('<mg-input-title> prop "identifier" is required.');
+    expect.assertions(1);
+    try {
+      await getPage({ identifier });
+    } catch (err) {
+      expect(err.message).toContain('<mg-input-title> prop "identifier" is required.');
+    }
   });
 });

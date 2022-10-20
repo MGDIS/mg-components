@@ -18,6 +18,29 @@ Release date
 ### 🐛 Bug Fix
 -->
 
+## 5.0.0
+
+October 20th, 2022
+
+### 💥 Breaking Changes
+
+- `mg-button`, `mg-tooltip` and `mg-popover` components use now [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM).  
+  This might create some a11y issues but it fix all the issues we have with AngularJS.  
+  The use of the [mg-text-content angularJS directive](http://core.pages.mgdis.fr/core-back/core/docs/mg-components-helpers/mg-text-content-angular) is not necesary anymore.
+- `mg-button` accessibility properties (expanded, controls, haspopup) have been removed, they now must be set on the component (aria-expanded, aria-controls, aria-haspopup) as a regular button.
+- Components with missing mandatory props won't render and will throw an error.
+- No more `variables.scss` export, only `variables.css`.
+
+### 🚀 Enhancement
+
+- [**`<mg-illustrated-message>`**](./?path=/docs/molecules-mg-illustrated-message--mg-illustrated-message) can be displayed horizontally.
+- Added icons to [**`<mg-icon>`**](./?path=/docs/atoms-mg-icon--mg-icon), [see all the availables icons](?path=/story/style-icons--icons).
+
+### 🐛 Bug Fix
+
+- [#154](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/154) mg-button: Unexpected behavior when displayed conditionally
+- [#158](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/158) mg-tooltip: child component interpolation does not work under ng-repeat directive
+
 ## 4.2.1
 
 October 5th, 2022
