@@ -168,7 +168,6 @@
   /*
     <mg-panel>
    */
-
   --mg-panel-border-radius: 0.5rem;
   --mg-panel-background: var(--color-info-h) var(--color-info-s) calc(var(--color-info-l) + 68%);
   --mg-panel-content-padding: 1.5rem;
@@ -176,8 +175,14 @@
   /*
     <mg-illustrated-message>
    */
-
   --mg-illustrated-message-padding-vertical: 4rem;
+
+  /*
+    <mg-divider>
+  */
+  --mg-divider-background-color: hsla(var(--color-dark), 15%);
+  --mg-divider-thickness: 0.1rem;
+  --mg-divider-vertical-spacing: 4rem;
 
   /*
     Layout
