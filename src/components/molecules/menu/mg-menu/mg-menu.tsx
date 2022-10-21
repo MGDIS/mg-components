@@ -1,6 +1,6 @@
 import { Component, h, Prop, State, Element, Watch, Host } from '@stencil/core';
 import { ClassList } from '../../../../utils/components.utils';
-import { Display } from './mg-menu.conf';
+import { Direction } from './mg-menu.conf';
 
 @Component({
   tag: 'mg-menu',
@@ -37,17 +37,17 @@ export class MgMenu {
   }
 
   /**
-   * Component display orientation
+   * Component display direction
    */
-  @Prop({ reflect: true }) display: Display = Display.HORIZONTAL;
-  @Watch('display')
-  validateDisplay(newValue: MgMenu['display']): void {
-    if (newValue === Display.VERTICAL) {
-      this.classList.add(`${this.name}--${Display.VERTICAL}`);
-    } else if (newValue === Display.HORIZONTAL) {
-      this.classList.add(`${this.name}--${Display.HORIZONTAL}`);
+  @Prop({ reflect: true }) direction: Direction = Direction.HORIZONTAL;
+  @Watch('direction')
+  validateDisplay(newValue: MgMenu['direction']): void {
+    if (newValue === Direction.VERTICAL) {
+      this.classList.add(`${this.name}--${Direction.VERTICAL}`);
+    } else if (newValue === Direction.HORIZONTAL) {
+      this.classList.add(`${this.name}--${Direction.HORIZONTAL}`);
     } else {
-      throw new Error(`<${this.name}> prop "display" must be one of : ${Display.HORIZONTAL}, ${Display.VERTICAL}.`);
+      throw new Error(`<${this.name}> prop "direction" must be one of : ${Direction.HORIZONTAL}, ${Direction.VERTICAL}.`);
     }
   }
 
@@ -115,7 +115,7 @@ export class MgMenu {
    * @returns {void}
    */
   componentWillLoad(): void {
-    this.validateDisplay(this.display);
+    this.validateDisplay(this.direction);
     this.validateLabel(this.label);
   }
 
@@ -133,11 +133,11 @@ export class MgMenu {
       this.isChildMenu = this.element.closest('mg-menu-item') !== null;
 
       // click outside management for child vertical menu
-      if (!this.isChildMenu && this.display === Display.HORIZONTAL) {
+      if (!this.isChildMenu && this.direction === Direction.HORIZONTAL) {
         document.addEventListener('click', (event: MouseEvent & { target: HTMLElement }) => {
           if (event.target.closest('mg-menu') === null) {
             this.menuItems.forEach(item => {
-              this.closeMenuItem(item, this.display === Display.HORIZONTAL);
+              this.closeMenuItem(item, this.direction === Direction.HORIZONTAL);
             });
           }
         });

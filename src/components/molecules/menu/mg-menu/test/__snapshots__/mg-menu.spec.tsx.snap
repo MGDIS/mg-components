@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`mg-menu events should manage focused-item event in %s menu 1`] = `
-<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--horizontal" display="horizontal" role="menubar">
+<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
@@ -19,7 +19,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 1`] = `
         <slot></slot>
       </div>
     </mock:shadow-root>
-    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" display="horizontal" hidden="" role="menu">
+    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" hidden="" role="menu">
       <mock:shadow-root>
         <slot></slot>
       </mock:shadow-root>
@@ -89,7 +89,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 1`] = `
 `;
 
 exports[`mg-menu events should manage focused-item event in %s menu 2`] = `
-<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--horizontal" display="horizontal" role="menubar">
+<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
@@ -107,7 +107,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 2`] = `
         <slot></slot>
       </div>
     </mock:shadow-root>
-    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" display="horizontal" hidden="" role="menu">
+    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" hidden="" role="menu">
       <mock:shadow-root>
         <slot></slot>
       </mock:shadow-root>
@@ -177,7 +177,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 2`] = `
 `;
 
 exports[`mg-menu events should manage focused-item event in %s menu 3`] = `
-<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--horizontal" display="horizontal" role="menubar">
+<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
@@ -195,7 +195,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 3`] = `
         <slot></slot>
       </div>
     </mock:shadow-root>
-    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" display="horizontal" hidden="" role="menu">
+    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" hidden="" role="menu">
       <mock:shadow-root>
         <slot></slot>
       </mock:shadow-root>
@@ -265,7 +265,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 3`] = `
 `;
 
 exports[`mg-menu events should manage focused-item event in %s menu 4`] = `
-<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--horizontal" display="horizontal" role="menubar">
+<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
@@ -283,7 +283,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 4`] = `
         <slot></slot>
       </div>
     </mock:shadow-root>
-    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" display="horizontal" hidden="" role="menu">
+    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" hidden="" role="menu">
       <mock:shadow-root>
         <slot></slot>
       </mock:shadow-root>
@@ -353,7 +353,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 4`] = `
 `;
 
 exports[`mg-menu events should manage focused-item event in %s menu 5`] = `
-<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--horizontal" display="horizontal" role="menubar">
+<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
@@ -371,7 +371,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 5`] = `
         <slot></slot>
       </div>
     </mock:shadow-root>
-    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" display="horizontal" hidden="" role="menu">
+    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" hidden="" role="menu">
       <mock:shadow-root>
         <slot></slot>
       </mock:shadow-root>
@@ -441,7 +441,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 5`] = `
 `;
 
 exports[`mg-menu events should manage focused-item event in %s menu 6`] = `
-<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--vertical" display="vertical" role="menubar">
+<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--vertical" direction="vertical" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
@@ -459,7 +459,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 6`] = `
         <slot></slot>
       </div>
     </mock:shadow-root>
-    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" display="horizontal" hidden="" role="menu">
+    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" hidden="" role="menu">
       <mock:shadow-root>
         <slot></slot>
       </mock:shadow-root>
@@ -529,7 +529,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 6`] = `
 `;
 
 exports[`mg-menu events should manage focused-item event in %s menu 7`] = `
-<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--vertical" display="vertical" role="menubar">
+<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--vertical" direction="vertical" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
@@ -547,7 +547,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 7`] = `
         <slot></slot>
       </div>
     </mock:shadow-root>
-    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" display="horizontal" hidden="" role="menu">
+    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" hidden="" role="menu">
       <mock:shadow-root>
         <slot></slot>
       </mock:shadow-root>
@@ -617,7 +617,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 7`] = `
 `;
 
 exports[`mg-menu events should manage focused-item event in %s menu 8`] = `
-<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--vertical" display="vertical" role="menubar">
+<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--vertical" direction="vertical" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
@@ -635,7 +635,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 8`] = `
         <slot></slot>
       </div>
     </mock:shadow-root>
-    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" display="horizontal" hidden="" role="menu">
+    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" hidden="" role="menu">
       <mock:shadow-root>
         <slot></slot>
       </mock:shadow-root>
@@ -705,7 +705,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 8`] = `
 `;
 
 exports[`mg-menu events should manage focused-item event in %s menu 9`] = `
-<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--vertical" display="vertical" role="menubar">
+<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--vertical" direction="vertical" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
@@ -723,7 +723,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 9`] = `
         <slot></slot>
       </div>
     </mock:shadow-root>
-    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" display="horizontal" hidden="" role="menu">
+    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" hidden="" role="menu">
       <mock:shadow-root>
         <slot></slot>
       </mock:shadow-root>
@@ -793,7 +793,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 9`] = `
 `;
 
 exports[`mg-menu events should manage focused-item event in %s menu 10`] = `
-<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--vertical" display="vertical" role="menubar">
+<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--vertical" direction="vertical" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
@@ -811,7 +811,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 10`] = `
         <slot></slot>
       </div>
     </mock:shadow-root>
-    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" display="horizontal" hidden="" role="menu">
+    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" hidden="" role="menu">
       <mock:shadow-root>
         <slot></slot>
       </mock:shadow-root>
@@ -881,7 +881,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 10`] = `
 `;
 
 exports[`mg-menu events should manage outside click 1`] = `
-<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--horizontal" display="horizontal" role="menubar">
+<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
@@ -899,7 +899,7 @@ exports[`mg-menu events should manage outside click 1`] = `
         <slot></slot>
       </div>
     </mock:shadow-root>
-    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" display="horizontal" hidden="" role="menu">
+    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" hidden="" role="menu">
       <mock:shadow-root>
         <slot></slot>
       </mock:shadow-root>
@@ -969,7 +969,7 @@ exports[`mg-menu events should manage outside click 1`] = `
 `;
 
 exports[`mg-menu events should manage outside click 2`] = `
-<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--horizontal" display="horizontal" role="menubar">
+<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
@@ -987,7 +987,7 @@ exports[`mg-menu events should manage outside click 2`] = `
         <slot></slot>
       </div>
     </mock:shadow-root>
-    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" display="horizontal" hidden="" role="menu">
+    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" hidden="" role="menu">
       <mock:shadow-root>
         <slot></slot>
       </mock:shadow-root>
@@ -1057,7 +1057,7 @@ exports[`mg-menu events should manage outside click 2`] = `
 `;
 
 exports[`mg-menu events should manage outside click 3`] = `
-<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--horizontal" display="horizontal" role="menubar">
+<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
@@ -1075,7 +1075,7 @@ exports[`mg-menu events should manage outside click 3`] = `
         <slot></slot>
       </div>
     </mock:shadow-root>
-    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" display="horizontal" hidden="" role="menu">
+    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" hidden="" role="menu">
       <mock:shadow-root>
         <slot></slot>
       </mock:shadow-root>
@@ -1145,7 +1145,7 @@ exports[`mg-menu events should manage outside click 3`] = `
 `;
 
 exports[`mg-menu events should manage outside click 4`] = `
-<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--vertical" display="vertical" role="menubar">
+<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--vertical" direction="vertical" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
@@ -1163,7 +1163,7 @@ exports[`mg-menu events should manage outside click 4`] = `
         <slot></slot>
       </div>
     </mock:shadow-root>
-    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" display="horizontal" hidden="" role="menu">
+    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" hidden="" role="menu">
       <mock:shadow-root>
         <slot></slot>
       </mock:shadow-root>
@@ -1233,7 +1233,7 @@ exports[`mg-menu events should manage outside click 4`] = `
 `;
 
 exports[`mg-menu events should manage outside click 5`] = `
-<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--vertical" display="vertical" role="menubar">
+<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--vertical" direction="vertical" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
@@ -1251,7 +1251,7 @@ exports[`mg-menu events should manage outside click 5`] = `
         <slot></slot>
       </div>
     </mock:shadow-root>
-    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" display="horizontal" hidden="" role="menu">
+    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" hidden="" role="menu">
       <mock:shadow-root>
         <slot></slot>
       </mock:shadow-root>
@@ -1321,7 +1321,7 @@ exports[`mg-menu events should manage outside click 5`] = `
 `;
 
 exports[`mg-menu events should manage outside click 6`] = `
-<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--vertical" display="vertical" role="menubar">
+<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--vertical" direction="vertical" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
@@ -1339,7 +1339,7 @@ exports[`mg-menu events should manage outside click 6`] = `
         <slot></slot>
       </div>
     </mock:shadow-root>
-    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" display="horizontal" hidden="" role="menu">
+    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" hidden="" role="menu">
       <mock:shadow-root>
         <slot></slot>
       </mock:shadow-root>
@@ -1409,7 +1409,7 @@ exports[`mg-menu events should manage outside click 6`] = `
 `;
 
 exports[`mg-menu render with args { label: 'batman menu' } 1`] = `
-<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--horizontal" display="horizontal" role="menubar">
+<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
@@ -1427,7 +1427,7 @@ exports[`mg-menu render with args { label: 'batman menu' } 1`] = `
         <slot></slot>
       </div>
     </mock:shadow-root>
-    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" display="horizontal" hidden="" role="menu">
+    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" hidden="" role="menu">
       <mock:shadow-root>
         <slot></slot>
       </mock:shadow-root>
@@ -1496,8 +1496,8 @@ exports[`mg-menu render with args { label: 'batman menu' } 1`] = `
 </mg-menu>
 `;
 
-exports[`mg-menu render with args { label: 'batman menu', display: 'horizontal' } 1`] = `
-<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--horizontal" display="horizontal" role="menubar">
+exports[`mg-menu render with args { label: 'batman menu', direction: 'horizontal' } 1`] = `
+<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
@@ -1515,7 +1515,7 @@ exports[`mg-menu render with args { label: 'batman menu', display: 'horizontal' 
         <slot></slot>
       </div>
     </mock:shadow-root>
-    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" display="horizontal" hidden="" role="menu">
+    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" hidden="" role="menu">
       <mock:shadow-root>
         <slot></slot>
       </mock:shadow-root>
@@ -1584,8 +1584,8 @@ exports[`mg-menu render with args { label: 'batman menu', display: 'horizontal' 
 </mg-menu>
 `;
 
-exports[`mg-menu render with args { label: 'batman menu', display: 'vertical' } 1`] = `
-<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--vertical" display="vertical" role="menubar">
+exports[`mg-menu render with args { label: 'batman menu', direction: 'vertical' } 1`] = `
+<mg-menu aria-label="batman menu" classlist="mg-menu mg-menu--vertical" direction="vertical" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
@@ -1603,7 +1603,7 @@ exports[`mg-menu render with args { label: 'batman menu', display: 'vertical' } 
         <slot></slot>
       </div>
     </mock:shadow-root>
-    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" display="horizontal" hidden="" role="menu">
+    <mg-menu aria-label="batman - submenu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" hidden="" role="menu">
       <mock:shadow-root>
         <slot></slot>
       </mock:shadow-root>

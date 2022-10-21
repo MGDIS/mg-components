@@ -13,7 +13,7 @@ import { Width } from "./components/molecules/inputs/MgInput.conf";
 import { RadioOption } from "./components/molecules/inputs/mg-input-radio/mg-input-radio.conf";
 import { SelectOption } from "./components/molecules/inputs/mg-input-select/mg-input-select.conf";
 import { ToggleValue } from "./components/molecules/inputs/mg-input-toggle/mg-input-toggle.conf";
-import { Display } from "./components/molecules/menu/mg-menu/mg-menu.conf";
+import { Direction } from "./components/molecules/menu/mg-menu/mg-menu.conf";
 import { MgBadge } from "./components/atoms/mg-badge/mg-badge";
 import { MgIcon } from "./components/atoms/mg-icon/mg-icon";
 import { MenuItemSizeType, Status } from "./components/molecules/menu/mg-menu-item/mg-menu-item.conf";
@@ -852,9 +852,9 @@ export namespace Components {
     }
     interface MgMenu {
         /**
-          * Component display orientation
+          * Component display direction
          */
-        "display": Display;
+        "direction": Direction;
         /**
           * Menu label. Include short menu description. Required for accessibility
          */
@@ -2194,9 +2194,9 @@ declare namespace LocalJSX {
     }
     interface MgMenu {
         /**
-          * Component display orientation
+          * Component display direction
          */
-        "display"?: Display;
+        "direction"?: Direction;
         /**
           * Menu label. Include short menu description. Required for accessibility
          */

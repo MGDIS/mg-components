@@ -1,7 +1,7 @@
 /**
- * Menu display type
+ * Menu direction type
  */
-export enum Display {
+export enum Direction {
   VERTICAL = 'vertical',
   HORIZONTAL = 'horizontal',
 }

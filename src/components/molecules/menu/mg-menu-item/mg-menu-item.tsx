@@ -3,7 +3,7 @@ import { ClassList } from '../../../../utils/components.utils';
 import { MgBadge } from '../../../atoms/mg-badge/mg-badge';
 import { MgIcon } from '../../../atoms/mg-icon/mg-icon';
 import { MgMenu } from '../mg-menu/mg-menu';
-import { Display } from '../mg-menu/mg-menu.conf';
+import { Direction } from '../mg-menu/mg-menu.conf';
 import { ElementPosition, sizes, MenuItemSizeType, Status } from './mg-menu-item.conf';
 
 @Component({
@@ -148,9 +148,9 @@ export class MgMenuItem {
   @State() navigationButtonClassList: ClassList = new ClassList([`${this.navigationButton}`]);
 
   /**
-   * Parent menu display mode
+   * Parent menu direction
    */
-  @State() displayMode: MgMenu['display'];
+  @State() direction: MgMenu['direction'];
 
   /**
    * Does component is in main menu
@@ -189,12 +189,12 @@ export class MgMenuItem {
   private hasChildElementStatus = (element: HTMLElement, status: Status): boolean => element.querySelector(`${this.name}[status="${status}"]`) !== null;
 
   /**
-   * Is component contextual orientation match the given orientation
+   * Is component contextual direction match the given direction
    *
-   * @param {MenuItemOrientationType} orientation in parent menu
-   * @returns {boolean} true is orientation match the displayMode propertie
+   * @param {MenuItemDirectionType} direction in parent menu
+   * @returns {boolean} true is direction match the direction propertie
    */
-  private isdisplayMode = (orientation: MgMenuItem['displayMode']): boolean => this.displayMode === orientation;
+  private isdirection = (direction: MgMenuItem['direction']): boolean => this.direction === direction;
 
   /************
    * Handlers *
@@ -273,7 +273,7 @@ export class MgMenuItem {
   componentDidLoad(): void {
     // define menu-item context states
     if (this.element.parentElement.nodeName === 'MG-MENU') {
-      this.displayMode = (this.element.parentElement as HTMLMgMenuElement).display;
+      this.direction = (this.element.parentElement as HTMLMgMenuElement).direction;
     }
 
     this.isInMainMenu = this.element.offsetParent?.className.includes('mg-menu-item') === false;
@@ -281,7 +281,7 @@ export class MgMenuItem {
     const hasPreviousMenuItem = this.element.previousElementSibling?.nodeName === 'MG-MENU-ITEM';
 
     // manage last menu item
-    if (!hasNextMenuItem && hasPreviousMenuItem && this.isdisplayMode(Display.HORIZONTAL)) {
+    if (!hasNextMenuItem && hasPreviousMenuItem && this.isdirection(Direction.HORIZONTAL)) {
       this.classList.add(`${this.name}--${ElementPosition.LAST}`);
     }
 
@@ -291,8 +291,8 @@ export class MgMenuItem {
     }
 
     // manage menu items style depending to parent menu horientation
-    this.classList.add(`${this.name}--${this.displayMode}`);
-    this.navigationButtonClassList.add(`${this.navigationButton}--${this.displayMode}`);
+    this.classList.add(`${this.name}--${this.direction}`);
+    this.navigationButtonClassList.add(`${this.navigationButton}--${this.direction}`);
   }
 
   /**
@@ -323,7 +323,7 @@ export class MgMenuItem {
             </span>
           )}
         </TagName>
-        <div class={`${this.name}__collapse-container ${this.isInMainMenu && this.isdisplayMode(Display.HORIZONTAL) && this.name + '__collapse-container--shadow'}`}>
+        <div class={`${this.name}__collapse-container ${this.isInMainMenu && this.isdirection(Direction.HORIZONTAL) && this.name + '__collapse-container--shadow'}`}>
           <slot></slot>
         </div>
       </Host>

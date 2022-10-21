@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-10-20T09:48:06",
+  "timestamp": "2022-10-21T06:11:36",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.18.1",
@@ -4220,26 +4220,26 @@
       "filePath": "./src/components/molecules/menu/mg-menu/mg-menu.tsx",
       "encapsulation": "shadow",
       "tag": "mg-menu",
-      "readme": "\n",
+      "readme": "## Horizontal\n\n### Use\n![](./mg-menu/doc/img/mg-menu-exemple.png)\nHorizontal menu is used with large (\"desktop\") resolutions, it is placed in the upper area of the screen.\n\n### Anatomy\nA menu is composed of mg-items.\n\n### Behavior\n\n#### Too large\n\n![](./mg-menu/doc/img/mg-menu-horizontal-plus.png)\n\nWhen not all of the items can be displayed because of the width of the menu's container, items are grouped in a \"plus\" item.\n\n### Specs\n\n#### Sizing\n\n![](./mg-menu/doc/img/mg-menu-horizontal-sizing.png)\n\nAn horizontal menu can display different sizes of items (see definition of mg-item) : regular, medium, large.\n\n### Spacing\n\n![](./mg-menu/doc/img/mg-menu-horizontal-spacing.png)\n\nSpace between items is 0.\n\n## Vertical\n\n### Use\n\n![](./mg-menu/doc/img/mg-menu-vertical-use.png)\n\nHorizontal menu is used with large (\"desktop\") resolutions, it is placed in the left area of the screen.\n\n### Anatomy\n\nA menu is composed of mg-items.\n\n### Behavior\n\n#### Too high\n\n![](./mg-menu/doc/img/mg-menu-vertical-scroll.png)\n\nWhen not all of the items can be displayed because of the height of the menu's container, a scrollbar allows to see hidden items.\n\n### Specs\n\n#### Sizing\n\nThe width of the menu has to be specified.\n\n### Spacing\n\n![](./mg-menu/doc/img/mg-menu-vertical-spacing.png)\n\nSpace between items is 0.\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
       "props": [
         {
-          "name": "display",
-          "type": "Display.HORIZONTAL | Display.VERTICAL",
+          "name": "direction",
+          "type": "Direction.HORIZONTAL | Direction.VERTICAL",
           "mutable": false,
-          "attr": "display",
+          "attr": "direction",
           "reflectToAttr": true,
-          "docs": "Component display orientation",
+          "docs": "Component display direction",
           "docsTags": [],
-          "default": "Display.HORIZONTAL",
+          "default": "Direction.HORIZONTAL",
           "values": [
             {
-              "type": "Display.HORIZONTAL"
+              "type": "Direction.HORIZONTAL"
             },
             {
-              "type": "Display.VERTICAL"
+              "type": "Direction.VERTICAL"
             }
           ],
           "optional": false,

@@ -31,7 +31,7 @@ describe('mg-menu', () => {
   beforeEach(() => jest.useFakeTimers());
   afterEach(() => jest.runOnlyPendingTimers());
   describe('render', () => {
-    test.each([{ label: 'batman menu' }, { label: 'batman menu', display: 'horizontal' }, { label: 'batman menu', display: 'vertical' }])('with args %s', async args => {
+    test.each([{ label: 'batman menu' }, { label: 'batman menu', direction: 'horizontal' }, { label: 'batman menu', direction: 'vertical' }])('with args %s', async args => {
       const { root } = await getPage(args);
 
       expect(root).toMatchSnapshot();
@@ -40,7 +40,7 @@ describe('mg-menu', () => {
 
   describe('errors', () => {
     test('Should throw error when missing label', async () => {
-      const args = { display: 'horizontal' };
+      const args = { direction: 'horizontal' };
 
       expect.assertions(1);
 
@@ -51,22 +51,22 @@ describe('mg-menu', () => {
       }
     });
 
-    test('Should throw error when display has invalid value', async () => {
-      const args = { label: 'batman menu', display: 'test' };
+    test('Should throw error when direction has invalid value', async () => {
+      const args = { label: 'batman menu', direction: 'test' };
 
       expect.assertions(1);
 
       try {
         await getPage(args);
       } catch (err) {
-        expect(err.message).toMatch('<mg-menu> prop "display" must be one of : horizontal, vertical.');
+        expect(err.message).toMatch('<mg-menu> prop "direction" must be one of : horizontal, vertical.');
       }
     });
   });
 
-  describe.each(['horizontal', 'vertical'])('events', display => {
+  describe.each(['horizontal', 'vertical'])('events', direction => {
     test('should manage focused-item event in %s menu', async () => {
-      const args = { label: 'batman menu', display };
+      const args = { label: 'batman menu', direction };
       const page = await getPage(args);
 
       expect(page.root).toMatchSnapshot();
@@ -99,7 +99,7 @@ describe('mg-menu', () => {
     });
 
     test('should manage outside click', async () => {
-      const args = { label: 'batman menu', display };
+      const args = { label: 'batman menu', direction };
       const page = await getPage(args);
 
       expect(page.root).toMatchSnapshot();
