@@ -39,6 +39,7 @@ describe('mg-panel', () => {
     `<mg-panel label="label" panel-title="panel title" expand-toggle-disabled expanded title-editable>${slot}</mg-panel>`,
     `<mg-panel label="label" panel-title="panel title" expand-toggle-disabled title-editable>${slot}</mg-panel>`,
     `<mg-panel label="label" panel-title="panel title" expanded style="--mg-panel-content-padding: 0"><div>Content without padding.</div></mg-panel>`,
+    `<mg-panel label="label" panel-title="panel title" expanded style="--mg-panel-background: none; --mg-panel-border-radius: 0; --mg-panel-box-shadow: none"><div>Transparent mg-panel</div></mg-panel>`,
   ])('template', html => {
     test('render', async () => {
       const page = await createPage(html);
