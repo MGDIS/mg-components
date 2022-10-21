@@ -42,8 +42,8 @@ export class MgMenuItem {
    */
   @Prop() identifier!: string;
   @Watch('identifier')
-  validateIdentifier(newValue: string): void {
-    if (!(newValue.trim().length > 0)) {
+  validateIdentifier(newValue: MgMenuItem['identifier']): void {
+    if (!(newValue?.trim().length > 0)) {
       throw new Error(`<${this.name}> prop "identifier" is required.`);
     }
   }
@@ -53,8 +53,8 @@ export class MgMenuItem {
    */
   @Prop() label!: string;
   @Watch('label')
-  validateLabel(newValue: string): void {
-    if (!(newValue.trim().length > 0)) {
+  validateLabel(newValue: MgMenuItem['label']): void {
+    if (!(newValue?.trim().length > 0)) {
       throw new Error(`<${this.name}> prop "label" is required.`);
     }
   }
@@ -80,7 +80,7 @@ export class MgMenuItem {
    */
   @Prop({ reflect: true }) status: Status = Status.VISIBLE;
   @Watch('status')
-  validateActive(newValue: Status, oldValue?: Status): void {
+  validateActive(newValue: MgMenuItem['status'], oldValue?: MgMenuItem['status']): void {
     if (oldValue !== undefined) {
       this.navigationButtonClassList.delete(`${this.navigationButton}--${oldValue}`);
     }
@@ -92,13 +92,11 @@ export class MgMenuItem {
    */
   @Prop() size: MenuItemSizeType = 'large';
   @Watch('size')
-  validateSize(newValue: MenuItemSizeType, oldValue?: MenuItemSizeType): void {
+  validateSize(newValue: MgMenuItem['size'], oldValue?: MgMenuItem['size']): void {
     if (!sizes.includes(newValue)) {
-      throw new Error(`<${this.name}> prop "size" must be one of : ${sizes.join(', ')}`);
+      throw new Error(`<${this.name}> prop "size" must be one of : ${sizes.join(', ')}.`);
     }
-    if (oldValue !== undefined) {
-      this.navigationButtonClassList.delete(`${this.navigationButton}--size-${oldValue}`);
-    }
+    this.navigationButtonClassList.delete(`${this.navigationButton}--size-${oldValue}`);
     this.navigationButtonClassList.add(`${this.navigationButton}--size-${newValue}`);
   }
 
@@ -112,7 +110,7 @@ export class MgMenuItem {
    */
   @Prop({ mutable: true }) expanded = false;
   @Watch('expanded')
-  validateExpanded(newValue: boolean): void {
+  validateExpanded(newValue: MgMenuItem['expanded']): void {
     if (this.childMenu !== undefined && this.childMenu !== null) {
       if (newValue) this.childMenu.removeAttribute('hidden');
       else this.childMenu.setAttribute('hidden', '');
@@ -183,15 +181,15 @@ export class MgMenuItem {
    * Does an HTMLElement contain child with given Status
    *
    * @param {HTMLElement} element to parse
-   * @param {Status} status to check
+   * @param {MgMenuItem['status']} status to check
    * @returns {boolean} true if element with status is found
    */
-  private hasChildElementStatus = (element: HTMLElement, status: Status): boolean => element.querySelector(`${this.name}[status="${status}"]`) !== null;
+  private hasChildElementStatus = (element: HTMLElement, status: MgMenuItem['status']): boolean => element.querySelector(`${this.name}[status="${status}"]`) !== null;
 
   /**
    * Is component contextual direction match the given direction
    *
-   * @param {MenuItemDirectionType} direction in parent menu
+   * @param {MgMenuItem['direction']} direction in parent menu
    * @returns {boolean} true is direction match the direction propertie
    */
   private isdirection = (direction: MgMenuItem['direction']): boolean => this.direction === direction;
@@ -276,7 +274,7 @@ export class MgMenuItem {
       this.direction = (this.element.parentElement as HTMLMgMenuElement).direction;
     }
 
-    this.isInMainMenu = this.element.offsetParent?.className.includes('mg-menu-item') === false;
+    this.isInMainMenu = this.element.parentElement.className.includes('mg-menu-item') === false;
     const hasNextMenuItem = this.element.nextElementSibling?.nodeName === 'MG-MENU-ITEM';
     const hasPreviousMenuItem = this.element.previousElementSibling?.nodeName === 'MG-MENU-ITEM';
 
