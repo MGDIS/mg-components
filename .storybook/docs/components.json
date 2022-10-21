@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-10-21T08:26:40",
+  "timestamp": "2022-10-21T10:14:31",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.18.1",
@@ -311,6 +311,25 @@
           "mg-button"
         ]
       }
+    },
+    {
+      "filePath": "./src/components/atoms/mg-card/mg-card.tsx",
+      "encapsulation": "shadow",
+      "tag": "mg-card",
+      "readme": "## Specs\n\n### Style\n\n![](./mg-card/doc/img/mg-card-style.png)\n\n1. Border radius: 5px\n2. Background: [@color-light](./?path=/docs/style-colors--page)\n3. Border: 1px, [@color-dark](./?path=/docs/style-colors--page) with alpha at 5%\n4. Shadow: [@shadow](./?path=/docs/style-colors--page)\n\n### Spacing\n\n![](./mg-card/doc/img/mg-card-spacing.png)\n\nA padding of 16px is applied around the content\n\n### Size\n\n![](./mg-card/doc/img/mg-card-size.png)\n\n1. Ajusting with the content\n2. Ajusting with its parent (100%)\n\n## CSS Variables\n\nIf needed some [variables](./?path=/story/css-variables--page) are available to customize the component:\n\n- `--mg-card-padding`: define car padding, default: `1.6rem`\n- `--mg-card-border-radius`: define card border radius, default: `0.5rem`\n- `--mg-card-background`: define card background, default: `hsl(var(--color-light))`\n- `--mg-card-border`: define card border, default: `0.1rem solid hsla(var(--color-dark), 5%)`\n- `--mg-card-box-shadow`: define card shadow, default: `var(--box-shadow)`\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
     },
     {
       "filePath": "./src/components/atoms/mg-character-left/mg-character-left.tsx",
