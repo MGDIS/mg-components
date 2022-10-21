@@ -68,8 +68,6 @@ export namespace Components {
          */
         "variant": VariantType;
     }
-    interface MgCard {
-    }
     interface MgCharacterLeft {
         /**
           * Sets the characters to count
@@ -1093,12 +1091,6 @@ declare global {
         prototype: HTMLMgButtonElement;
         new (): HTMLMgButtonElement;
     };
-    interface HTMLMgCardElement extends Components.MgCard, HTMLStencilElement {
-    }
-    var HTMLMgCardElement: {
-        prototype: HTMLMgCardElement;
-        new (): HTMLMgCardElement;
-    };
     interface HTMLMgCharacterLeftElement extends Components.MgCharacterLeft, HTMLStencilElement {
     }
     var HTMLMgCharacterLeftElement: {
@@ -1240,7 +1232,6 @@ declare global {
     interface HTMLElementTagNameMap {
         "mg-badge": HTMLMgBadgeElement;
         "mg-button": HTMLMgButtonElement;
-        "mg-card": HTMLMgCardElement;
         "mg-character-left": HTMLMgCharacterLeftElement;
         "mg-details": HTMLMgDetailsElement;
         "mg-form": HTMLMgFormElement;
@@ -1318,8 +1309,6 @@ declare namespace LocalJSX {
           * Define button variant
          */
         "variant"?: VariantType;
-    }
-    interface MgCard {
     }
     interface MgCharacterLeft {
         /**
@@ -2335,7 +2324,6 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "mg-badge": MgBadge;
         "mg-button": MgButton;
-        "mg-card": MgCard;
         "mg-character-left": MgCharacterLeft;
         "mg-details": MgDetails;
         "mg-form": MgForm;
@@ -2367,7 +2355,6 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "mg-badge": LocalJSX.MgBadge & JSXBase.HTMLAttributes<HTMLMgBadgeElement>;
             "mg-button": LocalJSX.MgButton & JSXBase.HTMLAttributes<HTMLMgButtonElement>;
-            "mg-card": LocalJSX.MgCard & JSXBase.HTMLAttributes<HTMLMgCardElement>;
             "mg-character-left": LocalJSX.MgCharacterLeft & JSXBase.HTMLAttributes<HTMLMgCharacterLeftElement>;
             "mg-details": LocalJSX.MgDetails & JSXBase.HTMLAttributes<HTMLMgDetailsElement>;
             "mg-form": LocalJSX.MgForm & JSXBase.HTMLAttributes<HTMLMgFormElement>;
