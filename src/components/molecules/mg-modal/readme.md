@@ -112,12 +112,14 @@ If needed some [variables](./?path=/story/css-variables--page) are available to 
 
 ### Depends on
 
+- [mg-card](../../atoms/mg-card)
 - [mg-button](../../atoms/mg-button)
 - [mg-icon](../../atoms/mg-icon)
 
 ### Graph
 ```mermaid
 graph TD;
+  mg-modal --> mg-card
   mg-modal --> mg-button
   mg-modal --> mg-icon
   mg-button --> mg-icon
