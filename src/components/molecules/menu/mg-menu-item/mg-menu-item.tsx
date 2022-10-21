@@ -43,7 +43,7 @@ export class MgMenuItem {
   @Prop() identifier!: string;
   @Watch('identifier')
   validateIdentifier(newValue: string): void {
-    if (!(newValue.length > 0)) {
+    if (!(newValue.trim().length > 0)) {
       throw new Error(`<${this.name}> prop "identifier" is required.`);
     }
   }
@@ -54,7 +54,7 @@ export class MgMenuItem {
   @Prop() label!: string;
   @Watch('label')
   validateLabel(newValue: string): void {
-    if (!(newValue.length > 0)) {
+    if (!(newValue.trim().length > 0)) {
       throw new Error(`<${this.name}> prop "label" is required.`);
     }
   }
@@ -140,12 +140,12 @@ export class MgMenuItem {
   /**
    * Component classes
    */
-  @State() classList: ClassList = new ClassList([`${this.name}`]);
+  @State() classList: ClassList = new ClassList([this.name]);
 
   /**
    * Component classes
    */
-  @State() navigationButtonClassList: ClassList = new ClassList([`${this.navigationButton}`]);
+  @State() navigationButtonClassList: ClassList = new ClassList([this.navigationButton]);
 
   /**
    * Parent menu direction
@@ -323,7 +323,7 @@ export class MgMenuItem {
             </span>
           )}
         </TagName>
-        <div class={`${this.name}__collapse-container ${this.isInMainMenu && this.isdirection(Direction.HORIZONTAL) && this.name + '__collapse-container--shadow'}`}>
+        <div class={{ 'mg-menu-item__collapse-container': true, 'mg-menu-item__collapse-container--shadow': this.isInMainMenu && this.isdirection(Direction.HORIZONTAL) }}>
           <slot></slot>
         </div>
       </Host>

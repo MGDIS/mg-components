@@ -20,7 +20,7 @@ $navigation-button-sizes: (
 :host {
   position: relative;
   display: block;
-  background-color: hsl(var(--mg-menu-item-background-color));
+  background-color: hsl(var(--mg-menu-item-background-color-hsl));
   z-index: 1;
 }
 

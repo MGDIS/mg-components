@@ -66,13 +66,11 @@ export class MgMenu {
    */
   @State() focusedMenuItem = 0;
   @Watch('focusedMenuItem')
-  validatefocusedMenuItem(newValue: MgMenu['focusedMenuItem'], oldValue: MgMenu['focusedMenuItem']): void {
-    if (newValue !== oldValue) {
-      // reset expanded on previous active menu item
-      this.menuItems.forEach((item, index) => {
-        this.closeMenuItem(item, index !== this.focusedMenuItem);
-      });
-    }
+  validatefocusedMenuItem(): void {
+    // reset expanded on previous active menu item
+    this.menuItems.forEach((item, index) => {
+      this.closeMenuItem(item, index !== this.focusedMenuItem);
+    });
   }
 
   /**

@@ -1,7 +1,6 @@
 import { Component, h, Prop, Watch, State } from '@stencil/core';
-import { icons, sizes, variants } from './mg-icon.conf';
+import { icons, sizes, variants, IconVariantType, IconSizeType } from './mg-icon.conf';
 import { ClassList } from '../../../utils/components.utils';
-import { IconVariantType, IconSizeType } from './mg-icon.conf';
 
 @Component({
   tag: 'mg-icon',
