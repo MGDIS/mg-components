@@ -187,6 +187,12 @@
   --mg-illustrated-message-padding-vertical: 4rem;
 
   /*
+    <mg-illustrated-message>
+   */
+
+  --mg-illustrated-message-padding-vertical: 4rem;
+
+  /*
     Layout
    */
   --mg-grid-spacing: 1rem;
