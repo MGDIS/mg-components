@@ -41,12 +41,14 @@ If needed some [variables](./?path=/story/css-variables--page) are available to 
 
  - [mg-message](../../molecules/mg-message)
  - [mg-modal](../../molecules/mg-modal)
+ - [mg-panel](../../molecules/mg-panel)
 
 ### Graph
 ```mermaid
 graph TD;
   mg-message --> mg-card
   mg-modal --> mg-card
+  mg-panel --> mg-card
   style mg-card fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

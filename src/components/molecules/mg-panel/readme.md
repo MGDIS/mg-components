@@ -70,6 +70,7 @@ If needed some [variables](./?path=/story/css-variables--page) are available to 
 - [mg-button](../../atoms/mg-button)
 - [mg-icon](../../atoms/mg-icon)
 - [mg-input-text](../inputs/mg-input-text)
+- [mg-card](../../atoms/mg-card)
 
 ### Graph
 ```mermaid
@@ -77,6 +78,7 @@ graph TD;
   mg-panel --> mg-button
   mg-panel --> mg-icon
   mg-panel --> mg-input-text
+  mg-panel --> mg-card
   mg-button --> mg-icon
   mg-input-text --> mg-icon
   mg-input-text --> mg-character-left

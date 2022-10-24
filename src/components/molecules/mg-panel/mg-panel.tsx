@@ -287,17 +287,19 @@ export class MgPanel {
    */
   render(): HTMLElement {
     return (
-      <section class={this.classList.join()} id={this.identifier}>
-        <header class="mg-panel__header" id={`${this.identifier}-header`}>
-          <div class={`mg-panel__header-left ${this.isEditing ? 'mg-panel__header-left--full' : ''}`}>{this.headerLeft()}</div>
-          <div class="mg-panel__header-right">
-            <slot name="header-right"></slot>
-          </div>
-        </header>
-        <article class="mg-panel__content" id={`${this.identifier}-content`} aria-labelledby={`${this.identifier}-header`} hidden={!this.expanded}>
-          <slot></slot>
-        </article>
-      </section>
+      <div class={this.classList.join()} id={this.identifier}>
+        <mg-card>
+          <header class="mg-panel__header" id={`${this.identifier}-header`}>
+            <div class={`mg-panel__header-left ${this.isEditing ? 'mg-panel__header-left--full' : ''}`}>{this.headerLeft()}</div>
+            <div class="mg-panel__header-right">
+              <slot name="header-right"></slot>
+            </div>
+          </header>
+          <article class="mg-panel__content" id={`${this.identifier}-content`} aria-labelledby={`${this.identifier}-header`} hidden={!this.expanded}>
+            <slot></slot>
+          </article>
+        </mg-card>
+      </div>
     );
   }
 }

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-01-03T16:05:12",
+  "timestamp": "2023-01-03T17:05:34",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.20.0",
@@ -367,7 +367,8 @@
       "parts": [],
       "dependents": [
         "mg-message",
-        "mg-modal"
+        "mg-modal",
+        "mg-panel"
       ],
       "dependencies": [],
       "dependencyGraph": {
@@ -375,6 +376,9 @@
           "mg-card"
         ],
         "mg-modal": [
+          "mg-card"
+        ],
+        "mg-panel": [
           "mg-card"
         ]
       }
@@ -5015,13 +5019,15 @@
       "dependencies": [
         "mg-button",
         "mg-icon",
-        "mg-input-text"
+        "mg-input-text",
+        "mg-card"
       ],
       "dependencyGraph": {
         "mg-panel": [
           "mg-button",
           "mg-icon",
-          "mg-input-text"
+          "mg-input-text",
+          "mg-card"
         ],
         "mg-button": [
           "mg-icon"
