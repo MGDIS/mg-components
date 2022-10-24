@@ -170,6 +170,7 @@
    */
   --mg-panel-border-radius: 0.5rem;
   --mg-panel-background: var(--color-info-h) var(--color-info-s) calc(var(--color-info-l) + 68%);
+  --mg-panel-box-shadow: var(--box-shadow);
   --mg-panel-content-padding: 1.5rem;
 
   /*
