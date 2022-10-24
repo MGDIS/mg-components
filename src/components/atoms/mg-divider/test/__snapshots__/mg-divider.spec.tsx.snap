@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mg-divider size full 1`] = `
+<mg-divider>
+  <mock:shadow-root>
+    <div class="mg-divider mg-divider--full"></div>
+  </mock:shadow-root>
+</mg-divider>
+`;
+
+exports[`mg-divider size regular 1`] = `
+<mg-divider>
+  <mock:shadow-root>
+    <div class="mg-divider"></div>
+  </mock:shadow-root>
+</mg-divider>
+`;
+
+exports[`mg-divider size undefined 1`] = `
+<mg-divider>
+  <mock:shadow-root>
+    <div class="mg-divider"></div>
+  </mock:shadow-root>
+</mg-divider>
+`;
