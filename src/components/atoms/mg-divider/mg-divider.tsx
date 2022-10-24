@@ -1,5 +1,4 @@
-import { Component, h, Prop, State } from '@stencil/core';
-import { ClassList } from '../../../utils/components.utils';
+import { Component, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'mg-divider',
@@ -15,11 +14,6 @@ export class MgDivider {
    * Define component size
    */
   @Prop() size: 'regular' | 'full' = 'regular';
-
-  /**
-   * Component classes
-   */
-  @State() classList: ClassList = new ClassList(['mg-badge']);
 
   /**
    * Render
