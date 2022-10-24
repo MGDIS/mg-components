@@ -496,6 +496,48 @@
       }
     },
     {
+      "filePath": "./src/components/atoms/mg-divider/mg-divider.tsx",
+      "encapsulation": "shadow",
+      "tag": "mg-divider",
+      "readme": "## Sizing\n\n![](./mg-divider/doc/img/mg-divider-sizing.png)\n\nTwo sizes are possible :\n\n- Regular : 120px\n- Full : 100%\n\nRules :\n\n- Regular is the default mode.\n- In full mode it takes 100% of its parent.\n- The thickness is 1px.\n\n## Spacing\n\n![](./mg-divider/doc/img/mg-divider-spacing.png)\n\nDefault margin applied on top and bottom of the divider is set to 40px.\n\n## Color\n\n![](./mg-divider/doc/img/mg-divider-color.png)\n\n## CSS Variables\n\nIf needed some [variables](./?path=/story/css-variables--page) are available to customize the component:\n\n- `--mg-divider-background-color`: define the divider background color, default: `hsla(var(--color-danger), 15%)`\n- `--mg-divider-thickness`: define the divider thickness, default: `0.1rem`\n- `--mg-divider-vertical-spacing`: define the divider vertical spacing, default: `4rem`\n",
+      "docs": "![](./mg-divider/doc/img/mg-divider-sizing.png)\n\nTwo sizes are possible :\n\n- Regular : 120px\n- Full : 100%\n\nRules :\n\n- Regular is the default mode.\n- In full mode it takes 100% of its parent.\n- The thickness is 1px.",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "size",
+          "type": "\"full\" | \"regular\"",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "Define component size",
+          "docsTags": [],
+          "default": "'regular'",
+          "values": [
+            {
+              "value": "full",
+              "type": "string"
+            },
+            {
+              "value": "regular",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
       "filePath": "./src/components/molecules/mg-form/mg-form.tsx",
       "encapsulation": "shadow",
       "tag": "mg-form",

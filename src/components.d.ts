@@ -98,6 +98,12 @@ export namespace Components {
          */
         "toggleOpened": string;
     }
+    interface MgDivider {
+        /**
+          * Define component size
+         */
+        "size": 'regular' | 'full';
+    }
     interface MgForm {
         /**
           * Define if form is disabled
@@ -1111,6 +1117,12 @@ declare global {
         prototype: HTMLMgDetailsElement;
         new (): HTMLMgDetailsElement;
     };
+    interface HTMLMgDividerElement extends Components.MgDivider, HTMLStencilElement {
+    }
+    var HTMLMgDividerElement: {
+        prototype: HTMLMgDividerElement;
+        new (): HTMLMgDividerElement;
+    };
     interface HTMLMgFormElement extends Components.MgForm, HTMLStencilElement {
     }
     var HTMLMgFormElement: {
@@ -1243,6 +1255,7 @@ declare global {
         "mg-card": HTMLMgCardElement;
         "mg-character-left": HTMLMgCharacterLeftElement;
         "mg-details": HTMLMgDetailsElement;
+        "mg-divider": HTMLMgDividerElement;
         "mg-form": HTMLMgFormElement;
         "mg-icon": HTMLMgIconElement;
         "mg-illustrated-message": HTMLMgIllustratedMessageElement;
@@ -1352,6 +1365,12 @@ declare namespace LocalJSX {
           * Displayed title when details are opened
          */
         "toggleOpened"?: string;
+    }
+    interface MgDivider {
+        /**
+          * Define component size
+         */
+        "size"?: 'regular' | 'full';
     }
     interface MgForm {
         /**
@@ -2338,6 +2357,7 @@ declare namespace LocalJSX {
         "mg-card": MgCard;
         "mg-character-left": MgCharacterLeft;
         "mg-details": MgDetails;
+        "mg-divider": MgDivider;
         "mg-form": MgForm;
         "mg-icon": MgIcon;
         "mg-illustrated-message": MgIllustratedMessage;
@@ -2370,6 +2390,7 @@ declare module "@stencil/core" {
             "mg-card": LocalJSX.MgCard & JSXBase.HTMLAttributes<HTMLMgCardElement>;
             "mg-character-left": LocalJSX.MgCharacterLeft & JSXBase.HTMLAttributes<HTMLMgCharacterLeftElement>;
             "mg-details": LocalJSX.MgDetails & JSXBase.HTMLAttributes<HTMLMgDetailsElement>;
+            "mg-divider": LocalJSX.MgDivider & JSXBase.HTMLAttributes<HTMLMgDividerElement>;
             "mg-form": LocalJSX.MgForm & JSXBase.HTMLAttributes<HTMLMgFormElement>;
             "mg-icon": LocalJSX.MgIcon & JSXBase.HTMLAttributes<HTMLMgIconElement>;
             "mg-illustrated-message": LocalJSX.MgIllustratedMessage & JSXBase.HTMLAttributes<HTMLMgIllustratedMessageElement>;
