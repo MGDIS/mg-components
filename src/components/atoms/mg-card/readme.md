@@ -31,6 +31,7 @@ If needed some [variables](./?path=/story/css-variables--page) are available to 
 - `--mg-card-background`: define card background, default: `hsl(var(--color-light))`
 - `--mg-card-border`: define card border, default: `0.1rem solid hsla(var(--color-dark), 5%)`
 - `--mg-card-box-shadow`: define card shadow, default: `var(--box-shadow)`
+- `--mg-card-box-overflow`: define card overflow, default: `unset`
 
 <!-- Auto Generated Below -->
 
@@ -42,6 +43,7 @@ If needed some [variables](./?path=/story/css-variables--page) are available to 
  - [mg-message](../../molecules/mg-message)
  - [mg-modal](../../molecules/mg-modal)
  - [mg-panel](../../molecules/mg-panel)
+ - [mg-popover](../../molecules/mg-popover)
 
 ### Graph
 ```mermaid
@@ -49,6 +51,7 @@ graph TD;
   mg-message --> mg-card
   mg-modal --> mg-card
   mg-panel --> mg-card
+  mg-popover --> mg-card
   style mg-card fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
