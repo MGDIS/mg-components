@@ -103,45 +103,6 @@ describe('mg-popover', () => {
     }
   });
 
-  test.each([false, true])('Should not toggle display when disabled', async display => {
-    const args = { identifier: 'identifier', closeButton: true, disabled: true, display };
-    const page = await getPage(args, [
-      <h2 slot="title">Blu bli blo bla</h2>,
-      <p slot="content">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>,
-      <mg-button identifier="identifier-btn">mg-button</mg-button>,
-    ]);
-
-    const mgPopover = page.doc.querySelector('mg-popover');
-    const interactiveElement = mgPopover.querySelector(`[aria-controls*='${args.identifier}']`);
-    const popover = mgPopover.shadowRoot.querySelector(`#${args.identifier}`);
-    const popoverButton = popover.querySelector(`mg-button`);
-
-    const displayChangeSpy = jest.spyOn(page.rootInstance.displayChange, 'emit');
-
-    expect(popoverButton).toBeNull();
-
-    if (display) expect(popover).toHaveAttribute('data-show');
-    else expect(popover).not.toHaveAttribute('data-show');
-
-    interactiveElement.dispatchEvent(new CustomEvent('click', { bubbles: true }));
-    await page.waitForChanges();
-
-    if (display) expect(popover).toHaveAttribute('data-show');
-    else expect(popover).not.toHaveAttribute('data-show');
-
-    mgPopover.dispatchEvent(new KeyboardEvent('keydown', { code: 'Escape' }));
-    await page.waitForChanges();
-
-    if (display) expect(popover).toHaveAttribute('data-show');
-    else expect(popover).not.toHaveAttribute('data-show');
-
-    expect(displayChangeSpy).not.toHaveBeenCalled();
-  });
-
   test('Should throw error if slot title element is not a heading', async () => {
     expect.assertions(1);
     try {
