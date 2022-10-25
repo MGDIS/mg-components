@@ -78,7 +78,7 @@ export class MgMenuItem {
   /**
    * Define menu-item status
    */
-  @Prop({ reflect: true }) status: Status = Status.VISIBLE;
+  @Prop({ reflect: true, mutable: true }) status: Status = Status.VISIBLE;
   @Watch('status')
   validateActive(newValue: MgMenuItem['status'], oldValue?: MgMenuItem['status']): void {
     if (oldValue !== undefined) {
@@ -266,31 +266,36 @@ export class MgMenuItem {
   /**
    * Check if component slots configuration
    *
-   * @returns {void}
+   * @returns {ReturnType<typeof setTimeout>} timeout
    */
-  componentDidLoad(): void {
-    // define menu-item context states
-    if (this.element.parentElement.nodeName === 'MG-MENU') {
-      this.direction = (this.element.parentElement as HTMLMgMenuElement).direction;
-    }
+  componentDidLoad(): ReturnType<typeof setTimeout> {
+    // update props and states after componentDidLoad hook
+    // return a promise to process action only in the FIRST render().
+    // https://stenciljs.com/docs/component-lifecycle#componentwillload
+    return setTimeout(() => {
+      // define menu-item context states
+      if (this.element.parentElement.nodeName === 'MG-MENU') {
+        this.direction = (this.element.parentElement as HTMLMgMenuElement).direction;
+      }
 
-    this.isInMainMenu = this.element.parentElement.className.includes('mg-menu-item') === false;
-    const hasNextMenuItem = this.element.nextElementSibling?.nodeName === 'MG-MENU-ITEM';
-    const hasPreviousMenuItem = this.element.previousElementSibling?.nodeName === 'MG-MENU-ITEM';
+      this.isInMainMenu = this.element.parentElement.className.includes('mg-menu-item') === false;
+      const hasNextMenuItem = this.element.nextElementSibling?.nodeName === 'MG-MENU-ITEM';
+      const hasPreviousMenuItem = this.element.previousElementSibling?.nodeName === 'MG-MENU-ITEM';
 
-    // manage last menu item
-    if (!hasNextMenuItem && hasPreviousMenuItem && this.isdirection(Direction.HORIZONTAL)) {
-      this.classList.add(`${this.name}--${ElementPosition.LAST}`);
-    }
+      // manage last menu item
+      if (!hasNextMenuItem && hasPreviousMenuItem && this.isdirection(Direction.HORIZONTAL)) {
+        this.classList.add(`${this.name}--${ElementPosition.LAST}`);
+      }
 
-    // when main menu item contain an active item it will get the active style
-    if (this.isInMainMenu && this.hasChildElementStatus(this.element, Status.ACTIVE)) {
-      this.status = Status.ACTIVE;
-    }
+      // when main menu item contain an active item it will get the active style
+      if (this.isInMainMenu && this.hasChildElementStatus(this.element, Status.ACTIVE)) {
+        this.status = Status.ACTIVE;
+      }
 
-    // manage menu items style depending to parent menu horientation
-    this.classList.add(`${this.name}--${this.direction}`);
-    this.navigationButtonClassList.add(`${this.navigationButton}--${this.direction}`);
+      // manage menu items style depending to parent menu horientation
+      this.classList.add(`${this.name}--${this.direction}`);
+      this.navigationButtonClassList.add(`${this.navigationButton}--${this.direction}`);
+    }, 0);
   }
 
   /**
@@ -321,7 +326,7 @@ export class MgMenuItem {
             </span>
           )}
         </TagName>
-        <div class={{ 'mg-menu-item__collapse-container': true, 'mg-menu-item__collapse-container--shadow': this.isInMainMenu && this.isdirection(Direction.HORIZONTAL) }}>
+        <div class={{ [`${this.name}__collapse-container`]: true, [`${this.name}__collapse-container--shadow`]: this.isInMainMenu && this.isdirection(Direction.HORIZONTAL) }}>
           <slot></slot>
         </div>
       </Host>

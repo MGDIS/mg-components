@@ -245,6 +245,7 @@ export class MgTabs {
               id={this.getElementId(this.identifier, index)}
               class={{
                 [`${this.buttonTabBaseClass}`]: true,
+                [`${this.buttonTabBaseClass}--horizontal`]: true,
                 [`${this.getNavigationButtonClass(Status.ACTIVE)}`]: this.tabHasGivenStatus(tab, Status.ACTIVE),
                 [`${this.getNavigationButtonClass(Status.DISABLED)}`]: this.tabHasGivenStatus(tab, Status.DISABLED),
                 [`${this.getNavigationButtonClass(Status.HIDDEN)}`]: this.tabHasGivenStatus(tab, Status.HIDDEN),

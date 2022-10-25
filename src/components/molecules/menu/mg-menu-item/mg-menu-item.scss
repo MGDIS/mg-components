@@ -47,6 +47,10 @@ $navigation-button-sizes: (
   box-shadow: var(--box-shadow);
 }
 
+.mg-menu-item__navigation-button {
+  width: 100%;
+}
+
 .mg-menu-item__collapse-container {
   position: absolute;
   top: 100%;

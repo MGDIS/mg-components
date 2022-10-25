@@ -9,10 +9,6 @@ $navigation-button-sizes: (
     'vertical': 1.5rem,
     'horizontal': 3rem,
   ),
-  'large': (
-    'vertical': 2.5rem,
-    'horizontal': 4rem,
-  ),
 );
 
 @include navigation-button('mg-tabs', $navigation-button-sizes);
