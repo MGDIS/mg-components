@@ -42,15 +42,15 @@ const Template = (args: any): HTMLElement => (
           <mg-menu-item identifier="id-4-4-5" size="medium" icon={{ icon: 'user' }} label="2 - head 4" badge={{ value: 2, label: 'hello' }}></mg-menu-item>
         </mg-menu>
       </mg-menu-item>
-      <mg-menu-item identifier="id-5" icon={{ icon: 'user' }} label="1 - head-5" badge={{ value: 2, label: 'hello' }}>
+      <mg-menu-item identifier="id-5" icon={{ icon: 'user' }} label="1 - head-5" badge={{ value: 2, label: 'hello' }} size="medium">
         <mg-menu label="submenu" direction={Direction.VERTICAL}>
           <mg-menu-item identifier="id-5-1" size="medium" label="2 - head 1">
             <mg-menu label="submenu" direction={Direction.VERTICAL}>
-              <mg-menu-item identifier="id-5-1-1" size="regular" icon={{ icon: 'user' }} label="3 - head 1" badge={{ value: 2, label: 'hello' }}>
+              <mg-menu-item identifier="id-5-1-1" size="medium" icon={{ icon: 'user' }} label="3 - head 1" badge={{ value: 2, label: 'hello' }}>
                 <mg-menu label="submenu 2" direction={Direction.VERTICAL}>
-                  <mg-menu-item identifier="id-5-1-1-1" size="regular" label="4 - head 1" status={Status.ACTIVE}></mg-menu-item>
-                  <mg-menu-item identifier="id-5-1-1-2" size="regular" icon={{ icon: 'user' }} label="4 - head 2"></mg-menu-item>
-                  <mg-menu-item identifier="id-5-1-1-3" size="regular" icon={{ icon: 'user' }} label="4 - head 3" badge={{ value: 2, label: 'hello' }}></mg-menu-item>
+                  <mg-menu-item identifier="id-5-1-1-1" size="medium" label="4 - head 1" status={Status.ACTIVE}></mg-menu-item>
+                  <mg-menu-item identifier="id-5-1-1-2" size="medium" icon={{ icon: 'user' }} label="4 - head 2"></mg-menu-item>
+                  <mg-menu-item identifier="id-5-1-1-3" size="medium" icon={{ icon: 'user' }} label="4 - head 3" badge={{ value: 2, label: 'hello' }}></mg-menu-item>
                 </mg-menu>
               </mg-menu-item>
             </mg-menu>

@@ -3,7 +3,7 @@ import { filterArgs } from '../../../../../../.storybook/utils';
 
 export default {
   component: 'mg-menu-item',
-  title: 'Molecules/menus/mg-item',
+  title: 'Molecules/menus/mg-menu-item',
 };
 
 /**
