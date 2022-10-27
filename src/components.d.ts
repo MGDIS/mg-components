@@ -47,6 +47,10 @@ export namespace Components {
          */
         "form": string;
         /**
+          * Set button to full-width
+         */
+        "fullWidth": boolean;
+        /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
          */
         "identifier": string;
@@ -1314,6 +1318,10 @@ declare namespace LocalJSX {
           * Define form id to attach button with. If this attribute is not set, the <button> is associated with its ancestor <form> element.
          */
         "form"?: string;
+        /**
+          * Set button to full-width
+         */
+        "fullWidth"?: boolean;
         /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
          */

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-10-27T11:39:45",
+  "timestamp": "2022-10-27T14:49:58",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.18.1",
@@ -153,6 +153,23 @@
           "values": [
             {
               "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "fullWidth",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "full-width",
+          "reflectToAttr": false,
+          "docs": "Set button to full-width",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
             }
           ],
           "optional": false,

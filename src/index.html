@@ -151,6 +151,14 @@
           <mg-button variant="primary">Court Texte <br />avec br et sans icone</mg-button>
         </div>
         <div style="padding: 0 0 1rem">
+          <mg-button variant="primary" full-width><mg-icon icon="check-circle"></mg-icon>full width button</mg-button>
+          <mg-button variant="primary" id="button-full-2">full width button</mg-button>
+          <script>
+            const mgButton2 = document.querySelector('#button-full-2');
+            mgButton2.fullWidth = true;
+          </script>
+        </div>
+        <div style="padding: 0 0 1rem">
           <mg-button variant="primary">
             <mg-icon icon="check-circle"></mg-icon>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
             enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
