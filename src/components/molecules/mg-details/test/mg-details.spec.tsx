@@ -20,7 +20,7 @@ describe('mg-details', () => {
   test.each([
     { toggleClosed: 'Show details', toggleOpened: 'Hide details' },
     { toggleClosed: 'Show details', toggleOpened: 'Hide details', expanded: true },
-    { toggleClosed: 'Show details', toggleOpened: 'Hide details', hiddeSummary: true },
+    { toggleClosed: 'Show details', toggleOpened: 'Hide details', hideSummary: true },
   ])('with args %s', async args => {
     const { root } = await getPage(args);
     expect(root).toMatchSnapshot();

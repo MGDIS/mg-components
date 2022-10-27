@@ -27,7 +27,7 @@ describe('mg-details', () => {
   });
 
   test('Should hidde summary', async () => {
-    const page = await createPage(`<mg-details toggle-closed="Show details" toggle-opened="Hide details" hidde-summary>${content}</mg-details>`);
+    const page = await createPage(`<mg-details toggle-closed="Show details" toggle-opened="Hide details" hide-summary>${content}</mg-details>`);
 
     const screenshot = await page.screenshot();
     expect(screenshot).toMatchImageSnapshot();

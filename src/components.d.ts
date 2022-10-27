@@ -92,7 +92,7 @@ export namespace Components {
         /**
           * Hidde sumary element
          */
-        "hiddeSummary": boolean;
+        "hideSummary": boolean;
         /**
           * Displayed title when details are closed
          */
@@ -1360,7 +1360,7 @@ declare namespace LocalJSX {
         /**
           * Hidde sumary element
          */
-        "hiddeSummary"?: boolean;
+        "hideSummary"?: boolean;
         /**
           * Emmited event when expanded change
          */

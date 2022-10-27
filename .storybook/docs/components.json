@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-10-27T09:27:10",
+  "timestamp": "2022-10-27T10:19:05",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.18.1",
@@ -437,10 +437,10 @@
           "required": false
         },
         {
-          "name": "hiddeSummary",
+          "name": "hideSummary",
           "type": "boolean",
           "mutable": false,
-          "attr": "hidde-summary",
+          "attr": "hide-summary",
           "reflectToAttr": false,
           "docs": "Hidde sumary element",
           "docsTags": [],

@@ -37,7 +37,7 @@ export class MgDetails {
   /**
    * Hidde sumary element
    */
-  @Prop() hiddeSummary = false;
+  @Prop() hideSummary = false;
 
   /**
    * Define if details are diplayed
@@ -87,8 +87,8 @@ export class MgDetails {
         <summary>
           <slot name="summary"></slot>
           <span class="mg-details__toggle">
-            <mg-icon icon={this.expanded ? 'chevron-up' : 'chevron-down'}></mg-icon>{' '}
-            <span class={{ 'sr-only': this.hiddeSummary }}>{this.expanded ? this.toggleOpened : this.toggleClosed}</span>
+            <mg-icon icon={this.expanded ? 'chevron-up' : 'chevron-down'}></mg-icon>
+            <span class={{ 'sr-only': this.hideSummary }}>{this.expanded ? this.toggleOpened : this.toggleClosed}</span>
           </span>
         </summary>
         <div class="mg-details__details">

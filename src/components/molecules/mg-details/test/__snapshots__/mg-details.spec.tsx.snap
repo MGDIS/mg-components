@@ -34,7 +34,7 @@ exports[`mg-details with args {
 exports[`mg-details with args {
   toggleClosed: 'Show details',
   toggleOpened: 'Hide details',
-  hiddeSummary: true
+  hideSummary: true
 } 1`] = `
 <mg-details>
   <mock:shadow-root>
