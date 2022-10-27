@@ -12,9 +12,8 @@ import { Width } from "./components/molecules/inputs/MgInput.conf";
 import { RadioOption } from "./components/molecules/inputs/mg-input-radio/mg-input-radio.conf";
 import { SelectOption } from "./components/molecules/inputs/mg-input-select/mg-input-select.conf";
 import { ToggleValue } from "./components/molecules/inputs/mg-input-toggle/mg-input-toggle.conf";
-import { Placement } from "./components/molecules/mg-popover/mg-popover.conf";
+import { Placement } from "@popperjs/core";
 import { TabItem } from "./components/molecules/mg-tabs/mg-tabs.conf";
-import { Placement as Placement1 } from "./components/atoms/mg-tooltip/mg-tooltip.conf";
 export namespace Components {
     interface MgBadge {
         /**
@@ -1015,7 +1014,7 @@ export namespace Components {
         /**
           * Tooltip placement
          */
-        "placement": Placement1;
+        "placement": Placement;
     }
 }
 export interface MgDetailsCustomEvent<T> extends CustomEvent<T> {
@@ -2349,7 +2348,7 @@ declare namespace LocalJSX {
         /**
           * Tooltip placement
          */
-        "placement"?: Placement1;
+        "placement"?: Placement;
     }
     interface IntrinsicElements {
         "mg-badge": MgBadge;

@@ -1,8 +1,7 @@
 import { Component, Element, Host, h, Prop, Watch, EventEmitter, Event } from '@stencil/core';
 import { createID, isTagName } from '../../../utils/components.utils';
-import { Instance as PopperInstance, createPopper } from '@popperjs/core';
+import { Instance as PopperInstance, createPopper, Placement } from '@popperjs/core';
 import { initLocales } from '../../../locales';
-import { Placement } from './mg-popover.conf';
 
 @Component({
   tag: 'mg-popover',
@@ -174,6 +173,7 @@ export class MgPopover {
     // Create popperjs popover
     this.popper = createPopper(interactiveElement, this.popover, {
       placement: this.placement,
+      strategy: 'fixed',
       modifiers: [
         {
           name: 'offset',
