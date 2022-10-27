@@ -158,25 +158,3 @@ When you want to get the fired **custom event data from a web-component** with t
 ```html
 <mg-popover ng-on-display-change="$ctrl.myMethod($event.originalEvent.detail)"></mg-popover>
 ```
-
-##### Common issues
-
-###### Slot render
-
-You can have troubles with i18n render in slots. In some cases, with the example below, the i18n can not be render due to angularjs lifecycle and i18n filter render hook.
-
-```html
-<mg-button>
-  <mg-icon icon="trash"></mg-icon>
-  {{'dispositifs.calculAide.button.btnDeleteScriptLabel' | translate}}
-</mg-button>
-```
-
-To solve this issue, you need to use the [mg-model directive](http://core.pages.mgdis.fr/core-back/core/docs/mg-components-helpers/mg-text-content-angular) to force the i18n render in slot.
-
-```html
-<mg-button>
-  <mg-icon icon="trash"></mg-icon>
-  <span mg-text-content="$ctrl.$translate.instant('dispositifs.calculAide.button.btnDeleteScriptLabel')"></span>
-</mg-button>
-```
