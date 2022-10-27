@@ -12,9 +12,8 @@ import { Width } from "./components/molecules/inputs/MgInput.conf";
 import { RadioOption } from "./components/molecules/inputs/mg-input-radio/mg-input-radio.conf";
 import { SelectOption } from "./components/molecules/inputs/mg-input-select/mg-input-select.conf";
 import { ToggleValue } from "./components/molecules/inputs/mg-input-toggle/mg-input-toggle.conf";
-import { Placement } from "./components/molecules/mg-popover/mg-popover.conf";
+import { Placement } from "@popperjs/core";
 import { TabItem } from "./components/molecules/mg-tabs/mg-tabs.conf";
-import { Placement as Placement1 } from "./components/atoms/mg-tooltip/mg-tooltip.conf";
 export namespace Components {
     interface MgBadge {
         /**
@@ -93,6 +92,10 @@ export namespace Components {
           * Define if details are diplayed
          */
         "expanded": boolean;
+        /**
+          * Hidde sumary element
+         */
+        "hideSummary": boolean;
         /**
           * Displayed title when details are closed
          */
@@ -1019,7 +1022,7 @@ export namespace Components {
         /**
           * Tooltip placement
          */
-        "placement": Placement1;
+        "placement": Placement;
     }
 }
 export interface MgDetailsCustomEvent<T> extends CustomEvent<T> {
@@ -1362,17 +1365,21 @@ declare namespace LocalJSX {
          */
         "expanded"?: boolean;
         /**
+          * Hidde sumary element
+         */
+        "hideSummary"?: boolean;
+        /**
           * Emmited event when expanded change
          */
         "onExpanded-change"?: (event: MgDetailsCustomEvent<boolean>) => void;
         /**
           * Displayed title when details are closed
          */
-        "toggleClosed"?: string;
+        "toggleClosed": string;
         /**
           * Displayed title when details are opened
          */
-        "toggleOpened"?: string;
+        "toggleOpened": string;
     }
     interface MgDivider {
         /**
@@ -2357,7 +2364,7 @@ declare namespace LocalJSX {
         /**
           * Tooltip placement
          */
-        "placement"?: Placement1;
+        "placement"?: Placement;
     }
     interface IntrinsicElements {
         "mg-badge": MgBadge;

@@ -4,7 +4,7 @@ exports[`mg-tooltip Should keep displaied tooltip when hover it 1`] = `
 <mg-tooltip>
   <mock:shadow-root>
     <slot></slot>
-    <div class="mg-tooltip" data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+    <div class="mg-tooltip" data-show id="identifier" role="tooltip" style="position: fixed; left: 0; top: 0; margin: 0;">
       blu
       <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
     </div>
@@ -19,7 +19,7 @@ exports[`mg-tooltip Should manage display on events enter with { eventIn: 'focus
 <mg-tooltip>
   <mock:shadow-root>
     <slot></slot>
-    <div class="mg-tooltip" data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+    <div class="mg-tooltip" data-show id="identifier" role="tooltip" style="position: fixed; left: 0; top: 0; margin: 0;">
       blu
       <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
     </div>
@@ -34,7 +34,7 @@ exports[`mg-tooltip Should manage display on events enter with { eventIn: 'focus
 <mg-tooltip>
   <mock:shadow-root>
     <slot></slot>
-    <div class="mg-tooltip" data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+    <div class="mg-tooltip" data-show id="identifier" role="tooltip" style="position: fixed; left: 0; top: 0; margin: 0;">
       blu
       <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
     </div>
@@ -49,7 +49,7 @@ exports[`mg-tooltip Should manage display on events enter with { eventIn: 'focus
 <mg-tooltip>
   <mock:shadow-root>
     <slot></slot>
-    <div class="mg-tooltip" data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+    <div class="mg-tooltip" data-show id="identifier" role="tooltip" style="position: fixed; left: 0; top: 0; margin: 0;">
       blu
       <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
     </div>
@@ -68,7 +68,7 @@ exports[`mg-tooltip Should manage display on events enter with { eventIn: 'focus
 <mg-tooltip>
   <mock:shadow-root>
     <slot></slot>
-    <div class="mg-tooltip" data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+    <div class="mg-tooltip" data-show id="identifier" role="tooltip" style="position: fixed; left: 0; top: 0; margin: 0;">
       blu
       <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
     </div>
@@ -90,7 +90,7 @@ exports[`mg-tooltip Should manage display on events enter with { eventIn: 'mouse
 <mg-tooltip>
   <mock:shadow-root>
     <slot></slot>
-    <div class="mg-tooltip" data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+    <div class="mg-tooltip" data-show id="identifier" role="tooltip" style="position: fixed; left: 0; top: 0; margin: 0;">
       blu
       <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
     </div>
@@ -105,7 +105,7 @@ exports[`mg-tooltip Should manage display on events enter with { eventIn: 'mouse
 <mg-tooltip>
   <mock:shadow-root>
     <slot></slot>
-    <div class="mg-tooltip" data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+    <div class="mg-tooltip" data-show id="identifier" role="tooltip" style="position: fixed; left: 0; top: 0; margin: 0;">
       blu
       <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
     </div>
@@ -120,7 +120,7 @@ exports[`mg-tooltip Should manage display on events enter with { eventIn: 'mouse
 <mg-tooltip>
   <mock:shadow-root>
     <slot></slot>
-    <div class="mg-tooltip" data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+    <div class="mg-tooltip" data-show id="identifier" role="tooltip" style="position: fixed; left: 0; top: 0; margin: 0;">
       blu
       <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
     </div>
@@ -139,7 +139,7 @@ exports[`mg-tooltip Should manage display on events enter with { eventIn: 'mouse
 <mg-tooltip>
   <mock:shadow-root>
     <slot></slot>
-    <div class="mg-tooltip" data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+    <div class="mg-tooltip" data-show id="identifier" role="tooltip" style="position: fixed; left: 0; top: 0; margin: 0;">
       blu
       <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
     </div>
@@ -161,7 +161,7 @@ exports[`mg-tooltip Should render with element 1`] = `
 <mg-tooltip>
   <mock:shadow-root>
     <slot></slot>
-    <div class="mg-tooltip" id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+    <div class="mg-tooltip" id="identifier" role="tooltip" style="position: fixed; left: 0; top: 0; margin: 0;">
       My tooltip message
       <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
     </div>
@@ -176,7 +176,7 @@ exports[`mg-tooltip Should render with element 2`] = `
 <mg-tooltip>
   <mock:shadow-root>
     <slot></slot>
-    <div class="mg-tooltip" id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+    <div class="mg-tooltip" id="identifier" role="tooltip" style="position: fixed; left: 0; top: 0; margin: 0;">
       My tooltip message
       <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
     </div>
@@ -191,7 +191,7 @@ exports[`mg-tooltip Should render with element 3`] = `
 <mg-tooltip>
   <mock:shadow-root>
     <slot></slot>
-    <div class="mg-tooltip" id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+    <div class="mg-tooltip" id="identifier" role="tooltip" style="position: fixed; left: 0; top: 0; margin: 0;">
       My tooltip message
       <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
     </div>
@@ -210,7 +210,7 @@ exports[`mg-tooltip Should render with element 4`] = `
 <mg-tooltip>
   <mock:shadow-root>
     <slot></slot>
-    <div class="mg-tooltip" id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+    <div class="mg-tooltip" id="identifier" role="tooltip" style="position: fixed; left: 0; top: 0; margin: 0;">
       My tooltip message
       <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
     </div>
@@ -232,7 +232,7 @@ exports[`mg-tooltip Should render with element with given placement 1`] = `
 <mg-tooltip>
   <mock:shadow-root>
     <slot></slot>
-    <div class="mg-tooltip" id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+    <div class="mg-tooltip" id="identifier" role="tooltip" style="position: fixed; left: 0; top: 0; margin: 0;">
       My tooltip message
       <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
     </div>
@@ -247,7 +247,7 @@ exports[`mg-tooltip Should toogle tooltip from prop display, case display false 
 <mg-tooltip>
   <mock:shadow-root>
     <slot></slot>
-    <div class="mg-tooltip" id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+    <div class="mg-tooltip" id="identifier" role="tooltip" style="position: fixed; left: 0; top: 0; margin: 0;">
       batman
       <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
     </div>
@@ -262,7 +262,7 @@ exports[`mg-tooltip Should toogle tooltip from prop display, case display false 
 <mg-tooltip>
   <mock:shadow-root>
     <slot></slot>
-    <div class="mg-tooltip" data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+    <div class="mg-tooltip" data-show id="identifier" role="tooltip" style="position: fixed; left: 0; top: 0; margin: 0;">
       batman
       <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
     </div>
@@ -277,7 +277,7 @@ exports[`mg-tooltip Should toogle tooltip from prop display, case display true 1
 <mg-tooltip>
   <mock:shadow-root>
     <slot></slot>
-    <div class="mg-tooltip" data-show id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+    <div class="mg-tooltip" data-show id="identifier" role="tooltip" style="position: fixed; left: 0; top: 0; margin: 0;">
       batman
       <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
     </div>
@@ -292,7 +292,7 @@ exports[`mg-tooltip Should toogle tooltip from prop display, case display true 2
 <mg-tooltip>
   <mock:shadow-root>
     <slot></slot>
-    <div class="mg-tooltip" id="identifier" role="tooltip" style="position: absolute; left: 0; top: 0; margin: 0;">
+    <div class="mg-tooltip" id="identifier" role="tooltip" style="position: fixed; left: 0; top: 0; margin: 0;">
       batman
       <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
     </div>

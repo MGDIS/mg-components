@@ -8,7 +8,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 2000;
   padding: 2rem 0;
   // Appearance
   background-color: hsla(var(--color-light), 85%);
@@ -16,6 +16,7 @@
   &__dialog {
     // Layout
     display: flex;
+    position: relative;
     flex-direction: column;
     align-self: center;
     row-gap: 3rem;
