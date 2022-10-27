@@ -27,7 +27,7 @@ exports[`mg-button Should render a button, case full-width false 1`] = `
 `;
 
 exports[`mg-button Should render a button, case full-width true 1`] = `
-<mg-button aria-label="label" mgwidth="full" role="button" tabindex="0">
+<mg-button aria-label="label" full-width="" role="button" tabindex="0">
   <mock:shadow-root>
     <div class="mg-button mg-button--full-width mg-button--primary">
       <div class="mg-button__content">

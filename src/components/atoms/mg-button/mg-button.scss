@@ -72,7 +72,7 @@ $button-column-gap: 0.6rem;
   }
 }
 
-:host([mgwidth='full']) {
+:host([full-width]) {
   display: block;
 }
 

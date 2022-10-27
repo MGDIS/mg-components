@@ -65,7 +65,6 @@ export class MgButton {
   @Watch('fullWidth')
   validateFullWidth(newValue) {
     if (newValue && this.isIcon) {
-      this.classList.delete(this.classFullWidth);
       throw new Error('<mg-button> prop "fullWidth" cannot be used with prop "isIcon".');
     } else if (newValue) {
       this.classList.add(this.classFullWidth);
@@ -208,7 +207,7 @@ export class MgButton {
         tabIndex={this.disabled ? -1 : 0}
         type={this.type}
         form={this.form}
-        mgWidth={this.fullWidth === true && 'full'} // css selector for host to prevent class usage bug on it
+        full-width={this.fullWidth}
         aria-label={this.label}
         aria-disabled={this.disabled !== undefined && this.disabled.toString()}
         onClick={this.handleClick}
