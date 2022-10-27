@@ -15,6 +15,7 @@ export class MgButton {
   private onClickElementFn = null;
   private classDisabled = 'mg-button--disabled';
   private classLoading = 'mg-button--loading';
+  private classFullWidth = 'mg-button--full-width';
 
   /**************
    * Decorators *
@@ -56,6 +57,22 @@ export class MgButton {
    * Define button type
    */
   @Prop() type: ButtonType;
+
+  /**
+   * Set button to full-width
+   */
+  @Prop({ mutable: true }) fullWidth = false;
+  @Watch('fullWidth')
+  validateFullWidth(newValue) {
+    if (newValue && this.isIcon) {
+      this.classList.delete(this.classFullWidth);
+      throw new Error('<mg-button> prop "fullWidth" cannot be used with prop "isIcon".');
+    } else if (newValue) {
+      this.classList.add(this.classFullWidth);
+    } else {
+      this.classList.delete(this.classFullWidth);
+    }
+  }
 
   /**
    * Define form id to attach button with.
@@ -167,6 +184,7 @@ export class MgButton {
    */
   componentWillLoad(): void {
     this.validateVariant(this.variant);
+    this.validateFullWidth(this.fullWidth);
     if (this.isIcon) {
       this.classList.add(`mg-button--icon`);
       if (typeof this.label !== 'string' || this.label.trim() === '') {
@@ -190,6 +208,7 @@ export class MgButton {
         tabIndex={this.disabled ? -1 : 0}
         type={this.type}
         form={this.form}
+        mgWidth={this.fullWidth === true && 'full'} // css selector for host to prevent class usage bug on it
         aria-label={this.label}
         aria-disabled={this.disabled !== undefined && this.disabled.toString()}
         onClick={this.handleClick}
