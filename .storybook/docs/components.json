@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-10-27T14:49:58",
+  "timestamp": "2022-10-27T15:52:40",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.18.1",
@@ -459,7 +459,7 @@
           "mutable": false,
           "attr": "hide-summary",
           "reflectToAttr": false,
-          "docs": "Hidde sumary element",
+          "docs": "Hide summary element",
           "docsTags": [],
           "default": "false",
           "values": [

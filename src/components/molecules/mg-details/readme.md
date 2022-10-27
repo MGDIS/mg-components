@@ -41,7 +41,7 @@ In mobile resolution, the text of the _toggle_ is hidden
 | Property                    | Attribute       | Description                             | Type      | Default     |
 | --------------------------- | --------------- | --------------------------------------- | --------- | ----------- |
 | `expanded`                  | `expanded`      | Define if details are diplayed          | `boolean` | `false`     |
-| `hideSummary`               | `hide-summary`  | Hidde sumary element                    | `boolean` | `false`     |
+| `hideSummary`               | `hide-summary`  | Hide summary element                    | `boolean` | `false`     |
 | `toggleClosed` _(required)_ | `toggle-closed` | Displayed title when details are closed | `string`  | `undefined` |
 | `toggleOpened` _(required)_ | `toggle-opened` | Displayed title when details are opened | `string`  | `undefined` |
 

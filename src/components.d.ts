@@ -93,7 +93,7 @@ export namespace Components {
          */
         "expanded": boolean;
         /**
-          * Hidde sumary element
+          * Hide summary element
          */
         "hideSummary": boolean;
         /**
@@ -1365,7 +1365,7 @@ declare namespace LocalJSX {
          */
         "expanded"?: boolean;
         /**
-          * Hidde sumary element
+          * Hide summary element
          */
         "hideSummary"?: boolean;
         /**
