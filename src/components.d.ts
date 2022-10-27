@@ -89,6 +89,10 @@ export namespace Components {
          */
         "expanded": boolean;
         /**
+          * Hidde sumary element
+         */
+        "hideSummary": boolean;
+        /**
           * Displayed title when details are closed
          */
         "toggleClosed": string;
@@ -1353,17 +1357,21 @@ declare namespace LocalJSX {
          */
         "expanded"?: boolean;
         /**
+          * Hidde sumary element
+         */
+        "hideSummary"?: boolean;
+        /**
           * Emmited event when expanded change
          */
         "onExpanded-change"?: (event: MgDetailsCustomEvent<boolean>) => void;
         /**
           * Displayed title when details are closed
          */
-        "toggleClosed"?: string;
+        "toggleClosed": string;
         /**
           * Displayed title when details are opened
          */
-        "toggleOpened"?: string;
+        "toggleOpened": string;
     }
     interface MgDivider {
         /**
