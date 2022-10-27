@@ -181,6 +181,7 @@ export class MgTooltip {
     // Create popperjs tooltip
     this.popper = createPopper(tooltipedElement, this.tooltip, {
       placement: this.placement,
+      strategy: 'fixed',
       modifiers: [
         {
           name: 'offset',
