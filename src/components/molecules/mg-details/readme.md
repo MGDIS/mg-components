@@ -38,11 +38,12 @@ In mobile resolution, the text of the _toggle_ is hidden
 
 ## Properties
 
-| Property       | Attribute       | Description                             | Type      | Default     |
-| -------------- | --------------- | --------------------------------------- | --------- | ----------- |
-| `expanded`     | `expanded`      | Define if details are diplayed          | `boolean` | `false`     |
-| `toggleClosed` | `toggle-closed` | Displayed title when details are closed | `string`  | `undefined` |
-| `toggleOpened` | `toggle-opened` | Displayed title when details are opened | `string`  | `undefined` |
+| Property                    | Attribute       | Description                             | Type      | Default     |
+| --------------------------- | --------------- | --------------------------------------- | --------- | ----------- |
+| `expanded`                  | `expanded`      | Define if details are diplayed          | `boolean` | `false`     |
+| `hiddeSummary`              | `hidde-summary` | Hidde sumary element                    | `boolean` | `false`     |
+| `toggleClosed` _(required)_ | `toggle-closed` | Displayed title when details are closed | `string`  | `undefined` |
+| `toggleOpened` _(required)_ | `toggle-opened` | Displayed title when details are opened | `string`  | `undefined` |
 
 
 ## Events
