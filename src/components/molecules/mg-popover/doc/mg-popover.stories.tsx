@@ -1,6 +1,5 @@
 import { h } from '@stencil/core';
 import { filterArgs } from '../../../../../.storybook/utils';
-import { placements } from '../mg-popover.conf';
 
 export default {
   component: 'mg-popover',
@@ -12,11 +11,7 @@ export default {
   },
   argTypes: {
     placement: {
-      options: placements,
       control: { type: 'select' },
-      table: {
-        defaultValue: { summary: 'bottom' },
-      },
     },
   },
 };

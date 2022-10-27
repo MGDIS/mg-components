@@ -4,7 +4,7 @@ exports[`mg-popover Should render with element 1`] = `
 <mg-popover>
   <mock:shadow-root>
     <slot></slot>
-    <div class="mg-popover" id="identifier" style="position: absolute; left: 0; top: 0; margin: 0;">
+    <div class="mg-popover" id="identifier" style="position: fixed; left: 0; top: 0; margin: 0;">
       <div class="mg-popover__title">
         <slot name="title"></slot>
       </div>
@@ -35,7 +35,7 @@ exports[`mg-popover Should render with element 2`] = `
 <mg-popover>
   <mock:shadow-root>
     <slot></slot>
-    <div class="mg-popover" id="identifier" style="position: absolute; left: 0; top: 0; margin: 0;">
+    <div class="mg-popover" id="identifier" style="position: fixed; left: 0; top: 0; margin: 0;">
       <div class="mg-popover__title">
         <slot name="title"></slot>
       </div>
@@ -66,7 +66,7 @@ exports[`mg-popover Should render with element 3`] = `
 <mg-popover>
   <mock:shadow-root>
     <slot></slot>
-    <div class="mg-popover" data-show id="identifier" style="position: absolute; left: 0; top: 0; margin: 0;">
+    <div class="mg-popover" data-show id="identifier" style="position: fixed; left: 0; top: 0; margin: 0;">
       <div class="mg-popover__title">
         <slot name="title"></slot>
       </div>
@@ -97,7 +97,7 @@ exports[`mg-popover Should render with element 4`] = `
 <mg-popover>
   <mock:shadow-root>
     <slot></slot>
-    <div class="mg-popover" id="identifier" style="position: absolute; left: 0; top: 0; margin: 0;">
+    <div class="mg-popover" id="identifier" style="position: fixed; left: 0; top: 0; margin: 0;">
       <mg-button aria-label="Close" is-icon="" role="button" tabindex="0">
         <mock:shadow-root>
           <div class="mg-button mg-button--flat mg-button--icon">
@@ -138,7 +138,7 @@ exports[`mg-popover Should render with element 5`] = `
 <mg-popover>
   <mock:shadow-root>
     <slot></slot>
-    <div class="mg-popover" data-show id="identifier" style="position: absolute; left: 0; top: 0; margin: 0;">
+    <div class="mg-popover" data-show id="identifier" style="position: fixed; left: 0; top: 0; margin: 0;">
       <div class="mg-popover__title">
         <slot name="title"></slot>
       </div>
@@ -169,7 +169,7 @@ exports[`mg-popover Should render with element 6`] = `
 <mg-popover lang="fr">
   <mock:shadow-root>
     <slot></slot>
-    <div class="mg-popover" id="identifier" style="position: absolute; left: 0; top: 0; margin: 0;">
+    <div class="mg-popover" id="identifier" style="position: fixed; left: 0; top: 0; margin: 0;">
       <mg-button aria-label="Fermer" is-icon="" role="button" tabindex="0">
         <mock:shadow-root>
           <div class="mg-button mg-button--flat mg-button--icon">
@@ -210,7 +210,7 @@ exports[`mg-popover Should render with element 7`] = `
 <mg-popover lang="xx">
   <mock:shadow-root>
     <slot></slot>
-    <div class="mg-popover" id="identifier" style="position: absolute; left: 0; top: 0; margin: 0;">
+    <div class="mg-popover" id="identifier" style="position: fixed; left: 0; top: 0; margin: 0;">
       <mg-button aria-label="Close" is-icon="" role="button" tabindex="0">
         <mock:shadow-root>
           <div class="mg-button mg-button--flat mg-button--icon">

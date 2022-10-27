@@ -1,7 +1,7 @@
 import { Component, Element, h, Host, Prop, Watch } from '@stencil/core';
 import { createID } from '../../../utils/components.utils';
-import { Instance as PopperInstance, createPopper } from '@popperjs/core';
-import { Placement, Guard } from './mg-tooltip.conf';
+import { Instance as PopperInstance, createPopper, Placement } from '@popperjs/core';
+import { Guard } from './mg-tooltip.conf';
 
 @Component({
   tag: 'mg-tooltip',
@@ -181,6 +181,7 @@ export class MgTooltip {
     // Create popperjs tooltip
     this.popper = createPopper(tooltipedElement, this.tooltip, {
       placement: this.placement,
+      strategy: 'fixed',
       modifiers: [
         {
           name: 'offset',
