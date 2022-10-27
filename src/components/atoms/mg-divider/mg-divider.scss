@@ -1,0 +1,10 @@
+.mg-divider {
+  margin: var(--mg-divider-vertical-spacing) auto;
+  width: 12rem;
+  height: var(--mg-divider-thickness);
+  background-color: var(--mg-divider-background-color);
+
+  &.mg-divider--full {
+    width: 100%;
+  }
+}

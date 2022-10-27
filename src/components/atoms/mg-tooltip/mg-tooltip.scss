@@ -6,7 +6,7 @@
   // Display
   display: none;
   padding: 0.5rem 0.8rem;
-  z-index: 9999;
+  z-index: 1000;
   // Decoration
   border-radius: var(--mg-tooltip-border-radius);
   background-color: hsl(var(--mg-tooltip-background-color));

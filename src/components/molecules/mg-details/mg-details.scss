@@ -1,3 +1,5 @@
+@import '../../../styles/a11y.scss';
+
 .mg-details summary {
   display: flex;
   align-items: baseline;
@@ -7,6 +9,14 @@
 .mg-details__toggle {
   margin-left: 1.5rem;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 0.6rem;
+  min-height: calc(var(--font-size) * var(--line-height));
+  mg-icon {
+    align-self: self-end;
+  }
 }
 
 .mg-details__details {

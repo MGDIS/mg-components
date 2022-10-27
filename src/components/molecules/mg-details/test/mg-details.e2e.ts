@@ -25,4 +25,18 @@ describe('mg-details', () => {
     const screenshotOpened = await page.screenshot();
     expect(screenshotOpened).toMatchImageSnapshot();
   });
+
+  test('Should hidde summary', async () => {
+    const page = await createPage(`<mg-details toggle-closed="Show details" toggle-opened="Hide details" hide-summary>${content}</mg-details>`);
+
+    const screenshot = await page.screenshot();
+    expect(screenshot).toMatchImageSnapshot();
+
+    const summary = await page.find('mg-details >>> summary');
+    summary.click();
+    await page.waitForChanges();
+
+    const screenshotOpened = await page.screenshot();
+    expect(screenshotOpened).toMatchImageSnapshot();
+  });
 });

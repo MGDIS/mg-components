@@ -20,19 +20,24 @@ export class MgDetails {
   /**
    * Displayed title when details are closed
    */
-  @Prop() toggleClosed: string;
+  @Prop() toggleClosed!: string;
 
   /**
    * Displayed title when details are opened
    */
-  @Prop() toggleOpened: string;
+  @Prop() toggleOpened!: string;
   @Watch('toggleClosed')
   @Watch('toggleOpened')
   validateTitles(newValue: string): void {
-    if (newValue === undefined || newValue === '') {
+    if (newValue === undefined || newValue.trim() === '') {
       throw new Error('<mg-details> prop "toggleClosed" and "toggleOpened" must be defined.');
     }
   }
+
+  /**
+   * Hide summary element
+   */
+  @Prop() hideSummary = false;
 
   /**
    * Define if details are diplayed
@@ -82,7 +87,8 @@ export class MgDetails {
         <summary>
           <slot name="summary"></slot>
           <span class="mg-details__toggle">
-            <mg-icon icon={this.expanded ? 'chevron-up' : 'chevron-down'}></mg-icon> {this.expanded ? this.toggleOpened : this.toggleClosed}
+            <mg-icon icon={this.expanded ? 'chevron-up' : 'chevron-down'}></mg-icon>
+            <span class={{ 'sr-only': this.hideSummary }}>{this.expanded ? this.toggleOpened : this.toggleClosed}</span>
           </span>
         </summary>
         <div class="mg-details__details">

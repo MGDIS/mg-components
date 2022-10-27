@@ -37,6 +37,13 @@ test('Should render a button in a paragraph', async () => {
   expect(screenshot).toMatchImageSnapshot();
 });
 
+test.each(['batman', '<mg-icon icon="check-circle"></mg-icon>batman'])('Should render a full-width button', async slot => {
+  const page = await createPage(`<mg-button full-width>${slot}</mg-button>`);
+
+  const screenshot = await page.screenshot();
+  expect(screenshot).toMatchImageSnapshot();
+});
+
 describe.each([
   '<mg-button disable-on-click>Message action</mg-button>',
   '<mg-button disable-on-click label="test" is-icon><mg-icon icon="info-circle"></mg-icon></mg-button>',

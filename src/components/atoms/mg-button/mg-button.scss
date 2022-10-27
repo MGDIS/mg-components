@@ -72,6 +72,10 @@ $button-column-gap: 0.6rem;
   }
 }
 
+:host([full-width]) {
+  display: block;
+}
+
 // Gradient style
 @include style-gradient('primary', null, null, true);
 @include style-gradient('secondary', null, null, true);
@@ -134,6 +138,11 @@ $button-column-gap: 0.6rem;
   &.mg-button--flat {
     background: none;
     border: none;
+  }
+  // full-width style
+  &.mg-button--full-width {
+    display: flex;
+    justify-content: center;
   }
 
   // loading style
