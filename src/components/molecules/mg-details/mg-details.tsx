@@ -35,7 +35,7 @@ export class MgDetails {
   }
 
   /**
-   * Hidde sumary element
+   * Hide summary element
    */
   @Prop() hideSummary = false;
 
