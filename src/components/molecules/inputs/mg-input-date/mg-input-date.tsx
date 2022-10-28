@@ -40,7 +40,7 @@ export class MgInputDate {
   @Prop({ mutable: true, reflect: true }) value: string;
   @Watch('value')
   validateValue(newValue: string): void {
-    if (newValue !== undefined && (typeof newValue !== 'string' || !dateRegExp.test(newValue))) {
+    if (newValue !== undefined && newValue !== null && (typeof newValue !== 'string' || !dateRegExp.test(newValue))) {
       throw new Error("<mg-input-date> props 'value' doesn't match pattern: yyyy-mm-dd");
     } else {
       this.valueChange.emit(this.value);
