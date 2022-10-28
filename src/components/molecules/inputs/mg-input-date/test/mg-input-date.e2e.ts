@@ -147,4 +147,19 @@ describe('mg-input-date', () => {
       expect(screenshot).toMatchImageSnapshot();
     });
   });
+
+  describe.each([undefined, 100])('Ensure component fit in width: %s', width => {
+    test.each([false, true])('label-on-top: %s', async labelOnTop => {
+      const page = await createPage(`<mg-input-date identifier="identifier" label="label" label-on-top="${labelOnTop}"></mg-input-date>`);
+
+      const element = await page.find('mg-input-date');
+
+      expect(element).toHaveClass('hydrated');
+
+      if (width !== undefined) await page.setViewport({ width, height: 100 });
+
+      const screenshot = await page.screenshot();
+      expect(screenshot).toMatchImageSnapshot();
+    });
+  });
 });

@@ -136,4 +136,19 @@ describe('mg-input-password', () => {
       expect(screenshot).toMatchImageSnapshot();
     });
   });
+
+  describe.each([undefined, 200])('Ensure component fit in width: %s', width => {
+    test.each([false, true])('label-on-top: %s', async labelOnTop => {
+      const page = await createPage(`<mg-input-password identifier="identifier" label="label" label-on-top="${labelOnTop}"></mg-input-password>`);
+
+      const element = await page.find('mg-input-password');
+
+      expect(element).toHaveClass('hydrated');
+
+      if (width !== undefined) await page.setViewport({ width, height: 100 });
+
+      const screenshot = await page.screenshot();
+      expect(screenshot).toMatchImageSnapshot();
+    });
+  });
 });

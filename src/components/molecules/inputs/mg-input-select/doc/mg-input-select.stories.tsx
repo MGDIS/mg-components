@@ -43,7 +43,7 @@ MgInputSelect.args = {
   required: true,
   readonly: false,
   disabled: false,
-  items: ['blu', 'bli', 'blo', 'bla'],
+  items: ['blu', 'bli', 'blo', 'le long libellé qui va faire sortir le champ mg-input-select de sa zone de confort'],
   mgWidth: undefined,
   // Tooltip
   tooltip: 'This is a tooltip',

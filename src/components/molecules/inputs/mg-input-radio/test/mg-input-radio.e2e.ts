@@ -175,4 +175,24 @@ describe('mg-input-radio', () => {
       expect(screenshot).toMatchImageSnapshot();
     });
   });
+
+  describe.each([undefined, 200])('Ensure component fit in width: %s', width => {
+    test.each([false, true])('label-on-top: %s', async labelOnTop => {
+      const page = await createPage(`<mg-input-radio identifier="identifier" label="label" label-on-top="${labelOnTop}"></mg-input-radio>
+        <script>
+        const mgInputRadio = document.querySelector('mg-input-radio');
+        mgInputRadio.items = ['batman', 'robin', 'joker', 'bane'];
+        </script>
+      `);
+
+      const element = await page.find('mg-input-radio');
+
+      expect(element).toHaveClass('hydrated');
+
+      if (width !== undefined) await page.setViewport({ width, height: 100 });
+
+      const screenshot = await page.screenshot();
+      expect(screenshot).toMatchImageSnapshot();
+    });
+  });
 });
