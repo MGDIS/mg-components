@@ -270,4 +270,59 @@ describe('mg-input-radio', () => {
 
     expect(page.root).toMatchSnapshot();
   });
+
+  test('Should remove error on input when required change dynamically', async () => {
+    const page = await getPage({
+      label: 'label',
+      identifier: 'identifier',
+      items: ['batman', 'robin'],
+      required: true,
+    });
+    const element = page.doc.querySelector('mg-input-radio');
+    const allInputs = element.shadowRoot.querySelectorAll('input');
+
+    //mock validity
+    allInputs[0].checkValidity = jest
+      .fn()
+      .mockReturnValueOnce(false) //1
+      .mockReturnValueOnce(false) //1
+      .mockReturnValueOnce(true) //2
+      .mockReturnValueOnce(true) //2
+      .mockReturnValueOnce(false) //3
+      .mockReturnValueOnce(false); //3
+    allInputs[1].checkValidity = jest.fn().mockReturnValueOnce(true).mockReturnValueOnce(true); //2
+    Object.defineProperty(allInputs[0], 'validity', {
+      get: jest
+        .fn()
+        .mockReturnValueOnce({
+          valueMissing: true, //1
+        })
+        .mockReturnValueOnce({
+          valueMissing: false, //2
+        })
+        .mockReturnValueOnce({
+          valueMissing: true, //3
+        }),
+    });
+
+    await element.displayError();
+    await page.waitForChanges();
+
+    expect(page.rootInstance.hasDisplayedError).toEqual(true);
+    expect(page.rootInstance.errorMessage).toEqual(messages.errors.required);
+
+    element.required = false;
+    await page.waitForChanges();
+
+    // Error message should disapear and change the hasDisplayedError status
+    expect(page.rootInstance.hasDisplayedError).toEqual(false);
+    expect(page.rootInstance.errorMessage).toBeUndefined();
+
+    element.required = true;
+    await page.waitForChanges();
+
+    // If back on required the message is still not displayed
+    expect(page.rootInstance.hasDisplayedError).toEqual(false);
+    expect(page.rootInstance.errorMessage).toBeUndefined();
+  });
 });
