@@ -29,7 +29,7 @@ export const cloneDeep = (obj: unknown): unknown => JSON.parse(JSON.stringify(ob
  * fireMo([{ type: 'childList', addedNodes: [AMockElemenet, AnotherMockElemenet], target: yourMockElemenet }]);;
  * ```
  */
-export const setupMutationObserverMock = ({ disconnect = () => null, observe = (_target: unknown, _options: unknown) => null, takeRecords = () => [] } = {}) => {
+export const setupMutationObserverMock = ({ disconnect, observe, takeRecords }) => {
   class MockMutationObserver implements MutationObserver {
     disconnect: () => void = disconnect;
     observe: (target: Node, options?: MutationObserverInit) => void = observe;
