@@ -73,6 +73,9 @@ describe('mg-input-textarea', () => {
     `<mg-input-textarea identifier="identifier" label="label" value="blu" disabled></mg-input-textarea>`,
     `<mg-input-textarea identifier="identifier" label="label" value="resizable" resizable="both"></mg-input-textarea>`,
     `<mg-input-textarea identifier="identifier" label="label" value="batman" help-text='<mg-icon icon="user" size="small"></mg-icon> Welcome batman'></mg-input-textarea>`,
+    `<mg-input-textarea identifier="identifier" label="label" value="blu" help-text="HelpText Message" required></mg-input-textarea>`,
+    `<mg-input-textarea identifier="identifier" label="label" value="blu" help-text="HelpText Message" required readonly></mg-input-textarea>`,
+    `<mg-input-textarea identifier="identifier" label="label" value="blu" help-text="HelpText Message" required disabled></mg-input-textarea>`,
   ])('Should render with template', html => {
     test('render', async () => {
       const page = await createPage(html);

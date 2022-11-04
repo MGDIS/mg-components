@@ -166,11 +166,17 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props: MgInputProps, 
 
   /**
    * Get input title (label) node
+   * Display asterisk only if not disabled and not readonly
    *
    * @returns {VNode[]} mg-input-title
    */
   const getInputTitle = (): VNode[] => (
-    <mg-input-title identifier={props.identifier} class={props.labelHide ? 'sr-only' : undefined} required={props.required && !props.disabled} is-legend={props.isFieldset}>
+    <mg-input-title
+      identifier={props.identifier}
+      class={props.labelHide ? 'sr-only' : undefined}
+      required={props.required && !props.disabled && !props.readonly}
+      is-legend={props.isFieldset}
+    >
       {props.label}
     </mg-input-title>
   );
