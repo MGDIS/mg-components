@@ -5,6 +5,7 @@ import { newSpecPage } from '@stencil/core/testing';
 import { MgButton } from '../../../atoms/mg-button/mg-button';
 import { MgModal } from '../mg-modal';
 import { focusableElements } from '../../../../utils/components.utils';
+import { setupMutationObserverMock } from '../../../../utils/test.utils';
 
 const getPage = (args, slots?) =>
   newSpecPage({
@@ -27,6 +28,16 @@ const getPage = (args, slots?) =>
   });
 
 describe('mg-modal', () => {
+  let fireMo;
+
+  beforeEach(() => {
+    setupMutationObserverMock({
+      observe: function () {
+        fireMo = this.cb;
+      },
+    });
+  });
+
   describe.each([undefined, { content: true }, { actions: true }, { content: true, actions: true }])('Should render a modal', slots => {
     test.each([
       { modalTitle: 'Modal Title', identifier: 'identifier' },
@@ -83,7 +94,7 @@ describe('mg-modal', () => {
     });
 
     test.each([true, false])('should keep focus inside modale', async closeButton => {
-      const page = await getPage({ modalTitle: 'Modal Title', identifier: 'identifier', closeButton }, { content: true, actions: true });
+      const page = await getPage({ modalTitle: 'Modal Title', identifier: 'identifier', closeButton, hide: true }, { content: true, actions: true });
       const element = page.doc.querySelector('mg-modal');
       // Get all focusable elements
       const modalFocusableElements = Array.from(element.querySelectorAll(focusableElements)).reduce((acc, focusableElement) => {
@@ -97,16 +108,16 @@ describe('mg-modal', () => {
       const lastFocusableElement = modalFocusableElements[modalFocusableElements.length - 1];
       const spyFirst = jest.spyOn(modalFocusableElements[0], 'focus');
       const spyLast = jest.spyOn(lastFocusableElement, 'focus');
-      /* 
-        TODO find a way to trigger the MutationObserver to cover the component code
-      */
+
       // Display modal
-      // element.hide = false;
-      // await page.waitForChanges();
+      element.hide = false;
+      fireMo([{ attributeName: 'aria-hidden', target: { ariaHidden: null } }]);
+      await page.waitForChanges();
+      expect(spyFirst).toHaveBeenCalledTimes(1);
       // Tab from last focusable element
       lastFocusableElement.dispatchEvent(new KeyboardEvent('keydown', { bubbles: true, key: 'Tab', shiftKey: false }));
       await page.waitForChanges();
-      expect(spyFirst).toHaveBeenCalledTimes(1);
+      expect(spyFirst).toHaveBeenCalledTimes(2);
       // Tab first focusable element with shift key
       modalFocusableElements[0].dispatchEvent(new KeyboardEvent('keydown', { bubbles: true, key: 'Tab', shiftKey: true }));
       await page.waitForChanges();
