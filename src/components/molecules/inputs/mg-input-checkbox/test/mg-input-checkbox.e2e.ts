@@ -153,22 +153,20 @@ describe('mg-input-checkbox', () => {
     });
   });
 
-  describe.each([undefined, 200])('Ensure component fit in width: %s', width => {
-    test.each([false, true])('label-on-top: %s', async labelOnTop => {
-      const page = await createPage(`<mg-input-checkbox identifier="identifier" label="legend" label-on-top="${labelOnTop}"></mg-input-checkbox>
+  test.each([false, true])('Ensure component fit in width 200px with label-on-top: %s', async labelOnTop => {
+    const page = await createPage(`<mg-input-checkbox identifier="identifier" label="legend" label-on-top="${labelOnTop}"></mg-input-checkbox>
     <script>
     const mgInputCheckbox = document.querySelector('mg-input-checkbox');
     mgInputCheckbox.value = [{title: 'Batman', value: false}, {title: 'Robin', value: false}, {title: 'Joker', value: false}, {title: 'Bane', value: false}];
     </script>`);
 
-      const element = await page.find('mg-input-checkbox');
+    const element = await page.find('mg-input-checkbox');
 
-      expect(element).toHaveClass('hydrated');
+    expect(element).toHaveClass('hydrated');
 
-      if (width !== undefined) await page.setViewport({ width, height: 100 });
+    await page.setViewport({ width: 200, height: 100 });
 
-      const screenshot = await page.screenshot();
-      expect(screenshot).toMatchImageSnapshot();
-    });
+    const screenshot = await page.screenshot();
+    expect(screenshot).toMatchImageSnapshot();
   });
 });

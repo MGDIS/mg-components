@@ -176,23 +176,21 @@ describe('mg-input-radio', () => {
     });
   });
 
-  describe.each([undefined, 200])('Ensure component fit in width: %s', width => {
-    test.each([false, true])('label-on-top: %s', async labelOnTop => {
-      const page = await createPage(`<mg-input-radio identifier="identifier" label="label" label-on-top="${labelOnTop}"></mg-input-radio>
+  test.each([false, true])('Ensure component fit in width 200px with label-on-top: %s', async labelOnTop => {
+    const page = await createPage(`<mg-input-radio identifier="identifier" label="label" label-on-top="${labelOnTop}"></mg-input-radio>
         <script>
         const mgInputRadio = document.querySelector('mg-input-radio');
         mgInputRadio.items = ['batman', 'robin', 'joker', 'bane'];
         </script>
       `);
 
-      const element = await page.find('mg-input-radio');
+    const element = await page.find('mg-input-radio');
 
-      expect(element).toHaveClass('hydrated');
+    expect(element).toHaveClass('hydrated');
 
-      if (width !== undefined) await page.setViewport({ width, height: 100 });
+    await page.setViewport({ width: 200, height: 100 });
 
-      const screenshot = await page.screenshot();
-      expect(screenshot).toMatchImageSnapshot();
-    });
+    const screenshot = await page.screenshot();
+    expect(screenshot).toMatchImageSnapshot();
   });
 });

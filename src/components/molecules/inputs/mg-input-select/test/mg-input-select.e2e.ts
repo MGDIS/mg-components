@@ -212,9 +212,8 @@ describe('mg-input-select', () => {
     });
   });
 
-  describe.each([undefined, 300])('Ensure component fit in width: %s', width => {
-    test.each([false, true])('label-on-top: %s', async labelOnTop => {
-      const page = await createPage(`
+  test.each([false, true])('Ensure component fit in width 300px with label-on-top: %s', async labelOnTop => {
+    const page = await createPage(`
       <mg-input-select identifier="identifier" label="label" label-on-top="${labelOnTop}"></mg-input-select>
       <script>
         const mgInputSelect = document.querySelector('mg-input-select');
@@ -222,14 +221,13 @@ describe('mg-input-select', () => {
       </script>
     `);
 
-      const element = await page.find('mg-input-select');
+    const element = await page.find('mg-input-select');
 
-      expect(element).toHaveClass('hydrated');
+    expect(element).toHaveClass('hydrated');
 
-      if (width !== undefined) await page.setViewport({ width, height: 100 });
+    await page.setViewport({ width: 300, height: 100 });
 
-      const screenshot = await page.screenshot();
-      expect(screenshot).toMatchImageSnapshot();
-    });
+    const screenshot = await page.screenshot();
+    expect(screenshot).toMatchImageSnapshot();
   });
 });
