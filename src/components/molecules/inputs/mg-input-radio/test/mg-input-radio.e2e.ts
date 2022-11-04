@@ -1,4 +1,4 @@
-import { createPage } from '../../../../../utils/test.utils';
+import { createPage } from '../../../../../utils/e2e.test.utils';
 
 describe('mg-input-radio', () => {
   describe.each([`<mg-input-radio identifier="identifier" label="legend"></mg-input-radio>`])('without tooltip', html => {

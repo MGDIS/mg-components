@@ -1,4 +1,4 @@
-import { createPage } from '../../../../utils/test.utils';
+import { createPage } from '../../../../utils/e2e.test.utils';
 
 describe.each([
   `<mg-character-left characters="" maxlength="100"></mg-character-left>`,

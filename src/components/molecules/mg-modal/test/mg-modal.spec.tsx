@@ -5,7 +5,7 @@ import { newSpecPage } from '@stencil/core/testing';
 import { MgButton } from '../../../atoms/mg-button/mg-button';
 import { MgModal } from '../mg-modal';
 import { focusableElements } from '../../../../utils/components.utils';
-import { setupMutationObserverMock } from '../../../../utils/test.utils';
+import { setupMutationObserverMock } from '../../../../utils/unit.test.utils';
 
 const getPage = (args, slots?) =>
   newSpecPage({
