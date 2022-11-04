@@ -63,14 +63,20 @@ describe('mg-form', () => {
     { args: { identifier: 'identifier' } },
     { args: { identifier: 'identifier', readonly: true } },
     { args: { identifier: 'identifier', disabled: true } },
-    { args: { identifier: 'identifier' }, requiredIndex: 'one' },
-    { args: { identifier: 'identifier' }, requiredIndex: 'all' },
-  ])('Should render with args %s:', async ({ args, requiredIndex }) => {
+    { args: { identifier: 'identifier' }, required: 'one' },
+    { args: { identifier: 'identifier' }, required: 'all' },
+    { args: { identifier: 'identifier' }, readonly: true },
+  ])('Should render with args %o:', async ({ args, required, readonly }) => {
     const slot = getSlottedContent();
-    if (requiredIndex === 'one') slot[0].$attrs$.required = true;
-    else if (requiredIndex === 'all') {
+    if (required === 'one') slot[0].$attrs$.required = true;
+    else if (required === 'all') {
       slot.forEach(s => {
         s.$attrs$.required = true;
+      });
+    }
+    if (readonly) {
+      slot.forEach(s => {
+        s.$attrs$.readonly = true;
       });
     }
     const { root } = await getPage(args, slot);
@@ -105,9 +111,8 @@ describe('mg-form', () => {
           });
         });
       });
+      await mgForm.displayError();
     }
-
-    await mgForm.displayError();
 
     await page.waitForChanges();
 

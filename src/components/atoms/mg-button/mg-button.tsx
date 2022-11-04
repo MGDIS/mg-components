@@ -149,7 +149,7 @@ export class MgButton {
   };
 
   /**
-   * Handle onKeyDown event
+   * Handle onKeydown event
    *
    * @param {KeyboardEvent} event keyboard event
    * @returns {void}
@@ -164,7 +164,7 @@ export class MgButton {
   };
 
   /**
-   * Handle onKeyUp event
+   * Handle onKeyup event
    *
    * @param {KeyboardEvent} event keyboard event
    * @returns {void}
@@ -211,8 +211,8 @@ export class MgButton {
         aria-label={this.label}
         aria-disabled={this.disabled !== undefined && this.disabled.toString()}
         onClick={this.handleClick}
-        onKeyUp={this.handleKeyup}
-        onKeyDown={this.handleKeydown}
+        onKeyup={this.handleKeyup}
+        onKeydown={this.handleKeydown}
       >
         <div class={this.classList.join()} id={this.identifier}>
           {this.loading && <mg-icon icon="loader" spin></mg-icon>}

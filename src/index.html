@@ -825,7 +825,7 @@
               const mgInputTextarea = document.querySelector('mg-input-textarea');
             </script>
 
-            <mg-input-toggle identifier="mg-input-toggle" label="All fields are required" value="non">
+            <mg-input-toggle identifier="mg-input-toggle-required" label="All fields are required">
               <span slot="item-1">non</span>
               <span slot="item-2">oui</span>
             </mg-input-toggle>
@@ -840,33 +840,34 @@
                   .filter(node => node.nodeName.startsWith('MG-INPUT-'))
                   .forEach(node => (node.required = e.detail));
               });
+              // mgInputToggle.value = 'non';
+              // mgInputToggle.value = mgInputToggle.items[1].value;
             </script>
 
             <div slot="actions" class="mg-group-elements mg-group-elements--align-right">
               <mg-button id="can-submit">Can Submit</mg-button>
               <mg-button id="display-error" variant="secondary">Chek errors</mg-button>
+              <mg-button id="toggle-readonly" variant="secondary">Toggle Readonly</mg-button>
             </div>
           </mg-form>
           <script>
             const mgForm = document.querySelector('mg-form');
             const mgFormButton = document.querySelector('#can-submit');
-            const mgFormButtonErrors = document.querySelector('#display-error');
             mgForm.addEventListener('form-valid', function (e) {
               mgFormButton.disabled = !e.detail;
             });
+            const mgFormButtonErrors = document.querySelector('#display-error');
             mgFormButtonErrors.addEventListener('click', () => {
               mgForm.displayError();
             });
+            const mgFormButtonToggleReadonly = document.querySelector('#toggle-readonly');
+            mgFormButtonToggleReadonly.addEventListener('click', () => {
+              Array.from(mgForm.querySelectorAll('*'))
+                .filter(node => node.nodeName.startsWith('MG-INPUT-'))
+                .forEach(node => (node.readonly = !node.readonly));
+            });
           </script>
           <script>
-            // mgInputToggle.value = 'non';
-            // mgInputToggle.value = mgInputToggle.items[1].value;
-          </script>
-          <script>
-            // mgInputCheckbox.value = [
-            //   { title: 'oui', value: true },
-            //   { title: 'non', value: false },
-            // ];
             // mgInputDate.value = '2022-04-15';
             // mgInputNumeric.value = 1234567890;
             // mgInputPassword.value = 'p455w0rD';
@@ -876,16 +877,14 @@
             // mgInputTextarea.value =
             //   'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
             // mgInputToggle.value = mgInputToggle.items[1].value;
-          </script>
-          <script>
-            mgInputCheckbox.required = true;
-            mgInputDate.required = true;
-            mgInputNumeric.required = true;
-            mgInputPassword.required = true;
-            mgInputRadio.required = true;
-            mgInputSelect.required = true;
-            mgInputText.required = true;
-            mgInputTextarea.required = true;
+            // mgInputCheckbox.readonly = true;
+            // mgInputDate.readonly = true;
+            // mgInputNumeric.readonly = true;
+            // mgInputPassword.readonly = true;
+            // mgInputRadio.readonly = true;
+            // mgInputSelect.readonly = true;
+            // mgInputText.readonly = true;
+            // mgInputTextarea.readonly = true;
           </script>
         </section>
         <h2>.mg-form-group</h2>
