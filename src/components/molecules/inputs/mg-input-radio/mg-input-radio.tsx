@@ -30,6 +30,9 @@ export class MgInputRadio {
   // Locales
   private messages;
 
+  // hasDisplayedError (triggered by blur event)
+  private hasDisplayedError = false;
+
   /**************
    * Decorators *
    **************/
@@ -111,6 +114,19 @@ export class MgInputRadio {
    * Define if input is readonly
    */
   @Prop() readonly = false;
+  @Watch('required')
+  handleRequired(newValue: boolean): void {
+    if (!this.readonly) {
+      this.inputs.forEach(input => {
+        input.required = newValue; // We can't wait for render to set input required
+      });
+      this.checkValidity();
+      if (this.hasDisplayedError) {
+        this.setErrorMessage();
+        this.hasDisplayedError = false;
+      }
+    }
+  }
 
   /**
    * Define if input is disabled
@@ -170,7 +186,8 @@ export class MgInputRadio {
   @Method()
   async displayError(): Promise<void> {
     this.checkValidity();
-    this.checkError();
+    this.setErrorMessage();
+    this.hasDisplayedError = this.invalid;
   }
 
   /**
@@ -191,7 +208,7 @@ export class MgInputRadio {
    */
   private handleBlur = (): void => {
     this.checkValidity();
-    this.checkError();
+    this.setErrorMessage();
   };
 
   /**
@@ -213,11 +230,11 @@ export class MgInputRadio {
   };
 
   /**
-   * Check input errors
+   * Set input error message
    *
    * @returns {void}
    */
-  private checkError = (): void => {
+  private setErrorMessage = (): void => {
     const invalidElement = this.getInvalidElement();
 
     // Set error message

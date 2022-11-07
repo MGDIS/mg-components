@@ -92,7 +92,7 @@ describe('mg-input-textarea', () => {
 
     input.dispatchEvent(new CustomEvent('focus', { bubbles: true }));
     await page.waitForChanges();
-    expect(page.rootInstance.classList.has('is-focused')).toBeTruthy();
+    expect(page.rootInstance.classList.has('is-focused')).toEqual(true);
 
     expect(page.root).toMatchSnapshot(); //Snapshot on focus
 
@@ -103,7 +103,7 @@ describe('mg-input-textarea', () => {
 
     input.dispatchEvent(new CustomEvent('blur', { bubbles: true }));
     await page.waitForChanges();
-    expect(page.rootInstance.classList.has('is-focused')).toBeFalsy();
+    expect(page.rootInstance.classList.has('is-focused')).toEqual(false);
   });
 
   describe.each(['readonly', 'disabled'])('validity, case next state is %s', nextState => {
@@ -218,19 +218,64 @@ describe('mg-input-textarea', () => {
 
     await page.waitForChanges();
 
-    expect(page.rootInstance.hasError).toBeTruthy();
+    expect(page.rootInstance.hasDisplayedError).toEqual(true);
     expect(page.rootInstance.errorMessage).toEqual(messages.errors.required);
 
     input.value = 'blu';
     input.dispatchEvent(new CustomEvent('input', { bubbles: true }));
     await page.waitForChanges();
 
-    expect(page.rootInstance.hasError).toBeTruthy();
+    expect(page.rootInstance.hasDisplayedError).toEqual(true);
     expect(page.rootInstance.errorMessage).toBeUndefined();
 
     input.dispatchEvent(new CustomEvent('blur', { bubbles: true }));
     await page.waitForChanges();
 
-    expect(page.rootInstance.hasError).toBeFalsy();
+    expect(page.rootInstance.hasDisplayedError).toEqual(false);
+  });
+
+  test('Should remove error on input when required change dynamically', async () => {
+    const page = await getPage({ label: 'label', identifier: 'identifier', required: true });
+    const element = page.doc.querySelector('mg-input-textarea');
+    const input = element.shadowRoot.querySelector('textarea');
+
+    //mock validity
+    input.checkValidity = jest.fn().mockReturnValueOnce(false).mockReturnValueOnce(true).mockReturnValueOnce(true);
+    Object.defineProperty(input, 'validity', {
+      get: jest
+        .fn()
+        .mockReturnValueOnce({
+          valueMissing: true,
+        })
+        .mockReturnValueOnce({
+          valueMissing: true,
+        })
+        .mockReturnValueOnce({
+          valueMissing: false,
+        })
+        .mockReturnValueOnce({
+          valueMissing: false,
+        }),
+    });
+
+    await element.displayError();
+    await page.waitForChanges();
+
+    expect(page.rootInstance.hasDisplayedError).toEqual(true);
+    expect(page.rootInstance.errorMessage).toEqual(messages.errors.required);
+
+    element.required = false;
+    await page.waitForChanges();
+
+    // Error message should disapear and change the hasDisplayedError status
+    expect(page.rootInstance.hasDisplayedError).toEqual(false);
+    expect(page.rootInstance.errorMessage).toBeUndefined();
+
+    element.required = true;
+    await page.waitForChanges();
+
+    // If back on required the message is still not displayed
+    expect(page.rootInstance.hasDisplayedError).toEqual(false);
+    expect(page.rootInstance.errorMessage).toBeUndefined();
   });
 });

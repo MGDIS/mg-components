@@ -47,7 +47,7 @@ describe('mg-message', () => {
     await page.waitForChanges();
 
     const mgMessageHideProp = await mgMessage.getProperty('hide');
-    expect(mgMessageHideProp).toBeTruthy();
+    expect(mgMessageHideProp).toEqual(true);
 
     await page.setViewport({ width: 600, height: 100 });
 
