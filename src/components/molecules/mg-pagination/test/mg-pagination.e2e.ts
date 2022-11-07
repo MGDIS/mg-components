@@ -3,7 +3,7 @@ import { createPage } from '../../../../utils/test.utils';
 describe('mg-pagination', () => {
   describe('template', () => {
     test.each([1, 2, 3, 10])('render', async totalPages => {
-      const page = await createPage(`<mg-pagination total-pages=${totalPages}></mg-pagination>`);
+      const page = await createPage(`<mg-pagination total-pages="${totalPages}"></mg-pagination>`);
 
       const element = await page.find('mg-pagination');
 
@@ -26,7 +26,7 @@ describe('mg-pagination', () => {
     });
 
     test('Keyboard navigation', async () => {
-      const page = await createPage(`<mg-pagination total-pages=5></mg-pagination>`);
+      const page = await createPage(`<mg-pagination total-pages="5"></mg-pagination>`);
 
       const screenshot = await page.screenshot();
       expect(screenshot).toMatchImageSnapshot();
@@ -69,7 +69,7 @@ describe('mg-pagination', () => {
 
   describe('locales', () => {
     test.each(['fr'])('render with locale: %s', async lang => {
-      const page = await createPage(`<mg-pagination total-pages=5 lang="${lang}"></mg-pagination>`);
+      const page = await createPage(`<mg-pagination total-pages="5" lang="${lang}"></mg-pagination>`);
 
       const element = await page.find('mg-pagination');
 

@@ -3,9 +3,14 @@
 @use '../styles/mg-input-width.scss';
 @use '../../../../styles/a11y.scss';
 
-.mg-input__box {
-  width: 100%;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-right: 1rem;
+.mg-input {
+  &__box {
+    width: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 1rem;
+  }
+  &.mg-input--select:not(.mg-input--label-on-top) .mg-input__box {
+    max-width: unset;
+  }
 }

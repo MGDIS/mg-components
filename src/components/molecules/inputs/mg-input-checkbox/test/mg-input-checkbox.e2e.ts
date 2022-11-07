@@ -155,4 +155,21 @@ describe('mg-input-checkbox', () => {
       expect(screenshot).toMatchImageSnapshot();
     });
   });
+
+  test.each([false, true])('Ensure component fit in width 200px with label-on-top: %s', async labelOnTop => {
+    const page = await createPage(`<mg-input-checkbox identifier="identifier" label="legend" label-on-top="${labelOnTop}"></mg-input-checkbox>
+    <script>
+    const mgInputCheckbox = document.querySelector('mg-input-checkbox');
+    mgInputCheckbox.value = [{title: 'Batman', value: false}, {title: 'Robin', value: false}, {title: 'Joker', value: false}, {title: 'Bane', value: false}];
+    </script>`);
+
+    const element = await page.find('mg-input-checkbox');
+
+    expect(element).toHaveClass('hydrated');
+
+    await page.setViewport({ width: 200, height: 100 });
+
+    const screenshot = await page.screenshot();
+    expect(screenshot).toMatchImageSnapshot();
+  });
 });
