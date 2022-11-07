@@ -3,37 +3,53 @@
  * Kept it nested for coming widths
  */
 
+$width-2: 5rem;
+$width-16: 21rem;
+
 .mg-input {
   &.mg-input--width-full {
     &:not(.mg-input--label-on-top) {
       justify-content: space-between;
     }
-
+    &.mg-input--label-on-top .mg-input__box {
+      width: 100%;
+    }
     .mg-input__input-container {
       flex: auto;
       width: 100%;
-
       .mg-input__box {
-        width: 100%;
+        max-width: 100%;
       }
     }
   }
 
-  &.mg-input--width-16 {
+  // default width
+  &:not(.mg-input--label-on-top) .mg-input__box {
+    width: 100%;
+    max-width: calc(17.7rem + var(--mg-inputs-spacer) * 2); // keep native width + mg-input spacer
+    min-width: $width-2;
+  }
+
+  &.mg-input--width-16 .mg-input__input-container {
+    width: 100%;
+    .mg-input__input {
+      width: 100%;
+      max-width: $width-16;
+    }
+    .mg-input__with-character-left {
+      width: 100%;
+    }
     .mg-input__box {
-      width: 21rem;
+      max-width: $width-16;
+      min-width: 100%;
     }
   }
 
-  &.mg-input--width-4 {
-    .mg-input__box {
-      width: 7rem;
-    }
+  &.mg-input--width-4 .mg-input__input-container .mg-input__box {
+    max-width: 7rem;
   }
 
-  &.mg-input--width-2 {
-    .mg-input__box {
-      width: 5rem;
-    }
+  &.mg-input--width-2 .mg-input__input-container .mg-input__box {
+    max-width: $width-2;
   }
 }

@@ -212,4 +212,17 @@ describe('mg-input-text', () => {
       expect(screenshot).toMatchImageSnapshot();
     });
   });
+
+  test.each([false, true])('Ensure component fit in width 200px with label-on-top: %s', async labelOnTop => {
+    const page = await createPage(`<mg-input-text identifier="identifier" label="label" label-on-top="${labelOnTop}"></mg-input-text>`);
+
+    const element = await page.find('mg-input-text');
+
+    expect(element).toHaveClass('hydrated');
+
+    await page.setViewport({ width: 200, height: 100 });
+
+    const screenshot = await page.screenshot();
+    expect(screenshot).toMatchImageSnapshot();
+  });
 });
