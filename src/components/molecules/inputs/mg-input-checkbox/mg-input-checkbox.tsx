@@ -29,6 +29,9 @@ export class MgInputCheckbox {
   // Locales
   private messages;
 
+  // hasDisplayedError (triggered by blur event)
+  private hasDisplayedError = false;
+
   /**************
    * Decorators *
    **************/
@@ -94,6 +97,19 @@ export class MgInputCheckbox {
    * Define if input is required
    */
   @Prop() required = false;
+  @Watch('required')
+  handleRequired(newValue: boolean): void {
+    if (!this.readonly) {
+      this.inputs.forEach(input => {
+        input.required = newValue; // We can't wait for render to set input required
+      });
+      this.checkValidity();
+      if (this.hasDisplayedError) {
+        this.setErrorMessage();
+        this.hasDisplayedError = false;
+      }
+    }
+  }
 
   /**
    * Define if input is readonly
@@ -158,7 +174,8 @@ export class MgInputCheckbox {
   @Method()
   async displayError(): Promise<void> {
     this.checkValidity();
-    this.checkError();
+    this.setErrorMessage();
+    this.hasDisplayedError = this.invalid;
   }
 
   /**
@@ -184,8 +201,15 @@ export class MgInputCheckbox {
   private handleBlur = (): void => {
     // Check validity
     this.checkValidity();
-    this.checkError();
+    this.setErrorMessage();
   };
+
+  /**
+   * get invalid element
+   *
+   * @returns {HTMLInputElement} element
+   */
+  private getInvalidElement = (): HTMLInputElement => this.inputs.find((input: HTMLInputElement) => !input.disabled && !input.checkValidity());
 
   /**
    * Check if input is valid
@@ -204,9 +228,9 @@ export class MgInputCheckbox {
   };
 
   /**
-   * Check input errors
+   * Set input error message
    */
-  private checkError = (): void => {
+  private setErrorMessage = (): void => {
     const invalidElement = this.getInvalidElement();
 
     // Set error message
@@ -215,13 +239,6 @@ export class MgInputCheckbox {
       this.errorMessage = this.messages.errors.required;
     }
   };
-
-  /**
-   * get invalid element
-   *
-   * @returns {HTMLInputElement} element
-   */
-  private getInvalidElement = (): HTMLInputElement => this.inputs.find((element: HTMLInputElement) => !element.disabled && !element.checkValidity());
 
   /*************
    * Lifecycle *

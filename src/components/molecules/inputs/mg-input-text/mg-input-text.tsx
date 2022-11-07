@@ -28,8 +28,8 @@ export class MgInputText {
   // Locales
   private messages;
 
-  // hasError (triggered by blur event)
-  private hasError = false;
+  // hasDisplayedError (triggered by blur event)
+  private hasDisplayedError = false;
 
   /**************
    * Decorators *
@@ -108,6 +108,17 @@ export class MgInputText {
    * Define if input is required
    */
   @Prop() required = false;
+  @Watch('required')
+  handleRequired(newValue: boolean): void {
+    if (!this.readonly) {
+      this.input.required = newValue; // We can't wait for render to set input required
+      this.checkValidity();
+      if (this.hasDisplayedError) {
+        this.setErrorMessage();
+        this.hasDisplayedError = false;
+      }
+    }
+  }
 
   /**
    * Define if input is readonly
@@ -197,8 +208,8 @@ export class MgInputText {
   @Method()
   async displayError(): Promise<void> {
     this.checkValidity();
-    this.checkError();
-    this.hasError = this.invalid;
+    this.setErrorMessage();
+    this.hasDisplayedError = this.invalid;
   }
 
   /**
@@ -208,8 +219,8 @@ export class MgInputText {
    */
   private handleInput = (): void => {
     this.checkValidity();
-    if (this.hasError) {
-      this.checkError();
+    if (this.hasDisplayedError) {
+      this.setErrorMessage();
     }
     this.value = this.input.value;
   };
@@ -256,11 +267,11 @@ export class MgInputText {
   };
 
   /**
-   * Check input errors
+   * Set input error message
    *
    * @returns {void}
    */
-  private checkError = (): void => {
+  private setErrorMessage = (): void => {
     // Set error message
     this.errorMessage = undefined;
     // Does not match pattern
@@ -274,7 +285,7 @@ export class MgInputText {
   };
 
   /**
-   * Validate patern configuration
+   * Validate pattern configuration
    *
    * @returns {void}
    */

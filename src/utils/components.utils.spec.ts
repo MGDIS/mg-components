@@ -36,8 +36,8 @@ describe('components.utils', () => {
 
     test('Should check if class already in list', () => {
       const classList = new ClassList(['blu']);
-      expect(classList.has('blu')).toBeTruthy();
-      expect(classList.has('bli')).toBeFalsy();
+      expect(classList.has('blu')).toEqual(true);
+      expect(classList.has('bli')).toEqual(false);
     });
 
     test('Should return seperated space classes list', () => {

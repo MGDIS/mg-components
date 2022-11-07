@@ -22,8 +22,8 @@ export class MgInputDate {
   private messages;
   private locale: string;
 
-  // hasError (triggered by blur event)
-  private hasError = false;
+  // hasDisplayedError (triggered by blur event)
+  private hasDisplayedError = false;
 
   /**************
    * Decorators *
@@ -77,6 +77,17 @@ export class MgInputDate {
    * Define if input is required
    */
   @Prop() required = false;
+  @Watch('required')
+  handleRequired(newValue: boolean): void {
+    if (!this.readonly) {
+      this.input.required = newValue; // We can't wait for render to set input required
+      this.checkValidity();
+      if (this.hasDisplayedError) {
+        this.setErrorMessage();
+        this.hasDisplayedError = false;
+      }
+    }
+  }
 
   /**
    * Define if input is readonly
@@ -155,8 +166,8 @@ export class MgInputDate {
   @Method()
   async displayError(): Promise<void> {
     this.checkValidity();
-    this.checkError();
-    this.hasError = this.invalid;
+    this.setErrorMessage();
+    this.hasDisplayedError = this.invalid;
   }
 
   /**
@@ -164,8 +175,8 @@ export class MgInputDate {
    */
   private handleInput = (): void => {
     this.checkValidity();
-    if (this.hasError) {
-      this.checkError();
+    if (this.hasDisplayedError) {
+      this.setErrorMessage();
     }
     this.value = this.input.value;
   };
@@ -222,37 +233,28 @@ export class MgInputDate {
   };
 
   /**
-   * Set error message
-   *
-   * @returns {void}
-   */
-  private setErrorMessage = (): void => {
-    const inputError = this.getInputError();
-    // required
-    if (inputError === InputError.REQUIRED) {
-      this.errorMessage = this.messages.errors[inputError];
-    }
-    // min, max & minMax
-    else if ([InputError.MIN, InputError.MAX, InputError.MINMAX].includes(inputError)) {
-      this.errorMessage = this.messages.errors.date[inputError].replace('{min}', localeDate(this.min, this.locale)).replace('{max}', localeDate(this.max, this.locale));
-    }
-    // wrong date format
-    // element.validity.badInput is default error message
-    else {
-      this.errorMessage = this.messages.errors.date.badInput.replace('{min}', this.min?.length > 0 ? localeDate(this.min, this.locale) : localeDate('1900-01-01', this.locale));
-    }
-  };
-
-  /**
    * Check input errors
    *
    * @returns {void}
    */
-  private checkError = (): void => {
+  private setErrorMessage = (): void => {
     // Set error message
     this.errorMessage = undefined;
     if (!this.valid) {
-      this.setErrorMessage();
+      const inputError = this.getInputError();
+      // required
+      if (inputError === InputError.REQUIRED) {
+        this.errorMessage = this.messages.errors[inputError];
+      }
+      // min, max & minMax
+      else if ([InputError.MIN, InputError.MAX, InputError.MINMAX].includes(inputError)) {
+        this.errorMessage = this.messages.errors.date[inputError].replace('{min}', localeDate(this.min, this.locale)).replace('{max}', localeDate(this.max, this.locale));
+      }
+      // wrong date format
+      // element.validity.badInput is default error message
+      else {
+        this.errorMessage = this.messages.errors.date.badInput.replace('{min}', this.min?.length > 0 ? localeDate(this.min, this.locale) : localeDate('1900-01-01', this.locale));
+      }
     }
   };
 
