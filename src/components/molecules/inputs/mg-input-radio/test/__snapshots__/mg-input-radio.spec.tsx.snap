@@ -288,7 +288,62 @@ exports[`mg-input-radio Should render with args {
   label: 'label',
   identifier: 'identifier',
   items: [Array],
-  required: true
+  required: true,
+  disabled: true,
+  helpText: 'My help text',
+  value: 'batman'
+}: 1`] = `
+<mg-input-radio>
+  <mock:shadow-root>
+    <fieldset class="mg-input mg-input--radio">
+      <mg-input-title identifier="identifier" is-legend="">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input">
+          <ul class="mg-input__input-group-container">
+            <li class="mg-input__input-group mg-input__input-group--disabled">
+              <input aria-describedby="identifier-help-text" checked="" disabled="" id="identifier_0" name="identifier" required="" type="radio" value="0">
+              <label htmlfor="identifier_0">
+                batman
+              </label>
+            </li>
+            <li class="mg-input__input-group mg-input__input-group--disabled">
+              <input aria-describedby="identifier-help-text" disabled="" id="identifier_1" name="identifier" required="" type="radio" value="1">
+              <label htmlfor="identifier_1">
+                robin
+              </label>
+            </li>
+            <li class="mg-input__input-group mg-input__input-group--disabled">
+              <input aria-describedby="identifier-help-text" disabled="" id="identifier_2" name="identifier" required="" type="radio" value="2">
+              <label htmlfor="identifier_2">
+                joker
+              </label>
+            </li>
+            <li class="mg-input__input-group mg-input__input-group--disabled">
+              <input aria-describedby="identifier-help-text" disabled="" id="identifier_3" name="identifier" required="" type="radio" value="3">
+              <label htmlfor="identifier_3">
+                bane
+              </label>
+            </li>
+          </ul>
+        </div>
+        <div class="mg-input__help-text" id="identifier-help-text">
+          My help text
+        </div>
+      </div>
+    </fieldset>
+  </mock:shadow-root>
+</mg-input-radio>
+`;
+
+exports[`mg-input-radio Should render with args {
+  label: 'label',
+  identifier: 'identifier',
+  items: [Array],
+  required: true,
+  helpText: 'My help text',
+  value: 'batman'
 }: 1`] = `
 <mg-input-radio>
   <mock:shadow-root>
@@ -300,31 +355,59 @@ exports[`mg-input-radio Should render with args {
         <div class="mg-input__input">
           <ul class="mg-input__input-group-container">
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_0" name="identifier" required="" type="radio" value="0">
+              <input aria-describedby="identifier-help-text" checked="" id="identifier_0" name="identifier" required="" type="radio" value="0">
               <label htmlfor="identifier_0">
                 batman
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_1" name="identifier" required="" type="radio" value="1">
+              <input aria-describedby="identifier-help-text" id="identifier_1" name="identifier" required="" type="radio" value="1">
               <label htmlfor="identifier_1">
                 robin
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_2" name="identifier" required="" type="radio" value="2">
+              <input aria-describedby="identifier-help-text" id="identifier_2" name="identifier" required="" type="radio" value="2">
               <label htmlfor="identifier_2">
                 joker
               </label>
             </li>
             <li class="mg-input__input-group">
-              <input aria-describedby="" id="identifier_3" name="identifier" required="" type="radio" value="3">
+              <input aria-describedby="identifier-help-text" id="identifier_3" name="identifier" required="" type="radio" value="3">
               <label htmlfor="identifier_3">
                 bane
               </label>
             </li>
           </ul>
         </div>
+        <div class="mg-input__help-text" id="identifier-help-text">
+          My help text
+        </div>
+      </div>
+    </fieldset>
+  </mock:shadow-root>
+</mg-input-radio>
+`;
+
+exports[`mg-input-radio Should render with args {
+  label: 'label',
+  identifier: 'identifier',
+  items: [Array],
+  required: true,
+  readonly: true,
+  helpText: 'My help text',
+  value: 'batman'
+}: 1`] = `
+<mg-input-radio>
+  <mock:shadow-root>
+    <fieldset class="mg-input mg-input--radio mg-input--readonly">
+      <mg-input-title identifier="identifier" is-legend="">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <strong>
+          batman
+        </strong>
       </div>
     </fieldset>
   </mock:shadow-root>

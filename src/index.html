@@ -752,11 +752,57 @@
               <mg-input-text class="mg-grid__col no-padding" mg-width="2" label="Libellé" tooltip="message tooltip" value="BA" maxlength="2"></mg-input-text>
             </div> -->
             <mg-input-checkbox label="mg-input-checkbox label" identifier="mg-input-checkbox-id"></mg-input-checkbox>
+            <script>
+              const mgInputCheckbox = document.querySelector('mg-input-checkbox');
+              mgInputCheckbox.value = [
+                { title: 'oui', value: false },
+                { title: 'non', value: false },
+              ];
+            </script>
+
             <mg-input-date label="mg-input-date label" identifier="mg-input-date-id"></mg-input-date>
+            <script>
+              const mgInputDate = document.querySelector('mg-input-date');
+            </script>
+
             <mg-input-numeric class="align-left" identifier="mg-input-numeric" label="mg-input-numeric label"></mg-input-numeric>
+            <script>
+              const mgInputNumeric = document.querySelector('mg-input-numeric');
+            </script>
+
             <mg-input-password identifier="mg-input-password" label="mg-input-password label"></mg-input-password>
-            <mg-input-radio identifier="mg-input-radio" label="mg-input-radio label" value="blu"></mg-input-radio>
+            <script>
+              const mgInputPassword = document.querySelector('mg-input-password');
+            </script>
+
+            <mg-input-radio identifier="mg-input-radio" label="mg-input-radio label"></mg-input-radio>
+            <script>
+              const mgInputRadio = document.querySelector('mg-input-radio');
+              mgInputRadio.items = [
+                { title: 'blu', value: 'blu' },
+                { title: 'bli', value: 'bli' },
+                { title: 'bla', value: 'bla', disabled: true },
+                { title: 'blo', value: 'blo' },
+              ];
+              // mgInputRadio.value = mgInputRadio.items[1].value;
+              // mgInputRadio.value = 'bli';
+            </script>
+
             <mg-input-select identifier="mg-input-select" label="mg-input-select label" value="blo" tooltip="non"></mg-input-select>
+            <script>
+              const mgInputSelect = document.querySelector('mg-input-select');
+              // mgInputSelect.items = ['blu', 'bli', 'bla', 'blo', 'le long libellé qui va faire sortir le champ mg-input-select de sa zone de confort'];
+              mgInputSelect.items = [
+                { title: 'blu', value: undefined },
+                { title: 'bli', value: { blu: 'bli' } },
+                { title: 'bla', value: 'bla' },
+                { title: 'blo', value: 5 },
+              ];
+              // mgInputSelect.value = 'bli';
+              // mgInputSelect.value = mgInputSelect.items[2];
+              // mgInputSelect.value = undefined;
+            </script>
+
             <mg-input-text
               identifier="mg-input-text"
               label="mg-input-text label"
@@ -770,14 +816,38 @@
             <mg-input-text icon="check-circle" identifier="mg-input-text-serch" label="mg-input-text label">
               <mg-button slot="append-input" label="search"><mg-icon icon="magnifying-glass"></mg-icon> Search</mg-button>
             </mg-input-text>
+            <script>
+              const mgInputText = document.querySelector('mg-input-text');
+            </script>
+
             <mg-input-textarea identifier="mg-input-textarea" label="mg-input-textarea label" help-text="aide"></mg-input-textarea>
-            <mg-input-toggle identifier="mg-input-toggle" label="mg-input-toggle label" value="oui">
+            <script>
+              const mgInputTextarea = document.querySelector('mg-input-textarea');
+            </script>
+
+            <mg-input-toggle identifier="mg-input-toggle-required" label="All fields are required">
               <span slot="item-1">non</span>
               <span slot="item-2">oui</span>
             </mg-input-toggle>
+            <script>
+              const mgInputToggle = document.querySelector('mg-input-toggle');
+              mgInputToggle.items = [
+                { title: 'non', value: false },
+                { title: 'oui', value: true },
+              ];
+              mgInputToggle.addEventListener('value-change', e => {
+                Array.from(document.querySelectorAll('mg-form *'))
+                  .filter(node => node.nodeName.startsWith('MG-INPUT-'))
+                  .forEach(node => (node.required = e.detail));
+              });
+              // mgInputToggle.value = 'non';
+              // mgInputToggle.value = mgInputToggle.items[1].value;
+            </script>
+
             <div slot="actions" class="mg-group-elements mg-group-elements--align-right">
-              <mg-button id="can-submit">Primary</mg-button>
-              <mg-button variant="secondary">Secondary</mg-button>
+              <mg-button id="can-submit">Can Submit</mg-button>
+              <mg-button id="display-error" variant="secondary">Chek errors</mg-button>
+              <mg-button id="toggle-readonly" variant="secondary">Toggle Readonly</mg-button>
             </div>
           </mg-form>
           <script>
@@ -786,55 +856,18 @@
             mgForm.addEventListener('form-valid', function (e) {
               mgFormButton.disabled = !e.detail;
             });
-            // setTimeout(function () {
-            //   mgForm.displayError();
-            // }, 1500);
+            const mgFormButtonErrors = document.querySelector('#display-error');
+            mgFormButtonErrors.addEventListener('click', () => {
+              mgForm.displayError();
+            });
+            const mgFormButtonToggleReadonly = document.querySelector('#toggle-readonly');
+            mgFormButtonToggleReadonly.addEventListener('click', () => {
+              Array.from(mgForm.querySelectorAll('*'))
+                .filter(node => node.nodeName.startsWith('MG-INPUT-'))
+                .forEach(node => (node.readonly = !node.readonly));
+            });
           </script>
           <script>
-            const mgInputCheckbox = document.querySelector('mg-input-checkbox');
-            const mgInputDate = document.querySelector('mg-input-date');
-            const mgInputNumeric = document.querySelector('mg-input-numeric');
-            const mgInputPassword = document.querySelector('mg-input-password');
-            const mgInputRadio = document.querySelector('mg-input-radio');
-            const mgInputSelect = document.querySelector('mg-input-select');
-            const mgInputText = document.querySelector('mg-input-text');
-            const mgInputTextarea = document.querySelector('mg-input-textarea');
-            const mgInputToggle = document.querySelector('mg-input-toggle');
-
-            mgInputCheckbox.value = [
-              { title: 'oui', value: false },
-              { title: 'non', value: false },
-            ];
-            mgInputRadio.items = [
-              { title: 'blu', value: 'blu' },
-              { title: 'bli', value: 'bli' },
-              { title: 'bla', value: 'bla', disabled: true },
-              { title: 'blo', value: 'blo' },
-            ];
-            // mgInputRadio.value = mgInputRadio.items[1].value;
-            // mgInputRadio.value = 'bli';
-            // mgInputSelect.items = ['blu', 'bli', 'bla', 'blo', 'le long libellé qui va faire sortir le champ mg-input-select de sa zone de confort'];
-            mgInputSelect.items = [
-              { title: 'blu', value: undefined },
-              { title: 'bli', value: { blu: 'bli' } },
-              { title: 'bla', value: 'bla' },
-              { title: 'blo', value: 5 },
-            ];
-            // mgInputSelect.value = 'bli';
-            // mgInputSelect.value = mgInputSelect.items[2];
-            mgInputSelect.value = undefined;
-            mgInputToggle.items = [
-              { title: 'non', value: 'non' },
-              { title: 'oui', value: 'oui' },
-            ];
-            // mgInputToggle.value = 'non';
-            // mgInputToggle.value = mgInputToggle.items[1].value;
-          </script>
-          <script>
-            // mgInputCheckbox.value = [
-            //   { title: 'oui', value: true },
-            //   { title: 'non', value: false },
-            // ];
             // mgInputDate.value = '2022-04-15';
             // mgInputNumeric.value = 1234567890;
             // mgInputPassword.value = 'p455w0rD';
@@ -844,16 +877,14 @@
             // mgInputTextarea.value =
             //   'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
             // mgInputToggle.value = mgInputToggle.items[1].value;
-          </script>
-          <script>
-            mgInputCheckbox.required = true;
-            mgInputDate.required = true;
-            mgInputNumeric.required = true;
-            mgInputPassword.required = true;
-            mgInputRadio.required = true;
-            mgInputSelect.required = true;
-            mgInputText.required = true;
-            mgInputTextarea.required = true;
+            // mgInputCheckbox.readonly = true;
+            // mgInputDate.readonly = true;
+            // mgInputNumeric.readonly = true;
+            // mgInputPassword.readonly = true;
+            // mgInputRadio.readonly = true;
+            // mgInputSelect.readonly = true;
+            // mgInputText.readonly = true;
+            // mgInputTextarea.readonly = true;
           </script>
         </section>
         <h2>.mg-form-group</h2>

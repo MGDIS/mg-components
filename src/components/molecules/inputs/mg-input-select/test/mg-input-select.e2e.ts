@@ -104,6 +104,9 @@ describe('mg-input-select', () => {
     `<mg-input-select identifier="identifier" label="label" disabled></mg-input-select>`,
     `<mg-input-select identifier="identifier" label="label" value="blu" disabled></mg-input-select>`,
     `<mg-input-select identifier="identifier" label="label" value="batman" help-text='<mg-icon icon="user" size="small"></mg-icon> Welcome batman'></mg-input-select>`,
+    `<mg-input-select identifier="identifier" label="label" value="blu" required help-text="HelpText Message"></mg-input-select>`,
+    `<mg-input-select identifier="identifier" label="label" value="blu" required readonly help-text="HelpText Message"></mg-input-select>`,
+    `<mg-input-select identifier="identifier" label="label" value="blu" required disabled help-text="HelpText Message"></mg-input-select>`,
   ])('Should render with template', html => {
     test('render', async () => {
       const page = await createPage(`${html}

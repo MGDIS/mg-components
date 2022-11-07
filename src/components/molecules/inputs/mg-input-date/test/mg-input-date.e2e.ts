@@ -74,6 +74,9 @@ describe('mg-input-date', () => {
     `<mg-input-date identifier="identifier" label="label" value="1982-06-02" disabled></mg-input-date>`,
     `<mg-input-date identifier="identifier" label="label" value="1982-06-02" readonly lang="fr"></mg-input-date>`,
     `<mg-input-date identifier="identifier" label="label" help-text='<mg-icon icon="user" size="small"></mg-icon> Welcome batman'></mg-input-date>`,
+    `<mg-input-date identifier="identifier" label="label" value="1982-06-02" help-text='My help text' required></mg-input-date>`,
+    `<mg-input-date identifier="identifier" label="label" value="1982-06-02" help-text='My help text' required readonly></mg-input-date>`,
+    `<mg-input-date identifier="identifier" label="label" value="1982-06-02" help-text='My help text' required disabled></mg-input-date>`,
   ])('Should render with template', html => {
     test('render', async () => {
       const page = await createPage(html);

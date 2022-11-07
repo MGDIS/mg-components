@@ -20,8 +20,8 @@ export class MgInputPassword {
   // Locales
   private messages;
 
-  // hasError (triggered by blur event)
-  private hasError = false;
+  // hasDisplayedError (triggered by blur event)
+  private hasDisplayedError = false;
 
   /**************
    * Decorators *
@@ -77,6 +77,17 @@ export class MgInputPassword {
    * Define if input is required
    */
   @Prop() required = false;
+  @Watch('required')
+  handleRequired(newValue: boolean): void {
+    if (!this.readonly) {
+      this.input.required = newValue; // We can't wait for render to set input required
+      this.checkValidity();
+      if (this.hasDisplayedError) {
+        this.setErrorMessage();
+        this.hasDisplayedError = false;
+      }
+    }
+  }
 
   /**
    * Define if input is readonly
@@ -141,8 +152,8 @@ export class MgInputPassword {
   @Method()
   async displayError(): Promise<void> {
     this.checkValidity();
-    this.checkError();
-    this.hasError = this.invalid;
+    this.setErrorMessage();
+    this.hasDisplayedError = this.invalid;
   }
 
   /**
@@ -150,8 +161,8 @@ export class MgInputPassword {
    */
   private handleInput = (): void => {
     this.checkValidity();
-    if (this.hasError) {
-      this.checkError();
+    if (this.hasDisplayedError) {
+      this.setErrorMessage();
     }
     this.value = this.input.value;
   };
@@ -180,9 +191,9 @@ export class MgInputPassword {
   };
 
   /**
-   * Check input errors
+   * Set input error message
    */
-  private checkError = (): void => {
+  private setErrorMessage = (): void => {
     // Set error message
     this.errorMessage = undefined;
     // required

@@ -88,6 +88,9 @@ describe('mg-input-checkbox', () => {
     `<mg-input-checkbox identifier="identifier" label="legend" input-vertical-list help-text="HelpText Message"></mg-input-checkbox>`,
     `<mg-input-checkbox identifier="identifier" label="legend" input-vertical-list help-text="HelpText Message" label-on-top></mg-input-checkbox>`,
     `<mg-input-checkbox identifier="identifier" label="legend" help-text='<mg-icon icon="user" size="small"></mg-icon> Welcome batman'></mg-input-checkbox>`,
+    `<mg-input-checkbox identifier="identifier" label="legend" help-text='HelpText Message' required></mg-input-checkbox>`,
+    `<mg-input-checkbox identifier="identifier" label="legend" help-text='HelpText Message' required readonly></mg-input-checkbox>`,
+    `<mg-input-checkbox identifier="identifier" label="legend" help-text='HelpText Message' required disabled></mg-input-checkbox>`,
   ])('Should render with template', html => {
     test('render', async () => {
       const page = await createPage(`${html}

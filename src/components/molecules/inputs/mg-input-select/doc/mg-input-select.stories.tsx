@@ -20,8 +20,7 @@ export default {
 };
 
 /**
- * 1. camelCase arguments must be written in the template, for exemple labelOnTop must be placed in the template as label-on-top={args.labelOnTop}
- * 2. boolean arguments with a default true value must be added like display-character-left={args.displayCharacterLeft ? 'true' : 'false'}
+ * Template
  *
  * @param {any} args component arguments
  * @returns {HTMLElement} HTMLElement

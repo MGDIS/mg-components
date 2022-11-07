@@ -70,6 +70,30 @@ const inputsScriptRequiredSome = `<script>
   mgInputText.required = true;
 </script>`;
 
+const inputsScriptReadonlyAll = `<script>
+  mgInputCheckbox.readonly = true;
+  mgInputDate.readonly = true;
+  mgInputNumeric.readonly = true;
+  mgInputPassword.readonly = true;
+  mgInputRadio.readonly = true;
+  mgInputSelect.readonly = true;
+  mgInputText.readonly = true;
+  mgInputTextarea.readonly = true;
+  mgInputToggle.readonly = true;
+</script>`;
+
+const inputsScriptDisabledAll = `<script>
+  mgInputCheckbox.disabled = true;
+  mgInputDate.disabled = true;
+  mgInputNumeric.disabled = true;
+  mgInputPassword.disabled = true;
+  mgInputRadio.disabled = true;
+  mgInputSelect.disabled = true;
+  mgInputText.disabled = true;
+  mgInputTextarea.disabled = true;
+  mgInputToggle.disabled = true;
+</script>`;
+
 describe('mg-form', () => {
   describe.each([`<mg-form>`, `<mg-form disabled>`, `<mg-form readonly>`])('params %s', startTag => {
     test('Should render', async () => {
@@ -125,5 +149,21 @@ describe('mg-form', () => {
         expect(screenshotErrors).toMatchImageSnapshot();
       });
     });
+  });
+
+  test.each(['readonly', 'disabled'])('Should not have required message when all inputs are required and %s', async attribute => {
+    const page = await createPage(`<mg-form>
+    ${inputs}
+    </mg-form>
+    ${inputsScript}
+    ${inputsScriptSetValues}
+    ${inputsScriptRequiredAll}
+    ${attribute === 'readonly' ? inputsScriptReadonlyAll : inputsScriptDisabledAll}`);
+
+    const element = await page.find('mg-form');
+    expect(element).toHaveClass('hydrated');
+
+    const screenshot = await page.screenshot();
+    expect(screenshot).toMatchImageSnapshot();
   });
 });

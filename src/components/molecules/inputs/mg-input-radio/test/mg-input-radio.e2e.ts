@@ -48,6 +48,9 @@ describe('mg-input-radio', () => {
     `<mg-input-radio identifier="identifier" label="legend" label-hide></mg-input-radio>`,
     `<mg-input-radio identifier="identifier" label="legend" placeholder="placeholder" help-text="HelpText Message"></mg-input-radio>`,
     `<mg-input-radio identifier="identifier" label="legend" placeholder="placeholder" value="batman" help-text='<mg-icon icon="user" size="small"></mg-icon> Welcome batman'></mg-input-radio>`,
+    `<mg-input-radio identifier="identifier" label="legend" placeholder="placeholder" required help-text="HelpText Message" value="batman"></mg-input-radio>`,
+    `<mg-input-radio identifier="identifier" label="legend" placeholder="placeholder" required readonly help-text="HelpText Message" value="batman"></mg-input-radio>`,
+    `<mg-input-radio identifier="identifier" label="legend" placeholder="placeholder" required disabled help-text="HelpText Message" value="batman"></mg-input-radio>`,
   ])('without tooltip', html => {
     test('render', async () => {
       const page = await createPage(`${html}
