@@ -22,6 +22,9 @@ describe('mg-input-password', () => {
     { label: 'label', identifier: 'identifier', readonly: true },
     { label: 'label', identifier: 'identifier', readonly: true, labelOnTop: true, tooltip: 'Tooltip message' },
     { label: 'label', identifier: 'identifier', readonly: true, value: 'blu' },
+    { label: 'label', identifier: 'identifier', required: true, value: 'blu', helpText: 'My help text' },
+    { label: 'label', identifier: 'identifier', required: true, readonly: true, value: 'blu', helpText: 'My help text' },
+    { label: 'label', identifier: 'identifier', required: true, disabled: true, value: 'blu', helpText: 'My help text' },
     { label: 'label', identifier: 'identifier', tooltip: 'My Tooltip Message' },
     { label: 'label', identifier: 'identifier', tooltip: 'My Tooltip Message', labelOnTop: true },
   ])('Should render with args %s:', async args => {

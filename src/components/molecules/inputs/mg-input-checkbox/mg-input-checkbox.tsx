@@ -268,6 +268,7 @@ export class MgInputCheckbox {
    * @returns {HTMLElement} HTML Element
    */
   render(): HTMLElement {
+    this.inputs = []; // clear inputs before every render
     return (
       <MgInput
         identifier={this.identifier}
@@ -276,15 +277,15 @@ export class MgInputCheckbox {
         label={this.label}
         labelOnTop={this.labelOnTop}
         labelHide={this.labelHide}
-        required={this.required}
+        required={!this.readonly ? this.required : undefined} // required is only used display asterisk
         readonly={undefined}
         mgWidth={undefined}
         disabled={this.disabled}
         value={this.value && this.value.toString()}
         readonlyValue={undefined}
-        tooltip={!this.readonly && this.tooltip}
-        helpText={this.helpText}
-        errorMessage={this.errorMessage}
+        tooltip={!this.readonly ? this.tooltip : undefined}
+        helpText={!this.readonly ? this.helpText : undefined}
+        errorMessage={!this.readonly ? this.errorMessage : undefined}
         isFieldset={true}
       >
         <ul class={{ 'mg-input__input-group-container': true, 'mg-input__input-group-container--vertical': this.inputVerticalList }}>
