@@ -100,7 +100,7 @@ export class MgForm {
    */
   private setRequiredMessage = (): void => {
     // Get required fields
-    const requiredInputs = this.mgInputs.filter(input => input.required && !input.disabled && !this.disabled);
+    const requiredInputs = this.mgInputs.filter(input => input.required && !input.disabled && !this.disabled && !input.readonly && !this.readonly);
 
     // All fields are required
     // mg-input-toggle can not be required
@@ -128,7 +128,13 @@ export class MgForm {
     this.formValid.emit(validity);
   };
 
-  private handleFormSubmit = (event: SubmitEvent) => {
+  /**
+   * Handle Form Submit
+   *
+   * @param {SubmitEvent} event submit event
+   * @returns {void}
+   */
+  private handleFormSubmit = (event: SubmitEvent): void => {
     event.preventDefault();
     this.formSubmit.emit();
   };
@@ -146,16 +152,16 @@ export class MgForm {
     // Get locales
     this.messages = initLocales(this.element).messages;
 
-    // Get slotted mgInputs
-    this.mgInputs = Array.from(this.element.querySelectorAll('*')).filter((node: Node) => node.nodeName.startsWith('MG-INPUT-')) as HTMLMgInputsElement[];
-
     // Get slotted mgButtons
-    this.mgButtons = Array.from(this.element.querySelectorAll('*')).filter((node: Node) => node.nodeName.startsWith('MG-BUTTON')) as HTMLMgButtonElement[];
+    this.mgButtons = Array.from(this.element.querySelectorAll('mg-button'));
 
     // Set button form identifier
     this.mgButtons.forEach(mgButton => {
       mgButton.setAttribute('form', this.identifier);
     });
+
+    // Get slotted mgInputs
+    this.mgInputs = Array.from(this.element.querySelectorAll('*')).filter((node: Node) => node.nodeName.startsWith('MG-INPUT-')) as HTMLMgInputsElement[];
 
     // Define required message
     this.setRequiredMessage();

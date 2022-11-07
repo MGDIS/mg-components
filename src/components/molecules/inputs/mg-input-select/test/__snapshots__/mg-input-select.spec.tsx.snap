@@ -282,6 +282,118 @@ exports[`mg-input-select Should render with args {
   label: 'label',
   identifier: 'identifier',
   items: [Array],
+  required: true,
+  disabled: true,
+  helpText: 'My help text',
+  value: 'blu'
+}: 1`] = `
+<mg-input-select>
+  <mock:shadow-root>
+    <div class="mg-input mg-input--select">
+      <mg-input-title identifier="identifier">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input">
+          <select aria-describedby="identifier-help-text" class="mg-input__box" disabled="" id="identifier" name="identifier" required="" title="Select a value">
+            <option value="">
+              Select a value
+            </option>
+            <option selected="" value="blu">
+              blu
+            </option>
+            <option value="bli">
+              bli
+            </option>
+            <option value="blo">
+              blo
+            </option>
+            <option value="bla">
+              bla
+            </option>
+          </select>
+        </div>
+        <div class="mg-input__help-text" id="identifier-help-text">
+          My help text
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-select>
+`;
+
+exports[`mg-input-select Should render with args {
+  label: 'label',
+  identifier: 'identifier',
+  items: [Array],
+  required: true,
+  helpText: 'My help text',
+  value: 'blu'
+}: 1`] = `
+<mg-input-select>
+  <mock:shadow-root>
+    <div class="mg-input mg-input--select">
+      <mg-input-title identifier="identifier" required="">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <div class="mg-input__input">
+          <select aria-describedby="identifier-help-text" class="mg-input__box" id="identifier" name="identifier" required="" title="Select a value">
+            <option value="">
+              Select a value
+            </option>
+            <option selected="" value="blu">
+              blu
+            </option>
+            <option value="bli">
+              bli
+            </option>
+            <option value="blo">
+              blo
+            </option>
+            <option value="bla">
+              bla
+            </option>
+          </select>
+        </div>
+        <div class="mg-input__help-text" id="identifier-help-text">
+          My help text
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-select>
+`;
+
+exports[`mg-input-select Should render with args {
+  label: 'label',
+  identifier: 'identifier',
+  items: [Array],
+  required: true,
+  readonly: true,
+  helpText: 'My help text',
+  value: 'blu'
+}: 1`] = `
+<mg-input-select>
+  <mock:shadow-root>
+    <div class="mg-input mg-input--readonly mg-input--select">
+      <mg-input-title identifier="identifier">
+        label
+      </mg-input-title>
+      <div class="mg-input__input-container">
+        <strong>
+          blu
+        </strong>
+      </div>
+    </div>
+  </mock:shadow-root>
+</mg-input-select>
+`;
+
+exports[`mg-input-select Should render with args {
+  label: 'label',
+  identifier: 'identifier',
+  items: [Array],
   tooltip: 'My Tooltip Message'
 }: 1`] = `
 <mg-input-select>

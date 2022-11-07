@@ -249,7 +249,7 @@ export class MgInputRadio {
    *
    * @returns {HTMLInputElement} element
    */
-  private getInvalidElement = (): HTMLInputElement => this.inputs.find((element: HTMLInputElement) => !element.disabled && !element.checkValidity());
+  private getInvalidElement = (): HTMLInputElement => this.inputs.find((input: HTMLInputElement) => !input.disabled && !input.checkValidity());
 
   /*************
    * Lifecycle *
@@ -279,6 +279,7 @@ export class MgInputRadio {
    * @returns {HTMLElement} HTML Element
    */
   render(): HTMLElement {
+    this.inputs = []; // clear inputs before every render
     return (
       <MgInput
         identifier={this.identifier}

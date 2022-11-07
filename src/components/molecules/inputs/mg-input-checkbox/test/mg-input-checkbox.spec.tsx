@@ -34,6 +34,8 @@ describe('mg-input-checkbox', () => {
     { label: 'label', identifier: 'identifier', value: cloneDeep(items), labelHide: true },
     { label: 'label', identifier: 'identifier', value: cloneDeep(items), inputVerticalList: true },
     { label: 'label', identifier: 'identifier', value: cloneDeep(items), required: true },
+    { label: 'label', identifier: 'identifier', value: cloneDeep(items), required: true, readonly: true, helpText: 'Hello joker' },
+    { label: 'label', identifier: 'identifier', value: cloneDeep(items), required: true, disabled: true, helpText: 'Hello joker' },
     { label: 'label', identifier: 'identifier', value: cloneDeep(items), readonly: true, labelOnTop: true, tooltip: 'Tooltip message' },
     { label: 'label', identifier: 'identifier', value: cloneDeep(items), disabled: true },
     { label: 'label', identifier: 'identifier', value: cloneDeep(items), helpText: 'Hello joker' },

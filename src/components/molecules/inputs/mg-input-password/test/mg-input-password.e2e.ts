@@ -74,6 +74,9 @@ describe('mg-input-password', () => {
     `<mg-input-password identifier="identifier" label="label" disabled></mg-input-password>`,
     `<mg-input-password identifier="identifier" label="label" value="blu" disabled></mg-input-password>`,
     `<mg-input-password identifier="identifier" label="label" value="batman" help-text='<mg-icon icon="user" size="small"></mg-icon> Welcome batman'></mg-input-password>`,
+    `<mg-input-password identifier="identifier" label="label" value="blu" help-text="HelpText Message" required></mg-input-password>`,
+    `<mg-input-password identifier="identifier" label="label" value="blu" help-text="HelpText Message" required readonly></mg-input-password>`,
+    `<mg-input-password identifier="identifier" label="label" value="blu" help-text="HelpText Message" required disabled></mg-input-password>`,
   ])('Should render with template', html => {
     test('render', async () => {
       const page = await createPage(html);
