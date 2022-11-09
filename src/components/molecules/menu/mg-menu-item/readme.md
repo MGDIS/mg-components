@@ -154,17 +154,15 @@ Submenu is displayed via an **mg-tray** component.
 
 ## Properties
 
-| Property                  | Attribute    | Description                                                                       | Type                                                                                                                              | Default          |
-| ------------------------- | ------------ | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
-| `badge`                   | --           | Define menu-item badge                                                            | `{ label: string; value: string \| number; variant?: "info" \| "success" \| "primary" \| "secondary" \| "warning" \| "danger"; }` | `undefined`      |
-| `expanded`                | `expanded`   | Define menu-item content expended                                                 | `boolean`                                                                                                                         | `false`          |
-| `href`                    | `href`       | Define menu-item badge when defined menu-item contain an anchor instead of button | `string`                                                                                                                          | `undefined`      |
-| `icon`                    | --           | Define menu-item icon                                                             | `{ variant?: "info" \| "success" \| "warning" \| "danger"; icon: string; }`                                                       | `undefined`      |
-| `identifier` _(required)_ | `identifier` | Identifier is used for the element ID (id is a reserved prop in Stencil.js)       | `string`                                                                                                                          | `undefined`      |
-| `label` _(required)_      | `label`      | Define menu-item button label                                                     | `string`                                                                                                                          | `undefined`      |
-| `menuIndex`               | `menu-index` | Define menu-item index in parent menu                                             | `number`                                                                                                                          | `undefined`      |
-| `size`                    | `size`       | Define menu-item size                                                             | `"large" \| "medium" \| "regular"`                                                                                                | `'large'`        |
-| `status`                  | `status`     | Define menu-item status                                                           | `Status.ACTIVE \| Status.DISABLED \| Status.HIDDEN \| Status.VISIBLE`                                                             | `Status.VISIBLE` |
+| Property                  | Attribute    | Description                                                                       | Type                                                                  | Default          |
+| ------------------------- | ------------ | --------------------------------------------------------------------------------- | --------------------------------------------------------------------- | ---------------- |
+| `expanded`                | `expanded`   | Define menu-item content expended                                                 | `boolean`                                                             | `false`          |
+| `href`                    | `href`       | Define menu-item badge when defined menu-item contain an anchor instead of button | `string`                                                              | `undefined`      |
+| `identifier` _(required)_ | `identifier` | Identifier is used for the element ID (id is a reserved prop in Stencil.js)       | `string`                                                              | `undefined`      |
+| `label` _(required)_      | `label`      | Define menu-item button label                                                     | `string`                                                              | `undefined`      |
+| `menuIndex`               | `menu-index` | Define menu-item index in parent menu                                             | `number`                                                              | `undefined`      |
+| `size`                    | `size`       | Define menu-item size                                                             | `"large" \| "medium" \| "regular"`                                    | `'large'`        |
+| `status`                  | `status`     | Define menu-item status                                                           | `Status.ACTIVE \| Status.DISABLED \| Status.HIDDEN \| Status.VISIBLE` | `Status.VISIBLE` |
 
 
 ## Events
@@ -180,13 +178,11 @@ Submenu is displayed via an **mg-tray** component.
 ### Depends on
 
 - [mg-icon](../../../atoms/mg-icon)
-- [mg-badge](../../../atoms/mg-badge)
 
 ### Graph
 ```mermaid
 graph TD;
   mg-menu-item --> mg-icon
-  mg-menu-item --> mg-badge
   style mg-menu-item fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

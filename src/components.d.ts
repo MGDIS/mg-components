@@ -14,8 +14,6 @@ import { RadioOption } from "./components/molecules/inputs/mg-input-radio/mg-inp
 import { SelectOption } from "./components/molecules/inputs/mg-input-select/mg-input-select.conf";
 import { ToggleValue } from "./components/molecules/inputs/mg-input-toggle/mg-input-toggle.conf";
 import { Direction } from "./components/molecules/menu/mg-menu/mg-menu.conf";
-import { MgBadge } from "./components/atoms/mg-badge/mg-badge";
-import { MgIcon } from "./components/atoms/mg-icon/mg-icon";
 import { MenuItemSizeType, Status } from "./components/molecules/menu/mg-menu-item/mg-menu-item.conf";
 import { Placement } from "./components/molecules/mg-popover/mg-popover.conf";
 import { SizeType, TabItem } from "./components/molecules/mg-tabs/mg-tabs.conf";
@@ -862,10 +860,6 @@ export namespace Components {
     }
     interface MgMenuItem {
         /**
-          * Define menu-item badge
-         */
-        "badge": Pick<MgBadge, 'value' | 'variant' | 'label'>;
-        /**
           * Define menu-item content expended
          */
         "expanded": boolean;
@@ -873,10 +867,6 @@ export namespace Components {
           * Define menu-item badge when defined menu-item contain an anchor instead of button
          */
         "href": string;
-        /**
-          * Define menu-item icon
-         */
-        "icon": Pick<MgIcon, 'icon' | 'variant'>;
         /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
          */
@@ -2204,10 +2194,6 @@ declare namespace LocalJSX {
     }
     interface MgMenuItem {
         /**
-          * Define menu-item badge
-         */
-        "badge"?: Pick<MgBadge, 'value' | 'variant' | 'label'>;
-        /**
           * Define menu-item content expended
          */
         "expanded"?: boolean;
@@ -2215,10 +2201,6 @@ declare namespace LocalJSX {
           * Define menu-item badge when defined menu-item contain an anchor instead of button
          */
         "href"?: string;
-        /**
-          * Define menu-item icon
-         */
-        "icon"?: Pick<MgIcon, 'icon' | 'variant'>;
         /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
          */

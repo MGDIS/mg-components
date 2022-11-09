@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-10-26T07:30:10",
+  "timestamp": "2022-11-07T16:38:37",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.18.1",
@@ -112,14 +112,10 @@
       "slots": [],
       "parts": [],
       "dependents": [
-        "mg-menu-item",
         "mg-tabs"
       ],
       "dependencies": [],
       "dependencyGraph": {
-        "mg-menu-item": [
-          "mg-badge"
-        ],
         "mg-tabs": [
           "mg-badge"
         ]
@@ -4220,7 +4216,7 @@
       "filePath": "./src/components/molecules/menu/mg-menu/mg-menu.tsx",
       "encapsulation": "shadow",
       "tag": "mg-menu",
-      "readme": "## Horizontal\n\n### Use\n![](./mg-menu/doc/img/mg-menu-exemple.png)\n\nHorizontal menu is used with large (\"desktop\") resolutions, it is placed in the upper area of the screen.\n\n### Anatomy\n\nA menu is composed of mg-menu-items.\n\n### Behavior\n\n#### Too large\n\n![](./mg-menu/doc/img/mg-menu-horizontal-plus.png)\n\nWhen not all of the items can be displayed because of the width of the menu's container, items are grouped in a \"plus\" item.\n\n### Specs\n\n#### Sizing\n\n![](./mg-menu/doc/img/mg-menu-horizontal-sizing.png)\n\nAn horizontal menu can display different sizes of items (see definition of mg-menu-item) : regular, medium, large.\n\n### Spacing\n\n![](./mg-menu/doc/img/mg-menu-horizontal-spacing.png)\n\nSpace between items is 0.\n\n## Vertical\n\n### Use\n\n![](./mg-menu/doc/img/mg-menu-vertical-use.png)\n\nHorizontal menu is used with large (\"desktop\") resolutions, it is placed in the left area of the screen.\n\n### Anatomy\n\nA menu is composed of mg-menu-items.\n\n### Behavior\n\n#### Too high\n\n![](./mg-menu/doc/img/mg-menu-vertical-scroll.png)\n\nWhen not all of the items can be displayed because of the height of the menu's container, a scrollbar allows to see hidden items.\n\n### Specs\n\n#### Sizing\n\nThe width of the menu has to be specified.\n\n### Spacing\n\n![](./mg-menu/doc/img/mg-menu-vertical-spacing.png)\n\nSpace between items is 0.\n",
+      "readme": "## Horizontal\n\n### Use\n![](./mg-menu/doc/img/mg-menu-exemple.png)\nHorizontal menu is used with large (\"desktop\") resolutions, it is placed in the upper area of the screen.\n\n### Anatomy\nA menu is composed of mg-items.\n\n### Behavior\n\n#### Too large\n\n![](./mg-menu/doc/img/mg-menu-horizontal-plus.png)\n\nWhen not all of the items can be displayed because of the width of the menu's container, items are grouped in a \"plus\" item.\n\n### Specs\n\n#### Sizing\n\n![](./mg-menu/doc/img/mg-menu-horizontal-sizing.png)\n\nAn horizontal menu can display different sizes of items (see definition of mg-item) : regular, medium, large.\n\n### Spacing\n\n![](./mg-menu/doc/img/mg-menu-horizontal-spacing.png)\n\nSpace between items is 0.\n\n## Vertical\n\n### Use\n\n![](./mg-menu/doc/img/mg-menu-vertical-use.png)\n\nHorizontal menu is used with large (\"desktop\") resolutions, it is placed in the left area of the screen.\n\n### Anatomy\n\nA menu is composed of mg-items.\n\n### Behavior\n\n#### Too high\n\n![](./mg-menu/doc/img/mg-menu-vertical-scroll.png)\n\nWhen not all of the items can be displayed because of the height of the menu's container, a scrollbar allows to see hidden items.\n\n### Specs\n\n#### Sizing\n\nThe width of the menu has to be specified.\n\n### Spacing\n\n![](./mg-menu/doc/img/mg-menu-vertical-spacing.png)\n\nSpace between items is 0.\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -4282,43 +4278,6 @@
       "usage": {},
       "props": [
         {
-          "name": "badge",
-          "type": "{ label: string; value: string | number; variant?: \"info\" | \"success\" | \"primary\" | \"secondary\" | \"warning\" | \"danger\"; }",
-          "mutable": false,
-          "reflectToAttr": false,
-          "docs": "Define menu-item badge",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "{ label: string; value: string"
-            },
-            {
-              "type": "number; variant?: \"info\""
-            },
-            {
-              "value": "success",
-              "type": "string"
-            },
-            {
-              "value": "primary",
-              "type": "string"
-            },
-            {
-              "value": "secondary",
-              "type": "string"
-            },
-            {
-              "value": "warning",
-              "type": "string"
-            },
-            {
-              "type": "\"danger\"; }"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
           "name": "expanded",
           "type": "boolean",
           "mutable": true,
@@ -4346,32 +4305,6 @@
           "values": [
             {
               "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "icon",
-          "type": "{ variant?: \"info\" | \"success\" | \"warning\" | \"danger\"; icon: string; }",
-          "mutable": false,
-          "reflectToAttr": false,
-          "docs": "Define menu-item icon",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "{ variant?: \"info\""
-            },
-            {
-              "value": "success",
-              "type": "string"
-            },
-            {
-              "value": "warning",
-              "type": "string"
-            },
-            {
-              "type": "\"danger\"; icon: string; }"
             }
           ],
           "optional": false,
@@ -4505,13 +4438,11 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "mg-icon",
-        "mg-badge"
+        "mg-icon"
       ],
       "dependencyGraph": {
         "mg-menu-item": [
-          "mg-icon",
-          "mg-badge"
+          "mg-icon"
         ]
       }
     },

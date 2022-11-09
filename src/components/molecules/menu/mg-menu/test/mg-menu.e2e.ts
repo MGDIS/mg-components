@@ -9,22 +9,22 @@ const createHTML = direction => `
         </mg-menu>
       </mg-menu-item>
       <mg-menu-item identifier="id-2" label="1 - head-2 long" status="disabled"></mg-menu-item>
-      <mg-menu-item identifier="id-3" icon={{ icon: 'user' }} label="1 - head-3 very long"></mg-menu-item>
-      <mg-menu-item identifier="id-4" icon={{ icon: 'user' }} label="1 - head-4" badge={{ value: 2, label: 'hello' }}></mg-menu-item>
-      <mg-menu-item identifier="id-5" icon={{ icon: 'user' }} label="1 - head-5" badge={{ value: 2, label: 'hello' }}>
+      <mg-menu-item identifier="id-3" label="1 - head-3 very long">
+        <mg-icon icon='user' slot='illustration'></mg-icon>
+      </mg-menu-item>
+      <mg-menu-item identifier="id-4" label="1 - head-4">
+        <mg-icon icon='user' slot='illustration'></mg-icon>
+        <mg-badge value='2' label='hello' slot='info'></mg-badge>  
+      </mg-menu-item>
+      <mg-menu-item identifier="id-5" label="1 - head-5">
+        <mg-icon icon='user' slot='illustration'></mg-icon>
+        <mg-badge value='2' label='hello' slot='info'></mg-badge>  
         <mg-menu label="submenu-2" direction="vertical">
           <mg-menu-item identifier="id-5-1" size="medium" label="Batman begins"></mg-menu-item>
         </mg-menu>
       </mg-menu-item>
     </mg-menu>
-  </div>
-  <script>
-    document.querySelector('mg-menu').querySelector('mg-menu-item[identifier="id-3"]').icon = {icon : 'user'};
-    document.querySelector('mg-menu').querySelector('mg-menu-item[identifier="id-4"]').icon = {icon : 'user'};
-    document.querySelector('mg-menu').querySelector('mg-menu-item[identifier="id-5"]').icon = {icon : 'user'};
-    document.querySelector('mg-menu').querySelector('mg-menu-item[identifier="id-4"]').badge = {label: 'hello', value: 2};
-    document.querySelector('mg-menu').querySelector('mg-menu-item[identifier="id-5"]').badge = {label: 'hello', value: 2};
-  </script>`;
+  </div>`;
 
 describe('mg-menu', () => {
   test.each([undefined, 'horizontal', 'vertical'])('should renders, props %s', async direction => {

@@ -1,7 +1,5 @@
 import { Component, h, Prop, State, Host, Watch, Element, Event, EventEmitter } from '@stencil/core';
 import { ClassList } from '../../../../utils/components.utils';
-import { MgBadge } from '../../../atoms/mg-badge/mg-badge';
-import { MgIcon } from '../../../atoms/mg-icon/mg-icon';
 import { MgMenu } from '../mg-menu/mg-menu';
 import { Direction } from '../mg-menu/mg-menu.conf';
 import { ElementPosition, sizes, MenuItemSizeType, Status } from './mg-menu-item.conf';
@@ -64,16 +62,6 @@ export class MgMenuItem {
    * when defined menu-item contain an anchor instead of button
    */
   @Prop() href: string;
-
-  /**
-   * Define menu-item badge
-   */
-  @Prop() badge: Pick<MgBadge, 'value' | 'variant' | 'label'>;
-
-  /**
-   * Define menu-item icon
-   */
-  @Prop() icon: Pick<MgIcon, 'icon' | 'variant'>;
 
   /**
    * Define menu-item status
@@ -317,9 +305,9 @@ export class MgMenuItem {
           onClick={this.handleElementCLick}
           onFocus={this.handleElementFocus}
         >
-          {this.icon !== undefined && <mg-icon variant={this.icon.variant} icon={this.icon.icon}></mg-icon>}
+          <slot name="illustration"></slot>
           <span class={`${this.navigationButton}-text`}>{this.label}</span>
-          {this.badge !== undefined && <mg-badge {...this.badge} variant={this.badge.variant || 'info'}></mg-badge>}
+          <slot name="info"></slot>
           {this.hasSubMenu && (
             <span class={`${this.navigationButton}-chevron`}>
               <mg-icon icon={`chevron-${this.expanded === true ? 'up' : 'down'}`}></mg-icon>
