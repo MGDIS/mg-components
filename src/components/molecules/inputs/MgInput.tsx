@@ -127,15 +127,6 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props: MgInputProps, 
   }
 
   /**
-   * Update input(s) in children
-   */
-  if (props.readonly) {
-    children = children.filter(child => child.$name$ === 'append-input');
-  } else {
-    children = applyAriadescribedBy(children, ariaDescribedbyIDs, utils);
-  }
-
-  /**
    * Return template
    *
    * +--------+--------------+---------+
@@ -151,7 +142,7 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props: MgInputProps, 
    * Error message is based on this aria method: https://www.w3.org/WAI/tutorials/forms/notifications/#on-focus-change
    */
 
-  const TagName = getTagName(props.isFieldset);
+  const TagName: string = getTagName(props.isFieldset);
 
   /**
    * Get tooltip node
@@ -194,12 +185,12 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props: MgInputProps, 
       {props.readonly ? (
         <div class="mg-input__input-container">
           <strong>{props.readonlyValue || props.value}</strong>
-          {children}
+          {children.filter(child => child.$name$ === 'append-input')}
         </div>
       ) : (
         <div class="mg-input__input-container">
           <div class={{ 'mg-input__input': true, 'mg-input__input--has-error': props.errorMessage !== undefined }}>
-            {children}
+            {applyAriadescribedBy(children, ariaDescribedbyIDs, utils)}
             {!props.labelOnTop && props.tooltip && getTooltip()}
           </div>
           {props.helpText && <div id={helpTextId} class="mg-input__help-text" innerHTML={props.helpText}></div>}

@@ -35,6 +35,10 @@ describe('mg-modal', () => {
       observe: function () {
         fireMo = this.cb;
       },
+      disconnect: function () {
+        return null;
+      },
+      takeRecords: [],
     });
   });
 

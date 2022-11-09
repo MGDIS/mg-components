@@ -32,6 +32,9 @@ export class MgModal {
    * Decorators *
    **************/
 
+  /**
+   * Get component DOM element
+   */
   @Element() element: HTMLMgModalElement;
 
   /**

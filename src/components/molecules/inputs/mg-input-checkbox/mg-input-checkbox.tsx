@@ -97,19 +97,6 @@ export class MgInputCheckbox {
    * Define if input is required
    */
   @Prop() required = false;
-  @Watch('required')
-  handleRequired(newValue: boolean): void {
-    if (!this.readonly) {
-      this.inputs.forEach(input => {
-        input.required = newValue; // We can't wait for render to set input required
-      });
-      this.checkValidity();
-      if (this.hasDisplayedError) {
-        this.setErrorMessage();
-        this.hasDisplayedError = false;
-      }
-    }
-  }
 
   /**
    * Define if input is readonly
@@ -120,6 +107,19 @@ export class MgInputCheckbox {
    * Define if input is disabled
    */
   @Prop() disabled = false;
+  @Watch('required')
+  @Watch('readonly')
+  @Watch('disabled')
+  handleValidityChange(newValue: boolean, _oldValue: boolean, prop: string): void {
+    this.inputs.forEach(input => {
+      input[prop] = newValue;
+    });
+    this.checkValidity();
+    if (this.hasDisplayedError) {
+      this.setErrorMessage();
+      this.hasDisplayedError = false;
+    }
+  }
 
   /**
    * Add a tooltip message next to the input
@@ -209,22 +209,16 @@ export class MgInputCheckbox {
    *
    * @returns {HTMLInputElement} element
    */
-  private getInvalidElement = (): HTMLInputElement => this.inputs.find((input: HTMLInputElement) => !input.disabled && !input.checkValidity());
+  private getInvalidElement = (): HTMLInputElement => this.inputs.find((input: HTMLInputElement) => input !== null && !input.disabled && !input.checkValidity());
 
   /**
    * Check if input is valid
    */
   private checkValidity = (): void => {
-    if (!this.readonly) {
-      const validity = this.getInvalidElement() === undefined;
-
-      // Set validity
-      this.valid = validity;
-      this.invalid = !validity;
-
-      //Send event
-      this.inputValid.emit(validity);
-    }
+    this.valid = this.readonly || this.disabled || this.getInvalidElement() === undefined;
+    this.invalid = !this.valid;
+    // We need to send valid event even if it is the same value
+    this.inputValid.emit(this.valid);
   };
 
   /**
@@ -268,7 +262,6 @@ export class MgInputCheckbox {
    * @returns {HTMLElement} HTML Element
    */
   render(): HTMLElement {
-    this.inputs = []; // clear inputs before every render
     return (
       <MgInput
         identifier={this.identifier}
@@ -293,7 +286,7 @@ export class MgInputCheckbox {
             .filter(item => {
               return !this.readonly || item.value;
             })
-            .map(input => (
+            .map((input, index) => (
               <li class={{ 'mg-input__input-group': true, 'mg-input__input-group--disabled': this.disabled || input.disabled }}>
                 <input
                   type="checkbox"
@@ -306,7 +299,9 @@ export class MgInputCheckbox {
                   indeterminate={input.value === null}
                   onInput={this.handleInput}
                   onBlur={this.handleBlur}
-                  ref={el => this.inputs.push(el as HTMLInputElement)}
+                  ref={el => {
+                    if (el !== null) this.inputs[index] = el as HTMLInputElement;
+                  }}
                 />
                 <label htmlFor={input.id}>{input.title}</label>
               </li>

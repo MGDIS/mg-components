@@ -1,4 +1,4 @@
-import { Component, Element, Event, EventEmitter, h, Method, Prop, State } from '@stencil/core';
+import { Component, Element, Event, EventEmitter, h, Method, Prop, State, Watch } from '@stencil/core';
 import { createID, ClassList } from '../../../utils/components.utils';
 import { initLocales } from '../../../locales';
 import { HTMLMgInputsElement } from '../inputs/MgInput.conf';
@@ -15,7 +15,9 @@ export class MgForm {
 
   private mgInputs: HTMLMgInputsElement[];
   private mgButtons: HTMLMgButtonElement[];
-  private requiredMessage: string;
+
+  // Classes
+  private classAllRequired = 'mg-form--all-required';
 
   // HTML selector
   private form: HTMLFormElement;
@@ -27,6 +29,9 @@ export class MgForm {
    * Decorators *
    **************/
 
+  /**
+   * Get component DOM element
+   */
   @Element() element: HTMLMgFormElement;
 
   /**
@@ -50,6 +55,12 @@ export class MgForm {
    * Define if form is disabled
    */
   @Prop() disabled = false;
+  @Watch('readonly')
+  @Watch('disabled')
+  handleAttributeChange(): void {
+    this.setMgInputs();
+    this.setRequiredMessage();
+  }
 
   /**
    * Define form valid state
@@ -65,6 +76,11 @@ export class MgForm {
    * Component classes
    */
   @State() classList: ClassList = new ClassList(['mg-form']);
+
+  /**
+   * Required message
+   */
+  @State() requiredMessage: string;
 
   /**
    * Emitted event on form validity check
@@ -99,18 +115,24 @@ export class MgForm {
    * @returns {void}
    */
   private setRequiredMessage = (): void => {
-    // Get required fields
-    const requiredInputs = this.mgInputs.filter(input => input.required && !input.disabled && !this.disabled && !input.readonly && !this.readonly);
-
-    // All fields are required
-    // mg-input-toggle can not be required
-    if (requiredInputs.length > 0 && requiredInputs.length === this.mgInputs.filter(input => input.nodeName !== 'MG-INPUT-TOGGLE').length) {
-      this.requiredMessage = this.messages.form.allRequired;
-      this.classList.add('mg-form--all-required');
-    }
-    // Some fields are required
-    else if (requiredInputs.length > 0) {
-      this.requiredMessage = this.messages.form.required;
+    // init required message
+    this.requiredMessage = null;
+    this.classList.delete(this.classAllRequired);
+    // If the form is disabled or readonly none of them are required
+    // Check if all fields are not editable (readonly or disabled)
+    if (!this.disabled && !this.readonly && !this.mgInputs.every(input => input.disabled || input.readonly)) {
+      // Get required fields
+      const requiredInputs = this.mgInputs.filter(input => input.required && !input.disabled && !input.readonly);
+      // All fields are required
+      // mg-input-toggle can not be required
+      if (requiredInputs.length > 0 && requiredInputs.length === this.mgInputs.filter(input => input.nodeName !== 'MG-INPUT-TOGGLE').length) {
+        this.requiredMessage = this.messages.form.allRequired;
+        this.classList.add(this.classAllRequired);
+      }
+      // Some fields are required
+      else if (requiredInputs.length > 0) {
+        this.requiredMessage = this.messages.form.required;
+      }
     }
   };
 
@@ -120,12 +142,13 @@ export class MgForm {
    * @returns {void}
    */
   private checkValidity = (): void => {
-    const validity = !this.mgInputs.some(input => input.invalid);
+    // Update required on input event
+    this.setRequiredMessage();
 
-    this.valid = validity;
-    this.invalid = !validity;
-
-    this.formValid.emit(validity);
+    this.valid = !this.mgInputs.some(input => input.invalid);
+    this.invalid = !this.valid;
+    // We need to send valid event if it is the same value
+    this.formValid.emit(this.valid);
   };
 
   /**
@@ -137,6 +160,23 @@ export class MgForm {
   private handleFormSubmit = (event: SubmitEvent): void => {
     event.preventDefault();
     this.formSubmit.emit();
+  };
+
+  /**
+   * Set mgInputs
+   *
+   * @returns {void}
+   */
+  private setMgInputs = (): void => {
+    // Get slotted mgInputs
+    this.mgInputs = Array.from(this.element.querySelectorAll('*')).filter((node: Node) => node.nodeName.startsWith('MG-INPUT-')) as HTMLMgInputsElement[];
+    // Set inputs readonly or disabled based on form configuration
+    // Othewise listen to events
+    this.mgInputs.map(async input => {
+      if (this.readonly) input.readonly = true;
+      else if (this.disabled) input.disabled = true;
+      else input.addEventListener('input-valid', this.checkValidity);
+    });
   };
 
   /*************
@@ -160,8 +200,8 @@ export class MgForm {
       mgButton.setAttribute('form', this.identifier);
     });
 
-    // Get slotted mgInputs
-    this.mgInputs = Array.from(this.element.querySelectorAll('*')).filter((node: Node) => node.nodeName.startsWith('MG-INPUT-')) as HTMLMgInputsElement[];
+    // Set mgInputs
+    this.setMgInputs();
 
     // Define required message
     this.setRequiredMessage();
@@ -169,11 +209,6 @@ export class MgForm {
     // Check validity when slotted mgInputs are ready
     Promise.all(
       this.mgInputs.map(async input => {
-        // Set inputs readonly or disabled based on form configuration
-        // Othewise listen to events
-        if (this.readonly) input.readonly = true;
-        else if (this.disabled) input.disabled = true;
-        else input.addEventListener('input-valid', this.checkValidity);
         try {
           await input.componentOnReady();
         } catch {} // prevent error with VueJS first render
@@ -197,6 +232,10 @@ export class MgForm {
         });
       }
     });
+    // Update mgInputs when mgForm content change
+    new MutationObserver(() => {
+      this.setMgInputs();
+    }).observe(this.element, { childList: true });
   }
 
   /**

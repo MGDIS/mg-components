@@ -627,9 +627,9 @@ exports[`mg-input-text validity, case next state is disabled validity ({ validit
         label
       </mg-input-title>
       <div class="mg-input__input-container">
-        <div class="mg-input__input mg-input__input--has-error">
+        <div class="mg-input__input">
           <div class="mg-input__with-character-left" style="--mg-character-left-message-length: 7;">
-            <input aria-describedby="identifier-character-left identifier-error" class="mg-input__box" disabled="" id="identifier" maxlength="400" name="identifier" type="text">
+            <input aria-describedby="identifier-character-left" class="mg-input__box" disabled="" id="identifier" maxlength="400" name="identifier" type="text">
             <mg-character-left identifier="identifier-character-left" maxlength="400"></mg-character-left>
           </div>
           <slot name="append-input"></slot>

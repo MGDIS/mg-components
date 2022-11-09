@@ -13,7 +13,7 @@ export class MgMessage {
    * Internal *
    ************/
 
-  // classes
+  // Classes
   private classHide = 'mg-message--hide';
 
   // IDs
@@ -29,6 +29,9 @@ export class MgMessage {
    * Decorators *
    **************/
 
+  /**
+   * Get component DOM element
+   */
   @Element() element: HTMLMgMessageElement;
 
   /**

@@ -412,8 +412,8 @@ exports[`mg-input-date validity, case next state is disabled validity ({ validit
         label
       </mg-input-title>
       <div class="mg-input__input-container">
-        <div class="mg-input__input mg-input__input--has-error">
-          <input aria-describedby="identifier-error" class="mg-input__box" disabled="" id="identifier" name="identifier" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" type="date">
+        <div class="mg-input__input">
+          <input aria-describedby="" class="mg-input__box" disabled="" id="identifier" name="identifier" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" type="date">
         </div>
       </div>
     </div>

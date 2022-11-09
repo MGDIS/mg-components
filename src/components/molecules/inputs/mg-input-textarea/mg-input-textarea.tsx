@@ -14,7 +14,7 @@ export class MgInputTextarea {
    * Internal *
    ************/
 
-  // classes
+  // Classes
   private classFocus = 'is-focused';
   private classHasDisplayCharacterLeft = 'mg-input--has-display-character-left';
 
@@ -90,17 +90,6 @@ export class MgInputTextarea {
    * Define if input is required
    */
   @Prop() required = false;
-  @Watch('required')
-  handleRequired(newValue: boolean): void {
-    if (!this.readonly) {
-      this.input.required = newValue; // We can't wait for render to set input required
-      this.checkValidity();
-      if (this.hasDisplayedError) {
-        this.setErrorMessage();
-        this.hasDisplayedError = false;
-      }
-    }
-  }
 
   /**
    * Define if input is readonly
@@ -111,6 +100,19 @@ export class MgInputTextarea {
    * Define if input is disabled
    */
   @Prop() disabled = false;
+  @Watch('required')
+  @Watch('readonly')
+  @Watch('disabled')
+  handleValidityChange(newValue: boolean, _oldValue: boolean, prop: string): void {
+    if (this.input !== undefined) {
+      this.input[prop] = newValue;
+      this.checkValidity();
+      if (this.hasDisplayedError) {
+        this.setErrorMessage();
+        this.hasDisplayedError = false;
+      }
+    }
+  }
 
   /**
    * Define input width
@@ -244,15 +246,10 @@ export class MgInputTextarea {
    * Check if input is valid
    */
   private checkValidity = (): void => {
-    if (!this.readonly && this.input !== undefined) {
-      const validity = this.input.checkValidity && this.input.checkValidity() && this.getPatternValidity();
-      // Set validity
-      this.valid = validity;
-      this.invalid = !validity;
-
-      //Send event
-      this.inputValid.emit(validity);
-    }
+    this.valid = this.readonly || this.disabled || (this.input?.checkValidity !== undefined && this.input.checkValidity() && this.getPatternValidity());
+    this.invalid = !this.valid;
+    // We need to send valid event even if it is the same value
+    this.inputValid.emit(this.valid);
   };
 
   /**
@@ -354,7 +351,9 @@ export class MgInputTextarea {
             onInput={this.handleInput}
             onFocus={this.handleFocus}
             onBlur={this.handleBlur}
-            ref={el => (this.input = el as HTMLTextAreaElement)}
+            ref={el => {
+              if (el !== null) this.input = el as HTMLTextAreaElement;
+            }}
           ></textarea>
           {this.displayCharacterLeft && this.maxlength > 0 && (
             <mg-character-left identifier={this.characterLeftId} characters={this.value} maxlength={this.maxlength}></mg-character-left>
