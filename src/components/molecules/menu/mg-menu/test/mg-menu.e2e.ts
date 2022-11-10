@@ -14,11 +14,11 @@ const createHTML = direction => `
       </mg-menu-item>
       <mg-menu-item identifier="id-4" label="1 - head-4">
         <mg-icon icon='user' slot='illustration'></mg-icon>
-        <mg-badge value='2' label='hello' slot='info'></mg-badge>  
+        <mg-badge value='2' label='hello' slot='information'></mg-badge>  
       </mg-menu-item>
       <mg-menu-item identifier="id-5" label="1 - head-5">
         <mg-icon icon='user' slot='illustration'></mg-icon>
-        <mg-badge value='2' label='hello' slot='info'></mg-badge>  
+        <mg-badge value='2' label='hello' slot='information'></mg-badge>  
         <mg-menu label="submenu-2" direction="vertical">
           <mg-menu-item identifier="id-5-1" size="medium" label="Batman begins"></mg-menu-item>
         </mg-menu>
@@ -33,7 +33,7 @@ describe('mg-menu', () => {
     const element = await page.find('mg-menu');
     expect(element).toHaveClass('hydrated');
 
-    await page.setViewport({ width: direction === 'vertical' ? 400 : 1000, height: direction === 'vertical' ? 400 : 100 });
+    await page.setViewport({ width: direction === 'vertical' ? 400 : 1200, height: direction === 'vertical' ? 400 : 100 });
 
     const screenshot = await page.screenshot();
     expect(screenshot).toMatchImageSnapshot();
@@ -43,7 +43,7 @@ describe('mg-menu', () => {
     test.each(['horizontal', 'vertical'])('should success keyboard navigation, case direction %s', async direction => {
       const page = await createPage(createHTML(direction));
 
-      await page.setViewport({ width: direction === 'vertical' ? 400 : 1000, height: direction === 'vertical' ? 500 : 200 });
+      await page.setViewport({ width: direction === 'vertical' ? 400 : 1200, height: direction === 'vertical' ? 500 : 200 });
 
       const baseScreenshot = await page.screenshot();
       expect(baseScreenshot).toMatchImageSnapshot();
@@ -118,7 +118,7 @@ describe('mg-menu', () => {
     test.each(['horizontal', 'vertical'])('should success keyboard navigation, case direction %s', async direction => {
       const page = await createPage(createHTML(direction));
 
-      await page.setViewport({ width: direction === 'vertical' ? 400 : 1000, height: direction === 'vertical' ? 500 : 200 });
+      await page.setViewport({ width: direction === 'vertical' ? 400 : 1200, height: direction === 'vertical' ? 500 : 200 });
 
       const baseScreenshot = await page.screenshot();
       expect(baseScreenshot).toMatchImageSnapshot();

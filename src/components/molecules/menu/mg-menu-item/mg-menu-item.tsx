@@ -283,6 +283,14 @@ export class MgMenuItem {
       // manage menu items style depending to parent menu horientation
       this.classList.add(`${this.name}--${this.direction}`);
       this.navigationButtonClassList.add(`${this.navigationButton}--${this.direction}`);
+
+      // manage child items level
+      const childItems = Array.from(this.element.querySelectorAll('mg-menu-item'));
+      childItems.forEach(item => {
+        const startIndex = this.isInMainMenu && this.direction === Direction.VERTICAL ? 1 : 0;
+        const itemLevel = Number(item.getAttribute('data-level')) || startIndex;
+        item.setAttribute('data-level', `${itemLevel + 1}`);
+      });
     }, 0);
   }
 
@@ -307,7 +315,7 @@ export class MgMenuItem {
         >
           <slot name="illustration"></slot>
           <span class={`${this.navigationButton}-text`}>{this.label}</span>
-          <slot name="info"></slot>
+          <slot name="information"></slot>
           {this.hasSubMenu && (
             <span class={`${this.navigationButton}-chevron`}>
               <mg-icon icon={`chevron-${this.expanded === true ? 'up' : 'down'}`}></mg-icon>

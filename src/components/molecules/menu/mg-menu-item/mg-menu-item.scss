@@ -1,3 +1,5 @@
+@use 'sass:map';
+
 @import '../../../../styles/mixins/navigation-button.scss';
 
 $navigation-button-sizes: (
@@ -15,7 +17,21 @@ $navigation-button-sizes: (
   ),
 );
 
+@mixin level($button-sizes) {
+  @each $name, $size in $button-sizes {
+    // Building level from 1 to 6
+    @for $i from 1 through 6 {
+      :host(.mg-menu-item--vertical[data-level='#{$i}']) {
+        .mg-menu-item__navigation-button.mg-menu-item__navigation-button--size-#{$name} {
+          padding-left: calc(#{$i} * #{map.get($size, 'horizontal')});
+        }
+      }
+    }
+  }
+}
+
 @include navigation-button('mg-menu-item', $navigation-button-sizes);
+@include level($navigation-button-sizes);
 
 :host {
   position: relative;
