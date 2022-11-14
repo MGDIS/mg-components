@@ -1,7 +1,7 @@
 import { createPage } from '../../../../../utils/test.utils';
 
 const createHTML = direction => `
-  <div style="display: flex;">
+  <div class="menu-container">
     <mg-menu ${direction && `direction="${direction}"`}>
       <mg-menu-item identifier="id-1" label="1 - head-1" status="active">
         <mg-menu label="submenu" direction="vertical">
@@ -37,6 +37,13 @@ describe('mg-menu', () => {
 
     const screenshot = await page.screenshot();
     expect(screenshot).toMatchImageSnapshot();
+
+    if (direction === 'vertical') {
+      await page.setViewport({ width: 150, height: 400 });
+
+      const screenshot2 = await page.screenshot();
+      expect(screenshot2).toMatchImageSnapshot();
+    }
   });
 
   describe('keyboard navigation', () => {

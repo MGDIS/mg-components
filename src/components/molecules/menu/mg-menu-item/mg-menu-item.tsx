@@ -314,7 +314,9 @@ export class MgMenuItem {
           onFocus={this.handleElementFocus}
         >
           <slot name="illustration"></slot>
-          <span class={`${this.navigationButton}-text`}>{this.label}</span>
+          <div class={`${this.navigationButton}-text`} title={this.label}>
+            {this.label}
+          </div>
           <slot name="information"></slot>
           {this.hasSubMenu && (
             <span class={`${this.navigationButton}-chevron`}>

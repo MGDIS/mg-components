@@ -35,17 +35,20 @@ $navigation-button-sizes: (
 
 :host {
   position: relative;
-  display: block;
+  display: flex;
   background-color: hsl(var(--mg-menu-item-background-color-hsl));
-  z-index: 1;
 }
 
+// last item style
 :host(.mg-menu-item--last) .mg-menu-item__collapse-container {
   left: unset;
   right: 0;
 }
 
+// vertical item style
 :host(.mg-menu-item--vertical) {
+  flex-direction: column;
+  width: 100%;
   .mg-menu-item {
     &__collapse-container {
       left: unset;
@@ -53,23 +56,38 @@ $navigation-button-sizes: (
       position: unset;
       width: unset;
     }
-    &__navigation-button-chevron {
-      margin-left: auto;
+    &__navigation-button {
+      width: 100%;
+      &-text {
+        flex: unset;
+      }
+      &-chevron {
+        margin-left: auto;
+      }
     }
   }
 }
 
+// horizontal item style
 :host(.mg-menu-item--horizontal) .mg-menu-item__collapse-container.mg-menu-item__collapse-container--shadow {
   box-shadow: var(--box-shadow);
 }
 
-.mg-menu-item__navigation-button {
-  width: 100%;
-}
-
-.mg-menu-item__collapse-container {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: max-content;
+.mg-menu-item {
+  &__collapse-container {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: max-content;
+  }
+  &__navigation-button {
+    :focus-visible {
+      z-index: 100;
+    }
+    &-text {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
 }
