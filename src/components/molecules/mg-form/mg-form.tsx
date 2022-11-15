@@ -172,7 +172,7 @@ export class MgForm {
     this.mgInputs = Array.from(this.element.querySelectorAll('*')).filter((node: Node) => node.nodeName.startsWith('MG-INPUT-')) as HTMLMgInputsElement[];
     // Set inputs readonly or disabled based on form configuration
     // Othewise listen to events
-    this.mgInputs.map(input => {
+    this.mgInputs.forEach(input => {
       if (this.readonly) input.readonly = true;
       else if (this.disabled) input.disabled = true;
       else input.addEventListener('input-valid', this.checkValidity);
