@@ -60,8 +60,5 @@ $border-bottom-size: 0.3rem;
     &.#{$element}__navigation-button--vertical {
       border-left: $border-bottom-size solid transparent;
     }
-    .#{$element}__navigation-button-text {
-      flex: 0 0 content;
-    }
   }
 }

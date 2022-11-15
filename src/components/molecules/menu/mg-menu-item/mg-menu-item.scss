@@ -49,6 +49,7 @@ $navigation-button-sizes: (
 :host(.mg-menu-item--vertical) {
   flex-direction: column;
   width: 100%;
+  overflow-y: auto;
   .mg-menu-item {
     &__collapse-container {
       left: unset;
@@ -58,9 +59,6 @@ $navigation-button-sizes: (
     }
     &__navigation-button {
       width: 100%;
-      &-text {
-        flex: unset;
-      }
       &-chevron {
         margin-left: auto;
       }
@@ -81,8 +79,8 @@ $navigation-button-sizes: (
     width: max-content;
   }
   &__navigation-button {
-    :focus-visible {
-      z-index: 100;
+    &:focus-visible {
+      outline-offset: -0.1rem;
     }
     &-text {
       white-space: nowrap;

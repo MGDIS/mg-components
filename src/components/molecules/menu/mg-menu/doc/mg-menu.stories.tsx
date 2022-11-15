@@ -22,7 +22,7 @@ export default {
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Template = (args: any): HTMLElement => {
-  const style = args.direction === Direction.VERTICAL ? { width: '20rem' } : {};
+  const style = args.direction === Direction.VERTICAL ? { width: '25rem', height: '20rem' } : {};
   return (
     <div style={style}>
       <mg-menu {...filterArgs(args)}>
@@ -34,7 +34,7 @@ const Template = (args: any): HTMLElement => {
         <mg-menu-item identifier="id-4" label="1 - head-4" size="medium">
           <mg-icon icon="user" slot="illustration"></mg-icon>
           <mg-badge value="2" label="hello" slot="information"></mg-badge>
-          <mg-menu label="submenu" direction={Direction.HORIZONTAL}>
+          <mg-menu label="submenu" direction={Direction.VERTICAL}>
             <mg-menu-item identifier="id-4-1" size="medium" label="Batman begins"></mg-menu-item>
             <mg-menu-item identifier="id-4-2" size="medium" label="2 - head 1">
               <mg-icon icon="user" slot="illustration"></mg-icon>

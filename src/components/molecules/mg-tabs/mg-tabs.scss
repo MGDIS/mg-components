@@ -13,12 +13,16 @@ $navigation-button-sizes: (
 
 @include navigation-button('mg-tabs', $navigation-button-sizes);
 
-.mg-tabs__header {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-.mg-tabs__content-container:focus-visible {
-  outline: none;
+.mg-tabs {
+  &__header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  &__content-container:focus-visible {
+    outline: none;
+  }
+  &__navigation-button-text {
+    flex: 0 0 content;
+  }
 }
