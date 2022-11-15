@@ -114,24 +114,24 @@ export class MgInputRadio {
    * Define if input is readonly
    */
   @Prop() readonly = false;
-  @Watch('required')
-  handleRequired(newValue: boolean): void {
-    if (!this.readonly) {
-      this.inputs.forEach(input => {
-        input.required = newValue; // We can't wait for render to set input required
-      });
-      this.checkValidity();
-      if (this.hasDisplayedError) {
-        this.setErrorMessage();
-        this.hasDisplayedError = false;
-      }
-    }
-  }
 
   /**
    * Define if input is disabled
    */
   @Prop() disabled = false;
+  @Watch('required')
+  @Watch('readonly')
+  @Watch('disabled')
+  handleValidityChange(newValue: boolean, _oldValue: boolean, prop: string): void {
+    this.inputs.forEach(input => {
+      input[prop] = newValue;
+    });
+    this.checkValidity();
+    if (this.hasDisplayedError) {
+      this.setErrorMessage();
+      this.hasDisplayedError = false;
+    }
+  }
 
   /**
    * Add a tooltip message next to the input
@@ -217,16 +217,10 @@ export class MgInputRadio {
    * @returns {void}
    */
   private checkValidity = (): void => {
-    if (!this.readonly) {
-      const validity = this.getInvalidElement() === undefined;
-
-      // Set validity
-      this.valid = validity;
-      this.invalid = !validity;
-
-      //Send event
-      this.inputValid.emit(validity);
-    }
+    this.valid = this.readonly || this.disabled || this.getInvalidElement() === undefined;
+    this.invalid = !this.valid;
+    // We need to send valid event even if it is the same value
+    this.inputValid.emit(this.valid);
   };
 
   /**
@@ -249,7 +243,7 @@ export class MgInputRadio {
    *
    * @returns {HTMLInputElement} element
    */
-  private getInvalidElement = (): HTMLInputElement => this.inputs.find((input: HTMLInputElement) => !input.disabled && !input.checkValidity());
+  private getInvalidElement = (): HTMLInputElement => this.inputs.find((input: HTMLInputElement) => !input.disabled && !input.readOnly && !input.checkValidity());
 
   /*************
    * Lifecycle *
@@ -279,7 +273,6 @@ export class MgInputRadio {
    * @returns {HTMLElement} HTML Element
    */
   render(): HTMLElement {
-    this.inputs = []; // clear inputs before every render
     return (
       <MgInput
         identifier={this.identifier}
@@ -312,7 +305,9 @@ export class MgInputRadio {
                 required={this.required}
                 onBlur={this.handleBlur}
                 onInput={this.handleInput}
-                ref={el => this.inputs.push(el as HTMLInputElement)}
+                ref={el => {
+                  if (el !== null) this.inputs[index] = el as HTMLInputElement;
+                }}
               />
               <label htmlFor={this.identifier + '_' + index}>{input.title}</label>
             </li>

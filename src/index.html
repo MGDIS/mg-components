@@ -808,7 +808,7 @@
               label="mg-input-text label"
               pattern="[a-z]*"
               pattern-error-message="non non non non non non non non non non non non non non non non non non non non non non non non non non non non non non non non non non non non non non non non non non non"
-              help-text="A l'aide !"
+              help-text="A l'aide ! <a href='javascript:alert(1)'>script</a>"
               mg-width="16"
               maxlength="20"
             ></mg-input-text>
@@ -836,8 +836,9 @@
                 { title: 'oui', value: true },
               ];
               mgInputToggle.addEventListener('value-change', e => {
+                console.log('---------- toggle-required ----------');
                 Array.from(document.querySelectorAll('mg-form *'))
-                  .filter(node => node.nodeName.startsWith('MG-INPUT-'))
+                  .filter(node => node.nodeName.startsWith('MG-INPUT-') && node !== mgInputToggle)
                   .forEach(node => (node.required = e.detail));
               });
               // mgInputToggle.value = 'non';
@@ -847,11 +848,18 @@
             <div slot="actions" class="mg-group-elements mg-group-elements--align-right">
               <mg-button id="can-submit">Can Submit</mg-button>
               <mg-button id="display-error" variant="secondary">Chek errors</mg-button>
-              <mg-button id="toggle-readonly" variant="secondary">Toggle Readonly</mg-button>
+              <mg-button id="toggle-readonly" variant="secondary">Toggle Inputs Readonly</mg-button>
+              <mg-button id="toggle-readonly-form" variant="secondary">Set Form Readonly</mg-button>
+              <mg-button id="toggle-disabled" variant="secondary">Toggle Inputs Disabled</mg-button>
+              <mg-button id="toggle-disabled-form" variant="secondary">Set Form Disabled</mg-button>
+              <mg-button id="add-input" variant="secondary">Add Required Input</mg-button>
             </div>
           </mg-form>
           <script>
             const mgForm = document.querySelector('mg-form');
+            mgForm.addEventListener('form-valid', e => {
+              console.log('form-valid', e.detail);
+            });
             const mgFormButton = document.querySelector('#can-submit');
             mgForm.addEventListener('form-valid', function (e) {
               mgFormButton.disabled = !e.detail;
@@ -862,9 +870,35 @@
             });
             const mgFormButtonToggleReadonly = document.querySelector('#toggle-readonly');
             mgFormButtonToggleReadonly.addEventListener('click', () => {
+              console.log('---------- toggle-readonly ----------');
               Array.from(mgForm.querySelectorAll('*'))
                 .filter(node => node.nodeName.startsWith('MG-INPUT-'))
-                .forEach(node => (node.readonly = !node.readonly));
+                .forEach(node => {
+                  node.readonly = !node.readonly;
+                  console.log(node.tagName, node.readonly);
+                });
+            });
+            const mgFormButtonToggleReadonlyForm = document.querySelector('#toggle-readonly-form');
+            mgFormButtonToggleReadonlyForm.addEventListener('click', () => {
+              mgForm.readonly = true;
+            });
+            const mgFormButtonToggleDisabled = document.querySelector('#toggle-disabled');
+            mgFormButtonToggleDisabled.addEventListener('click', () => {
+              Array.from(mgForm.querySelectorAll('*'))
+                .filter(node => node.nodeName.startsWith('MG-INPUT-'))
+                .forEach(node => (node.disabled = !node.disabled));
+            });
+            const mgFormButtonToggleDisabledForm = document.querySelector('#toggle-disabled-form');
+            mgFormButtonToggleDisabledForm.addEventListener('click', () => {
+              mgForm.disabled = true;
+            });
+            const mgFormButtonAddInput = document.querySelector('#add-input');
+            mgFormButtonAddInput.addEventListener('click', () => {
+              const mgInput = document.createElement('mg-input-text');
+              mgInput.label = 'mg-input JS creation';
+              mgInput.identifier = 'mg-input-js-creation';
+              mgInput.required = '';
+              mgForm.append(mgInput);
             });
           </script>
           <script>

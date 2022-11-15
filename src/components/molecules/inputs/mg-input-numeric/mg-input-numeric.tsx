@@ -106,17 +106,6 @@ export class MgInputNumeric {
    * Define if input is required
    */
   @Prop() required = false;
-  @Watch('required')
-  handleRequired(newValue: boolean): void {
-    if (!this.readonly) {
-      this.input.required = newValue; // We can't wait for render to set input required
-      this.checkValidity();
-      if (this.hasDisplayedError) {
-        this.setErrorMessage();
-        this.hasDisplayedError = false;
-      }
-    }
-  }
 
   /**
    * Define if input is readonly
@@ -127,6 +116,19 @@ export class MgInputNumeric {
    * Define if input is disabled
    */
   @Prop() disabled = false;
+  @Watch('required')
+  @Watch('readonly')
+  @Watch('disabled')
+  handleValidityChange(newValue: boolean, _oldValue: boolean, prop: string): void {
+    if (this.input !== undefined) {
+      this.input[prop] = newValue;
+      this.checkValidity();
+      if (this.hasDisplayedError) {
+        this.setErrorMessage();
+        this.hasDisplayedError = false;
+      }
+    }
+  }
 
   /**
    * Define input width
@@ -290,16 +292,10 @@ export class MgInputNumeric {
    * @returns {void}
    */
   private checkValidity = (): void => {
-    if (!this.readonly) {
-      const validity = this.getInputError() === null;
-
-      // Set validity
-      this.valid = validity;
-      this.invalid = !validity;
-
-      //Send event
-      this.inputValid.emit(validity);
-    }
+    this.valid = this.readonly || this.disabled || this.getInputError() === null;
+    this.invalid = !this.valid;
+    // We need to send valid event even if it is the same value
+    this.inputValid.emit(this.valid);
   };
 
   /**
@@ -327,7 +323,7 @@ export class MgInputNumeric {
    */
   private getInputError = (): null | InputError => {
     let inputError = null;
-    if (this.input === undefined) return inputError;
+    if (this.input === undefined || this.input === null) return inputError;
 
     // required
     if (!this.input.checkValidity() && this.input.validity.valueMissing) {
@@ -433,7 +429,9 @@ export class MgInputNumeric {
           onInput={this.handleInput}
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
-          ref={el => (this.input = el as HTMLInputElement)}
+          ref={el => {
+            if (el !== null) this.input = el as HTMLInputElement;
+          }}
         />
         <slot name="append-input"></slot>
       </MgInput>

@@ -13,6 +13,7 @@ import { MgInputText } from '../../inputs/mg-input-text/mg-input-text';
 import { MgInputTextarea } from '../../inputs/mg-input-textarea/mg-input-textarea';
 import { MgInputToggle } from '../../inputs/mg-input-toggle/mg-input-toggle';
 import { HTMLMgInputsElement } from '../../inputs/MgInput.conf';
+import { setupMutationObserverMock } from '../../../../utils/unit.test.utils';
 
 const getPage = (args, content?) => {
   const page = newSpecPage({
@@ -55,7 +56,21 @@ const getSlottedContent = () => [
 ];
 
 describe('mg-form', () => {
-  beforeEach(() => jest.useFakeTimers());
+  let fireMo;
+
+  beforeEach(() => {
+    jest.useFakeTimers();
+
+    setupMutationObserverMock({
+      observe: function () {
+        fireMo = this.cb;
+      },
+      disconnect: function () {
+        return null;
+      },
+      takeRecords: [],
+    });
+  });
 
   afterEach(() => jest.runOnlyPendingTimers());
 
@@ -154,16 +169,14 @@ describe('mg-form', () => {
     expect(page.root).toMatchSnapshot();
   });
 
-  test.each([undefined, ...buttonTypes])('Should only emit "submit" event for <mg-button type="submit", case type is %s>', async type => {
-    const args = { identifier: 'identifier', lang: 'fr' };
-
+  test.each([undefined, ...buttonTypes])('Should only emit "submit" event for <mg-button type="submit">, case type is %s', async type => {
+    const args = { identifier: 'identifier' };
     const slot = [
       ...getSlottedContent(),
       <div slot="actions">
         <mg-button type={type}>Submit</mg-button>
       </div>,
     ];
-
     const page = await getPage(args, slot);
 
     const mgForm = page.doc.querySelector('mg-form');
@@ -188,5 +201,39 @@ describe('mg-form', () => {
       expect(formSpy).not.toHaveBeenCalled();
       expect(mgFormSpy).not.toHaveBeenCalled();
     }
+  });
+
+  test('Should update input list when element is added to DOM', async () => {
+    const args = { identifier: 'identifier' };
+    const slot = getSlottedContent();
+    const page = await getPage(args, slot);
+
+    spyOn(page.rootInstance, 'setMgInputs');
+
+    expect(page.rootInstance.setMgInputs).not.toHaveBeenCalled();
+
+    fireMo([]);
+    await page.waitForChanges();
+
+    expect(page.rootInstance.setMgInputs).toHaveBeenCalled();
+  });
+
+  test.each(['readonly', 'disabled'])('Should update input list when attribute % change', async attribute => {
+    const args = { identifier: 'identifier' };
+    const slot = getSlottedContent();
+    const page = await getPage(args, slot);
+    const mgForm = page.doc.querySelector('mg-form');
+
+    spyOn(page.rootInstance, 'setMgInputs');
+    spyOn(page.rootInstance, 'setRequiredMessage');
+
+    expect(page.rootInstance.setMgInputs).not.toHaveBeenCalled();
+    expect(page.rootInstance.setRequiredMessage).not.toHaveBeenCalled();
+
+    mgForm[attribute] = true;
+    await page.waitForChanges();
+
+    expect(page.rootInstance.setMgInputs).toHaveBeenCalled();
+    expect(page.rootInstance.setRequiredMessage).toHaveBeenCalled();
   });
 });

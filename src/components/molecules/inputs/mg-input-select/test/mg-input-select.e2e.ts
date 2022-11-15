@@ -1,4 +1,4 @@
-import { createPage } from '../../../../../utils/test.utils';
+import { createPage } from '../../../../../utils/e2e.test.utils';
 
 describe('mg-input-select', () => {
   describe.each([`<mg-input-select identifier="identifier" label="label"></mg-input-select>`])('without tooltip', html => {

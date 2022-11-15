@@ -77,17 +77,6 @@ export class MgInputDate {
    * Define if input is required
    */
   @Prop() required = false;
-  @Watch('required')
-  handleRequired(newValue: boolean): void {
-    if (!this.readonly) {
-      this.input.required = newValue; // We can't wait for render to set input required
-      this.checkValidity();
-      if (this.hasDisplayedError) {
-        this.setErrorMessage();
-        this.hasDisplayedError = false;
-      }
-    }
-  }
 
   /**
    * Define if input is readonly
@@ -98,6 +87,19 @@ export class MgInputDate {
    * Define if input is disabled
    */
   @Prop() disabled = false;
+  @Watch('required')
+  @Watch('readonly')
+  @Watch('disabled')
+  handleValidityChange(newValue: boolean, _oldValue: boolean, prop: string): void {
+    if (this.input !== undefined) {
+      this.input[prop] = newValue;
+      this.checkValidity();
+      if (this.hasDisplayedError) {
+        this.setErrorMessage();
+        this.hasDisplayedError = false;
+      }
+    }
+  }
 
   /**
    * Add a tooltip message next to the input
@@ -192,16 +194,10 @@ export class MgInputDate {
    * Check if input is valid
    */
   private checkValidity = (): void => {
-    if (!this.readonly && this.input !== undefined) {
-      const validity = this.input.checkValidity();
-
-      // Set validity
-      this.valid = validity;
-      this.invalid = !validity;
-
-      //Send event
-      this.inputValid.emit(validity);
-    }
+    this.valid = this.readonly || this.disabled || (this.input?.checkValidity !== undefined ? this.input.checkValidity() : true);
+    this.invalid = !this.valid;
+    // We need to send valid event even if it is the same value
+    this.inputValid.emit(this.valid);
   };
 
   /**
@@ -322,7 +318,9 @@ export class MgInputDate {
           onInput={this.handleInput}
           onBlur={this.handleBlur}
           pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"
-          ref={el => (this.input = el as HTMLInputElement)}
+          ref={el => {
+            if (el !== null) this.input = el as HTMLInputElement;
+          }}
         />
       </MgInput>
     );

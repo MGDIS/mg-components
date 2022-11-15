@@ -23,7 +23,7 @@ export class MgInputToggle {
    * Internal *
    ************/
 
-  // classes
+  // Classes
   private classReadonly = 'mg-input--toggle-readonly';
   private classDisabled = 'mg-input--toggle-disabled';
   private classIsActive = 'mg-input--toggle-is-active';

@@ -11,7 +11,7 @@ export class MgTag {
    * Internal *
    ************/
 
-  // classes
+  // Classes
   private classOutline = `mg-tag--outline`;
 
   /**************

@@ -1,4 +1,4 @@
-import { createPage } from '../../../../utils/test.utils';
+import { createPage } from '../../../../utils/e2e.test.utils';
 import { variants } from '../mg-badge.conf';
 
 describe.each(variants)('mg-badge %s', variant => {

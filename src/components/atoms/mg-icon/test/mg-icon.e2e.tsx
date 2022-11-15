@@ -1,4 +1,4 @@
-import { createPage } from '../../../../utils/test.utils';
+import { createPage } from '../../../../utils/e2e.test.utils';
 import { icons, sizes, variants } from '../mg-icon.conf';
 
 const getIconWidth = (size: string): number => {
