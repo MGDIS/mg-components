@@ -27,6 +27,11 @@ describe('mg-button', () => {
     expect(root).toMatchSnapshot();
   });
 
+  test.each([true, false, undefined])('Should render a button, case full-width %s', async fullWidth => {
+    const { root } = await getPage({ label: 'label', fullWidth });
+    expect(root).toMatchSnapshot();
+  });
+
   test('Should replace classes on variant changes', async () => {
     const page = await getPage({ variant: 'primary', label: 'label' });
     const element = page.doc.querySelector('mg-button');
@@ -60,6 +65,15 @@ describe('mg-button', () => {
       await getPage({ isIcon: true, label });
     } catch (err) {
       expect(err.message).toContain('<mg-button> prop "label" is mandatory when prop "isIcon" is set to true.');
+    }
+  });
+
+  test('should throw error when using prop "isIcon" without a good prop "fullWidth"', async () => {
+    expect.assertions(1);
+    try {
+      await getPage({ isIcon: true, label: 'batman', fullWidth: true });
+    } catch (err) {
+      expect(err.message).toContain('<mg-button> prop "fullWidth" cannot be used with prop "isIcon"');
     }
   });
 

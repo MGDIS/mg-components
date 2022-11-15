@@ -5,7 +5,7 @@
  * @param {number} length ID length
  * @returns {string} ID
  */
-export function createID(prefix = '', length = 10): string {
+export const createID = (prefix = '', length = 10): string => {
   let ID = '';
   const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
   const charsLength = chars.length;
@@ -13,7 +13,7 @@ export function createID(prefix = '', length = 10): string {
     ID += chars.charAt(Math.floor(Math.random() * charsLength));
   }
   return (prefix !== '' ? `${prefix}-` : '') + ID;
-}
+};
 
 /**
  * Class to manage component classlist
@@ -77,9 +77,9 @@ export class ClassList {
  * @param {string[]} items items to check
  * @returns {boolean} all items are string
  */
-export function allItemsAreString(items: string[]): boolean {
+export const allItemsAreString = (items: string[]): boolean => {
   return items && items.every(item => typeof item === 'string');
-}
+};
 
 /**
  * Check if element is a heading
@@ -88,6 +88,11 @@ export function allItemsAreString(items: string[]): boolean {
  * @param {string[]} tagNames allowed tag names list
  * @returns {boolean} element is a heading
  */
-export function isTagName(element: Element, tagNames: string[]): boolean {
+export const isTagName = (element: Element, tagNames: string[]): boolean => {
   return tagNames.includes(element?.tagName.toLowerCase());
-}
+};
+
+/**
+ * Focusable elements query selector
+ */
+export const focusableElements = 'a[href], button, input, textarea, select, details, [tabindex]:not([tabindex="-1"]), [identifier]';

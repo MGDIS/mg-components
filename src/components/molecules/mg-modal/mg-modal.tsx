@@ -1,5 +1,5 @@
 import { Component, h, Prop, State, Watch, Element, Event, EventEmitter, Listen } from '@stencil/core';
-import { createID, ClassList } from '../../../utils/components.utils';
+import { createID, ClassList, focusableElements } from '../../../utils/components.utils';
 import { initLocales } from '../../../locales';
 
 @Component({
@@ -11,6 +11,9 @@ export class MgModal {
   /************
    * Internal *
    ************/
+
+  // Modal focusable elements
+  private modalFocusableElements: HTMLElement[];
 
   // Classes
   private classHide = 'mg-modal--hide';
@@ -112,6 +115,38 @@ export class MgModal {
     }
   }
 
+  private setFocus = (): void => {
+    // Get all focusable elements
+    this.modalFocusableElements = Array.from(this.element.querySelectorAll(focusableElements)).reduce((acc, focusableElement) => {
+      acc.push(focusableElement.shadowRoot !== null ? focusableElement.shadowRoot.querySelector(focusableElements) || focusableElement : focusableElement);
+      return acc;
+    }, []);
+    // When close button is enabled it's the first focusable element.
+    if (this.closeButton) {
+      this.modalFocusableElements.unshift(this.element.shadowRoot.querySelector(`.mg-modal__close-button mg-button`));
+    }
+    // It at least one
+    if (this.modalFocusableElements.length >= 1) {
+      // Set focus on first element
+      this.modalFocusableElements[0].focus();
+      // Add event listener on last element
+      const lastFocusableElement = this.modalFocusableElements[this.modalFocusableElements.length - 1];
+      lastFocusableElement.addEventListener('keydown', event => {
+        if (event.key === 'Tab' && !event.shiftKey) {
+          event.preventDefault();
+          this.modalFocusableElements[0].focus();
+        }
+      });
+      // Add event listener on first element (case shift + tab)
+      this.modalFocusableElements[0].addEventListener('keydown', event => {
+        if (event.key === 'Tab' && event.shiftKey) {
+          event.preventDefault();
+          lastFocusableElement.focus();
+        }
+      });
+    }
+  };
+
   /*************
    * Handlers *
    *************/
@@ -148,6 +183,27 @@ export class MgModal {
     this.titleId = `${this.identifier}-title`;
     this.validateModalTitle(this.modalTitle);
     this.validateHide(this.hide);
+  }
+
+  /**
+   * Add observer on component to set focus when displayed
+   *
+   * @returns {void}
+   */
+  componentDidLoad(): void {
+    new MutationObserver(mutationList => {
+      /* 
+        TODO find a way to cover this callback
+      */
+      /* istanbul ignore next */
+      if (mutationList.some(mutation => mutation.attributeName === 'aria-hidden' && (mutation.target as HTMLElement).ariaHidden === null)) {
+        this.setFocus();
+      }
+    }).observe(this.element.shadowRoot.getElementById(this.identifier), { attributes: true });
+    // Set focus if display on load
+    if (!this.hide) {
+      this.setFocus();
+    }
   }
 
   /**

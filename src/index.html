@@ -151,6 +151,14 @@
           <mg-button variant="primary">Court Texte <br />avec br et sans icone</mg-button>
         </div>
         <div style="padding: 0 0 1rem">
+          <mg-button variant="primary" full-width><mg-icon icon="check-circle"></mg-icon>full width button</mg-button>
+          <mg-button variant="primary" id="button-full-2">full width button</mg-button>
+          <script>
+            const mgButton2 = document.querySelector('#button-full-2');
+            mgButton2.fullWidth = true;
+          </script>
+        </div>
+        <div style="padding: 0 0 1rem">
           <mg-button variant="primary">
             <mg-icon icon="check-circle"></mg-icon>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
             enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
@@ -172,6 +180,20 @@
           <a href="#" class="mg-button mg-button--primary"><mg-icon icon="check-circle"></mg-icon>a.mg-button w/ icon</a>
           <a href="#" class="mg-button mg-button--primary mg-button--icon"><mg-icon icon="check-circle"></mg-icon></a>
         </div>
+      </section>
+      <section>
+        <h2>Card</h2>
+        <mg-card>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </mg-card>
+        <mg-card> Lorem ipsum dolor sit amet </mg-card>
+      </section>
+      <section>
+        <h2>Divider</h2>
+        <mg-divider></mg-divider>
+        <mg-divider size="full"></mg-divider>
       </section>
       <section>
         <h2>Messages</h2>
@@ -294,6 +316,16 @@
             </mg-button>
           </div>
         </mg-panel>
+
+        <mg-panel panel-title="panel title" title-editable style="--mg-panel-background: none; --mg-panel-border-radius: 0; --mg-panel-box-shadow: none">
+          <div>Content</div>
+          <div slot="header-right">
+            <mg-button variant="secondary"> <mg-icon icon="file-upload"></mg-icon> Upload </mg-button>
+            <mg-button is-icon variant="secondary" label="delete">
+              <mg-icon icon="trash"></mg-icon>
+            </mg-button>
+          </div>
+        </mg-panel>
       </section>
       <section>
         <h2>Details</h2>
@@ -390,16 +422,28 @@
             <mg-button onclick="document.getElementById('tp-disabled').removeAttribute('disabled')">mg-button</mg-button></mg-tooltip
           >
         </div>
-        <!--
+
         <h4>Modal</h4>
         <mg-button id="modal-button">Open modal</mg-button>
-        <mg-modal modal-title="Modal title" hide close-button>
+        <mg-modal modal-title="Modal title" close-button hide>
           <p slot="content">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
             exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           </p>
-          <div slot="actions" class="mg-group-elements mg-group-elements--align-right"><mg-button>Primary</mg-button><mg-button variant="secondary">Secondary</mg-button></div>
+          <mg-popover slot="content" close-button>
+            <mg-tooltip message="Blublu">
+              <mg-button>Display popover</mg-button>
+            </mg-tooltip>
+            <div slot="content">Lorem ipsum dolor sit amet</div>
+            <h1 slot="title">Titre Normal</h1>
+          </mg-popover>
+          <mg-input-text slot="content" identifier="modal-mg-input-text" label="label"></mg-input-text>
+          <mg-button slot="content" onclick="alert('blu')">Primary</mg-button>
+          <input slot="content" type="text" />
+          <div slot="actions" class="mg-group-elements mg-group-elements--align-right">
+            <mg-button>Primary</mg-button><mg-button variant="secondary" onclick="closeModal()">close</mg-button>
+          </div>
         </mg-modal>
         <script>
           document.querySelector('#modal-button').addEventListener('click', () => {
@@ -412,7 +456,10 @@
               mgModal.hide = true;
             }
           });
-        </script>-->
+          const closeModal = () => {
+            document.querySelector('mg-modal').hide = true;
+          };
+        </script>
         <h4>Popover</h4>
         <mg-popover>
           <mg-button>Display popover</mg-button>

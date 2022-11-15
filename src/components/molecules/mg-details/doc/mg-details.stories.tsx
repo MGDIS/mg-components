@@ -30,4 +30,5 @@ MgDetails.args = {
   toggleClosed: 'Show details',
   toggleOpened: 'Hide details',
   expanded: false,
+  hideSummary: false,
 };

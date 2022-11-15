@@ -15,9 +15,8 @@ import { SelectOption } from "./components/molecules/inputs/mg-input-select/mg-i
 import { ToggleValue } from "./components/molecules/inputs/mg-input-toggle/mg-input-toggle.conf";
 import { Direction } from "./components/molecules/menu/mg-menu/mg-menu.conf";
 import { MenuItemSizeType, Status } from "./components/molecules/menu/mg-menu-item/mg-menu-item.conf";
-import { Placement } from "./components/molecules/mg-popover/mg-popover.conf";
+import { Placement } from "@popperjs/core";
 import { SizeType, TabItem } from "./components/molecules/mg-tabs/mg-tabs.conf";
-import { Placement as Placement1 } from "./components/atoms/mg-tooltip/mg-tooltip.conf";
 export namespace Components {
     interface MgBadge {
         /**
@@ -51,6 +50,10 @@ export namespace Components {
          */
         "form": string;
         /**
+          * Set button to full-width
+         */
+        "fullWidth": boolean;
+        /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
          */
         "identifier": string;
@@ -70,6 +73,8 @@ export namespace Components {
           * Define button variant
          */
         "variant": VariantType;
+    }
+    interface MgCard {
     }
     interface MgCharacterLeft {
         /**
@@ -91,6 +96,10 @@ export namespace Components {
          */
         "expanded": boolean;
         /**
+          * Hide summary element
+         */
+        "hideSummary": boolean;
+        /**
           * Displayed title when details are closed
          */
         "toggleClosed": string;
@@ -98,6 +107,12 @@ export namespace Components {
           * Displayed title when details are opened
          */
         "toggleOpened": string;
+    }
+    interface MgDivider {
+        /**
+          * Define component size
+         */
+        "size": 'regular' | 'full';
     }
     interface MgForm {
         /**
@@ -1050,7 +1065,7 @@ export namespace Components {
         /**
           * Tooltip placement
          */
-        "placement": Placement1;
+        "placement": Placement;
     }
 }
 export interface MgDetailsCustomEvent<T> extends CustomEvent<T> {
@@ -1138,6 +1153,12 @@ declare global {
         prototype: HTMLMgButtonElement;
         new (): HTMLMgButtonElement;
     };
+    interface HTMLMgCardElement extends Components.MgCard, HTMLStencilElement {
+    }
+    var HTMLMgCardElement: {
+        prototype: HTMLMgCardElement;
+        new (): HTMLMgCardElement;
+    };
     interface HTMLMgCharacterLeftElement extends Components.MgCharacterLeft, HTMLStencilElement {
     }
     var HTMLMgCharacterLeftElement: {
@@ -1149,6 +1170,12 @@ declare global {
     var HTMLMgDetailsElement: {
         prototype: HTMLMgDetailsElement;
         new (): HTMLMgDetailsElement;
+    };
+    interface HTMLMgDividerElement extends Components.MgDivider, HTMLStencilElement {
+    }
+    var HTMLMgDividerElement: {
+        prototype: HTMLMgDividerElement;
+        new (): HTMLMgDividerElement;
     };
     interface HTMLMgFormElement extends Components.MgForm, HTMLStencilElement {
     }
@@ -1291,8 +1318,10 @@ declare global {
     interface HTMLElementTagNameMap {
         "mg-badge": HTMLMgBadgeElement;
         "mg-button": HTMLMgButtonElement;
+        "mg-card": HTMLMgCardElement;
         "mg-character-left": HTMLMgCharacterLeftElement;
         "mg-details": HTMLMgDetailsElement;
+        "mg-divider": HTMLMgDividerElement;
         "mg-form": HTMLMgFormElement;
         "mg-icon": HTMLMgIconElement;
         "mg-illustrated-message": HTMLMgIllustratedMessageElement;
@@ -1351,6 +1380,10 @@ declare namespace LocalJSX {
          */
         "form"?: string;
         /**
+          * Set button to full-width
+         */
+        "fullWidth"?: boolean;
+        /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
          */
         "identifier"?: string;
@@ -1370,6 +1403,8 @@ declare namespace LocalJSX {
           * Define button variant
          */
         "variant"?: VariantType;
+    }
+    interface MgCard {
     }
     interface MgCharacterLeft {
         /**
@@ -1391,17 +1426,27 @@ declare namespace LocalJSX {
          */
         "expanded"?: boolean;
         /**
+          * Hide summary element
+         */
+        "hideSummary"?: boolean;
+        /**
           * Emmited event when expanded change
          */
         "onExpanded-change"?: (event: MgDetailsCustomEvent<boolean>) => void;
         /**
           * Displayed title when details are closed
          */
-        "toggleClosed"?: string;
+        "toggleClosed": string;
         /**
           * Displayed title when details are opened
          */
-        "toggleOpened"?: string;
+        "toggleOpened": string;
+    }
+    interface MgDivider {
+        /**
+          * Define component size
+         */
+        "size"?: 'regular' | 'full';
     }
     interface MgForm {
         /**
@@ -2428,13 +2473,15 @@ declare namespace LocalJSX {
         /**
           * Tooltip placement
          */
-        "placement"?: Placement1;
+        "placement"?: Placement;
     }
     interface IntrinsicElements {
         "mg-badge": MgBadge;
         "mg-button": MgButton;
+        "mg-card": MgCard;
         "mg-character-left": MgCharacterLeft;
         "mg-details": MgDetails;
+        "mg-divider": MgDivider;
         "mg-form": MgForm;
         "mg-icon": MgIcon;
         "mg-illustrated-message": MgIllustratedMessage;
@@ -2466,8 +2513,10 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "mg-badge": LocalJSX.MgBadge & JSXBase.HTMLAttributes<HTMLMgBadgeElement>;
             "mg-button": LocalJSX.MgButton & JSXBase.HTMLAttributes<HTMLMgButtonElement>;
+            "mg-card": LocalJSX.MgCard & JSXBase.HTMLAttributes<HTMLMgCardElement>;
             "mg-character-left": LocalJSX.MgCharacterLeft & JSXBase.HTMLAttributes<HTMLMgCharacterLeftElement>;
             "mg-details": LocalJSX.MgDetails & JSXBase.HTMLAttributes<HTMLMgDetailsElement>;
+            "mg-divider": LocalJSX.MgDivider & JSXBase.HTMLAttributes<HTMLMgDividerElement>;
             "mg-form": LocalJSX.MgForm & JSXBase.HTMLAttributes<HTMLMgFormElement>;
             "mg-icon": LocalJSX.MgIcon & JSXBase.HTMLAttributes<HTMLMgIconElement>;
             "mg-illustrated-message": LocalJSX.MgIllustratedMessage & JSXBase.HTMLAttributes<HTMLMgIllustratedMessageElement>;
