@@ -11,7 +11,7 @@ export class MgBadge {
    * Internal *
    ************/
 
-  // classes
+  // Classes
   private classOutline = `mg-badge--outline`;
 
   /**************

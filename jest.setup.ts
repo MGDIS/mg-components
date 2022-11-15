@@ -1,6 +1,4 @@
 import { configureToMatchImageSnapshot } from 'jest-image-snapshot';
-import MutationObserver from 'mutation-observer';
-(global as any).MutationObserver = MutationObserver;
 
 /**
  * Global configuration for Image Snapshot

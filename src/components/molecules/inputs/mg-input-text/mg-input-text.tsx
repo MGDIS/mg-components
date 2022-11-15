@@ -14,7 +14,7 @@ export class MgInputText {
    * Internal *
    ************/
 
-  // classes
+  // Classes
   private classFocus = 'is-focused';
   private classIsInputGroupAppend = 'mg-input--is-input-group-append';
   private classHasIcon = 'mg-input--has-icon';
@@ -28,8 +28,8 @@ export class MgInputText {
   // Locales
   private messages;
 
-  // hasError (triggered by blur event)
-  private hasError = false;
+  // hasDisplayedError (triggered by blur event)
+  private hasDisplayedError = false;
 
   /**************
    * Decorators *
@@ -118,6 +118,19 @@ export class MgInputText {
    * Define if input is disabled
    */
   @Prop() disabled = false;
+  @Watch('required')
+  @Watch('readonly')
+  @Watch('disabled')
+  handleValidityChange(newValue: boolean, _oldValue: boolean, prop: string): void {
+    if (this.input !== undefined) {
+      this.input[prop] = newValue;
+      this.checkValidity();
+      if (this.hasDisplayedError) {
+        this.setErrorMessage();
+        this.hasDisplayedError = false;
+      }
+    }
+  }
 
   /**
    * Define input width
@@ -197,8 +210,8 @@ export class MgInputText {
   @Method()
   async displayError(): Promise<void> {
     this.checkValidity();
-    this.checkError();
-    this.hasError = this.invalid;
+    this.setErrorMessage();
+    this.hasDisplayedError = this.invalid;
   }
 
   /**
@@ -208,8 +221,8 @@ export class MgInputText {
    */
   private handleInput = (): void => {
     this.checkValidity();
-    if (this.hasError) {
-      this.checkError();
+    if (this.hasDisplayedError) {
+      this.setErrorMessage();
     }
     this.value = this.input.value;
   };
@@ -243,24 +256,18 @@ export class MgInputText {
    * @returns {void}
    */
   private checkValidity = (): void => {
-    if (!this.readonly && this.input !== undefined) {
-      const validity = this.input.checkValidity();
-
-      // Set validity
-      this.valid = validity;
-      this.invalid = !validity;
-
-      //Send event
-      this.inputValid.emit(validity);
-    }
+    this.valid = this.readonly || this.disabled || (this.input?.checkValidity !== undefined ? this.input.checkValidity() : true);
+    this.invalid = !this.valid;
+    // We need to send valid event even if it is the same value
+    this.inputValid.emit(this.valid);
   };
 
   /**
-   * Check input errors
+   * Set input error message
    *
    * @returns {void}
    */
-  private checkError = (): void => {
+  private setErrorMessage = (): void => {
     // Set error message
     this.errorMessage = undefined;
     // Does not match pattern
@@ -274,7 +281,7 @@ export class MgInputText {
   };
 
   /**
-   * Validate patern configuration
+   * Validate pattern configuration
    *
    * @returns {void}
    */
@@ -380,7 +387,9 @@ export class MgInputText {
             onInput={this.handleInput}
             onFocus={this.handleFocus}
             onBlur={this.handleBlur}
-            ref={el => (this.input = el as HTMLInputElement)}
+            ref={el => {
+              if (el !== null) this.input = el as HTMLInputElement;
+            }}
           />
           {this.displayCharacterLeft && this.maxlength > 0 && (
             <mg-character-left identifier={this.characterLeftId} characters={this.value} maxlength={this.maxlength}></mg-character-left>

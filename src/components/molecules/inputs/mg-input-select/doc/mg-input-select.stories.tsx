@@ -20,8 +20,7 @@ export default {
 };
 
 /**
- * 1. camelCase arguments must be written in the template, for exemple labelOnTop must be placed in the template as label-on-top={args.labelOnTop}
- * 2. boolean arguments with a default true value must be added like display-character-left={args.displayCharacterLeft ? 'true' : 'false'}
+ * Template
  *
  * @param {any} args component arguments
  * @returns {HTMLElement} HTMLElement
@@ -43,7 +42,7 @@ MgInputSelect.args = {
   required: true,
   readonly: false,
   disabled: false,
-  items: ['blu', 'bli', 'blo', 'bla'],
+  items: ['blu', 'bli', 'blo', 'le long libellé qui va faire sortir le champ mg-input-select de sa zone de confort'],
   mgWidth: undefined,
   // Tooltip
   tooltip: 'This is a tooltip',

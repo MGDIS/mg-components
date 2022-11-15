@@ -22,8 +22,8 @@ export class MgInputDate {
   private messages;
   private locale: string;
 
-  // hasError (triggered by blur event)
-  private hasError = false;
+  // hasDisplayedError (triggered by blur event)
+  private hasDisplayedError = false;
 
   /**************
    * Decorators *
@@ -40,7 +40,7 @@ export class MgInputDate {
   @Prop({ mutable: true, reflect: true }) value: string;
   @Watch('value')
   validateValue(newValue: string): void {
-    if (newValue !== undefined && (typeof newValue !== 'string' || !dateRegExp.test(newValue))) {
+    if (newValue !== undefined && newValue !== null && (typeof newValue !== 'string' || !dateRegExp.test(newValue))) {
       throw new Error("<mg-input-date> props 'value' doesn't match pattern: yyyy-mm-dd");
     } else {
       this.valueChange.emit(this.value);
@@ -87,6 +87,19 @@ export class MgInputDate {
    * Define if input is disabled
    */
   @Prop() disabled = false;
+  @Watch('required')
+  @Watch('readonly')
+  @Watch('disabled')
+  handleValidityChange(newValue: boolean, _oldValue: boolean, prop: string): void {
+    if (this.input !== undefined) {
+      this.input[prop] = newValue;
+      this.checkValidity();
+      if (this.hasDisplayedError) {
+        this.setErrorMessage();
+        this.hasDisplayedError = false;
+      }
+    }
+  }
 
   /**
    * Add a tooltip message next to the input
@@ -155,8 +168,8 @@ export class MgInputDate {
   @Method()
   async displayError(): Promise<void> {
     this.checkValidity();
-    this.checkError();
-    this.hasError = this.invalid;
+    this.setErrorMessage();
+    this.hasDisplayedError = this.invalid;
   }
 
   /**
@@ -164,8 +177,8 @@ export class MgInputDate {
    */
   private handleInput = (): void => {
     this.checkValidity();
-    if (this.hasError) {
-      this.checkError();
+    if (this.hasDisplayedError) {
+      this.setErrorMessage();
     }
     this.value = this.input.value;
   };
@@ -181,16 +194,10 @@ export class MgInputDate {
    * Check if input is valid
    */
   private checkValidity = (): void => {
-    if (!this.readonly && this.input !== undefined) {
-      const validity = this.input.checkValidity();
-
-      // Set validity
-      this.valid = validity;
-      this.invalid = !validity;
-
-      //Send event
-      this.inputValid.emit(validity);
-    }
+    this.valid = this.readonly || this.disabled || (this.input?.checkValidity !== undefined ? this.input.checkValidity() : true);
+    this.invalid = !this.valid;
+    // We need to send valid event even if it is the same value
+    this.inputValid.emit(this.valid);
   };
 
   /**
@@ -222,37 +229,28 @@ export class MgInputDate {
   };
 
   /**
-   * Set error message
-   *
-   * @returns {void}
-   */
-  private setErrorMessage = (): void => {
-    const inputError = this.getInputError();
-    // required
-    if (inputError === InputError.REQUIRED) {
-      this.errorMessage = this.messages.errors[inputError];
-    }
-    // min, max & minMax
-    else if ([InputError.MIN, InputError.MAX, InputError.MINMAX].includes(inputError)) {
-      this.errorMessage = this.messages.errors.date[inputError].replace('{min}', localeDate(this.min, this.locale)).replace('{max}', localeDate(this.max, this.locale));
-    }
-    // wrong date format
-    // element.validity.badInput is default error message
-    else {
-      this.errorMessage = this.messages.errors.date.badInput.replace('{min}', this.min?.length > 0 ? localeDate(this.min, this.locale) : localeDate('1900-01-01', this.locale));
-    }
-  };
-
-  /**
    * Check input errors
    *
    * @returns {void}
    */
-  private checkError = (): void => {
+  private setErrorMessage = (): void => {
     // Set error message
     this.errorMessage = undefined;
     if (!this.valid) {
-      this.setErrorMessage();
+      const inputError = this.getInputError();
+      // required
+      if (inputError === InputError.REQUIRED) {
+        this.errorMessage = this.messages.errors[inputError];
+      }
+      // min, max & minMax
+      else if ([InputError.MIN, InputError.MAX, InputError.MINMAX].includes(inputError)) {
+        this.errorMessage = this.messages.errors.date[inputError].replace('{min}', localeDate(this.min, this.locale)).replace('{max}', localeDate(this.max, this.locale));
+      }
+      // wrong date format
+      // element.validity.badInput is default error message
+      else {
+        this.errorMessage = this.messages.errors.date.badInput.replace('{min}', this.min?.length > 0 ? localeDate(this.min, this.locale) : localeDate('1900-01-01', this.locale));
+      }
     }
   };
 
@@ -320,7 +318,9 @@ export class MgInputDate {
           onInput={this.handleInput}
           onBlur={this.handleBlur}
           pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"
-          ref={el => (this.input = el as HTMLInputElement)}
+          ref={el => {
+            if (el !== null) this.input = el as HTMLInputElement;
+          }}
         />
       </MgInput>
     );

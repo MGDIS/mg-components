@@ -29,6 +29,9 @@ export class MgInputCheckbox {
   // Locales
   private messages;
 
+  // hasDisplayedError (triggered by blur event)
+  private hasDisplayedError = false;
+
   /**************
    * Decorators *
    **************/
@@ -104,6 +107,19 @@ export class MgInputCheckbox {
    * Define if input is disabled
    */
   @Prop() disabled = false;
+  @Watch('required')
+  @Watch('readonly')
+  @Watch('disabled')
+  handleValidityChange(newValue: boolean, _oldValue: boolean, prop: string): void {
+    this.inputs.forEach(input => {
+      input[prop] = newValue;
+    });
+    this.checkValidity();
+    if (this.hasDisplayedError) {
+      this.setErrorMessage();
+      this.hasDisplayedError = false;
+    }
+  }
 
   /**
    * Add a tooltip message next to the input
@@ -158,7 +174,8 @@ export class MgInputCheckbox {
   @Method()
   async displayError(): Promise<void> {
     this.checkValidity();
-    this.checkError();
+    this.setErrorMessage();
+    this.hasDisplayedError = this.invalid;
   }
 
   /**
@@ -184,29 +201,30 @@ export class MgInputCheckbox {
   private handleBlur = (): void => {
     // Check validity
     this.checkValidity();
-    this.checkError();
+    this.setErrorMessage();
   };
+
+  /**
+   * get invalid element
+   *
+   * @returns {HTMLInputElement} element
+   */
+  private getInvalidElement = (): HTMLInputElement => this.inputs.find((input: HTMLInputElement) => input !== null && !input.disabled && !input.checkValidity());
 
   /**
    * Check if input is valid
    */
   private checkValidity = (): void => {
-    if (!this.readonly) {
-      const validity = this.getInvalidElement() === undefined;
-
-      // Set validity
-      this.valid = validity;
-      this.invalid = !validity;
-
-      //Send event
-      this.inputValid.emit(validity);
-    }
+    this.valid = this.readonly || this.disabled || this.getInvalidElement() === undefined;
+    this.invalid = !this.valid;
+    // We need to send valid event even if it is the same value
+    this.inputValid.emit(this.valid);
   };
 
   /**
-   * Check input errors
+   * Set input error message
    */
-  private checkError = (): void => {
+  private setErrorMessage = (): void => {
     const invalidElement = this.getInvalidElement();
 
     // Set error message
@@ -215,13 +233,6 @@ export class MgInputCheckbox {
       this.errorMessage = this.messages.errors.required;
     }
   };
-
-  /**
-   * get invalid element
-   *
-   * @returns {HTMLInputElement} element
-   */
-  private getInvalidElement = (): HTMLInputElement => this.inputs.find((element: HTMLInputElement) => !element.disabled && !element.checkValidity());
 
   /*************
    * Lifecycle *
@@ -259,15 +270,15 @@ export class MgInputCheckbox {
         label={this.label}
         labelOnTop={this.labelOnTop}
         labelHide={this.labelHide}
-        required={this.required}
+        required={!this.readonly ? this.required : undefined} // required is only used display asterisk
         readonly={undefined}
         mgWidth={undefined}
         disabled={this.disabled}
         value={this.value && this.value.toString()}
         readonlyValue={undefined}
-        tooltip={!this.readonly && this.tooltip}
-        helpText={this.helpText}
-        errorMessage={this.errorMessage}
+        tooltip={!this.readonly ? this.tooltip : undefined}
+        helpText={!this.readonly ? this.helpText : undefined}
+        errorMessage={!this.readonly ? this.errorMessage : undefined}
         isFieldset={true}
       >
         <ul class={{ 'mg-input__input-group-container': true, 'mg-input__input-group-container--vertical': this.inputVerticalList }}>
@@ -275,7 +286,7 @@ export class MgInputCheckbox {
             .filter(item => {
               return !this.readonly || item.value;
             })
-            .map(input => (
+            .map((input, index) => (
               <li class={{ 'mg-input__input-group': true, 'mg-input__input-group--disabled': this.disabled || input.disabled }}>
                 <input
                   type="checkbox"
@@ -288,7 +299,9 @@ export class MgInputCheckbox {
                   indeterminate={input.value === null}
                   onInput={this.handleInput}
                   onBlur={this.handleBlur}
-                  ref={el => this.inputs.push(el as HTMLInputElement)}
+                  ref={el => {
+                    if (el !== null) this.inputs[index] = el as HTMLInputElement;
+                  }}
                 />
                 <label htmlFor={input.id}>{input.title}</label>
               </li>

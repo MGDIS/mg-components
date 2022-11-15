@@ -36,11 +36,3 @@ export async function createPage(htmlString?: string): Promise<DesignSystemE2EPa
 
   return page;
 }
-
-/**
- * Clone Deep function
- *
- * @param {unknown} obj object to clone
- * @returns {unknown} cloned json
- */
-export const cloneDeep = (obj: unknown): unknown => JSON.parse(JSON.stringify(obj));
