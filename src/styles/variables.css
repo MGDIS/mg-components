@@ -84,15 +84,15 @@
   --color-light: var(--color-light-h), var(--color-light-s), var(--color-light-l);
 
   /* Primary */
-  --color-primary-h: hsl(var(--color-dark-h));
-  --color-primary-s: hsl(var(--color-dark-s));
-  --color-primary-l: hsl(var(--color-dark-l));
+  --color-primary-h: var(--color-dark-h);
+  --color-primary-s: var(--color-dark-s);
+  --color-primary-l: var(--color-dark-l);
   --color-primary: hsl(var(--color-dark));
 
   /* Secondary */
-  --color-secondary-h: hsl(var(--color-neutral-h));
-  --color-secondary-s: hsl(var(--color-neutral-s));
-  --color-secondary-l: hsl(var(--color-neutral-l));
+  --color-secondary-h: var(--color-neutral-h);
+  --color-secondary-s: var(--color-neutral-s);
+  --color-secondary-l: var(--color-neutral-l);
   --color-secondary: hsl(var(--color-neutral));
 
   /* Shadow */

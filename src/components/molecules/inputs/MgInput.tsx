@@ -127,15 +127,6 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props: MgInputProps, 
   }
 
   /**
-   * Update input(s) in children
-   */
-  if (props.readonly) {
-    children = children.filter(child => child.$name$ === 'append-input');
-  } else {
-    children = applyAriadescribedBy(children, ariaDescribedbyIDs, utils);
-  }
-
-  /**
    * Return template
    *
    * +--------+--------------+---------+
@@ -151,7 +142,7 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props: MgInputProps, 
    * Error message is based on this aria method: https://www.w3.org/WAI/tutorials/forms/notifications/#on-focus-change
    */
 
-  const TagName = getTagName(props.isFieldset);
+  const TagName: string = getTagName(props.isFieldset);
 
   /**
    * Get tooltip node
@@ -166,11 +157,17 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props: MgInputProps, 
 
   /**
    * Get input title (label) node
+   * Display asterisk only if not disabled and not readonly
    *
    * @returns {VNode[]} mg-input-title
    */
   const getInputTitle = (): VNode[] => (
-    <mg-input-title identifier={props.identifier} class={props.labelHide ? 'sr-only' : undefined} required={props.required && !props.disabled} is-legend={props.isFieldset}>
+    <mg-input-title
+      identifier={props.identifier}
+      class={props.labelHide ? 'sr-only' : undefined}
+      required={props.required && !props.disabled && !props.readonly}
+      is-legend={props.isFieldset}
+    >
       {props.label}
     </mg-input-title>
   );
@@ -188,12 +185,12 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props: MgInputProps, 
       {props.readonly ? (
         <div class="mg-input__input-container">
           <strong>{props.readonlyValue || props.value}</strong>
-          {children}
+          {children.filter(child => child.$name$ === 'append-input')}
         </div>
       ) : (
         <div class="mg-input__input-container">
           <div class={{ 'mg-input__input': true, 'mg-input__input--has-error': props.errorMessage !== undefined }}>
-            {children}
+            {applyAriadescribedBy(children, ariaDescribedbyIDs, utils)}
             {!props.labelOnTop && props.tooltip && getTooltip()}
           </div>
           {props.helpText && <div id={helpTextId} class="mg-input__help-text" innerHTML={props.helpText}></div>}

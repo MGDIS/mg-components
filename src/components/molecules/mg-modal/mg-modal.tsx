@@ -32,6 +32,9 @@ export class MgModal {
    * Decorators *
    **************/
 
+  /**
+   * Get component DOM element
+   */
   @Element() element: HTMLMgModalElement;
 
   /**
@@ -192,10 +195,6 @@ export class MgModal {
    */
   componentDidLoad(): void {
     new MutationObserver(mutationList => {
-      /* 
-        TODO find a way to cover this callback
-      */
-      /* istanbul ignore next */
       if (mutationList.some(mutation => mutation.attributeName === 'aria-hidden' && (mutation.target as HTMLElement).ariaHidden === null)) {
         this.setFocus();
       }

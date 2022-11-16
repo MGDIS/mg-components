@@ -1,4 +1,4 @@
-import { createPage } from '../../../../utils/test.utils';
+import { createPage } from '../../../../utils/e2e.test.utils';
 
 describe('mg-divider', () => {
   describe.each(['regular', 'full'])('size %s', size => {

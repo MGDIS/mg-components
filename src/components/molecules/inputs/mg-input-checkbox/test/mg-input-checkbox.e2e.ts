@@ -1,4 +1,4 @@
-import { createPage } from '../../../../../utils/test.utils';
+import { createPage } from '../../../../../utils/e2e.test.utils';
 
 describe('mg-input-checkbox', () => {
   describe.each([
@@ -88,6 +88,9 @@ describe('mg-input-checkbox', () => {
     `<mg-input-checkbox identifier="identifier" label="legend" input-vertical-list help-text="HelpText Message"></mg-input-checkbox>`,
     `<mg-input-checkbox identifier="identifier" label="legend" input-vertical-list help-text="HelpText Message" label-on-top></mg-input-checkbox>`,
     `<mg-input-checkbox identifier="identifier" label="legend" help-text='<mg-icon icon="user" size="small"></mg-icon> Welcome batman'></mg-input-checkbox>`,
+    `<mg-input-checkbox identifier="identifier" label="legend" help-text='HelpText Message' required></mg-input-checkbox>`,
+    `<mg-input-checkbox identifier="identifier" label="legend" help-text='HelpText Message' required readonly></mg-input-checkbox>`,
+    `<mg-input-checkbox identifier="identifier" label="legend" help-text='HelpText Message' required disabled></mg-input-checkbox>`,
   ])('Should render with template', html => {
     test('render', async () => {
       const page = await createPage(`${html}
@@ -151,5 +154,22 @@ describe('mg-input-checkbox', () => {
       const screenshot = await page.screenshot();
       expect(screenshot).toMatchImageSnapshot();
     });
+  });
+
+  test.each([false, true])('Ensure component fit in width 200px with label-on-top: %s', async labelOnTop => {
+    const page = await createPage(`<mg-input-checkbox identifier="identifier" label="legend" label-on-top="${labelOnTop}"></mg-input-checkbox>
+    <script>
+    const mgInputCheckbox = document.querySelector('mg-input-checkbox');
+    mgInputCheckbox.value = [{title: 'Batman', value: false}, {title: 'Robin', value: false}, {title: 'Joker', value: false}, {title: 'Bane', value: false}];
+    </script>`);
+
+    const element = await page.find('mg-input-checkbox');
+
+    expect(element).toHaveClass('hydrated');
+
+    await page.setViewport({ width: 200, height: 100 });
+
+    const screenshot = await page.screenshot();
+    expect(screenshot).toMatchImageSnapshot();
   });
 });

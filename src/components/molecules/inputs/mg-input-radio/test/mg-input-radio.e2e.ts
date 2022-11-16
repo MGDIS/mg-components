@@ -1,4 +1,4 @@
-import { createPage } from '../../../../../utils/test.utils';
+import { createPage } from '../../../../../utils/e2e.test.utils';
 
 describe('mg-input-radio', () => {
   describe.each([`<mg-input-radio identifier="identifier" label="legend"></mg-input-radio>`])('without tooltip', html => {
@@ -48,6 +48,9 @@ describe('mg-input-radio', () => {
     `<mg-input-radio identifier="identifier" label="legend" label-hide></mg-input-radio>`,
     `<mg-input-radio identifier="identifier" label="legend" placeholder="placeholder" help-text="HelpText Message"></mg-input-radio>`,
     `<mg-input-radio identifier="identifier" label="legend" placeholder="placeholder" value="batman" help-text='<mg-icon icon="user" size="small"></mg-icon> Welcome batman'></mg-input-radio>`,
+    `<mg-input-radio identifier="identifier" label="legend" placeholder="placeholder" required help-text="HelpText Message" value="batman"></mg-input-radio>`,
+    `<mg-input-radio identifier="identifier" label="legend" placeholder="placeholder" required readonly help-text="HelpText Message" value="batman"></mg-input-radio>`,
+    `<mg-input-radio identifier="identifier" label="legend" placeholder="placeholder" required disabled help-text="HelpText Message" value="batman"></mg-input-radio>`,
   ])('without tooltip', html => {
     test('render', async () => {
       const page = await createPage(`${html}
@@ -174,5 +177,23 @@ describe('mg-input-radio', () => {
       const screenshot = await page.screenshot();
       expect(screenshot).toMatchImageSnapshot();
     });
+  });
+
+  test.each([false, true])('Ensure component fit in width 200px with label-on-top: %s', async labelOnTop => {
+    const page = await createPage(`<mg-input-radio identifier="identifier" label="label" label-on-top="${labelOnTop}"></mg-input-radio>
+        <script>
+        const mgInputRadio = document.querySelector('mg-input-radio');
+        mgInputRadio.items = ['batman', 'robin', 'joker', 'bane'];
+        </script>
+      `);
+
+    const element = await page.find('mg-input-radio');
+
+    expect(element).toHaveClass('hydrated');
+
+    await page.setViewport({ width: 200, height: 100 });
+
+    const screenshot = await page.screenshot();
+    expect(screenshot).toMatchImageSnapshot();
   });
 });

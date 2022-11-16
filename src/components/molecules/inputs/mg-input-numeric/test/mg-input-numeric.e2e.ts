@@ -1,4 +1,4 @@
-import { createPage } from '../../../../../utils/test.utils';
+import { createPage } from '../../../../../utils/e2e.test.utils';
 
 describe('mg-input-numeric', () => {
   describe.each([
@@ -86,6 +86,9 @@ describe('mg-input-numeric', () => {
     `<mg-input-numeric identifier="identifier" label="label" value="123,45" readonly lang="fr" type="currency"></mg-input-numeric>`,
     `<mg-input-numeric identifier="identifier" label="label" value="123,45" readonly lang="fr" type="currency" currency="EUR"></mg-input-numeric>`,
     `<mg-input-numeric identifier="identifier" label="label" value="123,45" help-text='<mg-icon icon="user" size="small"></mg-icon> Welcome batman'></mg-input-numeric>`,
+    `<mg-input-numeric identifier="identifier" label="label" value="123,45" help-text="HelpText Message" required></mg-input-numeric>`,
+    `<mg-input-numeric identifier="identifier" label="label" value="123,45" help-text="HelpText Message" required readonly></mg-input-numeric>`,
+    `<mg-input-numeric identifier="identifier" label="label" value="123,45" help-text="HelpText Message" required disabled></mg-input-numeric>`,
   ])('Should render with template', html => {
     test('render', async () => {
       const page = await createPage(html);
@@ -257,5 +260,18 @@ describe('mg-input-numeric', () => {
       const screenshot = await page.screenshot();
       expect(screenshot).toMatchImageSnapshot();
     });
+  });
+
+  test.each([false, true])('Ensure component fit in width 150px with label-on-top: %s', async labelOnTop => {
+    const page = await createPage(`<mg-input-numeric identifier="identifier" label="label" label-on-top="${labelOnTop}"></mg-input-numeric>`);
+
+    const element = await page.find('mg-input-numeric');
+
+    expect(element).toHaveClass('hydrated');
+
+    await page.setViewport({ width: 150, height: 100 });
+
+    const screenshot = await page.screenshot();
+    expect(screenshot).toMatchImageSnapshot();
   });
 });

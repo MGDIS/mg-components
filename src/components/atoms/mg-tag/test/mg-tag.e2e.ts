@@ -1,4 +1,4 @@
-import { createPage } from '../../../../utils/test.utils';
+import { createPage } from '../../../../utils/e2e.test.utils';
 import { variants } from '../mg-tag.conf';
 
 describe.each(variants)('mg-tag %s', variant => {

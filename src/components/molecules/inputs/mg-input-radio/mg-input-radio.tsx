@@ -30,6 +30,9 @@ export class MgInputRadio {
   // Locales
   private messages;
 
+  // hasDisplayedError (triggered by blur event)
+  private hasDisplayedError = false;
+
   /**************
    * Decorators *
    **************/
@@ -116,6 +119,19 @@ export class MgInputRadio {
    * Define if input is disabled
    */
   @Prop() disabled = false;
+  @Watch('required')
+  @Watch('readonly')
+  @Watch('disabled')
+  handleValidityChange(newValue: boolean, _oldValue: boolean, prop: string): void {
+    this.inputs.forEach(input => {
+      input[prop] = newValue;
+    });
+    this.checkValidity();
+    if (this.hasDisplayedError) {
+      this.setErrorMessage();
+      this.hasDisplayedError = false;
+    }
+  }
 
   /**
    * Add a tooltip message next to the input
@@ -170,7 +186,8 @@ export class MgInputRadio {
   @Method()
   async displayError(): Promise<void> {
     this.checkValidity();
-    this.checkError();
+    this.setErrorMessage();
+    this.hasDisplayedError = this.invalid;
   }
 
   /**
@@ -191,7 +208,7 @@ export class MgInputRadio {
    */
   private handleBlur = (): void => {
     this.checkValidity();
-    this.checkError();
+    this.setErrorMessage();
   };
 
   /**
@@ -200,24 +217,18 @@ export class MgInputRadio {
    * @returns {void}
    */
   private checkValidity = (): void => {
-    if (!this.readonly) {
-      const validity = this.getInvalidElement() === undefined;
-
-      // Set validity
-      this.valid = validity;
-      this.invalid = !validity;
-
-      //Send event
-      this.inputValid.emit(validity);
-    }
+    this.valid = this.readonly || this.disabled || this.getInvalidElement() === undefined;
+    this.invalid = !this.valid;
+    // We need to send valid event even if it is the same value
+    this.inputValid.emit(this.valid);
   };
 
   /**
-   * Check input errors
+   * Set input error message
    *
    * @returns {void}
    */
-  private checkError = (): void => {
+  private setErrorMessage = (): void => {
     const invalidElement = this.getInvalidElement();
 
     // Set error message
@@ -232,7 +243,7 @@ export class MgInputRadio {
    *
    * @returns {HTMLInputElement} element
    */
-  private getInvalidElement = (): HTMLInputElement => this.inputs.find((element: HTMLInputElement) => !element.disabled && !element.checkValidity());
+  private getInvalidElement = (): HTMLInputElement => this.inputs.find((input: HTMLInputElement) => !input.disabled && !input.readOnly && !input.checkValidity());
 
   /*************
    * Lifecycle *
@@ -294,7 +305,9 @@ export class MgInputRadio {
                 required={this.required}
                 onBlur={this.handleBlur}
                 onInput={this.handleInput}
-                ref={el => this.inputs.push(el as HTMLInputElement)}
+                ref={el => {
+                  if (el !== null) this.inputs[index] = el as HTMLInputElement;
+                }}
               />
               <label htmlFor={this.identifier + '_' + index}>{input.title}</label>
             </li>

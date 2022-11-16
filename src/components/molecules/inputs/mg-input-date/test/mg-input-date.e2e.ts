@@ -1,4 +1,4 @@
-import { createPage } from '../../../../../utils/test.utils';
+import { createPage } from '../../../../../utils/e2e.test.utils';
 
 describe('mg-input-date', () => {
   describe.each([
@@ -74,6 +74,9 @@ describe('mg-input-date', () => {
     `<mg-input-date identifier="identifier" label="label" value="1982-06-02" disabled></mg-input-date>`,
     `<mg-input-date identifier="identifier" label="label" value="1982-06-02" readonly lang="fr"></mg-input-date>`,
     `<mg-input-date identifier="identifier" label="label" help-text='<mg-icon icon="user" size="small"></mg-icon> Welcome batman'></mg-input-date>`,
+    `<mg-input-date identifier="identifier" label="label" value="1982-06-02" help-text='My help text' required></mg-input-date>`,
+    `<mg-input-date identifier="identifier" label="label" value="1982-06-02" help-text='My help text' required readonly></mg-input-date>`,
+    `<mg-input-date identifier="identifier" label="label" value="1982-06-02" help-text='My help text' required disabled></mg-input-date>`,
   ])('Should render with template', html => {
     test('render', async () => {
       const page = await createPage(html);
@@ -146,5 +149,18 @@ describe('mg-input-date', () => {
       const screenshot = await page.screenshot();
       expect(screenshot).toMatchImageSnapshot();
     });
+  });
+
+  test.each([false, true])('Ensure component fit in width 200px with label-on-top: %s', async labelOnTop => {
+    const page = await createPage(`<mg-input-date identifier="identifier" label="label" label-on-top="${labelOnTop}"></mg-input-date>`);
+
+    const element = await page.find('mg-input-date');
+
+    expect(element).toHaveClass('hydrated');
+
+    await page.setViewport({ width: 200, height: 100 });
+
+    const screenshot = await page.screenshot();
+    expect(screenshot).toMatchImageSnapshot();
   });
 });
