@@ -21,6 +21,7 @@ export class MgMenuItem {
    * DOM child element
    */
   private childMenu: HTMLMgMenuElement;
+  private childContent: HTMLElement;
 
   /**************
    * Decorators *
@@ -99,9 +100,13 @@ export class MgMenuItem {
   @Prop({ mutable: true }) expanded = false;
   @Watch('expanded')
   validateExpanded(newValue: MgMenuItem['expanded']): void {
-    if (this.childMenu !== undefined && this.childMenu !== null) {
+    if (this.hasSubMenu) {
       if (newValue) this.childMenu.removeAttribute('hidden');
       else this.childMenu.setAttribute('hidden', '');
+    }
+    if (this.hasSubContentItem) {
+      if (newValue) this.childContent.removeAttribute('hidden');
+      else this.childContent.setAttribute('hidden', '');
     }
   }
 
@@ -154,6 +159,11 @@ export class MgMenuItem {
     }
   }
 
+  /**
+   * Does component have child content item
+   */
+  @State() hasSubContentItem = false;
+
   /************
    * Methods *
    ************/
@@ -196,7 +206,7 @@ export class MgMenuItem {
     if (this.hasSubMenu) {
       this.toggleExpanded();
 
-      // when main menu item is NOT expanded we need NOT expanded sub-items
+      // when main menu item is NOT expanded we need NOT expanded sub-items and NOT expanded sub-content
       const subItems = Array.from(this.element.querySelectorAll(`${this.name}`));
       if (!this.expanded && this.isInMainMenu) {
         subItems.forEach(item => {
@@ -212,6 +222,8 @@ export class MgMenuItem {
           }
         });
       }
+    } else if (this.hasSubContentItem) {
+      this.toggleExpanded();
     } else {
       this.menuItemSelected.emit();
     }
@@ -242,6 +254,14 @@ export class MgMenuItem {
     // define submenu
     this.childMenu = this.element.querySelector('mg-menu');
     this.hasSubMenu = this.childMenu !== null;
+    this.childContent = this.element.firstElementChild as HTMLElement;
+
+    // sub content item is not a mg-menu || mg-menu-item || [slot="illustration"] || [slot="information"] element
+    this.hasSubContentItem =
+      this.childContent !== null && this.childContent.nodeName.startsWith('MG-MENU') === false && !['illustration', 'information'].includes(this.childContent.slot);
+    if (this.hasSubContentItem) {
+      this.childContent.setAttribute('hidden', '');
+    }
 
     // Validate props
     this.validateIdentifier(this.identifier);
@@ -318,13 +338,18 @@ export class MgMenuItem {
             {this.label}
           </div>
           <slot name="information"></slot>
-          {this.hasSubMenu && (
-            <span class={`${this.navigationButton}-chevron`}>
-              <mg-icon icon={`chevron-${this.expanded === true ? 'up' : 'down'}`}></mg-icon>
+          {(this.hasSubMenu || this.hasSubContentItem) && (
+            <span
+              class={{
+                [`${this.navigationButton}-chevron`]: true,
+                [`${this.navigationButton}-chevron--rotate`]: this.expanded === true,
+              }}
+            >
+              <mg-icon icon="chevron-down"></mg-icon>
             </span>
           )}
         </TagName>
-        <div class={{ [`${this.name}__collapse-container`]: true, [`${this.name}__collapse-container--shadow`]: this.isInMainMenu && this.isdirection(Direction.HORIZONTAL) }}>
+        <div class={{ [`${this.name}__collapse-container`]: true, [`${this.name}__collapse-container--first-level`]: this.isInMainMenu && this.isdirection(Direction.HORIZONTAL) }}>
           <slot></slot>
         </div>
       </Host>

@@ -1,10 +1,12 @@
-import { createPage } from '../../../../../utils/test.utils';
+import { createPage } from '../../../../../utils/e2e.test.utils';
+
+const delay = (duration = 200) => setTimeout(() => null, duration);
 
 const createHTML = direction => `
   <div class="menu-container">
-    <mg-menu ${direction && `direction="${direction}"`}>
+    <mg-menu label="menu" ${direction && `direction="${direction}"`}>
       <mg-menu-item identifier="id-1" label="1 - head-1" status="active">
-        <mg-menu label="submenu" direction="vertical">
+        <mg-menu label="submenu-1" direction="vertical">
           <mg-menu-item identifier="id-1-1" size="medium" label="Batman begins"></mg-menu-item>
         </mg-menu>
       </mg-menu-item>
@@ -87,6 +89,10 @@ describe('mg-menu', () => {
       page.keyboard.down('Enter');
       await page.waitForChanges();
 
+      // await chevron animation done
+      await delay();
+      await page.waitForChanges();
+
       const screenshotEnter1 = await page.screenshot();
       expect(screenshotEnter1).toMatchImageSnapshot();
 
@@ -108,6 +114,10 @@ describe('mg-menu', () => {
 
       // close submenu
       page.keyboard.down('Enter');
+      await page.waitForChanges();
+
+      // await chevron animation done
+      await delay();
       await page.waitForChanges();
 
       const screenshotEnter2 = await page.screenshot();
@@ -136,6 +146,10 @@ describe('mg-menu', () => {
 
       await page.waitForChanges();
 
+      // await chevron animation done
+      await delay();
+      await page.waitForChanges();
+
       const screenshotItem1 = await page.screenshot();
       expect(screenshotItem1).toMatchImageSnapshot();
 
@@ -145,12 +159,20 @@ describe('mg-menu', () => {
 
       await page.waitForChanges();
 
+      // await chevron animation done
+      await delay();
+      await page.waitForChanges();
+
       const screenshotItem5Expand = await page.screenshot();
       expect(screenshotItem5Expand).toMatchImageSnapshot();
 
       // expandable menu-item, close
       await mgMenuItem5.click();
 
+      await page.waitForChanges();
+
+      // await chevron animation done
+      await delay();
       await page.waitForChanges();
 
       const screenshotItem5Close = await page.screenshot();

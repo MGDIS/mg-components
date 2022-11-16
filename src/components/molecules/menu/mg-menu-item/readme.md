@@ -149,6 +149,12 @@ Items below are pushed to bottom.
 ![](./mg-menu-item/doc/img/mg-menu-submenu-tray.png) 
 Submenu is displayed via an **mg-tray** component.
 
+## CSS Variables
+
+### navigation-button
+
+- `--mg-menu-item-navigation-button-max-width`: define menu-item button max-width. Usefull to apply `text-overflow: ellipsis;` on `mg-menu-item__navigation-button-text` element. default: `unset`.
+
 <!-- Auto Generated Below -->
 
 

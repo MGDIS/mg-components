@@ -151,6 +151,16 @@ describe('mg-menu', () => {
         true,
         defaultSlot(undefined, defaultSlot({ identifier: 'child', label: 'child', status: Status.ACTIVE })),
       ),
+    expanded =>
+      getPage(
+        { identifier: 'batman', label: 'batman', expanded },
+        false,
+        true,
+        <div>
+          <h3>Demo title</h3>
+          <p>some content</p>
+        </div>,
+      ),
   ])('mouse navigation', template => {
     test.each([undefined, true, false])('should manage toggle expand with template %s', async expanded => {
       const page = await template(expanded);

@@ -17,7 +17,7 @@ exports[`mg-menu keyboard navigation should manage keyboard navigation 1`] = `
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -34,7 +34,7 @@ exports[`mg-menu keyboard navigation should manage keyboard navigation 1`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -61,7 +61,7 @@ exports[`mg-menu keyboard navigation should manage keyboard navigation 2`] = `
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -78,7 +78,7 @@ exports[`mg-menu keyboard navigation should manage keyboard navigation 2`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -105,7 +105,7 @@ exports[`mg-menu keyboard navigation should manage keyboard navigation 3`] = `
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -122,7 +122,7 @@ exports[`mg-menu keyboard navigation should manage keyboard navigation 3`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -149,7 +149,7 @@ exports[`mg-menu keyboard navigation should manage keyboard navigation 4`] = `
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -166,7 +166,7 @@ exports[`mg-menu keyboard navigation should manage keyboard navigation 4`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -190,7 +190,7 @@ exports[`mg-menu mouse navigation should manage toggle expand with template fals
         </div>
         <slot name="information"></slot>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -212,7 +212,7 @@ exports[`mg-menu mouse navigation should manage toggle expand with template fals
         </div>
         <slot name="information"></slot>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -237,7 +237,7 @@ exports[`mg-menu mouse navigation should manage toggle expand with template fals
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -254,7 +254,7 @@ exports[`mg-menu mouse navigation should manage toggle expand with template fals
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -277,11 +277,11 @@ exports[`mg-menu mouse navigation should manage toggle expand with template fals
           batman
         </div>
         <slot name="information"></slot>
-        <span class="mg-menu-item__navigation-button-chevron">
-          <mg-icon icon="chevron-up"></mg-icon>
+        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+          <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -298,7 +298,7 @@ exports[`mg-menu mouse navigation should manage toggle expand with template fals
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -325,7 +325,7 @@ exports[`mg-menu mouse navigation should manage toggle expand with template fals
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -345,7 +345,7 @@ exports[`mg-menu mouse navigation should manage toggle expand with template fals
               <mg-icon icon="chevron-down"></mg-icon>
             </span>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -362,7 +362,7 @@ exports[`mg-menu mouse navigation should manage toggle expand with template fals
                 </div>
                 <slot name="information"></slot>
               </button>
-              <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+              <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
                 <slot></slot>
               </div>
             </mock:shadow-root>
@@ -387,11 +387,11 @@ exports[`mg-menu mouse navigation should manage toggle expand with template fals
           batman
         </div>
         <slot name="information"></slot>
-        <span class="mg-menu-item__navigation-button-chevron">
-          <mg-icon icon="chevron-up"></mg-icon>
+        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+          <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -407,11 +407,11 @@ exports[`mg-menu mouse navigation should manage toggle expand with template fals
               child
             </div>
             <slot name="information"></slot>
-            <span class="mg-menu-item__navigation-button-chevron">
-              <mg-icon icon="chevron-up"></mg-icon>
+            <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+              <mg-icon icon="chevron-down"></mg-icon>
             </span>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -428,7 +428,7 @@ exports[`mg-menu mouse navigation should manage toggle expand with template fals
                 </div>
                 <slot name="information"></slot>
               </button>
-              <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+              <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
                 <slot></slot>
               </div>
             </mock:shadow-root>
@@ -436,6 +436,72 @@ exports[`mg-menu mouse navigation should manage toggle expand with template fals
         </mg-menu>
       </mg-menu-item>
     </mg-menu>
+  </mg-menu-item>
+</mg-menu>
+`;
+
+exports[`mg-menu mouse navigation should manage toggle expand with template false 7`] = `
+<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="0" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="batman" tabindex="0">
+        <slot name="illustration"></slot>
+        <div class="mg-menu-item__navigation-button-text" title="batman">
+          batman
+        </div>
+        <slot name="information"></slot>
+        <span class="mg-menu-item__navigation-button-chevron">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
+      </button>
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+    <div hidden="">
+      <h3>
+        Demo title
+      </h3>
+      <p>
+        some content
+      </p>
+    </div>
+  </mg-menu-item>
+</mg-menu>
+`;
+
+exports[`mg-menu mouse navigation should manage toggle expand with template false 8`] = `
+<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="0" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="true" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="batman" tabindex="0">
+        <slot name="illustration"></slot>
+        <div class="mg-menu-item__navigation-button-text" title="batman">
+          batman
+        </div>
+        <slot name="information"></slot>
+        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
+      </button>
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+    <div>
+      <h3>
+        Demo title
+      </h3>
+      <p>
+        some content
+      </p>
+    </div>
   </mg-menu-item>
 </mg-menu>
 `;
@@ -454,7 +520,7 @@ exports[`mg-menu mouse navigation should manage toggle expand with template true
         </div>
         <slot name="information"></slot>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -476,7 +542,7 @@ exports[`mg-menu mouse navigation should manage toggle expand with template true
         </div>
         <slot name="information"></slot>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -497,11 +563,11 @@ exports[`mg-menu mouse navigation should manage toggle expand with template true
           batman
         </div>
         <slot name="information"></slot>
-        <span class="mg-menu-item__navigation-button-chevron">
-          <mg-icon icon="chevron-up"></mg-icon>
+        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+          <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -518,7 +584,7 @@ exports[`mg-menu mouse navigation should manage toggle expand with template true
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -545,7 +611,7 @@ exports[`mg-menu mouse navigation should manage toggle expand with template true
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -562,7 +628,7 @@ exports[`mg-menu mouse navigation should manage toggle expand with template true
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -585,11 +651,11 @@ exports[`mg-menu mouse navigation should manage toggle expand with template true
           batman
         </div>
         <slot name="information"></slot>
-        <span class="mg-menu-item__navigation-button-chevron">
-          <mg-icon icon="chevron-up"></mg-icon>
+        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+          <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -609,7 +675,7 @@ exports[`mg-menu mouse navigation should manage toggle expand with template true
               <mg-icon icon="chevron-down"></mg-icon>
             </span>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -626,7 +692,7 @@ exports[`mg-menu mouse navigation should manage toggle expand with template true
                 </div>
                 <slot name="information"></slot>
               </button>
-              <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+              <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
                 <slot></slot>
               </div>
             </mock:shadow-root>
@@ -655,7 +721,7 @@ exports[`mg-menu mouse navigation should manage toggle expand with template true
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -675,7 +741,7 @@ exports[`mg-menu mouse navigation should manage toggle expand with template true
               <mg-icon icon="chevron-down"></mg-icon>
             </span>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -692,7 +758,7 @@ exports[`mg-menu mouse navigation should manage toggle expand with template true
                 </div>
                 <slot name="information"></slot>
               </button>
-              <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+              <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
                 <slot></slot>
               </div>
             </mock:shadow-root>
@@ -700,6 +766,72 @@ exports[`mg-menu mouse navigation should manage toggle expand with template true
         </mg-menu>
       </mg-menu-item>
     </mg-menu>
+  </mg-menu-item>
+</mg-menu>
+`;
+
+exports[`mg-menu mouse navigation should manage toggle expand with template true 7`] = `
+<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="0" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="true" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="batman" tabindex="0">
+        <slot name="illustration"></slot>
+        <div class="mg-menu-item__navigation-button-text" title="batman">
+          batman
+        </div>
+        <slot name="information"></slot>
+        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
+      </button>
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+    <div hidden="">
+      <h3>
+        Demo title
+      </h3>
+      <p>
+        some content
+      </p>
+    </div>
+  </mg-menu-item>
+</mg-menu>
+`;
+
+exports[`mg-menu mouse navigation should manage toggle expand with template true 8`] = `
+<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="0" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="batman" tabindex="0">
+        <slot name="illustration"></slot>
+        <div class="mg-menu-item__navigation-button-text" title="batman">
+          batman
+        </div>
+        <slot name="information"></slot>
+        <span class="mg-menu-item__navigation-button-chevron">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
+      </button>
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+    <div hidden="">
+      <h3>
+        Demo title
+      </h3>
+      <p>
+        some content
+      </p>
+    </div>
   </mg-menu-item>
 </mg-menu>
 `;
@@ -718,7 +850,7 @@ exports[`mg-menu mouse navigation should manage toggle expand with template unde
         </div>
         <slot name="information"></slot>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -740,7 +872,7 @@ exports[`mg-menu mouse navigation should manage toggle expand with template unde
         </div>
         <slot name="information"></slot>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -765,7 +897,7 @@ exports[`mg-menu mouse navigation should manage toggle expand with template unde
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -782,7 +914,7 @@ exports[`mg-menu mouse navigation should manage toggle expand with template unde
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -805,11 +937,11 @@ exports[`mg-menu mouse navigation should manage toggle expand with template unde
           batman
         </div>
         <slot name="information"></slot>
-        <span class="mg-menu-item__navigation-button-chevron">
-          <mg-icon icon="chevron-up"></mg-icon>
+        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+          <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -826,7 +958,7 @@ exports[`mg-menu mouse navigation should manage toggle expand with template unde
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -853,7 +985,7 @@ exports[`mg-menu mouse navigation should manage toggle expand with template unde
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -873,7 +1005,7 @@ exports[`mg-menu mouse navigation should manage toggle expand with template unde
               <mg-icon icon="chevron-down"></mg-icon>
             </span>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -890,7 +1022,7 @@ exports[`mg-menu mouse navigation should manage toggle expand with template unde
                 </div>
                 <slot name="information"></slot>
               </button>
-              <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+              <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
                 <slot></slot>
               </div>
             </mock:shadow-root>
@@ -915,11 +1047,11 @@ exports[`mg-menu mouse navigation should manage toggle expand with template unde
           batman
         </div>
         <slot name="information"></slot>
-        <span class="mg-menu-item__navigation-button-chevron">
-          <mg-icon icon="chevron-up"></mg-icon>
+        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+          <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -935,11 +1067,11 @@ exports[`mg-menu mouse navigation should manage toggle expand with template unde
               child
             </div>
             <slot name="information"></slot>
-            <span class="mg-menu-item__navigation-button-chevron">
-              <mg-icon icon="chevron-up"></mg-icon>
+            <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+              <mg-icon icon="chevron-down"></mg-icon>
             </span>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -956,7 +1088,7 @@ exports[`mg-menu mouse navigation should manage toggle expand with template unde
                 </div>
                 <slot name="information"></slot>
               </button>
-              <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+              <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
                 <slot></slot>
               </div>
             </mock:shadow-root>
@@ -964,6 +1096,72 @@ exports[`mg-menu mouse navigation should manage toggle expand with template unde
         </mg-menu>
       </mg-menu-item>
     </mg-menu>
+  </mg-menu-item>
+</mg-menu>
+`;
+
+exports[`mg-menu mouse navigation should manage toggle expand with template undefined 7`] = `
+<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="0" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="batman" tabindex="0">
+        <slot name="illustration"></slot>
+        <div class="mg-menu-item__navigation-button-text" title="batman">
+          batman
+        </div>
+        <slot name="information"></slot>
+        <span class="mg-menu-item__navigation-button-chevron">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
+      </button>
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+    <div hidden="">
+      <h3>
+        Demo title
+      </h3>
+      <p>
+        some content
+      </p>
+    </div>
+  </mg-menu-item>
+</mg-menu>
+`;
+
+exports[`mg-menu mouse navigation should manage toggle expand with template undefined 8`] = `
+<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" menu-index="0" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button aria-expanded="true" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="batman" tabindex="0">
+        <slot name="illustration"></slot>
+        <div class="mg-menu-item__navigation-button-text" title="batman">
+          batman
+        </div>
+        <slot name="information"></slot>
+        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
+      </button>
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+    <div>
+      <h3>
+        Demo title
+      </h3>
+      <p>
+        some content
+      </p>
+    </div>
   </mg-menu-item>
 </mg-menu>
 `;
@@ -982,7 +1180,7 @@ exports[`mg-menu render with 2 menu-items, last items get style modifier 1`] = `
         </div>
         <slot name="information"></slot>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -996,7 +1194,7 @@ exports[`mg-menu render with 2 menu-items, last items get style modifier 1`] = `
         </div>
         <slot name="information"></slot>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -1023,7 +1221,7 @@ exports[`mg-menu render with args {
         </div>
         <slot name="information"></slot>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -1045,7 +1243,7 @@ exports[`mg-menu render with args { identifier: 'batman', label: 'batman' } 1`] 
         </div>
         <slot name="information"></slot>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -1067,7 +1265,7 @@ exports[`mg-menu render with args { identifier: 'batman', label: 'batman', badge
         </div>
         <slot name="information"></slot>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -1089,7 +1287,7 @@ exports[`mg-menu render with args { identifier: 'batman', label: 'batman', href:
         </div>
         <slot name="information"></slot>
       </a>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -1111,7 +1309,7 @@ exports[`mg-menu render with args { identifier: 'batman', label: 'batman', icon:
         </div>
         <slot name="information"></slot>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -1136,7 +1334,7 @@ exports[`mg-menu render with expanded and sub-menu false 1`] = `
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -1153,7 +1351,7 @@ exports[`mg-menu render with expanded and sub-menu false 1`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -1176,11 +1374,11 @@ exports[`mg-menu render with expanded and sub-menu false 2`] = `
           batman
         </div>
         <slot name="information"></slot>
-        <span class="mg-menu-item__navigation-button-chevron">
-          <mg-icon icon="chevron-up"></mg-icon>
+        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+          <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -1197,7 +1395,7 @@ exports[`mg-menu render with expanded and sub-menu false 2`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -1220,11 +1418,11 @@ exports[`mg-menu render with expanded and sub-menu true 1`] = `
           batman
         </div>
         <slot name="information"></slot>
-        <span class="mg-menu-item__navigation-button-chevron">
-          <mg-icon icon="chevron-up"></mg-icon>
+        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+          <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -1241,7 +1439,7 @@ exports[`mg-menu render with expanded and sub-menu true 1`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -1268,7 +1466,7 @@ exports[`mg-menu render with expanded and sub-menu true 2`] = `
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -1285,7 +1483,7 @@ exports[`mg-menu render with expanded and sub-menu true 2`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -1312,7 +1510,7 @@ exports[`mg-menu render with expanded and sub-menu undefined 1`] = `
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -1329,7 +1527,7 @@ exports[`mg-menu render with expanded and sub-menu undefined 1`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -1352,11 +1550,11 @@ exports[`mg-menu render with expanded and sub-menu undefined 2`] = `
           batman
         </div>
         <slot name="information"></slot>
-        <span class="mg-menu-item__navigation-button-chevron">
-          <mg-icon icon="chevron-up"></mg-icon>
+        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+          <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -1373,7 +1571,7 @@ exports[`mg-menu render with expanded and sub-menu undefined 2`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -1397,7 +1595,7 @@ exports[`mg-menu render with expanded false 1`] = `
         </div>
         <slot name="information"></slot>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -1419,7 +1617,7 @@ exports[`mg-menu render with expanded false 2`] = `
         </div>
         <slot name="information"></slot>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -1441,7 +1639,7 @@ exports[`mg-menu render with expanded true 1`] = `
         </div>
         <slot name="information"></slot>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -1463,7 +1661,7 @@ exports[`mg-menu render with expanded true 2`] = `
         </div>
         <slot name="information"></slot>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -1485,7 +1683,7 @@ exports[`mg-menu render with expanded undefined 1`] = `
         </div>
         <slot name="information"></slot>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -1507,7 +1705,7 @@ exports[`mg-menu render with expanded undefined 2`] = `
         </div>
         <slot name="information"></slot>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -1529,7 +1727,7 @@ exports[`mg-menu render with menuIndex 0 1`] = `
         </div>
         <slot name="information"></slot>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -1551,7 +1749,7 @@ exports[`mg-menu render with menuIndex 5 1`] = `
         </div>
         <slot name="information"></slot>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -1573,7 +1771,7 @@ exports[`mg-menu render with menuIndex undefined 1`] = `
         </div>
         <slot name="information"></slot>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -1595,7 +1793,7 @@ exports[`mg-menu render with size large 1`] = `
         </div>
         <slot name="information"></slot>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -1617,7 +1815,7 @@ exports[`mg-menu render with size medium 1`] = `
         </div>
         <slot name="information"></slot>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -1639,7 +1837,7 @@ exports[`mg-menu render with size regular 1`] = `
         </div>
         <slot name="information"></slot>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -1661,7 +1859,7 @@ exports[`mg-menu render with status active 1`] = `
         </div>
         <slot name="information"></slot>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -1683,7 +1881,7 @@ exports[`mg-menu render with status active 2`] = `
         </div>
         <slot name="information"></slot>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -1705,7 +1903,7 @@ exports[`mg-menu render with status disabled 1`] = `
         </div>
         <slot name="information"></slot>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -1727,7 +1925,7 @@ exports[`mg-menu render with status disabled 2`] = `
         </div>
         <slot name="information"></slot>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -1749,7 +1947,7 @@ exports[`mg-menu render with status hidden 1`] = `
         </div>
         <slot name="information"></slot>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -1771,7 +1969,7 @@ exports[`mg-menu render with status hidden 2`] = `
         </div>
         <slot name="information"></slot>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -1793,7 +1991,7 @@ exports[`mg-menu render with status visible 1`] = `
         </div>
         <slot name="information"></slot>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -1815,7 +2013,7 @@ exports[`mg-menu render with status visible 2`] = `
         </div>
         <slot name="information"></slot>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>

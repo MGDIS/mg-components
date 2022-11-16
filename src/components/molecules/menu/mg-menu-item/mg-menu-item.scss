@@ -49,7 +49,6 @@ $navigation-button-sizes: (
 :host(.mg-menu-item--vertical) {
   flex-direction: column;
   width: 100%;
-  overflow-y: auto;
   .mg-menu-item {
     &__collapse-container {
       left: unset;
@@ -67,11 +66,16 @@ $navigation-button-sizes: (
 }
 
 // horizontal item style
-:host(.mg-menu-item--horizontal) .mg-menu-item__collapse-container.mg-menu-item__collapse-container--shadow {
+:host(.mg-menu-item--horizontal) .mg-menu-item__collapse-container.mg-menu-item__collapse-container--first-level {
   box-shadow: var(--box-shadow);
+  background-color: hsl(var(--color-light));
+  ::slotted(mg-menu) {
+    padding: 1rem 0;
+  }
 }
 
 .mg-menu-item {
+  max-width: var(--mg-menu-item-navigation-button-max-width);
   &__collapse-container {
     position: absolute;
     top: 100%;
@@ -86,6 +90,13 @@ $navigation-button-sizes: (
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+    }
+    &-chevron {
+      transition: transform 200ms;
+    }
+    &-chevron--rotate.mg-menu-item__navigation-button-chevron {
+      transition: transform 200ms;
+      transform: rotate(180deg);
     }
   }
 }

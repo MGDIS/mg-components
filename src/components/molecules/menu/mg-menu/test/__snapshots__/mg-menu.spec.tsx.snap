@@ -17,7 +17,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 1`] = `
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -34,7 +34,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 1`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -48,7 +48,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 1`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -62,7 +62,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 1`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -77,11 +77,22 @@ exports[`mg-menu events should manage focused-item event in %s menu 1`] = `
           joker
         </div>
         <slot name="information"></slot>
+        <span class="mg-menu-item__navigation-button-chevron">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
+    <div hidden="">
+      <h2>
+        This is a joker card
+      </h2>
+      <p>
+        If you don't know the joker, you can watch the movie.
+      </p>
+    </div>
   </mg-menu-item>
   <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal mg-menu-item--last" menu-index="2" role="menuitem" status="visible">
     <mock:shadow-root>
@@ -92,7 +103,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 1`] = `
         </div>
         <slot name="information"></slot>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -117,7 +128,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 2`] = `
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -134,7 +145,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 2`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -148,7 +159,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 2`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -162,7 +173,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 2`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -177,11 +188,22 @@ exports[`mg-menu events should manage focused-item event in %s menu 2`] = `
           joker
         </div>
         <slot name="information"></slot>
+        <span class="mg-menu-item__navigation-button-chevron">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
+    <div hidden="">
+      <h2>
+        This is a joker card
+      </h2>
+      <p>
+        If you don't know the joker, you can watch the movie.
+      </p>
+    </div>
   </mg-menu-item>
   <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal mg-menu-item--last" menu-index="2" role="menuitem" status="visible">
     <mock:shadow-root>
@@ -192,7 +214,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 2`] = `
         </div>
         <slot name="information"></slot>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -217,7 +239,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 3`] = `
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -234,7 +256,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 3`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -248,7 +270,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 3`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -262,7 +284,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 3`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -277,11 +299,22 @@ exports[`mg-menu events should manage focused-item event in %s menu 3`] = `
           joker
         </div>
         <slot name="information"></slot>
+        <span class="mg-menu-item__navigation-button-chevron">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
+    <div hidden="">
+      <h2>
+        This is a joker card
+      </h2>
+      <p>
+        If you don't know the joker, you can watch the movie.
+      </p>
+    </div>
   </mg-menu-item>
   <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal mg-menu-item--last" menu-index="2" role="menuitem" status="visible">
     <mock:shadow-root>
@@ -292,7 +325,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 3`] = `
         </div>
         <slot name="information"></slot>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -317,7 +350,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 4`] = `
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -334,7 +367,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 4`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -348,7 +381,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 4`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -362,7 +395,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 4`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -377,11 +410,22 @@ exports[`mg-menu events should manage focused-item event in %s menu 4`] = `
           joker
         </div>
         <slot name="information"></slot>
+        <span class="mg-menu-item__navigation-button-chevron">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
+    <div hidden="">
+      <h2>
+        This is a joker card
+      </h2>
+      <p>
+        If you don't know the joker, you can watch the movie.
+      </p>
+    </div>
   </mg-menu-item>
   <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal mg-menu-item--last" menu-index="2" role="menuitem" status="visible">
     <mock:shadow-root>
@@ -392,7 +436,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 4`] = `
         </div>
         <slot name="information"></slot>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -417,7 +461,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 5`] = `
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -434,7 +478,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 5`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -448,7 +492,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 5`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -462,7 +506,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 5`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -477,11 +521,22 @@ exports[`mg-menu events should manage focused-item event in %s menu 5`] = `
           joker
         </div>
         <slot name="information"></slot>
+        <span class="mg-menu-item__navigation-button-chevron">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
+    <div hidden="">
+      <h2>
+        This is a joker card
+      </h2>
+      <p>
+        If you don't know the joker, you can watch the movie.
+      </p>
+    </div>
   </mg-menu-item>
   <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal mg-menu-item--last" menu-index="2" role="menuitem" status="visible">
     <mock:shadow-root>
@@ -492,7 +547,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 5`] = `
         </div>
         <slot name="information"></slot>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -534,7 +589,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 6`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -548,7 +603,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 6`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -562,7 +617,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 6`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -577,11 +632,22 @@ exports[`mg-menu events should manage focused-item event in %s menu 6`] = `
           joker
         </div>
         <slot name="information"></slot>
+        <span class="mg-menu-item__navigation-button-chevron">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
       </button>
       <div class="mg-menu-item__collapse-container">
         <slot></slot>
       </div>
     </mock:shadow-root>
+    <div hidden="">
+      <h2>
+        This is a joker card
+      </h2>
+      <p>
+        If you don't know the joker, you can watch the movie.
+      </p>
+    </div>
   </mg-menu-item>
   <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--vertical" menu-index="2" role="menuitem" status="visible">
     <mock:shadow-root>
@@ -634,7 +700,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 7`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -648,7 +714,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 7`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -662,7 +728,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 7`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -677,11 +743,22 @@ exports[`mg-menu events should manage focused-item event in %s menu 7`] = `
           joker
         </div>
         <slot name="information"></slot>
+        <span class="mg-menu-item__navigation-button-chevron">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
       </button>
       <div class="mg-menu-item__collapse-container">
         <slot></slot>
       </div>
     </mock:shadow-root>
+    <div hidden="">
+      <h2>
+        This is a joker card
+      </h2>
+      <p>
+        If you don't know the joker, you can watch the movie.
+      </p>
+    </div>
   </mg-menu-item>
   <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--vertical" menu-index="2" role="menuitem" status="visible">
     <mock:shadow-root>
@@ -734,7 +811,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 8`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -748,7 +825,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 8`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -762,7 +839,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 8`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -777,11 +854,22 @@ exports[`mg-menu events should manage focused-item event in %s menu 8`] = `
           joker
         </div>
         <slot name="information"></slot>
+        <span class="mg-menu-item__navigation-button-chevron">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
       </button>
       <div class="mg-menu-item__collapse-container">
         <slot></slot>
       </div>
     </mock:shadow-root>
+    <div hidden="">
+      <h2>
+        This is a joker card
+      </h2>
+      <p>
+        If you don't know the joker, you can watch the movie.
+      </p>
+    </div>
   </mg-menu-item>
   <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--vertical" menu-index="2" role="menuitem" status="visible">
     <mock:shadow-root>
@@ -834,7 +922,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 9`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -848,7 +936,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 9`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -862,7 +950,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 9`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -877,11 +965,22 @@ exports[`mg-menu events should manage focused-item event in %s menu 9`] = `
           joker
         </div>
         <slot name="information"></slot>
+        <span class="mg-menu-item__navigation-button-chevron">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
       </button>
       <div class="mg-menu-item__collapse-container">
         <slot></slot>
       </div>
     </mock:shadow-root>
+    <div hidden="">
+      <h2>
+        This is a joker card
+      </h2>
+      <p>
+        If you don't know the joker, you can watch the movie.
+      </p>
+    </div>
   </mg-menu-item>
   <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--vertical" menu-index="2" role="menuitem" status="visible">
     <mock:shadow-root>
@@ -934,7 +1033,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 10`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -948,7 +1047,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 10`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -962,7 +1061,7 @@ exports[`mg-menu events should manage focused-item event in %s menu 10`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -977,11 +1076,22 @@ exports[`mg-menu events should manage focused-item event in %s menu 10`] = `
           joker
         </div>
         <slot name="information"></slot>
+        <span class="mg-menu-item__navigation-button-chevron">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
       </button>
       <div class="mg-menu-item__collapse-container">
         <slot></slot>
       </div>
     </mock:shadow-root>
+    <div hidden="">
+      <h2>
+        This is a joker card
+      </h2>
+      <p>
+        If you don't know the joker, you can watch the movie.
+      </p>
+    </div>
   </mg-menu-item>
   <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--vertical" menu-index="2" role="menuitem" status="visible">
     <mock:shadow-root>
@@ -1017,7 +1127,7 @@ exports[`mg-menu events should manage outside click 1`] = `
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -1034,7 +1144,7 @@ exports[`mg-menu events should manage outside click 1`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -1048,7 +1158,7 @@ exports[`mg-menu events should manage outside click 1`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -1062,7 +1172,7 @@ exports[`mg-menu events should manage outside click 1`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -1077,11 +1187,22 @@ exports[`mg-menu events should manage outside click 1`] = `
           joker
         </div>
         <slot name="information"></slot>
+        <span class="mg-menu-item__navigation-button-chevron">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
+    <div hidden="">
+      <h2>
+        This is a joker card
+      </h2>
+      <p>
+        If you don't know the joker, you can watch the movie.
+      </p>
+    </div>
   </mg-menu-item>
   <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal mg-menu-item--last" menu-index="2" role="menuitem" status="visible">
     <mock:shadow-root>
@@ -1092,7 +1213,7 @@ exports[`mg-menu events should manage outside click 1`] = `
         </div>
         <slot name="information"></slot>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -1117,7 +1238,7 @@ exports[`mg-menu events should manage outside click 2`] = `
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -1134,7 +1255,7 @@ exports[`mg-menu events should manage outside click 2`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -1148,7 +1269,7 @@ exports[`mg-menu events should manage outside click 2`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -1162,7 +1283,7 @@ exports[`mg-menu events should manage outside click 2`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -1177,11 +1298,22 @@ exports[`mg-menu events should manage outside click 2`] = `
           joker
         </div>
         <slot name="information"></slot>
+        <span class="mg-menu-item__navigation-button-chevron">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
+    <div hidden="">
+      <h2>
+        This is a joker card
+      </h2>
+      <p>
+        If you don't know the joker, you can watch the movie.
+      </p>
+    </div>
   </mg-menu-item>
   <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal mg-menu-item--last" menu-index="2" role="menuitem" status="visible">
     <mock:shadow-root>
@@ -1192,7 +1324,7 @@ exports[`mg-menu events should manage outside click 2`] = `
         </div>
         <slot name="information"></slot>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -1217,7 +1349,7 @@ exports[`mg-menu events should manage outside click 3`] = `
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -1234,7 +1366,7 @@ exports[`mg-menu events should manage outside click 3`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -1248,7 +1380,7 @@ exports[`mg-menu events should manage outside click 3`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -1262,7 +1394,7 @@ exports[`mg-menu events should manage outside click 3`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -1277,11 +1409,22 @@ exports[`mg-menu events should manage outside click 3`] = `
           joker
         </div>
         <slot name="information"></slot>
+        <span class="mg-menu-item__navigation-button-chevron">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
+    <div hidden="">
+      <h2>
+        This is a joker card
+      </h2>
+      <p>
+        If you don't know the joker, you can watch the movie.
+      </p>
+    </div>
   </mg-menu-item>
   <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal mg-menu-item--last" menu-index="2" role="menuitem" status="visible">
     <mock:shadow-root>
@@ -1292,7 +1435,7 @@ exports[`mg-menu events should manage outside click 3`] = `
         </div>
         <slot name="information"></slot>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -1334,7 +1477,7 @@ exports[`mg-menu events should manage outside click 4`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -1348,7 +1491,7 @@ exports[`mg-menu events should manage outside click 4`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -1362,7 +1505,7 @@ exports[`mg-menu events should manage outside click 4`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -1377,11 +1520,22 @@ exports[`mg-menu events should manage outside click 4`] = `
           joker
         </div>
         <slot name="information"></slot>
+        <span class="mg-menu-item__navigation-button-chevron">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
       </button>
       <div class="mg-menu-item__collapse-container">
         <slot></slot>
       </div>
     </mock:shadow-root>
+    <div hidden="">
+      <h2>
+        This is a joker card
+      </h2>
+      <p>
+        If you don't know the joker, you can watch the movie.
+      </p>
+    </div>
   </mg-menu-item>
   <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--vertical" menu-index="2" role="menuitem" status="visible">
     <mock:shadow-root>
@@ -1434,7 +1588,7 @@ exports[`mg-menu events should manage outside click 5`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -1448,7 +1602,7 @@ exports[`mg-menu events should manage outside click 5`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -1462,7 +1616,7 @@ exports[`mg-menu events should manage outside click 5`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -1477,11 +1631,22 @@ exports[`mg-menu events should manage outside click 5`] = `
           joker
         </div>
         <slot name="information"></slot>
+        <span class="mg-menu-item__navigation-button-chevron">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
       </button>
       <div class="mg-menu-item__collapse-container">
         <slot></slot>
       </div>
     </mock:shadow-root>
+    <div hidden="">
+      <h2>
+        This is a joker card
+      </h2>
+      <p>
+        If you don't know the joker, you can watch the movie.
+      </p>
+    </div>
   </mg-menu-item>
   <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--vertical" menu-index="2" role="menuitem" status="visible">
     <mock:shadow-root>
@@ -1534,7 +1699,7 @@ exports[`mg-menu events should manage outside click 6`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -1548,7 +1713,7 @@ exports[`mg-menu events should manage outside click 6`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -1562,7 +1727,7 @@ exports[`mg-menu events should manage outside click 6`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -1577,11 +1742,22 @@ exports[`mg-menu events should manage outside click 6`] = `
           joker
         </div>
         <slot name="information"></slot>
+        <span class="mg-menu-item__navigation-button-chevron">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
       </button>
       <div class="mg-menu-item__collapse-container">
         <slot></slot>
       </div>
     </mock:shadow-root>
+    <div hidden="">
+      <h2>
+        This is a joker card
+      </h2>
+      <p>
+        If you don't know the joker, you can watch the movie.
+      </p>
+    </div>
   </mg-menu-item>
   <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--vertical" menu-index="2" role="menuitem" status="visible">
     <mock:shadow-root>
@@ -1617,7 +1793,7 @@ exports[`mg-menu render with args { label: 'batman menu' } 1`] = `
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -1634,7 +1810,7 @@ exports[`mg-menu render with args { label: 'batman menu' } 1`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -1648,7 +1824,7 @@ exports[`mg-menu render with args { label: 'batman menu' } 1`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -1662,7 +1838,7 @@ exports[`mg-menu render with args { label: 'batman menu' } 1`] = `
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -1677,11 +1853,22 @@ exports[`mg-menu render with args { label: 'batman menu' } 1`] = `
           joker
         </div>
         <slot name="information"></slot>
+        <span class="mg-menu-item__navigation-button-chevron">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
+    <div hidden="">
+      <h2>
+        This is a joker card
+      </h2>
+      <p>
+        If you don't know the joker, you can watch the movie.
+      </p>
+    </div>
   </mg-menu-item>
   <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal mg-menu-item--last" menu-index="2" role="menuitem" status="visible">
     <mock:shadow-root>
@@ -1692,7 +1879,7 @@ exports[`mg-menu render with args { label: 'batman menu' } 1`] = `
         </div>
         <slot name="information"></slot>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -1717,7 +1904,7 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'horizontal
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -1734,7 +1921,7 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'horizontal
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -1748,7 +1935,7 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'horizontal
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -1762,7 +1949,7 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'horizontal
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -1777,11 +1964,22 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'horizontal
           joker
         </div>
         <slot name="information"></slot>
+        <span class="mg-menu-item__navigation-button-chevron">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
+    <div hidden="">
+      <h2>
+        This is a joker card
+      </h2>
+      <p>
+        If you don't know the joker, you can watch the movie.
+      </p>
+    </div>
   </mg-menu-item>
   <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal mg-menu-item--last" menu-index="2" role="menuitem" status="visible">
     <mock:shadow-root>
@@ -1792,7 +1990,7 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'horizontal
         </div>
         <slot name="information"></slot>
       </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
       </div>
     </mock:shadow-root>
@@ -1834,7 +2032,7 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'vertical' 
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -1848,7 +2046,7 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'vertical' 
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -1862,7 +2060,7 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'vertical' 
             </div>
             <slot name="information"></slot>
           </button>
-          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--shadow">
+          <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
           </div>
         </mock:shadow-root>
@@ -1877,11 +2075,22 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'vertical' 
           joker
         </div>
         <slot name="information"></slot>
+        <span class="mg-menu-item__navigation-button-chevron">
+          <mg-icon icon="chevron-down"></mg-icon>
+        </span>
       </button>
       <div class="mg-menu-item__collapse-container">
         <slot></slot>
       </div>
     </mock:shadow-root>
+    <div hidden="">
+      <h2>
+        This is a joker card
+      </h2>
+      <p>
+        If you don't know the joker, you can watch the movie.
+      </p>
+    </div>
   </mg-menu-item>
   <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--vertical" menu-index="2" role="menuitem" status="visible">
     <mock:shadow-root>

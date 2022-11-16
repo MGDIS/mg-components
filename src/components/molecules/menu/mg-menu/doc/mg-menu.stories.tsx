@@ -62,6 +62,12 @@ const Template = (args: any): HTMLElement => {
             </mg-menu-item>
           </mg-menu>
         </mg-menu-item>
+        <mg-menu-item identifier="slot-content" label="slot content" size="medium">
+          <div>
+            <h3>Demo title</h3>
+            <p>some content</p>
+          </div>
+        </mg-menu-item>
         <mg-menu-item identifier="id-5" label="1 - head-5" size="medium">
           <mg-badge value="2" label="hello" slot="information"></mg-badge>
           <mg-icon icon="user" slot="illustration"></mg-icon>

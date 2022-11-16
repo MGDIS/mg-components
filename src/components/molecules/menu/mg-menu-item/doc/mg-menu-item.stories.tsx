@@ -13,7 +13,7 @@ export default {
  * @returns {HTMLElement} HTMLElement
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Template = (args: any): HTMLElement => <mg-menu-item {...filterArgs(args)}></mg-menu-item>;
+const Template = (args: any): HTMLElement => <mg-menu-item {...filterArgs(args)}>{args.slot}</mg-menu-item>;
 
 export const MgMenuItem = Template.bind({});
 
@@ -25,28 +25,21 @@ export const MgMenuItemWhitIcon = Template.bind({});
 
 MgMenuItemWhitIcon.args = {
   label: 'Batman',
-  icon: 'user',
+  slot: <mg-icon icon="user" slot="illustration"></mg-icon>,
 };
 
 export const MgMenuItemWhitBadge = Template.bind({});
 
 MgMenuItemWhitBadge.args = {
   label: 'Batman',
-  badge: {
-    label: '1 notification',
-    value: '1',
-  },
+  slot: <mg-badge value="2" label="hello" slot="information"></mg-badge>,
 };
 
 export const MgMenuItemWhitBadgeAndIcon = Template.bind({});
 
 MgMenuItemWhitBadgeAndIcon.args = {
   label: 'Batman',
-  icon: 'user',
-  badge: {
-    label: '1 notification',
-    value: '1',
-  },
+  slot: [<mg-badge value="2" label="hello" slot="information"></mg-badge>, <mg-icon icon="user" slot="illustration"></mg-icon>],
 };
 
 const TemplateWhithSubmenu = (args: any): HTMLElement => (
