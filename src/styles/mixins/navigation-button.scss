@@ -7,10 +7,14 @@ $border-bottom-size: 0.3rem;
     .#{$element}.#{$element}--size-#{$name} .#{$element}__navigation-button,
     .#{$element}__navigation-button.#{$element}__navigation-button--size-#{$name} {
       padding: #{map.get($size, 'vertical')} #{map.get($size, 'horizontal')};
-      @if $name == 'regular' {
-        font-size: 1.3rem;
-      } @else {
-        font-size: 1.5rem;
+      &,
+      ::slotted([slot='label']),
+      ::slotted([slot='metadata']) {
+        @if $name == 'regular' {
+          font-size: 1.3rem;
+        } @else {
+          font-size: 1.5rem;
+        }
       }
       &.#{$element}__navigation-button--horizontal {
         padding-bottom: calc(#{map.get($size, 'vertical')} - #{$border-bottom-size});

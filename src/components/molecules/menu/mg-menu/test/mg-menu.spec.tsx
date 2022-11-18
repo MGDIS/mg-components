@@ -8,20 +8,30 @@ const getPage = async args => {
     components: [MgMenu, MgMenuItem],
     template: () => (
       <mg-menu {...args}>
-        <mg-menu-item identifier="1" label="batman">
+        <mg-menu-item>
+          <span slot="label">batman</span>
           <mg-menu label="batman - submenu">
-            <mg-menu-item identifier="1-1" label="batman begins"></mg-menu-item>
-            <mg-menu-item identifier="1-2" label="joker: the dark knight"></mg-menu-item>
-            <mg-menu-item identifier="1-3" label="bane: the dark knight rise"></mg-menu-item>
+            <mg-menu-item>
+              <span slot="label">batman begins</span>
+            </mg-menu-item>
+            <mg-menu-item>
+              <span slot="label">joker: the dark knight</span>
+            </mg-menu-item>
+            <mg-menu-item>
+              <span slot="label">bane: the dark knight rise</span>
+            </mg-menu-item>
           </mg-menu>
         </mg-menu-item>
-        <mg-menu-item identifier="2" label="joker">
+        <mg-menu-item>
+          <span slot="label">joker</span>
           <div>
             <h2>This is a joker card</h2>
             <p>If you don't know the joker, you can watch the movie.</p>
           </div>
         </mg-menu-item>
-        <mg-menu-item identifier="3" label="bane"></mg-menu-item>
+        <mg-menu-item>
+          <span slot="label">bane</span>
+        </mg-menu-item>
       </mg-menu>
     ),
   });

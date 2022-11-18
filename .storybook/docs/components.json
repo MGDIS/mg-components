@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-11-15T16:38:56",
+  "timestamp": "2022-11-18T08:18:49",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.18.1",
@@ -4378,7 +4378,7 @@
           "mutable": true,
           "attr": "expanded",
           "reflectToAttr": false,
-          "docs": "Define menu-item content expended",
+          "docs": "Define menu-item content expanded",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -4404,38 +4404,6 @@
           ],
           "optional": false,
           "required": false
-        },
-        {
-          "name": "identifier",
-          "type": "string",
-          "mutable": false,
-          "attr": "identifier",
-          "reflectToAttr": false,
-          "docs": "Identifier is used for the element ID (id is a reserved prop in Stencil.js)",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": true
-        },
-        {
-          "name": "label",
-          "type": "string",
-          "mutable": false,
-          "attr": "label",
-          "reflectToAttr": false,
-          "docs": "Define menu-item button label",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": true
         },
         {
           "name": "menuIndex",

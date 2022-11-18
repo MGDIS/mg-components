@@ -5,24 +5,28 @@ const delay = (duration = 200) => setTimeout(() => null, duration);
 const createHTML = direction => `
   <div class="menu-container">
     <mg-menu label="menu" ${direction && `direction="${direction}"`}>
-      <mg-menu-item identifier="id-1" label="1 - head-1" status="active">
+      <mg-menu-item status="active">
+        <span slot="label">1 - head-1</span>
         <mg-menu label="submenu-1" direction="vertical">
-          <mg-menu-item identifier="id-1-1" size="medium" label="Batman begins"></mg-menu-item>
+          <mg-menu-item size="medium"><span slot="label">Batman begins</span></mg-menu-item>
         </mg-menu>
       </mg-menu-item>
-      <mg-menu-item identifier="id-2" label="1 - head-2 long" status="disabled"></mg-menu-item>
-      <mg-menu-item identifier="id-3" label="1 - head-3 very long">
+      <mg-menu-item status="disabled"><span slot="label">1 - head-2 long</span></mg-menu-item>
+      <mg-menu-item>
+        <span slot="label">1 - head-3 very long</span>
         <mg-icon icon='user' slot='illustration'></mg-icon>
       </mg-menu-item>
-      <mg-menu-item identifier="id-4" label="1 - head-4">
+      <mg-menu-item>
+        <span slot="label">1 - head-4</span>
         <mg-icon icon='user' slot='illustration'></mg-icon>
         <mg-badge value='2' label='hello' slot='information'></mg-badge>  
       </mg-menu-item>
-      <mg-menu-item identifier="id-5" label="1 - head-5">
+      <mg-menu-item>
+        <span slot="label">1 - head-5</span>
         <mg-icon icon='user' slot='illustration'></mg-icon>
         <mg-badge value='2' label='hello' slot='information'></mg-badge>  
         <mg-menu label="submenu-2" direction="vertical">
-          <mg-menu-item identifier="id-5-1" size="medium" label="Batman begins"></mg-menu-item>
+          <mg-menu-item size="medium"><span slot="label">Batman begins</span></mg-menu-item>
         </mg-menu>
       </mg-menu-item>
     </mg-menu>
@@ -41,7 +45,7 @@ describe('mg-menu', () => {
     expect(screenshot).toMatchImageSnapshot();
 
     if (direction === 'vertical') {
-      await page.setViewport({ width: 150, height: 400 });
+      await page.setViewport({ width: 180, height: 400 });
 
       const screenshot2 = await page.screenshot();
       expect(screenshot2).toMatchImageSnapshot();
@@ -132,7 +136,7 @@ describe('mg-menu', () => {
     });
   });
   describe('click navigation', () => {
-    test.each(['horizontal', 'vertical'])('should success keyboard navigation, case direction %s', async direction => {
+    test.each(['horizontal', 'vertical'])('should success click navigation, case direction %s', async direction => {
       const page = await createPage(createHTML(direction));
 
       await page.setViewport({ width: direction === 'vertical' ? 400 : 1200, height: direction === 'vertical' ? 500 : 200 });
@@ -141,7 +145,7 @@ describe('mg-menu', () => {
       expect(baseScreenshot).toMatchImageSnapshot();
 
       // standard menu-item
-      const mgMenuItem1 = await page.find('mg-menu mg-menu-item[identifier="id-1"]');
+      const mgMenuItem1 = await page.find('mg-menu[label="menu"] > mg-menu-item:first-of-type');
       await mgMenuItem1.click();
 
       await page.waitForChanges();
@@ -154,7 +158,7 @@ describe('mg-menu', () => {
       expect(screenshotItem1).toMatchImageSnapshot();
 
       // expandable menu-item, open
-      const mgMenuItem5 = await page.find('mg-menu mg-menu-item[identifier="id-5"]');
+      const mgMenuItem5 = await page.find('mg-menu[label="menu"] > mg-menu-item:last-of-type');
       await mgMenuItem5.click();
 
       await page.waitForChanges();

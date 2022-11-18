@@ -875,21 +875,13 @@ export namespace Components {
     }
     interface MgMenuItem {
         /**
-          * Define menu-item content expended
+          * Define menu-item content expanded
          */
         "expanded": boolean;
         /**
           * Define menu-item badge when defined menu-item contain an anchor instead of button
          */
         "href": string;
-        /**
-          * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
-         */
-        "identifier": string;
-        /**
-          * Define menu-item button label
-         */
-        "label": string;
         /**
           * Define menu-item index in parent menu
          */
@@ -2239,21 +2231,13 @@ declare namespace LocalJSX {
     }
     interface MgMenuItem {
         /**
-          * Define menu-item content expended
+          * Define menu-item content expanded
          */
         "expanded"?: boolean;
         /**
           * Define menu-item badge when defined menu-item contain an anchor instead of button
          */
         "href"?: string;
-        /**
-          * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
-         */
-        "identifier": string;
-        /**
-          * Define menu-item button label
-         */
-        "label": string;
         /**
           * Define menu-item index in parent menu
          */

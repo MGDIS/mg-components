@@ -18,45 +18,57 @@ const Template = (args: any): HTMLElement => <mg-menu-item {...filterArgs(args)}
 export const MgMenuItem = Template.bind({});
 
 MgMenuItem.args = {
-  label: 'Batman',
+  identifier: 'identifier',
+  slot: <span slot="label">My label</span>,
 };
 
 export const MgMenuItemWhitIcon = Template.bind({});
 
 MgMenuItemWhitIcon.args = {
-  label: 'Batman',
-  slot: <mg-icon icon="user" slot="illustration"></mg-icon>,
+  ...MgMenuItem.args,
+  slot: [<span slot="label">My label</span>, <mg-icon icon="user" slot="illustration"></mg-icon>],
 };
 
 export const MgMenuItemWhitBadge = Template.bind({});
 
 MgMenuItemWhitBadge.args = {
-  label: 'Batman',
-  slot: <mg-badge value="2" label="hello" slot="information"></mg-badge>,
+  ...MgMenuItem.args,
+  slot: [<span slot="label">My label</span>, <mg-badge value="2" label="hello" slot="information"></mg-badge>],
 };
 
 export const MgMenuItemWhitBadgeAndIcon = Template.bind({});
 
 MgMenuItemWhitBadgeAndIcon.args = {
-  label: 'Batman',
-  slot: [<mg-badge value="2" label="hello" slot="information"></mg-badge>, <mg-icon icon="user" slot="illustration"></mg-icon>],
+  ...MgMenuItem.args,
+  slot: [<span slot="label">My label</span>, <mg-badge value="2" label="hello" slot="information"></mg-badge>, <mg-icon icon="user" slot="illustration"></mg-icon>],
 };
 
-const TemplateWhithSubmenu = (args: any): HTMLElement => (
-  <mg-menu-item {...filterArgs(args)}>
-    <mg-menu-vertical label="submenu">
-      <mg-menu-item identifier="id-1-1" label="Batman begins"></mg-menu-item>
-      <mg-menu-item identifier="id-1-2" label="The dark knight"></mg-menu-item>
-      <mg-menu-item identifier="id-1-3" label="The dark knight rises"></mg-menu-item>
-    </mg-menu-vertical>
-  </mg-menu-item>
-);
+export const MgMenuItemWhitMetadata = Template.bind({});
 
-export const MgMenuItemWhithSubmenu = TemplateWhithSubmenu.bind({});
+MgMenuItemWhitMetadata.args = {
+  ...MgMenuItem.args,
+  slot: [<span slot="label">My label</span>, <span slot="metadata">My metadata</span>],
+};
+
+export const MgMenuItemWhithSubmenu = Template.bind({});
 
 MgMenuItemWhithSubmenu.args = {
-  label: 'Batman',
-  icon: 'user',
-  identifier: 'id-1',
-  badge: { value: 2, label: 'hello' },
+  ...MgMenuItem.args,
+  slot: [
+    <span slot="label">My label</span>,
+    <mg-menu-vertical label="submenu">
+      <mg-menu-item>
+        <span slot="label">Subitem 1</span>
+      </mg-menu-item>
+      <mg-menu-item>
+        <mg-icon icon="user" slot="illustration"></mg-icon>
+        <span slot="label">Subitem 2</span>
+      </mg-menu-item>
+      <mg-menu-item>
+        <span slot="label">Subitem 3</span>
+        <mg-icon icon="user" slot="illustration"></mg-icon>
+        <mg-badge value="2" label="hello" slot="information"></mg-badge>
+      </mg-menu-item>
+    </mg-menu-vertical>,
+  ],
 };

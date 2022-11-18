@@ -17,12 +17,6 @@ export class MgMenuItem {
   private readonly name = 'mg-menu-item';
   private readonly navigationButton = `${this.name}__navigation-button`;
 
-  /**
-   * DOM child element
-   */
-  private childMenu: HTMLMgMenuElement;
-  private childContent: HTMLElement;
-
   /**************
    * Decorators *
    **************/
@@ -35,28 +29,6 @@ export class MgMenuItem {
   /************
    * Props *
    ************/
-
-  /**
-   * Identifier is used for the element ID (id is a reserved prop in Stencil.js)
-   */
-  @Prop() identifier!: string;
-  @Watch('identifier')
-  validateIdentifier(newValue: MgMenuItem['identifier']): void {
-    if (!(newValue?.trim().length > 0)) {
-      throw new Error(`<${this.name}> prop "identifier" is required.`);
-    }
-  }
-
-  /**
-   * Define menu-item button label
-   */
-  @Prop() label!: string;
-  @Watch('label')
-  validateLabel(newValue: MgMenuItem['label']): void {
-    if (!(newValue?.trim().length > 0)) {
-      throw new Error(`<${this.name}> prop "label" is required.`);
-    }
-  }
 
   /**
    * Define menu-item badge
@@ -95,20 +67,9 @@ export class MgMenuItem {
   @Prop({ mutable: true, reflect: true }) menuIndex: number;
 
   /**
-   * Define menu-item content expended
+   * Define menu-item content expanded
    */
   @Prop({ mutable: true }) expanded = false;
-  @Watch('expanded')
-  validateExpanded(newValue: MgMenuItem['expanded']): void {
-    if (this.hasSubMenu) {
-      if (newValue) this.childMenu.removeAttribute('hidden');
-      else this.childMenu.setAttribute('hidden', '');
-    }
-    if (this.hasSubContentItem) {
-      if (newValue) this.childContent.removeAttribute('hidden');
-      else this.childContent.setAttribute('hidden', '');
-    }
-  }
 
   /************
    * Events *
@@ -134,7 +95,7 @@ export class MgMenuItem {
   @State() classList: ClassList = new ClassList([this.name]);
 
   /**
-   * Component classes
+   * Component button classes
    */
   @State() navigationButtonClassList: ClassList = new ClassList([this.navigationButton]);
 
@@ -149,20 +110,15 @@ export class MgMenuItem {
   @State() isInMainMenu: boolean;
 
   /**
-   * Does component have child menu
+   * Does component have children
    */
-  @State() hasSubMenu = false;
-  @Watch('hasSubMenu')
-  validateHasSubMenu(newValue: boolean): void {
+  @State() hasChildren = false;
+  @Watch('hasChildren')
+  validateHasChildren(newValue: boolean): void {
     if (newValue && this.element.href !== undefined) {
       throw new Error(`<${this.name}> prop "href" is unauthorizied when element is a parent.`);
     }
   }
-
-  /**
-   * Does component have child content item
-   */
-  @State() hasSubContentItem = false;
 
   /************
    * Methods *
@@ -203,7 +159,10 @@ export class MgMenuItem {
    * @returns {void}
    */
   private handleElementCLick = (event: MouseEvent): void => {
-    if (this.hasSubMenu) {
+    this.focusedItem.emit(this.menuIndex);
+    event.preventDefault();
+
+    if (this.hasChildren) {
       this.toggleExpanded();
 
       // when main menu item is NOT expanded we need NOT expanded sub-items and NOT expanded sub-content
@@ -222,8 +181,6 @@ export class MgMenuItem {
           }
         });
       }
-    } else if (this.hasSubContentItem) {
-      this.toggleExpanded();
     } else {
       this.menuItemSelected.emit();
     }
@@ -251,24 +208,13 @@ export class MgMenuItem {
    * @returns {void}
    */
   componentWillLoad(): void {
-    // define submenu
-    this.childMenu = this.element.querySelector('mg-menu');
-    this.hasSubMenu = this.childMenu !== null;
-    this.childContent = this.element.firstElementChild as HTMLElement;
-
-    // sub content item is not a mg-menu || mg-menu-item || [slot="illustration"] || [slot="information"] element
-    this.hasSubContentItem =
-      this.childContent !== null && this.childContent.nodeName.startsWith('MG-MENU') === false && !['illustration', 'information'].includes(this.childContent.slot);
-    if (this.hasSubContentItem) {
-      this.childContent.setAttribute('hidden', '');
-    }
+    // has children items that is NOT [slot="illustration"] || [slot="information"] element
+    // we store only matching elements
+    this.hasChildren = Array.from(this.element.children).filter(child => !['illustration', 'information', 'label', 'metadata'].includes(child.slot)).length > 0;
 
     // Validate props
-    this.validateIdentifier(this.identifier);
-    this.validateLabel(this.label);
     this.validateSize(this.size);
     this.validateActive(this.status);
-    this.validateExpanded(this.expanded);
   }
 
   /**
@@ -277,6 +223,17 @@ export class MgMenuItem {
    * @returns {ReturnType<typeof setTimeout>} timeout
    */
   componentDidLoad(): ReturnType<typeof setTimeout> {
+    // slot title AND metadata validation
+    // add title on label AND metada slots due to text-overflow on these element
+    if (Array.from(this.element.children).find(child => child.slot === 'label') === undefined) throw new Error(`<${this.name}> slot "label" is required.`);
+
+    ['label', 'metadata'].forEach(slot => {
+      Array.from(this.element.querySelectorAll(`[slot="${slot}"]`)).forEach(element => {
+        if (element.textContent.trim().length < 1) throw new Error(`<${this.name}> slot "${slot}" must have text content.`);
+        if (element.getAttribute('title') === null) element.setAttribute('title', element.textContent);
+      });
+    });
+
     // update props and states after componentDidLoad hook
     // return a promise to process action only in the FIRST render().
     // https://stenciljs.com/docs/component-lifecycle#componentwillload
@@ -296,8 +253,10 @@ export class MgMenuItem {
       }
 
       // when main menu item contain an active item it will get the active style
+      // AND if item is in vertical menu it will be expanded
       if (this.isInMainMenu && this.hasChildElementStatus(this.element, Status.ACTIVE)) {
         this.status = Status.ACTIVE;
+        this.expanded = this.direction === Direction.VERTICAL;
       }
 
       // manage menu items style depending to parent menu horientation
@@ -322,23 +281,26 @@ export class MgMenuItem {
   render(): HTMLElement {
     const TagName: string = this.href !== undefined ? 'a' : 'button';
     return (
-      <Host role="menuitem" aria-haspopup={this.hasSubMenu.toString()} class={this.classList.join()}>
+      <Host role="menuitem" aria-haspopup={this.hasChildren.toString()} class={this.classList.join()}>
         <TagName
-          id={this.identifier}
           href={this.href}
           class={this.navigationButtonClassList.join()}
           tabindex={[Status.DISABLED, Status.HIDDEN].includes(this.status) ? -1 : 0}
           aria-expanded={this.expanded.toString()}
           aria-current={this.status === Status.ACTIVE && 'page'}
+          aria-haspopup={this.hasChildren}
           onClick={this.handleElementCLick}
           onFocus={this.handleElementFocus}
         >
           <slot name="illustration"></slot>
-          <div class={`${this.navigationButton}-text`} title={this.label}>
-            {this.label}
+          <div class={`${this.navigationButton}-center`}>
+            <div class={`${this.navigationButton}-text-content`}>
+              <slot name="label"></slot>
+              <slot name="information"></slot>
+            </div>
+            <slot name="metadata"></slot>
           </div>
-          <slot name="information"></slot>
-          {(this.hasSubMenu || this.hasSubContentItem) && (
+          {this.hasChildren && this.href === undefined && (
             <span
               class={{
                 [`${this.navigationButton}-chevron`]: true,
@@ -349,7 +311,10 @@ export class MgMenuItem {
             </span>
           )}
         </TagName>
-        <div class={{ [`${this.name}__collapse-container`]: true, [`${this.name}__collapse-container--first-level`]: this.isInMainMenu && this.isdirection(Direction.HORIZONTAL) }}>
+        <div
+          class={{ [`${this.name}__collapse-container`]: true, [`${this.name}__collapse-container--first-level`]: this.isInMainMenu && this.isdirection(Direction.HORIZONTAL) }}
+          hidden={!this.expanded}
+        >
           <slot></slot>
         </div>
       </Host>

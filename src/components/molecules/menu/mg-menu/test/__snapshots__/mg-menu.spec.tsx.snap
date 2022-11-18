@@ -9,10 +9,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 1`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="batman">
-          batman
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="batman">
+              batman
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="batman"></div>
         </div>
-        <slot name="information"></slot>
         <span class="mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
@@ -29,10 +34,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 1`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-1" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="batman begins">
-              batman begins
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="batman begins">
+                  batman begins
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="batman begins"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -43,10 +53,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 1`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-2" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="joker: the dark knight">
-              joker: the dark knight
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="joker: the dark knight">
+                  joker: the dark knight
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="joker: the dark knight"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -57,10 +72,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 1`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-3" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="bane: the dark knight rise">
-              bane: the dark knight rise
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="bane: the dark knight rise">
+                  bane: the dark knight rise
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="bane: the dark knight rise"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -73,10 +93,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 1`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="2" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="joker">
-          joker
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="joker">
+              joker
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="joker"></div>
         </div>
-        <slot name="information"></slot>
         <span class="mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
@@ -98,10 +123,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 1`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="3" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="bane">
-          bane
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="bane">
+              bane
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="bane"></div>
         </div>
-        <slot name="information"></slot>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
@@ -120,10 +150,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 2`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="batman">
-          batman
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="batman">
+              batman
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="batman"></div>
         </div>
-        <slot name="information"></slot>
         <span class="mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
@@ -140,10 +175,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 2`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-1" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="batman begins">
-              batman begins
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="batman begins">
+                  batman begins
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="batman begins"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -154,10 +194,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 2`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-2" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="joker: the dark knight">
-              joker: the dark knight
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="joker: the dark knight">
+                  joker: the dark knight
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="joker: the dark knight"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -168,10 +213,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 2`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-3" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="bane: the dark knight rise">
-              bane: the dark knight rise
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="bane: the dark knight rise">
+                  bane: the dark knight rise
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="bane: the dark knight rise"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -184,10 +234,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 2`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="2" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="joker">
-          joker
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="joker">
+              joker
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="joker"></div>
         </div>
-        <slot name="information"></slot>
         <span class="mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
@@ -209,10 +264,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 2`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="3" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="bane">
-          bane
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="bane">
+              bane
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="bane"></div>
         </div>
-        <slot name="information"></slot>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
@@ -231,10 +291,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 3`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="batman">
-          batman
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="batman">
+              batman
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="batman"></div>
         </div>
-        <slot name="information"></slot>
         <span class="mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
@@ -251,10 +316,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 3`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-1" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="batman begins">
-              batman begins
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="batman begins">
+                  batman begins
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="batman begins"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -265,10 +335,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 3`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-2" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="joker: the dark knight">
-              joker: the dark knight
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="joker: the dark knight">
+                  joker: the dark knight
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="joker: the dark knight"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -279,10 +354,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 3`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-3" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="bane: the dark knight rise">
-              bane: the dark knight rise
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="bane: the dark knight rise">
+                  bane: the dark knight rise
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="bane: the dark knight rise"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -295,10 +375,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 3`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="2" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="joker">
-          joker
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="joker">
+              joker
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="joker"></div>
         </div>
-        <slot name="information"></slot>
         <span class="mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
@@ -320,10 +405,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 3`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="3" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="bane">
-          bane
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="bane">
+              bane
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="bane"></div>
         </div>
-        <slot name="information"></slot>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
@@ -342,10 +432,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 4`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="batman">
-          batman
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="batman">
+              batman
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="batman"></div>
         </div>
-        <slot name="information"></slot>
         <span class="mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
@@ -362,10 +457,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 4`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-1" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="batman begins">
-              batman begins
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="batman begins">
+                  batman begins
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="batman begins"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -376,10 +476,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 4`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-2" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="joker: the dark knight">
-              joker: the dark knight
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="joker: the dark knight">
+                  joker: the dark knight
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="joker: the dark knight"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -390,10 +495,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 4`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-3" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="bane: the dark knight rise">
-              bane: the dark knight rise
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="bane: the dark knight rise">
+                  bane: the dark knight rise
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="bane: the dark knight rise"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -406,10 +516,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 4`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="2" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="joker">
-          joker
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="joker">
+              joker
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="joker"></div>
         </div>
-        <slot name="information"></slot>
         <span class="mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
@@ -431,10 +546,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 4`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="3" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="bane">
-          bane
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="bane">
+              bane
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="bane"></div>
         </div>
-        <slot name="information"></slot>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
@@ -453,10 +573,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 5`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="batman">
-          batman
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="batman">
+              batman
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="batman"></div>
         </div>
-        <slot name="information"></slot>
         <span class="mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
@@ -473,10 +598,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 5`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-1" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="batman begins">
-              batman begins
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="batman begins">
+                  batman begins
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="batman begins"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -487,10 +617,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 5`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-2" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="joker: the dark knight">
-              joker: the dark knight
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="joker: the dark knight">
+                  joker: the dark knight
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="joker: the dark knight"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -501,10 +636,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 5`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-3" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="bane: the dark knight rise">
-              bane: the dark knight rise
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="bane: the dark knight rise">
+                  bane: the dark knight rise
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="bane: the dark knight rise"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -517,10 +657,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 5`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="2" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="joker">
-          joker
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="joker">
+              joker
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="joker"></div>
         </div>
-        <slot name="information"></slot>
         <span class="mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
@@ -542,10 +687,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 5`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="3" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="bane">
-          bane
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="bane">
+              bane
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="bane"></div>
         </div>
-        <slot name="information"></slot>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
@@ -564,10 +714,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 6`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="1" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="batman">
-          batman
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="batman">
+              batman
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="batman"></div>
         </div>
-        <slot name="information"></slot>
         <span class="mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
@@ -584,10 +739,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 6`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-1" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="batman begins">
-              batman begins
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="batman begins">
+                  batman begins
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="batman begins"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -598,10 +758,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 6`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-2" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="joker: the dark knight">
-              joker: the dark knight
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="joker: the dark knight">
+                  joker: the dark knight
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="joker: the dark knight"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -612,10 +777,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 6`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-3" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="bane: the dark knight rise">
-              bane: the dark knight rise
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="bane: the dark knight rise">
+                  bane: the dark knight rise
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="bane: the dark knight rise"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -628,10 +798,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 6`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="2" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="joker">
-          joker
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="joker">
+              joker
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="joker"></div>
         </div>
-        <slot name="information"></slot>
         <span class="mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
@@ -653,10 +828,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 6`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="3" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="bane">
-          bane
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="bane">
+              bane
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="bane"></div>
         </div>
-        <slot name="information"></slot>
       </button>
       <div class="mg-menu-item__collapse-container">
         <slot></slot>
@@ -675,10 +855,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 7`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="1" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="batman">
-          batman
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="batman">
+              batman
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="batman"></div>
         </div>
-        <slot name="information"></slot>
         <span class="mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
@@ -695,10 +880,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 7`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-1" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="batman begins">
-              batman begins
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="batman begins">
+                  batman begins
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="batman begins"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -709,10 +899,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 7`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-2" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="joker: the dark knight">
-              joker: the dark knight
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="joker: the dark knight">
+                  joker: the dark knight
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="joker: the dark knight"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -723,10 +918,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 7`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-3" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="bane: the dark knight rise">
-              bane: the dark knight rise
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="bane: the dark knight rise">
+                  bane: the dark knight rise
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="bane: the dark knight rise"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -739,10 +939,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 7`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="2" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="joker">
-          joker
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="joker">
+              joker
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="joker"></div>
         </div>
-        <slot name="information"></slot>
         <span class="mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
@@ -764,10 +969,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 7`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="3" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="bane">
-          bane
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="bane">
+              bane
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="bane"></div>
         </div>
-        <slot name="information"></slot>
       </button>
       <div class="mg-menu-item__collapse-container">
         <slot></slot>
@@ -786,10 +996,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 8`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="1" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="batman">
-          batman
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="batman">
+              batman
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="batman"></div>
         </div>
-        <slot name="information"></slot>
         <span class="mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
@@ -806,10 +1021,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 8`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-1" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="batman begins">
-              batman begins
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="batman begins">
+                  batman begins
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="batman begins"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -820,10 +1040,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 8`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-2" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="joker: the dark knight">
-              joker: the dark knight
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="joker: the dark knight">
+                  joker: the dark knight
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="joker: the dark knight"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -834,10 +1059,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 8`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-3" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="bane: the dark knight rise">
-              bane: the dark knight rise
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="bane: the dark knight rise">
+                  bane: the dark knight rise
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="bane: the dark knight rise"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -850,10 +1080,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 8`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="2" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="joker">
-          joker
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="joker">
+              joker
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="joker"></div>
         </div>
-        <slot name="information"></slot>
         <span class="mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
@@ -875,10 +1110,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 8`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="3" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="bane">
-          bane
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="bane">
+              bane
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="bane"></div>
         </div>
-        <slot name="information"></slot>
       </button>
       <div class="mg-menu-item__collapse-container">
         <slot></slot>
@@ -897,10 +1137,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 9`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="1" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="batman">
-          batman
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="batman">
+              batman
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="batman"></div>
         </div>
-        <slot name="information"></slot>
         <span class="mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
@@ -917,10 +1162,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 9`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-1" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="batman begins">
-              batman begins
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="batman begins">
+                  batman begins
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="batman begins"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -931,10 +1181,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 9`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-2" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="joker: the dark knight">
-              joker: the dark knight
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="joker: the dark knight">
+                  joker: the dark knight
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="joker: the dark knight"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -945,10 +1200,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 9`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-3" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="bane: the dark knight rise">
-              bane: the dark knight rise
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="bane: the dark knight rise">
+                  bane: the dark knight rise
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="bane: the dark knight rise"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -961,10 +1221,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 9`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="2" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="joker">
-          joker
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="joker">
+              joker
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="joker"></div>
         </div>
-        <slot name="information"></slot>
         <span class="mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
@@ -986,10 +1251,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 9`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="3" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="bane">
-          bane
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="bane">
+              bane
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="bane"></div>
         </div>
-        <slot name="information"></slot>
       </button>
       <div class="mg-menu-item__collapse-container">
         <slot></slot>
@@ -1008,10 +1278,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 10`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="1" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="batman">
-          batman
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="batman">
+              batman
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="batman"></div>
         </div>
-        <slot name="information"></slot>
         <span class="mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
@@ -1028,10 +1303,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 10`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-1" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="batman begins">
-              batman begins
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="batman begins">
+                  batman begins
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="batman begins"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -1042,10 +1322,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 10`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-2" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="joker: the dark knight">
-              joker: the dark knight
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="joker: the dark knight">
+                  joker: the dark knight
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="joker: the dark knight"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -1056,10 +1341,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 10`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-3" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="bane: the dark knight rise">
-              bane: the dark knight rise
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="bane: the dark knight rise">
+                  bane: the dark knight rise
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="bane: the dark knight rise"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -1072,10 +1362,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 10`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="2" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="joker">
-          joker
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="joker">
+              joker
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="joker"></div>
         </div>
-        <slot name="information"></slot>
         <span class="mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
@@ -1097,10 +1392,15 @@ exports[`mg-menu events should manage focused-item event in %s menu 10`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="3" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="bane">
-          bane
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="bane">
+              bane
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="bane"></div>
         </div>
-        <slot name="information"></slot>
       </button>
       <div class="mg-menu-item__collapse-container">
         <slot></slot>
@@ -1119,10 +1419,15 @@ exports[`mg-menu events should manage outside click 1`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="batman">
-          batman
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="batman">
+              batman
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="batman"></div>
         </div>
-        <slot name="information"></slot>
         <span class="mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
@@ -1139,10 +1444,15 @@ exports[`mg-menu events should manage outside click 1`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-1" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="batman begins">
-              batman begins
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="batman begins">
+                  batman begins
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="batman begins"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -1153,10 +1463,15 @@ exports[`mg-menu events should manage outside click 1`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-2" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="joker: the dark knight">
-              joker: the dark knight
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="joker: the dark knight">
+                  joker: the dark knight
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="joker: the dark knight"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -1167,10 +1482,15 @@ exports[`mg-menu events should manage outside click 1`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-3" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="bane: the dark knight rise">
-              bane: the dark knight rise
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="bane: the dark knight rise">
+                  bane: the dark knight rise
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="bane: the dark knight rise"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -1183,10 +1503,15 @@ exports[`mg-menu events should manage outside click 1`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="2" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="joker">
-          joker
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="joker">
+              joker
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="joker"></div>
         </div>
-        <slot name="information"></slot>
         <span class="mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
@@ -1208,10 +1533,15 @@ exports[`mg-menu events should manage outside click 1`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="3" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="bane">
-          bane
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="bane">
+              bane
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="bane"></div>
         </div>
-        <slot name="information"></slot>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
@@ -1230,10 +1560,15 @@ exports[`mg-menu events should manage outside click 2`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="batman">
-          batman
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="batman">
+              batman
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="batman"></div>
         </div>
-        <slot name="information"></slot>
         <span class="mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
@@ -1250,10 +1585,15 @@ exports[`mg-menu events should manage outside click 2`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-1" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="batman begins">
-              batman begins
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="batman begins">
+                  batman begins
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="batman begins"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -1264,10 +1604,15 @@ exports[`mg-menu events should manage outside click 2`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-2" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="joker: the dark knight">
-              joker: the dark knight
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="joker: the dark knight">
+                  joker: the dark knight
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="joker: the dark knight"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -1278,10 +1623,15 @@ exports[`mg-menu events should manage outside click 2`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-3" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="bane: the dark knight rise">
-              bane: the dark knight rise
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="bane: the dark knight rise">
+                  bane: the dark knight rise
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="bane: the dark knight rise"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -1294,10 +1644,15 @@ exports[`mg-menu events should manage outside click 2`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="2" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="joker">
-          joker
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="joker">
+              joker
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="joker"></div>
         </div>
-        <slot name="information"></slot>
         <span class="mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
@@ -1319,10 +1674,15 @@ exports[`mg-menu events should manage outside click 2`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="3" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="bane">
-          bane
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="bane">
+              bane
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="bane"></div>
         </div>
-        <slot name="information"></slot>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
@@ -1341,10 +1701,15 @@ exports[`mg-menu events should manage outside click 3`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="batman">
-          batman
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="batman">
+              batman
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="batman"></div>
         </div>
-        <slot name="information"></slot>
         <span class="mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
@@ -1361,10 +1726,15 @@ exports[`mg-menu events should manage outside click 3`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-1" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="batman begins">
-              batman begins
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="batman begins">
+                  batman begins
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="batman begins"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -1375,10 +1745,15 @@ exports[`mg-menu events should manage outside click 3`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-2" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="joker: the dark knight">
-              joker: the dark knight
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="joker: the dark knight">
+                  joker: the dark knight
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="joker: the dark knight"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -1389,10 +1764,15 @@ exports[`mg-menu events should manage outside click 3`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-3" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="bane: the dark knight rise">
-              bane: the dark knight rise
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="bane: the dark knight rise">
+                  bane: the dark knight rise
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="bane: the dark knight rise"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -1405,10 +1785,15 @@ exports[`mg-menu events should manage outside click 3`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="2" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="joker">
-          joker
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="joker">
+              joker
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="joker"></div>
         </div>
-        <slot name="information"></slot>
         <span class="mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
@@ -1430,10 +1815,15 @@ exports[`mg-menu events should manage outside click 3`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="3" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="bane">
-          bane
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="bane">
+              bane
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="bane"></div>
         </div>
-        <slot name="information"></slot>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
@@ -1452,10 +1842,15 @@ exports[`mg-menu events should manage outside click 4`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="1" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="batman">
-          batman
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="batman">
+              batman
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="batman"></div>
         </div>
-        <slot name="information"></slot>
         <span class="mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
@@ -1472,10 +1867,15 @@ exports[`mg-menu events should manage outside click 4`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-1" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="batman begins">
-              batman begins
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="batman begins">
+                  batman begins
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="batman begins"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -1486,10 +1886,15 @@ exports[`mg-menu events should manage outside click 4`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-2" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="joker: the dark knight">
-              joker: the dark knight
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="joker: the dark knight">
+                  joker: the dark knight
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="joker: the dark knight"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -1500,10 +1905,15 @@ exports[`mg-menu events should manage outside click 4`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-3" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="bane: the dark knight rise">
-              bane: the dark knight rise
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="bane: the dark knight rise">
+                  bane: the dark knight rise
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="bane: the dark knight rise"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -1516,10 +1926,15 @@ exports[`mg-menu events should manage outside click 4`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="2" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="joker">
-          joker
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="joker">
+              joker
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="joker"></div>
         </div>
-        <slot name="information"></slot>
         <span class="mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
@@ -1541,10 +1956,15 @@ exports[`mg-menu events should manage outside click 4`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="3" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="bane">
-          bane
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="bane">
+              bane
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="bane"></div>
         </div>
-        <slot name="information"></slot>
       </button>
       <div class="mg-menu-item__collapse-container">
         <slot></slot>
@@ -1563,10 +1983,15 @@ exports[`mg-menu events should manage outside click 5`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="1" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="batman">
-          batman
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="batman">
+              batman
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="batman"></div>
         </div>
-        <slot name="information"></slot>
         <span class="mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
@@ -1583,10 +2008,15 @@ exports[`mg-menu events should manage outside click 5`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-1" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="batman begins">
-              batman begins
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="batman begins">
+                  batman begins
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="batman begins"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -1597,10 +2027,15 @@ exports[`mg-menu events should manage outside click 5`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-2" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="joker: the dark knight">
-              joker: the dark knight
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="joker: the dark knight">
+                  joker: the dark knight
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="joker: the dark knight"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -1611,10 +2046,15 @@ exports[`mg-menu events should manage outside click 5`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-3" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="bane: the dark knight rise">
-              bane: the dark knight rise
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="bane: the dark knight rise">
+                  bane: the dark knight rise
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="bane: the dark knight rise"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -1627,10 +2067,15 @@ exports[`mg-menu events should manage outside click 5`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="2" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="joker">
-          joker
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="joker">
+              joker
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="joker"></div>
         </div>
-        <slot name="information"></slot>
         <span class="mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
@@ -1652,10 +2097,15 @@ exports[`mg-menu events should manage outside click 5`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="3" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="bane">
-          bane
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="bane">
+              bane
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="bane"></div>
         </div>
-        <slot name="information"></slot>
       </button>
       <div class="mg-menu-item__collapse-container">
         <slot></slot>
@@ -1674,10 +2124,15 @@ exports[`mg-menu events should manage outside click 6`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="1" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="batman">
-          batman
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="batman">
+              batman
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="batman"></div>
         </div>
-        <slot name="information"></slot>
         <span class="mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
@@ -1694,10 +2149,15 @@ exports[`mg-menu events should manage outside click 6`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-1" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="batman begins">
-              batman begins
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="batman begins">
+                  batman begins
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="batman begins"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -1708,10 +2168,15 @@ exports[`mg-menu events should manage outside click 6`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-2" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="joker: the dark knight">
-              joker: the dark knight
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="joker: the dark knight">
+                  joker: the dark knight
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="joker: the dark knight"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -1722,10 +2187,15 @@ exports[`mg-menu events should manage outside click 6`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-3" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="bane: the dark knight rise">
-              bane: the dark knight rise
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="bane: the dark knight rise">
+                  bane: the dark knight rise
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="bane: the dark knight rise"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -1738,10 +2208,15 @@ exports[`mg-menu events should manage outside click 6`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="2" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="joker">
-          joker
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="joker">
+              joker
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="joker"></div>
         </div>
-        <slot name="information"></slot>
         <span class="mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
@@ -1763,10 +2238,15 @@ exports[`mg-menu events should manage outside click 6`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="3" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="bane">
-          bane
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="bane">
+              bane
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="bane"></div>
         </div>
-        <slot name="information"></slot>
       </button>
       <div class="mg-menu-item__collapse-container">
         <slot></slot>
@@ -1785,10 +2265,15 @@ exports[`mg-menu render with args { label: 'batman menu' } 1`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="batman">
-          batman
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="batman">
+              batman
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="batman"></div>
         </div>
-        <slot name="information"></slot>
         <span class="mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
@@ -1805,10 +2290,15 @@ exports[`mg-menu render with args { label: 'batman menu' } 1`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-1" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="batman begins">
-              batman begins
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="batman begins">
+                  batman begins
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="batman begins"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -1819,10 +2309,15 @@ exports[`mg-menu render with args { label: 'batman menu' } 1`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-2" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="joker: the dark knight">
-              joker: the dark knight
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="joker: the dark knight">
+                  joker: the dark knight
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="joker: the dark knight"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -1833,10 +2328,15 @@ exports[`mg-menu render with args { label: 'batman menu' } 1`] = `
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-3" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="bane: the dark knight rise">
-              bane: the dark knight rise
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="bane: the dark knight rise">
+                  bane: the dark knight rise
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="bane: the dark knight rise"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -1849,10 +2349,15 @@ exports[`mg-menu render with args { label: 'batman menu' } 1`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="2" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="joker">
-          joker
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="joker">
+              joker
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="joker"></div>
         </div>
-        <slot name="information"></slot>
         <span class="mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
@@ -1874,10 +2379,15 @@ exports[`mg-menu render with args { label: 'batman menu' } 1`] = `
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="3" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="bane">
-          bane
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="bane">
+              bane
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="bane"></div>
         </div>
-        <slot name="information"></slot>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
@@ -1896,10 +2406,15 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'horizontal
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="batman">
-          batman
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="batman">
+              batman
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="batman"></div>
         </div>
-        <slot name="information"></slot>
         <span class="mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
@@ -1916,10 +2431,15 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'horizontal
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-1" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="batman begins">
-              batman begins
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="batman begins">
+                  batman begins
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="batman begins"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -1930,10 +2450,15 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'horizontal
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-2" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="joker: the dark knight">
-              joker: the dark knight
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="joker: the dark knight">
+                  joker: the dark knight
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="joker: the dark knight"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -1944,10 +2469,15 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'horizontal
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-3" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="bane: the dark knight rise">
-              bane: the dark knight rise
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="bane: the dark knight rise">
+                  bane: the dark knight rise
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="bane: the dark knight rise"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -1960,10 +2490,15 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'horizontal
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="2" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="joker">
-          joker
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="joker">
+              joker
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="joker"></div>
         </div>
-        <slot name="information"></slot>
         <span class="mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
@@ -1985,10 +2520,15 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'horizontal
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="3" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="bane">
-          bane
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="bane">
+              bane
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="bane"></div>
         </div>
-        <slot name="information"></slot>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
         <slot></slot>
@@ -2007,10 +2547,15 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'vertical' 
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="1" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="batman">
-          batman
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="batman">
+              batman
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="batman"></div>
         </div>
-        <slot name="information"></slot>
         <span class="mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
@@ -2027,10 +2572,15 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'vertical' 
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-1" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="batman begins">
-              batman begins
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="batman begins">
+                  batman begins
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="batman begins"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -2041,10 +2591,15 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'vertical' 
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-2" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="joker: the dark knight">
-              joker: the dark knight
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="joker: the dark knight">
+                  joker: the dark knight
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="joker: the dark knight"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -2055,10 +2610,15 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'vertical' 
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" id="1-3" tabindex="0">
             <slot name="illustration"></slot>
-            <div class="mg-menu-item__navigation-button-text" title="bane: the dark knight rise">
-              bane: the dark knight rise
+            <div class="mg-menu-item__navigation-button-center">
+              <div class="mg-menu-item__navigation-button-text-content">
+                <div class="mg-menu-item__navigation-button-label" title="bane: the dark knight rise">
+                  bane: the dark knight rise
+                </div>
+                <slot name="information"></slot>
+              </div>
+              <div class="mg-menu-item__navigation-button-metadata" title="bane: the dark knight rise"></div>
             </div>
-            <slot name="information"></slot>
           </button>
           <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
             <slot></slot>
@@ -2071,10 +2631,15 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'vertical' 
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="2" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="joker">
-          joker
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="joker">
+              joker
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="joker"></div>
         </div>
-        <slot name="information"></slot>
         <span class="mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
@@ -2096,10 +2661,15 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'vertical' 
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" id="3" tabindex="0">
         <slot name="illustration"></slot>
-        <div class="mg-menu-item__navigation-button-text" title="bane">
-          bane
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <div class="mg-menu-item__navigation-button-label" title="bane">
+              bane
+            </div>
+            <slot name="information"></slot>
+          </div>
+          <div class="mg-menu-item__navigation-button-metadata" title="bane"></div>
         </div>
-        <slot name="information"></slot>
       </button>
       <div class="mg-menu-item__collapse-container">
         <slot></slot>
