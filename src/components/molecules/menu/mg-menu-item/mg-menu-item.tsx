@@ -210,7 +210,7 @@ export class MgMenuItem {
   componentWillLoad(): void {
     // has children items that is NOT [slot="illustration"] || [slot="information"] element
     // we store only matching elements
-    this.hasChildren = Array.from(this.element.children).filter(child => !['illustration', 'information', 'label', 'metadata'].includes(child.slot)).length > 0;
+    this.hasChildren = Array.from(this.element.children).filter(child => !['illustration', 'information', 'label', 'metadata'].includes(child.getAttribute('slot'))).length > 0;
 
     // Validate props
     this.validateSize(this.size);
@@ -225,7 +225,7 @@ export class MgMenuItem {
   componentDidLoad(): ReturnType<typeof setTimeout> {
     // slot title AND metadata validation
     // add title on label AND metada slots due to text-overflow on these element
-    if (Array.from(this.element.children).find(child => child.slot === 'label') === undefined) throw new Error(`<${this.name}> slot "label" is required.`);
+    if (Array.from(this.element.children).find(child => child.getAttribute('slot') === 'label') === undefined) throw new Error(`<${this.name}> slot "label" is required.`);
 
     ['label', 'metadata'].forEach(slot => {
       Array.from(this.element.querySelectorAll(`[slot="${slot}"]`)).forEach(element => {
@@ -288,7 +288,6 @@ export class MgMenuItem {
           tabindex={[Status.DISABLED, Status.HIDDEN].includes(this.status) ? -1 : 0}
           aria-expanded={this.expanded.toString()}
           aria-current={this.status === Status.ACTIVE && 'page'}
-          aria-haspopup={this.hasChildren}
           onClick={this.handleElementCLick}
           onFocus={this.handleElementFocus}
         >

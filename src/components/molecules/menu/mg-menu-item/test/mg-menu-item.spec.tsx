@@ -1,24 +1,29 @@
 import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
+import { MgBadge } from '../../../../atoms/mg-badge/mg-badge';
+import { MgIcon } from '../../../../atoms/mg-icon/mg-icon';
 import { MgMenuItem } from '../../mg-menu-item/mg-menu-item';
 import { MgMenu } from '../../mg-menu/mg-menu';
 import { sizes, Status } from '../mg-menu-item.conf';
 
-const defaultSlot = (args: Pick<MgMenuItem, 'identifier' | 'label' | 'status'> = { identifier: 'child', label: 'child', status: undefined }, slot?) => (
-  <mg-menu label="child-menu">
-    <mg-menu-item {...args}> {slot} </mg-menu-item>
-  </mg-menu>
+const menu = (label = 'child-menu', slots) => <mg-menu label={label}>{slots}</mg-menu>;
+const menuItem = (args, slot?) => (
+  <mg-menu-item {...args}>
+    {slot}
+    {args.label && <span slot="label">{args.label}</span>}
+    {args.metadata && <span slot="metadata">my metadata</span>}
+    {args.icon && <mg-icon slot="illustration" icon="user"></mg-icon>}
+    {args.badge && <mg-badge slot="information" label="badge label" value="1"></mg-badge>}
+  </mg-menu-item>
 );
+const childMenu = (args: { label: string; status?: MgMenuItem['status'] } = { label: 'child menu item' }, slots?) => menu('child menu', menuItem(args, slots));
+const templateDefault = (args, slots?) => menu('menu', menuItem(args, slots));
+const templateTwoMenuItems = (args, slots?) => menu('menu', [menuItem(args, slots), menuItem({ label: 'item 2' })]);
 
-const getPage = async (args, withLastItem = false, withSlot?, slot?) => {
+const getPage = async template => {
   const page = await newSpecPage({
-    components: [MgMenuItem, MgMenu],
-    template: () => (
-      <mg-menu label="menu">
-        <mg-menu-item {...args}>{withSlot && (slot || defaultSlot())}</mg-menu-item>
-        {withLastItem && <mg-menu-item label="last-item" identifier="last-item"></mg-menu-item>}
-      </mg-menu>
-    ),
+    components: [MgMenuItem, MgMenu, MgIcon, MgBadge],
+    template: () => template,
   });
 
   jest.runAllTimers();
@@ -27,30 +32,27 @@ const getPage = async (args, withLastItem = false, withSlot?, slot?) => {
   return page;
 };
 
-describe('mg-menu', () => {
+describe('mg-menu-item', () => {
   beforeEach(() => jest.useFakeTimers());
   afterEach(() => jest.runOnlyPendingTimers());
   describe('render', () => {
-    test.each([
-      { identifier: 'batman', label: 'batman' },
-      { identifier: 'batman', label: 'batman', icon: { icon: 'user' } },
-      { identifier: 'batman', label: 'batman', icon: { icon: 'user' }, badge: { value: 1, label: 1 } },
-      { identifier: 'batman', label: 'batman', badge: { value: 1, label: 1 } },
-      { identifier: 'batman', label: 'batman', href: '#link' },
-    ])('with args %s', async args => {
-      const { root } = await getPage(args);
+    test.each([{ label: 'Batman' }, { label: 'Batman', icon: true }, { label: 'Batman', badge: true }, { label: 'Batman', metadata: true }, { label: 'Batman', href: '#link' }])(
+      'with args %s',
+      async args => {
+        const { root } = await getPage(templateDefault(args));
 
-      expect(root).toMatchSnapshot();
-    });
+        expect(root).toMatchSnapshot();
+      },
+    );
 
     test('with 2 menu-items, last items get style modifier', async () => {
-      const { root } = await getPage({ identifier: 'batman', label: 'batman' }, true);
+      const { root } = await getPage(templateTwoMenuItems({ label: 'Batman' }));
 
       expect(root).toMatchSnapshot();
     });
 
     test.each([Status.ACTIVE, Status.DISABLED, Status.HIDDEN, Status.VISIBLE])('with status %s', async status => {
-      const page = await getPage({ identifier: 'batman', label: 'batman', status });
+      const page = await getPage(templateDefault({ label: 'Batman', status }));
       const element = page.doc.querySelector('mg-menu-item');
 
       expect(page.root).toMatchSnapshot();
@@ -62,19 +64,19 @@ describe('mg-menu', () => {
     });
 
     test.each(sizes)('with size %s', async sizes => {
-      const { root } = await getPage({ identifier: 'batman', label: 'batman', sizes });
+      const { root } = await getPage(templateDefault({ label: 'Batman', sizes }));
 
       expect(root).toMatchSnapshot();
     });
 
     test.each([undefined, 0, 5])('with menuIndex %s', async menuIndex => {
-      const { root } = await getPage({ identifier: 'batman', label: 'batman', menuIndex });
+      const { root } = await getPage(templateDefault({ label: 'Batman', menuIndex }));
 
       expect(root).toMatchSnapshot();
     });
 
     test.each([undefined, true, false])('with expanded %s', async expanded => {
-      const page = await getPage({ identifier: 'batman', label: 'batman', expanded });
+      const page = await getPage(templateDefault({ label: 'Batman', expanded }));
 
       const element = page.doc.querySelector('mg-menu-item');
 
@@ -87,7 +89,7 @@ describe('mg-menu', () => {
     });
 
     test.each([undefined, true, false])('with expanded and sub-menu %s', async expanded => {
-      const page = await getPage({ identifier: 'batman', label: 'batman', expanded }, false, true);
+      const page = await getPage(templateDefault({ label: 'Batman', expanded }, childMenu()));
 
       const element = page.doc.querySelector('mg-menu-item');
 
@@ -101,22 +103,23 @@ describe('mg-menu', () => {
   });
 
   describe('errors', () => {
-    test.each([undefined, ' '])('throw errors missing arg identifier %s', async identifier => {
+    test('throw errors missing slot label %s', async () => {
       expect.assertions(1);
 
       try {
-        await getPage({ identifier, label: 'batman' });
+        await getPage(templateDefault({ label: undefined }));
       } catch (err) {
-        expect(err.message).toBe('<mg-menu-item> prop "identifier" is required.');
+        expect(err.message).toBe('<mg-menu-item> slot "label" is required.');
       }
     });
-    test.each([undefined, ' '])('throw errors missing arg identifier %s', async label => {
+
+    test('throw errors missing slot label %s', async () => {
       expect.assertions(1);
 
       try {
-        await getPage({ identifier: 'batman', label });
+        await getPage(templateDefault({ label: ' ' }));
       } catch (err) {
-        expect(err.message).toBe('<mg-menu-item> prop "label" is required.');
+        expect(err.message).toBe('<mg-menu-item> slot "label" must have text content.');
       }
     });
 
@@ -124,7 +127,7 @@ describe('mg-menu', () => {
       expect.assertions(1);
 
       try {
-        await getPage({ identifier: 'batman', label: 'label', size: ' ' });
+        await getPage(templateDefault({ label: 'label', size: ' ' }));
       } catch (err) {
         expect(err.message).toBe('<mg-menu-item> prop "size" must be one of : regular, medium, large.');
       }
@@ -134,7 +137,7 @@ describe('mg-menu', () => {
       expect.assertions(1);
 
       try {
-        await getPage({ identifier: 'batman', label: 'label', href: '#link' }, false, true);
+        await getPage(templateDefault({ label: 'label', href: '#link' }, childMenu()));
       } catch (err) {
         expect(err.message).toBe('<mg-menu-item> prop "href" is unauthorizied when element is a parent.');
       }
@@ -142,28 +145,22 @@ describe('mg-menu', () => {
   });
 
   describe.each([
-    expanded => getPage({ identifier: 'batman', label: 'batman', expanded }),
-    expanded => getPage({ identifier: 'batman', label: 'batman', expanded }, false, true),
+    expanded => getPage(templateDefault({ label: 'Batman', expanded })),
+    expanded => getPage(templateDefault({ label: 'Batman', expanded }, childMenu())),
+    expanded => getPage(templateDefault({ label: 'Batman', expanded }, childMenu({ label: 'level 2' }, childMenu({ label: 'level 3', status: Status.ACTIVE })))),
     expanded =>
       getPage(
-        { identifier: 'batman', label: 'batman', expanded },
-        false,
-        true,
-        defaultSlot(undefined, defaultSlot({ identifier: 'child', label: 'child', status: Status.ACTIVE })),
-      ),
-    expanded =>
-      getPage(
-        { identifier: 'batman', label: 'batman', expanded },
-        false,
-        true,
-        <div>
-          <h3>Demo title</h3>
-          <p>some content</p>
-        </div>,
+        templateDefault(
+          { label: 'Batman', expanded },
+          <div>
+            <h3>Demo title</h3>
+            <p>some content</p>
+          </div>,
+        ),
       ),
   ])('mouse navigation', template => {
     test.each([undefined, true, false])('should manage toggle expand with template %s', async expanded => {
-      const page = await template(expanded);
+      const page = await template(templateDefault({ label: 'Batman', expanded }));
 
       const element = page.doc.querySelector('mg-menu-item');
 
@@ -178,7 +175,7 @@ describe('mg-menu', () => {
 
   describe('keyboard navigation', () => {
     test('should manage keyboard navigation', async () => {
-      const page = await getPage({ identifier: 'batman', label: 'batman' }, false, true);
+      const page = await getPage(templateDefault({ label: 'Batman' }, childMenu()));
       const interactiveElement = page.doc.querySelector('mg-menu-item').shadowRoot.querySelector('*');
 
       expect(page.root).toMatchSnapshot();
