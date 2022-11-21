@@ -36,7 +36,6 @@ $navigation-button-sizes: (
 :host {
   position: relative;
   display: flex;
-  background-color: hsl(var(--mg-menu-item-background-color-hsl));
 }
 
 // last item style
@@ -79,9 +78,6 @@ $navigation-button-sizes: (
     width: max-content;
   }
   &__navigation-button {
-    &:focus-visible {
-      outline-offset: -0.1rem;
-    }
     &-center {
       min-width: 0%;
     }

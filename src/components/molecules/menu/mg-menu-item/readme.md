@@ -27,6 +27,10 @@ Item's display depends on the size of the menu (regular, medium, large) and its 
 
 Width of the item depends on its content.
 
+![](./mg-menu-item/doc/img/mg-menu-item-sizing-maxwidth.png) 
+
+If a max-width is set, the *label_ and the _meta* use an ellipsis to cut their content if necessary.
+
 #### Vertical menu
 
 ![](./mg-menu-item/doc/img/mg-menu-item-sizing-vertical.png) 
@@ -64,7 +68,6 @@ Content of the item is centered
 
 Badge is positionned to 20px right and -15px up from the center of the item.
 
-
 ### Styling
 
 ![](./mg-menu-item/doc/img/mg-menu-item-styling.png) 
@@ -94,40 +97,52 @@ Mobile menu : large size
 ## Behavior
 
 ### Click
+
 Click on an item of the menu can 
  - redirect to an url 
- - display a submenu (see below)
+ - display a child content (see below)
 
-If a submenu is available, an icon "chevron-down" is displayed at the right of the item.
-When opened, the chevron makes a 180° rotation.
+If a child content is available, an icon "chevron-down" is displayed at the right of the item.
+When opening the child content, the chevron makes a 180° rotation.
+When closing the child content, the chevron returns to position 0°.
 
-## Submenu
+## Child content
 
 ### Horizontal and vertical menus
 
-Submenu is displayed 
+Child content is displayed 
  - by clicking on the item 
  - by pushing the space or enter key
 
 It is closed 
  - by clicking on the item 
  - by pushing the space or enter key
- - by clicking outside of the submenu if the menu is horizontal
+ - by clicking outside of the child content if the menu is horizontal
 
-The submenu displays :
+The child content can be  :
  - another horizontal or vertical menu with sub items
  - a slot for HTML content
 
 #### In an horizontal menu
 
-Submenu is displayed with a window over the content (like a popover).
-The submenu is aligned to the left bottom of the item, excepted for the last item of the menu which is aligned to the right bottom.
-If the submenu is higher than the screen size, there is no overflow for the menu, user can scroll the page to see the full submenu. 
-
 ![](./mg-menu-item/doc/img/mg-menu-submenu-alignment.png) 
 
-Submenu has a *@color-white_ background and a _@shadow*.
-A top and bottom spacing of 10px.
+Child content is displayed in a floating component over the content (like a popover).
+It is aligned to the left bottom of the item, excepted for the last item of the menu which is aligned to the right bottom.
+
+If the floating component is higher than the screen size, there is no overflow, user has to scroll the page. 
+
+![](./mg-menu-item/doc/img/mg-menu-item-child-styling.png) 
+
+The floating component has a *@color-light_ background and a _@shadow*.
+
+![](./mg-menu-item/doc/img/mg-menu-item-child-menu-spacing.png) 
+
+If the floating component displays a submenu, there are top and bottom spacing of 10px.
+
+![](./mg-menu-item/doc/img/mg-menu-item-child-slot-spacing.png) 
+
+If the floating component displays a slot, there is no spacing.
 
 ![](./mg-menu-item/doc/img/mg-menu-submenu-slot.png) 
 
@@ -136,24 +151,35 @@ Width of the submenu is determined by the width of the largest item or the conte
 
 #### In a vertical menu
 
-(i) Vertical menu is recommended for the submenu.
-Menu is displayed under the item, with the same width. Idem for the slot.
-Items below are pushed to bottom.
-
 ![](./mg-menu-item/doc/img/mg-menu-submenu-vertical-menu.png) 
 
-30px added to padding-left
+Menu is displayed under the item, with the same width. <span style="color:#4C9AFF">(i) Vertical menu is recommended if you display a submenu.</span>
+Idem for the slot. 
+There are no spacing to display child content.
+Items below are pushed to bottom.
+
+##### Spacing 
+Sub-items add to their left spacing the spacing between left border and content of their parent's item.
 
 ### Mobile menu
 
+Child content is displayed via an **mg-tray** component.
+
 ![](./mg-menu-item/doc/img/mg-menu-submenu-tray.png) 
-Submenu is displayed via an **mg-tray** component.
 
 ## CSS Variables
 
+### global
+
+- `--mg-menu-item-background-color-hsl`: define mg-menu-item background color. default: `--color-light`.
+- `--mg-menu-item-focused-background-color-hsl`: define mg-menu-item focused background color. default: `--mg-color-app-hsl`.
+- `--mg-menu-item-border-color-active-hsl`: define mg-menu-item border color. default: `--mg-color-app-hsl`.
+- `--mg-menu-item-color-hsl`: define mg-menu-item font color. default: `--mg-color-dark`.
+- `--mg-menu-item-color-active-hsl`: define mg-menu-item font color active. default: `--mg-color-app-hsl`.
+
 ### navigation-button
 
-- `--mg-menu-item-navigation-button-max-width`: define menu-item button max-width. Usefull to apply `text-overflow: ellipsis;` on `mg-menu-item__navigation-button-text` element. default: `unset`.
+- `--mg-menu-item-navigation-button-max-width`: define mg-menu-item button max-width. Usefull to apply `text-overflow: ellipsis;` on `mg-menu-item__navigation-button-text` element. default: `unset`.
 
 <!-- Auto Generated Below -->
 

@@ -1,11 +1,14 @@
 ## Horizontal
 
 ### Use
+
 ![](./mg-menu/doc/img/mg-menu-exemple.png)
+
 Horizontal menu is used with large ("desktop") resolutions, it is placed in the upper area of the screen.
 
 ### Anatomy
-A menu is composed of mg-items.
+
+A menu is composed of [**mg-menu-items**](./?path=/docs/molecules-menus-mg-menu-item--mg-menu-item).
 
 ### Behavior
 
@@ -13,7 +16,7 @@ A menu is composed of mg-items.
 
 ![](./mg-menu/doc/img/mg-menu-horizontal-plus.png)
 
-When not all of the items can be displayed because of the width of the menu's container, items are grouped in a "plus" item.
+When not all of the items can be displayed because of the width of the menu's container, items are grouped in a **["plus" item](TODO)**.
 
 ### Specs
 
@@ -21,31 +24,31 @@ When not all of the items can be displayed because of the width of the menu's co
 
 ![](./mg-menu/doc/img/mg-menu-horizontal-sizing.png)
 
-An horizontal menu can display different sizes of items (see definition of mg-item) : regular, medium, large.
+An horizontal menu can display different sizes of items (see definition of **[mg-menu-item](./?path=/docs/molecules-menus-mg-menu-item--mg-menu-item)**) : regular, medium, large.
 
-### Spacing
+#### Spacing
 
 ![](./mg-menu/doc/img/mg-menu-horizontal-spacing.png)
 
 Space between items is 0.
 
-## Vertical
+### Vertical
 
 ### Use
 
-![](./mg-menu/doc/img/mg-menu-vertical-use.png)
-
 Horizontal menu is used with large ("desktop") resolutions, it is placed in the left area of the screen.
+
+![](./mg-menu/doc/img/mg-menu-vertical-use.png) 
 
 ### Anatomy
 
-A menu is composed of mg-items.
+A menu is composed of **[mg-menu-item](./?path=/docs/molecules-menus-mg-menu-item--mg-menu-item)**.
 
 ### Behavior
 
 #### Too high
 
-![](./mg-menu/doc/img/mg-menu-vertical-scroll.png)
+![](./mg-menu/doc/img/mg-menu-vertical-scroll.png) 
 
 When not all of the items can be displayed because of the height of the menu's container, a scrollbar allows to see hidden items.
 
@@ -55,12 +58,11 @@ When not all of the items can be displayed because of the height of the menu's c
 
 The width of the menu has to be specified.
 
-### Spacing
+#### Spacing
 
-![](./mg-menu/doc/img/mg-menu-vertical-spacing.png)
+![](./mg-menu/doc/img/mg-menu-vertical-spacing.png) 
 
 Space between items is 0.
-
 
 <!-- Auto Generated Below -->
 

@@ -187,11 +187,6 @@
   --mg-illustrated-message-padding-vertical: 4rem;
 
   /*
-    <mg-illustrated-message>
-   */
-  --mg-illustrated-message-padding-vertical: 4rem;
-
-  /*
     <mg-card>
    */
   --mg-card-padding: 1.6rem;
@@ -248,13 +243,15 @@
     <mg-menu-item>
    */
   --mg-menu-item-background-color-hsl: var(--color-light);
-  --mg-menu-item-border-color-hsl: var(--mg-color-app-h), var(--mg-color-app-s), var(--mg-color-app-l);
+  --mg-menu-item-focused-background-color-hsl: var(--mg-color-app-hsl);
+  --mg-menu-item-border-color-active-hsl: var(--mg-color-app-hsl);
   --mg-menu-item-color-active-hsl: var(--mg-color-app-hsl);
-
+  
   /*
-    <mg-tabs>
-   */
+  <mg-tabs>
+  */
   --mg-tabs-background-color-hsl: var(--color-light);
-  --mg-tabs-border-color-hsl: var(--mg-color-app-h), var(--mg-color-app-s), var(--mg-color-app-l);
+  --mg-tabs-focused-background-color-hsl: var(--mg-color-app-hsl);
+  --mg-tabs-border-color-active-hsl: var(--mg-color-app-hsl);
   --mg-tabs-color-active-hsl: var(--mg-color-app-hsl);
 }
