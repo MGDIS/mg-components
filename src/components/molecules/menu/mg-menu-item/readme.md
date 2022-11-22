@@ -179,7 +179,7 @@ Child content is displayed via an **mg-tray** component.
 
 ### navigation-button
 
-- `--mg-menu-item-navigation-button-max-width`: define mg-menu-item button max-width. Usefull to apply `text-overflow: ellipsis;` on `mg-menu-item__navigation-button-text` element. default: `unset`.
+- `--mg-menu-item-navigation-button-max-width`: define mg-menu-item button max-width. Useful to apply `text-overflow: ellipsis;` on `mg-menu-item__navigation-button-text` element. default: `unset`.
 
 <!-- Auto Generated Below -->
 
