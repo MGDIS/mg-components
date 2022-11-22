@@ -112,7 +112,7 @@ When closing the child content, the chevron returns to position 0°.
 
 Child content is displayed 
  - by clicking on the item 
- - by pushing the space or enter key
+ - by pressing the space or enter key
 
 It is closed 
  - by clicking on the item 
