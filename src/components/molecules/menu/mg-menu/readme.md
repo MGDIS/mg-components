@@ -12,7 +12,7 @@ A menu is composed of [**mg-menu-items**](./?path=/docs/molecules-menus-mg-menu-
 
 ### Behavior
 
-#### Too large
+#### TODO / Too large
 
 ![](./mg-menu/doc/img/mg-menu-horizontal-plus.png)
 
@@ -56,7 +56,7 @@ When not all of the items can be displayed because of the height of the menu's c
 
 #### Sizing
 
-The width of the menu has to be specified.
+The width of the menu depend on his container.
 
 #### Spacing
 

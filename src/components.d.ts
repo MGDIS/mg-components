@@ -2249,7 +2249,7 @@ declare namespace LocalJSX {
         /**
           * Emited event when active menu-item change
          */
-        "onMenu-item-selected"?: (event: MgMenuItemCustomEvent<undefined>) => void;
+        "onMenu-item-selected"?: (event: MgMenuItemCustomEvent<any>) => void;
         /**
           * Define menu-item size
          */

@@ -83,7 +83,7 @@ export class MgMenuItem {
   /**
    * Emited event when active menu-item change
    */
-  @Event({ eventName: 'menu-item-selected' }) menuItemSelected: EventEmitter<undefined>;
+  @Event({ eventName: 'menu-item-selected' }) menuItemSelected: EventEmitter;
 
   /************
    * States *
@@ -126,6 +126,8 @@ export class MgMenuItem {
 
   /**
    * Toggle expanded prop value
+   *
+   * @returns {void}
    */
   private toggleExpanded = (): void => {
     this.expanded = !this.expanded;
@@ -166,15 +168,13 @@ export class MgMenuItem {
       this.toggleExpanded();
 
       // when main menu item is NOT expanded we need NOT expanded sub-items and NOT expanded sub-content
-      const subItems = Array.from(this.element.querySelectorAll(`${this.name}`));
+      const subItems = Array.from(this.element.querySelectorAll(this.name));
       if (!this.expanded && this.isInMainMenu) {
         subItems.forEach(item => {
           item.expanded = false;
         });
-      }
-
-      // when expended and contain an active item parents are expended too
-      if (this.expanded && this.hasChildElementStatus(this.element, Status.ACTIVE)) {
+      } else if (this.expanded && this.hasChildElementStatus(this.element, Status.ACTIVE)) {
+        // when expended and contain an active item parents are expended too
         subItems.forEach(item => {
           if (this.hasChildElementStatus(item, Status.ACTIVE)) {
             item.expanded = true;
@@ -184,7 +184,6 @@ export class MgMenuItem {
     } else {
       this.menuItemSelected.emit();
     }
-    event.preventDefault();
   };
 
   /**

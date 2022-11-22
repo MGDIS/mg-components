@@ -43,57 +43,9 @@ describe('mg-menu-item', () => {
       expect(screenshot).toMatchImageSnapshot();
     });
 
-    test.each([undefined, '', ...sizes])('should renders, props size=%s', async size => {
-      const page = await createPage(createHTML(size && `size="${size}"`, submenu && slotMenuItem));
-
-      const element = await page.find('mg-menu-item');
-      expect(element).toHaveClass('hydrated');
-
-      const screenshot = await page.screenshot();
-      expect(screenshot).toMatchImageSnapshot();
-    });
-
-    test.each([undefined, '', ...sizes])('should render with illustration slot', async size => {
-      let slot = slotIllusatration;
-      if (submenu) slot += slotMenuItem;
-
-      const page = await createPage(createHTML(size && `size="${size}"`, slot));
-
-      const element = await page.find('mg-menu-item');
-      expect(element).toHaveClass('hydrated');
-
-      const screenshot = await page.screenshot();
-      expect(screenshot).toMatchImageSnapshot();
-    });
-
-    test.each([undefined, '', ...sizes])('should render with information slot', async size => {
-      let slot = slotInformation;
-      if (submenu) slot += slotMenuItem;
-
-      const page = await createPage(createHTML(size && `size="${size}"`, slot));
-
-      const element = await page.find('mg-menu-item');
-      expect(element).toHaveClass('hydrated');
-
-      const screenshot = await page.screenshot();
-      expect(screenshot).toMatchImageSnapshot();
-    });
-
-    test.each([undefined, '', ...sizes])('should render with information AND illusatration slot', async size => {
-      let slot = slotInformation + slotIllusatration;
-      if (submenu) slot += slotMenuItem;
-      const page = await createPage(createHTML(size && `size="${size}"`, slot));
-
-      const element = await page.find('mg-menu-item');
-      expect(element).toHaveClass('hydrated');
-
-      const screenshot = await page.screenshot();
-      expect(screenshot).toMatchImageSnapshot();
-    });
-
-    describe('with metadata', () => {
-      test.each([undefined, '', ...sizes])('should renders, props size=%s', async size => {
-        const page = await createPage(createHTML(size && `size="${size}"`, `${slotMetadata} ${submenu && slotMenuItem}`));
+    describe.each([undefined, ...sizes])('props size=%s', size => {
+      test('should renders', async () => {
+        const page = await createPage(createHTML(size && `size="${size}"`, submenu && slotMenuItem));
 
         const element = await page.find('mg-menu-item');
         expect(element).toHaveClass('hydrated');
@@ -102,11 +54,11 @@ describe('mg-menu-item', () => {
         expect(screenshot).toMatchImageSnapshot();
       });
 
-      test.each([undefined, '', ...sizes])('should render with illustration slot', async size => {
+      test('should render with illustration slot', async () => {
         let slot = slotIllusatration;
         if (submenu) slot += slotMenuItem;
 
-        const page = await createPage(createHTML(size && `size="${size}"`, `${slotMetadata} ${slot}`));
+        const page = await createPage(createHTML(size && `size="${size}"`, slot));
 
         const element = await page.find('mg-menu-item');
         expect(element).toHaveClass('hydrated');
@@ -115,11 +67,11 @@ describe('mg-menu-item', () => {
         expect(screenshot).toMatchImageSnapshot();
       });
 
-      test.each([undefined, '', ...sizes])('should render with information slot', async size => {
+      test('should render with information slot', async () => {
         let slot = slotInformation;
         if (submenu) slot += slotMenuItem;
 
-        const page = await createPage(createHTML(size && `size="${size}"`, `${slotMetadata} ${slot}`));
+        const page = await createPage(createHTML(size && `size="${size}"`, slot));
 
         const element = await page.find('mg-menu-item');
         expect(element).toHaveClass('hydrated');
@@ -128,16 +80,65 @@ describe('mg-menu-item', () => {
         expect(screenshot).toMatchImageSnapshot();
       });
 
-      test.each([undefined, '', ...sizes])('should render with information AND illusatration slot', async size => {
+      test('should render with information AND illusatration slot', async () => {
         let slot = slotInformation + slotIllusatration;
         if (submenu) slot += slotMenuItem;
-        const page = await createPage(createHTML(size && `size="${size}"`, `${slotMetadata} ${slot}`));
+        const page = await createPage(createHTML(size && `size="${size}"`, slot));
 
         const element = await page.find('mg-menu-item');
         expect(element).toHaveClass('hydrated');
 
         const screenshot = await page.screenshot();
         expect(screenshot).toMatchImageSnapshot();
+      });
+      describe('with metadata', () => {
+        test('should renders, props size=%s', async () => {
+          const page = await createPage(createHTML(size && `size="${size}"`, `${slotMetadata} ${submenu && slotMenuItem}`));
+
+          const element = await page.find('mg-menu-item');
+          expect(element).toHaveClass('hydrated');
+
+          const screenshot = await page.screenshot();
+          expect(screenshot).toMatchImageSnapshot();
+        });
+
+        test('should render with illustration slot', async () => {
+          let slot = slotIllusatration;
+          if (submenu) slot += slotMenuItem;
+
+          const page = await createPage(createHTML(size && `size="${size}"`, `${slotMetadata} ${slot}`));
+
+          const element = await page.find('mg-menu-item');
+          expect(element).toHaveClass('hydrated');
+
+          const screenshot = await page.screenshot();
+          expect(screenshot).toMatchImageSnapshot();
+        });
+
+        test('should render with information slot', async () => {
+          let slot = slotInformation;
+          if (submenu) slot += slotMenuItem;
+
+          const page = await createPage(createHTML(size && `size="${size}"`, `${slotMetadata} ${slot}`));
+
+          const element = await page.find('mg-menu-item');
+          expect(element).toHaveClass('hydrated');
+
+          const screenshot = await page.screenshot();
+          expect(screenshot).toMatchImageSnapshot();
+        });
+
+        test('should render with information AND illusatration slot', async () => {
+          let slot = slotInformation + slotIllusatration;
+          if (submenu) slot += slotMenuItem;
+          const page = await createPage(createHTML(size && `size="${size}"`, `${slotMetadata} ${slot}`));
+
+          const element = await page.find('mg-menu-item');
+          expect(element).toHaveClass('hydrated');
+
+          const screenshot = await page.screenshot();
+          expect(screenshot).toMatchImageSnapshot();
+        });
       });
     });
   });
@@ -170,7 +171,7 @@ describe('mg-menu-item', () => {
 
   describe('in vertical menu', () => {
     describe.each([true, false])('with displayed slotMenuItem %s', submenu => {
-      test.each([undefined, '', ...sizes])('should renders, props size=%s', async size => {
+      test.each([undefined, ...sizes])('should renders, props size=%s', async size => {
         const page = await createPage(createHTML(size && `size="${size}"`, submenu && slotMenuItem, Direction.VERTICAL));
 
         const element = await page.find('mg-menu-item');

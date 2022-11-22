@@ -6,9 +6,9 @@ Item menu is used with horizontal, vertical or mobile menus.
 
 ![](./mg-menu-item/doc/img/mg-menu-item-anatomy.png) 
 
-An item has got at least a label.
-An icon can be used in addition of the text (before it).
-A badge can be added to the end of the item.
+An item must have a label.
+An icon can be added before the text.
+A badge can be added after the text.
 When a submenu is available, a chevron is displayed (in horizontal and vertical menus) to indicate its presence.
 
 ## Specs
@@ -153,7 +153,7 @@ Width of the submenu is determined by the width of the largest item or the conte
 
 ![](./mg-menu-item/doc/img/mg-menu-submenu-vertical-menu.png) 
 
-Menu is displayed under the item, with the same width. <span style="color:#4C9AFF">(i) Vertical menu is recommended if you display a submenu.</span>
+Menu is displayed under the item, with the same width. **(i) Vertical menu is recommended if you display a submenu.**
 Idem for the slot. 
 There is no space to display child content.
 Items below are pushed to bottom.
@@ -197,10 +197,10 @@ Child content is displayed via an **mg-tray** component.
 
 ## Events
 
-| Event                | Description                                                  | Type                     |
-| -------------------- | ------------------------------------------------------------ | ------------------------ |
-| `focused-item`       | Emited event to communicate next focused menu-item to parent | `CustomEvent<number>`    |
-| `menu-item-selected` | Emited event when active menu-item change                    | `CustomEvent<undefined>` |
+| Event                | Description                                                  | Type                  |
+| -------------------- | ------------------------------------------------------------ | --------------------- |
+| `focused-item`       | Emited event to communicate next focused menu-item to parent | `CustomEvent<number>` |
+| `menu-item-selected` | Emited event when active menu-item change                    | `CustomEvent<any>`    |
 
 
 ## Dependencies
