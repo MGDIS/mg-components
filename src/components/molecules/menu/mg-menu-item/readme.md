@@ -29,7 +29,7 @@ Width of the item depends on its content.
 
 ![](./mg-menu-item/doc/img/mg-menu-item-sizing-maxwidth.png) 
 
-If a max-width is set, the *label_ and the _meta* use an ellipsis to cut their content if necessary.
+If a max-width is set, the *label_ and the _meta* use an ellipsis to truncate the content if necessary.
 
 #### Vertical menu
 
