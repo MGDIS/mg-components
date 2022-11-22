@@ -116,7 +116,7 @@ Child content is displayed
 
 It is closed 
  - by clicking on the item 
- - by pushing the space or enter key
+ - by pressing the space or enter key
  - by clicking outside of the child content if the menu is horizontal
 
 The child content can be  :
