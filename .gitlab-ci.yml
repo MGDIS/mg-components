@@ -1,4 +1,4 @@
-image: $DOCKER_REGISTRE_URL/$DOCKER_REGISTRE_NAMESPACE_INT/node-build:14-alpine
+image: $DOCKER_REGISTRE_URL/$DOCKER_REGISTRE_NAMESPACE_INT/node:18-build
 
 # workflow stages are imported from templates
 include:
