@@ -99,7 +99,7 @@ Mobile menu : large size
 ### Click
 
 Click on an item of the menu can 
- - redirect to an url 
+ - redirect to a url
  - display a child content (see below)
 
 If a child content is available, an icon "chevron-down" is displayed at the right of the item.
