@@ -155,7 +155,7 @@ Width of the submenu is determined by the width of the largest item or the conte
 
 Menu is displayed under the item, with the same width. <span style="color:#4C9AFF">(i) Vertical menu is recommended if you display a submenu.</span>
 Idem for the slot. 
-There are no spacing to display child content.
+There is no space to display child content.
 Items below are pushed to bottom.
 
 ##### Spacing 
