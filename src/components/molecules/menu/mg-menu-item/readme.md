@@ -100,9 +100,9 @@ Mobile menu : large size
 
 Click on an item of the menu can 
  - redirect to a url
- - display a child content (see below)
+ - display child content (see below)
 
-If a child content is available, an icon "chevron-down" is displayed at the right of the item.
+If child content is available, an icon "chevron-down" is displayed at the right of the item.
 When opening the child content, the chevron makes a 180° rotation.
 When closing the child content, the chevron returns to position 0°.
 
