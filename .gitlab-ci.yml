@@ -113,7 +113,7 @@ artifact:
   extends:
     - .install
   script:
-    - npm publish --@mgdis:registry=http://artifactory.mgdis.fr/artifactory/api/npm/npm-local
+    - npm publish
   needs:
     - dist
 
@@ -134,7 +134,6 @@ review_app:
     url: 'http://core.pages.mgdis.fr/-/core-ui/$CI_PROJECT_NAME/-/jobs/$CI_JOB_ID/artifacts/public/index.html'
     on_stop: stop_review_app
     auto_stop_in: 1 week
-  
 
 stop_review_app:
   stage: review
