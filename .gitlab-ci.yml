@@ -50,7 +50,6 @@ outdated:
 
 test:
   stage: test
-  image: $DOCKER_REGISTRE_URL/$DOCKER_REGISTRE_NAMESPACE_INT/node:18-build
   rules:
     # except tags
     - if: $CI_COMMIT_TAG == null
@@ -124,6 +123,7 @@ review_app:
   extends:
     - .install
   script:
+    - npm run build
     - npm run storybook:build
     - mv storybook-static public
   artifacts:
@@ -163,6 +163,7 @@ pages:
   extends:
     - .install
   script:
+    - npm run build
     - npm run storybook:build
     - mv storybook-static public
   artifacts:
