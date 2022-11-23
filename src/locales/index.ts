@@ -12,7 +12,7 @@ const messages = { en, fr };
  */
 const getLocale = (element: HTMLElement): string => {
   // validate locale
-  const closestLang = Intl.ListFormat.supportedLocalesOf((element.closest('[lang]') as HTMLElement)?.lang);
+  const closestLang = Intl.NumberFormat.supportedLocalesOf((element.closest('[lang]') as HTMLElement)?.lang);
   return closestLang.length > 0 ? closestLang[0] : navigator.language || defaultLocale;
 };
 

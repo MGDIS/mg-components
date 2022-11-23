@@ -23,7 +23,12 @@ $navigation-button-sizes: (
     @for $i from 1 through 6 {
       :host(.mg-menu-item--vertical[data-level='#{$i}']) {
         .mg-menu-item__navigation-button.mg-menu-item__navigation-button--size-#{$name} {
-          padding-left: calc(#{$i} * #{map.get($size, 'horizontal')});
+          padding-left: calc(#{$i} * #{map.get($size, 'horizontal')} - 0.3rem);
+        }
+      }
+      :host([data-level='#{$i}']) {
+        .mg-menu-item__collapse-container {
+          z-index: calc(#{$i} * 10);
         }
       }
     }
@@ -76,6 +81,7 @@ $navigation-button-sizes: (
     top: 100%;
     left: 0;
     width: max-content;
+    z-index: 10;
   }
   &__navigation-button {
     &-center {

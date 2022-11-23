@@ -1,18 +1,110 @@
 import { h } from '@stencil/core';
 import { filterArgs } from '../../../../../../.storybook/utils';
-import { Status } from '../../mg-menu-item/mg-menu-item.conf';
+import { MenuItemSizeType, Status } from '../../mg-menu-item/mg-menu-item.conf';
 import { Direction } from '../mg-menu.conf';
 
 export default {
   component: 'mg-menu',
-  title: 'Molecules/menus/mg-menu',
+  title: 'Beta/menus/mg-menu',
   argTypes: {
     direction: {
       options: [undefined, Direction.HORIZONTAL, Direction.VERTICAL],
       control: { type: 'select' },
     },
   },
+  parameters: { actions: { handles: ['focused-item', 'menu-item-selected'] } },
 };
+
+type ItemArgType = {
+  size?: MenuItemSizeType;
+  label: string;
+  direction: Direction;
+  status?: Status;
+  metadata?: string;
+  icon?: boolean;
+  badge?: boolean;
+  content?: boolean;
+  submenu?: number;
+};
+
+interface IGetMenuArgs {
+  ({}: ItemArgType): Pick<ItemArgType, 'size' | 'status'> & { slot: Pick<ItemArgType, 'label' | 'metadata' | 'icon' | 'badge' | 'content' | 'submenu'> };
+}
+
+const getItemArgs: IGetMenuArgs = ({ size, label, direction, status, metadata, icon, badge, content, submenu }) => ({
+  size: size !== undefined ? size : direction === Direction.VERTICAL ? 'medium' : undefined,
+  status,
+  slot: {
+    label,
+    metadata,
+    icon,
+    badge,
+    content,
+    submenu,
+  },
+});
+
+const getMenuArgs = (direction: Direction, level = 0, isSubmenu = false) => ({
+  label: 'Batman menu',
+  direction,
+  slot: {
+    items: [
+      getItemArgs({
+        label: 'label 1',
+        direction,
+      }),
+      getItemArgs({
+        label: 'label 2',
+        direction,
+        status: Status.DISABLED,
+      }),
+      getItemArgs({
+        label: 'label 3 with long text',
+        direction,
+        badge: true,
+        icon: true,
+      }),
+      getItemArgs({
+        label: 'label 4',
+        direction,
+        badge: true,
+        icon: true,
+        status: Status.ACTIVE,
+        submenu: level,
+      }),
+      getItemArgs({
+        label: 'label 5',
+        direction,
+        icon: true,
+        metadata: 'my metadata',
+        content: true,
+        size: !isSubmenu && direction === Direction.HORIZONTAL ? 'regular' : undefined,
+      }),
+    ],
+  },
+});
+
+const menu = args => <mg-menu {...filterArgs(args)}>{args.slot.items.map(item => menuItem(item))}</mg-menu>;
+
+const menuItem = args => (
+  <mg-menu-item {...filterArgs(args)}>
+    {args.slot?.label && <span slot="label">{args.slot?.label}</span>}
+    {args.slot?.metadata && <span slot="metadata">{args.slot?.metadata}</span>}
+    {args.slot?.icon && <mg-icon slot="illustration" icon="user"></mg-icon>}
+    {args.slot?.badge && (
+      <mg-badge slot="information" label="information" value="1">
+        {args.slot?.icon}
+      </mg-badge>
+    )}
+    {args.slot?.content && (
+      <div>
+        <h3>Demo title</h3>
+        <p>some content</p>
+      </div>
+    )}
+    {args.slot?.submenu && menu(getMenuArgs(Direction.VERTICAL, args.slot?.submenu - 1, true))}
+  </mg-menu-item>
+);
 
 /**
  * Template
@@ -21,146 +113,22 @@ export default {
  * @returns {HTMLElement} HTMLElement
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Template = (args: any): HTMLElement => {
-  const style = args.direction === Direction.VERTICAL ? { width: '25rem', height: '20rem' } : {};
-  const firstLevelSize = args.direction === Direction.VERTICAL ? 'medium' : undefined;
-  return (
-    <div style={style}>
-      <mg-menu {...filterArgs(args)}>
-        <mg-menu-item size={firstLevelSize}>
-          <span slot="label">level-1 - label-1</span>
-        </mg-menu-item>
-        <mg-menu-item size={firstLevelSize} status={Status.DISABLED}>
-          <span slot="label">level-1 - label-2 long</span>
-        </mg-menu-item>
-        <mg-menu-item size={firstLevelSize}>
-          <span slot="label">level-1 - label-3 very very very very very long</span>
-          <mg-icon icon="user" slot="illustration"></mg-icon>
-        </mg-menu-item>
-        <mg-menu-item size={firstLevelSize}>
-          <span slot="label">level-1 - label-4</span>
-          <mg-icon icon="user" slot="illustration"></mg-icon>
-          <mg-badge value="2" label="hello" slot="information"></mg-badge>
-          <mg-menu label="submenu" direction={Direction.VERTICAL}>
-            <mg-menu-item size="medium">
-              <span slot="label">level-2 - label-1</span>
-            </mg-menu-item>
-            <mg-menu-item size="medium">
-              <span slot="label">level-2 - label-2</span>
-              <mg-icon icon="user" slot="illustration"></mg-icon>
-            </mg-menu-item>
-            <mg-menu-item size="medium">
-              <span slot="label">level-2 - label-3 very long</span>
-              <mg-icon icon="user" slot="illustration"></mg-icon>
-            </mg-menu-item>
-            <mg-menu-item size="medium">
-              <span slot="label">level-2 - label-4</span>
-              <mg-badge value="2" label="hello" slot="information"></mg-badge>
-              <mg-icon icon="user" slot="illustration"></mg-icon>
-              <mg-menu label="submenu 2" direction={Direction.VERTICAL}>
-                <mg-menu-item size="regular">
-                  <span slot="label">level-3 - label-1</span>
-                </mg-menu-item>
-                <mg-menu-item size="regular">
-                  <span slot="label">level-3 - label-2</span>
-                  <mg-icon icon="user" slot="illustration"></mg-icon>
-                </mg-menu-item>
-                <mg-menu-item size="regular">
-                  <span slot="label">level-3 - label-3</span>
-                  <mg-icon icon="user" slot="illustration"></mg-icon>
-                  <mg-badge value="2" label="hello" slot="information"></mg-badge>
-                </mg-menu-item>
-              </mg-menu>
-            </mg-menu-item>
-            <mg-menu-item size="medium">
-              <span slot="label">level-2 - label-5</span>
-              <mg-icon icon="user" slot="illustration"></mg-icon>
-              <mg-badge value="2" label="hello" slot="information"></mg-badge>
-            </mg-menu-item>
-          </mg-menu>
-        </mg-menu-item>
-        <mg-menu-item size="regular">
-          <span slot="label">level-1 - slot content</span>
-          <span slot="metadata">my very long metadatas</span>
-          <mg-icon icon="user" slot="illustration"></mg-icon>
-          <mg-badge value="2" label="hello" slot="information"></mg-badge>
-          <div>
-            <h3>Demo title</h3>
-            <p>some content</p>
-          </div>
-        </mg-menu-item>
-        <mg-menu-item size={firstLevelSize}>
-          <span slot="label">level-1 - label-6</span>
-          <mg-badge value="2" label="hello" slot="information"></mg-badge>
-          <mg-icon icon="user" slot="illustration"></mg-icon>
-          <mg-menu label="submenu" direction={Direction.VERTICAL}>
-            <mg-menu-item size="medium">
-              <span slot="label">level-2 - label-1</span>
-              <mg-menu label="submenu" direction={Direction.VERTICAL}>
-                <mg-menu-item size="medium">
-                  <span slot="label">level-3 - label-1</span>
-                  <mg-badge value="2" label="hello" slot="information"></mg-badge>
-                  <mg-icon icon="user" slot="illustration"></mg-icon>
-                  <mg-menu label="submenu 2" direction={Direction.VERTICAL}>
-                    <mg-menu-item size="medium" status={Status.ACTIVE}>
-                      <span slot="label">level-4 - label-1</span>
-                    </mg-menu-item>
-                    <mg-menu-item size="medium">
-                      <span slot="label">level-4 - label-2</span>
-                      <mg-icon icon="user" slot="illustration"></mg-icon>
-                    </mg-menu-item>
-                    <mg-menu-item size="medium">
-                      <span slot="label">level-4 - label-3</span>
-                      <mg-icon icon="user" slot="illustration"></mg-icon>
-                      <mg-badge value="2" label="hello" slot="information"></mg-badge>
-                    </mg-menu-item>
-                  </mg-menu>
-                </mg-menu-item>
-              </mg-menu>
-            </mg-menu-item>
-            <mg-menu-item size="medium">
-              <span slot="label">level-2 - label-2</span>
-              <mg-icon icon="user" slot="illustration"></mg-icon>
-            </mg-menu-item>
-            <mg-menu-item size="medium">
-              <span slot="label">level-2 - label-3</span>
-              <mg-icon icon="user" slot="illustration"></mg-icon>
-              <mg-badge value="2" label="hello" slot="information"></mg-badge>
-            </mg-menu-item>
-            <mg-menu-item size="medium">
-              <span slot="label">level-2 - label-4 very long</span>
-              <mg-icon icon="user" slot="illustration"></mg-icon>
-              <mg-badge value="2" label="hello" slot="information"></mg-badge>
-              <mg-menu label="submenu 2" direction={Direction.VERTICAL}>
-                <mg-menu-item size="regular">
-                  <span slot="label">level-3 - label-1</span>
-                </mg-menu-item>
-                <mg-menu-item size="regular">
-                  <span slot="label">level-3 - label-2</span>
-                  <mg-icon icon="user" slot="illustration"></mg-icon>
-                </mg-menu-item>
-                <mg-menu-item size="regular">
-                  <span slot="label">level-3 - label-3</span>
-                  <mg-icon icon="user" slot="illustration"></mg-icon>
-                  <mg-badge value="2" label="hello" slot="information"></mg-badge>
-                </mg-menu-item>
-              </mg-menu>
-            </mg-menu-item>
-            <mg-menu-item size="medium">
-              <span slot="label">level-2 - label-5</span>
-              <mg-icon icon="user" slot="illustration"></mg-icon>
-              <mg-badge value="2" label="hello" slot="information"></mg-badge>
-            </mg-menu-item>
-          </mg-menu>
-        </mg-menu-item>
-      </mg-menu>
-    </div>
-  );
+const Template = (args: any): HTMLElement => <div>{menu(args)}</div>;
+
+export const MgMenuHorizontal = Template.bind({});
+
+MgMenuHorizontal.args = getMenuArgs(Direction.HORIZONTAL, 2);
+
+export const MgMenuVertical = Template.bind({});
+
+MgMenuVertical.args = getMenuArgs(Direction.VERTICAL, 2);
+
+const TemplateSmallContainer = (args: any): HTMLElement => {
+  return <div style={{ width: '25rem', height: '20rem' }}>{menu(args)}</div>;
 };
 
-export const MgMenu = Template.bind({});
+export const MgMenuVerticalSmallContainer = TemplateSmallContainer.bind({});
 
-MgMenu.args = {
-  label: 'Batman menu',
-  direction: Direction.HORIZONTAL,
+MgMenuVerticalSmallContainer.args = {
+  ...MgMenuVertical.args,
 };

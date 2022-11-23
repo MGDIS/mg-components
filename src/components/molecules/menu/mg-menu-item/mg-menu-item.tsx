@@ -70,6 +70,28 @@ export class MgMenuItem {
    * Define menu-item content expanded
    */
   @Prop({ mutable: true }) expanded = false;
+  @Watch('expanded')
+  validateExpanded(newValue: MgMenuItem['expanded']) {
+    if (typeof newValue !== 'boolean') throw new Error(`<${this.name}> prop "expanded" must be a boolean.`);
+
+    // if menu-item has sub-menu we have to apply some updates:
+    if (this.hasChildren) {
+      const subItems = Array.from(this.element.querySelectorAll(this.name));
+      if (!newValue) {
+        // - when main menu item is NOT expanded we need NOT expanded sub-items and NOT expanded sub-content
+        subItems.forEach(item => {
+          item.expanded = false;
+        });
+      } else if (newValue && this.hasChildElementStatus(this.element, Status.ACTIVE)) {
+        // - when expanded and contain an active item parents are expended too
+        subItems.forEach(item => {
+          if (this.hasChildElementStatus(item, Status.ACTIVE)) {
+            item.expanded = true;
+          }
+        });
+      }
+    }
+  }
 
   /************
    * Events *
@@ -164,26 +186,8 @@ export class MgMenuItem {
     this.focusedItem.emit(this.menuIndex);
     event.preventDefault();
 
-    if (this.hasChildren) {
-      this.toggleExpanded();
-
-      // when main menu item is NOT expanded we need NOT expanded sub-items and NOT expanded sub-content
-      const subItems = Array.from(this.element.querySelectorAll(this.name));
-      if (!this.expanded && this.isInMainMenu) {
-        subItems.forEach(item => {
-          item.expanded = false;
-        });
-      } else if (this.expanded && this.hasChildElementStatus(this.element, Status.ACTIVE)) {
-        // when expended and contain an active item parents are expended too
-        subItems.forEach(item => {
-          if (this.hasChildElementStatus(item, Status.ACTIVE)) {
-            item.expanded = true;
-          }
-        });
-      }
-    } else {
-      this.menuItemSelected.emit();
-    }
+    if (this.hasChildren) this.toggleExpanded();
+    else this.menuItemSelected.emit();
   };
 
   /**
@@ -214,6 +218,7 @@ export class MgMenuItem {
     // Validate props
     this.validateSize(this.size);
     this.validateActive(this.status);
+    this.validateExpanded(this.expanded);
   }
 
   /**
@@ -265,9 +270,10 @@ export class MgMenuItem {
       // manage child items level
       const childItems = Array.from(this.element.querySelectorAll('mg-menu-item'));
       childItems.forEach(item => {
-        const startIndex = this.isInMainMenu && this.direction === Direction.VERTICAL ? 1 : 0;
-        const itemLevel = Number(item.getAttribute('data-level')) || startIndex;
-        item.setAttribute('data-level', `${itemLevel + 1}`);
+        if (this.direction === Direction.VERTICAL) {
+          const itemLevel = Number(item.getAttribute('data-level')) || 1;
+          item.setAttribute('data-level', `${itemLevel + 1}`);
+        }
       });
     }, 0);
   }
@@ -285,7 +291,8 @@ export class MgMenuItem {
           href={this.href}
           class={this.navigationButtonClassList.join()}
           tabindex={[Status.DISABLED, Status.HIDDEN].includes(this.status) ? -1 : 0}
-          aria-expanded={this.expanded.toString()}
+          disabled={this.status === Status.DISABLED}
+          aria-expanded={this.hasChildren && this.expanded.toString()}
           aria-current={this.status === Status.ACTIVE && 'page'}
           onClick={this.handleElementCLick}
           onFocus={this.handleElementFocus}

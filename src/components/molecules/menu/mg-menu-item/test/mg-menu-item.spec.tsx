@@ -100,6 +100,41 @@ describe('mg-menu-item', () => {
 
       expect(page.root).toMatchSnapshot();
     });
+
+    test('should manage sibling menu-item expanded props', async () => {
+      const page = await getPage(
+        menu('menu', [
+          menuItem({ label: 'Batman' }, childMenu({ label: 'Batman child 1' }, childMenu({ label: 'Batman child 2' }))),
+          menuItem({ label: 'Joker' }, childMenu({ label: 'Joker child 1' })),
+        ]),
+      );
+
+      expect(page.root).toMatchSnapshot();
+
+      // open batman item
+      const batmanItem: HTMLMgMenuItemElement = page.doc.querySelector('mg-menu-item:first-of-type');
+
+      batmanItem.shadowRoot.querySelector('button').dispatchEvent(new CustomEvent('click', { bubbles: true }));
+      await page.waitForChanges();
+
+      expect(page.root).toMatchSnapshot();
+
+      // open batman first child item
+      const batmanChildItem: HTMLMgMenuItemElement = page.doc.querySelector('mg-menu-item:first-of-type > * > mg-menu-item');
+
+      batmanChildItem.shadowRoot.querySelector('button').dispatchEvent(new CustomEvent('click', { bubbles: true }));
+      await page.waitForChanges();
+
+      expect(page.root).toMatchSnapshot();
+
+      // open joker item must close batman first child item
+      const jokerItem: HTMLMgMenuItemElement = page.doc.querySelector('mg-menu-item.mg-menu-item--last');
+
+      jokerItem.shadowRoot.querySelector('button').dispatchEvent(new CustomEvent('click', { bubbles: true }));
+      await page.waitForChanges();
+
+      expect(page.root).toMatchSnapshot();
+    });
   });
 
   describe('errors', () => {
@@ -142,31 +177,40 @@ describe('mg-menu-item', () => {
         expect(err.message).toBe('<mg-menu-item> prop "href" is unauthorizied when element is a parent.');
       }
     });
+
+    test('with expanded type mismatch', async () => {
+      expect.assertions(1);
+
+      try {
+        await getPage(menuItem({ label: 'label', expanded: { name: 'batman' } }));
+      } catch (err) {
+        expect(err.message).toBe('<mg-menu-item> prop "expanded" must be a boolean.');
+      }
+    });
   });
 
   describe.each([
-    expanded => getPage(templateDefault({ label: 'Batman', expanded })),
-    expanded => getPage(templateDefault({ label: 'Batman', expanded }, childMenu())),
-    expanded => getPage(templateDefault({ label: 'Batman', expanded }, childMenu({ label: 'level 2' }, childMenu({ label: 'level 3', status: Status.ACTIVE })))),
+    expanded => templateDefault({ label: 'Batman', expanded }),
+    expanded => templateDefault({ label: 'Batman', expanded }, childMenu()),
+    expanded => templateDefault({ label: 'Batman', expanded }, childMenu({ label: 'level 2' }, childMenu({ label: 'level 3' }))),
+    expanded => templateDefault({ label: 'Batman', expanded }, childMenu({ label: 'level 2' }, childMenu({ label: 'level 3', status: Status.ACTIVE }))),
     expanded =>
-      getPage(
-        templateDefault(
-          { label: 'Batman', expanded },
-          <div>
-            <h3>Demo title</h3>
-            <p>some content</p>
-          </div>,
-        ),
+      templateDefault(
+        { label: 'Batman', expanded },
+        <div>
+          <h3>Demo title</h3>
+          <p>some content</p>
+        </div>,
       ),
   ])('mouse navigation', template => {
     test.each([undefined, true, false])('should manage toggle expand with template %s', async expanded => {
-      const page = await template(templateDefault({ label: 'Batman', expanded }));
+      const page = await getPage(template(expanded));
 
       const element = page.doc.querySelector('mg-menu-item');
 
       expect(page.root).toMatchSnapshot();
 
-      element.shadowRoot.querySelector('*').dispatchEvent(new CustomEvent('click', { bubbles: true }));
+      element.shadowRoot.querySelector('button').dispatchEvent(new CustomEvent('click', { bubbles: true }));
       await page.waitForChanges();
 
       expect(page.root).toMatchSnapshot();
