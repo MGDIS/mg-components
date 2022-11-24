@@ -1934,7 +1934,7 @@ exports[`mg-icon Should render briefcase icon in extra-large size 1`] = `
 <mg-icon>
   <mock:shadow-root>
     <svg aria-hidden="true" class="mg-icon mg-icon--briefcase mg-icon--size-extra-large" focusable="false" viewBox="0 0 16 16">
-      <path d="M14 4.5h-2v-1c0-.55-.45-1-1-1H6c-.55 0-1 .45-1 1v1H2c-.55 0-1 .45-1 1v7c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-7c0-.55-.45-1-1-1Zm-8-1h5v1H6v-1Z" fill="currentColor"></path>
+      <path d="M14 4.5h-3v-1c0-.55-.45-1-1-1H6c-.55 0-1 .45-1 1v1H2c-.55 0-1 .45-1 1v7c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-7c0-.55-.45-1-1-1Zm-8-1h4v1H6v-1Z" fill="currentColor"></path>
     </svg>
   </mock:shadow-root>
 </mg-icon>
@@ -1944,7 +1944,7 @@ exports[`mg-icon Should render briefcase icon in large size 1`] = `
 <mg-icon>
   <mock:shadow-root>
     <svg aria-hidden="true" class="mg-icon mg-icon--briefcase mg-icon--size-large" focusable="false" viewBox="0 0 16 16">
-      <path d="M14 4.5h-2v-1c0-.55-.45-1-1-1H6c-.55 0-1 .45-1 1v1H2c-.55 0-1 .45-1 1v7c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-7c0-.55-.45-1-1-1Zm-8-1h5v1H6v-1Z" fill="currentColor"></path>
+      <path d="M14 4.5h-3v-1c0-.55-.45-1-1-1H6c-.55 0-1 .45-1 1v1H2c-.55 0-1 .45-1 1v7c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-7c0-.55-.45-1-1-1Zm-8-1h4v1H6v-1Z" fill="currentColor"></path>
     </svg>
   </mock:shadow-root>
 </mg-icon>
@@ -1954,7 +1954,7 @@ exports[`mg-icon Should render briefcase icon in regular size 1`] = `
 <mg-icon>
   <mock:shadow-root>
     <svg aria-hidden="true" class="mg-icon mg-icon--briefcase mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-      <path d="M14 4.5h-2v-1c0-.55-.45-1-1-1H6c-.55 0-1 .45-1 1v1H2c-.55 0-1 .45-1 1v7c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-7c0-.55-.45-1-1-1Zm-8-1h5v1H6v-1Z" fill="currentColor"></path>
+      <path d="M14 4.5h-3v-1c0-.55-.45-1-1-1H6c-.55 0-1 .45-1 1v1H2c-.55 0-1 .45-1 1v7c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-7c0-.55-.45-1-1-1Zm-8-1h4v1H6v-1Z" fill="currentColor"></path>
     </svg>
   </mock:shadow-root>
 </mg-icon>
@@ -1964,7 +1964,7 @@ exports[`mg-icon Should render briefcase icon in small size 1`] = `
 <mg-icon>
   <mock:shadow-root>
     <svg aria-hidden="true" class="mg-icon mg-icon--briefcase mg-icon--size-small" focusable="false" viewBox="0 0 16 16">
-      <path d="M14 4.5h-2v-1c0-.55-.45-1-1-1H6c-.55 0-1 .45-1 1v1H2c-.55 0-1 .45-1 1v7c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-7c0-.55-.45-1-1-1Zm-8-1h5v1H6v-1Z" fill="currentColor"></path>
+      <path d="M14 4.5h-3v-1c0-.55-.45-1-1-1H6c-.55 0-1 .45-1 1v1H2c-.55 0-1 .45-1 1v7c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-7c0-.55-.45-1-1-1Zm-8-1h4v1H6v-1Z" fill="currentColor"></path>
     </svg>
   </mock:shadow-root>
 </mg-icon>
@@ -1974,7 +1974,7 @@ exports[`mg-icon Should render briefcase icon using danger variant 1`] = `
 <mg-icon>
   <mock:shadow-root>
     <svg aria-hidden="true" class="mg-icon mg-icon--briefcase mg-icon--size-regular mg-icon--variant-danger" focusable="false" viewBox="0 0 16 16">
-      <path d="M14 4.5h-2v-1c0-.55-.45-1-1-1H6c-.55 0-1 .45-1 1v1H2c-.55 0-1 .45-1 1v7c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-7c0-.55-.45-1-1-1Zm-8-1h5v1H6v-1Z" fill="currentColor"></path>
+      <path d="M14 4.5h-3v-1c0-.55-.45-1-1-1H6c-.55 0-1 .45-1 1v1H2c-.55 0-1 .45-1 1v7c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-7c0-.55-.45-1-1-1Zm-8-1h4v1H6v-1Z" fill="currentColor"></path>
     </svg>
   </mock:shadow-root>
 </mg-icon>
@@ -1984,7 +1984,7 @@ exports[`mg-icon Should render briefcase icon using info variant 1`] = `
 <mg-icon>
   <mock:shadow-root>
     <svg aria-hidden="true" class="mg-icon mg-icon--briefcase mg-icon--size-regular mg-icon--variant-info" focusable="false" viewBox="0 0 16 16">
-      <path d="M14 4.5h-2v-1c0-.55-.45-1-1-1H6c-.55 0-1 .45-1 1v1H2c-.55 0-1 .45-1 1v7c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-7c0-.55-.45-1-1-1Zm-8-1h5v1H6v-1Z" fill="currentColor"></path>
+      <path d="M14 4.5h-3v-1c0-.55-.45-1-1-1H6c-.55 0-1 .45-1 1v1H2c-.55 0-1 .45-1 1v7c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-7c0-.55-.45-1-1-1Zm-8-1h4v1H6v-1Z" fill="currentColor"></path>
     </svg>
   </mock:shadow-root>
 </mg-icon>
@@ -1994,7 +1994,7 @@ exports[`mg-icon Should render briefcase icon using success variant 1`] = `
 <mg-icon>
   <mock:shadow-root>
     <svg aria-hidden="true" class="mg-icon mg-icon--briefcase mg-icon--size-regular mg-icon--variant-success" focusable="false" viewBox="0 0 16 16">
-      <path d="M14 4.5h-2v-1c0-.55-.45-1-1-1H6c-.55 0-1 .45-1 1v1H2c-.55 0-1 .45-1 1v7c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-7c0-.55-.45-1-1-1Zm-8-1h5v1H6v-1Z" fill="currentColor"></path>
+      <path d="M14 4.5h-3v-1c0-.55-.45-1-1-1H6c-.55 0-1 .45-1 1v1H2c-.55 0-1 .45-1 1v7c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-7c0-.55-.45-1-1-1Zm-8-1h4v1H6v-1Z" fill="currentColor"></path>
     </svg>
   </mock:shadow-root>
 </mg-icon>
@@ -2004,7 +2004,7 @@ exports[`mg-icon Should render briefcase icon using warning variant 1`] = `
 <mg-icon>
   <mock:shadow-root>
     <svg aria-hidden="true" class="mg-icon mg-icon--briefcase mg-icon--size-regular mg-icon--variant-warning" focusable="false" viewBox="0 0 16 16">
-      <path d="M14 4.5h-2v-1c0-.55-.45-1-1-1H6c-.55 0-1 .45-1 1v1H2c-.55 0-1 .45-1 1v7c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-7c0-.55-.45-1-1-1Zm-8-1h5v1H6v-1Z" fill="currentColor"></path>
+      <path d="M14 4.5h-3v-1c0-.55-.45-1-1-1H6c-.55 0-1 .45-1 1v1H2c-.55 0-1 .45-1 1v7c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-7c0-.55-.45-1-1-1Zm-8-1h4v1H6v-1Z" fill="currentColor"></path>
     </svg>
   </mock:shadow-root>
 </mg-icon>
@@ -2014,7 +2014,7 @@ exports[`mg-icon Should render briefcase-outline icon in extra-large size 1`] = 
 <mg-icon>
   <mock:shadow-root>
     <svg aria-hidden="true" class="mg-icon mg-icon--briefcase-outline mg-icon--size-extra-large" focusable="false" viewBox="0 0 16 16">
-      <path d="M14 4.5h-2v-1c0-.55-.45-1-1-1H6c-.55 0-1 .45-1 1v1H2c-.55 0-1 .45-1 1v7c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-7c0-.55-.45-1-1-1Zm-8-1h5v1H6v-1Zm8 9H2v-7h12v7Z" fill="currentColor"></path>
+      <path d="M14 4.5h-3v-1c0-.55-.45-1-1-1H6c-.55 0-1 .45-1 1v1H2c-.55 0-1 .45-1 1v7c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-7c0-.55-.45-1-1-1Zm-8-1h4v1H6v-1Zm8 9H2v-7h12v7Z" fill="currentColor"></path>
     </svg>
   </mock:shadow-root>
 </mg-icon>
@@ -2024,7 +2024,7 @@ exports[`mg-icon Should render briefcase-outline icon in large size 1`] = `
 <mg-icon>
   <mock:shadow-root>
     <svg aria-hidden="true" class="mg-icon mg-icon--briefcase-outline mg-icon--size-large" focusable="false" viewBox="0 0 16 16">
-      <path d="M14 4.5h-2v-1c0-.55-.45-1-1-1H6c-.55 0-1 .45-1 1v1H2c-.55 0-1 .45-1 1v7c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-7c0-.55-.45-1-1-1Zm-8-1h5v1H6v-1Zm8 9H2v-7h12v7Z" fill="currentColor"></path>
+      <path d="M14 4.5h-3v-1c0-.55-.45-1-1-1H6c-.55 0-1 .45-1 1v1H2c-.55 0-1 .45-1 1v7c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-7c0-.55-.45-1-1-1Zm-8-1h4v1H6v-1Zm8 9H2v-7h12v7Z" fill="currentColor"></path>
     </svg>
   </mock:shadow-root>
 </mg-icon>
@@ -2034,7 +2034,7 @@ exports[`mg-icon Should render briefcase-outline icon in regular size 1`] = `
 <mg-icon>
   <mock:shadow-root>
     <svg aria-hidden="true" class="mg-icon mg-icon--briefcase-outline mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-      <path d="M14 4.5h-2v-1c0-.55-.45-1-1-1H6c-.55 0-1 .45-1 1v1H2c-.55 0-1 .45-1 1v7c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-7c0-.55-.45-1-1-1Zm-8-1h5v1H6v-1Zm8 9H2v-7h12v7Z" fill="currentColor"></path>
+      <path d="M14 4.5h-3v-1c0-.55-.45-1-1-1H6c-.55 0-1 .45-1 1v1H2c-.55 0-1 .45-1 1v7c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-7c0-.55-.45-1-1-1Zm-8-1h4v1H6v-1Zm8 9H2v-7h12v7Z" fill="currentColor"></path>
     </svg>
   </mock:shadow-root>
 </mg-icon>
@@ -2044,7 +2044,7 @@ exports[`mg-icon Should render briefcase-outline icon in small size 1`] = `
 <mg-icon>
   <mock:shadow-root>
     <svg aria-hidden="true" class="mg-icon mg-icon--briefcase-outline mg-icon--size-small" focusable="false" viewBox="0 0 16 16">
-      <path d="M14 4.5h-2v-1c0-.55-.45-1-1-1H6c-.55 0-1 .45-1 1v1H2c-.55 0-1 .45-1 1v7c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-7c0-.55-.45-1-1-1Zm-8-1h5v1H6v-1Zm8 9H2v-7h12v7Z" fill="currentColor"></path>
+      <path d="M14 4.5h-3v-1c0-.55-.45-1-1-1H6c-.55 0-1 .45-1 1v1H2c-.55 0-1 .45-1 1v7c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-7c0-.55-.45-1-1-1Zm-8-1h4v1H6v-1Zm8 9H2v-7h12v7Z" fill="currentColor"></path>
     </svg>
   </mock:shadow-root>
 </mg-icon>
@@ -2054,7 +2054,7 @@ exports[`mg-icon Should render briefcase-outline icon using danger variant 1`] =
 <mg-icon>
   <mock:shadow-root>
     <svg aria-hidden="true" class="mg-icon mg-icon--briefcase-outline mg-icon--size-regular mg-icon--variant-danger" focusable="false" viewBox="0 0 16 16">
-      <path d="M14 4.5h-2v-1c0-.55-.45-1-1-1H6c-.55 0-1 .45-1 1v1H2c-.55 0-1 .45-1 1v7c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-7c0-.55-.45-1-1-1Zm-8-1h5v1H6v-1Zm8 9H2v-7h12v7Z" fill="currentColor"></path>
+      <path d="M14 4.5h-3v-1c0-.55-.45-1-1-1H6c-.55 0-1 .45-1 1v1H2c-.55 0-1 .45-1 1v7c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-7c0-.55-.45-1-1-1Zm-8-1h4v1H6v-1Zm8 9H2v-7h12v7Z" fill="currentColor"></path>
     </svg>
   </mock:shadow-root>
 </mg-icon>
@@ -2064,7 +2064,7 @@ exports[`mg-icon Should render briefcase-outline icon using info variant 1`] = `
 <mg-icon>
   <mock:shadow-root>
     <svg aria-hidden="true" class="mg-icon mg-icon--briefcase-outline mg-icon--size-regular mg-icon--variant-info" focusable="false" viewBox="0 0 16 16">
-      <path d="M14 4.5h-2v-1c0-.55-.45-1-1-1H6c-.55 0-1 .45-1 1v1H2c-.55 0-1 .45-1 1v7c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-7c0-.55-.45-1-1-1Zm-8-1h5v1H6v-1Zm8 9H2v-7h12v7Z" fill="currentColor"></path>
+      <path d="M14 4.5h-3v-1c0-.55-.45-1-1-1H6c-.55 0-1 .45-1 1v1H2c-.55 0-1 .45-1 1v7c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-7c0-.55-.45-1-1-1Zm-8-1h4v1H6v-1Zm8 9H2v-7h12v7Z" fill="currentColor"></path>
     </svg>
   </mock:shadow-root>
 </mg-icon>
@@ -2074,7 +2074,7 @@ exports[`mg-icon Should render briefcase-outline icon using success variant 1`] 
 <mg-icon>
   <mock:shadow-root>
     <svg aria-hidden="true" class="mg-icon mg-icon--briefcase-outline mg-icon--size-regular mg-icon--variant-success" focusable="false" viewBox="0 0 16 16">
-      <path d="M14 4.5h-2v-1c0-.55-.45-1-1-1H6c-.55 0-1 .45-1 1v1H2c-.55 0-1 .45-1 1v7c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-7c0-.55-.45-1-1-1Zm-8-1h5v1H6v-1Zm8 9H2v-7h12v7Z" fill="currentColor"></path>
+      <path d="M14 4.5h-3v-1c0-.55-.45-1-1-1H6c-.55 0-1 .45-1 1v1H2c-.55 0-1 .45-1 1v7c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-7c0-.55-.45-1-1-1Zm-8-1h4v1H6v-1Zm8 9H2v-7h12v7Z" fill="currentColor"></path>
     </svg>
   </mock:shadow-root>
 </mg-icon>
@@ -2084,7 +2084,7 @@ exports[`mg-icon Should render briefcase-outline icon using warning variant 1`] 
 <mg-icon>
   <mock:shadow-root>
     <svg aria-hidden="true" class="mg-icon mg-icon--briefcase-outline mg-icon--size-regular mg-icon--variant-warning" focusable="false" viewBox="0 0 16 16">
-      <path d="M14 4.5h-2v-1c0-.55-.45-1-1-1H6c-.55 0-1 .45-1 1v1H2c-.55 0-1 .45-1 1v7c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-7c0-.55-.45-1-1-1Zm-8-1h5v1H6v-1Zm8 9H2v-7h12v7Z" fill="currentColor"></path>
+      <path d="M14 4.5h-3v-1c0-.55-.45-1-1-1H6c-.55 0-1 .45-1 1v1H2c-.55 0-1 .45-1 1v7c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-7c0-.55-.45-1-1-1Zm-8-1h4v1H6v-1Zm8 9H2v-7h12v7Z" fill="currentColor"></path>
     </svg>
   </mock:shadow-root>
 </mg-icon>
