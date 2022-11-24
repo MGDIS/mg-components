@@ -28,14 +28,19 @@ describe('mg-tooltip', () => {
   beforeEach(() => jest.useFakeTimers());
   afterEach(() => jest.runOnlyPendingTimers());
 
-  test.each([<span>span</span>, <button aria-describedby="blu">button</button>, <mg-icon icon="check-circle"></mg-icon>, <mg-button identifier="identifier">mg-button</mg-button>])(
-    'Should render with element',
-    async element => {
-      const args = { identifier: 'identifier', message: 'My tooltip message' };
-      const { root } = await getPage(args, element);
-      expect(root).toMatchSnapshot();
-    },
-  );
+  test.each([
+    <span>span</span>,
+    <button aria-describedby="blu">button</button>,
+    <mg-icon icon="check-circle"></mg-icon>,
+    <mg-button identifier="identifier">mg-button</mg-button>,
+    <mg-button identifier="identifier" disabled>
+      mg-button.disabled
+    </mg-button>,
+  ])('Should render with element', async element => {
+    const args = { identifier: 'identifier', message: 'My tooltip message' };
+    const { root } = await getPage(args, element);
+    expect(root).toMatchSnapshot();
+  });
 
   test('Should render with element with given placement', async () => {
     const args = { identifier: 'identifier', message: 'My tooltip message', placement: 'auto' };

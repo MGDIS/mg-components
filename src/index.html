@@ -174,6 +174,13 @@
           <mg-button disable-on-click><mg-icon icon="check-circle"></mg-icon>Blu</mg-button>
           <mg-button is-icon label="Ce bouton se désactive après un clic" disable-on-click><mg-icon icon="check-circle"></mg-icon></mg-button>
         </div>
+        <h3>Disabled button</h3>
+        <div class="mg-group-elements" style="padding: 0 0 1rem">
+          <mg-button disabled onclick="alert('blu')" id="toggle-disabled-button">alert('blu')</mg-button>
+          <mg-button onclick="document.getElementById('toggle-disabled-button').disabled = !document.getElementById('toggle-disabled-button').disabled"
+            >👈 Toggle disabled</mg-button
+          >
+        </div>
         <h3>a.mg-button</h3>
         <div class="mg-group-elements" style="padding: 0 0 1rem">
           <a href="#" class="mg-button mg-button--primary">a.mg-button</a>

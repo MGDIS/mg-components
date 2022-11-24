@@ -204,7 +204,7 @@ export class MgButton {
     return (
       <Host
         role="button"
-        tabIndex={this.disabled ? -1 : 0}
+        tabIndex={0}
         type={this.type}
         form={this.form}
         full-width={this.fullWidth}

@@ -76,6 +76,12 @@ $button-column-gap: 0.6rem;
   display: block;
 }
 
+// Prevent click propagation when disabled
+:host([disabled]),
+:host([aria-disabled='true']) {
+  pointer-events: none;
+}
+
 // Gradient style
 @include style-gradient('primary', null, null, true);
 @include style-gradient('secondary', null, null, true);

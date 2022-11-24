@@ -160,12 +160,22 @@ export class MgTooltip {
 
     // get slotted element
     const slotElement = this.element.firstElementChild as HTMLElement;
+
     // Get interactive element
     const interactiveElements = ['a', 'button', 'input', 'textarea', 'select']; //! Might needs updates
     const interactiveElement = this.element.shadowRoot.querySelector(interactiveElements.join(',')) || slotElement.shadowRoot?.querySelector(interactiveElements.join(','));
 
     // define selected element to become tooltip selector
-    const tooltipedElement = interactiveElement || slotElement;
+    let tooltipedElement = interactiveElement || slotElement;
+
+    // Check if slotted element is a disabled mg-button
+    // In this case we wrap the mg-button into a div to enable the tooltip
+    if (slotElement.tagName === 'MG-BUTTON' && (slotElement as HTMLMgButtonElement).disabled) {
+      const div = document.createElement('div');
+      slotElement.parentNode.insertBefore(div, slotElement);
+      div.appendChild(slotElement);
+      tooltipedElement = div;
+    }
 
     // Add tabindex to slotted element if we can't find any interactive element
     if (interactiveElement === null || interactiveElement === undefined) slotElement.tabIndex = 0;

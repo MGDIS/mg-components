@@ -228,6 +228,30 @@ exports[`mg-tooltip Should render with element 4`] = `
 </mg-tooltip>
 `;
 
+exports[`mg-tooltip Should render with element 5`] = `
+<mg-tooltip>
+  <mock:shadow-root>
+    <slot></slot>
+    <div class="mg-tooltip" id="identifier" role="tooltip" style="position: fixed; left: 0; top: 0; margin: 0;">
+      My tooltip message
+      <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
+    </div>
+  </mock:shadow-root>
+  <div aria-describedby="identifier">
+    <mg-button aria-disabled="true" role="button" tabindex="0">
+      <mock:shadow-root>
+        <div class="mg-button mg-button--disabled mg-button--primary" id="identifier">
+          <div class="mg-button__content">
+            <slot></slot>
+          </div>
+        </div>
+      </mock:shadow-root>
+      mg-button.disabled
+    </mg-button>
+  </div>
+</mg-tooltip>
+`;
+
 exports[`mg-tooltip Should render with element with given placement 1`] = `
 <mg-tooltip>
   <mock:shadow-root>
