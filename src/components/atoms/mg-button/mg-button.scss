@@ -56,7 +56,7 @@ $button-column-gap: 0.6rem;
 :host(:focus-visible) {
   outline: 0;
   // same style as chrome
-  .mg-button:not(.mg-button--disabled) {
+  .mg-button {
     outline-color: -webkit-focus-ring-color;
     outline-style: auto;
     outline-width: 0.2rem;
