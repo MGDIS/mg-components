@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-11-23T14:00:28",
+  "timestamp": "2022-11-24T12:50:07",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.18.1",
@@ -4322,7 +4322,7 @@
           "mutable": false,
           "attr": "direction",
           "reflectToAttr": true,
-          "docs": "Component display direction",
+          "docs": "Component display direction. Default: \"horizontal\"",
           "docsTags": [],
           "default": "Direction.HORIZONTAL",
           "values": [
@@ -4378,7 +4378,7 @@
           "mutable": true,
           "attr": "expanded",
           "reflectToAttr": false,
-          "docs": "Define menu-item content expanded",
+          "docs": "Define menu-item content expanded. Default: false.",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -4406,28 +4406,12 @@
           "required": false
         },
         {
-          "name": "menuIndex",
-          "type": "number",
-          "mutable": true,
-          "attr": "menu-index",
-          "reflectToAttr": true,
-          "docs": "Define menu-item index in parent menu",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "number"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
           "name": "size",
           "type": "\"large\" | \"medium\" | \"regular\"",
           "mutable": false,
           "attr": "size",
           "reflectToAttr": false,
-          "docs": "Define menu-item size",
+          "docs": "Define menu-item size. Default: \"large\".",
           "docsTags": [],
           "default": "'large'",
           "values": [
@@ -4453,7 +4437,7 @@
           "mutable": true,
           "attr": "status",
           "reflectToAttr": true,
-          "docs": "Define menu-item status",
+          "docs": "Define menu-item status. Default: \"visible\"",
           "docsTags": [],
           "default": "Status.VISIBLE",
           "values": [
@@ -4475,26 +4459,7 @@
         }
       ],
       "methods": [],
-      "events": [
-        {
-          "event": "focused-item",
-          "detail": "number",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "Emited event to communicate next focused menu-item to parent",
-          "docsTags": []
-        },
-        {
-          "event": "menu-item-selected",
-          "detail": "any",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "Emited event when active menu-item change",
-          "docsTags": []
-        }
-      ],
+      "events": [],
       "listeners": [],
       "styles": [],
       "slots": [],

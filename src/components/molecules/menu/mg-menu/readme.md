@@ -71,7 +71,7 @@ Space between items is 0.
 
 | Property             | Attribute   | Description                                                            | Type                                         | Default                |
 | -------------------- | ----------- | ---------------------------------------------------------------------- | -------------------------------------------- | ---------------------- |
-| `direction`          | `direction` | Component display direction                                            | `Direction.HORIZONTAL \| Direction.VERTICAL` | `Direction.HORIZONTAL` |
+| `direction`          | `direction` | Component display direction. Default: "horizontal"                     | `Direction.HORIZONTAL \| Direction.VERTICAL` | `Direction.HORIZONTAL` |
 | `label` _(required)_ | `label`     | Menu label. Include short menu description. Required for accessibility | `string`                                     | `undefined`            |
 
 

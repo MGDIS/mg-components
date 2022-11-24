@@ -100,41 +100,6 @@ describe('mg-menu-item', () => {
 
       expect(page.root).toMatchSnapshot();
     });
-
-    test('should manage sibling menu-item expanded props', async () => {
-      const page = await getPage(
-        menu('menu', [
-          menuItem({ label: 'Batman' }, childMenu({ label: 'Batman child 1' }, childMenu({ label: 'Batman child 2' }))),
-          menuItem({ label: 'Joker' }, childMenu({ label: 'Joker child 1' })),
-        ]),
-      );
-
-      expect(page.root).toMatchSnapshot();
-
-      // open batman item
-      const batmanItem: HTMLMgMenuItemElement = page.doc.querySelector('mg-menu-item:first-of-type');
-
-      batmanItem.shadowRoot.querySelector('button').dispatchEvent(new CustomEvent('click', { bubbles: true }));
-      await page.waitForChanges();
-
-      expect(page.root).toMatchSnapshot();
-
-      // open batman first child item
-      const batmanChildItem: HTMLMgMenuItemElement = page.doc.querySelector('mg-menu-item:first-of-type > * > mg-menu-item');
-
-      batmanChildItem.shadowRoot.querySelector('button').dispatchEvent(new CustomEvent('click', { bubbles: true }));
-      await page.waitForChanges();
-
-      expect(page.root).toMatchSnapshot();
-
-      // open joker item must close batman first child item
-      const jokerItem: HTMLMgMenuItemElement = page.doc.querySelector('mg-menu-item.mg-menu-item--last');
-
-      jokerItem.shadowRoot.querySelector('button').dispatchEvent(new CustomEvent('click', { bubbles: true }));
-      await page.waitForChanges();
-
-      expect(page.root).toMatchSnapshot();
-    });
   });
 
   describe('errors', () => {
@@ -206,38 +171,11 @@ describe('mg-menu-item', () => {
     test.each([undefined, true, false])('should manage toggle expand with template %s', async expanded => {
       const page = await getPage(template(expanded));
 
-      const element = page.doc.querySelector('mg-menu-item');
+      const element = page.doc.querySelector('[title="Batman"]').closest('mg-menu-item');
 
       expect(page.root).toMatchSnapshot();
 
       element.shadowRoot.querySelector('button').dispatchEvent(new CustomEvent('click', { bubbles: true }));
-      await page.waitForChanges();
-
-      expect(page.root).toMatchSnapshot();
-    });
-  });
-
-  describe('keyboard navigation', () => {
-    test('should manage keyboard navigation', async () => {
-      const page = await getPage(templateDefault({ label: 'Batman' }, childMenu()));
-      const interactiveElement = page.doc.querySelector('mg-menu-item').shadowRoot.querySelector('*');
-
-      expect(page.root).toMatchSnapshot();
-
-      // focus on fist menu-item
-      interactiveElement.dispatchEvent(new CustomEvent('focus', { bubbles: true }));
-      await page.waitForChanges();
-
-      expect(page.root).toMatchSnapshot();
-
-      // expand fist menu-item
-      interactiveElement.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter' }));
-      await page.waitForChanges();
-
-      expect(page.root).toMatchSnapshot();
-
-      // close fist menu-item
-      interactiveElement.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter' }));
       await page.waitForChanges();
 
       expect(page.root).toMatchSnapshot();

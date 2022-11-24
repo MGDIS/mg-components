@@ -12,7 +12,6 @@ export default {
       control: { type: 'select' },
     },
   },
-  parameters: { actions: { handles: ['focused-item', 'menu-item-selected'] } },
 };
 
 type ItemArgType = {
@@ -46,7 +45,7 @@ const getItemArgs: IGetMenuArgs = ({ size, label, direction, status, metadata, i
 
 const getMenuArgs = (direction: Direction, level = 0, isSubmenu = false) => ({
   label: 'Batman menu',
-  direction,
+  direction: direction === Direction.HORIZONTAL ? undefined : direction,
   slot: {
     items: [
       getItemArgs({

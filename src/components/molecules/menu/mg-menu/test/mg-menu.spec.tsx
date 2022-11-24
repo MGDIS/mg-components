@@ -13,6 +13,11 @@ const getPage = async args => {
           <mg-menu label="batman - submenu">
             <mg-menu-item>
               <span slot="label">batman begins</span>
+              <mg-menu label="batman begins - submenu">
+                <mg-menu-item>
+                  <span slot="label">movie</span>
+                </mg-menu-item>
+              </mg-menu>
             </mg-menu-item>
             <mg-menu-item>
               <span slot="label">joker: the dark knight</span>
@@ -80,56 +85,55 @@ describe('mg-menu', () => {
   });
 
   describe.each(['horizontal', 'vertical'])('events', direction => {
-    test('should manage focused-item event in %s menu', async () => {
-      const args = { label: 'batman menu', direction };
-      const page = await getPage(args);
+    test('should manage outside click', async () => {
+      const page = await getPage({ label: 'batman menu', direction });
 
       expect(page.root).toMatchSnapshot();
 
-      // click on last item
-      const lastItem = page.root.querySelector('mg-menu-item:last-of-type') as HTMLMgMenuItemElement;
+      const firstItem: HTMLMgMenuItemElement = page.root.querySelector('[title="batman"]').closest('mg-menu-item');
 
-      lastItem.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+      firstItem.shadowRoot.querySelector('button').dispatchEvent(new MouseEvent('click', { bubbles: true }));
       await page.waitForChanges();
 
       expect(page.root).toMatchSnapshot();
 
-      lastItem.dispatchEvent(new CustomEvent('focused-item', { bubbles: true, detail: lastItem.menuIndex }));
-      await page.waitForChanges();
-
-      expect(page.root).toMatchSnapshot();
-
-      // click on first item
-      const firstItem = page.root.querySelector('mg-menu-item') as HTMLMgMenuItemElement;
-
-      firstItem.dispatchEvent(new CustomEvent('click', { bubbles: true }));
-      await page.waitForChanges();
-
-      expect(page.root).toMatchSnapshot();
-
-      firstItem.dispatchEvent(new CustomEvent('focused-item', { bubbles: true, detail: firstItem.menuIndex }));
+      document.dispatchEvent(new MouseEvent('click', { bubbles: true }));
       await page.waitForChanges();
 
       expect(page.root).toMatchSnapshot();
     });
 
-    test('should manage outside click', async () => {
-      const args = { label: 'batman menu', direction };
-      const page = await getPage(args);
+    test.each(['click', 'focus'])(`should manage sibling menu-item expanded props in ${direction} menu, case %s event`, async event => {
+      const page = await getPage({ label: 'batman menu', direction });
 
       expect(page.root).toMatchSnapshot();
 
-      const firstItem = page.root.querySelector('mg-menu-item:last-of-type');
+      // open batman item
+      const batmanItem: HTMLMgMenuItemElement = page.doc.querySelector('[title="batman"]').closest('mg-menu-item');
 
-      firstItem.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+      batmanItem.shadowRoot.querySelector('button').dispatchEvent(new CustomEvent('click', { bubbles: true }));
       await page.waitForChanges();
 
-      expect(page.root).toMatchSnapshot();
+      expect(batmanItem.expanded).toBe(true);
 
-      document.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+      // open batman first child item
+      const batmanChildItem: HTMLMgMenuItemElement = page.doc.querySelector('[title="batman begins"]').closest('mg-menu-item');
+
+      batmanChildItem.shadowRoot.querySelector('button').dispatchEvent(new CustomEvent('click', { bubbles: true }));
       await page.waitForChanges();
 
-      expect(page.root).toMatchSnapshot();
+      expect(batmanItem.expanded).toBe(true);
+      expect(batmanChildItem.expanded).toBe(true);
+
+      // open joker item must close batman first child item
+      const jokerItem: HTMLMgMenuItemElement = page.doc.querySelector('[title="joker"]').closest('mg-menu-item');
+
+      jokerItem.shadowRoot.querySelector('button').dispatchEvent(new CustomEvent(event, { bubbles: true }));
+      await page.waitForChanges();
+
+      expect(batmanItem.expanded).toBe(false);
+      expect(batmanChildItem.expanded).toBe(false);
+      expect(jokerItem.expanded).toBe(event === 'click');
     });
   });
 });

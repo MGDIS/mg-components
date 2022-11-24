@@ -14,6 +14,7 @@ export class MgMenu {
 
   private readonly name = 'mg-menu';
   private menuItems: HTMLMgMenuItemElement[];
+  private focusedMenuItem = 0;
 
   /**************
    * Decorators *
@@ -37,7 +38,7 @@ export class MgMenu {
   }
 
   /**
-   * Component display direction
+   * Component display direction. Default: "horizontal"
    */
   @Prop({ reflect: true }) direction: Direction = Direction.HORIZONTAL;
   @Watch('direction')
@@ -62,18 +63,6 @@ export class MgMenu {
   @State() classList: ClassList = new ClassList([this.name]);
 
   /**
-   * Component focused menu-item
-   */
-  @State() focusedMenuItem = 0;
-  @Watch('focusedMenuItem')
-  validatefocusedMenuItem(): void {
-    // reset expanded on previous active menu item
-    this.menuItems.forEach((item, index) => {
-      this.closeMenuItem(item, index !== this.focusedMenuItem);
-    });
-  }
-
-  /**
    * Close matching menu-item
    *
    * @param {HTMLMgMenuItemElement} item menu-item to close
@@ -91,14 +80,20 @@ export class MgMenu {
    */
   private initMenuItems = (): void => {
     // store all menu-items
-    this.menuItems = Array.from(this.element.children) as HTMLMgMenuItemElement[];
+    this.menuItems = Array.from(this.element.children).filter(child => child.nodeName === 'MG-MENU-ITEM') as HTMLMgMenuItemElement[];
 
     // add listeners on menu item and edit index
-    this.menuItems.forEach((item, index) => {
-      item.menuIndex = index;
-      item.addEventListener('focused-item', (event: CustomEvent & { target: HTMLMgMenuItemElement }) => {
-        this.focusedMenuItem = event.detail;
-        event.stopPropagation();
+    this.menuItems.forEach((item, menuItemIndex) => {
+      ['click', 'focus'].forEach(trigger => {
+        (item.shadowRoot.querySelector('button') || item.shadowRoot.querySelector('a')).addEventListener(trigger, (event: CustomEvent & { target: HTMLMgMenuItemElement }) => {
+          event.preventDefault();
+          event.stopPropagation();
+          this.focusedMenuItem = menuItemIndex;
+          // reset expanded on previous active menu item
+          this.menuItems.forEach((item, index) => {
+            this.closeMenuItem(item, index !== this.focusedMenuItem);
+          });
+        });
       });
     });
   };

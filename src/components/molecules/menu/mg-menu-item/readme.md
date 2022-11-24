@@ -186,21 +186,12 @@ Child content is displayed via an **mg-tray** component.
 
 ## Properties
 
-| Property    | Attribute    | Description                                                                       | Type                                                                  | Default          |
-| ----------- | ------------ | --------------------------------------------------------------------------------- | --------------------------------------------------------------------- | ---------------- |
-| `expanded`  | `expanded`   | Define menu-item content expanded                                                 | `boolean`                                                             | `false`          |
-| `href`      | `href`       | Define menu-item badge when defined menu-item contain an anchor instead of button | `string`                                                              | `undefined`      |
-| `menuIndex` | `menu-index` | Define menu-item index in parent menu                                             | `number`                                                              | `undefined`      |
-| `size`      | `size`       | Define menu-item size                                                             | `"large" \| "medium" \| "regular"`                                    | `'large'`        |
-| `status`    | `status`     | Define menu-item status                                                           | `Status.ACTIVE \| Status.DISABLED \| Status.HIDDEN \| Status.VISIBLE` | `Status.VISIBLE` |
-
-
-## Events
-
-| Event                | Description                                                  | Type                  |
-| -------------------- | ------------------------------------------------------------ | --------------------- |
-| `focused-item`       | Emited event to communicate next focused menu-item to parent | `CustomEvent<number>` |
-| `menu-item-selected` | Emited event when active menu-item change                    | `CustomEvent<any>`    |
+| Property   | Attribute  | Description                                                                       | Type                                                                  | Default          |
+| ---------- | ---------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------- | ---------------- |
+| `expanded` | `expanded` | Define menu-item content expanded. Default: false.                                | `boolean`                                                             | `false`          |
+| `href`     | `href`     | Define menu-item badge when defined menu-item contain an anchor instead of button | `string`                                                              | `undefined`      |
+| `size`     | `size`     | Define menu-item size. Default: "large".                                          | `"large" \| "medium" \| "regular"`                                    | `'large'`        |
+| `status`   | `status`   | Define menu-item status. Default: "visible"                                       | `Status.ACTIVE \| Status.DISABLED \| Status.HIDDEN \| Status.VISIBLE` | `Status.VISIBLE` |
 
 
 ## Dependencies

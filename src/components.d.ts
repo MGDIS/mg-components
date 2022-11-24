@@ -865,7 +865,7 @@ export namespace Components {
     }
     interface MgMenu {
         /**
-          * Component display direction
+          * Component display direction. Default: "horizontal"
          */
         "direction": Direction;
         /**
@@ -875,7 +875,7 @@ export namespace Components {
     }
     interface MgMenuItem {
         /**
-          * Define menu-item content expanded
+          * Define menu-item content expanded. Default: false.
          */
         "expanded": boolean;
         /**
@@ -883,15 +883,11 @@ export namespace Components {
          */
         "href": string;
         /**
-          * Define menu-item index in parent menu
-         */
-        "menuIndex": number;
-        /**
-          * Define menu-item size
+          * Define menu-item size. Default: "large".
          */
         "size": MenuItemSizeType;
         /**
-          * Define menu-item status
+          * Define menu-item status. Default: "visible"
          */
         "status": Status;
     }
@@ -1103,10 +1099,6 @@ export interface MgInputTextareaCustomEvent<T> extends CustomEvent<T> {
 export interface MgInputToggleCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLMgInputToggleElement;
-}
-export interface MgMenuItemCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLMgMenuItemElement;
 }
 export interface MgMessageCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -2221,7 +2213,7 @@ declare namespace LocalJSX {
     }
     interface MgMenu {
         /**
-          * Component display direction
+          * Component display direction. Default: "horizontal"
          */
         "direction"?: Direction;
         /**
@@ -2231,7 +2223,7 @@ declare namespace LocalJSX {
     }
     interface MgMenuItem {
         /**
-          * Define menu-item content expanded
+          * Define menu-item content expanded. Default: false.
          */
         "expanded"?: boolean;
         /**
@@ -2239,23 +2231,11 @@ declare namespace LocalJSX {
          */
         "href"?: string;
         /**
-          * Define menu-item index in parent menu
-         */
-        "menuIndex"?: number;
-        /**
-          * Emited event to communicate next focused menu-item to parent
-         */
-        "onFocused-item"?: (event: MgMenuItemCustomEvent<MgMenuItem['menuIndex']>) => void;
-        /**
-          * Emited event when active menu-item change
-         */
-        "onMenu-item-selected"?: (event: MgMenuItemCustomEvent<any>) => void;
-        /**
-          * Define menu-item size
+          * Define menu-item size. Default: "large".
          */
         "size"?: MenuItemSizeType;
         /**
-          * Define menu-item status
+          * Define menu-item status. Default: "visible"
          */
         "status"?: Status;
     }

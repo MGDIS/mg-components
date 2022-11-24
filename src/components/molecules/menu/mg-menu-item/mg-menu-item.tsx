@@ -1,4 +1,4 @@
-import { Component, h, Prop, State, Host, Watch, Element, Event, EventEmitter } from '@stencil/core';
+import { Component, h, Prop, State, Host, Watch, Element } from '@stencil/core';
 import { ClassList } from '../../../../utils/components.utils';
 import { MgMenu } from '../mg-menu/mg-menu';
 import { Direction } from '../mg-menu/mg-menu.conf';
@@ -37,7 +37,7 @@ export class MgMenuItem {
   @Prop() href: string;
 
   /**
-   * Define menu-item status
+   * Define menu-item status. Default: "visible"
    */
   @Prop({ reflect: true, mutable: true }) status: Status = Status.VISIBLE;
   @Watch('status')
@@ -49,7 +49,7 @@ export class MgMenuItem {
   }
 
   /**
-   * Define menu-item size
+   * Define menu-item size. Default: "large".
    */
   @Prop() size: MenuItemSizeType = 'large';
   @Watch('size')
@@ -62,12 +62,7 @@ export class MgMenuItem {
   }
 
   /**
-   * Define menu-item index in parent menu
-   */
-  @Prop({ mutable: true, reflect: true }) menuIndex: number;
-
-  /**
-   * Define menu-item content expanded
+   * Define menu-item content expanded. Default: false.
    */
   @Prop({ mutable: true }) expanded = false;
   @Watch('expanded')
@@ -94,20 +89,6 @@ export class MgMenuItem {
   }
 
   /************
-   * Events *
-   ************/
-
-  /**
-   * Emited event to communicate next focused menu-item to parent
-   */
-  @Event({ eventName: 'focused-item' }) focusedItem: EventEmitter<MgMenuItem['menuIndex']>;
-
-  /**
-   * Emited event when active menu-item change
-   */
-  @Event({ eventName: 'menu-item-selected' }) menuItemSelected: EventEmitter;
-
-  /************
    * States *
    ************/
 
@@ -132,7 +113,7 @@ export class MgMenuItem {
   @State() isInMainMenu: boolean;
 
   /**
-   * Does component have children
+   * Does component have children. Default: false.
    */
   @State() hasChildren = false;
   @Watch('hasChildren')
@@ -183,22 +164,8 @@ export class MgMenuItem {
    * @returns {void}
    */
   private handleElementCLick = (event: MouseEvent): void => {
-    this.focusedItem.emit(this.menuIndex);
     event.preventDefault();
-
     if (this.hasChildren) this.toggleExpanded();
-    else this.menuItemSelected.emit();
-  };
-
-  /**
-   * Handle interactive element focus
-   *
-   * @param {FocusEvent} event focus on element
-   * @returns {void}
-   */
-  private handleElementFocus = (event: FocusEvent): void => {
-    this.focusedItem.emit(this.menuIndex);
-    event.preventDefault();
   };
 
   /*************
@@ -295,7 +262,6 @@ export class MgMenuItem {
           aria-expanded={this.hasChildren && this.expanded.toString()}
           aria-current={this.status === Status.ACTIVE && 'page'}
           onClick={this.handleElementCLick}
-          onFocus={this.handleElementFocus}
         >
           <slot name="illustration"></slot>
           <div class={`${this.navigationButton}-center`}>
