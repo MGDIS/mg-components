@@ -18,7 +18,6 @@ describe('mg-badge', () => {
           .join(''),
       )
       .join('');
-    console.log(html);
 
     const page = await createPage(html);
 
