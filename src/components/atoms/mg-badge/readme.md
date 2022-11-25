@@ -2,7 +2,7 @@
 
 The badge is always placed on top of, or next to the element it is for.
 
-The badge displays a number or a punctuation character.
+The badge displays a number (can be followed by the `+` character) or a punctuation character.
 
 ## Specs
 
@@ -21,7 +21,6 @@ If needed some [variables](./?path=/story/css-variables--page) are available to 
 
 <!-- Auto Generated Below -->
 
-
 ## Properties
 
 | Property             | Attribute | Description                                                        | Type               | Default       |
@@ -31,20 +30,20 @@ If needed some [variables](./?path=/story/css-variables--page) are available to 
 | `value` _(required)_ | `value`   | Badge value                                                        | `number \| string` | `undefined`   |
 | `variant`            | `variant` | Define button variant                                              | `string`           | `variants[0]` |
 
-
 ## Dependencies
 
 ### Used by
 
- - [mg-tabs](../../molecules/mg-tabs)
+- [mg-tabs](../../molecules/mg-tabs)
 
 ### Graph
+
 ```mermaid
 graph TD;
   mg-tabs --> mg-badge
   style mg-badge fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
-----------------------------------------------
+---
 
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

@@ -1,22 +1,31 @@
 import { createPage } from '../../../../utils/e2e.test.utils';
 import { variants } from '../mg-badge.conf';
 
-describe.each(variants)('mg-badge %s', variant => {
-  describe.each([true, false])('outline %s', outline => {
-    describe.each([1, 99])('value %s', value => {
-      test('Should render', async () => {
-        const page = await createPage(
-          `${
-            variant === 'secondary' ? '<style>body{background:#999;}</style>' : ''
-          }<mg-badge value="${value}" label="${variant}" variant="${variant}" outline="${outline}"></mg-badge>`,
-        );
+describe('mg-badge', () => {
+  test('Should render', async () => {
+    const html = variants
+      .map(variant =>
+        [true, false]
+          .map(outline =>
+            [1, 99, '*', '!', '99+']
+              .map(value =>
+                variant === 'secondary'
+                  ? `<span style="background:#999"><mg-badge value="${value}" label="${variant}" variant="${variant}" outline="${outline}"></mg-badge></span>`
+                  : `<mg-badge value="${value}" label="${variant}" variant="${variant}" outline="${outline}"></mg-badge>`,
+              )
+              .join(''),
+          )
+          .join(''),
+      )
+      .join('');
+    console.log(html);
 
-        const element = await page.find('mg-badge');
-        expect(element).toHaveClass('hydrated');
+    const page = await createPage(html);
 
-        const screenshot = await page.screenshot();
-        expect(screenshot).toMatchImageSnapshot();
-      });
-    });
+    const element = await page.find('mg-badge');
+    expect(element).toHaveClass('hydrated');
+
+    const screenshot = await page.screenshot();
+    expect(screenshot).toMatchImageSnapshot();
   });
 });
