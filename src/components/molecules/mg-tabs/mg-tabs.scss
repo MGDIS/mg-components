@@ -1,51 +1,28 @@
+@import '../../../styles/mixins/navigation-button.scss';
+
 $navigation-button-sizes: (
-  'regular': 1rem,
-  'large': 1.8rem,
+  'regular': (
+    'vertical': 1rem,
+    'horizontal': 2rem,
+  ),
+  'large': (
+    'vertical': 1.5rem,
+    'horizontal': 3rem,
+  ),
 );
-$border-bottom-size: 0.3rem;
 
-@each $name, $size in $navigation-button-sizes {
-  .mg-tabs.mg-tabs--size-#{$name} .mg-tabs__navigation-button {
-    padding: calc(#{$size} + #{$border-bottom-size}) calc(#{$size} * 1.3) #{$size};
-  }
-}
+@include navigation-button('mg-tabs', $navigation-button-sizes);
 
-.mg-tabs__header {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-.mg-tabs__navigation-button {
-  display: flex;
-  align-items: center;
-  column-gap: 0.5rem;
-  background: none;
-  border: none;
-  border-bottom: $border-bottom-size solid transparent;
-  font-family: var(--font-family);
-  color: hsl(var(--color-dark));
-  line-height: var(--line-height);
-  cursor: pointer;
-  &:disabled,
-  &--disabled {
-    cursor: default;
-    opacity: 30%;
+.mg-tabs {
+  &__header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
-  &:hover:not(:disabled),
-  &:focus:not(:disabled) {
-    background-color: hsla(var(--color-info-h), var(--color-info-s), var(--color-info-l), 10%);
+  &__content-container:focus-visible {
+    outline: none;
   }
-  &.mg-tabs__navigation-button--active {
-    color: hsl(var(--color-info));
-    border-bottom-color: hsl(var(--color-info));
-    font-weight: 700;
+  &__navigation-button-text {
+    flex: 0 0 content;
   }
-  &.mg-tabs__navigation-button--hidden {
-    display: none;
-  }
-}
-
-.mg-tabs__content-container:focus-visible {
-  outline: none;
 }
