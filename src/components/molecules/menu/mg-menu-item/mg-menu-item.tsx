@@ -41,7 +41,7 @@ export class MgMenuItem {
    */
   @Prop({ reflect: true, mutable: true }) status: Status = Status.VISIBLE;
   @Watch('status')
-  validateActive(newValue: MgMenuItem['status'], oldValue?: MgMenuItem['status']): void {
+  validateStatus(newValue: MgMenuItem['status'], oldValue?: MgMenuItem['status']): void {
     if (oldValue !== undefined) {
       this.navigationButtonClassList.delete(`${this.navigationButton}--${oldValue}`);
     }
@@ -184,7 +184,7 @@ export class MgMenuItem {
 
     // Validate props
     this.validateSize(this.size);
-    this.validateActive(this.status);
+    this.validateStatus(this.status);
     this.validateExpanded(this.expanded);
   }
 

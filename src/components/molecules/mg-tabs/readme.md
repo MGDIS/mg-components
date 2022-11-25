@@ -6,8 +6,12 @@
 
 ### Spacing
 
-- Standard : @base = 10px
-- Large : @base = 18px
+- Regular
+  - X = 20px;
+  - Y = 10px;
+- Large
+  - X = 30px;
+  - Y = 15px;
 
 ![](./mg-tabs/doc/img/mg-tabs-spacing.png)
 

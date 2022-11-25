@@ -16,7 +16,7 @@ A menu is composed of [**mg-menu-items**](./?path=/docs/molecules-menus-mg-menu-
 
 ![](./mg-menu/doc/img/mg-menu-horizontal-plus.png)
 
-When not all of the items can be displayed because of the width of the menu's container, items are grouped in a **["plus" item](TODO)**.
+When not all of the items can be displayed because of the width of the menu's container, items are grouped in a "plus" item **(TODO)**.
 
 ### Specs
 
@@ -63,6 +63,16 @@ The width of the menu depend on his container.
 ![](./mg-menu/doc/img/mg-menu-vertical-spacing.png) 
 
 Space between items is 0.
+
+#### Colors
+
+Default background color is @color-light.
+
+## CSS Variables
+
+### global
+
+- `--mg-menu-background-color-hsl`: define mg-menu background color. Default: `--color-light`.
 
 <!-- Auto Generated Below -->
 

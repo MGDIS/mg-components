@@ -8,11 +8,11 @@ const slotIllusatration = '<mg-icon icon="user" slot="illustration"></mg-icon>';
 const slotInformation = '<mg-badge value="2" label="hello" slot="information"></mg-badge>';
 const slotMetadata = '<span slot="metadata">is a hero</span>';
 
-const createHTML = (args, slot?, direction = Direction.HORIZONTAL) => `
+const createHTML = (args, slot = '', direction = Direction.HORIZONTAL) => `
 <mg-menu label="batmenu" direction="${direction}">
   <mg-menu-item ${args}>
     <span slot="label">batman</span>
-    ${slot ? slot : ''}
+    ${slot}
   </mg-menu-item>
 </mg-menu>
 `;

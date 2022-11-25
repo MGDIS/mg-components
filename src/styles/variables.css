@@ -242,7 +242,6 @@
   /*
     <mg-menu-item>
    */
-  --mg-menu-item-background-color-hsl: var(--color-light);
   --mg-menu-item-focused-background-color-hsl: var(--mg-color-app-hsl);
   --mg-menu-item-border-color-active-hsl: var(--mg-color-app-hsl);
   --mg-menu-item-color-active-hsl: var(--mg-color-app-hsl);
@@ -250,7 +249,6 @@
   /*
   <mg-tabs>
   */
-  --mg-tabs-background-color-hsl: var(--color-light);
   --mg-tabs-focused-background-color-hsl: var(--mg-color-app-hsl);
   --mg-tabs-border-color-active-hsl: var(--mg-color-app-hsl);
   --mg-tabs-color-active-hsl: var(--mg-color-app-hsl);

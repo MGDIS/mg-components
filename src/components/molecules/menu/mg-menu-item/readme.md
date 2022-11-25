@@ -171,7 +171,6 @@ Child content is displayed via an **mg-tray** component.
 
 ### global
 
-- `--mg-menu-item-background-color-hsl`: define mg-menu-item background color. default: `--color-light`.
 - `--mg-menu-item-focused-background-color-hsl`: define mg-menu-item focused background color. default: `--mg-color-app-hsl`.
 - `--mg-menu-item-border-color-active-hsl`: define mg-menu-item border color. default: `--mg-color-app-hsl`.
 - `--mg-menu-item-color-hsl`: define mg-menu-item font color. default: `--mg-color-dark`.

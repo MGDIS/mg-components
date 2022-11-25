@@ -42,7 +42,7 @@ export class MgMenu {
    */
   @Prop({ reflect: true }) direction: Direction = Direction.HORIZONTAL;
   @Watch('direction')
-  validateDisplay(newValue: MgMenu['direction']): void {
+  validateDirection(newValue: MgMenu['direction']): void {
     if (newValue === Direction.VERTICAL) {
       this.classList.add(`${this.name}--${Direction.VERTICAL}`);
     } else if (newValue === Direction.HORIZONTAL) {
@@ -108,7 +108,7 @@ export class MgMenu {
    * @returns {void}
    */
   componentWillLoad(): void {
-    this.validateDisplay(this.direction);
+    this.validateDirection(this.direction);
     this.validateLabel(this.label);
   }
 

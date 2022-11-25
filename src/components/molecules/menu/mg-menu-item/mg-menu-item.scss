@@ -96,10 +96,9 @@ $navigation-button-sizes: (
     }
     &-chevron {
       margin-left: auto;
-      transition: transform 200ms;
+      transition: 200ms;
     }
     &-chevron--rotate.mg-menu-item__navigation-button-chevron {
-      transition: transform 200ms;
       transform: rotate(180deg);
     }
   }

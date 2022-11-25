@@ -1,5 +1,6 @@
 :host {
   display: flex;
+  background-color: hsl(var(--mg-menu-background-color-hsl, var(--color-light)));
 }
 
 :host(.mg-menu--vertical) {
