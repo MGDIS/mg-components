@@ -5,21 +5,24 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { BadgeType } from "./components/atoms/mg-badge/mg-badge.conf";
+import { BadgeVariantType } from "./components/atoms/mg-badge/mg-badge.conf";
 import { ButtonType, VariantType } from "./components/atoms/mg-button/mg-button.conf";
+import { IconSizeType, IconVariantType } from "./components/atoms/mg-icon/mg-icon.conf";
 import { CheckboxValue } from "./components/molecules/inputs/mg-input-checkbox/mg-input-checkbox.conf";
 import { Width } from "./components/molecules/inputs/MgInput.conf";
 import { RadioOption } from "./components/molecules/inputs/mg-input-radio/mg-input-radio.conf";
 import { SelectOption } from "./components/molecules/inputs/mg-input-select/mg-input-select.conf";
 import { ToggleValue } from "./components/molecules/inputs/mg-input-toggle/mg-input-toggle.conf";
+import { Direction } from "./components/molecules/menu/mg-menu/mg-menu.conf";
+import { MenuItemSizeType, Status } from "./components/molecules/menu/mg-menu-item/mg-menu-item.conf";
 import { Placement } from "@popperjs/core";
-import { TabItem } from "./components/molecules/mg-tabs/mg-tabs.conf";
+import { SizeType, TabItem } from "./components/molecules/mg-tabs/mg-tabs.conf";
 export namespace Components {
     interface MgBadge {
         /**
           * Badge label. Include short description. Required for accessibility
          */
-        "label": BadgeType['label'];
+        "label": string;
         /**
           * Define if button is using outline style
          */
@@ -27,11 +30,11 @@ export namespace Components {
         /**
           * Badge value
          */
-        "value": BadgeType['value'];
+        "value": string | number;
         /**
           * Define button variant
          */
-        "variant": string;
+        "variant"?: BadgeVariantType;
     }
     interface MgButton {
         /**
@@ -150,7 +153,7 @@ export namespace Components {
         /**
           * Define icon size
          */
-        "size": string;
+        "size": IconSizeType;
         /**
           * Make the icon spin
          */
@@ -158,7 +161,7 @@ export namespace Components {
         /**
           * Define icon variant Add a background to the icon based on variant color
          */
-        "variant": string;
+        "variant"?: IconVariantType;
     }
     interface MgIllustratedMessage {
         /**
@@ -860,6 +863,34 @@ export namespace Components {
          */
         "value": any;
     }
+    interface MgMenu {
+        /**
+          * Component display direction. Default: "horizontal"
+         */
+        "direction": Direction;
+        /**
+          * Menu label. Include short menu description. Required for accessibility
+         */
+        "label": string;
+    }
+    interface MgMenuItem {
+        /**
+          * Define menu-item content expanded. Default: false.
+         */
+        "expanded": boolean;
+        /**
+          * Define menu-item badge when defined menu-item contain an anchor instead of button
+         */
+        "href": string;
+        /**
+          * Define menu-item size. Default: "large".
+         */
+        "size": MenuItemSizeType;
+        /**
+          * Define menu-item status. Default: "visible"
+         */
+        "status": Status;
+    }
     interface MgMessage {
         /**
           * Define if message has a cross button RG 01: https://jira.mgdis.fr/browse/PDA9-140
@@ -990,7 +1021,7 @@ export namespace Components {
         /**
           * Define tabs size
          */
-        "size": string;
+        "size": SizeType;
     }
     interface MgTag {
         /**
@@ -1208,6 +1239,18 @@ declare global {
         prototype: HTMLMgInputToggleElement;
         new (): HTMLMgInputToggleElement;
     };
+    interface HTMLMgMenuElement extends Components.MgMenu, HTMLStencilElement {
+    }
+    var HTMLMgMenuElement: {
+        prototype: HTMLMgMenuElement;
+        new (): HTMLMgMenuElement;
+    };
+    interface HTMLMgMenuItemElement extends Components.MgMenuItem, HTMLStencilElement {
+    }
+    var HTMLMgMenuItemElement: {
+        prototype: HTMLMgMenuItemElement;
+        new (): HTMLMgMenuItemElement;
+    };
     interface HTMLMgMessageElement extends Components.MgMessage, HTMLStencilElement {
     }
     var HTMLMgMessageElement: {
@@ -1276,6 +1319,8 @@ declare global {
         "mg-input-textarea": HTMLMgInputTextareaElement;
         "mg-input-title": HTMLMgInputTitleElement;
         "mg-input-toggle": HTMLMgInputToggleElement;
+        "mg-menu": HTMLMgMenuElement;
+        "mg-menu-item": HTMLMgMenuItemElement;
         "mg-message": HTMLMgMessageElement;
         "mg-modal": HTMLMgModalElement;
         "mg-pagination": HTMLMgPaginationElement;
@@ -1291,7 +1336,7 @@ declare namespace LocalJSX {
         /**
           * Badge label. Include short description. Required for accessibility
          */
-        "label": BadgeType['label'];
+        "label": string;
         /**
           * Define if button is using outline style
          */
@@ -1299,11 +1344,11 @@ declare namespace LocalJSX {
         /**
           * Badge value
          */
-        "value": BadgeType['value'];
+        "value": string | number;
         /**
           * Define button variant
          */
-        "variant"?: string;
+        "variant"?: BadgeVariantType;
     }
     interface MgButton {
         /**
@@ -1429,7 +1474,7 @@ declare namespace LocalJSX {
         /**
           * Define icon size
          */
-        "size"?: string;
+        "size"?: IconSizeType;
         /**
           * Make the icon spin
          */
@@ -1437,7 +1482,7 @@ declare namespace LocalJSX {
         /**
           * Define icon variant Add a background to the icon based on variant color
          */
-        "variant"?: string;
+        "variant"?: IconVariantType;
     }
     interface MgIllustratedMessage {
         /**
@@ -2166,6 +2211,34 @@ declare namespace LocalJSX {
          */
         "value"?: any;
     }
+    interface MgMenu {
+        /**
+          * Component display direction. Default: "horizontal"
+         */
+        "direction"?: Direction;
+        /**
+          * Menu label. Include short menu description. Required for accessibility
+         */
+        "label": string;
+    }
+    interface MgMenuItem {
+        /**
+          * Define menu-item content expanded. Default: false.
+         */
+        "expanded"?: boolean;
+        /**
+          * Define menu-item badge when defined menu-item contain an anchor instead of button
+         */
+        "href"?: string;
+        /**
+          * Define menu-item size. Default: "large".
+         */
+        "size"?: MenuItemSizeType;
+        /**
+          * Define menu-item status. Default: "visible"
+         */
+        "status"?: Status;
+    }
     interface MgMessage {
         /**
           * Define if message has a cross button RG 01: https://jira.mgdis.fr/browse/PDA9-140
@@ -2332,7 +2405,7 @@ declare namespace LocalJSX {
         /**
           * Define tabs size
          */
-        "size"?: string;
+        "size"?: SizeType;
     }
     interface MgTag {
         /**
@@ -2386,6 +2459,8 @@ declare namespace LocalJSX {
         "mg-input-textarea": MgInputTextarea;
         "mg-input-title": MgInputTitle;
         "mg-input-toggle": MgInputToggle;
+        "mg-menu": MgMenu;
+        "mg-menu-item": MgMenuItem;
         "mg-message": MgMessage;
         "mg-modal": MgModal;
         "mg-pagination": MgPagination;
@@ -2419,6 +2494,8 @@ declare module "@stencil/core" {
             "mg-input-textarea": LocalJSX.MgInputTextarea & JSXBase.HTMLAttributes<HTMLMgInputTextareaElement>;
             "mg-input-title": LocalJSX.MgInputTitle & JSXBase.HTMLAttributes<HTMLMgInputTitleElement>;
             "mg-input-toggle": LocalJSX.MgInputToggle & JSXBase.HTMLAttributes<HTMLMgInputToggleElement>;
+            "mg-menu": LocalJSX.MgMenu & JSXBase.HTMLAttributes<HTMLMgMenuElement>;
+            "mg-menu-item": LocalJSX.MgMenuItem & JSXBase.HTMLAttributes<HTMLMgMenuItemElement>;
             "mg-message": LocalJSX.MgMessage & JSXBase.HTMLAttributes<HTMLMgMessageElement>;
             "mg-modal": LocalJSX.MgModal & JSXBase.HTMLAttributes<HTMLMgModalElement>;
             "mg-pagination": LocalJSX.MgPagination & JSXBase.HTMLAttributes<HTMLMgPaginationElement>;
