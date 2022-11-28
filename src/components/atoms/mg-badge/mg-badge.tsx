@@ -1,5 +1,5 @@
 import { Component, h, Prop, State, Watch } from '@stencil/core';
-import { variants, BadgeType } from './mg-badge.conf';
+import { variants, BadgeVariantType } from './mg-badge.conf';
 import { ClassList } from '../../../utils/components.utils';
 @Component({
   tag: 'mg-badge',
@@ -21,9 +21,9 @@ export class MgBadge {
   /**
    * Badge value
    */
-  @Prop({ mutable: true }) value!: BadgeType['value'];
+  @Prop({ mutable: true }) value!: string | number;
   @Watch('value')
-  validateValue(newValue: BadgeType['value']): void {
+  validateValue(newValue: MgBadge['value']): void {
     if (`${newValue}`.match(/^(\d+|[?*!a-z])$/i) === null) {
       throw new Error('<mg-badge> prop "value" must be interger or ponctuation character.');
     }
@@ -33,9 +33,9 @@ export class MgBadge {
    * Badge label. Include short description.
    * Required for accessibility
    */
-  @Prop() label!: BadgeType['label'];
+  @Prop() label!: string;
   @Watch('label')
-  validateLabel(newValue: BadgeType['label']): void {
+  validateLabel(newValue: MgBadge['label']): void {
     if (typeof newValue !== 'string' || newValue.trim() === '') {
       throw new Error('<mg-badge> prop "label" is required.');
     }
@@ -44,9 +44,9 @@ export class MgBadge {
   /**
    * Define button variant
    */
-  @Prop() variant: string = variants[0]; // info
+  @Prop() variant?: BadgeVariantType = variants[0]; // info
   @Watch('variant')
-  validateVariant(newValue: string, oldValue?: string): void {
+  validateVariant(newValue: MgBadge['variant'], oldValue?: MgBadge['variant']): void {
     if (!variants.includes(newValue)) {
       throw new Error(`<mg-badge> prop "variant" must be one of : ${variants.join(', ')}.`);
     } else {
@@ -62,7 +62,7 @@ export class MgBadge {
    */
   @Prop() outline: boolean;
   @Watch('outline')
-  validateOutline(newValue: boolean): void {
+  validateOutline(newValue: MgBadge['outline']): void {
     if (newValue) this.classList.add(this.classOutline);
     else this.classList.delete(this.classOutline);
   }

@@ -1,0 +1,114 @@
+@use 'sass:map';
+
+@import '../../../../styles/mixins/navigation-button.scss';
+
+$navigation-button-sizes: (
+  'regular': (
+    'vertical': 1rem,
+    'horizontal': 2rem,
+  ),
+  'medium': (
+    'vertical': 1.5rem,
+    'horizontal': 3rem,
+  ),
+  'large': (
+    'vertical': 2.5rem,
+    'horizontal': 4rem,
+  ),
+);
+
+@mixin level($button-sizes) {
+  @each $name, $size in $button-sizes {
+    // Building level from 1 to 6
+    @for $i from 1 through 6 {
+      :host(.mg-menu-item--vertical[data-level='#{$i}']) {
+        .mg-menu-item__navigation-button.mg-menu-item__navigation-button--size-#{$name} {
+          padding-left: calc(#{$i} * #{map.get($size, 'horizontal')} - 0.3rem);
+        }
+      }
+      :host([data-level='#{$i}']) {
+        .mg-menu-item__collapse-container {
+          z-index: calc(#{$i} * 10);
+        }
+      }
+    }
+  }
+}
+
+@include navigation-button('mg-menu-item', $navigation-button-sizes);
+@include level($navigation-button-sizes);
+
+:host {
+  position: relative;
+  display: flex;
+}
+
+// last item style
+:host(.mg-menu-item--last) .mg-menu-item__collapse-container {
+  left: unset;
+  right: 0;
+}
+
+// vertical item style
+:host(.mg-menu-item--vertical) {
+  flex-direction: column;
+  .mg-menu-item {
+    &__collapse-container {
+      left: unset;
+      top: unset;
+      position: unset;
+      width: unset;
+    }
+    &-chevron {
+      margin-left: auto;
+    }
+  }
+}
+
+// horizontal item style
+:host(.mg-menu-item--horizontal) .mg-menu-item__collapse-container.mg-menu-item__collapse-container--first-level {
+  box-shadow: var(--box-shadow);
+  background-color: hsl(var(--color-light));
+  ::slotted(mg-menu) {
+    padding: 1rem 0;
+  }
+}
+
+.mg-menu-item {
+  max-width: var(--mg-menu-item-navigation-button-max-width);
+  &__collapse-container {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: max-content;
+    z-index: 10;
+  }
+  &__navigation-button {
+    &-center {
+      min-width: 0;
+    }
+    &-text-content {
+      width: 100%;
+      display: flex;
+      ::slotted([slot='information']) {
+        margin-left: 1rem;
+      }
+    }
+    &-chevron {
+      margin-left: auto;
+      transition: 200ms;
+    }
+    &-chevron--rotate.mg-menu-item__navigation-button-chevron {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+::slotted([slot='label']),
+::slotted([slot='metadata']) {
+  display: block;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
