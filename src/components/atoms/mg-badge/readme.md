@@ -2,7 +2,7 @@
 
 The badge is always placed on top of, or next to the element it is for.
 
-The badge displays a number or a punctuation character.
+The badge displays a number (can be followed by the `+` character) or a punctuation character.
 
 ## Specs
 
