@@ -1,5 +1,4 @@
 import { Component, h, Prop, State, Element, Watch, Host } from '@stencil/core';
-import { ClassList } from '../../../../utils/components.utils';
 import { Direction } from './mg-menu.conf';
 
 @Component({
@@ -43,11 +42,7 @@ export class MgMenu {
   @Prop({ reflect: true }) direction: Direction = Direction.HORIZONTAL;
   @Watch('direction')
   validateDirection(newValue: MgMenu['direction']): void {
-    if (newValue === Direction.VERTICAL) {
-      this.classList.add(`${this.name}--${Direction.VERTICAL}`);
-    } else if (newValue === Direction.HORIZONTAL) {
-      this.classList.add(`${this.name}--${Direction.HORIZONTAL}`);
-    } else {
+    if (![Direction.VERTICAL, Direction.HORIZONTAL].includes(newValue)) {
       throw new Error(`<${this.name}> prop "direction" must be one of : ${Direction.HORIZONTAL}, ${Direction.VERTICAL}.`);
     }
   }
@@ -56,11 +51,6 @@ export class MgMenu {
    * is this menu a child menu. Used for conditional render.
    */
   @State() isChildMenu: boolean;
-
-  /**
-   * Component classes
-   */
-  @State() classList: ClassList = new ClassList([this.name]);
 
   /**
    * Close matching menu-item
@@ -118,11 +108,11 @@ export class MgMenu {
    * @returns {ReturnType<typeof setTimeout>} timeout
    */
   componentDidLoad(): ReturnType<typeof setTimeout> {
-    this.initMenuItems();
     // update props and states after componentDidLoad hook
     // return a promise to process action only in the FIRST render().
     // https://stenciljs.com/docs/component-lifecycle#componentwillload
     return setTimeout(() => {
+      this.initMenuItems();
       this.isChildMenu = this.element.closest('mg-menu-item') !== null;
 
       // click outside management for child vertical menu
@@ -145,7 +135,7 @@ export class MgMenu {
    */
   render(): HTMLElement {
     return (
-      <Host role={this.isChildMenu ? 'menu' : 'menubar'} aria-label={this.label} classList={this.classList.join()}>
+      <Host role={this.isChildMenu ? 'menu' : 'menubar'} aria-label={this.label}>
         <slot></slot>
       </Host>
     );
