@@ -108,10 +108,12 @@ chromatic-publish:
 
 artifact:
   stage: artifact
+  extends:
+    - .install
   rules:
     - if: $CI_COMMIT_TAG == null
   script:
-    - npm publish --@mgdis:registry=http://artifactory.mgdis.fr/artifactory/api/npm/npm-local
+    - npm publish
   needs:
     - dist
 
