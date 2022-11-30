@@ -73,7 +73,7 @@ export class MgIcon {
   /**
    * Component classes
    */
-  @State() classList: ClassList = new ClassList(['mg-icon']);
+  @State() classList: ClassList = new ClassList(['mg-icon', 'mg-a11y-animation']);
 
   /**
    * getIcon

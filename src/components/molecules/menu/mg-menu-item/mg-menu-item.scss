@@ -1,5 +1,6 @@
 @use 'sass:map';
 
+@import '../../../../styles/a11y.scss';
 @import '../../../../styles/mixins/navigation-button.scss';
 
 $navigation-button-sizes: (

@@ -276,6 +276,7 @@ export class MgMenuItem {
               class={{
                 [`${this.navigationButton}-chevron`]: true,
                 [`${this.navigationButton}-chevron--rotate`]: this.expanded === true,
+                'mg-a11y-animation': true,
               }}
             >
               <mg-icon icon="chevron-down"></mg-icon>

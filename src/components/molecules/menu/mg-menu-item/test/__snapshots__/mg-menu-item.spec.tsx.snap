@@ -72,10 +72,10 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon>
             <mock:shadow-root>
-              <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <svg aria-hidden="true" class="mg-a11y-animation mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                 <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
               </svg>
             </mock:shadow-root>
@@ -134,10 +134,10 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
           <mg-icon>
             <mock:shadow-root>
-              <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <svg aria-hidden="true" class="mg-a11y-animation mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                 <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
               </svg>
             </mock:shadow-root>
@@ -196,10 +196,10 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon>
             <mock:shadow-root>
-              <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <svg aria-hidden="true" class="mg-a11y-animation mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                 <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
               </svg>
             </mock:shadow-root>
@@ -225,10 +225,10 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="metadata"></slot>
             </div>
-            <span class="mg-menu-item__navigation-button-chevron">
+            <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon>
                 <mock:shadow-root>
-                  <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+                  <svg aria-hidden="true" class="mg-a11y-animation mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                     <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
                   </svg>
                 </mock:shadow-root>
@@ -292,10 +292,10 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
           <mg-icon>
             <mock:shadow-root>
-              <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <svg aria-hidden="true" class="mg-a11y-animation mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                 <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
               </svg>
             </mock:shadow-root>
@@ -321,10 +321,10 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="metadata"></slot>
             </div>
-            <span class="mg-menu-item__navigation-button-chevron">
+            <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon>
                 <mock:shadow-root>
-                  <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+                  <svg aria-hidden="true" class="mg-a11y-animation mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                     <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
                   </svg>
                 </mock:shadow-root>
@@ -388,10 +388,10 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon>
             <mock:shadow-root>
-              <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <svg aria-hidden="true" class="mg-a11y-animation mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                 <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
               </svg>
             </mock:shadow-root>
@@ -417,10 +417,10 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="metadata"></slot>
             </div>
-            <span class="mg-menu-item__navigation-button-chevron">
+            <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon>
                 <mock:shadow-root>
-                  <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+                  <svg aria-hidden="true" class="mg-a11y-animation mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                     <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
                   </svg>
                 </mock:shadow-root>
@@ -484,10 +484,10 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
           <mg-icon>
             <mock:shadow-root>
-              <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <svg aria-hidden="true" class="mg-a11y-animation mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                 <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
               </svg>
             </mock:shadow-root>
@@ -513,10 +513,10 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="metadata"></slot>
             </div>
-            <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+            <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
               <mg-icon>
                 <mock:shadow-root>
-                  <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+                  <svg aria-hidden="true" class="mg-a11y-animation mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                     <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
                   </svg>
                 </mock:shadow-root>
@@ -580,10 +580,10 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon>
             <mock:shadow-root>
-              <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <svg aria-hidden="true" class="mg-a11y-animation mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                 <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
               </svg>
             </mock:shadow-root>
@@ -625,10 +625,10 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
           <mg-icon>
             <mock:shadow-root>
-              <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <svg aria-hidden="true" class="mg-a11y-animation mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                 <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
               </svg>
             </mock:shadow-root>
@@ -726,10 +726,10 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
           <mg-icon>
             <mock:shadow-root>
-              <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <svg aria-hidden="true" class="mg-a11y-animation mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                 <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
               </svg>
             </mock:shadow-root>
@@ -788,10 +788,10 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon>
             <mock:shadow-root>
-              <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <svg aria-hidden="true" class="mg-a11y-animation mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                 <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
               </svg>
             </mock:shadow-root>
@@ -850,10 +850,10 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
           <mg-icon>
             <mock:shadow-root>
-              <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <svg aria-hidden="true" class="mg-a11y-animation mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                 <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
               </svg>
             </mock:shadow-root>
@@ -879,10 +879,10 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="metadata"></slot>
             </div>
-            <span class="mg-menu-item__navigation-button-chevron">
+            <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon>
                 <mock:shadow-root>
-                  <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+                  <svg aria-hidden="true" class="mg-a11y-animation mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                     <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
                   </svg>
                 </mock:shadow-root>
@@ -946,10 +946,10 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon>
             <mock:shadow-root>
-              <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <svg aria-hidden="true" class="mg-a11y-animation mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                 <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
               </svg>
             </mock:shadow-root>
@@ -975,10 +975,10 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="metadata"></slot>
             </div>
-            <span class="mg-menu-item__navigation-button-chevron">
+            <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon>
                 <mock:shadow-root>
-                  <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+                  <svg aria-hidden="true" class="mg-a11y-animation mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                     <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
                   </svg>
                 </mock:shadow-root>
@@ -1042,10 +1042,10 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon>
             <mock:shadow-root>
-              <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <svg aria-hidden="true" class="mg-a11y-animation mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                 <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
               </svg>
             </mock:shadow-root>
@@ -1071,10 +1071,10 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="metadata"></slot>
             </div>
-            <span class="mg-menu-item__navigation-button-chevron">
+            <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon>
                 <mock:shadow-root>
-                  <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+                  <svg aria-hidden="true" class="mg-a11y-animation mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                     <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
                   </svg>
                 </mock:shadow-root>
@@ -1138,10 +1138,10 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
           <mg-icon>
             <mock:shadow-root>
-              <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <svg aria-hidden="true" class="mg-a11y-animation mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                 <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
               </svg>
             </mock:shadow-root>
@@ -1167,10 +1167,10 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="metadata"></slot>
             </div>
-            <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+            <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
               <mg-icon>
                 <mock:shadow-root>
-                  <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+                  <svg aria-hidden="true" class="mg-a11y-animation mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                     <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
                   </svg>
                 </mock:shadow-root>
@@ -1234,10 +1234,10 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
           <mg-icon>
             <mock:shadow-root>
-              <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <svg aria-hidden="true" class="mg-a11y-animation mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                 <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
               </svg>
             </mock:shadow-root>
@@ -1279,10 +1279,10 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon>
             <mock:shadow-root>
-              <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <svg aria-hidden="true" class="mg-a11y-animation mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                 <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
               </svg>
             </mock:shadow-root>
@@ -1380,10 +1380,10 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon>
             <mock:shadow-root>
-              <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <svg aria-hidden="true" class="mg-a11y-animation mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                 <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
               </svg>
             </mock:shadow-root>
@@ -1442,10 +1442,10 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
           <mg-icon>
             <mock:shadow-root>
-              <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <svg aria-hidden="true" class="mg-a11y-animation mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                 <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
               </svg>
             </mock:shadow-root>
@@ -1504,10 +1504,10 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon>
             <mock:shadow-root>
-              <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <svg aria-hidden="true" class="mg-a11y-animation mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                 <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
               </svg>
             </mock:shadow-root>
@@ -1533,10 +1533,10 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="metadata"></slot>
             </div>
-            <span class="mg-menu-item__navigation-button-chevron">
+            <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon>
                 <mock:shadow-root>
-                  <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+                  <svg aria-hidden="true" class="mg-a11y-animation mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                     <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
                   </svg>
                 </mock:shadow-root>
@@ -1600,10 +1600,10 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
           <mg-icon>
             <mock:shadow-root>
-              <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <svg aria-hidden="true" class="mg-a11y-animation mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                 <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
               </svg>
             </mock:shadow-root>
@@ -1629,10 +1629,10 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="metadata"></slot>
             </div>
-            <span class="mg-menu-item__navigation-button-chevron">
+            <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon>
                 <mock:shadow-root>
-                  <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+                  <svg aria-hidden="true" class="mg-a11y-animation mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                     <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
                   </svg>
                 </mock:shadow-root>
@@ -1696,10 +1696,10 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon>
             <mock:shadow-root>
-              <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <svg aria-hidden="true" class="mg-a11y-animation mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                 <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
               </svg>
             </mock:shadow-root>
@@ -1725,10 +1725,10 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="metadata"></slot>
             </div>
-            <span class="mg-menu-item__navigation-button-chevron">
+            <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon>
                 <mock:shadow-root>
-                  <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+                  <svg aria-hidden="true" class="mg-a11y-animation mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                     <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
                   </svg>
                 </mock:shadow-root>
@@ -1792,10 +1792,10 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
           <mg-icon>
             <mock:shadow-root>
-              <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <svg aria-hidden="true" class="mg-a11y-animation mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                 <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
               </svg>
             </mock:shadow-root>
@@ -1821,10 +1821,10 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="metadata"></slot>
             </div>
-            <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+            <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
               <mg-icon>
                 <mock:shadow-root>
-                  <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+                  <svg aria-hidden="true" class="mg-a11y-animation mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                     <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
                   </svg>
                 </mock:shadow-root>
@@ -1888,10 +1888,10 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon>
             <mock:shadow-root>
-              <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <svg aria-hidden="true" class="mg-a11y-animation mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                 <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
               </svg>
             </mock:shadow-root>
@@ -1933,10 +1933,10 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
           <mg-icon>
             <mock:shadow-root>
-              <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <svg aria-hidden="true" class="mg-a11y-animation mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                 <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
               </svg>
             </mock:shadow-root>
@@ -2130,7 +2130,7 @@ exports[`mg-menu-item render with args { label: 'Batman', icon: true } 1`] = `
     </span>
     <mg-icon slot="illustration">
       <mock:shadow-root>
-        <svg aria-hidden="true" class="mg-icon mg-icon--size-regular mg-icon--user" focusable="false" viewBox="0 0 16 16">
+        <svg aria-hidden="true" class="mg-a11y-animation mg-icon mg-icon--size-regular mg-icon--user" focusable="false" viewBox="0 0 16 16">
           <path d="M8 8.79a3.56 3.56 0 1 0-3.56-3.56A3.56 3.56 0 0 0 8 8.79Zm3.17.79H9.8a4.27 4.27 0 0 1-3.6 0H4.83a3.16 3.16 0 0 0-3.16 3.17v.4a1.18 1.18 0 0 0 1.18 1.18h10.3a1.18 1.18 0 0 0 1.18-1.18v-.4a3.16 3.16 0 0 0-3.16-3.17Z" fill="currentColor"></path>
         </svg>
       </mock:shadow-root>
@@ -2186,10 +2186,10 @@ exports[`mg-menu-item render with expanded and sub-menu false 1`] = `
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon>
             <mock:shadow-root>
-              <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <svg aria-hidden="true" class="mg-a11y-animation mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                 <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
               </svg>
             </mock:shadow-root>
@@ -2248,10 +2248,10 @@ exports[`mg-menu-item render with expanded and sub-menu false 2`] = `
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
           <mg-icon>
             <mock:shadow-root>
-              <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <svg aria-hidden="true" class="mg-a11y-animation mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                 <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
               </svg>
             </mock:shadow-root>
@@ -2310,10 +2310,10 @@ exports[`mg-menu-item render with expanded and sub-menu true 1`] = `
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
           <mg-icon>
             <mock:shadow-root>
-              <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <svg aria-hidden="true" class="mg-a11y-animation mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                 <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
               </svg>
             </mock:shadow-root>
@@ -2372,10 +2372,10 @@ exports[`mg-menu-item render with expanded and sub-menu true 2`] = `
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon>
             <mock:shadow-root>
-              <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <svg aria-hidden="true" class="mg-a11y-animation mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                 <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
               </svg>
             </mock:shadow-root>
@@ -2434,10 +2434,10 @@ exports[`mg-menu-item render with expanded and sub-menu undefined 1`] = `
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon>
             <mock:shadow-root>
-              <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <svg aria-hidden="true" class="mg-a11y-animation mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                 <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
               </svg>
             </mock:shadow-root>
@@ -2496,10 +2496,10 @@ exports[`mg-menu-item render with expanded and sub-menu undefined 2`] = `
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
           <mg-icon>
             <mock:shadow-root>
-              <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
+              <svg aria-hidden="true" class="mg-a11y-animation mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
                 <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
               </svg>
             </mock:shadow-root>
