@@ -15,6 +15,7 @@ export class MgTooltip {
 
   private popper: PopperInstance;
   private tooltip: HTMLElement;
+  private tooltipedElement: HTMLElement;
 
   // tooltip actions guards
   private guard: Guard;
@@ -143,6 +144,89 @@ export class MgTooltip {
     this.guard = undefined;
   };
 
+  /**
+   * Update slot content when itis a mg-button
+   *
+   * @param {HTMLMgButtonElement} mgButton slotted mg-button
+   * @returns {void}
+   */
+  private setMgButtonWrapper = (mgButton: HTMLMgButtonElement): void => {
+    if (mgButton.disabled) {
+      const div = document.createElement('div');
+      div.classList.add('mg-tooltip__mg-button-wrapper');
+      mgButton.parentNode.insertBefore(div, mgButton);
+      div.appendChild(mgButton);
+      this.tooltipedElement = div;
+    } else if (mgButton.parentElement.classList.contains('mg-tooltip__mg-button-wrapper')) {
+      this.element.firstElementChild.replaceWith(mgButton);
+      this.tooltipedElement = mgButton;
+    }
+  };
+
+  /**
+   * Init tooltip
+   *
+   * @param {HTMLElement} slotElement slotted element
+   * @param {HTMLElement} interactiveElement interactive element
+   */
+  private initTooltip = (slotElement: HTMLElement, interactiveElement: HTMLElement): void => {
+    // Add tabindex to slotted element if we can't find any interactive element
+    if (interactiveElement === null || interactiveElement === undefined) slotElement.tabIndex = 0;
+    // Set aria-describedby
+    const ariaDescribedby = slotElement.getAttribute('aria-describedby');
+
+    if (ariaDescribedby === null) {
+      this.tooltipedElement.setAttribute('aria-describedby', this.identifier);
+    } else {
+      // We ensure to have uniq ids
+      slotElement.setAttribute('aria-describedby', `${[...new Set([...ariaDescribedby.split(' '), this.identifier])].join(' ')}`);
+    }
+
+    // Create popperjs tooltip
+    this.popper = createPopper(this.tooltipedElement, this.tooltip, {
+      placement: this.placement,
+      strategy: 'fixed',
+      modifiers: [
+        {
+          name: 'offset',
+          options: {
+            offset: [0, 8],
+          },
+        },
+      ],
+    });
+
+    // Manage tooltipedElement focus/blur events
+    this.tooltipedElement.addEventListener('focus', () => {
+      this.guard = Guard.FOCUS;
+      this.setDisplay(true);
+    });
+
+    ['blur', 'keydown'].forEach(event => {
+      this.tooltipedElement.addEventListener(event, (e: UIEvent & KeyboardEvent) => {
+        // we continue to process ONLY for KeyboardEvents 'Escape'
+        if (e.type === 'keydown' && e.code !== 'Escape') {
+          return;
+        }
+        this.resetGuard();
+        this.setDisplay(false);
+      });
+    });
+
+    // manage tooltipElement & tooltipedElement mouseenter/mouseleave events
+    ['mouseenter', 'mouseleave'].forEach(event => {
+      const isMouseenter = event === 'mouseenter';
+      [
+        { element: this.tooltip, action: () => this.tooltipMouseListenerAction(Guard.HOVER_TOOLTIP_ELEMENT, isMouseenter, Guard.HOVER_TOOLTIPED_ELEMENT) },
+        { element: this.tooltipedElement, action: () => this.tooltipMouseListenerAction(Guard.HOVER_TOOLTIPED_ELEMENT, isMouseenter, Guard.HOVER_TOOLTIP_ELEMENT) },
+      ].forEach(({ element, action }) => {
+        element.addEventListener(event, () => {
+          action();
+        });
+      });
+    });
+  };
+
   /*************
    * Lifecycle *
    *************/
@@ -163,74 +247,27 @@ export class MgTooltip {
 
     // Get interactive element
     const interactiveElements = ['a', 'button', 'input', 'textarea', 'select']; //! Might needs updates
-    const interactiveElement = this.element.shadowRoot.querySelector(interactiveElements.join(',')) || slotElement.shadowRoot?.querySelector(interactiveElements.join(','));
+    const interactiveElement =
+      (this.element.shadowRoot.querySelector(interactiveElements.join(',')) as HTMLElement) ||
+      (slotElement.shadowRoot?.querySelector(interactiveElements.join(',')) as HTMLElement);
 
     // define selected element to become tooltip selector
-    let tooltipedElement = interactiveElement || slotElement;
+    this.tooltipedElement = interactiveElement || slotElement;
 
     // Check if slotted element is a disabled mg-button
     // In this case we wrap the mg-button into a div to enable the tooltip
-    if (slotElement.tagName === 'MG-BUTTON' && (slotElement as HTMLMgButtonElement).disabled) {
-      const div = document.createElement('div');
-      slotElement.parentNode.insertBefore(div, slotElement);
-      div.appendChild(slotElement);
-      tooltipedElement = div;
-    }
-
-    // Add tabindex to slotted element if we can't find any interactive element
-    if (interactiveElement === null || interactiveElement === undefined) slotElement.tabIndex = 0;
-
-    // Set aria-describedby
-    const ariaDescribedby = slotElement.getAttribute('aria-describedby');
-    if (ariaDescribedby === null) {
-      tooltipedElement.setAttribute('aria-describedby', this.identifier);
-    } else {
-      slotElement.setAttribute('aria-describedby', `${ariaDescribedby} ${this.identifier}`);
-    }
-
-    // Create popperjs tooltip
-    this.popper = createPopper(tooltipedElement, this.tooltip, {
-      placement: this.placement,
-      strategy: 'fixed',
-      modifiers: [
-        {
-          name: 'offset',
-          options: {
-            offset: [0, 8],
-          },
-        },
-      ],
-    });
-
-    // Manage tooltipedElement focus/blur events
-    tooltipedElement.addEventListener('focus', () => {
-      this.guard = Guard.FOCUS;
-      this.setDisplay(true);
-    });
-
-    ['blur', 'keydown'].forEach(event => {
-      tooltipedElement.addEventListener(event, (e: UIEvent & KeyboardEvent) => {
-        // we continue to process ONLY for KeyboardEvents 'Escape'
-        if (e.type === 'keydown' && e.code !== 'Escape') {
-          return;
+    if (slotElement.tagName === 'MG-BUTTON') {
+      new MutationObserver(mutationList => {
+        if (mutationList.some(mutation => mutation.attributeName === 'aria-disabled')) {
+          this.setMgButtonWrapper(slotElement as HTMLMgButtonElement);
+          this.initTooltip(slotElement, interactiveElement);
         }
-        this.resetGuard();
-        this.setDisplay(false);
-      });
-    });
+      }).observe(slotElement, { attributes: true });
+      this.setMgButtonWrapper(slotElement as HTMLMgButtonElement);
+    }
 
-    // manage tooltipElement & tooltipedElement mouseenter/mouseleave events
-    ['mouseenter', 'mouseleave'].forEach(event => {
-      const isMouseenter = event === 'mouseenter';
-      [
-        { element: this.tooltip, action: () => this.tooltipMouseListenerAction(Guard.HOVER_TOOLTIP_ELEMENT, isMouseenter, Guard.HOVER_TOOLTIPED_ELEMENT) },
-        { element: tooltipedElement, action: () => this.tooltipMouseListenerAction(Guard.HOVER_TOOLTIPED_ELEMENT, isMouseenter, Guard.HOVER_TOOLTIP_ELEMENT) },
-      ].forEach(({ element, action }) => {
-        element.addEventListener(event, () => {
-          action();
-        });
-      });
-    });
+    // Init Tooltip
+    this.initTooltip(slotElement, interactiveElement);
 
     this.handleDisplay(this.display);
     this.validateMessage(this.message);
