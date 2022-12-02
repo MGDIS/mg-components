@@ -300,7 +300,7 @@ exports[`mg-button prevent double click should NOT disable button after click 2`
 `;
 
 exports[`mg-button prevent double click should NOT disable button after click 3`] = `
-<mg-button aria-disabled="true" role="button" tabindex="-1">
+<mg-button aria-disabled="true" role="button" tabindex="0">
   <mock:shadow-root>
     <div class="mg-button mg-button--disabled mg-button--primary" id="identifier">
       <div class="mg-button__content">
@@ -326,7 +326,7 @@ exports[`mg-button prevent double click should disable button after click 1`] = 
 `;
 
 exports[`mg-button prevent double click should disable button after click 2`] = `
-<mg-button aria-disabled="true" role="button" tabindex="-1">
+<mg-button aria-disabled="true" role="button" tabindex="0">
   <mock:shadow-root>
     <div class="mg-button mg-button--disabled mg-button--loading mg-button--primary">
       <mg-icon icon="loader" spin=""></mg-icon>
@@ -353,7 +353,7 @@ exports[`mg-button prevent double click should disable button after click 3`] = 
 `;
 
 exports[`mg-button prevent double click should not have fn when disabled 1`] = `
-<mg-button aria-disabled="true" role="button" tabindex="-1">
+<mg-button aria-disabled="true" role="button" tabindex="0">
   <mock:shadow-root>
     <div class="mg-button mg-button--disabled mg-button--primary">
       <div class="mg-button__content">
@@ -366,7 +366,7 @@ exports[`mg-button prevent double click should not have fn when disabled 1`] = `
 `;
 
 exports[`mg-button prevent double click should not trigger disableOnClick when disabled 1`] = `
-<mg-button aria-disabled="true" disableonclick="" role="button" tabindex="-1">
+<mg-button aria-disabled="true" disableonclick="" role="button" tabindex="0">
   <mock:shadow-root>
     <div class="mg-button mg-button--disabled mg-button--primary">
       <div class="mg-button__content">
@@ -379,7 +379,7 @@ exports[`mg-button prevent double click should not trigger disableOnClick when d
 `;
 
 exports[`mg-button prevent double click should not trigger disableOnClick when disabled 2`] = `
-<mg-button aria-disabled="true" disableonclick="" role="button" tabindex="-1">
+<mg-button aria-disabled="true" disableonclick="" role="button" tabindex="0">
   <mock:shadow-root>
     <div class="mg-button mg-button--disabled mg-button--primary">
       <div class="mg-button__content">
