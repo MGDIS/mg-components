@@ -16,7 +16,7 @@ exports[`mg-menu events should manage outside click 1`] = `
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
@@ -42,7 +42,7 @@ exports[`mg-menu events should manage outside click 1`] = `
               </div>
               <slot name="metadata"></slot>
             </div>
-            <span class="mg-menu-item__navigation-button-chevron">
+            <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon icon="chevron-down"></mg-icon>
             </span>
           </button>
@@ -132,7 +132,7 @@ exports[`mg-menu events should manage outside click 1`] = `
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
@@ -191,7 +191,7 @@ exports[`mg-menu events should manage outside click 2`] = `
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
@@ -217,7 +217,7 @@ exports[`mg-menu events should manage outside click 2`] = `
               </div>
               <slot name="metadata"></slot>
             </div>
-            <span class="mg-menu-item__navigation-button-chevron">
+            <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon icon="chevron-down"></mg-icon>
             </span>
           </button>
@@ -307,7 +307,7 @@ exports[`mg-menu events should manage outside click 2`] = `
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
@@ -366,7 +366,7 @@ exports[`mg-menu events should manage outside click 3`] = `
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
@@ -392,7 +392,7 @@ exports[`mg-menu events should manage outside click 3`] = `
               </div>
               <slot name="metadata"></slot>
             </div>
-            <span class="mg-menu-item__navigation-button-chevron">
+            <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon icon="chevron-down"></mg-icon>
             </span>
           </button>
@@ -482,7 +482,7 @@ exports[`mg-menu events should manage outside click 3`] = `
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
@@ -541,7 +541,7 @@ exports[`mg-menu events should manage outside click 4`] = `
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
@@ -567,7 +567,7 @@ exports[`mg-menu events should manage outside click 4`] = `
               </div>
               <slot name="metadata"></slot>
             </div>
-            <span class="mg-menu-item__navigation-button-chevron">
+            <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon icon="chevron-down"></mg-icon>
             </span>
           </button>
@@ -657,7 +657,7 @@ exports[`mg-menu events should manage outside click 4`] = `
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
@@ -716,7 +716,7 @@ exports[`mg-menu events should manage outside click 5`] = `
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
@@ -742,7 +742,7 @@ exports[`mg-menu events should manage outside click 5`] = `
               </div>
               <slot name="metadata"></slot>
             </div>
-            <span class="mg-menu-item__navigation-button-chevron">
+            <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon icon="chevron-down"></mg-icon>
             </span>
           </button>
@@ -832,7 +832,7 @@ exports[`mg-menu events should manage outside click 5`] = `
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
@@ -891,7 +891,7 @@ exports[`mg-menu events should manage outside click 6`] = `
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
@@ -917,7 +917,7 @@ exports[`mg-menu events should manage outside click 6`] = `
               </div>
               <slot name="metadata"></slot>
             </div>
-            <span class="mg-menu-item__navigation-button-chevron">
+            <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon icon="chevron-down"></mg-icon>
             </span>
           </button>
@@ -1007,7 +1007,7 @@ exports[`mg-menu events should manage outside click 6`] = `
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
@@ -1066,7 +1066,7 @@ exports[`mg-menu events should manage sibling menu-item expanded props in horizo
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
@@ -1092,7 +1092,7 @@ exports[`mg-menu events should manage sibling menu-item expanded props in horizo
               </div>
               <slot name="metadata"></slot>
             </div>
-            <span class="mg-menu-item__navigation-button-chevron">
+            <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon icon="chevron-down"></mg-icon>
             </span>
           </button>
@@ -1182,7 +1182,7 @@ exports[`mg-menu events should manage sibling menu-item expanded props in horizo
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
@@ -1241,7 +1241,7 @@ exports[`mg-menu events should manage sibling menu-item expanded props in horizo
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
@@ -1267,7 +1267,7 @@ exports[`mg-menu events should manage sibling menu-item expanded props in horizo
               </div>
               <slot name="metadata"></slot>
             </div>
-            <span class="mg-menu-item__navigation-button-chevron">
+            <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon icon="chevron-down"></mg-icon>
             </span>
           </button>
@@ -1357,7 +1357,7 @@ exports[`mg-menu events should manage sibling menu-item expanded props in horizo
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
@@ -1416,7 +1416,7 @@ exports[`mg-menu events should manage sibling menu-item expanded props in vertic
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
@@ -1442,7 +1442,7 @@ exports[`mg-menu events should manage sibling menu-item expanded props in vertic
               </div>
               <slot name="metadata"></slot>
             </div>
-            <span class="mg-menu-item__navigation-button-chevron">
+            <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon icon="chevron-down"></mg-icon>
             </span>
           </button>
@@ -1532,7 +1532,7 @@ exports[`mg-menu events should manage sibling menu-item expanded props in vertic
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
@@ -1591,7 +1591,7 @@ exports[`mg-menu events should manage sibling menu-item expanded props in vertic
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
@@ -1617,7 +1617,7 @@ exports[`mg-menu events should manage sibling menu-item expanded props in vertic
               </div>
               <slot name="metadata"></slot>
             </div>
-            <span class="mg-menu-item__navigation-button-chevron">
+            <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon icon="chevron-down"></mg-icon>
             </span>
           </button>
@@ -1707,7 +1707,7 @@ exports[`mg-menu events should manage sibling menu-item expanded props in vertic
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
@@ -1766,7 +1766,7 @@ exports[`mg-menu render with args { label: 'batman menu' } 1`] = `
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
@@ -1792,7 +1792,7 @@ exports[`mg-menu render with args { label: 'batman menu' } 1`] = `
               </div>
               <slot name="metadata"></slot>
             </div>
-            <span class="mg-menu-item__navigation-button-chevron">
+            <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon icon="chevron-down"></mg-icon>
             </span>
           </button>
@@ -1882,7 +1882,7 @@ exports[`mg-menu render with args { label: 'batman menu' } 1`] = `
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
@@ -1941,7 +1941,7 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'horizontal
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
@@ -1967,7 +1967,7 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'horizontal
               </div>
               <slot name="metadata"></slot>
             </div>
-            <span class="mg-menu-item__navigation-button-chevron">
+            <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon icon="chevron-down"></mg-icon>
             </span>
           </button>
@@ -2057,7 +2057,7 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'horizontal
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
@@ -2116,7 +2116,7 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'vertical' 
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>
@@ -2142,7 +2142,7 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'vertical' 
               </div>
               <slot name="metadata"></slot>
             </div>
-            <span class="mg-menu-item__navigation-button-chevron">
+            <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon icon="chevron-down"></mg-icon>
             </span>
           </button>
@@ -2232,7 +2232,7 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'vertical' 
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
         </span>
       </button>

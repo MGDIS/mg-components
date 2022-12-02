@@ -72,7 +72,7 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon>
             <mock:shadow-root>
               <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -134,7 +134,7 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
           <mg-icon>
             <mock:shadow-root>
               <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -196,7 +196,7 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon>
             <mock:shadow-root>
               <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -225,7 +225,7 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="metadata"></slot>
             </div>
-            <span class="mg-menu-item__navigation-button-chevron">
+            <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon>
                 <mock:shadow-root>
                   <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -292,7 +292,7 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
           <mg-icon>
             <mock:shadow-root>
               <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -321,7 +321,7 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="metadata"></slot>
             </div>
-            <span class="mg-menu-item__navigation-button-chevron">
+            <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon>
                 <mock:shadow-root>
                   <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -388,7 +388,7 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon>
             <mock:shadow-root>
               <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -417,7 +417,7 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="metadata"></slot>
             </div>
-            <span class="mg-menu-item__navigation-button-chevron">
+            <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon>
                 <mock:shadow-root>
                   <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -484,7 +484,7 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
           <mg-icon>
             <mock:shadow-root>
               <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -513,7 +513,7 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="metadata"></slot>
             </div>
-            <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+            <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
               <mg-icon>
                 <mock:shadow-root>
                   <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -580,7 +580,7 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon>
             <mock:shadow-root>
               <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -625,7 +625,7 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
           <mg-icon>
             <mock:shadow-root>
               <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -726,7 +726,7 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
           <mg-icon>
             <mock:shadow-root>
               <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -788,7 +788,7 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon>
             <mock:shadow-root>
               <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -850,7 +850,7 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
           <mg-icon>
             <mock:shadow-root>
               <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -879,7 +879,7 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="metadata"></slot>
             </div>
-            <span class="mg-menu-item__navigation-button-chevron">
+            <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon>
                 <mock:shadow-root>
                   <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -946,7 +946,7 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon>
             <mock:shadow-root>
               <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -975,7 +975,7 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="metadata"></slot>
             </div>
-            <span class="mg-menu-item__navigation-button-chevron">
+            <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon>
                 <mock:shadow-root>
                   <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -1042,7 +1042,7 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon>
             <mock:shadow-root>
               <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -1071,7 +1071,7 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="metadata"></slot>
             </div>
-            <span class="mg-menu-item__navigation-button-chevron">
+            <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon>
                 <mock:shadow-root>
                   <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -1138,7 +1138,7 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
           <mg-icon>
             <mock:shadow-root>
               <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -1167,7 +1167,7 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="metadata"></slot>
             </div>
-            <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+            <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
               <mg-icon>
                 <mock:shadow-root>
                   <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -1234,7 +1234,7 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
           <mg-icon>
             <mock:shadow-root>
               <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -1279,7 +1279,7 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon>
             <mock:shadow-root>
               <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -1380,7 +1380,7 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon>
             <mock:shadow-root>
               <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -1442,7 +1442,7 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
           <mg-icon>
             <mock:shadow-root>
               <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -1504,7 +1504,7 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon>
             <mock:shadow-root>
               <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -1533,7 +1533,7 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="metadata"></slot>
             </div>
-            <span class="mg-menu-item__navigation-button-chevron">
+            <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon>
                 <mock:shadow-root>
                   <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -1600,7 +1600,7 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
           <mg-icon>
             <mock:shadow-root>
               <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -1629,7 +1629,7 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="metadata"></slot>
             </div>
-            <span class="mg-menu-item__navigation-button-chevron">
+            <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon>
                 <mock:shadow-root>
                   <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -1696,7 +1696,7 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon>
             <mock:shadow-root>
               <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -1725,7 +1725,7 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="metadata"></slot>
             </div>
-            <span class="mg-menu-item__navigation-button-chevron">
+            <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon>
                 <mock:shadow-root>
                   <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -1792,7 +1792,7 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
           <mg-icon>
             <mock:shadow-root>
               <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -1821,7 +1821,7 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="metadata"></slot>
             </div>
-            <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+            <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
               <mg-icon>
                 <mock:shadow-root>
                   <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -1888,7 +1888,7 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon>
             <mock:shadow-root>
               <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -1933,7 +1933,7 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
           <mg-icon>
             <mock:shadow-root>
               <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -2186,7 +2186,7 @@ exports[`mg-menu-item render with expanded and sub-menu false 1`] = `
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon>
             <mock:shadow-root>
               <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -2248,7 +2248,7 @@ exports[`mg-menu-item render with expanded and sub-menu false 2`] = `
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
           <mg-icon>
             <mock:shadow-root>
               <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -2310,7 +2310,7 @@ exports[`mg-menu-item render with expanded and sub-menu true 1`] = `
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
           <mg-icon>
             <mock:shadow-root>
               <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -2372,7 +2372,7 @@ exports[`mg-menu-item render with expanded and sub-menu true 2`] = `
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon>
             <mock:shadow-root>
               <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -2434,7 +2434,7 @@ exports[`mg-menu-item render with expanded and sub-menu undefined 1`] = `
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon>
             <mock:shadow-root>
               <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
@@ -2496,7 +2496,7 @@ exports[`mg-menu-item render with expanded and sub-menu undefined 2`] = `
           </div>
           <slot name="metadata"></slot>
         </div>
-        <span class="mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
+        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
           <mg-icon>
             <mock:shadow-root>
               <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
