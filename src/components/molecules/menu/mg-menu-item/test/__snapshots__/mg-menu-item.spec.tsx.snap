@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`mg-menu-item mouse navigation should manage toggle expand with template false 1`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -29,11 +29,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
 `;
 
 exports[`mg-menu-item mouse navigation should manage toggle expand with template false 2`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -57,11 +57,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
 `;
 
 exports[`mg-menu-item mouse navigation should manage toggle expand with template false 3`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="true" data-style-direction-horizontal label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -86,11 +86,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
         <slot></slot>
       </div>
     </mock:shadow-root>
-    <mg-menu aria-label="child menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menu">
+    <mg-menu aria-label="child menu" direction="horizontal" role="menu">
       <mock:shadow-root>
         <slot></slot>
       </mock:shadow-root>
-      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="child menu item" role="menuitem" status="visible">
+      <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="child menu item" role="menuitem" status="visible">
         <mock:shadow-root>
           <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
             <slot name="illustration"></slot>
@@ -119,11 +119,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
 `;
 
 exports[`mg-menu-item mouse navigation should manage toggle expand with template false 4`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="true" data-style-direction-horizontal label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <button aria-expanded="true" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -148,11 +148,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
         <slot></slot>
       </div>
     </mock:shadow-root>
-    <mg-menu aria-label="child menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menu">
+    <mg-menu aria-label="child menu" direction="horizontal" role="menu">
       <mock:shadow-root>
         <slot></slot>
       </mock:shadow-root>
-      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="child menu item" role="menuitem" status="visible">
+      <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="child menu item" role="menuitem" status="visible">
         <mock:shadow-root>
           <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
             <slot name="illustration"></slot>
@@ -181,11 +181,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
 `;
 
 exports[`mg-menu-item mouse navigation should manage toggle expand with template false 5`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="true" data-style-direction-horizontal label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -210,11 +210,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
         <slot></slot>
       </div>
     </mock:shadow-root>
-    <mg-menu aria-label="child menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menu">
+    <mg-menu aria-label="child menu" direction="horizontal" role="menu">
       <mock:shadow-root>
         <slot></slot>
       </mock:shadow-root>
-      <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" label="level 2" role="menuitem" status="visible">
+      <mg-menu-item aria-haspopup="true" data-style-direction-horizontal label="level 2" role="menuitem" status="visible">
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
             <slot name="illustration"></slot>
@@ -239,11 +239,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
             <slot></slot>
           </div>
         </mock:shadow-root>
-        <mg-menu aria-label="child menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menu">
+        <mg-menu aria-label="child menu" direction="horizontal" role="menu">
           <mock:shadow-root>
             <slot></slot>
           </mock:shadow-root>
-          <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="level 3" role="menuitem" status="visible">
+          <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="level 3" role="menuitem" status="visible">
             <mock:shadow-root>
               <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
                 <slot name="illustration"></slot>
@@ -277,11 +277,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
 `;
 
 exports[`mg-menu-item mouse navigation should manage toggle expand with template false 6`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="true" data-style-direction-horizontal label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <button aria-expanded="true" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -306,11 +306,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
         <slot></slot>
       </div>
     </mock:shadow-root>
-    <mg-menu aria-label="child menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menu">
+    <mg-menu aria-label="child menu" direction="horizontal" role="menu">
       <mock:shadow-root>
         <slot></slot>
       </mock:shadow-root>
-      <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" label="level 2" role="menuitem" status="visible">
+      <mg-menu-item aria-haspopup="true" data-style-direction-horizontal label="level 2" role="menuitem" status="visible">
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
             <slot name="illustration"></slot>
@@ -335,11 +335,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
             <slot></slot>
           </div>
         </mock:shadow-root>
-        <mg-menu aria-label="child menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menu">
+        <mg-menu aria-label="child menu" direction="horizontal" role="menu">
           <mock:shadow-root>
             <slot></slot>
           </mock:shadow-root>
-          <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="level 3" role="menuitem" status="visible">
+          <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="level 3" role="menuitem" status="visible">
             <mock:shadow-root>
               <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
                 <slot name="illustration"></slot>
@@ -373,11 +373,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
 `;
 
 exports[`mg-menu-item mouse navigation should manage toggle expand with template false 7`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="active">
+  <mg-menu-item aria-haspopup="true" data-style-direction-horizontal label="Batman" role="menuitem" status="active">
     <mock:shadow-root>
       <button aria-current="page" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--active mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large" tabindex="0">
         <slot name="illustration"></slot>
@@ -402,11 +402,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
         <slot></slot>
       </div>
     </mock:shadow-root>
-    <mg-menu aria-label="child menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menu">
+    <mg-menu aria-label="child menu" direction="horizontal" role="menu">
       <mock:shadow-root>
         <slot></slot>
       </mock:shadow-root>
-      <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" label="level 2" role="menuitem" status="active">
+      <mg-menu-item aria-haspopup="true" data-style-direction-horizontal label="level 2" role="menuitem" status="active">
         <mock:shadow-root>
           <button aria-current="page" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--active mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large" tabindex="0">
             <slot name="illustration"></slot>
@@ -431,11 +431,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
             <slot></slot>
           </div>
         </mock:shadow-root>
-        <mg-menu aria-label="child menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menu">
+        <mg-menu aria-label="child menu" direction="horizontal" role="menu">
           <mock:shadow-root>
             <slot></slot>
           </mock:shadow-root>
-          <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="level 3" role="menuitem" status="active">
+          <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="level 3" role="menuitem" status="active">
             <mock:shadow-root>
               <button aria-current="page" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--active mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large" tabindex="0">
                 <slot name="illustration"></slot>
@@ -469,11 +469,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
 `;
 
 exports[`mg-menu-item mouse navigation should manage toggle expand with template false 8`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="active">
+  <mg-menu-item aria-haspopup="true" data-style-direction-horizontal label="Batman" role="menuitem" status="active">
     <mock:shadow-root>
       <button aria-current="page" aria-expanded="true" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--active mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large" tabindex="0">
         <slot name="illustration"></slot>
@@ -498,11 +498,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
         <slot></slot>
       </div>
     </mock:shadow-root>
-    <mg-menu aria-label="child menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menu">
+    <mg-menu aria-label="child menu" direction="horizontal" role="menu">
       <mock:shadow-root>
         <slot></slot>
       </mock:shadow-root>
-      <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" label="level 2" role="menuitem" status="active">
+      <mg-menu-item aria-haspopup="true" data-style-direction-horizontal label="level 2" role="menuitem" status="active">
         <mock:shadow-root>
           <button aria-current="page" aria-expanded="true" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--active mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large" tabindex="0">
             <slot name="illustration"></slot>
@@ -527,11 +527,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
             <slot></slot>
           </div>
         </mock:shadow-root>
-        <mg-menu aria-label="child menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menu">
+        <mg-menu aria-label="child menu" direction="horizontal" role="menu">
           <mock:shadow-root>
             <slot></slot>
           </mock:shadow-root>
-          <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="level 3" role="menuitem" status="active">
+          <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="level 3" role="menuitem" status="active">
             <mock:shadow-root>
               <button aria-current="page" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--active mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large" tabindex="0">
                 <slot name="illustration"></slot>
@@ -565,11 +565,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
 `;
 
 exports[`mg-menu-item mouse navigation should manage toggle expand with template false 9`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="true" data-style-direction-horizontal label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -610,11 +610,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
 `;
 
 exports[`mg-menu-item mouse navigation should manage toggle expand with template false 10`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="true" data-style-direction-horizontal label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <button aria-expanded="true" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -655,11 +655,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
 `;
 
 exports[`mg-menu-item mouse navigation should manage toggle expand with template true 1`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -683,11 +683,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
 `;
 
 exports[`mg-menu-item mouse navigation should manage toggle expand with template true 2`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -711,11 +711,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
 `;
 
 exports[`mg-menu-item mouse navigation should manage toggle expand with template true 3`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="true" data-style-direction-horizontal label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <button aria-expanded="true" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -740,11 +740,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
         <slot></slot>
       </div>
     </mock:shadow-root>
-    <mg-menu aria-label="child menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menu">
+    <mg-menu aria-label="child menu" direction="horizontal" role="menu">
       <mock:shadow-root>
         <slot></slot>
       </mock:shadow-root>
-      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="child menu item" role="menuitem" status="visible">
+      <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="child menu item" role="menuitem" status="visible">
         <mock:shadow-root>
           <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
             <slot name="illustration"></slot>
@@ -773,11 +773,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
 `;
 
 exports[`mg-menu-item mouse navigation should manage toggle expand with template true 4`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="true" data-style-direction-horizontal label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -802,11 +802,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
         <slot></slot>
       </div>
     </mock:shadow-root>
-    <mg-menu aria-label="child menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menu">
+    <mg-menu aria-label="child menu" direction="horizontal" role="menu">
       <mock:shadow-root>
         <slot></slot>
       </mock:shadow-root>
-      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="child menu item" role="menuitem" status="visible">
+      <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="child menu item" role="menuitem" status="visible">
         <mock:shadow-root>
           <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
             <slot name="illustration"></slot>
@@ -835,11 +835,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
 `;
 
 exports[`mg-menu-item mouse navigation should manage toggle expand with template true 5`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="true" data-style-direction-horizontal label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <button aria-expanded="true" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -864,11 +864,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
         <slot></slot>
       </div>
     </mock:shadow-root>
-    <mg-menu aria-label="child menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menu">
+    <mg-menu aria-label="child menu" direction="horizontal" role="menu">
       <mock:shadow-root>
         <slot></slot>
       </mock:shadow-root>
-      <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" label="level 2" role="menuitem" status="visible">
+      <mg-menu-item aria-haspopup="true" data-style-direction-horizontal label="level 2" role="menuitem" status="visible">
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
             <slot name="illustration"></slot>
@@ -893,11 +893,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
             <slot></slot>
           </div>
         </mock:shadow-root>
-        <mg-menu aria-label="child menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menu">
+        <mg-menu aria-label="child menu" direction="horizontal" role="menu">
           <mock:shadow-root>
             <slot></slot>
           </mock:shadow-root>
-          <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="level 3" role="menuitem" status="visible">
+          <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="level 3" role="menuitem" status="visible">
             <mock:shadow-root>
               <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
                 <slot name="illustration"></slot>
@@ -931,11 +931,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
 `;
 
 exports[`mg-menu-item mouse navigation should manage toggle expand with template true 6`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="true" data-style-direction-horizontal label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -960,11 +960,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
         <slot></slot>
       </div>
     </mock:shadow-root>
-    <mg-menu aria-label="child menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menu">
+    <mg-menu aria-label="child menu" direction="horizontal" role="menu">
       <mock:shadow-root>
         <slot></slot>
       </mock:shadow-root>
-      <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" label="level 2" role="menuitem" status="visible">
+      <mg-menu-item aria-haspopup="true" data-style-direction-horizontal label="level 2" role="menuitem" status="visible">
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
             <slot name="illustration"></slot>
@@ -989,11 +989,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
             <slot></slot>
           </div>
         </mock:shadow-root>
-        <mg-menu aria-label="child menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menu">
+        <mg-menu aria-label="child menu" direction="horizontal" role="menu">
           <mock:shadow-root>
             <slot></slot>
           </mock:shadow-root>
-          <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="level 3" role="menuitem" status="visible">
+          <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="level 3" role="menuitem" status="visible">
             <mock:shadow-root>
               <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
                 <slot name="illustration"></slot>
@@ -1027,11 +1027,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
 `;
 
 exports[`mg-menu-item mouse navigation should manage toggle expand with template true 7`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="active">
+  <mg-menu-item aria-haspopup="true" data-style-direction-horizontal label="Batman" role="menuitem" status="active">
     <mock:shadow-root>
       <button aria-current="page" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--active mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large" tabindex="0">
         <slot name="illustration"></slot>
@@ -1056,11 +1056,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
         <slot></slot>
       </div>
     </mock:shadow-root>
-    <mg-menu aria-label="child menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menu">
+    <mg-menu aria-label="child menu" direction="horizontal" role="menu">
       <mock:shadow-root>
         <slot></slot>
       </mock:shadow-root>
-      <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" label="level 2" role="menuitem" status="active">
+      <mg-menu-item aria-haspopup="true" data-style-direction-horizontal label="level 2" role="menuitem" status="active">
         <mock:shadow-root>
           <button aria-current="page" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--active mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large" tabindex="0">
             <slot name="illustration"></slot>
@@ -1085,11 +1085,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
             <slot></slot>
           </div>
         </mock:shadow-root>
-        <mg-menu aria-label="child menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menu">
+        <mg-menu aria-label="child menu" direction="horizontal" role="menu">
           <mock:shadow-root>
             <slot></slot>
           </mock:shadow-root>
-          <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="level 3" role="menuitem" status="active">
+          <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="level 3" role="menuitem" status="active">
             <mock:shadow-root>
               <button aria-current="page" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--active mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large" tabindex="0">
                 <slot name="illustration"></slot>
@@ -1123,11 +1123,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
 `;
 
 exports[`mg-menu-item mouse navigation should manage toggle expand with template true 8`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="active">
+  <mg-menu-item aria-haspopup="true" data-style-direction-horizontal label="Batman" role="menuitem" status="active">
     <mock:shadow-root>
       <button aria-current="page" aria-expanded="true" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--active mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large" tabindex="0">
         <slot name="illustration"></slot>
@@ -1152,11 +1152,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
         <slot></slot>
       </div>
     </mock:shadow-root>
-    <mg-menu aria-label="child menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menu">
+    <mg-menu aria-label="child menu" direction="horizontal" role="menu">
       <mock:shadow-root>
         <slot></slot>
       </mock:shadow-root>
-      <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" label="level 2" role="menuitem" status="active">
+      <mg-menu-item aria-haspopup="true" data-style-direction-horizontal label="level 2" role="menuitem" status="active">
         <mock:shadow-root>
           <button aria-current="page" aria-expanded="true" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--active mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large" tabindex="0">
             <slot name="illustration"></slot>
@@ -1181,11 +1181,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
             <slot></slot>
           </div>
         </mock:shadow-root>
-        <mg-menu aria-label="child menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menu">
+        <mg-menu aria-label="child menu" direction="horizontal" role="menu">
           <mock:shadow-root>
             <slot></slot>
           </mock:shadow-root>
-          <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="level 3" role="menuitem" status="active">
+          <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="level 3" role="menuitem" status="active">
             <mock:shadow-root>
               <button aria-current="page" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--active mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large" tabindex="0">
                 <slot name="illustration"></slot>
@@ -1219,11 +1219,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
 `;
 
 exports[`mg-menu-item mouse navigation should manage toggle expand with template true 9`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="true" data-style-direction-horizontal label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <button aria-expanded="true" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -1264,11 +1264,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
 `;
 
 exports[`mg-menu-item mouse navigation should manage toggle expand with template true 10`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="true" data-style-direction-horizontal label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -1309,11 +1309,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
 `;
 
 exports[`mg-menu-item mouse navigation should manage toggle expand with template undefined 1`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -1337,11 +1337,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
 `;
 
 exports[`mg-menu-item mouse navigation should manage toggle expand with template undefined 2`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -1365,11 +1365,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
 `;
 
 exports[`mg-menu-item mouse navigation should manage toggle expand with template undefined 3`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="true" data-style-direction-horizontal label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -1394,11 +1394,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
         <slot></slot>
       </div>
     </mock:shadow-root>
-    <mg-menu aria-label="child menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menu">
+    <mg-menu aria-label="child menu" direction="horizontal" role="menu">
       <mock:shadow-root>
         <slot></slot>
       </mock:shadow-root>
-      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="child menu item" role="menuitem" status="visible">
+      <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="child menu item" role="menuitem" status="visible">
         <mock:shadow-root>
           <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
             <slot name="illustration"></slot>
@@ -1427,11 +1427,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
 `;
 
 exports[`mg-menu-item mouse navigation should manage toggle expand with template undefined 4`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="true" data-style-direction-horizontal label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <button aria-expanded="true" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -1456,11 +1456,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
         <slot></slot>
       </div>
     </mock:shadow-root>
-    <mg-menu aria-label="child menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menu">
+    <mg-menu aria-label="child menu" direction="horizontal" role="menu">
       <mock:shadow-root>
         <slot></slot>
       </mock:shadow-root>
-      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="child menu item" role="menuitem" status="visible">
+      <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="child menu item" role="menuitem" status="visible">
         <mock:shadow-root>
           <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
             <slot name="illustration"></slot>
@@ -1489,11 +1489,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
 `;
 
 exports[`mg-menu-item mouse navigation should manage toggle expand with template undefined 5`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="true" data-style-direction-horizontal label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -1518,11 +1518,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
         <slot></slot>
       </div>
     </mock:shadow-root>
-    <mg-menu aria-label="child menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menu">
+    <mg-menu aria-label="child menu" direction="horizontal" role="menu">
       <mock:shadow-root>
         <slot></slot>
       </mock:shadow-root>
-      <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" label="level 2" role="menuitem" status="visible">
+      <mg-menu-item aria-haspopup="true" data-style-direction-horizontal label="level 2" role="menuitem" status="visible">
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
             <slot name="illustration"></slot>
@@ -1547,11 +1547,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
             <slot></slot>
           </div>
         </mock:shadow-root>
-        <mg-menu aria-label="child menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menu">
+        <mg-menu aria-label="child menu" direction="horizontal" role="menu">
           <mock:shadow-root>
             <slot></slot>
           </mock:shadow-root>
-          <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="level 3" role="menuitem" status="visible">
+          <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="level 3" role="menuitem" status="visible">
             <mock:shadow-root>
               <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
                 <slot name="illustration"></slot>
@@ -1585,11 +1585,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
 `;
 
 exports[`mg-menu-item mouse navigation should manage toggle expand with template undefined 6`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="true" data-style-direction-horizontal label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <button aria-expanded="true" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -1614,11 +1614,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
         <slot></slot>
       </div>
     </mock:shadow-root>
-    <mg-menu aria-label="child menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menu">
+    <mg-menu aria-label="child menu" direction="horizontal" role="menu">
       <mock:shadow-root>
         <slot></slot>
       </mock:shadow-root>
-      <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" label="level 2" role="menuitem" status="visible">
+      <mg-menu-item aria-haspopup="true" data-style-direction-horizontal label="level 2" role="menuitem" status="visible">
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
             <slot name="illustration"></slot>
@@ -1643,11 +1643,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
             <slot></slot>
           </div>
         </mock:shadow-root>
-        <mg-menu aria-label="child menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menu">
+        <mg-menu aria-label="child menu" direction="horizontal" role="menu">
           <mock:shadow-root>
             <slot></slot>
           </mock:shadow-root>
-          <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="level 3" role="menuitem" status="visible">
+          <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="level 3" role="menuitem" status="visible">
             <mock:shadow-root>
               <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
                 <slot name="illustration"></slot>
@@ -1681,11 +1681,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
 `;
 
 exports[`mg-menu-item mouse navigation should manage toggle expand with template undefined 7`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="active">
+  <mg-menu-item aria-haspopup="true" data-style-direction-horizontal label="Batman" role="menuitem" status="active">
     <mock:shadow-root>
       <button aria-current="page" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--active mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large" tabindex="0">
         <slot name="illustration"></slot>
@@ -1710,11 +1710,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
         <slot></slot>
       </div>
     </mock:shadow-root>
-    <mg-menu aria-label="child menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menu">
+    <mg-menu aria-label="child menu" direction="horizontal" role="menu">
       <mock:shadow-root>
         <slot></slot>
       </mock:shadow-root>
-      <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" label="level 2" role="menuitem" status="active">
+      <mg-menu-item aria-haspopup="true" data-style-direction-horizontal label="level 2" role="menuitem" status="active">
         <mock:shadow-root>
           <button aria-current="page" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--active mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large" tabindex="0">
             <slot name="illustration"></slot>
@@ -1739,11 +1739,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
             <slot></slot>
           </div>
         </mock:shadow-root>
-        <mg-menu aria-label="child menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menu">
+        <mg-menu aria-label="child menu" direction="horizontal" role="menu">
           <mock:shadow-root>
             <slot></slot>
           </mock:shadow-root>
-          <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="level 3" role="menuitem" status="active">
+          <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="level 3" role="menuitem" status="active">
             <mock:shadow-root>
               <button aria-current="page" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--active mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large" tabindex="0">
                 <slot name="illustration"></slot>
@@ -1777,11 +1777,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
 `;
 
 exports[`mg-menu-item mouse navigation should manage toggle expand with template undefined 8`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="active">
+  <mg-menu-item aria-haspopup="true" data-style-direction-horizontal label="Batman" role="menuitem" status="active">
     <mock:shadow-root>
       <button aria-current="page" aria-expanded="true" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--active mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large" tabindex="0">
         <slot name="illustration"></slot>
@@ -1806,11 +1806,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
         <slot></slot>
       </div>
     </mock:shadow-root>
-    <mg-menu aria-label="child menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menu">
+    <mg-menu aria-label="child menu" direction="horizontal" role="menu">
       <mock:shadow-root>
         <slot></slot>
       </mock:shadow-root>
-      <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" label="level 2" role="menuitem" status="active">
+      <mg-menu-item aria-haspopup="true" data-style-direction-horizontal label="level 2" role="menuitem" status="active">
         <mock:shadow-root>
           <button aria-current="page" aria-expanded="true" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--active mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large" tabindex="0">
             <slot name="illustration"></slot>
@@ -1835,11 +1835,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
             <slot></slot>
           </div>
         </mock:shadow-root>
-        <mg-menu aria-label="child menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menu">
+        <mg-menu aria-label="child menu" direction="horizontal" role="menu">
           <mock:shadow-root>
             <slot></slot>
           </mock:shadow-root>
-          <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="level 3" role="menuitem" status="active">
+          <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="level 3" role="menuitem" status="active">
             <mock:shadow-root>
               <button aria-current="page" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--active mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large" tabindex="0">
                 <slot name="illustration"></slot>
@@ -1873,11 +1873,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
 `;
 
 exports[`mg-menu-item mouse navigation should manage toggle expand with template undefined 9`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="true" data-style-direction-horizontal label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -1918,11 +1918,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
 `;
 
 exports[`mg-menu-item mouse navigation should manage toggle expand with template undefined 10`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="true" data-style-direction-horizontal label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <button aria-expanded="true" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -1963,11 +1963,11 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
 `;
 
 exports[`mg-menu-item render with 2 menu-items, last items get style modifier 1`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -1987,7 +1987,7 @@ exports[`mg-menu-item render with 2 menu-items, last items get style modifier 1`
       Batman
     </span>
   </mg-menu-item>
-  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal mg-menu-item--last" label="item 2" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="false" data-style-direction-horizontal data-style-position-last label="item 2" role="menuitem" status="visible">
     <mock:shadow-root>
       <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -2011,11 +2011,11 @@ exports[`mg-menu-item render with 2 menu-items, last items get style modifier 1`
 `;
 
 exports[`mg-menu-item render with args { label: 'Batman' } 1`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -2039,11 +2039,11 @@ exports[`mg-menu-item render with args { label: 'Batman' } 1`] = `
 `;
 
 exports[`mg-menu-item render with args { label: 'Batman', badge: true } 1`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="false" badge="" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="false" badge="" data-style-direction-horizontal label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -2077,11 +2077,11 @@ exports[`mg-menu-item render with args { label: 'Batman', badge: true } 1`] = `
 `;
 
 exports[`mg-menu-item render with args { label: 'Batman', href: '#link' } 1`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <a class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" href="#link" tabindex="0">
         <slot name="illustration"></slot>
@@ -2105,11 +2105,11 @@ exports[`mg-menu-item render with args { label: 'Batman', href: '#link' } 1`] = 
 `;
 
 exports[`mg-menu-item render with args { label: 'Batman', icon: true } 1`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" icon="" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="false" data-style-direction-horizontal icon="" label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -2140,11 +2140,11 @@ exports[`mg-menu-item render with args { label: 'Batman', icon: true } 1`] = `
 `;
 
 exports[`mg-menu-item render with args { label: 'Batman', metadata: true } 1`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="Batman" metadata="" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="Batman" metadata="" role="menuitem" status="visible">
     <mock:shadow-root>
       <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -2171,11 +2171,11 @@ exports[`mg-menu-item render with args { label: 'Batman', metadata: true } 1`] =
 `;
 
 exports[`mg-menu-item render with expanded and sub-menu false 1`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="true" data-style-direction-horizontal label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -2200,11 +2200,11 @@ exports[`mg-menu-item render with expanded and sub-menu false 1`] = `
         <slot></slot>
       </div>
     </mock:shadow-root>
-    <mg-menu aria-label="child menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menu">
+    <mg-menu aria-label="child menu" direction="horizontal" role="menu">
       <mock:shadow-root>
         <slot></slot>
       </mock:shadow-root>
-      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="child menu item" role="menuitem" status="visible">
+      <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="child menu item" role="menuitem" status="visible">
         <mock:shadow-root>
           <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
             <slot name="illustration"></slot>
@@ -2233,11 +2233,11 @@ exports[`mg-menu-item render with expanded and sub-menu false 1`] = `
 `;
 
 exports[`mg-menu-item render with expanded and sub-menu false 2`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="true" data-style-direction-horizontal label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <button aria-expanded="true" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -2262,11 +2262,11 @@ exports[`mg-menu-item render with expanded and sub-menu false 2`] = `
         <slot></slot>
       </div>
     </mock:shadow-root>
-    <mg-menu aria-label="child menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menu">
+    <mg-menu aria-label="child menu" direction="horizontal" role="menu">
       <mock:shadow-root>
         <slot></slot>
       </mock:shadow-root>
-      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="child menu item" role="menuitem" status="visible">
+      <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="child menu item" role="menuitem" status="visible">
         <mock:shadow-root>
           <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
             <slot name="illustration"></slot>
@@ -2295,11 +2295,11 @@ exports[`mg-menu-item render with expanded and sub-menu false 2`] = `
 `;
 
 exports[`mg-menu-item render with expanded and sub-menu true 1`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="true" data-style-direction-horizontal label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <button aria-expanded="true" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -2324,11 +2324,11 @@ exports[`mg-menu-item render with expanded and sub-menu true 1`] = `
         <slot></slot>
       </div>
     </mock:shadow-root>
-    <mg-menu aria-label="child menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menu">
+    <mg-menu aria-label="child menu" direction="horizontal" role="menu">
       <mock:shadow-root>
         <slot></slot>
       </mock:shadow-root>
-      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="child menu item" role="menuitem" status="visible">
+      <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="child menu item" role="menuitem" status="visible">
         <mock:shadow-root>
           <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
             <slot name="illustration"></slot>
@@ -2357,11 +2357,11 @@ exports[`mg-menu-item render with expanded and sub-menu true 1`] = `
 `;
 
 exports[`mg-menu-item render with expanded and sub-menu true 2`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="true" data-style-direction-horizontal label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -2386,11 +2386,11 @@ exports[`mg-menu-item render with expanded and sub-menu true 2`] = `
         <slot></slot>
       </div>
     </mock:shadow-root>
-    <mg-menu aria-label="child menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menu">
+    <mg-menu aria-label="child menu" direction="horizontal" role="menu">
       <mock:shadow-root>
         <slot></slot>
       </mock:shadow-root>
-      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="child menu item" role="menuitem" status="visible">
+      <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="child menu item" role="menuitem" status="visible">
         <mock:shadow-root>
           <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
             <slot name="illustration"></slot>
@@ -2419,11 +2419,11 @@ exports[`mg-menu-item render with expanded and sub-menu true 2`] = `
 `;
 
 exports[`mg-menu-item render with expanded and sub-menu undefined 1`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="true" data-style-direction-horizontal label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -2448,11 +2448,11 @@ exports[`mg-menu-item render with expanded and sub-menu undefined 1`] = `
         <slot></slot>
       </div>
     </mock:shadow-root>
-    <mg-menu aria-label="child menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menu">
+    <mg-menu aria-label="child menu" direction="horizontal" role="menu">
       <mock:shadow-root>
         <slot></slot>
       </mock:shadow-root>
-      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="child menu item" role="menuitem" status="visible">
+      <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="child menu item" role="menuitem" status="visible">
         <mock:shadow-root>
           <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
             <slot name="illustration"></slot>
@@ -2481,11 +2481,11 @@ exports[`mg-menu-item render with expanded and sub-menu undefined 1`] = `
 `;
 
 exports[`mg-menu-item render with expanded and sub-menu undefined 2`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="true" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="true" data-style-direction-horizontal label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <button aria-expanded="true" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -2510,11 +2510,11 @@ exports[`mg-menu-item render with expanded and sub-menu undefined 2`] = `
         <slot></slot>
       </div>
     </mock:shadow-root>
-    <mg-menu aria-label="child menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menu">
+    <mg-menu aria-label="child menu" direction="horizontal" role="menu">
       <mock:shadow-root>
         <slot></slot>
       </mock:shadow-root>
-      <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="child menu item" role="menuitem" status="visible">
+      <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="child menu item" role="menuitem" status="visible">
         <mock:shadow-root>
           <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
             <slot name="illustration"></slot>
@@ -2543,11 +2543,11 @@ exports[`mg-menu-item render with expanded and sub-menu undefined 2`] = `
 `;
 
 exports[`mg-menu-item render with expanded false 1`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -2571,11 +2571,11 @@ exports[`mg-menu-item render with expanded false 1`] = `
 `;
 
 exports[`mg-menu-item render with expanded false 2`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -2599,11 +2599,11 @@ exports[`mg-menu-item render with expanded false 2`] = `
 `;
 
 exports[`mg-menu-item render with expanded true 1`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -2627,11 +2627,11 @@ exports[`mg-menu-item render with expanded true 1`] = `
 `;
 
 exports[`mg-menu-item render with expanded true 2`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -2655,11 +2655,11 @@ exports[`mg-menu-item render with expanded true 2`] = `
 `;
 
 exports[`mg-menu-item render with expanded undefined 1`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -2683,11 +2683,11 @@ exports[`mg-menu-item render with expanded undefined 1`] = `
 `;
 
 exports[`mg-menu-item render with expanded undefined 2`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -2711,11 +2711,11 @@ exports[`mg-menu-item render with expanded undefined 2`] = `
 `;
 
 exports[`mg-menu-item render with menuIndex 0 1`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="Batman" menuindex="0" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="Batman" menuindex="0" role="menuitem" status="visible">
     <mock:shadow-root>
       <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -2739,11 +2739,11 @@ exports[`mg-menu-item render with menuIndex 0 1`] = `
 `;
 
 exports[`mg-menu-item render with menuIndex 5 1`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="Batman" menuindex="5" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="Batman" menuindex="5" role="menuitem" status="visible">
     <mock:shadow-root>
       <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -2767,11 +2767,11 @@ exports[`mg-menu-item render with menuIndex 5 1`] = `
 `;
 
 exports[`mg-menu-item render with menuIndex undefined 1`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -2795,11 +2795,11 @@ exports[`mg-menu-item render with menuIndex undefined 1`] = `
 `;
 
 exports[`mg-menu-item render with size large 1`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" sizes="large" status="visible">
+  <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="Batman" role="menuitem" sizes="large" status="visible">
     <mock:shadow-root>
       <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -2823,11 +2823,11 @@ exports[`mg-menu-item render with size large 1`] = `
 `;
 
 exports[`mg-menu-item render with size medium 1`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" sizes="medium" status="visible">
+  <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="Batman" role="menuitem" sizes="medium" status="visible">
     <mock:shadow-root>
       <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -2851,11 +2851,11 @@ exports[`mg-menu-item render with size medium 1`] = `
 `;
 
 exports[`mg-menu-item render with size regular 1`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" sizes="regular" status="visible">
+  <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="Batman" role="menuitem" sizes="regular" status="visible">
     <mock:shadow-root>
       <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -2879,11 +2879,11 @@ exports[`mg-menu-item render with size regular 1`] = `
 `;
 
 exports[`mg-menu-item render with status active 1`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="active">
+  <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="Batman" role="menuitem" status="active">
     <mock:shadow-root>
       <button aria-current="page" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--active mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large" tabindex="0">
         <slot name="illustration"></slot>
@@ -2907,11 +2907,11 @@ exports[`mg-menu-item render with status active 1`] = `
 `;
 
 exports[`mg-menu-item render with status active 2`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <button aria-current="page" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -2935,11 +2935,11 @@ exports[`mg-menu-item render with status active 2`] = `
 `;
 
 exports[`mg-menu-item render with status disabled 1`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="disabled">
+  <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="Batman" role="menuitem" status="disabled">
     <mock:shadow-root>
       <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--disabled mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large" disabled="" tabindex="-1">
         <slot name="illustration"></slot>
@@ -2963,11 +2963,11 @@ exports[`mg-menu-item render with status disabled 1`] = `
 `;
 
 exports[`mg-menu-item render with status disabled 2`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="active">
+  <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="Batman" role="menuitem" status="active">
     <mock:shadow-root>
       <button aria-current="page" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--active mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large" tabindex="0">
         <slot name="illustration"></slot>
@@ -2991,11 +2991,11 @@ exports[`mg-menu-item render with status disabled 2`] = `
 `;
 
 exports[`mg-menu-item render with status hidden 1`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="hidden">
+  <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="Batman" role="menuitem" status="hidden">
     <mock:shadow-root>
       <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--hidden mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large" tabindex="-1">
         <slot name="illustration"></slot>
@@ -3019,11 +3019,11 @@ exports[`mg-menu-item render with status hidden 1`] = `
 `;
 
 exports[`mg-menu-item render with status hidden 2`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="active">
+  <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="Batman" role="menuitem" status="active">
     <mock:shadow-root>
       <button aria-current="page" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--active mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large" tabindex="0">
         <slot name="illustration"></slot>
@@ -3047,11 +3047,11 @@ exports[`mg-menu-item render with status hidden 2`] = `
 `;
 
 exports[`mg-menu-item render with status visible 1`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="Batman" role="menuitem" status="visible">
     <mock:shadow-root>
       <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="illustration"></slot>
@@ -3075,11 +3075,11 @@ exports[`mg-menu-item render with status visible 1`] = `
 `;
 
 exports[`mg-menu-item render with status visible 2`] = `
-<mg-menu aria-label="menu" classlist="mg-menu mg-menu--horizontal" direction="horizontal" role="menubar">
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
-  <mg-menu-item aria-haspopup="false" class="mg-menu-item mg-menu-item--horizontal" label="Batman" role="menuitem" status="active">
+  <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="Batman" role="menuitem" status="active">
     <mock:shadow-root>
       <button aria-current="page" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--active mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-large" tabindex="0">
         <slot name="illustration"></slot>
