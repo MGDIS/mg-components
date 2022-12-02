@@ -145,7 +145,7 @@ export class MgTooltip {
   };
 
   /**
-   * Update slot content when itis a mg-button
+   * Update slot content when it is a mg-button
    *
    * @param {HTMLMgButtonElement} mgButton slotted mg-button
    * @returns {void}
