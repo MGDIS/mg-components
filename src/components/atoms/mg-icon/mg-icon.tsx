@@ -65,15 +65,17 @@ export class MgIcon {
   handleSpin(newValue: MgIcon['spin']): void {
     if (newValue) {
       this.classList.add('mg-icon--spin');
+      this.classList.add('mg-a11y-animation');
     } else {
       this.classList.delete('mg-icon--spin');
+      this.classList.delete('mg-a11y-animation');
     }
   }
 
   /**
    * Component classes
    */
-  @State() classList: ClassList = new ClassList(['mg-icon', 'mg-a11y-animation']);
+  @State() classList: ClassList = new ClassList(['mg-icon']);
 
   /**
    * getIcon
