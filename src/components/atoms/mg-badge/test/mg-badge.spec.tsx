@@ -17,7 +17,7 @@ describe('mg-badge', () => {
     });
   });
 
-  test.each([1, 100, '!', '?'])('value %s', async value => {
+  test.each([1, 100, '!', '?', '99+'])('value %s', async value => {
     const { root } = await getPage({ value, label: 'Batman' });
     expect(root).toMatchSnapshot();
   });

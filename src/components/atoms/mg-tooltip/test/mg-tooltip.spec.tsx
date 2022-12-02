@@ -3,6 +3,7 @@ import { newSpecPage } from '@stencil/core/testing';
 import { MgTooltip } from '../mg-tooltip';
 import { MgButton } from '../../mg-button/mg-button';
 import { MgIcon } from '../../mg-icon/mg-icon';
+import { setupMutationObserverMock } from '../../../../utils/unit.test.utils';
 
 // fix popper console.error in test
 // it is generated in @popperjs/core/dist/cjs/popper.js l.1859
@@ -25,17 +26,36 @@ const getPage = (args, element) =>
   });
 
 describe('mg-tooltip', () => {
-  beforeEach(() => jest.useFakeTimers());
+  let fireMo;
+
+  beforeEach(() => {
+    jest.useFakeTimers();
+    setupMutationObserverMock({
+      observe: function () {
+        fireMo = this.cb;
+      },
+      disconnect: function () {
+        return null;
+      },
+      takeRecords: [],
+    });
+  });
+
   afterEach(() => jest.runOnlyPendingTimers());
 
-  test.each([<span>span</span>, <button aria-describedby="blu">button</button>, <mg-icon icon="check-circle"></mg-icon>, <mg-button identifier="identifier">mg-button</mg-button>])(
-    'Should render with element',
-    async element => {
-      const args = { identifier: 'identifier', message: 'My tooltip message' };
-      const { root } = await getPage(args, element);
-      expect(root).toMatchSnapshot();
-    },
-  );
+  test.each([
+    <span>span</span>,
+    <button aria-describedby="blu">button</button>,
+    <mg-icon icon="check-circle"></mg-icon>,
+    <mg-button identifier="identifier">mg-button</mg-button>,
+    <mg-button identifier="identifier" disabled>
+      mg-button.disabled
+    </mg-button>,
+  ])('Should render with element', async element => {
+    const args = { identifier: 'identifier', message: 'My tooltip message' };
+    const { root } = await getPage(args, element);
+    expect(root).toMatchSnapshot();
+  });
 
   test('Should render with element with given placement', async () => {
     const args = { identifier: 'identifier', message: 'My tooltip message', placement: 'auto' };
@@ -166,7 +186,7 @@ describe('mg-tooltip', () => {
     });
   });
 
-  test('Should keep displaied tooltip when hover it', async () => {
+  test('Should keep displayed tooltip when hover it', async () => {
     const element = <span>span</span>;
     const eventIn = 'mouseenter';
     const eventOut = 'mouseleave';
@@ -183,13 +203,13 @@ describe('mg-tooltip', () => {
     expect(page.root).toMatchSnapshot();
     expect(tooltip).toHaveAttribute('data-show');
 
-    // 2.1 leave tooltipedElement and tooltip stay displaied
+    // 2.1 leave tooltipedElement and tooltip stay displayed
     linkedTooltipElement.dispatchEvent(new CustomEvent(eventOut, { bubbles: true }));
     await page.waitForChanges();
 
     expect(tooltip).toHaveAttribute('data-show');
 
-    // 2.2 hover on tooltipedElement and tooltip stay displaied
+    // 2.2 hover on tooltipedElement and tooltip stay displayed
     tooltip.dispatchEvent(new CustomEvent(eventIn, { bubbles: true }));
     await page.waitForChanges();
 
@@ -208,5 +228,30 @@ describe('mg-tooltip', () => {
     await page.waitForChanges();
 
     expect(tooltip).not.toHaveAttribute('data-show');
+  });
+
+  test('Should update mg-button wrapper dynamically', async () => {
+    const args = { identifier: 'identifier', message: 'My tooltip message' };
+    const page = await getPage(
+      args,
+      <mg-button identifier="identifier" disabled>
+        mg-button.disabled
+      </mg-button>,
+    );
+
+    expect(page.root).toMatchSnapshot();
+
+    // Mock replaceWith
+    const mgTooltip = page.doc.querySelector('mg-tooltip');
+    mgTooltip.firstElementChild.replaceWith = jest.fn(element => {
+      mgTooltip.innerHTML = (element as Node).parentElement.innerHTML;
+    });
+
+    const mgButton = page.doc.querySelector('mg-button');
+    mgButton.disabled = false;
+    fireMo([{ attributeName: 'aria-disabled' }]);
+    await page.waitForChanges();
+
+    expect(page.root).toMatchSnapshot();
   });
 });

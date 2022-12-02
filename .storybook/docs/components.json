@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-11-25T14:13:51",
+  "timestamp": "2022-12-02T10:48:56",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.18.1",
@@ -10,8 +10,8 @@
       "filePath": "./src/components/atoms/mg-badge/mg-badge.tsx",
       "encapsulation": "shadow",
       "tag": "mg-badge",
-      "readme": "## Design\n\nThe badge is always placed on top of, or next to the element it is for.\n\nThe badge displays a number or a punctuation character.\n\n## Specs\n\n![](./mg-badge/doc/img/mg-badge-specs.png)\n\n## Theming\n\n![](./mg-badge/doc/img/mg-badge-styles.png)\n\n## CSS Variables\n\nIf needed some [variables](./?path=/story/css-variables--page) are available to customize the component:\n\n- `--mg-badge-size`: define badge height and min-width, default: `1.6rem`\n- `--mg-badge-font-size`: define badge font size, default: `1.1rem`\n",
-      "docs": "The badge is always placed on top of, or next to the element it is for.\n\nThe badge displays a number or a punctuation character.",
+      "readme": "## Design\n\nThe badge is always placed on top of, or next to the element it is for.\n\nThe badge displays a number (can be followed by the `+` character) or a punctuation character.\n\n## Specs\n\n![](./mg-badge/doc/img/mg-badge-specs.png)\n\n## Theming\n\n![](./mg-badge/doc/img/mg-badge-styles.png)\n\n## CSS Variables\n\nIf needed some [variables](./?path=/story/css-variables--page) are available to customize the component:\n\n- `--mg-badge-size`: define badge height and min-width, default: `1.6rem`\n- `--mg-badge-font-size`: define badge font size, default: `1.1rem`\n",
+      "docs": "The badge is always placed on top of, or next to the element it is for.\n\nThe badge displays a number (can be followed by the `+` character) or a punctuation character.",
       "docsTags": [],
       "usage": {},
       "props": [
