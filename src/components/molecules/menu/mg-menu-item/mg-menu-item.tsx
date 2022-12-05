@@ -215,7 +215,7 @@ export class MgMenuItem {
       }
 
       this.isInMainMenu = this.element.parentElement.className.includes('mg-menu-item') === false;
-      const hasNextMenuItem = this.element.nextElementSibling?.nodeName === 'MG-MENU-ITEM';
+      const hasNextMenuItem = this.element.nextElementSibling?.nodeName === 'MG-MENU-ITEM' && this.element.nextElementSibling.getAttribute('[hidden]') === null;
       const hasPreviousMenuItem = this.element.previousElementSibling?.nodeName === 'MG-MENU-ITEM';
 
       // manage last menu item

@@ -11,11 +11,11 @@ export const cloneDeep = (obj: unknown): unknown => JSON.parse(JSON.stringify(ob
  *
  * @param mutationObserverMock - Parameter that is sent to the `Object.defineProperty`
  * overwrite method. `jest.fn()` mock functions can be passed here if the goal is to not only
- * mock the resize observer, but its methods.
+ * mock the mutation observer, but its methods.
  * You can manually fire an intersection entry:
  * @param {Function} mutationObserverMock.disconnect disconnect function
- * @param {Function} mutationObserverMock.observe observe fnuction
- * @param {Function} mutationObserverMock.takeRecords takeRecords fnuction
+ * @param {Function} mutationObserverMock.observe observe function
+ * @param {Function} mutationObserverMock.takeRecords takeRecords function
  * @returns {MutationObserver} Mocked MutationObserver
  * @example
  * ```
@@ -40,17 +40,66 @@ export const setupMutationObserverMock = ({ disconnect, observe, takeRecords }) 
     }
   }
 
-  Object.defineProperty(window, 'MutationObserver', {
-    writable: true,
-    configurable: true,
-    value: MockMutationObserver,
-  });
-
-  Object.defineProperty(global, 'MutationObserver', {
-    writable: true,
-    configurable: true,
-    value: MockMutationObserver,
+  [window, global].forEach(element => {
+    Object.defineProperty(element, 'MutationObserver', {
+      writable: true,
+      configurable: true,
+      value: MockMutationObserver,
+    });
   });
 
   return MockMutationObserver;
+};
+
+
+/**
+ * Utility function that mocks the `ResizeObserver` API. Recommended to execute inside `beforeEach`.
+ *
+ * @param resizeObserverMock - Parameter that is sent to the `Object.defineProperty`
+ * overwrite method. `jest.fn()` mock functions can be passed here if the goal is to not only
+ * mock the resize observer, but its methods.
+ * You can manually fire an intersection entry:
+ * @param {Function} resizeObserverMock.disconnect disconnect function
+ * @param {Function} resizeObserverMock.observe observe function
+ * @param {Function} resizeObserverMock.takeRecords takeRecords function
+ * @returns {ResizeObserver} Mocked ResizeObserver
+ * @example
+ * ```
+ * let fireMo;
+ * setupResizeObserverMock({
+ *   observe: function () {
+ *     fireMo = this.cb;
+ *   },
+ * });
+ * ...
+ * fireMo([{
+ *  borderBoxSize: ResizeObserverSize[],
+ *  contentBoxSize: ResizeObserverSize[],
+ *  contentRect: DOMRectReadOnly,
+ *  devicePixelContentBoxSize: ResizeObserverSize[],
+ *  target: yourMockElemenet
+ * }]);;
+ * ```
+ */
+export const setupResizeObserverMock = ({ disconnect, observe, takeRecords }) => {
+  class MockResizeObserver implements ResizeObserver {
+    disconnect: () => void = disconnect;
+    observe: (target: Element, options?: ResizeObserverOptions) => void = observe;
+    takeRecords: () => MutationRecord[] = takeRecords;
+    unobserve: () => void
+    cb: () => unknown;
+    constructor(fn) {
+      this.cb = fn;
+    }
+  }
+
+  [window, global].forEach(element => {
+    Object.defineProperty(element, 'ResizeObserver', {
+      writable: true,
+      configurable: true,
+      value: MockResizeObserver,
+    });
+  })
+
+  return MockResizeObserver;
 };

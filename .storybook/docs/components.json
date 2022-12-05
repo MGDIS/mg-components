@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-11-25T14:13:51",
+  "timestamp": "2022-12-02T14:49:48",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.18.1",
@@ -867,6 +867,7 @@
         "mg-input-text",
         "mg-input-textarea",
         "mg-input-toggle",
+        "mg-menu",
         "mg-menu-item",
         "mg-message",
         "mg-modal",
@@ -908,6 +909,9 @@
           "mg-icon"
         ],
         "mg-input-toggle": [
+          "mg-icon"
+        ],
+        "mg-menu": [
           "mg-icon"
         ],
         "mg-menu-item": [
@@ -4359,9 +4363,22 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
+      "dependents": [
+        "mg-menu"
+      ],
+      "dependencies": [
+        "mg-menu-item",
+        "mg-icon",
+        "mg-menu"
+      ],
+      "dependencyGraph": {
+        "mg-menu": [
+          "mg-menu"
+        ],
+        "mg-menu-item": [
+          "mg-icon"
+        ]
+      }
     },
     {
       "filePath": "./src/components/molecules/menu/mg-menu-item/mg-menu-item.tsx",
@@ -4464,13 +4481,18 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [],
+      "dependents": [
+        "mg-menu"
+      ],
       "dependencies": [
         "mg-icon"
       ],
       "dependencyGraph": {
         "mg-menu-item": [
           "mg-icon"
+        ],
+        "mg-menu": [
+          "mg-menu-item"
         ]
       }
     },

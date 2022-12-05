@@ -74,6 +74,10 @@ $navigation-button-sizes: (
   }
 }
 
+:host([data-mg-plus]) .mg-menu-item__navigation-button-chevron {
+  display: none;
+}
+
 .mg-menu-item {
   max-width: var(--mg-menu-item-navigation-button-max-width);
   &__collapse-container {

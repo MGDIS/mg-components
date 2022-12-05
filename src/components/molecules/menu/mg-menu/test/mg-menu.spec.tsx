@@ -2,6 +2,7 @@ import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
 import { MgMenu } from '../mg-menu';
 import { MgMenuItem } from '../../mg-menu-item/mg-menu-item';
+import { setupResizeObserverMock } from '../../../../../utils/unit.test.utils';
 
 const getPage = async args => {
   const page = await newSpecPage({
@@ -48,7 +49,19 @@ const getPage = async args => {
 };
 
 describe('mg-menu', () => {
-  beforeEach(() => jest.useFakeTimers());
+  let fireMo;
+  beforeEach(() => {
+    jest.useFakeTimers();
+    setupResizeObserverMock({
+      observe: function () {
+        fireMo = this.cb;
+      },
+      disconnect: function () {
+        return null;
+      },
+      takeRecords: [],
+    });
+  });
   afterEach(() => jest.runOnlyPendingTimers());
   describe('render', () => {
     test.each([{ label: 'batman menu' }, { label: 'batman menu', direction: 'horizontal' }, { label: 'batman menu', direction: 'vertical' }])('with args %s', async args => {
@@ -134,6 +147,35 @@ describe('mg-menu', () => {
       expect(batmanItem.expanded).toBe(false);
       expect(batmanChildItem.expanded).toBe(false);
       expect(jokerItem.expanded).toBe(event === 'click');
+    });
+  });
+
+  describe('mg-plus in mg-menu', () => {
+    test('should fire disconnect callback', async () => {
+      const { root, doc } = await getPage({ label: 'batman menu' });
+
+      expect(root).toMatchSnapshot();
+
+      const mgMenu = doc.querySelector('[aria-label="batman menu"]');
+
+      mgMenu.remove();
+
+      expect(root).toMatchSnapshot();
+    });
+
+    test('should manage resize with observer', async () => {
+      const page = await getPage({ label: 'batman menu' });
+
+      spyOn(page.rootInstance, 'initMgPlus');
+
+      expect(page.rootInstance.initMgPlus).not.toHaveBeenCalled();
+
+      const target = page.doc.querySelector('[aria-label="batman menu"]');
+
+      fireMo([{ contentRect: 100, target }]);
+      await page.waitForChanges();
+
+      expect(page.rootInstance.initMgPlus).toHaveBeenCalledWith(100);
     });
   });
 });

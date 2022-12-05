@@ -46,5 +46,8 @@
     "close": "Fermer",
     "next": "suivant",
     "previous": "précédent"
+  },
+  "menu": {
+    "moreMenu": "Menu complémentaire"
   }
 }

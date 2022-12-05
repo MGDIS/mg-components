@@ -1,6 +1,9 @@
 import { Component, h, Prop, State, Element, Watch, Host } from '@stencil/core';
 import { ClassList } from '../../../../utils/components.utils';
 import { Direction } from './mg-menu.conf';
+import { initLocales } from '../../../../locales';
+import { MgPlus } from '../../../../behaviors/mg-plus';
+import { Status } from '../mg-menu-item/mg-menu-item.conf';
 
 @Component({
   tag: 'mg-menu',
@@ -15,6 +18,10 @@ export class MgMenu {
   private readonly name = 'mg-menu';
   private menuItems: HTMLMgMenuItemElement[];
   private focusedMenuItem = 0;
+  // mg-plus variables
+  private mgPlus: MgPlus;
+  private messages;
+  private resizeObserver: ResizeObserver;
 
   /**************
    * Decorators *
@@ -78,7 +85,7 @@ export class MgMenu {
   /**
    * Store menu-items on component init and add listeners
    */
-  private initMenuItems = (): void => {
+  private initMenuItemsListeners = (): void => {
     // store all menu-items
     this.menuItems = Array.from(this.element.children).filter(child => child.nodeName === 'MG-MENU-ITEM') as HTMLMgMenuItemElement[];
 
@@ -98,6 +105,54 @@ export class MgMenu {
     });
   };
 
+  private initMgPlus = (): void => {
+    if (!this.isChildMenu) {
+      // add resize observer
+      this.resizeObserver = new ResizeObserver(entries => {
+        entries.forEach(entry => {
+          this.mgPlus.setUp(entry.target.nodeName === 'MG-MENU' ? entry.contentRect.width : this.element.offsetWidth);
+        });
+      });
+      [this.element, ...Array.from(this.element.children)].forEach(item => {
+        this.resizeObserver.observe(item);
+      });
+    }
+  };
+
+  private renderMgPlus = (): HTMLElement => {
+    const size = Array.from(this.element.children)
+      .find(child => child.nodeName === 'MG-MENU-ITEM')
+      ?.getAttribute('size');
+
+    const mgPlus = document.createElement('mg-menu-item');
+    if (size !== null) mgPlus.setAttribute('size', size);
+
+    const label = document.createElement('span');
+    label.setAttribute('slot', 'label');
+
+    const labelText = document.createElement('span');
+    labelText.setAttribute('hidden', '');
+    labelText.textContent = this.messages.menu.moreMenu;
+    label.appendChild(labelText);
+
+    const mgIcon = document.createElement('mg-icon');
+    mgIcon.setAttribute('icon', 'ellipsis-vertical');
+    label.appendChild(mgIcon);
+
+    mgPlus.appendChild(label);
+
+    const plusMenu = document.createElement('mg-menu');
+    plusMenu.setAttribute('direction', Direction.VERTICAL);
+    plusMenu.setAttribute('label', this.messages.menu.moreMenu);
+    Array.from(this.element.children).forEach((element, index) => {
+      element.setAttribute('data-mg-menu-index', `${index}`);
+      plusMenu.appendChild(element.cloneNode(true));
+    });
+    mgPlus.appendChild(plusMenu);
+
+    return mgPlus;
+  };
+
   /*************
    * Lifecycle *
    *************/
@@ -108,6 +163,8 @@ export class MgMenu {
    * @returns {void}
    */
   componentWillLoad(): void {
+    // Get locales
+    this.messages = initLocales(this.element).messages;
     this.validateDirection(this.direction);
     this.validateLabel(this.label);
   }
@@ -118,12 +175,18 @@ export class MgMenu {
    * @returns {ReturnType<typeof setTimeout>} timeout
    */
   componentDidLoad(): ReturnType<typeof setTimeout> {
-    this.initMenuItems();
+    this.mgPlus = new MgPlus(this.element, this.renderMgPlus, (item: HTMLMgMenuItemElement) => item.status !== Status.HIDDEN);
     // update props and states after componentDidLoad hook
     // return a promise to process action only in the FIRST render().
     // https://stenciljs.com/docs/component-lifecycle#componentwillload
     return setTimeout(() => {
       this.isChildMenu = this.element.closest('mg-menu-item') !== null;
+
+      // init mg-plus
+      this.initMgPlus();
+
+      // add menu items listeners
+      this.initMenuItemsListeners();
 
       // click outside management for child vertical menu
       if (!this.isChildMenu && this.direction === Direction.HORIZONTAL) {
@@ -136,6 +199,10 @@ export class MgMenu {
         });
       }
     }, 0);
+  }
+
+  disconnectedCallback() {
+    this.resizeObserver?.disconnect();
   }
 
   /**

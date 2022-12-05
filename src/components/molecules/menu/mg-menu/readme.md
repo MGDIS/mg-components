@@ -85,6 +85,26 @@ Default background color is @color-light.
 | `label` _(required)_ | `label`     | Menu label. Include short menu description. Required for accessibility | `string`                                     | `undefined`            |
 
 
+## Dependencies
+
+### Used by
+
+ - [mg-menu](.)
+
+### Depends on
+
+- [mg-menu-item](../mg-menu-item)
+- [mg-icon](../../../atoms/mg-icon)
+- [mg-menu](.)
+
+### Graph
+```mermaid
+graph TD;
+  mg-menu --> mg-menu
+  mg-menu-item --> mg-icon
+  style mg-menu fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

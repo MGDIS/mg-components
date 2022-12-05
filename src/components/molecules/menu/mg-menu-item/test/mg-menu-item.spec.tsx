@@ -5,6 +5,7 @@ import { MgIcon } from '../../../../atoms/mg-icon/mg-icon';
 import { MgMenuItem } from '../../mg-menu-item/mg-menu-item';
 import { MgMenu } from '../../mg-menu/mg-menu';
 import { sizes, Status } from '../mg-menu-item.conf';
+import { setupResizeObserverMock } from '../../../../../utils/unit.test.utils';
 
 const menu = (label = 'child-menu', slots) => <mg-menu label={label}>{slots}</mg-menu>;
 const menuItem = (args, slot?) => (
@@ -33,7 +34,19 @@ const getPage = async template => {
 };
 
 describe('mg-menu-item', () => {
-  beforeEach(() => jest.useFakeTimers());
+  let fireMo;
+  beforeEach(() => {
+    jest.useFakeTimers();
+    setupResizeObserverMock({
+      observe: function () {
+        fireMo = this.cb;
+      },
+      disconnect: function () {
+        return null;
+      },
+      takeRecords: [],
+    });
+  });
   afterEach(() => jest.runOnlyPendingTimers());
   describe('render', () => {
     test.each([{ label: 'Batman' }, { label: 'Batman', icon: true }, { label: 'Batman', badge: true }, { label: 'Batman', metadata: true }, { label: 'Batman', href: '#link' }])(

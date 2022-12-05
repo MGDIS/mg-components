@@ -195,6 +195,10 @@ Child content is displayed via an **mg-tray** component.
 
 ## Dependencies
 
+### Used by
+
+ - [mg-menu](../mg-menu)
+
 ### Depends on
 
 - [mg-icon](../../../atoms/mg-icon)
@@ -203,6 +207,7 @@ Child content is displayed via an **mg-tray** component.
 ```mermaid
 graph TD;
   mg-menu-item --> mg-icon
+  mg-menu --> mg-menu-item
   style mg-menu-item fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
