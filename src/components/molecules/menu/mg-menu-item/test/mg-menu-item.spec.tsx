@@ -181,4 +181,28 @@ describe('mg-menu-item', () => {
       expect(page.root).toMatchSnapshot();
     });
   });
+
+  describe('click', () => {
+    test.each([{}, { child: true }, { status: Status.DISABLED }, { href: '/' }])('should manage prevent click action', async props => {
+      const page = await getPage(templateDefault({ label: 'Batman', ...props }, props.child === true && childMenu()));
+
+      const element = page.doc.querySelector('[title="Batman"]').closest('mg-menu-item');
+
+      const event = new CustomEvent('click', { bubbles: true });
+
+      const spyPreventDefault = jest.spyOn(event, 'preventDefault');
+      const spyStopPropagation = jest.spyOn(event, 'stopPropagation');
+
+      element.shadowRoot.querySelector(props.href !== undefined ? 'a' : 'button').dispatchEvent(event);
+      await page.waitForChanges();
+
+      if (props.child || props.status !== undefined) {
+        expect(spyPreventDefault).toHaveBeenCalled();
+        expect(spyStopPropagation).toHaveBeenCalled();
+      } else {
+        expect(spyPreventDefault).not.toHaveBeenCalled();
+        expect(spyStopPropagation).not.toHaveBeenCalled();
+      }
+    });
+  });
 });
