@@ -1,5 +1,4 @@
 import { Component, h, Prop, State, Element, Watch, Host } from '@stencil/core';
-import { ClassList } from '../../../../utils/components.utils';
 import { Direction } from './mg-menu.conf';
 import { initLocales } from '../../../../locales';
 import { MgPlus } from '../../../../behaviors/mg-plus';
@@ -50,11 +49,7 @@ export class MgMenu {
   @Prop({ reflect: true }) direction: Direction = Direction.HORIZONTAL;
   @Watch('direction')
   validateDirection(newValue: MgMenu['direction']): void {
-    if (newValue === Direction.VERTICAL) {
-      this.classList.add(`${this.name}--${Direction.VERTICAL}`);
-    } else if (newValue === Direction.HORIZONTAL) {
-      this.classList.add(`${this.name}--${Direction.HORIZONTAL}`);
-    } else {
+    if (![Direction.VERTICAL, Direction.HORIZONTAL].includes(newValue)) {
       throw new Error(`<${this.name}> prop "direction" must be one of : ${Direction.HORIZONTAL}, ${Direction.VERTICAL}.`);
     }
   }
@@ -63,11 +58,6 @@ export class MgMenu {
    * is this menu a child menu. Used for conditional render.
    */
   @State() isChildMenu: boolean;
-
-  /**
-   * Component classes
-   */
-  @State() classList: ClassList = new ClassList([this.name]);
 
   /**
    * Close matching menu-item
@@ -212,7 +202,7 @@ export class MgMenu {
    */
   render(): HTMLElement {
     return (
-      <Host role={this.isChildMenu ? 'menu' : 'menubar'} aria-label={this.label} classList={this.classList.join()}>
+      <Host role={this.isChildMenu ? 'menu' : 'menubar'} aria-label={this.label}>
         <slot></slot>
       </Host>
     );

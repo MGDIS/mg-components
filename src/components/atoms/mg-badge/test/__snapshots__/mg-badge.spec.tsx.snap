@@ -39,6 +39,19 @@ exports[`mg-badge value 1 1`] = `
 </mg-badge>
 `;
 
+exports[`mg-badge value 99+ 1`] = `
+<mg-badge>
+  <mock:shadow-root>
+    <span class="mg-badge mg-badge--info">
+      99+
+      <span class="sr-only">
+        Batman
+      </span>
+    </span>
+  </mock:shadow-root>
+</mg-badge>
+`;
+
 exports[`mg-badge value 100 1`] = `
 <mg-badge>
   <mock:shadow-root>

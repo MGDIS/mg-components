@@ -5,10 +5,10 @@
 ### New epic started
 
 - [ ] Create new entry in changelog
-- [ ] Update version number in `package.json`
 - [ ] Update dependancies + audit
 - [ ] Resolve code smell from sonar
 - [ ] Add chromatic artifact previous version in .`storybook/main.ts`
+
 ```js
 {
   ...,

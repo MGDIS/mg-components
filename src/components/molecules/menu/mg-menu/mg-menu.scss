@@ -3,7 +3,7 @@
   background-color: hsl(var(--mg-menu-background-color-hsl, var(--color-light)));
 }
 
-:host(.mg-menu--vertical) {
+:host([direction='vertical']) {
   flex-direction: column;
   height: 100%;
   overflow-y: auto;

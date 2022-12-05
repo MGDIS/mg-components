@@ -51,7 +51,6 @@ export const setupMutationObserverMock = ({ disconnect, observe, takeRecords }) 
   return MockMutationObserver;
 };
 
-
 /**
  * Utility function that mocks the `ResizeObserver` API. Recommended to execute inside `beforeEach`.
  *
@@ -86,7 +85,7 @@ export const setupResizeObserverMock = ({ disconnect, observe, takeRecords }) =>
     disconnect: () => void = disconnect;
     observe: (target: Element, options?: ResizeObserverOptions) => void = observe;
     takeRecords: () => MutationRecord[] = takeRecords;
-    unobserve: () => void
+    unobserve: () => void;
     cb: () => unknown;
     constructor(fn) {
       this.cb = fn;
@@ -99,7 +98,7 @@ export const setupResizeObserverMock = ({ disconnect, observe, takeRecords }) =>
       configurable: true,
       value: MockResizeObserver,
     });
-  })
+  });
 
   return MockResizeObserver;
 };

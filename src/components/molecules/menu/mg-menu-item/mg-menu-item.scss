@@ -1,5 +1,6 @@
 @use 'sass:map';
 
+@import '../../../../styles/a11y.scss';
 @import '../../../../styles/mixins/navigation-button.scss';
 
 $navigation-button-sizes: (
@@ -21,7 +22,7 @@ $navigation-button-sizes: (
   @each $name, $size in $button-sizes {
     // Building level from 1 to 6
     @for $i from 1 through 6 {
-      :host(.mg-menu-item--vertical[data-level='#{$i}']) {
+      :host([data-style-direction-vertical][data-level='#{$i}']) {
         .mg-menu-item__navigation-button.mg-menu-item__navigation-button--size-#{$name} {
           padding-left: calc(#{$i} * #{map.get($size, 'horizontal')} - 0.3rem);
         }
@@ -44,13 +45,13 @@ $navigation-button-sizes: (
 }
 
 // last item style
-:host(.mg-menu-item--last) .mg-menu-item__collapse-container {
+:host([data-style-position-last]) .mg-menu-item__collapse-container {
   left: unset;
   right: 0;
 }
 
 // vertical item style
-:host(.mg-menu-item--vertical) {
+:host([data-style-direction-vertical]) {
   flex-direction: column;
   .mg-menu-item {
     &__collapse-container {
@@ -66,7 +67,7 @@ $navigation-button-sizes: (
 }
 
 // horizontal item style
-:host(.mg-menu-item--horizontal) .mg-menu-item__collapse-container.mg-menu-item__collapse-container--first-level {
+:host([data-style-direction-horizontal]) .mg-menu-item__collapse-container.mg-menu-item__collapse-container--first-level {
   box-shadow: var(--box-shadow);
   background-color: hsl(var(--color-light));
   ::slotted(mg-menu) {

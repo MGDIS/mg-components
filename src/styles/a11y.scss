@@ -23,3 +23,10 @@
 *:focus:not(:focus-visible) {
   outline: none;
 }
+
+@media (prefers-reduced-motion) {
+  .mg-a11y-animation {
+    animation: none !important;
+    transition: none !important;
+  }
+}

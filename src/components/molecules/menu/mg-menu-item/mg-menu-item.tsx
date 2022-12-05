@@ -2,7 +2,7 @@ import { Component, h, Prop, State, Host, Watch, Element } from '@stencil/core';
 import { ClassList } from '../../../../utils/components.utils';
 import { MgMenu } from '../mg-menu/mg-menu';
 import { Direction } from '../mg-menu/mg-menu.conf';
-import { ElementPosition, sizes, MenuItemSizeType, Status } from './mg-menu-item.conf';
+import { sizes, MenuItemSizeType, Status } from './mg-menu-item.conf';
 
 @Component({
   tag: 'mg-menu-item',
@@ -91,11 +91,6 @@ export class MgMenuItem {
   /************
    * States *
    ************/
-
-  /**
-   * Component classes
-   */
-  @State() classList: ClassList = new ClassList([this.name]);
 
   /**
    * Component button classes
@@ -220,7 +215,7 @@ export class MgMenuItem {
 
       // manage last menu item
       if (!hasNextMenuItem && hasPreviousMenuItem && this.isdirection(Direction.HORIZONTAL)) {
-        this.classList.add(`${this.name}--${ElementPosition.LAST}`);
+        this.element.setAttribute('data-style-position-last', '');
       }
 
       // when main menu item contain an active item it will get the active style
@@ -231,7 +226,7 @@ export class MgMenuItem {
       }
 
       // manage menu items style depending to parent menu horientation
-      this.classList.add(`${this.name}--${this.direction}`);
+      this.element.setAttribute(`data-style-direction-${this.direction}`, '');
       this.navigationButtonClassList.add(`${this.navigationButton}--${this.direction}`);
 
       // manage child items level
@@ -253,7 +248,7 @@ export class MgMenuItem {
   render(): HTMLElement {
     const TagName: string = this.href !== undefined ? 'a' : 'button';
     return (
-      <Host role="menuitem" aria-haspopup={this.hasChildren.toString()} class={this.classList.join()}>
+      <Host role="menuitem" aria-haspopup={this.hasChildren.toString()}>
         <TagName
           href={this.href}
           class={this.navigationButtonClassList.join()}
@@ -276,6 +271,7 @@ export class MgMenuItem {
               class={{
                 [`${this.navigationButton}-chevron`]: true,
                 [`${this.navigationButton}-chevron--rotate`]: this.expanded === true,
+                'mg-a11y-animation': true,
               }}
             >
               <mg-icon icon="chevron-down"></mg-icon>
