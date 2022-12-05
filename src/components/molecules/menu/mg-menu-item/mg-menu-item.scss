@@ -117,3 +117,8 @@ $navigation-button-sizes: (
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+// Prevent click propagation when disabled
+:host([status='disabled']) {
+  pointer-events: none;
+}

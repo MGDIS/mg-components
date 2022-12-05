@@ -82,9 +82,7 @@ export class MgMenu {
     // add listeners on menu item and edit index
     this.menuItems.forEach((item, menuItemIndex) => {
       ['click', 'focus'].forEach(trigger => {
-        (item.shadowRoot.querySelector('button') || item.shadowRoot.querySelector('a')).addEventListener(trigger, (event: CustomEvent & { target: HTMLMgMenuItemElement }) => {
-          event.preventDefault();
-          event.stopPropagation();
+        (item.shadowRoot.querySelector('button') || item.shadowRoot.querySelector('a')).addEventListener(trigger, () => {
           this.focusedMenuItem = menuItemIndex;
           // reset expanded on previous active menu item
           this.menuItems.forEach((item, index) => {

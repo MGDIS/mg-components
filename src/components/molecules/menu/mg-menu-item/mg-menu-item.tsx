@@ -159,7 +159,12 @@ export class MgMenuItem {
    * @returns {void}
    */
   private handleElementCLick = (event: MouseEvent): void => {
-    event.preventDefault();
+    if (this.hasChildren || this.status === Status.DISABLED) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    // toggle expanded when mg-menu-item has child items
     if (this.hasChildren) this.toggleExpanded();
   };
 
