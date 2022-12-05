@@ -21,6 +21,13 @@ MgMenuItem.args = {
   identifier: 'identifier',
   slot: <span slot="label">My label</span>,
 };
+export const MgMenuItemAsLink = Template.bind({});
+
+MgMenuItemAsLink.args = {
+  identifier: 'identifier',
+  href: './',
+  slot: <span slot="label">My label</span>,
+};
 
 export const MgMenuItemWhitIcon = Template.bind({});
 
