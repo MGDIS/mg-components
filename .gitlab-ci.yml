@@ -28,7 +28,7 @@ lint:
   extends:
     - .install
   script:
-    - npm run lint
+    - pnpm turbo lint
 
 audit:
   stage: test
@@ -57,7 +57,7 @@ test:
   extends:
     - .install
   script:
-    - npm test
+    - pnpm turbo test
   artifacts:
     when: always
     expire_in: 1 day
@@ -88,7 +88,7 @@ dist:
     # bump version with feature branch name
     - export version=`cat package.json | jq -r '.version'`
     - if [ -z $CI_COMMIT_TAG ]; then version=$version-$CI_COMMIT_REF_SLUG-$CI_PIPELINE_ID && npm version --no-git-tag-version $version; fi;
-    - npm run build
+    - pnpm turbo build
   artifacts:
     expire_in: 1 week
     paths:

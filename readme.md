@@ -17,8 +17,8 @@ Stencil components are just Web Components, so they work in any major framework 
 To run MG Components, clone this repository, go to your new directory and run:
 
 ```bash
-corepack enable
 # This repository uses pnpm as package manager
+corepack enable
 pnpm i
 npm run start
 ```

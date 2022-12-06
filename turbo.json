@@ -1,0 +1,14 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "build": {
+      "outputs": ["dist/**", "loader/**", "www/**", ".storybook/docs/**"]
+    },
+    "lint": {
+      "outputs": []
+    },
+    "test": {
+      "outputs": ["dist/**", "loader/**", "www/**", ".storybook/docs/**", "coverage/**"]
+    }
+  }
+}
