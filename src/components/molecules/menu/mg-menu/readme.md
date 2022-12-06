@@ -79,10 +79,10 @@ Default background color is @color-light.
 
 ## Properties
 
-| Property             | Attribute   | Description                                                            | Type                                         | Default                |
-| -------------------- | ----------- | ---------------------------------------------------------------------- | -------------------------------------------- | ---------------------- |
-| `direction`          | `direction` | Component display direction. Default: "horizontal"                     | `Direction.HORIZONTAL \| Direction.VERTICAL` | `Direction.HORIZONTAL` |
-| `label` _(required)_ | `label`     | Menu label. Include short menu description. Required for accessibility | `string`                                     | `undefined`            |
+| Property             | Attribute   | Description                                                                                                                   | Type                                         | Default                |
+| -------------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------- | ---------------------- |
+| `direction`          | `direction` | Component display direction. Default: "horizontal"                                                                            | `Direction.HORIZONTAL \| Direction.VERTICAL` | `Direction.HORIZONTAL` |
+| `label` _(required)_ | `label`     | Menu label. Include short menu description. Required for accessibility use reflect for cloneNode() label attribute in mg-plus | `string`                                     | `undefined`            |
 
 
 ## Dependencies

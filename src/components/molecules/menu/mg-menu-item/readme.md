@@ -185,12 +185,12 @@ Child content is displayed via an **mg-tray** component.
 
 ## Properties
 
-| Property   | Attribute  | Description                                                                       | Type                                                                  | Default          |
-| ---------- | ---------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------- | ---------------- |
-| `expanded` | `expanded` | Define menu-item content expanded. Default: false.                                | `boolean`                                                             | `false`          |
-| `href`     | `href`     | Define menu-item badge when defined menu-item contain an anchor instead of button | `string`                                                              | `undefined`      |
-| `size`     | `size`     | Define menu-item size. Default: "large".                                          | `"large" \| "medium" \| "regular"`                                    | `'large'`        |
-| `status`   | `status`   | Define menu-item status. Default: "visible"                                       | `Status.ACTIVE \| Status.DISABLED \| Status.HIDDEN \| Status.VISIBLE` | `Status.VISIBLE` |
+| Property   | Attribute  | Description                                                                              | Type                                                                  | Default          |
+| ---------- | ---------- | ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------- | ---------------- |
+| `expanded` | `expanded` | Define menu-item content expanded. Default: false.                                       | `boolean`                                                             | `false`          |
+| `href`     | `href`     | Define menu-item badge when defined menu-item contain an anchor instead of button        | `string`                                                              | `undefined`      |
+| `size`     | `size`     | Define menu-item size. Default: "large". use reflect to use in getAttribute() in mg-plus | `"large" \| "medium" \| "regular"`                                    | `'large'`        |
+| `status`   | `status`   | Define menu-item status. Default: "visible"                                              | `Status.ACTIVE \| Status.DISABLED \| Status.HIDDEN \| Status.VISIBLE` | `Status.VISIBLE` |
 
 
 ## Dependencies

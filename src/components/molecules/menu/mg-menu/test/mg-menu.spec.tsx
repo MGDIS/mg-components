@@ -4,29 +4,31 @@ import { MgMenu } from '../mg-menu';
 import { MgMenuItem } from '../../mg-menu-item/mg-menu-item';
 import { setupResizeObserverMock } from '../../../../../utils/unit.test.utils';
 
-const getPage = async args => {
+const getPage = async (args, withSubmenu = true) => {
   const page = await newSpecPage({
     components: [MgMenu, MgMenuItem],
     template: () => (
       <mg-menu {...args}>
         <mg-menu-item>
           <span slot="label">batman</span>
-          <mg-menu label="batman - submenu">
-            <mg-menu-item>
-              <span slot="label">batman begins</span>
-              <mg-menu label="batman begins - submenu">
-                <mg-menu-item>
-                  <span slot="label">movie</span>
-                </mg-menu-item>
-              </mg-menu>
-            </mg-menu-item>
-            <mg-menu-item>
-              <span slot="label">joker: the dark knight</span>
-            </mg-menu-item>
-            <mg-menu-item>
-              <span slot="label">bane: the dark knight rise</span>
-            </mg-menu-item>
-          </mg-menu>
+          {withSubmenu && (
+            <mg-menu label="batman - submenu">
+              <mg-menu-item>
+                <span slot="label">batman begins</span>
+                <mg-menu label="batman begins - submenu">
+                  <mg-menu-item>
+                    <span slot="label">movie</span>
+                  </mg-menu-item>
+                </mg-menu>
+              </mg-menu-item>
+              <mg-menu-item>
+                <span slot="label">joker: the dark knight</span>
+              </mg-menu-item>
+              <mg-menu-item>
+                <span slot="label">bane: the dark knight rise</span>
+              </mg-menu-item>
+            </mg-menu>
+          )}
         </mg-menu-item>
         <mg-menu-item>
           <span slot="label">joker</span>
@@ -163,19 +165,21 @@ describe('mg-menu', () => {
       expect(root).toMatchSnapshot();
     });
 
-    test('should manage resize with observer', async () => {
-      const page = await getPage({ label: 'batman menu' });
+    test.each([{ nodeName: 'MG-MENU-ITEM' }, { nodeName: 'MG-MENU' }])('should manage resize with observer', async target => {
+      const page = await getPage({ label: 'batman menu' }, false);
 
-      spyOn(page.rootInstance, 'initMgPlus');
+      const spy = jest.spyOn(page.rootInstance.mgPlus, 'setUp');
 
-      expect(page.rootInstance.initMgPlus).not.toHaveBeenCalled();
+      expect(spy).not.toHaveBeenCalled();
 
-      const target = page.doc.querySelector('[aria-label="batman menu"]');
-
-      fireMo([{ contentRect: 100, target }]);
+      fireMo([{ contentRect: { width: 100 }, target }]);
       await page.waitForChanges();
 
-      expect(page.rootInstance.initMgPlus).toHaveBeenCalledWith(100);
+      if (target.nodeName === 'MG-MENU') {
+        expect(spy).toHaveBeenCalledWith(100);
+      } else {
+        expect(spy).toHaveBeenCalled();
+      }
     });
   });
 });

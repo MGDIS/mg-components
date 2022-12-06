@@ -869,7 +869,7 @@ export namespace Components {
          */
         "direction": Direction;
         /**
-          * Menu label. Include short menu description. Required for accessibility
+          * Menu label. Include short menu description. Required for accessibility use reflect for cloneNode() label attribute in mg-plus
          */
         "label": string;
     }
@@ -883,7 +883,7 @@ export namespace Components {
          */
         "href": string;
         /**
-          * Define menu-item size. Default: "large".
+          * Define menu-item size. Default: "large". use reflect to use in getAttribute() in mg-plus
          */
         "size": MenuItemSizeType;
         /**
@@ -2217,7 +2217,7 @@ declare namespace LocalJSX {
          */
         "direction"?: Direction;
         /**
-          * Menu label. Include short menu description. Required for accessibility
+          * Menu label. Include short menu description. Required for accessibility use reflect for cloneNode() label attribute in mg-plus
          */
         "label": string;
     }
@@ -2231,7 +2231,7 @@ declare namespace LocalJSX {
          */
         "href"?: string;
         /**
-          * Define menu-item size. Default: "large".
+          * Define menu-item size. Default: "large". use reflect to use in getAttribute() in mg-plus
          */
         "size"?: MenuItemSizeType;
         /**

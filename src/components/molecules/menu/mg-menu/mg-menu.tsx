@@ -1,7 +1,7 @@
 import { Component, h, Prop, State, Element, Watch, Host } from '@stencil/core';
 import { Direction } from './mg-menu.conf';
 import { initLocales } from '../../../../locales';
-import { MgPlus } from '../../../../behaviors/mg-plus';
+import { MgPlus } from '../../../../behaviors/mg-plus/mg-plus';
 import { Status } from '../mg-menu-item/mg-menu-item.conf';
 
 @Component({
@@ -34,8 +34,9 @@ export class MgMenu {
   /**
    * Menu label. Include short menu description.
    * Required for accessibility
+   * use reflect for cloneNode() label attribute in mg-plus
    */
-  @Prop() label!: string;
+  @Prop({ reflect: true }) label!: string;
   @Watch('label')
   validateLabel(newValue: MgMenu['label']): void {
     if (newValue === undefined) {
@@ -76,9 +77,6 @@ export class MgMenu {
    * Store menu-items on component init and add listeners
    */
   private initMenuItemsListeners = (): void => {
-    // store all menu-items
-    this.menuItems = Array.from(this.element.children).filter(child => child.nodeName === 'MG-MENU-ITEM') as HTMLMgMenuItemElement[];
-
     // add listeners on menu item and edit index
     this.menuItems.forEach((item, menuItemIndex) => {
       ['click', 'focus'].forEach(trigger => {
@@ -94,23 +92,21 @@ export class MgMenu {
   };
 
   private initMgPlus = (): void => {
-    if (!this.isChildMenu) {
+    if (!this.isChildMenu && !this.resizeObserver) {
       // add resize observer
       this.resizeObserver = new ResizeObserver(entries => {
         entries.forEach(entry => {
           this.mgPlus.setUp(entry.target.nodeName === 'MG-MENU' ? entry.contentRect.width : this.element.offsetWidth);
         });
       });
-      [this.element, ...Array.from(this.element.children)].forEach(item => {
+      [this.element, ...this.menuItems].forEach(item => {
         this.resizeObserver.observe(item);
       });
     }
   };
 
   private renderMgPlus = (): HTMLElement => {
-    const size = Array.from(this.element.children)
-      .find(child => child.nodeName === 'MG-MENU-ITEM')
-      ?.getAttribute('size');
+    const size = this.menuItems.find(child => child.nodeName === 'MG-MENU-ITEM').getAttribute('size');
 
     const mgPlus = document.createElement('mg-menu-item');
     if (size !== null) mgPlus.setAttribute('size', size);
@@ -168,6 +164,8 @@ export class MgMenu {
     // return a promise to process action only in the FIRST render().
     // https://stenciljs.com/docs/component-lifecycle#componentwillload
     return setTimeout(() => {
+      // store all menu-items
+      this.menuItems = Array.from(this.element.children).filter(child => child.nodeName === 'MG-MENU-ITEM') as HTMLMgMenuItemElement[];
       this.isChildMenu = this.element.closest('mg-menu-item') !== null;
 
       // init mg-plus

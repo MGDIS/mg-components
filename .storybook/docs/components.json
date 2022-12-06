@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-12-02T14:49:48",
+  "timestamp": "2022-12-06T13:14:19",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.18.1",
@@ -4345,8 +4345,8 @@
           "type": "string",
           "mutable": false,
           "attr": "label",
-          "reflectToAttr": false,
-          "docs": "Menu label. Include short menu description.\nRequired for accessibility",
+          "reflectToAttr": true,
+          "docs": "Menu label. Include short menu description.\nRequired for accessibility\nuse reflect for cloneNode() label attribute in mg-plus",
           "docsTags": [],
           "values": [
             {
@@ -4427,8 +4427,8 @@
           "type": "\"large\" | \"medium\" | \"regular\"",
           "mutable": false,
           "attr": "size",
-          "reflectToAttr": false,
-          "docs": "Define menu-item size. Default: \"large\".",
+          "reflectToAttr": true,
+          "docs": "Define menu-item size. Default: \"large\".\nuse reflect to use in getAttribute() in mg-plus",
           "docsTags": [],
           "default": "'large'",
           "values": [

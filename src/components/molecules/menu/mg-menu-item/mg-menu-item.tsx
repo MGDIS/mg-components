@@ -50,8 +50,9 @@ export class MgMenuItem {
 
   /**
    * Define menu-item size. Default: "large".
+   * use reflect to use in getAttribute() in mg-plus
    */
-  @Prop() size: MenuItemSizeType = 'large';
+  @Prop({ reflect: true }) size: MenuItemSizeType = 'large';
   @Watch('size')
   validateSize(newValue: MgMenuItem['size'], oldValue?: MgMenuItem['size']): void {
     if (!sizes.includes(newValue)) {
