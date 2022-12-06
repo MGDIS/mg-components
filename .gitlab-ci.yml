@@ -125,7 +125,7 @@ review_app:
   extends:
     - .install
   script:
-    - npm run storybook:build
+    - pnpm turbo storybook:build
     - mv storybook-static public
   needs:
     - dist

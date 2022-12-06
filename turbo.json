@@ -4,6 +4,9 @@
     "build": {
       "outputs": ["dist/**", "loader/**", "www/**", ".storybook/docs/**"]
     },
+    "storybook:build": {
+      "outputs": ["storybook-static/**"]
+    },
     "lint": {
       "outputs": []
     },
