@@ -123,9 +123,10 @@ review_app:
   extends:
     - .install
   script:
-    - npm run build
     - npm run storybook:build
     - mv storybook-static public
+  needs:
+    - dist
   artifacts:
     paths:
       - public
@@ -163,9 +164,10 @@ pages:
   extends:
     - .install
   script:
-    - npm run build
     - npm run storybook:build
     - mv storybook-static public
+  needs:
+    - dist
   artifacts:
     paths:
       - public
