@@ -18,7 +18,8 @@ stages:
 
 .install:
   before_script:
-    - npm ci
+    - corepack enable
+    - pnpm i
 
 lint:
   stage: test
