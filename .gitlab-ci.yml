@@ -95,6 +95,7 @@ dist:
       - package.json
       - dist
       - loader
+      - www
 
 chromatic-publish:
   stage: chromatic-publish
