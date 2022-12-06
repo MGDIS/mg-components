@@ -36,3 +36,14 @@ export async function createPage(htmlString?: string): Promise<DesignSystemE2EPa
 
   return page;
 }
+
+/**
+ * Add a darker background
+ * usefull for light rendered element
+ *
+ * @param {boolean} condition condition to add darker background
+ * @param {string} html html to update
+ * @returns {string} html to render
+ */
+export const darkBackground = (condition: boolean, html: string): string =>
+  `${condition ? '<span style="background:#999;display:inline-block;">' : ''}${html}${condition ? '</span>' : ''}`;

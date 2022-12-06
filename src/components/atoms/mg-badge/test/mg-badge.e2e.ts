@@ -1,4 +1,4 @@
-import { createPage } from '../../../../utils/e2e.test.utils';
+import { createPage, darkBackground } from '../../../../utils/e2e.test.utils';
 import { variants } from '../mg-badge.conf';
 
 describe('mg-badge', () => {
@@ -8,11 +8,7 @@ describe('mg-badge', () => {
         [true, false]
           .map(outline =>
             [1, 99, '*', '!', '99+']
-              .map(value =>
-                variant === 'secondary'
-                  ? `<span style="background:#999"><mg-badge value="${value}" label="${variant}" variant="${variant}" outline="${outline}"></mg-badge></span>`
-                  : `<mg-badge value="${value}" label="${variant}" variant="${variant}" outline="${outline}"></mg-badge>`,
-              )
+              .map(value => darkBackground(variant === 'secondary', `<mg-badge value="${value}" label="${variant}" variant="${variant}" outline="${outline}"></mg-badge>`))
               .join(''),
           )
           .join(''),

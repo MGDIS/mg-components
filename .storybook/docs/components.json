@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-12-05T16:18:49",
+  "timestamp": "2022-12-06T16:55:29",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.20.0",
@@ -5335,8 +5335,8 @@
       "filePath": "./src/components/atoms/mg-tag/mg-tag.tsx",
       "encapsulation": "shadow",
       "tag": "mg-tag",
-      "readme": "## Specs\n\n![](./mg-tag/doc/img/mg-tag-specs.png)\n\n## Theming\n\n![](./mg-tag/doc/img/mg-tag-theming.png)\n\n## CSS Variables\n\nIf needed some [variables](./?path=/story/css-variables--page) are available to customize the component:\n\n### Global\n\n- `--mg-tag-height`: Define tag min height, default: `2.3rem`\n- `--mg-tag-border-radius`: Define tag border radius, default: `0.5rem`\n- `--mg-tag-font-size`: Define tag font size, default: `1.2rem`\n\n### Variant\n\nVariants `primary`, `secondary`, `success`, `warning`, `danger`, `info` can be customized by changing the global [colors](./?path=/docs/style-colors--page).\n\n",
-      "docs": "![](./mg-tag/doc/img/mg-tag-specs.png)",
+      "readme": "## Specs\n\n ![](./mg-tag/doc/img/specs-tags.png) \n\n### Fill / Outline tags\n\n#### Colors \n\n![](./mg-tag/doc/img/colors-tag.png)\n\nIcons take the color of the label.\n\n### Soft tags\n\n#### Font \n\n![](./mg-tag/doc/img/font-tags.png) \n\nThey are not on *SemiBold but Regular*.\n\n#### Colors\n\n![](./mg-tag/doc/img/icons-colors-tags.png) \n\n1. Icons takes the color of the tag variant.\n2. Labels are **@dark** for all.\n3. Color background is *90% lightness* of the tag variant. \n\n#### Rules\n\n![](./mg-tag/doc/img/use-tags.png) \n\nAll must have label for accessibility. \nThis is not possible only for software tags. \nFor \"normal\" tags only a pictogram can be used because the contrast is sufficient.\n\n## Theming\n\n![](./mg-tag/doc/img/tags.png) \n\n### With Icons\n\n![](./mg-tag/doc/img/tags-icons.png) \n\n## CSS Variables\n\nIf needed some [variables](./?path=/story/css-variables--page) are available to customize the component:\n\n### Global\n\n- `--mg-tag-height`: Define tag min height, default: `2.3rem`\n- `--mg-tag-border-radius`: Define tag border radius, default: `0.5rem`\n- `--mg-tag-font-size`: Define tag font size, default: `1.2rem`\n\n### Variant\n\nVariants `primary`, `secondary`, `success`, `warning`, `danger`, `info` can be customized by changing the global [colors](./?path=/docs/style-colors--page).\n\n",
+      "docs": "![](./mg-tag/doc/img/specs-tags.png)",
       "docsTags": [],
       "usage": {},
       "props": [
@@ -5346,7 +5346,23 @@
           "mutable": false,
           "attr": "outline",
           "reflectToAttr": false,
-          "docs": "Define if button is using outline style",
+          "docs": "Define if tag is using outline style",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "soft",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "soft",
+          "reflectToAttr": false,
+          "docs": "Define if tag is using soft style",
           "docsTags": [],
           "values": [
             {
@@ -5358,15 +5374,36 @@
         },
         {
           "name": "variant",
-          "type": "string",
+          "type": "\"danger\" | \"info\" | \"primary\" | \"secondary\" | \"success\" | \"warning\"",
           "mutable": false,
           "attr": "variant",
           "reflectToAttr": false,
-          "docs": "Define button variant",
+          "docs": "Define tag variant",
           "docsTags": [],
           "default": "variants[0]",
           "values": [
             {
+              "value": "danger",
+              "type": "string"
+            },
+            {
+              "value": "info",
+              "type": "string"
+            },
+            {
+              "value": "primary",
+              "type": "string"
+            },
+            {
+              "value": "secondary",
+              "type": "string"
+            },
+            {
+              "value": "success",
+              "type": "string"
+            },
+            {
+              "value": "warning",
               "type": "string"
             }
           ],
