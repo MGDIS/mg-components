@@ -1,5 +1,9 @@
-import { BadgeType } from '../../atoms/mg-badge/mg-badge.conf';
+import { MgBadge } from '../../atoms/mg-badge/mg-badge';
+import { MgIcon } from '../../atoms/mg-icon/mg-icon';
 
+/**
+ * Available tabs items status
+ */
 export enum Status {
   VISIBLE = 'visible',
   HIDDEN = 'hidden',
@@ -13,12 +17,17 @@ export enum Status {
  */
 export type TabItem = {
   label: string;
-  icon?: string;
-  badge?: BadgeType;
+  icon?: MgIcon['icon'];
+  badge?: Pick<MgBadge, 'value' | 'variant' | 'label'>;
   status: Status;
 };
 
 /**
  * List of all possibles sizes
  */
-export const sizes: string[] = ['regular', 'large'];
+export const sizes = ['regular', 'large'] as const;
+
+/**
+ * Variant type from variants
+ */
+export type SizeType = typeof sizes[number];

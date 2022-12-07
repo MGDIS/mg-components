@@ -40,12 +40,12 @@ If needed some [variables](./?path=/story/css-variables--page) are available to 
 
 ## Properties
 
-| Property  | Attribute | Description                                                             | Type      | Default     |
-| --------- | --------- | ----------------------------------------------------------------------- | --------- | ----------- |
-| `icon`    | `icon`    | Icon to display                                                         | `string`  | `undefined` |
-| `size`    | `size`    | Define icon size                                                        | `string`  | `'regular'` |
-| `spin`    | `spin`    | Make the icon spin                                                      | `boolean` | `false`     |
-| `variant` | `variant` | Define icon variant Add a background to the icon based on variant color | `string`  | `undefined` |
+| Property  | Attribute | Description                                                             | Type                                               | Default     |
+| --------- | --------- | ----------------------------------------------------------------------- | -------------------------------------------------- | ----------- |
+| `icon`    | `icon`    | Icon to display                                                         | `string`                                           | `undefined` |
+| `size`    | `size`    | Define icon size                                                        | `"extra-large" \| "large" \| "regular" \| "small"` | `'regular'` |
+| `spin`    | `spin`    | Make the icon spin                                                      | `boolean`                                          | `false`     |
+| `variant` | `variant` | Define icon variant Add a background to the icon based on variant color | `"danger" \| "info" \| "success" \| "warning"`     | `undefined` |
 
 
 ## Dependencies
@@ -63,6 +63,7 @@ If needed some [variables](./?path=/story/css-variables--page) are available to 
  - [mg-input-text](../../molecules/inputs/mg-input-text)
  - [mg-input-textarea](../../molecules/inputs/mg-input-textarea)
  - [mg-input-toggle](../../molecules/inputs/mg-input-toggle)
+ - [mg-menu-item](../../molecules/menu/mg-menu-item)
  - [mg-message](../../molecules/mg-message)
  - [mg-modal](../../molecules/mg-modal)
  - [mg-pagination](../../molecules/mg-pagination)
@@ -84,6 +85,7 @@ graph TD;
   mg-input-text --> mg-icon
   mg-input-textarea --> mg-icon
   mg-input-toggle --> mg-icon
+  mg-menu-item --> mg-icon
   mg-message --> mg-icon
   mg-modal --> mg-icon
   mg-pagination --> mg-icon

@@ -2,7 +2,7 @@
 
 The badge is always placed on top of, or next to the element it is for.
 
-The badge displays a number or a punctuation character.
+The badge displays a number (can be followed by the `+` character) or a punctuation character.
 
 ## Specs
 
@@ -24,12 +24,12 @@ If needed some [variables](./?path=/story/css-variables--page) are available to 
 
 ## Properties
 
-| Property             | Attribute | Description                                                        | Type               | Default       |
-| -------------------- | --------- | ------------------------------------------------------------------ | ------------------ | ------------- |
-| `label` _(required)_ | `label`   | Badge label. Include short description. Required for accessibility | `string`           | `undefined`   |
-| `outline`            | `outline` | Define if button is using outline style                            | `boolean`          | `undefined`   |
-| `value` _(required)_ | `value`   | Badge value                                                        | `number \| string` | `undefined`   |
-| `variant`            | `variant` | Define button variant                                              | `string`           | `variants[0]` |
+| Property             | Attribute | Description                                                        | Type                                                                       | Default       |
+| -------------------- | --------- | ------------------------------------------------------------------ | -------------------------------------------------------------------------- | ------------- |
+| `label` _(required)_ | `label`   | Badge label. Include short description. Required for accessibility | `string`                                                                   | `undefined`   |
+| `outline`            | `outline` | Define if button is using outline style                            | `boolean`                                                                  | `undefined`   |
+| `value` _(required)_ | `value`   | Badge value                                                        | `number \| string`                                                         | `undefined`   |
+| `variant`            | `variant` | Define button variant                                              | `"danger" \| "info" \| "primary" \| "secondary" \| "success" \| "warning"` | `variants[0]` |
 
 
 ## Dependencies

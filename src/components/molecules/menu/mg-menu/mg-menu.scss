@@ -1,0 +1,10 @@
+:host {
+  display: flex;
+  background-color: hsl(var(--mg-menu-background-color-hsl, var(--color-light)));
+}
+
+:host([direction='vertical']) {
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+}

@@ -97,6 +97,267 @@
         </div>
       </section>
       <section>
+        <h2>Menu</h2>
+        <h3>Horiztonal menu</h3>
+        <mg-menu label="Batman menu">
+          <mg-menu-item size="medium">
+            <span slot="label">level-1 - label-1</span>
+          </mg-menu-item>
+          <mg-menu-item size="medium" status="disabled">
+            <span slot="label">level-1 - label-2 long</span>
+          </mg-menu-item>
+          <mg-menu-item size="medium">
+            <span slot="label">level-1 - label-3 very very very very very long</span>
+            <mg-icon icon="user" slot="illustration"></mg-icon>
+          </mg-menu-item>
+          <mg-menu-item size="medium">
+            <span slot="label">level-1 - label-4</span>
+            <mg-icon icon="user" slot="illustration"></mg-icon>
+            <mg-badge value="2" label="hello" slot="information"></mg-badge>
+            <mg-menu label="submenu" direction="vertical">
+              <mg-menu-item size="medium">
+                <span slot="label">level-2 - label-1</span>
+              </mg-menu-item>
+              <mg-menu-item size="medium">
+                <span slot="label">level-2 - label-2</span>
+                <mg-icon icon="user" slot="illustration"></mg-icon>
+              </mg-menu-item>
+              <mg-menu-item size="medium">
+                <span slot="label">level-2 - label-3 very long</span>
+                <mg-icon icon="user" slot="illustration"></mg-icon>
+              </mg-menu-item>
+              <mg-menu-item size="medium">
+                <span slot="label">level-2 - label-4</span>
+                <mg-badge value="2" label="hello" slot="information"></mg-badge>
+                <mg-icon icon="user" slot="illustration"></mg-icon>
+                <mg-menu label="submenu 2" direction="vertical">
+                  <mg-menu-item size="regular">
+                    <span slot="label">level-3 - label-1</span>
+                  </mg-menu-item>
+                  <mg-menu-item size="regular">
+                    <span slot="label">level-3 - label-2</span>
+                    <mg-icon icon="user" slot="illustration"></mg-icon>
+                  </mg-menu-item>
+                  <mg-menu-item size="regular">
+                    <span slot="label">level-3 - label-3</span>
+                    <mg-icon icon="user" slot="illustration"></mg-icon>
+                    <mg-badge value="2" label="hello" slot="information"></mg-badge>
+                  </mg-menu-item>
+                </mg-menu>
+              </mg-menu-item>
+              <mg-menu-item size="medium">
+                <span slot="label">level-2 - label-5</span>
+                <mg-icon icon="user" slot="illustration"></mg-icon>
+                <mg-badge value="2" label="hello" slot="information"></mg-badge>
+              </mg-menu-item>
+            </mg-menu>
+          </mg-menu-item>
+          <mg-menu-item size="regular">
+            <span slot="label">level-1 - slot content</span>
+            <span slot="metadata">my very long metadatas</span>
+            <mg-icon icon="user" slot="illustration"></mg-icon>
+            <mg-badge value="2" label="hello" slot="information"></mg-badge>
+            <div>
+              <h3>Demo title</h3>
+              <p>some content</p>
+            </div>
+          </mg-menu-item>
+          <mg-menu-item size="medium">
+            <span slot="label">level-1 - label-6</span>
+            <mg-badge value="2" label="hello" slot="information"></mg-badge>
+            <mg-icon icon="user" slot="illustration"></mg-icon>
+            <mg-menu label="submenu" direction="vertical">
+              <mg-menu-item size="medium">
+                <span slot="label">level-2 - label-1</span>
+                <mg-menu label="submenu" direction="vertical">
+                  <mg-menu-item size="medium">
+                    <span slot="label">level-3 - label-1</span>
+                    <mg-badge value="2" label="hello" slot="information"></mg-badge>
+                    <mg-icon icon="user" slot="illustration"></mg-icon>
+                    <mg-menu label="submenu 2" direction="vertical">
+                      <mg-menu-item size="medium" status="{Status.ACTIVE}">
+                        <span slot="label">level-4 - label-1</span>
+                      </mg-menu-item>
+                      <mg-menu-item size="medium">
+                        <span slot="label">level-4 - label-2</span>
+                        <mg-icon icon="user" slot="illustration"></mg-icon>
+                      </mg-menu-item>
+                      <mg-menu-item size="medium">
+                        <span slot="label">level-4 - label-3</span>
+                        <mg-icon icon="user" slot="illustration"></mg-icon>
+                        <mg-badge value="2" label="hello" slot="information"></mg-badge>
+                      </mg-menu-item>
+                    </mg-menu>
+                  </mg-menu-item>
+                </mg-menu>
+              </mg-menu-item>
+              <mg-menu-item size="medium">
+                <span slot="label">level-2 - label-2</span>
+                <mg-icon icon="user" slot="illustration"></mg-icon>
+              </mg-menu-item>
+              <mg-menu-item size="medium">
+                <span slot="label">level-2 - label-3</span>
+                <mg-icon icon="user" slot="illustration"></mg-icon>
+                <mg-badge value="2" label="hello" slot="information"></mg-badge>
+              </mg-menu-item>
+              <mg-menu-item size="medium">
+                <span slot="label">level-2 - label-4 very long</span>
+                <mg-icon icon="user" slot="illustration"></mg-icon>
+                <mg-badge value="2" label="hello" slot="information"></mg-badge>
+                <mg-menu label="submenu 2" direction="vertical">
+                  <mg-menu-item size="regular">
+                    <span slot="label">level-3 - label-1</span>
+                  </mg-menu-item>
+                  <mg-menu-item size="regular">
+                    <span slot="label">level-3 - label-2</span>
+                    <mg-icon icon="user" slot="illustration"></mg-icon>
+                  </mg-menu-item>
+                  <mg-menu-item size="regular">
+                    <span slot="label">level-3 - label-3</span>
+                    <mg-icon icon="user" slot="illustration"></mg-icon>
+                    <mg-badge value="2" label="hello" slot="information"></mg-badge>
+                  </mg-menu-item>
+                </mg-menu>
+              </mg-menu-item>
+              <mg-menu-item size="medium">
+                <span slot="label">level-2 - label-5</span>
+                <mg-icon icon="user" slot="illustration"></mg-icon>
+                <mg-badge value="2" label="hello" slot="information"></mg-badge>
+              </mg-menu-item>
+            </mg-menu>
+          </mg-menu-item>
+        </mg-menu>
+        <h3>Vertical menu</h3>
+        <mg-menu label="Batman menu" direction="vertical">
+          <mg-menu-item size="medium">
+            <span slot="label">level-1 - label-1</span>
+          </mg-menu-item>
+          <mg-menu-item size="medium" status="disabled">
+            <span slot="label">level-1 - label-2 long</span>
+          </mg-menu-item>
+          <mg-menu-item size="medium">
+            <span slot="label">level-1 - label-3 very very very very very long</span>
+            <mg-icon icon="user" slot="illustration"></mg-icon>
+          </mg-menu-item>
+          <mg-menu-item size="medium">
+            <span slot="label">level-1 - label-4</span>
+            <mg-icon icon="user" slot="illustration"></mg-icon>
+            <mg-badge value="2" label="hello" slot="information"></mg-badge>
+            <mg-menu label="submenu" direction="vertical">
+              <mg-menu-item size="medium">
+                <span slot="label">level-2 - label-1</span>
+              </mg-menu-item>
+              <mg-menu-item size="medium">
+                <span slot="label">level-2 - label-2</span>
+                <mg-icon icon="user" slot="illustration"></mg-icon>
+              </mg-menu-item>
+              <mg-menu-item size="medium">
+                <span slot="label">level-2 - label-3 very long</span>
+                <mg-icon icon="user" slot="illustration"></mg-icon>
+              </mg-menu-item>
+              <mg-menu-item size="medium">
+                <span slot="label">level-2 - label-4</span>
+                <mg-badge value="2" label="hello" slot="information"></mg-badge>
+                <mg-icon icon="user" slot="illustration"></mg-icon>
+                <mg-menu label="submenu 2" direction="vertical">
+                  <mg-menu-item size="regular">
+                    <span slot="label">level-3 - label-1</span>
+                  </mg-menu-item>
+                  <mg-menu-item size="regular">
+                    <span slot="label">level-3 - label-2</span>
+                    <mg-icon icon="user" slot="illustration"></mg-icon>
+                  </mg-menu-item>
+                  <mg-menu-item size="regular">
+                    <span slot="label">level-3 - label-3</span>
+                    <mg-icon icon="user" slot="illustration"></mg-icon>
+                    <mg-badge value="2" label="hello" slot="information"></mg-badge>
+                  </mg-menu-item>
+                </mg-menu>
+              </mg-menu-item>
+              <mg-menu-item size="medium">
+                <span slot="label">level-2 - label-5</span>
+                <mg-icon icon="user" slot="illustration"></mg-icon>
+                <mg-badge value="2" label="hello" slot="information"></mg-badge>
+              </mg-menu-item>
+            </mg-menu>
+          </mg-menu-item>
+          <mg-menu-item size="regular">
+            <span slot="label">level-1 - slot content</span>
+            <span slot="metadata">my very long metadatas</span>
+            <mg-icon icon="user" slot="illustration"></mg-icon>
+            <mg-badge value="2" label="hello" slot="information"></mg-badge>
+            <div>
+              <h3>Demo title</h3>
+              <p>some content</p>
+            </div>
+          </mg-menu-item>
+          <mg-menu-item size="medium">
+            <span slot="label">level-1 - label-6</span>
+            <mg-badge value="2" label="hello" slot="information"></mg-badge>
+            <mg-icon icon="user" slot="illustration"></mg-icon>
+            <mg-menu label="submenu" direction="vertical">
+              <mg-menu-item size="medium">
+                <span slot="label">level-2 - label-1</span>
+                <mg-menu label="submenu" direction="vertical">
+                  <mg-menu-item size="medium">
+                    <span slot="label">level-3 - label-1</span>
+                    <mg-badge value="2" label="hello" slot="information"></mg-badge>
+                    <mg-icon icon="user" slot="illustration"></mg-icon>
+                    <mg-menu label="submenu 2" direction="vertical">
+                      <mg-menu-item size="medium" status="{Status.ACTIVE}">
+                        <span slot="label">level-4 - label-1</span>
+                      </mg-menu-item>
+                      <mg-menu-item size="medium">
+                        <span slot="label">level-4 - label-2</span>
+                        <mg-icon icon="user" slot="illustration"></mg-icon>
+                      </mg-menu-item>
+                      <mg-menu-item size="medium">
+                        <span slot="label">level-4 - label-3</span>
+                        <mg-icon icon="user" slot="illustration"></mg-icon>
+                        <mg-badge value="2" label="hello" slot="information"></mg-badge>
+                      </mg-menu-item>
+                    </mg-menu>
+                  </mg-menu-item>
+                </mg-menu>
+              </mg-menu-item>
+              <mg-menu-item size="medium">
+                <span slot="label">level-2 - label-2</span>
+                <mg-icon icon="user" slot="illustration"></mg-icon>
+              </mg-menu-item>
+              <mg-menu-item size="medium">
+                <span slot="label">level-2 - label-3</span>
+                <mg-icon icon="user" slot="illustration"></mg-icon>
+                <mg-badge value="2" label="hello" slot="information"></mg-badge>
+              </mg-menu-item>
+              <mg-menu-item size="medium">
+                <span slot="label">level-2 - label-4 very long</span>
+                <mg-icon icon="user" slot="illustration"></mg-icon>
+                <mg-badge value="2" label="hello" slot="information"></mg-badge>
+                <mg-menu label="submenu 2" direction="vertical">
+                  <mg-menu-item size="regular">
+                    <span slot="label">level-3 - label-1</span>
+                  </mg-menu-item>
+                  <mg-menu-item size="regular">
+                    <span slot="label">level-3 - label-2</span>
+                    <mg-icon icon="user" slot="illustration"></mg-icon>
+                  </mg-menu-item>
+                  <mg-menu-item size="regular">
+                    <span slot="label">level-3 - label-3</span>
+                    <mg-icon icon="user" slot="illustration"></mg-icon>
+                    <mg-badge value="2" label="hello" slot="information"></mg-badge>
+                  </mg-menu-item>
+                </mg-menu>
+              </mg-menu-item>
+              <mg-menu-item size="medium">
+                <span slot="label">level-2 - label-5</span>
+                <mg-icon icon="user" slot="illustration"></mg-icon>
+                <mg-badge value="2" label="hello" slot="information"></mg-badge>
+              </mg-menu-item>
+            </mg-menu>
+          </mg-menu-item>
+        </mg-menu>
+      </section>
+      <section>
         <h2>Buttons</h2>
         <div class="mg-group-elements" style="padding: 0 0 1rem">
           <mg-button variant="primary">Primary</mg-button>
@@ -173,6 +434,13 @@
           <mg-button disable-on-click>Blu Blu Blu Blu Blu Blu Blu Blu</mg-button>
           <mg-button disable-on-click><mg-icon icon="check-circle"></mg-icon>Blu</mg-button>
           <mg-button is-icon label="Ce bouton se désactive après un clic" disable-on-click><mg-icon icon="check-circle"></mg-icon></mg-button>
+        </div>
+        <h3>Disabled button</h3>
+        <div class="mg-group-elements" style="padding: 0 0 1rem">
+          <mg-button disabled onclick="alert('blu')" id="toggle-disabled-button">alert('blu')</mg-button>
+          <mg-button onclick="document.getElementById('toggle-disabled-button').disabled = !document.getElementById('toggle-disabled-button').disabled"
+            >👈 Toggle disabled</mg-button
+          >
         </div>
         <h3>a.mg-button</h3>
         <div class="mg-group-elements" style="padding: 0 0 1rem">

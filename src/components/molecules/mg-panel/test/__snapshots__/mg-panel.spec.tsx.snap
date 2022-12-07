@@ -318,7 +318,7 @@ exports[`mg-panel navigation Should NOT collapse panel, case expandToggleDisable
     <section class="mg-panel" id="identifier">
       <header class="mg-panel__header" id="identifier-header">
         <div class="mg-panel__header-left">
-          <mg-button aria-controls="identifier-content" aria-disabled="true" aria-expanded="true" role="button" tabindex="-1">
+          <mg-button aria-controls="identifier-content" aria-disabled="true" aria-expanded="true" role="button" tabindex="0">
             <mock:shadow-root>
               <div class="mg-button mg-button--disabled mg-button--flat" id="identifier-collapse-button">
                 <div class="mg-button__content">
@@ -356,7 +356,7 @@ exports[`mg-panel navigation Should NOT collapse panel, case expandToggleDisable
     <section class="mg-panel" id="identifier">
       <header class="mg-panel__header" id="identifier-header">
         <div class="mg-panel__header-left">
-          <mg-button aria-controls="identifier-content" aria-disabled="true" aria-expanded="true" role="button" tabindex="-1">
+          <mg-button aria-controls="identifier-content" aria-disabled="true" aria-expanded="true" role="button" tabindex="0">
             <mock:shadow-root>
               <div class="mg-button mg-button--disabled mg-button--flat" id="identifier-collapse-button">
                 <div class="mg-button__content">
@@ -394,7 +394,7 @@ exports[`mg-panel navigation Should NOT collapse panel, case expandToggleDisable
     <section class="mg-panel" id="identifier">
       <header class="mg-panel__header" id="identifier-header">
         <div class="mg-panel__header-left">
-          <mg-button aria-controls="identifier-content" aria-disabled="true" aria-expanded="false" role="button" tabindex="-1">
+          <mg-button aria-controls="identifier-content" aria-disabled="true" aria-expanded="false" role="button" tabindex="0">
             <mock:shadow-root>
               <div class="mg-button mg-button--disabled mg-button--flat" id="identifier-collapse-button">
                 <div class="mg-button__content">
@@ -432,7 +432,7 @@ exports[`mg-panel navigation Should NOT collapse panel, case expandToggleDisable
     <section class="mg-panel" id="identifier">
       <header class="mg-panel__header" id="identifier-header">
         <div class="mg-panel__header-left">
-          <mg-button aria-controls="identifier-content" aria-disabled="true" aria-expanded="false" role="button" tabindex="-1">
+          <mg-button aria-controls="identifier-content" aria-disabled="true" aria-expanded="false" role="button" tabindex="0">
             <mock:shadow-root>
               <div class="mg-button mg-button--disabled mg-button--flat" id="identifier-collapse-button">
                 <div class="mg-button__content">
