@@ -1,7 +1,12 @@
 {
   "name": "@mgdis/mg-components",
-  "version": "5.4.0",
+  "version": "5.5.0",
   "description": "MG Components",
+  "packageManager": "pnpm@7.17.1",
+  "engineStrict": true,
+  "engines": {
+    "pnpm": ">=7"
+  },
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "es2015": "dist/esm/index.mjs",
@@ -23,7 +28,7 @@
     "start": "stencil build --dev --watch --serve",
     "lint": "run-s lint:es lint:prettier",
     "lint:fix": "run-s lint:es:fix lint:prettier:fix",
-    "lint:es": "eslint src/**/*.{ts,tsx,js}",
+    "lint:es": "eslint src/**/*.{ts,tsx}",
     "lint:es:fix": "eslint src/**/*.{ts,tsx} --fix",
     "lint:prettier": "prettier --check **/*.{ts,tsx,scss,html,mdx,json}",
     "lint:prettier:fix": "prettier --write **/*.{ts,tsx,scss,html,mdx,json}",
@@ -32,8 +37,8 @@
     "test:e2e": "stencil test --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
-    "storybook": "start-storybook -p 6006",
-    "storybook:build": "build-storybook",
+    "storybook": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006",
+    "storybook:build": "NODE_OPTIONS=--openssl-legacy-provider build-storybook",
     "prepare": "husky install"
   },
   "jest-junit": {
@@ -84,7 +89,8 @@
     "sass-loader": "^10.2.0",
     "style-loader": "^2.0.0",
     "ts-node": "^10.7.0",
-    "typescript": "^4.4.3"
+    "turbo": "^1.6.3",
+    "typescript": "~4.4.4"
   },
   "license": "BSD-3-Clause"
 }
