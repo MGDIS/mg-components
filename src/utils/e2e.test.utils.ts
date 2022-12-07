@@ -7,12 +7,15 @@ export type DesignSystemE2EPage = E2EPage & Pick<PuppeteerPage, 'screenshot' | '
  * Create E2E page
  *
  * @param {string} htmlString html to render
+ * @param {object} viewPort custom page viewPort - optional
+ * @param {number} viewPort.width viewPort width - optional
+ * @param {number} viewPort.height viewPort height - optional
  * @returns {Promise<DesignSystemE2EPage>} page
  */
-export async function createPage(htmlString?: string): Promise<DesignSystemE2EPage> {
+export async function createPage(htmlString: string, viewPort?: { width?: number; height?: number }): Promise<DesignSystemE2EPage> {
   const defaultSize = 600;
   const page = (await newE2EPage()) as DesignSystemE2EPage;
-  await page.setViewport({ width: defaultSize, height: defaultSize });
+  await page.setViewport({ width: viewPort?.width || defaultSize, height: viewPort?.height || defaultSize });
   await page.setContent(`<link rel="stylesheet" href="http://localhost:3333/build/variables.css" /><meta charset="UTF-8">${htmlString}`, { waitUntil: 'networkidle0' });
   await page.evaluateHandle('document.fonts.ready');
 

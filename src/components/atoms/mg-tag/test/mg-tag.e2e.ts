@@ -4,8 +4,8 @@ import { variants } from '../mg-tag.conf';
 describe('mg-tag', () => {
   test('Should render', async () => {
     const html = variants
-      .map(variant =>
-        [true, false]
+      .map(variant => {
+        const template = [true, false]
           .map(icon =>
             [
               { outline: false, soft: false },
@@ -20,8 +20,9 @@ describe('mg-tag', () => {
               )
               .join(''),
           )
-          .join(''),
-      )
+          .join('');
+        return `<h2>${variant}<h2/><div>${template}<div>`;
+      })
       .join('');
 
     const page = await createPage(html);

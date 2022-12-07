@@ -12,7 +12,7 @@ export class MgBadge {
    ************/
 
   // Classes
-  private classOutline = `mg-badge--outline`;
+  private readonly classOutline = `mg-badge--outline`;
 
   /**************
    * Decorators *

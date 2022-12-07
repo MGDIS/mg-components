@@ -14,7 +14,7 @@ export class MgMessage {
    ************/
 
   // Classes
-  private classHide = 'mg-message--hide';
+  private readonly classHide = 'mg-message--hide';
 
   // IDs
   private closeButtonId = '';

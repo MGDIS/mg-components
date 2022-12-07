@@ -12,8 +12,8 @@ export class MgTag {
    ************/
 
   // Classes
-  private classOutline = `mg-tag--outline`;
-  private classSoft = `mg-tag--soft`;
+  private readonly classOutline = `mg-tag--outline`;
+  private readonly classSoft = `mg-tag--soft`;
 
   /**************
    * Decorators *
