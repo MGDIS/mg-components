@@ -6,13 +6,6 @@ export default {
   component: 'mg-badge',
   title: 'Atoms/mg-badge',
   argTypes: {
-    variant: {
-      options: variants,
-      control: { type: 'select' },
-      table: {
-        defaultValue: { summary: variants[0] },
-      },
-    },
     value: {
       control: { type: 'text' },
     },

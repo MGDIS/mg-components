@@ -4,7 +4,7 @@
 export const variants = ['primary', 'secondary', 'danger', 'danger-alt', 'info', 'flat', 'success'] as const;
 
 /**
- * ButtonType type from buttonTypes
+ * VariantType type from button variants
  */
 export type VariantType = typeof variants[number];
 

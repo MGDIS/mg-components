@@ -16,7 +16,7 @@ export class MgModal {
   private modalFocusableElements: HTMLElement[];
 
   // Classes
-  private classHide = 'mg-modal--hide';
+  private readonly classHide = 'mg-modal--hide';
 
   // IDs
   private closeButtonId = '';

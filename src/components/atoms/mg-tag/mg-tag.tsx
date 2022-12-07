@@ -1,5 +1,5 @@
-import { Component, h, Prop, State, Watch } from '@stencil/core';
-import { variants } from './mg-tag.conf';
+import { Component, h, Prop, State, Watch, Element } from '@stencil/core';
+import { TagVariantType, variants } from './mg-tag.conf';
 import { ClassList } from '../../../utils/components.utils';
 @Component({
   tag: 'mg-tag',
@@ -12,18 +12,24 @@ export class MgTag {
    ************/
 
   // Classes
-  private classOutline = `mg-tag--outline`;
+  private readonly classOutline = `mg-tag--outline`;
+  private readonly classSoft = `mg-tag--soft`;
 
   /**************
    * Decorators *
    **************/
 
   /**
-   * Define button variant
+   * Get component DOM element
    */
-  @Prop() variant: string = variants[0]; // primary
+  @Element() element: HTMLMgTagElement;
+
+  /**
+   * Define tag variant
+   */
+  @Prop() variant: TagVariantType = variants[0]; // primary
   @Watch('variant')
-  validateVariant(newValue: string, oldValue?: string): void {
+  validateVariant(newValue: MgTag['variant'], oldValue?: MgTag['variant']): void {
     if (!variants.includes(newValue)) {
       throw new Error(`<mg-tag> prop "variant" must be one of : ${variants.join(', ')}.`);
     } else {
@@ -35,19 +41,47 @@ export class MgTag {
   }
 
   /**
-   * Define if button is using outline style
+   * Define if tag is using outline style
    */
   @Prop() outline: boolean;
   @Watch('outline')
-  validateOutline(newValue: boolean): void {
+  validateOutline(newValue: MgTag['outline']): void {
     if (newValue) this.classList.add(this.classOutline);
     else this.classList.delete(this.classOutline);
+  }
+
+  /**
+   * Define if tag is using soft style
+   */
+  @Prop() soft: boolean;
+  @Watch('soft')
+  validateSoft(newValue: MgTag['soft']): void {
+    // usage validation
+    if (newValue && this.outline) throw new Error('<mg-tag> prop "soft" can NOT be used with prop "outline".');
+
+    // apply class
+    if (newValue) this.classList.add(this.classSoft);
+    else this.classList.delete(this.classSoft);
   }
 
   /**
    * Component classes
    */
   @State() classList: ClassList = new ClassList(['mg-tag']);
+
+  /*************
+   * Methods *
+   *************/
+
+  /**
+   * Validate the given textContent
+   *
+   * @param {string} textContent html element textContent property
+   * @returns {void}
+   */
+  private validateTextContent(textContent: string): void {
+    if (!textContent || textContent.trim() === '') throw new Error('<mg-tag> slot must contain a text content.');
+  }
 
   /*************
    * Lifecycle *
@@ -61,6 +95,8 @@ export class MgTag {
   componentWillLoad(): void {
     this.validateVariant(this.variant);
     this.validateOutline(this.outline);
+    this.validateSoft(this.soft);
+    this.validateTextContent(this.element.textContent);
   }
 
   /**

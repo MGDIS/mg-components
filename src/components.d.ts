@@ -17,6 +17,7 @@ import { Direction } from "./components/molecules/menu/mg-menu/mg-menu.conf";
 import { MenuItemSizeType, Status } from "./components/molecules/menu/mg-menu-item/mg-menu-item.conf";
 import { Placement } from "@popperjs/core";
 import { SizeType, TabItem } from "./components/molecules/mg-tabs/mg-tabs.conf";
+import { TagVariantType } from "./components/atoms/mg-tag/mg-tag.conf";
 export namespace Components {
     interface MgBadge {
         /**
@@ -1025,13 +1026,17 @@ export namespace Components {
     }
     interface MgTag {
         /**
-          * Define if button is using outline style
+          * Define if tag is using outline style
          */
         "outline": boolean;
         /**
-          * Define button variant
+          * Define if tag is using soft style
          */
-        "variant": string;
+        "soft": boolean;
+        /**
+          * Define tag variant
+         */
+        "variant": TagVariantType;
     }
     interface MgTooltip {
         /**
@@ -2409,13 +2414,17 @@ declare namespace LocalJSX {
     }
     interface MgTag {
         /**
-          * Define if button is using outline style
+          * Define if tag is using outline style
          */
         "outline"?: boolean;
         /**
-          * Define button variant
+          * Define if tag is using soft style
          */
-        "variant"?: string;
+        "soft"?: boolean;
+        /**
+          * Define tag variant
+         */
+        "variant"?: TagVariantType;
     }
     interface MgTooltip {
         /**
