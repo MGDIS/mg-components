@@ -5,15 +5,6 @@ import { variants } from '../mg-tag.conf';
 export default {
   component: 'mg-tag',
   title: 'Atoms/mg-tag',
-  argTypes: {
-    variant: {
-      options: variants,
-      control: { type: 'select' },
-      table: {
-        defaultValue: { summary: variants[0] },
-      },
-    },
-  },
 };
 
 /**
@@ -30,4 +21,5 @@ MgTag.args = {
   slot: 'Label',
   variant: variants[0],
   outline: false,
+  soft: false,
 };

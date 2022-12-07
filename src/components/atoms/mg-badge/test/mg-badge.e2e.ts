@@ -1,25 +1,22 @@
-import { createPage } from '../../../../utils/e2e.test.utils';
+import { createPage, darkBackground } from '../../../../utils/e2e.test.utils';
 import { variants } from '../mg-badge.conf';
 
 describe('mg-badge', () => {
   test('Should render', async () => {
     const html = variants
-      .map(variant =>
-        [true, false]
+      .map(variant => {
+        const template = [true, false]
           .map(outline =>
             [1, 99, '*', '!', '99+']
-              .map(value =>
-                variant === 'secondary'
-                  ? `<span style="background:#999"><mg-badge value="${value}" label="${variant}" variant="${variant}" outline="${outline}"></mg-badge></span>`
-                  : `<mg-badge value="${value}" label="${variant}" variant="${variant}" outline="${outline}"></mg-badge>`,
-              )
+              .map(value => darkBackground(variant === 'secondary', `<mg-badge value="${value}" label="${variant}" variant="${variant}" outline="${outline}"></mg-badge>`))
               .join(''),
           )
-          .join(''),
-      )
+          .join('');
+        return `<h2>${variant}<h2/><div>${template}<div>`;
+      })
       .join('');
 
-    const page = await createPage(html);
+    const page = await createPage(html, { width: 250 });
 
     const element = await page.find('mg-badge');
     expect(element).toHaveClass('hydrated');

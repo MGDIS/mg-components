@@ -7,13 +7,6 @@ export default {
   component: 'mg-button',
   title: 'Atoms/mg-button',
   argTypes: {
-    variant: {
-      options: variants,
-      control: { type: 'select' },
-      table: {
-        defaultValue: { summary: variants[0] },
-      },
-    },
     type: {
       options: [undefined, ...buttonTypes],
       control: { type: 'select' },
