@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`mg-tag variant danger outiline false 1`] = `
+exports[`mg-tag variant danger outline false 1`] = `
 <mg-tag>
   <mock:shadow-root>
     <span class="mg-tag mg-tag--danger">
@@ -11,7 +11,7 @@ exports[`mg-tag variant danger outiline false 1`] = `
 </mg-tag>
 `;
 
-exports[`mg-tag variant danger outiline true 1`] = `
+exports[`mg-tag variant danger outline true 1`] = `
 <mg-tag>
   <mock:shadow-root>
     <span class="mg-tag mg-tag--danger mg-tag--outline">
@@ -22,7 +22,29 @@ exports[`mg-tag variant danger outiline true 1`] = `
 </mg-tag>
 `;
 
-exports[`mg-tag variant info outiline false 1`] = `
+exports[`mg-tag variant danger soft false 1`] = `
+<mg-tag>
+  <mock:shadow-root>
+    <span class="mg-tag mg-tag--danger">
+      <slot></slot>
+    </span>
+  </mock:shadow-root>
+  danger
+</mg-tag>
+`;
+
+exports[`mg-tag variant danger soft true 1`] = `
+<mg-tag>
+  <mock:shadow-root>
+    <span class="mg-tag mg-tag--danger mg-tag--soft">
+      <slot></slot>
+    </span>
+  </mock:shadow-root>
+  danger
+</mg-tag>
+`;
+
+exports[`mg-tag variant info outline false 1`] = `
 <mg-tag>
   <mock:shadow-root>
     <span class="mg-tag mg-tag--info">
@@ -33,7 +55,7 @@ exports[`mg-tag variant info outiline false 1`] = `
 </mg-tag>
 `;
 
-exports[`mg-tag variant info outiline true 1`] = `
+exports[`mg-tag variant info outline true 1`] = `
 <mg-tag>
   <mock:shadow-root>
     <span class="mg-tag mg-tag--info mg-tag--outline">
@@ -44,7 +66,29 @@ exports[`mg-tag variant info outiline true 1`] = `
 </mg-tag>
 `;
 
-exports[`mg-tag variant primary outiline false 1`] = `
+exports[`mg-tag variant info soft false 1`] = `
+<mg-tag>
+  <mock:shadow-root>
+    <span class="mg-tag mg-tag--info">
+      <slot></slot>
+    </span>
+  </mock:shadow-root>
+  info
+</mg-tag>
+`;
+
+exports[`mg-tag variant info soft true 1`] = `
+<mg-tag>
+  <mock:shadow-root>
+    <span class="mg-tag mg-tag--info mg-tag--soft">
+      <slot></slot>
+    </span>
+  </mock:shadow-root>
+  info
+</mg-tag>
+`;
+
+exports[`mg-tag variant primary outline false 1`] = `
 <mg-tag>
   <mock:shadow-root>
     <span class="mg-tag mg-tag--primary">
@@ -55,7 +99,7 @@ exports[`mg-tag variant primary outiline false 1`] = `
 </mg-tag>
 `;
 
-exports[`mg-tag variant primary outiline true 1`] = `
+exports[`mg-tag variant primary outline true 1`] = `
 <mg-tag>
   <mock:shadow-root>
     <span class="mg-tag mg-tag--outline mg-tag--primary">
@@ -66,7 +110,29 @@ exports[`mg-tag variant primary outiline true 1`] = `
 </mg-tag>
 `;
 
-exports[`mg-tag variant secondary outiline false 1`] = `
+exports[`mg-tag variant primary soft false 1`] = `
+<mg-tag>
+  <mock:shadow-root>
+    <span class="mg-tag mg-tag--primary">
+      <slot></slot>
+    </span>
+  </mock:shadow-root>
+  primary
+</mg-tag>
+`;
+
+exports[`mg-tag variant primary soft true 1`] = `
+<mg-tag>
+  <mock:shadow-root>
+    <span class="mg-tag mg-tag--primary mg-tag--soft">
+      <slot></slot>
+    </span>
+  </mock:shadow-root>
+  primary
+</mg-tag>
+`;
+
+exports[`mg-tag variant secondary outline false 1`] = `
 <mg-tag>
   <mock:shadow-root>
     <span class="mg-tag mg-tag--secondary">
@@ -77,7 +143,7 @@ exports[`mg-tag variant secondary outiline false 1`] = `
 </mg-tag>
 `;
 
-exports[`mg-tag variant secondary outiline true 1`] = `
+exports[`mg-tag variant secondary outline true 1`] = `
 <mg-tag>
   <mock:shadow-root>
     <span class="mg-tag mg-tag--outline mg-tag--secondary">
@@ -88,7 +154,29 @@ exports[`mg-tag variant secondary outiline true 1`] = `
 </mg-tag>
 `;
 
-exports[`mg-tag variant success outiline false 1`] = `
+exports[`mg-tag variant secondary soft false 1`] = `
+<mg-tag>
+  <mock:shadow-root>
+    <span class="mg-tag mg-tag--secondary">
+      <slot></slot>
+    </span>
+  </mock:shadow-root>
+  secondary
+</mg-tag>
+`;
+
+exports[`mg-tag variant secondary soft true 1`] = `
+<mg-tag>
+  <mock:shadow-root>
+    <span class="mg-tag mg-tag--secondary mg-tag--soft">
+      <slot></slot>
+    </span>
+  </mock:shadow-root>
+  secondary
+</mg-tag>
+`;
+
+exports[`mg-tag variant success outline false 1`] = `
 <mg-tag>
   <mock:shadow-root>
     <span class="mg-tag mg-tag--success">
@@ -99,7 +187,7 @@ exports[`mg-tag variant success outiline false 1`] = `
 </mg-tag>
 `;
 
-exports[`mg-tag variant success outiline true 1`] = `
+exports[`mg-tag variant success outline true 1`] = `
 <mg-tag>
   <mock:shadow-root>
     <span class="mg-tag mg-tag--outline mg-tag--success">
@@ -110,7 +198,29 @@ exports[`mg-tag variant success outiline true 1`] = `
 </mg-tag>
 `;
 
-exports[`mg-tag variant warning outiline false 1`] = `
+exports[`mg-tag variant success soft false 1`] = `
+<mg-tag>
+  <mock:shadow-root>
+    <span class="mg-tag mg-tag--success">
+      <slot></slot>
+    </span>
+  </mock:shadow-root>
+  success
+</mg-tag>
+`;
+
+exports[`mg-tag variant success soft true 1`] = `
+<mg-tag>
+  <mock:shadow-root>
+    <span class="mg-tag mg-tag--soft mg-tag--success">
+      <slot></slot>
+    </span>
+  </mock:shadow-root>
+  success
+</mg-tag>
+`;
+
+exports[`mg-tag variant warning outline false 1`] = `
 <mg-tag>
   <mock:shadow-root>
     <span class="mg-tag mg-tag--warning">
@@ -121,10 +231,32 @@ exports[`mg-tag variant warning outiline false 1`] = `
 </mg-tag>
 `;
 
-exports[`mg-tag variant warning outiline true 1`] = `
+exports[`mg-tag variant warning outline true 1`] = `
 <mg-tag>
   <mock:shadow-root>
     <span class="mg-tag mg-tag--outline mg-tag--warning">
+      <slot></slot>
+    </span>
+  </mock:shadow-root>
+  warning
+</mg-tag>
+`;
+
+exports[`mg-tag variant warning soft false 1`] = `
+<mg-tag>
+  <mock:shadow-root>
+    <span class="mg-tag mg-tag--warning">
+      <slot></slot>
+    </span>
+  </mock:shadow-root>
+  warning
+</mg-tag>
+`;
+
+exports[`mg-tag variant warning soft true 1`] = `
+<mg-tag>
+  <mock:shadow-root>
+    <span class="mg-tag mg-tag--soft mg-tag--warning">
       <slot></slot>
     </span>
   </mock:shadow-root>

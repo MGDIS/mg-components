@@ -11,8 +11,13 @@ const getPage = (args, slot) =>
 
 describe('mg-tag', () => {
   describe.each(variants)('variant %s', variant => {
-    test.each([true, false])('outiline %s', async outline => {
+    test.each([true, false])('outline %s', async outline => {
       const { root } = await getPage({ variant, outline }, variant);
+      expect(root).toMatchSnapshot();
+    });
+
+    test.each([true, false])('soft %s', async soft => {
+      const { root } = await getPage({ variant, soft }, variant);
       expect(root).toMatchSnapshot();
     });
   });
@@ -44,12 +49,31 @@ describe('mg-tag', () => {
     expect(classOutline).not.toBeNull();
   });
 
-  test.each(['', 'blu'])('Should throw error', async variant => {
-    expect.assertions(1);
-    try {
-      await getPage({ variant }, 'wrong variant');
-    } catch (err) {
-      expect(err.message).toContain('<mg-tag> prop "variant" must be one of : ');
-    }
+  describe('errors', () => {
+    test.each(['', 'blu'])('Should throw error, case wrong variant', async variant => {
+      expect.assertions(1);
+      try {
+        await getPage({ variant }, 'wrong variant');
+      } catch (err) {
+        expect(err.message).toContain('<mg-tag> prop "variant" must be one of : ');
+      }
+    });
+    test.each([undefined, ' '])('Should throw error, case empty slot', async slot => {
+      expect.assertions(1);
+      try {
+        await getPage({ variant: variants[0] }, slot);
+      } catch (err) {
+        expect(err.message).toBe('<mg-tag> slot must contain a text content.');
+      }
+    });
+    test('Should throw error, case empty slot', async () => {
+      const variant = variants[0];
+      expect.assertions(1);
+      try {
+        await getPage({ variant, outline: true, soft: true }, variant);
+      } catch (err) {
+        expect(err.message).toBe('<mg-tag> prop "soft" can NOT be used with prop "outline".');
+      }
+    });
   });
 });

@@ -17,7 +17,7 @@ export class MgForm {
   private mgButtons: HTMLMgButtonElement[];
 
   // Classes
-  private classAllRequired = 'mg-form--all-required';
+  private readonly classAllRequired = 'mg-form--all-required';
 
   // HTML selector
   private form: HTMLFormElement;

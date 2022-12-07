@@ -13,9 +13,9 @@ export class MgButton {
    ************/
 
   private onClickElementFn = null;
-  private classDisabled = 'mg-button--disabled';
-  private classLoading = 'mg-button--loading';
-  private classFullWidth = 'mg-button--full-width';
+  private readonly classDisabled = 'mg-button--disabled';
+  private readonly classLoading = 'mg-button--loading';
+  private readonly classFullWidth = 'mg-button--full-width';
 
   /**************
    * Decorators *

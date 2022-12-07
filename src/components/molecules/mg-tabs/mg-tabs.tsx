@@ -20,9 +20,12 @@ export class MgTabs {
    * Internal *
    ************/
 
-  private tabPanel = 'panel';
+  // classes
+  private readonly tabPanel = 'panel';
+  private readonly buttonTabBaseClass = 'mg-tabs__navigation-button';
+
+  // variables
   private startIndex = 1;
-  private buttonTabBaseClass = 'mg-tabs__navigation-button';
 
   /**************
    * Decorators *

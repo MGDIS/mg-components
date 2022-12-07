@@ -17,6 +17,20 @@ $mg-tag-padding-horizontal: 0.7rem;
       // Font
       color: hsl(var(--color-#{$backgroundColor}));
     }
+    &.mg-tag--soft {
+      $fill-color: hsl(var(--color-#{$backgroundColor}-h), var(--color-#{$backgroundColor}-s), 90%);
+      font-weight: 200;
+      background-color: $fill-color;
+      border-color: $fill-color;
+      color: hsl(var(--color-dark));
+      ::slotted(mg-icon) {
+        @if $name == 'secondary' {
+          color: hsl(var(--color-dark));
+        } @else {
+          color: hsl(var(--color-#{$backgroundColor}));
+        }
+      }
+    }
   }
 }
 
@@ -47,4 +61,8 @@ $mg-tag-padding-horizontal: 0.7rem;
 mg-tag {
   display: inline-block;
   vertical-align: middle;
+}
+
+::slotted(mg-icon) {
+  margin-right: 0.4rem;
 }
