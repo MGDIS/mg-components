@@ -980,6 +980,8 @@ export namespace Components {
          */
         "titlePatternErrorMessage": string;
     }
+    interface MgPlus {
+    }
     interface MgPopover {
         /**
           * Define if popover has a cross button
@@ -1280,6 +1282,12 @@ declare global {
         prototype: HTMLMgPanelElement;
         new (): HTMLMgPanelElement;
     };
+    interface HTMLMgPlusElement extends Components.MgPlus, HTMLStencilElement {
+    }
+    var HTMLMgPlusElement: {
+        prototype: HTMLMgPlusElement;
+        new (): HTMLMgPlusElement;
+    };
     interface HTMLMgPopoverElement extends Components.MgPopover, HTMLStencilElement {
     }
     var HTMLMgPopoverElement: {
@@ -1330,6 +1338,7 @@ declare global {
         "mg-modal": HTMLMgModalElement;
         "mg-pagination": HTMLMgPaginationElement;
         "mg-panel": HTMLMgPanelElement;
+        "mg-plus": HTMLMgPlusElement;
         "mg-popover": HTMLMgPopoverElement;
         "mg-tabs": HTMLMgTabsElement;
         "mg-tag": HTMLMgTagElement;
@@ -2360,6 +2369,8 @@ declare namespace LocalJSX {
          */
         "titlePatternErrorMessage"?: string;
     }
+    interface MgPlus {
+    }
     interface MgPopover {
         /**
           * Define if popover has a cross button
@@ -2474,6 +2485,7 @@ declare namespace LocalJSX {
         "mg-modal": MgModal;
         "mg-pagination": MgPagination;
         "mg-panel": MgPanel;
+        "mg-plus": MgPlus;
         "mg-popover": MgPopover;
         "mg-tabs": MgTabs;
         "mg-tag": MgTag;
@@ -2509,6 +2521,7 @@ declare module "@stencil/core" {
             "mg-modal": LocalJSX.MgModal & JSXBase.HTMLAttributes<HTMLMgModalElement>;
             "mg-pagination": LocalJSX.MgPagination & JSXBase.HTMLAttributes<HTMLMgPaginationElement>;
             "mg-panel": LocalJSX.MgPanel & JSXBase.HTMLAttributes<HTMLMgPanelElement>;
+            "mg-plus": LocalJSX.MgPlus & JSXBase.HTMLAttributes<HTMLMgPlusElement>;
             "mg-popover": LocalJSX.MgPopover & JSXBase.HTMLAttributes<HTMLMgPopoverElement>;
             "mg-tabs": LocalJSX.MgTabs & JSXBase.HTMLAttributes<HTMLMgTabsElement>;
             "mg-tag": LocalJSX.MgTag & JSXBase.HTMLAttributes<HTMLMgTagElement>;

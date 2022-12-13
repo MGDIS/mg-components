@@ -189,15 +189,11 @@ Child content is displayed via an **mg-tray** component.
 | ---------- | ---------- | ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------- | ---------------- |
 | `expanded` | `expanded` | Define menu-item content expanded. Default: false.                                       | `boolean`                                                             | `false`          |
 | `href`     | `href`     | Define menu-item badge when defined menu-item contain an anchor instead of button        | `string`                                                              | `undefined`      |
-| `size`     | `size`     | Define menu-item size. Default: "large". use reflect to use in getAttribute() in mg-plus | `"large" \| "medium" \| "regular"`                                    | `'large'`        |
+| `size`     | `size`     | Define menu-item size. Default: "large". use reflect to use in getAttribute() in mg-plus | `"large" \| "medium" \| "regular"`                                    | `'regular'`      |
 | `status`   | `status`   | Define menu-item status. Default: "visible"                                              | `Status.ACTIVE \| Status.DISABLED \| Status.HIDDEN \| Status.VISIBLE` | `Status.VISIBLE` |
 
 
 ## Dependencies
-
-### Used by
-
- - [mg-menu](../mg-menu)
 
 ### Depends on
 
@@ -207,7 +203,6 @@ Child content is displayed via an **mg-tray** component.
 ```mermaid
 graph TD;
   mg-menu-item --> mg-icon
-  mg-menu --> mg-menu-item
   style mg-menu-item fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

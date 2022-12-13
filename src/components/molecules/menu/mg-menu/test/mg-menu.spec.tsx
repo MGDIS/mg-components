@@ -2,7 +2,6 @@ import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
 import { MgMenu } from '../mg-menu';
 import { MgMenuItem } from '../../mg-menu-item/mg-menu-item';
-import { setupResizeObserverMock } from '../../../../../utils/unit.test.utils';
 
 const getPage = async (args, withSubmenu = true) => {
   const page = await newSpecPage({
@@ -32,6 +31,7 @@ const getPage = async (args, withSubmenu = true) => {
         </mg-menu-item>
         <mg-menu-item>
           <span slot="label">joker</span>
+          {args.badge && <mg-badge value="1" label="bad guy"></mg-badge>}
           <div>
             <h2>This is a joker card</h2>
             <p>If you don't know the joker, you can watch the movie.</p>
@@ -51,19 +51,7 @@ const getPage = async (args, withSubmenu = true) => {
 };
 
 describe('mg-menu', () => {
-  let fireMo;
-  beforeEach(() => {
-    jest.useFakeTimers();
-    setupResizeObserverMock({
-      observe: function () {
-        fireMo = this.cb;
-      },
-      disconnect: function () {
-        return null;
-      },
-      takeRecords: [],
-    });
-  });
+  beforeEach(() => jest.useFakeTimers());
   afterEach(() => jest.runOnlyPendingTimers());
   describe('render', () => {
     test.each([{ label: 'batman menu' }, { label: 'batman menu', direction: 'horizontal' }, { label: 'batman menu', direction: 'vertical' }])('with args %s', async args => {
@@ -149,37 +137,6 @@ describe('mg-menu', () => {
       expect(batmanItem.expanded).toBe(false);
       expect(batmanChildItem.expanded).toBe(false);
       expect(jokerItem.expanded).toBe(event === 'click');
-    });
-  });
-
-  describe('mg-plus in mg-menu', () => {
-    test('should fire disconnect callback', async () => {
-      const { root, doc } = await getPage({ label: 'batman menu' });
-
-      expect(root).toMatchSnapshot();
-
-      const mgMenu = doc.querySelector('[aria-label="batman menu"]');
-
-      mgMenu.remove();
-
-      expect(root).toMatchSnapshot();
-    });
-
-    test.each([{ nodeName: 'MG-MENU-ITEM' }, { nodeName: 'MG-MENU' }])('should manage resize with observer', async target => {
-      const page = await getPage({ label: 'batman menu' }, false);
-
-      const spy = jest.spyOn(page.rootInstance.mgPlus, 'setUp');
-
-      expect(spy).not.toHaveBeenCalled();
-
-      fireMo([{ contentRect: { width: 100 }, target }]);
-      await page.waitForChanges();
-
-      if (target.nodeName === 'MG-MENU') {
-        expect(spy).toHaveBeenCalledWith(100);
-      } else {
-        expect(spy).toHaveBeenCalled();
-      }
     });
   });
 });

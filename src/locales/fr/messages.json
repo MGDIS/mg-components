@@ -47,7 +47,8 @@
     "next": "suivant",
     "previous": "précédent"
   },
-  "menu": {
-    "moreMenu": "Menu complémentaire"
+  "plusMenu": {
+    "moreLabel": "Menu complémentaire",
+    "badgeLabel": "Notification(s) incluse(s)"
   }
 }

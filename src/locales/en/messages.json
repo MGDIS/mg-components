@@ -47,7 +47,8 @@
     "next": "next",
     "previous": "previous"
   },
-  "menu": {
-    "moreMenu": "Additional menu"
+  "plusMenu": {
+    "moreLabel": "Additional menu",
+    "badgeLabel": "Include notification(s)"
   }
 }

@@ -1,27 +1,30 @@
-import { createPage } from '../../../../../utils/e2e.test.utils';
+import { createPage, DesignSystemE2EPage, renderAttributes } from '../../../../../utils/e2e.test.utils';
 
-const delay = (duration = 200) => setTimeout(() => null, duration);
+const expectImageSnapshot = async (page: DesignSystemE2EPage) => {
+  const screenshot = await page.screenshot();
+  expect(screenshot).toMatchImageSnapshot();
+};
 
-const createHTML = direction => `
+const createHTML = args => `
   <div class="menu-container">
-    <mg-menu label="menu" ${direction && `direction="${direction}"`}>
-      <mg-menu-item status="active">
+    <mg-menu ${renderAttributes({ label: 'menu', ...args })}>
+      <mg-menu-item size="large" status="active">
         <span slot="label">1 - head-1</span>
         <mg-menu label="submenu-1" direction="vertical">
           <mg-menu-item size="medium"><span slot="label">Batman begins</span></mg-menu-item>
         </mg-menu>
       </mg-menu-item>
-      <mg-menu-item status="disabled"><span slot="label">1 - head-2 long</span></mg-menu-item>
-      <mg-menu-item>
+      <mg-menu-item size="large" status="disabled"><span slot="label">1 - head-2 long</span></mg-menu-item>
+      <mg-menu-item size="large">
         <span slot="label">1 - head-3 very long</span>
         <mg-icon icon='user' slot='illustration'></mg-icon>
       </mg-menu-item>
-      <mg-menu-item>
+      <mg-menu-item size="large">
         <span slot="label">1 - head-4</span>
         <mg-icon icon='user' slot='illustration'></mg-icon>
         <mg-badge value='2' label='hello' slot='information'></mg-badge>  
       </mg-menu-item>
-      <mg-menu-item>
+      <mg-menu-item size="large">
         <span slot="label">1 - head-5</span>
         <mg-icon icon='user' slot='illustration'></mg-icon>
         <mg-badge value='2' label='hello' slot='information'></mg-badge>  
@@ -32,155 +35,92 @@ const createHTML = direction => `
     </mg-menu>
   </div>`;
 
-describe('mg-menu', () => {
-  test.each([undefined, 'horizontal', 'vertical'])('should renders, props %s', async direction => {
-    const page = await createPage(createHTML(direction));
+describe.each(['horizontal', 'vertical'])('mg-menu', direction => {
+  test(`should renders, case direction ${direction}`, async () => {
+    const page = await createPage(createHTML({ direction }), { width: direction === 'vertical' ? 400 : 1200, height: direction === 'vertical' ? 400 : 100 });
 
     const element = await page.find('mg-menu');
     expect(element).toHaveClass('hydrated');
-
-    await page.setViewport({ width: direction === 'vertical' ? 400 : 1200, height: direction === 'vertical' ? 400 : 100 });
-
-    const screenshot = await page.screenshot();
-    expect(screenshot).toMatchImageSnapshot();
+    await expectImageSnapshot(page);
 
     if (direction === 'vertical') {
       await page.setViewport({ width: 180, height: 400 });
-
-      const screenshot2 = await page.screenshot();
-      expect(screenshot2).toMatchImageSnapshot();
+      await expectImageSnapshot(page);
     }
   });
 
-  describe('keyboard navigation', () => {
-    test.each(['horizontal', 'vertical'])('should success keyboard navigation, case direction %s', async direction => {
-      const page = await createPage(createHTML(direction));
+  describe('navigation', () => {
+    test(`should success mouse navigation, case direction ${direction}`, async () => {
+      const page = await createPage(createHTML({ direction }), { width: direction === 'vertical' ? 400 : 1200, height: direction === 'vertical' ? 500 : 200 });
+      await expectImageSnapshot(page);
 
-      await page.setViewport({ width: direction === 'vertical' ? 400 : 1200, height: direction === 'vertical' ? 500 : 200 });
+      // standard menu-item
+      const mgMenuItem1 = await page.find('mg-menu-item');
+      await mgMenuItem1.click();
+      await page.waitForChanges();
+      await page.waitForTimeout(200); // chevron rotation animation
+      await expectImageSnapshot(page);
 
-      const baseScreenshot = await page.screenshot();
-      expect(baseScreenshot).toMatchImageSnapshot();
+      // expandable menu-item, open
+      const mgMenuItem5 = await page.find(`mg-menu-item[data-style-direction-${direction}]:nth-child(5)`);
+      await mgMenuItem5.click();
+      await page.waitForChanges();
+      await page.waitForTimeout(200); // chevron rotation animation
+      await expectImageSnapshot(page);
+
+      // expandable menu-item, close
+      await mgMenuItem5.click();
+      await page.waitForChanges();
+      await page.waitForTimeout(200); // chevron rotation animation
+      await expectImageSnapshot(page);
+    });
+
+    test(`should success keyboard navigation, case direction ${direction}`, async () => {
+      const page = await createPage(createHTML({ direction }), { width: direction === 'vertical' ? 400 : 1200, height: direction === 'vertical' ? 500 : 200 });
+      await expectImageSnapshot(page);
 
       // focus on menu-item id-1
-      page.keyboard.down('Tab');
+      page.keyboard.press('Tab');
       await page.waitForChanges();
-
-      const screenshotTab1 = await page.screenshot();
-      expect(screenshotTab1).toMatchImageSnapshot();
+      await expectImageSnapshot(page);
 
       // focus on menu-item id-3 (has id-2 is disabled)
-      page.keyboard.down('Tab');
-      await page.waitForChanges();
-
-      const screenshotTab2 = await page.screenshot();
-      expect(screenshotTab2).toMatchImageSnapshot();
-
+      page.keyboard.press('Tab');
       // focus on menu-item id-4
-      page.keyboard.down('Tab');
-      await page.waitForChanges();
-
-      const screenshotTab3 = await page.screenshot();
-      expect(screenshotTab3).toMatchImageSnapshot();
-
+      page.keyboard.press('Tab');
       // focus on menu-item id-5
-      page.keyboard.down('Tab');
+      page.keyboard.press('Tab');
       await page.waitForChanges();
-
-      const screenshotTab4 = await page.screenshot();
-      expect(screenshotTab4).toMatchImageSnapshot();
+      await expectImageSnapshot(page);
 
       // expand submenu-item id-5-1
-      page.keyboard.down('Enter');
+      page.keyboard.press('Enter');
       await page.waitForChanges();
-
-      // await chevron animation done
-      await delay();
-      await page.waitForChanges();
-
-      const screenshotEnter1 = await page.screenshot();
-      expect(screenshotEnter1).toMatchImageSnapshot();
+      await page.waitForTimeout(200); // chevron rotation animation
+      await expectImageSnapshot(page);
 
       // focus on submenu-item id-5-1
-      page.keyboard.down('Tab');
+      page.keyboard.press('Tab');
       await page.waitForChanges();
-
-      const screenshotTab5 = await page.screenshot();
-      expect(screenshotTab5).toMatchImageSnapshot();
+      await expectImageSnapshot(page);
 
       // focus to parent menu item id-5
       await page.keyboard.down('Shift');
       await page.keyboard.press('Tab');
       await page.keyboard.up('Shift');
       await page.waitForChanges();
-
-      const screenshotTab6 = await page.screenshot();
-      expect(screenshotTab6).toMatchImageSnapshot();
+      await expectImageSnapshot(page);
 
       // close submenu
-      page.keyboard.down('Enter');
+      page.keyboard.press('Enter');
       await page.waitForChanges();
-
-      // await chevron animation done
-      await delay();
-      await page.waitForChanges();
-
-      const screenshotEnter2 = await page.screenshot();
-      expect(screenshotEnter2).toMatchImageSnapshot();
+      await page.waitForTimeout(200); // chevron rotation animation
+      await expectImageSnapshot(page);
 
       // exit focus menu
-      page.keyboard.down('Tab');
+      page.keyboard.press('Tab');
       await page.waitForChanges();
-
-      const screenshotTab7 = await page.screenshot();
-      expect(screenshotTab7).toMatchImageSnapshot();
-    });
-  });
-  describe('click navigation', () => {
-    test.each(['horizontal', 'vertical'])('should success click navigation, case direction %s', async direction => {
-      const page = await createPage(createHTML(direction));
-
-      await page.setViewport({ width: direction === 'vertical' ? 400 : 1200, height: direction === 'vertical' ? 500 : 200 });
-
-      const baseScreenshot = await page.screenshot();
-      expect(baseScreenshot).toMatchImageSnapshot();
-
-      // standard menu-item
-      const mgMenuItem1 = await page.find('mg-menu[label="menu"] > mg-menu-item:first-of-type');
-      await mgMenuItem1.click();
-
-      await page.waitForChanges();
-
-      // await chevron animation done
-      await delay();
-      await page.waitForChanges();
-
-      const screenshotItem1 = await page.screenshot();
-      expect(screenshotItem1).toMatchImageSnapshot();
-
-      // expandable menu-item, open
-      const mgMenuItem5 = await page.find('mg-menu[label="menu"] > mg-menu-item:last-of-type');
-      await mgMenuItem5.click();
-
-      await page.waitForChanges();
-
-      // await chevron animation done
-      await delay();
-      await page.waitForChanges();
-
-      const screenshotItem5Expand = await page.screenshot();
-      expect(screenshotItem5Expand).toMatchImageSnapshot();
-
-      // expandable menu-item, close
-      await mgMenuItem5.click();
-
-      await page.waitForChanges();
-
-      // await chevron animation done
-      await delay();
-      await page.waitForChanges();
-
-      const screenshotItem5Close = await page.screenshot();
-      expect(screenshotItem5Close).toMatchImageSnapshot();
+      await expectImageSnapshot(page);
     });
   });
 });

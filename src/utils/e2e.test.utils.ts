@@ -37,6 +37,13 @@ export async function createPage(htmlString: string, viewPort?: { width?: number
     });
   };
 
+  // get page messages in test logs
+  page
+    .on('console', msg => {
+      console.log(msg.text());
+    })
+    .on('pageerror', error => console.log(error.message));
+
   return page;
 }
 
@@ -50,3 +57,16 @@ export async function createPage(htmlString: string, viewPort?: { width?: number
  */
 export const darkBackground = (condition: boolean, html: string): string =>
   `${condition ? '<span style="background:#999;display:inline-block;">' : ''}${html}${condition ? '</span>' : ''}`;
+
+/**
+ * Render attributes from props objects
+ *
+ * @param {object} args argument to render as string. ex: {status: 'visible'}
+ * @returns {string} formated inline attributed. ex: 'status="visible"'
+ */
+export const renderAttributes = (args: unknown): string =>
+  (typeof args === 'object' &&
+    Object.keys(args)
+      .map(key => (args[key] ? `${key}="${args[key]}"` : ''))
+      .join(' ')) ||
+  '';

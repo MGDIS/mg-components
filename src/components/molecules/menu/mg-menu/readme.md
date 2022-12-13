@@ -89,19 +89,12 @@ Default background color is @color-light.
 
 ### Used by
 
- - [mg-menu](.)
-
-### Depends on
-
-- [mg-menu-item](../mg-menu-item)
-- [mg-icon](../../../atoms/mg-icon)
-- [mg-menu](.)
+ - [mg-plus](../../../../behaviors/mg-plus)
 
 ### Graph
 ```mermaid
 graph TD;
-  mg-menu --> mg-menu
-  mg-menu-item --> mg-icon
+  mg-plus --> mg-menu
   style mg-menu fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

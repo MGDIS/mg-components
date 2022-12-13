@@ -36,11 +36,13 @@ If needed some [variables](./?path=/story/css-variables--page) are available to 
 
 ### Used by
 
+ - [mg-plus](../../../behaviors/mg-plus)
  - [mg-tabs](../../molecules/mg-tabs)
 
 ### Graph
 ```mermaid
 graph TD;
+  mg-plus --> mg-badge
   mg-tabs --> mg-badge
   style mg-badge fill:#f9f,stroke:#333,stroke-width:4px
 ```

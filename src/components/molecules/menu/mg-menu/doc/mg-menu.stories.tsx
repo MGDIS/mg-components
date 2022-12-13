@@ -43,7 +43,7 @@ const getItemArgs: IGetMenuArgs = ({ size, label, direction, status, metadata, i
   },
 });
 
-const getMenuArgs = (direction: Direction, level = 0, isSubmenu = false) => ({
+export const getMenuArgs = (direction: Direction, level = 0, isSubmenu = false) => ({
   label: 'Batman menu',
   direction,
   slot: {
@@ -83,7 +83,7 @@ const getMenuArgs = (direction: Direction, level = 0, isSubmenu = false) => ({
   },
 });
 
-const menu = args => <mg-menu {...filterArgs(args, { direction: Direction.HORIZONTAL })}>{args.slot.items.map(item => menuItem(item))}</mg-menu>;
+export const menu = args => <mg-menu {...filterArgs(args, { direction: Direction.HORIZONTAL })}>{args.slot.items.map(item => menuItem(item))}</mg-menu>;
 
 const menuItem = args => (
   <mg-menu-item {...filterArgs(args)}>

@@ -63,12 +63,12 @@ If needed some [variables](./?path=/story/css-variables--page) are available to 
  - [mg-input-text](../../molecules/inputs/mg-input-text)
  - [mg-input-textarea](../../molecules/inputs/mg-input-textarea)
  - [mg-input-toggle](../../molecules/inputs/mg-input-toggle)
- - [mg-menu](../../molecules/menu/mg-menu)
  - [mg-menu-item](../../molecules/menu/mg-menu-item)
  - [mg-message](../../molecules/mg-message)
  - [mg-modal](../../molecules/mg-modal)
  - [mg-pagination](../../molecules/mg-pagination)
  - [mg-panel](../../molecules/mg-panel)
+ - [mg-plus](../../../behaviors/mg-plus)
  - [mg-popover](../../molecules/mg-popover)
  - [mg-tabs](../../molecules/mg-tabs)
 
@@ -86,12 +86,12 @@ graph TD;
   mg-input-text --> mg-icon
   mg-input-textarea --> mg-icon
   mg-input-toggle --> mg-icon
-  mg-menu --> mg-icon
   mg-menu-item --> mg-icon
   mg-message --> mg-icon
   mg-modal --> mg-icon
   mg-pagination --> mg-icon
   mg-panel --> mg-icon
+  mg-plus --> mg-icon
   mg-popover --> mg-icon
   mg-tabs --> mg-icon
   style mg-icon fill:#f9f,stroke:#333,stroke-width:4px

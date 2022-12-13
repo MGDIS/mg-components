@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-12-06T13:14:19",
+  "timestamp": "2022-12-12T13:16:05",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.20.0",
@@ -112,10 +112,14 @@
       "slots": [],
       "parts": [],
       "dependents": [
+        "mg-plus",
         "mg-tabs"
       ],
       "dependencies": [],
       "dependencyGraph": {
+        "mg-plus": [
+          "mg-badge"
+        ],
         "mg-tabs": [
           "mg-badge"
         ]
@@ -867,12 +871,12 @@
         "mg-input-text",
         "mg-input-textarea",
         "mg-input-toggle",
-        "mg-menu",
         "mg-menu-item",
         "mg-message",
         "mg-modal",
         "mg-pagination",
         "mg-panel",
+        "mg-plus",
         "mg-popover",
         "mg-tabs"
       ],
@@ -911,9 +915,6 @@
         "mg-input-toggle": [
           "mg-icon"
         ],
-        "mg-menu": [
-          "mg-icon"
-        ],
         "mg-menu-item": [
           "mg-icon"
         ],
@@ -927,6 +928,9 @@
           "mg-icon"
         ],
         "mg-panel": [
+          "mg-icon"
+        ],
+        "mg-plus": [
           "mg-icon"
         ],
         "mg-popover": [
@@ -4364,19 +4368,12 @@
       "slots": [],
       "parts": [],
       "dependents": [
-        "mg-menu"
+        "mg-plus"
       ],
-      "dependencies": [
-        "mg-menu-item",
-        "mg-icon",
-        "mg-menu"
-      ],
+      "dependencies": [],
       "dependencyGraph": {
-        "mg-menu": [
+        "mg-plus": [
           "mg-menu"
-        ],
-        "mg-menu-item": [
-          "mg-icon"
         ]
       }
     },
@@ -4430,7 +4427,7 @@
           "reflectToAttr": true,
           "docs": "Define menu-item size. Default: \"large\".\nuse reflect to use in getAttribute() in mg-plus",
           "docsTags": [],
-          "default": "'large'",
+          "default": "'regular'",
           "values": [
             {
               "value": "large",
@@ -4481,18 +4478,13 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "mg-menu"
-      ],
+      "dependents": [],
       "dependencies": [
         "mg-icon"
       ],
       "dependencyGraph": {
         "mg-menu-item": [
           "mg-icon"
-        ],
-        "mg-menu": [
-          "mg-menu-item"
         ]
       }
     },
@@ -5039,6 +5031,35 @@
           "mg-character-left",
           "mg-tooltip",
           "mg-input-title"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/behaviors/mg-plus/mg-plus.tsx",
+      "encapsulation": "shadow",
+      "tag": "mg-plus",
+      "readme": "## Use\n\n![](./mg-plus/doc/img/mg-plus-use.png)\n\nWhen not all of the items can be displayed because of the width of a [**`<mg-menu> horizontal`**](./?path=/docs/beta-menus-mg-menu--mg-menu) or **`<mg-menu>  mobile`** (TODO) or a [**`<mg-tabs>`**](./?path=/docs/molecules-mg-tabs--mg-tabs), items are replaced by a single \"plus\" item.\n\n## Behavior\n\nBy clicking on the \"plus\" item a submenu displays the hidden items.\n\n### With an horizontal menu or tabs\n\n![](./mg-plus/doc/img/mg-plus-behavior-menu-tabs.png)\n\nA **`<mg-menu>  vertical`** displays items in the style of the menu.\n\nSubmenu is aligned to the right of the item according to the \"submenu of the [**`<mg-menu-item>`**](./?path=/docs/beta-menus-mg-menu-item--mg-menu-item) behavior.\n\n### With a mobile menu\n\n![](./mg-plus/doc/img/mg-plus-behavior-mobile.png)\n\nA **`<mg-menu> mobile`** displays, over the actual menu, items in the style of the menu.\nThere are as much lines of items as it is needed to display them.\nThe **`<mg-plus>`** item is replaced by a close button (flat with a cross).\n\n### Badges\n\n![](./mg-plus/doc/img/mg-plus-mg-menu-large.png)\n\n![](./mg-plus/doc/img/mg-plus-behavior-badge-mobile.png)\n\nIf one or more hidden items have **`<mg-badge>`**, the **`<mg-plus>`** item displays a badge with \"exclamation\" symbol as its content.\n\n## Specs\n\n### Anatomy\n\nUse \"ellipsis-vertical\" [**`<mg-icon>`**](./?path=/story/atoms-mg-icon--mg-icon) for **`<mg-menu>  horizontal`** or **`<mg-tab>`**.\nUse \"ellipsis\" [**`<mg-icon>`**](./?path=/story/atoms-mg-icon--mg-icon) for **`<mg-menu>  mobile`**.\n\n",
+      "docs": "![](./mg-plus/doc/img/mg-plus-use.png)\n\nWhen not all of the items can be displayed because of the width of a [**`<mg-menu> horizontal`**](./?path=/docs/beta-menus-mg-menu--mg-menu) or **`<mg-menu>  mobile`** (TODO) or a [**`<mg-tabs>`**](./?path=/docs/molecules-mg-tabs--mg-tabs), items are replaced by a single \"plus\" item.",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "mg-icon",
+        "mg-menu",
+        "mg-badge"
+      ],
+      "dependencyGraph": {
+        "mg-plus": [
+          "mg-icon",
+          "mg-menu",
+          "mg-badge"
         ]
       }
     },
