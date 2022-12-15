@@ -27,9 +27,8 @@ export class MgMenu {
   /**
    * Menu label. Include short menu description.
    * Required for accessibility
-   * use reflect for cloneNode() label attribute in mg-plus
    */
-  @Prop({ reflect: true }) label!: string;
+  @Prop() label!: string;
   @Watch('label')
   validateLabel(newValue: MgMenu['label']): void {
     if (newValue === undefined) {

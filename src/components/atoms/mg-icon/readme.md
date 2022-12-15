@@ -52,6 +52,7 @@ If needed some [variables](./?path=/story/css-variables--page) are available to 
 
 ### Used by
 
+ - [mg-action-menu](../../../behaviors/mg-action-menu)
  - [mg-button](../mg-button)
  - [mg-details](../../molecules/mg-details)
  - [mg-input-checkbox](../../molecules/inputs/mg-input-checkbox)
@@ -68,13 +69,13 @@ If needed some [variables](./?path=/story/css-variables--page) are available to 
  - [mg-modal](../../molecules/mg-modal)
  - [mg-pagination](../../molecules/mg-pagination)
  - [mg-panel](../../molecules/mg-panel)
- - [mg-plus](../../../behaviors/mg-plus)
  - [mg-popover](../../molecules/mg-popover)
  - [mg-tabs](../../molecules/mg-tabs)
 
 ### Graph
 ```mermaid
 graph TD;
+  mg-action-menu --> mg-icon
   mg-button --> mg-icon
   mg-details --> mg-icon
   mg-input-checkbox --> mg-icon
@@ -91,7 +92,6 @@ graph TD;
   mg-modal --> mg-icon
   mg-pagination --> mg-icon
   mg-panel --> mg-icon
-  mg-plus --> mg-icon
   mg-popover --> mg-icon
   mg-tabs --> mg-icon
   style mg-icon fill:#f9f,stroke:#333,stroke-width:4px

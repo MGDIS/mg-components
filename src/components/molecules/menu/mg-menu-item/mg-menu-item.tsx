@@ -31,7 +31,7 @@ export class MgMenuItem {
    ************/
 
   /**
-   * Define menu-item badge
+   * Define menu-item href
    * when defined menu-item contain an anchor instead of button
    */
   @Prop() href: string;
@@ -50,9 +50,8 @@ export class MgMenuItem {
 
   /**
    * Define menu-item size. Default: "large".
-   * use reflect to use in getAttribute() in mg-plus
    */
-  @Prop({ reflect: true }) size: MenuItemSizeType = 'regular';
+  @Prop() size: MenuItemSizeType = 'regular';
   @Watch('size')
   validateSize(newValue: MgMenuItem['size'], oldValue?: MgMenuItem['size']): void {
     if (!sizes.includes(newValue)) {

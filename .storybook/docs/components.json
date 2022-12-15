@@ -1,11 +1,133 @@
 {
-  "timestamp": "2022-12-12T13:16:05",
+  "timestamp": "2022-12-15T13:10:06",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.20.0",
     "typescriptVersion": "4.8.4"
   },
   "components": [
+    {
+      "filePath": "./src/behaviors/mg-action-menu/mg-action-menu.tsx",
+      "encapsulation": "shadow",
+      "tag": "mg-action-menu",
+      "readme": "## Use\n\n![](./mg-action-menu/doc/img/mg-action-menu-use.png)\n\nWhen not all of the items can be displayed because of the width of a [**`<mg-menu> horizontal`**](./?path=/docs/beta-menus-mg-menu--mg-menu) or **`<mg-menu>  mobile`** (TODO) or a [**`<mg-tabs>`**](./?path=/docs/molecules-mg-tabs--mg-tabs), items are replaced by a single \"plus\" item.\n\n## Behavior\n\nBy clicking on the \"plus\" item a submenu displays the hidden items.\n\n### With an horizontal menu or tabs\n\n![](./mg-action-menu/doc/img/mg-action-menu-behavior-menu-tabs.png)\n\nA **`<mg-menu>  vertical`** displays items in the style of the menu.\n\nSubmenu is aligned to the right of the item according to the \"submenu of the [**`<mg-menu-item>`**](./?path=/docs/beta-menus-mg-menu-item--mg-menu-item) behavior.\n\n### With a mobile menu\n\n![](./mg-action-menu/doc/img/mg-action-menu-behavior-mobile.png)\n\nA **`<mg-menu> mobile`** displays, over the actual menu, items in the style of the menu.\nThere are as much lines of items as it is needed to display them.\nThe **`<mg-action-menu>`** item is replaced by a close button (flat with a cross).\n\n### Badges\n\n![](./mg-action-menu/doc/img/mg-action-menu-mg-menu-large.png)\n\n![](./mg-action-menu/doc/img/mg-action-menu-behavior-badge-mobile.png)\n\nIf one or more hidden items have **`<mg-badge>`**, the **`<mg-action-menu>`** item displays a badge with \"exclamation\" symbol as its content.\n\n## Specs\n\n### Anatomy\n\nUse \"ellipsis-vertical\" [**`<mg-icon>`**](./?path=/story/atoms-mg-icon--mg-icon) for **`<mg-menu>  horizontal`** or **`<mg-tab>`**.\nUse \"ellipsis\" [**`<mg-icon>`**](./?path=/story/atoms-mg-icon--mg-icon) for **`<mg-menu>  mobile`**.\n",
+      "docs": "![](./mg-action-menu/doc/img/mg-action-menu-use.png)\n\nWhen not all of the items can be displayed because of the width of a [**`<mg-menu> horizontal`**](./?path=/docs/beta-menus-mg-menu--mg-menu) or **`<mg-menu>  mobile`** (TODO) or a [**`<mg-tabs>`**](./?path=/docs/molecules-mg-tabs--mg-tabs), items are replaced by a single \"plus\" item.",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "interactiveElement",
+          "type": "\"button\" | \"mg-button\" | \"mg-menu-item\"",
+          "mutable": false,
+          "attr": "interactive-element",
+          "reflectToAttr": false,
+          "docs": "Define interactive element\nex: mg-button, mg-menu-item.\ndefault: 'mg-button'",
+          "docsTags": [],
+          "default": "interactivesElements[0]",
+          "values": [
+            {
+              "value": "button",
+              "type": "string"
+            },
+            {
+              "value": "mg-button",
+              "type": "string"
+            },
+            {
+              "value": "mg-menu-item",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "itemSize",
+          "type": "\"large\" | \"medium\" | \"regular\"",
+          "mutable": false,
+          "attr": "item-size",
+          "reflectToAttr": false,
+          "docs": "Define the popover menu item size",
+          "docsTags": [],
+          "default": "sizes[0]",
+          "values": [
+            {
+              "value": "large",
+              "type": "string"
+            },
+            {
+              "value": "medium",
+              "type": "string"
+            },
+            {
+              "value": "regular",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "placement",
+          "type": "\"center\" | \"left\" | \"right\"",
+          "mutable": false,
+          "attr": "placement",
+          "reflectToAttr": true,
+          "docs": "Define the popover menu item size",
+          "docsTags": [],
+          "default": "placements[0]",
+          "values": [
+            {
+              "value": "center",
+              "type": "string"
+            },
+            {
+              "value": "left",
+              "type": "string"
+            },
+            {
+              "value": "right",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "mg-menu-item",
+        "mg-popover",
+        "mg-badge",
+        "mg-icon",
+        "mg-menu"
+      ],
+      "dependencyGraph": {
+        "mg-action-menu": [
+          "mg-menu-item",
+          "mg-popover",
+          "mg-badge",
+          "mg-icon",
+          "mg-menu"
+        ],
+        "mg-menu-item": [
+          "mg-icon"
+        ],
+        "mg-popover": [
+          "mg-button",
+          "mg-icon"
+        ],
+        "mg-button": [
+          "mg-icon"
+        ]
+      }
+    },
     {
       "filePath": "./src/components/atoms/mg-badge/mg-badge.tsx",
       "encapsulation": "shadow",
@@ -112,12 +234,12 @@
       "slots": [],
       "parts": [],
       "dependents": [
-        "mg-plus",
+        "mg-action-menu",
         "mg-tabs"
       ],
       "dependencies": [],
       "dependencyGraph": {
-        "mg-plus": [
+        "mg-action-menu": [
           "mg-badge"
         ],
         "mg-tabs": [
@@ -860,6 +982,7 @@
       "slots": [],
       "parts": [],
       "dependents": [
+        "mg-action-menu",
         "mg-button",
         "mg-details",
         "mg-input-checkbox",
@@ -876,12 +999,14 @@
         "mg-modal",
         "mg-pagination",
         "mg-panel",
-        "mg-plus",
         "mg-popover",
         "mg-tabs"
       ],
       "dependencies": [],
       "dependencyGraph": {
+        "mg-action-menu": [
+          "mg-icon"
+        ],
         "mg-button": [
           "mg-icon"
         ],
@@ -928,9 +1053,6 @@
           "mg-icon"
         ],
         "mg-panel": [
-          "mg-icon"
-        ],
-        "mg-plus": [
           "mg-icon"
         ],
         "mg-popover": [
@@ -4349,8 +4471,8 @@
           "type": "string",
           "mutable": false,
           "attr": "label",
-          "reflectToAttr": true,
-          "docs": "Menu label. Include short menu description.\nRequired for accessibility\nuse reflect for cloneNode() label attribute in mg-plus",
+          "reflectToAttr": false,
+          "docs": "Menu label. Include short menu description.\nRequired for accessibility",
           "docsTags": [],
           "values": [
             {
@@ -4368,11 +4490,11 @@
       "slots": [],
       "parts": [],
       "dependents": [
-        "mg-plus"
+        "mg-action-menu"
       ],
       "dependencies": [],
       "dependencyGraph": {
-        "mg-plus": [
+        "mg-action-menu": [
           "mg-menu"
         ]
       }
@@ -4409,7 +4531,7 @@
           "mutable": false,
           "attr": "href",
           "reflectToAttr": false,
-          "docs": "Define menu-item badge\nwhen defined menu-item contain an anchor instead of button",
+          "docs": "Define menu-item href\nwhen defined menu-item contain an anchor instead of button",
           "docsTags": [],
           "values": [
             {
@@ -4424,8 +4546,8 @@
           "type": "\"large\" | \"medium\" | \"regular\"",
           "mutable": false,
           "attr": "size",
-          "reflectToAttr": true,
-          "docs": "Define menu-item size. Default: \"large\".\nuse reflect to use in getAttribute() in mg-plus",
+          "reflectToAttr": false,
+          "docs": "Define menu-item size. Default: \"large\".",
           "docsTags": [],
           "default": "'regular'",
           "values": [
@@ -4478,13 +4600,18 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [],
+      "dependents": [
+        "mg-action-menu"
+      ],
       "dependencies": [
         "mg-icon"
       ],
       "dependencyGraph": {
         "mg-menu-item": [
           "mg-icon"
+        ],
+        "mg-action-menu": [
+          "mg-menu-item"
         ]
       }
     },
@@ -5035,39 +5162,10 @@
       }
     },
     {
-      "filePath": "./src/behaviors/mg-plus/mg-plus.tsx",
-      "encapsulation": "shadow",
-      "tag": "mg-plus",
-      "readme": "## Use\n\n![](./mg-plus/doc/img/mg-plus-use.png)\n\nWhen not all of the items can be displayed because of the width of a [**`<mg-menu> horizontal`**](./?path=/docs/beta-menus-mg-menu--mg-menu) or **`<mg-menu>  mobile`** (TODO) or a [**`<mg-tabs>`**](./?path=/docs/molecules-mg-tabs--mg-tabs), items are replaced by a single \"plus\" item.\n\n## Behavior\n\nBy clicking on the \"plus\" item a submenu displays the hidden items.\n\n### With an horizontal menu or tabs\n\n![](./mg-plus/doc/img/mg-plus-behavior-menu-tabs.png)\n\nA **`<mg-menu>  vertical`** displays items in the style of the menu.\n\nSubmenu is aligned to the right of the item according to the \"submenu of the [**`<mg-menu-item>`**](./?path=/docs/beta-menus-mg-menu-item--mg-menu-item) behavior.\n\n### With a mobile menu\n\n![](./mg-plus/doc/img/mg-plus-behavior-mobile.png)\n\nA **`<mg-menu> mobile`** displays, over the actual menu, items in the style of the menu.\nThere are as much lines of items as it is needed to display them.\nThe **`<mg-plus>`** item is replaced by a close button (flat with a cross).\n\n### Badges\n\n![](./mg-plus/doc/img/mg-plus-mg-menu-large.png)\n\n![](./mg-plus/doc/img/mg-plus-behavior-badge-mobile.png)\n\nIf one or more hidden items have **`<mg-badge>`**, the **`<mg-plus>`** item displays a badge with \"exclamation\" symbol as its content.\n\n## Specs\n\n### Anatomy\n\nUse \"ellipsis-vertical\" [**`<mg-icon>`**](./?path=/story/atoms-mg-icon--mg-icon) for **`<mg-menu>  horizontal`** or **`<mg-tab>`**.\nUse \"ellipsis\" [**`<mg-icon>`**](./?path=/story/atoms-mg-icon--mg-icon) for **`<mg-menu>  mobile`**.\n\n",
-      "docs": "![](./mg-plus/doc/img/mg-plus-use.png)\n\nWhen not all of the items can be displayed because of the width of a [**`<mg-menu> horizontal`**](./?path=/docs/beta-menus-mg-menu--mg-menu) or **`<mg-menu>  mobile`** (TODO) or a [**`<mg-tabs>`**](./?path=/docs/molecules-mg-tabs--mg-tabs), items are replaced by a single \"plus\" item.",
-      "docsTags": [],
-      "usage": {},
-      "props": [],
-      "methods": [],
-      "events": [],
-      "listeners": [],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [
-        "mg-icon",
-        "mg-menu",
-        "mg-badge"
-      ],
-      "dependencyGraph": {
-        "mg-plus": [
-          "mg-icon",
-          "mg-menu",
-          "mg-badge"
-        ]
-      }
-    },
-    {
       "filePath": "./src/components/molecules/mg-popover/mg-popover.tsx",
       "encapsulation": "shadow",
       "tag": "mg-popover",
-      "readme": "## Usage\n\nA popover is more enhanced than a tooltip but less blocking than a modal.\n\n## Behavior\n\nThe window is displayed when clicking on its trigger.\n\nThe window is displayed next to its trigger, usually below it. A triangle (in css) makes the link between the trigger and the window.\n\nThe window closes:\n\n- when clicking on its trigger\n- clicking outside the window\n- when the ESC key is pressed\n- when clicking on the close button at the top right corner\n\nThe size of the window is determined by the content (set a maximum size to avoid problems).\n\nThe title and the close button are optional.\n\n## Specs\n\n### Fonts\n\n![](./mg-popover/doc/img/mg-popover-fonts.png)\n\n### Spacing\n\n![](./mg-popover/doc/img/mg-popover-spacing.png)\n\n### Sizing\n\n![](./mg-popover/doc/img/mg-popover-sizing.png)\n\n### Alignments\n\n![](./mg-popover/doc/img/mg-popover-align.png)\n\n### Positioning\n\n#### Item\n\n![](./mg-popover/doc/img/mg-popover-position.png)\n\n#### Screen\n\n![](./mg-popover/doc/img/mg-popover-position-screen.png)\n\n### Style\n\n![](./mg-popover/doc/img/mg-popover-style.png)\n\n## CSS Variables\n\nIf needed some [variables](./?path=/story/css-variables--page) are available to customize the component:\n\n`--mg-popover-background-color`: Define popover background color, default: `var(--color-light)`\n`--mg-popover-font-color`: Define popover font color, default: `var(--color-font-dark)`\n`--mg-popover-title-font-size`: Define popover title font size, default: `1.4rem`\n",
+      "readme": "## Usage\n\nA popover is more enhanced than a tooltip but less blocking than a modal.\n\n## Behavior\n\nThe window is displayed when clicking on its trigger.\n\nThe window is displayed next to its trigger, usually below it. A triangle (in css) makes the link between the trigger and the window.\n\nThe window closes:\n\n- when clicking on its trigger\n- clicking outside the window\n- when the ESC key is pressed\n- when clicking on the close button at the top right corner\n\nThe size of the window is determined by the content (set a maximum size to avoid problems).\n\nThe title and the close button are optional.\n\n## Specs\n\n### Fonts\n\n![](./mg-popover/doc/img/mg-popover-fonts.png)\n\n### Spacing\n\n![](./mg-popover/doc/img/mg-popover-spacing.png)\n\n### Sizing\n\n![](./mg-popover/doc/img/mg-popover-sizing.png)\n\n### Alignments\n\n![](./mg-popover/doc/img/mg-popover-align.png)\n\n### Positioning\n\n#### Item\n\n![](./mg-popover/doc/img/mg-popover-position.png)\n\n#### Screen\n\n![](./mg-popover/doc/img/mg-popover-position-screen.png)\n\n### Style\n\n![](./mg-popover/doc/img/mg-popover-style.png)\n\n## CSS Variables\n\nIf needed some [variables](./?path=/story/css-variables--page) are available to customize the component:\n\n`--mg-popover-background-color`: Define popover background color, default: `var(--color-light)`\n`--mg-popover-font-color`: Define popover font color, default: `var(--color-font-dark)`\n`--mg-popover-title-font-size`: Define popover title font size, default: `1.4rem`\n`--mg-popover-padding-vertical`: Define popover vertical padding, default: `1.5rem`\n`--mg-popover-padding-horizontal`: Define popover vertical padding, default: `--mg-popover-padding-vertical`\n",
       "docs": "A popover is more enhanced than a tooltip but less blocking than a modal.",
       "docsTags": [],
       "usage": {},
@@ -5231,7 +5329,9 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [],
+      "dependents": [
+        "mg-action-menu"
+      ],
       "dependencies": [
         "mg-button",
         "mg-icon"
@@ -5243,6 +5343,9 @@
         ],
         "mg-button": [
           "mg-icon"
+        ],
+        "mg-action-menu": [
+          "mg-popover"
         ]
       }
     },

@@ -31,7 +31,7 @@ const getPage = async (args, withSubmenu = true) => {
         </mg-menu-item>
         <mg-menu-item>
           <span slot="label">joker</span>
-          {args.badge && <mg-badge value="1" label="bad guy"></mg-badge>}
+          {args.badge && <mg-badge value={1} label="bad guy"></mg-badge>}
           <div>
             <h2>This is a joker card</h2>
             <p>If you don't know the joker, you can watch the movie.</p>

@@ -185,15 +185,19 @@ Child content is displayed via an **mg-tray** component.
 
 ## Properties
 
-| Property   | Attribute  | Description                                                                              | Type                                                                  | Default          |
-| ---------- | ---------- | ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------- | ---------------- |
-| `expanded` | `expanded` | Define menu-item content expanded. Default: false.                                       | `boolean`                                                             | `false`          |
-| `href`     | `href`     | Define menu-item badge when defined menu-item contain an anchor instead of button        | `string`                                                              | `undefined`      |
-| `size`     | `size`     | Define menu-item size. Default: "large". use reflect to use in getAttribute() in mg-plus | `"large" \| "medium" \| "regular"`                                    | `'regular'`      |
-| `status`   | `status`   | Define menu-item status. Default: "visible"                                              | `Status.ACTIVE \| Status.DISABLED \| Status.HIDDEN \| Status.VISIBLE` | `Status.VISIBLE` |
+| Property   | Attribute  | Description                                                                      | Type                                                                  | Default          |
+| ---------- | ---------- | -------------------------------------------------------------------------------- | --------------------------------------------------------------------- | ---------------- |
+| `expanded` | `expanded` | Define menu-item content expanded. Default: false.                               | `boolean`                                                             | `false`          |
+| `href`     | `href`     | Define menu-item href when defined menu-item contain an anchor instead of button | `string`                                                              | `undefined`      |
+| `size`     | `size`     | Define menu-item size. Default: "large".                                         | `"large" \| "medium" \| "regular"`                                    | `'regular'`      |
+| `status`   | `status`   | Define menu-item status. Default: "visible"                                      | `Status.ACTIVE \| Status.DISABLED \| Status.HIDDEN \| Status.VISIBLE` | `Status.VISIBLE` |
 
 
 ## Dependencies
+
+### Used by
+
+ - [mg-action-menu](../../../../behaviors/mg-action-menu)
 
 ### Depends on
 
@@ -203,6 +207,7 @@ Child content is displayed via an **mg-tray** component.
 ```mermaid
 graph TD;
   mg-menu-item --> mg-icon
+  mg-action-menu --> mg-menu-item
   style mg-menu-item fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

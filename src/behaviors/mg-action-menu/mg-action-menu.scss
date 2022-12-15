@@ -1,0 +1,22 @@
+:host {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+:host([placement='center']) {
+  justify-content: center;
+}
+
+:host([placement='right']) {
+  justify-content: end;
+}
+
+:host([data-style-inner-space-0]) {
+  gap: unset;
+}
+
+::slotted(*) {
+  --mg-popover-padding-vertical: 1rem;
+  --mg-popover-padding-horizontal: 0;
+}

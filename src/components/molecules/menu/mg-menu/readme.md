@@ -79,22 +79,22 @@ Default background color is @color-light.
 
 ## Properties
 
-| Property             | Attribute   | Description                                                                                                                   | Type                                         | Default                |
-| -------------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------- | ---------------------- |
-| `direction`          | `direction` | Component display direction. Default: "horizontal"                                                                            | `Direction.HORIZONTAL \| Direction.VERTICAL` | `Direction.HORIZONTAL` |
-| `label` _(required)_ | `label`     | Menu label. Include short menu description. Required for accessibility use reflect for cloneNode() label attribute in mg-plus | `string`                                     | `undefined`            |
+| Property             | Attribute   | Description                                                            | Type                                         | Default                |
+| -------------------- | ----------- | ---------------------------------------------------------------------- | -------------------------------------------- | ---------------------- |
+| `direction`          | `direction` | Component display direction. Default: "horizontal"                     | `Direction.HORIZONTAL \| Direction.VERTICAL` | `Direction.HORIZONTAL` |
+| `label` _(required)_ | `label`     | Menu label. Include short menu description. Required for accessibility | `string`                                     | `undefined`            |
 
 
 ## Dependencies
 
 ### Used by
 
- - [mg-plus](../../../../behaviors/mg-plus)
+ - [mg-action-menu](../../../../behaviors/mg-action-menu)
 
 ### Graph
 ```mermaid
 graph TD;
-  mg-plus --> mg-menu
+  mg-action-menu --> mg-menu
   style mg-menu fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

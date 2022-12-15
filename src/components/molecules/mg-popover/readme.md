@@ -58,6 +58,8 @@ If needed some [variables](./?path=/story/css-variables--page) are available to 
 `--mg-popover-background-color`: Define popover background color, default: `var(--color-light)`
 `--mg-popover-font-color`: Define popover font color, default: `var(--color-font-dark)`
 `--mg-popover-title-font-size`: Define popover title font size, default: `1.4rem`
+`--mg-popover-padding-vertical`: Define popover vertical padding, default: `1.5rem`
+`--mg-popover-padding-horizontal`: Define popover vertical padding, default: `--mg-popover-padding-vertical`
 
 <!-- Auto Generated Below -->
 
@@ -82,6 +84,10 @@ If needed some [variables](./?path=/story/css-variables--page) are available to 
 
 ## Dependencies
 
+### Used by
+
+ - [mg-action-menu](../../../behaviors/mg-action-menu)
+
 ### Depends on
 
 - [mg-button](../../atoms/mg-button)
@@ -93,6 +99,7 @@ graph TD;
   mg-popover --> mg-button
   mg-popover --> mg-icon
   mg-button --> mg-icon
+  mg-action-menu --> mg-popover
   style mg-popover fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

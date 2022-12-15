@@ -5,6 +5,8 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { MenuItemSizeType, Status } from "./components/molecules/menu/mg-menu-item/mg-menu-item.conf";
+import { InteractiveElementType, PlacementType } from "./behaviors/mg-action-menu/mg-action-menu.conf";
 import { BadgeVariantType } from "./components/atoms/mg-badge/mg-badge.conf";
 import { ButtonType, VariantType } from "./components/atoms/mg-button/mg-button.conf";
 import { IconSizeType, IconVariantType } from "./components/atoms/mg-icon/mg-icon.conf";
@@ -14,11 +16,24 @@ import { RadioOption } from "./components/molecules/inputs/mg-input-radio/mg-inp
 import { SelectOption } from "./components/molecules/inputs/mg-input-select/mg-input-select.conf";
 import { ToggleValue } from "./components/molecules/inputs/mg-input-toggle/mg-input-toggle.conf";
 import { Direction } from "./components/molecules/menu/mg-menu/mg-menu.conf";
-import { MenuItemSizeType, Status } from "./components/molecules/menu/mg-menu-item/mg-menu-item.conf";
 import { Placement } from "@popperjs/core";
 import { SizeType, TabItem } from "./components/molecules/mg-tabs/mg-tabs.conf";
 import { TagVariantType } from "./components/atoms/mg-tag/mg-tag.conf";
 export namespace Components {
+    interface MgActionMenu {
+        /**
+          * Define interactive element ex: mg-button, mg-menu-item. default: 'mg-button'
+         */
+        "interactiveElement": InteractiveElementType;
+        /**
+          * Define the popover menu item size
+         */
+        "itemSize": MenuItemSizeType;
+        /**
+          * Define the popover menu item size
+         */
+        "placement": PlacementType;
+    }
     interface MgBadge {
         /**
           * Badge label. Include short description. Required for accessibility
@@ -870,7 +885,7 @@ export namespace Components {
          */
         "direction": Direction;
         /**
-          * Menu label. Include short menu description. Required for accessibility use reflect for cloneNode() label attribute in mg-plus
+          * Menu label. Include short menu description. Required for accessibility
          */
         "label": string;
     }
@@ -880,11 +895,11 @@ export namespace Components {
          */
         "expanded": boolean;
         /**
-          * Define menu-item badge when defined menu-item contain an anchor instead of button
+          * Define menu-item href when defined menu-item contain an anchor instead of button
          */
         "href": string;
         /**
-          * Define menu-item size. Default: "large". use reflect to use in getAttribute() in mg-plus
+          * Define menu-item size. Default: "large".
          */
         "size": MenuItemSizeType;
         /**
@@ -979,8 +994,6 @@ export namespace Components {
           * Panel title pattern error message
          */
         "titlePatternErrorMessage": string;
-    }
-    interface MgPlus {
     }
     interface MgPopover {
         /**
@@ -1132,6 +1145,12 @@ export interface MgTabsCustomEvent<T> extends CustomEvent<T> {
     target: HTMLMgTabsElement;
 }
 declare global {
+    interface HTMLMgActionMenuElement extends Components.MgActionMenu, HTMLStencilElement {
+    }
+    var HTMLMgActionMenuElement: {
+        prototype: HTMLMgActionMenuElement;
+        new (): HTMLMgActionMenuElement;
+    };
     interface HTMLMgBadgeElement extends Components.MgBadge, HTMLStencilElement {
     }
     var HTMLMgBadgeElement: {
@@ -1282,12 +1301,6 @@ declare global {
         prototype: HTMLMgPanelElement;
         new (): HTMLMgPanelElement;
     };
-    interface HTMLMgPlusElement extends Components.MgPlus, HTMLStencilElement {
-    }
-    var HTMLMgPlusElement: {
-        prototype: HTMLMgPlusElement;
-        new (): HTMLMgPlusElement;
-    };
     interface HTMLMgPopoverElement extends Components.MgPopover, HTMLStencilElement {
     }
     var HTMLMgPopoverElement: {
@@ -1313,6 +1326,7 @@ declare global {
         new (): HTMLMgTooltipElement;
     };
     interface HTMLElementTagNameMap {
+        "mg-action-menu": HTMLMgActionMenuElement;
         "mg-badge": HTMLMgBadgeElement;
         "mg-button": HTMLMgButtonElement;
         "mg-card": HTMLMgCardElement;
@@ -1338,7 +1352,6 @@ declare global {
         "mg-modal": HTMLMgModalElement;
         "mg-pagination": HTMLMgPaginationElement;
         "mg-panel": HTMLMgPanelElement;
-        "mg-plus": HTMLMgPlusElement;
         "mg-popover": HTMLMgPopoverElement;
         "mg-tabs": HTMLMgTabsElement;
         "mg-tag": HTMLMgTagElement;
@@ -1346,6 +1359,20 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface MgActionMenu {
+        /**
+          * Define interactive element ex: mg-button, mg-menu-item. default: 'mg-button'
+         */
+        "interactiveElement"?: InteractiveElementType;
+        /**
+          * Define the popover menu item size
+         */
+        "itemSize"?: MenuItemSizeType;
+        /**
+          * Define the popover menu item size
+         */
+        "placement"?: PlacementType;
+    }
     interface MgBadge {
         /**
           * Badge label. Include short description. Required for accessibility
@@ -2231,7 +2258,7 @@ declare namespace LocalJSX {
          */
         "direction"?: Direction;
         /**
-          * Menu label. Include short menu description. Required for accessibility use reflect for cloneNode() label attribute in mg-plus
+          * Menu label. Include short menu description. Required for accessibility
          */
         "label": string;
     }
@@ -2241,11 +2268,11 @@ declare namespace LocalJSX {
          */
         "expanded"?: boolean;
         /**
-          * Define menu-item badge when defined menu-item contain an anchor instead of button
+          * Define menu-item href when defined menu-item contain an anchor instead of button
          */
         "href"?: string;
         /**
-          * Define menu-item size. Default: "large". use reflect to use in getAttribute() in mg-plus
+          * Define menu-item size. Default: "large".
          */
         "size"?: MenuItemSizeType;
         /**
@@ -2369,8 +2396,6 @@ declare namespace LocalJSX {
          */
         "titlePatternErrorMessage"?: string;
     }
-    interface MgPlus {
-    }
     interface MgPopover {
         /**
           * Define if popover has a cross button
@@ -2460,6 +2485,7 @@ declare namespace LocalJSX {
         "placement"?: Placement;
     }
     interface IntrinsicElements {
+        "mg-action-menu": MgActionMenu;
         "mg-badge": MgBadge;
         "mg-button": MgButton;
         "mg-card": MgCard;
@@ -2485,7 +2511,6 @@ declare namespace LocalJSX {
         "mg-modal": MgModal;
         "mg-pagination": MgPagination;
         "mg-panel": MgPanel;
-        "mg-plus": MgPlus;
         "mg-popover": MgPopover;
         "mg-tabs": MgTabs;
         "mg-tag": MgTag;
@@ -2496,6 +2521,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "mg-action-menu": LocalJSX.MgActionMenu & JSXBase.HTMLAttributes<HTMLMgActionMenuElement>;
             "mg-badge": LocalJSX.MgBadge & JSXBase.HTMLAttributes<HTMLMgBadgeElement>;
             "mg-button": LocalJSX.MgButton & JSXBase.HTMLAttributes<HTMLMgButtonElement>;
             "mg-card": LocalJSX.MgCard & JSXBase.HTMLAttributes<HTMLMgCardElement>;
@@ -2521,7 +2547,6 @@ declare module "@stencil/core" {
             "mg-modal": LocalJSX.MgModal & JSXBase.HTMLAttributes<HTMLMgModalElement>;
             "mg-pagination": LocalJSX.MgPagination & JSXBase.HTMLAttributes<HTMLMgPaginationElement>;
             "mg-panel": LocalJSX.MgPanel & JSXBase.HTMLAttributes<HTMLMgPanelElement>;
-            "mg-plus": LocalJSX.MgPlus & JSXBase.HTMLAttributes<HTMLMgPlusElement>;
             "mg-popover": LocalJSX.MgPopover & JSXBase.HTMLAttributes<HTMLMgPopoverElement>;
             "mg-tabs": LocalJSX.MgTabs & JSXBase.HTMLAttributes<HTMLMgTabsElement>;
             "mg-tag": LocalJSX.MgTag & JSXBase.HTMLAttributes<HTMLMgTagElement>;

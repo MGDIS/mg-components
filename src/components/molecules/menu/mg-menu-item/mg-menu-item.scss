@@ -75,7 +75,7 @@ $navigation-button-sizes: (
   }
 }
 
-:host([data-mg-plus]) {
+:host([data-mg-action-menu]) {
   .mg-menu-item__navigation-button-chevron {
     display: none;
   }

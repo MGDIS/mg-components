@@ -1,4 +1,4 @@
-$mg-popover-padding-vertivcal: 1.5rem;
+$mg-popover-padding-vertical: var(--mg-popover-padding-vertical, 1.5rem);
 
 mg-popover {
   display: contents;
@@ -10,7 +10,7 @@ mg-popover {
 .mg-popover {
   // Display
   display: none;
-  padding: $mg-popover-padding-vertivcal;
+  padding: $mg-popover-padding-vertical var(--mg-popover-padding-horizontal, $mg-popover-padding-vertical);
   z-index: 1000;
   // Decoration
   border-radius: 0.5rem;
