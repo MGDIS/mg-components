@@ -111,24 +111,20 @@ export class MgMenu {
     // return a promise to process action only in the FIRST render().
     // https://stenciljs.com/docs/component-lifecycle#componentwillload
     return setTimeout(() => {
-      // store all menu-items
-      this.menuItems = Array.from(this.element.children).filter(child => child.nodeName === 'MG-MENU-ITEM') as HTMLMgMenuItemElement[];
       this.isChildMenu = this.element.closest('mg-menu-item') !== null;
-
-      // add menu items listeners
-      this.initMenuItemsListeners();
-
-      // click outside management for child vertical menu
-      if (!this.isChildMenu && this.direction === Direction.HORIZONTAL) {
-        document.addEventListener('click', (event: MouseEvent & { target: HTMLElement }) => {
-          if (event.target.closest('mg-menu') === null) {
-            this.menuItems.forEach(item => {
-              this.closeMenuItem(item, this.direction === Direction.HORIZONTAL);
-            });
-          }
-        });
-      }
     }, 0);
+  }
+
+  /**
+   * Check add listeners to childs
+   *
+   * @returns {void}
+   */
+  componentDidRender() {
+    // store all menu-items
+    this.menuItems = Array.from(this.element.children).filter(child => child.nodeName === 'MG-MENU-ITEM') as HTMLMgMenuItemElement[];
+    // add menu items listeners
+    this.initMenuItemsListeners();
   }
 
   /**

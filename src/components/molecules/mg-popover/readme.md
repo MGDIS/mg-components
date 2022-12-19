@@ -68,6 +68,7 @@ If needed some [variables](./?path=/story/css-variables--page) are available to 
 
 | Property      | Attribute      | Description                                                                      | Type                                                                                                                                                                                                         | Default                  |
 | ------------- | -------------- | -------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------ |
+| `arrowHide`   | `arrow-hide`   | Hide popover arrow                                                               | `boolean`                                                                                                                                                                                                    | `false`                  |
 | `closeButton` | `close-button` | Define if popover has a cross button                                             | `boolean`                                                                                                                                                                                                    | `false`                  |
 | `disabled`    | `disabled`     | Disable popover                                                                  | `boolean`                                                                                                                                                                                                    | `false`                  |
 | `display`     | `display`      | Display popover                                                                  | `boolean`                                                                                                                                                                                                    | `false`                  |
@@ -87,6 +88,7 @@ If needed some [variables](./?path=/story/css-variables--page) are available to 
 ### Used by
 
  - [mg-action-menu](../../../behaviors/mg-action-menu)
+ - [mg-menu-item](../menu/mg-menu-item)
 
 ### Depends on
 
@@ -100,6 +102,7 @@ graph TD;
   mg-popover --> mg-icon
   mg-button --> mg-icon
   mg-action-menu --> mg-popover
+  mg-menu-item --> mg-popover
   style mg-popover fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

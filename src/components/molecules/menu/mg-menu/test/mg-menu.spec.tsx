@@ -1,20 +1,25 @@
 import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
 import { MgMenu } from '../mg-menu';
+import { Direction } from '../mg-menu.conf';
 import { MgMenuItem } from '../../mg-menu-item/mg-menu-item';
+import { MgPopover } from '../../../mg-popover/mg-popover';
+import { mockPopperArrowError } from '../../../mg-popover/test/mg-popover.spec';
+
+mockPopperArrowError();
 
 const getPage = async (args, withSubmenu = true) => {
   const page = await newSpecPage({
-    components: [MgMenu, MgMenuItem],
+    components: [MgMenu, MgMenuItem, MgPopover],
     template: () => (
       <mg-menu {...args}>
         <mg-menu-item>
           <span slot="label">batman</span>
           {withSubmenu && (
-            <mg-menu label="batman - submenu">
+            <mg-menu label="batman - submenu" direction={Direction.VERTICAL}>
               <mg-menu-item>
                 <span slot="label">batman begins</span>
-                <mg-menu label="batman begins - submenu">
+                <mg-menu label="batman begins - submenu" direction={Direction.VERTICAL}>
                   <mg-menu-item>
                     <span slot="label">movie</span>
                   </mg-menu-item>
@@ -44,15 +49,24 @@ const getPage = async (args, withSubmenu = true) => {
     ),
   });
 
-  jest.runAllTimers();
+  jest.runOnlyPendingTimers();
   await page.waitForChanges();
+
+  Array.from(page.doc.querySelectorAll('mg-menu-item')).forEach((item, index) => {
+    const popover = item.shadowRoot.querySelector('mg-popover');
+    if (popover) {
+      const id = `mg-popover-test_${index}`;
+      popover.shadowRoot.querySelector('.mg-popover')?.setAttribute('id', id);
+      item.shadowRoot.querySelector('button')?.setAttribute('aria-controls', id);
+    }
+  });
 
   return page;
 };
 
 describe('mg-menu', () => {
   beforeEach(() => jest.useFakeTimers());
-  afterEach(() => jest.runOnlyPendingTimers());
+  afterEach(() => jest.clearAllTimers());
   describe('render', () => {
     test.each([{ label: 'batman menu' }, { label: 'batman menu', direction: 'horizontal' }, { label: 'batman menu', direction: 'vertical' }])('with args %s', async args => {
       const { root } = await getPage(args);
@@ -88,34 +102,36 @@ describe('mg-menu', () => {
   });
 
   describe.each(['horizontal', 'vertical'])('events', direction => {
-    test('should manage outside click', async () => {
+    test(`should manage outside click, case direction ${direction}`, async () => {
       const page = await getPage({ label: 'batman menu', direction });
 
-      expect(page.root).toMatchSnapshot();
-
       const firstItem: HTMLMgMenuItemElement = page.root.querySelector('[title="batman"]').closest('mg-menu-item');
+      expect(firstItem.expanded).toBe(false);
 
       firstItem.shadowRoot.querySelector('button').dispatchEvent(new MouseEvent('click', { bubbles: true }));
       await page.waitForChanges();
+      jest.runOnlyPendingTimers();
 
-      expect(page.root).toMatchSnapshot();
+      expect(firstItem.expanded).toBe(true);
 
-      document.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+      document.dispatchEvent(new CustomEvent('click', { bubbles: true }));
       await page.waitForChanges();
 
-      expect(page.root).toMatchSnapshot();
+      expect(firstItem.expanded).toBe(direction === 'vertical');
     });
 
     test.each(['click', 'focus'])(`should manage sibling menu-item expanded props in ${direction} menu, case %s event`, async event => {
       const page = await getPage({ label: 'batman menu', direction });
-
-      expect(page.root).toMatchSnapshot();
-
       // open batman item
       const batmanItem: HTMLMgMenuItemElement = page.doc.querySelector('[title="batman"]').closest('mg-menu-item');
+      expect(batmanItem.expanded).toBe(false);
+      if (direction === 'horizontal') {
+        expect(batmanItem.shadowRoot.querySelector('mg-popover')).not.toBe(null);
+      }
 
       batmanItem.shadowRoot.querySelector('button').dispatchEvent(new CustomEvent('click', { bubbles: true }));
       await page.waitForChanges();
+      jest.runOnlyPendingTimers();
 
       expect(batmanItem.expanded).toBe(true);
 

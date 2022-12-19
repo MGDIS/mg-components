@@ -159,13 +159,23 @@ export class MgMenuItem {
    * @returns {void}
    */
   private handleElementCLick = (event: MouseEvent): void => {
-    if (this.hasChildren || this.status === Status.DISABLED) {
+    if ((this.hasChildren && !this.isInMainMenu) || this.status === Status.DISABLED) {
       event.preventDefault();
       event.stopPropagation();
     }
 
     // toggle expanded when mg-menu-item has child items
     if (this.hasChildren) this.toggleExpanded();
+  };
+
+  /**
+   * Handle popover element display-change event
+   *
+   * @param {CustomEvent} event popover display event
+   * @returns {void}
+   */
+  private handlePopoverDisplay = (event: CustomEvent): void => {
+    this.expanded = event.detail;
   };
 
   /*************
@@ -214,7 +224,7 @@ export class MgMenuItem {
         this.direction = (this.element.parentElement as HTMLMgMenuElement).direction;
       }
 
-      this.isInMainMenu = this.element.parentElement.className.includes('mg-menu-item') === false;
+      this.isInMainMenu = this.element.parentElement.closest('mg-menu-item') === null;
       const hasNextMenuItem = this.element.nextElementSibling?.nodeName === 'MG-MENU-ITEM' && this.element.nextElementSibling.getAttribute('[hidden]') === null;
       const hasPreviousMenuItem = this.element.previousElementSibling?.nodeName === 'MG-MENU-ITEM';
 
@@ -246,49 +256,72 @@ export class MgMenuItem {
   }
 
   /**
+   * Render ineractive element
+   *
+   * @returns {HTMLElement} HTML Element
+   */
+  renderInteractiveElement(): HTMLElement {
+    const TagName: string = this.href !== undefined ? 'a' : 'button';
+    return (
+      <TagName
+        href={this.href}
+        class={this.navigationButtonClassList.join()}
+        tabindex={[Status.DISABLED, Status.HIDDEN].includes(this.status) ? -1 : 0}
+        disabled={this.status === Status.DISABLED}
+        aria-expanded={this.hasChildren && this.expanded.toString()}
+        aria-current={this.status === Status.ACTIVE && 'page'}
+        onClick={this.handleElementCLick}
+      >
+        <slot name="illustration"></slot>
+        <div class={`${this.navigationButton}-center`}>
+          <div class={`${this.navigationButton}-text-content`}>
+            <slot name="label"></slot>
+            <slot name="information"></slot>
+          </div>
+          <slot name="metadata"></slot>
+        </div>
+        {this.hasChildren && this.href === undefined && (
+          <span
+            class={{
+              [`${this.navigationButton}-chevron`]: true,
+              [`${this.navigationButton}-chevron--rotate`]: this.expanded === true,
+              'mg-a11y-animation': true,
+            }}
+          >
+            <mg-icon icon="chevron-down"></mg-icon>
+          </span>
+        )}
+      </TagName>
+    );
+  }
+
+  /**
    * Render
    *
    * @returns {HTMLElement} HTML Element
    */
   render(): HTMLElement {
-    const TagName: string = this.href !== undefined ? 'a' : 'button';
+    const getContainerClasses = () => ({
+      [`${this.name}__collapse-container`]: true,
+      [`${this.name}__collapse-container--first-level`]: this.isInMainMenu && this.isdirection(Direction.HORIZONTAL),
+    });
     return (
       <Host role="menuitem" aria-haspopup={this.hasChildren.toString()}>
-        <TagName
-          href={this.href}
-          class={this.navigationButtonClassList.join()}
-          tabindex={[Status.DISABLED, Status.HIDDEN].includes(this.status) ? -1 : 0}
-          disabled={this.status === Status.DISABLED}
-          aria-expanded={this.hasChildren && this.expanded.toString()}
-          aria-current={this.status === Status.ACTIVE && 'page'}
-          onClick={this.handleElementCLick}
-        >
-          <slot name="illustration"></slot>
-          <div class={`${this.navigationButton}-center`}>
-            <div class={`${this.navigationButton}-text-content`}>
-              <slot name="label"></slot>
-              <slot name="information"></slot>
+        {this.isdirection(Direction.HORIZONTAL) && this.hasChildren && !this.href ? (
+          <mg-popover display={this.expanded} placement="bottom-start" arrowHide={true} onDisplay-change={this.handlePopoverDisplay}>
+            {this.renderInteractiveElement()}
+            <div class={getContainerClasses()} slot="content">
+              <slot></slot>
             </div>
-            <slot name="metadata"></slot>
-          </div>
-          {this.hasChildren && this.href === undefined && (
-            <span
-              class={{
-                [`${this.navigationButton}-chevron`]: true,
-                [`${this.navigationButton}-chevron--rotate`]: this.expanded === true,
-                'mg-a11y-animation': true,
-              }}
-            >
-              <mg-icon icon="chevron-down"></mg-icon>
-            </span>
-          )}
-        </TagName>
-        <div
-          class={{ [`${this.name}__collapse-container`]: true, [`${this.name}__collapse-container--first-level`]: this.isInMainMenu && this.isdirection(Direction.HORIZONTAL) }}
-          hidden={!this.expanded}
-        >
-          <slot></slot>
-        </div>
+          </mg-popover>
+        ) : (
+          [
+            this.renderInteractiveElement(),
+            <div class={getContainerClasses()} hidden={!this.expanded}>
+              <slot></slot>
+            </div>,
+          ]
+        )}
       </Host>
     );
   }

@@ -42,6 +42,8 @@ $navigation-button-sizes: (
 :host {
   position: relative;
   display: flex;
+  --mg-popover-padding-vertical: 0;
+  --mg-popover-padding-horizontal: 0;
 }
 
 // last item style
@@ -54,6 +56,9 @@ $navigation-button-sizes: (
 :host([data-style-direction-vertical]) {
   flex-direction: column;
   .mg-menu-item {
+    &__navigation-button {
+      width: 100%;
+    }
     &__collapse-container {
       left: unset;
       top: unset;
@@ -68,7 +73,6 @@ $navigation-button-sizes: (
 
 // horizontal item style
 :host([data-style-direction-horizontal]) .mg-menu-item__collapse-container.mg-menu-item__collapse-container--first-level {
-  box-shadow: var(--box-shadow);
   background-color: hsl(var(--color-light));
   ::slotted(mg-menu) {
     padding: 1rem 0;
@@ -87,9 +91,6 @@ $navigation-button-sizes: (
 .mg-menu-item {
   max-width: var(--mg-menu-item-navigation-button-max-width);
   &__collapse-container {
-    position: absolute;
-    top: 100%;
-    left: 0;
     width: max-content;
     z-index: 10;
   }

@@ -40,7 +40,7 @@ interface IGetMenuItemArgs {
  * @returns {ItemFormatedArgs} items formated args object
  */
 const getItemArgs: IGetMenuItemArgs = ({ size, label, direction, status, metadata, icon, badge, content, submenu }) => ({
-  size: size !== undefined ? size : direction === Direction.VERTICAL ? 'medium' : undefined,
+  size: size !== undefined ? size : direction === Direction.VERTICAL ? 'medium' : 'large',
   status,
   slot: {
     label,
@@ -91,10 +91,9 @@ interface IGetMenuArgs {
  *
  * @param {Direction} direction menu direction
  * @param {number} level menu level. Default: 0.
- * @param {boolean} isSubmenu is menu a submenu. Default: false.
  * @returns {MenuFormatedArgs} menu formated args object
  */
-export const getMenuArgs: IGetMenuArgs = (direction: Direction, level = 0, isSubmenu = false) => ({
+export const getMenuArgs: IGetMenuArgs = (direction: Direction, level = 0) => ({
   label: 'Batman menu',
   direction,
   slot: {
@@ -128,7 +127,7 @@ export const getMenuArgs: IGetMenuArgs = (direction: Direction, level = 0, isSub
         icon: true,
         metadata: 'my metadata',
         content: true,
-        size: !isSubmenu && direction === Direction.HORIZONTAL ? 'regular' : undefined,
+        size: 'medium',
       }),
     ],
   },

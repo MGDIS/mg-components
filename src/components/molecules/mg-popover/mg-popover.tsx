@@ -16,6 +16,7 @@ export class MgPopover {
   private popper: PopperInstance;
   private popover: HTMLElement;
   private closeButtonId = '';
+  private space: number;
 
   // Locales
   private messages;
@@ -40,6 +41,15 @@ export class MgPopover {
    */
   @Prop() placement: Placement = 'bottom';
 
+  /**
+   * Hide popover arrow
+   */
+  @Prop() arrowHide = false;
+  @Watch('arrowHide')
+  validateArrowHide(newValue: MgPopover['arrowHide']): void {
+    if (newValue) this.space = 0;
+    else this.space = 10;
+  }
   /**
    * Define if popover has a cross button
    */
@@ -141,6 +151,7 @@ export class MgPopover {
   componentWillLoad(): void {
     // Get locales
     this.messages = initLocales(this.element).messages;
+    this.validateArrowHide(this.arrowHide);
   }
 
   /**
@@ -178,7 +189,7 @@ export class MgPopover {
         {
           name: 'offset',
           options: {
-            offset: [0, 10],
+            offset: [0, this.space],
           },
         },
       ],
@@ -216,7 +227,7 @@ export class MgPopover {
             <slot name="title"></slot>
           </div>
           <slot name="content"></slot>
-          <div class="mg-popover__arrow" data-popper-arrow></div>
+          <div class={{ 'mg-popover__arrow': !this.arrowHide }} data-popper-arrow></div>
         </div>
       </Host>
     );

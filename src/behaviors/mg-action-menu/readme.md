@@ -70,6 +70,7 @@ graph TD;
   mg-action-menu --> mg-icon
   mg-action-menu --> mg-menu
   mg-menu-item --> mg-icon
+  mg-menu-item --> mg-popover
   mg-popover --> mg-button
   mg-popover --> mg-icon
   mg-button --> mg-icon

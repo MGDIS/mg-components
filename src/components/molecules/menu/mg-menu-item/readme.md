@@ -202,11 +202,16 @@ Child content is displayed via an **mg-tray** component.
 ### Depends on
 
 - [mg-icon](../../../atoms/mg-icon)
+- [mg-popover](../../mg-popover)
 
 ### Graph
 ```mermaid
 graph TD;
   mg-menu-item --> mg-icon
+  mg-menu-item --> mg-popover
+  mg-popover --> mg-button
+  mg-popover --> mg-icon
+  mg-button --> mg-icon
   mg-action-menu --> mg-menu-item
   style mg-menu-item fill:#f9f,stroke:#333,stroke-width:4px
 ```
