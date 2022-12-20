@@ -188,9 +188,9 @@ export class MgMenuItem {
    * @returns {void}
    */
   componentWillLoad(): void {
-    // has children items that is NOT [slot="illustration"] || [slot="information"] element
+    // has children items that is NOT [slot='image' | 'information' | 'label' | 'metadata'] element
     // we store only matching elements
-    this.hasChildren = Array.from(this.element.children).filter(child => !['illustration', 'information', 'label', 'metadata'].includes(child.getAttribute('slot'))).length > 0;
+    this.hasChildren = Array.from(this.element.children).filter(child => !['image', 'information', 'label', 'metadata'].includes(child.getAttribute('slot'))).length > 0;
 
     // Validate props
     this.validateSize(this.size);
@@ -272,7 +272,7 @@ export class MgMenuItem {
         aria-current={this.status === Status.ACTIVE && 'page'}
         onClick={this.handleElementCLick}
       >
-        <slot name="illustration"></slot>
+        <slot name="image"></slot>
         <div class={`${this.navigationButton}-center`}>
           <div class={`${this.navigationButton}-text-content`}>
             <slot name="label"></slot>
@@ -305,6 +305,7 @@ export class MgMenuItem {
       [`${this.name}__collapse-container`]: true,
       [`${this.name}__collapse-container--first-level`]: this.isInMainMenu && this.isdirection(Direction.HORIZONTAL),
     });
+
     return (
       <Host role="menuitem" aria-haspopup={this.hasChildren.toString()}>
         {this.isdirection(Direction.HORIZONTAL) && this.hasChildren && !this.href ? (

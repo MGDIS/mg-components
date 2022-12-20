@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-12-19T11:17:03",
+  "timestamp": "2022-12-20T11:29:42",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.20.0",
@@ -103,7 +103,6 @@
       "dependents": [],
       "dependencies": [
         "mg-menu-item",
-        "mg-popover",
         "mg-badge",
         "mg-icon",
         "mg-menu"
@@ -111,7 +110,6 @@
       "dependencyGraph": {
         "mg-action-menu": [
           "mg-menu-item",
-          "mg-popover",
           "mg-badge",
           "mg-icon",
           "mg-menu"
@@ -5357,7 +5355,6 @@
       "slots": [],
       "parts": [],
       "dependents": [
-        "mg-action-menu",
         "mg-menu-item"
       ],
       "dependencies": [
@@ -5371,9 +5368,6 @@
         ],
         "mg-button": [
           "mg-icon"
-        ],
-        "mg-action-menu": [
-          "mg-popover"
         ],
         "mg-menu-item": [
           "mg-popover"

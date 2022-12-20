@@ -4,7 +4,7 @@ import { sizes, Status } from '../mg-menu-item.conf';
 
 const slotContent = '<div><h3>Demo title</h3><p>some content</p></div>';
 const slotMenuItem = '<mg-menu label="submenu"><mg-menu-item><span slot="label">Batman begins</span></mg-menu-item></mg-menu>';
-const slotIllusatration = '<mg-icon icon="user" slot="illustration"></mg-icon>';
+const slotImage = '<mg-icon icon="user" slot="image"></mg-icon>';
 const slotInformation = '<mg-badge value="2" label="hello" slot="information"></mg-badge>';
 const slotMetadata = '<span slot="metadata">is a hero</span>';
 
@@ -43,9 +43,9 @@ describe('mg-menu-item', () => {
     test('should render whith slots', async () => {
       const html = [
         { label: 'submenu', slot: slotMenuItem },
-        { label: 'illustration', slot: slotIllusatration },
+        { label: 'image', slot: slotImage },
         { label: 'information', slot: slotInformation },
-        { label: 'information AND illustration', slot: slotInformation + slotIllusatration },
+        { label: 'information AND image', slot: slotInformation + slotImage },
       ]
         .map(({ label, slot }) => {
           const template = [true, false]

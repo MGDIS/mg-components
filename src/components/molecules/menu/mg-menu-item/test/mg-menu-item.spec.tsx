@@ -22,7 +22,7 @@ const menuItem = (args, slot?) => (
     {slot}
     {args.label && <span slot="label">{args.label}</span>}
     {args.metadata && <span slot="metadata">my metadata</span>}
-    {args.icon && <mg-icon slot="illustration" icon="user"></mg-icon>}
+    {args.icon && <mg-icon slot="image" icon="user"></mg-icon>}
     {args.badge && <mg-badge slot="information" label="badge label" value="1"></mg-badge>}
   </mg-menu-item>
 );

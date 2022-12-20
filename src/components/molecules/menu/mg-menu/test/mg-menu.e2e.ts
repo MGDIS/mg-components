@@ -17,16 +17,16 @@ const createHTML = args => `
       <mg-menu-item size="large" status="disabled"><span slot="label">1 - head-2 long</span></mg-menu-item>
       <mg-menu-item size="large">
         <span slot="label">1 - head-3 very long</span>
-        <mg-icon icon='user' slot='illustration'></mg-icon>
+        <mg-icon icon='user' slot='image'></mg-icon>
       </mg-menu-item>
       <mg-menu-item size="large">
         <span slot="label">1 - head-4</span>
-        <mg-icon icon='user' slot='illustration'></mg-icon>
+        <mg-icon icon='user' slot='image'></mg-icon>
         <mg-badge value='2' label='hello' slot='information'></mg-badge>  
       </mg-menu-item>
       <mg-menu-item size="large">
         <span slot="label">1 - head-5</span>
-        <mg-icon icon='user' slot='illustration'></mg-icon>
+        <mg-icon icon='user' slot='image'></mg-icon>
         <mg-badge value='2' label='hello' slot='information'></mg-badge>  
         <mg-menu label="submenu-2" direction="vertical">
           <mg-menu-item size="medium"><span slot="label">Batman begins with a longer title to go outide screen</span></mg-menu-item>
