@@ -1,8 +1,8 @@
 import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
 import { MgActionMenu } from '../mg-action-menu';
-import { setupResizeObserverMock } from '../../../utils/unit.test.utils';
-import { MgBadge } from '../../../components/atoms/mg-badge/mg-badge';
+import { setupResizeObserverMock } from '../../../../../utils/unit.test.utils';
+import { MgBadge } from '../../../../atoms/mg-badge/mg-badge';
 
 const getPage = async args => {
   const page = await newSpecPage({

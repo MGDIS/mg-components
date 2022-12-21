@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-12-20T11:29:42",
+  "timestamp": "2022-12-21T15:51:52",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.20.0",
@@ -7,7 +7,7 @@
   },
   "components": [
     {
-      "filePath": "./src/behaviors/mg-action-menu/mg-action-menu.tsx",
+      "filePath": "./src/components/molecules/menu/mg-action-menu/mg-action-menu.tsx",
       "encapsulation": "shadow",
       "tag": "mg-action-menu",
       "readme": "## Use\n\n![](./mg-action-menu/doc/img/mg-action-menu-use.png)\n\nWhen not all of the items can be displayed because of the width of a [**`<mg-menu> horizontal`**](./?path=/docs/beta-menus-mg-menu--mg-menu) or **`<mg-menu>  mobile`** (TODO) or a [**`<mg-tabs>`**](./?path=/docs/molecules-mg-tabs--mg-tabs), items are replaced by a single \"plus\" item.\n\n## Behavior\n\nBy clicking on the \"plus\" item a submenu displays the hidden items.\n\n### With an horizontal menu or tabs\n\n![](./mg-action-menu/doc/img/mg-action-menu-behavior-menu-tabs.png)\n\nA **`<mg-menu>  vertical`** displays items in the style of the menu.\n\nSubmenu is aligned to the right of the item according to the \"submenu of the [**`<mg-menu-item>`**](./?path=/docs/beta-menus-mg-menu-item--mg-menu-item) behavior.\n\n### With a mobile menu\n\n![](./mg-action-menu/doc/img/mg-action-menu-behavior-mobile.png)\n\nA **`<mg-menu> mobile`** displays, over the actual menu, items in the style of the menu.\nThere are as much lines of items as it is needed to display them.\nThe **`<mg-action-menu>`** item is replaced by a close button (flat with a cross).\n\n### Badges\n\n![](./mg-action-menu/doc/img/mg-action-menu-mg-menu-large.png)\n\n![](./mg-action-menu/doc/img/mg-action-menu-behavior-badge-mobile.png)\n\nIf one or more hidden items have **`<mg-badge>`**, the **`<mg-action-menu>`** item displays a badge with \"exclamation\" symbol as its content.\n\n## Specs\n\n### Anatomy\n\nUse \"ellipsis-vertical\" [**`<mg-icon>`**](./?path=/story/atoms-mg-icon--mg-icon) for **`<mg-menu>  horizontal`** or **`<mg-tab>`**.\nUse \"ellipsis\" [**`<mg-icon>`**](./?path=/story/atoms-mg-icon--mg-icon) for **`<mg-menu>  mobile`**.\n",

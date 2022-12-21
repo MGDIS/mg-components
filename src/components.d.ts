@@ -6,7 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { MenuItemSizeType, Status } from "./components/molecules/menu/mg-menu-item/mg-menu-item.conf";
-import { InteractiveElementType, PlacementType } from "./behaviors/mg-action-menu/mg-action-menu.conf";
+import { InteractiveElementType, PlacementType } from "./components/molecules/menu/mg-action-menu/mg-action-menu.conf";
 import { BadgeVariantType } from "./components/atoms/mg-badge/mg-badge.conf";
 import { ButtonType, VariantType } from "./components/atoms/mg-button/mg-button.conf";
 import { IconSizeType, IconVariantType } from "./components/atoms/mg-icon/mg-icon.conf";

@@ -197,7 +197,7 @@ Child content is displayed via an **mg-tray** component.
 
 ### Used by
 
- - [mg-action-menu](../../../../behaviors/mg-action-menu)
+ - [mg-action-menu](../mg-action-menu)
 
 ### Depends on
 

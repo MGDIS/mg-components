@@ -89,7 +89,7 @@ Default background color is @color-light.
 
 ### Used by
 
- - [mg-action-menu](../../../../behaviors/mg-action-menu)
+ - [mg-action-menu](../mg-action-menu)
 
 ### Graph
 ```mermaid

@@ -1,8 +1,6 @@
 import { h } from '@stencil/core';
-import { filterArgs } from '../../../../.storybook/utils';
-import { sizes } from '../../../components/molecules/menu/mg-menu-item/mg-menu-item.conf';
-import { getMenuArgs, menu } from '../../../components/molecules/menu/mg-menu/doc/mg-menu.stories.shared';
-import { Direction } from '../../../components/molecules/menu/mg-menu/mg-menu.conf';
+import { filterArgs } from '../../../../../../.storybook/utils';
+import { sizes } from '../../mg-menu-item/mg-menu-item.conf';
 import { interactivesElements, placements } from '../mg-action-menu.conf';
 
 export default {
@@ -36,11 +34,4 @@ ButtonList.args = {
       Element 3<mg-badge value={1} label="movies"></mg-badge>
     </mg-button>,
   ],
-};
-
-export const MgMenuHorizontal = Template.bind({});
-
-MgMenuHorizontal.args = {
-  ...args,
-  slot: menu(getMenuArgs(Direction.HORIZONTAL, 2)),
 };

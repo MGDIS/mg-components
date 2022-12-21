@@ -1,0 +1,225 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mg-action-menu render should manage resize with observer, case { badgeSlot: true } 1`] = `
+<mg-action-menu badgeslot="" placement="left">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <ul>
+    <li>
+      <mg-button>
+        Batman
+      </mg-button>
+    </li>
+    <li>
+      <mg-button>
+        Joker
+      </mg-button>
+    </li>
+    <li>
+      <mg-button>
+        Bane
+        <mg-badge>
+          <mock:shadow-root>
+            <span class="mg-badge mg-badge--info">
+              1
+              <span class="sr-only">
+                movies
+              </span>
+            </span>
+          </mock:shadow-root>
+        </mg-badge>
+      </mg-button>
+    </li>
+  </ul>
+</mg-action-menu>
+`;
+
+exports[`mg-action-menu render should manage resize with observer, case { badgeSlot: true } 2`] = `
+<mg-action-menu badgeslot="" placement="left">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <ul data-mg-action-menu-base-index="0">
+    <li>
+      <mg-button>
+        Batman
+      </mg-button>
+    </li>
+    <li>
+      <mg-button>
+        Joker
+      </mg-button>
+    </li>
+    <li>
+      <mg-button>
+        Bane
+        <mg-badge>
+          <mock:shadow-root>
+            <span class="mg-badge mg-badge--info">
+              1
+              <span class="sr-only">
+                movies
+              </span>
+            </span>
+          </mock:shadow-root>
+        </mg-badge>
+      </mg-button>
+    </li>
+  </ul>
+  <mg-popover data-mg-action-menu hidden="">
+    <mg-button variant="secondary">
+      <mg-icon data-mg-action-menu-icon icon="ellipsis-vertical"></mg-icon>
+      <span class="sr-only" data-mg-action-menu-label>
+        Additional menu
+      </span>
+      <mg-badge data-mg-action-menu-badge hidden="" label="Include notification(s)" value="!">
+        <mock:shadow-root>
+          <span class="mg-badge mg-badge--info">
+            !
+            <span class="sr-only">
+              Include notification(s)
+            </span>
+          </span>
+        </mock:shadow-root>
+      </mg-badge>
+    </mg-button>
+    <div data-mg-action-menu-container slot="content">
+      <mg-menu direction="vertical" label="Additional menu">
+        <mg-menu-item data-mg-action-menu-proxy-index="0" hidden="" size="regular">
+          <span slot="label">
+            BatmanJokerBane
+          </span>
+        </mg-menu-item>
+      </mg-menu>
+    </div>
+  </mg-popover>
+</mg-action-menu>
+`;
+
+exports[`mg-action-menu render should manage resize with observer, case {} 1`] = `
+<mg-action-menu placement="left">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <ul>
+    <li>
+      <mg-button>
+        Batman
+      </mg-button>
+    </li>
+    <li>
+      <mg-button>
+        Joker
+      </mg-button>
+    </li>
+    <li>
+      <mg-button>
+        Bane
+      </mg-button>
+    </li>
+  </ul>
+</mg-action-menu>
+`;
+
+exports[`mg-action-menu render should manage resize with observer, case {} 2`] = `
+<mg-action-menu placement="left">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <ul data-mg-action-menu-base-index="0">
+    <li>
+      <mg-button>
+        Batman
+      </mg-button>
+    </li>
+    <li>
+      <mg-button>
+        Joker
+      </mg-button>
+    </li>
+    <li>
+      <mg-button>
+        Bane
+      </mg-button>
+    </li>
+  </ul>
+  <mg-popover data-mg-action-menu hidden="">
+    <mg-button variant="secondary">
+      <mg-icon data-mg-action-menu-icon icon="ellipsis-vertical"></mg-icon>
+      <span class="sr-only" data-mg-action-menu-label>
+        Additional menu
+      </span>
+      <mg-badge data-mg-action-menu-badge hidden="" label="Include notification(s)" value="!">
+        <mock:shadow-root>
+          <span class="mg-badge mg-badge--info">
+            !
+            <span class="sr-only">
+              Include notification(s)
+            </span>
+          </span>
+        </mock:shadow-root>
+      </mg-badge>
+    </mg-button>
+    <div data-mg-action-menu-container slot="content">
+      <mg-menu direction="vertical" label="Additional menu">
+        <mg-menu-item data-mg-action-menu-proxy-index="0" hidden="" size="regular">
+          <span slot="label">
+            BatmanJokerBane
+          </span>
+        </mg-menu-item>
+      </mg-menu>
+    </div>
+  </mg-popover>
+</mg-action-menu>
+`;
+
+exports[`mg-action-menu should fire disconnect callback 1`] = `
+<mg-action-menu label="batman menu" placement="left">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <ul>
+    <li>
+      <mg-button>
+        Batman
+      </mg-button>
+    </li>
+    <li>
+      <mg-button>
+        Joker
+      </mg-button>
+    </li>
+    <li>
+      <mg-button>
+        Bane
+      </mg-button>
+    </li>
+  </ul>
+</mg-action-menu>
+`;
+
+exports[`mg-action-menu should fire disconnect callback 2`] = `
+<mg-action-menu label="batman menu" placement="left">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <ul>
+    <li>
+      <mg-button>
+        Batman
+      </mg-button>
+    </li>
+    <li>
+      <mg-button>
+        Joker
+      </mg-button>
+    </li>
+    <li>
+      <mg-button>
+        Bane
+      </mg-button>
+    </li>
+  </ul>
+</mg-action-menu>
+`;

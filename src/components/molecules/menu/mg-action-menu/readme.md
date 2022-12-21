@@ -55,17 +55,15 @@ Use "ellipsis" [**`<mg-icon>`**](./?path=/story/atoms-mg-icon--mg-icon) for **`<
 
 ### Depends on
 
-- [mg-menu-item](../../components/molecules/menu/mg-menu-item)
-- [mg-popover](../../components/molecules/mg-popover)
-- [mg-badge](../../components/atoms/mg-badge)
-- [mg-icon](../../components/atoms/mg-icon)
-- [mg-menu](../../components/molecules/menu/mg-menu)
+- [mg-menu-item](../mg-menu-item)
+- [mg-badge](../../../atoms/mg-badge)
+- [mg-icon](../../../atoms/mg-icon)
+- [mg-menu](../mg-menu)
 
 ### Graph
 ```mermaid
 graph TD;
   mg-action-menu --> mg-menu-item
-  mg-action-menu --> mg-popover
   mg-action-menu --> mg-badge
   mg-action-menu --> mg-icon
   mg-action-menu --> mg-menu

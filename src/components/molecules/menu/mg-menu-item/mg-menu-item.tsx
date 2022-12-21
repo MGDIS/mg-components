@@ -220,9 +220,7 @@ export class MgMenuItem {
     // https://stenciljs.com/docs/component-lifecycle#componentwillload
     return setTimeout(() => {
       // define menu-item context states
-      if (this.element.parentElement.nodeName === 'MG-MENU') {
-        this.direction = (this.element.parentElement as HTMLMgMenuElement).direction;
-      }
+      this.direction = this.element.closest('mg-menu').direction;
 
       this.isInMainMenu = this.element.parentElement.closest('mg-menu-item') === null;
       const hasNextMenuItem = this.element.nextElementSibling?.nodeName === 'MG-MENU-ITEM' && this.element.nextElementSibling.getAttribute('[hidden]') === null;
@@ -296,6 +294,13 @@ export class MgMenuItem {
   }
 
   /**
+   * Render slot
+   *
+   * @returns {HTMLElement} HTML Element
+   */
+  renderSlot = (): HTMLElement => <slot></slot>;
+
+  /**
    * Render
    *
    * @returns {HTMLElement} HTML Element
@@ -312,14 +317,14 @@ export class MgMenuItem {
           <mg-popover display={this.expanded} placement="bottom-start" arrowHide={true} onDisplay-change={this.handlePopoverDisplay}>
             {this.renderInteractiveElement()}
             <div class={getContainerClasses()} slot="content">
-              <slot></slot>
+              {this.renderSlot()}
             </div>
           </mg-popover>
         ) : (
           [
             this.renderInteractiveElement(),
             <div class={getContainerClasses()} hidden={!this.expanded}>
-              <slot></slot>
+              {this.renderSlot()}
             </div>,
           ]
         )}

@@ -36,7 +36,7 @@ If needed some [variables](./?path=/story/css-variables--page) are available to 
 
 ### Used by
 
- - [mg-action-menu](../../../behaviors/mg-action-menu)
+ - [mg-action-menu](../../molecules/menu/mg-action-menu)
  - [mg-tabs](../../molecules/mg-tabs)
 
 ### Graph
