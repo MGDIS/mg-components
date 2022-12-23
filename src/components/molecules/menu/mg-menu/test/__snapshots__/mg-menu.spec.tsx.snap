@@ -176,7 +176,7 @@ exports[`mg-menu render with args { label: 'batman menu' } 1`] = `
       </p>
     </div>
   </mg-menu-item>
-  <mg-menu-item aria-haspopup="false" data-style-direction-horizontal data-style-position-last role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="false" data-style-direction-horizontal role="menuitem" status="visible">
     <mock:shadow-root>
       <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="image"></slot>
@@ -375,7 +375,7 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'horizontal
       </p>
     </div>
   </mg-menu-item>
-  <mg-menu-item aria-haspopup="false" data-style-direction-horizontal data-style-position-last role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="false" data-style-direction-horizontal role="menuitem" status="visible">
     <mock:shadow-root>
       <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="image"></slot>

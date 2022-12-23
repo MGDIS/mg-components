@@ -77,10 +77,10 @@ export class MgMenuItem {
         subItems.forEach(item => {
           item.expanded = false;
         });
-      } else if (newValue && this.hasChildElementStatus(this.element, Status.ACTIVE)) {
+      } else if (newValue && this.hasStatus(this.element, Status.ACTIVE)) {
         // - when expanded and contain an active item parents are expended too
         subItems.forEach(item => {
-          if (this.hasChildElementStatus(item, Status.ACTIVE)) {
+          if (this.hasStatus(item, Status.ACTIVE)) {
             item.expanded = true;
           }
         });
@@ -132,13 +132,13 @@ export class MgMenuItem {
   };
 
   /**
-   * Does an HTMLElement contain child with given Status
+   * Does an Element have given Status
    *
-   * @param {HTMLElement} element to parse
+   * @param {Element} element to parse
    * @param {MgMenuItem['status']} status to check
    * @returns {boolean} true if element with status is found
    */
-  private hasChildElementStatus = (element: HTMLElement, status: MgMenuItem['status']): boolean => element.querySelector(`${this.name}[status="${status}"]`) !== null;
+  private hasStatus = (element: Element, status: MgMenuItem['status']): boolean => element.querySelector(`${this.name}[status="${status}"]`) !== null;
 
   /**
    * Is component contextual direction match the given direction
@@ -223,17 +223,11 @@ export class MgMenuItem {
       this.direction = this.element.closest('mg-menu').direction;
 
       this.isInMainMenu = this.element.parentElement.closest('mg-menu-item') === null;
-      const hasNextMenuItem = this.element.nextElementSibling?.nodeName === 'MG-MENU-ITEM' && this.element.nextElementSibling.getAttribute('[hidden]') === null;
-      const hasPreviousMenuItem = this.element.previousElementSibling?.nodeName === 'MG-MENU-ITEM';
-
-      // manage last menu item
-      if (!hasNextMenuItem && hasPreviousMenuItem && this.isdirection(Direction.HORIZONTAL)) {
-        this.element.setAttribute('data-style-position-last', '');
-      }
 
       // when main menu item contain an active item it will get the active style
       // AND if item is in vertical menu it will be expanded
-      if (this.isInMainMenu && this.hasChildElementStatus(this.element, Status.ACTIVE)) {
+      const hasActiveChild = Array.from(this.element.children).find(element => this.hasStatus(element, Status.ACTIVE) && element.getAttribute('hidden') === null) !== undefined;
+      if (this.isInMainMenu && hasActiveChild) {
         this.status = Status.ACTIVE;
         this.expanded = this.direction === Direction.VERTICAL;
       }

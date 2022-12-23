@@ -2419,7 +2419,7 @@ exports[`mg-menu-item render with 2 menu-items, last items get style modifier 1`
       Batman
     </span>
   </mg-menu-item>
-  <mg-menu-item aria-haspopup="false" data-style-direction-horizontal data-style-position-last label="item 2" role="menuitem" status="visible">
+  <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="item 2" role="menuitem" status="visible">
     <mock:shadow-root>
       <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
         <slot name="image"></slot>

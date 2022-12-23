@@ -25,3 +25,10 @@ export const sizes = ['regular', 'medium', 'large'] as const;
  * item Size from sizes
  */
 export type MenuItemSizeType = typeof sizes[number];
+
+/**
+ * MgMenuItem type guard
+ *
+ * @param element
+ */
+export const isMgMenuItem = (element: HTMLElement): element is HTMLMgMenuItemElement => element.nodeName === 'MG-MENU-ITEM';

@@ -52,7 +52,7 @@ If needed some [variables](./?path=/story/css-variables--page) are available to 
 
 ### Used by
 
- - [mg-action-menu](../../molecules/menu/mg-action-menu)
+ - [mg-action-more](../../molecules/menu/mg-action-more)
  - [mg-button](../mg-button)
  - [mg-details](../../molecules/mg-details)
  - [mg-input-checkbox](../../molecules/inputs/mg-input-checkbox)
@@ -64,6 +64,7 @@ If needed some [variables](./?path=/story/css-variables--page) are available to 
  - [mg-input-text](../../molecules/inputs/mg-input-text)
  - [mg-input-textarea](../../molecules/inputs/mg-input-textarea)
  - [mg-input-toggle](../../molecules/inputs/mg-input-toggle)
+ - [mg-menu](../../molecules/menu/mg-menu)
  - [mg-menu-item](../../molecules/menu/mg-menu-item)
  - [mg-message](../../molecules/mg-message)
  - [mg-modal](../../molecules/mg-modal)
@@ -75,7 +76,7 @@ If needed some [variables](./?path=/story/css-variables--page) are available to 
 ### Graph
 ```mermaid
 graph TD;
-  mg-action-menu --> mg-icon
+  mg-action-more --> mg-icon
   mg-button --> mg-icon
   mg-details --> mg-icon
   mg-input-checkbox --> mg-icon
@@ -87,6 +88,7 @@ graph TD;
   mg-input-text --> mg-icon
   mg-input-textarea --> mg-icon
   mg-input-toggle --> mg-icon
+  mg-menu --> mg-icon
   mg-menu-item --> mg-icon
   mg-message --> mg-icon
   mg-modal --> mg-icon

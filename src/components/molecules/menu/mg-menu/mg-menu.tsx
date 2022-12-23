@@ -1,4 +1,5 @@
 import { Component, h, Prop, State, Element, Watch, Host } from '@stencil/core';
+import { OverflowBehavior, OverflowBehaviorElements } from '../../../../utils/behaviors.utils';
 import { Direction } from './mg-menu.conf';
 
 @Component({
@@ -14,6 +15,7 @@ export class MgMenu {
   private readonly name = 'mg-menu';
   private menuItems: HTMLMgMenuItemElement[];
   private focusedMenuItem = 0;
+  private overflowBehavior: OverflowBehavior;
 
   /**************
    * Decorators *
@@ -46,6 +48,11 @@ export class MgMenu {
       throw new Error(`<${this.name}> prop "direction" must be one of : ${Direction.HORIZONTAL}, ${Direction.VERTICAL}.`);
     }
   }
+
+  /**
+   * Define component manage child overflow
+   */
+  @Prop() activeOverflow: boolean;
 
   /**
    * is this menu a child menu. Used for conditional render.
@@ -87,6 +94,24 @@ export class MgMenu {
     });
   };
 
+  private renderMgActionMore = (): HTMLMgMenuItemElement => {
+    const moreElement = this.element.shadowRoot.querySelector(`[${OverflowBehaviorElements.MORE}]`);
+    Array.from(this.element.children).forEach(child => {
+      const proxy = child.cloneNode(true);
+      proxy.addEventListener('click', () => {
+        child.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+      });
+      moreElement.querySelector('mg-menu').appendChild(proxy);
+    });
+    this.element.appendChild(moreElement);
+
+    // size
+    const size = this.element.querySelector('mg-menu-item').getAttribute('size');
+    moreElement.setAttribute('size', size);
+
+    return this.element.querySelector(`[${OverflowBehaviorElements.MORE}]`);
+  };
+
   /*************
    * Lifecycle *
    *************/
@@ -107,6 +132,10 @@ export class MgMenu {
    * @returns {ReturnType<typeof setTimeout>} timeout
    */
   componentDidLoad(): ReturnType<typeof setTimeout> {
+    if (this.activeOverflow) {
+      this.overflowBehavior = new OverflowBehavior(this.element, this.renderMgActionMore);
+      this.overflowBehavior.init();
+    }
     // update props and states after componentDidLoad hook
     // return a promise to process action only in the FIRST render().
     // https://stenciljs.com/docs/component-lifecycle#componentwillload
@@ -128,6 +157,37 @@ export class MgMenu {
   }
 
   /**
+   * Disconnect overflow ResizeObserver
+   *
+   * @returns {void}
+   */
+  disconnectedCallback(): void {
+    if (this.activeOverflow) {
+      this.overflowBehavior.disconnect();
+    }
+  }
+
+  renderMgMenuItemMore(): HTMLMgMenuItemElement {
+    const displayBadge = false;
+    const messages = {
+      badgeLabel: 'todo',
+      moreLabel: 'todo',
+    };
+    return (
+      <mg-menu-item data-overflow-more>
+        <mg-icon icon="ellipsis-vertical" slot="image"></mg-icon>
+        <span class="sr-only" slot="label">
+          {messages.moreLabel}
+        </span>
+        {displayBadge && <mg-badge label={messages.badgeLabel} value="!" hidden variant="primary" slot="information"></mg-badge>}
+        <mg-menu direction={Direction.VERTICAL} label={messages.moreLabel}>
+          <slot></slot>
+        </mg-menu>
+      </mg-menu-item>
+    );
+  }
+
+  /**
    * Render
    *
    * @returns {HTMLElement} HTML Element
@@ -136,6 +196,7 @@ export class MgMenu {
     return (
       <Host role={this.isChildMenu ? 'menu' : 'menubar'} aria-label={this.label}>
         <slot></slot>
+        {this.activeOverflow && this.renderMgMenuItemMore()}
       </Host>
     );
   }

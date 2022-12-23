@@ -77,6 +77,7 @@ Variants `danger`, `danger-alt`, `info` and `success` can be customized by chang
 
 ### Used by
 
+ - [mg-action-more](../../molecules/menu/mg-action-more)
  - [mg-message](../../molecules/mg-message)
  - [mg-modal](../../molecules/mg-modal)
  - [mg-pagination](../../molecules/mg-pagination)
@@ -91,6 +92,7 @@ Variants `danger`, `danger-alt`, `info` and `success` can be customized by chang
 ```mermaid
 graph TD;
   mg-button --> mg-icon
+  mg-action-more --> mg-button
   mg-message --> mg-button
   mg-modal --> mg-button
   mg-pagination --> mg-button

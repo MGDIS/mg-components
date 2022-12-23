@@ -46,12 +46,6 @@ $navigation-button-sizes: (
   --mg-popover-padding-horizontal: 0;
 }
 
-// last item style
-:host([data-style-position-last]) .mg-menu-item__collapse-container {
-  left: unset;
-  right: 0;
-}
-
 // vertical item style
 :host([data-style-direction-vertical]) {
   flex-direction: column;
@@ -79,7 +73,7 @@ $navigation-button-sizes: (
   }
 }
 
-:host([data-mg-action-menu]) {
+:host([data-overflow-more]) {
   .mg-menu-item__navigation-button-chevron {
     display: none;
   }
@@ -100,6 +94,7 @@ $navigation-button-sizes: (
     }
     &-text-content {
       width: 100%;
+      min-height: 2.1rem;
       display: flex;
       ::slotted([slot='information']) {
         margin-left: 1rem;
@@ -127,4 +122,9 @@ $navigation-button-sizes: (
 // Prevent click propagation when disabled
 :host([status='disabled']) {
   pointer-events: none;
+}
+
+// fix missing "hidden" style in browser
+:host([hidden]) {
+  display: none;
 }

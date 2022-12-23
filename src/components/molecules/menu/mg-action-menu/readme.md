@@ -44,34 +44,37 @@ Use "ellipsis" [**`<mg-icon>`**](./?path=/story/atoms-mg-icon--mg-icon) for **`<
 
 ## Properties
 
-| Property             | Attribute             | Description                                                                  | Type                                        | Default                   |
-| -------------------- | --------------------- | ---------------------------------------------------------------------------- | ------------------------------------------- | ------------------------- |
-| `interactiveElement` | `interactive-element` | Define interactive element ex: mg-button, mg-menu-item. default: 'mg-button' | `"button" \| "mg-button" \| "mg-menu-item"` | `interactivesElements[0]` |
-| `itemSize`           | `item-size`           | Define the popover menu item size                                            | `"large" \| "medium" \| "regular"`          | `sizes[0]`                |
-| `placement`          | `placement`           | Define the popover menu item size                                            | `"center" \| "left" \| "right"`             | `placements[0]`           |
+| Property          | Attribute          | Description                            | Type                            | Default         |
+| ----------------- | ------------------ | -------------------------------------- | ------------------------------- | --------------- |
+| `disableOverflow` | `disable-overflow` | Define component manage child overflow | `boolean`                       | `undefined`     |
+| `placement`       | `placement`        | Define the popover menu item size      | `"center" \| "left" \| "right"` | `placements[0]` |
 
 
 ## Dependencies
 
 ### Depends on
 
-- [mg-menu-item](../mg-menu-item)
-- [mg-badge](../../../atoms/mg-badge)
-- [mg-icon](../../../atoms/mg-icon)
-- [mg-menu](../mg-menu)
+- [mg-action-more](../mg-action-more)
 
 ### Graph
 ```mermaid
 graph TD;
-  mg-action-menu --> mg-menu-item
-  mg-action-menu --> mg-badge
-  mg-action-menu --> mg-icon
-  mg-action-menu --> mg-menu
-  mg-menu-item --> mg-icon
-  mg-menu-item --> mg-popover
+  mg-action-menu --> mg-action-more
+  mg-action-more --> mg-popover
+  mg-action-more --> mg-button
+  mg-action-more --> mg-icon
+  mg-action-more --> mg-badge
+  mg-action-more --> mg-menu
+  mg-action-more --> mg-menu-item
   mg-popover --> mg-button
   mg-popover --> mg-icon
   mg-button --> mg-icon
+  mg-menu --> mg-menu-item
+  mg-menu --> mg-icon
+  mg-menu --> mg-badge
+  mg-menu --> mg-menu
+  mg-menu-item --> mg-icon
+  mg-menu-item --> mg-popover
   style mg-action-menu fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

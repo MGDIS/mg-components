@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-12-21T15:51:52",
+  "timestamp": "2022-12-23T15:27:42",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.20.0",
@@ -16,52 +16,16 @@
       "usage": {},
       "props": [
         {
-          "name": "interactiveElement",
-          "type": "\"button\" | \"mg-button\" | \"mg-menu-item\"",
+          "name": "disableOverflow",
+          "type": "boolean",
           "mutable": false,
-          "attr": "interactive-element",
+          "attr": "disable-overflow",
           "reflectToAttr": false,
-          "docs": "Define interactive element\nex: mg-button, mg-menu-item.\ndefault: 'mg-button'",
+          "docs": "Define component manage child overflow",
           "docsTags": [],
-          "default": "interactivesElements[0]",
           "values": [
             {
-              "value": "button",
-              "type": "string"
-            },
-            {
-              "value": "mg-button",
-              "type": "string"
-            },
-            {
-              "value": "mg-menu-item",
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "itemSize",
-          "type": "\"large\" | \"medium\" | \"regular\"",
-          "mutable": false,
-          "attr": "item-size",
-          "reflectToAttr": false,
-          "docs": "Define the popover menu item size",
-          "docsTags": [],
-          "default": "sizes[0]",
-          "values": [
-            {
-              "value": "large",
-              "type": "string"
-            },
-            {
-              "value": "medium",
-              "type": "string"
-            },
-            {
-              "value": "regular",
-              "type": "string"
+              "type": "boolean"
             }
           ],
           "optional": false,
@@ -102,21 +66,19 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "mg-menu-item",
-        "mg-badge",
-        "mg-icon",
-        "mg-menu"
+        "mg-action-more"
       ],
       "dependencyGraph": {
         "mg-action-menu": [
-          "mg-menu-item",
-          "mg-badge",
-          "mg-icon",
-          "mg-menu"
+          "mg-action-more"
         ],
-        "mg-menu-item": [
+        "mg-action-more": [
+          "mg-popover",
+          "mg-button",
           "mg-icon",
-          "mg-popover"
+          "mg-badge",
+          "mg-menu",
+          "mg-menu-item"
         ],
         "mg-popover": [
           "mg-button",
@@ -124,6 +86,132 @@
         ],
         "mg-button": [
           "mg-icon"
+        ],
+        "mg-menu": [
+          "mg-menu-item",
+          "mg-icon",
+          "mg-badge",
+          "mg-menu"
+        ],
+        "mg-menu-item": [
+          "mg-icon",
+          "mg-popover"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/molecules/menu/mg-action-more/mg-action-more.tsx",
+      "encapsulation": "shadow",
+      "tag": "mg-action-more",
+      "readme": "# mg-action-more\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "displayLabel",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "display-label",
+          "reflectToAttr": false,
+          "docs": "Define if label is display",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "icon",
+          "type": "string",
+          "mutable": false,
+          "attr": "icon",
+          "reflectToAttr": false,
+          "docs": "Define displaied icon\nDefault: 'ellipsis-vertical'",
+          "docsTags": [],
+          "default": "'ellipsis-vertical'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "items",
+          "type": "ItemType[]",
+          "mutable": true,
+          "reflectToAttr": false,
+          "docs": "Define the menu-items elements",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "ItemType[]"
+            }
+          ],
+          "optional": false,
+          "required": true
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "selected-change",
+          "detail": "number",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted event when selected item change - item index number",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "mg-action-menu"
+      ],
+      "dependencies": [
+        "mg-popover",
+        "mg-button",
+        "mg-icon",
+        "mg-badge",
+        "mg-menu",
+        "mg-menu-item"
+      ],
+      "dependencyGraph": {
+        "mg-action-more": [
+          "mg-popover",
+          "mg-button",
+          "mg-icon",
+          "mg-badge",
+          "mg-menu",
+          "mg-menu-item"
+        ],
+        "mg-popover": [
+          "mg-button",
+          "mg-icon"
+        ],
+        "mg-button": [
+          "mg-icon"
+        ],
+        "mg-menu": [
+          "mg-menu-item",
+          "mg-icon",
+          "mg-badge",
+          "mg-menu"
+        ],
+        "mg-menu-item": [
+          "mg-icon",
+          "mg-popover"
+        ],
+        "mg-action-menu": [
+          "mg-action-more"
         ]
       }
     },
@@ -233,12 +321,16 @@
       "slots": [],
       "parts": [],
       "dependents": [
-        "mg-action-menu",
+        "mg-action-more",
+        "mg-menu",
         "mg-tabs"
       ],
       "dependencies": [],
       "dependencyGraph": {
-        "mg-action-menu": [
+        "mg-action-more": [
+          "mg-badge"
+        ],
+        "mg-menu": [
           "mg-badge"
         ],
         "mg-tabs": [
@@ -445,6 +537,7 @@
       "slots": [],
       "parts": [],
       "dependents": [
+        "mg-action-more",
         "mg-message",
         "mg-modal",
         "mg-pagination",
@@ -457,6 +550,9 @@
       "dependencyGraph": {
         "mg-button": [
           "mg-icon"
+        ],
+        "mg-action-more": [
+          "mg-button"
         ],
         "mg-message": [
           "mg-button"
@@ -981,7 +1077,7 @@
       "slots": [],
       "parts": [],
       "dependents": [
-        "mg-action-menu",
+        "mg-action-more",
         "mg-button",
         "mg-details",
         "mg-input-checkbox",
@@ -993,6 +1089,7 @@
         "mg-input-text",
         "mg-input-textarea",
         "mg-input-toggle",
+        "mg-menu",
         "mg-menu-item",
         "mg-message",
         "mg-modal",
@@ -1003,7 +1100,7 @@
       ],
       "dependencies": [],
       "dependencyGraph": {
-        "mg-action-menu": [
+        "mg-action-more": [
           "mg-icon"
         ],
         "mg-button": [
@@ -1037,6 +1134,9 @@
           "mg-icon"
         ],
         "mg-input-toggle": [
+          "mg-icon"
+        ],
+        "mg-menu": [
           "mg-icon"
         ],
         "mg-menu-item": [
@@ -4446,6 +4546,22 @@
       "usage": {},
       "props": [
         {
+          "name": "activeOverflow",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "active-overflow",
+          "reflectToAttr": false,
+          "docs": "Define component manage child overflow",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "direction",
           "type": "Direction.HORIZONTAL | Direction.VERTICAL",
           "mutable": false,
@@ -4489,11 +4605,31 @@
       "slots": [],
       "parts": [],
       "dependents": [
-        "mg-action-menu"
+        "mg-action-more",
+        "mg-menu"
       ],
-      "dependencies": [],
+      "dependencies": [
+        "mg-menu-item",
+        "mg-icon",
+        "mg-badge",
+        "mg-menu"
+      ],
       "dependencyGraph": {
-        "mg-action-menu": [
+        "mg-menu": [
+          "mg-menu"
+        ],
+        "mg-menu-item": [
+          "mg-icon",
+          "mg-popover"
+        ],
+        "mg-popover": [
+          "mg-button",
+          "mg-icon"
+        ],
+        "mg-button": [
+          "mg-icon"
+        ],
+        "mg-action-more": [
           "mg-menu"
         ]
       }
@@ -4600,7 +4736,8 @@
       "slots": [],
       "parts": [],
       "dependents": [
-        "mg-action-menu"
+        "mg-action-more",
+        "mg-menu"
       ],
       "dependencies": [
         "mg-icon",
@@ -4618,7 +4755,10 @@
         "mg-button": [
           "mg-icon"
         ],
-        "mg-action-menu": [
+        "mg-action-more": [
+          "mg-menu-item"
+        ],
+        "mg-menu": [
           "mg-menu-item"
         ]
       }
@@ -5355,6 +5495,7 @@
       "slots": [],
       "parts": [],
       "dependents": [
+        "mg-action-more",
         "mg-menu-item"
       ],
       "dependencies": [
@@ -5368,6 +5509,9 @@
         ],
         "mg-button": [
           "mg-icon"
+        ],
+        "mg-action-more": [
+          "mg-popover"
         ],
         "mg-menu-item": [
           "mg-popover"

@@ -79,22 +79,37 @@ Default background color is @color-light.
 
 ## Properties
 
-| Property             | Attribute   | Description                                                            | Type                                         | Default                |
-| -------------------- | ----------- | ---------------------------------------------------------------------- | -------------------------------------------- | ---------------------- |
-| `direction`          | `direction` | Component display direction. Default: "horizontal"                     | `Direction.HORIZONTAL \| Direction.VERTICAL` | `Direction.HORIZONTAL` |
-| `label` _(required)_ | `label`     | Menu label. Include short menu description. Required for accessibility | `string`                                     | `undefined`            |
+| Property             | Attribute         | Description                                                            | Type                                         | Default                |
+| -------------------- | ----------------- | ---------------------------------------------------------------------- | -------------------------------------------- | ---------------------- |
+| `activeOverflow`     | `active-overflow` | Define component manage child overflow                                 | `boolean`                                    | `undefined`            |
+| `direction`          | `direction`       | Component display direction. Default: "horizontal"                     | `Direction.HORIZONTAL \| Direction.VERTICAL` | `Direction.HORIZONTAL` |
+| `label` _(required)_ | `label`           | Menu label. Include short menu description. Required for accessibility | `string`                                     | `undefined`            |
 
 
 ## Dependencies
 
 ### Used by
 
- - [mg-action-menu](../mg-action-menu)
+ - [mg-action-more](../mg-action-more)
+ - [mg-menu](.)
+
+### Depends on
+
+- [mg-menu-item](../mg-menu-item)
+- [mg-icon](../../../atoms/mg-icon)
+- [mg-badge](../../../atoms/mg-badge)
+- [mg-menu](.)
 
 ### Graph
 ```mermaid
 graph TD;
-  mg-action-menu --> mg-menu
+  mg-menu --> mg-menu
+  mg-menu-item --> mg-icon
+  mg-menu-item --> mg-popover
+  mg-popover --> mg-button
+  mg-popover --> mg-icon
+  mg-button --> mg-icon
+  mg-action-more --> mg-menu
   style mg-menu fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

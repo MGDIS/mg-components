@@ -96,6 +96,7 @@ interface IGetMenuArgs {
 export const getMenuArgs: IGetMenuArgs = (direction: Direction, level = 0) => ({
   label: 'Batman menu',
   direction,
+  overflow: false,
   slot: {
     items: [
       getItemArgs({
