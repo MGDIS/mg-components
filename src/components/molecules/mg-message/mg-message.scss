@@ -1,7 +1,7 @@
 @mixin message-variants($variants...) {
   @each $variant in $variants {
     &.mg-message--#{$variant} {
-      &::before {
+      .mg-message__bar {
         background-color: hsl(var(--color-#{$variant}));
       }
       .mg-message__icon {
@@ -11,20 +11,19 @@
   }
 }
 
+:host {
+  // Set mg-card variables
+  --mg-card-padding: 0;
+  --mg-card-border-radius: var(--mg-message-border-radius);
+  --mg-card-border: none;
+}
+
 .mg-message {
   // Display
   display: inline-block;
-  position: relative;
-  box-sizing: border-box;
   min-height: var(--default-size);
-  overflow: hidden;
-  // Decoration
-  background-color: white;
-  border-radius: var(--mg-message-border-radius);
-  box-shadow: var(--box-shadow);
 
-  &::before {
-    content: '';
+  &__bar {
     position: absolute;
     top: 0;
     left: 0;
@@ -35,7 +34,7 @@
   @include message-variants('info', 'warning', 'success', 'danger');
 
   &.mg-message--close-button {
-    padding-right: 3.4rem;
+    --mg-card-padding: 0 3.4rem 0 0;
   }
 
   &.mg-message--hide {
@@ -47,45 +46,45 @@
     margin: 0;
     padding: 0;
   }
-}
 
-.mg-message__icon {
-  // Display
-  position: absolute;
-  top: calc((var(--default-size) - var(--mg-icon-regular-size)) / 2);
-  left: 1.3rem;
-  // Font
-  line-height: 1;
-}
+  &__icon {
+    // Display
+    position: absolute;
+    top: calc((var(--default-size) - var(--mg-icon-regular-size)) / 2);
+    left: 1.3rem;
+    // Font
+    line-height: 1;
+  }
 
-.mg-message__content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  align-content: stretch;
-  padding: 0 1rem 0 3.8rem;
-}
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-content: stretch;
+    padding: 0 1rem 0 3.8rem;
+  }
 
-.mg-message__content-slot {
-  flex-grow: 1;
-  margin: 0.84rem 0;
-}
+  &__content-slot {
+    flex-grow: 1;
+    margin: 0.84rem 0;
+  }
 
-.mg-message__content-separator {
-  display: inline-block;
-  width: 4.5rem;
-  height: 0;
-}
+  &__content-separator {
+    display: inline-block;
+    width: 4.5rem;
+    height: 0;
+  }
 
-.mg-message__content-actions-slot {
-  padding: 1rem 0;
-  text-align: right;
-}
+  &__content-actions-slot {
+    padding: 1rem 0;
+    text-align: right;
+  }
 
-.mg-message__close-button {
-  position: absolute;
-  top: 0;
-  right: 0;
+  &__close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 }
 
 .mg-message,

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-12-07T08:42:02",
+  "timestamp": "2023-01-03T15:08:17",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.20.0",
@@ -365,9 +365,15 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [],
+      "dependents": [
+        "mg-message"
+      ],
       "dependencies": [],
-      "dependencyGraph": {}
+      "dependencyGraph": {
+        "mg-message": [
+          "mg-card"
+        ]
+      }
     },
     {
       "filePath": "./src/components/atoms/mg-character-left/mg-character-left.tsx",
@@ -4595,11 +4601,13 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
+        "mg-card",
         "mg-icon",
         "mg-button"
       ],
       "dependencyGraph": {
         "mg-message": [
+          "mg-card",
           "mg-icon",
           "mg-button"
         ],

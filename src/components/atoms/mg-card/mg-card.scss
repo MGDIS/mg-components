@@ -4,4 +4,6 @@
   background: var(--mg-card-background);
   border: var(--mg-card-border);
   box-shadow: var(--mg-card-box-shadow);
+  overflow: hidden;
+  position: relative;
 }

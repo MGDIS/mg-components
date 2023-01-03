@@ -35,6 +35,19 @@ If needed some [variables](./?path=/story/css-variables--page) are available to 
 <!-- Auto Generated Below -->
 
 
+## Dependencies
+
+### Used by
+
+ - [mg-message](../../molecules/mg-message)
+
+### Graph
+```mermaid
+graph TD;
+  mg-message --> mg-card
+  style mg-card fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
