@@ -63,7 +63,7 @@ export class MgButton {
    */
   @Prop({ mutable: true }) fullWidth = false;
   @Watch('fullWidth')
-  validateFullWidth(newValue) {
+  validateFullWidth(newValue: boolean): void {
     if (newValue && this.isIcon) {
       throw new Error('<mg-button> prop "fullWidth" cannot be used with prop "isIcon".');
     } else if (newValue) {
