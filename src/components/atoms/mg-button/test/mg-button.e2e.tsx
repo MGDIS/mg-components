@@ -30,12 +30,15 @@ test('Should render a 2 lines button', async () => {
   expect(screenshot).toMatchImageSnapshot();
 });
 
-test('Should render a button in a paragraph', async () => {
-  const page = await createPage(`<p>This is a <mg-button>button</mg-button> in a paragraph.</p>`);
+test.each([`<p>This is a <mg-button>button</mg-button> in a paragraph.</p>`, `<p>This is a <mg-button variant="link">button</mg-button> in a paragraph.</p>`])(
+  'Should render a button in a paragraph',
+  async html => {
+    const page = await createPage(html);
 
-  const screenshot = await page.screenshot();
-  expect(screenshot).toMatchImageSnapshot();
-});
+    const screenshot = await page.screenshot();
+    expect(screenshot).toMatchImageSnapshot();
+  },
+);
 
 test.each(['batman', '<mg-icon icon="check-circle"></mg-icon>batman'])('Should render a full-width button', async slot => {
   const page = await createPage(`<mg-button full-width>${slot}</mg-button>`);
