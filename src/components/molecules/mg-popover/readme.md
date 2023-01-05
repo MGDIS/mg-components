@@ -55,9 +55,9 @@ The title and the close button are optional.
 
 If needed some [variables](./?path=/story/css-variables--page) are available to customize the component:
 
-`--mg-popover-background-color`: Define popover background color, default: `var(--color-light)`
-`--mg-popover-font-color`: Define popover font color, default: `var(--color-font-dark)`
-`--mg-popover-title-font-size`: Define popover title font size, default: `1.4rem`
+- `--mg-popover-background-color`: Define popover background color, default: `var(--color-light)`
+- `--mg-popover-font-color`: Define popover font color, default: `var(--color-font-dark)`
+- `--mg-popover-title-font-size`: Define popover title font size, default: `1.4rem`
 
 <!-- Auto Generated Below -->
 
@@ -84,12 +84,14 @@ If needed some [variables](./?path=/story/css-variables--page) are available to 
 
 ### Depends on
 
+- [mg-card](../../atoms/mg-card)
 - [mg-button](../../atoms/mg-button)
 - [mg-icon](../../atoms/mg-icon)
 
 ### Graph
 ```mermaid
 graph TD;
+  mg-popover --> mg-card
   mg-popover --> mg-button
   mg-popover --> mg-icon
   mg-button --> mg-icon

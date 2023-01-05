@@ -212,34 +212,36 @@ export class MgModal {
    */
   render(): HTMLElement {
     return (
-      <section role="dialog" id={this.identifier} class={this.classList.join()} tabindex="-1" aria-labelledby={this.titleId} aria-modal="true" aria-hidden={this.hide}>
-        <article class="mg-modal__dialog">
-          <header class="mg-modal__header">
-            {this.closeButton && (
-              <span class="mg-modal__close-button">
-                <mg-button identifier={this.closeButtonId} is-icon variant="flat" label={this.messages.modal.closeButton} onClick={this.handleClose}>
-                  <mg-icon icon="cross"></mg-icon>
-                </mg-button>
-              </span>
+      <div role="alertdialog" id={this.identifier} class={this.classList.join()} tabindex="-1" aria-labelledby={this.titleId} aria-modal="true" aria-hidden={this.hide}>
+        <mg-card>
+          <div class="mg-modal__dialog">
+            <header class="mg-modal__header">
+              {this.closeButton && (
+                <span class="mg-modal__close-button">
+                  <mg-button identifier={this.closeButtonId} is-icon variant="flat" label={this.messages.modal.closeButton} onClick={this.handleClose}>
+                    <mg-icon icon="cross"></mg-icon>
+                  </mg-button>
+                </span>
+              )}
+              <h1 class="mg-modal__title" id={this.titleId}>
+                {this.modalTitle}
+              </h1>
+            </header>
+
+            {this.hasContent && (
+              <article class="mg-modal__content">
+                <slot name="content"></slot>
+              </article>
             )}
-            <h1 class="mg-modal__title" id={this.titleId}>
-              {this.modalTitle}
-            </h1>
-          </header>
 
-          {this.hasContent && (
-            <article class="mg-modal__content">
-              <slot name="content"></slot>
-            </article>
-          )}
-
-          {this.hasActions && (
-            <footer class="mg-modal__footer">
-              <slot name="actions"></slot>
-            </footer>
-          )}
-        </article>
-      </section>
+            {this.hasActions && (
+              <footer class="mg-modal__footer">
+                <slot name="actions"></slot>
+              </footer>
+            )}
+          </div>
+        </mg-card>
+      </div>
     );
   }
 }

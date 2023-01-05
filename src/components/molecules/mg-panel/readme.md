@@ -34,10 +34,10 @@ Slot content padding can be customized using the --mg-panel-content-padding CSS 
 
 If needed some [variables](./?path=/story/css-variables--page) are available to customize the component:
 
-`--mg-panel-border-radius`: Define panel border radius, default: `0.5rem`
-`--mg-panel-background`: Define panel background, default: `var(--color-info-h) var(--color-info-s) calc(var(--color-info-l) + 68%)`
-`--mg-panel-box-shadow`: Define panel box shadow, default: `var(--box-shadow)`
-`--mg-panel-content-padding`: Define panel content padding, default: `1.5rem`
+- `--mg-panel-border-radius`: Define panel border radius, default: `0.5rem`
+- `--mg-panel-background`: Define panel background, default: `var(--color-info-h) var(--color-info-s) calc(var(--color-info-l) + 68%)`
+- `--mg-panel-box-shadow`: Define panel box shadow, default: `var(--box-shadow)`
+- `--mg-panel-content-padding`: Define panel content padding, default: `1.5rem`
 
 <!-- Auto Generated Below -->
 
@@ -70,6 +70,7 @@ If needed some [variables](./?path=/story/css-variables--page) are available to 
 - [mg-button](../../atoms/mg-button)
 - [mg-icon](../../atoms/mg-icon)
 - [mg-input-text](../inputs/mg-input-text)
+- [mg-card](../../atoms/mg-card)
 
 ### Graph
 ```mermaid
@@ -77,6 +78,7 @@ graph TD;
   mg-panel --> mg-button
   mg-panel --> mg-icon
   mg-panel --> mg-input-text
+  mg-panel --> mg-card
   mg-button --> mg-icon
   mg-input-text --> mg-icon
   mg-input-text --> mg-character-left

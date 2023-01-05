@@ -1,7 +1,14 @@
 .mg-card {
+  // Display
+  position: relative;
+  width: 100%;
   padding: var(--mg-card-padding);
-  border-radius: var(--mg-card-border-radius);
+  overflow: var(--mg-card-overflow);
+  box-sizing: border-box;
+  z-index: inherit;
+  // Decoration
   background: var(--mg-card-background);
   border: var(--mg-card-border);
+  border-radius: var(--mg-card-border-radius);
   box-shadow: var(--mg-card-box-shadow);
 }

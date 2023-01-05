@@ -1,10 +1,14 @@
 $header-spacing: 0.3rem;
 
-.mg-panel {
-  background-color: hsl(var(--mg-panel-background));
-  border-radius: var(--mg-panel-border-radius);
-  box-shadow: var(--mg-panel-box-shadow);
+:host {
+  --mg-card-border: none;
+  --mg-card-padding: 0;
+  --mg-card-border-radius: var(--mg-panel-border-radius);
+  --mg-card-background: hsl(var(--mg-panel-background));
+  --mg-card-box-shadow: var(--mg-panel-box-shadow);
+}
 
+.mg-panel {
   &__header {
     display: flex;
     flex-wrap: wrap;
