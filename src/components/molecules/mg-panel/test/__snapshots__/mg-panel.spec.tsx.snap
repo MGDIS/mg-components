@@ -7,7 +7,7 @@ exports[`mg-panel Should render with args {
 }: 1`] = `
 <mg-panel>
   <mock:shadow-root>
-    <div class="mg-panel" id="identifier">
+    <section class="mg-panel" id="identifier">
       <mg-card>
         <header class="mg-panel__header" id="identifier-header">
           <div class="mg-panel__header-left">
@@ -55,7 +55,7 @@ exports[`mg-panel Should render with args {
           <slot></slot>
         </article>
       </mg-card>
-    </div>
+    </section>
   </mock:shadow-root>
 </mg-panel>
 `;
@@ -68,7 +68,7 @@ exports[`mg-panel Should render with args {
 }: 1`] = `
 <mg-panel lang="fr">
   <mock:shadow-root>
-    <div class="mg-panel" id="identifier">
+    <section class="mg-panel" id="identifier">
       <mg-card>
         <header class="mg-panel__header" id="identifier-header">
           <div class="mg-panel__header-left">
@@ -116,7 +116,7 @@ exports[`mg-panel Should render with args {
           <slot></slot>
         </article>
       </mg-card>
-    </div>
+    </section>
   </mock:shadow-root>
 </mg-panel>
 `;
@@ -129,7 +129,7 @@ exports[`mg-panel Should render with args {
 }: 1`] = `
 <mg-panel lang="xx">
   <mock:shadow-root>
-    <div class="mg-panel" id="identifier">
+    <section class="mg-panel" id="identifier">
       <mg-card>
         <header class="mg-panel__header" id="identifier-header">
           <div class="mg-panel__header-left">
@@ -177,7 +177,7 @@ exports[`mg-panel Should render with args {
           <slot></slot>
         </article>
       </mg-card>
-    </div>
+    </section>
   </mock:shadow-root>
 </mg-panel>
 `;
@@ -191,7 +191,7 @@ exports[`mg-panel Should render with args {
 }: 1`] = `
 <mg-panel>
   <mock:shadow-root>
-    <div class="mg-panel" id="identifier">
+    <section class="mg-panel" id="identifier">
       <mg-card>
         <header class="mg-panel__header" id="identifier-header">
           <div class="mg-panel__header-left">
@@ -239,7 +239,7 @@ exports[`mg-panel Should render with args {
           <slot></slot>
         </article>
       </mg-card>
-    </div>
+    </section>
   </mock:shadow-root>
 </mg-panel>
 `;
@@ -247,7 +247,7 @@ exports[`mg-panel Should render with args {
 exports[`mg-panel Should render with args { identifier: 'identifier', panelTitle: 'panel title' }: 1`] = `
 <mg-panel>
   <mock:shadow-root>
-    <div class="mg-panel" id="identifier">
+    <section class="mg-panel" id="identifier">
       <mg-card>
         <header class="mg-panel__header" id="identifier-header">
           <div class="mg-panel__header-left">
@@ -279,7 +279,7 @@ exports[`mg-panel Should render with args { identifier: 'identifier', panelTitle
           <slot></slot>
         </article>
       </mg-card>
-    </div>
+    </section>
   </mock:shadow-root>
 </mg-panel>
 `;
@@ -287,7 +287,7 @@ exports[`mg-panel Should render with args { identifier: 'identifier', panelTitle
 exports[`mg-panel Should render with args { identifier: 'identifier', panelTitle: 'panel title', expanded: true }: 1`] = `
 <mg-panel>
   <mock:shadow-root>
-    <div class="mg-panel" id="identifier">
+    <section class="mg-panel" id="identifier">
       <mg-card>
         <header class="mg-panel__header" id="identifier-header">
           <div class="mg-panel__header-left">
@@ -319,7 +319,7 @@ exports[`mg-panel Should render with args { identifier: 'identifier', panelTitle
           <slot></slot>
         </article>
       </mg-card>
-    </div>
+    </section>
   </mock:shadow-root>
 </mg-panel>
 `;
@@ -327,7 +327,7 @@ exports[`mg-panel Should render with args { identifier: 'identifier', panelTitle
 exports[`mg-panel navigation Should NOT collapse panel, case expandToggleDisabled = true 1`] = `
 <mg-panel>
   <mock:shadow-root>
-    <div class="mg-panel" id="identifier">
+    <section class="mg-panel" id="identifier">
       <mg-card>
         <header class="mg-panel__header" id="identifier-header">
           <div class="mg-panel__header-left">
@@ -359,7 +359,7 @@ exports[`mg-panel navigation Should NOT collapse panel, case expandToggleDisable
           <slot></slot>
         </article>
       </mg-card>
-    </div>
+    </section>
   </mock:shadow-root>
 </mg-panel>
 `;
@@ -367,7 +367,7 @@ exports[`mg-panel navigation Should NOT collapse panel, case expandToggleDisable
 exports[`mg-panel navigation Should NOT collapse panel, case expandToggleDisabled = true 2`] = `
 <mg-panel>
   <mock:shadow-root>
-    <div class="mg-panel" id="identifier">
+    <section class="mg-panel" id="identifier">
       <mg-card>
         <header class="mg-panel__header" id="identifier-header">
           <div class="mg-panel__header-left">
@@ -399,7 +399,7 @@ exports[`mg-panel navigation Should NOT collapse panel, case expandToggleDisable
           <slot></slot>
         </article>
       </mg-card>
-    </div>
+    </section>
   </mock:shadow-root>
 </mg-panel>
 `;
@@ -407,7 +407,7 @@ exports[`mg-panel navigation Should NOT collapse panel, case expandToggleDisable
 exports[`mg-panel navigation Should NOT collapse panel, case expandToggleDisabled = true 3`] = `
 <mg-panel>
   <mock:shadow-root>
-    <div class="mg-panel" id="identifier">
+    <section class="mg-panel" id="identifier">
       <mg-card>
         <header class="mg-panel__header" id="identifier-header">
           <div class="mg-panel__header-left">
@@ -439,7 +439,7 @@ exports[`mg-panel navigation Should NOT collapse panel, case expandToggleDisable
           <slot></slot>
         </article>
       </mg-card>
-    </div>
+    </section>
   </mock:shadow-root>
 </mg-panel>
 `;
@@ -447,7 +447,7 @@ exports[`mg-panel navigation Should NOT collapse panel, case expandToggleDisable
 exports[`mg-panel navigation Should NOT collapse panel, case expandToggleDisabled = true 4`] = `
 <mg-panel>
   <mock:shadow-root>
-    <div class="mg-panel" id="identifier">
+    <section class="mg-panel" id="identifier">
       <mg-card>
         <header class="mg-panel__header" id="identifier-header">
           <div class="mg-panel__header-left">
@@ -479,7 +479,7 @@ exports[`mg-panel navigation Should NOT collapse panel, case expandToggleDisable
           <slot></slot>
         </article>
       </mg-card>
-    </div>
+    </section>
   </mock:shadow-root>
 </mg-panel>
 `;
@@ -487,7 +487,7 @@ exports[`mg-panel navigation Should NOT collapse panel, case expandToggleDisable
 exports[`mg-panel navigation Should NOT update panel title, case input new value does NOT match pattern 1`] = `
 <mg-panel>
   <mock:shadow-root>
-    <div class="mg-panel" id="identifier">
+    <section class="mg-panel" id="identifier">
       <mg-card>
         <header class="mg-panel__header" id="identifier-header">
           <div class="mg-panel__header-left">
@@ -535,7 +535,7 @@ exports[`mg-panel navigation Should NOT update panel title, case input new value
           <slot></slot>
         </article>
       </mg-card>
-    </div>
+    </section>
   </mock:shadow-root>
 </mg-panel>
 `;
@@ -543,7 +543,7 @@ exports[`mg-panel navigation Should NOT update panel title, case input new value
 exports[`mg-panel navigation Should NOT update panel title, case input new value does NOT match pattern 2`] = `
 <mg-panel>
   <mock:shadow-root>
-    <div class="mg-panel" id="identifier">
+    <section class="mg-panel" id="identifier">
       <mg-card>
         <header class="mg-panel__header" id="identifier-header">
           <div class="mg-panel__header-left mg-panel__header-left--full">
@@ -623,7 +623,7 @@ exports[`mg-panel navigation Should NOT update panel title, case input new value
           <slot></slot>
         </article>
       </mg-card>
-    </div>
+    </section>
   </mock:shadow-root>
 </mg-panel>
 `;
@@ -631,7 +631,7 @@ exports[`mg-panel navigation Should NOT update panel title, case input new value
 exports[`mg-panel navigation Should NOT update panel title, case input new value does NOT match pattern 3`] = `
 <mg-panel>
   <mock:shadow-root>
-    <div class="mg-panel" id="identifier">
+    <section class="mg-panel" id="identifier">
       <mg-card>
         <header class="mg-panel__header" id="identifier-header">
           <div class="mg-panel__header-left mg-panel__header-left--full">
@@ -711,7 +711,7 @@ exports[`mg-panel navigation Should NOT update panel title, case input new value
           <slot></slot>
         </article>
       </mg-card>
-    </div>
+    </section>
   </mock:shadow-root>
 </mg-panel>
 `;
@@ -719,7 +719,7 @@ exports[`mg-panel navigation Should NOT update panel title, case input new value
 exports[`mg-panel navigation Should NOT update panel title, case input new value does NOT match pattern 4`] = `
 <mg-panel>
   <mock:shadow-root>
-    <div class="mg-panel" id="identifier">
+    <section class="mg-panel" id="identifier">
       <mg-card>
         <header class="mg-panel__header" id="identifier-header">
           <div class="mg-panel__header-left mg-panel__header-left--full">
@@ -799,7 +799,7 @@ exports[`mg-panel navigation Should NOT update panel title, case input new value
           <slot></slot>
         </article>
       </mg-card>
-    </div>
+    </section>
   </mock:shadow-root>
 </mg-panel>
 `;
@@ -807,7 +807,7 @@ exports[`mg-panel navigation Should NOT update panel title, case input new value
 exports[`mg-panel navigation Should toggle collapse panel, expanded false 1`] = `
 <mg-panel>
   <mock:shadow-root>
-    <div class="mg-panel" id="identifier">
+    <section class="mg-panel" id="identifier">
       <mg-card>
         <header class="mg-panel__header" id="identifier-header">
           <div class="mg-panel__header-left">
@@ -839,7 +839,7 @@ exports[`mg-panel navigation Should toggle collapse panel, expanded false 1`] = 
           <slot></slot>
         </article>
       </mg-card>
-    </div>
+    </section>
   </mock:shadow-root>
 </mg-panel>
 `;
@@ -847,7 +847,7 @@ exports[`mg-panel navigation Should toggle collapse panel, expanded false 1`] = 
 exports[`mg-panel navigation Should toggle collapse panel, expanded false 2`] = `
 <mg-panel>
   <mock:shadow-root>
-    <div class="mg-panel" id="identifier">
+    <section class="mg-panel" id="identifier">
       <mg-card>
         <header class="mg-panel__header" id="identifier-header">
           <div class="mg-panel__header-left">
@@ -879,7 +879,7 @@ exports[`mg-panel navigation Should toggle collapse panel, expanded false 2`] = 
           <slot></slot>
         </article>
       </mg-card>
-    </div>
+    </section>
   </mock:shadow-root>
 </mg-panel>
 `;
@@ -887,7 +887,7 @@ exports[`mg-panel navigation Should toggle collapse panel, expanded false 2`] = 
 exports[`mg-panel navigation Should toggle collapse panel, expanded false 3`] = `
 <mg-panel>
   <mock:shadow-root>
-    <div class="mg-panel" id="identifier">
+    <section class="mg-panel" id="identifier">
       <mg-card>
         <header class="mg-panel__header" id="identifier-header">
           <div class="mg-panel__header-left">
@@ -919,7 +919,7 @@ exports[`mg-panel navigation Should toggle collapse panel, expanded false 3`] = 
           <slot></slot>
         </article>
       </mg-card>
-    </div>
+    </section>
   </mock:shadow-root>
 </mg-panel>
 `;
@@ -927,7 +927,7 @@ exports[`mg-panel navigation Should toggle collapse panel, expanded false 3`] = 
 exports[`mg-panel navigation Should toggle collapse panel, expanded true 1`] = `
 <mg-panel>
   <mock:shadow-root>
-    <div class="mg-panel" id="identifier">
+    <section class="mg-panel" id="identifier">
       <mg-card>
         <header class="mg-panel__header" id="identifier-header">
           <div class="mg-panel__header-left">
@@ -959,7 +959,7 @@ exports[`mg-panel navigation Should toggle collapse panel, expanded true 1`] = `
           <slot></slot>
         </article>
       </mg-card>
-    </div>
+    </section>
   </mock:shadow-root>
 </mg-panel>
 `;
@@ -967,7 +967,7 @@ exports[`mg-panel navigation Should toggle collapse panel, expanded true 1`] = `
 exports[`mg-panel navigation Should toggle collapse panel, expanded true 2`] = `
 <mg-panel>
   <mock:shadow-root>
-    <div class="mg-panel" id="identifier">
+    <section class="mg-panel" id="identifier">
       <mg-card>
         <header class="mg-panel__header" id="identifier-header">
           <div class="mg-panel__header-left">
@@ -999,7 +999,7 @@ exports[`mg-panel navigation Should toggle collapse panel, expanded true 2`] = `
           <slot></slot>
         </article>
       </mg-card>
-    </div>
+    </section>
   </mock:shadow-root>
 </mg-panel>
 `;
@@ -1007,7 +1007,7 @@ exports[`mg-panel navigation Should toggle collapse panel, expanded true 2`] = `
 exports[`mg-panel navigation Should toggle collapse panel, expanded true 3`] = `
 <mg-panel>
   <mock:shadow-root>
-    <div class="mg-panel" id="identifier">
+    <section class="mg-panel" id="identifier">
       <mg-card>
         <header class="mg-panel__header" id="identifier-header">
           <div class="mg-panel__header-left">
@@ -1039,7 +1039,7 @@ exports[`mg-panel navigation Should toggle collapse panel, expanded true 3`] = `
           <slot></slot>
         </article>
       </mg-card>
-    </div>
+    </section>
   </mock:shadow-root>
 </mg-panel>
 `;
@@ -1047,7 +1047,7 @@ exports[`mg-panel navigation Should toggle collapse panel, expanded true 3`] = `
 exports[`mg-panel navigation Should toggle edit panel title 1`] = `
 <mg-panel>
   <mock:shadow-root>
-    <div class="mg-panel" id="identifier">
+    <section class="mg-panel" id="identifier">
       <mg-card>
         <header class="mg-panel__header" id="identifier-header">
           <div class="mg-panel__header-left">
@@ -1095,7 +1095,7 @@ exports[`mg-panel navigation Should toggle edit panel title 1`] = `
           <slot></slot>
         </article>
       </mg-card>
-    </div>
+    </section>
   </mock:shadow-root>
 </mg-panel>
 `;
@@ -1103,7 +1103,7 @@ exports[`mg-panel navigation Should toggle edit panel title 1`] = `
 exports[`mg-panel navigation Should toggle edit panel title 2`] = `
 <mg-panel>
   <mock:shadow-root>
-    <div class="mg-panel" id="identifier">
+    <section class="mg-panel" id="identifier">
       <mg-card>
         <header class="mg-panel__header" id="identifier-header">
           <div class="mg-panel__header-left mg-panel__header-left--full">
@@ -1183,7 +1183,7 @@ exports[`mg-panel navigation Should toggle edit panel title 2`] = `
           <slot></slot>
         </article>
       </mg-card>
-    </div>
+    </section>
   </mock:shadow-root>
 </mg-panel>
 `;
@@ -1191,7 +1191,7 @@ exports[`mg-panel navigation Should toggle edit panel title 2`] = `
 exports[`mg-panel navigation Should toggle edit panel title 3`] = `
 <mg-panel>
   <mock:shadow-root>
-    <div class="mg-panel" id="identifier">
+    <section class="mg-panel" id="identifier">
       <mg-card>
         <header class="mg-panel__header" id="identifier-header">
           <div class="mg-panel__header-left">
@@ -1239,7 +1239,7 @@ exports[`mg-panel navigation Should toggle edit panel title 3`] = `
           <slot></slot>
         </article>
       </mg-card>
-    </div>
+    </section>
   </mock:shadow-root>
 </mg-panel>
 `;
@@ -1247,7 +1247,7 @@ exports[`mg-panel navigation Should toggle edit panel title 3`] = `
 exports[`mg-panel navigation Should toggle edit panel title 4`] = `
 <mg-panel>
   <mock:shadow-root>
-    <div class="mg-panel" id="identifier">
+    <section class="mg-panel" id="identifier">
       <mg-card>
         <header class="mg-panel__header" id="identifier-header">
           <div class="mg-panel__header-left">
@@ -1279,7 +1279,7 @@ exports[`mg-panel navigation Should toggle edit panel title 4`] = `
           <slot></slot>
         </article>
       </mg-card>
-    </div>
+    </section>
   </mock:shadow-root>
 </mg-panel>
 `;
@@ -1287,7 +1287,7 @@ exports[`mg-panel navigation Should toggle edit panel title 4`] = `
 exports[`mg-panel navigation should NOT update panel title, case no enter in input 1`] = `
 <mg-panel>
   <mock:shadow-root>
-    <div class="mg-panel" id="identifier">
+    <section class="mg-panel" id="identifier">
       <mg-card>
         <header class="mg-panel__header" id="identifier-header">
           <div class="mg-panel__header-left">
@@ -1335,7 +1335,7 @@ exports[`mg-panel navigation should NOT update panel title, case no enter in inp
           <slot></slot>
         </article>
       </mg-card>
-    </div>
+    </section>
   </mock:shadow-root>
 </mg-panel>
 `;
@@ -1343,7 +1343,7 @@ exports[`mg-panel navigation should NOT update panel title, case no enter in inp
 exports[`mg-panel navigation should NOT update panel title, case no enter in input 2`] = `
 <mg-panel>
   <mock:shadow-root>
-    <div class="mg-panel" id="identifier">
+    <section class="mg-panel" id="identifier">
       <mg-card>
         <header class="mg-panel__header" id="identifier-header">
           <div class="mg-panel__header-left mg-panel__header-left--full">
@@ -1423,7 +1423,7 @@ exports[`mg-panel navigation should NOT update panel title, case no enter in inp
           <slot></slot>
         </article>
       </mg-card>
-    </div>
+    </section>
   </mock:shadow-root>
 </mg-panel>
 `;
@@ -1431,7 +1431,7 @@ exports[`mg-panel navigation should NOT update panel title, case no enter in inp
 exports[`mg-panel navigation should NOT update panel title, case no enter in input 3`] = `
 <mg-panel>
   <mock:shadow-root>
-    <div class="mg-panel" id="identifier">
+    <section class="mg-panel" id="identifier">
       <mg-card>
         <header class="mg-panel__header" id="identifier-header">
           <div class="mg-panel__header-left">
@@ -1479,7 +1479,7 @@ exports[`mg-panel navigation should NOT update panel title, case no enter in inp
           <slot></slot>
         </article>
       </mg-card>
-    </div>
+    </section>
   </mock:shadow-root>
 </mg-panel>
 `;
@@ -1487,7 +1487,7 @@ exports[`mg-panel navigation should NOT update panel title, case no enter in inp
 exports[`mg-panel navigation should update panel title, case first-of-type 1`] = `
 <mg-panel>
   <mock:shadow-root>
-    <div class="mg-panel" id="identifier">
+    <section class="mg-panel" id="identifier">
       <mg-card>
         <header class="mg-panel__header" id="identifier-header">
           <div class="mg-panel__header-left">
@@ -1535,7 +1535,7 @@ exports[`mg-panel navigation should update panel title, case first-of-type 1`] =
           <slot></slot>
         </article>
       </mg-card>
-    </div>
+    </section>
   </mock:shadow-root>
 </mg-panel>
 `;
@@ -1543,7 +1543,7 @@ exports[`mg-panel navigation should update panel title, case first-of-type 1`] =
 exports[`mg-panel navigation should update panel title, case first-of-type 2`] = `
 <mg-panel>
   <mock:shadow-root>
-    <div class="mg-panel" id="identifier">
+    <section class="mg-panel" id="identifier">
       <mg-card>
         <header class="mg-panel__header" id="identifier-header">
           <div class="mg-panel__header-left mg-panel__header-left--full">
@@ -1623,7 +1623,7 @@ exports[`mg-panel navigation should update panel title, case first-of-type 2`] =
           <slot></slot>
         </article>
       </mg-card>
-    </div>
+    </section>
   </mock:shadow-root>
 </mg-panel>
 `;
@@ -1631,7 +1631,7 @@ exports[`mg-panel navigation should update panel title, case first-of-type 2`] =
 exports[`mg-panel navigation should update panel title, case first-of-type 3`] = `
 <mg-panel>
   <mock:shadow-root>
-    <div class="mg-panel" id="identifier">
+    <section class="mg-panel" id="identifier">
       <mg-card>
         <header class="mg-panel__header" id="identifier-header">
           <div class="mg-panel__header-left">
@@ -1679,7 +1679,7 @@ exports[`mg-panel navigation should update panel title, case first-of-type 3`] =
           <slot></slot>
         </article>
       </mg-card>
-    </div>
+    </section>
   </mock:shadow-root>
 </mg-panel>
 `;
@@ -1687,7 +1687,7 @@ exports[`mg-panel navigation should update panel title, case first-of-type 3`] =
 exports[`mg-panel navigation should update panel title, case last-of-type 1`] = `
 <mg-panel>
   <mock:shadow-root>
-    <div class="mg-panel" id="identifier">
+    <section class="mg-panel" id="identifier">
       <mg-card>
         <header class="mg-panel__header" id="identifier-header">
           <div class="mg-panel__header-left">
@@ -1735,7 +1735,7 @@ exports[`mg-panel navigation should update panel title, case last-of-type 1`] = 
           <slot></slot>
         </article>
       </mg-card>
-    </div>
+    </section>
   </mock:shadow-root>
 </mg-panel>
 `;
@@ -1743,7 +1743,7 @@ exports[`mg-panel navigation should update panel title, case last-of-type 1`] = 
 exports[`mg-panel navigation should update panel title, case last-of-type 2`] = `
 <mg-panel>
   <mock:shadow-root>
-    <div class="mg-panel" id="identifier">
+    <section class="mg-panel" id="identifier">
       <mg-card>
         <header class="mg-panel__header" id="identifier-header">
           <div class="mg-panel__header-left mg-panel__header-left--full">
@@ -1823,7 +1823,7 @@ exports[`mg-panel navigation should update panel title, case last-of-type 2`] = 
           <slot></slot>
         </article>
       </mg-card>
-    </div>
+    </section>
   </mock:shadow-root>
 </mg-panel>
 `;
@@ -1831,7 +1831,7 @@ exports[`mg-panel navigation should update panel title, case last-of-type 2`] = 
 exports[`mg-panel navigation should update panel title, case last-of-type 3`] = `
 <mg-panel>
   <mock:shadow-root>
-    <div class="mg-panel" id="identifier">
+    <section class="mg-panel" id="identifier">
       <mg-card>
         <header class="mg-panel__header" id="identifier-header">
           <div class="mg-panel__header-left">
@@ -1879,7 +1879,7 @@ exports[`mg-panel navigation should update panel title, case last-of-type 3`] = 
           <slot></slot>
         </article>
       </mg-card>
-    </div>
+    </section>
   </mock:shadow-root>
 </mg-panel>
 `;

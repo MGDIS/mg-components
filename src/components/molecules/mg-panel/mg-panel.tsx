@@ -287,7 +287,7 @@ export class MgPanel {
    */
   render(): HTMLElement {
     return (
-      <div class={this.classList.join()} id={this.identifier}>
+      <section class={this.classList.join()} id={this.identifier}>
         <mg-card>
           <header class="mg-panel__header" id={`${this.identifier}-header`}>
             <div class={`mg-panel__header-left ${this.isEditing ? 'mg-panel__header-left--full' : ''}`}>{this.headerLeft()}</div>
@@ -299,7 +299,7 @@ export class MgPanel {
             <slot></slot>
           </article>
         </mg-card>
-      </div>
+      </section>
     );
   }
 }
