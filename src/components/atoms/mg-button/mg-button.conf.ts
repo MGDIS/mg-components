@@ -1,7 +1,7 @@
 /**
  * List of all possibles variants
  */
-export const variants = ['primary', 'secondary', 'danger', 'danger-alt', 'info', 'flat', 'success'] as const;
+export const variants = ['primary', 'secondary', 'danger', 'danger-alt', 'info', 'flat', 'success', 'link'] as const;
 
 /**
  * VariantType type from button variants

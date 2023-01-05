@@ -272,7 +272,7 @@
         },
         {
           "name": "variant",
-          "type": "\"danger\" | \"danger-alt\" | \"flat\" | \"info\" | \"primary\" | \"secondary\" | \"success\"",
+          "type": "\"danger\" | \"danger-alt\" | \"flat\" | \"info\" | \"link\" | \"primary\" | \"secondary\" | \"success\"",
           "mutable": false,
           "attr": "variant",
           "reflectToAttr": false,
@@ -294,6 +294,10 @@
             },
             {
               "value": "info",
+              "type": "string"
+            },
+            {
+              "value": "link",
               "type": "string"
             },
             {
