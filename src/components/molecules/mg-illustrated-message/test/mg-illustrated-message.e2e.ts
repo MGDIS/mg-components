@@ -35,7 +35,7 @@ describe('mg-illustrated-message', () => {
     const element = await page.find('mg-illustrated-message');
     expect(element).toHaveClass('hydrated');
 
-    await page.setViewport({ width: 800, height: 400 });
+    await page.setViewport({ width: 800, height: 300 });
 
     const screenshot = await page.screenshot();
     expect(screenshot).toMatchImageSnapshot();
