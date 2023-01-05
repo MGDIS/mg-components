@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-12-07T08:42:02",
+  "timestamp": "2023-01-03T14:03:30",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.20.0",
@@ -272,7 +272,7 @@
         },
         {
           "name": "variant",
-          "type": "\"danger\" | \"danger-alt\" | \"flat\" | \"info\" | \"primary\" | \"secondary\" | \"success\"",
+          "type": "\"danger\" | \"danger-alt\" | \"flat\" | \"info\" | \"link\" | \"primary\" | \"secondary\" | \"success\"",
           "mutable": false,
           "attr": "variant",
           "reflectToAttr": false,
@@ -294,6 +294,10 @@
             },
             {
               "value": "info",
+              "type": "string"
+            },
+            {
+              "value": "link",
               "type": "string"
             },
             {
