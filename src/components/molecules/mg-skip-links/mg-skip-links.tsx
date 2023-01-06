@@ -29,7 +29,11 @@ export class MgSkipLinks {
   @Prop({ mutable: true }) links: SkipLink[];
   @Watch('links')
   validateLinks(links: SkipLink[]): void {
-    if (links.length === 0 || links.some(link => link.href === undefined || !link.href.startsWith('#') || link.label === undefined || link.label.trim() === '')) {
+    if (
+      links === undefined ||
+      links.length === 0 ||
+      links.some(link => link.href === undefined || !link.href.startsWith('#') || link.label === undefined || link.label.trim() === '')
+    ) {
       throw new Error(`<mg-skip-links> prop "links": Cannot be empty and each link must contains an href starting with a "#" and a non empty label attributes.`);
     }
   }
