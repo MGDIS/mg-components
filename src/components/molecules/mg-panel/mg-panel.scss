@@ -26,6 +26,8 @@ $header-spacing: 0.3rem;
   &__header-right {
     padding-left: $header-spacing;
     flex: 1 auto;
+    min-height: var(--default-size);
+    align-items: center;
   }
 
   &__header-left {
