@@ -1,0 +1,34 @@
+.mg-skip-links {
+  position: absolute;
+  transform: translateY(-100%);
+  opacity: 0;
+  background: hsl(var(--color-light));
+
+  &:focus-within {
+    position: relative;
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 0;
+    padding: 0.64rem 1.8rem;
+
+    list-style: none;
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 1.2rem;
+
+    color: hsl(var(--color-dark));
+
+    &:hover {
+      background: hsl(var(--color-dark), 0.1);
+    }
+  }
+}

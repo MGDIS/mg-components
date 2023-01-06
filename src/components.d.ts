@@ -16,6 +16,7 @@ import { ToggleValue } from "./components/molecules/inputs/mg-input-toggle/mg-in
 import { Direction } from "./components/molecules/menu/mg-menu/mg-menu.conf";
 import { MenuItemSizeType, Status } from "./components/molecules/menu/mg-menu-item/mg-menu-item.conf";
 import { Placement } from "@popperjs/core";
+import { SkipLink } from "./components/molecules/mg-skip-links/mg-skip-links.conf";
 import { SizeType, TabItem } from "./components/molecules/mg-tabs/mg-tabs.conf";
 import { TagVariantType } from "./components/atoms/mg-tag/mg-tag.conf";
 export namespace Components {
@@ -1002,6 +1003,12 @@ export namespace Components {
          */
         "placement": Placement;
     }
+    interface MgSkipLinks {
+        /**
+          * Skip links
+         */
+        "links": SkipLink[];
+    }
     interface MgTabs {
         /**
           * Active tab number default: first is 1
@@ -1286,6 +1293,12 @@ declare global {
         prototype: HTMLMgPopoverElement;
         new (): HTMLMgPopoverElement;
     };
+    interface HTMLMgSkipLinksElement extends Components.MgSkipLinks, HTMLStencilElement {
+    }
+    var HTMLMgSkipLinksElement: {
+        prototype: HTMLMgSkipLinksElement;
+        new (): HTMLMgSkipLinksElement;
+    };
     interface HTMLMgTabsElement extends Components.MgTabs, HTMLStencilElement {
     }
     var HTMLMgTabsElement: {
@@ -1331,6 +1344,7 @@ declare global {
         "mg-pagination": HTMLMgPaginationElement;
         "mg-panel": HTMLMgPanelElement;
         "mg-popover": HTMLMgPopoverElement;
+        "mg-skip-links": HTMLMgSkipLinksElement;
         "mg-tabs": HTMLMgTabsElement;
         "mg-tag": HTMLMgTagElement;
         "mg-tooltip": HTMLMgTooltipElement;
@@ -2386,6 +2400,12 @@ declare namespace LocalJSX {
          */
         "placement"?: Placement;
     }
+    interface MgSkipLinks {
+        /**
+          * Skip links
+         */
+        "links"?: SkipLink[];
+    }
     interface MgTabs {
         /**
           * Active tab number default: first is 1
@@ -2475,6 +2495,7 @@ declare namespace LocalJSX {
         "mg-pagination": MgPagination;
         "mg-panel": MgPanel;
         "mg-popover": MgPopover;
+        "mg-skip-links": MgSkipLinks;
         "mg-tabs": MgTabs;
         "mg-tag": MgTag;
         "mg-tooltip": MgTooltip;
@@ -2510,6 +2531,7 @@ declare module "@stencil/core" {
             "mg-pagination": LocalJSX.MgPagination & JSXBase.HTMLAttributes<HTMLMgPaginationElement>;
             "mg-panel": LocalJSX.MgPanel & JSXBase.HTMLAttributes<HTMLMgPanelElement>;
             "mg-popover": LocalJSX.MgPopover & JSXBase.HTMLAttributes<HTMLMgPopoverElement>;
+            "mg-skip-links": LocalJSX.MgSkipLinks & JSXBase.HTMLAttributes<HTMLMgSkipLinksElement>;
             "mg-tabs": LocalJSX.MgTabs & JSXBase.HTMLAttributes<HTMLMgTabsElement>;
             "mg-tag": LocalJSX.MgTag & JSXBase.HTMLAttributes<HTMLMgTagElement>;
             "mg-tooltip": LocalJSX.MgTooltip & JSXBase.HTMLAttributes<HTMLMgTooltipElement>;
