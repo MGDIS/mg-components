@@ -29,7 +29,8 @@ export const cloneDeep = (obj: unknown): unknown => JSON.parse(JSON.stringify(ob
  * fireMo([{ type: 'childList', addedNodes: [AMockElemenet, AnotherMockElemenet], target: yourMockElemenet }]);;
  * ```
  */
-export const setupMutationObserverMock = ({ disconnect, observe, takeRecords }) => {
+type SetupMutationObserverMockParams = { disconnect: MutationObserver['disconnect']; observe: MutationObserver['observe']; takeRecords: MutationObserver['takeRecords'] };
+export const setupMutationObserverMock = ({ disconnect, observe, takeRecords }: SetupMutationObserverMockParams): typeof MutationObserver => {
   class MockMutationObserver implements MutationObserver {
     disconnect: () => void = disconnect;
     observe: (target: Node, options?: MutationObserverInit) => void = observe;
@@ -60,7 +61,6 @@ export const setupMutationObserverMock = ({ disconnect, observe, takeRecords }) 
  * You can manually fire an intersection entry:
  * @param {Function} resizeObserverMock.disconnect disconnect function
  * @param {Function} resizeObserverMock.observe observe function
- * @param {Function} resizeObserverMock.takeRecords takeRecords function
  * @returns {ResizeObserver} Mocked ResizeObserver
  * @example
  * ```
@@ -80,11 +80,11 @@ export const setupMutationObserverMock = ({ disconnect, observe, takeRecords }) 
  * }]);;
  * ```
  */
-export const setupResizeObserverMock = ({ disconnect, observe, takeRecords }) => {
+type setupResizeObserverMockParams = { disconnect: ResizeObserver['disconnect']; observe: ResizeObserver['observe'] };
+export const setupResizeObserverMock = ({ disconnect, observe }: setupResizeObserverMockParams): typeof ResizeObserver => {
   class MockResizeObserver implements ResizeObserver {
     disconnect: () => void = disconnect;
     observe: (target: Element, options?: ResizeObserverOptions) => void = observe;
-    takeRecords: () => MutationRecord[] = takeRecords;
     unobserve: () => void;
     cb: () => unknown;
     constructor(fn) {
@@ -101,4 +101,19 @@ export const setupResizeObserverMock = ({ disconnect, observe, takeRecords }) =>
   });
 
   return MockResizeObserver;
+};
+
+/**
+ * force popover id when component use randomed identifier
+ *
+ * @param {Element} item element wich include mg-popover
+ * @param {string} id new fixed id
+ * @returns {void}
+ */
+export const forcePopoverId = (item: Element, id: string): void => {
+  const popover = item.shadowRoot.querySelector('mg-popover');
+  if (popover !== null) {
+    popover.shadowRoot.querySelector('.mg-popover').setAttribute('id', id);
+    item.shadowRoot.querySelector('button').setAttribute('aria-controls', id);
+  }
 };

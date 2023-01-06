@@ -1,4 +1,3 @@
-import { isMgActionMore } from '../components/molecules/menu/mg-action-more/mg-action-more.conf';
 import { isMgMenuItem, Status } from '../components/molecules/menu/mg-menu-item/mg-menu-item.conf';
 
 export enum OverflowBehaviorElements {
@@ -10,10 +9,10 @@ export enum OverflowBehaviorElements {
 export class OverflowBehavior {
   // variables
   private resizeObserver: ResizeObserver;
-  private moreELement: HTMLElement | HTMLMgActionMoreElement;
+  private moreELement: HTMLElement;
   private children: Element[];
 
-  constructor(private element: Element, private render: () => HTMLMgMenuItemElement | HTMLMgActionMoreElement) {}
+  constructor(private element: Element, private render: () => HTMLElement) {}
 
   /**********
    * Public *
@@ -24,8 +23,8 @@ export class OverflowBehavior {
    *
    * @returns {void}
    */
-  init = (): void => {
-    if (!this.resizeObserver) {
+  public init = (): void => {
+    if (this.resizeObserver === undefined) {
       // add resize observer
       this.resizeObserver = new ResizeObserver(entries => {
         entries.forEach(entry => {
@@ -41,8 +40,21 @@ export class OverflowBehavior {
    *
    * @returns {void}
    */
-  disconnect = (): void => {
-    this.resizeObserver?.disconnect();
+  public disconnect = (): void => {
+    this.resizeObserver.disconnect();
+  };
+
+  /**
+   * Update more element status if active child
+   *
+   * @returns {void}
+   */
+  public updateActiveStatus = (): void => {
+    const hasActiveChild = Array.from(this.moreELement.querySelector('mg-menu').children)
+      .filter(element => element.nodeName === 'MG-MENU-ITEM')
+      .find((child: HTMLMgMenuItemElement) => child.getAttribute('status') === Status.ACTIVE && child.getAttribute('hidden') === null);
+
+    this.moreELement.setAttribute('status', hasActiveChild === undefined ? Status.ACTIVE : Status.VISIBLE);
   };
 
   /************
@@ -56,7 +68,7 @@ export class OverflowBehavior {
    * @returns {void}
    */
   private run = (width: number): void => {
-    if (!this.moreELement) {
+    if (this.moreELement === undefined) {
       // set moreElement
       this.moreELement = this.render();
       this.moreELement.setAttribute(OverflowBehaviorElements.MORE, '');
@@ -67,8 +79,6 @@ export class OverflowBehavior {
       const filter = ['MG-MENU-ITEM', 'MG-BUTTON'];
       if (isMgMenuItem(this.moreELement)) {
         moreELementChildren = Array.from(this.moreELement.querySelector('mg-menu').children).filter(element => filter.includes(element.nodeName));
-      } else {
-        moreELementChildren = Array.from(this.moreELement.children).filter(element => filter.includes(element.nodeName));
       }
 
       this.children.forEach((child, index) => {
@@ -123,7 +133,7 @@ export class OverflowBehavior {
    * @param {number} cumulateWidth previous sibling elements cumulate width + item width
    * @param {HTMLElement} item item HTML element
    * @param {number} availableWidth container available width
-   * @returns {boolean}
+   * @returns {boolean} truthy if element is overflow
    */
   private isOverflowElement = (cumulateWidth: number, item: HTMLElement, availableWidth: number): boolean => {
     if (item.previousElementSibling === null) return false;
@@ -137,7 +147,7 @@ export class OverflowBehavior {
    * Utility method to know if a given element is the 'MORE' element
    *
    * @param {Element} element element to match with 'MORE' element
-   * @returns {boolean}
+   * @returns {boolean} truthy if element is the 'MORE' element
    */
   private isMoreElement = (element: Element): boolean => element.getAttribute(OverflowBehaviorElements.MORE) !== null;
 
@@ -153,13 +163,7 @@ export class OverflowBehavior {
     if (this.isMoreElement(item)) this.toggleElement(this.moreELement, isHidden);
     else if (mgActionMenuindex >= 0) {
       this.toggleElement(item, isHidden);
-      if (isMgActionMore(this.moreELement)) {
-        this.moreELement.items[mgActionMenuindex].hidden = !isHidden;
-        // reset moreElement items to handle component watcher
-        this.moreELement.items = [...this.moreELement.items];
-      } else {
-        this.toggleElement(this.moreELement.querySelector(`[${OverflowBehaviorElements.PROXY_INDEX}="${mgActionMenuindex}"]`), !isHidden);
-      }
+      this.toggleElement(this.moreELement.querySelector(`[${OverflowBehaviorElements.PROXY_INDEX}="${mgActionMenuindex}"]`), !isHidden);
     }
   };
 
@@ -182,17 +186,5 @@ export class OverflowBehavior {
    */
   private restoreItems = (): void => {
     this.children.forEach(item => item.removeAttribute('hidden'));
-  };
-
-  /**
-   * Update more element status if active child
-   *
-   * @returns {void}
-   */
-  private updateActiveStatus = (): void => {
-    const hasActiveChild = Array.from(this.moreELement.querySelector('mg-menu').children).find(
-      child => child.getAttribute('status') === Status.ACTIVE && child.getAttribute('hidden') === null,
-    );
-    this.moreELement.setAttribute('status', hasActiveChild ? Status.ACTIVE : Status.VISIBLE);
   };
 }

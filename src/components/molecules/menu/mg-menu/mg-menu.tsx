@@ -1,6 +1,7 @@
 import { Component, h, Prop, State, Element, Watch, Host } from '@stencil/core';
 import { OverflowBehavior, OverflowBehaviorElements } from '../../../../utils/behaviors.utils';
-import { Direction } from './mg-menu.conf';
+import { Direction, isMoreItem, MessageType, MoreItemType } from './mg-menu.conf';
+import { initLocales } from '../../../../locales';
 
 @Component({
   tag: 'mg-menu',
@@ -13,6 +14,7 @@ export class MgMenu {
    ************/
 
   private readonly name = 'mg-menu';
+  private messages: MessageType;
   private menuItems: HTMLMgMenuItemElement[];
   private focusedMenuItem = 0;
   private overflowBehavior: OverflowBehavior;
@@ -51,8 +53,29 @@ export class MgMenu {
 
   /**
    * Define component manage child overflow
+   * Default: false
    */
-  @Prop() activeOverflow: boolean;
+  @Prop() activeOverflow = false;
+  @Watch('activeOverflow')
+  validateActiveOverflow(newValue: MgMenu['activeOverflow']): void {
+    if (newValue && this.direction === Direction.VERTICAL) {
+      throw new Error(`<${this.name}> prop "activeOverflow" can not be paired with prop "direction = vertical".`);
+    }
+  }
+
+  /**
+   * Define mg-menu-item "more element"
+   * used when overflow is enable
+   */
+  @Prop() moreitem: MoreItemType;
+  @Watch('moreitem')
+  validateMoreItem(newValue: MgMenu['moreitem']): void {
+    if (!this.activeOverflow && newValue !== undefined) {
+      throw new Error(`<${this.name}> prop "moreitem" must be paired with truthy "activeOverflow" prop.`);
+    } else if (this.activeOverflow && isMoreItem(newValue) !== true) {
+      throw new Error(`<${this.name}> prop "moreitem" must match MoreItemType.`);
+    }
+  }
 
   /**
    * is this menu a child menu. Used for conditional render.
@@ -62,7 +85,7 @@ export class MgMenu {
   /**
    * Close matching menu-item
    *
-   * @param {HTMLMgMenuItemElement} item menu-item to close
+   * @param {HTMLElement} item menu-item to close
    * @param {boolean} condition addionnal condition
    * @returns {void}
    */
@@ -78,6 +101,8 @@ export class MgMenu {
 
   /**
    * Store menu-items on component init and add listeners
+   *
+   * @returns {void}
    */
   private initMenuItemsListeners = (): void => {
     // add listeners on menu item and edit index
@@ -94,20 +119,30 @@ export class MgMenu {
     });
   };
 
-  private renderMgActionMore = (): HTMLMgMenuItemElement => {
+  /**
+   * render mg-menu-more
+   *
+   * @returns {HTMLElement} formated mg-menu-item element
+   */
+  private renderMgMenuMore = (): HTMLMgMenuItemElement => {
     const moreElement = this.element.shadowRoot.querySelector(`[${OverflowBehaviorElements.MORE}]`);
-    Array.from(this.element.children).forEach(child => {
-      const proxy = child.cloneNode(true);
-      proxy.addEventListener('click', () => {
-        child.dispatchEvent(new MouseEvent('click', { bubbles: true }));
-      });
-      moreElement.querySelector('mg-menu').appendChild(proxy);
-    });
-    this.element.appendChild(moreElement);
+    Array.from(this.element.children)
+      .filter(element => element.nodeName === 'MG-MENU-ITEM')
+      .forEach((child: HTMLMgMenuItemElement) => {
+        const proxy = child.cloneNode(true) as HTMLMgMenuItemElement;
+        // manage click on proxy to mirror it on initial element
+        proxy.addEventListener('click', () => {
+          child.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+        });
 
-    // size
-    const size = this.element.querySelector('mg-menu-item').getAttribute('size');
-    moreElement.setAttribute('size', size);
+        // manage status change miror in proxy
+        child.addEventListener('status-change', (event: CustomEvent) => {
+          proxy.setAttribute('status', event.detail);
+          this.overflowBehavior.updateActiveStatus();
+        });
+        moreElement.querySelector('mg-menu').appendChild(proxy);
+      });
+    this.element.appendChild(moreElement);
 
     return this.element.querySelector(`[${OverflowBehaviorElements.MORE}]`);
   };
@@ -124,6 +159,9 @@ export class MgMenu {
   componentWillLoad(): void {
     this.validateDirection(this.direction);
     this.validateLabel(this.label);
+    this.validateActiveOverflow(this.activeOverflow);
+    this.validateMoreItem(this.moreitem);
+    this.messages = initLocales(this.element).messages.plusMenu;
   }
 
   /**
@@ -132,8 +170,8 @@ export class MgMenu {
    * @returns {ReturnType<typeof setTimeout>} timeout
    */
   componentDidLoad(): ReturnType<typeof setTimeout> {
-    if (this.activeOverflow) {
-      this.overflowBehavior = new OverflowBehavior(this.element, this.renderMgActionMore);
+    if (this.activeOverflow === true && isMoreItem(this.moreitem)) {
+      this.overflowBehavior = new OverflowBehavior(this.element, this.renderMgMenuMore);
       this.overflowBehavior.init();
     }
     // update props and states after componentDidLoad hook
@@ -149,7 +187,7 @@ export class MgMenu {
    *
    * @returns {void}
    */
-  componentDidRender() {
+  componentDidRender(): void {
     // store all menu-items
     this.menuItems = Array.from(this.element.children).filter(child => child.nodeName === 'MG-MENU-ITEM') as HTMLMgMenuItemElement[];
     // add menu items listeners
@@ -159,33 +197,33 @@ export class MgMenu {
   /**
    * Disconnect overflow ResizeObserver
    *
-   * @returns {void}
+   * @returns {void} run overflow resize obeserver disconnexion
    */
   disconnectedCallback(): void {
-    if (this.activeOverflow) {
+    if (this.activeOverflow === true) {
       this.overflowBehavior.disconnect();
     }
   }
 
-  renderMgMenuItemMore(): HTMLMgMenuItemElement {
-    const displayBadge = false;
-    const messages = {
-      badgeLabel: 'todo',
-      moreLabel: 'todo',
-    };
+  /**
+   * Render mg-menu-item more element for overflow behavior
+   *
+   * @returns {HTMLElement} rendered mg-menu-item more element
+   */
+  private renderMgMenuItemMore = (): HTMLMgMenuItemElement => {
+    // TODO manage display badge
+    // const displayBadge = false;
     return (
-      <mg-menu-item data-overflow-more>
-        <mg-icon icon="ellipsis-vertical" slot="image"></mg-icon>
-        <span class="sr-only" slot="label">
-          {messages.moreLabel}
+      <mg-menu-item data-overflow-more size={this.moreitem?.size}>
+        <mg-icon icon={this.moreitem?.mgIcon?.icon || 'ellipsis-vertical'} slot="image"></mg-icon>
+        <span class={{ 'sr-only': !this.moreitem?.slotLabel?.display }} slot="label">
+          {this.moreitem?.slotLabel?.label || this.messages.moreLabel}
         </span>
-        {displayBadge && <mg-badge label={messages.badgeLabel} value="!" hidden variant="primary" slot="information"></mg-badge>}
-        <mg-menu direction={Direction.VERTICAL} label={messages.moreLabel}>
-          <slot></slot>
-        </mg-menu>
+        {/* {displayBadge && <mg-badge label={messages.badgeLabel} value="!" hidden variant="primary" slot="information"></mg-badge>} */}
+        <mg-menu direction={Direction.VERTICAL} label={this.messages.moreLabel}></mg-menu>
       </mg-menu-item>
     );
-  }
+  };
 
   /**
    * Render
@@ -196,7 +234,7 @@ export class MgMenu {
     return (
       <Host role={this.isChildMenu ? 'menu' : 'menubar'} aria-label={this.label}>
         <slot></slot>
-        {this.activeOverflow && this.renderMgMenuItemMore()}
+        {this.activeOverflow && isMoreItem(this.moreitem) && this.renderMgMenuItemMore()}
       </Host>
     );
   }

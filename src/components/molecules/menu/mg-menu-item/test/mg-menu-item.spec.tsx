@@ -8,6 +8,7 @@ import { sizes, Status } from '../mg-menu-item.conf';
 import { Direction } from '../../mg-menu/mg-menu.conf';
 import { MgPopover } from '../../../mg-popover/mg-popover';
 import { mockPopperArrowError } from '../../../mg-popover/test/mg-popover.spec';
+import { forcePopoverId } from '../../../../../utils/unit.test.utils';
 
 mockPopperArrowError();
 
@@ -40,12 +41,7 @@ const getPage = async template => {
   await page.waitForChanges();
 
   Array.from(page.doc.querySelectorAll('mg-menu-item')).forEach((item, index) => {
-    const popover = item.shadowRoot.querySelector('mg-popover');
-    if (popover) {
-      const id = `mg-popover-test_${index}`;
-      popover.shadowRoot.querySelector('.mg-popover')?.setAttribute('id', id);
-      item.shadowRoot.querySelector('button')?.setAttribute('aria-controls', id);
-    }
+    forcePopoverId(item, `mg-popover-test_${index}`);
   });
 
   return page;
@@ -262,6 +258,19 @@ describe('mg-menu-item', () => {
         popover.dispatchEvent(event);
 
         expect(element.expanded).toBe(display);
+      });
+    });
+
+    describe('status-change', () => {
+      test('should emit new status, when prop status change', async () => {
+        const { rootInstance, doc } = await getPage(menuItem({ label: 'Batman' }));
+
+        const item = doc.querySelector('mg-menu-item');
+
+        const spy = jest.spyOn(rootInstance.statusChange, 'emit');
+        item.status = Status.ACTIVE;
+
+        expect(spy).toHaveBeenCalledWith(Status.ACTIVE);
       });
     });
   });

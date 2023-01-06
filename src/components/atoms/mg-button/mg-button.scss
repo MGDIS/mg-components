@@ -114,7 +114,6 @@ $button-column-gap: 0.6rem;
   border-style: solid;
   // Font (necessary for stylesheet only)
   @include font-style();
-  white-space: nowrap;
   // Other
   touch-action: manipulation;
 

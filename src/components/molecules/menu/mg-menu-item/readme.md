@@ -189,15 +189,21 @@ Child content is displayed via an **mg-tray** component.
 | ---------- | ---------- | -------------------------------------------------------------------------------- | --------------------------------------------------------------------- | ---------------- |
 | `expanded` | `expanded` | Define menu-item content expanded. Default: false.                               | `boolean`                                                             | `false`          |
 | `href`     | `href`     | Define menu-item href when defined menu-item contain an anchor instead of button | `string`                                                              | `undefined`      |
-| `size`     | `size`     | Define menu-item size. Default: "large".                                         | `"large" \| "medium" \| "regular"`                                    | `'regular'`      |
+| `size`     | `size`     | Define menu-item size. Default: "regular".                                       | `"large" \| "medium" \| "regular"`                                    | `'regular'`      |
 | `status`   | `status`   | Define menu-item status. Default: "visible"                                      | `Status.ACTIVE \| Status.DISABLED \| Status.HIDDEN \| Status.VISIBLE` | `Status.VISIBLE` |
+
+
+## Events
+
+| Event           | Description                     | Type                                                                               |
+| --------------- | ------------------------------- | ---------------------------------------------------------------------------------- |
+| `status-change` | Emited event when status change | `CustomEvent<Status.ACTIVE \| Status.DISABLED \| Status.HIDDEN \| Status.VISIBLE>` |
 
 
 ## Dependencies
 
 ### Used by
 
- - [mg-action-more](../mg-action-more)
  - [mg-menu](../mg-menu)
 
 ### Depends on
@@ -213,7 +219,6 @@ graph TD;
   mg-popover --> mg-button
   mg-popover --> mg-icon
   mg-button --> mg-icon
-  mg-action-more --> mg-menu-item
   mg-menu --> mg-menu-item
   style mg-menu-item fill:#f9f,stroke:#333,stroke-width:4px
 ```

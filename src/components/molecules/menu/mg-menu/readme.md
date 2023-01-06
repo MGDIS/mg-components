@@ -79,25 +79,24 @@ Default background color is @color-light.
 
 ## Properties
 
-| Property             | Attribute         | Description                                                            | Type                                         | Default                |
-| -------------------- | ----------------- | ---------------------------------------------------------------------- | -------------------------------------------- | ---------------------- |
-| `activeOverflow`     | `active-overflow` | Define component manage child overflow                                 | `boolean`                                    | `undefined`            |
-| `direction`          | `direction`       | Component display direction. Default: "horizontal"                     | `Direction.HORIZONTAL \| Direction.VERTICAL` | `Direction.HORIZONTAL` |
-| `label` _(required)_ | `label`           | Menu label. Include short menu description. Required for accessibility | `string`                                     | `undefined`            |
+| Property             | Attribute         | Description                                                            | Type                                                                                                                           | Default                |
+| -------------------- | ----------------- | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | ---------------------- |
+| `activeOverflow`     | `active-overflow` | Define component manage child overflow Default: false                  | `boolean`                                                                                                                      | `false`                |
+| `direction`          | `direction`       | Component display direction. Default: "horizontal"                     | `Direction.HORIZONTAL \| Direction.VERTICAL`                                                                                   | `Direction.HORIZONTAL` |
+| `label` _(required)_ | `label`           | Menu label. Include short menu description. Required for accessibility | `string`                                                                                                                       | `undefined`            |
+| `moreitem`           | --                | Define mg-menu-item "more element" used when overflow is enable        | `{ mgIcon?: { icon: string; }; slotLabel?: { label?: string; display?: boolean; }; size?: "regular" \| "large" \| "medium"; }` | `undefined`            |
 
 
 ## Dependencies
 
 ### Used by
 
- - [mg-action-more](../mg-action-more)
  - [mg-menu](.)
 
 ### Depends on
 
 - [mg-menu-item](../mg-menu-item)
 - [mg-icon](../../../atoms/mg-icon)
-- [mg-badge](../../../atoms/mg-badge)
 - [mg-menu](.)
 
 ### Graph
@@ -109,7 +108,6 @@ graph TD;
   mg-popover --> mg-button
   mg-popover --> mg-icon
   mg-button --> mg-icon
-  mg-action-more --> mg-menu
   style mg-menu fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

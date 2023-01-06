@@ -1,4 +1,5 @@
-import { Component, h, Prop, State, Host, Watch, Element } from '@stencil/core';
+import { Component, h, Prop, State, Host, Watch, Element, Event, EventEmitter } from '@stencil/core';
+import { OverflowBehaviorElements } from '../../../../utils/behaviors.utils';
 import { ClassList } from '../../../../utils/components.utils';
 import { MgMenu } from '../mg-menu/mg-menu';
 import { Direction } from '../mg-menu/mg-menu.conf';
@@ -46,10 +47,11 @@ export class MgMenuItem {
       this.navigationButtonClassList.delete(`${this.navigationButton}--${oldValue}`);
     }
     this.navigationButtonClassList.add(`${this.navigationButton}--${newValue}`);
+    this.statusChange.emit(newValue);
   }
 
   /**
-   * Define menu-item size. Default: "large".
+   * Define menu-item size. Default: "regular".
    */
   @Prop() size: MenuItemSizeType = 'regular';
   @Watch('size')
@@ -66,7 +68,7 @@ export class MgMenuItem {
    */
   @Prop({ mutable: true }) expanded = false;
   @Watch('expanded')
-  validateExpanded(newValue: MgMenuItem['expanded']) {
+  validateExpanded(newValue: MgMenuItem['expanded']): void {
     if (typeof newValue !== 'boolean') throw new Error(`<${this.name}> prop "expanded" must be a boolean.`);
 
     // if menu-item has sub-menu we have to apply some updates:
@@ -88,9 +90,18 @@ export class MgMenuItem {
     }
   }
 
-  /************
+  /**********
+   * Events *
+   *********/
+
+  /**
+   * Emited event when status change
+   */
+  @Event({ eventName: 'status-change' }) statusChange: EventEmitter<MgMenuItem['status']>;
+
+  /**********
    * States *
-   ************/
+   *********/
 
   /**
    * Component button classes
@@ -118,9 +129,9 @@ export class MgMenuItem {
     }
   }
 
-  /************
+  /***********
    * Methods *
-   ************/
+   **********/
 
   /**
    * Toggle expanded prop value
@@ -220,7 +231,8 @@ export class MgMenuItem {
     // https://stenciljs.com/docs/component-lifecycle#componentwillload
     return setTimeout(() => {
       // define menu-item context states
-      this.direction = this.element.closest('mg-menu').direction;
+      const menu = this.element.closest('mg-menu');
+      this.direction = this.element.getAttribute(OverflowBehaviorElements.MORE) !== null || menu === null ? Direction.HORIZONTAL : menu.direction;
 
       this.isInMainMenu = this.element.parentElement.closest('mg-menu-item') === null;
 
@@ -252,7 +264,7 @@ export class MgMenuItem {
    *
    * @returns {HTMLElement} HTML Element
    */
-  renderInteractiveElement(): HTMLElement {
+  private renderInteractiveElement(): HTMLElement {
     const TagName: string = this.href !== undefined ? 'a' : 'button';
     return (
       <TagName
@@ -292,7 +304,7 @@ export class MgMenuItem {
    *
    * @returns {HTMLElement} HTML Element
    */
-  renderSlot = (): HTMLElement => <slot></slot>;
+  private renderSlot = (): HTMLElement => <slot></slot>;
 
   /**
    * Render
@@ -307,7 +319,7 @@ export class MgMenuItem {
 
     return (
       <Host role="menuitem" aria-haspopup={this.hasChildren.toString()}>
-        {this.isdirection(Direction.HORIZONTAL) && this.hasChildren && !this.href ? (
+        {this.isdirection(Direction.HORIZONTAL) && this.hasChildren && this.href === undefined ? (
           <mg-popover display={this.expanded} placement="bottom-start" arrowHide={true} onDisplay-change={this.handlePopoverDisplay}>
             {this.renderInteractiveElement()}
             <div class={getContainerClasses()} slot="content">

@@ -36,15 +36,11 @@ If needed some [variables](./?path=/story/css-variables--page) are available to 
 
 ### Used by
 
- - [mg-action-more](../../molecules/menu/mg-action-more)
- - [mg-menu](../../molecules/menu/mg-menu)
  - [mg-tabs](../../molecules/mg-tabs)
 
 ### Graph
 ```mermaid
 graph TD;
-  mg-action-more --> mg-badge
-  mg-menu --> mg-badge
   mg-tabs --> mg-badge
   style mg-badge fill:#f9f,stroke:#333,stroke-width:4px
 ```

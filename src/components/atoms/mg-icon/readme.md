@@ -52,7 +52,6 @@ If needed some [variables](./?path=/story/css-variables--page) are available to 
 
 ### Used by
 
- - [mg-action-more](../../molecules/menu/mg-action-more)
  - [mg-button](../mg-button)
  - [mg-details](../../molecules/mg-details)
  - [mg-input-checkbox](../../molecules/inputs/mg-input-checkbox)
@@ -76,7 +75,6 @@ If needed some [variables](./?path=/story/css-variables--page) are available to 
 ### Graph
 ```mermaid
 graph TD;
-  mg-action-more --> mg-icon
   mg-button --> mg-icon
   mg-details --> mg-icon
   mg-input-checkbox --> mg-icon

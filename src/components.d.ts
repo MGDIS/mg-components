@@ -5,9 +5,6 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { PlacementType } from "./components/molecules/menu/mg-action-menu/mg-action-menu.conf";
-import { ItemType } from "./components/molecules/menu/mg-action-more/mg-action-more.conf";
-import { MgIcon } from "./components/atoms/mg-icon/mg-icon";
 import { BadgeVariantType } from "./components/atoms/mg-badge/mg-badge.conf";
 import { ButtonType, VariantType } from "./components/atoms/mg-button/mg-button.conf";
 import { IconSizeType, IconVariantType } from "./components/atoms/mg-icon/mg-icon.conf";
@@ -16,36 +13,12 @@ import { Width } from "./components/molecules/inputs/MgInput.conf";
 import { RadioOption } from "./components/molecules/inputs/mg-input-radio/mg-input-radio.conf";
 import { SelectOption } from "./components/molecules/inputs/mg-input-select/mg-input-select.conf";
 import { ToggleValue } from "./components/molecules/inputs/mg-input-toggle/mg-input-toggle.conf";
-import { Direction } from "./components/molecules/menu/mg-menu/mg-menu.conf";
+import { Direction, MoreItemType } from "./components/molecules/menu/mg-menu/mg-menu.conf";
 import { MenuItemSizeType, Status } from "./components/molecules/menu/mg-menu-item/mg-menu-item.conf";
 import { Placement } from "@popperjs/core";
 import { SizeType, TabItem } from "./components/molecules/mg-tabs/mg-tabs.conf";
 import { TagVariantType } from "./components/atoms/mg-tag/mg-tag.conf";
 export namespace Components {
-    interface MgActionMenu {
-        /**
-          * Define component manage child overflow
-         */
-        "disableOverflow": boolean;
-        /**
-          * Define the popover menu item size
-         */
-        "placement": PlacementType;
-    }
-    interface MgActionMore {
-        /**
-          * Define if label is display
-         */
-        "displayLabel": boolean;
-        /**
-          * Define displaied icon Default: 'ellipsis-vertical'
-         */
-        "icon": MgIcon['icon'];
-        /**
-          * Define the menu-items elements
-         */
-        "items": ItemType[];
-    }
     interface MgBadge {
         /**
           * Badge label. Include short description. Required for accessibility
@@ -893,7 +866,7 @@ export namespace Components {
     }
     interface MgMenu {
         /**
-          * Define component manage child overflow
+          * Define component manage child overflow Default: false
          */
         "activeOverflow": boolean;
         /**
@@ -904,6 +877,10 @@ export namespace Components {
           * Menu label. Include short menu description. Required for accessibility
          */
         "label": string;
+        /**
+          * Define mg-menu-item "more element" used when overflow is enable
+         */
+        "moreitem": MoreItemType;
     }
     interface MgMenuItem {
         /**
@@ -915,7 +892,7 @@ export namespace Components {
          */
         "href": string;
         /**
-          * Define menu-item size. Default: "large".
+          * Define menu-item size. Default: "regular".
          */
         "size": MenuItemSizeType;
         /**
@@ -1096,10 +1073,6 @@ export namespace Components {
         "placement": Placement;
     }
 }
-export interface MgActionMoreCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLMgActionMoreElement;
-}
 export interface MgDetailsCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLMgDetailsElement;
@@ -1144,6 +1117,10 @@ export interface MgInputToggleCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLMgInputToggleElement;
 }
+export interface MgMenuItemCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMgMenuItemElement;
+}
 export interface MgMessageCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLMgMessageElement;
@@ -1169,18 +1146,6 @@ export interface MgTabsCustomEvent<T> extends CustomEvent<T> {
     target: HTMLMgTabsElement;
 }
 declare global {
-    interface HTMLMgActionMenuElement extends Components.MgActionMenu, HTMLStencilElement {
-    }
-    var HTMLMgActionMenuElement: {
-        prototype: HTMLMgActionMenuElement;
-        new (): HTMLMgActionMenuElement;
-    };
-    interface HTMLMgActionMoreElement extends Components.MgActionMore, HTMLStencilElement {
-    }
-    var HTMLMgActionMoreElement: {
-        prototype: HTMLMgActionMoreElement;
-        new (): HTMLMgActionMoreElement;
-    };
     interface HTMLMgBadgeElement extends Components.MgBadge, HTMLStencilElement {
     }
     var HTMLMgBadgeElement: {
@@ -1356,8 +1321,6 @@ declare global {
         new (): HTMLMgTooltipElement;
     };
     interface HTMLElementTagNameMap {
-        "mg-action-menu": HTMLMgActionMenuElement;
-        "mg-action-more": HTMLMgActionMoreElement;
         "mg-badge": HTMLMgBadgeElement;
         "mg-button": HTMLMgButtonElement;
         "mg-card": HTMLMgCardElement;
@@ -1390,34 +1353,6 @@ declare global {
     }
 }
 declare namespace LocalJSX {
-    interface MgActionMenu {
-        /**
-          * Define component manage child overflow
-         */
-        "disableOverflow"?: boolean;
-        /**
-          * Define the popover menu item size
-         */
-        "placement"?: PlacementType;
-    }
-    interface MgActionMore {
-        /**
-          * Define if label is display
-         */
-        "displayLabel"?: boolean;
-        /**
-          * Define displaied icon Default: 'ellipsis-vertical'
-         */
-        "icon"?: MgIcon['icon'];
-        /**
-          * Define the menu-items elements
-         */
-        "items": ItemType[];
-        /**
-          * Emitted event when selected item change - item index number
-         */
-        "onSelected-change"?: (event: MgActionMoreCustomEvent<number>) => void;
-    }
     interface MgBadge {
         /**
           * Badge label. Include short description. Required for accessibility
@@ -2299,7 +2234,7 @@ declare namespace LocalJSX {
     }
     interface MgMenu {
         /**
-          * Define component manage child overflow
+          * Define component manage child overflow Default: false
          */
         "activeOverflow"?: boolean;
         /**
@@ -2310,6 +2245,10 @@ declare namespace LocalJSX {
           * Menu label. Include short menu description. Required for accessibility
          */
         "label": string;
+        /**
+          * Define mg-menu-item "more element" used when overflow is enable
+         */
+        "moreitem"?: MoreItemType;
     }
     interface MgMenuItem {
         /**
@@ -2321,7 +2260,11 @@ declare namespace LocalJSX {
          */
         "href"?: string;
         /**
-          * Define menu-item size. Default: "large".
+          * Emited event when status change
+         */
+        "onStatus-change"?: (event: MgMenuItemCustomEvent<MgMenuItem['status']>) => void;
+        /**
+          * Define menu-item size. Default: "regular".
          */
         "size"?: MenuItemSizeType;
         /**
@@ -2538,8 +2481,6 @@ declare namespace LocalJSX {
         "placement"?: Placement;
     }
     interface IntrinsicElements {
-        "mg-action-menu": MgActionMenu;
-        "mg-action-more": MgActionMore;
         "mg-badge": MgBadge;
         "mg-button": MgButton;
         "mg-card": MgCard;
@@ -2575,8 +2516,6 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "mg-action-menu": LocalJSX.MgActionMenu & JSXBase.HTMLAttributes<HTMLMgActionMenuElement>;
-            "mg-action-more": LocalJSX.MgActionMore & JSXBase.HTMLAttributes<HTMLMgActionMoreElement>;
             "mg-badge": LocalJSX.MgBadge & JSXBase.HTMLAttributes<HTMLMgBadgeElement>;
             "mg-button": LocalJSX.MgButton & JSXBase.HTMLAttributes<HTMLMgButtonElement>;
             "mg-card": LocalJSX.MgCard & JSXBase.HTMLAttributes<HTMLMgCardElement>;

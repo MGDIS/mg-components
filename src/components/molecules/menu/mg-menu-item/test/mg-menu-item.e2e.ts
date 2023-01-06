@@ -24,7 +24,9 @@ describe('mg-menu-item', () => {
         .map(status => {
           const template = [undefined, '#link']
             .map(href =>
-              [true, false].map(submenu => sizes.map(size => (submenu && href ? '' : createHTML({ status, size, href }, submenu && slotMenuItem, direction))).join('')).join(''),
+              [true, false]
+                .map(submenu => sizes.map(size => (submenu && href !== undefined ? '' : createHTML({ status, size, href }, submenu && slotMenuItem, direction))).join(''))
+                .join(''),
             )
             .join('');
           return `<h2>${status}<h2/><div>${template}<div>`;

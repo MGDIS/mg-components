@@ -73,11 +73,12 @@ $navigation-button-sizes: (
   }
 }
 
-:host([data-overflow-more]) {
-  .mg-menu-item__navigation-button-chevron {
+// more menu-item element
+:host([data-overflow-more]) .mg-menu-item__navigation-button {
+  &-chevron {
     display: none;
   }
-  .mg-menu-item__navigation-button-text-content ::slotted([slot='information']) {
+  &-text-content ::slotted([slot='information']) {
     margin-left: 0;
   }
 }

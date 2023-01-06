@@ -80,7 +80,7 @@ export class MgTag {
    * @returns {void}
    */
   private validateTextContent(textContent: string): void {
-    if (!textContent || textContent.trim() === '') throw new Error('<mg-tag> slot must contain a text content.');
+    if (textContent === undefined || textContent.trim() === '') throw new Error('<mg-tag> slot must contain a text content.');
   }
 
   /*************

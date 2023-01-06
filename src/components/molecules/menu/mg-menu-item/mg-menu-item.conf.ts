@@ -29,6 +29,7 @@ export type MenuItemSizeType = typeof sizes[number];
 /**
  * MgMenuItem type guard
  *
- * @param element
+ * @param {HTMLElement} element element to control type
+ * @returns {boolean} truthy if element is mg-menu-item
  */
 export const isMgMenuItem = (element: HTMLElement): element is HTMLMgMenuItemElement => element.nodeName === 'MG-MENU-ITEM';
