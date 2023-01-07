@@ -11,20 +11,22 @@
   }
 
   &__list {
+    // Display
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 0.6rem;
     margin: 0;
     padding: 0.64rem 1.8rem;
-
+    // Decoration
     list-style: none;
   }
 
   &__link {
+    // Display
     display: inline-block;
     padding: 1.2rem;
-
+    // Decoration
     color: hsl(var(--color-dark));
 
     &:hover {
