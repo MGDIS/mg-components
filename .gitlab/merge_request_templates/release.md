@@ -32,7 +32,7 @@
   - [ ] Set release date
   - [ ] Update version
 - [ ] Check version in `package.json`
-- [ ] `npm i` to update `package-lock.json`
+- [ ] `pnpm i` to update `package-lock.json`
 - [ ] Check chromatic artifact version in `.storybook/main.ts`
 
 # Merged
