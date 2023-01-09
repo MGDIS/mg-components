@@ -109,7 +109,7 @@ artifact:
   extends:
     - .install
   script:
-    - pnpm publish
+    - pnpm publish --no-git-checks
   needs:
     - dist
 
