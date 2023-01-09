@@ -195,6 +195,32 @@ exports[`mg-button Should render an info button isIcon true 1`] = `
 </mg-button>
 `;
 
+exports[`mg-button Should render an link button isIcon false 1`] = `
+<mg-button aria-label="label" role="button" tabindex="0">
+  <mock:shadow-root>
+    <div class="mg-button mg-button--link">
+      <div class="mg-button__content">
+        <slot></slot>
+      </div>
+    </div>
+  </mock:shadow-root>
+  Text button
+</mg-button>
+`;
+
+exports[`mg-button Should render an link button isIcon true 1`] = `
+<mg-button aria-label="label" role="button" tabindex="0">
+  <mock:shadow-root>
+    <div class="mg-button mg-button--icon mg-button--link">
+      <div class="mg-button__content">
+        <slot></slot>
+      </div>
+    </div>
+  </mock:shadow-root>
+  Text button
+</mg-button>
+`;
+
 exports[`mg-button Should render an primary button isIcon false 1`] = `
 <mg-button aria-label="label" role="button" tabindex="0">
   <mock:shadow-root>

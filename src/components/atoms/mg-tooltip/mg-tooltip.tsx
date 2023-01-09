@@ -248,8 +248,7 @@ export class MgTooltip {
     // Get interactive element
     const interactiveElements = ['a', 'button', 'input', 'textarea', 'select']; //! Might needs updates
     const interactiveElement =
-      (this.element.shadowRoot.querySelector(interactiveElements.join(',')) as HTMLElement) ||
-      (slotElement.shadowRoot?.querySelector(interactiveElements.join(',')) as HTMLElement);
+      (this.element.shadowRoot.querySelector(interactiveElements.join(',')) as HTMLElement) || slotElement.shadowRoot?.querySelector(interactiveElements.join(','));
 
     // define selected element to become tooltip selector
     this.tooltipedElement = interactiveElement || slotElement;

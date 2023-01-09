@@ -13,9 +13,9 @@ export class MgButton {
    ************/
 
   private onClickElementFn = null;
-  private classDisabled = 'mg-button--disabled';
-  private classLoading = 'mg-button--loading';
-  private classFullWidth = 'mg-button--full-width';
+  private readonly classDisabled = 'mg-button--disabled';
+  private readonly classLoading = 'mg-button--loading';
+  private readonly classFullWidth = 'mg-button--full-width';
 
   /**************
    * Decorators *
@@ -63,7 +63,7 @@ export class MgButton {
    */
   @Prop({ mutable: true }) fullWidth = false;
   @Watch('fullWidth')
-  validateFullWidth(newValue) {
+  validateFullWidth(newValue: MgButton['fullWidth']): void {
     if (newValue && this.isIcon) {
       throw new Error('<mg-button> prop "fullWidth" cannot be used with prop "isIcon".');
     } else if (newValue) {
@@ -84,7 +84,7 @@ export class MgButton {
    */
   @Prop({ mutable: true }) disabled: boolean;
   @Watch('disabled')
-  disabledHandler(isDisabled: boolean): void {
+  disabledHandler(isDisabled: MgButton['disabled']): void {
     // Remove loading when enable
     // Will be set back onclick
     if (!isDisabled && this.disableOnClick) {
@@ -119,7 +119,7 @@ export class MgButton {
    */
   @State() loading = false;
   @Watch('loading')
-  loadingHandler(newValue: boolean): void {
+  loadingHandler(newValue: MgButton['loading']): void {
     // we add loading style if it newvalue is true else we remove it
     if (newValue) {
       this.classList.add(this.classLoading);

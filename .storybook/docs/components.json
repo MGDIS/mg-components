@@ -1,9 +1,9 @@
 {
-  "timestamp": "2022-12-02T10:48:56",
+  "timestamp": "2023-01-06T12:53:46",
   "compiler": {
     "name": "@stencil/core",
-    "version": "2.18.1",
-    "typescriptVersion": "4.7.4"
+    "version": "2.20.0",
+    "typescriptVersion": "4.8.4"
   },
   "components": [
     {
@@ -272,7 +272,7 @@
         },
         {
           "name": "variant",
-          "type": "\"danger\" | \"danger-alt\" | \"flat\" | \"info\" | \"primary\" | \"secondary\" | \"success\"",
+          "type": "\"danger\" | \"danger-alt\" | \"flat\" | \"info\" | \"link\" | \"primary\" | \"secondary\" | \"success\"",
           "mutable": false,
           "attr": "variant",
           "reflectToAttr": false,
@@ -294,6 +294,10 @@
             },
             {
               "value": "info",
+              "type": "string"
+            },
+            {
+              "value": "link",
               "type": "string"
             },
             {
@@ -354,7 +358,7 @@
       "filePath": "./src/components/atoms/mg-card/mg-card.tsx",
       "encapsulation": "shadow",
       "tag": "mg-card",
-      "readme": "## Specs\n\n### Style\n\n![](./mg-card/doc/img/mg-card-style.png)\n\n1. Border radius: 5px\n2. Background: [@color-light](./?path=/docs/style-colors--page)\n3. Border: 1px, [@color-dark](./?path=/docs/style-colors--page) with alpha at 5%\n4. Shadow: [@shadow](./?path=/docs/style-colors--page)\n\n### Spacing\n\n![](./mg-card/doc/img/mg-card-spacing.png)\n\nA padding of 16px is applied around the content\n\n### Size\n\n![](./mg-card/doc/img/mg-card-size.png)\n\n1. Ajusting with the content\n2. Ajusting with its parent (100%)\n\n## CSS Variables\n\nIf needed some [variables](./?path=/story/css-variables--page) are available to customize the component:\n\n- `--mg-card-padding`: define car padding, default: `1.6rem`\n- `--mg-card-border-radius`: define card border radius, default: `0.5rem`\n- `--mg-card-background`: define card background, default: `hsl(var(--color-light))`\n- `--mg-card-border`: define card border, default: `0.1rem solid hsla(var(--color-dark), 5%)`\n- `--mg-card-box-shadow`: define card shadow, default: `var(--box-shadow)`\n",
+      "readme": "## Specs\n\n### Style\n\n![](./mg-card/doc/img/mg-card-style.png)\n\n1. Border radius: 5px\n2. Background: [@color-light](./?path=/docs/style-colors--page)\n3. Border: 1px, [@color-dark](./?path=/docs/style-colors--page) with alpha at 5%\n4. Shadow: [@shadow](./?path=/docs/style-colors--page)\n\n### Spacing\n\n![](./mg-card/doc/img/mg-card-spacing.png)\n\nA padding of 16px is applied around the content\n\n### Size\n\n![](./mg-card/doc/img/mg-card-size.png)\n\n1. Ajusting with the content\n2. Ajusting with its parent (100%)\n\n## CSS Variables\n\nIf needed some [variables](./?path=/story/css-variables--page) are available to customize the component:\n\n- `--mg-card-padding`: define car padding, default: `1.6rem`\n- `--mg-card-border-radius`: define card border radius, default: `0.5rem`\n- `--mg-card-background`: define card background, default: `hsl(var(--color-light))`\n- `--mg-card-border`: define card border, default: `0.1rem solid hsla(var(--color-dark), 5%)`\n- `--mg-card-box-shadow`: define card shadow, default: `var(--box-shadow)`\n- `--mg-card-box-overflow`: define card overflow, default: `unset`\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -365,9 +369,27 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [],
+      "dependents": [
+        "mg-message",
+        "mg-modal",
+        "mg-panel",
+        "mg-popover"
+      ],
       "dependencies": [],
-      "dependencyGraph": {}
+      "dependencyGraph": {
+        "mg-message": [
+          "mg-card"
+        ],
+        "mg-modal": [
+          "mg-card"
+        ],
+        "mg-panel": [
+          "mg-card"
+        ],
+        "mg-popover": [
+          "mg-card"
+        ]
+      }
     },
     {
       "filePath": "./src/components/atoms/mg-character-left/mg-character-left.tsx",
@@ -937,7 +959,7 @@
       "filePath": "./src/components/molecules/mg-illustrated-message/mg-illustrated-message.tsx",
       "encapsulation": "shadow",
       "tag": "mg-illustrated-message",
-      "readme": "## Specs\n\n### Vertical\n\n#### Anatomy\n\n![](./mg-illustrated-message/doc/img/mg-illustrated-message-vertical-anatomy.png)\n\nComponent is built with :\n\n- an illustration\n- a title\n\nOptionnally :\n\n- one or more _details_ slot which accept HTML content (text, button...)\n\n#### Style\n\n- _title_ : Open Sans, 20px, Regular\n- All contents are centered.\n\n#### Spacing\n\n![](./mg-illustrated-message/doc/img/mg-illustrated-message-vertical-spacing.png).\n\n30px between the bottom of the _illustration_ and top of the _title_.\n\n20px for the top of the _details_ zone.\n\n15px between left/right border of the screen and the component\n\n#### Sizing\n\nThe maximum width of the component is 475px.\n\nThe maximum height of the illustration is 335px. Illustration must keep its proportionnality.\nIllustration can be displayed in \"small\" size so its maximum height is set to 60px.\n\n![](./mg-illustrated-message/doc/img/mg-illustrated-message-vertical-sizing-small.png)\n\n### Horizontal\n\n#### Anatomy\n\n![](./mg-illustrated-message/doc/img/mg-illustrated-message-horizontal-anatomy.png)\n\n#### Spacing\n\n![](./mg-illustrated-message/doc/img/mg-illustrated-message-horizontal-spacing.png)\n\nBy default the margin is set to 40px on top and bottom. It's possible to modify this props.\n\n![](./mg-illustrated-message/doc/img/mg-illustrated-message-horizontal-spacing-2.png)\n\nBetween the image and the group title/action.\n\n#### Alignment\n\n![](./mg-illustrated-message/doc/img/mg-illustrated-message-horizontal-alignment.png)\n\nThe image/illustration and the group tittle/details/action are vertically centred between them in the background.\n\n#### Responsive\n\nWhen there is not enough space the component take is default appearance.\n\n## CSS Variables\n\nIf needed some [variables](./?path=/story/css-variables--page) are available to customize the component:\n\n- `--mg-illustrated-message-padding-vertical`: define component vertical padding, default: `4rem`\n",
+      "readme": "## Specs\n\n### Vertical\n\n#### Anatomy\n\n![](./mg-illustrated-message/doc/img/mg-illustrated-message-vertical-anatomy.png)\n\nComponent is built with :\n\n- an illustration\n- a title\n\nOptionnally :\n\n- one or more _details_ slot which accept HTML content (text, button...)\n\n#### Style\n\n- _title_ : Open Sans, 20px, Regular\n- All contents are centered.\n\n#### Spacing\n\n![](./mg-illustrated-message/doc/img/mg-illustrated-message-vertical-spacing.png).\n\n30px between the bottom of the _illustration_ and top of the _title_.\n\n20px for the top of the _details_ zone.\n\n15px between left/right border of the screen and the component\n\n#### Sizing\n\nThe maximum width of the component is 475px.\n\nThe maximum height of the illustration is 184px. Illustration must keep its proportionnality.\nIllustration can be displayed in \"small\" size so its maximum height is set to 60px.\n\n![](./mg-illustrated-message/doc/img/mg-illustrated-message-vertical-sizing-small.png)\n\n### Horizontal\n\n#### Anatomy\n\n![](./mg-illustrated-message/doc/img/mg-illustrated-message-horizontal-anatomy.png)\n\n#### Spacing\n\n![](./mg-illustrated-message/doc/img/mg-illustrated-message-horizontal-spacing.png)\n\nBy default the margin is set to 40px on top and bottom. It's possible to modify this props.\n\n![](./mg-illustrated-message/doc/img/mg-illustrated-message-horizontal-spacing-2.png)\n\nBetween the image and the group title/action.\n\n#### Alignment\n\n![](./mg-illustrated-message/doc/img/mg-illustrated-message-horizontal-alignment.png)\n\nThe image/illustration and the group tittle/details/action are vertically centred between them in the background.\n\n#### Responsive\n\nWhen there is not enough space the component take is default appearance.\n\n## CSS Variables\n\nIf needed some [variables](./?path=/story/css-variables--page) are available to customize the component:\n\n- `--mg-illustrated-message-padding-vertical`: define component vertical padding, default: `4rem`\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -4595,11 +4617,13 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
+        "mg-card",
         "mg-icon",
         "mg-button"
       ],
       "dependencyGraph": {
         "mg-message": [
+          "mg-card",
           "mg-icon",
           "mg-button"
         ],
@@ -4612,7 +4636,7 @@
       "filePath": "./src/components/molecules/mg-modal/mg-modal.tsx",
       "encapsulation": "shadow",
       "tag": "mg-modal",
-      "readme": "## Anatomy\n\nA modal has :\n\n- a closing cross at the top right corner\n- a title\n- a body composed of fields or a message\n- a validation button\n- a cancel button\n\n## Behavior\n\nWhen clicking on the cross, the cancel button or the `<Escape>` key is pressed the modal closes and no processing is done.\n\nWhen the validation button is clicked, processing is performed and the modal closes.\n\nAs long as the user does not press one of these three buttons, the modal does not close.\n\nThe modal allows focusing the attention on what it is asking: a confirmation or a cancellation.  \nIn this sense the rest of the screen should not be accessible:\n\n- it is hidden by a backdrop\n- clicking on the backdrop does not close the modal\n\nThe title of the modal has a written name.\nEx : Add value\n\nThe wording of the validation button is the infinitive verb of the current action.  \nAvoid the verb \"Validate\" if a more explicit one is possible.  \nEx : \"Add\" for adding a value, \"Delete\" to delete a value, \"Modify\" to modify a value.\n\n### Icon or not icon on the action buttons ?\n\nIn the case of a targeted action, the icon can help to understand or even reassure > check icon that validates the action.\n\nIn the case of a confirmation/cancellation choice: not necessary or even superfluous > the term \"Save/Cancel\" is enough.\n\nEx: if I put a check in front of the term \"Delete\" which is the validation button of a deletion, the check refers to positive while the action of deletion is negative, and the Cancel button also, so not to add to the confusion, do not put an icon...\n\n## Specs\n\n### Shapes\n\n![](./mg-modal/doc/img/mg-modal-shapes.png)\n\n### Fonts\n\n![](./mg-modal/doc/img/mg-modal-fonts.png)\n\n### Spacing\n\n#### Spacing between edges and content\n\n![](./mg-modal/doc/img/mg-modal-spaces-borders.png)\n\n#### Spacing between title, text and buttons\n\n![](./mg-modal/doc/img/mg-modal-spaces-slot.png)\n![](./mg-modal/doc/img/mg-modal-spaces-slot-title.png)\n\n#### Spacing between the title and the cross button\n\n![](./mg-modal/doc/img/mg-modal-spaces-title.png)\n![](./mg-modal/doc/img/mg-modal-spaces-title-multiline.png)\n\n### Alignments\n\n![](./mg-modal/doc/img/mg-modal-alignments.png)\n\n### Sizes\n\n![](./mg-modal/doc/img/mg-modal-sizes.png)\n\n### Colors\n\n![](./mg-modal/doc/img/mg-modal-colors.png)\n\n### Backdrop\n\nColor: [@color-light](./?path=/docs/style-colors--page) with an opacity set to 85%.\n\n## CSS Variables\n\nIf needed some [variables](./?path=/story/css-variables--page) are available to customize the component:\n\n`--mg-modal-border-radius`: Define border radius modal, default: `0.5rem`\n`--mg-modal-title-font-size`: Define modal title font size, default: `1.8rem`\n`--mg-modal-content-font-size`: Define modall content font size, default: `1.2rem`\n",
+      "readme": "## Anatomy\n\nA modal has :\n\n- a closing cross at the top right corner\n- a title\n- a body composed of fields or a message\n- a validation button\n- a cancel button\n\n## Behavior\n\nWhen clicking on the cross, the cancel button or the `<Escape>` key is pressed the modal closes and no processing is done.\n\nWhen the validation button is clicked, processing is performed and the modal closes.\n\nAs long as the user does not press one of these three buttons, the modal does not close.\n\nThe modal allows focusing the attention on what it is asking: a confirmation or a cancellation.  \nIn this sense the rest of the screen should not be accessible:\n\n- it is hidden by a backdrop\n- clicking on the backdrop does not close the modal\n\nThe title of the modal has a written name.\nEx : Add value\n\nThe wording of the validation button is the infinitive verb of the current action.  \nAvoid the verb \"Validate\" if a more explicit one is possible.  \nEx : \"Add\" for adding a value, \"Delete\" to delete a value, \"Modify\" to modify a value.\n\n### Icon or not icon on the action buttons ?\n\nIn the case of a targeted action, the icon can help to understand or even reassure > check icon that validates the action.\n\nIn the case of a confirmation/cancellation choice: not necessary or even superfluous > the term \"Save/Cancel\" is enough.\n\nEx: if I put a check in front of the term \"Delete\" which is the validation button of a deletion, the check refers to positive while the action of deletion is negative, and the Cancel button also, so not to add to the confusion, do not put an icon...\n\n## Specs\n\n### Shapes\n\n![](./mg-modal/doc/img/mg-modal-shapes.png)\n\n### Fonts\n\n![](./mg-modal/doc/img/mg-modal-fonts.png)\n\n### Spacing\n\n#### Spacing between edges and content\n\n![](./mg-modal/doc/img/mg-modal-spaces-borders.png)\n\n#### Spacing between title, text and buttons\n\n![](./mg-modal/doc/img/mg-modal-spaces-slot.png)\n![](./mg-modal/doc/img/mg-modal-spaces-slot-title.png)\n\n#### Spacing between the title and the cross button\n\n![](./mg-modal/doc/img/mg-modal-spaces-title.png)\n![](./mg-modal/doc/img/mg-modal-spaces-title-multiline.png)\n\n### Alignments\n\n![](./mg-modal/doc/img/mg-modal-alignments.png)\n\n### Sizes\n\n![](./mg-modal/doc/img/mg-modal-sizes.png)\n\n### Colors\n\n![](./mg-modal/doc/img/mg-modal-colors.png)\n\n### Backdrop\n\nColor: [@color-light](./?path=/docs/style-colors--page) with an opacity set to 85%.\n\n## CSS Variables\n\nIf needed some [variables](./?path=/story/css-variables--page) are available to customize the component:\n\n- `--mg-modal-border-radius`: Define border radius modal, default: `0.5rem`\n- `--mg-modal-title-font-size`: Define modal title font size, default: `1.8rem`\n- `--mg-modal-content-font-size`: Define modall content font size, default: `1.2rem`\n",
       "docs": "A modal has :\n\n- a closing cross at the top right corner\n- a title\n- a body composed of fields or a message\n- a validation button\n- a cancel button",
       "docsTags": [],
       "usage": {},
@@ -4719,11 +4743,13 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
+        "mg-card",
         "mg-button",
         "mg-icon"
       ],
       "dependencyGraph": {
         "mg-modal": [
+          "mg-card",
           "mg-button",
           "mg-icon"
         ],
@@ -4851,7 +4877,7 @@
       "filePath": "./src/components/molecules/mg-panel/mg-panel.tsx",
       "encapsulation": "shadow",
       "tag": "mg-panel",
-      "readme": "## Behavior\n\nThe left zone of the header displays the item label, this zone is clickable and allows the user to unfold/fold the panel.\nIf no content is available, the panel cannot be unfolded.\nWhen the panel is unfolded, the icon is vertically inverted.\n\nThe right area of the header can accommodate any component.\n\n## Anatomy\n\n![](./mg-panel/doc/img/mg-panel-anatomy.png)\n\n## Specs\n\n### Sizing\n\n![](./mg-panel/doc/img/mg-panel-sizing.png)\n\n### Spacing\n\n![](./mg-panel/doc/img/mg-panel-spacing.png)\n\nSlot content padding can be customized using the --mg-panel-content-padding CSS variable, default is 15px.\n\n### Alignments\n\n![](./mg-panel/doc/img/mg-panel-align.png)\n\n### Styles\n\n![](./mg-panel/doc/img/mg-panel-style.png)\n\n## CSS Variables\n\nIf needed some [variables](./?path=/story/css-variables--page) are available to customize the component:\n\n`--mg-panel-border-radius`: Define panel border radius, default: `0.5rem`\n`--mg-panel-background`: Define panel background, default: `var(--color-info-h) var(--color-info-s) calc(var(--color-info-l) + 68%)`\n`--mg-panel-box-shadow`: Define panel box shadow, default: `var(--box-shadow)`\n`--mg-panel-content-padding`: Define panel content padding, default: `1.5rem`\n",
+      "readme": "## Behavior\n\nThe left zone of the header displays the item label, this zone is clickable and allows the user to unfold/fold the panel.\nIf no content is available, the panel cannot be unfolded.\nWhen the panel is unfolded, the icon is vertically inverted.\n\nThe right area of the header can accommodate any component.\n\n## Anatomy\n\n![](./mg-panel/doc/img/mg-panel-anatomy.png)\n\n## Specs\n\n### Sizing\n\n![](./mg-panel/doc/img/mg-panel-sizing.png)\n\n### Spacing\n\n![](./mg-panel/doc/img/mg-panel-spacing.png)\n\nSlot content padding can be customized using the --mg-panel-content-padding CSS variable, default is 15px.\n\n### Alignments\n\n![](./mg-panel/doc/img/mg-panel-align.png)\n\n### Styles\n\n![](./mg-panel/doc/img/mg-panel-style.png)\n\n## CSS Variables\n\nIf needed some [variables](./?path=/story/css-variables--page) are available to customize the component:\n\n- `--mg-panel-border-radius`: Define panel border radius, default: `0.5rem`\n- `--mg-panel-background`: Define panel background, default: `var(--color-info-h) var(--color-info-s) calc(var(--color-info-l) + 68%)`\n- `--mg-panel-box-shadow`: Define panel box shadow, default: `var(--box-shadow)`\n- `--mg-panel-content-padding`: Define panel content padding, default: `1.5rem`\n",
       "docs": "The left zone of the header displays the item label, this zone is clickable and allows the user to unfold/fold the panel.\nIf no content is available, the panel cannot be unfolded.\nWhen the panel is unfolded, the icon is vertically inverted.\n\nThe right area of the header can accommodate any component.",
       "docsTags": [],
       "usage": {},
@@ -5001,13 +5027,15 @@
       "dependencies": [
         "mg-button",
         "mg-icon",
-        "mg-input-text"
+        "mg-input-text",
+        "mg-card"
       ],
       "dependencyGraph": {
         "mg-panel": [
           "mg-button",
           "mg-icon",
-          "mg-input-text"
+          "mg-input-text",
+          "mg-card"
         ],
         "mg-button": [
           "mg-icon"
@@ -5024,7 +5052,7 @@
       "filePath": "./src/components/molecules/mg-popover/mg-popover.tsx",
       "encapsulation": "shadow",
       "tag": "mg-popover",
-      "readme": "## Usage\n\nA popover is more enhanced than a tooltip but less blocking than a modal.\n\n## Behavior\n\nThe window is displayed when clicking on its trigger.\n\nThe window is displayed next to its trigger, usually below it. A triangle (in css) makes the link between the trigger and the window.\n\nThe window closes:\n\n- when clicking on its trigger\n- clicking outside the window\n- when the ESC key is pressed\n- when clicking on the close button at the top right corner\n\nThe size of the window is determined by the content (set a maximum size to avoid problems).\n\nThe title and the close button are optional.\n\n## Specs\n\n### Fonts\n\n![](./mg-popover/doc/img/mg-popover-fonts.png)\n\n### Spacing\n\n![](./mg-popover/doc/img/mg-popover-spacing.png)\n\n### Sizing\n\n![](./mg-popover/doc/img/mg-popover-sizing.png)\n\n### Alignments\n\n![](./mg-popover/doc/img/mg-popover-align.png)\n\n### Positioning\n\n#### Item\n\n![](./mg-popover/doc/img/mg-popover-position.png)\n\n#### Screen\n\n![](./mg-popover/doc/img/mg-popover-position-screen.png)\n\n### Style\n\n![](./mg-popover/doc/img/mg-popover-style.png)\n\n## CSS Variables\n\nIf needed some [variables](./?path=/story/css-variables--page) are available to customize the component:\n\n`--mg-popover-background-color`: Define popover background color, default: `var(--color-light)`\n`--mg-popover-font-color`: Define popover font color, default: `var(--color-font-dark)`\n`--mg-popover-title-font-size`: Define popover title font size, default: `1.4rem`\n",
+      "readme": "## Usage\n\nA popover is more enhanced than a tooltip but less blocking than a modal.\n\n## Behavior\n\nThe window is displayed when clicking on its trigger.\n\nThe window is displayed next to its trigger, usually below it. A triangle (in css) makes the link between the trigger and the window.\n\nThe window closes:\n\n- when clicking on its trigger\n- clicking outside the window\n- when the ESC key is pressed\n- when clicking on the close button at the top right corner\n\nThe size of the window is determined by the content (set a maximum size to avoid problems).\n\nThe title and the close button are optional.\n\n## Specs\n\n### Fonts\n\n![](./mg-popover/doc/img/mg-popover-fonts.png)\n\n### Spacing\n\n![](./mg-popover/doc/img/mg-popover-spacing.png)\n\n### Sizing\n\n![](./mg-popover/doc/img/mg-popover-sizing.png)\n\n### Alignments\n\n![](./mg-popover/doc/img/mg-popover-align.png)\n\n### Positioning\n\n#### Item\n\n![](./mg-popover/doc/img/mg-popover-position.png)\n\n#### Screen\n\n![](./mg-popover/doc/img/mg-popover-position-screen.png)\n\n### Style\n\n![](./mg-popover/doc/img/mg-popover-style.png)\n\n## CSS Variables\n\nIf needed some [variables](./?path=/story/css-variables--page) are available to customize the component:\n\n- `--mg-popover-background-color`: Define popover background color, default: `var(--color-light)`\n- `--mg-popover-font-color`: Define popover font color, default: `var(--color-font-dark)`\n- `--mg-popover-title-font-size`: Define popover title font size, default: `1.4rem`\n",
       "docs": "A popover is more enhanced than a tooltip but less blocking than a modal.",
       "docsTags": [],
       "usage": {},
@@ -5190,11 +5218,13 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
+        "mg-card",
         "mg-button",
         "mg-icon"
       ],
       "dependencyGraph": {
         "mg-popover": [
+          "mg-card",
           "mg-button",
           "mg-icon"
         ],
@@ -5202,6 +5232,41 @@
           "mg-icon"
         ]
       }
+    },
+    {
+      "filePath": "./src/components/molecules/mg-skip-links/mg-skip-links.tsx",
+      "encapsulation": "shadow",
+      "tag": "mg-skip-links",
+      "readme": "## Behavior\n\nOn the first tab, a banner with the link(s) is displayed by pushing the content down.\n\nThe number of links will be added according to the content of the page.\n\n## Specs\n\n### Sizing\n\nThe minimum height of the banner is 55px.\n\n### Spacing\n\nItems have an internal margin of 12px and are spaced 6px apart.\n\n### Styling\n\n- The links are in [@color-dark](./?path=/docs/style-colors--page).\n- The background of the banner is in [@color-light](./?path=/docs/style-colors--page).\n\n#### On hover\n\nThe background of the item takes the color [@color-dark](./?path=/docs/style-colors--page) at 10% opacity.\n\n#### Focus taking\n\nNative browser behavior is retained.\n\n## Code example\n\nYou need to press <kbd>Tab</kbd> in the code example to see the component.\n",
+      "docs": "On the first tab, a banner with the link(s) is displayed by pushing the content down.\n\nThe number of links will be added according to the content of the page.",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "links",
+          "type": "SkipLink[]",
+          "mutable": true,
+          "reflectToAttr": false,
+          "docs": "Skip links",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "SkipLink[]"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
     },
     {
       "filePath": "./src/components/molecules/mg-tabs/mg-tabs.tsx",
@@ -5335,7 +5400,7 @@
       "filePath": "./src/components/atoms/mg-tag/mg-tag.tsx",
       "encapsulation": "shadow",
       "tag": "mg-tag",
-      "readme": "## Specs\n\n![](./mg-tag/doc/img/mg-tag-specs.png)\n\n## Theming\n\n![](./mg-tag/doc/img/mg-tag-theming.png)\n\n## CSS Variables\n\nIf needed some [variables](./?path=/story/css-variables--page) are available to customize the component:\n\n### Global\n\n- `--mg-tag-height`: Define tag min height, default: `2.3rem`\n- `--mg-tag-border-radius`: Define tag border radius, default: `0.5rem`\n- `--mg-tag-font-size`: Define tag font size, default: `1.2rem`\n\n### Variant\n\nVariants `primary`, `secondary`, `success`, `warning`, `danger`, `info` can be customized by changing the global [colors](./?path=/docs/style-colors--page).\n\n",
+      "readme": "## Specs\n\n ![](./mg-tag/doc/img/mg-tag-specs.png) \n\n### Fill / Outline tags\n\n#### Colors \n\n![](./mg-tag/doc/img/mg-tag-colors.png)\n\nIcons take the color of the label.\n\n### Soft tags\n\n#### Font \n\n![](./mg-tag/doc/img/mg-tag-font.png) \n\nThey are not on *SemiBold but Regular*.\n\n#### Colors\n\n![](./mg-tag/doc/img/mg-tag-icons-colors.png) \n\n1. Icons takes the color of the tag variant.\n2. Labels are **@dark** for all.\n3. Color background is *90% lightness* of the tag variant. \n\n#### Rules\n\n![](./mg-tag/doc/img/mg-tag-use.png) \n\nAll must have label for accessibility. \nThis is not possible only for software tags. \nFor \"normal\" tags only a pictogram can be used because the contrast is sufficient.\n\n## Theming\n\n![](./mg-tag/doc/img/mg-tag-variants.png) \n\n### With Icons\n\n![](./mg-tag/doc/img/mg-tag-icons.png) \n\n## CSS Variables\n\nIf needed some [variables](./?path=/story/css-variables--page) are available to customize the component:\n\n### Global\n\n- `--mg-tag-height`: Define tag min height, default: `2.3rem`\n- `--mg-tag-border-radius`: Define tag border radius, default: `0.5rem`\n- `--mg-tag-font-size`: Define tag font size, default: `1.2rem`\n\n### Variant\n\nVariants `primary`, `secondary`, `success`, `warning`, `danger`, `info` can be customized by changing the global [colors](./?path=/docs/style-colors--page).\n\n",
       "docs": "![](./mg-tag/doc/img/mg-tag-specs.png)",
       "docsTags": [],
       "usage": {},
@@ -5346,7 +5411,23 @@
           "mutable": false,
           "attr": "outline",
           "reflectToAttr": false,
-          "docs": "Define if button is using outline style",
+          "docs": "Define if tag is using outline style",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "soft",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "soft",
+          "reflectToAttr": false,
+          "docs": "Define if tag is using soft style",
           "docsTags": [],
           "values": [
             {
@@ -5358,15 +5439,36 @@
         },
         {
           "name": "variant",
-          "type": "string",
+          "type": "\"danger\" | \"info\" | \"primary\" | \"secondary\" | \"success\" | \"warning\"",
           "mutable": false,
           "attr": "variant",
           "reflectToAttr": false,
-          "docs": "Define button variant",
+          "docs": "Define tag variant",
           "docsTags": [],
           "default": "variants[0]",
           "values": [
             {
+              "value": "danger",
+              "type": "string"
+            },
+            {
+              "value": "info",
+              "type": "string"
+            },
+            {
+              "value": "primary",
+              "type": "string"
+            },
+            {
+              "value": "secondary",
+              "type": "string"
+            },
+            {
+              "value": "success",
+              "type": "string"
+            },
+            {
+              "value": "warning",
               "type": "string"
             }
           ],

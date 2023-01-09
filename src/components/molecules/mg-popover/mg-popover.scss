@@ -1,6 +1,10 @@
-$mg-popover-padding-vertivcal: 1.5rem;
+:host {
+  --mg-card-padding: 1.5rem;
+  --mg-card-border: none;
+  --mg-card-border-radius: 0.5rem;
+  --mg-card-background: hsl(var(--mg-popover-background-color));
+  position: relative;
 
-mg-popover {
   display: contents;
   &::slotted(*) {
     display: inline-block;
@@ -8,16 +12,13 @@ mg-popover {
 }
 
 .mg-popover {
-  // Display
   display: none;
-  padding: $mg-popover-padding-vertivcal;
-  z-index: 1000;
-  // Decoration
-  border-radius: 0.5rem;
-  background-color: hsl(var(--mg-popover-background-color));
-  box-shadow: var(--box-shadow);
-  // Font
+  z-index: 2000;
   color: hsl(var(--mg-popover-font-color));
+
+  mg-card {
+    z-index: -1;
+  }
 
   &[data-show] {
     display: block;
@@ -36,9 +37,9 @@ mg-popover {
     position: absolute;
     width: 2rem;
     height: 2rem;
-    z-index: -1;
+    z-index: 2000;
     // Decoration
-    background: inherit;
+    background: hsl(var(--mg-popover-background-color));
   }
 
   &__arrow {

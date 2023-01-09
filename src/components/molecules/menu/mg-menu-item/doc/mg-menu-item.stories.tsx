@@ -1,5 +1,6 @@
 import { h } from '@stencil/core';
 import { filterArgs } from '../../../../../../.storybook/utils';
+import { Direction } from '../../mg-menu/mg-menu.conf';
 
 export default {
   component: 'mg-menu-item',
@@ -19,6 +20,13 @@ export const MgMenuItem = Template.bind({});
 
 MgMenuItem.args = {
   identifier: 'identifier',
+  slot: <span slot="label">My label</span>,
+};
+export const MgMenuItemAsLink = Template.bind({});
+
+MgMenuItemAsLink.args = {
+  identifier: 'identifier',
+  href: './',
   slot: <span slot="label">My label</span>,
 };
 
@@ -56,7 +64,7 @@ MgMenuItemWhithSubmenu.args = {
   ...MgMenuItem.args,
   slot: [
     <span slot="label">My label</span>,
-    <mg-menu-vertical label="submenu">
+    <mg-menu direction={Direction.VERTICAL} label="submenu">
       <mg-menu-item>
         <span slot="label">Subitem 1</span>
       </mg-menu-item>
@@ -69,6 +77,6 @@ MgMenuItemWhithSubmenu.args = {
         <mg-icon icon="user" slot="illustration"></mg-icon>
         <mg-badge value="2" label="hello" slot="information"></mg-badge>
       </mg-menu-item>
-    </mg-menu-vertical>,
+    </mg-menu>,
   ],
 };

@@ -14,7 +14,7 @@ export class MgMessage {
    ************/
 
   // Classes
-  private classHide = 'mg-message--hide';
+  private readonly classHide = 'mg-message--hide';
 
   // IDs
   private closeButtonId = '';
@@ -186,27 +186,30 @@ export class MgMessage {
   render(): HTMLElement {
     return (
       <div id={this.identifier} class={this.classList.join()} role={this.variant === 'info' ? 'status' : 'alert'}>
-        <span class="mg-message__icon">
-          <mg-icon icon={this.getIcon()}></mg-icon>
-        </span>
-        <div class="mg-message__content">
-          <span class="mg-message__content-slot">
-            <slot></slot>
+        <mg-card>
+          <span class="mg-message__bar"></span>
+          <span class="mg-message__icon">
+            <mg-icon icon={this.getIcon()}></mg-icon>
           </span>
-          {this.hasActions && <span class="mg-message__content-separator"></span>}
-          {this.hasActions && (
-            <span class="mg-message__content-actions-slot">
-              <slot name="actions"></slot>
+          <div class="mg-message__content">
+            <span class="mg-message__content-slot">
+              <slot></slot>
+            </span>
+            {this.hasActions && <span class="mg-message__content-separator"></span>}
+            {this.hasActions && (
+              <span class="mg-message__content-actions-slot">
+                <slot name="actions"></slot>
+              </span>
+            )}
+          </div>
+          {this.closeButton && (
+            <span class="mg-message__close-button">
+              <mg-button identifier={this.closeButtonId} is-icon variant="flat" label={this.messages.message.closeButton} onClick={this.handleClose}>
+                <mg-icon icon="cross"></mg-icon>
+              </mg-button>
             </span>
           )}
-        </div>
-        {this.closeButton && (
-          <span class="mg-message__close-button">
-            <mg-button identifier={this.closeButtonId} is-icon variant="flat" label={this.messages.message.closeButton} onClick={this.handleClose}>
-              <mg-icon icon="cross"></mg-icon>
-            </mg-button>
-          </span>
-        )}
+        </mg-card>
       </div>
     );
   }

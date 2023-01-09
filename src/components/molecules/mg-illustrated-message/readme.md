@@ -34,7 +34,7 @@ Optionnally :
 
 The maximum width of the component is 475px.
 
-The maximum height of the illustration is 335px. Illustration must keep its proportionnality.
+The maximum height of the illustration is 184px. Illustration must keep its proportionnality.
 Illustration can be displayed in "small" size so its maximum height is set to 60px.
 
 ![](./mg-illustrated-message/doc/img/mg-illustrated-message-vertical-sizing-small.png)

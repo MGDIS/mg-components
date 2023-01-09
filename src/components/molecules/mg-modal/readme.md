@@ -83,9 +83,9 @@ Color: [@color-light](./?path=/docs/style-colors--page) with an opacity set to 8
 
 If needed some [variables](./?path=/story/css-variables--page) are available to customize the component:
 
-`--mg-modal-border-radius`: Define border radius modal, default: `0.5rem`
-`--mg-modal-title-font-size`: Define modal title font size, default: `1.8rem`
-`--mg-modal-content-font-size`: Define modall content font size, default: `1.2rem`
+- `--mg-modal-border-radius`: Define border radius modal, default: `0.5rem`
+- `--mg-modal-title-font-size`: Define modal title font size, default: `1.8rem`
+- `--mg-modal-content-font-size`: Define modall content font size, default: `1.2rem`
 
 <!-- Auto Generated Below -->
 
@@ -112,12 +112,14 @@ If needed some [variables](./?path=/story/css-variables--page) are available to 
 
 ### Depends on
 
+- [mg-card](../../atoms/mg-card)
 - [mg-button](../../atoms/mg-button)
 - [mg-icon](../../atoms/mg-icon)
 
 ### Graph
 ```mermaid
 graph TD;
+  mg-modal --> mg-card
   mg-modal --> mg-button
   mg-modal --> mg-icon
   mg-button --> mg-icon
