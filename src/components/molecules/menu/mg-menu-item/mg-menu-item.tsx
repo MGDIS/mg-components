@@ -1,6 +1,7 @@
 import { Component, h, Prop, State, Host, Watch, Element, Event, EventEmitter } from '@stencil/core';
 import { OverflowBehaviorElements } from '../../../../utils/behaviors.utils';
 import { ClassList } from '../../../../utils/components.utils';
+import { initLocales } from '../../../../locales';
 import { MgMenu } from '../mg-menu/mg-menu';
 import { Direction } from '../mg-menu/mg-menu.conf';
 import { sizes, MenuItemSizeType, Status } from './mg-menu-item.conf';
@@ -17,6 +18,7 @@ export class MgMenuItem {
 
   private readonly name = 'mg-menu-item';
   private readonly navigationButton = `${this.name}__navigation-button`;
+  private badgeLabel: string;
 
   /**************
    * Decorators *
@@ -129,6 +131,11 @@ export class MgMenuItem {
     }
   }
 
+  /**
+   * Does component should display notification badge.
+   */
+  @State() displayNotificationBadge: boolean;
+
   /***********
    * Methods *
    **********/
@@ -189,6 +196,19 @@ export class MgMenuItem {
     this.expanded = event.detail;
   };
 
+  /**
+   * Update displayNotificationBadge
+   * current component notification badge have priority over the slot badge when submenu contain badge
+   *
+   * @returns {void} update displayNotificationBadge value
+   */
+  private updateDisplayNotificationBadge = (): void => {
+    const childMenu = this.element.querySelector('mg-menu');
+    this.displayNotificationBadge =
+      childMenu !== null &&
+      Array.from(childMenu.children).find((subItem: HTMLMgMenuItemElement) => subItem.querySelector('mg-badge') !== null && subItem.getAttribute('hidden') === null) !== undefined;
+  };
+
   /*************
    * Lifecycle *
    *************/
@@ -207,6 +227,7 @@ export class MgMenuItem {
     this.validateSize(this.size);
     this.validateStatus(this.status);
     this.validateExpanded(this.expanded);
+    this.badgeLabel = initLocales(this.element).messages.plusMenu.badgeLabel;
   }
 
   /**
@@ -248,14 +269,22 @@ export class MgMenuItem {
       this.element.setAttribute(`data-style-direction-${this.direction}`, '');
       this.navigationButtonClassList.add(`${this.navigationButton}--${this.direction}`);
 
-      // manage child items level
-      const childItems = Array.from(this.element.querySelectorAll('mg-menu-item'));
-      childItems.forEach(item => {
-        if (this.direction === Direction.VERTICAL) {
-          const itemLevel = Number(item.getAttribute('data-level')) || 1;
-          item.setAttribute('data-level', `${itemLevel + 1}`);
-        }
-      });
+      this.updateDisplayNotificationBadge();
+
+      const childItems = Array.from(this.element.querySelector('mg-menu')?.children || []).filter(item => item.nodeName === 'MG-MENU-ITEM');
+      if (childItems.length > 0) {
+        childItems.forEach(item => {
+          // manage child items level with data-level attribut
+          if (this.direction === Direction.VERTICAL) {
+            const itemLevel = Number(item.getAttribute('data-level')) || 1;
+            item.setAttribute('data-level', `${itemLevel + 1}`);
+          }
+          // manage child menu listener
+          new MutationObserver(() => {
+            this.updateDisplayNotificationBadge();
+          }).observe(item, { attributes: true });
+        });
+      }
     }, 0);
   }
 
@@ -272,6 +301,7 @@ export class MgMenuItem {
         class={this.navigationButtonClassList.join()}
         tabindex={[Status.DISABLED, Status.HIDDEN].includes(this.status) ? -1 : 0}
         disabled={this.status === Status.DISABLED}
+        hidden={this.status === Status.HIDDEN}
         aria-expanded={this.hasChildren && this.expanded.toString()}
         aria-current={this.status === Status.ACTIVE && 'page'}
         onClick={this.handleElementCLick}
@@ -280,7 +310,12 @@ export class MgMenuItem {
         <div class={`${this.navigationButton}-center`}>
           <div class={`${this.navigationButton}-text-content`}>
             <slot name="label"></slot>
-            <slot name="information"></slot>
+            {!this.displayNotificationBadge && <slot name="information"></slot>}
+            {this.displayNotificationBadge && (
+              <span class="mg-menu-item__navigation-button-text-content-notification">
+                <mg-badge label={this.badgeLabel} value="!" variant="info" slot="information"></mg-badge>
+              </span>
+            )}
           </div>
           <slot name="metadata"></slot>
         </div>

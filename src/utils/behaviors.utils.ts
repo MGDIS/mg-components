@@ -54,7 +54,7 @@ export class OverflowBehavior {
       .filter(element => element.nodeName === 'MG-MENU-ITEM')
       .find((child: HTMLMgMenuItemElement) => child.getAttribute('status') === Status.ACTIVE && child.getAttribute('hidden') === null);
 
-    this.moreELement.setAttribute('status', hasActiveChild === undefined ? Status.ACTIVE : Status.VISIBLE);
+    this.moreELement.setAttribute('status', hasActiveChild === undefined ? Status.VISIBLE : Status.ACTIVE);
   };
 
   /************

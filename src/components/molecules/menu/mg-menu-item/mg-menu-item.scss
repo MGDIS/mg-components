@@ -74,12 +74,15 @@ $navigation-button-sizes: (
 }
 
 // more menu-item element
-:host([data-overflow-more]) .mg-menu-item__navigation-button {
-  &-chevron {
-    display: none;
-  }
-  &-text-content ::slotted([slot='information']) {
-    margin-left: 0;
+:host([data-overflow-more]) {
+  --mg-menu-item-navigation-button-column-gap: 0;
+  .mg-menu-item__navigation-button {
+    &-chevron {
+      display: none;
+    }
+    &-text-content ::slotted([slot='information']) {
+      margin-left: 0;
+    }
   }
 }
 
@@ -90,15 +93,23 @@ $navigation-button-sizes: (
     z-index: 10;
   }
   &__navigation-button {
+    &--size-large,
+    &--size-medium {
+      .mg-menu-item__navigation-button-text-content {
+        min-height: calc(#{$font-size-large} * var(--line-height));
+      }
+    }
     &-center {
       min-width: 0;
     }
     &-text-content {
       width: 100%;
-      min-height: 2.1rem;
       display: flex;
+      align-items: center;
+      &-notification,
       ::slotted([slot='information']) {
         margin-left: 1rem;
+        font-size: var(--font-size);
       }
     }
     &-chevron {

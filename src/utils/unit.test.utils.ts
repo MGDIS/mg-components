@@ -64,14 +64,14 @@ export const setupMutationObserverMock = ({ disconnect, observe, takeRecords }: 
  * @returns {ResizeObserver} Mocked ResizeObserver
  * @example
  * ```
- * let fireMo;
+ * let fireRo;
  * setupResizeObserverMock({
  *   observe: function () {
- *     fireMo = this.cb;
+ *     fireRo = this.cb;
  *   },
  * });
  * ...
- * fireMo([{
+ * fireRo([{
  *  borderBoxSize: ResizeObserverSize[],
  *  contentBoxSize: ResizeObserverSize[],
  *  contentRect: DOMRectReadOnly,

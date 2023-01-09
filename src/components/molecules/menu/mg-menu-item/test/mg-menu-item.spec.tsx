@@ -8,7 +8,7 @@ import { sizes, Status } from '../mg-menu-item.conf';
 import { Direction } from '../../mg-menu/mg-menu.conf';
 import { MgPopover } from '../../../mg-popover/mg-popover';
 import { mockPopperArrowError } from '../../../mg-popover/test/mg-popover.spec';
-import { forcePopoverId } from '../../../../../utils/unit.test.utils';
+import { forcePopoverId, setupMutationObserverMock } from '../../../../../utils/unit.test.utils';
 
 mockPopperArrowError();
 
@@ -26,7 +26,7 @@ const menuItem = (args, slot?) => (
     {args.badge && <mg-badge slot="information" label="badge label" value="1"></mg-badge>}
   </mg-menu-item>
 );
-const childMenu = (args: { label: string; status?: MgMenuItem['status']; direction?: MgMenu['direction'] } = { label: 'child menu item' }, slots?) =>
+const childMenu = (args: { label: string; status?: MgMenuItem['status']; direction?: MgMenu['direction']; badge?: boolean } = { label: 'child menu item' }, slots?) =>
   menu('child menu', menuItem(args, slots), args.direction);
 const templateDefault = (args, slots?) => menu('menu', menuItem(args, slots));
 const templateTwoMenuItems = (args, slots?) => menu('menu', [menuItem(args, slots), menuItem({ label: 'item 2' })]);
@@ -48,7 +48,19 @@ const getPage = async template => {
 };
 
 describe('mg-menu-item', () => {
-  beforeEach(() => jest.useFakeTimers());
+  let fireMo;
+  beforeEach(() => {
+    jest.useFakeTimers();
+    setupMutationObserverMock({
+      observe: function () {
+        fireMo = this.cb;
+      },
+      disconnect: function () {
+        return null;
+      },
+      takeRecords: () => [],
+    });
+  });
   afterEach(() => jest.clearAllTimers());
   describe('render', () => {
     test.each([{ label: 'Batman' }, { label: 'Batman', icon: true }, { label: 'Batman', badge: true }, { label: 'Batman', metadata: true }, { label: 'Batman', href: '#link' }])(
@@ -272,6 +284,21 @@ describe('mg-menu-item', () => {
 
         expect(spy).toHaveBeenCalledWith(Status.ACTIVE);
       });
+    });
+  });
+
+  describe('notification badge', () => {
+    test.each([true, false])('with args %s', async badge => {
+      const page = await getPage(menuItem({ label: 'Batman' }, childMenu({ label: 'child menu', badge })));
+
+      spyOn(page.rootInstance, 'updateDisplayNotificationBadge');
+
+      expect(page.rootInstance.updateDisplayNotificationBadge).not.toHaveBeenCalled();
+
+      fireMo([]);
+      await page.waitForChanges();
+
+      expect(page.rootInstance.updateDisplayNotificationBadge).toHaveBeenCalledTimes(1);
     });
   });
 });

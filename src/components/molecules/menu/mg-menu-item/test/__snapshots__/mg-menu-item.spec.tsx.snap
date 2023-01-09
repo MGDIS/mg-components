@@ -3501,7 +3501,7 @@ exports[`mg-menu-item render with status hidden 1`] = `
   </mock:shadow-root>
   <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="Batman" role="menuitem" status="hidden">
     <mock:shadow-root>
-      <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--hidden mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular" tabindex="-1">
+      <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--hidden mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular" hidden="" tabindex="-1">
         <slot name="image"></slot>
         <div class="mg-menu-item__navigation-button-center">
           <div class="mg-menu-item__navigation-button-text-content">

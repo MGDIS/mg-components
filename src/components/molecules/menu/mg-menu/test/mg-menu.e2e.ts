@@ -1,5 +1,6 @@
 import { OverflowBehaviorElements } from '../../../../../utils/behaviors.utils';
 import { createPage, DesignSystemE2EPage, renderAttributes } from '../../../../../utils/e2e.test.utils';
+import { Status } from '../../mg-menu-item/mg-menu-item.conf';
 import { Direction } from '../mg-menu.conf';
 
 const expectImageSnapshot = async (page: DesignSystemE2EPage) => {
@@ -17,7 +18,7 @@ const moreElement = (isActiveOverflow: boolean) =>
   `
     : '';
 
-const createHTML = args => `
+const createHTML = (args, withoutSubBadge?: boolean) => `
   <div class="menu-container">
     <mg-menu ${renderAttributes({ label: 'menu', ...args })}>
       <mg-menu-item size="large" status="active">
@@ -34,12 +35,12 @@ const createHTML = args => `
       <mg-menu-item size="large">
         <span slot="label">1 - head-4</span>
         <mg-icon icon='user' slot='image'></mg-icon>
-        <mg-badge value='2' label='hello' slot='information'></mg-badge>  
+        ${withoutSubBadge ? '' : "<mg-badge value='2' label='hello' slot='information'></mg-badge>"}  
       </mg-menu-item>
       <mg-menu-item size="large">
         <span slot="label">1 - head-5</span>
         <mg-icon icon='user' slot='image'></mg-icon>
-        <mg-badge value='2' label='hello' slot='information'></mg-badge>  
+        ${withoutSubBadge ? '' : "<mg-badge value='2' label='hello' slot='information'></mg-badge>"} 
         <mg-menu label="submenu-2" direction="vertical">
           <mg-menu-item size="medium"><span slot="label">Batman begins with a longer title to go outide screen</span></mg-menu-item>
         </mg-menu>
@@ -161,8 +162,8 @@ describe('mg-menu', () => {
   });
 
   describe('overflow', () => {
-    test('should renders with overflow', async () => {
-      const page = await createPage(createHTML({ 'direction': Direction.HORIZONTAL, 'active-overflow': true }), { width: 1100, height: 400 });
+    test.each([true, false])('should renders with overflow', async withoutSubBadge => {
+      const page = await createPage(createHTML({ 'direction': Direction.HORIZONTAL, 'active-overflow': true }, withoutSubBadge), { width: 1100, height: 400 });
       await page.waitForTimeout(300);
 
       const element = await page.find('mg-menu');
@@ -175,6 +176,24 @@ describe('mg-menu', () => {
 
       const moreElement = await element.find(`[${OverflowBehaviorElements.MORE}]`);
       await moreElement.click();
+      await page.waitForTimeout(300);
+
+      await expectImageSnapshot(page);
+
+      await page.$eval(
+        `[${OverflowBehaviorElements.BASE_INDEX}="0"]`,
+        (elm, status) => {
+          elm.setAttribute('status', status as string);
+        },
+        Status.VISIBLE,
+      );
+      await page.$eval(
+        `[${OverflowBehaviorElements.BASE_INDEX}="2"]`,
+        (elm, status) => {
+          elm.setAttribute('status', status as string);
+        },
+        Status.ACTIVE,
+      );
       await page.waitForTimeout(300);
 
       await expectImageSnapshot(page);

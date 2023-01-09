@@ -210,20 +210,15 @@ export class MgMenu {
    *
    * @returns {HTMLElement} rendered mg-menu-item more element
    */
-  private renderMgMenuItemMore = (): HTMLMgMenuItemElement => {
-    // TODO manage display badge
-    // const displayBadge = false;
-    return (
-      <mg-menu-item data-overflow-more size={this.moreitem?.size}>
-        <mg-icon icon={this.moreitem?.mgIcon?.icon || 'ellipsis-vertical'} slot="image"></mg-icon>
-        <span class={{ 'sr-only': !this.moreitem?.slotLabel?.display }} slot="label">
-          {this.moreitem?.slotLabel?.label || this.messages.moreLabel}
-        </span>
-        {/* {displayBadge && <mg-badge label={messages.badgeLabel} value="!" hidden variant="primary" slot="information"></mg-badge>} */}
-        <mg-menu direction={Direction.VERTICAL} label={this.messages.moreLabel}></mg-menu>
-      </mg-menu-item>
-    );
-  };
+  private renderMgMenuItemMore = (): HTMLMgMenuItemElement => (
+    <mg-menu-item data-overflow-more size={this.moreitem?.size}>
+      <mg-icon icon={this.moreitem?.mgIcon?.icon || 'ellipsis-vertical'} slot="image"></mg-icon>
+      <span class={{ 'sr-only': !this.moreitem?.slotLabel?.display }} slot="label">
+        {this.moreitem?.slotLabel?.label || this.messages.moreLabel}
+      </span>
+      <mg-menu direction={Direction.VERTICAL} label={this.messages.moreLabel}></mg-menu>
+    </mg-menu-item>
+  );
 
   /**
    * Render

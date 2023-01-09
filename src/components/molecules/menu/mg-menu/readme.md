@@ -103,6 +103,7 @@ Default background color is @color-light.
 ```mermaid
 graph TD;
   mg-menu --> mg-menu
+  mg-menu-item --> mg-badge
   mg-menu-item --> mg-icon
   mg-menu-item --> mg-popover
   mg-popover --> mg-button

@@ -175,6 +175,7 @@ Child content is displayed via an **mg-tray** component.
 - `--mg-menu-item-border-color-active-hsl`: define mg-menu-item border color. default: `--mg-color-app-hsl`.
 - `--mg-menu-item-color-hsl`: define mg-menu-item font color. default: `--mg-color-dark`.
 - `--mg-menu-item-color-active-hsl`: define mg-menu-item font color active. default: `--mg-color-app-hsl`.
+- `--mg-menu-item-navigation-button-column-gap`: define mg-menu-item button column gap. default: `unset`.
 
 ### navigation-button
 
@@ -208,12 +209,14 @@ Child content is displayed via an **mg-tray** component.
 
 ### Depends on
 
+- [mg-badge](../../../atoms/mg-badge)
 - [mg-icon](../../../atoms/mg-icon)
 - [mg-popover](../../mg-popover)
 
 ### Graph
 ```mermaid
 graph TD;
+  mg-menu-item --> mg-badge
   mg-menu-item --> mg-icon
   mg-menu-item --> mg-popover
   mg-popover --> mg-button

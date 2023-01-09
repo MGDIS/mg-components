@@ -1,6 +1,7 @@
 @use 'sass:map';
 
 $border-bottom-size: 0.3rem;
+$font-size-large: calc(var(--font-size) + 0.2rem);
 
 @mixin navigation-button($element, $button-sizes) {
   @each $name, $size in $button-sizes {
@@ -11,9 +12,9 @@ $border-bottom-size: 0.3rem;
       ::slotted([slot='label']),
       ::slotted([slot='metadata']) {
         @if $name == 'regular' {
-          font-size: 1.3rem;
+          font-size: var(--font-size);
         } @else {
-          font-size: 1.5rem;
+          font-size: $font-size-large;
         }
       }
       &.#{$element}__navigation-button--horizontal {
@@ -28,7 +29,7 @@ $border-bottom-size: 0.3rem;
   .#{$element}__navigation-button {
     display: flex;
     align-items: center;
-    column-gap: 1rem;
+    column-gap: var(--#{$element}-navigation-button-column-gap, 1rem);
     background-color: unset;
     border: none;
     font-family: var(--font-family);
