@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-01-04T14:49:00",
+  "timestamp": "2023-01-06T12:53:46",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.20.0",
@@ -5232,6 +5232,41 @@
           "mg-icon"
         ]
       }
+    },
+    {
+      "filePath": "./src/components/molecules/mg-skip-links/mg-skip-links.tsx",
+      "encapsulation": "shadow",
+      "tag": "mg-skip-links",
+      "readme": "## Behavior\n\nOn the first tab, a banner with the link(s) is displayed by pushing the content down.\n\nThe number of links will be added according to the content of the page.\n\n## Specs\n\n### Sizing\n\nThe minimum height of the banner is 55px.\n\n### Spacing\n\nItems have an internal margin of 12px and are spaced 6px apart.\n\n### Styling\n\n- The links are in [@color-dark](./?path=/docs/style-colors--page).\n- The background of the banner is in [@color-light](./?path=/docs/style-colors--page).\n\n#### On hover\n\nThe background of the item takes the color [@color-dark](./?path=/docs/style-colors--page) at 10% opacity.\n\n#### Focus taking\n\nNative browser behavior is retained.\n\n## Code example\n\nYou need to press <kbd>Tab</kbd> in the code example to see the component.\n",
+      "docs": "On the first tab, a banner with the link(s) is displayed by pushing the content down.\n\nThe number of links will be added according to the content of the page.",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "links",
+          "type": "SkipLink[]",
+          "mutable": true,
+          "reflectToAttr": false,
+          "docs": "Skip links",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "SkipLink[]"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
     },
     {
       "filePath": "./src/components/molecules/mg-tabs/mg-tabs.tsx",
