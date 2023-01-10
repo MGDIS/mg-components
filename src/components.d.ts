@@ -866,10 +866,6 @@ export namespace Components {
     }
     interface MgMenu {
         /**
-          * Define component manage child overflow Default: false
-         */
-        "activeOverflow": boolean;
-        /**
           * Component display direction. Default: "horizontal"
          */
         "direction": Direction;
@@ -2233,10 +2229,6 @@ declare namespace LocalJSX {
         "value"?: any;
     }
     interface MgMenu {
-        /**
-          * Define component manage child overflow Default: false
-         */
-        "activeOverflow"?: boolean;
         /**
           * Component display direction. Default: "horizontal"
          */

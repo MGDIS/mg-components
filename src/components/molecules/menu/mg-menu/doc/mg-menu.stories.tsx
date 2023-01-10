@@ -5,7 +5,7 @@ import { MenuItemSizeType, Status } from '../../mg-menu-item/mg-menu-item.conf';
 
 export default {
   component: 'mg-menu',
-  title: 'Beta/menus/mg-menu',
+  title: 'Molecules/Menus/mg-menu',
   argTypes: {
     direction: {
       options: [undefined, Direction.HORIZONTAL, Direction.VERTICAL],
@@ -38,7 +38,6 @@ type ItemFormatedArgs = Pick<ItemArgType, 'size' | 'status'> & { slot: Pick<Item
 type MenuFormatedArgs = {
   label: string;
   direction: Direction;
-  activeOverflow: boolean;
   moreitem: unknown;
   slot: {
     items: ItemFormatedArgs[];
@@ -112,7 +111,6 @@ interface IGetMenuArgs {
 const getMenuArgs: IGetMenuArgs = (direction: Direction, level = 0) => ({
   label: 'Batman menu',
   direction,
-  activeOverflow: false,
   moreitem: direction === Direction.HORIZONTAL ? { size: 'large' } : undefined,
   slot: {
     items: [

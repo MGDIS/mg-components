@@ -84,6 +84,9 @@ $navigation-button-sizes: (
       margin-left: 0;
     }
   }
+  ::slotted(mg-menu) {
+    --mg-menu-item-navigation-button-column-gap: #{$navigation-button-column-gap};
+  }
 }
 
 .mg-menu-item {

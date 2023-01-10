@@ -55,7 +55,7 @@ const getPage = async (args, withSubmenu = true) => {
   jest.runOnlyPendingTimers();
   await page.waitForChanges();
 
-  [page.doc, page.doc.querySelector('mg-menu').shadowRoot].forEach(el =>
+  [page.doc, ...Array.from(page.doc.querySelectorAll('mg-menu')).map(el => el.shadowRoot)].forEach(el =>
     Array.from(el.querySelectorAll('mg-menu-item')).forEach((item, index) => {
       forcePopoverId(item, `mg-popover-test_${index}`);
     }),
@@ -98,14 +98,10 @@ describe('mg-menu', () => {
     test.each([
       { props: { direction: 'horizontal' }, error: '<mg-menu> prop "label" is required.' },
       { props: { ...baseProps, direction: 'test' }, error: '<mg-menu> prop "direction" must be one of : horizontal, vertical.' },
-      {
-        props: { ...baseProps, activeOverflow: true, direction: Direction.VERTICAL },
-        error: '<mg-menu> prop "activeOverflow" can not be paired with prop "direction = vertical".',
-      },
-      { props: { ...baseProps, moreitem: { icon: 'user' } }, error: '<mg-menu> prop "moreitem" must be paired with truthy "activeOverflow" prop.' },
-      { props: { ...baseProps, moreitem: {}, activeOverflow: true }, error: '<mg-menu> prop "moreitem" must match MoreItemType.' },
-      { props: { ...baseProps, moreitem: { mgIcon: {} }, activeOverflow: true }, error: '<mg-menu> prop "moreitem" must match MoreItemType.' },
-      { props: { ...baseProps, moreitem: { slotLabel: {} }, activeOverflow: true }, error: '<mg-menu> prop "moreitem" must match MoreItemType.' },
+      { props: { ...baseProps, direction: Direction.VERTICAL, moreitem: { icon: 'user' } }, error: '<mg-menu> prop "moreitem" must be paired with direction horizontal.' },
+      { props: { ...baseProps, moreitem: {} }, error: '<mg-menu> prop "moreitem" must match MoreItemType.' },
+      { props: { ...baseProps, moreitem: { mgIcon: {} } }, error: '<mg-menu> prop "moreitem" must match MoreItemType.' },
+      { props: { ...baseProps, moreitem: { slotLabel: {} } }, error: '<mg-menu> prop "moreitem" must match MoreItemType.' },
     ])('Should throw error when props are invalid, case %s', async ({ props, error }) => {
       expect.assertions(1);
 
@@ -176,7 +172,7 @@ describe('mg-menu', () => {
     test.each([undefined, { mgIcon: { icon: 'user' } }, { slotLabel: { label: 'batman' } }, { slotLabel: { display: true } }, { size: 'large' }])(
       'with args %s',
       async moreitem => {
-        const page = await getPage({ label: 'batman menu', activeOverflow: true, moreitem });
+        const page = await getPage({ label: 'batman menu', moreitem });
         const menuSize = 215;
         const menu = page.doc.querySelector('mg-menu');
 
@@ -226,10 +222,10 @@ describe('mg-menu', () => {
       },
     );
 
-    test.each([true, false])('should fire disconnect callback', async activeOverflow => {
-      const { rootInstance, doc } = await getPage({ label: 'batman menu', activeOverflow });
+    test.each([Direction.HORIZONTAL, Direction.HORIZONTAL])('should fire disconnect callback', async direction => {
+      const { rootInstance, doc } = await getPage({ label: 'batman menu', direction });
 
-      if (activeOverflow) {
+      if (direction === Direction.HORIZONTAL) {
         const spy = jest.spyOn(rootInstance.overflowBehavior, 'disconnect');
         doc.querySelector('mg-menu').remove();
         expect(spy).toHaveBeenCalled();

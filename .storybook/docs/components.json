@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-01-09T09:24:50",
+  "timestamp": "2023-01-10T14:23:13",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.20.0",
@@ -4319,28 +4319,11 @@
       "filePath": "./src/components/molecules/menu/mg-menu/mg-menu.tsx",
       "encapsulation": "shadow",
       "tag": "mg-menu",
-      "readme": "## Horizontal\n\n### Use\n\n![](./mg-menu/doc/img/mg-menu-exemple.png)\n\nHorizontal menu is used with large (\"desktop\") resolutions, it is placed in the upper area of the screen.\n\n### Anatomy\n\nA menu is composed of [**mg-menu-items**](./?path=/docs/molecules-menus-mg-menu-item--mg-menu-item).\n\n### Behavior\n\n#### TODO / Too large\n\n![](./mg-menu/doc/img/mg-menu-horizontal-plus.png)\n\nWhen not all of the items can be displayed because of the width of the menu's container, items are grouped in a \"plus\" item **(TODO)**.\n\n### Specs\n\n#### Sizing\n\n![](./mg-menu/doc/img/mg-menu-horizontal-sizing.png)\n\nAn horizontal menu can display different sizes of items (see definition of **[mg-menu-item](./?path=/docs/molecules-menus-mg-menu-item--mg-menu-item)**) : regular, medium, large.\n\n#### Spacing\n\n![](./mg-menu/doc/img/mg-menu-horizontal-spacing.png)\n\nSpace between items is 0.\n\n### Vertical\n\n### Use\n\nHorizontal menu is used with large (\"desktop\") resolutions, it is placed in the left area of the screen.\n\n![](./mg-menu/doc/img/mg-menu-vertical-use.png) \n\n### Anatomy\n\nA menu is composed of **[mg-menu-item](./?path=/docs/molecules-menus-mg-menu-item--mg-menu-item)**.\n\n### Behavior\n\n#### Too high\n\n![](./mg-menu/doc/img/mg-menu-vertical-scroll.png) \n\nWhen not all of the items can be displayed because of the height of the menu's container, a scrollbar allows to see hidden items.\n\n### Specs\n\n#### Sizing\n\nThe width of the menu depend on his container.\n\n#### Spacing\n\n![](./mg-menu/doc/img/mg-menu-vertical-spacing.png) \n\nSpace between items is 0.\n\n#### Colors\n\nDefault background color is @color-light.\n\n## CSS Variables\n\n### global\n\n- `--mg-menu-background-color-hsl`: define mg-menu background color. Default: `--color-light`.\n",
+      "readme": "## Horizontal\n\n### Use\n\n![](./mg-menu/doc/img/mg-menu-exemple.png)\n\nHorizontal menu is used with large (\"desktop\") resolutions, it is placed in the upper area of the screen.\n\n### Anatomy\n\n![](./mg-menu/doc/img/mg-menu-horizontal-anatomy.png) \n\n![](./mg-menu/doc/img/mg-menu-horizontal-item-anatomy.png) \n\n### Options\n\n#### Meta\n\nMeta text is optional.\n\n#### Icon\n\nIcon is optional.\nUse it on all or none of the items of the menu.\n\n#### Illustration\n\nIllustration is optional.\nAn SVG can be specified instead of an icon.\n\n#### Badge\n\nBadge is optional.\nUse it when you need to notify new events in this section.\n\n### Behavior\n\n#### Sizing\n\n![](./mg-menu/doc/img/mg-menu-horizontal-sizing.png) \n\nAn horizontal menu can display different sizes of items : regular, medium, large.\n\n![](./mg-menu/doc/img/mg-menu-horizontal-sizing-itemmaxwidth.png) \n\nLe contenu de l'item détermine sa largeur, mais pour gérer le cas où le contenu peut être trop grand (libellé long), il est possible de spécifier une largeur maximale à l'item.\n*Libellé_ et _Meta* sont alors tronqués.\n\n#### Sub-content\n\n![](./mg-menu/doc/img/mg-menu-horizontal-subcontent-submenu.png)\n\n![](./mg-menu/doc/img/mg-menu-horizontal-subcontent-slot.png) \n\nA \"submenu\" or a \"free content\" can be set to the item.\nAn icon \"chevron-down\" at the right of the item informs the user.\n\n##### Badge\n\n![](./mg-menu/doc/img/mg-menu-horizontal-subcontent-badge.png) \n\nIf at least one sub item has got a badge, the item displays a badge with exclamation symbol.\n\n#### Overflow\n\n![](./mg-menu/doc/img/mg-menu-horizontal-plus.png) \n\nWhen not all of the items can be displayed because of the width of the menu's container, items are grouped in a \"plus item\".\n\n## Vertical\n\n### Use\n\n![](./mg-menu/doc/img/mg-menu-vertical-use.png) \n\nHorizontal menu is used with large (\"desktop\") resolutions, it is mostly placed in the left area of the screen.\n\n### Anatomy\n\n![](./mg-menu/doc/img/mg-menu-vertical-anatomy.png) \n\n![](./mg-menu/doc/img/mg-menu-vertical-item-anatomy.png) \n\n### Options\n\n#### Icon\n\nIcon is optional.\n\nUse it on all of one level or none of the items of the menu.\n\n#### Badge\n\nBadge is optional.\n\nUse it when you need to notify new events in this section.\n\n### Behavior\n\n#### Sub content\n\nAn item can display a sub content which can be another vertical menu.\nThis item displays a chevron at its right.\nThe submenu is displayed by clicking on the item.\n\n##### Badge\n\n![](./mg-menu/doc/img/mg-menu-vertical-subcontent-badge.png) \n\nIf at least one sub item has got a badge, the item displays a badge with exclamation symbol.\n\n#### Overflow\n\n![](./mg-menu/doc/img/mg-menu-vertical-scroll.png) \n\nWhen not all of the items can be displayed because of the height of the menu's container, a scrollbar allows to see hidden items.\n\n## CSS Variables\n\n### global\n\n- `--mg-menu-background-color-hsl`: define mg-menu background color. Default: `--color-light`.\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
       "props": [
-        {
-          "name": "activeOverflow",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "active-overflow",
-          "reflectToAttr": false,
-          "docs": "Define component manage child overflow\nDefault: false",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
         {
           "name": "direction",
           "type": "Direction.HORIZONTAL | Direction.VERTICAL",

@@ -15,7 +15,7 @@ export class MgMenu {
 
   private readonly name = 'mg-menu';
   private messages: MessageType;
-  private menuItems: HTMLMgMenuItemElement[];
+  private menuItems: HTMLMgMenuItemElement[] = [];
   private focusedMenuItem = 0;
   private overflowBehavior: OverflowBehavior;
 
@@ -52,27 +52,15 @@ export class MgMenu {
   }
 
   /**
-   * Define component manage child overflow
-   * Default: false
-   */
-  @Prop() activeOverflow = false;
-  @Watch('activeOverflow')
-  validateActiveOverflow(newValue: MgMenu['activeOverflow']): void {
-    if (newValue && this.direction === Direction.VERTICAL) {
-      throw new Error(`<${this.name}> prop "activeOverflow" can not be paired with prop "direction = vertical".`);
-    }
-  }
-
-  /**
    * Define mg-menu-item "more element"
    * used when overflow is enable
    */
   @Prop() moreitem: MoreItemType;
   @Watch('moreitem')
   validateMoreItem(newValue: MgMenu['moreitem']): void {
-    if (!this.activeOverflow && newValue !== undefined) {
-      throw new Error(`<${this.name}> prop "moreitem" must be paired with truthy "activeOverflow" prop.`);
-    } else if (this.activeOverflow && isMoreItem(newValue) !== true) {
+    if (this.direction !== Direction.HORIZONTAL && newValue !== undefined) {
+      throw new Error(`<${this.name}> prop "moreitem" must be paired with direction ${Direction.HORIZONTAL}.`);
+    } else if (isMoreItem(newValue) !== true) {
       throw new Error(`<${this.name}> prop "moreitem" must match MoreItemType.`);
     }
   }
@@ -81,6 +69,12 @@ export class MgMenu {
    * is this menu a child menu. Used for conditional render.
    */
   @State() isChildMenu: boolean;
+
+  /**
+   * Define if component manage child overflow
+   * Default: false
+   */
+  @State() hasOverflow = false;
 
   /**
    * Close matching menu-item
@@ -126,22 +120,20 @@ export class MgMenu {
    */
   private renderMgMenuMore = (): HTMLMgMenuItemElement => {
     const moreElement = this.element.shadowRoot.querySelector(`[${OverflowBehaviorElements.MORE}]`);
-    Array.from(this.element.children)
-      .filter(element => element.nodeName === 'MG-MENU-ITEM')
-      .forEach((child: HTMLMgMenuItemElement) => {
-        const proxy = child.cloneNode(true) as HTMLMgMenuItemElement;
-        // manage click on proxy to mirror it on initial element
-        proxy.addEventListener('click', () => {
-          child.dispatchEvent(new MouseEvent('click', { bubbles: true }));
-        });
-
-        // manage status change miror in proxy
-        child.addEventListener('status-change', (event: CustomEvent) => {
-          proxy.setAttribute('status', event.detail);
-          this.overflowBehavior.updateActiveStatus();
-        });
-        moreElement.querySelector('mg-menu').appendChild(proxy);
+    this.menuItems.forEach((child: HTMLMgMenuItemElement) => {
+      const proxy = child.cloneNode(true) as HTMLMgMenuItemElement;
+      // manage click on proxy to mirror it on initial element
+      proxy.addEventListener('click', () => {
+        child.dispatchEvent(new MouseEvent('click', { bubbles: true }));
       });
+
+      // manage status change miror in proxy
+      child.addEventListener('status-change', (event: CustomEvent) => {
+        proxy.setAttribute('status', event.detail);
+        this.overflowBehavior.updateActiveStatus();
+      });
+      moreElement.querySelector('mg-menu').appendChild(proxy);
+    });
     this.element.appendChild(moreElement);
 
     return this.element.querySelector(`[${OverflowBehaviorElements.MORE}]`);
@@ -157,11 +149,12 @@ export class MgMenu {
    * @returns {void}
    */
   componentWillLoad(): void {
+    this.messages = initLocales(this.element).messages.plusMenu;
+
+    // validation
     this.validateDirection(this.direction);
     this.validateLabel(this.label);
-    this.validateActiveOverflow(this.activeOverflow);
     this.validateMoreItem(this.moreitem);
-    this.messages = initLocales(this.element).messages.plusMenu;
   }
 
   /**
@@ -170,15 +163,18 @@ export class MgMenu {
    * @returns {ReturnType<typeof setTimeout>} timeout
    */
   componentDidLoad(): ReturnType<typeof setTimeout> {
-    if (this.activeOverflow === true && isMoreItem(this.moreitem)) {
-      this.overflowBehavior = new OverflowBehavior(this.element, this.renderMgMenuMore);
-      this.overflowBehavior.init();
-    }
     // update props and states after componentDidLoad hook
     // return a promise to process action only in the FIRST render().
     // https://stenciljs.com/docs/component-lifecycle#componentwillload
     return setTimeout(() => {
+      // store all menu-items
+      this.menuItems = Array.from(this.element.children).filter(child => child.nodeName === 'MG-MENU-ITEM') as HTMLMgMenuItemElement[];
       this.isChildMenu = this.element.closest('mg-menu-item') !== null;
+      this.hasOverflow = this.direction === Direction.HORIZONTAL && !this.isChildMenu;
+      if (this.hasOverflow && isMoreItem(this.moreitem)) {
+        this.overflowBehavior = new OverflowBehavior(this.element, this.renderMgMenuMore);
+        this.overflowBehavior.init();
+      }
     }, 0);
   }
 
@@ -188,8 +184,6 @@ export class MgMenu {
    * @returns {void}
    */
   componentDidRender(): void {
-    // store all menu-items
-    this.menuItems = Array.from(this.element.children).filter(child => child.nodeName === 'MG-MENU-ITEM') as HTMLMgMenuItemElement[];
     // add menu items listeners
     this.initMenuItemsListeners();
   }
@@ -200,9 +194,7 @@ export class MgMenu {
    * @returns {void} run overflow resize obeserver disconnexion
    */
   disconnectedCallback(): void {
-    if (this.activeOverflow === true) {
-      this.overflowBehavior.disconnect();
-    }
+    if (this.hasOverflow) this.overflowBehavior.disconnect();
   }
 
   /**
@@ -229,7 +221,7 @@ export class MgMenu {
     return (
       <Host role={this.isChildMenu ? 'menu' : 'menubar'} aria-label={this.label}>
         <slot></slot>
-        {this.activeOverflow && isMoreItem(this.moreitem) && this.renderMgMenuItemMore()}
+        {this.hasOverflow && isMoreItem(this.moreitem) && this.renderMgMenuItemMore()}
       </Host>
     );
   }

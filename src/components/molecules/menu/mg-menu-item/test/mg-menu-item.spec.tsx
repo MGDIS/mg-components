@@ -8,7 +8,7 @@ import { sizes, Status } from '../mg-menu-item.conf';
 import { Direction } from '../../mg-menu/mg-menu.conf';
 import { MgPopover } from '../../../mg-popover/mg-popover';
 import { mockPopperArrowError } from '../../../mg-popover/test/mg-popover.spec';
-import { forcePopoverId, setupMutationObserverMock } from '../../../../../utils/unit.test.utils';
+import { forcePopoverId, setupMutationObserverMock, setupResizeObserverMock } from '../../../../../utils/unit.test.utils';
 
 mockPopperArrowError();
 
@@ -40,9 +40,11 @@ const getPage = async template => {
   jest.runAllTimers();
   await page.waitForChanges();
 
-  Array.from(page.doc.querySelectorAll('mg-menu-item')).forEach((item, index) => {
-    forcePopoverId(item, `mg-popover-test_${index}`);
-  });
+  [page.doc, ...Array.from(page.doc.querySelectorAll('mg-menu')).map(el => el.shadowRoot)].forEach(el =>
+    Array.from(el.querySelectorAll('mg-menu-item')).forEach((item, index) => {
+      forcePopoverId(item, `mg-popover-test_${index}`);
+    }),
+  );
 
   return page;
 };
@@ -59,6 +61,10 @@ describe('mg-menu-item', () => {
         return null;
       },
       takeRecords: () => [],
+    });
+    setupResizeObserverMock({
+      observe: () => null,
+      disconnect: () => null,
     });
   });
   afterEach(() => jest.clearAllTimers());

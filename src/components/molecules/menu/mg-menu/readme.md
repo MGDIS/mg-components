@@ -8,65 +8,112 @@ Horizontal menu is used with large ("desktop") resolutions, it is placed in the 
 
 ### Anatomy
 
-A menu is composed of [**mg-menu-items**](./?path=/docs/molecules-menus-mg-menu-item--mg-menu-item).
+![](./mg-menu/doc/img/mg-menu-horizontal-anatomy.png) 
+
+![](./mg-menu/doc/img/mg-menu-horizontal-item-anatomy.png) 
+
+### Options
+
+#### Meta
+
+Meta text is optional.
+
+#### Icon
+
+Icon is optional.
+Use it on all or none of the items of the menu.
+
+#### Illustration
+
+Illustration is optional.
+An SVG can be specified instead of an icon.
+
+#### Badge
+
+Badge is optional.
+Use it when you need to notify new events in this section.
 
 ### Behavior
-
-#### TODO / Too large
-
-![](./mg-menu/doc/img/mg-menu-horizontal-plus.png)
-
-When not all of the items can be displayed because of the width of the menu's container, items are grouped in a "plus" item **(TODO)**.
-
-### Specs
 
 #### Sizing
 
-![](./mg-menu/doc/img/mg-menu-horizontal-sizing.png)
+![](./mg-menu/doc/img/mg-menu-horizontal-sizing.png) 
 
-An horizontal menu can display different sizes of items (see definition of **[mg-menu-item](./?path=/docs/molecules-menus-mg-menu-item--mg-menu-item)**) : regular, medium, large.
+An horizontal menu can display different sizes of items : regular, medium, large.
 
-#### Spacing
+![](./mg-menu/doc/img/mg-menu-horizontal-sizing-itemmaxwidth.png) 
 
-![](./mg-menu/doc/img/mg-menu-horizontal-spacing.png)
+Le contenu de l'item détermine sa largeur, mais pour gérer le cas où le contenu peut être trop grand (libellé long), il est possible de spécifier une largeur maximale à l'item.
+*Libellé_ et _Meta* sont alors tronqués.
 
-Space between items is 0.
+#### Sub-content
 
-### Vertical
+![](./mg-menu/doc/img/mg-menu-horizontal-subcontent-submenu.png)
+
+![](./mg-menu/doc/img/mg-menu-horizontal-subcontent-slot.png) 
+
+A "submenu" or a "free content" can be set to the item.
+An icon "chevron-down" at the right of the item informs the user.
+
+##### Badge
+
+![](./mg-menu/doc/img/mg-menu-horizontal-subcontent-badge.png) 
+
+If at least one sub item has got a badge, the item displays a badge with exclamation symbol.
+
+#### Overflow
+
+![](./mg-menu/doc/img/mg-menu-horizontal-plus.png) 
+
+When not all of the items can be displayed because of the width of the menu's container, items are grouped in a "plus item".
+
+## Vertical
 
 ### Use
 
-Horizontal menu is used with large ("desktop") resolutions, it is placed in the left area of the screen.
-
 ![](./mg-menu/doc/img/mg-menu-vertical-use.png) 
+
+Horizontal menu is used with large ("desktop") resolutions, it is mostly placed in the left area of the screen.
 
 ### Anatomy
 
-A menu is composed of **[mg-menu-item](./?path=/docs/molecules-menus-mg-menu-item--mg-menu-item)**.
+![](./mg-menu/doc/img/mg-menu-vertical-anatomy.png) 
+
+![](./mg-menu/doc/img/mg-menu-vertical-item-anatomy.png) 
+
+### Options
+
+#### Icon
+
+Icon is optional.
+
+Use it on all of one level or none of the items of the menu.
+
+#### Badge
+
+Badge is optional.
+
+Use it when you need to notify new events in this section.
 
 ### Behavior
 
-#### Too high
+#### Sub content
+
+An item can display a sub content which can be another vertical menu.
+This item displays a chevron at its right.
+The submenu is displayed by clicking on the item.
+
+##### Badge
+
+![](./mg-menu/doc/img/mg-menu-vertical-subcontent-badge.png) 
+
+If at least one sub item has got a badge, the item displays a badge with exclamation symbol.
+
+#### Overflow
 
 ![](./mg-menu/doc/img/mg-menu-vertical-scroll.png) 
 
 When not all of the items can be displayed because of the height of the menu's container, a scrollbar allows to see hidden items.
-
-### Specs
-
-#### Sizing
-
-The width of the menu depend on his container.
-
-#### Spacing
-
-![](./mg-menu/doc/img/mg-menu-vertical-spacing.png) 
-
-Space between items is 0.
-
-#### Colors
-
-Default background color is @color-light.
 
 ## CSS Variables
 
@@ -79,12 +126,11 @@ Default background color is @color-light.
 
 ## Properties
 
-| Property             | Attribute         | Description                                                            | Type                                                                                                                           | Default                |
-| -------------------- | ----------------- | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | ---------------------- |
-| `activeOverflow`     | `active-overflow` | Define component manage child overflow Default: false                  | `boolean`                                                                                                                      | `false`                |
-| `direction`          | `direction`       | Component display direction. Default: "horizontal"                     | `Direction.HORIZONTAL \| Direction.VERTICAL`                                                                                   | `Direction.HORIZONTAL` |
-| `label` _(required)_ | `label`           | Menu label. Include short menu description. Required for accessibility | `string`                                                                                                                       | `undefined`            |
-| `moreitem`           | --                | Define mg-menu-item "more element" used when overflow is enable        | `{ mgIcon?: { icon: string; }; slotLabel?: { label?: string; display?: boolean; }; size?: "regular" \| "large" \| "medium"; }` | `undefined`            |
+| Property             | Attribute   | Description                                                            | Type                                                                                                                           | Default                |
+| -------------------- | ----------- | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | ---------------------- |
+| `direction`          | `direction` | Component display direction. Default: "horizontal"                     | `Direction.HORIZONTAL \| Direction.VERTICAL`                                                                                   | `Direction.HORIZONTAL` |
+| `label` _(required)_ | `label`     | Menu label. Include short menu description. Required for accessibility | `string`                                                                                                                       | `undefined`            |
+| `moreitem`           | --          | Define mg-menu-item "more element" used when overflow is enable        | `{ mgIcon?: { icon: string; }; slotLabel?: { label?: string; display?: boolean; }; size?: "regular" \| "large" \| "medium"; }` | `undefined`            |
 
 
 ## Dependencies
