@@ -38,11 +38,11 @@ export async function createPage(htmlString: string, viewPort?: { width?: number
   };
 
   // get page messages in test logs
-  page
-    .on('console', msg => {
-      console.log(msg.text());
-    })
-    .on('pageerror', error => console.log(error.message));
+  // page
+  //   .on('console', msg => {
+  //     console.log(msg.text());
+  //   })
+  //   .on('pageerror', error => console.log(error.message));
 
   return page;
 }

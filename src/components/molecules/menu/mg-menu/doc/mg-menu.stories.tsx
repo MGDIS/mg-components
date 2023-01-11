@@ -5,7 +5,7 @@ import { MenuItemSizeType, Status } from '../../mg-menu-item/mg-menu-item.conf';
 
 export default {
   component: 'mg-menu',
-  title: 'Molecules/Menus/mg-menu',
+  title: 'Beta/Menus/mg-menu',
   argTypes: {
     direction: {
       options: [undefined, Direction.HORIZONTAL, Direction.VERTICAL],

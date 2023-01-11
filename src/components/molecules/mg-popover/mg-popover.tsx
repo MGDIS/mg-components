@@ -47,8 +47,7 @@ export class MgPopover {
   @Prop() arrowHide = false;
   @Watch('arrowHide')
   validateArrowHide(newValue: MgPopover['arrowHide']): void {
-    if (newValue) this.space = 0;
-    else this.space = 10;
+    this.space = newValue ? 0 : 10;
   }
   /**
    * Define if popover has a cross button

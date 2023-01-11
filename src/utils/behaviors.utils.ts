@@ -76,9 +76,9 @@ export class OverflowBehavior {
       // set children
       this.children = Array.from(this.element.children);
       let moreELementChildren;
-      const filter = ['MG-MENU-ITEM', 'MG-BUTTON'];
+      const allowedElements = ['MG-MENU-ITEM', 'MG-BUTTON'];
       if (isMgMenuItem(this.moreELement)) {
-        moreELementChildren = Array.from(this.moreELement.querySelector('mg-menu').children).filter(element => filter.includes(element.nodeName));
+        moreELementChildren = Array.from(this.moreELement.querySelector('mg-menu').children).filter(element => allowedElements.includes(element.nodeName));
       }
 
       this.children.forEach((child, index) => {

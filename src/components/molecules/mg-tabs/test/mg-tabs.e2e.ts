@@ -58,7 +58,7 @@ describe('mg-tabs', () => {
       mgTabs.items = ['Batman', 'Joker', 'Bane'];
       </script>
       `);
-      page.keyboard.down('Tab');
+      await page.keyboard.down('Tab');
       await page.waitForChanges();
 
       const screenshot = await page.screenshot();
@@ -82,7 +82,7 @@ describe('mg-tabs', () => {
       const screenshotLeft = await page.screenshot();
       expect(screenshotLeft).toMatchImageSnapshot();
 
-      page.keyboard.down('Tab');
+      await page.keyboard.down('Tab');
       await page.waitForChanges();
 
       const screenshotLeave = await page.screenshot();

@@ -112,26 +112,26 @@ describe('mg-menu', () => {
         await expectImageSnapshot(page);
 
         // focus on menu-item id-1
-        page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
         await page.waitForChanges();
         await expectImageSnapshot(page);
 
         // focus on menu-item id-3 (has id-2 is disabled)
-        page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
         // focus on menu-item id-4
-        page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
         // focus on menu-item id-5
-        page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
         await page.waitForChanges();
         await expectImageSnapshot(page);
 
         // expand submenu-item id-5-1
-        page.keyboard.press('Enter');
+        await page.keyboard.press('Enter');
         await page.waitForChanges();
         await expectImageSnapshot(page);
 
         // focus on submenu-item id-5-1
-        page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
         await page.waitForChanges();
         await expectImageSnapshot(page);
 
@@ -143,12 +143,12 @@ describe('mg-menu', () => {
         await expectImageSnapshot(page);
 
         // close submenu
-        page.keyboard.press('Enter');
+        await page.keyboard.press('Enter');
         await page.waitForChanges();
         await expectImageSnapshot(page);
 
         // exit focus menu
-        page.keyboard.press('Tab');
+        await page.keyboard.press('Tab');
         await page.waitForChanges();
         await expectImageSnapshot(page);
       });

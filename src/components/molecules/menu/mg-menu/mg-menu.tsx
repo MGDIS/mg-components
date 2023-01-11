@@ -58,9 +58,9 @@ export class MgMenu {
   @Prop() moreitem: MoreItemType;
   @Watch('moreitem')
   validateMoreItem(newValue: MgMenu['moreitem']): void {
-    if (this.direction !== Direction.HORIZONTAL && newValue !== undefined) {
+    if (newValue !== undefined && this.direction !== Direction.HORIZONTAL) {
       throw new Error(`<${this.name}> prop "moreitem" must be paired with direction ${Direction.HORIZONTAL}.`);
-    } else if (isMoreItem(newValue) !== true) {
+    } else if (newValue !== undefined && !isMoreItem(newValue)) {
       throw new Error(`<${this.name}> prop "moreitem" must match MoreItemType.`);
     }
   }

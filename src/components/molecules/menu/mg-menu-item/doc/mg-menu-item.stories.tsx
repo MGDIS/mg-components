@@ -4,7 +4,7 @@ import { Direction } from '../../mg-menu/mg-menu.conf';
 
 export default {
   component: 'mg-menu-item',
-  title: 'Molecules/Menus/mg-menu-item',
+  title: 'Beta/Menus/mg-menu-item',
 };
 
 /**

@@ -55,11 +55,11 @@ The title and the close button are optional.
 
 If needed some [variables](./?path=/story/css-variables--page) are available to customize the component:
 
-`--mg-popover-background-color`: Define popover background color, default: `var(--color-light)`
-`--mg-popover-font-color`: Define popover font color, default: `var(--color-font-dark)`
-`--mg-popover-title-font-size`: Define popover title font size, default: `1.4rem`
-`--mg-popover-padding-vertical`: Define popover vertical padding, default: `1.5rem`
-`--mg-popover-padding-horizontal`: Define popover vertical padding, default: `--mg-popover-padding-vertical`
+- `--mg-popover-background-color`: Define popover background color, default: `var(--color-light)`
+- `--mg-popover-font-color`: Define popover font color, default: `var(--color-font-dark)`
+- `--mg-popover-title-font-size`: Define popover title font size, default: `1.4rem`
+- `--mg-popover-padding-vertical`: Define popover vertical padding, default: `1.5rem`
+- `--mg-popover-padding-horizontal`: Define popover vertical padding, default: `--mg-popover-padding-vertical`
 
 <!-- Auto Generated Below -->
 

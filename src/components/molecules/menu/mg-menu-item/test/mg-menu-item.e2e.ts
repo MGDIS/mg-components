@@ -74,7 +74,7 @@ describe('mg-menu-item', () => {
       expect(screenshot).toMatchImageSnapshot();
     });
 
-    test.each([true, false])('should renders, props expanded=%s', async expanded => {
+    test.each([true, false])(`should renders direction=${direction}, props expanded=%s`, async expanded => {
       const page = await createPage(createHTML({ expanded }, slotMenuItem, direction));
 
       const element = await page.find('mg-menu-item');
