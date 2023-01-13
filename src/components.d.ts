@@ -874,9 +874,12 @@ export namespace Components {
          */
         "label": string;
         /**
-          * Define mg-menu-item "more element" used when overflow is enable
+          * Customize mg-menu "more element" Used with direction: 'vertical' to manage overflow
          */
         "moreitem": MoreItemType;
+        /**
+          * Define mg-menu size Default: 'regular'
+         */
         "size": MenuSizeType;
     }
     interface MgMenuItem {
@@ -2235,9 +2238,12 @@ declare namespace LocalJSX {
          */
         "label": string;
         /**
-          * Define mg-menu-item "more element" used when overflow is enable
+          * Customize mg-menu "more element" Used with direction: 'vertical' to manage overflow
          */
         "moreitem"?: MoreItemType;
+        /**
+          * Define mg-menu size Default: 'regular'
+         */
         "size"?: MenuSizeType;
     }
     interface MgMenuItem {

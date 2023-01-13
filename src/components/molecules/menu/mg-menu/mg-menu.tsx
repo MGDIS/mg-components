@@ -52,8 +52,8 @@ export class MgMenu {
   }
 
   /**
-   * Define mg-menu-item "more element"
-   * used when overflow is enable
+   * Customize mg-menu "more element"
+   * Used with direction: 'vertical' to manage overflow
    */
   @Prop() moreitem: MoreItemType;
   @Watch('moreitem')
@@ -65,6 +65,10 @@ export class MgMenu {
     }
   }
 
+  /**
+   * Define mg-menu size
+   * Default: 'regular'
+   */
   @Prop() size: MenuSizeType = 'regular';
   @Watch('size')
   validateSize(newValue: MgMenu['size']): void {
@@ -217,7 +221,7 @@ export class MgMenu {
       <span class={{ 'sr-only': !this.moreitem?.slotLabel?.display }} slot="label">
         {this.moreitem?.slotLabel?.label || this.messages.moreLabel}
       </span>
-      <mg-menu direction={Direction.VERTICAL} label={this.messages.moreLabel}></mg-menu>
+      <mg-menu direction={Direction.VERTICAL} label={this.messages.moreLabel} size={this.moreitem?.size}></mg-menu>
     </mg-menu-item>
   );
 

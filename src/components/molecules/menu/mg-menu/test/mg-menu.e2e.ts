@@ -4,20 +4,11 @@ import { Status } from '../../mg-menu-item/mg-menu-item.conf';
 import { Direction, MenuSizeType, sizes } from '../mg-menu.conf';
 
 const expectImageSnapshot = async (page: DesignSystemE2EPage) => {
+  await page.waitForChanges();
   await page.waitForTimeout(200);
   const screenshot = await page.screenshot();
   expect(screenshot).toMatchImageSnapshot();
 };
-
-const moreElement = (hasOverflow: boolean) =>
-  hasOverflow
-    ? `
-  <script>
-    const mgMenu = document.querySelector('mg-menu');
-    mgMenu.moreitem = ${JSON.stringify({ size: 'large' })};
-  </script>
-  `
-    : '';
 
 const getSubMenuSize = (size: MenuSizeType) => {
   if (size === 'large') return 'medium';
@@ -26,11 +17,11 @@ const getSubMenuSize = (size: MenuSizeType) => {
 };
 
 const createHTML = (args, containerSize?) => `
-  <div class="menu-container menu-container--${containerSize}">
+  <header class="menu-container menu-container--${containerSize}">
     <mg-menu ${renderAttributes({ label: 'menu', ...args })}>
       <mg-menu-item status="active">
         <span slot="label">1 - head-1</span>
-        <mg-menu ${renderAttributes({ label: 'sub-menu 1', size: getSubMenuSize(args?.size) })}>
+        <mg-menu ${renderAttributes({ label: 'sub-menu 1', direction: Direction.VERTICAL, size: getSubMenuSize(args?.size) })}>
           <mg-menu-item><span slot="label">Batman begins</span></mg-menu-item>
         </mg-menu>
       </mg-menu-item>
@@ -48,28 +39,24 @@ const createHTML = (args, containerSize?) => `
         <span slot="label">1 - head-5</span>
         <mg-icon icon='user' slot='image'></mg-icon>
         ${args?.badge ? "<mg-badge value='2' label='hello' slot='information'></mg-badge>" : ''} 
-        <mg-menu ${renderAttributes({ label: 'sub-menu 2', size: getSubMenuSize(args?.size) })}>
+        <mg-menu ${renderAttributes({ label: 'sub-menu 2', direction: Direction.VERTICAL, size: getSubMenuSize(args?.size) })}>
           <mg-menu-item><span slot="label">Batman begins with a longer title to go outide screen</span></mg-menu-item>
         </mg-menu>
       </mg-menu-item>
     </mg-menu>
-  </div>
+  </header>
   <style>
     .menu-container.menu-container--vertical-small {
       width: 180px;
     }
-    .menu-container.menu-container--horizontal-small {
-      width: 400px;
-    }
   </style>
-  ${moreElement(args.direction !== Direction.VERTICAL)}
   `;
 
 describe('mg-menu', () => {
   describe.each([Direction.HORIZONTAL, Direction.VERTICAL])('direction %s', direction => {
     test.each(sizes)(`should renders, case direction ${direction} size %s with large screen`, async size => {
       const page = await createPage(
-        `<h1>${direction} mg-menu - Size props ${size} in large screen</h1>${createHTML({ direction, size })}`,
+        `<h1>${direction} mg-menu - Size props ${size} in large screen</h1>${createHTML({ direction, size, badge: true })}`,
         direction === Direction.HORIZONTAL ? { width: 1100, height: 200 } : undefined,
       );
 
@@ -81,7 +68,10 @@ describe('mg-menu', () => {
 
     describe('navigation', () => {
       test(`should success mouse navigation, case direction ${direction}`, async () => {
-        const page = await createPage(createHTML({ direction }), { width: direction === Direction.VERTICAL ? 400 : 1200, height: direction === Direction.VERTICAL ? 500 : 200 });
+        const page = await createPage(createHTML({ direction }), direction === Direction.VERTICAL ? { width: 400, height: 500 } : undefined);
+        if (direction === Direction.HORIZONTAL) {
+          await page.setViewport({ width: 1200, height: 200 });
+        }
         await expectImageSnapshot(page);
 
         // standard menu-item
@@ -103,25 +93,31 @@ describe('mg-menu', () => {
       });
 
       test(`should manage document click, case direction ${direction}`, async () => {
-        const page = await createPage(createHTML({ direction }), { width: direction === Direction.VERTICAL ? 400 : 1200, height: direction === Direction.VERTICAL ? 500 : 200 });
+        const page = await createPage(createHTML({ direction }), direction === Direction.VERTICAL ? { width: 400, height: 500 } : undefined);
+        if (direction === Direction.HORIZONTAL) {
+          await page.setViewport({ width: 1200, height: 200 });
+        }
         await expectImageSnapshot(page);
 
-        const document = await page.find('body');
-
-        // standard menu-item
+        // menu-item expand: true
         const mgMenuItem1 = await page.find('mg-menu-item');
         await mgMenuItem1.click();
         await page.waitForChanges();
         await expectImageSnapshot(page);
 
-        // expandable menu-item, close
-        await document.click();
+        // menu-item expand: false
+        await page.$eval('body', elm => {
+          elm.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+        });
         await page.waitForChanges();
         await expectImageSnapshot(page);
       });
 
       test(`should success keyboard navigation, case direction ${direction}`, async () => {
-        const page = await createPage(createHTML({ direction }), { width: direction === Direction.VERTICAL ? 400 : 1200, height: direction === Direction.VERTICAL ? 500 : 200 });
+        const page = await createPage(createHTML({ direction }), direction === Direction.VERTICAL ? { width: 400, height: 500 } : undefined);
+        if (direction === Direction.HORIZONTAL) {
+          await page.setViewport({ width: 1200, height: 200 });
+        }
         await expectImageSnapshot(page);
 
         // focus on menu-item id-1
@@ -178,21 +174,13 @@ describe('mg-menu', () => {
     });
 
     test.each([true, false])('should renders with overflow, case badge %s', async badge => {
-      const page = await createPage(`<h1>mg-menu - Overflow - direction ${Direction.HORIZONTAL}</h1>${createHTML({ direction: Direction.HORIZONTAL, badge })}`, {
-        width: 1100,
-        height: 200,
-      });
+      const page = await createPage(createHTML({ direction: Direction.HORIZONTAL, badge }), { width: 1100, height: 200 });
+
+      await page.setViewport({ width: 400, height: 200 });
+
+      await expectImageSnapshot(page);
 
       const element = await page.find('mg-menu');
-      expect(element).toHaveClass('hydrated');
-      await expectImageSnapshot(page);
-
-      await page.$eval('.menu-container', elm => {
-        elm.classList.add('menu-container--horizontal-small');
-      });
-      await page.waitForChanges();
-      await expectImageSnapshot(page);
-
       const moreElement = await element.find(`[${OverflowBehaviorElements.MORE}]`);
       await moreElement.click();
 
@@ -205,6 +193,7 @@ describe('mg-menu', () => {
         },
         Status.VISIBLE,
       );
+
       await page.$eval(
         `[${OverflowBehaviorElements.BASE_INDEX}="2"]`,
         (elm, status) => {

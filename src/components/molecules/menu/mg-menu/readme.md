@@ -126,12 +126,12 @@ When not all of the items can be displayed because of the height of the menu's c
 
 ## Properties
 
-| Property             | Attribute   | Description                                                            | Type                                                                                  | Default                |
-| -------------------- | ----------- | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ---------------------- |
-| `direction`          | `direction` | Component display direction. Default: "horizontal"                     | `Direction.HORIZONTAL \| Direction.VERTICAL`                                          | `Direction.HORIZONTAL` |
-| `label` _(required)_ | `label`     | Menu label. Include short menu description. Required for accessibility | `string`                                                                              | `undefined`            |
-| `moreitem`           | --          | Define mg-menu-item "more element" used when overflow is enable        | `{ mgIcon?: { icon: string; }; slotLabel?: { label?: string; display?: boolean; }; }` | `undefined`            |
-| `size`               | `size`      |                                                                        | `"large" \| "medium" \| "regular"`                                                    | `'regular'`            |
+| Property             | Attribute   | Description                                                                         | Type                                                                                                                           | Default                |
+| -------------------- | ----------- | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | ---------------------- |
+| `direction`          | `direction` | Component display direction. Default: "horizontal"                                  | `Direction.HORIZONTAL \| Direction.VERTICAL`                                                                                   | `Direction.HORIZONTAL` |
+| `label` _(required)_ | `label`     | Menu label. Include short menu description. Required for accessibility              | `string`                                                                                                                       | `undefined`            |
+| `moreitem`           | --          | Customize mg-menu "more element" Used with direction: 'vertical' to manage overflow | `{ mgIcon?: { icon: string; }; slotLabel?: { label?: string; display?: boolean; }; size?: "regular" \| "large" \| "medium"; }` | `undefined`            |
+| `size`               | `size`      | Define mg-menu size Default: 'regular'                                              | `"large" \| "medium" \| "regular"`                                                                                             | `'regular'`            |
 
 
 ## Dependencies

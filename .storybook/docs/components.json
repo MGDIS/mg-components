@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-01-13T10:08:26",
+  "timestamp": "2023-01-13T12:07:42",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.20.0",
@@ -4362,14 +4362,21 @@
         },
         {
           "name": "moreitem",
-          "type": "{ mgIcon?: { icon: string; }; slotLabel?: { label?: string; display?: boolean; }; }",
+          "type": "{ mgIcon?: { icon: string; }; slotLabel?: { label?: string; display?: boolean; }; size?: \"regular\" | \"large\" | \"medium\"; }",
           "mutable": false,
           "reflectToAttr": false,
-          "docs": "Define mg-menu-item \"more element\"\nused when overflow is enable",
+          "docs": "Customize mg-menu \"more element\"\nUsed with direction: 'vertical' to manage overflow",
           "docsTags": [],
           "values": [
             {
-              "type": "{ mgIcon?: { icon: string; }; slotLabel?: { label?: string; display?: boolean; }; }"
+              "type": "{ mgIcon?: { icon: string; }; slotLabel?: { label?: string; display?: boolean; }; size?: \"regular\""
+            },
+            {
+              "value": "large",
+              "type": "string"
+            },
+            {
+              "type": "\"medium\"; }"
             }
           ],
           "optional": false,
@@ -4381,7 +4388,7 @@
           "mutable": false,
           "attr": "size",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "Define mg-menu size\nDefault: 'regular'",
           "docsTags": [],
           "default": "'regular'",
           "values": [

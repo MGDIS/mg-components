@@ -1,4 +1,5 @@
 import { MgIcon } from '../../../atoms/mg-icon/mg-icon';
+import { MgMenu } from './mg-menu';
 
 /**
  * Menu direction type
@@ -24,6 +25,7 @@ export type MoreItemType = {
     label?: string;
     display?: boolean;
   };
+  size?: MgMenu['size'];
 };
 
 /**
@@ -36,7 +38,8 @@ export const isMoreItem = (element: unknown): element is MoreItemType => {
   const item = element as MoreItemType;
   return (
     item === undefined ||
-    (typeof item === 'object' && (typeof item.mgIcon?.icon === 'string' || typeof item.slotLabel?.label === 'string' || typeof item.slotLabel?.display === 'boolean'))
+    (typeof item === 'object' &&
+      (typeof item.size === 'string' || typeof item.mgIcon?.icon === 'string' || typeof item.slotLabel?.label === 'string' || typeof item.slotLabel?.display === 'boolean'))
   );
 };
 
