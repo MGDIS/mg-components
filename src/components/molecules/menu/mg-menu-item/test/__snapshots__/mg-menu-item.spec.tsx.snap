@@ -185,10 +185,12 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
         <mock:shadow-root>
           <slot></slot>
           <div class="mg-popover" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
-            <div class="mg-popover__title">
-              <slot name="title"></slot>
-            </div>
-            <slot name="content"></slot>
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
             <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
@@ -297,10 +299,12 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
         <mock:shadow-root>
           <slot></slot>
           <div class="mg-popover" data-show id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
-            <div class="mg-popover__title">
-              <slot name="title"></slot>
-            </div>
-            <slot name="content"></slot>
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
             <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
@@ -409,10 +413,12 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
         <mock:shadow-root>
           <slot></slot>
           <div class="mg-popover" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
-            <div class="mg-popover__title">
-              <slot name="title"></slot>
-            </div>
-            <slot name="content"></slot>
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
             <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
@@ -449,10 +455,12 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
             <mock:shadow-root>
               <slot></slot>
               <div class="mg-popover" id="mg-popover-test_1" style="position: fixed; left: 0; top: 0; margin: 0;">
-                <div class="mg-popover__title">
-                  <slot name="title"></slot>
-                </div>
-                <slot name="content"></slot>
+                <mg-card>
+                  <div class="mg-popover__title">
+                    <slot name="title"></slot>
+                  </div>
+                  <slot name="content"></slot>
+                </mg-card>
                 <div data-popper-arrow style="position: absolute;"></div>
               </div>
             </mock:shadow-root>
@@ -566,10 +574,12 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
         <mock:shadow-root>
           <slot></slot>
           <div class="mg-popover" data-show id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
-            <div class="mg-popover__title">
-              <slot name="title"></slot>
-            </div>
-            <slot name="content"></slot>
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
             <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
@@ -606,10 +616,12 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
             <mock:shadow-root>
               <slot></slot>
               <div class="mg-popover" id="mg-popover-test_1" style="position: fixed; left: 0; top: 0; margin: 0;">
-                <div class="mg-popover__title">
-                  <slot name="title"></slot>
-                </div>
-                <slot name="content"></slot>
+                <mg-card>
+                  <div class="mg-popover__title">
+                    <slot name="title"></slot>
+                  </div>
+                  <slot name="content"></slot>
+                </mg-card>
                 <div data-popper-arrow style="position: absolute;"></div>
               </div>
             </mock:shadow-root>
@@ -723,10 +735,12 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
         <mock:shadow-root>
           <slot></slot>
           <div class="mg-popover" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
-            <div class="mg-popover__title">
-              <slot name="title"></slot>
-            </div>
-            <slot name="content"></slot>
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
             <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
@@ -763,10 +777,12 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
             <mock:shadow-root>
               <slot></slot>
               <div class="mg-popover" id="mg-popover-test_1" style="position: fixed; left: 0; top: 0; margin: 0;">
-                <div class="mg-popover__title">
-                  <slot name="title"></slot>
-                </div>
-                <slot name="content"></slot>
+                <mg-card>
+                  <div class="mg-popover__title">
+                    <slot name="title"></slot>
+                  </div>
+                  <slot name="content"></slot>
+                </mg-card>
                 <div data-popper-arrow style="position: absolute;"></div>
               </div>
             </mock:shadow-root>
@@ -880,10 +896,12 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
         <mock:shadow-root>
           <slot></slot>
           <div class="mg-popover" data-show id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
-            <div class="mg-popover__title">
-              <slot name="title"></slot>
-            </div>
-            <slot name="content"></slot>
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
             <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
@@ -920,10 +938,12 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
             <mock:shadow-root>
               <slot></slot>
               <div class="mg-popover" data-show id="mg-popover-test_1" style="position: fixed; left: 0; top: 0; margin: 0;">
-                <div class="mg-popover__title">
-                  <slot name="title"></slot>
-                </div>
-                <slot name="content"></slot>
+                <mg-card>
+                  <div class="mg-popover__title">
+                    <slot name="title"></slot>
+                  </div>
+                  <slot name="content"></slot>
+                </mg-card>
                 <div data-popper-arrow style="position: absolute;"></div>
               </div>
             </mock:shadow-root>
@@ -1037,10 +1057,12 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
         <mock:shadow-root>
           <slot></slot>
           <div class="mg-popover" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
-            <div class="mg-popover__title">
-              <slot name="title"></slot>
-            </div>
-            <slot name="content"></slot>
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
             <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
@@ -1133,10 +1155,12 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
         <mock:shadow-root>
           <slot></slot>
           <div class="mg-popover" data-show id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
-            <div class="mg-popover__title">
-              <slot name="title"></slot>
-            </div>
-            <slot name="content"></slot>
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
             <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
@@ -1363,10 +1387,12 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
         <mock:shadow-root>
           <slot></slot>
           <div class="mg-popover" data-show id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
-            <div class="mg-popover__title">
-              <slot name="title"></slot>
-            </div>
-            <slot name="content"></slot>
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
             <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
@@ -1475,10 +1501,12 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
         <mock:shadow-root>
           <slot></slot>
           <div class="mg-popover" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
-            <div class="mg-popover__title">
-              <slot name="title"></slot>
-            </div>
-            <slot name="content"></slot>
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
             <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
@@ -1587,10 +1615,12 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
         <mock:shadow-root>
           <slot></slot>
           <div class="mg-popover" data-show id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
-            <div class="mg-popover__title">
-              <slot name="title"></slot>
-            </div>
-            <slot name="content"></slot>
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
             <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
@@ -1627,10 +1657,12 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
             <mock:shadow-root>
               <slot></slot>
               <div class="mg-popover" id="mg-popover-test_1" style="position: fixed; left: 0; top: 0; margin: 0;">
-                <div class="mg-popover__title">
-                  <slot name="title"></slot>
-                </div>
-                <slot name="content"></slot>
+                <mg-card>
+                  <div class="mg-popover__title">
+                    <slot name="title"></slot>
+                  </div>
+                  <slot name="content"></slot>
+                </mg-card>
                 <div data-popper-arrow style="position: absolute;"></div>
               </div>
             </mock:shadow-root>
@@ -1744,10 +1776,12 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
         <mock:shadow-root>
           <slot></slot>
           <div class="mg-popover" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
-            <div class="mg-popover__title">
-              <slot name="title"></slot>
-            </div>
-            <slot name="content"></slot>
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
             <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
@@ -1784,10 +1818,12 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
             <mock:shadow-root>
               <slot></slot>
               <div class="mg-popover" id="mg-popover-test_1" style="position: fixed; left: 0; top: 0; margin: 0;">
-                <div class="mg-popover__title">
-                  <slot name="title"></slot>
-                </div>
-                <slot name="content"></slot>
+                <mg-card>
+                  <div class="mg-popover__title">
+                    <slot name="title"></slot>
+                  </div>
+                  <slot name="content"></slot>
+                </mg-card>
                 <div data-popper-arrow style="position: absolute;"></div>
               </div>
             </mock:shadow-root>
@@ -1901,10 +1937,12 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
         <mock:shadow-root>
           <slot></slot>
           <div class="mg-popover" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
-            <div class="mg-popover__title">
-              <slot name="title"></slot>
-            </div>
-            <slot name="content"></slot>
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
             <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
@@ -1941,10 +1979,12 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
             <mock:shadow-root>
               <slot></slot>
               <div class="mg-popover" id="mg-popover-test_1" style="position: fixed; left: 0; top: 0; margin: 0;">
-                <div class="mg-popover__title">
-                  <slot name="title"></slot>
-                </div>
-                <slot name="content"></slot>
+                <mg-card>
+                  <div class="mg-popover__title">
+                    <slot name="title"></slot>
+                  </div>
+                  <slot name="content"></slot>
+                </mg-card>
                 <div data-popper-arrow style="position: absolute;"></div>
               </div>
             </mock:shadow-root>
@@ -2058,10 +2098,12 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
         <mock:shadow-root>
           <slot></slot>
           <div class="mg-popover" data-show id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
-            <div class="mg-popover__title">
-              <slot name="title"></slot>
-            </div>
-            <slot name="content"></slot>
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
             <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
@@ -2098,10 +2140,12 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
             <mock:shadow-root>
               <slot></slot>
               <div class="mg-popover" data-show id="mg-popover-test_1" style="position: fixed; left: 0; top: 0; margin: 0;">
-                <div class="mg-popover__title">
-                  <slot name="title"></slot>
-                </div>
-                <slot name="content"></slot>
+                <mg-card>
+                  <div class="mg-popover__title">
+                    <slot name="title"></slot>
+                  </div>
+                  <slot name="content"></slot>
+                </mg-card>
                 <div data-popper-arrow style="position: absolute;"></div>
               </div>
             </mock:shadow-root>
@@ -2215,10 +2259,12 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
         <mock:shadow-root>
           <slot></slot>
           <div class="mg-popover" data-show id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
-            <div class="mg-popover__title">
-              <slot name="title"></slot>
-            </div>
-            <slot name="content"></slot>
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
             <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
@@ -2311,10 +2357,12 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
         <mock:shadow-root>
           <slot></slot>
           <div class="mg-popover" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
-            <div class="mg-popover__title">
-              <slot name="title"></slot>
-            </div>
-            <slot name="content"></slot>
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
             <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
@@ -2541,10 +2589,12 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
         <mock:shadow-root>
           <slot></slot>
           <div class="mg-popover" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
-            <div class="mg-popover__title">
-              <slot name="title"></slot>
-            </div>
-            <slot name="content"></slot>
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
             <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
@@ -2653,10 +2703,12 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
         <mock:shadow-root>
           <slot></slot>
           <div class="mg-popover" data-show id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
-            <div class="mg-popover__title">
-              <slot name="title"></slot>
-            </div>
-            <slot name="content"></slot>
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
             <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
@@ -2765,10 +2817,12 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
         <mock:shadow-root>
           <slot></slot>
           <div class="mg-popover" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
-            <div class="mg-popover__title">
-              <slot name="title"></slot>
-            </div>
-            <slot name="content"></slot>
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
             <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
@@ -2805,10 +2859,12 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
             <mock:shadow-root>
               <slot></slot>
               <div class="mg-popover" id="mg-popover-test_1" style="position: fixed; left: 0; top: 0; margin: 0;">
-                <div class="mg-popover__title">
-                  <slot name="title"></slot>
-                </div>
-                <slot name="content"></slot>
+                <mg-card>
+                  <div class="mg-popover__title">
+                    <slot name="title"></slot>
+                  </div>
+                  <slot name="content"></slot>
+                </mg-card>
                 <div data-popper-arrow style="position: absolute;"></div>
               </div>
             </mock:shadow-root>
@@ -2922,10 +2978,12 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
         <mock:shadow-root>
           <slot></slot>
           <div class="mg-popover" data-show id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
-            <div class="mg-popover__title">
-              <slot name="title"></slot>
-            </div>
-            <slot name="content"></slot>
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
             <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
@@ -2962,10 +3020,12 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
             <mock:shadow-root>
               <slot></slot>
               <div class="mg-popover" id="mg-popover-test_1" style="position: fixed; left: 0; top: 0; margin: 0;">
-                <div class="mg-popover__title">
-                  <slot name="title"></slot>
-                </div>
-                <slot name="content"></slot>
+                <mg-card>
+                  <div class="mg-popover__title">
+                    <slot name="title"></slot>
+                  </div>
+                  <slot name="content"></slot>
+                </mg-card>
                 <div data-popper-arrow style="position: absolute;"></div>
               </div>
             </mock:shadow-root>
@@ -3079,10 +3139,12 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
         <mock:shadow-root>
           <slot></slot>
           <div class="mg-popover" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
-            <div class="mg-popover__title">
-              <slot name="title"></slot>
-            </div>
-            <slot name="content"></slot>
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
             <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
@@ -3119,10 +3181,12 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
             <mock:shadow-root>
               <slot></slot>
               <div class="mg-popover" id="mg-popover-test_1" style="position: fixed; left: 0; top: 0; margin: 0;">
-                <div class="mg-popover__title">
-                  <slot name="title"></slot>
-                </div>
-                <slot name="content"></slot>
+                <mg-card>
+                  <div class="mg-popover__title">
+                    <slot name="title"></slot>
+                  </div>
+                  <slot name="content"></slot>
+                </mg-card>
                 <div data-popper-arrow style="position: absolute;"></div>
               </div>
             </mock:shadow-root>
@@ -3236,10 +3300,12 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
         <mock:shadow-root>
           <slot></slot>
           <div class="mg-popover" data-show id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
-            <div class="mg-popover__title">
-              <slot name="title"></slot>
-            </div>
-            <slot name="content"></slot>
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
             <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
@@ -3276,10 +3342,12 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
             <mock:shadow-root>
               <slot></slot>
               <div class="mg-popover" data-show id="mg-popover-test_1" style="position: fixed; left: 0; top: 0; margin: 0;">
-                <div class="mg-popover__title">
-                  <slot name="title"></slot>
-                </div>
-                <slot name="content"></slot>
+                <mg-card>
+                  <div class="mg-popover__title">
+                    <slot name="title"></slot>
+                  </div>
+                  <slot name="content"></slot>
+                </mg-card>
                 <div data-popper-arrow style="position: absolute;"></div>
               </div>
             </mock:shadow-root>
@@ -3393,10 +3461,12 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
         <mock:shadow-root>
           <slot></slot>
           <div class="mg-popover" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
-            <div class="mg-popover__title">
-              <slot name="title"></slot>
-            </div>
-            <slot name="content"></slot>
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
             <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
@@ -3489,10 +3559,12 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
         <mock:shadow-root>
           <slot></slot>
           <div class="mg-popover" data-show id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
-            <div class="mg-popover__title">
-              <slot name="title"></slot>
-            </div>
-            <slot name="content"></slot>
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
             <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
@@ -4026,10 +4098,12 @@ exports[`mg-menu-item render with expanded and sub-menu false 1`] = `
         <mock:shadow-root>
           <slot></slot>
           <div class="mg-popover" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
-            <div class="mg-popover__title">
-              <slot name="title"></slot>
-            </div>
-            <slot name="content"></slot>
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
             <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
@@ -4138,10 +4212,12 @@ exports[`mg-menu-item render with expanded and sub-menu false 2`] = `
         <mock:shadow-root>
           <slot></slot>
           <div class="mg-popover" data-show id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
-            <div class="mg-popover__title">
-              <slot name="title"></slot>
-            </div>
-            <slot name="content"></slot>
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
             <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
@@ -4250,10 +4326,12 @@ exports[`mg-menu-item render with expanded and sub-menu true 1`] = `
         <mock:shadow-root>
           <slot></slot>
           <div class="mg-popover" data-show id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
-            <div class="mg-popover__title">
-              <slot name="title"></slot>
-            </div>
-            <slot name="content"></slot>
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
             <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
@@ -4362,10 +4440,12 @@ exports[`mg-menu-item render with expanded and sub-menu true 2`] = `
         <mock:shadow-root>
           <slot></slot>
           <div class="mg-popover" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
-            <div class="mg-popover__title">
-              <slot name="title"></slot>
-            </div>
-            <slot name="content"></slot>
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
             <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
@@ -4474,10 +4554,12 @@ exports[`mg-menu-item render with expanded and sub-menu undefined 1`] = `
         <mock:shadow-root>
           <slot></slot>
           <div class="mg-popover" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
-            <div class="mg-popover__title">
-              <slot name="title"></slot>
-            </div>
-            <slot name="content"></slot>
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
             <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
@@ -4586,10 +4668,12 @@ exports[`mg-menu-item render with expanded and sub-menu undefined 2`] = `
         <mock:shadow-root>
           <slot></slot>
           <div class="mg-popover" data-show id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
-            <div class="mg-popover__title">
-              <slot name="title"></slot>
-            </div>
-            <slot name="content"></slot>
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
             <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
@@ -5837,10 +5921,12 @@ exports[`mg-menu-item render with vertical sub-menu 1`] = `
         <mock:shadow-root>
           <slot></slot>
           <div class="mg-popover" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
-            <div class="mg-popover__title">
-              <slot name="title"></slot>
-            </div>
-            <slot name="content"></slot>
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
             <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
@@ -5982,10 +6068,12 @@ exports[`mg-menu-item render with vertical sub-menu 2`] = `
         <mock:shadow-root>
           <slot></slot>
           <div class="mg-popover" data-show id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
-            <div class="mg-popover__title">
-              <slot name="title"></slot>
-            </div>
-            <slot name="content"></slot>
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
             <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
@@ -6081,10 +6169,12 @@ exports[`mg-popover Should render with element 1`] = `
   <mock:shadow-root>
     <slot></slot>
     <div class="mg-popover" id="identifier" style="position: fixed; left: 0; top: 0; margin: 0;">
-      <div class="mg-popover__title">
-        <slot name="title"></slot>
-      </div>
-      <slot name="content"></slot>
+      <mg-card>
+        <div class="mg-popover__title">
+          <slot name="title"></slot>
+        </div>
+        <slot name="content"></slot>
+      </mg-card>
       <div class="mg-popover__arrow" data-popper-arrow style="position: absolute;"></div>
     </div>
   </mock:shadow-root>
@@ -6112,10 +6202,12 @@ exports[`mg-popover Should render with element 2`] = `
   <mock:shadow-root>
     <slot></slot>
     <div class="mg-popover" id="identifier" style="position: fixed; left: 0; top: 0; margin: 0;">
-      <div class="mg-popover__title">
-        <slot name="title"></slot>
-      </div>
-      <slot name="content"></slot>
+      <mg-card>
+        <div class="mg-popover__title">
+          <slot name="title"></slot>
+        </div>
+        <slot name="content"></slot>
+      </mg-card>
       <div class="mg-popover__arrow" data-popper-arrow style="position: absolute;"></div>
     </div>
   </mock:shadow-root>
@@ -6143,10 +6235,12 @@ exports[`mg-popover Should render with element 3`] = `
   <mock:shadow-root>
     <slot></slot>
     <div class="mg-popover" data-show id="identifier" style="position: fixed; left: 0; top: 0; margin: 0;">
-      <div class="mg-popover__title">
-        <slot name="title"></slot>
-      </div>
-      <slot name="content"></slot>
+      <mg-card>
+        <div class="mg-popover__title">
+          <slot name="title"></slot>
+        </div>
+        <slot name="content"></slot>
+      </mg-card>
       <div class="mg-popover__arrow" data-popper-arrow style="position: absolute;"></div>
     </div>
   </mock:shadow-root>
@@ -6174,20 +6268,22 @@ exports[`mg-popover Should render with element 4`] = `
   <mock:shadow-root>
     <slot></slot>
     <div class="mg-popover" id="identifier" style="position: fixed; left: 0; top: 0; margin: 0;">
-      <mg-button aria-label="Close" is-icon="" role="button" tabindex="0">
-        <mock:shadow-root>
-          <div class="mg-button mg-button--flat mg-button--icon">
-            <div class="mg-button__content">
-              <slot></slot>
+      <mg-card>
+        <mg-button aria-label="Close" is-icon="" role="button" tabindex="0">
+          <mock:shadow-root>
+            <div class="mg-button mg-button--flat mg-button--icon">
+              <div class="mg-button__content">
+                <slot></slot>
+              </div>
             </div>
-          </div>
-        </mock:shadow-root>
-        <mg-icon icon="cross"></mg-icon>
-      </mg-button>
-      <div class="mg-popover__title">
-        <slot name="title"></slot>
-      </div>
-      <slot name="content"></slot>
+          </mock:shadow-root>
+          <mg-icon icon="cross"></mg-icon>
+        </mg-button>
+        <div class="mg-popover__title">
+          <slot name="title"></slot>
+        </div>
+        <slot name="content"></slot>
+      </mg-card>
       <div class="mg-popover__arrow" data-popper-arrow style="position: absolute;"></div>
     </div>
   </mock:shadow-root>
@@ -6215,10 +6311,12 @@ exports[`mg-popover Should render with element 5`] = `
   <mock:shadow-root>
     <slot></slot>
     <div class="mg-popover" data-show id="identifier" style="position: fixed; left: 0; top: 0; margin: 0;">
-      <div class="mg-popover__title">
-        <slot name="title"></slot>
-      </div>
-      <slot name="content"></slot>
+      <mg-card>
+        <div class="mg-popover__title">
+          <slot name="title"></slot>
+        </div>
+        <slot name="content"></slot>
+      </mg-card>
       <div class="mg-popover__arrow" data-popper-arrow style="position: absolute;"></div>
     </div>
   </mock:shadow-root>
@@ -6246,20 +6344,22 @@ exports[`mg-popover Should render with element 6`] = `
   <mock:shadow-root>
     <slot></slot>
     <div class="mg-popover" id="identifier" style="position: fixed; left: 0; top: 0; margin: 0;">
-      <mg-button aria-label="Fermer" is-icon="" role="button" tabindex="0">
-        <mock:shadow-root>
-          <div class="mg-button mg-button--flat mg-button--icon">
-            <div class="mg-button__content">
-              <slot></slot>
+      <mg-card>
+        <mg-button aria-label="Fermer" is-icon="" role="button" tabindex="0">
+          <mock:shadow-root>
+            <div class="mg-button mg-button--flat mg-button--icon">
+              <div class="mg-button__content">
+                <slot></slot>
+              </div>
             </div>
-          </div>
-        </mock:shadow-root>
-        <mg-icon icon="cross"></mg-icon>
-      </mg-button>
-      <div class="mg-popover__title">
-        <slot name="title"></slot>
-      </div>
-      <slot name="content"></slot>
+          </mock:shadow-root>
+          <mg-icon icon="cross"></mg-icon>
+        </mg-button>
+        <div class="mg-popover__title">
+          <slot name="title"></slot>
+        </div>
+        <slot name="content"></slot>
+      </mg-card>
       <div class="mg-popover__arrow" data-popper-arrow style="position: absolute;"></div>
     </div>
   </mock:shadow-root>
@@ -6287,20 +6387,22 @@ exports[`mg-popover Should render with element 7`] = `
   <mock:shadow-root>
     <slot></slot>
     <div class="mg-popover" id="identifier" style="position: fixed; left: 0; top: 0; margin: 0;">
-      <mg-button aria-label="Close" is-icon="" role="button" tabindex="0">
-        <mock:shadow-root>
-          <div class="mg-button mg-button--flat mg-button--icon">
-            <div class="mg-button__content">
-              <slot></slot>
+      <mg-card>
+        <mg-button aria-label="Close" is-icon="" role="button" tabindex="0">
+          <mock:shadow-root>
+            <div class="mg-button mg-button--flat mg-button--icon">
+              <div class="mg-button__content">
+                <slot></slot>
+              </div>
             </div>
-          </div>
-        </mock:shadow-root>
-        <mg-icon icon="cross"></mg-icon>
-      </mg-button>
-      <div class="mg-popover__title">
-        <slot name="title"></slot>
-      </div>
-      <slot name="content"></slot>
+          </mock:shadow-root>
+          <mg-icon icon="cross"></mg-icon>
+        </mg-button>
+        <div class="mg-popover__title">
+          <slot name="title"></slot>
+        </div>
+        <slot name="content"></slot>
+      </mg-card>
       <div class="mg-popover__arrow" data-popper-arrow style="position: absolute;"></div>
     </div>
   </mock:shadow-root>
@@ -6328,10 +6430,12 @@ exports[`mg-popover Should render with element 8`] = `
   <mock:shadow-root>
     <slot></slot>
     <div class="mg-popover" id="identifier" style="position: fixed; left: 0; top: 0; margin: 0;">
-      <div class="mg-popover__title">
-        <slot name="title"></slot>
-      </div>
-      <slot name="content"></slot>
+      <mg-card>
+        <div class="mg-popover__title">
+          <slot name="title"></slot>
+        </div>
+        <slot name="content"></slot>
+      </mg-card>
       <div data-popper-arrow style="position: absolute;"></div>
     </div>
   </mock:shadow-root>

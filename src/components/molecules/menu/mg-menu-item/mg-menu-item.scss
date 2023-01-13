@@ -132,6 +132,11 @@ $navigation-button-sizes: (
   text-overflow: ellipsis;
 }
 
+::slotted(*) {
+  display: flex;
+  flex-direction: column;
+}
+
 // Prevent click propagation when disabled
 :host([status='disabled']) {
   pointer-events: none;

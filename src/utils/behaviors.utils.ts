@@ -1,4 +1,12 @@
-import { isMgMenuItem, Status } from '../components/molecules/menu/mg-menu-item/mg-menu-item.conf';
+import { Status } from '../components/molecules/menu/mg-menu-item/mg-menu-item.conf';
+
+/**
+ * MgMenuItem type guard
+ *
+ * @param {HTMLElement} element element to control type
+ * @returns {boolean} truthy if element is mg-menu-item
+ */
+const isMgMenuItem = (element: HTMLElement): element is HTMLMgMenuItemElement => element.nodeName === 'MG-MENU-ITEM';
 
 export enum OverflowBehaviorElements {
   MORE = 'data-overflow-more',

@@ -1,7 +1,7 @@
 $mg-popover-padding-vertical: var(--mg-popover-padding-vertical, 1.5rem);
 
 :host {
-  --mg-card-padding: $mg-popover-padding-vertical var(--mg-popover-padding-horizontal, $mg-popover-padding-vertical);
+  --mg-card-padding: #{$mg-popover-padding-vertical} var(--mg-popover-padding-horizontal, #{$mg-popover-padding-vertical});
   --mg-card-border: none;
   --mg-card-border-radius: 0.5rem;
   --mg-card-background: hsl(var(--mg-popover-background-color));
