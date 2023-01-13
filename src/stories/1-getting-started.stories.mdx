@@ -88,11 +88,13 @@ To bind a non string value in a web component we have to use the Vue.js [`.prop`
 <mg-input-text :value="user.firstname" :label="$t('firstname')" @value-change="user.firstname = $event.target.value"></mg-input-text>
 ```
 
-If this syntax is too verbose for you, you can use the directive `v-mg-model` used in the [mg-model directive](http://core.pages.mgdis.fr/core-back/core/docs/mg-components-helpers/mg-model-vue), the syntax will become:
+Given that this syntax is somewhat verbose, it is recommended to use the `v-mg-model` from the [mg-model directive](http://core.pages.mgdis.fr/core-back/core/docs/mg-components-helpers/mg-model-vue), the syntax will become:
 
 ```html
 <mg-input-text v-mg-model="user.firstname" :label="$t('firstname')"></mg-input-text>
 ```
+
+**This directive solves some issues with the components ([#139](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/139)), thus it is recommended to use it.**
 
 #### Tests
 
@@ -141,6 +143,12 @@ To bind a value in a web component we have to use the Angular.js [`ng-prop-`](ht
 
 ```html
 <mg-input-text ng-prop-readonly="readOnly" ng-prop-value="user.firstname" label="Firstname" identifier="firstname"></mg-input-text>
+```
+
+In some cases, binding **a string or a number** won't work ([#191](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/191)), we didn't findout why but as a fix you can do:
+
+```html
+<mg-message variant="{{variant}}" delay="{{delay}}">My message</mg-message>
 ```
 
 ##### ng-model
