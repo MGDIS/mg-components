@@ -30,4 +30,4 @@ export const sizes = ['regular', 'large'] as const;
 /**
  * Variant type from variants
  */
-export type SizeType = typeof sizes[number];
+export type SizeType = (typeof sizes)[number];

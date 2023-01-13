@@ -6,7 +6,7 @@ export const variants = ['primary', 'secondary', 'danger', 'danger-alt', 'info',
 /**
  * VariantType type from button variants
  */
-export type VariantType = typeof variants[number];
+export type VariantType = (typeof variants)[number];
 
 /**
  * List of all possibles button types
@@ -16,4 +16,4 @@ export const buttonTypes = ['button', 'submit', 'reset'] as const;
 /**
  * ButtonType type from buttonTypes
  */
-export type ButtonType = typeof buttonTypes[number];
+export type ButtonType = (typeof buttonTypes)[number];

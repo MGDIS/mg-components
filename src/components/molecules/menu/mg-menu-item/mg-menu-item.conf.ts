@@ -24,4 +24,4 @@ export const sizes = ['regular', 'medium', 'large'] as const;
 /**
  * item Size from sizes
  */
-export type MenuItemSizeType = typeof sizes[number];
+export type MenuItemSizeType = (typeof sizes)[number];
