@@ -172,7 +172,7 @@ export class MgPopover {
     }
 
     // Get popover content
-    this.popover = this.element.shadowRoot.querySelector(`#${this.identifier}`);
+    this.popover = this.element.shadowRoot.getElementById(this.identifier);
 
     //Get interactive element (first element without slot attribute)
     const interactiveElement = this.element.querySelector(':not([slot])') as HTMLElement;
@@ -217,15 +217,17 @@ export class MgPopover {
       <Host>
         <slot></slot>
         <div id={this.identifier} class="mg-popover">
-          {this.closeButton && (
-            <mg-button identifier={this.closeButtonId} is-icon variant="flat" label={this.messages.general.close} onClick={this.handleCloseButton}>
-              <mg-icon icon="cross"></mg-icon>
-            </mg-button>
-          )}
-          <div class="mg-popover__title">
-            <slot name="title"></slot>
-          </div>
-          <slot name="content"></slot>
+          <mg-card>
+            {!this.disabled && this.closeButton && (
+              <mg-button identifier={this.closeButtonId} is-icon variant="flat" label={this.messages.general.close} onClick={this.handleCloseButton}>
+                <mg-icon icon="cross"></mg-icon>
+              </mg-button>
+            )}
+            <div class="mg-popover__title">
+              <slot name="title"></slot>
+            </div>
+            <slot name="content"></slot>
+          </mg-card>
           <div class={{ 'mg-popover__arrow': !this.arrowHide }} data-popper-arrow></div>
         </div>
       </Host>

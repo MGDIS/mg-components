@@ -140,11 +140,29 @@ $button-column-gap: 0.6rem;
     line-height: var(--font-size);
   }
 
-  // Flat style
+  // Flat variant
   &.mg-button--flat {
     background: none;
     border: none;
   }
+
+  // Link variant
+  &.mg-button--link {
+    padding: unset;
+    min-height: unset;
+    background: unset;
+    border: unset;
+    text-decoration: underline;
+
+    slot {
+      font-weight: 600;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
   // full-width style
   &.mg-button--full-width {
     display: flex;

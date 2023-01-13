@@ -40,6 +40,9 @@
   "panel": {
     "editLabel": "Edit section title."
   },
+  "skipLinks": {
+    "navLabel": "Quick access"
+  },
   "general": {
     "confirm": "Confirm",
     "cancel": "Cancel",

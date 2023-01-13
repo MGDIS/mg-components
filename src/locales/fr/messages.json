@@ -40,6 +40,9 @@
   "panel": {
     "editLabel": "Modifier le titre de la section."
   },
+  "skipLinks": {
+    "navLabel": "Accès rapide"
+  },
   "general": {
     "confirm": "Valider",
     "cancel": "Annuler",

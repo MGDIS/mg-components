@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mg-skip-links with args %s 1`] = `
+<mg-skip-links>
+  <mock:shadow-root>
+    <nav aria-label="Quick access" class="mg-skip-links" role="navigation">
+      <ul class="mg-skip-links__list">
+        <li>
+          <a class="mg-skip-links__link" href="#content">
+            Content
+          </a>
+        </li>
+        <li>
+          <a class="mg-skip-links__link" href="#menu">
+            Menu
+          </a>
+        </li>
+        <li>
+          <a class="mg-skip-links__link" href="#search">
+            Search
+          </a>
+        </li>
+        <li>
+          <a class="mg-skip-links__link" href="#footer">
+            Footer
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </mock:shadow-root>
+</mg-skip-links>
+`;
