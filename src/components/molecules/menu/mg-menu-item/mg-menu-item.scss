@@ -3,18 +3,22 @@
 @import '../../../../styles/a11y.scss';
 @import '../../../../styles/mixins/navigation-button.scss';
 
+$navigation-vertical-spacing: 1rem;
 $navigation-button-sizes: (
   'regular': (
-    'vertical': 1rem,
+    'vertical': $navigation-vertical-spacing,
     'horizontal': 2rem,
+    'height': 3.8rem,
   ),
   'medium': (
-    'vertical': 1.5rem,
+    'vertical': $navigation-vertical-spacing,
     'horizontal': 3rem,
+    'height': 5.1rem,
   ),
   'large': (
-    'vertical': 2.5rem,
+    'vertical': $navigation-vertical-spacing,
     'horizontal': 4rem,
+    'height': 7.1rem,
   ),
 );
 
@@ -96,12 +100,6 @@ $navigation-button-sizes: (
     z-index: 10;
   }
   &__navigation-button {
-    &--size-large,
-    &--size-medium {
-      .mg-menu-item__navigation-button-text-content {
-        min-height: calc(#{$font-size-large} * var(--line-height));
-      }
-    }
     &-center {
       min-width: 0;
     }

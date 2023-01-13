@@ -1,7 +1,7 @@
 import { OverflowBehaviorElements } from '../../../../../utils/behaviors.utils';
 import { createPage, DesignSystemE2EPage, renderAttributes } from '../../../../../utils/e2e.test.utils';
 import { Status } from '../../mg-menu-item/mg-menu-item.conf';
-import { Direction } from '../mg-menu.conf';
+import { Direction, MenuSizeType, sizes } from '../mg-menu.conf';
 
 const expectImageSnapshot = async (page: DesignSystemE2EPage) => {
   await page.waitForTimeout(200);
@@ -19,51 +19,64 @@ const moreElement = (hasOverflow: boolean) =>
   `
     : '';
 
-const createHTML = (args, withoutSubBadge?: boolean) => `
-  <div class="menu-container">
+const getSubMenuSize = (size: MenuSizeType) => {
+  if (size === 'large') return 'medium';
+  else if (size === 'medium') return 'regular';
+  else return 'regular';
+};
+
+const createHTML = (args, containerSize?) => `
+  <div class="menu-container menu-container--${containerSize}">
     <mg-menu ${renderAttributes({ label: 'menu', ...args })}>
-      <mg-menu-item size="large" status="active">
+      <mg-menu-item status="active">
         <span slot="label">1 - head-1</span>
-        <mg-menu label="submenu-1" direction="vertical">
-          <mg-menu-item size="medium"><span slot="label">Batman begins</span></mg-menu-item>
+        <mg-menu ${renderAttributes({ label: 'sub-menu 1', size: getSubMenuSize(args?.size) })}>
+          <mg-menu-item><span slot="label">Batman begins</span></mg-menu-item>
         </mg-menu>
       </mg-menu-item>
-      <mg-menu-item size="large" status="disabled"><span slot="label">1 - head-2 long</span></mg-menu-item>
-      <mg-menu-item size="large">
+      <mg-menu-item status="disabled"><span slot="label">1 - head-2 long</span></mg-menu-item>
+      <mg-menu-item>
         <span slot="label">1 - head-3 very long</span>
         <mg-icon icon='user' slot='image'></mg-icon>
       </mg-menu-item>
-      <mg-menu-item size="large">
+      <mg-menu-item>
         <span slot="label">1 - head-4</span>
         <mg-icon icon='user' slot='image'></mg-icon>
-        ${withoutSubBadge ? '' : "<mg-badge value='2' label='hello' slot='information'></mg-badge>"}  
+        ${args?.badge ? "<mg-badge value='2' label='hello' slot='information'></mg-badge>" : ''}  
       </mg-menu-item>
-      <mg-menu-item size="large">
+      <mg-menu-item>
         <span slot="label">1 - head-5</span>
         <mg-icon icon='user' slot='image'></mg-icon>
-        ${withoutSubBadge ? '' : "<mg-badge value='2' label='hello' slot='information'></mg-badge>"} 
-        <mg-menu label="submenu-2" direction="vertical">
-          <mg-menu-item size="medium"><span slot="label">Batman begins with a longer title to go outide screen</span></mg-menu-item>
+        ${args?.badge ? "<mg-badge value='2' label='hello' slot='information'></mg-badge>" : ''} 
+        <mg-menu ${renderAttributes({ label: 'sub-menu 2', size: getSubMenuSize(args?.size) })}>
+          <mg-menu-item><span slot="label">Batman begins with a longer title to go outide screen</span></mg-menu-item>
         </mg-menu>
       </mg-menu-item>
     </mg-menu>
   </div>
+  <style>
+    .menu-container.menu-container--vertical-small {
+      width: 180px;
+    }
+    .menu-container.menu-container--horizontal-small {
+      width: 400px;
+    }
+  </style>
   ${moreElement(args.direction !== Direction.VERTICAL)}
   `;
 
 describe('mg-menu', () => {
   describe.each([Direction.HORIZONTAL, Direction.VERTICAL])('direction %s', direction => {
-    test(`should renders, case direction ${direction}`, async () => {
-      const page = await createPage(createHTML({ direction }), { width: direction === Direction.VERTICAL ? 400 : 1100, height: direction === Direction.VERTICAL ? 400 : 100 });
+    test.each(sizes)(`should renders, case direction ${direction} size %s with large screen`, async size => {
+      const page = await createPage(
+        `<h1>${direction} mg-menu - Size props ${size} in large screen</h1>${createHTML({ direction, size })}`,
+        direction === Direction.HORIZONTAL ? { width: 1100, height: 200 } : undefined,
+      );
 
       const element = await page.find('mg-menu');
       expect(element).toHaveClass('hydrated');
-      await expectImageSnapshot(page);
 
-      if (direction === Direction.VERTICAL) {
-        await page.setViewport({ width: 180, height: 400 });
-        await expectImageSnapshot(page);
-      }
+      await expectImageSnapshot(page);
     });
 
     describe('navigation', () => {
@@ -156,14 +169,28 @@ describe('mg-menu', () => {
   });
 
   describe('overflow', () => {
-    test.each([true, false])('should renders with overflow', async withoutSubBadge => {
-      const page = await createPage(createHTML({ direction: Direction.HORIZONTAL }, withoutSubBadge), { width: 1100, height: 400 });
+    test.each(sizes)(`should renders, case direction ${Direction.VERTICAL} size %s with small screen`, async size => {
+      const page = await createPage(
+        `<h1>${Direction.VERTICAL} mg-menu - Size props ${size} in small screen</h1>${createHTML({ direction: Direction.VERTICAL, size }, `${Direction.VERTICAL}-${'small'}`)}`,
+      );
+
+      await expectImageSnapshot(page);
+    });
+
+    test.each([true, false])('should renders with overflow, case badge %s', async badge => {
+      const page = await createPage(`<h1>mg-menu - Overflow - direction ${Direction.HORIZONTAL}</h1>${createHTML({ direction: Direction.HORIZONTAL, badge })}`, {
+        width: 1100,
+        height: 200,
+      });
 
       const element = await page.find('mg-menu');
       expect(element).toHaveClass('hydrated');
       await expectImageSnapshot(page);
 
-      await page.setViewport({ width: 400, height: 400 });
+      await page.$eval('.menu-container', elm => {
+        elm.classList.add('menu-container--horizontal-small');
+      });
+      await page.waitForChanges();
       await expectImageSnapshot(page);
 
       const moreElement = await element.find(`[${OverflowBehaviorElements.MORE}]`);

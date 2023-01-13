@@ -190,7 +190,6 @@ Child content is displayed via an **mg-tray** component.
 | ---------- | ---------- | -------------------------------------------------------------------------------- | --------------------------------------------------------------------- | ---------------- |
 | `expanded` | `expanded` | Define menu-item content expanded. Default: false.                               | `boolean`                                                             | `false`          |
 | `href`     | `href`     | Define menu-item href when defined menu-item contain an anchor instead of button | `string`                                                              | `undefined`      |
-| `size`     | `size`     | Define menu-item size. Default: "regular".                                       | `"large" \| "medium" \| "regular"`                                    | `'regular'`      |
 | `status`   | `status`   | Define menu-item status. Default: "visible"                                      | `Status.ACTIVE \| Status.DISABLED \| Status.HIDDEN \| Status.VISIBLE` | `Status.VISIBLE` |
 
 

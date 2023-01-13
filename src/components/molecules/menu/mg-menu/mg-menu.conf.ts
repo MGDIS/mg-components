@@ -1,5 +1,4 @@
 import { MgIcon } from '../../../atoms/mg-icon/mg-icon';
-import { MgMenuItem } from '../mg-menu-item/mg-menu-item';
 
 /**
  * Menu direction type
@@ -25,7 +24,6 @@ export type MoreItemType = {
     label?: string;
     display?: boolean;
   };
-  size?: MgMenuItem['size'];
 };
 
 /**
@@ -38,7 +36,16 @@ export const isMoreItem = (element: unknown): element is MoreItemType => {
   const item = element as MoreItemType;
   return (
     item === undefined ||
-    (typeof item === 'object' &&
-      (typeof item.size === 'string' || typeof item.mgIcon?.icon === 'string' || typeof item.slotLabel?.label === 'string' || typeof item.slotLabel?.display === 'boolean'))
+    (typeof item === 'object' && (typeof item.mgIcon?.icon === 'string' || typeof item.slotLabel?.label === 'string' || typeof item.slotLabel?.display === 'boolean'))
   );
 };
+
+/**
+ * List of all possibles sizes
+ */
+export const sizes = ['regular', 'medium', 'large'] as const;
+
+/**
+ * item Size from sizes
+ */
+export type MenuSizeType = typeof sizes[number];

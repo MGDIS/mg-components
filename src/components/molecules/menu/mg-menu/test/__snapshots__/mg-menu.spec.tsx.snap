@@ -13,7 +13,6 @@ exports[`mg-menu overflow with args { mgIcon: [Object] } 1`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon icon="chevron-down"></mg-icon>
@@ -54,7 +53,6 @@ exports[`mg-menu overflow with args { mgIcon: [Object] } 1`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon icon="chevron-down"></mg-icon>
@@ -81,7 +79,6 @@ exports[`mg-menu overflow with args { mgIcon: [Object] } 1`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
             <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon icon="chevron-down"></mg-icon>
@@ -107,7 +104,6 @@ exports[`mg-menu overflow with args { mgIcon: [Object] } 1`] = `
                     <slot name="label"></slot>
                     <slot name="information"></slot>
                   </div>
-                  <slot name="metadata"></slot>
                 </div>
               </button>
               <div class="mg-menu-item__collapse-container" hidden="">
@@ -129,7 +125,6 @@ exports[`mg-menu overflow with args { mgIcon: [Object] } 1`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
           </button>
           <div class="mg-menu-item__collapse-container" hidden="">
@@ -149,7 +144,6 @@ exports[`mg-menu overflow with args { mgIcon: [Object] } 1`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
           </button>
           <div class="mg-menu-item__collapse-container" hidden="">
@@ -182,7 +176,6 @@ exports[`mg-menu overflow with args { mgIcon: [Object] } 1`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon icon="chevron-down"></mg-icon>
@@ -214,7 +207,6 @@ exports[`mg-menu overflow with args { mgIcon: [Object] } 1`] = `
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
@@ -253,7 +245,6 @@ exports[`mg-menu overflow with args { mgIcon: [Object] } 2`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon icon="chevron-down"></mg-icon>
@@ -280,7 +271,6 @@ exports[`mg-menu overflow with args { mgIcon: [Object] } 2`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
             <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon icon="chevron-down"></mg-icon>
@@ -306,7 +296,6 @@ exports[`mg-menu overflow with args { mgIcon: [Object] } 2`] = `
                     <slot name="label"></slot>
                     <slot name="information"></slot>
                   </div>
-                  <slot name="metadata"></slot>
                 </div>
               </button>
               <div class="mg-menu-item__collapse-container" hidden="">
@@ -328,7 +317,6 @@ exports[`mg-menu overflow with args { mgIcon: [Object] } 2`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
           </button>
           <div class="mg-menu-item__collapse-container" hidden="">
@@ -348,7 +336,6 @@ exports[`mg-menu overflow with args { mgIcon: [Object] } 2`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
           </button>
           <div class="mg-menu-item__collapse-container" hidden="">
@@ -381,7 +368,6 @@ exports[`mg-menu overflow with args { mgIcon: [Object] } 2`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon icon="chevron-down"></mg-icon>
@@ -413,7 +399,6 @@ exports[`mg-menu overflow with args { mgIcon: [Object] } 2`] = `
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
@@ -433,7 +418,6 @@ exports[`mg-menu overflow with args { mgIcon: [Object] } 2`] = `
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
         <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
@@ -460,7 +444,6 @@ exports[`mg-menu overflow with args { mgIcon: [Object] } 2`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
             <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon icon="chevron-down"></mg-icon>
@@ -486,7 +469,6 @@ exports[`mg-menu overflow with args { mgIcon: [Object] } 2`] = `
                     <slot name="label"></slot>
                     <slot name="information"></slot>
                   </div>
-                  <slot name="metadata"></slot>
                 </div>
                 <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
                   <mg-icon icon="chevron-down"></mg-icon>
@@ -512,7 +494,6 @@ exports[`mg-menu overflow with args { mgIcon: [Object] } 2`] = `
                         <slot name="label"></slot>
                         <slot name="information"></slot>
                       </div>
-                      <slot name="metadata"></slot>
                     </div>
                   </button>
                   <div class="mg-menu-item__collapse-container" hidden="">
@@ -534,7 +515,6 @@ exports[`mg-menu overflow with args { mgIcon: [Object] } 2`] = `
                     <slot name="label"></slot>
                     <slot name="information"></slot>
                   </div>
-                  <slot name="metadata"></slot>
                 </div>
               </button>
               <div class="mg-menu-item__collapse-container" hidden="">
@@ -554,7 +534,6 @@ exports[`mg-menu overflow with args { mgIcon: [Object] } 2`] = `
                     <slot name="label"></slot>
                     <slot name="information"></slot>
                   </div>
-                  <slot name="metadata"></slot>
                 </div>
               </button>
               <div class="mg-menu-item__collapse-container" hidden="">
@@ -576,7 +555,6 @@ exports[`mg-menu overflow with args { mgIcon: [Object] } 2`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
             <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon icon="chevron-down"></mg-icon>
@@ -607,630 +585,6 @@ exports[`mg-menu overflow with args { mgIcon: [Object] } 2`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
-            </div>
-          </button>
-          <div class="mg-menu-item__collapse-container" hidden="">
-            <slot></slot>
-          </div>
-        </mock:shadow-root>
-        <span slot="label" title="bane">
-          bane
-        </span>
-      </mg-menu-item>
-    </mg-menu>
-  </mg-menu-item>
-</mg-menu>
-`;
-
-exports[`mg-menu overflow with args { size: 'large' } 1`] = `
-<mg-menu aria-label="batman menu" direction="horizontal" role="menubar">
-  <mock:shadow-root>
-    <slot></slot>
-    <mg-menu-item aria-haspopup="true" data-overflow-more role="menuitem" status="visible">
-      <mock:shadow-root>
-        <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
-          <slot name="image"></slot>
-          <div class="mg-menu-item__navigation-button-center">
-            <div class="mg-menu-item__navigation-button-text-content">
-              <slot name="label"></slot>
-              <slot name="information"></slot>
-            </div>
-            <slot name="metadata"></slot>
-          </div>
-          <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
-            <mg-icon icon="chevron-down"></mg-icon>
-          </span>
-        </button>
-        <div class="mg-menu-item__collapse-container" hidden="">
-          <slot></slot>
-        </div>
-      </mock:shadow-root>
-      <mg-icon icon="ellipsis-vertical" slot="image"></mg-icon>
-      <span class="sr-only" slot="label" title="Additional menu">
-        Additional menu
-      </span>
-      <mg-menu aria-label="Additional menu" direction="vertical" role="menubar">
-        <mock:shadow-root>
-          <slot></slot>
-        </mock:shadow-root>
-      </mg-menu>
-    </mg-menu-item>
-  </mock:shadow-root>
-  <mg-menu-item aria-haspopup="true" data-style-direction-horizontal role="menuitem" status="visible">
-    <mock:shadow-root>
-      <mg-popover>
-        <mock:shadow-root>
-          <slot></slot>
-          <div class="mg-popover" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
-            <div class="mg-popover__title">
-              <slot name="title"></slot>
-            </div>
-            <slot name="content"></slot>
-            <div data-popper-arrow style="position: absolute;"></div>
-          </div>
-        </mock:shadow-root>
-        <button aria-controls="mg-popover-test_0" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
-          <slot name="image"></slot>
-          <div class="mg-menu-item__navigation-button-center">
-            <div class="mg-menu-item__navigation-button-text-content">
-              <slot name="label"></slot>
-              <slot name="information"></slot>
-            </div>
-            <slot name="metadata"></slot>
-          </div>
-          <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
-            <mg-icon icon="chevron-down"></mg-icon>
-          </span>
-        </button>
-        <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" slot="content">
-          <slot></slot>
-        </div>
-      </mg-popover>
-    </mock:shadow-root>
-    <span slot="label" title="batman">
-      batman
-    </span>
-    <mg-menu aria-label="batman - submenu" direction="vertical" role="menu">
-      <mock:shadow-root>
-        <slot></slot>
-      </mock:shadow-root>
-      <mg-menu-item aria-haspopup="true" data-style-direction-vertical role="menuitem" status="visible">
-        <mock:shadow-root>
-          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" tabindex="0">
-            <slot name="image"></slot>
-            <div class="mg-menu-item__navigation-button-center">
-              <div class="mg-menu-item__navigation-button-text-content">
-                <slot name="label"></slot>
-                <slot name="information"></slot>
-              </div>
-              <slot name="metadata"></slot>
-            </div>
-            <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
-              <mg-icon icon="chevron-down"></mg-icon>
-            </span>
-          </button>
-          <div class="mg-menu-item__collapse-container" hidden="">
-            <slot></slot>
-          </div>
-        </mock:shadow-root>
-        <span slot="label" title="batman begins">
-          batman begins
-        </span>
-        <mg-menu aria-label="batman begins - submenu" direction="vertical" role="menu">
-          <mock:shadow-root>
-            <slot></slot>
-          </mock:shadow-root>
-          <mg-menu-item aria-haspopup="false" data-level="2" data-style-direction-vertical role="menuitem" status="visible">
-            <mock:shadow-root>
-              <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" tabindex="0">
-                <slot name="image"></slot>
-                <div class="mg-menu-item__navigation-button-center">
-                  <div class="mg-menu-item__navigation-button-text-content">
-                    <slot name="label"></slot>
-                    <slot name="information"></slot>
-                  </div>
-                  <slot name="metadata"></slot>
-                </div>
-              </button>
-              <div class="mg-menu-item__collapse-container" hidden="">
-                <slot></slot>
-              </div>
-            </mock:shadow-root>
-            <span slot="label" title="movie">
-              movie
-            </span>
-          </mg-menu-item>
-        </mg-menu>
-      </mg-menu-item>
-      <mg-menu-item aria-haspopup="false" data-style-direction-vertical role="menuitem" status="visible">
-        <mock:shadow-root>
-          <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" tabindex="0">
-            <slot name="image"></slot>
-            <div class="mg-menu-item__navigation-button-center">
-              <div class="mg-menu-item__navigation-button-text-content">
-                <slot name="label"></slot>
-                <slot name="information"></slot>
-              </div>
-              <slot name="metadata"></slot>
-            </div>
-          </button>
-          <div class="mg-menu-item__collapse-container" hidden="">
-            <slot></slot>
-          </div>
-        </mock:shadow-root>
-        <span slot="label" title="joker: the dark knight">
-          joker: the dark knight
-        </span>
-      </mg-menu-item>
-      <mg-menu-item aria-haspopup="false" data-style-direction-vertical role="menuitem" status="visible">
-        <mock:shadow-root>
-          <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" tabindex="0">
-            <slot name="image"></slot>
-            <div class="mg-menu-item__navigation-button-center">
-              <div class="mg-menu-item__navigation-button-text-content">
-                <slot name="label"></slot>
-                <slot name="information"></slot>
-              </div>
-              <slot name="metadata"></slot>
-            </div>
-          </button>
-          <div class="mg-menu-item__collapse-container" hidden="">
-            <slot></slot>
-          </div>
-        </mock:shadow-root>
-        <span slot="label" title="bane: the dark knight rise">
-          bane: the dark knight rise
-        </span>
-      </mg-menu-item>
-    </mg-menu>
-  </mg-menu-item>
-  <mg-menu-item aria-haspopup="true" data-style-direction-horizontal role="menuitem" status="visible">
-    <mock:shadow-root>
-      <mg-popover>
-        <mock:shadow-root>
-          <slot></slot>
-          <div class="mg-popover" id="mg-popover-test_5" style="position: fixed; left: 0; top: 0; margin: 0;">
-            <div class="mg-popover__title">
-              <slot name="title"></slot>
-            </div>
-            <slot name="content"></slot>
-            <div data-popper-arrow style="position: absolute;"></div>
-          </div>
-        </mock:shadow-root>
-        <button aria-controls="mg-popover-test_5" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
-          <slot name="image"></slot>
-          <div class="mg-menu-item__navigation-button-center">
-            <div class="mg-menu-item__navigation-button-text-content">
-              <slot name="label"></slot>
-              <slot name="information"></slot>
-            </div>
-            <slot name="metadata"></slot>
-          </div>
-          <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
-            <mg-icon icon="chevron-down"></mg-icon>
-          </span>
-        </button>
-        <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" slot="content">
-          <slot></slot>
-        </div>
-      </mg-popover>
-    </mock:shadow-root>
-    <span slot="label" title="joker">
-      joker
-    </span>
-    <div>
-      <h2>
-        This is a joker card
-      </h2>
-      <p>
-        If you don't know the joker, you can watch the movie.
-      </p>
-    </div>
-  </mg-menu-item>
-  <mg-menu-item aria-haspopup="false" data-style-direction-horizontal role="menuitem" status="visible">
-    <mock:shadow-root>
-      <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
-        <slot name="image"></slot>
-        <div class="mg-menu-item__navigation-button-center">
-          <div class="mg-menu-item__navigation-button-text-content">
-            <slot name="label"></slot>
-            <slot name="information"></slot>
-          </div>
-          <slot name="metadata"></slot>
-        </div>
-      </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
-        <slot></slot>
-      </div>
-    </mock:shadow-root>
-    <span slot="label" title="bane">
-      bane
-    </span>
-  </mg-menu-item>
-</mg-menu>
-`;
-
-exports[`mg-menu overflow with args { size: 'large' } 2`] = `
-<mg-menu aria-label="batman menu" direction="horizontal" role="menubar">
-  <mock:shadow-root>
-    <slot></slot>
-  </mock:shadow-root>
-  <mg-menu-item aria-haspopup="true" data-overflow-base-index="0" data-style-direction-horizontal role="menuitem" status="visible">
-    <mock:shadow-root>
-      <mg-popover>
-        <mock:shadow-root>
-          <slot></slot>
-          <div class="mg-popover" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
-            <div class="mg-popover__title">
-              <slot name="title"></slot>
-            </div>
-            <slot name="content"></slot>
-            <div data-popper-arrow style="position: absolute;"></div>
-          </div>
-        </mock:shadow-root>
-        <button aria-controls="mg-popover-test_0" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
-          <slot name="image"></slot>
-          <div class="mg-menu-item__navigation-button-center">
-            <div class="mg-menu-item__navigation-button-text-content">
-              <slot name="label"></slot>
-              <slot name="information"></slot>
-            </div>
-            <slot name="metadata"></slot>
-          </div>
-          <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
-            <mg-icon icon="chevron-down"></mg-icon>
-          </span>
-        </button>
-        <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" slot="content">
-          <slot></slot>
-        </div>
-      </mg-popover>
-    </mock:shadow-root>
-    <span slot="label" title="batman">
-      batman
-    </span>
-    <mg-menu aria-label="batman - submenu" direction="vertical" role="menu">
-      <mock:shadow-root>
-        <slot></slot>
-      </mock:shadow-root>
-      <mg-menu-item aria-haspopup="true" data-style-direction-vertical role="menuitem" status="visible">
-        <mock:shadow-root>
-          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" tabindex="0">
-            <slot name="image"></slot>
-            <div class="mg-menu-item__navigation-button-center">
-              <div class="mg-menu-item__navigation-button-text-content">
-                <slot name="label"></slot>
-                <slot name="information"></slot>
-              </div>
-              <slot name="metadata"></slot>
-            </div>
-            <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
-              <mg-icon icon="chevron-down"></mg-icon>
-            </span>
-          </button>
-          <div class="mg-menu-item__collapse-container" hidden="">
-            <slot></slot>
-          </div>
-        </mock:shadow-root>
-        <span slot="label" title="batman begins">
-          batman begins
-        </span>
-        <mg-menu aria-label="batman begins - submenu" direction="vertical" role="menu">
-          <mock:shadow-root>
-            <slot></slot>
-          </mock:shadow-root>
-          <mg-menu-item aria-haspopup="false" data-level="2" data-style-direction-vertical role="menuitem" status="visible">
-            <mock:shadow-root>
-              <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" tabindex="0">
-                <slot name="image"></slot>
-                <div class="mg-menu-item__navigation-button-center">
-                  <div class="mg-menu-item__navigation-button-text-content">
-                    <slot name="label"></slot>
-                    <slot name="information"></slot>
-                  </div>
-                  <slot name="metadata"></slot>
-                </div>
-              </button>
-              <div class="mg-menu-item__collapse-container" hidden="">
-                <slot></slot>
-              </div>
-            </mock:shadow-root>
-            <span slot="label" title="movie">
-              movie
-            </span>
-          </mg-menu-item>
-        </mg-menu>
-      </mg-menu-item>
-      <mg-menu-item aria-haspopup="false" data-style-direction-vertical role="menuitem" status="visible">
-        <mock:shadow-root>
-          <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" tabindex="0">
-            <slot name="image"></slot>
-            <div class="mg-menu-item__navigation-button-center">
-              <div class="mg-menu-item__navigation-button-text-content">
-                <slot name="label"></slot>
-                <slot name="information"></slot>
-              </div>
-              <slot name="metadata"></slot>
-            </div>
-          </button>
-          <div class="mg-menu-item__collapse-container" hidden="">
-            <slot></slot>
-          </div>
-        </mock:shadow-root>
-        <span slot="label" title="joker: the dark knight">
-          joker: the dark knight
-        </span>
-      </mg-menu-item>
-      <mg-menu-item aria-haspopup="false" data-style-direction-vertical role="menuitem" status="visible">
-        <mock:shadow-root>
-          <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" tabindex="0">
-            <slot name="image"></slot>
-            <div class="mg-menu-item__navigation-button-center">
-              <div class="mg-menu-item__navigation-button-text-content">
-                <slot name="label"></slot>
-                <slot name="information"></slot>
-              </div>
-              <slot name="metadata"></slot>
-            </div>
-          </button>
-          <div class="mg-menu-item__collapse-container" hidden="">
-            <slot></slot>
-          </div>
-        </mock:shadow-root>
-        <span slot="label" title="bane: the dark knight rise">
-          bane: the dark knight rise
-        </span>
-      </mg-menu-item>
-    </mg-menu>
-  </mg-menu-item>
-  <mg-menu-item aria-haspopup="true" data-overflow-base-index="1" data-style-direction-horizontal role="menuitem" status="visible">
-    <mock:shadow-root>
-      <mg-popover>
-        <mock:shadow-root>
-          <slot></slot>
-          <div class="mg-popover" id="mg-popover-test_5" style="position: fixed; left: 0; top: 0; margin: 0;">
-            <div class="mg-popover__title">
-              <slot name="title"></slot>
-            </div>
-            <slot name="content"></slot>
-            <div data-popper-arrow style="position: absolute;"></div>
-          </div>
-        </mock:shadow-root>
-        <button aria-controls="mg-popover-test_5" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
-          <slot name="image"></slot>
-          <div class="mg-menu-item__navigation-button-center">
-            <div class="mg-menu-item__navigation-button-text-content">
-              <slot name="label"></slot>
-              <slot name="information"></slot>
-            </div>
-            <slot name="metadata"></slot>
-          </div>
-          <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
-            <mg-icon icon="chevron-down"></mg-icon>
-          </span>
-        </button>
-        <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" slot="content">
-          <slot></slot>
-        </div>
-      </mg-popover>
-    </mock:shadow-root>
-    <span slot="label" title="joker">
-      joker
-    </span>
-    <div>
-      <h2>
-        This is a joker card
-      </h2>
-      <p>
-        If you don't know the joker, you can watch the movie.
-      </p>
-    </div>
-  </mg-menu-item>
-  <mg-menu-item aria-haspopup="false" data-overflow-base-index="2" data-style-direction-horizontal hidden="" role="menuitem" status="visible">
-    <mock:shadow-root>
-      <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
-        <slot name="image"></slot>
-        <div class="mg-menu-item__navigation-button-center">
-          <div class="mg-menu-item__navigation-button-text-content">
-            <slot name="label"></slot>
-            <slot name="information"></slot>
-          </div>
-          <slot name="metadata"></slot>
-        </div>
-      </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
-        <slot></slot>
-      </div>
-    </mock:shadow-root>
-    <span slot="label" title="bane">
-      bane
-    </span>
-  </mg-menu-item>
-  <mg-menu-item aria-haspopup="true" data-overflow-base-index="3" data-overflow-more role="menuitem" status="visible">
-    <mock:shadow-root>
-      <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-large mg-menu-item__navigation-button--visible" tabindex="0">
-        <slot name="image"></slot>
-        <div class="mg-menu-item__navigation-button-center">
-          <div class="mg-menu-item__navigation-button-text-content">
-            <slot name="label"></slot>
-            <slot name="information"></slot>
-          </div>
-          <slot name="metadata"></slot>
-        </div>
-        <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
-          <mg-icon icon="chevron-down"></mg-icon>
-        </span>
-      </button>
-      <div class="mg-menu-item__collapse-container" hidden="">
-        <slot></slot>
-      </div>
-    </mock:shadow-root>
-    <mg-icon icon="ellipsis-vertical" slot="image"></mg-icon>
-    <span class="sr-only" slot="label" title="Additional menu">
-      Additional menu
-    </span>
-    <mg-menu aria-label="Additional menu" direction="vertical" role="menubar">
-      <mock:shadow-root>
-        <slot></slot>
-      </mock:shadow-root>
-      <mg-menu-item aria-haspopup="true" data-overflow-proxy-index="0" data-style-direction-horizontal hidden="" role="menuitem" status="visible">
-        <mock:shadow-root>
-          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
-            <slot name="image"></slot>
-            <div class="mg-menu-item__navigation-button-center">
-              <div class="mg-menu-item__navigation-button-text-content">
-                <slot name="label"></slot>
-                <slot name="information"></slot>
-              </div>
-              <slot name="metadata"></slot>
-            </div>
-            <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
-              <mg-icon icon="chevron-down"></mg-icon>
-            </span>
-          </button>
-          <div class="mg-menu-item__collapse-container" hidden="">
-            <slot></slot>
-          </div>
-        </mock:shadow-root>
-        <span slot="label" title="batman">
-          batman
-        </span>
-        <mg-menu aria-label="test override" direction="horizontal" role="menubar">
-          <mock:shadow-root>
-            <slot></slot>
-          </mock:shadow-root>
-          <mg-menu-item aria-haspopup="true" data-style-direction-vertical role="menuitem" status="visible">
-            <mock:shadow-root>
-              <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
-                <slot name="image"></slot>
-                <div class="mg-menu-item__navigation-button-center">
-                  <div class="mg-menu-item__navigation-button-text-content">
-                    <slot name="label"></slot>
-                    <slot name="information"></slot>
-                  </div>
-                  <slot name="metadata"></slot>
-                </div>
-                <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
-                  <mg-icon icon="chevron-down"></mg-icon>
-                </span>
-              </button>
-              <div class="mg-menu-item__collapse-container" hidden="">
-                <slot></slot>
-              </div>
-            </mock:shadow-root>
-            <span slot="label" title="batman begins">
-              batman begins
-            </span>
-            <mg-menu aria-label="test override" direction="horizontal" role="menubar">
-              <mock:shadow-root>
-                <slot></slot>
-              </mock:shadow-root>
-              <mg-menu-item aria-haspopup="false" data-level="2" data-style-direction-vertical role="menuitem" status="visible">
-                <mock:shadow-root>
-                  <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
-                    <slot name="image"></slot>
-                    <div class="mg-menu-item__navigation-button-center">
-                      <div class="mg-menu-item__navigation-button-text-content">
-                        <slot name="label"></slot>
-                        <slot name="information"></slot>
-                      </div>
-                      <slot name="metadata"></slot>
-                    </div>
-                  </button>
-                  <div class="mg-menu-item__collapse-container" hidden="">
-                    <slot></slot>
-                  </div>
-                </mock:shadow-root>
-                <span slot="label" title="movie">
-                  movie
-                </span>
-              </mg-menu-item>
-            </mg-menu>
-          </mg-menu-item>
-          <mg-menu-item aria-haspopup="false" data-style-direction-vertical role="menuitem" status="visible">
-            <mock:shadow-root>
-              <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
-                <slot name="image"></slot>
-                <div class="mg-menu-item__navigation-button-center">
-                  <div class="mg-menu-item__navigation-button-text-content">
-                    <slot name="label"></slot>
-                    <slot name="information"></slot>
-                  </div>
-                  <slot name="metadata"></slot>
-                </div>
-              </button>
-              <div class="mg-menu-item__collapse-container" hidden="">
-                <slot></slot>
-              </div>
-            </mock:shadow-root>
-            <span slot="label" title="joker: the dark knight">
-              joker: the dark knight
-            </span>
-          </mg-menu-item>
-          <mg-menu-item aria-haspopup="false" data-style-direction-vertical role="menuitem" status="visible">
-            <mock:shadow-root>
-              <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
-                <slot name="image"></slot>
-                <div class="mg-menu-item__navigation-button-center">
-                  <div class="mg-menu-item__navigation-button-text-content">
-                    <slot name="label"></slot>
-                    <slot name="information"></slot>
-                  </div>
-                  <slot name="metadata"></slot>
-                </div>
-              </button>
-              <div class="mg-menu-item__collapse-container" hidden="">
-                <slot></slot>
-              </div>
-            </mock:shadow-root>
-            <span slot="label" title="bane: the dark knight rise">
-              bane: the dark knight rise
-            </span>
-          </mg-menu-item>
-        </mg-menu>
-      </mg-menu-item>
-      <mg-menu-item aria-haspopup="true" data-overflow-proxy-index="1" data-style-direction-horizontal hidden="" role="menuitem" status="visible">
-        <mock:shadow-root>
-          <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
-            <slot name="image"></slot>
-            <div class="mg-menu-item__navigation-button-center">
-              <div class="mg-menu-item__navigation-button-text-content">
-                <slot name="label"></slot>
-                <slot name="information"></slot>
-              </div>
-              <slot name="metadata"></slot>
-            </div>
-            <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
-              <mg-icon icon="chevron-down"></mg-icon>
-            </span>
-          </button>
-          <div class="mg-menu-item__collapse-container" hidden="">
-            <slot></slot>
-          </div>
-        </mock:shadow-root>
-        <span slot="label" title="joker">
-          joker
-        </span>
-        <div>
-          <h2>
-            This is a joker card
-          </h2>
-          <p>
-            If you don't know the joker, you can watch the movie.
-          </p>
-        </div>
-      </mg-menu-item>
-      <mg-menu-item aria-haspopup="false" data-overflow-proxy-index="2" data-style-direction-horizontal role="menuitem" status="visible">
-        <mock:shadow-root>
-          <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
-            <slot name="image"></slot>
-            <div class="mg-menu-item__navigation-button-center">
-              <div class="mg-menu-item__navigation-button-text-content">
-                <slot name="label"></slot>
-                <slot name="information"></slot>
-              </div>
-              <slot name="metadata"></slot>
             </div>
           </button>
           <div class="mg-menu-item__collapse-container" hidden="">
@@ -1259,7 +613,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 1`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon icon="chevron-down"></mg-icon>
@@ -1300,7 +653,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 1`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon icon="chevron-down"></mg-icon>
@@ -1327,7 +679,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 1`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
             <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon icon="chevron-down"></mg-icon>
@@ -1353,7 +704,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 1`] = `
                     <slot name="label"></slot>
                     <slot name="information"></slot>
                   </div>
-                  <slot name="metadata"></slot>
                 </div>
               </button>
               <div class="mg-menu-item__collapse-container" hidden="">
@@ -1375,7 +725,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 1`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
           </button>
           <div class="mg-menu-item__collapse-container" hidden="">
@@ -1395,7 +744,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 1`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
           </button>
           <div class="mg-menu-item__collapse-container" hidden="">
@@ -1428,7 +776,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 1`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon icon="chevron-down"></mg-icon>
@@ -1460,7 +807,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 1`] = `
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
@@ -1499,7 +845,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 2`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon icon="chevron-down"></mg-icon>
@@ -1526,7 +871,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 2`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
             <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon icon="chevron-down"></mg-icon>
@@ -1552,7 +896,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 2`] = `
                     <slot name="label"></slot>
                     <slot name="information"></slot>
                   </div>
-                  <slot name="metadata"></slot>
                 </div>
               </button>
               <div class="mg-menu-item__collapse-container" hidden="">
@@ -1574,7 +917,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 2`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
           </button>
           <div class="mg-menu-item__collapse-container" hidden="">
@@ -1594,7 +936,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 2`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
           </button>
           <div class="mg-menu-item__collapse-container" hidden="">
@@ -1627,7 +968,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 2`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon icon="chevron-down"></mg-icon>
@@ -1659,7 +999,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 2`] = `
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
@@ -1679,7 +1018,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 2`] = `
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
         <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
@@ -1706,7 +1044,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 2`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
             <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon icon="chevron-down"></mg-icon>
@@ -1732,7 +1069,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 2`] = `
                     <slot name="label"></slot>
                     <slot name="information"></slot>
                   </div>
-                  <slot name="metadata"></slot>
                 </div>
                 <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
                   <mg-icon icon="chevron-down"></mg-icon>
@@ -1758,7 +1094,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 2`] = `
                         <slot name="label"></slot>
                         <slot name="information"></slot>
                       </div>
-                      <slot name="metadata"></slot>
                     </div>
                   </button>
                   <div class="mg-menu-item__collapse-container" hidden="">
@@ -1780,7 +1115,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 2`] = `
                     <slot name="label"></slot>
                     <slot name="information"></slot>
                   </div>
-                  <slot name="metadata"></slot>
                 </div>
               </button>
               <div class="mg-menu-item__collapse-container" hidden="">
@@ -1800,7 +1134,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 2`] = `
                     <slot name="label"></slot>
                     <slot name="information"></slot>
                   </div>
-                  <slot name="metadata"></slot>
                 </div>
               </button>
               <div class="mg-menu-item__collapse-container" hidden="">
@@ -1822,7 +1155,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 2`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
             <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon icon="chevron-down"></mg-icon>
@@ -1853,7 +1185,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 2`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
           </button>
           <div class="mg-menu-item__collapse-container" hidden="">
@@ -1882,7 +1213,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 3`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon icon="chevron-down"></mg-icon>
@@ -1923,7 +1253,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 3`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon icon="chevron-down"></mg-icon>
@@ -1950,7 +1279,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 3`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
             <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon icon="chevron-down"></mg-icon>
@@ -1976,7 +1304,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 3`] = `
                     <slot name="label"></slot>
                     <slot name="information"></slot>
                   </div>
-                  <slot name="metadata"></slot>
                 </div>
               </button>
               <div class="mg-menu-item__collapse-container" hidden="">
@@ -1998,7 +1325,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 3`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
           </button>
           <div class="mg-menu-item__collapse-container" hidden="">
@@ -2018,7 +1344,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 3`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
           </button>
           <div class="mg-menu-item__collapse-container" hidden="">
@@ -2051,7 +1376,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 3`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon icon="chevron-down"></mg-icon>
@@ -2083,7 +1407,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 3`] = `
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
@@ -2122,7 +1445,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 4`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon icon="chevron-down"></mg-icon>
@@ -2149,7 +1471,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 4`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
             <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon icon="chevron-down"></mg-icon>
@@ -2175,7 +1496,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 4`] = `
                     <slot name="label"></slot>
                     <slot name="information"></slot>
                   </div>
-                  <slot name="metadata"></slot>
                 </div>
               </button>
               <div class="mg-menu-item__collapse-container" hidden="">
@@ -2197,7 +1517,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 4`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
           </button>
           <div class="mg-menu-item__collapse-container" hidden="">
@@ -2217,7 +1536,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 4`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
           </button>
           <div class="mg-menu-item__collapse-container" hidden="">
@@ -2250,7 +1568,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 4`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon icon="chevron-down"></mg-icon>
@@ -2282,7 +1599,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 4`] = `
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
@@ -2302,7 +1618,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 4`] = `
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
         <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
@@ -2329,7 +1644,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 4`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
             <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon icon="chevron-down"></mg-icon>
@@ -2355,7 +1669,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 4`] = `
                     <slot name="label"></slot>
                     <slot name="information"></slot>
                   </div>
-                  <slot name="metadata"></slot>
                 </div>
                 <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
                   <mg-icon icon="chevron-down"></mg-icon>
@@ -2381,7 +1694,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 4`] = `
                         <slot name="label"></slot>
                         <slot name="information"></slot>
                       </div>
-                      <slot name="metadata"></slot>
                     </div>
                   </button>
                   <div class="mg-menu-item__collapse-container" hidden="">
@@ -2403,7 +1715,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 4`] = `
                     <slot name="label"></slot>
                     <slot name="information"></slot>
                   </div>
-                  <slot name="metadata"></slot>
                 </div>
               </button>
               <div class="mg-menu-item__collapse-container" hidden="">
@@ -2423,7 +1734,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 4`] = `
                     <slot name="label"></slot>
                     <slot name="information"></slot>
                   </div>
-                  <slot name="metadata"></slot>
                 </div>
               </button>
               <div class="mg-menu-item__collapse-container" hidden="">
@@ -2445,7 +1755,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 4`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
             <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon icon="chevron-down"></mg-icon>
@@ -2476,7 +1785,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 4`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
           </button>
           <div class="mg-menu-item__collapse-container" hidden="">
@@ -2505,7 +1813,6 @@ exports[`mg-menu overflow with args undefined 1`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon icon="chevron-down"></mg-icon>
@@ -2546,7 +1853,6 @@ exports[`mg-menu overflow with args undefined 1`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon icon="chevron-down"></mg-icon>
@@ -2573,7 +1879,6 @@ exports[`mg-menu overflow with args undefined 1`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
             <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon icon="chevron-down"></mg-icon>
@@ -2599,7 +1904,6 @@ exports[`mg-menu overflow with args undefined 1`] = `
                     <slot name="label"></slot>
                     <slot name="information"></slot>
                   </div>
-                  <slot name="metadata"></slot>
                 </div>
               </button>
               <div class="mg-menu-item__collapse-container" hidden="">
@@ -2621,7 +1925,6 @@ exports[`mg-menu overflow with args undefined 1`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
           </button>
           <div class="mg-menu-item__collapse-container" hidden="">
@@ -2641,7 +1944,6 @@ exports[`mg-menu overflow with args undefined 1`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
           </button>
           <div class="mg-menu-item__collapse-container" hidden="">
@@ -2674,7 +1976,6 @@ exports[`mg-menu overflow with args undefined 1`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon icon="chevron-down"></mg-icon>
@@ -2706,7 +2007,6 @@ exports[`mg-menu overflow with args undefined 1`] = `
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
@@ -2745,7 +2045,6 @@ exports[`mg-menu overflow with args undefined 2`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon icon="chevron-down"></mg-icon>
@@ -2772,7 +2071,6 @@ exports[`mg-menu overflow with args undefined 2`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
             <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon icon="chevron-down"></mg-icon>
@@ -2798,7 +2096,6 @@ exports[`mg-menu overflow with args undefined 2`] = `
                     <slot name="label"></slot>
                     <slot name="information"></slot>
                   </div>
-                  <slot name="metadata"></slot>
                 </div>
               </button>
               <div class="mg-menu-item__collapse-container" hidden="">
@@ -2820,7 +2117,6 @@ exports[`mg-menu overflow with args undefined 2`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
           </button>
           <div class="mg-menu-item__collapse-container" hidden="">
@@ -2840,7 +2136,6 @@ exports[`mg-menu overflow with args undefined 2`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
           </button>
           <div class="mg-menu-item__collapse-container" hidden="">
@@ -2873,7 +2168,6 @@ exports[`mg-menu overflow with args undefined 2`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon icon="chevron-down"></mg-icon>
@@ -2905,7 +2199,6 @@ exports[`mg-menu overflow with args undefined 2`] = `
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
@@ -2925,7 +2218,6 @@ exports[`mg-menu overflow with args undefined 2`] = `
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
         <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
@@ -2952,7 +2244,6 @@ exports[`mg-menu overflow with args undefined 2`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
             <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon icon="chevron-down"></mg-icon>
@@ -2978,7 +2269,6 @@ exports[`mg-menu overflow with args undefined 2`] = `
                     <slot name="label"></slot>
                     <slot name="information"></slot>
                   </div>
-                  <slot name="metadata"></slot>
                 </div>
                 <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
                   <mg-icon icon="chevron-down"></mg-icon>
@@ -3004,7 +2294,6 @@ exports[`mg-menu overflow with args undefined 2`] = `
                         <slot name="label"></slot>
                         <slot name="information"></slot>
                       </div>
-                      <slot name="metadata"></slot>
                     </div>
                   </button>
                   <div class="mg-menu-item__collapse-container" hidden="">
@@ -3026,7 +2315,6 @@ exports[`mg-menu overflow with args undefined 2`] = `
                     <slot name="label"></slot>
                     <slot name="information"></slot>
                   </div>
-                  <slot name="metadata"></slot>
                 </div>
               </button>
               <div class="mg-menu-item__collapse-container" hidden="">
@@ -3046,7 +2334,6 @@ exports[`mg-menu overflow with args undefined 2`] = `
                     <slot name="label"></slot>
                     <slot name="information"></slot>
                   </div>
-                  <slot name="metadata"></slot>
                 </div>
               </button>
               <div class="mg-menu-item__collapse-container" hidden="">
@@ -3068,7 +2355,6 @@ exports[`mg-menu overflow with args undefined 2`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
             <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon icon="chevron-down"></mg-icon>
@@ -3099,7 +2385,6 @@ exports[`mg-menu overflow with args undefined 2`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
           </button>
           <div class="mg-menu-item__collapse-container" hidden="">
@@ -3128,7 +2413,6 @@ exports[`mg-menu render with args { label: 'batman menu' } 1`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon icon="chevron-down"></mg-icon>
@@ -3169,7 +2453,6 @@ exports[`mg-menu render with args { label: 'batman menu' } 1`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon icon="chevron-down"></mg-icon>
@@ -3196,7 +2479,6 @@ exports[`mg-menu render with args { label: 'batman menu' } 1`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
             <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon icon="chevron-down"></mg-icon>
@@ -3222,7 +2504,6 @@ exports[`mg-menu render with args { label: 'batman menu' } 1`] = `
                     <slot name="label"></slot>
                     <slot name="information"></slot>
                   </div>
-                  <slot name="metadata"></slot>
                 </div>
               </button>
               <div class="mg-menu-item__collapse-container" hidden="">
@@ -3244,7 +2525,6 @@ exports[`mg-menu render with args { label: 'batman menu' } 1`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
           </button>
           <div class="mg-menu-item__collapse-container" hidden="">
@@ -3264,7 +2544,6 @@ exports[`mg-menu render with args { label: 'batman menu' } 1`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
           </button>
           <div class="mg-menu-item__collapse-container" hidden="">
@@ -3297,7 +2576,6 @@ exports[`mg-menu render with args { label: 'batman menu' } 1`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon icon="chevron-down"></mg-icon>
@@ -3329,7 +2607,6 @@ exports[`mg-menu render with args { label: 'batman menu' } 1`] = `
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
@@ -3356,7 +2633,6 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'horizontal
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon icon="chevron-down"></mg-icon>
@@ -3397,7 +2673,6 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'horizontal
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon icon="chevron-down"></mg-icon>
@@ -3424,7 +2699,6 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'horizontal
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
             <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon icon="chevron-down"></mg-icon>
@@ -3450,7 +2724,6 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'horizontal
                     <slot name="label"></slot>
                     <slot name="information"></slot>
                   </div>
-                  <slot name="metadata"></slot>
                 </div>
               </button>
               <div class="mg-menu-item__collapse-container" hidden="">
@@ -3472,7 +2745,6 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'horizontal
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
           </button>
           <div class="mg-menu-item__collapse-container" hidden="">
@@ -3492,7 +2764,6 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'horizontal
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
           </button>
           <div class="mg-menu-item__collapse-container" hidden="">
@@ -3525,7 +2796,6 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'horizontal
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon icon="chevron-down"></mg-icon>
@@ -3557,7 +2827,6 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'horizontal
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
@@ -3585,7 +2854,6 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'vertical' 
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
         <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
@@ -3611,7 +2879,6 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'vertical' 
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
             <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon icon="chevron-down"></mg-icon>
@@ -3628,7 +2895,7 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'vertical' 
           <mock:shadow-root>
             <slot></slot>
           </mock:shadow-root>
-          <mg-menu-item aria-haspopup="false" data-level="2" data-style-direction-vertical role="menuitem" status="visible">
+          <mg-menu-item aria-haspopup="false" data-level="3" data-style-direction-vertical role="menuitem" status="visible">
             <mock:shadow-root>
               <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" tabindex="0">
                 <slot name="image"></slot>
@@ -3637,7 +2904,6 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'vertical' 
                     <slot name="label"></slot>
                     <slot name="information"></slot>
                   </div>
-                  <slot name="metadata"></slot>
                 </div>
               </button>
               <div class="mg-menu-item__collapse-container" hidden="">
@@ -3659,7 +2925,6 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'vertical' 
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
           </button>
           <div class="mg-menu-item__collapse-container" hidden="">
@@ -3679,7 +2944,6 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'vertical' 
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
           </button>
           <div class="mg-menu-item__collapse-container" hidden="">
@@ -3701,7 +2965,6 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'vertical' 
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
         <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
           <mg-icon icon="chevron-down"></mg-icon>
@@ -3732,7 +2995,6 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'vertical' 
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
       </button>
       <div class="mg-menu-item__collapse-container" hidden="">

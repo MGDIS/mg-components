@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-01-11T08:57:44",
+  "timestamp": "2023-01-13T10:08:26",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.20.0",
@@ -4362,21 +4362,40 @@
         },
         {
           "name": "moreitem",
-          "type": "{ mgIcon?: { icon: string; }; slotLabel?: { label?: string; display?: boolean; }; size?: \"regular\" | \"large\" | \"medium\"; }",
+          "type": "{ mgIcon?: { icon: string; }; slotLabel?: { label?: string; display?: boolean; }; }",
           "mutable": false,
           "reflectToAttr": false,
           "docs": "Define mg-menu-item \"more element\"\nused when overflow is enable",
           "docsTags": [],
           "values": [
             {
-              "type": "{ mgIcon?: { icon: string; }; slotLabel?: { label?: string; display?: boolean; }; size?: \"regular\""
-            },
+              "type": "{ mgIcon?: { icon: string; }; slotLabel?: { label?: string; display?: boolean; }; }"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "\"large\" | \"medium\" | \"regular\"",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "'regular'",
+          "values": [
             {
               "value": "large",
               "type": "string"
             },
             {
-              "type": "\"medium\"; }"
+              "value": "medium",
+              "type": "string"
+            },
+            {
+              "value": "regular",
+              "type": "string"
             }
           ],
           "optional": false,
@@ -4451,32 +4470,6 @@
           "docsTags": [],
           "values": [
             {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "size",
-          "type": "\"large\" | \"medium\" | \"regular\"",
-          "mutable": false,
-          "attr": "size",
-          "reflectToAttr": false,
-          "docs": "Define menu-item size. Default: \"regular\".",
-          "docsTags": [],
-          "default": "'regular'",
-          "values": [
-            {
-              "value": "large",
-              "type": "string"
-            },
-            {
-              "value": "medium",
-              "type": "string"
-            },
-            {
-              "value": "regular",
               "type": "string"
             }
           ],

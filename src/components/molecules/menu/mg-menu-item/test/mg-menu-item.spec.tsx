@@ -4,7 +4,7 @@ import { MgBadge } from '../../../../atoms/mg-badge/mg-badge';
 import { MgIcon } from '../../../../atoms/mg-icon/mg-icon';
 import { MgMenuItem } from '../../mg-menu-item/mg-menu-item';
 import { MgMenu } from '../../mg-menu/mg-menu';
-import { sizes, Status } from '../mg-menu-item.conf';
+import { Status } from '../mg-menu-item.conf';
 import { Direction } from '../../mg-menu/mg-menu.conf';
 import { MgPopover } from '../../../mg-popover/mg-popover';
 import { mockPopperArrowError } from '../../../mg-popover/test/mg-popover.spec';
@@ -96,12 +96,6 @@ describe('mg-menu-item', () => {
       expect(page.root).toMatchSnapshot();
     });
 
-    test.each(sizes)('with size %s', async sizes => {
-      const { root } = await getPage(templateDefault({ label: 'Batman', sizes }));
-
-      expect(root).toMatchSnapshot();
-    });
-
     test.each([undefined, 0, 5])('with menuIndex %s', async menuIndex => {
       const { root } = await getPage(templateDefault({ label: 'Batman', menuIndex }));
 
@@ -168,16 +162,6 @@ describe('mg-menu-item', () => {
         await getPage(templateDefault({ label: ' ' }));
       } catch (err) {
         expect(err.message).toBe('<mg-menu-item> slot "label" must have text content.');
-      }
-    });
-
-    test('throw errors missing arg identifier %s', async () => {
-      expect.assertions(1);
-
-      try {
-        await getPage(templateDefault({ label: 'label', size: ' ' }));
-      } catch (err) {
-        expect(err.message).toBe('<mg-menu-item> prop "size" must be one of : regular, medium, large.');
       }
     });
 

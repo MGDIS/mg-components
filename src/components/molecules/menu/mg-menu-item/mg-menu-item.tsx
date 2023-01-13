@@ -3,8 +3,8 @@ import { OverflowBehaviorElements } from '../../../../utils/behaviors.utils';
 import { ClassList } from '../../../../utils/components.utils';
 import { initLocales } from '../../../../locales';
 import { MgMenu } from '../mg-menu/mg-menu';
-import { Direction } from '../mg-menu/mg-menu.conf';
-import { sizes, MenuItemSizeType, Status } from './mg-menu-item.conf';
+import { Direction, MenuSizeType } from '../mg-menu/mg-menu.conf';
+import { Status } from './mg-menu-item.conf';
 
 @Component({
   tag: 'mg-menu-item',
@@ -53,19 +53,6 @@ export class MgMenuItem {
   }
 
   /**
-   * Define menu-item size. Default: "regular".
-   */
-  @Prop() size: MenuItemSizeType = 'regular';
-  @Watch('size')
-  validateSize(newValue: MgMenuItem['size'], oldValue?: MgMenuItem['size']): void {
-    if (!sizes.includes(newValue)) {
-      throw new Error(`<${this.name}> prop "size" must be one of : ${sizes.join(', ')}.`);
-    }
-    this.navigationButtonClassList.delete(`${this.navigationButton}--size-${oldValue}`);
-    this.navigationButtonClassList.add(`${this.navigationButton}--size-${newValue}`);
-  }
-
-  /**
    * Define menu-item content expanded. Default: false.
    */
   @Prop({ mutable: true }) expanded = false;
@@ -104,6 +91,16 @@ export class MgMenuItem {
   /**********
    * States *
    *********/
+
+  /**
+   * Define menu-item size. Default: "regular".
+   */
+  @State() size: MenuSizeType = 'regular';
+  @Watch('size')
+  validateSize(newValue: MgMenuItem['size'], oldValue?: MgMenuItem['size']): void {
+    this.navigationButtonClassList.delete(`${this.navigationButton}--size-${oldValue}`);
+    this.navigationButtonClassList.add(`${this.navigationButton}--size-${newValue}`);
+  }
 
   /**
    * Component button classes
@@ -254,6 +251,7 @@ export class MgMenuItem {
       // define menu-item context states
       const menu = this.element.closest('mg-menu');
       this.direction = this.element.getAttribute(OverflowBehaviorElements.MORE) !== null || menu === null ? Direction.HORIZONTAL : menu.direction;
+      this.size = menu?.size;
 
       this.isInMainMenu = this.element.parentElement.closest('mg-menu-item') === null;
 
@@ -262,7 +260,7 @@ export class MgMenuItem {
       const hasActiveChild = Array.from(this.element.children).find(element => this.hasStatus(element, Status.ACTIVE) && element.getAttribute('hidden') === null) !== undefined;
       if (this.isInMainMenu && hasActiveChild) {
         this.status = Status.ACTIVE;
-        this.expanded = this.direction === Direction.VERTICAL;
+        this.expanded = this.isdirection(Direction.VERTICAL);
       }
 
       // manage menu items style depending to parent menu horientation
@@ -271,20 +269,22 @@ export class MgMenuItem {
 
       this.updateDisplayNotificationBadge();
 
-      const childItems = Array.from(this.element.querySelector('mg-menu')?.children || []).filter(item => item.nodeName === 'MG-MENU-ITEM');
-      if (childItems.length > 0) {
-        childItems.forEach(item => {
-          // manage child items level with data-level attribut
-          if (this.direction === Direction.VERTICAL) {
-            const itemLevel = Number(item.getAttribute('data-level')) || 1;
-            item.setAttribute('data-level', `${itemLevel + 1}`);
-          }
-          // manage child menu listener
-          new MutationObserver(() => {
-            this.updateDisplayNotificationBadge();
-          }).observe(item, { attributes: true });
+      // manage all sub levels child menu-items level with data-level attribut
+      if (this.isdirection(Direction.VERTICAL)) {
+        Array.from(this.element.querySelectorAll('mg-menu-item')).forEach(item => {
+          const itemLevel = Number(item.getAttribute('data-level')) || 1;
+          item.setAttribute('data-level', `${itemLevel + 1}`);
         });
       }
+
+      // manage first sub-level menu-items
+      const childItems = Array.from(this.element.querySelector('mg-menu')?.children || []).filter(item => item.nodeName === 'MG-MENU-ITEM');
+      childItems.forEach(item => {
+        // manage child menu listener
+        new MutationObserver(() => {
+          this.updateDisplayNotificationBadge();
+        }).observe(item, { attributes: true });
+      });
     }, 0);
   }
 
@@ -317,7 +317,7 @@ export class MgMenuItem {
               </span>
             )}
           </div>
-          <slot name="metadata"></slot>
+          {this.size !== 'regular' && <slot name="metadata"></slot>}
         </div>
         {this.hasChildren && this.href === undefined && (
           <span

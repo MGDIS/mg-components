@@ -1,7 +1,7 @@
 import { h } from '@stencil/core';
 import { filterArgs } from '../../../../../../.storybook/utils';
-import { Direction } from '../mg-menu.conf';
-import { MenuItemSizeType, Status } from '../../mg-menu-item/mg-menu-item.conf';
+import { Direction, MenuSizeType } from '../mg-menu.conf';
+import { Status } from '../../mg-menu-item/mg-menu-item.conf';
 
 export default {
   component: 'mg-menu',
@@ -22,7 +22,6 @@ export default {
  ***************/
 
 type ItemArgType = {
-  size?: MenuItemSizeType;
   label: string;
   direction: Direction;
   status?: Status;
@@ -33,10 +32,11 @@ type ItemArgType = {
   submenu?: number;
 };
 
-type ItemFormatedArgs = Pick<ItemArgType, 'size' | 'status'> & { slot: Pick<ItemArgType, 'label' | 'metadata' | 'icon' | 'badge' | 'content' | 'submenu'> };
+type ItemFormatedArgs = Pick<ItemArgType, 'status'> & { slot: Pick<ItemArgType, 'label' | 'metadata' | 'icon' | 'badge' | 'content' | 'submenu'> };
 
 type MenuFormatedArgs = {
   label: string;
+  size?: MenuSizeType;
   direction: Direction;
   moreitem: unknown;
   slot: {
@@ -54,8 +54,7 @@ interface IGetMenuItemArgs {
  * @param {ItemArgType} itemArgs - item arguments
  * @returns {ItemFormatedArgs} items formated args object
  */
-const getItemArgs: IGetMenuItemArgs = ({ size, label, direction, status, metadata, icon, badge, content, submenu }) => ({
-  size: size !== undefined ? size : direction === Direction.VERTICAL ? 'medium' : 'large',
+const getItemArgs: IGetMenuItemArgs = ({ label, status, metadata, icon, badge, content, submenu }) => ({
   status,
   slot: {
     label,
@@ -89,12 +88,12 @@ const menuItem = (args: ItemFormatedArgs): HTMLMgMenuItemElement => (
         <p>some content</p>
       </div>
     )}
-    {args.slot?.submenu && menu(getMenuArgs(Direction.VERTICAL, args.slot?.submenu - 1, true))}
+    {args.slot?.submenu && menu(getMenuArgs(Direction.VERTICAL, args.slot?.submenu - 1, 'medium'))}
   </mg-menu-item>
 );
 
 interface IGetMenuArgs {
-  (direction: Direction, level?: number, isSubmenu?: boolean): MenuFormatedArgs;
+  (direction: Direction, level?: number, size?: MenuSizeType): MenuFormatedArgs;
 }
 
 /***********
@@ -106,12 +105,14 @@ interface IGetMenuArgs {
  *
  * @param {Direction} direction menu direction
  * @param {number} level menu level. Default: 0.
+ * @param {MenuSizeType} size menu size. Default: 'regular'
  * @returns {MenuFormatedArgs} menu formated args object
  */
-const getMenuArgs: IGetMenuArgs = (direction: Direction, level = 0) => ({
+const getMenuArgs: IGetMenuArgs = (direction, level = 0, size = 'regular') => ({
   label: 'Batman menu',
   direction,
-  moreitem: direction === Direction.HORIZONTAL ? { size: 'large' } : undefined,
+  size,
+  moreitem: undefined,
   slot: {
     items: [
       getItemArgs({
@@ -143,7 +144,6 @@ const getMenuArgs: IGetMenuArgs = (direction: Direction, level = 0) => ({
         icon: true,
         metadata: 'my metadata',
         content: true,
-        size: 'medium',
       }),
     ],
   },

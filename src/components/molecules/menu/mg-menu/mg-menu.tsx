@@ -1,6 +1,6 @@
 import { Component, h, Prop, State, Element, Watch, Host } from '@stencil/core';
 import { OverflowBehavior, OverflowBehaviorElements } from '../../../../utils/behaviors.utils';
-import { Direction, isMoreItem, MessageType, MoreItemType } from './mg-menu.conf';
+import { Direction, isMoreItem, MenuSizeType, MessageType, MoreItemType, sizes } from './mg-menu.conf';
 import { initLocales } from '../../../../locales';
 
 @Component({
@@ -62,6 +62,14 @@ export class MgMenu {
       throw new Error(`<${this.name}> prop "moreitem" must be paired with direction ${Direction.HORIZONTAL}.`);
     } else if (newValue !== undefined && !isMoreItem(newValue)) {
       throw new Error(`<${this.name}> prop "moreitem" must match MoreItemType.`);
+    }
+  }
+
+  @Prop() size: MenuSizeType = 'regular';
+  @Watch('size')
+  validateSize(newValue: MgMenu['size']): void {
+    if (!sizes.includes(newValue)) {
+      throw new Error(`<${this.name}> prop "size" must be one of : ${sizes.join(', ')}.`);
     }
   }
 
@@ -155,6 +163,7 @@ export class MgMenu {
     this.validateDirection(this.direction);
     this.validateLabel(this.label);
     this.validateMoreItem(this.moreitem);
+    this.validateSize(this.size);
   }
 
   /**
@@ -203,7 +212,7 @@ export class MgMenu {
    * @returns {HTMLElement} rendered mg-menu-item more element
    */
   private renderMgMenuItemMore = (): HTMLMgMenuItemElement => (
-    <mg-menu-item data-overflow-more size={this.moreitem?.size}>
+    <mg-menu-item data-overflow-more>
       <mg-icon icon={this.moreitem?.mgIcon?.icon || 'ellipsis-vertical'} slot="image"></mg-icon>
       <span class={{ 'sr-only': !this.moreitem?.slotLabel?.display }} slot="label">
         {this.moreitem?.slotLabel?.label || this.messages.moreLabel}

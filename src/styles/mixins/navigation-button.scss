@@ -9,6 +9,7 @@ $navigation-button-column-gap: 1rem;
     .#{$element}.#{$element}--size-#{$name} .#{$element}__navigation-button,
     .#{$element}__navigation-button.#{$element}__navigation-button--size-#{$name} {
       padding: #{map.get($size, 'vertical')} #{map.get($size, 'horizontal')};
+      height: calc(#{map.get($size, 'height')});
       &,
       ::slotted([slot='label']),
       ::slotted([slot='metadata']) {
@@ -53,7 +54,7 @@ $navigation-button-column-gap: 1rem;
     }
     &.#{$element}__navigation-button--active {
       color: hsl(var(--#{$element}-color-active-hsl));
-      font-weight: 700;
+      font-weight: 600;
       &.#{$element}__navigation-button--horizontal {
         border-bottom-color: hsl(var(--#{$element}-border-color-active-hsl));
       }

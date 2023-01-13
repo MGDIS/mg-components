@@ -13,7 +13,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -55,7 +54,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
@@ -82,7 +80,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -124,7 +121,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
@@ -151,7 +147,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -204,7 +199,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -234,7 +228,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
           </button>
           <div class="mg-menu-item__collapse-container" hidden="">
@@ -266,7 +259,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -319,7 +311,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
             <mg-icon>
@@ -349,7 +340,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
           </button>
           <div class="mg-menu-item__collapse-container" hidden="">
@@ -381,7 +371,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -434,7 +423,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -475,7 +463,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
                   <slot name="label"></slot>
                   <slot name="information"></slot>
                 </div>
-                <slot name="metadata"></slot>
               </div>
               <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
                 <mg-icon>
@@ -505,7 +492,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
                     <slot name="label"></slot>
                     <slot name="information"></slot>
                   </div>
-                  <slot name="metadata"></slot>
                 </div>
               </button>
               <div class="mg-menu-item__collapse-container" hidden="">
@@ -542,7 +528,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -595,7 +580,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
             <mg-icon>
@@ -636,7 +620,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
                   <slot name="label"></slot>
                   <slot name="information"></slot>
                 </div>
-                <slot name="metadata"></slot>
               </div>
               <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
                 <mg-icon>
@@ -666,7 +649,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
                     <slot name="label"></slot>
                     <slot name="information"></slot>
                   </div>
-                  <slot name="metadata"></slot>
                 </div>
               </button>
               <div class="mg-menu-item__collapse-container" hidden="">
@@ -703,7 +685,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -756,7 +737,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -797,7 +777,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
                   <slot name="label"></slot>
                   <slot name="information"></slot>
                 </div>
-                <slot name="metadata"></slot>
               </div>
               <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
                 <mg-icon>
@@ -827,7 +806,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
                     <slot name="label"></slot>
                     <slot name="information"></slot>
                   </div>
-                  <slot name="metadata"></slot>
                 </div>
               </button>
               <div class="mg-menu-item__collapse-container" hidden="">
@@ -864,7 +842,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -917,7 +894,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
             <mg-icon>
@@ -958,7 +934,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
                   <slot name="label"></slot>
                   <slot name="information"></slot>
                 </div>
-                <slot name="metadata"></slot>
               </div>
               <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
                 <mg-icon>
@@ -988,7 +963,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
                     <slot name="label"></slot>
                     <slot name="information"></slot>
                   </div>
-                  <slot name="metadata"></slot>
                 </div>
               </button>
               <div class="mg-menu-item__collapse-container" hidden="">
@@ -1025,7 +999,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -1078,7 +1051,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -1123,7 +1095,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -1176,7 +1147,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
             <mg-icon>
@@ -1221,7 +1191,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -1263,7 +1232,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
@@ -1290,7 +1258,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -1332,7 +1299,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
@@ -1359,7 +1325,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -1412,7 +1377,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
             <mg-icon>
@@ -1442,7 +1406,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
           </button>
           <div class="mg-menu-item__collapse-container" hidden="">
@@ -1474,7 +1437,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -1527,7 +1489,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -1557,7 +1518,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
           </button>
           <div class="mg-menu-item__collapse-container" hidden="">
@@ -1589,7 +1549,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -1642,7 +1601,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
             <mg-icon>
@@ -1683,7 +1641,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
                   <slot name="label"></slot>
                   <slot name="information"></slot>
                 </div>
-                <slot name="metadata"></slot>
               </div>
               <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
                 <mg-icon>
@@ -1713,7 +1670,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
                     <slot name="label"></slot>
                     <slot name="information"></slot>
                   </div>
-                  <slot name="metadata"></slot>
                 </div>
               </button>
               <div class="mg-menu-item__collapse-container" hidden="">
@@ -1750,7 +1706,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -1803,7 +1758,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -1844,7 +1798,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
                   <slot name="label"></slot>
                   <slot name="information"></slot>
                 </div>
-                <slot name="metadata"></slot>
               </div>
               <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
                 <mg-icon>
@@ -1874,7 +1827,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
                     <slot name="label"></slot>
                     <slot name="information"></slot>
                   </div>
-                  <slot name="metadata"></slot>
                 </div>
               </button>
               <div class="mg-menu-item__collapse-container" hidden="">
@@ -1911,7 +1863,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -1964,7 +1915,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -2005,7 +1955,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
                   <slot name="label"></slot>
                   <slot name="information"></slot>
                 </div>
-                <slot name="metadata"></slot>
               </div>
               <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
                 <mg-icon>
@@ -2035,7 +1984,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
                     <slot name="label"></slot>
                     <slot name="information"></slot>
                   </div>
-                  <slot name="metadata"></slot>
                 </div>
               </button>
               <div class="mg-menu-item__collapse-container" hidden="">
@@ -2072,7 +2020,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -2125,7 +2072,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
             <mg-icon>
@@ -2166,7 +2112,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
                   <slot name="label"></slot>
                   <slot name="information"></slot>
                 </div>
-                <slot name="metadata"></slot>
               </div>
               <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
                 <mg-icon>
@@ -2196,7 +2141,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
                     <slot name="label"></slot>
                     <slot name="information"></slot>
                   </div>
-                  <slot name="metadata"></slot>
                 </div>
               </button>
               <div class="mg-menu-item__collapse-container" hidden="">
@@ -2233,7 +2177,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -2286,7 +2229,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
             <mg-icon>
@@ -2331,7 +2273,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -2384,7 +2325,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -2429,7 +2369,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -2471,7 +2410,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
@@ -2498,7 +2436,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -2540,7 +2477,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
@@ -2567,7 +2503,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -2620,7 +2555,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -2650,7 +2584,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
           </button>
           <div class="mg-menu-item__collapse-container" hidden="">
@@ -2682,7 +2615,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -2735,7 +2667,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
             <mg-icon>
@@ -2765,7 +2696,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
           </button>
           <div class="mg-menu-item__collapse-container" hidden="">
@@ -2797,7 +2727,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -2850,7 +2779,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -2891,7 +2819,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
                   <slot name="label"></slot>
                   <slot name="information"></slot>
                 </div>
-                <slot name="metadata"></slot>
               </div>
               <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
                 <mg-icon>
@@ -2921,7 +2848,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
                     <slot name="label"></slot>
                     <slot name="information"></slot>
                   </div>
-                  <slot name="metadata"></slot>
                 </div>
               </button>
               <div class="mg-menu-item__collapse-container" hidden="">
@@ -2958,7 +2884,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -3011,7 +2936,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
             <mg-icon>
@@ -3052,7 +2976,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
                   <slot name="label"></slot>
                   <slot name="information"></slot>
                 </div>
-                <slot name="metadata"></slot>
               </div>
               <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
                 <mg-icon>
@@ -3082,7 +3005,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
                     <slot name="label"></slot>
                     <slot name="information"></slot>
                   </div>
-                  <slot name="metadata"></slot>
                 </div>
               </button>
               <div class="mg-menu-item__collapse-container" hidden="">
@@ -3119,7 +3041,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -3172,7 +3093,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -3213,7 +3133,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
                   <slot name="label"></slot>
                   <slot name="information"></slot>
                 </div>
-                <slot name="metadata"></slot>
               </div>
               <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
                 <mg-icon>
@@ -3243,7 +3162,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
                     <slot name="label"></slot>
                     <slot name="information"></slot>
                   </div>
-                  <slot name="metadata"></slot>
                 </div>
               </button>
               <div class="mg-menu-item__collapse-container" hidden="">
@@ -3280,7 +3198,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -3333,7 +3250,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
             <mg-icon>
@@ -3374,7 +3290,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
                   <slot name="label"></slot>
                   <slot name="information"></slot>
                 </div>
-                <slot name="metadata"></slot>
               </div>
               <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
                 <mg-icon>
@@ -3404,7 +3319,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
                     <slot name="label"></slot>
                     <slot name="information"></slot>
                   </div>
-                  <slot name="metadata"></slot>
                 </div>
               </button>
               <div class="mg-menu-item__collapse-container" hidden="">
@@ -3441,7 +3355,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -3494,7 +3407,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -3539,7 +3451,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -3592,7 +3503,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
             <mg-icon>
@@ -3637,7 +3547,6 @@ exports[`mg-menu-item render with 2 menu-items, last items get style modifier 1`
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -3679,7 +3588,6 @@ exports[`mg-menu-item render with 2 menu-items, last items get style modifier 1`
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
@@ -3699,7 +3607,6 @@ exports[`mg-menu-item render with 2 menu-items, last items get style modifier 1`
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
@@ -3726,7 +3633,6 @@ exports[`mg-menu-item render with args { label: 'Batman' } 1`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -3768,7 +3674,6 @@ exports[`mg-menu-item render with args { label: 'Batman' } 1`] = `
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
@@ -3795,7 +3700,6 @@ exports[`mg-menu-item render with args { label: 'Batman', badge: true } 1`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -3837,7 +3741,6 @@ exports[`mg-menu-item render with args { label: 'Batman', badge: true } 1`] = `
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
@@ -3874,7 +3777,6 @@ exports[`mg-menu-item render with args { label: 'Batman', href: '#link' } 1`] = 
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -3916,7 +3818,6 @@ exports[`mg-menu-item render with args { label: 'Batman', href: '#link' } 1`] = 
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
       </a>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
@@ -3943,7 +3844,6 @@ exports[`mg-menu-item render with args { label: 'Batman', icon: true } 1`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -3985,7 +3885,6 @@ exports[`mg-menu-item render with args { label: 'Batman', icon: true } 1`] = `
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
@@ -4019,7 +3918,6 @@ exports[`mg-menu-item render with args { label: 'Batman', metadata: true } 1`] =
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -4061,7 +3959,6 @@ exports[`mg-menu-item render with args { label: 'Batman', metadata: true } 1`] =
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
@@ -4091,7 +3988,6 @@ exports[`mg-menu-item render with expanded and sub-menu false 1`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -4144,7 +4040,6 @@ exports[`mg-menu-item render with expanded and sub-menu false 1`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -4174,7 +4069,6 @@ exports[`mg-menu-item render with expanded and sub-menu false 1`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
           </button>
           <div class="mg-menu-item__collapse-container" hidden="">
@@ -4206,7 +4100,6 @@ exports[`mg-menu-item render with expanded and sub-menu false 2`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -4259,7 +4152,6 @@ exports[`mg-menu-item render with expanded and sub-menu false 2`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
             <mg-icon>
@@ -4289,7 +4181,6 @@ exports[`mg-menu-item render with expanded and sub-menu false 2`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
           </button>
           <div class="mg-menu-item__collapse-container" hidden="">
@@ -4321,7 +4212,6 @@ exports[`mg-menu-item render with expanded and sub-menu true 1`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -4374,7 +4264,6 @@ exports[`mg-menu-item render with expanded and sub-menu true 1`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
             <mg-icon>
@@ -4404,7 +4293,6 @@ exports[`mg-menu-item render with expanded and sub-menu true 1`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
           </button>
           <div class="mg-menu-item__collapse-container" hidden="">
@@ -4436,7 +4324,6 @@ exports[`mg-menu-item render with expanded and sub-menu true 2`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -4489,7 +4376,6 @@ exports[`mg-menu-item render with expanded and sub-menu true 2`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -4519,7 +4405,6 @@ exports[`mg-menu-item render with expanded and sub-menu true 2`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
           </button>
           <div class="mg-menu-item__collapse-container" hidden="">
@@ -4551,7 +4436,6 @@ exports[`mg-menu-item render with expanded and sub-menu undefined 1`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -4604,7 +4488,6 @@ exports[`mg-menu-item render with expanded and sub-menu undefined 1`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -4634,7 +4517,6 @@ exports[`mg-menu-item render with expanded and sub-menu undefined 1`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
           </button>
           <div class="mg-menu-item__collapse-container" hidden="">
@@ -4666,7 +4548,6 @@ exports[`mg-menu-item render with expanded and sub-menu undefined 2`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -4719,7 +4600,6 @@ exports[`mg-menu-item render with expanded and sub-menu undefined 2`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
             <mg-icon>
@@ -4749,7 +4629,6 @@ exports[`mg-menu-item render with expanded and sub-menu undefined 2`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
           </button>
           <div class="mg-menu-item__collapse-container" hidden="">
@@ -4781,7 +4660,6 @@ exports[`mg-menu-item render with expanded false 1`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -4823,7 +4701,6 @@ exports[`mg-menu-item render with expanded false 1`] = `
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
@@ -4850,7 +4727,6 @@ exports[`mg-menu-item render with expanded false 2`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -4892,7 +4768,6 @@ exports[`mg-menu-item render with expanded false 2`] = `
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
@@ -4919,7 +4794,6 @@ exports[`mg-menu-item render with expanded true 1`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -4961,7 +4835,6 @@ exports[`mg-menu-item render with expanded true 1`] = `
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
@@ -4988,7 +4861,6 @@ exports[`mg-menu-item render with expanded true 2`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -5030,7 +4902,6 @@ exports[`mg-menu-item render with expanded true 2`] = `
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
@@ -5057,7 +4928,6 @@ exports[`mg-menu-item render with expanded undefined 1`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -5099,7 +4969,6 @@ exports[`mg-menu-item render with expanded undefined 1`] = `
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
@@ -5126,7 +4995,6 @@ exports[`mg-menu-item render with expanded undefined 2`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -5168,7 +5036,6 @@ exports[`mg-menu-item render with expanded undefined 2`] = `
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level">
@@ -5195,7 +5062,6 @@ exports[`mg-menu-item render with menuIndex 0 1`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -5237,7 +5103,6 @@ exports[`mg-menu-item render with menuIndex 0 1`] = `
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
@@ -5264,7 +5129,6 @@ exports[`mg-menu-item render with menuIndex 5 1`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -5306,7 +5170,6 @@ exports[`mg-menu-item render with menuIndex 5 1`] = `
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
@@ -5333,7 +5196,6 @@ exports[`mg-menu-item render with menuIndex undefined 1`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -5375,214 +5237,6 @@ exports[`mg-menu-item render with menuIndex undefined 1`] = `
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
-        </div>
-      </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
-        <slot></slot>
-      </div>
-    </mock:shadow-root>
-    <span slot="label" title="Batman">
-      Batman
-    </span>
-  </mg-menu-item>
-</mg-menu>
-`;
-
-exports[`mg-menu-item render with size large 1`] = `
-<mg-menu aria-label="menu" direction="horizontal" role="menubar">
-  <mock:shadow-root>
-    <slot></slot>
-    <mg-menu-item aria-haspopup="true" data-overflow-more role="menuitem" status="visible">
-      <mock:shadow-root>
-        <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
-          <slot name="image"></slot>
-          <div class="mg-menu-item__navigation-button-center">
-            <div class="mg-menu-item__navigation-button-text-content">
-              <slot name="label"></slot>
-              <slot name="information"></slot>
-            </div>
-            <slot name="metadata"></slot>
-          </div>
-          <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
-          </span>
-        </button>
-        <div class="mg-menu-item__collapse-container" hidden="">
-          <slot></slot>
-        </div>
-      </mock:shadow-root>
-      <mg-icon slot="image">
-        <mock:shadow-root>
-          <svg aria-hidden="true" class="mg-icon mg-icon--ellipsis-vertical mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-            <path d="M6.17 13.5A1.83 1.83 0 1 0 8 11.67c-1.01 0-1.83.82-1.83 1.83Zm0-11A1.83 1.83 0 1 0 8 .67c-1.01 0-1.83.82-1.83 1.83Zm0 5.5A1.83 1.83 0 1 0 8 6.17c-1.01 0-1.83.82-1.83 1.83Z" fill="currentColor"></path>
-          </svg>
-        </mock:shadow-root>
-      </mg-icon>
-      <span class="sr-only" slot="label" title="Additional menu">
-        Additional menu
-      </span>
-      <mg-menu aria-label="Additional menu" direction="vertical" role="menubar">
-        <mock:shadow-root>
-          <slot></slot>
-        </mock:shadow-root>
-      </mg-menu>
-    </mg-menu-item>
-  </mock:shadow-root>
-  <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="Batman" role="menuitem" sizes="large" status="visible">
-    <mock:shadow-root>
-      <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
-        <slot name="image"></slot>
-        <div class="mg-menu-item__navigation-button-center">
-          <div class="mg-menu-item__navigation-button-text-content">
-            <slot name="label"></slot>
-            <slot name="information"></slot>
-          </div>
-          <slot name="metadata"></slot>
-        </div>
-      </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
-        <slot></slot>
-      </div>
-    </mock:shadow-root>
-    <span slot="label" title="Batman">
-      Batman
-    </span>
-  </mg-menu-item>
-</mg-menu>
-`;
-
-exports[`mg-menu-item render with size medium 1`] = `
-<mg-menu aria-label="menu" direction="horizontal" role="menubar">
-  <mock:shadow-root>
-    <slot></slot>
-    <mg-menu-item aria-haspopup="true" data-overflow-more role="menuitem" status="visible">
-      <mock:shadow-root>
-        <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
-          <slot name="image"></slot>
-          <div class="mg-menu-item__navigation-button-center">
-            <div class="mg-menu-item__navigation-button-text-content">
-              <slot name="label"></slot>
-              <slot name="information"></slot>
-            </div>
-            <slot name="metadata"></slot>
-          </div>
-          <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
-          </span>
-        </button>
-        <div class="mg-menu-item__collapse-container" hidden="">
-          <slot></slot>
-        </div>
-      </mock:shadow-root>
-      <mg-icon slot="image">
-        <mock:shadow-root>
-          <svg aria-hidden="true" class="mg-icon mg-icon--ellipsis-vertical mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-            <path d="M6.17 13.5A1.83 1.83 0 1 0 8 11.67c-1.01 0-1.83.82-1.83 1.83Zm0-11A1.83 1.83 0 1 0 8 .67c-1.01 0-1.83.82-1.83 1.83Zm0 5.5A1.83 1.83 0 1 0 8 6.17c-1.01 0-1.83.82-1.83 1.83Z" fill="currentColor"></path>
-          </svg>
-        </mock:shadow-root>
-      </mg-icon>
-      <span class="sr-only" slot="label" title="Additional menu">
-        Additional menu
-      </span>
-      <mg-menu aria-label="Additional menu" direction="vertical" role="menubar">
-        <mock:shadow-root>
-          <slot></slot>
-        </mock:shadow-root>
-      </mg-menu>
-    </mg-menu-item>
-  </mock:shadow-root>
-  <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="Batman" role="menuitem" sizes="medium" status="visible">
-    <mock:shadow-root>
-      <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
-        <slot name="image"></slot>
-        <div class="mg-menu-item__navigation-button-center">
-          <div class="mg-menu-item__navigation-button-text-content">
-            <slot name="label"></slot>
-            <slot name="information"></slot>
-          </div>
-          <slot name="metadata"></slot>
-        </div>
-      </button>
-      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
-        <slot></slot>
-      </div>
-    </mock:shadow-root>
-    <span slot="label" title="Batman">
-      Batman
-    </span>
-  </mg-menu-item>
-</mg-menu>
-`;
-
-exports[`mg-menu-item render with size regular 1`] = `
-<mg-menu aria-label="menu" direction="horizontal" role="menubar">
-  <mock:shadow-root>
-    <slot></slot>
-    <mg-menu-item aria-haspopup="true" data-overflow-more role="menuitem" status="visible">
-      <mock:shadow-root>
-        <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
-          <slot name="image"></slot>
-          <div class="mg-menu-item__navigation-button-center">
-            <div class="mg-menu-item__navigation-button-text-content">
-              <slot name="label"></slot>
-              <slot name="information"></slot>
-            </div>
-            <slot name="metadata"></slot>
-          </div>
-          <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
-            <mg-icon>
-              <mock:shadow-root>
-                <svg aria-hidden="true" class="mg-icon mg-icon--chevron-down mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-                  <path d="M7.43,12.21.9,5.69a.81.81,0,0,1,0-1.14h0l.76-.77a.81.81,0,0,1,1.14,0L8,9l5.2-5.18a.81.81,0,0,1,1.14,0l.76.77a.8.8,0,0,1,0,1.13h0L8.57,12.21a.79.79,0,0,1-1.13,0Z" fill="currentColor"></path>
-                </svg>
-              </mock:shadow-root>
-            </mg-icon>
-          </span>
-        </button>
-        <div class="mg-menu-item__collapse-container" hidden="">
-          <slot></slot>
-        </div>
-      </mock:shadow-root>
-      <mg-icon slot="image">
-        <mock:shadow-root>
-          <svg aria-hidden="true" class="mg-icon mg-icon--ellipsis-vertical mg-icon--size-regular" focusable="false" viewBox="0 0 16 16">
-            <path d="M6.17 13.5A1.83 1.83 0 1 0 8 11.67c-1.01 0-1.83.82-1.83 1.83Zm0-11A1.83 1.83 0 1 0 8 .67c-1.01 0-1.83.82-1.83 1.83Zm0 5.5A1.83 1.83 0 1 0 8 6.17c-1.01 0-1.83.82-1.83 1.83Z" fill="currentColor"></path>
-          </svg>
-        </mock:shadow-root>
-      </mg-icon>
-      <span class="sr-only" slot="label" title="Additional menu">
-        Additional menu
-      </span>
-      <mg-menu aria-label="Additional menu" direction="vertical" role="menubar">
-        <mock:shadow-root>
-          <slot></slot>
-        </mock:shadow-root>
-      </mg-menu>
-    </mg-menu-item>
-  </mock:shadow-root>
-  <mg-menu-item aria-haspopup="false" data-style-direction-horizontal label="Batman" role="menuitem" sizes="regular" status="visible">
-    <mock:shadow-root>
-      <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
-        <slot name="image"></slot>
-        <div class="mg-menu-item__navigation-button-center">
-          <div class="mg-menu-item__navigation-button-text-content">
-            <slot name="label"></slot>
-            <slot name="information"></slot>
-          </div>
-          <slot name="metadata"></slot>
         </div>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
@@ -5609,7 +5263,6 @@ exports[`mg-menu-item render with status active 1`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -5651,7 +5304,6 @@ exports[`mg-menu-item render with status active 1`] = `
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
@@ -5678,7 +5330,6 @@ exports[`mg-menu-item render with status active 2`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -5720,7 +5371,6 @@ exports[`mg-menu-item render with status active 2`] = `
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
@@ -5747,7 +5397,6 @@ exports[`mg-menu-item render with status disabled 1`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -5789,7 +5438,6 @@ exports[`mg-menu-item render with status disabled 1`] = `
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
@@ -5816,7 +5464,6 @@ exports[`mg-menu-item render with status disabled 2`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -5858,7 +5505,6 @@ exports[`mg-menu-item render with status disabled 2`] = `
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
@@ -5885,7 +5531,6 @@ exports[`mg-menu-item render with status hidden 1`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -5927,7 +5572,6 @@ exports[`mg-menu-item render with status hidden 1`] = `
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
@@ -5954,7 +5598,6 @@ exports[`mg-menu-item render with status hidden 2`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -5996,7 +5639,6 @@ exports[`mg-menu-item render with status hidden 2`] = `
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
@@ -6023,7 +5665,6 @@ exports[`mg-menu-item render with status visible 1`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -6065,7 +5706,6 @@ exports[`mg-menu-item render with status visible 1`] = `
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
@@ -6092,7 +5732,6 @@ exports[`mg-menu-item render with status visible 2`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -6134,7 +5773,6 @@ exports[`mg-menu-item render with status visible 2`] = `
             <slot name="label"></slot>
             <slot name="information"></slot>
           </div>
-          <slot name="metadata"></slot>
         </div>
       </button>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
@@ -6161,7 +5799,6 @@ exports[`mg-menu-item render with vertical sub-menu 1`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -6214,7 +5851,6 @@ exports[`mg-menu-item render with vertical sub-menu 1`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -6244,7 +5880,6 @@ exports[`mg-menu-item render with vertical sub-menu 1`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
             <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon>
@@ -6273,7 +5908,6 @@ exports[`mg-menu-item render with vertical sub-menu 1`] = `
                     <slot name="label"></slot>
                     <slot name="information"></slot>
                   </div>
-                  <slot name="metadata"></slot>
                 </div>
               </button>
               <div class="mg-menu-item__collapse-container" hidden="">
@@ -6310,7 +5944,6 @@ exports[`mg-menu-item render with vertical sub-menu 2`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
             <mg-icon>
@@ -6363,7 +5996,6 @@ exports[`mg-menu-item render with vertical sub-menu 2`] = `
               <slot name="label"></slot>
               <slot name="information"></slot>
             </div>
-            <slot name="metadata"></slot>
           </div>
           <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron mg-menu-item__navigation-button-chevron--rotate">
             <mg-icon>
@@ -6393,7 +6025,6 @@ exports[`mg-menu-item render with vertical sub-menu 2`] = `
                 <slot name="label"></slot>
                 <slot name="information"></slot>
               </div>
-              <slot name="metadata"></slot>
             </div>
             <span class="mg-a11y-animation mg-menu-item__navigation-button-chevron">
               <mg-icon>
@@ -6422,7 +6053,6 @@ exports[`mg-menu-item render with vertical sub-menu 2`] = `
                     <slot name="label"></slot>
                     <slot name="information"></slot>
                   </div>
-                  <slot name="metadata"></slot>
                 </div>
               </button>
               <div class="mg-menu-item__collapse-container" hidden="">

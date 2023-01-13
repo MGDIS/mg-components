@@ -13,8 +13,8 @@ import { Width } from "./components/molecules/inputs/MgInput.conf";
 import { RadioOption } from "./components/molecules/inputs/mg-input-radio/mg-input-radio.conf";
 import { SelectOption } from "./components/molecules/inputs/mg-input-select/mg-input-select.conf";
 import { ToggleValue } from "./components/molecules/inputs/mg-input-toggle/mg-input-toggle.conf";
-import { Direction, MoreItemType } from "./components/molecules/menu/mg-menu/mg-menu.conf";
-import { MenuItemSizeType, Status } from "./components/molecules/menu/mg-menu-item/mg-menu-item.conf";
+import { Direction, MenuSizeType, MoreItemType } from "./components/molecules/menu/mg-menu/mg-menu.conf";
+import { Status } from "./components/molecules/menu/mg-menu-item/mg-menu-item.conf";
 import { Placement } from "@popperjs/core";
 import { SizeType, TabItem } from "./components/molecules/mg-tabs/mg-tabs.conf";
 import { TagVariantType } from "./components/atoms/mg-tag/mg-tag.conf";
@@ -877,6 +877,7 @@ export namespace Components {
           * Define mg-menu-item "more element" used when overflow is enable
          */
         "moreitem": MoreItemType;
+        "size": MenuSizeType;
     }
     interface MgMenuItem {
         /**
@@ -887,10 +888,6 @@ export namespace Components {
           * Define menu-item href when defined menu-item contain an anchor instead of button
          */
         "href": string;
-        /**
-          * Define menu-item size. Default: "regular".
-         */
-        "size": MenuItemSizeType;
         /**
           * Define menu-item status. Default: "visible"
          */
@@ -2241,6 +2238,7 @@ declare namespace LocalJSX {
           * Define mg-menu-item "more element" used when overflow is enable
          */
         "moreitem"?: MoreItemType;
+        "size"?: MenuSizeType;
     }
     interface MgMenuItem {
         /**
@@ -2255,10 +2253,6 @@ declare namespace LocalJSX {
           * Emited event when status change
          */
         "onStatus-change"?: (event: MgMenuItemCustomEvent<MgMenuItem['status']>) => void;
-        /**
-          * Define menu-item size. Default: "regular".
-         */
-        "size"?: MenuItemSizeType;
         /**
           * Define menu-item status. Default: "visible"
          */

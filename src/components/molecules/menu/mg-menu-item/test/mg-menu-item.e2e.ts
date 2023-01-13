@@ -1,6 +1,6 @@
 import { createPage, renderAttributes } from '../../../../../utils/e2e.test.utils';
-import { Direction } from '../../mg-menu/mg-menu.conf';
-import { sizes, Status } from '../mg-menu-item.conf';
+import { Direction, sizes } from '../../mg-menu/mg-menu.conf';
+import { Status } from '../mg-menu-item.conf';
 
 const slotContent = '<div><h3>Demo title</h3><p>some content</p></div>';
 const slotMenuItem = '<mg-menu label="submenu"><mg-menu-item><span slot="label">Batman begins</span></mg-menu-item></mg-menu>';
@@ -9,7 +9,7 @@ const slotInformation = '<mg-badge value="2" label="hello" slot="information"></
 const slotMetadata = '<span slot="metadata">is a hero</span>';
 
 const createHTML = (args, slot = '', direction = Direction.HORIZONTAL) => `
-<mg-menu ${renderAttributes({ label: 'batmenu', direction })}">
+<mg-menu ${renderAttributes({ label: 'batmenu', direction, ...args })}">
   <mg-menu-item ${renderAttributes(args)}>
     <span slot="label">${args.href ? 'batman link' : 'batman'}</span>
     ${slot}
@@ -23,17 +23,13 @@ describe('mg-menu-item', () => {
       const html = [Status.ACTIVE, Status.VISIBLE, Status.HIDDEN, Status.DISABLED]
         .map(status => {
           const template = [undefined, '#link']
-            .map(href =>
-              [true, false]
-                .map(submenu => sizes.map(size => (submenu && href !== undefined ? '' : createHTML({ status, size, href }, submenu && slotMenuItem, direction))).join(''))
-                .join(''),
-            )
+            .map(href => [true, false].map(submenu => (submenu && href !== undefined ? '' : createHTML({ status, href }, submenu && slotMenuItem, direction))).join(''))
             .join('');
           return `<h2>${status}<h2/><div>${template}<div>`;
         })
         .join('');
 
-      const page = await createPage(`<h1>${direction} mg-menu - Status</h1>` + html);
+      const page = await createPage(`<h1>${direction} mg-menu - Status</h1>${html}`);
 
       const element = await page.find('mg-menu-item');
       expect(element).toHaveClass('hydrated');
@@ -65,7 +61,7 @@ describe('mg-menu-item', () => {
         })
         .join('');
 
-      const page = await createPage(`<h1>${direction} mg-menu - Slots</h1>` + html);
+      const page = await createPage(`<h1>${direction} mg-menu - Slots</h1>${html}`);
 
       const element = await page.find('mg-menu-item');
       expect(element).toHaveClass('hydrated');

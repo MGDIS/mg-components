@@ -1,4 +1,4 @@
-import { createPage } from '../../../../utils/e2e.test.utils';
+import { createPage, renderAttributes } from '../../../../utils/e2e.test.utils';
 
 describe('mg-popover', () => {
   describe.each([
@@ -18,10 +18,10 @@ describe('mg-popover', () => {
     'left-start',
     'left-end',
   ])('placement %s', placement => {
-    test('Should render', async () => {
+    test.each([true, false])('Should render, case hide arrow %s', async arrowHide => {
       const page = await createPage(
         `<style>mg-button{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%)}</style>
-        <mg-popover placement="${placement}">
+        <mg-popover ${renderAttributes({ placement, arrowHide })}>
         <mg-button>Button</mg-button>
         <h2 slot="title">Blu bli blo bla</h2>
         <p slot="content">
@@ -71,41 +71,6 @@ describe('mg-popover', () => {
 
       expect(popover).not.toHaveAttribute('data-show');
     });
-  });
-
-  test('Should render without arrow', async () => {
-    const page = await createPage(
-      `<style>mg-button{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%)}</style>
-      <mg-popover arrow-hide>
-      <mg-button>Button</mg-button>
-      <h2 slot="title">Blu bli blo bla</h2>
-      <p slot="content">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-      </mg-popover>`,
-    );
-
-    const mgPopover = await page.find('mg-popover');
-    const mgButton = await page.find('mg-button');
-    const popover = await page.find('mg-popover >>> .mg-popover');
-
-    expect(mgPopover).toHaveClass('hydrated');
-
-    // display popover on click on slotted element
-    mgButton.triggerEvent('click');
-    await page.waitForChanges();
-
-    expect(popover).toHaveAttribute('data-show');
-
-    await page.setViewport({ width: 800, height: 300 });
-
-    const screenshot = await page.screenshot();
-    expect(screenshot).toMatchImageSnapshot();
   });
 
   describe.each([

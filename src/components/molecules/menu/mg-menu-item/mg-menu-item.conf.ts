@@ -17,16 +17,6 @@ export enum Status {
 }
 
 /**
- * List of all possibles sizes
- */
-export const sizes = ['regular', 'medium', 'large'] as const;
-
-/**
- * item Size from sizes
- */
-export type MenuItemSizeType = typeof sizes[number];
-
-/**
  * MgMenuItem type guard
  *
  * @param {HTMLElement} element element to control type

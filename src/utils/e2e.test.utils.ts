@@ -67,6 +67,7 @@ export const darkBackground = (condition: boolean, html: string): string =>
 export const renderAttributes = (args: unknown): string =>
   (typeof args === 'object' &&
     Object.keys(args)
-      .map(key => (args[key] ? `${key}="${args[key]}"` : ''))
+      .filter(key => ![null, undefined, false].includes(args[key]))
+      .map(key => `${key.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()}="${args[key]}"`)
       .join(' ')) ||
   '';
