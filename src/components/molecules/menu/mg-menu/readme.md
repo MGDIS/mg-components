@@ -153,6 +153,7 @@ graph TD;
   mg-menu-item --> mg-badge
   mg-menu-item --> mg-icon
   mg-menu-item --> mg-popover
+  mg-popover --> mg-card
   mg-popover --> mg-button
   mg-popover --> mg-icon
   mg-button --> mg-icon
