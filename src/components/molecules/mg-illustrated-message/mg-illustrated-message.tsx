@@ -38,12 +38,15 @@ export class MgIllustratedMessage {
   componentDidLoad(): void {
     const headingTags = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
     const imageTags = ['img', 'svg'];
+    const slottedIllustrations = this.element.querySelectorAll('[slot="illustration"]');
 
     if (!isTagName(this.element.querySelector('[slot="title"]'), headingTags)) {
       throw new Error(`<mg-illustrated-message> Slotted title must be a heading: ${headingTags.join(', ')}`);
-    } else if (!isTagName(this.element.querySelector('[slot="illustration"]'), imageTags)) {
-      throw new Error(`<mg-illustrated-message> Slotted illustration must be an image: ${imageTags.join(', ')}`);
+    } else if (slottedIllustrations.length !== 1 || !isTagName(slottedIllustrations[0], imageTags)) {
+      throw new Error(`<mg-illustrated-message> Slotted illustration must be a single image: ${imageTags.join(', ')}`);
     }
+
+    slottedIllustrations[0].setAttribute('aria-hidden', 'true');
   }
 
   /**
