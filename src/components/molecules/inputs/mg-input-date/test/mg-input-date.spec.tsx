@@ -75,13 +75,40 @@ describe('mg-input-date', () => {
     }
   });
 
-  test.each(['', 2021, '31-12-2022', '2022-02-24T08:01:44.460Z'])('Should throw an error with invalid value property : %s', async value => {
+  test.each([2021, '31-12-2022', '2022-02-24T08:01:44.460Z'])('Should throw an error with invalid value property : %s', async value => {
     expect.assertions(1);
     try {
       await getPage({ identifier: 'identifier', label: 'label', value });
     } catch (err) {
       expect(err.message).toMatch("<mg-input-date> props 'value' doesn't match pattern: yyyy-mm-dd");
     }
+  });
+
+  test('Should emit null value when receive an empty string', async () => {
+    const args = { label: 'label', identifier: 'identifier', helpText: 'My help text' };
+    const page = await getPage(args);
+
+    const element = page.doc.querySelector('mg-input-date');
+    const input = element.shadowRoot.querySelector('input');
+
+    //mock validity
+    input.checkValidity = jest.fn(() => true);
+    Object.defineProperty(input, 'validity', {
+      get: jest.fn(() => ({
+        valueMissing: false,
+        badInput: false,
+      })),
+    });
+
+    jest.spyOn(page.rootInstance.valueChange, 'emit');
+
+    input.dispatchEvent(new CustomEvent('focus', { bubbles: true }));
+    await page.waitForChanges();
+
+    input.value = '';
+    input.dispatchEvent(new CustomEvent('input', { bubbles: true }));
+    await page.waitForChanges();
+    expect(page.rootInstance.valueChange.emit).toHaveBeenCalledWith(null);
   });
 
   test('Should trigger events', async () => {

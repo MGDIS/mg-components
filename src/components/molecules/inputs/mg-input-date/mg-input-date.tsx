@@ -40,10 +40,12 @@ export class MgInputDate {
   @Prop({ mutable: true, reflect: true }) value: string;
   @Watch('value')
   validateValue(newValue: string): void {
+    // When the input is not fully completed or has been cleared, the value becomes an empty string.
+    if (newValue === '') newValue = null;
     if (newValue !== undefined && newValue !== null && (typeof newValue !== 'string' || !dateRegExp.test(newValue))) {
       throw new Error("<mg-input-date> props 'value' doesn't match pattern: yyyy-mm-dd");
     } else {
-      this.valueChange.emit(this.value);
+      this.valueChange.emit(newValue);
     }
   }
 
