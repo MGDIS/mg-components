@@ -47,12 +47,15 @@ describe('mg-illustrated-message', () => {
     }
   });
 
-  test('Should throw error if slot illustration element is not an image', async () => {
-    expect.assertions(1);
-    try {
-      await getPage({}, undefined, <span slot="illustration">Lorem Ipsum</span>);
-    } catch (err) {
-      expect(err.message).toContain('<mg-illustrated-message> Slotted illustration must be an image: ');
-    }
-  });
+  test.each([<span slot="illustration">Lorem Ipsum</span>, [<svg></svg>, <svg></svg>]])(
+    'Should throw error if slot illustration is not single or element is not an image',
+    async slottedIllustration => {
+      expect.assertions(1);
+      try {
+        await getPage({}, undefined, slottedIllustration);
+      } catch (err) {
+        expect(err.message).toContain('<mg-illustrated-message> Slotted illustration must be a single image: ');
+      }
+    },
+  );
 });
