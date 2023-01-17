@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-01-09T09:29:27",
+  "timestamp": "2023-01-17T17:01:22",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.21.0",
@@ -5400,7 +5400,7 @@
       "filePath": "./src/components/atoms/mg-tag/mg-tag.tsx",
       "encapsulation": "shadow",
       "tag": "mg-tag",
-      "readme": "## Specs\n\n ![](./mg-tag/doc/img/mg-tag-specs.png) \n\n### Fill / Outline tags\n\n#### Colors \n\n![](./mg-tag/doc/img/mg-tag-colors.png)\n\nIcons take the color of the label.\n\n### Soft tags\n\n#### Font \n\n![](./mg-tag/doc/img/mg-tag-font.png) \n\nThey are not on *SemiBold but Regular*.\n\n#### Colors\n\n![](./mg-tag/doc/img/mg-tag-icons-colors.png) \n\n1. Icons takes the color of the tag variant.\n2. Labels are **@dark** for all.\n3. Color background is *90% lightness* of the tag variant. \n\n#### Rules\n\n![](./mg-tag/doc/img/mg-tag-use.png) \n\nAll must have label for accessibility. \nThis is not possible only for software tags. \nFor \"normal\" tags only a pictogram can be used because the contrast is sufficient.\n\n## Theming\n\n![](./mg-tag/doc/img/mg-tag-variants.png) \n\n### With Icons\n\n![](./mg-tag/doc/img/mg-tag-icons.png) \n\n## CSS Variables\n\nIf needed some [variables](./?path=/story/css-variables--page) are available to customize the component:\n\n### Global\n\n- `--mg-tag-height`: Define tag min height, default: `2.3rem`\n- `--mg-tag-border-radius`: Define tag border radius, default: `0.5rem`\n- `--mg-tag-font-size`: Define tag font size, default: `1.2rem`\n\n### Variant\n\nVariants `primary`, `secondary`, `success`, `warning`, `danger`, `info` can be customized by changing the global [colors](./?path=/docs/style-colors--page).\n\n",
+      "readme": "## Specs\n\n![](./mg-tag/doc/img/mg-tag-specs.png)\n\n### Fill / Outline tags\n\n#### Colors\n\n![](./mg-tag/doc/img/mg-tag-colors.png)\n\nIcons take the color of the label.\n\n### Soft tags\n\n#### Font\n\n![](./mg-tag/doc/img/mg-tag-font.png)\n\nThey are not on SemiBold but **Regular**.\n\n#### Colors\n\n![](./mg-tag/doc/img/mg-tag-icons-colors.png)\n\n1. Icons takes the color of the tag variant.\n2. Labels are [**@color-dark**](./?path=/docs/style-colors--page) for all.\n3. Color background is **90% lightness** of the tag variant.\n\n#### Rules\n\n![](./mg-tag/doc/img/mg-tag-use.png)\n\nFor accessibility, soft variant tags cannot use an icon on its own.\n\n## Theming\n\n![](./mg-tag/doc/img/mg-tag-variants.png)\n\n### With Icons\n\n![](./mg-tag/doc/img/mg-tag-icons.png)\n\n## CSS Variables\n\nIf needed some [variables](./?path=/story/css-variables--page) are available to customize the component:\n\n### Global\n\n- `--mg-tag-height`: Define tag min height, default: `2.3rem`\n- `--mg-tag-border-radius`: Define tag border radius, default: `0.5rem`\n- `--mg-tag-font-size`: Define tag font size, default: `1.2rem`\n\n### Variant\n\nVariants `primary`, `secondary`, `success`, `warning`, `danger`, `info` can be customized by changing the global [colors](./?path=/docs/style-colors--page).\n",
       "docs": "![](./mg-tag/doc/img/mg-tag-specs.png)",
       "docsTags": [],
       "usage": {},
