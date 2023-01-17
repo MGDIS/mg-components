@@ -16,7 +16,7 @@ describe('mg-badge', () => {
       })
       .join('');
 
-    const page = await createPage(html, { width: 250 });
+    const page = await createPage(html, { width: 250, height: 700 });
 
     const element = await page.find('mg-badge');
     expect(element).toHaveClass('hydrated');

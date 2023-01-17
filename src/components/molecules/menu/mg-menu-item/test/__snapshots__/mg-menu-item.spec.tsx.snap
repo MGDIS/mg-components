@@ -2065,7 +2065,9 @@ exports[`mg-menu-item render with args { label: 'Batman', badge: true } 1`] = `
     <mg-badge slot="information">
       <mock:shadow-root>
         <span class="mg-badge mg-badge--info">
-          1
+          <span class="mg-badge__value">
+            1
+          </span>
           <span class="sr-only">
             badge label
           </span>
