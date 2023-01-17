@@ -22,6 +22,10 @@ export class MgMessage {
   // Stored timer setted when hide action is run from setTimeOut
   private storedTimer: ReturnType<typeof setTimeout> = null;
 
+  // Manage hover
+  private isFocused = false;
+  private isHovered = false;
+
   // Locales
   private messages;
 
@@ -90,11 +94,25 @@ export class MgMessage {
     if (newValue) {
       this.componentHide.emit();
       this.classList.add(this.classHide);
+      // Remove event Listener
+      ['focusin', 'mouseenter'].forEach(event => {
+        this.element.removeEventListener(event, this.timerEvents);
+      });
+      // Clear Timer
+      this.clearTimer();
     } else {
       this.componentShow.emit();
       this.classList.delete(this.classHide);
+      // If delay is set
+      if (this.delay > 1) {
+        // Start timer
+        this.setTimer();
+        // Stop timer when get focus or mouse enter
+        ['focusin', 'mouseenter'].forEach(event => {
+          this.element.addEventListener(event, this.timerEvents);
+        });
+      }
     }
-    this.hideWithDelay();
   }
 
   /**
@@ -118,21 +136,52 @@ export class MgMessage {
   @Event({ eventName: 'component-hide' }) componentHide: EventEmitter<string>;
 
   /**
+   * Set timer
+   *
+   * @returns {void}
+   */
+  private setTimer = (): void => {
+    this.storedTimer = setTimeout(() => (this.hide = true), this.delay * 1000);
+  };
+
+  /**
+   * Clear timer
+   *
+   * @returns {void}
+   */
+  private clearTimer = (): void => {
+    clearTimeout(this.storedTimer);
+  };
+
+  /**
+   * Event to add on element
+   *
+   * @param {MouseEvent | FocusEvent} event  event
+   * @returns {void}
+   */
+  private timerEvents = (event: MouseEvent | FocusEvent): void => {
+    this.clearTimer();
+    const isMouseEvent: boolean = event.type === 'mouseenter';
+    // Needed to ensure we don't start the timer
+    this[isMouseEvent ? 'isHovered' : 'isFocused'] = true;
+
+    // Restart timer when loose focus AND mouse leave
+    this.element.addEventListener(
+      isMouseEvent ? 'mouseleave' : 'focusout',
+      eventOut => {
+        this[eventOut.type === 'mouseleave' ? 'isHovered' : 'isFocused'] = false;
+        // Start timer if needed
+        if (!this.isFocused && !this.isHovered) this.setTimer();
+      },
+      { once: true },
+    );
+  };
+
+  /**
    * Handle close button
    */
   private handleClose = (): void => {
     this.hide = true;
-  };
-
-  /**
-   * Hide component whith delay
-   */
-  private hideWithDelay = (): void => {
-    if (this.delay > 0 && this.hide !== true) {
-      this.storedTimer = setTimeout(() => (this.hide = true), this.delay * 1000);
-    } else if (this.storedTimer !== null) {
-      clearTimeout(this.storedTimer);
-    }
   };
 
   /**
