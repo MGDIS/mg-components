@@ -55,10 +55,7 @@ const createHTML = (args, containerSize?) => `
 describe('mg-menu', () => {
   describe.each([Direction.HORIZONTAL, Direction.VERTICAL])('direction %s', direction => {
     test.each(sizes)(`should renders, case direction ${direction} size %s with large screen`, async size => {
-      const page = await createPage(
-        `<h1>${direction} mg-menu - Size props ${size} in large screen</h1>${createHTML({ direction, size, badge: true })}`,
-        direction === Direction.HORIZONTAL ? { width: 1100, height: 200 } : undefined,
-      );
+      const page = await createPage(createHTML({ direction, size, badge: true }), direction === Direction.HORIZONTAL ? { width: 1100, height: 200 } : undefined);
 
       const element = await page.find('mg-menu');
       expect(element).toHaveClass('hydrated');
