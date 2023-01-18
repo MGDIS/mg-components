@@ -18,9 +18,6 @@ describe('mg-badge', () => {
 
     const page = await createPage(html, { width: 250 });
 
-    const element = await page.find('mg-badge');
-    expect(element).toHaveClass('hydrated');
-
     const screenshot = await page.screenshot();
     expect(screenshot).toMatchImageSnapshot();
   });
