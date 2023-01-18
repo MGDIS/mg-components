@@ -18,7 +18,7 @@ export enum Status {
 export type TabItem = {
   label: string;
   icon?: MgIcon['icon'];
-  badge?: Pick<MgBadge, 'value' | 'variant' | 'label'>;
+  badge?: Pick<MgBadge, 'value' | 'variant' | 'label'> & { role: 'notification' | 'information' };
   status: Status;
 };
 
