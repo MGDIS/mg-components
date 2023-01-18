@@ -53,12 +53,13 @@ MgTabsItems.args = {
     },
     {
       label: 'Tab 2',
-      badge: { value: 5, label: 'messages' },
+      badge: { value: 5, label: 'messages', role: 'information' },
       status: Status.DISABLED,
     },
     {
       label: 'Tab 3',
       icon: 'cross',
+      badge: { value: '9+', label: 'messages', role: 'notification' },
     },
     {
       label: 'Tab 4',

@@ -263,7 +263,7 @@ export class MgTabs {
             >
               {tab.icon !== undefined && <mg-icon icon={tab.icon}></mg-icon>}
               {tab.label}
-              {tab.badge !== undefined && <mg-badge variant="text-color" value={tab.badge.value} label={tab.badge.label}></mg-badge>}
+              {tab.badge !== undefined && <mg-badge variant="text-color" value={tab.badge.value} label={tab.badge.label} outline={tab.badge.role === 'information'}></mg-badge>}
             </button>
           ))}
         </header>
