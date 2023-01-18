@@ -240,12 +240,12 @@ exports[`mg-tabs navigation should go to next tab on click event 3`] = `
         <button aria-controls="panel-1" aria-selected="true" class="mg-tabs__navigation-button mg-tabs__navigation-button--active mg-tabs__navigation-button--horizontal" data-index="1" id="id-1" role="tab" tabindex="0">
           <mg-icon icon="check"></mg-icon>
           Batman
-          <mg-badge label="messages" value="2" variant="info"></mg-badge>
+          <mg-badge label="messages" value="2" variant="text-color"></mg-badge>
         </button>
         <button aria-controls="panel-2" aria-selected="false" class="mg-tabs__navigation-button mg-tabs__navigation-button--horizontal" data-index="2" id="id-2" role="tab" tabindex="-1">
           <mg-icon icon="cross"></mg-icon>
           Joker
-          <mg-badge label="messages" value="2" variant="primary"></mg-badge>
+          <mg-badge label="messages" value="2" variant="text-color"></mg-badge>
         </button>
       </header>
       <article aria-labelledby="id-1" class="mg-tabs__content-container" id="panel-1" role="tabpanel" tabindex="0">
@@ -273,12 +273,12 @@ exports[`mg-tabs navigation should go to next tab on click event 4`] = `
         <button aria-controls="panel-1" aria-selected="false" class="mg-tabs__navigation-button mg-tabs__navigation-button--horizontal" data-index="1" id="id-1" role="tab" tabindex="-1">
           <mg-icon icon="check"></mg-icon>
           Batman
-          <mg-badge label="messages" value="2" variant="primary"></mg-badge>
+          <mg-badge label="messages" value="2" variant="text-color"></mg-badge>
         </button>
         <button aria-controls="panel-2" aria-selected="true" class="mg-tabs__navigation-button mg-tabs__navigation-button--active mg-tabs__navigation-button--horizontal" data-index="2" id="id-2" role="tab" tabindex="0">
           <mg-icon icon="cross"></mg-icon>
           Joker
-          <mg-badge label="messages" value="2" variant="info"></mg-badge>
+          <mg-badge label="messages" value="2" variant="text-color"></mg-badge>
         </button>
       </header>
       <article aria-labelledby="id-1" class="mg-tabs__content-container" hidden="" id="panel-1" role="tabpanel" tabindex="-1">
@@ -904,17 +904,17 @@ exports[`mg-tabs template render 2`] = `
         <button aria-controls="panel-1" aria-selected="true" class="mg-tabs__navigation-button mg-tabs__navigation-button--active mg-tabs__navigation-button--horizontal" data-index="1" id="identifier-1" role="tab" tabindex="0">
           <mg-icon icon="check"></mg-icon>
           Batman
-          <mg-badge label="messages" value="2" variant="info"></mg-badge>
+          <mg-badge label="messages" value="2" variant="text-color"></mg-badge>
         </button>
         <button aria-controls="panel-2" aria-selected="false" class="mg-tabs__navigation-button mg-tabs__navigation-button--disabled mg-tabs__navigation-button--horizontal" data-index="2" disabled="" id="identifier-2" role="tab" tabindex="-1">
           <mg-icon icon="cross"></mg-icon>
           Joker
-          <mg-badge label="messages" value="2" variant="primary"></mg-badge>
+          <mg-badge label="messages" value="2" variant="text-color"></mg-badge>
         </button>
         <button aria-controls="panel-3" aria-selected="false" class="mg-tabs__navigation-button mg-tabs__navigation-button--hidden mg-tabs__navigation-button--horizontal" data-index="3" id="identifier-3" role="tab" tabindex="-1">
           <mg-icon icon="trash"></mg-icon>
           Bane
-          <mg-badge label="messages" value="2" variant="primary"></mg-badge>
+          <mg-badge label="messages" value="2" variant="text-color"></mg-badge>
         </button>
       </header>
       <article aria-labelledby="identifier-1" class="mg-tabs__content-container" id="panel-1" role="tabpanel" tabindex="0">
@@ -986,17 +986,17 @@ exports[`mg-tabs template render 4`] = `
         <button aria-controls="panel-1" aria-selected="true" class="mg-tabs__navigation-button mg-tabs__navigation-button--active mg-tabs__navigation-button--horizontal" data-index="1" id="identifier-1" role="tab" tabindex="0">
           <mg-icon icon="check"></mg-icon>
           Batman
-          <mg-badge label="messages" value="2" variant="info"></mg-badge>
+          <mg-badge label="messages" value="2" variant="text-color"></mg-badge>
         </button>
         <button aria-controls="panel-2" aria-selected="false" class="mg-tabs__navigation-button mg-tabs__navigation-button--disabled mg-tabs__navigation-button--horizontal" data-index="2" disabled="" id="identifier-2" role="tab" tabindex="-1">
           <mg-icon icon="cross"></mg-icon>
           Joker
-          <mg-badge label="messages" value="2" variant="primary"></mg-badge>
+          <mg-badge label="messages" value="2" variant="text-color"></mg-badge>
         </button>
         <button aria-controls="panel-3" aria-selected="false" class="mg-tabs__navigation-button mg-tabs__navigation-button--hidden mg-tabs__navigation-button--horizontal" data-index="3" id="identifier-3" role="tab" tabindex="-1">
           <mg-icon icon="trash"></mg-icon>
           Bane
-          <mg-badge label="messages" value="2" variant="primary"></mg-badge>
+          <mg-badge label="messages" value="2" variant="text-color"></mg-badge>
         </button>
       </header>
       <article aria-labelledby="identifier-1" class="mg-tabs__content-container" id="panel-1" role="tabpanel" tabindex="0">

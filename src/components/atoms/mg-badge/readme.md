@@ -18,18 +18,19 @@ If needed some [variables](./?path=/story/css-variables--page) are available to 
 
 - `--mg-badge-size`: define badge height and min-width, default: `1.6rem`
 - `--mg-badge-font-size`: define badge font size, default: `1.1rem`
+- `--mg-badge-text-color`: define badge color for text-color variant, default: `--color-light`
 
 <!-- Auto Generated Below -->
 
 
 ## Properties
 
-| Property             | Attribute | Description                                                        | Type                                                                       | Default       |
-| -------------------- | --------- | ------------------------------------------------------------------ | -------------------------------------------------------------------------- | ------------- |
-| `label` _(required)_ | `label`   | Badge label. Include short description. Required for accessibility | `string`                                                                   | `undefined`   |
-| `outline`            | `outline` | Define if button is using outline style                            | `boolean`                                                                  | `undefined`   |
-| `value` _(required)_ | `value`   | Badge value                                                        | `number \| string`                                                         | `undefined`   |
-| `variant`            | `variant` | Define button variant                                              | `"danger" \| "info" \| "primary" \| "secondary" \| "success" \| "warning"` | `variants[0]` |
+| Property             | Attribute | Description                                                        | Type                                                                                       | Default       |
+| -------------------- | --------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------- |
+| `label` _(required)_ | `label`   | Badge label. Include short description. Required for accessibility | `string`                                                                                   | `undefined`   |
+| `outline`            | `outline` | Define if button is using outline style                            | `boolean`                                                                                  | `undefined`   |
+| `value` _(required)_ | `value`   | Badge value                                                        | `number \| string`                                                                         | `undefined`   |
+| `variant`            | `variant` | Define button variant                                              | `"danger" \| "info" \| "primary" \| "secondary" \| "success" \| "text-color" \| "warning"` | `variants[0]` |
 
 
 ## Dependencies
