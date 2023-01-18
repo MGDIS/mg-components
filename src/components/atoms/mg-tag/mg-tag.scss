@@ -19,7 +19,7 @@ $mg-tag-padding-horizontal: 0.7rem;
     }
     &.mg-tag--soft {
       $fill-color: hsl(var(--color-#{$backgroundColor}-h), var(--color-#{$backgroundColor}-s), 90%);
-      font-weight: 200;
+      font-weight: 400;
       background-color: $fill-color;
       border-color: $fill-color;
       color: hsl(var(--color-dark));

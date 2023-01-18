@@ -92,7 +92,7 @@ export class MgBadge {
   render(): HTMLElement {
     return (
       <span class={this.classList.join()}>
-        {this.value}
+        <span class="mg-badge__value">{this.value}</span>
         <span class="sr-only">{this.label}</span>
       </span>
     );

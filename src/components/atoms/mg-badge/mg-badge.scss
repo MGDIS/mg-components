@@ -6,17 +6,34 @@ $mg-badge-border-width: 0.1rem;
 /* Mixins */
 @mixin badge-variant($name, $backgroundColor, $color) {
   &.mg-badge--#{$name} {
-    // Decoration
-    background-color: hsl(var(--color-#{$backgroundColor}));
-    border-color: hsl(var(--color-#{$backgroundColor}));
-    // Font
-    color: hsl(var(--color-#{$color}));
+    @if $name == 'text-color' {
+      // Decoration
+      background-color: currentColor;
+      border-color: currentColor;
+      .mg-badge__value {
+        // Font
+        color: hsl(var(--mg-badge-text-color, var(--color-light)));
+      }
+    } @else {
+      // Decoration
+      background-color: hsl(var(--color-#{$backgroundColor}));
+      border-color: hsl(var(--color-#{$backgroundColor}));
+      // Font
+      color: hsl(var(--color-#{$color}));
+    }
 
     &.mg-badge--outline {
       // Decoration
       background-color: transparent;
       // Font
-      color: hsl(var(--color-#{$backgroundColor}));
+      @if $name == 'text-color' {
+        // Font
+        .mg-badge__value {
+          color: currentColor;
+        }
+      } @else {
+        color: hsl(var(--color-#{$backgroundColor}));
+      }
     }
   }
 }
@@ -44,6 +61,7 @@ $mg-badge-border-width: 0.1rem;
   @include badge-variant('warning', 'warning', 'dark');
   @include badge-variant('danger', 'danger', 'light');
   @include badge-variant('info', 'info', 'light');
+  @include badge-variant('text-color', none, 'light');
 }
 
 .mg-badge,
