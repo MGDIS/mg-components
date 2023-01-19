@@ -18,7 +18,7 @@ describe('locales', () => {
       expect(locales.messages).toMatchObject(messagesFr);
     });
 
-    test('Should return default locale when requested does not exist', () => {
+    test('Should return default locale messages when requested does not exist', () => {
       const div = document.createElement('div');
       div.lang = 'ca';
       const locales = initLocales(div);
