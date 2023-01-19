@@ -779,14 +779,13 @@
         <h4>Popover</h4>
         <mg-popover>
           <mg-button>Display popover</mg-button>
-          <div slot="content">Coucou</div></mg-popover
-        >
+          <div slot="content">Coucou</div>
+        </mg-popover>
         <mg-popover close-button>
           <mg-button>Display popover</mg-button>
           <div slot="content">Lorem ipsum dolor sit amet</div>
           <h1 slot="title">Titre Normal</h1>
         </mg-popover>
-
         <mg-popover close-button display>
           <div slot="content">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -796,6 +795,16 @@
           <h1 slot="title">Titre un peu plus long un peu plus long un peu plus long un peu plus long un peu plus long</h1>
           <mg-button>Display popover</mg-button>
         </mg-popover>
+        <mg-popover class="custom-popover">
+          <mg-button>Display custom popover</mg-button>
+          <div slot="content">Coucou</div>
+        </mg-popover>
+        <style>
+          .custom-popover {
+            --mg-card-padding: 5rem;
+            --mg-card-border-radius: 50%;
+          }
+        </style>
 
         <!--
         <h4>Character left</h4>
