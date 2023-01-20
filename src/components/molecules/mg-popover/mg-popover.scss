@@ -2,7 +2,7 @@ $position-size: 6px;
 
 @mixin arrow-placement($position, $shadow-x, $shadow-y) {
   #{$position}: calc(-1 * #{$position-size});
-  filter: drop-shadow(#{$shadow-x} #{$shadow-y} 5px rgba(0, 0, 0, 0.1));
+  filter: drop-shadow(#{$shadow-x} #{$shadow-y} 5px hsla(var(--color-dark), 0.15));
 }
 
 :host {
