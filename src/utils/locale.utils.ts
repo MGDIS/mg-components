@@ -39,3 +39,25 @@ export function localeDate(date: string, locale: string): string {
   }
   return new Intl.DateTimeFormat(locale).format(new Date(date));
 }
+
+/**
+ * Get locale and messages
+ * We load the defined locale but for now we only support the first subtag for messages
+ *
+ * @param {HTMLElement} element element we need to get the language
+ * @param {unknown} messages messages to use
+ * @param {string} defaultLocale default messages locale
+ * @returns {{ locale: string; messages: unknown }} messages object
+ */
+export const getLocaleMessages = (element: HTMLElement, messages: unknown, defaultLocale: string): { locale: string; messages: unknown } => {
+  // Get local
+  const closestLang = Intl.NumberFormat.supportedLocalesOf((element.closest('[lang]') as HTMLElement)?.lang);
+  const locale = closestLang.length > 0 ? closestLang[0] : navigator.language || defaultLocale;
+  // Only keep first subtag
+  const localeSubtag = locale.split('-').shift();
+  // Return
+  return {
+    locale,
+    messages: messages[localeSubtag] || messages[defaultLocale],
+  };
+};

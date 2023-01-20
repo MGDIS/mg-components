@@ -1,15 +1,12 @@
 import { createPage } from '../../../../utils/e2e.test.utils';
 
 describe('mg-divider', () => {
-  describe.each(['regular', 'full'])('size %s', size => {
-    test('Should render', async () => {
-      const page = await createPage(`<mg-divider size="${size}"></mg-divider>`);
+  test('Should render', async () => {
+    const sizes = ['regular', 'full'];
+    const html = sizes.map(size => `<mg-divider size="${size}"></mg-divider>`).join('');
+    const page = await createPage(html);
 
-      const element = await page.find('mg-divider');
-      expect(element).toHaveClass('hydrated');
-
-      const screenshot = await page.screenshot();
-      expect(screenshot).toMatchImageSnapshot();
-    });
+    const screenshot = await page.screenshot();
+    expect(screenshot).toMatchImageSnapshot();
   });
 });

@@ -39,6 +39,8 @@ If needed some [variables](./?path=/story/css-variables--page) are available to 
 - `--mg-panel-box-shadow`: Define panel box shadow, default: `var(--box-shadow)`
 - `--mg-panel-content-padding`: Define panel content padding, default: `1.5rem`
 
+Please note that the mg-panel component uses the [mg-card](./?path=/docs/atoms-mg-card--mg-card) component. This means that you can benefit from the CSS variables of [mg-card](./?path=/docs/atoms-mg-card--mg-card) to customize mg-panel. You can easily change padding, border-radius, etc. Use this feature to seamlessly adapt mg-panel to your design.
+
 <!-- Auto Generated Below -->
 
 

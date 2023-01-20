@@ -909,7 +909,7 @@ exports[`mg-tabs template render 2`] = `
         <button aria-controls="panel-2" aria-selected="false" class="mg-tabs__navigation-button mg-tabs__navigation-button--disabled mg-tabs__navigation-button--horizontal" data-index="2" disabled="" id="identifier-2" role="tab" tabindex="-1">
           <mg-icon icon="cross"></mg-icon>
           Joker
-          <mg-badge label="messages" value="2" variant="text-color"></mg-badge>
+          <mg-badge label="messages" outline="" value="2" variant="text-color"></mg-badge>
         </button>
         <button aria-controls="panel-3" aria-selected="false" class="mg-tabs__navigation-button mg-tabs__navigation-button--hidden mg-tabs__navigation-button--horizontal" data-index="3" id="identifier-3" role="tab" tabindex="-1">
           <mg-icon icon="trash"></mg-icon>
@@ -991,7 +991,7 @@ exports[`mg-tabs template render 4`] = `
         <button aria-controls="panel-2" aria-selected="false" class="mg-tabs__navigation-button mg-tabs__navigation-button--disabled mg-tabs__navigation-button--horizontal" data-index="2" disabled="" id="identifier-2" role="tab" tabindex="-1">
           <mg-icon icon="cross"></mg-icon>
           Joker
-          <mg-badge label="messages" value="2" variant="text-color"></mg-badge>
+          <mg-badge label="messages" outline="" value="2" variant="text-color"></mg-badge>
         </button>
         <button aria-controls="panel-3" aria-selected="false" class="mg-tabs__navigation-button mg-tabs__navigation-button--hidden mg-tabs__navigation-button--horizontal" data-index="3" id="identifier-3" role="tab" tabindex="-1">
           <mg-icon icon="trash"></mg-icon>
