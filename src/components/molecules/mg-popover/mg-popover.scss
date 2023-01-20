@@ -58,19 +58,19 @@ $position-size: 6px;
   }
 
   &[data-popper-placement^='top'] > &__arrow {
-    @include arrow-placement('bottom', 0px, calc(#{$position-size} * 2));
+    @include arrow-placement('bottom', 0, calc(#{$position-size} * 2));
   }
 
   &[data-popper-placement^='bottom'] > &__arrow {
-    @include arrow-placement('top', 0px, calc((-1 * #{$position-size}) * 2));
+    @include arrow-placement('top', 0, calc((-1 * #{$position-size}) * 2));
   }
 
   &[data-popper-placement^='left'] > &__arrow {
-    @include arrow-placement('right', calc(#{$position-size} * 2), 0px);
+    @include arrow-placement('right', calc(#{$position-size} * 2), 0);
   }
 
   &[data-popper-placement^='right'] > &__arrow {
-    @include arrow-placement('left', calc((-1 * #{$position-size}) * 2), 0px);
+    @include arrow-placement('left', calc((-1 * #{$position-size}) * 2), 0);
   }
 
   &__title ::slotted([slot='title']) {
