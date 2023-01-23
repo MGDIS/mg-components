@@ -19,6 +19,7 @@ describe('mg-input-select', () => {
   beforeEach(() => jest.useFakeTimers());
   afterEach(() => jest.runOnlyPendingTimers());
   test.each([
+    { label: 'label', identifier: 'identifier', items: [] },
     { label: 'label', identifier: 'identifier', items: ['blu', 'bli', 'blo', 'bla'] },
     { label: 'label', identifier: 'identifier', items: ['blu', 'bli', 'blo', 'bla'], labelHide: true },
     {
@@ -92,7 +93,7 @@ describe('mg-input-select', () => {
       try {
         await getPage({ label: 'Label', items });
       } catch (err) {
-        expect(err.message).toMatch('<mg-input-select> prop "items" is required and all items must be the same type, string or Option.');
+        expect(err.message).toMatch('<mg-input-select> prop "items" is required, can be an empty Array or all items must be the same type: string or Option.');
       }
     },
   );
