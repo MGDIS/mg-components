@@ -45,7 +45,7 @@ $border-bottom-size: 0.3rem;
       z-index: 10;
     }
     &:hover:not(.#{$element}__navigation-button--disabled),
-    &:focus:not(.#{$element}__navigation-button--disabled) {
+    &:focus-visible:not(.#{$element}__navigation-button--disabled) {
       background-color: hsla(var(--#{$element}-focused-background-color-hsl), 10%);
     }
     &.#{$element}__navigation-button--active {
