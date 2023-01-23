@@ -12,8 +12,8 @@ export class MgTag {
    ************/
 
   // Classes
-  private readonly classOutline = `mg-tag--outline`;
-  private readonly classSoft = `mg-tag--soft`;
+  private readonly classOutline = 'mg-tag--outline';
+  private readonly classSoft = 'mg-tag--soft';
 
   /**************
    * Decorators *
@@ -80,7 +80,7 @@ export class MgTag {
    * @returns {void}
    */
   private validateTextContent(textContent: string): void {
-    if (textContent === undefined || textContent.trim() === '') throw new Error('<mg-tag> slot must contain a text content.');
+    if (typeof textContent !== 'string' || textContent.trim() === '') throw new Error('<mg-tag> slot must contain a text content.');
   }
 
   /*************

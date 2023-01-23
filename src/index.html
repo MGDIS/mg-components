@@ -492,18 +492,18 @@
       <section>
         <h2>Messages</h2>
         <mg-message variant="info">
-          <p><strong>Coucou</strong> toi !</p></mg-message
-        >
+          <p><strong>Coucou</strong> toi !</p>
+        </mg-message>
         <mg-message variant="warning" close-button>
-          <p><strong>Coucou</strong> toi !</p></mg-message
-        >
+          <p><strong>Coucou</strong> toi !</p>
+        </mg-message>
         <mg-message variant="success">
           <p><strong>Coucou</strong> toi !</p>
           <div slot="actions" class="mg-group-elements mg-group-elements--align-right">
             <mg-button>Primary</mg-button>
             <mg-button variant="secondary">Secondary</mg-button>
-          </div></mg-message
-        >
+          </div>
+        </mg-message>
         <mg-message variant="danger">
           <p>
             <strong>Coucou</strong> toi ! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -518,15 +518,29 @@
           <div slot="actions" class="mg-group-elements mg-group-elements--align-right">
             <mg-button>Primary</mg-button>
             <mg-button variant="secondary">Secondary</mg-button>
-          </div></mg-message
-        >
+          </div>
+        </mg-message>
         <mg-message variant="info" close-button>
           <p>
             <strong>Coucou</strong> toi ! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
             minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
             dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </p></mg-message
-        >
+          </p>
+        </mg-message>
+        <div>
+          <mg-button type="button" id="button-with-delay">Toggle mg-message w/ delay</mg-button>
+        </div>
+        <mg-message variant="info" close-button delay="10" identifier="message-with-delay">
+          <p>with delay</p>
+          <mg-input-text identifier="input-with-delay" label="input to get focus"></mg-input-text>
+        </mg-message>
+        <script>
+          const messageWithDelay = document.querySelector('[identifier="message-with-delay"]');
+          const buttonWithDelay = document.getElementById('button-with-delay');
+          buttonWithDelay.addEventListener('click', event => {
+            messageWithDelay.hide = !messageWithDelay.hide;
+          });
+        </script>
       </section>
       <section>
         <h2>Illustrated message</h2>
@@ -765,14 +779,13 @@
         <h4>Popover</h4>
         <mg-popover>
           <mg-button>Display popover</mg-button>
-          <div slot="content">Coucou</div></mg-popover
-        >
+          <div slot="content">Coucou</div>
+        </mg-popover>
         <mg-popover close-button>
           <mg-button>Display popover</mg-button>
           <div slot="content">Lorem ipsum dolor sit amet</div>
           <h1 slot="title">Titre Normal</h1>
         </mg-popover>
-
         <mg-popover close-button display>
           <div slot="content">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -782,6 +795,16 @@
           <h1 slot="title">Titre un peu plus long un peu plus long un peu plus long un peu plus long un peu plus long</h1>
           <mg-button>Display popover</mg-button>
         </mg-popover>
+        <mg-popover class="custom-popover">
+          <mg-button>Display custom popover</mg-button>
+          <div slot="content">Coucou</div>
+        </mg-popover>
+        <style>
+          .custom-popover {
+            --mg-card-padding: 5rem;
+            --mg-card-border-radius: 50%;
+          }
+        </style>
 
         <!--
         <h4>Character left</h4>
@@ -1149,12 +1172,12 @@
 
             <div slot="actions" class="mg-group-elements mg-group-elements--align-right">
               <mg-button id="can-submit">Can Submit</mg-button>
-              <mg-button id="display-error" variant="secondary">Chek errors</mg-button>
-              <mg-button id="toggle-readonly" variant="secondary">Toggle Inputs Readonly</mg-button>
-              <mg-button id="toggle-readonly-form" variant="secondary">Set Form Readonly</mg-button>
-              <mg-button id="toggle-disabled" variant="secondary">Toggle Inputs Disabled</mg-button>
-              <mg-button id="toggle-disabled-form" variant="secondary">Set Form Disabled</mg-button>
-              <mg-button id="add-input" variant="secondary">Add Required Input</mg-button>
+              <mg-button id="display-error" variant="secondary" type="button">Chek errors</mg-button>
+              <mg-button id="toggle-readonly" variant="secondary" type="button">Toggle Inputs Readonly</mg-button>
+              <mg-button id="toggle-readonly-form" variant="secondary" type="button">Set Form Readonly</mg-button>
+              <mg-button id="toggle-disabled" variant="secondary" type="button">Toggle Inputs Disabled</mg-button>
+              <mg-button id="toggle-disabled-form" variant="secondary" type="button">Set Form Disabled</mg-button>
+              <mg-button id="add-input" variant="secondary" type="button">Add Required Input</mg-button>
             </div>
           </mg-form>
           <script>

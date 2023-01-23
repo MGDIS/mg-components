@@ -161,7 +161,7 @@ export class MgMenu {
    * @returns {void}
    */
   componentWillLoad(): void {
-    this.messages = initLocales(this.element).messages.plusMenu;
+    this.messages = (initLocales(this.element).messages as { plusMenu: MessageType }).plusMenu;
 
     // validation
     this.validateDirection(this.direction);

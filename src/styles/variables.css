@@ -96,7 +96,7 @@
   --color-secondary: hsl(var(--color-neutral));
 
   /* Shadow */
-  --box-shadow: 0 0.3rem 0.8rem 0 rgba(0, 0, 0, 0.1);
+  --box-shadow: 0 0.3rem 0.8rem 0 hsla(var(--color-dark), 0.15);
 
   /*
     Global

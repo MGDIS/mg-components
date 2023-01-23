@@ -157,7 +157,8 @@ bot-publish:
 pages:
   stage: deploy
   rules:
-    - if: $CI_COMMIT_BRANCH == 'master'
+    # only tags
+    - if: $CI_COMMIT_TAG
   extends:
     - .install
   script:
@@ -170,8 +171,8 @@ pages:
       - public
 
 release:
-  # only tags
   rules:
+    # only tags
     - if: $CI_COMMIT_TAG
   stage: release
   image: $DOCKER_REGISTRE_URL/$DOCKER_REGISTRE_NAMESPACE_INT/node:16-build

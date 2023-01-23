@@ -28,7 +28,7 @@ describe('mg-tabs', () => {
       [
         [
           { label: 'Batman', icon: 'check', badge },
-          { label: 'Joker', icon: 'cross', badge, status: 'disabled' },
+          { label: 'Joker', icon: 'cross', badge: { ...badge, role: 'information' }, status: 'disabled' },
           { label: 'Bane', icon: 'trash', badge, status: 'hidden' },
         ],
       ],

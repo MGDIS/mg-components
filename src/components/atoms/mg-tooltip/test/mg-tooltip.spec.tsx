@@ -161,7 +161,7 @@ describe('mg-tooltip', () => {
 
       expect(tooltip).toHaveAttribute('data-show');
 
-      element.dispatchEvent(new KeyboardEvent('keydown', { code: key }));
+      document.dispatchEvent(new KeyboardEvent('keydown', { code: key }));
       await page.waitForChanges();
 
       expect(tooltip).toHaveAttribute('data-show');
@@ -179,7 +179,7 @@ describe('mg-tooltip', () => {
 
       expect(tooltip).toHaveAttribute('data-show');
 
-      element.dispatchEvent(new KeyboardEvent('keydown', { code: 'Escape' }));
+      document.dispatchEvent(new KeyboardEvent('keydown', { code: 'Escape' }));
       await page.waitForChanges();
 
       expect(tooltip).not.toHaveAttribute('data-show');

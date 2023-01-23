@@ -3,7 +3,7 @@ import { OverflowBehaviorElements } from '../../../../utils/behaviors.utils';
 import { ClassList } from '../../../../utils/components.utils';
 import { initLocales } from '../../../../locales';
 import { MgMenu } from '../mg-menu/mg-menu';
-import { Direction, MenuSizeType } from '../mg-menu/mg-menu.conf';
+import { Direction, MenuSizeType, MessageType } from '../mg-menu/mg-menu.conf';
 import { Status } from './mg-menu-item.conf';
 
 @Component({
@@ -224,7 +224,7 @@ export class MgMenuItem {
     this.validateSize(this.size);
     this.validateStatus(this.status);
     this.validateExpanded(this.expanded);
-    this.badgeLabel = initLocales(this.element).messages.plusMenu.badgeLabel;
+    this.badgeLabel = (initLocales(this.element).messages as { plusMenu: MessageType }).plusMenu.badgeLabel;
   }
 
   /**

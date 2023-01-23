@@ -1,4 +1,10 @@
 $mg-popover-padding-vertical: var(--mg-popover-padding-vertical, 1.5rem);
+$position-size: 6px;
+
+@mixin arrow-placement($position, $shadow-x, $shadow-y) {
+  #{$position}: calc(-1 * #{$position-size});
+  filter: drop-shadow(#{$shadow-x} #{$shadow-y} 5px hsla(var(--color-dark), 0.15));
+}
 
 :host {
   --mg-card-padding: #{$mg-popover-padding-vertical} var(--mg-popover-padding-horizontal, #{$mg-popover-padding-vertical});
@@ -33,41 +39,39 @@ $mg-popover-padding-vertical: var(--mg-popover-padding-vertical, 1.5rem);
     margin-left: 3rem;
   }
 
-  &__arrow,
-  &__arrow::before {
-    // Display
-    position: absolute;
-    width: 2rem;
-    height: 2rem;
-    z-index: 2000;
-    // Decoration
-    background: hsl(var(--mg-popover-background-color));
-  }
-
   &__arrow {
     visibility: hidden;
-  }
-
-  &__arrow::before {
-    visibility: visible;
-    content: '';
-    transform: rotate(45deg);
+    &,
+    &::before {
+      // Display
+      position: absolute;
+      width: 2rem;
+      height: 2rem;
+      z-index: 2000;
+      // Decoration
+      background: hsl(var(--mg-popover-background-color));
+    }
+    &::before {
+      visibility: visible;
+      content: '';
+      transform: rotate(45deg);
+    }
   }
 
   &[data-popper-placement^='top'] > &__arrow {
-    bottom: -6px;
+    @include arrow-placement('bottom', 0, calc(#{$position-size} * 2));
   }
 
   &[data-popper-placement^='bottom'] > &__arrow {
-    top: -6px;
+    @include arrow-placement('top', 0, calc((-1 * #{$position-size}) * 2));
   }
 
   &[data-popper-placement^='left'] > &__arrow {
-    right: -6px;
+    @include arrow-placement('right', calc(#{$position-size} * 2), 0);
   }
 
   &[data-popper-placement^='right'] > &__arrow {
-    left: -6px;
+    @include arrow-placement('left', calc((-1 * #{$position-size}) * 2), 0);
   }
 
   &__title ::slotted([slot='title']) {

@@ -33,7 +33,14 @@ describe('mg-tabs', () => {
           { label: 'Bane', icon: 'cross', status: 'hidden' },
         ],
       },
-    ])('render', async ({ items }) => {
+      {
+        items: [
+          { label: 'Batman', icon: 'check', badge: { label: 'count', value: 99, role: 'notification' } },
+          { label: 'Joker', icon: 'cross', badge: { label: 'count', value: 99, role: 'information' }, status: 'disabled' },
+          { label: 'Bane', icon: 'cross', status: 'hidden' },
+        ],
+      },
+    ])(`render size=${size}`, async ({ items }) => {
       const page = await createPage(`<mg-tabs label="label" size=${size}>${createSlot(defaultSlotContents)}</mg-tabs>
       <script>
       const mgTabs = document.querySelector('mg-tabs');
