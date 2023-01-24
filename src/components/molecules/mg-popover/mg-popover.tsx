@@ -178,7 +178,7 @@ export class MgPopover {
         {
           name: 'offset',
           options: {
-            offset: [0, 10],
+            offset: [0, 9],
           },
         },
       ],
@@ -208,7 +208,7 @@ export class MgPopover {
         <slot></slot>
         <div id={this.identifier} class="mg-popover">
           <mg-card>
-            {!this.disabled && this.closeButton && (
+            {this.closeButton && (
               <mg-button identifier={this.closeButtonId} is-icon variant="flat" label={this.messages.general.close} onClick={this.handleCloseButton}>
                 <mg-icon icon="cross"></mg-icon>
               </mg-button>

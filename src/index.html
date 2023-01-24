@@ -37,9 +37,9 @@
     <link rel="stylesheet" href="/build/variables.css" />
     <link rel="stylesheet" href="/build/mg-components.css" />
     <script type="module" src="/build/mg-components.esm.js"></script>
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mgdis/mg-components@5/dist/mg-components/variables.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mgdis/mg-components@5/dist/mg-components/mg-components.css" />
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@mgdis/mg-components@5.0.1/dist/mg-components/mg-components.esm.js"></script> -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mgdis/mg-components@5.5.0/dist/mg-components/variables.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mgdis/mg-components@5.5.0/dist/mg-components/mg-components.css" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@mgdis/mg-components@5.5.0/dist/mg-components/mg-components.esm.js"></script> -->
   </head>
   <body>
     <mg-skip-links></mg-skip-links>
@@ -779,21 +779,23 @@
         <h4>Popover</h4>
         <mg-popover>
           <mg-button>Display popover</mg-button>
-          <div slot="content">Coucou</div>
+          <div slot="content">
+            <mg-button onclick="javascript:alert('coucou')">Coucou</mg-button>
+          </div>
         </mg-popover>
         <mg-popover close-button>
           <mg-button>Display popover</mg-button>
           <div slot="content">Lorem ipsum dolor sit amet</div>
           <h1 slot="title">Titre Normal</h1>
         </mg-popover>
-        <mg-popover close-button display>
+        <mg-popover close-button display placement="left">
           <div slot="content">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
             exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           </div>
           <h1 slot="title">Titre un peu plus long un peu plus long un peu plus long un peu plus long un peu plus long</h1>
-          <mg-button>Display popover</mg-button>
+          <mg-button variant="flat">Display popover</mg-button>
         </mg-popover>
         <mg-popover class="custom-popover">
           <mg-button>Display custom popover</mg-button>
@@ -802,7 +804,7 @@
         <style>
           .custom-popover {
             --mg-card-padding: 5rem;
-            --mg-card-border-radius: 50%;
+            --mg-card-border-radius: 5rem;
           }
         </style>
 

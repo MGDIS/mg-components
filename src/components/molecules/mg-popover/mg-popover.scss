@@ -1,8 +1,12 @@
-$position-size: 6px;
+$position-size: 0.9rem;
+$arrow-height: 1rem;
+$arrow-width: 3rem;
+$border-arrow-head: $arrow-height solid hsl(var(--mg-popover-background-color));
+$border-arrow-side: calc(#{$arrow-width} / 2) solid transparent;
 
 @mixin arrow-placement($position, $shadow-x, $shadow-y) {
   #{$position}: calc(-1 * #{$position-size});
-  filter: drop-shadow(#{$shadow-x} #{$shadow-y} 5px hsla(var(--color-dark), 0.15));
+  filter: drop-shadow(#{$shadow-x} #{$shadow-y} 0.5rem hsl(var(--color-dark), 0.15));
 }
 
 :host {
@@ -24,6 +28,7 @@ $position-size: 6px;
   color: hsl(var(--mg-popover-font-color));
 
   mg-card {
+    position: relative;
     z-index: -1;
   }
 
@@ -39,38 +44,75 @@ $position-size: 6px;
   }
 
   &__arrow {
+    position: absolute;
     visibility: hidden;
-    &,
-    &::before {
-      // Display
-      position: absolute;
-      width: 2rem;
-      height: 2rem;
-      z-index: 2000;
-      // Decoration
-      background: hsl(var(--mg-popover-background-color));
-    }
-    &::before {
+    // Need to set the max size to ensure it will be well centered
+    width: calc($arrow-width + 2 * var(--mg-card-border-radius));
+    height: calc($arrow-width + 2 * var(--mg-card-border-radius));
+
+    &:before {
       visibility: visible;
       content: '';
-      transform: rotate(45deg);
+      position: absolute;
+    }
+  }
+
+  &[data-popper-placement^='top'] > &__arrow,
+  &[data-popper-placement^='bottom'] > &__arrow {
+    height: $arrow-height;
+
+    &:before {
+      left: var(--mg-card-border-radius);
+      border-right: $border-arrow-side;
+      border-left: $border-arrow-side;
     }
   }
 
   &[data-popper-placement^='top'] > &__arrow {
-    @include arrow-placement('bottom', 0, calc(#{$position-size} * 2));
+    bottom: -$position-size;
+    filter: drop-shadow(0 #{$position-size} 0.5rem hsl(var(--color-dark), 0.15));
+
+    &:before {
+      border-top: $border-arrow-head;
+    }
   }
 
   &[data-popper-placement^='bottom'] > &__arrow {
-    @include arrow-placement('top', 0, calc((-1 * #{$position-size}) * 2));
+    top: -$position-size;
+    filter: drop-shadow(0 #{-$position-size} 0.5rem hsl(var(--color-dark), 0.15));
+
+    &:before {
+      border-bottom: $border-arrow-head;
+    }
+  }
+
+  &[data-popper-placement^='left'] > &__arrow,
+  &[data-popper-placement^='right'] > &__arrow {
+    width: $arrow-height;
+
+    &:before {
+      top: var(--mg-card-border-radius);
+      border-top: $border-arrow-side;
+      border-bottom: $border-arrow-side;
+    }
   }
 
   &[data-popper-placement^='left'] > &__arrow {
-    @include arrow-placement('right', calc(#{$position-size} * 2), 0);
+    right: -$position-size;
+    filter: drop-shadow(#{$position-size} 0 0.5rem hsl(var(--color-dark), 0.15));
+
+    &:before {
+      border-left: $border-arrow-head;
+    }
   }
 
   &[data-popper-placement^='right'] > &__arrow {
-    @include arrow-placement('left', calc((-1 * #{$position-size}) * 2), 0);
+    left: -$position-size;
+    filter: drop-shadow(#{-$position-size} 0 0.5rem hsl(var(--color-dark), 0.15));
+
+    &:before {
+      border-right: $border-arrow-head;
+    }
   }
 
   &__title ::slotted([slot='title']) {

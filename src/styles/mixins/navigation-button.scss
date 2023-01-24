@@ -39,14 +39,14 @@ $border-bottom-size: 0.3rem;
     &:disabled,
     &--disabled {
       cursor: default;
-      opacity: 30%;
+      opacity: 0.3;
     }
     &:focus-visible {
       z-index: 10;
     }
     &:hover:not(.#{$element}__navigation-button--disabled),
     &:focus-visible:not(.#{$element}__navigation-button--disabled) {
-      background-color: hsla(var(--#{$element}-focused-background-color-hsl), 10%);
+      background-color: hsl(var(--#{$element}-focused-background-color-hsl), 0.1);
     }
     &.#{$element}__navigation-button--active {
       color: hsl(var(--#{$element}-color-active-hsl));
