@@ -92,13 +92,17 @@ export class MgInputSelect {
   @Prop() items!: string[] | SelectOption[];
   @Watch('items')
   validateItems(newValue: string[] | SelectOption[]): void {
+    // Empty options
+    if (newValue.length === 0) {
+      this.options = [];
+    }
     // String array
-    if (allItemsAreString(newValue as string[])) {
+    else if (allItemsAreString(newValue as string[])) {
       this.valueExist = (newValue as string[]).includes(this.value as string);
       this.options = (newValue as string[]).map((item: string) => ({ title: item, value: item }));
     }
     // Object array
-    else if (newValue && (newValue as SelectOption[]).every(item => isOption(item))) {
+    else if ((newValue as SelectOption[]).every(item => isOption(item))) {
       this.valueExist = (newValue as SelectOption[]).map(item => item.value).includes(this.value);
       // Grouped object options
       if ((newValue as SelectOption[]).some(item => item.group !== undefined)) {
@@ -109,7 +113,7 @@ export class MgInputSelect {
         this.options = newValue as SelectOption[];
       }
     } else {
-      throw new Error('<mg-input-select> prop "items" is required and all items must be the same type, string or Option.');
+      throw new Error('<mg-input-select> prop "items" is required, can be an empty Array or all items must be the same type: string or Option.');
     }
   }
 
