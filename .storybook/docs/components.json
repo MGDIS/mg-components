@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-01-19T10:16:33",
+  "timestamp": "2023-01-24T14:42:50",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.21.0",
@@ -5287,9 +5287,8 @@
           "mutable": true,
           "attr": "active-tab",
           "reflectToAttr": true,
-          "docs": "Active tab number\ndefault: first is 1",
+          "docs": "Active tab number",
           "docsTags": [],
-          "default": "1",
           "values": [
             {
               "type": "number"

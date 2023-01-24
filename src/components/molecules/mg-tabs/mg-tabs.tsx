@@ -75,11 +75,13 @@ export class MgTabs {
   validateItems(newValue: MgTabs['items']): void {
     // String array
     if (allItemsAreString(newValue as string[])) {
-      this.tabs = (newValue as string[]).map(item => ({ label: item, status: Status.VISIBLE }));
+      this.tabs = (newValue as string[]).map((item, index) => ({ label: item, status: index === 0 ? Status.ACTIVE : Status.VISIBLE }));
     }
     // Object array
-    else if (newValue && (newValue as TabItem[]).every(item => isTabItem(item))) {
+    else if (newValue && newValue.length > 0 && (newValue as TabItem[]).every(item => isTabItem(item))) {
       this.tabs = newValue as TabItem[];
+      // init active tabs if not set. Default: index 0.
+      if (this.tabs.find(tab => this.tabHasStatus(tab, Status.ACTIVE)) === undefined) this.tabs[0].status = Status.ACTIVE;
     } else {
       throw new Error('<mg-tabs> prop "items" is required and all items must be the same type: TabItem.');
     }
@@ -87,15 +89,24 @@ export class MgTabs {
 
   /**
    * Active tab number
-   * default: first is 1
    */
-  @Prop({ reflect: true, mutable: true }) activeTab = 1;
+  @Prop({ reflect: true, mutable: true }) activeTab: number;
   @Watch('activeTab')
   validateActiveTab(newValue: MgTabs['activeTab']): void {
-    if (newValue < 1 || newValue > this.tabs.length) {
+    if (typeof newValue === 'number' && newValue >= 1 && newValue <= this.tabs.length) {
+      this.tabs.forEach((tab, index) => {
+        const isNewActiveTab = index === newValue - this.startIndex;
+        // reset active tabs
+        if (this.tabHasStatus(tab, Status.ACTIVE) && !isNewActiveTab) tab.status = Status.VISIBLE;
+        // set active tab from given tab key
+        else if ((tab.status === undefined || this.tabHasStatus(tab, Status.VISIBLE)) && isNewActiveTab) tab.status = Status.ACTIVE;
+      });
+      // emit change active tab key event
+      if (this.tabs.find(tab => this.tabHasStatus(tab, Status.ACTIVE)) !== undefined) {
+        this.activeTabChange.emit(newValue);
+      }
+    } else if (newValue !== undefined) {
       throw new Error('<mg-tabs> prop "activeTab" must be between 1 and tabs length.');
-    } else {
-      this.setActiveTab(newValue);
     }
   }
 
@@ -115,30 +126,13 @@ export class MgTabs {
   @Event({ eventName: 'active-tab-change' }) activeTabChange: EventEmitter<number>;
 
   /**
-   * Method to set active tab
-   *
-   * @param {number} tabKey item tab key to set to ACTIVE status
-   * @returns {void}
-   */
-  private setActiveTab = (tabKey: number): void => {
-    // reset active tabs
-    this.tabs.forEach(tab => {
-      if (this.tabHasGivenStatus(tab, Status.ACTIVE)) tab.status = Status.VISIBLE;
-    });
-    // set active tab from given tab key
-    this.tabs[tabKey - this.startIndex].status = Status.ACTIVE;
-    // emit change active tab key event
-    this.activeTabChange.emit(tabKey);
-  };
-
-  /**
    * Method to know if given tab has the given status
    *
    * @param {TabItem} tab item tab key to set to ACTIVE status
    * @param {Status} status status to valide
    * @returns {boolean} status comparaison
    */
-  private tabHasGivenStatus = (tab: TabItem, status: Status): boolean => tab.status === status;
+  private tabHasStatus = (tab: TabItem, status: Status): boolean => tab.status === status;
 
   /**
    * Method to get element id from index
@@ -147,15 +141,15 @@ export class MgTabs {
    * @param {number} index to generate id
    * @returns {string} generated element id
    */
-  private getElementId = (element: string, index: number): string => `${element}-${this.getTabIndex(index)}`;
+  private getElementId = (element: string, index: number): string => `${element}-${this.getTabItemIndex(index)}`;
 
   /**
-   * Method to get tab index
+   * Method to get tab item index
    *
    * @param {number} index to get
    * @returns {number} index
    */
-  private getTabIndex = (index: number): number => index + this.startIndex;
+  private getTabItemIndex = (index: number): number => index + this.startIndex;
 
   /**
    * Handle click events on tabs
@@ -249,17 +243,17 @@ export class MgTabs {
               class={{
                 [`${this.buttonTabBaseClass}`]: true,
                 [`${this.buttonTabBaseClass}--horizontal`]: true,
-                [`${this.getNavigationButtonClass(Status.ACTIVE)}`]: this.tabHasGivenStatus(tab, Status.ACTIVE),
-                [`${this.getNavigationButtonClass(Status.DISABLED)}`]: this.tabHasGivenStatus(tab, Status.DISABLED),
-                [`${this.getNavigationButtonClass(Status.HIDDEN)}`]: this.tabHasGivenStatus(tab, Status.HIDDEN),
+                [`${this.getNavigationButtonClass(Status.ACTIVE)}`]: this.tabHasStatus(tab, Status.ACTIVE),
+                [`${this.getNavigationButtonClass(Status.DISABLED)}`]: this.tabHasStatus(tab, Status.DISABLED),
+                [`${this.getNavigationButtonClass(Status.HIDDEN)}`]: this.tabHasStatus(tab, Status.HIDDEN),
               }}
-              tabindex={this.tabHasGivenStatus(tab, Status.ACTIVE) ? 0 : -1}
-              aria-selected={this.tabHasGivenStatus(tab, Status.ACTIVE).toString()}
+              tabindex={this.tabHasStatus(tab, Status.ACTIVE) ? 0 : -1}
+              aria-selected={this.tabHasStatus(tab, Status.ACTIVE).toString()}
               aria-controls={this.getElementId(this.tabPanel, index)}
               onClick={this.handleClick}
               onKeyDown={this.handleKeydown}
-              data-index={this.getTabIndex(index)}
-              disabled={this.tabHasGivenStatus(tab, Status.DISABLED)}
+              data-index={this.getTabItemIndex(index)}
+              disabled={this.tabHasStatus(tab, Status.DISABLED)}
             >
               {tab.icon !== undefined && <mg-icon icon={tab.icon}></mg-icon>}
               {tab.label}
@@ -271,9 +265,9 @@ export class MgTabs {
           <article
             role="tabpanel"
             id={this.getElementId(this.tabPanel, index)}
-            hidden={!this.tabHasGivenStatus(tab, Status.ACTIVE)}
+            hidden={!this.tabHasStatus(tab, Status.ACTIVE)}
             aria-labelledby={this.getElementId(this.identifier, index)}
-            tabindex={this.tabHasGivenStatus(tab, Status.ACTIVE) ? 0 : -1}
+            tabindex={this.tabHasStatus(tab, Status.ACTIVE) ? 0 : -1}
             class="mg-tabs__content-container"
           >
             <slot name={this.getElementId('tab_content', index)}></slot>

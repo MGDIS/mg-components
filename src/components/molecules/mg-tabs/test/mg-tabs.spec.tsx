@@ -1,7 +1,7 @@
 import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
 import { MgTabs } from '../mg-tabs';
-import { sizes } from '../mg-tabs.conf';
+import { sizes, Status } from '../mg-tabs.conf';
 
 const getPage = (args, slots?) =>
   newSpecPage({
@@ -28,8 +28,8 @@ describe('mg-tabs', () => {
       [
         [
           { label: 'Batman', icon: 'check', badge },
-          { label: 'Joker', icon: 'cross', badge: { ...badge, role: 'information' }, status: 'disabled' },
-          { label: 'Bane', icon: 'trash', badge, status: 'hidden' },
+          { label: 'Joker', icon: 'cross', badge: { ...badge, role: 'information' }, status: Status.DISABLED },
+          { label: 'Bane', icon: 'trash', badge, status: Status.HIDDEN },
         ],
       ],
     ])('render', async items => {
@@ -42,8 +42,28 @@ describe('mg-tabs', () => {
       expect(root).toMatchSnapshot();
     });
 
-    test('display tabs with activeProps set by props', async () => {
-      const { root } = await getPage({ label: 'Sample label', items: ['Tab 1', 'Tab 2', 'Tab 3'], identifier: 'identifier', activeTab: 2 }, createSlots(3));
+    test.each([
+      {
+        items: ['Tab 1', 'Tab 2', 'Tab 3'],
+        activeTab: 2,
+      },
+      {
+        items: [{ label: 'Batman' }, { label: 'Joker', status: Status.ACTIVE }, { label: 'Bane' }],
+      },
+      {
+        items: [{ label: 'Batman' }, { label: 'Joker' }, { label: 'Bane' }],
+        activeTab: 2,
+      },
+      {
+        items: [{ label: 'Batman' }, { label: 'Joker', status: Status.ACTIVE }, { label: 'Bane' }],
+        activeTab: 2,
+      },
+      {
+        items: [{ label: 'Batman' }, { label: 'Joker', status: Status.ACTIVE }, { label: 'Bane' }],
+        activeTab: 3,
+      },
+    ])(`display ${size} tabs with activeProps set by props`, async props => {
+      const { root } = await getPage({ label: 'Sample label', identifier: 'identifier', ...props }, createSlots(3));
       expect(root).toMatchSnapshot();
     });
   });
@@ -104,8 +124,16 @@ describe('mg-tabs', () => {
   });
 
   describe('navigation', () => {
-    test('should go to next tab on click event', async () => {
-      const page = await getPage({ label: 'Sample label', items: ['batman', 'joker'], identifier: 'id' }, createSlots());
+    test.each([
+      [['batman', 'joker']],
+      [
+        [
+          { label: 'Batman', icon: 'check', badge },
+          { label: 'Joker', icon: 'cross', badge },
+        ],
+      ],
+    ])('should go to next tab on click event', async items => {
+      const page = await getPage({ label: 'Sample label', items, identifier: 'id' }, createSlots());
       expect(page.root).toMatchSnapshot();
 
       const element = page.doc.querySelector('mg-tabs');
@@ -114,39 +142,8 @@ describe('mg-tabs', () => {
 
       jest.spyOn(page.rootInstance.activeTabChange, 'emit');
 
-      const nextTab = element.shadowRoot.querySelector('#id-2');
-      nextTab.dispatchEvent(new CustomEvent('click', { bubbles: true }));
-      await page.waitForChanges();
-
-      expect(page.root).toMatchSnapshot();
-      expect(page.rootInstance.activeTabChange.emit).toHaveBeenCalledWith(2);
-
-      activeTab = element.shadowRoot.querySelector('.mg-tabs__navigation-button--active');
-      expect(activeTab).toHaveProperty('id', 'id-2');
-    });
-
-    test('should go to next tab on click event', async () => {
-      const page = await getPage(
-        {
-          label: 'Sample label',
-          items: [
-            { label: 'Batman', icon: 'check', badge },
-            { label: 'Joker', icon: 'cross', badge },
-          ],
-          identifier: 'id',
-        },
-        createSlots(),
-      );
-      expect(page.root).toMatchSnapshot();
-
-      const element = page.doc.querySelector('mg-tabs');
-      let activeTab = element.shadowRoot.querySelector('.mg-tabs__navigation-button--active');
-      expect(activeTab).toHaveProperty('id', 'id-1');
-
-      jest.spyOn(page.rootInstance.activeTabChange, 'emit');
-
-      const nextTab = element.shadowRoot.querySelector('#id-2 mg-icon');
-      nextTab.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+      const nextTab = element.shadowRoot.getElementById('id-2');
+      nextTab.dispatchEvent(new MouseEvent('click', { bubbles: true }));
       await page.waitForChanges();
 
       expect(page.root).toMatchSnapshot();
@@ -193,12 +190,8 @@ describe('mg-tabs', () => {
       expect(page.rootInstance.activeTabChange.emit).toHaveBeenCalledWith(1);
     });
 
-    test.each(['hidden', 'disabled'])("should go to next visible tab, and keep focus if it's the last one on keyboard event", async status => {
-      const items = [
-        { label: 'Batman', status: 'visible' },
-        { label: 'Batman', status: 'visible' },
-        { label: 'Batman', status },
-      ];
+    test.each([Status.HIDDEN, Status.DISABLED])("should go to next visible tab, and keep focus if it's the last one on keyboard event", async status => {
+      const items = [{ label: 'Batman' }, { label: 'Joker' }, { label: 'Bane', status }];
       const page = await getPage({ label: 'Sample label', items, identifier: 'id' }, createSlots(3));
       expect(page.root).toMatchSnapshot();
 
@@ -259,7 +252,7 @@ describe('mg-tabs', () => {
 
       activeTab = element.shadowRoot.querySelector('.mg-tabs__navigation-button--active');
       expect(activeTab).toHaveProperty('id', 'id-1');
-      expect(page.rootInstance.activeTabChange.emit).not.toHaveBeenCalled();
+      expect(page.rootInstance.activeTabChange.emit).toHaveBeenCalledWith(1);
     });
   });
 });
