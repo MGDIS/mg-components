@@ -25,6 +25,7 @@ export class MgTabs {
   private readonly buttonTabBaseClass = 'mg-tabs__navigation-button';
 
   // variables
+  private tabFocus: number;
   private startIndex = 1;
 
   /**************
@@ -152,23 +153,36 @@ export class MgTabs {
   private getTabItemIndex = (index: number): number => index + this.startIndex;
 
   /**
+   * Method to get the active-tab value
+   *
+   * @returns {number} of the active-tab
+   */
+  private getActiveTab = (): number =>
+    this.activeTab || this.getTabItemIndex(this.tabs.map((tab, index) => ({ ...tab, index })).find(tab => this.tabHasStatus(tab, Status.ACTIVE)).index);
+
+  /**
    * Handle click events on tabs
    *
    * @param {MouseEvent} event mouse event
    */
   private handleClick = (event: MouseEvent & { currentTarget: HTMLElement }): void => {
     const tabId = event.currentTarget.getAttribute('data-index');
-    this.activeTab = Number(tabId);
+    const tab = this.tabs[Number(tabId) - this.startIndex];
+    if (this.tabHasStatus(tab, Status.HIDDEN) || this.tabHasStatus(tab, Status.DISABLED)) {
+      event.preventDefault();
+    } else {
+      this.activeTab = Number(tabId);
+      this.tabFocus = undefined;
+    }
   };
 
   /**
    * get navigation button class from given status
    *
    * @param {Status} status button tab status
-   * @param {boolean} isSelector set if we need a CSS selector with the dot '.' at the begin. default value = false.
    * @returns {string} button class/selector variant
    */
-  private getNavigationButtonClass = (status: Status, isSelector = false): string => `${isSelector ? '.' : ''}${this.buttonTabBaseClass}--${status}`;
+  private getNavigationButtonClass = (status: Status): string => `${this.buttonTabBaseClass}--${status}`;
 
   /**
    * Handle keyboard event on tabs
@@ -177,26 +191,49 @@ export class MgTabs {
    * @returns {void}
    */
   private handleKeydown = (event: KeyboardEvent & { target: HTMLElement }): void => {
-    let tabId = Number(event.target.getAttribute('data-index'));
     const parent = event.target.parentElement;
+    if (['ArrowRight', 'ArrowLeft'].includes(event.key)) {
+      this.tabFocus = Number(event.target.getAttribute('data-index'));
+      parent.querySelector(`[data-index="${this.tabFocus}"]`).setAttribute('tabindex', '-1');
 
-    // change selected id from key code
-    if (event.key === 'ArrowRight') {
-      tabId++;
-    } else if (event.key === 'ArrowLeft') {
-      tabId--;
+      // Move right
+      if (event.key === 'ArrowRight') {
+        this.tabFocus++;
+        // If we're at the end, go to the start
+        if (this.tabFocus > this.tabs.length) this.tabFocus = this.startIndex;
+        // Move left
+      } else if (event.key === 'ArrowLeft') {
+        this.tabFocus--;
+        // If we're at the start, move to the end
+        if (this.tabFocus < this.startIndex) this.tabFocus = this.tabs.length;
+      }
+
+      // if focus item is ['hidden'] we recursively repeat action
+      if (this.tabHasStatus(this.tabs[this.tabFocus - 1], Status.HIDDEN)) {
+        parent.querySelector(`[data-index="${this.tabFocus}"]`).dispatchEvent(new KeyboardEvent('keydown', { key: event.key, bubbles: true }));
+        // else run focus methods on tabFocus element
+      } else {
+        parent.querySelector(`[data-index="${this.tabFocus}"]`).setAttribute('tabindex', '0');
+        (parent.querySelector(`[data-index="${this.tabFocus}"]`) as HTMLButtonElement).focus();
+      }
+    } else if (event.key === 'Tab') {
+      this.resetFocus();
     }
+  };
 
-    // get selected tab if NOT hidden, disabled
-    const selectedTab: HTMLElement = parent.querySelector(
-      `[data-index="${tabId}"]:not(${[this.getNavigationButtonClass(Status.HIDDEN, true), this.getNavigationButtonClass(Status.DISABLED, true)].join()})`,
-    );
-
-    // apply selected tab if exist
-    if (selectedTab !== null) {
-      selectedTab.focus();
-      this.activeTab = tabId;
-    }
+  /**
+   * Method to reset focus behavior
+   *
+   * @returns {void}
+   */
+  private resetFocus = (): void => {
+    // update asynchronously tabindex to prevent get focus on new tabindex at then end of event process
+    setTimeout(() => {
+      this.tabFocus = undefined;
+      Array.from(this.element.shadowRoot.querySelectorAll('[data-index]')).forEach((tab, index) => {
+        tab.setAttribute('tabindex', this.getActiveTab() - this.startIndex !== index ? '-1' : '0');
+      });
+    }, 0);
   };
 
   /**
@@ -204,9 +241,7 @@ export class MgTabs {
    */
   private validateSlots = (): void => {
     const slots = Array.from(this.element.children).filter(slot => slot.getAttribute('slot')?.includes('tab_content-'));
-    if (slots.length !== this.tabs.length) {
-      throw new Error('<mg-tabs> Must have slots counts equal to tabs count.');
-    }
+    if (slots.length !== this.tabs.length) throw new Error('<mg-tabs> Must have slots counts equal to tabs count.');
   };
 
   /*************
@@ -225,6 +260,21 @@ export class MgTabs {
     this.validateActiveTab(this.activeTab);
     this.validateSize(this.size);
     this.validateSlots();
+  }
+
+  /**
+   * add listners
+   *
+   * @returns {void}
+   */
+  componentDidLoad(): void {
+    document.addEventListener(
+      'click',
+      (event: MouseEvent & { target: HTMLElement }) => {
+        if (event.target.closest('mg-tabs') !== this.element) this.resetFocus();
+      },
+      false,
+    );
   }
 
   /**
@@ -250,10 +300,10 @@ export class MgTabs {
               tabindex={this.tabHasStatus(tab, Status.ACTIVE) ? 0 : -1}
               aria-selected={this.tabHasStatus(tab, Status.ACTIVE).toString()}
               aria-controls={this.getElementId(this.tabPanel, index)}
+              aria-disabled={this.tabHasStatus(tab, Status.DISABLED)}
               onClick={this.handleClick}
               onKeyDown={this.handleKeydown}
               data-index={this.getTabItemIndex(index)}
-              disabled={this.tabHasStatus(tab, Status.DISABLED)}
             >
               {tab.icon !== undefined && <mg-icon icon={tab.icon}></mg-icon>}
               {tab.label}
