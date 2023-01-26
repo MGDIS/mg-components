@@ -147,7 +147,6 @@ export class MgPopover {
   componentWillLoad(): void {
     // Get windows to attach events
     this.windows = getWindows(window);
-
     // Get locales
     this.messages = initLocales(this.element).messages;
   }
@@ -187,7 +186,7 @@ export class MgPopover {
         {
           name: 'offset',
           options: {
-            offset: [0, 9],
+            offset: [0, 0],
           },
         },
       ],

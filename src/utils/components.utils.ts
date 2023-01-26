@@ -139,11 +139,12 @@ export const getParentWindows = (localWindow: Window, windows: Window[] = []): W
  * @returns {Window[]} The list of windows found
  */
 const getChildWindows = (localWindow: Window, windows: Window[] = []): Window[] => {
-  if (localWindow.frames.length > 0)
+  if (localWindow.frames.length > 0) {
     for (let i = 0; i < localWindow.frames.length; i++) {
       const childWindow: Window = localWindow.frames[i];
       windows.push(childWindow);
-      return getChildWindows(childWindow, windows);
+      windows.concat(getChildWindows(childWindow, windows));
     }
+  }
   return windows;
 };
