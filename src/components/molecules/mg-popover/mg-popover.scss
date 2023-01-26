@@ -65,7 +65,7 @@ $border-arrow-side: calc(#{$arrow-width} / 2) solid transparent;
 
   &[data-popper-placement^='top'] > &__arrow {
     bottom: -$position-size;
-    filter: drop-shadow(0 #{$position-size} 0.5rem hsl(var(--color-dark), 0.15));
+    filter: drop-shadow(0 calc(#{$position-size} / 2) calc(#{$position-size} / 4) hsl(var(--color-dark), 0.15));
 
     &:before {
       border-top: $border-arrow-head;
@@ -74,7 +74,7 @@ $border-arrow-side: calc(#{$arrow-width} / 2) solid transparent;
 
   &[data-popper-placement^='bottom'] > &__arrow {
     top: -$position-size;
-    filter: drop-shadow(0 #{-$position-size} 0.5rem hsl(var(--color-dark), 0.15));
+    filter: drop-shadow(0 calc(#{-$position-size} / 2) calc(#{$position-size} / 4) hsl(var(--color-dark), 0.15));
 
     &:before {
       border-bottom: $border-arrow-head;
@@ -94,7 +94,7 @@ $border-arrow-side: calc(#{$arrow-width} / 2) solid transparent;
 
   &[data-popper-placement^='left'] > &__arrow {
     right: -$position-size;
-    filter: drop-shadow(#{$position-size} 0 0.5rem hsl(var(--color-dark), 0.15));
+    filter: drop-shadow(calc(#{$position-size} / 2) 0 calc(#{$position-size} / 4) hsl(var(--color-dark), 0.15));
 
     &:before {
       border-left: $border-arrow-head;
@@ -103,7 +103,7 @@ $border-arrow-side: calc(#{$arrow-width} / 2) solid transparent;
 
   &[data-popper-placement^='right'] > &__arrow {
     left: -$position-size;
-    filter: drop-shadow(#{-$position-size} 0 0.5rem hsl(var(--color-dark), 0.15));
+    filter: drop-shadow(calc(#{-$position-size} / 2) 0 calc(#{$position-size} / 4) hsl(var(--color-dark), 0.15));
 
     &:before {
       border-right: $border-arrow-head;
