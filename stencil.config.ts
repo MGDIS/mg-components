@@ -46,6 +46,9 @@ export const config: Config = {
       serviceWorker: null, // disable service workers
       copy: [
         {
+          src: 'iframe.html',
+        },
+        {
           src: 'styles/variables.css',
           dest: 'build/variables.css', // export variable for working space
         },

@@ -23,6 +23,10 @@ const getPage = (args, element) =>
     template: () => <mg-popover {...args}>{element}</mg-popover>,
   });
 
+Object.defineProperty(window, 'frames', {
+  value: { length: 0 },
+});
+
 describe('mg-popover', () => {
   test.each([
     { identifier: 'identifier' },
