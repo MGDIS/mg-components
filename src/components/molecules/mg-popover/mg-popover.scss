@@ -4,11 +4,6 @@ $arrow-width: 3rem;
 $border-arrow-head: $arrow-height solid hsl(var(--mg-popover-background-color));
 $border-arrow-side: calc(#{$arrow-width} / 2) solid transparent;
 
-@mixin arrow-placement($position, $shadow-x, $shadow-y) {
-  #{$position}: calc(-1 * #{$position-size});
-  filter: drop-shadow(#{$shadow-x} #{$shadow-y} 0.5rem hsl(var(--color-dark), 0.15));
-}
-
 :host {
   --mg-card-padding: 1.5rem;
   --mg-card-border: none;
