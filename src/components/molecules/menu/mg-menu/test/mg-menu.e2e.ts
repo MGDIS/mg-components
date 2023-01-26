@@ -1,7 +1,19 @@
+import { KeyInput } from 'puppeteer';
 import { OverflowBehaviorElements } from '../../../../../utils/behaviors.utils';
 import { createPage, DesignSystemE2EPage, renderAttributes } from '../../../../../utils/e2e.test.utils';
 import { Status } from '../../mg-menu-item/mg-menu-item.conf';
 import { Direction, MenuSizeType, sizes } from '../mg-menu.conf';
+
+enum Position {
+  PRESS = 'press',
+  DOWN = 'down',
+}
+
+enum Key {
+  TAB = 'Tab',
+  SHIFT = 'Shift',
+  ENTER = 'Enter',
+}
 
 const expectImageSnapshot = async (page: DesignSystemE2EPage) => {
   await page.waitForChanges();
@@ -15,6 +27,11 @@ const getSubMenuSize = (size: MenuSizeType) => {
   else if (size === 'medium') return 'regular';
   else return 'regular';
 };
+
+const getFrameSize = (direction, size?) =>
+  direction === Direction.VERTICAL
+    ? { width: 400, height: ['medium', 'large'].includes(size) ? 400 : 250 }
+    : { width: ['medium', 'large'].includes(size) ? 1100 : 800, height: 200 };
 
 const createHTML = (args, containerSize?) => `
   <header class="menu-container menu-container--${containerSize}">
@@ -55,131 +72,142 @@ const createHTML = (args, containerSize?) => `
 describe('mg-menu', () => {
   describe.each([Direction.HORIZONTAL, Direction.VERTICAL])('direction %s', direction => {
     test.each(sizes)(`should renders, case direction ${direction} size %s with large screen`, async size => {
-      const page = await createPage(createHTML({ direction, size, badge: true }), direction === Direction.HORIZONTAL ? { width: 1100, height: 200 } : undefined);
+      const page = await createPage(createHTML({ direction, size, badge: true }), getFrameSize(direction, size));
 
       const element = await page.find('mg-menu');
       expect(element).toHaveClass('hydrated');
 
       await expectImageSnapshot(page);
     });
+  });
 
-    describe('navigation', () => {
-      test(`should success mouse navigation, case direction ${direction}`, async () => {
-        const page = await createPage(createHTML({ direction }), direction === Direction.VERTICAL ? { width: 400, height: 500 } : undefined);
-        if (direction === Direction.HORIZONTAL) {
-          await page.setViewport({ width: 1200, height: 200 });
-        }
-        await expectImageSnapshot(page);
+  describe('navigation horizontal', () => {
+    test(`should success mouse navigation, case direction ${Direction.HORIZONTAL}`, async () => {
+      const page = await createPage(createHTML({ direction: Direction.HORIZONTAL }), getFrameSize(Direction.HORIZONTAL));
+      await expectImageSnapshot(page);
 
-        // standard menu-item
-        const mgMenuItem1 = await page.find('mg-menu-item');
-        await mgMenuItem1.click();
+      const actions = [
+        { position: 1, expanded: true },
+        { position: 5, expanded: true },
+        { position: 5, expanded: false },
+        { position: 1, expanded: true },
+      ];
+      for await (const action of actions) {
+        let item = await page.find(`header > mg-menu > mg-menu-item:nth-of-type(${action.position}) >>> button`);
+        await item.click();
         await page.waitForChanges();
-        await expectImageSnapshot(page);
 
-        // expandable menu-item, open
-        const mgMenuItem5 = await page.find(`mg-menu-item[data-style-direction-${direction}]:nth-child(5)`);
-        await mgMenuItem5.click();
-        await page.waitForChanges();
-        await expectImageSnapshot(page);
+        expect(item.getAttribute('aria-expanded')).toBe(`${action.expanded}`);
+        item = await page.find(`header > mg-menu > mg-menu-item:not(:nth-of-type(${action.position})) >>> button[aria-expanded="true"]`);
+        expect(item).toBe(null);
+      }
 
-        // expandable menu-item, close
-        await mgMenuItem5.click();
-        await page.waitForChanges();
-        await expectImageSnapshot(page);
+      // menu-item close
+      await page.$eval('body', elm => {
+        elm.dispatchEvent(new MouseEvent('click', { bubbles: true }));
       });
+      await page.waitForChanges();
+      await expectImageSnapshot(page);
+    });
 
-      test(`should manage document click, case direction ${direction}`, async () => {
-        const page = await createPage(createHTML({ direction }), direction === Direction.VERTICAL ? { width: 400, height: 500 } : undefined);
-        if (direction === Direction.HORIZONTAL) {
-          await page.setViewport({ width: 1200, height: 200 });
+    test(`should success keyboard navigation, case direction ${Direction.HORIZONTAL}`, async () => {
+      const page = await createPage(createHTML({ direction: Direction.HORIZONTAL }), getFrameSize(Direction.HORIZONTAL));
+      await expectImageSnapshot(page);
+
+      const actions = [
+        { position: Position.PRESS, key: Key.TAB, openeItem: null },
+        { position: Position.PRESS, key: Key.TAB, openeItem: null },
+        { position: Position.PRESS, key: Key.TAB, openeItem: null },
+        { position: Position.PRESS, key: Key.TAB, openeItem: null },
+        { position: Position.PRESS, key: Key.ENTER, openeItem: 5 },
+        { position: Position.PRESS, key: Key.TAB, openeItem: 5 },
+        { position: Position.PRESS, key: Key.SHIFT, openeItem: 5 },
+        { position: Position.PRESS, key: Key.ENTER, openeItem: null },
+        { position: Position.PRESS, key: Key.TAB, openeItem: null },
+      ];
+
+      for await (const action of actions) {
+        if (action.key === Key.SHIFT) {
+          await page.keyboard.down(Key.SHIFT);
+          await page.keyboard.press(Key.TAB);
+          await page.keyboard.up(Key.SHIFT);
+        } else {
+          await page.keyboard[action.position](action.key as unknown as KeyInput);
         }
-        await expectImageSnapshot(page);
-
-        // menu-item expand: true
-        const mgMenuItem1 = await page.find('mg-menu-item');
-        await mgMenuItem1.click();
         await page.waitForChanges();
-        await expectImageSnapshot(page);
-
-        // menu-item expand: false
-        await page.$eval('body', elm => {
-          elm.dispatchEvent(new MouseEvent('click', { bubbles: true }));
-        });
-        await page.waitForChanges();
-        await expectImageSnapshot(page);
-      });
-
-      test(`should success keyboard navigation, case direction ${direction}`, async () => {
-        const page = await createPage(createHTML({ direction }), direction === Direction.VERTICAL ? { width: 400, height: 500 } : undefined);
-        if (direction === Direction.HORIZONTAL) {
-          await page.setViewport({ width: 1200, height: 200 });
+        let item;
+        if (action.openeItem > 0) {
+          item = await page.find(`header > mg-menu > mg-menu-item:nth-of-type(${action.openeItem}) >>> button[aria-expanded="true"]`);
+          expect(item).not.toBe(null);
+          item = await page.find(`header > mg-menu > mg-menu-item:not(:nth-of-type(${action.openeItem})) >>> button[aria-expanded="true"]`);
+        } else {
+          item = await page.find(`header > mg-menu > mg-menu-item >>> button[aria-expanded="true"]`);
         }
-        await expectImageSnapshot(page);
+        expect(item).toBe(null);
+      }
+    });
+  });
 
-        // focus on menu-item id-1
-        await page.keyboard.press('Tab');
+  describe('navigation vertical', () => {
+    test(`should success mouse navigation, case direction ${Direction.VERTICAL}`, async () => {
+      const page = await createPage(createHTML({ direction: Direction.VERTICAL }), getFrameSize(Direction.VERTICAL));
+      await expectImageSnapshot(page);
+
+      const positions = [1, 5, 5, 1];
+      for await (const position of positions) {
+        const item = await page.find(`header > mg-menu > mg-menu-item:nth-of-type(${position}) >>> button`);
+        await item.click();
         await page.waitForChanges();
         await expectImageSnapshot(page);
+      }
 
-        // focus on menu-item id-3 (has id-2 is disabled)
-        await page.keyboard.press('Tab');
-        // focus on menu-item id-4
-        await page.keyboard.press('Tab');
-        // focus on menu-item id-5
-        await page.keyboard.press('Tab');
-        await page.waitForChanges();
-        await expectImageSnapshot(page);
-
-        // expand submenu-item id-5-1
-        await page.keyboard.press('Enter');
-        await page.waitForChanges();
-        await expectImageSnapshot(page);
-
-        // focus on submenu-item id-5-1
-        await page.keyboard.press('Tab');
-        await page.waitForChanges();
-        await expectImageSnapshot(page);
-
-        // focus to parent menu item id-5
-        await page.keyboard.down('Shift');
-        await page.keyboard.press('Tab');
-        await page.keyboard.up('Shift');
-        await page.waitForChanges();
-        await expectImageSnapshot(page);
-
-        // close submenu
-        await page.keyboard.press('Enter');
-        await page.waitForChanges();
-        await expectImageSnapshot(page);
-
-        // exit focus menu
-        await page.keyboard.press('Tab');
-        await page.waitForChanges();
-        await expectImageSnapshot(page);
+      await page.$eval('body', elm => {
+        elm.dispatchEvent(new MouseEvent('click', { bubbles: true }));
       });
+      await page.waitForChanges();
+      await expectImageSnapshot(page);
+    });
+    test(`should success keyboard navigation, case direction ${Direction.VERTICAL}`, async () => {
+      const page = await createPage(createHTML({ direction: Direction.VERTICAL }), getFrameSize(Direction.VERTICAL));
+      await expectImageSnapshot(page);
+
+      const actions = [
+        { position: Position.PRESS, key: Key.TAB },
+        { position: Position.PRESS, key: Key.TAB },
+        { position: Position.PRESS, key: Key.TAB },
+        { position: Position.PRESS, key: Key.TAB },
+        { position: Position.PRESS, key: Key.ENTER },
+        { position: Position.PRESS, key: Key.TAB },
+        { position: Position.PRESS, key: Key.SHIFT },
+        { position: Position.PRESS, key: Key.ENTER },
+        { position: Position.PRESS, key: Key.TAB },
+      ];
+
+      for await (const action of actions) {
+        if (action.key === Key.SHIFT) {
+          await page.keyboard.down(Key.SHIFT);
+          await page.keyboard.press(Key.TAB);
+          await page.keyboard.up(Key.SHIFT);
+        } else {
+          await page.keyboard[action.position](action.key as unknown as KeyInput);
+        }
+        await page.waitForChanges();
+        await expectImageSnapshot(page);
+      }
     });
   });
 
   describe('overflow', () => {
     test.each(sizes)(`should renders, case direction ${Direction.VERTICAL} size %s with small screen`, async size => {
-      const page = await createPage(
-        `<h1>${Direction.VERTICAL} mg-menu - Size props ${size} in small screen</h1>${createHTML({ direction: Direction.VERTICAL, size }, `${Direction.VERTICAL}-${'small'}`)}`,
-      );
+      const page = await createPage(createHTML({ direction: Direction.VERTICAL, size }, `${Direction.VERTICAL}-${'small'}`));
 
       await expectImageSnapshot(page);
     });
 
     test.each([true, false])('should renders with overflow, case badge %s', async badge => {
-      const page = await createPage(createHTML({ direction: Direction.HORIZONTAL, badge }), { width: 1100, height: 200 });
+      const page = await createPage(createHTML({ direction: Direction.HORIZONTAL, badge }), getFrameSize(Direction.HORIZONTAL));
 
-      await page.setViewport({ width: 400, height: 200 });
-
-      await expectImageSnapshot(page);
-
-      const element = await page.find('mg-menu');
-      const moreElement = await element.find(`[${OverflowBehaviorElements.MORE}]`);
-      await moreElement.click();
+      await page.setViewport({ width: 450, height: 200 });
 
       await expectImageSnapshot(page);
 

@@ -1,3 +1,4 @@
+import { KeyInput } from 'puppeteer';
 import { createPage, renderAttributes } from '../../../../../utils/e2e.test.utils';
 import { Direction, sizes } from '../../mg-menu/mg-menu.conf';
 import { Status } from '../mg-menu-item.conf';
@@ -92,6 +93,25 @@ describe('mg-menu-item', () => {
 
       const screenshot = await page.screenshot();
       expect(screenshot).toMatchImageSnapshot();
+    });
+
+    test.each([[Status.ACTIVE, Status.VISIBLE, Status.HIDDEN, Status.DISABLED]])('shoud manage keyboard navigation', async status => {
+      const page = await createPage(createHTML({ status }, slotMenuItem, direction));
+      let screenshot = await page.screenshot();
+      expect(screenshot).toMatchImageSnapshot();
+
+      const element = await page.find('mg-menu-item');
+      expect(element).toHaveClass('hydrated');
+
+      await page.setViewport({ width: 300, height: 200 });
+
+      for await (const key of ['Tab', 'Enter']) {
+        await page.keyboard.press(key as unknown as KeyInput);
+        await page.waitForChanges();
+        await page.waitForTimeout(200);
+        screenshot = await page.screenshot();
+        expect(screenshot).toMatchImageSnapshot();
+      }
     });
   });
 });

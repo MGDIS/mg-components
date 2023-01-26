@@ -147,7 +147,7 @@ export class MgTooltip {
   /**
    * Update slot content when it is a mg-button
    *
-   * @param {HTMLElement} mgButton slotted mg-button
+   * @param {HTMLMgButtonElement} mgButton slotted mg-button
    * @returns {void}
    */
   private setMgButtonWrapper = (mgButton: HTMLMgButtonElement): void => {
