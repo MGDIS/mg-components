@@ -37,6 +37,16 @@ describe('mg-button', () => {
     expect(screenshot).toMatchImageSnapshot();
   });
 
+  test('Should render a focused button link without border radius', async () => {
+    const page = await createPage(`<mg-button variant="link">button</mg-button><style>.custom-link{--mg-button-border-radius: 1rem;}</style>`);
+
+    await page.keyboard.down('Tab');
+    await page.waitForChanges();
+
+    const screenshot = await page.screenshot();
+    expect(screenshot).toMatchImageSnapshot();
+  });
+
   test('Should render a full-width button', async () => {
     const slots = ['batman', '<mg-icon icon="check-circle"></mg-icon>batman'];
     const html = slots.map(slot => `<mg-button full-width>${slot}</mg-button>`).join('');
