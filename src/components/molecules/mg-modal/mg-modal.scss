@@ -1,3 +1,5 @@
+@import '../../../styles/mixins/reset-mg-card-slotted-variables.scss';
+
 :host {
   // Set mg-card variables
   --mg-card-border-radius: var(--mg-modal-border-radius);
@@ -68,4 +70,6 @@
   &.mg-modal--hide {
     display: none;
   }
+
+  @include reset-slot-card-variables();
 }

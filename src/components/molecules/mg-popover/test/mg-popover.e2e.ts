@@ -103,4 +103,32 @@ describe('mg-popover', () => {
       expect(screenshot).toMatchImageSnapshot();
     });
   });
+
+  describe('style', () => {
+    test('Should render with child mg-card', async () => {
+      const page = await createPage(
+        `<mg-popover display close-button class="custom-popover-card">
+        <mg-button>Button</mg-button>
+        <mg-card slot="content">
+          My custom card
+        </mg-card>
+        </mg-popover>
+        <style>
+          .custom-popover-card {
+            --mg-popover-background-color: var(--color-danger);
+          }
+        </style>
+        `,
+      );
+
+      const mgPopover = await page.find('mg-popover');
+
+      expect(mgPopover).toHaveClass('hydrated');
+
+      await page.setViewport({ width: 500, height: 300 });
+
+      const screenshot = await page.screenshot();
+      expect(screenshot).toMatchImageSnapshot();
+    });
+  });
 });

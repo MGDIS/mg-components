@@ -489,6 +489,19 @@
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </mg-card>
         <mg-card> Lorem ipsum dolor sit amet </mg-card>
+        <mg-card class="custom-mg-card--danger"><mg-card>Custom card</mg-card></mg-card>
+        <mg-card class="custom-mg-card--danger"><mg-card class="custom-mg-card--info">Custom card</mg-card></mg-card>
+        <mg-card class="custom-mg-card--danger"
+          ><mg-card class="custom-mg-card--info"><mg-card>Custom card</mg-card></mg-card></mg-card
+        >
+        <style>
+          .custom-mg-card--danger {
+            --mg-card-background: hsl(var(--color-danger));
+          }
+          .custom-mg-card--info {
+            --mg-card-background: hsl(var(--color-info));
+          }
+        </style>
       </section>
       <section>
         <h2>Divider</h2>
@@ -540,6 +553,14 @@
           <p>with delay</p>
           <mg-input-text identifier="input-with-delay" label="input to get focus"></mg-input-text>
         </mg-message>
+        <mg-message class="custom-message-card">
+          <mg-card>child card</mg-card>
+        </mg-message>
+        <style>
+          .custom-message-card {
+            --mg-card-background: hsl(var(--color-danger));
+          }
+        </style>
         <script>
           const messageWithDelay = document.querySelector('[identifier="message-with-delay"]');
           const buttonWithDelay = document.getElementById('button-with-delay');
@@ -628,6 +649,15 @@
             <mg-icon icon="check-circle" variant="success"></mg-icon>
           </div>
         </mg-panel>
+
+        <mg-panel panel-title="panel title" class="custom-panel-card">
+          <mg-card>Content</mg-card>
+        </mg-panel>
+        <style>
+          .custom-panel-card {
+            --mg-panel-background: var(--color-danger);
+          }
+        </style>
 
         <mg-panel panel-title="panel title" title-editable>
           <div>Content</div>
@@ -807,10 +837,17 @@
           <mg-button>Display custom popover</mg-button>
           <div slot="content">Coucou</div>
         </mg-popover>
+        <mg-popover class="custom-popover--card">
+          <mg-button>Display custom popover card</mg-button>
+          <mg-card slot="content">Coucou</mg-card>
+        </mg-popover>
         <style>
           .custom-popover {
             --mg-card-padding: 5rem;
             --mg-card-border-radius: 5rem;
+          }
+          .custom-popover--card {
+            --mg-popover-background-color: var(--color-danger);
           }
         </style>
         <iframe src="./iframe.html" title="test popover iframe" frameborder="0"></iframe>
