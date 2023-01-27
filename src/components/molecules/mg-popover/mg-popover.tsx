@@ -1,6 +1,7 @@
 import { Component, Element, Host, h, Prop, Watch, EventEmitter, Event } from '@stencil/core';
 import { createID, isTagName } from '../../../utils/components.utils';
 import { Instance as PopperInstance, createPopper, Placement } from '@popperjs/core';
+import { getWindows } from '../../../utils/components.utils';
 import { initLocales } from '../../../locales';
 
 @Component({
@@ -17,6 +18,7 @@ export class MgPopover {
   private popover: HTMLElement;
   private closeButtonId = '';
   private space: number;
+  private windows;
 
   // Locales
   private messages;
@@ -108,7 +110,9 @@ export class MgPopover {
     // hide when click outside
     // setTimeout is used to prevent event to trigger after creation
     setTimeout(() => {
-      document.addEventListener('click', this.clickOutside, false);
+      this.windows.forEach((localWindow: Window) => {
+        localWindow.addEventListener('click', this.clickOutside, false);
+      });
     }, 0);
   };
 
@@ -126,7 +130,9 @@ export class MgPopover {
       modifiers: [...options.modifiers, { name: 'eventListeners', enabled: false }],
     }));
     // Remove event listener
-    document.removeEventListener('click', this.clickOutside, false);
+    this.windows.forEach((localWindow: Window) => {
+      localWindow.removeEventListener('click', this.clickOutside, false);
+    });
   };
 
   /**
@@ -148,6 +154,8 @@ export class MgPopover {
    * @returns {void} timeout
    */
   componentWillLoad(): void {
+    // Get windows to attach events
+    this.windows = getWindows(window);
     // Get locales
     this.messages = initLocales(this.element).messages;
     this.validateArrowHide(this.arrowHide);
@@ -188,7 +196,7 @@ export class MgPopover {
         {
           name: 'offset',
           options: {
-            offset: [0, this.space],
+            offset: [0, 0],
           },
         },
       ],
@@ -218,7 +226,7 @@ export class MgPopover {
         <slot></slot>
         <div id={this.identifier} class="mg-popover">
           <mg-card>
-            {!this.disabled && this.closeButton && (
+            {this.closeButton && (
               <mg-button identifier={this.closeButtonId} is-icon variant="flat" label={this.messages.general.close} onClick={this.handleCloseButton}>
                 <mg-icon icon="cross"></mg-icon>
               </mg-button>

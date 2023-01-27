@@ -96,7 +96,7 @@
   --color-secondary: hsl(var(--color-neutral));
 
   /* Shadow */
-  --box-shadow: 0 0.3rem 0.8rem 0 hsla(var(--color-dark), 0.15);
+  --box-shadow: 0 0.3rem 0.8rem 0 hsl(var(--color-dark), 0.15);
 
   /*
     Global
@@ -180,7 +180,7 @@
   --mg-panel-box-shadow: var(--box-shadow);
   --mg-panel-content-padding: 1.5rem;
 
-   /*
+  /*
     <mg-illustrated-message>
    */
 
@@ -189,16 +189,16 @@
   /*
     <mg-card>
    */
-  --mg-card-padding: 1.6rem;
-  --mg-card-border-radius: 0.5rem;
-  --mg-card-background: hsl(var(--color-light));
-  --mg-card-border: 0.1rem solid hsla(var(--color-dark), 5%);
-  --mg-card-box-shadow: var(--box-shadow);
+  --mg-card-padding-default: 1.6rem;
+  --mg-card-border-radius-default: 0.5rem;
+  --mg-card-background-default: hsl(var(--color-light));
+  --mg-card-border-default: 0.1rem solid hsl(var(--color-dark), 0.05);
+  --mg-card-box-shadow-default: var(--box-shadow);
 
   /*
     <mg-divider>
   */
-  --mg-divider-background-color: hsla(var(--color-dark), 15%);
+  --mg-divider-background-color: hsl(var(--color-dark), 0.15);
   --mg-divider-thickness: 0.1rem;
   --mg-divider-vertical-spacing: 4rem;
 
@@ -245,7 +245,7 @@
   --mg-menu-item-focused-background-color-hsl: var(--mg-color-app-hsl);
   --mg-menu-item-border-color-active-hsl: var(--mg-color-app-hsl);
   --mg-menu-item-color-active-hsl: var(--mg-color-app-hsl);
-  
+
   /*
   <mg-tabs>
   */

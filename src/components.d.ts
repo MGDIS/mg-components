@@ -1019,7 +1019,7 @@ export namespace Components {
     }
     interface MgTabs {
         /**
-          * Active tab number default: first is 1
+          * Active tab number
          */
         "activeTab": number;
         /**
@@ -2432,7 +2432,7 @@ declare namespace LocalJSX {
     }
     interface MgTabs {
         /**
-          * Active tab number default: first is 1
+          * Active tab number
          */
         "activeTab"?: number;
         /**

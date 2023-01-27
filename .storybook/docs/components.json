@@ -5389,9 +5389,8 @@
           "mutable": true,
           "attr": "active-tab",
           "reflectToAttr": true,
-          "docs": "Active tab number\ndefault: first is 1",
+          "docs": "Active tab number",
           "docsTags": [],
-          "default": "1",
           "values": [
             {
               "type": "number"

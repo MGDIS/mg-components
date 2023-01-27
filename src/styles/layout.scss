@@ -16,7 +16,7 @@ $grid-columns: 12;
 
 // Those columns will equaly share space
 .mg-grid__col {
-  flex: 1 0 0%;
+  flex: 1 0 0;
   padding: 0 var(--mg-grid-spacing);
 
   // Building columns

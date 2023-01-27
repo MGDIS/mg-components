@@ -8,6 +8,13 @@ const defaultSlotContents = [
 ];
 const createSlot = (contents: string[]) => contents.map((content, i) => `<div slot="tab_content-${i + 1}">${content}</div>`).join('');
 
+enum Key {
+  NEXT = 'ArrowRight',
+  PREV = 'ArrowLeft',
+  TAB = 'Tab',
+  ENTER = 'Enter',
+}
+
 describe('mg-tabs', () => {
   describe.each(sizes)('template', size => {
     test.each([
@@ -68,32 +75,15 @@ describe('mg-tabs', () => {
       await page.keyboard.down('Tab');
       await page.waitForChanges();
 
-      const screenshot = await page.screenshot();
+      let screenshot = await page.screenshot();
       expect(screenshot).toMatchImageSnapshot();
 
-      await page.keyboard.down('ArrowRight');
-      await page.waitForChanges();
-
-      const screenshotRight = await page.screenshot();
-      expect(screenshotRight).toMatchImageSnapshot();
-
-      await page.keyboard.down('ArrowRight');
-      await page.waitForChanges();
-
-      const screenshotRightHidden = await page.screenshot();
-      expect(screenshotRightHidden).toMatchImageSnapshot();
-
-      await page.keyboard.down('ArrowLeft');
-      await page.waitForChanges();
-
-      const screenshotLeft = await page.screenshot();
-      expect(screenshotLeft).toMatchImageSnapshot();
-
-      await page.keyboard.down('Tab');
-      await page.waitForChanges();
-
-      const screenshotLeave = await page.screenshot();
-      expect(screenshotLeave).toMatchImageSnapshot();
+      for await (const key of [Key.NEXT, Key.NEXT, Key.PREV, Key.ENTER, Key.TAB]) {
+        await page.keyboard.down(key);
+        await page.waitForChanges();
+        screenshot = await page.screenshot();
+        expect(screenshot).toMatchImageSnapshot();
+      }
     });
   });
 });

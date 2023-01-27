@@ -31,7 +31,7 @@
   }
 
   &:focus {
-    box-shadow: 0 0 0.6rem hsla(var(--mg-inputs-color-shadow-focus-hsl), 0.5);
+    box-shadow: 0 0 0.6rem hsl(var(--mg-inputs-color-shadow-focus-hsl), 0.5);
   }
 
   // disabled
@@ -54,8 +54,8 @@
   */
   .mg-input__box {
     margin-right: -0.1rem;
-    border-top-right-radius: 0%;
-    border-bottom-right-radius: 0%;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
     &:focus-visible {
       outline-style: solid;
       outline-offset: -0.2rem;
