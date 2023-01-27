@@ -378,6 +378,12 @@
           <mg-button variant="info">Info</mg-button>
           <mg-button variant="flat">flat</mg-button>
           <mg-button variant="link">link</mg-button>
+          <mg-button variant="link" class="custom-link">link</mg-button>
+          <style>
+            .custom-link {
+              --mg-button-border-radius: 1rem;
+            }
+          </style>
         </div>
         <div class="mg-group-elements" style="padding: 0 0 1rem">
           <mg-button variant="primary"><mg-icon icon="check-circle"></mg-icon>Primary</mg-button>
