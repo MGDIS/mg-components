@@ -17,8 +17,6 @@ You can install the library using jsDelivr CDN by adding those script in the HTM
 
 ### Vue.js
 
-#### Adding the lib
-
 Add MG Components to your project.
 
 ```bash
@@ -41,8 +39,6 @@ import '@mgdis/mg-components/dist/components/mg-button';
 import '@mgdis/mg-components/dist/components/mg-message';
 ```
 
-##### Import stylesheet
-
 You need now to import the components style by adding the mg-components variables or directly the stylesheet who came with in the `App.vue` file :
 
 ```html
@@ -63,39 +59,6 @@ You also can import the mg-components CSS file if you want to use our grid layou
 
 If you are already using a CSS framwork you may face some problem.
 
-#### Use the lib
-
-##### Bind
-
-To bind a non string value in a web component we have to use the Vue.js [`.prop`](https://vuejs.org/v2/api/#v-bind) modifier:
-
-```html
-<mg-input-text
-  :readonly.prop="readOnly"
-  :value="user.firstname" // Not mandatory when the value is a string
-  :label="$t('firstname')"
-  identifier="firstname"
-></mg-input-text>
-```
-
-##### v-model with Vue2
-
-**Below instructions are for Vue2 projects only. With Vue3 you can use v-model as usual.**
-
-`v-model` can not be used in web components so we must set the value and use the custom event `value-change` to update the value:
-
-```html
-<mg-input-text :value="user.firstname" :label="$t('firstname')" @value-change="user.firstname = $event.target.value"></mg-input-text>
-```
-
-Given that this syntax is somewhat verbose, it is recommended to use the `v-mg-model` from the [mg-model directive](http://core.pages.mgdis.fr/core-back/core/docs/mg-components-helpers/mg-model-vue), the syntax will become:
-
-```html
-<mg-input-text v-mg-model="user.firstname" :label="$t('firstname')"></mg-input-text>
-```
-
-**This directive solves some issues with the components ([#139](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/139)), thus it is recommended to use it.**
-
 #### Tests
 
 During test custom elements are not registered, to prevent Jest to log errors you'll need to add the ignoredElements Vue.js config in the jest setup file:
@@ -109,8 +72,6 @@ Vue.config.ignoredElements = [/mg-\w*/];
 ### Angular.js
 
 **Your project must use the last AngularJS version (1.8.3).**
-
-#### Adding the lib
 
 Add MG Components to your project.
 
@@ -135,9 +96,44 @@ import '@mgdis/mg-components/dist/mg-components/variables.css';
 import '@mgdis/mg-components/dist/mg-components/mg-components.css'; // if needed
 ```
 
-#### Use the lib
+## Use the Lib
 
-##### Bind
+### Vue.js
+
+#### Bind
+
+To bind a non string value in a web component we have to use the Vue.js [`.prop`](https://v2.vuejs.org/v2/api/#v-bind) modifier:
+
+```html
+<mg-input-text
+  :readonly.prop="readOnly"
+  :value="user.firstname" // Not mandatory when the value is a string
+  :label="$t('firstname')"
+  identifier="firstname"
+></mg-input-text>
+```
+
+#### v-model with Vue2
+
+**Below instructions are for Vue2 projects only. With Vue3 you can use v-model as usual.**
+
+`v-model` can not be used in web components so we must set the value and use the custom event `value-change` to update the value:
+
+```html
+<mg-input-text :value="user.firstname" :label="$t('firstname')" @value-change="user.firstname = $event.detail"></mg-input-text>
+```
+
+Given that this syntax is somewhat verbose, it is recommended to use the `v-mg-model` from the [mg-model directive](http://core.pages.mgdis.fr/core-back/core/docs/mg-components-helpers/mg-model-vue), the syntax will become:
+
+```html
+<mg-input-text v-mg-model="user.firstname" :label="$t('firstname')"></mg-input-text>
+```
+
+**This directive solves some issues with the components ([#139](https://gitlab.mgdis.fr/core/core-ui/mg-components/-/issues/139)), thus it is recommended to use it.**
+
+### AngularJS
+
+#### Bind
 
 To bind a value in a web component we have to use the Angular.js [`ng-prop-`](https://docs.angularjs.org/api/ng/directive/ngProp) directive:
 
@@ -151,17 +147,21 @@ In some cases, binding **a string or a number** won't work ([#191](https://gitla
 <mg-message variant="{{variant}}" delay="{{delay}}">My message</mg-message>
 ```
 
-##### ng-model
+#### ng-model
 
 `ng-model` can not be used in web components so we must set the value and the use the custom event `value-change` with the [`ng-on-`](https://docs.angularjs.org/api/ng/directive/ngOn) directive :
 
 ```html
-<mg-input-text ng-prop-value="user.firstname" label="Firstname" ng-on-value-change="user.firstname = $event.target.value"></mg-input-text>
+<mg-input-text ng-prop-value="user.firstname" label="Firstname" ng-on-value-change="user.firstname = $event.detail"></mg-input-text>
 ```
 
-##### Custom Events
+## Events
 
-When you want to get the fired **custom event data from a web-component** with the [`ng-on-`](https://docs.angularjs.org/api/ng/directive/ngOn) directive you need to parse the native event instead the jQuery wrapped event like so:
+If you are using component events, the value is accessed through `$event.detail` and not `$event.target.value`.
+
+### AngularJS
+
+With the [`ng-on-`](https://docs.angularjs.org/api/ng/directive/ngOn) directive you need to parse the native event instead the jQuery wrapped event like so:
 
 ```html
 <mg-popover ng-on-display-change="$ctrl.myMethod($event.originalEvent.detail)"></mg-popover>
