@@ -59,7 +59,7 @@ If needed some [variables](./?path=/story/css-variables--page) are available to 
 - `--mg-popover-font-color`: Define popover font color, default: `var(--color-font-dark)`
 - `--mg-popover-title-font-size`: Define popover title font size, default: `1.4rem`
 
-Please note that the mg-popover component uses the [mg-card](./?path=/docs/atoms-mg-card--mg-card) component. This means that you can benefit from the CSS variables of [mg-card](./?path=/docs/atoms-mg-card--mg-card) to customize mg-popover. You can easily change padding, border-radius, etc. Use this feature to seamlessly adapt mg-popover to your design.
+Please note that the mg-popover component uses the [mg-card](./?path=/docs/atoms-mg-card--mg-card) component. This means that you can benefit from the CSS variables of [mg-card](./?path=/docs/atoms-mg-card--mg-card) to customize mg-popover. You can easily change padding, border-radius, etc. Use this feature to seamlessly adapt mg-popover to your design by using the target variable with '-override' suffix, ex: use `--mg-card-padding-overrride` instead of `--mg-card-padding`.
 
 <!-- Auto Generated Below -->
 

@@ -1,4 +1,4 @@
-@import '../../atoms/mg-card/mg-card.scss';
+@import '../../atoms/mg-card/styles/reset-slot-card-variables.mixin.scss';
 
 @mixin message-variants($variants...) {
   @each $variant in $variants {
@@ -15,10 +15,10 @@
 
 :host {
   // Set mg-card variables
-  --mg-card-padding: 0;
-  --mg-card-border-radius: var(--mg-message-border-radius);
-  --mg-card-border: none;
-  --mg-card-overflow: hidden;
+  --mg-card-padding-override: 0;
+  --mg-card-border-radius-override: var(--mg-message-border-radius);
+  --mg-card-border-override: none;
+  --mg-card-overflow-override: hidden;
 }
 
 .mg-message {
@@ -37,7 +37,7 @@
   @include message-variants('info', 'warning', 'success', 'danger');
 
   &.mg-message--close-button {
-    --mg-card-padding: 0 3.4rem 0 0;
+    --mg-card-padding-override: 0 3.4rem 0 0;
   }
 
   &.mg-message--hide {

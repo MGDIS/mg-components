@@ -483,10 +483,14 @@
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </mg-card>
         <mg-card> Lorem ipsum dolor sit amet </mg-card>
-        <mg-card class="custom-mg-card"><mg-card>Custom card</mg-card></mg-card>
+        <mg-card class="custom-mg-card--danger"><mg-card>Custom card</mg-card></mg-card>
+        <mg-card class="custom-mg-card--danger"><mg-card class="custom-mg-card--info">Custom card</mg-card></mg-card>
         <style>
-          .custom-mg-card {
-            --mg-card-background: hsl(var(--color-danger));
+          .custom-mg-card--danger {
+            --mg-card-background-override: hsl(var(--color-danger));
+          }
+          .custom-mg-card--info {
+            --mg-card-background-override: hsl(var(--color-info));
           }
         </style>
       </section>
@@ -545,7 +549,7 @@
         </mg-message>
         <style>
           .custom-message-card {
-            --mg-card-background: hsl(var(--color-danger));
+            --mg-card-background-override: hsl(var(--color-danger));
           }
         </style>
         <script>

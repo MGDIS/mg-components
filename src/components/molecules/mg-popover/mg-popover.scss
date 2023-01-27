@@ -1,4 +1,4 @@
-@import '../../atoms/mg-card/mg-card.scss';
+@import '../../atoms/mg-card/styles/reset-slot-card-variables.mixin.scss';
 
 $popover-space: 1rem;
 $arrow-height: 1rem;
@@ -7,10 +7,10 @@ $border-arrow-head: $arrow-height solid hsl(var(--mg-popover-background-color));
 $border-arrow-side: calc(#{$arrow-width} / 2) solid transparent;
 
 :host {
-  --mg-card-padding: 1.5rem;
-  --mg-card-border: none;
-  --mg-card-border-radius: 0.5rem;
-  --mg-card-background: hsl(var(--mg-popover-background-color));
+  --mg-card-padding-override: 1.5rem;
+  --mg-card-border-override: none;
+  --mg-card-border-radius-override: 0.5rem;
+  --mg-card-background-override: hsl(var(--mg-popover-background-color));
   position: relative;
 
   display: contents;

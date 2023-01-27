@@ -189,11 +189,11 @@
   /*
     <mg-card>
    */
-  --mg-card-padding-default: 1.6rem;
-  --mg-card-border-radius-default: 0.5rem;
-  --mg-card-background-default: hsl(var(--color-light));
-  --mg-card-border-default: 0.1rem solid hsl(var(--color-dark), 0.05);
-  --mg-card-box-shadow-default: var(--box-shadow);
+  --mg-card-padding: 1.6rem;
+  --mg-card-border-radius: 0.5rem;
+  --mg-card-background: hsl(var(--color-light));
+  --mg-card-border: 0.1rem solid hsl(var(--color-dark), 0.05);
+  --mg-card-box-shadow: var(--box-shadow);
 
   /*
     <mg-divider>

@@ -1,10 +1,10 @@
-@import '../../atoms/mg-card/mg-card.scss';
+@import '../../atoms/mg-card/styles/reset-slot-card-variables.mixin.scss';
 
 :host {
   // Set mg-card variables
-  --mg-card-border-radius: var(--mg-modal-border-radius);
-  --mg-card-padding: 1.5rem 2.5rem;
-  --mg-card-border: none;
+  --mg-card-border-radius-override: var(--mg-modal-border-radius);
+  --mg-card-padding-override: 1.5rem 2.5rem;
+  --mg-card-border-override: none;
 }
 
 .mg-modal {
