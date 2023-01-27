@@ -96,3 +96,55 @@ export const isTagName = (element: Element, tagNames: string[]): boolean => {
  * Focusable elements query selector
  */
 export const focusableElements = 'a[href], button, input, textarea, select, details, [tabindex]:not([tabindex="-1"]), [identifier]';
+
+/**
+ *
+ * @param {Window} localWindow the window we are lookink for other windows
+ * @returns {Window[]} The list of windows found
+ */
+export const getWindows = (localWindow: Window): Window[] => {
+  const parentWindows = getParentWindows(localWindow);
+  const childWindows = getChildWindows(localWindow);
+  return [localWindow, ...parentWindows, ...childWindows];
+};
+
+/**
+ * Get parent windows
+ *
+ * @param {Window} localWindow the window we are lookink for parents
+ * @param {Window[]} windows The list of allready found windows
+ * @returns {Window[]} The list of windows found
+ */
+export const getParentWindows = (localWindow: Window, windows: Window[] = []): Window[] => {
+  // Check if is in iframe
+  if (localWindow.self !== localWindow.top) {
+    // Check if we have permission to access parent
+    try {
+      const parentWindow: Window = localWindow.parent;
+      windows.push(parentWindow);
+      return getParentWindows(parentWindow, windows);
+    } catch (err) {
+      console.error('Different hosts between iframes:', err);
+      return windows;
+    }
+  }
+  return windows;
+};
+
+/**
+ * Get child windows
+ *
+ * @param {Window} localWindow the window we are lookink for children
+ * @param {Window[]} windows The list of allready found windows
+ * @returns {Window[]} The list of windows found
+ */
+const getChildWindows = (localWindow: Window, windows: Window[] = []): Window[] => {
+  if (localWindow.frames.length > 0) {
+    for (let i = 0; i < localWindow.frames.length; i++) {
+      const childWindow: Window = localWindow.frames[i];
+      windows.push(childWindow);
+      windows.concat(getChildWindows(childWindow, windows));
+    }
+  }
+  return windows;
+};

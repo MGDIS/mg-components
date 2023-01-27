@@ -68,7 +68,7 @@ $button-column-gap: 0.6rem;
 :host(:focus),
 :host(:active) {
   .mg-button--flat:not(.mg-button--disabled) {
-    background: hsla(var(--color-dark), 0.1);
+    background: hsl(var(--color-dark), 0.1);
   }
 }
 

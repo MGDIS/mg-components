@@ -47,7 +47,7 @@ describe('mg-popover', () => {
 
       expect(popover).toHaveAttribute('data-show');
 
-      await page.setViewport({ width: 800, height: 300 });
+      await page.setViewport({ width: 800, height: 350 });
 
       const screenshot = await page.screenshot();
       expect(screenshot).toMatchImageSnapshot();
@@ -97,7 +97,7 @@ describe('mg-popover', () => {
 
       expect(mgPopover).toHaveClass('hydrated');
 
-      await page.setViewport({ width: 500, height: 300 });
+      await page.setViewport({ width: 500, height: 350 });
 
       const screenshot = await page.screenshot();
       expect(screenshot).toMatchImageSnapshot();
