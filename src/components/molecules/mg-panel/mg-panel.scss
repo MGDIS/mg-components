@@ -1,13 +1,13 @@
-@import '../../atoms/mg-card/styles/reset-slot-card-variables.mixin.scss';
+@import '../../../styles/mixins/reset-mg-card-slotted-variables.scss';
 
 $header-spacing: 0.3rem;
 
 :host {
-  --mg-card-border-override: none;
-  --mg-card-padding-override: 0;
-  --mg-card-border-radius-override: var(--mg-panel-border-radius);
-  --mg-card-background-override: hsl(var(--mg-panel-background));
-  --mg-card-box-shadow-override: var(--mg-panel-box-shadow);
+  --mg-card-border: none;
+  --mg-card-padding: 0;
+  --mg-card-border-radius: var(--mg-panel-border-radius);
+  --mg-card-background: hsl(var(--mg-panel-background));
+  --mg-card-box-shadow: var(--mg-panel-box-shadow);
 }
 
 .mg-panel {

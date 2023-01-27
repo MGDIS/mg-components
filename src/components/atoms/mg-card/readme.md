@@ -33,9 +33,6 @@ If needed some [variables](./?path=/story/css-variables--page) are available to 
 - `--mg-card-box-shadow`: define card shadow, default: `var(--box-shadow)`
 - `--mg-card-box-overflow`: define card overflow, default: `unset`
 
-**If your component include child mg-card with different styles we recommand to use the target variable with '-override' suffix, ex: use `--mg-card-padding-overrride` instead of `--mg-card-padding`.**
-Explenations: CSS variables is based on heritage behavior. So each child `var` value is updated by the value of its closer ancestor. When you use the variable with '-override' suffix, the librarie use the closest `--mg-card-padding` to re-assign `var` by its value for child. As a result, if you don't update directly the theme variable `--mg-card-padding` but the `--mg-card-padding-overrride`, your element default style will be the same as the template. 
-
 <!-- Auto Generated Below -->
 
 

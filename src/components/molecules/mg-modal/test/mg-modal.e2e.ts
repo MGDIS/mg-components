@@ -94,7 +94,7 @@ describe('mg-modal', () => {
         `<mg-modal modal-title="child mg-card" class="custom-modal-card">
         <mg-card slot="content">child card</mg-card>
         </mg-modal>
-        <style>.custom-modal-card {--mg-card-background-override: hsl(var(--color-danger));}</style>`,
+        <style>.custom-modal-card {--mg-card-background: hsl(var(--color-danger));}</style>`,
       );
 
       await page.setViewport({ width: 800, height: 500 });

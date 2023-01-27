@@ -1,18 +1,18 @@
-@import './styles/reset-slot-card-variables.mixin.scss';
+@import '../../../styles/mixins/reset-mg-card-slotted-variables.scss';
 
 .mg-card {
   // Display
   position: relative;
   width: 100%;
-  padding: var(--mg-card-padding-override, var(--mg-card-padding));
-  overflow: var(--mg-card-overflow-override, var(--mg-card-overflow));
+  padding: var(--mg-card-padding, var(--mg-card-padding-default));
+  overflow: var(--mg-card-overflow, var(--mg-card-overflow-default));
   box-sizing: border-box;
   z-index: inherit;
   // Decoration
-  background: var(--mg-card-background-override, var(--mg-card-background));
-  border: var(--mg-card-border-override, var(--mg-card-border));
-  border-radius: var(--mg-card-border-radius-override, var(--mg-card-border-radius));
-  box-shadow: var(--mg-card-box-shadow-override, var(--mg-card-box-shadow));
+  background: var(--mg-card-background, var(--mg-card-background-default));
+  border: var(--mg-card-border, var(--mg-card-border-default));
+  border-radius: var(--mg-card-border-radius, var(--mg-card-border-radius-default));
+  box-shadow: var(--mg-card-box-shadow, var(--mg-card-box-shadow-default));
 
   @include reset-slot-card-variables();
 }

@@ -11,8 +11,7 @@ describe('mg-card', () => {
       .map(slot => `<mg-card class="${slot.includes('</mg-card>') ? 'custom-card--danger' : ''}">${slot}</mg-card>`)
       .join('');
     const page = await createPage(
-      html +
-        '<style>.custom-card--danger {--mg-card-background-override: hsl(var(--color-danger));} .custom-card--info {--mg-card-background-override: hsl(var(--color-info));}</style>',
+      html + '<style>.custom-card--danger {--mg-card-background: hsl(var(--color-danger));} .custom-card--info {--mg-card-background: hsl(var(--color-info));}</style>',
     );
 
     const element = await page.find('mg-card');
