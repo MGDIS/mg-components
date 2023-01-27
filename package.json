@@ -24,7 +24,7 @@
     "Nicolas Jouanno <jouanno-n@mgdis.fr>"
   ],
   "scripts": {
-    "build": "stencil build --docs",
+    "build": "stencil build --docs --config stencil.config.prod.ts",
     "start": "stencil build --dev --watch --serve",
     "lint": "run-s lint:es lint:prettier",
     "lint:fix": "run-s lint:es:fix lint:prettier:fix",
