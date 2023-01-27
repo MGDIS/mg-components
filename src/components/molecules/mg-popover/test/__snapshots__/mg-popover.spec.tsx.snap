@@ -265,7 +265,7 @@ exports[`mg-popover Should render with element 8`] = `
 <mg-popover>
   <mock:shadow-root>
     <slot></slot>
-    <div class="mg-popover" id="identifier" style="position: fixed; left: 0; top: 0; margin: 0;">
+    <div class="mg-popover mg-popover--arrow-hide" id="identifier" style="position: fixed; left: 0; top: 0; margin: 0;">
       <mg-card>
         <div class="mg-popover__title">
           <slot name="title"></slot>

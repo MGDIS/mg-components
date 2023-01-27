@@ -38,7 +38,7 @@ exports[`mg-menu overflow with args { mgIcon: [Object] } 1`] = `
       <mg-popover>
         <mock:shadow-root>
           <slot></slot>
-          <div class="mg-popover" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
+          <div class="mg-popover mg-popover--arrow-hide" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
             <mg-card>
               <div class="mg-popover__title">
                 <slot name="title"></slot>
@@ -163,7 +163,7 @@ exports[`mg-menu overflow with args { mgIcon: [Object] } 1`] = `
       <mg-popover>
         <mock:shadow-root>
           <slot></slot>
-          <div class="mg-popover" id="mg-popover-test_5" style="position: fixed; left: 0; top: 0; margin: 0;">
+          <div class="mg-popover mg-popover--arrow-hide" id="mg-popover-test_5" style="position: fixed; left: 0; top: 0; margin: 0;">
             <mg-card>
               <div class="mg-popover__title">
                 <slot name="title"></slot>
@@ -234,7 +234,7 @@ exports[`mg-menu overflow with args { mgIcon: [Object] } 2`] = `
       <mg-popover>
         <mock:shadow-root>
           <slot></slot>
-          <div class="mg-popover" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
+          <div class="mg-popover mg-popover--arrow-hide" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
             <mg-card>
               <div class="mg-popover__title">
                 <slot name="title"></slot>
@@ -359,7 +359,7 @@ exports[`mg-menu overflow with args { mgIcon: [Object] } 2`] = `
       <mg-popover>
         <mock:shadow-root>
           <slot></slot>
-          <div class="mg-popover" id="mg-popover-test_5" style="position: fixed; left: 0; top: 0; margin: 0;">
+          <div class="mg-popover mg-popover--arrow-hide" id="mg-popover-test_5" style="position: fixed; left: 0; top: 0; margin: 0;">
             <mg-card>
               <div class="mg-popover__title">
                 <slot name="title"></slot>
@@ -646,7 +646,7 @@ exports[`mg-menu overflow with args { size: 'large' } 1`] = `
       <mg-popover>
         <mock:shadow-root>
           <slot></slot>
-          <div class="mg-popover" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
+          <div class="mg-popover mg-popover--arrow-hide" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
             <mg-card>
               <div class="mg-popover__title">
                 <slot name="title"></slot>
@@ -771,7 +771,7 @@ exports[`mg-menu overflow with args { size: 'large' } 1`] = `
       <mg-popover>
         <mock:shadow-root>
           <slot></slot>
-          <div class="mg-popover" id="mg-popover-test_5" style="position: fixed; left: 0; top: 0; margin: 0;">
+          <div class="mg-popover mg-popover--arrow-hide" id="mg-popover-test_5" style="position: fixed; left: 0; top: 0; margin: 0;">
             <mg-card>
               <div class="mg-popover__title">
                 <slot name="title"></slot>
@@ -842,7 +842,7 @@ exports[`mg-menu overflow with args { size: 'large' } 2`] = `
       <mg-popover>
         <mock:shadow-root>
           <slot></slot>
-          <div class="mg-popover" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
+          <div class="mg-popover mg-popover--arrow-hide" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
             <mg-card>
               <div class="mg-popover__title">
                 <slot name="title"></slot>
@@ -967,7 +967,7 @@ exports[`mg-menu overflow with args { size: 'large' } 2`] = `
       <mg-popover>
         <mock:shadow-root>
           <slot></slot>
-          <div class="mg-popover" id="mg-popover-test_5" style="position: fixed; left: 0; top: 0; margin: 0;">
+          <div class="mg-popover mg-popover--arrow-hide" id="mg-popover-test_5" style="position: fixed; left: 0; top: 0; margin: 0;">
             <mg-card>
               <div class="mg-popover__title">
                 <slot name="title"></slot>
@@ -1254,7 +1254,7 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 1`] = `
       <mg-popover>
         <mock:shadow-root>
           <slot></slot>
-          <div class="mg-popover" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
+          <div class="mg-popover mg-popover--arrow-hide" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
             <mg-card>
               <div class="mg-popover__title">
                 <slot name="title"></slot>
@@ -1379,7 +1379,7 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 1`] = `
       <mg-popover>
         <mock:shadow-root>
           <slot></slot>
-          <div class="mg-popover" id="mg-popover-test_5" style="position: fixed; left: 0; top: 0; margin: 0;">
+          <div class="mg-popover mg-popover--arrow-hide" id="mg-popover-test_5" style="position: fixed; left: 0; top: 0; margin: 0;">
             <mg-card>
               <div class="mg-popover__title">
                 <slot name="title"></slot>
@@ -1450,7 +1450,7 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 2`] = `
       <mg-popover>
         <mock:shadow-root>
           <slot></slot>
-          <div class="mg-popover" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
+          <div class="mg-popover mg-popover--arrow-hide" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
             <mg-card>
               <div class="mg-popover__title">
                 <slot name="title"></slot>
@@ -1575,7 +1575,7 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 2`] = `
       <mg-popover>
         <mock:shadow-root>
           <slot></slot>
-          <div class="mg-popover" id="mg-popover-test_5" style="position: fixed; left: 0; top: 0; margin: 0;">
+          <div class="mg-popover mg-popover--arrow-hide" id="mg-popover-test_5" style="position: fixed; left: 0; top: 0; margin: 0;">
             <mg-card>
               <div class="mg-popover__title">
                 <slot name="title"></slot>
@@ -1862,7 +1862,7 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 3`] = `
       <mg-popover>
         <mock:shadow-root>
           <slot></slot>
-          <div class="mg-popover" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
+          <div class="mg-popover mg-popover--arrow-hide" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
             <mg-card>
               <div class="mg-popover__title">
                 <slot name="title"></slot>
@@ -1987,7 +1987,7 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 3`] = `
       <mg-popover>
         <mock:shadow-root>
           <slot></slot>
-          <div class="mg-popover" id="mg-popover-test_5" style="position: fixed; left: 0; top: 0; margin: 0;">
+          <div class="mg-popover mg-popover--arrow-hide" id="mg-popover-test_5" style="position: fixed; left: 0; top: 0; margin: 0;">
             <mg-card>
               <div class="mg-popover__title">
                 <slot name="title"></slot>
@@ -2058,7 +2058,7 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 4`] = `
       <mg-popover>
         <mock:shadow-root>
           <slot></slot>
-          <div class="mg-popover" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
+          <div class="mg-popover mg-popover--arrow-hide" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
             <mg-card>
               <div class="mg-popover__title">
                 <slot name="title"></slot>
@@ -2183,7 +2183,7 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 4`] = `
       <mg-popover>
         <mock:shadow-root>
           <slot></slot>
-          <div class="mg-popover" id="mg-popover-test_5" style="position: fixed; left: 0; top: 0; margin: 0;">
+          <div class="mg-popover mg-popover--arrow-hide" id="mg-popover-test_5" style="position: fixed; left: 0; top: 0; margin: 0;">
             <mg-card>
               <div class="mg-popover__title">
                 <slot name="title"></slot>
@@ -2470,7 +2470,7 @@ exports[`mg-menu overflow with args undefined 1`] = `
       <mg-popover>
         <mock:shadow-root>
           <slot></slot>
-          <div class="mg-popover" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
+          <div class="mg-popover mg-popover--arrow-hide" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
             <mg-card>
               <div class="mg-popover__title">
                 <slot name="title"></slot>
@@ -2595,7 +2595,7 @@ exports[`mg-menu overflow with args undefined 1`] = `
       <mg-popover>
         <mock:shadow-root>
           <slot></slot>
-          <div class="mg-popover" id="mg-popover-test_5" style="position: fixed; left: 0; top: 0; margin: 0;">
+          <div class="mg-popover mg-popover--arrow-hide" id="mg-popover-test_5" style="position: fixed; left: 0; top: 0; margin: 0;">
             <mg-card>
               <div class="mg-popover__title">
                 <slot name="title"></slot>
@@ -2666,7 +2666,7 @@ exports[`mg-menu overflow with args undefined 2`] = `
       <mg-popover>
         <mock:shadow-root>
           <slot></slot>
-          <div class="mg-popover" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
+          <div class="mg-popover mg-popover--arrow-hide" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
             <mg-card>
               <div class="mg-popover__title">
                 <slot name="title"></slot>
@@ -2791,7 +2791,7 @@ exports[`mg-menu overflow with args undefined 2`] = `
       <mg-popover>
         <mock:shadow-root>
           <slot></slot>
-          <div class="mg-popover" id="mg-popover-test_5" style="position: fixed; left: 0; top: 0; margin: 0;">
+          <div class="mg-popover mg-popover--arrow-hide" id="mg-popover-test_5" style="position: fixed; left: 0; top: 0; margin: 0;">
             <mg-card>
               <div class="mg-popover__title">
                 <slot name="title"></slot>
@@ -3078,7 +3078,7 @@ exports[`mg-menu render with args { label: 'batman menu' } 1`] = `
       <mg-popover>
         <mock:shadow-root>
           <slot></slot>
-          <div class="mg-popover" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
+          <div class="mg-popover mg-popover--arrow-hide" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
             <mg-card>
               <div class="mg-popover__title">
                 <slot name="title"></slot>
@@ -3203,7 +3203,7 @@ exports[`mg-menu render with args { label: 'batman menu' } 1`] = `
       <mg-popover>
         <mock:shadow-root>
           <slot></slot>
-          <div class="mg-popover" id="mg-popover-test_5" style="position: fixed; left: 0; top: 0; margin: 0;">
+          <div class="mg-popover mg-popover--arrow-hide" id="mg-popover-test_5" style="position: fixed; left: 0; top: 0; margin: 0;">
             <mg-card>
               <div class="mg-popover__title">
                 <slot name="title"></slot>
@@ -3302,7 +3302,7 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'horizontal
       <mg-popover>
         <mock:shadow-root>
           <slot></slot>
-          <div class="mg-popover" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
+          <div class="mg-popover mg-popover--arrow-hide" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
             <mg-card>
               <div class="mg-popover__title">
                 <slot name="title"></slot>
@@ -3427,7 +3427,7 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'horizontal
       <mg-popover>
         <mock:shadow-root>
           <slot></slot>
-          <div class="mg-popover" id="mg-popover-test_5" style="position: fixed; left: 0; top: 0; margin: 0;">
+          <div class="mg-popover mg-popover--arrow-hide" id="mg-popover-test_5" style="position: fixed; left: 0; top: 0; margin: 0;">
             <mg-card>
               <div class="mg-popover__title">
                 <slot name="title"></slot>
@@ -3921,7 +3921,7 @@ exports[`mg-popover Should render with element 8`] = `
 <mg-popover>
   <mock:shadow-root>
     <slot></slot>
-    <div class="mg-popover" id="identifier" style="position: fixed; left: 0; top: 0; margin: 0;">
+    <div class="mg-popover mg-popover--arrow-hide" id="identifier" style="position: fixed; left: 0; top: 0; margin: 0;">
       <mg-card>
         <div class="mg-popover__title">
           <slot name="title"></slot>

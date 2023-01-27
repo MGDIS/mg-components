@@ -139,5 +139,22 @@ $mg-popover-padding-vertical: var(--mg-popover-padding-vertical, 1.5rem);
     font-weight: 600;
   }
 
+  &--arrow-hide.mg-popover {
+    &[data-popper-placement^='top'] {
+      padding-bottom: 0;
+    }
+    &[data-popper-placement^='bottom'] {
+      padding-top: 0;
+    }
+    &[data-popper-placement$='end'],
+    &[data-popper-placement^='left'] {
+      padding-right: 0;
+    }
+    &[data-popper-placement$='start'],
+    &[data-popper-placement^='right'] {
+      padding-left: 0;
+    }
+  }
+
   @include reset-slot-card-variables();
 }
