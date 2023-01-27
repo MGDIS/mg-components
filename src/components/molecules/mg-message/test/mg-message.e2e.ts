@@ -37,6 +37,22 @@ describe('mg-message', () => {
     expect(screenshot).toMatchImageSnapshot();
   });
 
+  test('Should render with child mg-card', async () => {
+    const page = await createPage(`
+      <mg-message class="custom-message-card">
+        <mg-card>child card</mg-card>
+      </mg-message>
+      <style>
+        .custom-message-card {
+          --mg-card-background: hsl(var(--color-danger));
+        }
+      </style>
+    `);
+
+    const screenshot = await page.screenshot();
+    expect(screenshot).toMatchImageSnapshot();
+  });
+
   test('Should hide message on close button click', async () => {
     const page = await createPage(`<mg-message close-button><p>Blu</p></mg-message>`);
 

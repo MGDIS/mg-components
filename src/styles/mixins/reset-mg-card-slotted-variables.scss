@@ -1,0 +1,9 @@
+@mixin reset-slot-card-variables() {
+  ::slotted(*) {
+    --mg-card-border: var(--mg-card-border-default);
+    --mg-card-padding: var(--mg-card-padding-default);
+    --mg-card-border-radius: var(--mg-card-border-radius-default);
+    --mg-card-background: var(--mg-card-background-default);
+    --mg-card-box-shadow: var(--mg-card-box-shadow-default);
+  }
+}

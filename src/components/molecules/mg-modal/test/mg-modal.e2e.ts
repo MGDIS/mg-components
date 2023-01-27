@@ -88,6 +88,22 @@ describe('mg-modal', () => {
     });
   });
 
+  describe('style', () => {
+    test.only('Should render with child mg-card', async () => {
+      const page = await createPage(
+        `<mg-modal modal-title="child mg-card" class="custom-modal-card">
+        <mg-card slot="content">child card</mg-card>
+        </mg-modal>
+        <style>.custom-modal-card {--mg-card-background: hsl(var(--color-danger));}</style>`,
+      );
+
+      await page.setViewport({ width: 800, height: 500 });
+
+      const screenshot = await page.screenshot();
+      expect(screenshot).toMatchImageSnapshot();
+    });
+  });
+
   describe('navigation', () => {
     test('Should trigger modal and close modal.', async () => {
       const page = await createPage(`

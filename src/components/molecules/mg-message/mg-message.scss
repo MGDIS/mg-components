@@ -1,3 +1,5 @@
+@import '../../../styles/mixins/reset-mg-card-slotted-variables.scss';
+
 @mixin message-variants($variants...) {
   @each $variant in $variants {
     &.mg-message--#{$variant} {
@@ -86,6 +88,8 @@
     top: 0;
     right: 0;
   }
+
+  @include reset-slot-card-variables();
 }
 
 .mg-message,

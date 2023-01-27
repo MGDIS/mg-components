@@ -41,6 +41,7 @@ describe('mg-panel', () => {
     `<mg-panel label="label" panel-title="panel title" expanded style="--mg-panel-content-padding: 0"><div>Content without padding.</div></mg-panel>`,
     `<mg-panel label="label" panel-title="panel title" expanded style="--mg-panel-background: none; --mg-panel-border-radius: 0; --mg-panel-box-shadow: none"><div>Transparent mg-panel</div></mg-panel>`,
     `<mg-panel label="label" panel-title="panel title" expanded><div>header right items should be vertically aligned</div><div slot="header-right"><mg-tag>Label</mg-tag><mg-icon icon="check-circle" variant="success"></mg-icon></div></mg-panel>`,
+    `<mg-panel label="label" panel-title="panel title" expanded style="--mg-panel-background: var(--color-danger)"><mg-card>Content whith child card.</mg-card></mg-panel>`,
   ])('template', html => {
     test('render', async () => {
       const page = await createPage(html);
