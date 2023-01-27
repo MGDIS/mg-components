@@ -1,3 +1,5 @@
+@import '../../atoms/mg-card/mg-card.scss';
+
 $popover-space: 1rem;
 $arrow-height: 1rem;
 $arrow-width: 3rem;
@@ -134,4 +136,6 @@ $border-arrow-side: calc(#{$arrow-width} / 2) solid transparent;
     font-size: var(--mg-popover-title-font-size) !important;
     font-weight: 600;
   }
+
+  @include reset-slot-card-variables();
 }
