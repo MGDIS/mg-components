@@ -107,7 +107,7 @@ The submenu is displayed by clicking on the item.
 
 ![](./mg-menu/doc/img/mg-menu-vertical-subcontent-badge.png) 
 
-If at least one sub item has got a badge, the item displays a badge with exclamation symbol.
+If at least one sub-item has a badge, the item displays a badge with an exclamation symbol.
 
 #### Overflow
 
