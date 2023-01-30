@@ -49,7 +49,7 @@ describe('mg-skip-links', () => {
 
     const spy = jest.spyOn(page.rootInstance.goToAnchor, 'emit');
 
-    const mgSkilinks = page.doc.querySelector('mg-skip-links');
+    const mgSkiplinks = page.doc.querySelector('mg-skip-links');
     const anchor = mgSkilinks.shadowRoot.querySelector('a');
     anchor.dispatchEvent(new MouseEvent('click', { bubbles: true }));
 
