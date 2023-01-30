@@ -218,7 +218,7 @@ export class MgMenuItem {
   componentWillLoad(): void {
     // has children items that is NOT [slot='image' | 'information' | 'label' | 'metadata'] element
     // we store only matching elements
-    this.hasChildren = Array.from(this.element.children).filter(child => !['image', 'information', 'label', 'metadata'].includes(child.getAttribute('slot'))).length > 0;
+    this.hasChildren = Array.from(this.element.children).some(child => !['image', 'information', 'label', 'metadata'].includes(child.getAttribute('slot')));
 
     // Validate props
     this.validateSize(this.size);
