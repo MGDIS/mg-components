@@ -161,7 +161,7 @@ export class MgMenuItem {
    * @param {MgMenuItem['direction']} direction in parent menu
    * @returns {boolean} true is direction match the direction propertie
    */
-  private isdirection = (direction: MgMenuItem['direction']): boolean => this.direction === direction;
+  private isDirection = (direction: MgMenuItem['direction']): boolean => this.direction === direction;
 
   /************
    * Handlers *
@@ -260,7 +260,7 @@ export class MgMenuItem {
       const hasActiveChild = Array.from(this.element.children).some(element => this.hasStatus(element, Status.ACTIVE) && element.getAttribute('hidden') === null);
       if (this.isInMainMenu && hasActiveChild) {
         this.status = Status.ACTIVE;
-        this.expanded = this.isdirection(Direction.VERTICAL);
+        this.expanded = this.isDirection(Direction.VERTICAL);
       }
 
       // manage menu items style depending to parent menu horientation
@@ -270,7 +270,7 @@ export class MgMenuItem {
       this.updateDisplayNotificationBadge();
 
       // manage all sub levels child menu-items level with data-level attribut
-      if (this.isdirection(Direction.VERTICAL)) {
+      if (this.isDirection(Direction.VERTICAL)) {
         Array.from(this.element.querySelectorAll('mg-menu-item')).forEach(item => {
           const itemLevel = Number(item.getAttribute('data-level')) || 1;
           item.setAttribute('data-level', `${itemLevel + 1}`);
@@ -349,12 +349,12 @@ export class MgMenuItem {
   render(): HTMLElement {
     const getContainerClasses = () => ({
       [`${this.name}__collapse-container`]: true,
-      [`${this.name}__collapse-container--first-level`]: this.isInMainMenu && this.isdirection(Direction.HORIZONTAL),
+      [`${this.name}__collapse-container--first-level`]: this.isInMainMenu && this.isDirection(Direction.HORIZONTAL),
     });
 
     return (
       <Host role="menuitem" aria-haspopup={this.hasChildren.toString()}>
-        {this.isdirection(Direction.HORIZONTAL) && this.hasChildren && this.href === undefined ? (
+        {this.isDirection(Direction.HORIZONTAL) && this.hasChildren && this.href === undefined ? (
           <mg-popover display={this.expanded} placement="bottom-start" arrowHide={true} onDisplay-change={this.handlePopoverDisplay}>
             {this.renderInteractiveElement()}
             <div class={getContainerClasses()} slot="content">
