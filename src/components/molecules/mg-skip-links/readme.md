@@ -43,7 +43,7 @@ const goToAnchor(anchor){
 }​
 ```
 
-- in case the anchor is in parent/child/sibling iframe document, with the [moveToAnchor method from iframeRisizer](https://github.com/davidjbradshaw/iframe-resizer/blob/master/docs/parent_page/methods.md#movetoanchoranchor)
+- in case the anchor is in another window, with the [iframeRisizer's moveToAnchor method](https://github.com/davidjbradshaw/iframe-resizer/blob/master/docs/parent_page/methods.md#movetoanchoranchor)
 
 <!-- Auto Generated Below -->
 
