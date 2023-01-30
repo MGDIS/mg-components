@@ -1,5 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`mg-illustrated-message Should render even if slotted content is not an image file 1`] = `
+<mg-illustrated-message>
+  <mock:shadow-root>
+    <div class="mg-illustrated-message">
+      <div class="mg-illustrated-message__illustration">
+        <slot name="illustration"></slot>
+      </div>
+      <div class="mg-illustrated-message__slots">
+        <div class="mg-illustrated-message__title">
+          <slot name="title"></slot>
+        </div>
+        <div class="mg-illustrated-message__details">
+          <slot name="details"></slot>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+  <span aria-hidden="true" slot="illustration"></span>
+  <h2 slot="title">
+    Lorem Ipsum
+  </h2>
+  <h3 slot="details">
+    The standard Lorem Ipsum passage, used since the 1500s
+  </h3>
+  <div slot="details">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </div>
+</mg-illustrated-message>
+`;
+
 exports[`mg-illustrated-message with args { direction: 'horizontal' } 1`] = `
 <mg-illustrated-message>
   <mock:shadow-root>
