@@ -1,19 +1,22 @@
 @use 'sass:map';
 
 $border-bottom-size: 0.3rem;
+$font-size-large: calc(var(--font-size) + 0.2rem);
+$navigation-button-column-gap: 1rem;
 
 @mixin navigation-button($element, $button-sizes) {
   @each $name, $size in $button-sizes {
     .#{$element}.#{$element}--size-#{$name} .#{$element}__navigation-button,
     .#{$element}__navigation-button.#{$element}__navigation-button--size-#{$name} {
       padding: #{map.get($size, 'vertical')} #{map.get($size, 'horizontal')};
+      height: calc(#{map.get($size, 'height')});
       &,
       ::slotted([slot='label']),
       ::slotted([slot='metadata']) {
         @if $name == 'regular' {
-          font-size: 1.3rem;
+          font-size: var(--font-size);
         } @else {
-          font-size: 1.5rem;
+          font-size: $font-size-large;
         }
       }
       &.#{$element}__navigation-button--horizontal {
@@ -28,13 +31,14 @@ $border-bottom-size: 0.3rem;
   .#{$element}__navigation-button {
     display: flex;
     align-items: center;
-    column-gap: 1rem;
+    column-gap: var(--#{$element}-navigation-button-column-gap, $navigation-button-column-gap);
     background-color: unset;
     border: none;
     font-family: var(--font-family);
     color: hsl(var(--#{$element}-color-hsl, var(--color-dark)));
     line-height: var(--line-height);
     text-decoration: none;
+    white-space: nowrap;
     cursor: pointer;
     &:disabled,
     &--disabled {
@@ -50,7 +54,7 @@ $border-bottom-size: 0.3rem;
     }
     &.#{$element}__navigation-button--active {
       color: hsl(var(--#{$element}-color-active-hsl));
-      font-weight: 700;
+      font-weight: 600;
       &.#{$element}__navigation-button--horizontal {
         border-bottom-color: hsl(var(--#{$element}-border-color-active-hsl));
       }

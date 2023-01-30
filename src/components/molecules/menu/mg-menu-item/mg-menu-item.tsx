@@ -1,8 +1,10 @@
-import { Component, h, Prop, State, Host, Watch, Element } from '@stencil/core';
+import { Component, h, Prop, State, Host, Watch, Element, Event, EventEmitter } from '@stencil/core';
+import { OverflowBehaviorElements } from '../../../../utils/behaviors.utils';
 import { ClassList } from '../../../../utils/components.utils';
+import { initLocales } from '../../../../locales';
 import { MgMenu } from '../mg-menu/mg-menu';
-import { Direction } from '../mg-menu/mg-menu.conf';
-import { sizes, MenuItemSizeType, Status } from './mg-menu-item.conf';
+import { Direction, MenuSizeType, MessageType } from '../mg-menu/mg-menu.conf';
+import { Status } from './mg-menu-item.conf';
 
 @Component({
   tag: 'mg-menu-item',
@@ -16,6 +18,7 @@ export class MgMenuItem {
 
   private readonly name = 'mg-menu-item';
   private readonly navigationButton = `${this.name}__navigation-button`;
+  private badgeLabel: string;
 
   /**************
    * Decorators *
@@ -31,7 +34,7 @@ export class MgMenuItem {
    ************/
 
   /**
-   * Define menu-item badge
+   * Define menu-item href
    * when defined menu-item contain an anchor instead of button
    */
   @Prop() href: string;
@@ -46,19 +49,7 @@ export class MgMenuItem {
       this.navigationButtonClassList.delete(`${this.navigationButton}--${oldValue}`);
     }
     this.navigationButtonClassList.add(`${this.navigationButton}--${newValue}`);
-  }
-
-  /**
-   * Define menu-item size. Default: "large".
-   */
-  @Prop() size: MenuItemSizeType = 'large';
-  @Watch('size')
-  validateSize(newValue: MgMenuItem['size'], oldValue?: MgMenuItem['size']): void {
-    if (!sizes.includes(newValue)) {
-      throw new Error(`<${this.name}> prop "size" must be one of : ${sizes.join(', ')}.`);
-    }
-    this.navigationButtonClassList.delete(`${this.navigationButton}--size-${oldValue}`);
-    this.navigationButtonClassList.add(`${this.navigationButton}--size-${newValue}`);
+    this.statusChange.emit(newValue);
   }
 
   /**
@@ -66,7 +57,7 @@ export class MgMenuItem {
    */
   @Prop({ mutable: true }) expanded = false;
   @Watch('expanded')
-  validateExpanded(newValue: MgMenuItem['expanded']) {
+  validateExpanded(newValue: MgMenuItem['expanded']): void {
     if (typeof newValue !== 'boolean') throw new Error(`<${this.name}> prop "expanded" must be a boolean.`);
 
     // if menu-item has sub-menu we have to apply some updates:
@@ -77,10 +68,10 @@ export class MgMenuItem {
         subItems.forEach(item => {
           item.expanded = false;
         });
-      } else if (newValue && this.hasChildElementStatus(this.element, Status.ACTIVE)) {
+      } else if (this.hasStatus(this.element, Status.ACTIVE)) {
         // - when expanded and contain an active item parents are expended too
         subItems.forEach(item => {
-          if (this.hasChildElementStatus(item, Status.ACTIVE)) {
+          if (this.hasStatus(item, Status.ACTIVE)) {
             item.expanded = true;
           }
         });
@@ -88,9 +79,28 @@ export class MgMenuItem {
     }
   }
 
-  /************
+  /**********
+   * Events *
+   *********/
+
+  /**
+   * Emited event when status change
+   */
+  @Event({ eventName: 'status-change' }) statusChange: EventEmitter<MgMenuItem['status']>;
+
+  /**********
    * States *
-   ************/
+   *********/
+
+  /**
+   * Define menu-item size. Default: "regular".
+   */
+  @State() size: MenuSizeType = 'regular';
+  @Watch('size')
+  validateSize(newValue: MgMenuItem['size'], oldValue?: MgMenuItem['size']): void {
+    this.navigationButtonClassList.delete(`${this.navigationButton}--size-${oldValue}`);
+    this.navigationButtonClassList.add(`${this.navigationButton}--size-${newValue}`);
+  }
 
   /**
    * Component button classes
@@ -118,9 +128,14 @@ export class MgMenuItem {
     }
   }
 
-  /************
+  /**
+   * Does component should display notification badge.
+   */
+  @State() displayNotificationBadge: boolean;
+
+  /***********
    * Methods *
-   ************/
+   **********/
 
   /**
    * Toggle expanded prop value
@@ -132,13 +147,13 @@ export class MgMenuItem {
   };
 
   /**
-   * Does an HTMLElement contain child with given Status
+   * Does an Element have given Status
    *
-   * @param {HTMLElement} element to parse
+   * @param {Element} element to parse
    * @param {MgMenuItem['status']} status to check
    * @returns {boolean} true if element with status is found
    */
-  private hasChildElementStatus = (element: HTMLElement, status: MgMenuItem['status']): boolean => element.querySelector(`${this.name}[status="${status}"]`) !== null;
+  private hasStatus = (element: Element, status: MgMenuItem['status']): boolean => element.querySelector(`${this.name}[status="${status}"]`) !== null;
 
   /**
    * Is component contextual direction match the given direction
@@ -146,7 +161,7 @@ export class MgMenuItem {
    * @param {MgMenuItem['direction']} direction in parent menu
    * @returns {boolean} true is direction match the direction propertie
    */
-  private isdirection = (direction: MgMenuItem['direction']): boolean => this.direction === direction;
+  private isDirection = (direction: MgMenuItem['direction']): boolean => this.direction === direction;
 
   /************
    * Handlers *
@@ -159,13 +174,36 @@ export class MgMenuItem {
    * @returns {void}
    */
   private handleElementCLick = (event: MouseEvent): void => {
-    if (this.hasChildren || this.status === Status.DISABLED) {
+    if ((this.hasChildren && !this.isInMainMenu) || this.status === Status.DISABLED) {
       event.preventDefault();
       event.stopPropagation();
     }
 
     // toggle expanded when mg-menu-item has child items
     if (this.hasChildren) this.toggleExpanded();
+  };
+
+  /**
+   * Handle popover element display-change event
+   *
+   * @param {CustomEvent} event popover display event
+   * @returns {void}
+   */
+  private handlePopoverDisplay = (event: CustomEvent): void => {
+    this.expanded = event.detail;
+  };
+
+  /**
+   * Update displayNotificationBadge
+   * current component notification badge have priority over the slot badge when submenu contain badge
+   *
+   * @returns {void} update displayNotificationBadge value
+   */
+  private updateDisplayNotificationBadge = (): void => {
+    const childMenu = this.element.querySelector('mg-menu');
+    this.displayNotificationBadge =
+      childMenu !== null &&
+      Array.from(childMenu.children).some((subItem: HTMLMgMenuItemElement) => subItem.querySelector('mg-badge') !== null && subItem.getAttribute('hidden') === null);
   };
 
   /*************
@@ -178,14 +216,15 @@ export class MgMenuItem {
    * @returns {void}
    */
   componentWillLoad(): void {
-    // has children items that is NOT [slot="illustration"] || [slot="information"] element
+    // has children items that is NOT [slot='image' | 'information' | 'label' | 'metadata'] element
     // we store only matching elements
-    this.hasChildren = Array.from(this.element.children).filter(child => !['illustration', 'information', 'label', 'metadata'].includes(child.getAttribute('slot'))).length > 0;
+    this.hasChildren = Array.from(this.element.children).some(child => !['image', 'information', 'label', 'metadata'].includes(child.getAttribute('slot')));
 
     // Validate props
     this.validateSize(this.size);
     this.validateStatus(this.status);
     this.validateExpanded(this.expanded);
+    this.badgeLabel = (initLocales(this.element).messages as { plusMenu: MessageType }).plusMenu.badgeLabel;
   }
 
   /**
@@ -210,40 +249,97 @@ export class MgMenuItem {
     // https://stenciljs.com/docs/component-lifecycle#componentwillload
     return setTimeout(() => {
       // define menu-item context states
-      if (this.element.parentElement.nodeName === 'MG-MENU') {
-        this.direction = (this.element.parentElement as HTMLMgMenuElement).direction;
-      }
+      const menu = this.element.closest('mg-menu');
+      this.direction = this.element.getAttribute(OverflowBehaviorElements.MORE) !== null || menu === null ? Direction.HORIZONTAL : menu.direction;
+      this.size = menu?.size;
 
-      this.isInMainMenu = this.element.parentElement.className.includes('mg-menu-item') === false;
-      const hasNextMenuItem = this.element.nextElementSibling?.nodeName === 'MG-MENU-ITEM';
-      const hasPreviousMenuItem = this.element.previousElementSibling?.nodeName === 'MG-MENU-ITEM';
-
-      // manage last menu item
-      if (!hasNextMenuItem && hasPreviousMenuItem && this.isdirection(Direction.HORIZONTAL)) {
-        this.element.setAttribute('data-style-position-last', '');
-      }
+      this.isInMainMenu = this.element.parentElement.closest('mg-menu-item') === null;
 
       // when main menu item contain an active item it will get the active style
       // AND if item is in vertical menu it will be expanded
-      if (this.isInMainMenu && this.hasChildElementStatus(this.element, Status.ACTIVE)) {
+      const hasActiveChild = Array.from(this.element.children).some(element => this.hasStatus(element, Status.ACTIVE) && element.getAttribute('hidden') === null);
+      if (this.isInMainMenu && hasActiveChild) {
         this.status = Status.ACTIVE;
-        this.expanded = this.direction === Direction.VERTICAL;
+        this.expanded = this.isDirection(Direction.VERTICAL);
       }
 
       // manage menu items style depending to parent menu horientation
       this.element.setAttribute(`data-style-direction-${this.direction}`, '');
       this.navigationButtonClassList.add(`${this.navigationButton}--${this.direction}`);
 
-      // manage child items level
-      const childItems = Array.from(this.element.querySelectorAll('mg-menu-item'));
-      childItems.forEach(item => {
-        if (this.direction === Direction.VERTICAL) {
+      this.updateDisplayNotificationBadge();
+
+      // manage all sub levels child menu-items level with data-level attribut
+      if (this.isDirection(Direction.VERTICAL)) {
+        Array.from(this.element.querySelectorAll('mg-menu-item')).forEach(item => {
           const itemLevel = Number(item.getAttribute('data-level')) || 1;
           item.setAttribute('data-level', `${itemLevel + 1}`);
-        }
+        });
+      }
+
+      // manage first sub-level menu-items
+      const childItems = Array.from(this.element.querySelector('mg-menu')?.children || []).filter(item => item.nodeName === 'MG-MENU-ITEM');
+      childItems.forEach(item => {
+        // manage child menu listener
+        new MutationObserver(() => {
+          this.updateDisplayNotificationBadge();
+        }).observe(item, { attributes: true });
       });
     }, 0);
   }
+
+  /**
+   * Render ineractive element
+   *
+   * @returns {HTMLElement} HTML Element
+   */
+  private renderInteractiveElement(): HTMLElement {
+    const TagName: string = this.href !== undefined ? 'a' : 'button';
+    return (
+      <TagName
+        href={this.href}
+        class={this.navigationButtonClassList.join()}
+        tabindex={[Status.DISABLED, Status.HIDDEN].includes(this.status) ? -1 : 0}
+        disabled={this.status === Status.DISABLED}
+        hidden={this.status === Status.HIDDEN}
+        aria-expanded={this.hasChildren && this.expanded.toString()}
+        aria-current={this.status === Status.ACTIVE && 'page'}
+        onClick={this.handleElementCLick}
+      >
+        <slot name="image"></slot>
+        <div class={`${this.navigationButton}-center`}>
+          <div class={`${this.navigationButton}-text-content`}>
+            <slot name="label"></slot>
+            {!this.displayNotificationBadge && <slot name="information"></slot>}
+            {this.displayNotificationBadge && (
+              <span class="mg-menu-item__navigation-button-text-content-notification">
+                <mg-badge label={this.badgeLabel} value="!" variant="info" slot="information"></mg-badge>
+              </span>
+            )}
+          </div>
+          {this.size !== 'regular' && <slot name="metadata"></slot>}
+        </div>
+        {this.hasChildren && this.href === undefined && (
+          <span
+            class={{
+              [`${this.navigationButton}-chevron`]: true,
+              [`${this.navigationButton}-chevron--rotate`]: this.expanded === true,
+              'mg-a11y-animation': true,
+            }}
+          >
+            <mg-icon icon="chevron-down"></mg-icon>
+          </span>
+        )}
+      </TagName>
+    );
+  }
+
+  /**
+   * Render slot
+   *
+   * @returns {HTMLElement} HTML Element
+   */
+  private renderSlot = (): HTMLElement => <slot></slot>;
 
   /**
    * Render
@@ -251,44 +347,28 @@ export class MgMenuItem {
    * @returns {HTMLElement} HTML Element
    */
   render(): HTMLElement {
-    const TagName: string = this.href !== undefined ? 'a' : 'button';
+    const getContainerClasses = () => ({
+      [`${this.name}__collapse-container`]: true,
+      [`${this.name}__collapse-container--first-level`]: this.isInMainMenu && this.isDirection(Direction.HORIZONTAL),
+    });
+
     return (
       <Host role="menuitem" aria-haspopup={this.hasChildren.toString()}>
-        <TagName
-          href={this.href}
-          class={this.navigationButtonClassList.join()}
-          tabindex={[Status.DISABLED, Status.HIDDEN].includes(this.status) ? -1 : 0}
-          disabled={this.status === Status.DISABLED}
-          aria-expanded={this.hasChildren && this.expanded.toString()}
-          aria-current={this.status === Status.ACTIVE && 'page'}
-          onClick={this.handleElementCLick}
-        >
-          <slot name="illustration"></slot>
-          <div class={`${this.navigationButton}-center`}>
-            <div class={`${this.navigationButton}-text-content`}>
-              <slot name="label"></slot>
-              <slot name="information"></slot>
+        {this.isDirection(Direction.HORIZONTAL) && this.hasChildren && this.href === undefined ? (
+          <mg-popover display={this.expanded} placement="bottom-start" arrowHide={true} onDisplay-change={this.handlePopoverDisplay}>
+            {this.renderInteractiveElement()}
+            <div class={getContainerClasses()} slot="content">
+              {this.renderSlot()}
             </div>
-            <slot name="metadata"></slot>
-          </div>
-          {this.hasChildren && this.href === undefined && (
-            <span
-              class={{
-                [`${this.navigationButton}-chevron`]: true,
-                [`${this.navigationButton}-chevron--rotate`]: this.expanded === true,
-                'mg-a11y-animation': true,
-              }}
-            >
-              <mg-icon icon="chevron-down"></mg-icon>
-            </span>
-          )}
-        </TagName>
-        <div
-          class={{ [`${this.name}__collapse-container`]: true, [`${this.name}__collapse-container--first-level`]: this.isInMainMenu && this.isdirection(Direction.HORIZONTAL) }}
-          hidden={!this.expanded}
-        >
-          <slot></slot>
-        </div>
+          </mg-popover>
+        ) : (
+          [
+            this.renderInteractiveElement(),
+            <div class={getContainerClasses()} hidden={!this.expanded}>
+              {this.renderSlot()}
+            </div>,
+          ]
+        )}
       </Host>
     );
   }

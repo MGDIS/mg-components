@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-01-27T11:00:35",
+  "timestamp": "2023-01-30T08:48:01",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.21.0",
@@ -116,10 +116,14 @@
       "slots": [],
       "parts": [],
       "dependents": [
+        "mg-menu-item",
         "mg-tabs"
       ],
       "dependencies": [],
       "dependencyGraph": {
+        "mg-menu-item": [
+          "mg-badge"
+        ],
         "mg-tabs": [
           "mg-badge"
         ]
@@ -893,6 +897,7 @@
         "mg-input-text",
         "mg-input-textarea",
         "mg-input-toggle",
+        "mg-menu",
         "mg-menu-item",
         "mg-message",
         "mg-modal",
@@ -934,6 +939,9 @@
           "mg-icon"
         ],
         "mg-input-toggle": [
+          "mg-icon"
+        ],
+        "mg-menu": [
           "mg-icon"
         ],
         "mg-menu-item": [
@@ -4337,7 +4345,7 @@
       "filePath": "./src/components/molecules/menu/mg-menu/mg-menu.tsx",
       "encapsulation": "shadow",
       "tag": "mg-menu",
-      "readme": "## Horizontal\n\n### Use\n\n![](./mg-menu/doc/img/mg-menu-exemple.png)\n\nHorizontal menu is used with large (\"desktop\") resolutions, it is placed in the upper area of the screen.\n\n### Anatomy\n\nA menu is composed of [**mg-menu-items**](./?path=/docs/molecules-menus-mg-menu-item--mg-menu-item).\n\n### Behavior\n\n#### TODO / Too large\n\n![](./mg-menu/doc/img/mg-menu-horizontal-plus.png)\n\nWhen not all of the items can be displayed because of the width of the menu's container, items are grouped in a \"plus\" item **(TODO)**.\n\n### Specs\n\n#### Sizing\n\n![](./mg-menu/doc/img/mg-menu-horizontal-sizing.png)\n\nAn horizontal menu can display different sizes of items (see definition of **[mg-menu-item](./?path=/docs/molecules-menus-mg-menu-item--mg-menu-item)**) : regular, medium, large.\n\n#### Spacing\n\n![](./mg-menu/doc/img/mg-menu-horizontal-spacing.png)\n\nSpace between items is 0.\n\n### Vertical\n\n### Use\n\nHorizontal menu is used with large (\"desktop\") resolutions, it is placed in the left area of the screen.\n\n![](./mg-menu/doc/img/mg-menu-vertical-use.png) \n\n### Anatomy\n\nA menu is composed of **[mg-menu-item](./?path=/docs/molecules-menus-mg-menu-item--mg-menu-item)**.\n\n### Behavior\n\n#### Too high\n\n![](./mg-menu/doc/img/mg-menu-vertical-scroll.png) \n\nWhen not all of the items can be displayed because of the height of the menu's container, a scrollbar allows to see hidden items.\n\n### Specs\n\n#### Sizing\n\nThe width of the menu depend on his container.\n\n#### Spacing\n\n![](./mg-menu/doc/img/mg-menu-vertical-spacing.png) \n\nSpace between items is 0.\n\n#### Colors\n\nDefault background color is @color-light.\n\n## CSS Variables\n\n### global\n\n- `--mg-menu-background-color-hsl`: define mg-menu background color. Default: `--color-light`.\n",
+      "readme": "## Horizontal\n\n### Use\n\n![](./mg-menu/doc/img/mg-menu-exemple.png)\n\nHorizontal menu is used with large (\"desktop\") resolutions, it is placed in the upper area of the screen.\n\n### Anatomy\n\n![](./mg-menu/doc/img/mg-menu-horizontal-anatomy.png) \n\n![](./mg-menu/doc/img/mg-menu-horizontal-item-anatomy.png) \n\n### Options\n\n#### Meta\n\nMeta text is optional.\n\n#### Icon\n\nIcon is optional.\nUse it on all or none of the menu items.\n\n#### Illustration\n\nIllustration is optional.\nAn SVG can be specified instead of an icon.\n\n#### Badge\n\nBadge is optional.\nUse it when you need to notify new events in this section.\n\n### Behavior\n\n#### Sizing\n\n![](./mg-menu/doc/img/mg-menu-horizontal-sizing.png) \n\nA horizontal menu can display different item sizes: regular, medium, large.\n\n![](./mg-menu/doc/img/mg-menu-horizontal-sizing-itemmaxwidth.png) \n\nThe content of the element determines its width, but to handle the case where the content is too large (long label), it is possible to specify a maximum width for the element._Label_ and _Meta_ are then truncated.\n\n#### Sub-content\n\n![](./mg-menu/doc/img/mg-menu-horizontal-subcontent-submenu.png)\n\n![](./mg-menu/doc/img/mg-menu-horizontal-subcontent-slot.png) \n\nA \"submenu\" or a \"free content\" can be set to the item.\nAn icon \"chevron-down\" at the right of the item informs the user.\n\n##### Badge\n\n![](./mg-menu/doc/img/mg-menu-horizontal-subcontent-badge.png) \n\nIf at least one sub-item has a badge, the item displays a badge with an exclamation symbol.\n\n#### Overflow\n\n![](./mg-menu/doc/img/mg-menu-horizontal-plus.png) \n\nWhen not all items can be displayed due to the width of the menu container, the items are grouped into a \"plus item\".\n\n## Vertical\n\n### Use\n\n![](./mg-menu/doc/img/mg-menu-vertical-use.png) \n\nThe horizontal menu is used with large resolutions (\"desktop\"), it is mainly placed in the left area of the screen.\n\n### Anatomy\n\n![](./mg-menu/doc/img/mg-menu-vertical-anatomy.png) \n\n![](./mg-menu/doc/img/mg-menu-vertical-item-anatomy.png) \n\n### Options\n\n#### Icon\n\nIcon is optional.\n\nUse it on all levels or none of the menu items.\n\n#### Badge\n\nBadge is optional.\n\nUse it when you need to notify new events in this section.\n\n### Behavior\n\n#### Sub content\n\nAn item can display a sub content which can be another vertical menu.\nThis item displays a chevron to its right.\nThe submenu is displayed by clicking on the item.\n\n##### Badge\n\n![](./mg-menu/doc/img/mg-menu-vertical-subcontent-badge.png) \n\nIf at least one sub-item has a badge, the item displays a badge with an exclamation symbol.\n\n#### Overflow\n\n![](./mg-menu/doc/img/mg-menu-vertical-scroll.png) \n\nWhen not all items can be displayed due to the height of the menu container, a scroll bar helps to see hidden items.\n\n## CSS Variables\n\n### global\n\n- `--mg-menu-background-color-hsl`: define mg-menu background color. Default: `--color-light`.\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -4377,6 +4385,54 @@
           ],
           "optional": false,
           "required": true
+        },
+        {
+          "name": "moreitem",
+          "type": "{ mgIcon?: { icon: string; }; slotLabel?: { label?: string; display?: boolean; }; size?: \"regular\" | \"large\" | \"medium\"; }",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "Customize mg-menu \"more element\"\nUsed with direction: 'vertical' to manage overflow",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "{ mgIcon?: { icon: string; }; slotLabel?: { label?: string; display?: boolean; }; size?: \"regular\""
+            },
+            {
+              "value": "large",
+              "type": "string"
+            },
+            {
+              "type": "\"medium\"; }"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "\"large\" | \"medium\" | \"regular\"",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "Define mg-menu size\nDefault: 'regular'",
+          "docsTags": [],
+          "default": "'regular'",
+          "values": [
+            {
+              "value": "large",
+              "type": "string"
+            },
+            {
+              "value": "medium",
+              "type": "string"
+            },
+            {
+              "value": "regular",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
         }
       ],
       "methods": [],
@@ -4385,15 +4441,38 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
+      "dependents": [
+        "mg-menu"
+      ],
+      "dependencies": [
+        "mg-menu-item",
+        "mg-icon",
+        "mg-menu"
+      ],
+      "dependencyGraph": {
+        "mg-menu": [
+          "mg-menu"
+        ],
+        "mg-menu-item": [
+          "mg-badge",
+          "mg-icon",
+          "mg-popover"
+        ],
+        "mg-popover": [
+          "mg-card",
+          "mg-button",
+          "mg-icon"
+        ],
+        "mg-button": [
+          "mg-icon"
+        ]
+      }
     },
     {
       "filePath": "./src/components/molecules/menu/mg-menu-item/mg-menu-item.tsx",
       "encapsulation": "shadow",
       "tag": "mg-menu-item",
-      "readme": "## Use\n\nItem menu is used with horizontal, vertical or mobile menus.\n\n## Anatomy\n\n![](./mg-menu-item/doc/img/mg-menu-item-anatomy.png) \n\nAn item must have a label.\nAn icon can be added before the text.\nA badge can be added after the text.\nWhen a submenu is available, a chevron is displayed (in horizontal and vertical menus) to indicate its presence.\n\n## Specs\n\nItem's display depends on the size of the menu (regular, medium, large) and its mode (horizontal, vertical, mobile).\n\n### Spacing\n\n![](./mg-menu-item/doc/img/mg-menu-item-spacing.png) \n\n### Sizing\n\n#### Horizontal menu\n\n![](./mg-menu-item/doc/img/mg-menu-item-sizing-horizontal.png) \n\nWidth of the item depends on its content.\n\n![](./mg-menu-item/doc/img/mg-menu-item-sizing-maxwidth.png) \n\nIf a max-width is set, the *label_ and the _meta* use an ellipsis to truncate the content if necessary.\n\n#### Vertical menu\n\n![](./mg-menu-item/doc/img/mg-menu-item-sizing-vertical.png) \n\nWidth of the item is 100% width of the menu.\n\n#### Mobile\n\n![](./mg-menu-item/doc/img/mg-menu-item-sizing-mobile.png) \n\nWidth of the item is equal to the width of the menu divided by number of items displayed.\n\n### Alignment\n\n#### Horizontal and vertical menus\n\n![](./mg-menu-item/doc/img/mg-menu-item-alignment.png) \n\nAll contents are aligned vertically.\n\n#### Vertical menu\n\n![](./mg-menu-item/doc/img/mg-menu-item-alignment-vertical.png) \n\nAll items are aligned to left.\nThe chevron is aligned to the right of the item.\n\n#### Mobile\n\n![](./mg-menu-item/doc/img/mg-menu-item-alignment-mobile.png) \n\nContent of the item is centered\n\n![](./mg-menu-item/doc/img/mg-menu-item-alignment-mobile-badge.png) \n\nBadge is positionned to 20px right and -15px up from the center of the item.\n\n### Styling\n\n![](./mg-menu-item/doc/img/mg-menu-item-styling.png) \n\nHover item : the background is colored\nActive item : the font color changes, an active bar (3px) is displayed at the bottom of the item for horizontal and mobile menus), at the left of the item for vertical menus.\n\n#### Colors\n\nStandard color is @color-dark.\nActive color is the color of the app.\nHover color is the color of the app with an opacity set to 10%.\nDisabled item's opacity is set to 30%.\n\n#### Fonts\n\nFamily : Open Sans\nRegular size : 13px\nMedium/Large size : 15px\nMobile : 12px\n\n#### Icons\n\nRegular/Medium/Large menus : regular size\nMobile menu : large size\n\n## Behavior\n\n### Click\n\nClick on an item of the menu can \n - redirect to a url\n - display child content (see below)\n\nIf child content is available, an icon \"chevron-down\" is displayed at the right of the item.\nWhen opening the child content, the chevron makes a 180° rotation.\nWhen closing the child content, the chevron returns to position 0°.\n\n## Child content\n\n### Horizontal and vertical menus\n\nChild content is displayed \n - by clicking on the item \n - by pressing the space or enter key\n\nIt is closed \n - by clicking on the item \n - by pressing the space or enter key\n - by clicking outside of the child content if the menu is horizontal\n\nThe child content can be  :\n - another horizontal or vertical menu with sub items\n - a slot for HTML content\n\n#### In an horizontal menu\n\n![](./mg-menu-item/doc/img/mg-menu-submenu-alignment.png) \n\nChild content is displayed in a floating component over the content (like a popover).\nIt is aligned to the left bottom of the item, excepted for the last item of the menu which is aligned to the right bottom.\n\nIf the floating component is higher than the screen size, there is no overflow, user has to scroll the page. \n\n![](./mg-menu-item/doc/img/mg-menu-item-child-styling.png) \n\nThe floating component has a *@color-light_ background and a _@shadow*.\n\n![](./mg-menu-item/doc/img/mg-menu-item-child-menu-spacing.png) \n\nIf the floating component displays a submenu, there are top and bottom spacing of 10px.\n\n![](./mg-menu-item/doc/img/mg-menu-item-child-slot-spacing.png) \n\nIf the floating component displays a slot, there is no spacing.\n\n![](./mg-menu-item/doc/img/mg-menu-submenu-slot.png) \n\nThe minimal width of the submenu is the item's width.\nWidth of the submenu is determined by the width of the largest item or the content of the slot.\n\n#### In a vertical menu\n\n![](./mg-menu-item/doc/img/mg-menu-submenu-vertical-menu.png) \n\nMenu is displayed under the item, with the same width. **(i) Vertical menu is recommended if you display a submenu.**\nIdem for the slot. \nThere is no space to display child content.\nItems below are pushed to bottom.\n\n##### Spacing \nSub-items add to their left spacing the spacing between left border and content of their parent's item.\n\n### Mobile menu\n\nChild content is displayed via an **mg-tray** component.\n\n![](./mg-menu-item/doc/img/mg-menu-submenu-tray.png) \n\n## CSS Variables\n\n### global\n\n- `--mg-menu-item-focused-background-color-hsl`: define mg-menu-item focused background color. default: `--mg-color-app-hsl`.\n- `--mg-menu-item-border-color-active-hsl`: define mg-menu-item border color. default: `--mg-color-app-hsl`.\n- `--mg-menu-item-color-hsl`: define mg-menu-item font color. default: `--mg-color-dark`.\n- `--mg-menu-item-color-active-hsl`: define mg-menu-item font color active. default: `--mg-color-app-hsl`.\n\n### navigation-button\n\n- `--mg-menu-item-navigation-button-max-width`: define mg-menu-item button max-width. Useful to apply `text-overflow: ellipsis;` on `mg-menu-item__navigation-button-text` element. default: `unset`.\n",
+      "readme": "## Use\n\nItem menu is used with horizontal, vertical or mobile menus.\n\n## Anatomy\n\n![](./mg-menu-item/doc/img/mg-menu-item-anatomy.png) \n\nAn item must have a label.\nAn icon can be added before the text.\nA badge can be added after the text.\nWhen a submenu is available, a chevron is displayed (in horizontal and vertical menus) to indicate its presence.\n\n## Specs\n\nItem's display depends on the size of the menu (regular, medium, large) and its mode (horizontal, vertical, mobile).\n\n### Spacing\n\n![](./mg-menu-item/doc/img/mg-menu-item-spacing.png) \n\n### Sizing\n\n#### Horizontal menu\n\n![](./mg-menu-item/doc/img/mg-menu-item-sizing-horizontal.png) \n\nWidth of the item depends on its content.\n\n![](./mg-menu-item/doc/img/mg-menu-item-sizing-maxwidth.png) \n\nIf a max-width is set, the *label_ and the _meta* use an ellipsis to truncate the content if necessary.\n\n#### Vertical menu\n\n![](./mg-menu-item/doc/img/mg-menu-item-sizing-vertical.png) \n\nWidth of the item is 100% width of the menu.\n\n#### Mobile\n\n![](./mg-menu-item/doc/img/mg-menu-item-sizing-mobile.png) \n\nWidth of the item is equal to the width of the menu divided by number of items displayed.\n\n### Alignment\n\n#### Horizontal and vertical menus\n\n![](./mg-menu-item/doc/img/mg-menu-item-alignment.png) \n\nAll contents are aligned vertically.\n\n#### Vertical menu\n\n![](./mg-menu-item/doc/img/mg-menu-item-alignment-vertical.png) \n\nAll items are aligned to left.\nThe chevron is aligned to the right of the item.\n\n#### Mobile\n\n![](./mg-menu-item/doc/img/mg-menu-item-alignment-mobile.png) \n\nContent of the item is centered\n\n![](./mg-menu-item/doc/img/mg-menu-item-alignment-mobile-badge.png) \n\nBadge is positionned to 20px right and -15px up from the center of the item.\n\n### Styling\n\n![](./mg-menu-item/doc/img/mg-menu-item-styling.png) \n\nHover item : the background is colored\nActive item : the font color changes, an active bar (3px) is displayed at the bottom of the item for horizontal and mobile menus), at the left of the item for vertical menus.\n\n#### Colors\n\nStandard color is @color-dark.\nActive color is the color of the app.\nHover color is the color of the app with an opacity set to 10%.\nDisabled item's opacity is set to 30%.\n\n#### Fonts\n\nFamily : Open Sans\nRegular size : 13px\nMedium/Large size : 15px\nMobile : 12px\n\n#### Icons\n\nRegular/Medium/Large menus : regular size\nMobile menu : large size\n\n## Behavior\n\n### Click\n\nClick on an item of the menu can \n - redirect to a url\n - display child content (see below)\n\nIf child content is available, an icon \"chevron-down\" is displayed at the right of the item.\nWhen opening the child content, the chevron makes a 180° rotation.\nWhen closing the child content, the chevron returns to position 0°.\n\n## Child content\n\n### Horizontal and vertical menus\n\nChild content is displayed \n - by clicking on the item \n - by pressing the space or enter key\n\nIt is closed \n - by clicking on the item \n - by pressing the space or enter key\n - by clicking outside of the child content if the menu is horizontal\n\nThe child content can be  :\n - another horizontal or vertical menu with sub items\n - a slot for HTML content\n\n#### In an horizontal menu\n\n![](./mg-menu-item/doc/img/mg-menu-submenu-alignment.png) \n\nChild content is displayed in a floating component over the content (like a popover).\nIt is aligned to the left bottom of the item, excepted for the last item of the menu which is aligned to the right bottom.\n\nIf the floating component is higher than the screen size, there is no overflow, user has to scroll the page. \n\n![](./mg-menu-item/doc/img/mg-menu-item-child-styling.png) \n\nThe floating component has a *@color-light_ background and a _@shadow*.\n\n![](./mg-menu-item/doc/img/mg-menu-item-child-menu-spacing.png) \n\nIf the floating component displays a submenu, there are top and bottom spacing of 10px.\n\n![](./mg-menu-item/doc/img/mg-menu-item-child-slot-spacing.png) \n\nIf the floating component displays a slot, there is no spacing.\n\n![](./mg-menu-item/doc/img/mg-menu-submenu-slot.png) \n\nThe minimal width of the submenu is the item's width.\nWidth of the submenu is determined by the width of the largest item or the content of the slot.\n\n#### In a vertical menu\n\n![](./mg-menu-item/doc/img/mg-menu-submenu-vertical-menu.png) \n\nMenu is displayed under the item, with the same width. **(i) Vertical menu is recommended if you display a submenu.**\nIdem for the slot. \nThere is no space to display child content.\nItems below are pushed to bottom.\n\n##### Spacing \nSub-items add to their left spacing the spacing between left border and content of their parent's item.\n\n### Mobile menu\n\nChild content is displayed via an **mg-tray** component.\n\n![](./mg-menu-item/doc/img/mg-menu-submenu-tray.png) \n\n## CSS Variables\n\n### global\n\n- `--mg-menu-item-focused-background-color-hsl`: define mg-menu-item focused background color. default: `--mg-color-app-hsl`.\n- `--mg-menu-item-border-color-active-hsl`: define mg-menu-item border color. default: `--mg-color-app-hsl`.\n- `--mg-menu-item-color-hsl`: define mg-menu-item font color. default: `--mg-color-dark`.\n- `--mg-menu-item-color-active-hsl`: define mg-menu-item font color active. default: `--mg-color-app-hsl`.\n- `--mg-menu-item-navigation-button-column-gap`: define mg-menu-item button column gap. default: `unset`.\n\n### navigation-button\n\n- `--mg-menu-item-navigation-button-max-width`: define mg-menu-item button max-width. Useful to apply `text-overflow: ellipsis;` on `mg-menu-item__navigation-button-text` element. default: `unset`.\n",
       "docs": "Item menu is used with horizontal, vertical or mobile menus.",
       "docsTags": [],
       "usage": {},
@@ -4421,36 +4500,10 @@
           "mutable": false,
           "attr": "href",
           "reflectToAttr": false,
-          "docs": "Define menu-item badge\nwhen defined menu-item contain an anchor instead of button",
+          "docs": "Define menu-item href\nwhen defined menu-item contain an anchor instead of button",
           "docsTags": [],
           "values": [
             {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "size",
-          "type": "\"large\" | \"medium\" | \"regular\"",
-          "mutable": false,
-          "attr": "size",
-          "reflectToAttr": false,
-          "docs": "Define menu-item size. Default: \"large\".",
-          "docsTags": [],
-          "default": "'large'",
-          "values": [
-            {
-              "value": "large",
-              "type": "string"
-            },
-            {
-              "value": "medium",
-              "type": "string"
-            },
-            {
-              "value": "regular",
               "type": "string"
             }
           ],
@@ -4485,18 +4538,45 @@
         }
       ],
       "methods": [],
-      "events": [],
+      "events": [
+        {
+          "event": "status-change",
+          "detail": "Status.ACTIVE | Status.DISABLED | Status.HIDDEN | Status.VISIBLE",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emited event when status change",
+          "docsTags": []
+        }
+      ],
       "listeners": [],
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [],
+      "dependents": [
+        "mg-menu"
+      ],
       "dependencies": [
-        "mg-icon"
+        "mg-badge",
+        "mg-icon",
+        "mg-popover"
       ],
       "dependencyGraph": {
         "mg-menu-item": [
+          "mg-badge",
+          "mg-icon",
+          "mg-popover"
+        ],
+        "mg-popover": [
+          "mg-card",
+          "mg-button",
           "mg-icon"
+        ],
+        "mg-button": [
+          "mg-icon"
+        ],
+        "mg-menu": [
+          "mg-menu-item"
         ]
       }
     },
@@ -5056,11 +5136,28 @@
       "filePath": "./src/components/molecules/mg-popover/mg-popover.tsx",
       "encapsulation": "shadow",
       "tag": "mg-popover",
-      "readme": "## Usage\n\nA popover is more enhanced than a tooltip but less blocking than a modal.\n\n## Behavior\n\nThe window is displayed when clicking on its trigger.\n\nThe window is displayed next to its trigger, usually below it. A triangle (in css) makes the link between the trigger and the window.\n\nThe window closes:\n\n- when clicking on its trigger\n- clicking outside the window\n- when the ESC key is pressed\n- when clicking on the close button at the top right corner\n\nThe size of the window is determined by the content (set a maximum size to avoid problems).\n\nThe title and the close button are optional.\n\n## Specs\n\n### Fonts\n\n![](./mg-popover/doc/img/mg-popover-fonts.png)\n\n### Spacing\n\n![](./mg-popover/doc/img/mg-popover-spacing.png)\n\n### Sizing\n\n![](./mg-popover/doc/img/mg-popover-sizing.png)\n\n### Alignments\n\n![](./mg-popover/doc/img/mg-popover-align.png)\n\n### Positioning\n\n#### Item\n\n![](./mg-popover/doc/img/mg-popover-position.png)\n\n#### Screen\n\n![](./mg-popover/doc/img/mg-popover-position-screen.png)\n\n### Style\n\n![](./mg-popover/doc/img/mg-popover-style.png)\n\n## CSS Variables\n\nIf needed some [variables](./?path=/story/css-variables--page) are available to customize the component:\n\n- `--mg-popover-background-color`: Define popover background color, default: `var(--color-light)`\n- `--mg-popover-font-color`: Define popover font color, default: `var(--color-font-dark)`\n- `--mg-popover-title-font-size`: Define popover title font size, default: `1.4rem`\n\nPlease note that the mg-popover component uses the [mg-card](./?path=/docs/atoms-mg-card--mg-card) component. This means that you can benefit from the CSS variables of [mg-card](./?path=/docs/atoms-mg-card--mg-card) to customize mg-popover. You can easily change padding, border-radius, etc. Use this feature to seamlessly adapt mg-popover to your design.\n",
+      "readme": "## Usage\n\nA popover is more enhanced than a tooltip but less blocking than a modal.\n\n## Behavior\n\nThe window is displayed when clicking on its trigger.\n\nThe window is displayed next to its trigger, usually below it. A triangle (in css) makes the link between the trigger and the window.\n\nThe window closes:\n\n- when clicking on its trigger\n- clicking outside the window\n- when the ESC key is pressed\n- when clicking on the close button at the top right corner\n\nThe size of the window is determined by the content (set a maximum size to avoid problems).\n\nThe title and the close button are optional.\n\n## Specs\n\n### Fonts\n\n![](./mg-popover/doc/img/mg-popover-fonts.png)\n\n### Spacing\n\n![](./mg-popover/doc/img/mg-popover-spacing.png)\n\n### Sizing\n\n![](./mg-popover/doc/img/mg-popover-sizing.png)\n\n### Alignments\n\n![](./mg-popover/doc/img/mg-popover-align.png)\n\n### Positioning\n\n#### Item\n\n![](./mg-popover/doc/img/mg-popover-position.png)\n\n#### Screen\n\n![](./mg-popover/doc/img/mg-popover-position-screen.png)\n\n### Style\n\n![](./mg-popover/doc/img/mg-popover-style.png)\n\n## CSS Variables\n\nIf needed some [variables](./?path=/story/css-variables--page) are available to customize the component:\n\n- `--mg-popover-background-color`: Define popover background color, default: `var(--color-light)`\n- `--mg-popover-font-color`: Define popover font color, default: `var(--color-font-dark)`\n- `--mg-popover-title-font-size`: Define popover title font size, default: `1.4rem`\n- `--mg-popover-padding-vertical`: Define popover vertical padding, default: `1.5rem`\n- `--mg-popover-padding-horizontal`: Define popover vertical padding, default: `--mg-popover-padding-vertical`\n\nPlease note that the mg-popover component uses the [mg-card](./?path=/docs/atoms-mg-card--mg-card) component. This means that you can benefit from the CSS variables of [mg-card](./?path=/docs/atoms-mg-card--mg-card) to customize mg-popover. You can easily change padding, border-radius, etc. Use this feature to seamlessly adapt mg-popover to your design.\n",
       "docs": "A popover is more enhanced than a tooltip but less blocking than a modal.",
       "docsTags": [],
       "usage": {},
       "props": [
+        {
+          "name": "arrowHide",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "arrow-hide",
+          "reflectToAttr": false,
+          "docs": "Hide popover arrow",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
         {
           "name": "closeButton",
           "type": "boolean",
@@ -5220,7 +5317,9 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [],
+      "dependents": [
+        "mg-menu-item"
+      ],
       "dependencies": [
         "mg-card",
         "mg-button",
@@ -5234,6 +5333,9 @@
         ],
         "mg-button": [
           "mg-icon"
+        ],
+        "mg-menu-item": [
+          "mg-popover"
         ]
       }
     },

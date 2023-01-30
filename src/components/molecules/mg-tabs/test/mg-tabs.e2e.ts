@@ -72,7 +72,7 @@ describe('mg-tabs', () => {
       mgTabs.items = ['Batman', 'Joker', 'Bane'];
       </script>
       `);
-      page.keyboard.down('Tab');
+      await page.keyboard.down('Tab');
       await page.waitForChanges();
 
       let screenshot = await page.screenshot();

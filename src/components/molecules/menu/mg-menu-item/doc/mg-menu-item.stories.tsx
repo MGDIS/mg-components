@@ -4,7 +4,7 @@ import { Direction } from '../../mg-menu/mg-menu.conf';
 
 export default {
   component: 'mg-menu-item',
-  title: 'Beta/menus/mg-menu-item',
+  title: 'Beta/Menus/mg-menu-item',
 };
 
 /**
@@ -19,22 +19,20 @@ const Template = (args: any): HTMLElement => <mg-menu-item {...filterArgs(args)}
 export const MgMenuItem = Template.bind({});
 
 MgMenuItem.args = {
-  identifier: 'identifier',
   slot: <span slot="label">My label</span>,
 };
 export const MgMenuItemAsLink = Template.bind({});
 
 MgMenuItemAsLink.args = {
-  identifier: 'identifier',
   href: './',
-  slot: <span slot="label">My label</span>,
+  ...MgMenuItem.args,
 };
 
 export const MgMenuItemWhitIcon = Template.bind({});
 
 MgMenuItemWhitIcon.args = {
   ...MgMenuItem.args,
-  slot: [<span slot="label">My label</span>, <mg-icon icon="user" slot="illustration"></mg-icon>],
+  slot: [<span slot="label">My label</span>, <mg-icon icon="user" slot="image"></mg-icon>],
 };
 
 export const MgMenuItemWhitBadge = Template.bind({});
@@ -48,7 +46,7 @@ export const MgMenuItemWhitBadgeAndIcon = Template.bind({});
 
 MgMenuItemWhitBadgeAndIcon.args = {
   ...MgMenuItem.args,
-  slot: [<span slot="label">My label</span>, <mg-badge value="2" label="hello" slot="information"></mg-badge>, <mg-icon icon="user" slot="illustration"></mg-icon>],
+  slot: [<span slot="label">My label</span>, <mg-badge value="2" label="hello" slot="information"></mg-badge>, <mg-icon icon="user" slot="image"></mg-icon>],
 };
 
 export const MgMenuItemWhitMetadata = Template.bind({});
@@ -69,12 +67,12 @@ MgMenuItemWhithSubmenu.args = {
         <span slot="label">Subitem 1</span>
       </mg-menu-item>
       <mg-menu-item>
-        <mg-icon icon="user" slot="illustration"></mg-icon>
+        <mg-icon icon="user" slot="image"></mg-icon>
         <span slot="label">Subitem 2</span>
       </mg-menu-item>
       <mg-menu-item>
         <span slot="label">Subitem 3</span>
-        <mg-icon icon="user" slot="illustration"></mg-icon>
+        <mg-icon icon="user" slot="image"></mg-icon>
         <mg-badge value="2" label="hello" slot="information"></mg-badge>
       </mg-menu-item>
     </mg-menu>,

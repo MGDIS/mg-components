@@ -37,7 +37,7 @@ describe('mg-tooltip', () => {
       disconnect: function () {
         return null;
       },
-      takeRecords: [],
+      takeRecords: () => [],
     });
   });
 

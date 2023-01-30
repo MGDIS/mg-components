@@ -1,3 +1,5 @@
+@import '../../../../styles/a11y.scss';
+
 :host {
   display: flex;
   background-color: hsl(var(--mg-menu-background-color-hsl, var(--color-light)));
