@@ -38,7 +38,7 @@ describe('mg-modal', () => {
       disconnect: function () {
         return null;
       },
-      takeRecords: [],
+      takeRecords: () => [],
     });
   });
 

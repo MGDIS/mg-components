@@ -1,7 +1,7 @@
-import { Component, Element, Host, h, Prop, Watch, EventEmitter, Event } from '@stencil/core';
+import { Component, Element, Host, h, Prop, Watch, EventEmitter, Event, State } from '@stencil/core';
 import { createID, isTagName } from '../../../utils/components.utils';
 import { Instance as PopperInstance, createPopper, Placement } from '@popperjs/core';
-import { getWindows } from '../../../utils/components.utils';
+import { getWindows, ClassList } from '../../../utils/components.utils';
 import { initLocales } from '../../../locales';
 
 @Component({
@@ -22,6 +22,9 @@ export class MgPopover {
   // Locales
   private messages;
 
+  // Classes
+  private readonly classArrowHide = `mg-popover--arrow-hide`;
+
   /**************
    * Decorators *
    **************/
@@ -41,6 +44,16 @@ export class MgPopover {
    * Popover placement
    */
   @Prop() placement: Placement = 'bottom';
+
+  /**
+   * Hide popover arrow
+   */
+  @Prop() arrowHide = false;
+  @Watch('arrowHide')
+  validateArrowHide(newValue: MgPopover['arrowHide']): void {
+    if (newValue) this.classList.add(this.classArrowHide);
+    else this.classList.delete(this.classArrowHide);
+  }
 
   /**
    * Define if popover has a cross button
@@ -65,6 +78,11 @@ export class MgPopover {
    * Disable popover
    */
   @Prop({ mutable: true }) disabled = false;
+
+  /**
+   * Component classes
+   */
+  @State() classList: ClassList = new ClassList(['mg-popover']);
 
   /**
    * Emited event when display value change
@@ -149,6 +167,7 @@ export class MgPopover {
     this.windows = getWindows(window);
     // Get locales
     this.messages = initLocales(this.element).messages;
+    this.validateArrowHide(this.arrowHide);
   }
 
   /**
@@ -214,7 +233,7 @@ export class MgPopover {
     return (
       <Host>
         <slot></slot>
-        <div id={this.identifier} class="mg-popover">
+        <div id={this.identifier} class={this.classList.join()}>
           <mg-card>
             {this.closeButton && (
               <mg-button identifier={this.closeButtonId} is-icon variant="flat" label={this.messages.general.close} onClick={this.handleCloseButton}>
@@ -226,7 +245,8 @@ export class MgPopover {
             </div>
             <slot name="content"></slot>
           </mg-card>
-          <div class="mg-popover__arrow" data-popper-arrow></div>
+
+          {!this.arrowHide && <div class="mg-popover__arrow" data-popper-arrow></div>}
         </div>
       </Host>
     );

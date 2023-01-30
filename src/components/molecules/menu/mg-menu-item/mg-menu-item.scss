@@ -3,18 +3,22 @@
 @import '../../../../styles/a11y.scss';
 @import '../../../../styles/mixins/navigation-button.scss';
 
+$navigation-vertical-spacing: 1rem;
 $navigation-button-sizes: (
   'regular': (
-    'vertical': 1rem,
+    'vertical': $navigation-vertical-spacing,
     'horizontal': 2rem,
+    'height': 3.8rem,
   ),
   'medium': (
-    'vertical': 1.5rem,
+    'vertical': $navigation-vertical-spacing,
     'horizontal': 3rem,
+    'height': 5.1rem,
   ),
   'large': (
-    'vertical': 2.5rem,
+    'vertical': $navigation-vertical-spacing,
     'horizontal': 4rem,
+    'height': 7.1rem,
   ),
 );
 
@@ -42,18 +46,17 @@ $navigation-button-sizes: (
 :host {
   position: relative;
   display: flex;
-}
-
-// last item style
-:host([data-style-position-last]) .mg-menu-item__collapse-container {
-  left: unset;
-  right: 0;
+  --mg-popover-padding-vertical: 0;
+  --mg-popover-padding-horizontal: 0;
 }
 
 // vertical item style
 :host([data-style-direction-vertical]) {
   flex-direction: column;
   .mg-menu-item {
+    &__navigation-button {
+      width: 100%;
+    }
     &__collapse-container {
       left: unset;
       top: unset;
@@ -68,19 +71,31 @@ $navigation-button-sizes: (
 
 // horizontal item style
 :host([data-style-direction-horizontal]) .mg-menu-item__collapse-container.mg-menu-item__collapse-container--first-level {
-  box-shadow: var(--box-shadow);
   background-color: hsl(var(--color-light));
   ::slotted(mg-menu) {
     padding: 1rem 0;
   }
 }
 
+// more menu-item element
+:host([data-overflow-more]) {
+  --mg-menu-item-navigation-button-column-gap: 0;
+  .mg-menu-item__navigation-button {
+    &-chevron {
+      display: none;
+    }
+    &-text-content ::slotted([slot='information']) {
+      margin-left: 0;
+    }
+  }
+  ::slotted(mg-menu) {
+    --mg-menu-item-navigation-button-column-gap: #{$navigation-button-column-gap};
+  }
+}
+
 .mg-menu-item {
   max-width: var(--mg-menu-item-navigation-button-max-width);
   &__collapse-container {
-    position: absolute;
-    top: 100%;
-    left: 0;
     width: max-content;
     z-index: 10;
   }
@@ -91,8 +106,11 @@ $navigation-button-sizes: (
     &-text-content {
       width: 100%;
       display: flex;
+      align-items: center;
+      &-notification,
       ::slotted([slot='information']) {
         margin-left: 1rem;
+        font-size: var(--font-size);
       }
     }
     &-chevron {
@@ -114,7 +132,17 @@ $navigation-button-sizes: (
   text-overflow: ellipsis;
 }
 
+::slotted(*) {
+  display: flex;
+  flex-direction: column;
+}
+
 // Prevent click propagation when disabled
 :host([status='disabled']) {
   pointer-events: none;
+}
+
+// fix missing "hidden" style in browser
+:host([hidden]) {
+  display: none;
 }
