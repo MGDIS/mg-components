@@ -113,7 +113,7 @@ If at least one sub-item has a badge, the item displays a badge with an exclamat
 
 ![](./mg-menu/doc/img/mg-menu-vertical-scroll.png) 
 
-When not all of the items can be displayed because of the height of the menu's container, a scrollbar allows to see hidden items.
+When not all items can be displayed due to the height of the menu container, a scroll bar helps to see hidden items.
 
 ## CSS Variables
 
