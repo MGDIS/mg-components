@@ -87,7 +87,7 @@ Horizontal menu is used with large ("desktop") resolutions, it is mostly placed 
 
 Icon is optional.
 
-Use it on all of one level or none of the items of the menu.
+Use it on all levels or none of the menu items.
 
 #### Badge
 
