@@ -33,7 +33,7 @@ You need to press <kbd>Tab</kbd> in the code example to see the component.
 
 ## Implementation with a "#" based router
 
-The `mg-skip-links` use native anchor behavior, but if your site/application use a router based on "#" links, like angularJS does, you will need to use the component "go-to-anchor" event. This event return its detail property the target anchor, then you can apply the anchor scrollTo behavior:
+`mg-skip-links` uses native anchor behavior, but if your site/app uses a "#" link-based router, like AngularJS does, you'll need to use the "go-to-anchor" component event. This event returns its detail property to the target anchor, then you can apply the scrollTo anchor behavior:
 - if the anchor is in the same window, with native javascript:
 
 ```js
