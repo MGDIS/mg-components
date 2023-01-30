@@ -257,7 +257,7 @@ export class MgMenuItem {
 
       // when main menu item contain an active item it will get the active style
       // AND if item is in vertical menu it will be expanded
-      const hasActiveChild = Array.from(this.element.children).find(element => this.hasStatus(element, Status.ACTIVE) && element.getAttribute('hidden') === null) !== undefined;
+      const hasActiveChild = Array.from(this.element.children).some(element => this.hasStatus(element, Status.ACTIVE) && element.getAttribute('hidden') === null);
       if (this.isInMainMenu && hasActiveChild) {
         this.status = Status.ACTIVE;
         this.expanded = this.isdirection(Direction.VERTICAL);
