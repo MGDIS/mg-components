@@ -41,6 +41,13 @@ You need to press <kbd>Tab</kbd> in the code example to see the component.
 | `links`  | --        | Skip links  | `SkipLink[]` | `undefined` |
 
 
+## Events
+
+| Event          | Description                       | Type                  |
+| -------------- | --------------------------------- | --------------------- |
+| `go-to-anchor` | Emited event when link is clicked | `CustomEvent<string>` |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

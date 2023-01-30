@@ -1132,6 +1132,10 @@ export interface MgPopoverCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLMgPopoverElement;
 }
+export interface MgSkipLinksCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMgSkipLinksElement;
+}
 export interface MgTabsCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLMgTabsElement;
@@ -2405,6 +2409,10 @@ declare namespace LocalJSX {
           * Skip links
          */
         "links"?: SkipLink[];
+        /**
+          * Emited event when link is clicked
+         */
+        "onGo-to-anchor"?: (event: MgSkipLinksCustomEvent<string>) => void;
     }
     interface MgTabs {
         /**

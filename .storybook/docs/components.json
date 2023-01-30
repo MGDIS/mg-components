@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-01-27T11:00:35",
+  "timestamp": "2023-01-30T10:09:19",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.21.0",
@@ -5263,7 +5263,17 @@
         }
       ],
       "methods": [],
-      "events": [],
+      "events": [
+        {
+          "event": "go-to-anchor",
+          "detail": "string",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emited event when link is clicked",
+          "docsTags": []
+        }
+      ],
       "listeners": [],
       "styles": [],
       "slots": [],
