@@ -45,7 +45,6 @@ exports[`mg-menu overflow with args { mgIcon: [Object] } 1`] = `
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -170,7 +169,6 @@ exports[`mg-menu overflow with args { mgIcon: [Object] } 1`] = `
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_5" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -241,7 +239,6 @@ exports[`mg-menu overflow with args { mgIcon: [Object] } 2`] = `
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -366,7 +363,6 @@ exports[`mg-menu overflow with args { mgIcon: [Object] } 2`] = `
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_5" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -653,7 +649,6 @@ exports[`mg-menu overflow with args { size: 'large' } 1`] = `
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -778,7 +773,6 @@ exports[`mg-menu overflow with args { size: 'large' } 1`] = `
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_5" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -849,7 +843,6 @@ exports[`mg-menu overflow with args { size: 'large' } 2`] = `
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -974,7 +967,6 @@ exports[`mg-menu overflow with args { size: 'large' } 2`] = `
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_5" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -1261,7 +1253,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 1`] = `
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -1386,7 +1377,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 1`] = `
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_5" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -1457,7 +1447,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 2`] = `
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -1582,7 +1571,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 2`] = `
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_5" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -1869,7 +1857,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 3`] = `
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -1994,7 +1981,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 3`] = `
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_5" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -2065,7 +2051,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 4`] = `
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -2190,7 +2175,6 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 4`] = `
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_5" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -2477,7 +2461,6 @@ exports[`mg-menu overflow with args undefined 1`] = `
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -2602,7 +2585,6 @@ exports[`mg-menu overflow with args undefined 1`] = `
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_5" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -2673,7 +2655,6 @@ exports[`mg-menu overflow with args undefined 2`] = `
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -2798,7 +2779,6 @@ exports[`mg-menu overflow with args undefined 2`] = `
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_5" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -3085,7 +3065,6 @@ exports[`mg-menu render with args { label: 'batman menu' } 1`] = `
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -3210,7 +3189,6 @@ exports[`mg-menu render with args { label: 'batman menu' } 1`] = `
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_5" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -3309,7 +3287,6 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'horizontal
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -3434,7 +3411,6 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'horizontal
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_5" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -3928,7 +3904,6 @@ exports[`mg-popover Should render with element 8`] = `
         </div>
         <slot name="content"></slot>
       </mg-card>
-      <div data-popper-arrow style="position: absolute;"></div>
     </div>
   </mock:shadow-root>
   <h2 slot="title">

@@ -191,7 +191,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -305,7 +304,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-expanded="true" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -419,7 +417,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -461,7 +458,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
                   </div>
                   <slot name="content"></slot>
                 </mg-card>
-                <div data-popper-arrow style="position: absolute;"></div>
               </div>
             </mock:shadow-root>
             <button aria-controls="mg-popover-test_1" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -580,7 +576,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-expanded="true" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -622,7 +617,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
                   </div>
                   <slot name="content"></slot>
                 </mg-card>
-                <div data-popper-arrow style="position: absolute;"></div>
               </div>
             </mock:shadow-root>
             <button aria-controls="mg-popover-test_1" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -741,7 +735,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-current="page" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--active mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular" tabindex="0">
@@ -783,7 +776,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
                   </div>
                   <slot name="content"></slot>
                 </mg-card>
-                <div data-popper-arrow style="position: absolute;"></div>
               </div>
             </mock:shadow-root>
             <button aria-controls="mg-popover-test_1" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -902,7 +894,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-current="page" aria-expanded="true" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--active mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular" tabindex="0">
@@ -944,7 +935,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
                   </div>
                   <slot name="content"></slot>
                 </mg-card>
-                <div data-popper-arrow style="position: absolute;"></div>
               </div>
             </mock:shadow-root>
             <button aria-controls="mg-popover-test_1" aria-expanded="true" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -1063,7 +1053,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -1161,7 +1150,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-expanded="true" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -1393,7 +1381,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-expanded="true" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -1507,7 +1494,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -1621,7 +1607,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-expanded="true" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -1663,7 +1648,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
                   </div>
                   <slot name="content"></slot>
                 </mg-card>
-                <div data-popper-arrow style="position: absolute;"></div>
               </div>
             </mock:shadow-root>
             <button aria-controls="mg-popover-test_1" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -1782,7 +1766,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -1824,7 +1807,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
                   </div>
                   <slot name="content"></slot>
                 </mg-card>
-                <div data-popper-arrow style="position: absolute;"></div>
               </div>
             </mock:shadow-root>
             <button aria-controls="mg-popover-test_1" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -1943,7 +1925,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-current="page" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--active mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular" tabindex="0">
@@ -1985,7 +1966,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
                   </div>
                   <slot name="content"></slot>
                 </mg-card>
-                <div data-popper-arrow style="position: absolute;"></div>
               </div>
             </mock:shadow-root>
             <button aria-controls="mg-popover-test_1" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -2104,7 +2084,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-current="page" aria-expanded="true" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--active mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular" tabindex="0">
@@ -2146,7 +2125,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
                   </div>
                   <slot name="content"></slot>
                 </mg-card>
-                <div data-popper-arrow style="position: absolute;"></div>
               </div>
             </mock:shadow-root>
             <button aria-controls="mg-popover-test_1" aria-expanded="true" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -2265,7 +2243,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-expanded="true" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -2363,7 +2340,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -2595,7 +2571,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -2709,7 +2684,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-expanded="true" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -2823,7 +2797,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -2865,7 +2838,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
                   </div>
                   <slot name="content"></slot>
                 </mg-card>
-                <div data-popper-arrow style="position: absolute;"></div>
               </div>
             </mock:shadow-root>
             <button aria-controls="mg-popover-test_1" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -2984,7 +2956,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-expanded="true" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -3026,7 +2997,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
                   </div>
                   <slot name="content"></slot>
                 </mg-card>
-                <div data-popper-arrow style="position: absolute;"></div>
               </div>
             </mock:shadow-root>
             <button aria-controls="mg-popover-test_1" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -3145,7 +3115,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-current="page" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--active mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular" tabindex="0">
@@ -3187,7 +3156,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
                   </div>
                   <slot name="content"></slot>
                 </mg-card>
-                <div data-popper-arrow style="position: absolute;"></div>
               </div>
             </mock:shadow-root>
             <button aria-controls="mg-popover-test_1" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -3306,7 +3274,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-current="page" aria-expanded="true" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--active mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular" tabindex="0">
@@ -3348,7 +3315,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
                   </div>
                   <slot name="content"></slot>
                 </mg-card>
-                <div data-popper-arrow style="position: absolute;"></div>
               </div>
             </mock:shadow-root>
             <button aria-controls="mg-popover-test_1" aria-expanded="true" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -3467,7 +3433,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -3565,7 +3530,6 @@ exports[`mg-menu-item mouse navigation should manage toggle expand with template
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-expanded="true" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -4106,7 +4070,6 @@ exports[`mg-menu-item render with expanded and sub-menu false 1`] = `
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -4220,7 +4183,6 @@ exports[`mg-menu-item render with expanded and sub-menu false 2`] = `
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-expanded="true" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -4334,7 +4296,6 @@ exports[`mg-menu-item render with expanded and sub-menu true 1`] = `
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-expanded="true" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -4448,7 +4409,6 @@ exports[`mg-menu-item render with expanded and sub-menu true 2`] = `
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -4562,7 +4522,6 @@ exports[`mg-menu-item render with expanded and sub-menu undefined 1`] = `
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -4676,7 +4635,6 @@ exports[`mg-menu-item render with expanded and sub-menu undefined 2`] = `
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-expanded="true" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -5929,7 +5887,6 @@ exports[`mg-menu-item render with vertical sub-menu 1`] = `
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -6076,7 +6033,6 @@ exports[`mg-menu-item render with vertical sub-menu 2`] = `
               </div>
               <slot name="content"></slot>
             </mg-card>
-            <div data-popper-arrow style="position: absolute;"></div>
           </div>
         </mock:shadow-root>
         <button aria-controls="mg-popover-test_0" aria-expanded="true" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
@@ -6438,7 +6394,6 @@ exports[`mg-popover Should render with element 8`] = `
         </div>
         <slot name="content"></slot>
       </mg-card>
-      <div data-popper-arrow style="position: absolute;"></div>
     </div>
   </mock:shadow-root>
   <h2 slot="title">

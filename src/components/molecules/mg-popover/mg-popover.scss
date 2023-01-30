@@ -5,7 +5,6 @@ $arrow-height: 1rem;
 $arrow-width: 3rem;
 $border-arrow-head: $arrow-height solid hsl(var(--mg-popover-background-color));
 $border-arrow-side: calc(#{$arrow-width} / 2) solid transparent;
-$position-size: 6px;
 $mg-popover-padding-vertical: var(--mg-popover-padding-vertical, 1.5rem);
 
 :host {

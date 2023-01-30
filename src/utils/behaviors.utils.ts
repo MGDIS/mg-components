@@ -20,18 +20,7 @@ export class OverflowBehavior {
   private moreELement: HTMLElement;
   private children: Element[];
 
-  constructor(private element: Element, private render: () => HTMLElement) {}
-
-  /**********
-   * Public *
-   **********/
-
-  /**
-   * init behavior
-   *
-   * @returns {void}
-   */
-  public init = (): void => {
+  constructor(private element: Element, private render: () => HTMLElement) {
     if (this.resizeObserver === undefined) {
       // add resize observer
       this.resizeObserver = new ResizeObserver(entries => {
@@ -41,7 +30,11 @@ export class OverflowBehavior {
       });
       this.resizeObserver.observe(this.element);
     }
-  };
+  }
+
+  /**********
+   * Public *
+   **********/
 
   /**
    * Disconnect ResizeObserver
@@ -58,11 +51,11 @@ export class OverflowBehavior {
    * @returns {void}
    */
   public updateActiveStatus = (): void => {
-    const hasActiveChild = Array.from(this.moreELement.querySelector('mg-menu').children)
-      .filter(element => element.nodeName === 'MG-MENU-ITEM')
-      .find((child: HTMLMgMenuItemElement) => child.getAttribute('status') === Status.ACTIVE && child.getAttribute('hidden') === null);
+    const hasActiveChild = Array.from(this.moreELement.querySelector('mg-menu').children).some(
+      element => element.nodeName === 'MG-MENU-ITEM' && element.getAttribute('status') === Status.ACTIVE && element.getAttribute('hidden') === null,
+    );
 
-    this.moreELement.setAttribute('status', hasActiveChild === undefined ? Status.VISIBLE : Status.ACTIVE);
+    this.moreELement.setAttribute('status', hasActiveChild ? Status.ACTIVE : Status.VISIBLE);
   };
 
   /************
@@ -145,8 +138,7 @@ export class OverflowBehavior {
    */
   private isOverflowElement = (cumulateWidth: number, item: HTMLElement, availableWidth: number): boolean => {
     if (item.previousElementSibling === null || this.isMoreElement(item)) return false;
-    else if (item.nextElementSibling !== null)
-      return cumulateWidth + this.moreELement.offsetWidth > availableWidth;
+    else if (!this.isMoreElement(item.nextElementSibling)) return cumulateWidth + this.moreELement.offsetWidth > availableWidth;
     else return cumulateWidth > availableWidth;
   };
 

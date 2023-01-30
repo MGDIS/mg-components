@@ -245,7 +245,8 @@ export class MgPopover {
             </div>
             <slot name="content"></slot>
           </mg-card>
-          <div class={{ 'mg-popover__arrow': !this.arrowHide }} data-popper-arrow></div>
+
+          {!this.arrowHide && <div class="mg-popover__arrow" data-popper-arrow></div>}
         </div>
       </Host>
     );

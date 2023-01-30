@@ -184,10 +184,7 @@ export class MgMenu {
       this.menuItems = Array.from(this.element.children).filter(child => child.nodeName === 'MG-MENU-ITEM') as HTMLMgMenuItemElement[];
       this.isChildMenu = this.element.closest('mg-menu-item') !== null;
       this.hasOverflow = this.direction === Direction.HORIZONTAL && !this.isChildMenu;
-      if (this.hasOverflow && isMoreItem(this.moreitem)) {
-        this.overflowBehavior = new OverflowBehavior(this.element, this.renderMgMenuMore);
-        this.overflowBehavior.init();
-      }
+      if (this.hasOverflow && isMoreItem(this.moreitem)) this.overflowBehavior = new OverflowBehavior(this.element, this.renderMgMenuMore);
     }, 0);
   }
 

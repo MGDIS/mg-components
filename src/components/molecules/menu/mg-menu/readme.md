@@ -43,8 +43,7 @@ A horizontal menu can display different item sizes: regular, medium, large.
 
 ![](./mg-menu/doc/img/mg-menu-horizontal-sizing-itemmaxwidth.png) 
 
-Le contenu de l'item détermine sa largeur, mais pour gérer le cas où le contenu peut être trop grand (libellé long), il est possible de spécifier une largeur maximale à l'item.
-*Libellé_ et _Meta* sont alors tronqués.
+The content of the element determines its width, but to handle the case where the content is too large (long label), it is possible to specify a maximum width for the element._Label_ and _Meta_ are then truncated.
 
 #### Sub-content
 
@@ -65,7 +64,7 @@ If at least one sub-item has a badge, the item displays a badge with an exclamat
 
 ![](./mg-menu/doc/img/mg-menu-horizontal-plus.png) 
 
-When not all of the items can be displayed because of the width of the menu's container, items are grouped in a "plus item".
+When not all items can be displayed due to the width of the menu container, the items are grouped into a "plus item".
 
 ## Vertical
 
@@ -73,7 +72,7 @@ When not all of the items can be displayed because of the width of the menu's co
 
 ![](./mg-menu/doc/img/mg-menu-vertical-use.png) 
 
-Horizontal menu is used with large ("desktop") resolutions, it is mostly placed in the left area of the screen.
+The horizontal menu is used with large resolutions ("desktop"), it is mainly placed in the left area of the screen.
 
 ### Anatomy
 
