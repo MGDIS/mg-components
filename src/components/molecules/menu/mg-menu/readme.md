@@ -21,7 +21,7 @@ Meta text is optional.
 #### Icon
 
 Icon is optional.
-Use it on all or none of the items of the menu.
+Use it on all or none of the menu items.
 
 #### Illustration
 
