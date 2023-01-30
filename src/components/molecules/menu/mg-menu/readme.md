@@ -100,7 +100,7 @@ Use it when you need to notify new events in this section.
 #### Sub content
 
 An item can display a sub content which can be another vertical menu.
-This item displays a chevron at its right.
+This item displays a chevron to its right.
 The submenu is displayed by clicking on the item.
 
 ##### Badge
