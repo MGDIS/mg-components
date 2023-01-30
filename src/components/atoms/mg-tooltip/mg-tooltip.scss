@@ -13,6 +13,7 @@
   // Font
   color: hsl(var(--mg-tooltip-font-color));
   text-align: start;
+  max-width: 40rem;
 
   &[data-show] {
     display: block;
