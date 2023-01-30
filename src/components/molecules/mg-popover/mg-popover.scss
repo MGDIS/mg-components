@@ -5,9 +5,10 @@ $arrow-height: 1rem;
 $arrow-width: 3rem;
 $border-arrow-head: $arrow-height solid hsl(var(--mg-popover-background-color));
 $border-arrow-side: calc(#{$arrow-width} / 2) solid transparent;
+$mg-popover-padding-vertical: var(--mg-popover-padding-vertical, 1.5rem);
 
 :host {
-  --mg-card-padding: 1.5rem;
+  --mg-card-padding: #{$mg-popover-padding-vertical} var(--mg-popover-padding-horizontal, #{$mg-popover-padding-vertical});
   --mg-card-border: none;
   --mg-card-border-radius: 0.5rem;
   --mg-card-background: hsl(var(--mg-popover-background-color));
@@ -135,6 +136,23 @@ $border-arrow-side: calc(#{$arrow-width} / 2) solid transparent;
     margin: 0 0 1rem !important;
     font-size: var(--mg-popover-title-font-size) !important;
     font-weight: 600;
+  }
+
+  &--arrow-hide.mg-popover {
+    &[data-popper-placement^='top'] {
+      padding-bottom: 0;
+    }
+    &[data-popper-placement^='bottom'] {
+      padding-top: 0;
+    }
+    &[data-popper-placement$='end'],
+    &[data-popper-placement^='left'] {
+      padding-right: 0;
+    }
+    &[data-popper-placement$='start'],
+    &[data-popper-placement^='right'] {
+      padding-left: 0;
+    }
   }
 
   @include reset-slot-card-variables();

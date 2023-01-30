@@ -4,37 +4,70 @@ import { MgBadge } from '../../../../atoms/mg-badge/mg-badge';
 import { MgIcon } from '../../../../atoms/mg-icon/mg-icon';
 import { MgMenuItem } from '../../mg-menu-item/mg-menu-item';
 import { MgMenu } from '../../mg-menu/mg-menu';
-import { sizes, Status } from '../mg-menu-item.conf';
+import { Status } from '../mg-menu-item.conf';
+import { Direction } from '../../mg-menu/mg-menu.conf';
+import { MgPopover } from '../../../mg-popover/mg-popover';
+import { mockPopperArrowError } from '../../../mg-popover/test/mg-popover.spec';
+import { forcePopoverId, setupMutationObserverMock, setupResizeObserverMock } from '../../../../../utils/unit.test.utils';
 
-const menu = (label = 'child-menu', slots) => <mg-menu label={label}>{slots}</mg-menu>;
+mockPopperArrowError();
+
+const menu = (label = 'child-menu', slots, direction?: MgMenu['direction']) => (
+  <mg-menu label={label} direction={direction}>
+    {slots}
+  </mg-menu>
+);
 const menuItem = (args, slot?) => (
   <mg-menu-item {...args}>
     {slot}
     {args.label && <span slot="label">{args.label}</span>}
     {args.metadata && <span slot="metadata">my metadata</span>}
-    {args.icon && <mg-icon slot="illustration" icon="user"></mg-icon>}
+    {args.icon && <mg-icon slot="image" icon="user"></mg-icon>}
     {args.badge && <mg-badge slot="information" label="badge label" value="1"></mg-badge>}
   </mg-menu-item>
 );
-const childMenu = (args: { label: string; status?: MgMenuItem['status'] } = { label: 'child menu item' }, slots?) => menu('child menu', menuItem(args, slots));
+const childMenu = (args: { label: string; status?: MgMenuItem['status']; direction?: MgMenu['direction']; badge?: boolean } = { label: 'child menu item' }, slots?) =>
+  menu('child menu', menuItem(args, slots), args.direction);
 const templateDefault = (args, slots?) => menu('menu', menuItem(args, slots));
 const templateTwoMenuItems = (args, slots?) => menu('menu', [menuItem(args, slots), menuItem({ label: 'item 2' })]);
 
 const getPage = async template => {
   const page = await newSpecPage({
-    components: [MgMenuItem, MgMenu, MgIcon, MgBadge],
+    components: [MgMenuItem, MgMenu, MgIcon, MgBadge, MgPopover],
     template: () => template,
   });
 
   jest.runAllTimers();
   await page.waitForChanges();
 
+  [page.doc, ...Array.from(page.doc.querySelectorAll('mg-menu')).map(el => el.shadowRoot)].forEach(el =>
+    Array.from(el.querySelectorAll('mg-menu-item')).forEach((item, index) => {
+      forcePopoverId(item, `mg-popover-test_${index}`);
+    }),
+  );
+
   return page;
 };
 
 describe('mg-menu-item', () => {
-  beforeEach(() => jest.useFakeTimers());
-  afterEach(() => jest.runOnlyPendingTimers());
+  let fireMo;
+  beforeEach(() => {
+    jest.useFakeTimers();
+    setupMutationObserverMock({
+      observe: function () {
+        fireMo = this.cb;
+      },
+      disconnect: function () {
+        return null;
+      },
+      takeRecords: () => [],
+    });
+    setupResizeObserverMock({
+      observe: () => null,
+      disconnect: () => null,
+    });
+  });
+  afterEach(() => jest.clearAllTimers());
   describe('render', () => {
     test.each([{ label: 'Batman' }, { label: 'Batman', icon: true }, { label: 'Batman', badge: true }, { label: 'Batman', metadata: true }, { label: 'Batman', href: '#link' }])(
       'with args %s',
@@ -61,12 +94,6 @@ describe('mg-menu-item', () => {
       await page.waitForChanges();
 
       expect(page.root).toMatchSnapshot();
-    });
-
-    test.each(sizes)('with size %s', async sizes => {
-      const { root } = await getPage(templateDefault({ label: 'Batman', sizes }));
-
-      expect(root).toMatchSnapshot();
     });
 
     test.each([undefined, 0, 5])('with menuIndex %s', async menuIndex => {
@@ -100,6 +127,21 @@ describe('mg-menu-item', () => {
 
       expect(page.root).toMatchSnapshot();
     });
+
+    test('with vertical sub-menu', async () => {
+      const page = await getPage(
+        templateDefault({ label: 'Batman' }, childMenu({ label: 'level 2', direction: Direction.VERTICAL }, childMenu({ label: 'level 3', direction: Direction.VERTICAL }))),
+      );
+
+      const element = page.doc.querySelector('mg-menu-item');
+
+      expect(page.root).toMatchSnapshot();
+
+      element.expanded = !element.expanded;
+      await page.waitForChanges();
+
+      expect(page.root).toMatchSnapshot();
+    });
   });
 
   describe('errors', () => {
@@ -120,16 +162,6 @@ describe('mg-menu-item', () => {
         await getPage(templateDefault({ label: ' ' }));
       } catch (err) {
         expect(err.message).toBe('<mg-menu-item> slot "label" must have text content.');
-      }
-    });
-
-    test('throw errors missing arg identifier %s', async () => {
-      expect.assertions(1);
-
-      try {
-        await getPage(templateDefault({ label: 'label', size: ' ' }));
-      } catch (err) {
-        expect(err.message).toBe('<mg-menu-item> prop "size" must be one of : regular, medium, large.');
       }
     });
 
@@ -182,27 +214,81 @@ describe('mg-menu-item', () => {
     });
   });
 
-  describe('click', () => {
-    test.each([{}, { child: true }, { status: Status.DISABLED }, { href: '/' }])('should manage prevent click action', async props => {
-      const page = await getPage(templateDefault({ label: 'Batman', ...props }, props.child === true && childMenu()));
+  describe('events', () => {
+    describe('click', () => {
+      test.each([{}, { child: true }, { status: Status.DISABLED }, { href: '/' }])('should manage prevent click action %s', async props => {
+        const page = await getPage(templateDefault({ label: 'Batman', ...props }, props.child === true && childMenu()));
 
-      const element = page.doc.querySelector('[title="Batman"]').closest('mg-menu-item');
+        const element = page.doc.querySelector('[title="Batman"]').closest('mg-menu-item');
 
-      const event = new CustomEvent('click', { bubbles: true });
+        const event = new CustomEvent('click', { bubbles: true });
 
-      const spyPreventDefault = jest.spyOn(event, 'preventDefault');
-      const spyStopPropagation = jest.spyOn(event, 'stopPropagation');
+        const spyPreventDefault = jest.spyOn(event, 'preventDefault');
+        const spyStopPropagation = jest.spyOn(event, 'stopPropagation');
 
-      element.shadowRoot.querySelector(props.href !== undefined ? 'a' : 'button').dispatchEvent(event);
+        element.shadowRoot.querySelector(props.href !== undefined ? 'a' : 'button').dispatchEvent(event);
+        await page.waitForChanges();
+
+        if (props.child) {
+          const subElement = page.doc.querySelector('mg-menu mg-menu > mg-menu-item');
+
+          subElement.shadowRoot.querySelector(props.href !== undefined ? 'a' : 'button').dispatchEvent(event);
+          await page.waitForChanges();
+
+          expect(spyPreventDefault).not.toHaveBeenCalled();
+          expect(spyStopPropagation).not.toHaveBeenCalled();
+        } else if (props.status !== undefined) {
+          expect(spyPreventDefault).toHaveBeenCalled();
+          expect(spyStopPropagation).toHaveBeenCalled();
+        } else {
+          expect(spyPreventDefault).not.toHaveBeenCalled();
+          expect(spyStopPropagation).not.toHaveBeenCalled();
+        }
+      });
+    });
+
+    describe('popover', () => {
+      test.each([true, false])('should toggle expanded from popover display-change event', async display => {
+        const page = await getPage(templateDefault({ label: 'Batman', expanded: !display }, childMenu()));
+
+        const event = new CustomEvent('display-change', { detail: display });
+
+        const element = page.doc.querySelector('[title="Batman"]').closest('mg-menu-item');
+
+        const popover = element.shadowRoot.querySelector('mg-popover');
+
+        popover.dispatchEvent(event);
+
+        expect(element.expanded).toBe(display);
+      });
+    });
+
+    describe('status-change', () => {
+      test('should emit new status, when prop status change', async () => {
+        const { rootInstance, doc } = await getPage(menuItem({ label: 'Batman' }));
+
+        const item = doc.querySelector('mg-menu-item');
+
+        const spy = jest.spyOn(rootInstance.statusChange, 'emit');
+        item.status = Status.ACTIVE;
+
+        expect(spy).toHaveBeenCalledWith(Status.ACTIVE);
+      });
+    });
+  });
+
+  describe('notification badge', () => {
+    test.each([true, false])('with args %s', async badge => {
+      const page = await getPage(menuItem({ label: 'Batman' }, childMenu({ label: 'child menu', badge })));
+
+      spyOn(page.rootInstance, 'updateDisplayNotificationBadge');
+
+      expect(page.rootInstance.updateDisplayNotificationBadge).not.toHaveBeenCalled();
+
+      fireMo([]);
       await page.waitForChanges();
 
-      if (props.child || props.status !== undefined) {
-        expect(spyPreventDefault).toHaveBeenCalled();
-        expect(spyStopPropagation).toHaveBeenCalled();
-      } else {
-        expect(spyPreventDefault).not.toHaveBeenCalled();
-        expect(spyStopPropagation).not.toHaveBeenCalled();
-      }
+      expect(page.rootInstance.updateDisplayNotificationBadge).toHaveBeenCalledTimes(1);
     });
   });
 });

@@ -73,7 +73,7 @@ describe('mg-badge', () => {
       try {
         await getPage({ value, label: 'Batman' });
       } catch (err) {
-        expect(err.message).toContain('<mg-badge> prop "value" must be interger or ponctuation character.');
+        expect(err.message).toContain('<mg-badge> prop "value" must be integer or ponctuation character.');
       }
     });
   });

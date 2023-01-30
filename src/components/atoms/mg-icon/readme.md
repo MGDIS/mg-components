@@ -63,6 +63,7 @@ If needed some [variables](./?path=/story/css-variables--page) are available to 
  - [mg-input-text](../../molecules/inputs/mg-input-text)
  - [mg-input-textarea](../../molecules/inputs/mg-input-textarea)
  - [mg-input-toggle](../../molecules/inputs/mg-input-toggle)
+ - [mg-menu](../../molecules/menu/mg-menu)
  - [mg-menu-item](../../molecules/menu/mg-menu-item)
  - [mg-message](../../molecules/mg-message)
  - [mg-modal](../../molecules/mg-modal)
@@ -85,6 +86,7 @@ graph TD;
   mg-input-text --> mg-icon
   mg-input-textarea --> mg-icon
   mg-input-toggle --> mg-icon
+  mg-menu --> mg-icon
   mg-menu-item --> mg-icon
   mg-message --> mg-icon
   mg-modal --> mg-icon

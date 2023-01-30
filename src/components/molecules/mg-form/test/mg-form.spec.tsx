@@ -68,7 +68,7 @@ describe('mg-form', () => {
       disconnect: function () {
         return null;
       },
-      takeRecords: [],
+      takeRecords: () => [],
     });
   });
 
