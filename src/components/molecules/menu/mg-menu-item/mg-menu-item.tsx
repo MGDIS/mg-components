@@ -68,7 +68,7 @@ export class MgMenuItem {
         subItems.forEach(item => {
           item.expanded = false;
         });
-      } else if (newValue && this.hasStatus(this.element, Status.ACTIVE)) {
+      } else if (this.hasStatus(this.element, Status.ACTIVE)) {
         // - when expanded and contain an active item parents are expended too
         subItems.forEach(item => {
           if (this.hasStatus(item, Status.ACTIVE)) {
