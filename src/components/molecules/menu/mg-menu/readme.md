@@ -39,7 +39,7 @@ Use it when you need to notify new events in this section.
 
 ![](./mg-menu/doc/img/mg-menu-horizontal-sizing.png) 
 
-An horizontal menu can display different sizes of items : regular, medium, large.
+A horizontal menu can display different item sizes: regular, medium, large.
 
 ![](./mg-menu/doc/img/mg-menu-horizontal-sizing-itemmaxwidth.png) 
 
