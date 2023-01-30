@@ -203,7 +203,7 @@ export class MgMenuItem {
     const childMenu = this.element.querySelector('mg-menu');
     this.displayNotificationBadge =
       childMenu !== null &&
-      Array.from(childMenu.children).find((subItem: HTMLMgMenuItemElement) => subItem.querySelector('mg-badge') !== null && subItem.getAttribute('hidden') === null) !== undefined;
+      Array.from(childMenu.children).some((subItem: HTMLMgMenuItemElement) => subItem.querySelector('mg-badge') !== null && subItem.getAttribute('hidden') === null);
   };
 
   /*************
