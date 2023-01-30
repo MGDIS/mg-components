@@ -144,8 +144,7 @@ export class OverflowBehavior {
    * @returns {boolean} truthy if element is overflow
    */
   private isOverflowElement = (cumulateWidth: number, item: HTMLElement, availableWidth: number): boolean => {
-    if (item.previousElementSibling === null) return false;
-    else if (this.isMoreElement(item)) return false;
+    if (item.previousElementSibling === null || this.isMoreElement(item)) return false;
     else if (item.previousElementSibling !== null && item.nextElementSibling !== null && !this.isMoreElement(item.nextElementSibling))
       return cumulateWidth + this.moreELement.offsetWidth > availableWidth;
     else return cumulateWidth > availableWidth;
