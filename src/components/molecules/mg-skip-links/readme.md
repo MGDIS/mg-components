@@ -31,6 +31,20 @@ Native browser behavior is retained.
 
 You need to press <kbd>Tab</kbd> in the code example to see the component.
 
+## Implementation with a "#" based router
+
+The `mg-skip-links` use native anchor behavior, but if your site/application use a router based on "#" links, like angularJS does, you will need to use the component "go-to-anchor" event. This event return its detail property the target anchor, then you can apply the anchor scrollTo behavior:
+- in case the anchor is in the same document, with some native javascript :
+
+```js
+const goToAnchor(anchor){
+    const top = document.querySelector(anchor).offsetTop;
+    window.scrollTo(0, top);
+}​
+```
+
+- in case the anchor is in parent/child/sibling iframe document, with the [moveToAnchor method from iframeRisizer](https://github.com/davidjbradshaw/iframe-resizer/blob/master/docs/parent_page/methods.md#movetoanchoranchor)
+
 <!-- Auto Generated Below -->
 
 

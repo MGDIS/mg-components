@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-01-30T10:09:19",
+  "timestamp": "2023-01-30T13:21:40",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.21.0",
@@ -5241,7 +5241,7 @@
       "filePath": "./src/components/molecules/mg-skip-links/mg-skip-links.tsx",
       "encapsulation": "shadow",
       "tag": "mg-skip-links",
-      "readme": "## Behavior\n\nOn the first tab, a banner with the link(s) is displayed by pushing the content down.\n\nThe number of links will be added according to the content of the page.\n\n## Specs\n\n### Sizing\n\nThe minimum height of the banner is 55px.\n\n### Spacing\n\nItems have an internal margin of 12px and are spaced 6px apart.\n\n### Styling\n\n- The links are in [@color-dark](./?path=/docs/style-colors--page).\n- The background of the banner is in [@color-light](./?path=/docs/style-colors--page).\n\n#### On hover\n\nThe background of the item takes the color [@color-dark](./?path=/docs/style-colors--page) at 10% opacity.\n\n#### Focus taking\n\nNative browser behavior is retained.\n\n## Code example\n\nYou need to press <kbd>Tab</kbd> in the code example to see the component.\n",
+      "readme": "## Behavior\n\nOn the first tab, a banner with the link(s) is displayed by pushing the content down.\n\nThe number of links will be added according to the content of the page.\n\n## Specs\n\n### Sizing\n\nThe minimum height of the banner is 55px.\n\n### Spacing\n\nItems have an internal margin of 12px and are spaced 6px apart.\n\n### Styling\n\n- The links are in [@color-dark](./?path=/docs/style-colors--page).\n- The background of the banner is in [@color-light](./?path=/docs/style-colors--page).\n\n#### On hover\n\nThe background of the item takes the color [@color-dark](./?path=/docs/style-colors--page) at 10% opacity.\n\n#### Focus taking\n\nNative browser behavior is retained.\n\n## Code example\n\nYou need to press <kbd>Tab</kbd> in the code example to see the component.\n\n## Implementation with a \"#\" based router\n\nThe `mg-skip-links` use native anchor behavior, but if your site/application use a router based on \"#\" links, like angularJS does, you will need to use the component \"go-to-anchor\" event. This event return its detail property the target anchor, then you can apply the anchor scrollTo behavior:\n- in case the anchor is in the same document, with some native javascript :\n\n```js\nconst goToAnchor(anchor){\n    const top = document.querySelector(anchor).offsetTop;\n    window.scrollTo(0, top);\n}​\n```\n\n- in case the anchor is in parent/child/sibling iframe document, with the [moveToAnchor method from iframeRisizer](https://github.com/davidjbradshaw/iframe-resizer/blob/master/docs/parent_page/methods.md#movetoanchoranchor)\n",
       "docs": "On the first tab, a banner with the link(s) is displayed by pushing the content down.\n\nThe number of links will be added according to the content of the page.",
       "docsTags": [],
       "usage": {},
