@@ -1,4 +1,4 @@
-import { Component, Element, h, Prop, Watch } from '@stencil/core';
+import { Component, Element, Event, EventEmitter, h, Prop, Watch } from '@stencil/core';
 import { SkipLink } from './mg-skip-links.conf';
 import { initLocales } from '../../../locales';
 
@@ -38,6 +38,25 @@ export class MgSkipLinks {
     }
   }
 
+  /**
+   * Emited event when link is clicked
+   */
+  @Event({ eventName: 'go-to-anchor' }) goToAnchor: EventEmitter<string>;
+
+  /***********
+   * Methods *
+   **********/
+
+  /**
+   * Handle link click and emit go-to-anchor event
+   *
+   * @param {MouseEvent} event mouse event
+   * @returns {void}
+   */
+  private handleLinkCLick = (event: MouseEvent & { currentTarget: HTMLElement }): void => {
+    this.goToAnchor.emit(event.currentTarget.getAttribute('href'));
+  };
+
   /*************
    * Lifecycle *
    *************/
@@ -63,7 +82,7 @@ export class MgSkipLinks {
         <ul class="mg-skip-links__list">
           {this.links.map(link => (
             <li>
-              <a class="mg-skip-links__link" href={link.href}>
+              <a class="mg-skip-links__link" href={link.href} onClick={this.handleLinkCLick}>
                 {link.label}
               </a>
             </li>
