@@ -61,7 +61,7 @@ Triangle is always centered on the call component
 
 Component's max-width is 400px.
 
-![](./mg-tooltip/doc/img/mg-tooltip-max-width.png.png)
+![](./mg-tooltip/doc/img/mg-tooltip-max-width.png)
 
 ## CSS Variables
 
