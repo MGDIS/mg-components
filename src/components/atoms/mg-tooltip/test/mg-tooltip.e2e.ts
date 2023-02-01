@@ -151,4 +151,20 @@ describe('mg-tooltip', () => {
     screenshot = await page.screenshot();
     expect(screenshot).toMatchImageSnapshot();
   });
+
+  test('Should display long tooltip with max width', async () => {
+    const page = await createPage(
+      '<mg-tooltip identifier="identifier" message="my very long content should return to line because of the max-width set to 400px in the design specification"><mg-icon icon="user"></mg-icon></mg-tooltip>',
+    );
+
+    const tooltipedElement = await page.find('mg-icon');
+
+    await page.setViewport({ width: 500, height: 100 });
+
+    tooltipedElement.triggerEvent('focus');
+    await page.waitForChanges();
+
+    const screenshot = await page.screenshot();
+    expect(screenshot).toMatchImageSnapshot();
+  });
 });
