@@ -131,4 +131,24 @@ describe('mg-tooltip', () => {
 
     expect(tooltipElement).not.toHaveAttribute('data-show');
   });
+
+  test('Should keep tooltip arrow when update message', async () => {
+    const page = await createPage('<mg-tooltip message="Batman tooltip"><mg-icon icon="user"></mg-icon></mg-tooltip>');
+
+    await page.keyboard.down('Tab');
+    await page.waitForChanges();
+
+    await page.setViewport({ width: 400, height: 100 });
+
+    let screenshot = await page.screenshot();
+    expect(screenshot).toMatchImageSnapshot();
+
+    await page.$eval('mg-tooltip', elm => {
+      (elm as HTMLMgTooltipElement).message = 'Joker is here';
+    });
+    await page.waitForChanges();
+
+    screenshot = await page.screenshot();
+    expect(screenshot).toMatchImageSnapshot();
+  });
 });
