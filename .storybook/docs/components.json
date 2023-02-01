@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-02-01T07:00:15",
+  "timestamp": "2023-02-01T13:26:37",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.21.0",
@@ -4846,7 +4846,7 @@
       "filePath": "./src/components/molecules/mg-pagination/mg-pagination.tsx",
       "encapsulation": "shadow",
       "tag": "mg-pagination",
-      "readme": "## Anatomy\n\n![](./mg-pagination/doc/img/mg-pagination-nav-anatomy.png)\n\n## Specs\n\n![](./mg-pagination/doc/img/mg-pagination-nav-specs.png)\n",
+      "readme": "## Anatomy\n\n![](./mg-pagination/doc/img/mg-pagination-nav-anatomy.png)\n\n## Specs\n\n![](./mg-pagination/doc/img/mg-pagination-nav-specs.png)\n\nIt's possible to hide the labels \"prev\" and \"next\" to show only the icons \"chevron\"\n\n![](./mg-pagination/doc/img/mg-pagination-nav-label-hide.png)\n\n",
       "docs": "![](./mg-pagination/doc/img/mg-pagination-nav-anatomy.png)",
       "docsTags": [],
       "usage": {},
@@ -4863,6 +4863,22 @@
           "values": [
             {
               "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "hideNavigationLabels",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "hide-navigation-labels",
+          "reflectToAttr": false,
+          "docs": "Hide navigation label",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
             }
           ],
           "optional": false,
