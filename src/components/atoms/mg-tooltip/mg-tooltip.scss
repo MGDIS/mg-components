@@ -14,6 +14,7 @@
   color: hsl(var(--mg-tooltip-font-color));
   text-align: start;
   max-width: 40rem;
+  box-sizing: border-box;
 
   &[data-show] {
     display: block;

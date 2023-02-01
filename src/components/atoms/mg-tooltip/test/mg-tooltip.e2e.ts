@@ -139,7 +139,7 @@ describe('mg-tooltip', () => {
 
     const tooltipedElement = await page.find('mg-icon');
 
-    await page.setViewport({ width: 500, height: 400 });
+    await page.setViewport({ width: 500, height: 100 });
 
     tooltipedElement.triggerEvent('focus');
     await page.waitForChanges();
