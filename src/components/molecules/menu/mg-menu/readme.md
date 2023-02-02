@@ -114,6 +114,10 @@ If at least one sub-item has a badge, the item displays a badge with an exclamat
 
 When not all items can be displayed due to the height of the menu container, a scroll bar helps to see hidden items.
 
+**🔺child mg-menu-item slots image / information**
+
+With a mg-badge/mg-tag/mg-icon **you must set component with HTML attributs** instead because the behavior use the [cloneNode](https://developer.mozilla.org/fr/docs/Web/API/Node/cloneNode) method wich break properties.
+
 ## CSS Variables
 
 ### global

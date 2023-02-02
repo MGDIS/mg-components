@@ -39,6 +39,7 @@ $navigation-button-column-gap: 1rem;
     line-height: var(--line-height);
     text-decoration: none;
     white-space: nowrap;
+    box-sizing: border-box;
     cursor: pointer;
     &:disabled,
     &--disabled {

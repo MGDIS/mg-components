@@ -134,18 +134,24 @@ export class MgMenu {
     const moreElement = this.element.shadowRoot.querySelector(`[${OverflowBehaviorElements.MORE}]`);
     this.menuItems.forEach((child: HTMLMgMenuItemElement) => {
       const proxy = child.cloneNode(true) as HTMLMgMenuItemElement;
+      moreElement.querySelector('mg-menu').appendChild(proxy);
+    });
+
+    const allMenuItem = Array.from(this.element.querySelectorAll('mg-menu-item:not([data-overflow-more])'));
+
+    Array.from(moreElement.querySelectorAll('mg-menu-item:not([data-overflow-more])')).forEach((proxy, index) => {
       // manage click on proxy to mirror it on initial element
       proxy.addEventListener('click', () => {
-        child.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+        (allMenuItem[index].shadowRoot.querySelector('a') || allMenuItem[index].shadowRoot.querySelector('button')).dispatchEvent(new MouseEvent('click', { bubbles: true }));
       });
 
       // manage status change miror in proxy
-      child.addEventListener('status-change', (event: CustomEvent) => {
+      allMenuItem[index].addEventListener('status-change', (event: CustomEvent) => {
         proxy.setAttribute('status', event.detail);
         this.overflowBehavior.updateActiveStatus();
       });
-      moreElement.querySelector('mg-menu').appendChild(proxy);
     });
+
     this.element.appendChild(moreElement);
 
     return this.element.querySelector(`[${OverflowBehaviorElements.MORE}]`);
