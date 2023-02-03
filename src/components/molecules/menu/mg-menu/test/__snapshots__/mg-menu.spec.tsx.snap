@@ -202,7 +202,7 @@ exports[`mg-menu overflow with args { mgIcon: [Object] } 1`] = `
   </mg-menu-item>
   <mg-menu-item aria-haspopup="false" data-style-direction-horizontal role="menuitem" status="visible">
     <mock:shadow-root>
-      <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+      <a class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" href="#bane" tabindex="0">
         <slot name="image"></slot>
         <div class="mg-menu-item__navigation-button-center">
           <div class="mg-menu-item__navigation-button-text-content">
@@ -210,7 +210,7 @@ exports[`mg-menu overflow with args { mgIcon: [Object] } 1`] = `
             <slot name="information"></slot>
           </div>
         </div>
-      </button>
+      </a>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
         <slot></slot>
       </div>
@@ -396,7 +396,7 @@ exports[`mg-menu overflow with args { mgIcon: [Object] } 2`] = `
   </mg-menu-item>
   <mg-menu-item aria-haspopup="false" data-overflow-base-index="2" data-style-direction-horizontal hidden="" role="menuitem" status="visible">
     <mock:shadow-root>
-      <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+      <a class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" href="#bane" tabindex="0">
         <slot name="image"></slot>
         <div class="mg-menu-item__navigation-button-center">
           <div class="mg-menu-item__navigation-button-text-content">
@@ -404,7 +404,7 @@ exports[`mg-menu overflow with args { mgIcon: [Object] } 2`] = `
             <slot name="information"></slot>
           </div>
         </div>
-      </button>
+      </a>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
         <slot></slot>
       </div>
@@ -806,7 +806,7 @@ exports[`mg-menu overflow with args { size: 'large' } 1`] = `
   </mg-menu-item>
   <mg-menu-item aria-haspopup="false" data-style-direction-horizontal role="menuitem" status="visible">
     <mock:shadow-root>
-      <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+      <a class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" href="#bane" tabindex="0">
         <slot name="image"></slot>
         <div class="mg-menu-item__navigation-button-center">
           <div class="mg-menu-item__navigation-button-text-content">
@@ -814,7 +814,7 @@ exports[`mg-menu overflow with args { size: 'large' } 1`] = `
             <slot name="information"></slot>
           </div>
         </div>
-      </button>
+      </a>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
         <slot></slot>
       </div>
@@ -1000,7 +1000,7 @@ exports[`mg-menu overflow with args { size: 'large' } 2`] = `
   </mg-menu-item>
   <mg-menu-item aria-haspopup="false" data-overflow-base-index="2" data-style-direction-horizontal hidden="" role="menuitem" status="visible">
     <mock:shadow-root>
-      <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+      <a class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" href="#bane" tabindex="0">
         <slot name="image"></slot>
         <div class="mg-menu-item__navigation-button-center">
           <div class="mg-menu-item__navigation-button-text-content">
@@ -1008,7 +1008,7 @@ exports[`mg-menu overflow with args { size: 'large' } 2`] = `
             <slot name="information"></slot>
           </div>
         </div>
-      </button>
+      </a>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
         <slot></slot>
       </div>
@@ -1410,7 +1410,7 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 1`] = `
   </mg-menu-item>
   <mg-menu-item aria-haspopup="false" data-style-direction-horizontal role="menuitem" status="visible">
     <mock:shadow-root>
-      <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+      <a class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" href="#bane" tabindex="0">
         <slot name="image"></slot>
         <div class="mg-menu-item__navigation-button-center">
           <div class="mg-menu-item__navigation-button-text-content">
@@ -1418,7 +1418,7 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 1`] = `
             <slot name="information"></slot>
           </div>
         </div>
-      </button>
+      </a>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
         <slot></slot>
       </div>
@@ -1604,7 +1604,7 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 2`] = `
   </mg-menu-item>
   <mg-menu-item aria-haspopup="false" data-overflow-base-index="2" data-style-direction-horizontal hidden="" role="menuitem" status="visible">
     <mock:shadow-root>
-      <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+      <a class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" href="#bane" tabindex="0">
         <slot name="image"></slot>
         <div class="mg-menu-item__navigation-button-center">
           <div class="mg-menu-item__navigation-button-text-content">
@@ -1612,7 +1612,7 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 2`] = `
             <slot name="information"></slot>
           </div>
         </div>
-      </button>
+      </a>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
         <slot></slot>
       </div>
@@ -2014,7 +2014,7 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 3`] = `
   </mg-menu-item>
   <mg-menu-item aria-haspopup="false" data-style-direction-horizontal role="menuitem" status="visible">
     <mock:shadow-root>
-      <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+      <a class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" href="#bane" tabindex="0">
         <slot name="image"></slot>
         <div class="mg-menu-item__navigation-button-center">
           <div class="mg-menu-item__navigation-button-text-content">
@@ -2022,7 +2022,7 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 3`] = `
             <slot name="information"></slot>
           </div>
         </div>
-      </button>
+      </a>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
         <slot></slot>
       </div>
@@ -2208,7 +2208,7 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 4`] = `
   </mg-menu-item>
   <mg-menu-item aria-haspopup="false" data-overflow-base-index="2" data-style-direction-horizontal hidden="" role="menuitem" status="visible">
     <mock:shadow-root>
-      <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+      <a class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" href="#bane" tabindex="0">
         <slot name="image"></slot>
         <div class="mg-menu-item__navigation-button-center">
           <div class="mg-menu-item__navigation-button-text-content">
@@ -2216,7 +2216,7 @@ exports[`mg-menu overflow with args { slotLabel: [Object] } 4`] = `
             <slot name="information"></slot>
           </div>
         </div>
-      </button>
+      </a>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
         <slot></slot>
       </div>
@@ -2618,7 +2618,7 @@ exports[`mg-menu overflow with args undefined 1`] = `
   </mg-menu-item>
   <mg-menu-item aria-haspopup="false" data-style-direction-horizontal role="menuitem" status="visible">
     <mock:shadow-root>
-      <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+      <a class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" href="#bane" tabindex="0">
         <slot name="image"></slot>
         <div class="mg-menu-item__navigation-button-center">
           <div class="mg-menu-item__navigation-button-text-content">
@@ -2626,7 +2626,7 @@ exports[`mg-menu overflow with args undefined 1`] = `
             <slot name="information"></slot>
           </div>
         </div>
-      </button>
+      </a>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
         <slot></slot>
       </div>
@@ -2812,7 +2812,7 @@ exports[`mg-menu overflow with args undefined 2`] = `
   </mg-menu-item>
   <mg-menu-item aria-haspopup="false" data-overflow-base-index="2" data-style-direction-horizontal hidden="" role="menuitem" status="visible">
     <mock:shadow-root>
-      <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+      <a class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" href="#bane" tabindex="0">
         <slot name="image"></slot>
         <div class="mg-menu-item__navigation-button-center">
           <div class="mg-menu-item__navigation-button-text-content">
@@ -2820,7 +2820,7 @@ exports[`mg-menu overflow with args undefined 2`] = `
             <slot name="information"></slot>
           </div>
         </div>
-      </button>
+      </a>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
         <slot></slot>
       </div>
@@ -3222,7 +3222,7 @@ exports[`mg-menu render with args { label: 'batman menu' } 1`] = `
   </mg-menu-item>
   <mg-menu-item aria-haspopup="false" data-style-direction-horizontal role="menuitem" status="visible">
     <mock:shadow-root>
-      <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+      <a class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" href="#bane" tabindex="0">
         <slot name="image"></slot>
         <div class="mg-menu-item__navigation-button-center">
           <div class="mg-menu-item__navigation-button-text-content">
@@ -3230,7 +3230,7 @@ exports[`mg-menu render with args { label: 'batman menu' } 1`] = `
             <slot name="information"></slot>
           </div>
         </div>
-      </button>
+      </a>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
         <slot></slot>
       </div>
@@ -3444,7 +3444,7 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'horizontal
   </mg-menu-item>
   <mg-menu-item aria-haspopup="false" data-style-direction-horizontal role="menuitem" status="visible">
     <mock:shadow-root>
-      <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+      <a class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" href="#bane" tabindex="0">
         <slot name="image"></slot>
         <div class="mg-menu-item__navigation-button-center">
           <div class="mg-menu-item__navigation-button-text-content">
@@ -3452,7 +3452,7 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'horizontal
             <slot name="information"></slot>
           </div>
         </div>
-      </button>
+      </a>
       <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
         <slot></slot>
       </div>
@@ -3612,7 +3612,7 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'vertical' 
   </mg-menu-item>
   <mg-menu-item aria-haspopup="false" data-style-direction-vertical role="menuitem" status="visible">
     <mock:shadow-root>
-      <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" tabindex="0">
+      <a class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--vertical mg-menu-item__navigation-button--visible" href="#bane" tabindex="0">
         <slot name="image"></slot>
         <div class="mg-menu-item__navigation-button-center">
           <div class="mg-menu-item__navigation-button-text-content">
@@ -3620,7 +3620,7 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'vertical' 
             <slot name="information"></slot>
           </div>
         </div>
-      </button>
+      </a>
       <div class="mg-menu-item__collapse-container" hidden="">
         <slot></slot>
       </div>

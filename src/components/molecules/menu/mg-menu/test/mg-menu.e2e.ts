@@ -43,7 +43,7 @@ const createHTML = (args, containerSize?) => `
         </mg-menu>
       </mg-menu-item>
       <mg-menu-item status="disabled"><span slot="label">1 - head-2 long</span></mg-menu-item>
-      <mg-menu-item>
+      <mg-menu-item href="#link">
         <span slot="label">1 - head-3 very long</span>
         <mg-icon icon='user' slot='image'></mg-icon>
       </mg-menu-item>

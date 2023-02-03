@@ -45,7 +45,7 @@ const getPage = async (args, withSubmenu = true) => {
             <p>If you don't know the joker, you can watch the movie.</p>
           </div>
         </mg-menu-item>
-        <mg-menu-item>
+        <mg-menu-item href="#bane">
           <span slot="label">bane</span>
         </mg-menu-item>
       </mg-menu>
@@ -199,7 +199,6 @@ describe('mg-menu', () => {
             });
             return newNode;
           };
-          item.dispatchEvent;
         });
 
         // render more menu with last menu item displayed in more menu
@@ -209,15 +208,21 @@ describe('mg-menu', () => {
         expect(page.root).toMatchSnapshot();
 
         // test click on visible more menu item
-        const lastVisbleItem = page.doc.querySelector(`[${OverflowBehaviorElements.BASE_INDEX}="2"]`) as HTMLMgMenuItemElement;
-        const spy = jest.spyOn(lastVisbleItem, 'dispatchEvent');
+        for await (const baseIndex of [1, 2]) {
+          const element = baseIndex === 1 ? 'button' : 'a';
+          const item = page.doc.querySelector(`[${OverflowBehaviorElements.BASE_INDEX}="${baseIndex}"]`) as HTMLMgMenuItemElement;
+          const itemInteractiveElement = item.shadowRoot.querySelector(element);
+          const spy = jest.spyOn(itemInteractiveElement, 'dispatchEvent');
 
-        const lastVisbleItemProxy = page.doc.querySelector(`[${OverflowBehaviorElements.PROXY_INDEX}="2"]`) as HTMLMgMenuItemElement;
-        lastVisbleItemProxy.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+          const itemProxy = page.doc.querySelector(`[${OverflowBehaviorElements.PROXY_INDEX}="${baseIndex}"]`) as HTMLMgMenuItemElement;
+          itemProxy.dispatchEvent(new MouseEvent('click', { bubbles: true }));
 
-        expect(spy).toHaveBeenCalled();
+          expect(spy).toHaveBeenCalled();
+        }
 
         // test status change on visible item to active
+        const lastVisbleItem = page.doc.querySelector(`[${OverflowBehaviorElements.BASE_INDEX}="2"]`) as HTMLMgMenuItemElement;
+        const lastVisbleItemProxy = page.doc.querySelector(`[${OverflowBehaviorElements.PROXY_INDEX}="2"]`) as HTMLMgMenuItemElement;
         lastVisbleItem.status = Status.ACTIVE;
         expect(lastVisbleItemProxy.status).toBe(Status.ACTIVE);
       },
