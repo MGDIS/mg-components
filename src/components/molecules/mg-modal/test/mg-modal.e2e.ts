@@ -89,7 +89,7 @@ describe('mg-modal', () => {
   });
 
   describe('style', () => {
-    test.only('Should render with child mg-card', async () => {
+    test('Should render with child mg-card', async () => {
       const page = await createPage(
         `<mg-modal modal-title="child mg-card" class="custom-modal-card">
         <mg-card slot="content">child card</mg-card>

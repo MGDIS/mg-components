@@ -38,6 +38,11 @@ describe('mg-illustrated-message', () => {
     expect(root).toMatchSnapshot();
   });
 
+  test('Should render even if slotted content is not an image file', async () => {
+    const { root } = await getPage({}, undefined, <span slot="illustration"></span>);
+    expect(root).toMatchSnapshot();
+  });
+
   test('Should throw error if slot title element is not a heading', async () => {
     expect.assertions(1);
     try {
@@ -47,14 +52,14 @@ describe('mg-illustrated-message', () => {
     }
   });
 
-  test.each([<span slot="illustration">Lorem Ipsum</span>, [<svg></svg>, <svg></svg>]])(
+  test.each([<div>content without illustration slot</div>, [<svg slot="illustration"></svg>, <svg slot="illustration"></svg>]])(
     'Should throw error if slot illustration is not single or element is not an image',
     async slottedIllustration => {
       expect.assertions(1);
       try {
         await getPage({}, undefined, slottedIllustration);
       } catch (err) {
-        expect(err.message).toContain('<mg-illustrated-message> Slotted illustration must be a single image: ');
+        expect(err.message).toEqual('<mg-illustrated-message> Slotted illustration must be present and unique.');
       }
     },
   );

@@ -49,5 +49,9 @@
     "close": "Fermer",
     "next": "suivant",
     "previous": "précédent"
+  },
+  "plusMenu": {
+    "moreLabel": "Menu complémentaire",
+    "badgeLabel": "Notification(s) incluse(s)"
   }
 }

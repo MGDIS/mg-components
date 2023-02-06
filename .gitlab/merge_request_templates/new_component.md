@@ -12,6 +12,7 @@
 - [ ] Browser tests
   - [ ] Chrome
   - [ ] Firefox
+  - [ ] Edge
 
 ## Reviewers
 

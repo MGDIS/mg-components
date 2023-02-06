@@ -175,6 +175,7 @@ Child content is displayed via an **mg-tray** component.
 - `--mg-menu-item-border-color-active-hsl`: define mg-menu-item border color. default: `--mg-color-app-hsl`.
 - `--mg-menu-item-color-hsl`: define mg-menu-item font color. default: `--mg-color-dark`.
 - `--mg-menu-item-color-active-hsl`: define mg-menu-item font color active. default: `--mg-color-app-hsl`.
+- `--mg-menu-item-navigation-button-column-gap`: define mg-menu-item button column gap. default: `unset`.
 
 ### navigation-button
 
@@ -185,24 +186,43 @@ Child content is displayed via an **mg-tray** component.
 
 ## Properties
 
-| Property   | Attribute  | Description                                                                       | Type                                                                  | Default          |
-| ---------- | ---------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------- | ---------------- |
-| `expanded` | `expanded` | Define menu-item content expanded. Default: false.                                | `boolean`                                                             | `false`          |
-| `href`     | `href`     | Define menu-item badge when defined menu-item contain an anchor instead of button | `string`                                                              | `undefined`      |
-| `size`     | `size`     | Define menu-item size. Default: "large".                                          | `"large" \| "medium" \| "regular"`                                    | `'large'`        |
-| `status`   | `status`   | Define menu-item status. Default: "visible"                                       | `Status.ACTIVE \| Status.DISABLED \| Status.HIDDEN \| Status.VISIBLE` | `Status.VISIBLE` |
+| Property   | Attribute  | Description                                                                      | Type                                                                  | Default          |
+| ---------- | ---------- | -------------------------------------------------------------------------------- | --------------------------------------------------------------------- | ---------------- |
+| `expanded` | `expanded` | Define menu-item content expanded. Default: false.                               | `boolean`                                                             | `false`          |
+| `href`     | `href`     | Define menu-item href when defined menu-item contain an anchor instead of button | `string`                                                              | `undefined`      |
+| `status`   | `status`   | Define menu-item status. Default: "visible"                                      | `Status.ACTIVE \| Status.DISABLED \| Status.HIDDEN \| Status.VISIBLE` | `Status.VISIBLE` |
+
+
+## Events
+
+| Event           | Description                     | Type                                                                               |
+| --------------- | ------------------------------- | ---------------------------------------------------------------------------------- |
+| `status-change` | Emited event when status change | `CustomEvent<Status.ACTIVE \| Status.DISABLED \| Status.HIDDEN \| Status.VISIBLE>` |
 
 
 ## Dependencies
 
+### Used by
+
+ - [mg-menu](../mg-menu)
+
 ### Depends on
 
+- [mg-badge](../../../atoms/mg-badge)
 - [mg-icon](../../../atoms/mg-icon)
+- [mg-popover](../../mg-popover)
 
 ### Graph
 ```mermaid
 graph TD;
+  mg-menu-item --> mg-badge
   mg-menu-item --> mg-icon
+  mg-menu-item --> mg-popover
+  mg-popover --> mg-card
+  mg-popover --> mg-button
+  mg-popover --> mg-icon
+  mg-button --> mg-icon
+  mg-menu --> mg-menu-item
   style mg-menu-item fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

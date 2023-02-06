@@ -4,11 +4,9 @@
 
 ## TODO
 
-- Add link to the issue
-- Add link to the Jira
-- Update changelog
-
-/label ~bug
+- [ ] Add link to the issue
+- [ ] Add link to the Jira
+- [ ] Update changelog
 
 ## Reviewers
 

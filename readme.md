@@ -20,45 +20,47 @@ To run MG Components, clone this repository, go to your new directory and run:
 # This repository uses pnpm as package manager
 corepack enable
 pnpm i
-npm run start
+pnpm start
 ```
 
 To build for production, run:
 
 ```bash
-npm run build
+pnpm build
 ```
 
 To run tests for the components, run:
 
 ```bash
-npm run test
+pnpm test
 
 # only unit tests
-npm run test:unit
+pnpm test:unit
 
 # only e2e tests
-npm run test:e2e
+pnpm test:e2e
 
 # filter on filename
-npm run test -- mg-icon
-npm run test:unit -- mg-icon
+pnpm test -- mg-icon
+pnpm test:unit -- mg-icon
 ```
 
 <!-- Not working for now: To regenerate snapshot you must add the `-u` parameter. -->
+
+To regenerate snapshot you must add the `--updateSnapshot` parameter.
 
 For E2E tests you **must** use [WSL](https://docs.microsoft.com/fr-fr/windows/wsl/install) or a Linux OS to get the same screenshots as the GitLab CI.
 
 To add a component, run:
 
 ```bash
-npm run generate component-path
+pnpm generate component-path
 
 # example for an atom
-npm run generate atoms/mg-icon
+pnpm generate atoms/mg-icon
 
 # example for a molecule
-npm run generate molecules/mg-message
+pnpm generate molecules/mg-message
 ```
 
 ## Naming Components
@@ -126,10 +128,17 @@ The plugin [storybook-addon-docs-stencil
 ### run
 
 ```bash
-npm run storybook
+pnpm storybook
 ```
 
 ### Notes
 
-- camelCase arguments must be written in the template, for exemple labelOnTop must be placed in the template as label-on-top={args.labelOnTop}
-- Boolean arguments with a default true value must be added like display-character-left={args.displayCharacterLeft ? 'true' : 'false'}
+To display components in our `stories`, we use the `filterArgs` method to only show the necessary arguments in the code example. It takes in the first parameter an object containing the arguments to be used, and in the second parameter, an object containing the component default values.
+
+```JS
+const Template = (args: any): HTMLElement => (
+  <mg-tooltip {...filterArgs(args, { placement: 'bottom' })}>
+    <mg-icon icon="info-circle"></mg-icon>
+  </mg-tooltip>
+);
+```
