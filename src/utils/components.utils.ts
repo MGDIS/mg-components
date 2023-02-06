@@ -143,7 +143,7 @@ const getChildWindows = (localWindow: Window, windows: Window[] = []): Window[] 
     for (let i = 0; i < localWindow.frames.length; i++) {
       const childWindow: Window = localWindow.frames[i];
       windows.push(childWindow);
-      windows.concat(getChildWindows(childWindow, windows));
+      getChildWindows(childWindow, windows);
     }
   }
   return windows;
