@@ -6,10 +6,10 @@ stages:
   - dist
   - artifact
   - review
+  - deploy
   - chromatic-publish
   - release
   - bot-publish
-  - deploy
 
 .install:
   before_script:
