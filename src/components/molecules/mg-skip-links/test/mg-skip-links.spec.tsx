@@ -36,4 +36,27 @@ describe('mg-skip-links', () => {
       expect(err.message).toMatch('<mg-skip-links> prop "links": Cannot be empty and each link must contains an href starting with a "#" and a non empty label attributes.');
     }
   });
+
+  test('should emit event when link is clicked', async () => {
+    const page = await getPage({
+      links: [
+        { href: '#content', label: 'Content' },
+        { href: '#menu', label: 'Menu' },
+        { href: '#search', label: 'Search' },
+        { href: '#footer', label: 'Footer' },
+      ],
+    });
+
+    const spyGoToAnchor = jest.spyOn(page.rootInstance.goToAnchor, 'emit');
+
+    const mgSkiplinks = page.doc.querySelector('mg-skip-links');
+    const anchor = mgSkiplinks.shadowRoot.querySelector('a');
+    const spyBlur = jest.spyOn(anchor, 'blur');
+    anchor.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+
+    await page.waitForChanges();
+
+    expect(spyGoToAnchor).toHaveBeenCalledWith('#content');
+    expect(spyBlur).toHaveBeenCalled();
+  });
 });

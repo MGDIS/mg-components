@@ -13,8 +13,8 @@ import { Width } from "./components/molecules/inputs/MgInput.conf";
 import { RadioOption } from "./components/molecules/inputs/mg-input-radio/mg-input-radio.conf";
 import { SelectOption } from "./components/molecules/inputs/mg-input-select/mg-input-select.conf";
 import { ToggleValue } from "./components/molecules/inputs/mg-input-toggle/mg-input-toggle.conf";
-import { Direction } from "./components/molecules/menu/mg-menu/mg-menu.conf";
-import { MenuItemSizeType, Status } from "./components/molecules/menu/mg-menu-item/mg-menu-item.conf";
+import { Direction, MenuSizeType, MoreItemType } from "./components/molecules/menu/mg-menu/mg-menu.conf";
+import { Status } from "./components/molecules/menu/mg-menu-item/mg-menu-item.conf";
 import { Placement } from "@popperjs/core";
 import { SkipLink } from "./components/molecules/mg-skip-links/mg-skip-links.conf";
 import { SizeType, TabItem } from "./components/molecules/mg-tabs/mg-tabs.conf";
@@ -874,6 +874,14 @@ export namespace Components {
           * Menu label. Include short menu description. Required for accessibility
          */
         "label": string;
+        /**
+          * Customize mg-menu "more element" Used with direction: 'vertical' to manage overflow
+         */
+        "moreitem": MoreItemType;
+        /**
+          * Define mg-menu size Default: 'regular'
+         */
+        "size": MenuSizeType;
     }
     interface MgMenuItem {
         /**
@@ -881,13 +889,9 @@ export namespace Components {
          */
         "expanded": boolean;
         /**
-          * Define menu-item badge when defined menu-item contain an anchor instead of button
+          * Define menu-item href when defined menu-item contain an anchor instead of button
          */
         "href": string;
-        /**
-          * Define menu-item size. Default: "large".
-         */
-        "size": MenuItemSizeType;
         /**
           * Define menu-item status. Default: "visible"
          */
@@ -983,6 +987,10 @@ export namespace Components {
     }
     interface MgPopover {
         /**
+          * Hide popover arrow
+         */
+        "arrowHide": boolean;
+        /**
           * Define if popover has a cross button
          */
         "closeButton": boolean;
@@ -1011,7 +1019,7 @@ export namespace Components {
     }
     interface MgTabs {
         /**
-          * Active tab number default: first is 1
+          * Active tab number
          */
         "activeTab": number;
         /**
@@ -1112,6 +1120,10 @@ export interface MgInputToggleCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLMgInputToggleElement;
 }
+export interface MgMenuItemCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMgMenuItemElement;
+}
 export interface MgMessageCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLMgMessageElement;
@@ -1131,6 +1143,10 @@ export interface MgPanelCustomEvent<T> extends CustomEvent<T> {
 export interface MgPopoverCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLMgPopoverElement;
+}
+export interface MgSkipLinksCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMgSkipLinksElement;
 }
 export interface MgTabsCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -2239,6 +2255,14 @@ declare namespace LocalJSX {
           * Menu label. Include short menu description. Required for accessibility
          */
         "label": string;
+        /**
+          * Customize mg-menu "more element" Used with direction: 'vertical' to manage overflow
+         */
+        "moreitem"?: MoreItemType;
+        /**
+          * Define mg-menu size Default: 'regular'
+         */
+        "size"?: MenuSizeType;
     }
     interface MgMenuItem {
         /**
@@ -2246,13 +2270,13 @@ declare namespace LocalJSX {
          */
         "expanded"?: boolean;
         /**
-          * Define menu-item badge when defined menu-item contain an anchor instead of button
+          * Define menu-item href when defined menu-item contain an anchor instead of button
          */
         "href"?: string;
         /**
-          * Define menu-item size. Default: "large".
+          * Emited event when status change
          */
-        "size"?: MenuItemSizeType;
+        "onStatus-change"?: (event: MgMenuItemCustomEvent<MgMenuItem['status']>) => void;
         /**
           * Define menu-item status. Default: "visible"
          */
@@ -2376,6 +2400,10 @@ declare namespace LocalJSX {
     }
     interface MgPopover {
         /**
+          * Hide popover arrow
+         */
+        "arrowHide"?: boolean;
+        /**
           * Define if popover has a cross button
          */
         "closeButton"?: boolean;
@@ -2405,10 +2433,14 @@ declare namespace LocalJSX {
           * Skip links
          */
         "links"?: SkipLink[];
+        /**
+          * Emited event when link is clicked
+         */
+        "onGo-to-anchor"?: (event: MgSkipLinksCustomEvent<string>) => void;
     }
     interface MgTabs {
         /**
-          * Active tab number default: first is 1
+          * Active tab number
          */
         "activeTab"?: number;
         /**

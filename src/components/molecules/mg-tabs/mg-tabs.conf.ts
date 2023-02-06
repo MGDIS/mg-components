@@ -18,7 +18,7 @@ export enum Status {
 export type TabItem = {
   label: string;
   icon?: MgIcon['icon'];
-  badge?: Pick<MgBadge, 'value' | 'variant' | 'label'>;
+  badge?: Pick<MgBadge, 'value' | 'variant' | 'label'> & { role: 'notification' | 'information' };
   status: Status;
 };
 
@@ -30,4 +30,4 @@ export const sizes = ['regular', 'large'] as const;
 /**
  * Variant type from variants
  */
-export type SizeType = typeof sizes[number];
+export type SizeType = (typeof sizes)[number];

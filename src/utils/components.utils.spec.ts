@@ -1,4 +1,4 @@
-import { createID, ClassList, allItemsAreString, isTagName } from './components.utils';
+import { createID, ClassList, allItemsAreString, isTagName, getWindows } from './components.utils';
 
 describe('components.utils', () => {
   describe('createID', () => {
@@ -65,6 +65,67 @@ describe('components.utils', () => {
       div.innerHTML = '<h1></h1><span></span>';
       const elm = div.querySelector(querySelector);
       expect(isTagName(elm as HTMLElement, ['h1'])).toEqual(expected);
+    });
+  });
+
+  describe('getWindows', () => {
+    const mockWindowFramesLength = jest.fn();
+    const mockWindowIndexZero = jest.fn();
+    Object.defineProperty(window, 'frames', {
+      value: {
+        get length() {
+          return mockWindowFramesLength();
+        },
+        get 0() {
+          return mockWindowIndexZero();
+        },
+      },
+    });
+
+    afterEach(() => {
+      jest.clearAllMocks();
+    });
+
+    test('Should return the window in an array', () => {
+      mockWindowFramesLength.mockReturnValue(0);
+      const localWindow: Window = window;
+      const windows: Window[] = getWindows(localWindow);
+      expect(windows).toHaveLength(1);
+      expect(windows[0]).toEqual(localWindow);
+    });
+
+    test('Should return the window with a parent', () => {
+      mockWindowFramesLength.mockReturnValue(0);
+      const spyWindowSelf = jest.spyOn(window, 'self', 'get').mockImplementationOnce(jest.fn());
+      const spyWindowParent = jest.spyOn(window, 'parent', 'get').mockImplementationOnce(() => window);
+
+      const windows = getWindows(window);
+      expect(windows).toHaveLength(2);
+      expect(spyWindowSelf).toBeCalledTimes(2);
+      expect(spyWindowParent).toBeCalledTimes(1);
+    });
+
+    test('Should return the window with a child', () => {
+      mockWindowFramesLength.mockReturnValueOnce(1).mockReturnValueOnce(1).mockReturnValue(0);
+      mockWindowIndexZero.mockReturnValueOnce(window);
+      const windows = getWindows(window);
+      expect(windows).toHaveLength(2);
+    });
+
+    test('Should throw an error when cannot access top parent window', () => {
+      mockWindowFramesLength.mockReturnValue(0);
+      const spyConsole = jest.spyOn(console, 'error');
+      const spyWindowSelf = jest.spyOn(window, 'self', 'get').mockImplementationOnce(jest.fn());
+      const spyWindowParent = jest.spyOn(window, 'parent', 'get').mockImplementationOnce(() => {
+        throw new Error('non');
+      });
+      const localWindow: Window = window;
+      const windows: Window[] = getWindows(localWindow);
+      expect(windows).toHaveLength(1);
+      expect(windows[0]).toEqual(localWindow);
+      expect(spyConsole).toBeCalledTimes(1);
+      expect(spyWindowSelf).toBeCalledTimes(1);
+      expect(spyWindowParent).toBeCalledTimes(1);
     });
   });
 });

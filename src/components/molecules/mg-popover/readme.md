@@ -58,6 +58,10 @@ If needed some [variables](./?path=/story/css-variables--page) are available to 
 - `--mg-popover-background-color`: Define popover background color, default: `var(--color-light)`
 - `--mg-popover-font-color`: Define popover font color, default: `var(--color-font-dark)`
 - `--mg-popover-title-font-size`: Define popover title font size, default: `1.4rem`
+- `--mg-popover-padding-vertical`: Define popover vertical padding, default: `1.5rem`
+- `--mg-popover-padding-horizontal`: Define popover horizontal padding, default: `--mg-popover-padding-vertical`
+
+Please note that the mg-popover component uses the [mg-card](./?path=/docs/atoms-mg-card--mg-card) component. This means that you can benefit from the CSS variables of [mg-card](./?path=/docs/atoms-mg-card--mg-card) to customize mg-popover. You can easily change padding, border-radius, etc. Use this feature to seamlessly adapt mg-popover to your design.
 
 <!-- Auto Generated Below -->
 
@@ -66,6 +70,7 @@ If needed some [variables](./?path=/story/css-variables--page) are available to 
 
 | Property      | Attribute      | Description                                                                      | Type                                                                                                                                                                                                         | Default                  |
 | ------------- | -------------- | -------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------ |
+| `arrowHide`   | `arrow-hide`   | Hide popover arrow                                                               | `boolean`                                                                                                                                                                                                    | `false`                  |
 | `closeButton` | `close-button` | Define if popover has a cross button                                             | `boolean`                                                                                                                                                                                                    | `false`                  |
 | `disabled`    | `disabled`     | Disable popover                                                                  | `boolean`                                                                                                                                                                                                    | `false`                  |
 | `display`     | `display`      | Display popover                                                                  | `boolean`                                                                                                                                                                                                    | `false`                  |
@@ -82,6 +87,10 @@ If needed some [variables](./?path=/story/css-variables--page) are available to 
 
 ## Dependencies
 
+### Used by
+
+ - [mg-menu-item](../menu/mg-menu-item)
+
 ### Depends on
 
 - [mg-card](../../atoms/mg-card)
@@ -95,6 +104,7 @@ graph TD;
   mg-popover --> mg-button
   mg-popover --> mg-icon
   mg-button --> mg-icon
+  mg-menu-item --> mg-popover
   style mg-popover fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

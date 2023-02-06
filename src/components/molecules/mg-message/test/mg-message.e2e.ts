@@ -15,25 +15,42 @@ const getContent = (contentSize, withAction) => {
 };
 
 describe('mg-message', () => {
-  describe.each(variants)('%s', variant => {
-    describe.each([
-      { contentSize: 'short', withAction: false, closeButton: false },
-      { contentSize: 'long', withAction: false, closeButton: false },
-      { contentSize: 'short', withAction: true, closeButton: false },
-      { contentSize: 'long', withAction: true, closeButton: false },
-      { contentSize: 'short', withAction: false, closeButton: true },
-      { contentSize: 'long', withAction: false, closeButton: true },
-    ])('params %s', ({ contentSize, withAction, closeButton }) => {
-      test('Should render', async () => {
-        const page = await createPage(`<mg-message variant="${variant}" close-button="${closeButton}">${getContent(contentSize, withAction)}</mg-message>`);
+  test('Should render', async () => {
+    const html = variants
+      .map(variant => {
+        const props = [
+          { contentSize: 'short', withAction: false, closeButton: false },
+          { contentSize: 'long', withAction: false, closeButton: false },
+          { contentSize: 'short', withAction: true, closeButton: false },
+          { contentSize: 'long', withAction: true, closeButton: false },
+          { contentSize: 'short', withAction: false, closeButton: true },
+          { contentSize: 'long', withAction: false, closeButton: true },
+        ];
+        return props
+          .map(({ contentSize, withAction, closeButton }) => `<mg-message variant="${variant}" close-button="${closeButton}">${getContent(contentSize, withAction)}</mg-message>`)
+          .join('');
+      })
+      .join('');
+    const page = await createPage(html);
 
-        const element = await page.find('mg-message');
-        expect(element).toHaveClass('hydrated');
+    const screenshot = await page.screenshot();
+    expect(screenshot).toMatchImageSnapshot();
+  });
 
-        const screenshot = await page.screenshot();
-        expect(screenshot).toMatchImageSnapshot();
-      });
-    });
+  test('Should render with child mg-card', async () => {
+    const page = await createPage(`
+      <mg-message class="custom-message-card">
+        <mg-card>child card</mg-card>
+      </mg-message>
+      <style>
+        .custom-message-card {
+          --mg-card-background: hsl(var(--color-danger));
+        }
+      </style>
+    `);
+
+    const screenshot = await page.screenshot();
+    expect(screenshot).toMatchImageSnapshot();
   });
 
   test('Should hide message on close button click', async () => {

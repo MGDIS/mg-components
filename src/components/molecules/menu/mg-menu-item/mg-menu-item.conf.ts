@@ -15,13 +15,3 @@ export enum Status {
   DISABLED = 'disabled',
   ACTIVE = 'active',
 }
-
-/**
- * List of all possibles sizes
- */
-export const sizes = ['regular', 'medium', 'large'] as const;
-
-/**
- * item Size from sizes
- */
-export type MenuItemSizeType = typeof sizes[number];

@@ -8,14 +8,13 @@ import { MgButton } from '../../../atoms/mg-button/mg-button';
 // this is due to internal function isHTMLElement(), so we can not mock it directly.
 // this function check if test DOM element mockHTMLElement instance is 'instanceof HTMLElement'
 // so we only override the console.error side effect for this error
-const errorFunction = console.error;
-const mock = jest.spyOn(console, 'error');
-mock.mockImplementation(error => {
-  const compareWith = 'Popper: "arrow" element must be an HTMLElement (not an SVGElement). To use an SVG arrow, wrap it in an HTMLElement that will be used as the arrow.';
-  if (error !== compareWith) {
-    errorFunction(error);
-  }
-});
+export const mockPopperArrowError = (): jest.SpyInstance =>
+  jest.spyOn(console, 'error').mockImplementation(error => {
+    const compareWith = 'Popper: "arrow" element must be an HTMLElement (not an SVGElement). To use an SVG arrow, wrap it in an HTMLElement that will be used as the arrow.';
+    if (error !== compareWith) console.error(error);
+  });
+
+mockPopperArrowError();
 
 const getPage = (args, element) =>
   newSpecPage({
@@ -23,7 +22,14 @@ const getPage = (args, element) =>
     template: () => <mg-popover {...args}>{element}</mg-popover>,
   });
 
+Object.defineProperty(window, 'frames', {
+  value: { length: 0 },
+});
+
 describe('mg-popover', () => {
+  beforeEach(() => jest.useFakeTimers());
+  afterEach(() => jest.clearAllTimers());
+
   test.each([
     { identifier: 'identifier' },
     { identifier: 'identifier', placement: 'auto' },
@@ -32,6 +38,7 @@ describe('mg-popover', () => {
     { identifier: 'identifier', display: true },
     { identifier: 'identifier', closeButton: true, lang: 'fr' },
     { identifier: 'identifier', closeButton: true, lang: 'xx' },
+    { identifier: 'identifier', arrowHide: true },
   ])('Should render with element', async args => {
     const { root } = await getPage(args, [
       <h2 slot="title">Blu bli blo bla</h2>,
@@ -52,8 +59,6 @@ describe('mg-popover', () => {
     { eventIn: 'click', eventOut: 'clickDocument' },
     { eventIn: 'click', eventOut: 'clickPopover' },
   ])('Should manage display on events %s', async ({ eventIn, eventOut }) => {
-    jest.clearAllTimers();
-
     const args = { identifier: 'identifier', closeButton: true };
     const page = await getPage(args, [
       <h2 slot="title">Blu bli blo bla</h2>,

@@ -129,7 +129,7 @@ export class MgTooltip {
           this.setDisplay(isMouseenter, this.guard !== conditionalGuard);
           this.resetGuard();
         }, 100);
-      } else if (isMouseenter && elementGuard === Guard.HOVER_TOOLTIPED_ELEMENT) {
+      } else if (this.guard === Guard.HOVER_TOOLTIPED_ELEMENT) {
         this.setDisplay(isMouseenter);
       }
     }
@@ -203,7 +203,7 @@ export class MgTooltip {
     });
 
     ['blur', 'keydown'].forEach(event => {
-      this.tooltipedElement.addEventListener(event, (e: UIEvent & KeyboardEvent) => {
+      document.addEventListener(event, (e: UIEvent & KeyboardEvent) => {
         // we continue to process ONLY for KeyboardEvents 'Escape'
         if (e.type === 'keydown' && e.code !== 'Escape') {
           return;
@@ -281,7 +281,8 @@ export class MgTooltip {
     return (
       <Host>
         <slot></slot>
-        <div role="tooltip" id={this.identifier} class="mg-tooltip" innerHTML={this.message}>
+        <div role="tooltip" id={this.identifier} class="mg-tooltip">
+          <span innerHTML={this.message}></span>
           <div class="mg-tooltip__arrow" data-popper-arrow></div>
         </div>
       </Host>

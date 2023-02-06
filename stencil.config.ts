@@ -17,6 +17,10 @@ export const config: Config = {
           dest: 'variables.css', // export variable in a seperate file for component inside another framework
         },
         {
+          src: 'styles/**/*.scss',
+          dest: './styles', // export variable in a seperate file for component inside another framework
+        },
+        {
           src: 'styles/fonts',
           dest: 'fonts', // export fonts
         },
@@ -45,6 +49,9 @@ export const config: Config = {
       type: 'www',
       serviceWorker: null, // disable service workers
       copy: [
+        {
+          src: 'iframe.html',
+        },
         {
           src: 'styles/variables.css',
           dest: 'build/variables.css', // export variable for working space

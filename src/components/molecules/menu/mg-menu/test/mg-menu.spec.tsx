@@ -1,55 +1,90 @@
 import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
 import { MgMenu } from '../mg-menu';
+import { Direction } from '../mg-menu.conf';
 import { MgMenuItem } from '../../mg-menu-item/mg-menu-item';
+import { MgPopover } from '../../../mg-popover/mg-popover';
+import { mockPopperArrowError } from '../../../mg-popover/test/mg-popover.spec';
+import { forcePopoverId, setupMutationObserverMock, setupResizeObserverMock } from '../../../../../utils/unit.test.utils';
+import { OverflowBehaviorElements } from '../../../../../utils/behaviors.utils';
+import { Status } from '../../mg-menu-item/mg-menu-item.conf';
 
-const getPage = async args => {
+mockPopperArrowError();
+
+const getPage = async (args, withSubmenu = true) => {
   const page = await newSpecPage({
-    components: [MgMenu, MgMenuItem],
+    components: [MgMenu, MgMenuItem, MgPopover],
     template: () => (
       <mg-menu {...args}>
         <mg-menu-item>
           <span slot="label">batman</span>
-          <mg-menu label="batman - submenu">
-            <mg-menu-item>
-              <span slot="label">batman begins</span>
-              <mg-menu label="batman begins - submenu">
-                <mg-menu-item>
-                  <span slot="label">movie</span>
-                </mg-menu-item>
-              </mg-menu>
-            </mg-menu-item>
-            <mg-menu-item>
-              <span slot="label">joker: the dark knight</span>
-            </mg-menu-item>
-            <mg-menu-item>
-              <span slot="label">bane: the dark knight rise</span>
-            </mg-menu-item>
-          </mg-menu>
+          {withSubmenu && (
+            <mg-menu label="batman - submenu" direction={Direction.VERTICAL}>
+              <mg-menu-item>
+                <span slot="label">batman begins</span>
+                <mg-menu label="batman begins - submenu" direction={Direction.VERTICAL}>
+                  <mg-menu-item>
+                    <span slot="label">movie</span>
+                  </mg-menu-item>
+                </mg-menu>
+              </mg-menu-item>
+              <mg-menu-item>
+                <span slot="label">joker: the dark knight</span>
+              </mg-menu-item>
+              <mg-menu-item>
+                <span slot="label">bane: the dark knight rise</span>
+              </mg-menu-item>
+            </mg-menu>
+          )}
         </mg-menu-item>
         <mg-menu-item>
           <span slot="label">joker</span>
+          {args.badge && <mg-badge value={1} label="bad guy"></mg-badge>}
           <div>
             <h2>This is a joker card</h2>
             <p>If you don't know the joker, you can watch the movie.</p>
           </div>
         </mg-menu-item>
-        <mg-menu-item>
+        <mg-menu-item href="#bane">
           <span slot="label">bane</span>
         </mg-menu-item>
       </mg-menu>
     ),
   });
 
-  jest.runAllTimers();
+  jest.runOnlyPendingTimers();
   await page.waitForChanges();
+
+  [page.doc, ...Array.from(page.doc.querySelectorAll('mg-menu')).map(el => el.shadowRoot)].forEach(el =>
+    Array.from(el.querySelectorAll('mg-menu-item')).forEach((item, index) => {
+      forcePopoverId(item, `mg-popover-test_${index}`);
+    }),
+  );
 
   return page;
 };
 
 describe('mg-menu', () => {
-  beforeEach(() => jest.useFakeTimers());
-  afterEach(() => jest.runOnlyPendingTimers());
+  let fireRo;
+  beforeEach(() => {
+    jest.useFakeTimers();
+    setupResizeObserverMock({
+      observe: function () {
+        fireRo = this.cb;
+      },
+      disconnect: function () {
+        return null;
+      },
+    });
+    setupMutationObserverMock({
+      observe: () => null,
+      disconnect: () => null,
+      takeRecords: () => [],
+    });
+  });
+
+  afterEach(() => jest.clearAllTimers());
+
   describe('render', () => {
     test.each([{ label: 'batman menu' }, { label: 'batman menu', direction: 'horizontal' }, { label: 'batman menu', direction: 'vertical' }])('with args %s', async args => {
       const { root } = await getPage(args);
@@ -59,60 +94,57 @@ describe('mg-menu', () => {
   });
 
   describe('errors', () => {
-    test('Should throw error when missing label', async () => {
-      const args = { direction: 'horizontal' };
-
+    const baseProps = { label: 'batman menu' };
+    test.each([
+      { props: { direction: 'horizontal' }, error: '<mg-menu> prop "label" is required.' },
+      { props: { ...baseProps, direction: 'test' }, error: '<mg-menu> prop "direction" must be one of : horizontal, vertical.' },
+      { props: { ...baseProps, direction: Direction.VERTICAL, moreitem: { icon: 'user' } }, error: '<mg-menu> prop "moreitem" must be paired with direction horizontal.' },
+      { props: { ...baseProps, moreitem: {} }, error: '<mg-menu> prop "moreitem" must match MoreItemType.' },
+      { props: { ...baseProps, moreitem: { mgIcon: {} } }, error: '<mg-menu> prop "moreitem" must match MoreItemType.' },
+      { props: { ...baseProps, moreitem: { slotLabel: {} } }, error: '<mg-menu> prop "moreitem" must match MoreItemType.' },
+      { props: { ...baseProps, size: 'batman' }, error: '<mg-menu> prop "size" must be one of : regular, medium, large.' },
+    ])('Should throw error when props are invalid, case %s', async ({ props, error }) => {
       expect.assertions(1);
 
       try {
-        await getPage(args);
+        await getPage(props);
       } catch (err) {
-        expect(err.message).toMatch('<mg-menu> prop "label" is required.');
-      }
-    });
-
-    test('Should throw error when direction has invalid value', async () => {
-      const args = { label: 'batman menu', direction: 'test' };
-
-      expect.assertions(1);
-
-      try {
-        await getPage(args);
-      } catch (err) {
-        expect(err.message).toMatch('<mg-menu> prop "direction" must be one of : horizontal, vertical.');
+        expect(err.message).toMatch(error);
       }
     });
   });
 
   describe.each(['horizontal', 'vertical'])('events', direction => {
-    test('should manage outside click', async () => {
+    test(`should manage outside click, case direction ${direction}`, async () => {
       const page = await getPage({ label: 'batman menu', direction });
 
-      expect(page.root).toMatchSnapshot();
-
       const firstItem: HTMLMgMenuItemElement = page.root.querySelector('[title="batman"]').closest('mg-menu-item');
+      expect(firstItem.expanded).toBe(false);
 
       firstItem.shadowRoot.querySelector('button').dispatchEvent(new MouseEvent('click', { bubbles: true }));
       await page.waitForChanges();
+      jest.runOnlyPendingTimers();
 
-      expect(page.root).toMatchSnapshot();
+      expect(firstItem.expanded).toBe(true);
 
-      document.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+      document.dispatchEvent(new CustomEvent('click', { bubbles: true }));
       await page.waitForChanges();
 
-      expect(page.root).toMatchSnapshot();
+      expect(firstItem.expanded).toBe(direction === 'vertical');
     });
 
     test.each(['click', 'focus'])(`should manage sibling menu-item expanded props in ${direction} menu, case %s event`, async event => {
       const page = await getPage({ label: 'batman menu', direction });
-
-      expect(page.root).toMatchSnapshot();
-
       // open batman item
       const batmanItem: HTMLMgMenuItemElement = page.doc.querySelector('[title="batman"]').closest('mg-menu-item');
+      expect(batmanItem.expanded).toBe(false);
+      if (direction === 'horizontal') {
+        expect(batmanItem.shadowRoot.querySelector('mg-popover')).not.toBe(null);
+      }
 
       batmanItem.shadowRoot.querySelector('button').dispatchEvent(new CustomEvent('click', { bubbles: true }));
       await page.waitForChanges();
+      jest.runOnlyPendingTimers();
 
       expect(batmanItem.expanded).toBe(true);
 
@@ -134,6 +166,78 @@ describe('mg-menu', () => {
       expect(batmanItem.expanded).toBe(false);
       expect(batmanChildItem.expanded).toBe(false);
       expect(jokerItem.expanded).toBe(event === 'click');
+    });
+  });
+
+  describe('overflow', () => {
+    test.each([undefined, { size: 'large' }, { mgIcon: { icon: 'user' } }, { slotLabel: { label: 'batman' } }, { slotLabel: { display: true } }])(
+      'with args %s',
+      async moreitem => {
+        const page = await getPage({ label: 'batman menu', moreitem });
+        const menuSize = 215;
+        const menu = page.doc.querySelector('mg-menu');
+
+        expect(page.root).toMatchSnapshot();
+
+        Object.defineProperty(menu, 'offsetWidth', {
+          get: jest.fn(() => menuSize),
+        });
+        Object.defineProperty(menu.shadowRoot.querySelector(`[${OverflowBehaviorElements.MORE}]`), 'offsetWidth', {
+          get: jest.fn(() => 50),
+        });
+        const items = Array.from(page.doc.querySelectorAll('mg-menu-item'));
+        items.forEach(item => {
+          Object.defineProperty(item, 'offsetWidth', {
+            get: jest.fn(() => 80),
+          });
+
+          // has JSDom don't clone child props and label is required on mg-menu we force it
+          const newNode = item.cloneNode(true);
+          item.cloneNode = (): Node => {
+            Array.from((newNode as unknown as HTMLElement).querySelectorAll('mg-menu')).forEach(menu => {
+              menu.label = 'test override';
+            });
+            return newNode;
+          };
+        });
+
+        // render more menu with last menu item displayed in more menu
+        fireRo([{ contentRect: { width: menuSize } }]);
+        await page.waitForChanges();
+
+        expect(page.root).toMatchSnapshot();
+
+        // test click on visible more menu item
+        for await (const baseIndex of [1, 2]) {
+          const element = baseIndex === 1 ? 'button' : 'a';
+          const item = page.doc.querySelector(`[${OverflowBehaviorElements.BASE_INDEX}="${baseIndex}"]`) as HTMLMgMenuItemElement;
+          const itemInteractiveElement = item.shadowRoot.querySelector(element);
+          const spy = jest.spyOn(itemInteractiveElement, 'dispatchEvent');
+
+          const itemProxy = page.doc.querySelector(`[${OverflowBehaviorElements.PROXY_INDEX}="${baseIndex}"]`) as HTMLMgMenuItemElement;
+          itemProxy.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+
+          expect(spy).toHaveBeenCalled();
+        }
+
+        // test status change on visible item to active
+        const lastVisbleItem = page.doc.querySelector(`[${OverflowBehaviorElements.BASE_INDEX}="2"]`) as HTMLMgMenuItemElement;
+        const lastVisbleItemProxy = page.doc.querySelector(`[${OverflowBehaviorElements.PROXY_INDEX}="2"]`) as HTMLMgMenuItemElement;
+        lastVisbleItem.status = Status.ACTIVE;
+        expect(lastVisbleItemProxy.status).toBe(Status.ACTIVE);
+      },
+    );
+
+    test.each([Direction.HORIZONTAL, Direction.HORIZONTAL])('should fire disconnect callback', async direction => {
+      const { rootInstance, doc } = await getPage({ label: 'batman menu', direction });
+
+      if (direction === Direction.HORIZONTAL) {
+        const spy = jest.spyOn(rootInstance.overflowBehavior, 'disconnect');
+        doc.querySelector('mg-menu').remove();
+        expect(spy).toHaveBeenCalled();
+      } else {
+        expect(rootInstance.overflowBehavior).toBe(undefined);
+      }
     });
   });
 });

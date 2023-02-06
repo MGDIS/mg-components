@@ -37,9 +37,9 @@
     <link rel="stylesheet" href="/build/variables.css" />
     <link rel="stylesheet" href="/build/mg-components.css" />
     <script type="module" src="/build/mg-components.esm.js"></script>
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mgdis/mg-components@5/dist/mg-components/variables.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mgdis/mg-components@5/dist/mg-components/mg-components.css" />
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@mgdis/mg-components@5.0.1/dist/mg-components/mg-components.esm.js"></script> -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mgdis/mg-components@5.5.0/dist/mg-components/variables.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mgdis/mg-components@5.5.0/dist/mg-components/mg-components.css" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@mgdis/mg-components@5.5.0/dist/mg-components/mg-components.esm.js"></script> -->
   </head>
   <body>
     <mg-skip-links></mg-skip-links>
@@ -378,6 +378,12 @@
           <mg-button variant="info">Info</mg-button>
           <mg-button variant="flat">flat</mg-button>
           <mg-button variant="link">link</mg-button>
+          <mg-button variant="link" class="custom-link">link</mg-button>
+          <style>
+            .custom-link {
+              --mg-button-border-radius: 1rem;
+            }
+          </style>
         </div>
         <div class="mg-group-elements" style="padding: 0 0 1rem">
           <mg-button variant="primary"><mg-icon icon="check-circle"></mg-icon>Primary</mg-button>
@@ -483,6 +489,19 @@
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </mg-card>
         <mg-card> Lorem ipsum dolor sit amet </mg-card>
+        <mg-card class="custom-mg-card--danger"><mg-card>Custom card</mg-card></mg-card>
+        <mg-card class="custom-mg-card--danger"><mg-card class="custom-mg-card--info">Custom card</mg-card></mg-card>
+        <mg-card class="custom-mg-card--danger"
+          ><mg-card class="custom-mg-card--info"><mg-card>Custom card</mg-card></mg-card></mg-card
+        >
+        <style>
+          .custom-mg-card--danger {
+            --mg-card-background: hsl(var(--color-danger));
+          }
+          .custom-mg-card--info {
+            --mg-card-background: hsl(var(--color-info));
+          }
+        </style>
       </section>
       <section>
         <h2>Divider</h2>
@@ -492,18 +511,18 @@
       <section>
         <h2>Messages</h2>
         <mg-message variant="info">
-          <p><strong>Coucou</strong> toi !</p></mg-message
-        >
+          <p><strong>Coucou</strong> toi !</p>
+        </mg-message>
         <mg-message variant="warning" close-button>
-          <p><strong>Coucou</strong> toi !</p></mg-message
-        >
+          <p><strong>Coucou</strong> toi !</p>
+        </mg-message>
         <mg-message variant="success">
           <p><strong>Coucou</strong> toi !</p>
           <div slot="actions" class="mg-group-elements mg-group-elements--align-right">
             <mg-button>Primary</mg-button>
             <mg-button variant="secondary">Secondary</mg-button>
-          </div></mg-message
-        >
+          </div>
+        </mg-message>
         <mg-message variant="danger">
           <p>
             <strong>Coucou</strong> toi ! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -518,15 +537,37 @@
           <div slot="actions" class="mg-group-elements mg-group-elements--align-right">
             <mg-button>Primary</mg-button>
             <mg-button variant="secondary">Secondary</mg-button>
-          </div></mg-message
-        >
+          </div>
+        </mg-message>
         <mg-message variant="info" close-button>
           <p>
             <strong>Coucou</strong> toi ! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
             minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
             dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </p></mg-message
-        >
+          </p>
+        </mg-message>
+        <div>
+          <mg-button type="button" id="button-with-delay">Toggle mg-message w/ delay</mg-button>
+        </div>
+        <mg-message variant="info" close-button delay="10" identifier="message-with-delay">
+          <p>with delay</p>
+          <mg-input-text identifier="input-with-delay" label="input to get focus"></mg-input-text>
+        </mg-message>
+        <mg-message class="custom-message-card">
+          <mg-card>child card</mg-card>
+        </mg-message>
+        <style>
+          .custom-message-card {
+            --mg-card-background: hsl(var(--color-danger));
+          }
+        </style>
+        <script>
+          const messageWithDelay = document.querySelector('[identifier="message-with-delay"]');
+          const buttonWithDelay = document.getElementById('button-with-delay');
+          buttonWithDelay.addEventListener('click', event => {
+            messageWithDelay.hide = !messageWithDelay.hide;
+          });
+        </script>
       </section>
       <section>
         <h2>Illustrated message</h2>
@@ -608,6 +649,15 @@
             <mg-icon icon="check-circle" variant="success"></mg-icon>
           </div>
         </mg-panel>
+
+        <mg-panel panel-title="panel title" class="custom-panel-card">
+          <mg-card>Content</mg-card>
+        </mg-panel>
+        <style>
+          .custom-panel-card {
+            --mg-panel-background: var(--color-danger);
+          }
+        </style>
 
         <mg-panel panel-title="panel title" title-editable>
           <div>Content</div>
@@ -765,23 +815,43 @@
         <h4>Popover</h4>
         <mg-popover>
           <mg-button>Display popover</mg-button>
-          <div slot="content">Coucou</div></mg-popover
-        >
+          <div slot="content">
+            <mg-button onclick="javascript:alert('coucou')">Coucou</mg-button>
+          </div>
+        </mg-popover>
         <mg-popover close-button>
           <mg-button>Display popover</mg-button>
           <div slot="content">Lorem ipsum dolor sit amet</div>
           <h1 slot="title">Titre Normal</h1>
         </mg-popover>
-
-        <mg-popover close-button display>
+        <mg-popover close-button display placement="right-start">
           <div slot="content">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
             exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           </div>
           <h1 slot="title">Titre un peu plus long un peu plus long un peu plus long un peu plus long un peu plus long</h1>
-          <mg-button>Display popover</mg-button>
+          <mg-button variant="flat">Display popover</mg-button>
         </mg-popover>
+        <mg-popover class="custom-popover">
+          <mg-button>Display custom popover</mg-button>
+          <div slot="content">Coucou</div>
+        </mg-popover>
+        <mg-popover class="custom-popover--card">
+          <mg-button>Display custom popover card</mg-button>
+          <mg-card slot="content">Coucou</mg-card>
+        </mg-popover>
+        <style>
+          .custom-popover {
+            --mg-card-padding: 5rem;
+            --mg-card-border-radius: 5rem;
+          }
+          .custom-popover--card {
+            --mg-popover-background-color: var(--color-danger);
+          }
+        </style>
+        <iframe src="./iframe.html" title="test popover iframe" frameborder="0"></iframe>
+        <iframe src="./iframe.html" title="test popover second iframe" frameborder="0"></iframe>
 
         <!--
         <h4>Character left</h4>
@@ -1094,12 +1164,13 @@
             <script>
               const mgInputSelect = document.querySelector('mg-input-select');
               // mgInputSelect.items = ['blu', 'bli', 'bla', 'blo', 'le long libellé qui va faire sortir le champ mg-input-select de sa zone de confort'];
-              mgInputSelect.items = [
-                { title: 'blu', value: undefined },
-                { title: 'bli', value: { blu: 'bli' } },
-                { title: 'bla', value: 'bla' },
-                { title: 'blo', value: 5 },
-              ];
+              // mgInputSelect.items = [
+              //   { title: 'blu', value: undefined },
+              //   { title: 'bli', value: { blu: 'bli' } },
+              //   { title: 'bla', value: 'bla' },
+              //   { title: 'blo', value: 5 },
+              // ];
+              mgInputSelect.items = [];
               // mgInputSelect.value = 'bli';
               // mgInputSelect.value = mgInputSelect.items[2];
               // mgInputSelect.value = undefined;
@@ -1149,12 +1220,12 @@
 
             <div slot="actions" class="mg-group-elements mg-group-elements--align-right">
               <mg-button id="can-submit">Can Submit</mg-button>
-              <mg-button id="display-error" variant="secondary">Chek errors</mg-button>
-              <mg-button id="toggle-readonly" variant="secondary">Toggle Inputs Readonly</mg-button>
-              <mg-button id="toggle-readonly-form" variant="secondary">Set Form Readonly</mg-button>
-              <mg-button id="toggle-disabled" variant="secondary">Toggle Inputs Disabled</mg-button>
-              <mg-button id="toggle-disabled-form" variant="secondary">Set Form Disabled</mg-button>
-              <mg-button id="add-input" variant="secondary">Add Required Input</mg-button>
+              <mg-button id="display-error" variant="secondary" type="button">Chek errors</mg-button>
+              <mg-button id="toggle-readonly" variant="secondary" type="button">Toggle Inputs Readonly</mg-button>
+              <mg-button id="toggle-readonly-form" variant="secondary" type="button">Set Form Readonly</mg-button>
+              <mg-button id="toggle-disabled" variant="secondary" type="button">Toggle Inputs Disabled</mg-button>
+              <mg-button id="toggle-disabled-form" variant="secondary" type="button">Set Form Disabled</mg-button>
+              <mg-button id="add-input" variant="secondary" type="button">Add Required Input</mg-button>
             </div>
           </mg-form>
           <script>

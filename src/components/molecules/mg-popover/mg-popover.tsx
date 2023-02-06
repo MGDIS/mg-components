@@ -1,6 +1,7 @@
-import { Component, Element, Host, h, Prop, Watch, EventEmitter, Event } from '@stencil/core';
+import { Component, Element, Host, h, Prop, Watch, EventEmitter, Event, State } from '@stencil/core';
 import { createID, isTagName } from '../../../utils/components.utils';
 import { Instance as PopperInstance, createPopper, Placement } from '@popperjs/core';
+import { getWindows, ClassList } from '../../../utils/components.utils';
 import { initLocales } from '../../../locales';
 
 @Component({
@@ -16,9 +17,13 @@ export class MgPopover {
   private popper: PopperInstance;
   private popover: HTMLElement;
   private closeButtonId = '';
+  private windows;
 
   // Locales
   private messages;
+
+  // Classes
+  private readonly classArrowHide = `mg-popover--arrow-hide`;
 
   /**************
    * Decorators *
@@ -39,6 +44,16 @@ export class MgPopover {
    * Popover placement
    */
   @Prop() placement: Placement = 'bottom';
+
+  /**
+   * Hide popover arrow
+   */
+  @Prop() arrowHide = false;
+  @Watch('arrowHide')
+  validateArrowHide(newValue: MgPopover['arrowHide']): void {
+    if (newValue) this.classList.add(this.classArrowHide);
+    else this.classList.delete(this.classArrowHide);
+  }
 
   /**
    * Define if popover has a cross button
@@ -63,6 +78,11 @@ export class MgPopover {
    * Disable popover
    */
   @Prop({ mutable: true }) disabled = false;
+
+  /**
+   * Component classes
+   */
+  @State() classList: ClassList = new ClassList(['mg-popover']);
 
   /**
    * Emited event when display value change
@@ -99,7 +119,9 @@ export class MgPopover {
     // hide when click outside
     // setTimeout is used to prevent event to trigger after creation
     setTimeout(() => {
-      document.addEventListener('click', this.clickOutside, false);
+      this.windows.forEach((localWindow: Window) => {
+        localWindow.addEventListener('click', this.clickOutside, false);
+      });
     }, 0);
   };
 
@@ -117,7 +139,9 @@ export class MgPopover {
       modifiers: [...options.modifiers, { name: 'eventListeners', enabled: false }],
     }));
     // Remove event listener
-    document.removeEventListener('click', this.clickOutside, false);
+    this.windows.forEach((localWindow: Window) => {
+      localWindow.removeEventListener('click', this.clickOutside, false);
+    });
   };
 
   /**
@@ -139,8 +163,11 @@ export class MgPopover {
    * @returns {void} timeout
    */
   componentWillLoad(): void {
+    // Get windows to attach events
+    this.windows = getWindows(window);
     // Get locales
     this.messages = initLocales(this.element).messages;
+    this.validateArrowHide(this.arrowHide);
   }
 
   /**
@@ -178,7 +205,7 @@ export class MgPopover {
         {
           name: 'offset',
           options: {
-            offset: [0, 10],
+            offset: [0, 0],
           },
         },
       ],
@@ -206,9 +233,9 @@ export class MgPopover {
     return (
       <Host>
         <slot></slot>
-        <div id={this.identifier} class="mg-popover">
+        <div id={this.identifier} class={this.classList.join()}>
           <mg-card>
-            {!this.disabled && this.closeButton && (
+            {this.closeButton && (
               <mg-button identifier={this.closeButtonId} is-icon variant="flat" label={this.messages.general.close} onClick={this.handleCloseButton}>
                 <mg-icon icon="cross"></mg-icon>
               </mg-button>
@@ -218,7 +245,8 @@ export class MgPopover {
             </div>
             <slot name="content"></slot>
           </mg-card>
-          <div class="mg-popover__arrow" data-popper-arrow></div>
+
+          {!this.arrowHide && <div class="mg-popover__arrow" data-popper-arrow></div>}
         </div>
       </Host>
     );

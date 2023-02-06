@@ -1,5 +1,14 @@
+@import '../../../styles/mixins/reset-mg-card-slotted-variables.scss';
+
+$popover-space: 1rem;
+$arrow-height: 1rem;
+$arrow-width: 3rem;
+$border-arrow-head: $arrow-height solid hsl(var(--mg-popover-background-color));
+$border-arrow-side: calc(#{$arrow-width} / 2) solid transparent;
+$mg-popover-padding-vertical: var(--mg-popover-padding-vertical, 1.5rem);
+
 :host {
-  --mg-card-padding: 1.5rem;
+  --mg-card-padding: #{$mg-popover-padding-vertical} var(--mg-popover-padding-horizontal, #{$mg-popover-padding-vertical});
   --mg-card-border: none;
   --mg-card-border-radius: 0.5rem;
   --mg-card-background: hsl(var(--mg-popover-background-color));
@@ -13,10 +22,12 @@
 
 .mg-popover {
   display: none;
+  padding: $popover-space;
   z-index: 2000;
   color: hsl(var(--mg-popover-font-color));
 
   mg-card {
+    position: relative;
     z-index: -1;
   }
 
@@ -31,41 +42,94 @@
     margin-left: 3rem;
   }
 
-  &__arrow,
-  &__arrow::before {
-    // Display
-    position: absolute;
-    width: 2rem;
-    height: 2rem;
-    z-index: 2000;
-    // Decoration
-    background: hsl(var(--mg-popover-background-color));
-  }
-
   &__arrow {
+    position: absolute;
     visibility: hidden;
+    // Need to set the max size to ensure it will be well centered
+    width: calc($arrow-width + 2 * var(--mg-card-border-radius) + 2 * $popover-space);
+    height: calc($arrow-width + 2 * var(--mg-card-border-radius) + 2 * $popover-space);
+
+    &:before {
+      visibility: visible;
+      content: '';
+      position: absolute;
+    }
   }
 
-  &__arrow::before {
-    visibility: visible;
-    content: '';
-    transform: rotate(45deg);
+  &[data-popper-placement^='top'] > &__arrow,
+  &[data-popper-placement^='bottom'] > &__arrow {
+    height: $arrow-height;
+
+    &:before {
+      left: calc(var(--mg-card-border-radius) + $popover-space);
+      border-right: $border-arrow-side;
+      border-left: $border-arrow-side;
+    }
   }
 
   &[data-popper-placement^='top'] > &__arrow {
-    bottom: -6px;
+    bottom: 0.1rem;
+    filter: drop-shadow(0 0.5rem 0.25rem hsl(var(--color-dark), 0.15));
+
+    &:before {
+      border-top: $border-arrow-head;
+    }
   }
 
   &[data-popper-placement^='bottom'] > &__arrow {
-    top: -6px;
+    top: 0.1rem;
+    filter: drop-shadow(0 -0.5rem 0.25rem hsl(var(--color-dark), 0.15));
+
+    &:before {
+      border-bottom: $border-arrow-head;
+    }
+  }
+
+  &[data-popper-placement^='left'] > &__arrow,
+  &[data-popper-placement^='right'] > &__arrow {
+    width: $arrow-height;
+
+    &:before {
+      top: calc(var(--mg-card-border-radius) + $popover-space);
+      border-top: $border-arrow-side;
+      border-bottom: $border-arrow-side;
+    }
   }
 
   &[data-popper-placement^='left'] > &__arrow {
-    right: -6px;
+    right: 0.1rem;
+    filter: drop-shadow(0.5rem 0 0.25rem hsl(var(--color-dark), 0.15));
+
+    &:before {
+      border-left: $border-arrow-head;
+    }
   }
 
   &[data-popper-placement^='right'] > &__arrow {
-    left: -6px;
+    left: 0.1rem;
+    filter: drop-shadow(-0.5rem 0 0.25rem hsl(var(--color-dark), 0.15));
+
+    &:before {
+      border-right: $border-arrow-head;
+    }
+  }
+
+  &[data-popper-placement^='left-start'],
+  &[data-popper-placement^='left-end'],
+  &[data-popper-placement^='right-start'],
+  &[data-popper-placement^='right-end'] {
+    padding: 0 $popover-space;
+  }
+
+  &[data-popper-placement^='left-start'] > &__arrow,
+  &[data-popper-placement^='left-end'] > &__arrow,
+  &[data-popper-placement^='right-start'] > &__arrow,
+  &[data-popper-placement^='right-end'] > &__arrow {
+    height: calc($arrow-width + 2 * var(--mg-card-border-radius));
+
+    &:before {
+      top: var(--mg-card-border-radius);
+    }
   }
 
   &__title ::slotted([slot='title']) {
@@ -73,4 +137,23 @@
     font-size: var(--mg-popover-title-font-size) !important;
     font-weight: 600;
   }
+
+  &--arrow-hide.mg-popover {
+    &[data-popper-placement^='top'] {
+      padding-bottom: 0;
+    }
+    &[data-popper-placement^='bottom'] {
+      padding-top: 0;
+    }
+    &[data-popper-placement$='end'],
+    &[data-popper-placement^='left'] {
+      padding-right: 0;
+    }
+    &[data-popper-placement$='start'],
+    &[data-popper-placement^='right'] {
+      padding-left: 0;
+    }
+  }
+
+  @include reset-slot-card-variables();
 }
