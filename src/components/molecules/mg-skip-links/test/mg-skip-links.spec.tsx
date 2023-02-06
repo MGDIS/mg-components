@@ -47,14 +47,16 @@ describe('mg-skip-links', () => {
       ],
     });
 
-    const spy = jest.spyOn(page.rootInstance.goToAnchor, 'emit');
+    const spyGoToAnchor = jest.spyOn(page.rootInstance.goToAnchor, 'emit');
 
     const mgSkiplinks = page.doc.querySelector('mg-skip-links');
     const anchor = mgSkiplinks.shadowRoot.querySelector('a');
+    const spyBlur = jest.spyOn(anchor, 'blur');
     anchor.dispatchEvent(new MouseEvent('click', { bubbles: true }));
 
     await page.waitForChanges();
 
-    expect(spy).toHaveBeenCalledWith('#content');
+    expect(spyGoToAnchor).toHaveBeenCalledWith('#content');
+    expect(spyBlur).toHaveBeenCalled();
   });
 });

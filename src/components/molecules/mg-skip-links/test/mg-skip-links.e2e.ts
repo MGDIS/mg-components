@@ -1,3 +1,4 @@
+import { KeyInput } from 'puppeteer';
 import { createPage } from '../../../../utils/e2e.test.utils';
 
 describe('mg-skip-links', () => {
@@ -22,10 +23,12 @@ describe('mg-skip-links', () => {
     const screenshot = await page.screenshot();
     expect(screenshot).toMatchImageSnapshot();
 
-    await page.keyboard.down('Tab');
-    await page.waitForChanges();
+    for await (const key of ['Tab', 'Enter']) {
+      await page.keyboard.down(key as KeyInput);
+      await page.waitForChanges();
 
-    const screenshotTab = await page.screenshot();
-    expect(screenshotTab).toMatchImageSnapshot();
+      const screenshotTab = await page.screenshot();
+      expect(screenshotTab).toMatchImageSnapshot();
+    }
   });
 });

@@ -44,13 +44,20 @@ The `mg-skip-links` must be integrated at the very top of your page to be the fi
 const goToAnchor = (anchor) => {
     const top = document.querySelector(anchor).offsetTop;
     window.scrollTo(0, top);
+
+    // set focus on next element to put keyboard navigation at the right place
+    anchor.focus();
 }
 
-Array.from(document.querySelector('mg-skip-links').shadowRoot.querySelectorAll('a')).forEach(anchor => {
-    anchor.addEventListener('click', event => {
-        event.preventDefault();
-    })
-})​
+// optionaly you can use a timeout to wait document ready
+setTimeout(()=> {
+    // you must add listener on skip links element to prevent redirection
+    Array.from(document.querySelector('mg-skip-links').shadowRoot.querySelectorAll('a')).forEach(anchor => {
+        anchor.addEventListener('click', event => {
+            event.preventDefault();
+        })
+    })​
+})
 ```
 
 - in case the anchor is in another window, with the [iframeRisizer's moveToAnchor method](https://github.com/davidjbradshaw/iframe-resizer/blob/master/docs/parent_page/methods.md#movetoanchoranchor)
