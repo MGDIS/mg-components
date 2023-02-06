@@ -7,7 +7,7 @@ export const config: Config = {
   devServer: {
     openBrowser: false,
   },
-  tsconfig: 'tsconfig.prod.json',
+  tsconfig: 'tsconfig.build.json',
   outputTargets: [
     {
       type: 'dist',
