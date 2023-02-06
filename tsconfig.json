@@ -15,5 +15,5 @@
     "resolveJsonModule": true
   },
   "include": ["src"],
-  "exclude": ["node_modules", "**/*.stories.tsx"]
+  "exclude": ["node_modules"]
 }
