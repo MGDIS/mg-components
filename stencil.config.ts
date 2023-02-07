@@ -7,6 +7,7 @@ export const config: Config = {
   devServer: {
     openBrowser: false,
   },
+  tsconfig: 'tsconfig.build.json',
   outputTargets: [
     {
       type: 'dist',
@@ -36,7 +37,7 @@ export const config: Config = {
     },
     {
       type: 'dist-custom-elements',
-      autoDefineCustomElements: true,
+      customElementsExportBehavior: 'auto-define-custom-elements',
     },
     {
       type: 'docs-json',
