@@ -287,7 +287,7 @@ export class MgInputCheckbox {
               return !this.readonly || item.value;
             })
             .map((input, index) => (
-              <li key={index} class={{ 'mg-input__input-group': true, 'mg-input__input-group--disabled': this.disabled || input.disabled }}>
+              <li key={input.id} class={{ 'mg-input__input-group': true, 'mg-input__input-group--disabled': this.disabled || input.disabled }}>
                 <input
                   type="checkbox"
                   id={input.id}

@@ -621,7 +621,7 @@ export const icons: unknown = {
       fill="currentColor"
       d="M13.67 3.4H4.68c-.75 0-1.28.53-1.28 1.28v8.99c0 .75.53 1.28 1.28 1.28h6.42V11.1h3.85V4.68c0-.75-.53-1.28-1.28-1.28Zm-4.49 7.06H5.97V9.18h3.21v1.28Zm3.21-2.57H5.97V6.61h6.42v1.28Z"
     />,
-    <path fill="currentColor" d="m11.74 14.42 2.68-2.68h-2.68v2.68z" />,
+    <path key="notes-3" fill="currentColor" d="m11.74 14.42 2.68-2.68h-2.68v2.68z" />,
   ],
   'notes-outline': () => (
     <path
