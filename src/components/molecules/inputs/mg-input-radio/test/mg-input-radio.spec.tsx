@@ -76,7 +76,7 @@ describe('mg-input-radio', () => {
     }
   });
 
-  test.each(['', ' ', undefined])('Should throw error with invalid label property : %s', async label => {
+  test.each(['', ' ', undefined])('Should throw error with invalid label property: %s', async label => {
     expect.assertions(1);
     try {
       await getPage({ identifier: 'identifier', label, items: ['batman', 'robin', 'joker', 'bane'] });
@@ -116,7 +116,7 @@ describe('mg-input-radio', () => {
         { title: 'batman', value: 'test' },
       ],
     ],
-  ])('Should throw error with invalid items property : %s', async items => {
+  ])('Should throw error with invalid items property: %s', async items => {
     expect.assertions(1);
     try {
       await getPage({ label: 'Label', items });

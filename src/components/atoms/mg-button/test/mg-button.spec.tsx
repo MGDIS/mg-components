@@ -55,7 +55,7 @@ describe('mg-button', () => {
     try {
       await getPage({ variant });
     } catch (err) {
-      expect(err.message).toContain('<mg-button> prop "variant" must be one of : ');
+      expect(err.message).toContain('<mg-button> prop "variant" must be one of: ');
     }
   });
 

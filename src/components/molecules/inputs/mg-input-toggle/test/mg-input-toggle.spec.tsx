@@ -137,7 +137,7 @@ describe('mg-input-toggle', () => {
       }
     });
 
-    test.each(['', ' ', undefined])('Should throw error with invalid label property : %s', async label => {
+    test.each(['', ' ', undefined])('Should throw error with invalid label property: %s', async label => {
       expect.assertions(1);
       try {
         await getPage(
@@ -196,7 +196,7 @@ describe('mg-input-toggle', () => {
           { title: 'batman', value: 'test' },
         ],
       ],
-    ])('Should throw error with invalid items property : %s', async items => {
+    ])('Should throw error with invalid items property: %s', async items => {
       expect.assertions(1);
       try {
         await getPage({ label: 'Label', items }, defaultSlots);
@@ -247,7 +247,7 @@ describe('mg-input-toggle', () => {
       expected: true,
       value: false,
     },
-  ])('Should trigger events for items with inputValue : %s', async ({ items, expected, value }) => {
+  ])('Should trigger events for items with inputValue: %s', async ({ items, expected, value }) => {
     const args = { label: 'label', items, identifier: 'identifier', helpText: 'My help text', value };
     const page = await getPage(args, defaultSlots);
 

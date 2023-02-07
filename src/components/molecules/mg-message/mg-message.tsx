@@ -63,7 +63,7 @@ export class MgMessage {
   @Watch('variant')
   validateVariant(newValue: string, oldValue?: string): void {
     if (!variants.includes(newValue)) {
-      throw new Error(`<mg-message> prop "variant" must be one of : ${variants.join(', ')}`);
+      throw new Error(`<mg-message> prop "variant" must be one of: ${variants.join(', ')}`);
     } else {
       if (oldValue !== undefined) {
         this.classList.delete(`mg-message--${oldValue}`);

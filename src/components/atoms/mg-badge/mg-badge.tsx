@@ -48,7 +48,7 @@ export class MgBadge {
   @Watch('variant')
   validateVariant(newValue: MgBadge['variant'], oldValue?: MgBadge['variant']): void {
     if (!variants.includes(newValue)) {
-      throw new Error(`<mg-badge> prop "variant" must be one of : ${variants.join(', ')}.`);
+      throw new Error(`<mg-badge> prop "variant" must be one of: ${variants.join(', ')}.`);
     } else {
       if (oldValue !== undefined) {
         this.classList.delete(`mg-badge--${oldValue}`);

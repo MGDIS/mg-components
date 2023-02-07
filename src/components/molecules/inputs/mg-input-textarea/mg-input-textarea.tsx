@@ -236,7 +236,7 @@ export class MgInputTextarea {
 
   /**
    * Get pattern validity
-   * Pattern is not defined on textarea field : https://developer.mozilla.org/fr/docs/Web/HTML/Element/Textarea
+   * Pattern is not defined on textarea field: https://developer.mozilla.org/fr/docs/Web/HTML/Element/Textarea
    *
    * @returns {boolean} is pattern valid
    */

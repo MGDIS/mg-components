@@ -62,7 +62,7 @@ export class MgTabs {
   @Watch('size')
   validateSize(newValue: MgTabs['size']): void {
     if (!sizes.includes(newValue)) {
-      throw new Error(`<mg-tabs> prop "size" must be one of : ${sizes.join(', ')}`);
+      throw new Error(`<mg-tabs> prop "size" must be one of: ${sizes.join(', ')}`);
     }
     this.classList.add(`mg-tabs--size-${this.size}`);
   }

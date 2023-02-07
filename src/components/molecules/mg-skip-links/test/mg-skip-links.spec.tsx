@@ -28,7 +28,7 @@ describe('mg-skip-links', () => {
     { links: [{ href: 'nohash', Label: 'label' }] },
     { links: [{ href: '#hash', Label: ' ' }] },
     { links: [{ href: '#hash', Label: '' }] },
-  ])('Should throw error with wrong link params : %s', async args => {
+  ])('Should throw error with wrong link params: %s', async args => {
     expect.assertions(1);
     try {
       await getPage(args);

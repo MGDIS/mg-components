@@ -55,7 +55,7 @@ describe('mg-tag', () => {
       try {
         await getPage({ variant }, 'wrong variant');
       } catch (err) {
-        expect(err.message).toContain('<mg-tag> prop "variant" must be one of : ');
+        expect(err.message).toContain('<mg-tag> prop "variant" must be one of: ');
       }
     });
     test.each([undefined, ' '])('Should throw error, case empty slot', async slot => {

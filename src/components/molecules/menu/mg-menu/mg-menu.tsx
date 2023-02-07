@@ -47,7 +47,7 @@ export class MgMenu {
   @Watch('direction')
   validateDirection(newValue: MgMenu['direction']): void {
     if (![Direction.VERTICAL, Direction.HORIZONTAL].includes(newValue)) {
-      throw new Error(`<${this.name}> prop "direction" must be one of : ${Direction.HORIZONTAL}, ${Direction.VERTICAL}.`);
+      throw new Error(`<${this.name}> prop "direction" must be one of: ${Direction.HORIZONTAL}, ${Direction.VERTICAL}.`);
     }
   }
 
@@ -73,7 +73,7 @@ export class MgMenu {
   @Watch('size')
   validateSize(newValue: MgMenu['size']): void {
     if (!sizes.includes(newValue)) {
-      throw new Error(`<${this.name}> prop "size" must be one of : ${sizes.join(', ')}.`);
+      throw new Error(`<${this.name}> prop "size" must be one of: ${sizes.join(', ')}.`);
     }
   }
 

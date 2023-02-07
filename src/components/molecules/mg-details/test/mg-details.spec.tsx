@@ -32,7 +32,7 @@ describe('mg-details', () => {
     { toggleOpened: 'Hide details' },
     { toggleClosed: ' ', toggleOpened: 'Hide details' },
     { toggleClosed: 'Show details', toggleOpened: ' ' },
-  ])('Should throw error when missing toogle messages : %s', async args => {
+  ])('Should throw error when missing toogle messages: %s', async args => {
     expect.assertions(1);
     try {
       await getPage(args);
