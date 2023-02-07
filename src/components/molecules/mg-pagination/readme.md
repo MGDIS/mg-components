@@ -6,7 +6,7 @@
 
 ![](./mg-pagination/doc/img/mg-pagination-nav-specs.png)
 
-It's possible to hide the labels "prev" and "next" to show only the icons "chevron"
+It's possible to hide the labels "prev" and "next" to show only the "chevron" icons
 
 ![](./mg-pagination/doc/img/mg-pagination-nav-label-hide.png)
 
