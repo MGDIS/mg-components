@@ -957,6 +957,10 @@ export namespace Components {
          */
         "currentPage": number;
         /**
+          * Hide navigation label
+         */
+        "hideNavigationLabels": boolean;
+        /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */
         "identifier": string;
@@ -2357,6 +2361,10 @@ declare namespace LocalJSX {
           * Component current page
          */
         "currentPage"?: number;
+        /**
+          * Hide navigation label
+         */
+        "hideNavigationLabels"?: boolean;
         /**
           * Identifier is used for the element ID (id is a reserved prop in Stencil.js) If not set, it will be created.
          */

@@ -1,12 +1,23 @@
-import { createPage } from '../../../../utils/e2e.test.utils';
+import { createPage, renderAttributes } from '../../../../utils/e2e.test.utils';
 
 describe('mg-pagination', () => {
   describe('template', () => {
-    test.each([1, 2, 3, 10])('render', async totalPages => {
-      const page = await createPage(`<mg-pagination total-pages="${totalPages}"></mg-pagination>`);
+    test('render', async () => {
+      const template = [1, 2, 3, 10]
+        .map(totalPages => [true, false].map(hideNavigationLabels => `<mg-pagination ${renderAttributes({ totalPages, hideNavigationLabels })}></mg-pagination>`).join(''))
+        .join('');
+      const page = await createPage(template);
+
+      const screenshot = await page.screenshot();
+      expect(screenshot).toMatchImageSnapshot();
+    });
+  });
+
+  describe('navigation', () => {
+    test.each([1, 2, 3, 10])('should success mouse navigation', async totalPages => {
+      const page = await createPage(`<mg-pagination ${renderAttributes({ totalPages })}"></mg-pagination>`);
 
       const element = await page.find('mg-pagination');
-
       expect(element).toHaveClass('hydrated');
 
       const screenshot = await page.screenshot();
@@ -25,13 +36,14 @@ describe('mg-pagination', () => {
       }
     });
 
-    test('Keyboard navigation', async () => {
-      const page = await createPage(`<mg-pagination total-pages="5"></mg-pagination>`);
+    test('should success keyboard navigation', async () => {
+      const page = await createPage(`<mg-pagination ${renderAttributes({ totalPages: 5 })}></mg-pagination>`);
 
       const screenshot = await page.screenshot();
       expect(screenshot).toMatchImageSnapshot();
 
       // take focus on mg-input-select
+      await page.keyboard.down('Tab');
       await page.keyboard.down('Tab');
       await page.waitForChanges();
 
@@ -69,7 +81,7 @@ describe('mg-pagination', () => {
 
   describe('locales', () => {
     test.each(['fr'])('render with locale: %s', async lang => {
-      const page = await createPage(`<mg-pagination total-pages="5" lang="${lang}"></mg-pagination>`);
+      const page = await createPage(`<mg-pagination ${renderAttributes({ totalPages: 5, lang })}"></mg-pagination>`);
 
       const element = await page.find('mg-pagination');
 

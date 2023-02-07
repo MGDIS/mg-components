@@ -60,6 +60,11 @@ export class MgPagination {
   @Prop({ mutable: true }) label: string;
 
   /**
+   * Hide navigation label
+   */
+  @Prop() hideNavigationLabels: boolean;
+
+  /**
    * Component total pages
    */
   @Prop() totalPages = 1;
@@ -161,9 +166,10 @@ export class MgPagination {
         onClick={() => this.handleGoToPage(action, disabled)}
         disabled={disabled}
         variant="flat"
+        isIcon={this.hideNavigationLabels}
       >
         {action === NavigationAction.PREVIOUS && <mg-icon icon="chevron-left"></mg-icon>}
-        {this.messages.general[action]}
+        {!this.hideNavigationLabels && this.messages.general[action]}
         {action === NavigationAction.NEXT && <mg-icon icon="chevron-right"></mg-icon>}
       </mg-button>
     );

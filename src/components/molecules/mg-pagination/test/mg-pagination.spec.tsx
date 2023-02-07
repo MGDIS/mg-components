@@ -30,8 +30,12 @@ describe('mg-pagination', () => {
     });
 
     test('Should set custom label', async () => {
-      const totalPages = 2;
-      const page = await getPage({ totalPages, identifier: 'id', label: 'custom label' });
+      const page = await getPage({ totalPages: 2, identifier: 'id', label: 'custom label' });
+      expect(page.root).toMatchSnapshot();
+    });
+
+    test.each([true, false])('Should hidde navigation labels', async hideNavigationLabels => {
+      const page = await getPage({ totalPages: 2, identifier: 'id', hideNavigationLabels });
       expect(page.root).toMatchSnapshot();
     });
 
