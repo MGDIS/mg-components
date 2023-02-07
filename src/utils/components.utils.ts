@@ -140,11 +140,15 @@ export const getParentWindows = (localWindow: Window, windows: Window[] = []): W
  */
 const getChildWindows = (localWindow: Window, windows: Window[] = []): Window[] => {
   if (localWindow.frames.length > 0) {
+    // Window.frames is an array-like object, needs a classic for loop
+    // https://developer.mozilla.org/en-US/docs/Web/API/Window/frames
+    // BEGIN-NOSCAN
     for (let i = 0; i < localWindow.frames.length; i++) {
       const childWindow: Window = localWindow.frames[i];
       windows.push(childWindow);
       getChildWindows(childWindow, windows);
     }
+    // END-NOSCAN
   }
   return windows;
 };
