@@ -289,6 +289,7 @@ export class MgTabs {
         <header role="tablist" aria-label={this.label} class="mg-tabs__header">
           {this.tabs.map((tab, index) => (
             <button
+              key={index}
               role="tab"
               id={this.getElementId(this.identifier, index)}
               class={{
@@ -314,6 +315,7 @@ export class MgTabs {
         </header>
         {this.tabs.map((tab, index) => (
           <article
+            key={index}
             role="tabpanel"
             id={this.getElementId(this.tabPanel, index)}
             hidden={!this.tabHasStatus(tab, Status.ACTIVE)}

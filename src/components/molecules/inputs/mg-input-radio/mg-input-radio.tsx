@@ -294,7 +294,7 @@ export class MgInputRadio {
       >
         <ul class={{ 'mg-input__input-group-container': true, 'mg-input__input-group-container--vertical': this.inputVerticalList }}>
           {this.options.map((input, index) => (
-            <li class={{ 'mg-input__input-group': true, 'mg-input__input-group--disabled': this.disabled || input.disabled }}>
+            <li key={index} class={{ 'mg-input__input-group': true, 'mg-input__input-group--disabled': this.disabled || input.disabled }}>
               <input
                 type="radio"
                 id={this.identifier + '_' + index}
