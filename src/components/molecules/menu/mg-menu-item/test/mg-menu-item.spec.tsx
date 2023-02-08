@@ -277,8 +277,8 @@ describe('mg-menu-item', () => {
     });
   });
 
-  describe('notification badge', () => {
-    test.each([true, false])('with args %s', async badge => {
+  describe('MutationObserver', () => {
+    test.each([true, false])('should update notification badge with args %s', async badge => {
       const page = await getPage(menuItem({ label: 'Batman' }, childMenu({ label: 'child menu', badge })));
 
       spyOn(page.rootInstance, 'updateDisplayNotificationBadge');
@@ -289,6 +289,15 @@ describe('mg-menu-item', () => {
       await page.waitForChanges();
 
       expect(page.rootInstance.updateDisplayNotificationBadge).toHaveBeenCalledTimes(1);
+    });
+
+    test.each([Status.ACTIVE, Status.VISIBLE])('Should update status with child attribute mutation, from status %s', async status => {
+      const page = await getPage(menuItem({ label: 'Batman', status: status === Status.ACTIVE ? Status.VISIBLE : Status.ACTIVE }, childMenu({ label: 'child menu', status })));
+
+      fireMo([{ attributeName: 'hidden' }]);
+      await page.waitForChanges();
+
+      expect(page.root).toMatchSnapshot();
     });
   });
 });

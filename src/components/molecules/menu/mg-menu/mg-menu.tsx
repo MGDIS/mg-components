@@ -148,7 +148,6 @@ export class MgMenu {
       // manage status change miror in proxy
       allMenuItem[index].addEventListener('status-change', (event: CustomEvent) => {
         proxy.setAttribute('status', event.detail);
-        this.overflowBehavior.updateActiveStatus();
       });
     });
 

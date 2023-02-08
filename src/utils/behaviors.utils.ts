@@ -1,5 +1,3 @@
-import { Status } from '../components/molecules/menu/mg-menu-item/mg-menu-item.conf';
-
 /**
  * MgMenuItem type guard
  *
@@ -17,7 +15,7 @@ export enum OverflowBehaviorElements {
 export class OverflowBehavior {
   // variables
   private resizeObserver: ResizeObserver;
-  private moreELement: HTMLElement;
+  private moreElement: HTMLElement;
   private children: Element[];
 
   constructor(private element: Element, private render: () => HTMLElement) {
@@ -45,19 +43,6 @@ export class OverflowBehavior {
     this.resizeObserver.disconnect();
   };
 
-  /**
-   * Update more element status if active child
-   *
-   * @returns {void}
-   */
-  public updateActiveStatus = (): void => {
-    const hasActiveChild = Array.from(this.moreELement.querySelector('mg-menu').children).some(
-      element => element.nodeName === 'MG-MENU-ITEM' && element.getAttribute('status') === Status.ACTIVE && element.getAttribute('hidden') === null,
-    );
-
-    this.moreELement.setAttribute('status', hasActiveChild ? Status.ACTIVE : Status.VISIBLE);
-  };
-
   /************
    * Internal *
    ************/
@@ -69,30 +54,29 @@ export class OverflowBehavior {
    * @returns {void}
    */
   private run = (width: number): void => {
-    if (this.moreELement === undefined) {
+    if (this.moreElement === undefined) {
       // set moreElement
-      this.moreELement = this.render();
-      this.moreELement.setAttribute(OverflowBehaviorElements.MORE, '');
+      this.moreElement = this.render();
+      this.moreElement.setAttribute(OverflowBehaviorElements.MORE, '');
 
       // set children
       this.children = Array.from(this.element.children);
-      let moreELementChildren;
+      let moreElementChildren;
       const allowedElements = ['MG-MENU-ITEM', 'MG-BUTTON'];
-      if (isMgMenuItem(this.moreELement)) {
-        moreELementChildren = Array.from(this.moreELement.querySelector('mg-menu').children).filter(element => allowedElements.includes(element.nodeName));
+      if (isMgMenuItem(this.moreElement)) {
+        moreElementChildren = Array.from(this.moreElement.querySelector('mg-menu').children).filter(element => allowedElements.includes(element.nodeName));
       }
 
       this.children.forEach((child, index) => {
         child.setAttribute(OverflowBehaviorElements.BASE_INDEX, `${index}`);
         if (child.getAttribute(OverflowBehaviorElements.MORE) === null) {
           // set moreElement children
-          moreELementChildren[index].setAttribute(OverflowBehaviorElements.PROXY_INDEX, `${index}`);
+          moreElementChildren[index].setAttribute(OverflowBehaviorElements.PROXY_INDEX, `${index}`);
         }
       });
     }
 
     this.updateDisplayedItems(width);
-    if (isMgMenuItem(this.moreELement)) this.updateActiveStatus();
   };
 
   /**
@@ -138,7 +122,7 @@ export class OverflowBehavior {
    */
   private isOverflowElement = (cumulateWidth: number, item: HTMLElement, availableWidth: number): boolean => {
     if (item.previousElementSibling === null || this.isMoreElement(item)) return false;
-    else if (!this.isMoreElement(item.nextElementSibling)) return cumulateWidth + this.moreELement.offsetWidth > availableWidth;
+    else if (!this.isMoreElement(item.nextElementSibling)) return cumulateWidth + this.moreElement.offsetWidth > availableWidth;
     else return cumulateWidth > availableWidth;
   };
 
@@ -159,10 +143,10 @@ export class OverflowBehavior {
    */
   private toggleItem = (item: HTMLElement, isHidden: boolean): void => {
     const mgActionMenuindex = Number(item.getAttribute(OverflowBehaviorElements.BASE_INDEX));
-    if (this.isMoreElement(item)) this.toggleElement(this.moreELement, isHidden);
+    if (this.isMoreElement(item)) this.toggleElement(this.moreElement, isHidden);
     else if (mgActionMenuindex >= 0) {
       this.toggleElement(item, isHidden);
-      this.toggleElement(this.moreELement.querySelector(`[${OverflowBehaviorElements.PROXY_INDEX}="${mgActionMenuindex}"]`), !isHidden);
+      this.toggleElement(this.moreElement.querySelector(`[${OverflowBehaviorElements.PROXY_INDEX}="${mgActionMenuindex}"]`), !isHidden);
     }
   };
 

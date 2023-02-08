@@ -68,7 +68,7 @@ export class MgMenuItem {
         subItems.forEach(item => {
           item.expanded = false;
         });
-      } else if (this.hasStatus(this.element, Status.ACTIVE)) {
+      } else if (this.element.querySelector(`${this.name}[status="${Status.ACTIVE}"]`) !== null) {
         // - when expanded and contain an active item parents are expended too
         subItems.forEach(item => {
           if (this.hasStatus(item, Status.ACTIVE)) {
@@ -153,7 +153,7 @@ export class MgMenuItem {
    * @param {MgMenuItem['status']} status to check
    * @returns {boolean} true if element with status is found
    */
-  private hasStatus = (element: Element, status: MgMenuItem['status']): boolean => element.querySelector(`${this.name}[status="${status}"]`) !== null;
+  private hasStatus = (element: Element, status: MgMenuItem['status']): boolean => element.getAttribute('status') === status;
 
   /**
    * Is component contextual direction match the given direction
@@ -206,6 +206,14 @@ export class MgMenuItem {
       Array.from(childMenu.children).some((subItem: HTMLMgMenuItemElement) => subItem.querySelector('mg-badge') !== null && subItem.getAttribute('hidden') === null);
   };
 
+  /**
+   * Method to control if one of component children have active status
+   *
+   * @returns {boolean} truthy if component has active child
+   */
+  private hasActiveChild = (): boolean =>
+    Array.from(this.element.querySelector('mg-menu')?.children || []).some(element => this.hasStatus(element, Status.ACTIVE) && element.getAttribute('hidden') === null);
+
   /*************
    * Lifecycle *
    *************/
@@ -257,10 +265,9 @@ export class MgMenuItem {
 
       // when main menu item contain an active item it will get the active style
       // AND if item is in vertical menu it will be expanded
-      const hasActiveChild = Array.from(this.element.children).some(element => this.hasStatus(element, Status.ACTIVE) && element.getAttribute('hidden') === null);
-      if (this.isInMainMenu && hasActiveChild) {
+      if (this.hasActiveChild()) {
         this.status = Status.ACTIVE;
-        this.expanded = this.isDirection(Direction.VERTICAL);
+        if (this.isInMainMenu) this.expanded = this.isDirection(Direction.VERTICAL);
       }
 
       // manage menu items style depending to parent menu horientation
@@ -281,7 +288,9 @@ export class MgMenuItem {
       const childItems = Array.from(this.element.querySelector('mg-menu')?.children || []).filter(item => item.nodeName === 'MG-MENU-ITEM');
       childItems.forEach(item => {
         // manage child menu listener
-        new MutationObserver(() => {
+        new MutationObserver(mutationsList => {
+          const isAttributeHiddenMutated = mutationsList.some(mutation => mutation.attributeName === 'hidden');
+          if (isAttributeHiddenMutated) this.status = this.hasActiveChild() ? Status.ACTIVE : Status.VISIBLE;
           this.updateDisplayNotificationBadge();
         }).observe(item, { attributes: true });
       });
