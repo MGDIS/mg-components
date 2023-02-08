@@ -64,7 +64,7 @@ describe('mg-badge', () => {
       try {
         await getPage({ variant, value: 1, label: 'Batman' });
       } catch (err) {
-        expect(err.message).toContain('<mg-badge> prop "variant" must be one of : ');
+        expect(err.message).toContain('<mg-badge> prop "variant" must be one of: ');
       }
     });
 

@@ -375,7 +375,7 @@ export class MgInputSelect {
             option.group !== undefined ? (
               <optgroup label={option.group}>
                 {(option as OptGroup).options.map(optgroup => (
-                  <option value={optgroup.title} selected={JSON.stringify(this.value) === JSON.stringify(optgroup.value)} disabled={optgroup.disabled}>
+                  <option key={optgroup.title} value={optgroup.title} selected={JSON.stringify(this.value) === JSON.stringify(optgroup.value)} disabled={optgroup.disabled}>
                     {optgroup.title}
                   </option>
                 ))}

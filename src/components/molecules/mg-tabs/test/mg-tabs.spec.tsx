@@ -69,7 +69,7 @@ describe('mg-tabs', () => {
   });
 
   describe('errors', () => {
-    test.each(['', ' ', undefined])('Should throw error with invalid label property : %s', async label => {
+    test.each(['', ' ', undefined])('Should throw error with invalid label property: %s', async label => {
       expect.assertions(1);
       try {
         await getPage({ label, items: ['Batman', 'Joker'] }, createSlots());
@@ -118,7 +118,7 @@ describe('mg-tabs', () => {
       try {
         await getPage({ label: 'Sample label', items: ['Tab 1', 'Tab 2'], size: 'batman' }, createSlots());
       } catch (err) {
-        expect(err.message).toMatch(`<mg-tabs> prop "size" must be one of : ${sizes.join(', ')}`);
+        expect(err.message).toMatch(`<mg-tabs> prop "size" must be one of: ${sizes.join(', ')}`);
       }
     });
   });

@@ -68,7 +68,7 @@ describe('mg-input-select', () => {
     }
   });
 
-  test.each(['', ' ', undefined])('Should throw error with invalid label property : %s', async label => {
+  test.each(['', ' ', undefined])('Should throw error with invalid label property: %s', async label => {
     expect.assertions(1);
     try {
       await getPage({ identifier: 'identifier', label, items: ['blu', 'bli', 'blo', 'bla'] });
@@ -87,7 +87,7 @@ describe('mg-input-select', () => {
   });
 
   test.each([[['blu', { title: 'blu', value: 'blu' }]], [['blu', { blu: 'blu' }]], [[{ title: 'blu', value: 'blu' }, { blu: 'blu' }]]])(
-    'Should throw error with invalid items property : %s',
+    'Should throw error with invalid items property: %s',
     async items => {
       expect.assertions(1);
       try {

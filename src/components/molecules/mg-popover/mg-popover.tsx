@@ -1,7 +1,6 @@
 import { Component, Element, Host, h, Prop, Watch, EventEmitter, Event, State } from '@stencil/core';
-import { createID, isTagName } from '../../../utils/components.utils';
+import { createID, isTagName, getWindows, ClassList } from '../../../utils/components.utils';
 import { Instance as PopperInstance, createPopper, Placement } from '@popperjs/core';
-import { getWindows, ClassList } from '../../../utils/components.utils';
 import { initLocales } from '../../../locales';
 
 @Component({

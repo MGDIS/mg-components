@@ -33,7 +33,7 @@ export class MgButton {
   @Watch('variant')
   validateVariant(newValue: VariantType, oldValue?: VariantType): void {
     if (!variants.includes(newValue)) {
-      throw new Error(`<mg-button> prop "variant" must be one of : ${variants.join(', ')}`);
+      throw new Error(`<mg-button> prop "variant" must be one of: ${variants.join(', ')}`);
     } else {
       if (oldValue !== undefined) {
         this.classList.delete(`mg-button--${oldValue}`);

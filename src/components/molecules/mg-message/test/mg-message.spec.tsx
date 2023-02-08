@@ -45,16 +45,16 @@ describe('mg-message', () => {
     expect(classDanger).not.toBeNull();
   });
 
-  test.each(['', 'blu'])('Should throw error with invalid variant property : %s', async variant => {
+  test.each(['', 'blu'])('Should throw error with invalid variant property: %s', async variant => {
     expect.assertions(1);
     try {
       await getPage({ identifier: 'identifier', variant }, getDefaultContent());
     } catch (err) {
-      expect(err.message).toMatch('<mg-message> prop "variant" must be one of :');
+      expect(err.message).toMatch('<mg-message> prop "variant" must be one of:');
     }
   });
 
-  test('Should throw error with invalid delay property : 50ms', async () => {
+  test('Should throw error with invalid delay property: 50ms', async () => {
     expect.assertions(1);
     try {
       await getPage({ identifier: 'identifier', delay: 1 }, getDefaultContent());

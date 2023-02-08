@@ -82,7 +82,7 @@ export class MgSkipLinks {
       <nav class="mg-skip-links" role="navigation" aria-label={this.messages.skipLinks.navLabel}>
         <ul class="mg-skip-links__list">
           {this.links.map(link => (
-            <li>
+            <li key={link.href}>
               <a class="mg-skip-links__link" href={link.href} onClick={this.handleLinkCLick}>
                 {link.label}
               </a>

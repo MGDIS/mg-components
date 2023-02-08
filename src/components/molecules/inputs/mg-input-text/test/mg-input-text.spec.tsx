@@ -68,7 +68,7 @@ describe('mg-input-text', () => {
     }
   });
 
-  test.each(['', ' ', undefined])('Should throw error with invalid label property : %s', async label => {
+  test.each(['', ' ', undefined])('Should throw error with invalid label property: %s', async label => {
     expect.assertions(1);
     try {
       await getPage({ identifier: 'identifier', label });

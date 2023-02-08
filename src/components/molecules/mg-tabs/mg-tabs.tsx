@@ -62,7 +62,7 @@ export class MgTabs {
   @Watch('size')
   validateSize(newValue: MgTabs['size']): void {
     if (!sizes.includes(newValue)) {
-      throw new Error(`<mg-tabs> prop "size" must be one of : ${sizes.join(', ')}`);
+      throw new Error(`<mg-tabs> prop "size" must be one of: ${sizes.join(', ')}`);
     }
     this.classList.add(`mg-tabs--size-${this.size}`);
   }
@@ -208,13 +208,14 @@ export class MgTabs {
         if (this.tabFocus < this.startIndex) this.tabFocus = this.tabs.length;
       }
 
+      const parentButtonElement: HTMLButtonElement = parent.querySelector(`[data-index="${this.tabFocus}"]`);
       // if focus item is ['hidden'] we recursively repeat action
       if (this.tabHasStatus(this.tabs[this.tabFocus - 1], Status.HIDDEN)) {
-        parent.querySelector(`[data-index="${this.tabFocus}"]`).dispatchEvent(new KeyboardEvent('keydown', { key: event.key, bubbles: true }));
+        parentButtonElement.dispatchEvent(new KeyboardEvent('keydown', { key: event.key, bubbles: true }));
         // else run focus methods on tabFocus element
       } else {
-        parent.querySelector(`[data-index="${this.tabFocus}"]`).setAttribute('tabindex', '0');
-        (parent.querySelector(`[data-index="${this.tabFocus}"]`) as HTMLButtonElement).focus();
+        parentButtonElement.setAttribute('tabindex', '0');
+        parentButtonElement.focus();
       }
     } else if (event.key === 'Tab') {
       this.resetFocus();
@@ -288,6 +289,7 @@ export class MgTabs {
         <header role="tablist" aria-label={this.label} class="mg-tabs__header">
           {this.tabs.map((tab, index) => (
             <button
+              key={tab.label}
               role="tab"
               id={this.getElementId(this.identifier, index)}
               class={{
@@ -313,6 +315,7 @@ export class MgTabs {
         </header>
         {this.tabs.map((tab, index) => (
           <article
+            key={tab.label}
             role="tabpanel"
             id={this.getElementId(this.tabPanel, index)}
             hidden={!this.tabHasStatus(tab, Status.ACTIVE)}

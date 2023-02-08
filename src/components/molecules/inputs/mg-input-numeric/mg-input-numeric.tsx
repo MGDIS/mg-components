@@ -152,7 +152,7 @@ export class MgInputNumeric {
   @Watch('type')
   validateType(newValue: string): void {
     if (!types.includes(newValue)) {
-      throw new Error(`<mg-input-numeric> prop "type" must be one of : ${types.join(', ')}`);
+      throw new Error(`<mg-input-numeric> prop "type" must be one of: ${types.join(', ')}`);
     }
   }
 

@@ -69,30 +69,30 @@ describe('mg-icon', () => {
     expect(classVariantDanger).not.toBeNull();
   });
 
-  test.each(['', 'blu', undefined])('Should throw error with invalid icon property : %s', async icon => {
+  test.each(['', 'blu', undefined])('Should throw error with invalid icon property: %s', async icon => {
     expect.assertions(1);
     try {
       await getPage({ icon });
     } catch (err) {
-      expect(err.message).toMatch('<mg-icon> prop "icon" must be one of : ');
+      expect(err.message).toMatch('<mg-icon> prop "icon" must be one of: ');
     }
   });
 
-  test.each(['', 'blu'])('Should throw error with invalid size property : %s', async size => {
+  test.each(['', 'blu'])('Should throw error with invalid size property: %s', async size => {
     expect.assertions(1);
     try {
       await getPage({ icon: 'check-circle', size });
     } catch (err) {
-      expect(err.message).toMatch('<mg-icon> prop "size" must be one of : ');
+      expect(err.message).toMatch('<mg-icon> prop "size" must be one of: ');
     }
   });
 
-  test.each(['', 'blu'])('Should throw error with invalid variant property : %s', async variant => {
+  test.each(['', 'blu'])('Should throw error with invalid variant property: %s', async variant => {
     expect.assertions(1);
     try {
       await getPage({ icon: 'check-circle', variant });
     } catch (err) {
-      expect(err.message).toMatch('<mg-icon> prop "variant" must be one of : ');
+      expect(err.message).toMatch('<mg-icon> prop "variant" must be one of: ');
     }
   });
 });

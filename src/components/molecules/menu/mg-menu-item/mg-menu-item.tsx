@@ -364,7 +364,7 @@ export class MgMenuItem {
         ) : (
           [
             this.renderInteractiveElement(),
-            <div class={getContainerClasses()} hidden={!this.expanded}>
+            <div key="vertical-container" class={getContainerClasses()} hidden={!this.expanded}>
               {this.renderSlot()}
             </div>,
           ]

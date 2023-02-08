@@ -74,7 +74,7 @@ describe('mg-input-numeric', () => {
         expect(err.message).toMatch('<mg-input> prop "identifier" is required.');
       }
     });
-    test.each(['', ' ', undefined])('Should throw error with invalid label property : %s', async label => {
+    test.each(['', ' ', undefined])('Should throw error with invalid label property: %s', async label => {
       expect.assertions(1);
       try {
         await getPage({ identifier: 'identifier', label, type });
@@ -270,12 +270,12 @@ describe('mg-input-numeric', () => {
     });
   });
 
-  test.each(['', 'blu'])('Should throw error with invalid type property : %s', async type => {
+  test.each(['', 'blu'])('Should throw error with invalid type property: %s', async type => {
     expect.assertions(1);
     try {
       await getPage({ identifier: 'identifier', label: 'Blu', type });
     } catch (err) {
-      expect(err.message).toMatch('<mg-input-numeric> prop "type" must be one of :');
+      expect(err.message).toMatch('<mg-input-numeric> prop "type" must be one of:');
     }
   });
 

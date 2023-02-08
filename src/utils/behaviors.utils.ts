@@ -103,29 +103,22 @@ export class OverflowBehavior {
    */
   private updateDisplayedItems = (availableWidth: number): void => {
     this.restoreItems();
-    this.children.reduce(
-      (acc, curr: HTMLMgMenuItemElement) => {
-        acc.accWidth += curr.offsetWidth;
-        const isPreviousItemHidden = acc.previousItem !== null && acc.previousItem.getAttribute('hidden') !== null;
-        // if previous item is hidden AND is NOT more element we hidde current
-        // OR if item has an overflow we hidde current
-        // OR if current item is more element AND have NOT previous hidden items, current more element item is an hidden item
-        // ELSE current is a display item
-        if (
-          (isPreviousItemHidden && !this.isMoreElement(curr)) ||
-          this.isOverflowElement(acc.accWidth, curr, availableWidth) ||
-          (this.isMoreElement(curr) && !isPreviousItemHidden)
-        ) {
-          this.toggleItem(curr, true);
-        } else this.toggleItem(curr, false);
+    const acc = { accWidth: 0, previousItem: null };
+    this.children.forEach((child: HTMLMgMenuItemElement) => {
+      acc.accWidth += child.offsetWidth;
+      const isPreviousItemHidden = acc.previousItem !== null && acc.previousItem.getAttribute('hidden') !== null;
+      // if previous item is hidden AND is NOT more element we hidde current
+      // OR if item has an overflow we hidde current
+      // OR if current item is more element AND have NOT previous hidden items, current more element item is an hidden item
+      // ELSE current is a display item
+      this.toggleItem(
+        child,
+        (isPreviousItemHidden && !this.isMoreElement(child)) || this.isOverflowElement(acc.accWidth, child, availableWidth) || (this.isMoreElement(child) && !isPreviousItemHidden),
+      );
 
-        // update previous item with current item
-        acc.previousItem = curr;
-
-        return acc;
-      },
-      { accWidth: 0, previousItem: null },
-    );
+      // update previous item with current item
+      acc.previousItem = child;
+    });
   };
 
   /**

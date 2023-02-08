@@ -57,7 +57,7 @@ describe('mg-input-date', () => {
     }
   });
 
-  test.each(['', ' ', undefined])('Should throw an error with invalid label property : %s', async label => {
+  test.each(['', ' ', undefined])('Should throw an error with invalid label property: %s', async label => {
     expect.assertions(1);
     try {
       await getPage({ identifier: 'identifier', label });
@@ -75,7 +75,7 @@ describe('mg-input-date', () => {
     }
   });
 
-  test.each([2021, '31-12-2022', '2022-02-24T08:01:44.460Z'])('Should throw an error with invalid value property : %s', async value => {
+  test.each([2021, '31-12-2022', '2022-02-24T08:01:44.460Z'])('Should throw an error with invalid value property: %s', async value => {
     expect.assertions(1);
     try {
       await getPage({ identifier: 'identifier', label: 'label', value });
