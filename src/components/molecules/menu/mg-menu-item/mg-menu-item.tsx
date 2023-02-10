@@ -287,10 +287,15 @@ export class MgMenuItem {
       // manage first sub-level menu-items
       const childItems = Array.from(this.element.querySelector('mg-menu')?.children || []).filter(item => item.nodeName === 'MG-MENU-ITEM');
       childItems.forEach(item => {
+        const updateStatus = () => {
+          this.status = this.hasActiveChild() ? Status.ACTIVE : Status.VISIBLE;
+        };
         // manage child menu listener
+        item.addEventListener('status-change', () => {
+          updateStatus();
+        });
         new MutationObserver(mutationsList => {
-          const isAttributeHiddenMutated = mutationsList.some(mutation => mutation.attributeName === 'hidden');
-          if (isAttributeHiddenMutated) this.status = this.hasActiveChild() ? Status.ACTIVE : Status.VISIBLE;
+          if (mutationsList.some(mutation => mutation.attributeName === 'hidden')) updateStatus();
           this.updateDisplayNotificationBadge();
         }).observe(item, { attributes: true });
       });

@@ -274,6 +274,25 @@ describe('mg-menu-item', () => {
 
         expect(spy).toHaveBeenCalledWith(Status.ACTIVE);
       });
+
+      test.each([Status.ACTIVE, Status.VISIBLE])('Should update status with child item "change-status" event, from status %s', async status => {
+        const itemStatus = status === Status.ACTIVE ? Status.ACTIVE : Status.VISIBLE;
+        const page = await getPage(menuItem({ label: 'Batman', status: itemStatus }, childMenu({ label: 'child menu', status })));
+        await page.waitForChanges();
+
+        const item = page.doc.querySelector('mg-menu-item');
+        const childItem = page.doc.querySelector('mg-menu-item mg-menu-item');
+
+        expect(item).toHaveProperty('status', itemStatus);
+        expect(childItem).toHaveProperty('status', status);
+
+        childItem.dispatchEvent(new CustomEvent('change-status', { bubbles: true }));
+
+        await page.waitForChanges();
+
+        expect(item).toHaveProperty('status', status);
+        expect(childItem).toHaveProperty('status', itemStatus);
+      });
     });
   });
 
