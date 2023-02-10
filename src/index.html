@@ -749,6 +749,15 @@
         </div>
         <h4>Tooltips</h4>
         <div class="mg-group-elements" style="padding: 0 0 1rem">
+          <mg-tooltip message="Blu">
+            <mg-input-checkbox id="blo" label="bli" identifier="bla" label-hide></mg-input-checkbox>
+            <script>
+              const mgInputCheckboxWithTooltip = document.querySelector('mg-input-checkbox#blo');
+              mgInputCheckboxWithTooltip.value = [{ title: '', value: true }];
+            </script>
+          </mg-tooltip>
+        </div>
+        <div class="mg-group-elements" style="padding: 0 0 1rem">
           <mg-tooltip
             message="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
           exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
@@ -1125,7 +1134,7 @@
             </div> -->
             <mg-input-checkbox label="mg-input-checkbox label" identifier="mg-input-checkbox-id"></mg-input-checkbox>
             <script>
-              const mgInputCheckbox = document.querySelector('mg-input-checkbox');
+              const mgInputCheckbox = document.querySelector('mg-input-checkbox[identifier="mg-input-checkbox-id"]');
               mgInputCheckbox.value = [
                 { title: 'oui', value: false },
                 { title: 'non', value: false },
