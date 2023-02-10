@@ -18,10 +18,10 @@ export default {
 const Template = (args: any): HTMLElement => (
   <div>
     <mg-button
-      aria-controls="identifier"
+      aria-controls={args.identifier}
       aria-haspopup="dialog"
       onClick={() => {
-        const mgModal = document.querySelector('mg-modal');
+        const mgModal: HTMLMgModalElement = document.querySelector(`mg-modal[identifier="${args.identifier}"]`);
         const isHide = mgModal.hide === true;
         if (isHide) {
           mgModal.removeAttribute('hide'); // storybook first render is an attribute then we use property
@@ -55,6 +55,7 @@ export const WithCloseButton = Template.bind({});
 
 WithCloseButton.args = {
   ...MgModal.args,
+  identifier: 'identifier-close-button',
   closeButton: true,
 };
 
@@ -63,5 +64,6 @@ export const WithActions = Template.bind({});
 WithActions.args = {
   ...MgModal.args,
   closeButton: true,
+  identifier: 'identifier-with-action',
   slotActions: `<div class="mg-group-elements mg-group-elements--align-right"><mg-button>Primary</mg-button><mg-button variant="secondary">Secondary</mg-button></div>`,
 };
