@@ -1,11 +1,155 @@
 {
-  "timestamp": "2023-02-07T08:40:16",
+  "timestamp": "2023-02-10T11:34:43",
   "compiler": {
     "name": "@stencil/core",
     "version": "3.0.0",
     "typescriptVersion": "4.9.4"
   },
   "components": [
+    {
+      "filePath": "./src/components/molecules/mg-action-more/mg-action-more.tsx",
+      "encapsulation": "shadow",
+      "tag": "mg-action-more",
+      "readme": "## Anatomy\n\n![](./mg-action-more/doc/img/mg-action-more-anatomy.png) \n\n## Specifications\n\n![](./mg-action-more/doc/img/mg-action-more-popover-spacing.png) \n\n### Spacing\nPopover padding should be 10 up/down, 0 left/right.\n\n## Behavior\n\n### Action\n\nIn addition of the standard popover's behavior, when an item of the menu is clicked the popover closes itself.\n\n## Options\n\n### Button's variant\n\n![](./mg-action-more/doc/img/mg-action-more-options-variant.png) \n\nBy default, button variant is \"flat\".\nIt is possible to set another variant (see [mg-button](http://core.pages.mgdis.fr/core-ui/mg-components/?path=/story/atoms-mg-button--mg-button)).\n\n### Icon\n\n![](./mg-action-more/doc/img/mg-action-more-options-icon.png)\n\nBy default, icon is *ellipsis*. \nIt is possible to set another icon\n\n\n### Label\n\n![](./mg-action-more/doc/img/mg-action-more-options-label.png) \n\nBy default, label is *Actions* and hidden. \nIt is possible to set another label.\n\n### Chevron\n\n![](./mg-action-more/doc/img/mg-action-more-options-chevron.png) \n\nIt is possible to display a chevron on the label right side, it make a 180 degree rotation on click.\n\n",
+      "docs": "![](./mg-action-more/doc/img/mg-action-more-anatomy.png)",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "button",
+          "type": "{ isIcon: boolean; variant: \"flat\" | \"info\" | \"success\" | \"link\" | \"primary\" | \"secondary\" | \"danger\" | \"danger-alt\"; label?: string; identifier?: string; }",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "Define button properties\nDefault: {variant: 'flat', isIcon: true}.",
+          "docsTags": [],
+          "default": "{ variant: 'flat', isIcon: true }",
+          "values": [
+            {
+              "type": "{ isIcon: boolean; variant: \"flat\""
+            },
+            {
+              "value": "info",
+              "type": "string"
+            },
+            {
+              "value": "success",
+              "type": "string"
+            },
+            {
+              "value": "link",
+              "type": "string"
+            },
+            {
+              "value": "primary",
+              "type": "string"
+            },
+            {
+              "value": "secondary",
+              "type": "string"
+            },
+            {
+              "value": "danger",
+              "type": "string"
+            },
+            {
+              "type": "\"danger-alt\"; label?: string; identifier?: string; }"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "displayChevron",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "display-chevron",
+          "reflectToAttr": false,
+          "docs": "Define if chevron is display",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "icon",
+          "type": "{ icon?: string; }",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "Define displaied icon\nDefault: {icon: 'ellipsis'}",
+          "docsTags": [],
+          "default": "{ icon: 'ellipsis' }",
+          "values": [
+            {
+              "type": "{ icon?: string; }"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "items",
+          "type": "MgActionMoreItemType[]",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "Define the menu-items elements",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "MgActionMoreItemType[]"
+            }
+          ],
+          "optional": false,
+          "required": true
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "mg-icon",
+        "mg-popover",
+        "mg-button",
+        "mg-menu",
+        "mg-menu-item",
+        "mg-badge"
+      ],
+      "dependencyGraph": {
+        "mg-action-more": [
+          "mg-icon",
+          "mg-popover",
+          "mg-button",
+          "mg-menu",
+          "mg-menu-item",
+          "mg-badge"
+        ],
+        "mg-popover": [
+          "mg-card",
+          "mg-button",
+          "mg-icon"
+        ],
+        "mg-button": [
+          "mg-icon"
+        ],
+        "mg-menu": [
+          "mg-menu-item",
+          "mg-icon",
+          "mg-menu"
+        ],
+        "mg-menu-item": [
+          "mg-badge",
+          "mg-icon",
+          "mg-popover"
+        ]
+      }
+    },
     {
       "filePath": "./src/components/atoms/mg-badge/mg-badge.tsx",
       "encapsulation": "shadow",
@@ -116,11 +260,15 @@
       "slots": [],
       "parts": [],
       "dependents": [
+        "mg-action-more",
         "mg-menu-item",
         "mg-tabs"
       ],
       "dependencies": [],
       "dependencyGraph": {
+        "mg-action-more": [
+          "mg-badge"
+        ],
         "mg-menu-item": [
           "mg-badge"
         ],
@@ -332,6 +480,7 @@
       "slots": [],
       "parts": [],
       "dependents": [
+        "mg-action-more",
         "mg-message",
         "mg-modal",
         "mg-pagination",
@@ -344,6 +493,9 @@
       "dependencyGraph": {
         "mg-button": [
           "mg-icon"
+        ],
+        "mg-action-more": [
+          "mg-button"
         ],
         "mg-message": [
           "mg-button"
@@ -886,6 +1038,7 @@
       "slots": [],
       "parts": [],
       "dependents": [
+        "mg-action-more",
         "mg-button",
         "mg-details",
         "mg-input-checkbox",
@@ -908,6 +1061,9 @@
       ],
       "dependencies": [],
       "dependencyGraph": {
+        "mg-action-more": [
+          "mg-icon"
+        ],
         "mg-button": [
           "mg-icon"
         ],
@@ -4442,6 +4598,7 @@
       "slots": [],
       "parts": [],
       "dependents": [
+        "mg-action-more",
         "mg-menu"
       ],
       "dependencies": [
@@ -4465,6 +4622,9 @@
         ],
         "mg-button": [
           "mg-icon"
+        ],
+        "mg-action-more": [
+          "mg-menu"
         ]
       }
     },
@@ -4554,6 +4714,7 @@
       "slots": [],
       "parts": [],
       "dependents": [
+        "mg-action-more",
         "mg-menu"
       ],
       "dependencies": [
@@ -4574,6 +4735,9 @@
         ],
         "mg-button": [
           "mg-icon"
+        ],
+        "mg-action-more": [
+          "mg-menu-item"
         ],
         "mg-menu": [
           "mg-menu-item"
@@ -5334,6 +5498,7 @@
       "slots": [],
       "parts": [],
       "dependents": [
+        "mg-action-more",
         "mg-menu-item"
       ],
       "dependencies": [
@@ -5349,6 +5514,9 @@
         ],
         "mg-button": [
           "mg-icon"
+        ],
+        "mg-action-more": [
+          "mg-popover"
         ],
         "mg-menu-item": [
           "mg-popover"
