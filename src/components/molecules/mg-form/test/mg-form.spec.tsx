@@ -80,20 +80,26 @@ describe('mg-form', () => {
     { args: { identifier: 'identifier', disabled: true } },
     { args: { identifier: 'identifier' }, required: 'one' },
     { args: { identifier: 'identifier' }, required: 'all' },
+    { args: { identifier: 'identifier' }, required: 'multiple' },
+    { args: { identifier: 'identifier' }, required: 'single' },
     { args: { identifier: 'identifier' }, readonly: true },
   ])('Should render with args %o:', async ({ args, required, readonly }) => {
-    const slot = getSlottedContent();
+    const slot = required === 'single' ? getSlottedContent()[0] : getSlottedContent();
     if (required === 'one') slot[0].$attrs$.required = true;
-    else if (required === 'all') {
+    else if (required === 'all')
       slot.forEach(s => {
         s.$attrs$.required = true;
       });
-    }
-    if (readonly) {
+    else if (required === 'multiple') {
+      slot[0].$attrs$.required = true;
+      slot[1].$attrs$.required = true;
+    } else if (required === 'single') slot.$attrs$.required = true;
+
+    if (readonly)
       slot.forEach(s => {
         s.$attrs$.readonly = true;
       });
-    }
+
     const { root } = await getPage(args, slot);
     expect(root).toMatchSnapshot();
   });

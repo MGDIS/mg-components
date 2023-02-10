@@ -21,7 +21,9 @@
   },
   "form": {
     "required": "Fields with a <strong class=\"is-asterisk\">*</strong> are required",
-    "allRequired": "All fields are required"
+    "requiredSingle": "Field with a <strong class=\"is-asterisk\">*</strong> is required",
+    "allRequired": "All fields are required",
+    "allRequiredSingle": "The field is required"
   },
   "message": {
     "closeButton": "Close message"
