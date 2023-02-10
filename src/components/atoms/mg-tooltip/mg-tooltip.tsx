@@ -1,5 +1,5 @@
 import { Component, Element, h, Host, Prop, Watch } from '@stencil/core';
-import { createID } from '../../../utils/components.utils';
+import { createID, focusableElements } from '../../../utils/components.utils';
 import { Instance as PopperInstance, createPopper, Placement } from '@popperjs/core';
 import { Guard } from './mg-tooltip.conf';
 
@@ -202,25 +202,23 @@ export class MgTooltip {
       this.setDisplay(true);
     });
 
-    ['blur', 'keydown'].forEach(event => {
-      document.addEventListener(event, (e: UIEvent & KeyboardEvent) => {
-        // we continue to process ONLY for KeyboardEvents 'Escape'
-        if (e.type === 'keydown' && e.code !== 'Escape') {
-          return;
-        }
-        this.resetGuard();
-        this.setDisplay(false);
-      });
+    this.tooltipedElement.addEventListener('blur', () => {
+      this.resetGuard();
+      this.setDisplay(false);
+    });
+
+    document.addEventListener('keydown', (event: KeyboardEvent) => {
+      if (event.code === 'Escape') this.setDisplay(false);
     });
 
     // manage tooltipElement & tooltipedElement mouseenter/mouseleave events
-    ['mouseenter', 'mouseleave'].forEach(event => {
-      const isMouseenter = event === 'mouseenter';
+    ['mouseenter', 'mouseleave'].forEach(eventType => {
+      const isMouseenter = eventType === 'mouseenter';
       [
         { element: this.tooltip, action: () => this.tooltipMouseListenerAction(Guard.HOVER_TOOLTIP_ELEMENT, isMouseenter, Guard.HOVER_TOOLTIPED_ELEMENT) },
         { element: this.tooltipedElement, action: () => this.tooltipMouseListenerAction(Guard.HOVER_TOOLTIPED_ELEMENT, isMouseenter, Guard.HOVER_TOOLTIP_ELEMENT) },
       ].forEach(({ element, action }) => {
-        element.addEventListener(event, () => {
+        element.addEventListener(eventType, () => {
           action();
         });
       });
@@ -246,9 +244,7 @@ export class MgTooltip {
     const slotElement = this.element.firstElementChild as HTMLElement;
 
     // Get interactive element
-    const interactiveElements = ['a', 'button', 'input', 'textarea', 'select']; //! Might needs updates
-    const interactiveElement =
-      (this.element.shadowRoot.querySelector(interactiveElements.join(',')) as HTMLElement) || slotElement.shadowRoot?.querySelector(interactiveElements.join(','));
+    const interactiveElement: HTMLElement = slotElement.matches(focusableElements) ? slotElement : slotElement.shadowRoot?.querySelector(focusableElements);
 
     // define selected element to become tooltip selector
     this.tooltipedElement = interactiveElement || slotElement;
