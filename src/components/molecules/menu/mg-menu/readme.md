@@ -141,7 +141,6 @@ With a mg-badge/mg-tag/mg-icon, **you must set the component using HTML attribut
 
 ### Used by
 
- - [mg-action-more](../../mg-action-more)
  - [mg-menu](.)
 
 ### Depends on
@@ -161,7 +160,6 @@ graph TD;
   mg-popover --> mg-button
   mg-popover --> mg-icon
   mg-button --> mg-icon
-  mg-action-more --> mg-menu
   style mg-menu fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

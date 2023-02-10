@@ -1,6 +1,0 @@
-@mixin rotate($selecteur, $duration) {
-  transition: $duration;
-  &--rotate#{$selecteur} {
-    transform: rotate(180deg);
-  }
-}

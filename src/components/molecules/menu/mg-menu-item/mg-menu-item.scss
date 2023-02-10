@@ -2,7 +2,6 @@
 
 @import '../../../../styles/a11y.scss';
 @import '../../../../styles/mixins/navigation-button.scss';
-@import '../../../../styles/mixins/mg-icon-animation.scss';
 
 $navigation-vertical-spacing: 1rem;
 $navigation-button-sizes: (
@@ -116,7 +115,10 @@ $navigation-button-sizes: (
     }
     &-chevron {
       margin-left: auto;
-      @include rotate('.mg-menu-item__navigation-button-chevron', 200ms);
+      transition: 200ms;
+    }
+    &-chevron--rotate.mg-menu-item__navigation-button-chevron {
+      transform: rotate(180deg);
     }
   }
 }
