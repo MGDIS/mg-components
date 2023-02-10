@@ -45,7 +45,7 @@ exports[`mg-tooltip Should manage display on events enter with { eventIn: 'focus
       <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
     </div>
   </mock:shadow-root>
-  <button aria-describedby="blu identifier" tabindex="0">
+  <button aria-describedby="blu identifier">
     button
   </button>
 </mg-tooltip>
@@ -124,7 +124,7 @@ exports[`mg-tooltip Should manage display on events enter with { eventIn: 'mouse
       <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
     </div>
   </mock:shadow-root>
-  <button aria-describedby="blu identifier" tabindex="0">
+  <button aria-describedby="blu identifier">
     button
   </button>
 </mg-tooltip>
@@ -203,7 +203,7 @@ exports[`mg-tooltip Should render with element 2`] = `
       <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
     </div>
   </mock:shadow-root>
-  <button aria-describedby="blu identifier" tabindex="0">
+  <button aria-describedby="blu identifier">
     button
   </button>
 </mg-tooltip>

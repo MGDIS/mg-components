@@ -88,7 +88,7 @@ const menuItem = (args: ItemFormatedArgs): HTMLMgMenuItemElement => (
         <p>some content</p>
       </div>
     )}
-    {args.slot?.submenu && menu(getMenuArgs(Direction.VERTICAL, args.slot?.submenu - 1, 'medium'))}
+    {args.slot?.submenu > 0 && menu(getMenuArgs(Direction.VERTICAL, args.slot?.submenu - 1, 'medium'))}
   </mg-menu-item>
 );
 
