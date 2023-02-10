@@ -1,0 +1,369 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`behavior.utils OverflowBehavior render should manage resize with observer, case 50 1`] = `
+<mg-menu aria-label="batman" direction="horizontal" role="menubar">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <mg-menu-item aria-haspopup="false" data-overflow-base-index="0" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+        <slot name="image"></slot>
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <slot name="label"></slot>
+            <slot name="information"></slot>
+          </div>
+        </div>
+      </button>
+      <div class="mg-menu-item__collapse-container" hidden="">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+    <span slot="label" title="Batman">
+      Batman
+    </span>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" data-overflow-base-index="1" hidden="" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+        <slot name="image"></slot>
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <slot name="label"></slot>
+            <slot name="information"></slot>
+          </div>
+        </div>
+      </button>
+      <div class="mg-menu-item__collapse-container" hidden="">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+    <span slot="label" title="Joker">
+      Joker
+    </span>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" data-overflow-base-index="2" hidden="" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+        <slot name="image"></slot>
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <slot name="label"></slot>
+            <slot name="information"></slot>
+          </div>
+        </div>
+      </button>
+      <div class="mg-menu-item__collapse-container" hidden="">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+    <span slot="label" title="Bane">
+      Bane
+    </span>
+  </mg-menu-item>
+  <mg-menu-item data-overflow-base-index="3" data-overflow-more>
+    <mock:shadow-root></mock:shadow-root>
+    <span>
+      more menu
+    </span>
+    <mg-menu>
+      <mock:shadow-root></mock:shadow-root>
+      <mg-menu-item data-overflow-proxy-index="0" hidden="">
+        <mock:shadow-root></mock:shadow-root>
+        <span>
+          proxy batman
+        </span>
+      </mg-menu-item>
+      <mg-menu-item data-overflow-proxy-index="1">
+        <mock:shadow-root></mock:shadow-root>
+        <span>
+          proxy joker
+        </span>
+      </mg-menu-item>
+      <mg-menu-item data-overflow-proxy-index="2">
+        <mock:shadow-root></mock:shadow-root>
+        <span>
+          proxy bane
+        </span>
+      </mg-menu-item>
+    </mg-menu>
+  </mg-menu-item>
+</mg-menu>
+`;
+
+exports[`behavior.utils OverflowBehavior render should manage resize with observer, case 80 1`] = `
+<mg-menu aria-label="batman" direction="horizontal" role="menubar">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <mg-menu-item aria-haspopup="false" data-overflow-base-index="0" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+        <slot name="image"></slot>
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <slot name="label"></slot>
+            <slot name="information"></slot>
+          </div>
+        </div>
+      </button>
+      <div class="mg-menu-item__collapse-container" hidden="">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+    <span slot="label" title="Batman">
+      Batman
+    </span>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" data-overflow-base-index="1" hidden="" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+        <slot name="image"></slot>
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <slot name="label"></slot>
+            <slot name="information"></slot>
+          </div>
+        </div>
+      </button>
+      <div class="mg-menu-item__collapse-container" hidden="">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+    <span slot="label" title="Joker">
+      Joker
+    </span>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" data-overflow-base-index="2" hidden="" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+        <slot name="image"></slot>
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <slot name="label"></slot>
+            <slot name="information"></slot>
+          </div>
+        </div>
+      </button>
+      <div class="mg-menu-item__collapse-container" hidden="">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+    <span slot="label" title="Bane">
+      Bane
+    </span>
+  </mg-menu-item>
+  <mg-menu-item data-overflow-base-index="3" data-overflow-more>
+    <mock:shadow-root></mock:shadow-root>
+    <span>
+      more menu
+    </span>
+    <mg-menu>
+      <mock:shadow-root></mock:shadow-root>
+      <mg-menu-item data-overflow-proxy-index="0" hidden="">
+        <mock:shadow-root></mock:shadow-root>
+        <span>
+          proxy batman
+        </span>
+      </mg-menu-item>
+      <mg-menu-item data-overflow-proxy-index="1">
+        <mock:shadow-root></mock:shadow-root>
+        <span>
+          proxy joker
+        </span>
+      </mg-menu-item>
+      <mg-menu-item data-overflow-proxy-index="2">
+        <mock:shadow-root></mock:shadow-root>
+        <span>
+          proxy bane
+        </span>
+      </mg-menu-item>
+    </mg-menu>
+  </mg-menu-item>
+</mg-menu>
+`;
+
+exports[`behavior.utils OverflowBehavior render should manage resize with observer, case 100 1`] = `
+<mg-menu aria-label="batman" direction="horizontal" role="menubar">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <mg-menu-item aria-haspopup="false" data-overflow-base-index="0" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+        <slot name="image"></slot>
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <slot name="label"></slot>
+            <slot name="information"></slot>
+          </div>
+        </div>
+      </button>
+      <div class="mg-menu-item__collapse-container" hidden="">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+    <span slot="label" title="Batman">
+      Batman
+    </span>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" data-overflow-base-index="1" hidden="" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+        <slot name="image"></slot>
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <slot name="label"></slot>
+            <slot name="information"></slot>
+          </div>
+        </div>
+      </button>
+      <div class="mg-menu-item__collapse-container" hidden="">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+    <span slot="label" title="Joker">
+      Joker
+    </span>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" data-overflow-base-index="2" hidden="" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+        <slot name="image"></slot>
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <slot name="label"></slot>
+            <slot name="information"></slot>
+          </div>
+        </div>
+      </button>
+      <div class="mg-menu-item__collapse-container" hidden="">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+    <span slot="label" title="Bane">
+      Bane
+    </span>
+  </mg-menu-item>
+  <mg-menu-item data-overflow-base-index="3" data-overflow-more>
+    <mock:shadow-root></mock:shadow-root>
+    <span>
+      more menu
+    </span>
+    <mg-menu>
+      <mock:shadow-root></mock:shadow-root>
+      <mg-menu-item data-overflow-proxy-index="0" hidden="">
+        <mock:shadow-root></mock:shadow-root>
+        <span>
+          proxy batman
+        </span>
+      </mg-menu-item>
+      <mg-menu-item data-overflow-proxy-index="1">
+        <mock:shadow-root></mock:shadow-root>
+        <span>
+          proxy joker
+        </span>
+      </mg-menu-item>
+      <mg-menu-item data-overflow-proxy-index="2">
+        <mock:shadow-root></mock:shadow-root>
+        <span>
+          proxy bane
+        </span>
+      </mg-menu-item>
+    </mg-menu>
+  </mg-menu-item>
+</mg-menu>
+`;
+
+exports[`behavior.utils OverflowBehavior render should manage resize with observer, case 250 1`] = `
+<mg-menu aria-label="batman" direction="horizontal" role="menubar">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <mg-menu-item aria-haspopup="false" data-overflow-base-index="0" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+        <slot name="image"></slot>
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <slot name="label"></slot>
+            <slot name="information"></slot>
+          </div>
+        </div>
+      </button>
+      <div class="mg-menu-item__collapse-container" hidden="">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+    <span slot="label" title="Batman">
+      Batman
+    </span>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" data-overflow-base-index="1" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+        <slot name="image"></slot>
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <slot name="label"></slot>
+            <slot name="information"></slot>
+          </div>
+        </div>
+      </button>
+      <div class="mg-menu-item__collapse-container" hidden="">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+    <span slot="label" title="Joker">
+      Joker
+    </span>
+  </mg-menu-item>
+  <mg-menu-item aria-haspopup="false" data-overflow-base-index="2" role="menuitem" status="visible">
+    <mock:shadow-root>
+      <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+        <slot name="image"></slot>
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <slot name="label"></slot>
+            <slot name="information"></slot>
+          </div>
+        </div>
+      </button>
+      <div class="mg-menu-item__collapse-container" hidden="">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+    <span slot="label" title="Bane">
+      Bane
+    </span>
+  </mg-menu-item>
+  <mg-menu-item data-overflow-base-index="3" data-overflow-more hidden="">
+    <mock:shadow-root></mock:shadow-root>
+    <span>
+      more menu
+    </span>
+    <mg-menu>
+      <mock:shadow-root></mock:shadow-root>
+      <mg-menu-item data-overflow-proxy-index="0" hidden="">
+        <mock:shadow-root></mock:shadow-root>
+        <span>
+          proxy batman
+        </span>
+      </mg-menu-item>
+      <mg-menu-item data-overflow-proxy-index="1" hidden="">
+        <mock:shadow-root></mock:shadow-root>
+        <span>
+          proxy joker
+        </span>
+      </mg-menu-item>
+      <mg-menu-item data-overflow-proxy-index="2" hidden="">
+        <mock:shadow-root></mock:shadow-root>
+        <span>
+          proxy bane
+        </span>
+      </mg-menu-item>
+    </mg-menu>
+  </mg-menu-item>
+</mg-menu>
+`;
