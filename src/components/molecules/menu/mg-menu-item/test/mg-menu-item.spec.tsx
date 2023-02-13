@@ -286,7 +286,7 @@ describe('mg-menu-item', () => {
         expect(item).toHaveProperty('status', itemStatus);
         expect(childItem).toHaveProperty('status', status);
 
-        childItem.dispatchEvent(new CustomEvent('change-status', { bubbles: true }));
+        childItem.dispatchEvent(new CustomEvent('status-change', { bubbles: true }));
 
         await page.waitForChanges();
 
@@ -308,6 +308,7 @@ describe('mg-menu-item', () => {
       await page.waitForChanges();
 
       expect(page.rootInstance.updateDisplayNotificationBadge).toHaveBeenCalledTimes(1);
+      expect(page.root).toMatchSnapshot();
     });
 
     test.each([Status.ACTIVE, Status.VISIBLE])('Should update status with child attribute mutation, from status %s', async status => {

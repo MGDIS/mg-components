@@ -327,7 +327,7 @@ export class MgMenuItem {
             {!this.displayNotificationBadge && <slot name="information"></slot>}
             {this.displayNotificationBadge && (
               <span class="mg-menu-item__navigation-button-text-content-notification">
-                <mg-badge label={this.badgeLabel} value="!" variant="info" slot="information"></mg-badge>
+                <mg-badge label={this.badgeLabel} value="!" variant="text-color" slot="information"></mg-badge>
               </span>
             )}
           </div>
