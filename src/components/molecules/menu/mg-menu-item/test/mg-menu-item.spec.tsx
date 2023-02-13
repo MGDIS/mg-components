@@ -276,22 +276,21 @@ describe('mg-menu-item', () => {
       });
 
       test.each([Status.ACTIVE, Status.VISIBLE])('Should update status with child item "change-status" event, from status %s', async status => {
-        const itemStatus = status === Status.ACTIVE ? Status.ACTIVE : Status.VISIBLE;
-        const page = await getPage(menuItem({ label: 'Batman', status: itemStatus }, childMenu({ label: 'child menu', status })));
-        await page.waitForChanges();
+        const nextStatus = status === Status.ACTIVE ? Status.VISIBLE : Status.ACTIVE;
+        const page = await getPage(menuItem({ label: 'Batman' }, childMenu({ label: 'child menu', status })));
 
         const item = page.doc.querySelector('mg-menu-item');
-        const childItem = page.doc.querySelector('mg-menu-item mg-menu-item');
+        const childItem: HTMLMgMenuItemElement = page.doc.querySelector('mg-menu-item mg-menu-item');
 
-        expect(item).toHaveProperty('status', itemStatus);
+        expect(item).toHaveProperty('status', status);
         expect(childItem).toHaveProperty('status', status);
 
-        childItem.dispatchEvent(new CustomEvent('status-change', { bubbles: true }));
+        childItem.status = nextStatus;
 
         await page.waitForChanges();
 
-        expect(item).toHaveProperty('status', status);
-        expect(childItem).toHaveProperty('status', itemStatus);
+        expect(item).toHaveProperty('status', nextStatus);
+        expect(childItem).toHaveProperty('status', nextStatus);
       });
     });
   });

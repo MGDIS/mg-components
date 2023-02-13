@@ -153,7 +153,7 @@ export class MgMenuItem {
    * @param {MgMenuItem['status']} status to check
    * @returns {boolean} true if element with status is found
    */
-  private hasStatus = (element: Element, status: MgMenuItem['status']): boolean => element.getAttribute('status') === status;
+  private hasStatus = (element: Element, status: MgMenuItem['status']): boolean => (element as HTMLMgMenuItemElement).status === status;
 
   /**
    * Is component contextual direction match the given direction
@@ -288,7 +288,9 @@ export class MgMenuItem {
       const childItems = Array.from(this.element.querySelector('mg-menu')?.children || []).filter(item => item.nodeName === 'MG-MENU-ITEM');
       childItems.forEach(item => {
         const updateStatus = () => {
-          this.status = this.hasActiveChild() ? Status.ACTIVE : Status.VISIBLE;
+          if (![Status.HIDDEN, Status.DISABLED].includes(this.status)) {
+            this.status = this.hasActiveChild() ? Status.ACTIVE : Status.VISIBLE;
+          }
         };
         // manage child menu listener
         item.addEventListener('status-change', () => {
