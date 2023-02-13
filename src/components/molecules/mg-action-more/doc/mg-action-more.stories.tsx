@@ -6,6 +6,10 @@ export default {
   title: 'Molecules/mg-action-more',
 };
 
+const mouseEventHandler = event => {
+  console.log(event);
+};
+
 /**
  * Template
  *
@@ -13,7 +17,7 @@ export default {
  * @returns {HTMLElement} HTMLElement
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Template = (args: any): HTMLElement => <mg-action-more {...filterArgs(args)}>{args.slot}</mg-action-more>;
+const Template = (args: any): HTMLElement => <mg-action-more {...filterArgs(args)}></mg-action-more>;
 
 export const MgActionMore = Template.bind({});
 
@@ -21,15 +25,11 @@ MgActionMore.args = {
   items: [
     {
       label: 'element 1',
-      mouseEventHandler: event => {
-        console.log(event);
-      },
+      mouseEventHandler,
     },
     {
       label: 'element 2',
-      mouseEventHandler: event => {
-        console.log(event);
-      },
+      mouseEventHandler,
       badge: {
         value: 2,
         label: 'badge',
@@ -37,9 +37,7 @@ MgActionMore.args = {
     },
     {
       label: 'element 3',
-      mouseEventHandler: event => {
-        console.log(event);
-      },
+      mouseEventHandler,
       icon: 'user',
     },
   ],

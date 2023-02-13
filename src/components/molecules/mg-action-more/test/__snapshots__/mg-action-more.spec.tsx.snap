@@ -1,0 +1,496 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mg-action-more navigation Should run item mouseEventHandler by clicking on menu-item 1`] = `
+<mg-action-more>
+  <mock:shadow-root>
+    <span class="mg-action-more">
+      <mg-popover>
+        <mg-button isicon="" label="Actions" type="button" variant="flat">
+          <mg-icon icon="ellipsis"></mg-icon>
+        </mg-button>
+        <div slot="content">
+          <mg-menu direction="vertical" label="Actions">
+            <mg-menu-item status="visible">
+              <span slot="label">
+                batman
+              </span>
+            </mg-menu-item>
+            <mg-menu-item status="hidden">
+              <span slot="label">
+                robin
+              </span>
+            </mg-menu-item>
+            <mg-menu-item status="visible">
+              <span slot="label">
+                joker
+              </span>
+              <mg-badge label="badge" slot="information" value="2" variant="text-color"></mg-badge>
+            </mg-menu-item>
+            <mg-menu-item status="visible">
+              <mg-icon icon="user" slot="image"></mg-icon>
+              <span slot="label">
+                bane
+              </span>
+            </mg-menu-item>
+          </mg-menu>
+        </div>
+      </mg-popover>
+    </span>
+  </mock:shadow-root>
+</mg-action-more>
+`;
+
+exports[`mg-action-more navigation Should run item mouseEventHandler by clicking on menu-item 2`] = `
+<mg-action-more>
+  <mock:shadow-root>
+    <span class="mg-action-more">
+      <mg-popover>
+        <mg-button isicon="" label="Actions" type="button" variant="flat">
+          <mg-icon icon="ellipsis"></mg-icon>
+        </mg-button>
+        <div slot="content">
+          <mg-menu direction="vertical" label="Actions">
+            <mg-menu-item status="visible">
+              <span slot="label">
+                batman
+              </span>
+            </mg-menu-item>
+            <mg-menu-item status="hidden">
+              <span slot="label">
+                robin
+              </span>
+            </mg-menu-item>
+            <mg-menu-item status="visible">
+              <span slot="label">
+                joker
+              </span>
+              <mg-badge label="badge" slot="information" value="2" variant="text-color"></mg-badge>
+            </mg-menu-item>
+            <mg-menu-item status="visible">
+              <mg-icon icon="user" slot="image"></mg-icon>
+              <span slot="label">
+                bane
+              </span>
+            </mg-menu-item>
+          </mg-menu>
+        </div>
+      </mg-popover>
+    </span>
+  </mock:shadow-root>
+</mg-action-more>
+`;
+
+exports[`mg-action-more navigation Should run item mouseEventHandler by clicking on menu-item 3`] = `
+<mg-action-more>
+  <mock:shadow-root>
+    <span class="mg-action-more">
+      <mg-popover>
+        <mg-button isicon="" label="Actions" type="button" variant="flat">
+          <mg-icon icon="ellipsis"></mg-icon>
+        </mg-button>
+        <div slot="content">
+          <mg-menu direction="vertical" label="Actions">
+            <mg-menu-item status="visible">
+              <span slot="label">
+                batman
+              </span>
+            </mg-menu-item>
+            <mg-menu-item status="hidden">
+              <span slot="label">
+                robin
+              </span>
+            </mg-menu-item>
+            <mg-menu-item status="visible">
+              <span slot="label">
+                joker
+              </span>
+              <mg-badge label="badge" slot="information" value="2" variant="text-color"></mg-badge>
+            </mg-menu-item>
+            <mg-menu-item status="visible">
+              <mg-icon icon="user" slot="image"></mg-icon>
+              <span slot="label">
+                bane
+              </span>
+            </mg-menu-item>
+          </mg-menu>
+        </div>
+      </mg-popover>
+    </span>
+  </mock:shadow-root>
+</mg-action-more>
+`;
+
+exports[`mg-action-more render Should render with args [object Object] 1`] = `
+<mg-action-more>
+  <mock:shadow-root>
+    <span class="mg-action-more">
+      <mg-popover>
+        <mg-button isicon="" label="Actions" type="button" variant="flat">
+          <mg-icon icon="ellipsis"></mg-icon>
+        </mg-button>
+        <div slot="content">
+          <mg-menu direction="vertical" label="Actions">
+            <mg-menu-item status="visible">
+              <span slot="label">
+                batman
+              </span>
+            </mg-menu-item>
+            <mg-menu-item status="hidden">
+              <span slot="label">
+                robin
+              </span>
+            </mg-menu-item>
+            <mg-menu-item status="visible">
+              <span slot="label">
+                joker
+              </span>
+              <mg-badge label="badge" slot="information" value="2" variant="text-color"></mg-badge>
+            </mg-menu-item>
+            <mg-menu-item status="visible">
+              <mg-icon icon="user" slot="image"></mg-icon>
+              <span slot="label">
+                bane
+              </span>
+            </mg-menu-item>
+          </mg-menu>
+        </div>
+      </mg-popover>
+    </span>
+  </mock:shadow-root>
+</mg-action-more>
+`;
+
+exports[`mg-action-more render Should render with args [object Object] 2`] = `
+<mg-action-more>
+  <mock:shadow-root>
+    <span class="mg-action-more">
+      <mg-popover>
+        <mg-button label="dc-comics" type="button" variant="primary">
+          <mg-icon icon="ellipsis"></mg-icon>
+          dc-comics
+        </mg-button>
+        <div slot="content">
+          <mg-menu direction="vertical" label="Actions">
+            <mg-menu-item status="visible">
+              <span slot="label">
+                batman
+              </span>
+            </mg-menu-item>
+            <mg-menu-item status="hidden">
+              <span slot="label">
+                robin
+              </span>
+            </mg-menu-item>
+            <mg-menu-item status="visible">
+              <span slot="label">
+                joker
+              </span>
+              <mg-badge label="badge" slot="information" value="2" variant="text-color"></mg-badge>
+            </mg-menu-item>
+            <mg-menu-item status="visible">
+              <mg-icon icon="user" slot="image"></mg-icon>
+              <span slot="label">
+                bane
+              </span>
+            </mg-menu-item>
+          </mg-menu>
+        </div>
+      </mg-popover>
+    </span>
+  </mock:shadow-root>
+</mg-action-more>
+`;
+
+exports[`mg-action-more render Should render with args [object Object] 3`] = `
+<mg-action-more>
+  <mock:shadow-root>
+    <span class="mg-action-more">
+      <mg-popover>
+        <mg-button label="Actions" type="button" variant="flat">
+          <mg-icon icon="ellipsis"></mg-icon>
+          Actions
+          <span class="mg-a11y-animation mg-action-more__chevron">
+            <mg-icon icon="chevron-down" size="small"></mg-icon>
+          </span>
+        </mg-button>
+        <div slot="content">
+          <mg-menu direction="vertical" label="Actions">
+            <mg-menu-item status="visible">
+              <span slot="label">
+                batman
+              </span>
+            </mg-menu-item>
+            <mg-menu-item status="hidden">
+              <span slot="label">
+                robin
+              </span>
+            </mg-menu-item>
+            <mg-menu-item status="visible">
+              <span slot="label">
+                joker
+              </span>
+              <mg-badge label="badge" slot="information" value="2" variant="text-color"></mg-badge>
+            </mg-menu-item>
+            <mg-menu-item status="visible">
+              <mg-icon icon="user" slot="image"></mg-icon>
+              <span slot="label">
+                bane
+              </span>
+            </mg-menu-item>
+          </mg-menu>
+        </div>
+      </mg-popover>
+    </span>
+  </mock:shadow-root>
+</mg-action-more>
+`;
+
+exports[`mg-action-more render Should toggle menu on click 1`] = `
+<mg-action-more>
+  <mock:shadow-root>
+    <span class="mg-action-more">
+      <mg-popover>
+        <mg-button isicon="" label="Actions" type="button" variant="flat">
+          <mg-icon icon="ellipsis"></mg-icon>
+        </mg-button>
+        <div slot="content">
+          <mg-menu direction="vertical" label="Actions">
+            <mg-menu-item status="visible">
+              <span slot="label">
+                batman
+              </span>
+            </mg-menu-item>
+            <mg-menu-item status="hidden">
+              <span slot="label">
+                robin
+              </span>
+            </mg-menu-item>
+            <mg-menu-item status="visible">
+              <span slot="label">
+                joker
+              </span>
+              <mg-badge label="badge" slot="information" value="2" variant="text-color"></mg-badge>
+            </mg-menu-item>
+            <mg-menu-item status="visible">
+              <mg-icon icon="user" slot="image"></mg-icon>
+              <span slot="label">
+                bane
+              </span>
+            </mg-menu-item>
+          </mg-menu>
+        </div>
+      </mg-popover>
+    </span>
+  </mock:shadow-root>
+</mg-action-more>
+`;
+
+exports[`mg-action-more render Should toggle menu on click 2`] = `
+<mg-action-more>
+  <mock:shadow-root>
+    <span class="mg-action-more">
+      <mg-popover>
+        <mg-button isicon="" label="Actions" type="button" variant="flat">
+          <mg-icon icon="ellipsis"></mg-icon>
+        </mg-button>
+        <div slot="content">
+          <mg-menu direction="vertical" label="Actions">
+            <mg-menu-item status="visible">
+              <span slot="label">
+                batman
+              </span>
+            </mg-menu-item>
+            <mg-menu-item status="hidden">
+              <span slot="label">
+                robin
+              </span>
+            </mg-menu-item>
+            <mg-menu-item status="visible">
+              <span slot="label">
+                joker
+              </span>
+              <mg-badge label="badge" slot="information" value="2" variant="text-color"></mg-badge>
+            </mg-menu-item>
+            <mg-menu-item status="visible">
+              <mg-icon icon="user" slot="image"></mg-icon>
+              <span slot="label">
+                bane
+              </span>
+            </mg-menu-item>
+          </mg-menu>
+        </div>
+      </mg-popover>
+    </span>
+  </mock:shadow-root>
+</mg-action-more>
+`;
+
+exports[`mg-action-more render Should toggle menu on click 3`] = `
+<mg-action-more>
+  <mock:shadow-root>
+    <span class="mg-action-more">
+      <mg-popover>
+        <mg-button label="dc-comics" type="button" variant="primary">
+          <mg-icon icon="ellipsis"></mg-icon>
+          dc-comics
+        </mg-button>
+        <div slot="content">
+          <mg-menu direction="vertical" label="Actions">
+            <mg-menu-item status="visible">
+              <span slot="label">
+                batman
+              </span>
+            </mg-menu-item>
+            <mg-menu-item status="hidden">
+              <span slot="label">
+                robin
+              </span>
+            </mg-menu-item>
+            <mg-menu-item status="visible">
+              <span slot="label">
+                joker
+              </span>
+              <mg-badge label="badge" slot="information" value="2" variant="text-color"></mg-badge>
+            </mg-menu-item>
+            <mg-menu-item status="visible">
+              <mg-icon icon="user" slot="image"></mg-icon>
+              <span slot="label">
+                bane
+              </span>
+            </mg-menu-item>
+          </mg-menu>
+        </div>
+      </mg-popover>
+    </span>
+  </mock:shadow-root>
+</mg-action-more>
+`;
+
+exports[`mg-action-more render Should toggle menu on click 4`] = `
+<mg-action-more>
+  <mock:shadow-root>
+    <span class="mg-action-more">
+      <mg-popover>
+        <mg-button label="dc-comics" type="button" variant="primary">
+          <mg-icon icon="ellipsis"></mg-icon>
+          dc-comics
+        </mg-button>
+        <div slot="content">
+          <mg-menu direction="vertical" label="Actions">
+            <mg-menu-item status="visible">
+              <span slot="label">
+                batman
+              </span>
+            </mg-menu-item>
+            <mg-menu-item status="hidden">
+              <span slot="label">
+                robin
+              </span>
+            </mg-menu-item>
+            <mg-menu-item status="visible">
+              <span slot="label">
+                joker
+              </span>
+              <mg-badge label="badge" slot="information" value="2" variant="text-color"></mg-badge>
+            </mg-menu-item>
+            <mg-menu-item status="visible">
+              <mg-icon icon="user" slot="image"></mg-icon>
+              <span slot="label">
+                bane
+              </span>
+            </mg-menu-item>
+          </mg-menu>
+        </div>
+      </mg-popover>
+    </span>
+  </mock:shadow-root>
+</mg-action-more>
+`;
+
+exports[`mg-action-more render Should toggle menu on click 5`] = `
+<mg-action-more>
+  <mock:shadow-root>
+    <span class="mg-action-more">
+      <mg-popover>
+        <mg-button label="Actions" type="button" variant="flat">
+          <mg-icon icon="ellipsis"></mg-icon>
+          Actions
+          <span class="mg-a11y-animation mg-action-more__chevron">
+            <mg-icon icon="chevron-down" size="small"></mg-icon>
+          </span>
+        </mg-button>
+        <div slot="content">
+          <mg-menu direction="vertical" label="Actions">
+            <mg-menu-item status="visible">
+              <span slot="label">
+                batman
+              </span>
+            </mg-menu-item>
+            <mg-menu-item status="hidden">
+              <span slot="label">
+                robin
+              </span>
+            </mg-menu-item>
+            <mg-menu-item status="visible">
+              <span slot="label">
+                joker
+              </span>
+              <mg-badge label="badge" slot="information" value="2" variant="text-color"></mg-badge>
+            </mg-menu-item>
+            <mg-menu-item status="visible">
+              <mg-icon icon="user" slot="image"></mg-icon>
+              <span slot="label">
+                bane
+              </span>
+            </mg-menu-item>
+          </mg-menu>
+        </div>
+      </mg-popover>
+    </span>
+  </mock:shadow-root>
+</mg-action-more>
+`;
+
+exports[`mg-action-more render Should toggle menu on click 6`] = `
+<mg-action-more>
+  <mock:shadow-root>
+    <span class="mg-action-more">
+      <mg-popover>
+        <mg-button label="Actions" type="button" variant="flat">
+          <mg-icon icon="ellipsis"></mg-icon>
+          Actions
+          <span class="mg-a11y-animation mg-action-more__chevron mg-action-more__chevron--rotate">
+            <mg-icon icon="chevron-down" size="small"></mg-icon>
+          </span>
+        </mg-button>
+        <div slot="content">
+          <mg-menu direction="vertical" label="Actions">
+            <mg-menu-item status="visible">
+              <span slot="label">
+                batman
+              </span>
+            </mg-menu-item>
+            <mg-menu-item status="hidden">
+              <span slot="label">
+                robin
+              </span>
+            </mg-menu-item>
+            <mg-menu-item status="visible">
+              <span slot="label">
+                joker
+              </span>
+              <mg-badge label="badge" slot="information" value="2" variant="text-color"></mg-badge>
+            </mg-menu-item>
+            <mg-menu-item status="visible">
+              <mg-icon icon="user" slot="image"></mg-icon>
+              <span slot="label">
+                bane
+              </span>
+            </mg-menu-item>
+          </mg-menu>
+        </div>
+      </mg-popover>
+    </span>
+  </mock:shadow-root>
+</mg-action-more>
+`;

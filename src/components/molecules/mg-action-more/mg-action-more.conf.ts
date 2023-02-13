@@ -2,13 +2,12 @@ import { MgBadge } from '../../atoms/mg-badge/mg-badge';
 import { MgButton } from '../../atoms/mg-button/mg-button';
 import { MgIcon } from '../../atoms/mg-icon/mg-icon';
 import { Status } from '../menu/mg-menu-item/mg-menu-item.conf';
-import { MenuSizeType } from '../menu/mg-menu/mg-menu.conf';
 
 /**
  * prop icon type
  */
 export type MgActionMoreIconType = {
-  icon?: MgIcon['icon'];
+  icon: MgIcon['icon'];
 };
 
 /**
@@ -22,7 +21,7 @@ export type MgActionMoreButtonType = {
 };
 
 /**
- * prop message type
+ * locals message type
  */
 export type MgActionMoreMessageType = { label: string };
 
@@ -33,8 +32,6 @@ export type MgActionMoreItemType = {
   label: string;
   mouseEventHandler: IMouseEventHandler;
   status?: Status;
-  hidden?: boolean;
-  size?: MenuSizeType;
   icon?: MgIcon['icon'];
   badge?: Pick<MgBadge, 'value' | 'label'>;
 };

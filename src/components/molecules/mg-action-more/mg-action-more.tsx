@@ -12,7 +12,7 @@ import { Direction } from '../menu/mg-menu/mg-menu.conf';
  */
 const isMgActionMoreItems = (prop: unknown): prop is MgActionMoreItemType[] => {
   const items = prop as MgActionMoreItemType[];
-  return typeof items === 'object' && items.every(item => typeof item === 'object' && item.label !== undefined && typeof item.mouseEventHandler === 'function');
+  return typeof items === 'object' && items.every(item => typeof item === 'object' && typeof item.label === 'string' && typeof item.mouseEventHandler === 'function');
 };
 
 /**
@@ -23,7 +23,7 @@ const isMgActionMoreItems = (prop: unknown): prop is MgActionMoreItemType[] => {
  */
 const isMgActionMoreButton = (prop: unknown): prop is MgActionMoreButtonType => {
   const button = prop as MgActionMoreButtonType;
-  return typeof button === 'object' && button.variant !== undefined && button.isIcon !== undefined;
+  return typeof button === 'object' && typeof button.variant === 'string' && typeof button.isIcon === 'boolean';
 };
 
 /**
@@ -34,7 +34,7 @@ const isMgActionMoreButton = (prop: unknown): prop is MgActionMoreButtonType => 
  */
 const isMgActionMoreIcon = (prop: unknown): prop is MgActionMoreIconType => {
   const icon = prop as MgActionMoreIconType;
-  return typeof icon === 'object' && icon.icon !== undefined;
+  return typeof icon === 'object' && typeof icon.icon === 'string';
 };
 
 @Component({
@@ -99,7 +99,7 @@ export class MgActionMore {
   @Prop() displayChevron: boolean;
   @Watch('displayChevron')
   validateDisplayChevron(newValue: MgActionMore['displayChevron']): void {
-    if (newValue && this.button?.isIcon === true) {
+    if (newValue && this.button.isIcon === true) {
       throw new Error(`<${this.name}> prop "displayChevron" can't be used with a 'button" prop "isIcon" attribute.`);
     }
   }
@@ -145,7 +145,7 @@ export class MgActionMore {
    * @returns {HTMLElement} HTML Element
    */
   render(): HTMLElement {
-    const buttonLabel = this.button?.label || this.messages.label;
+    const buttonLabel = this.button.label || this.messages.label;
     const buttonContent = [buttonLabel];
 
     if (!this.button.isIcon && this.displayChevron) {
@@ -172,7 +172,7 @@ export class MgActionMore {
           <div slot="content">
             <mg-menu direction={Direction.VERTICAL} label={this.messages.label}>
               {this.items.map((item, index) => (
-                <mg-menu-item key={index} hidden={item.hidden} status={item.status || Status.VISIBLE} onClick={item.mouseEventHandler}>
+                <mg-menu-item key={index} status={item.status || Status.VISIBLE} onClick={item.mouseEventHandler}>
                   {item.icon && <mg-icon icon={item.icon} slot="image"></mg-icon>}
                   <span slot="label">{item.label}</span>
                   {item.badge?.label && <mg-badge label={item.badge.label} value={item.badge.value} slot="information" variant="text-color"></mg-badge>}
