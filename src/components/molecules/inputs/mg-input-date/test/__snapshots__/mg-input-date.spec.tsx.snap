@@ -107,7 +107,7 @@ exports[`mg-input-date Should render with args {
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <input aria-describedby="identifier-help-text" class="mg-input__box" disabled="" id="identifier" name="identifier" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required="" type="date" value="2022-06-02">
+          <input aria-describedby="identifier-help-text" class="mg-input__box" disabled="" id="identifier" name="identifier" required="" type="date" value="2022-06-02">
         </div>
         <div class="mg-input__help-text" id="identifier-help-text">
           My help text
@@ -157,7 +157,7 @@ exports[`mg-input-date Should render with args {
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <input aria-describedby="identifier-help-text" class="mg-input__box" id="identifier" name="identifier" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required="" type="date" value="2022-06-02">
+          <input aria-describedby="identifier-help-text" class="mg-input__box" id="identifier" name="identifier" required="" type="date" value="2022-06-02">
         </div>
         <div class="mg-input__help-text" id="identifier-help-text">
           My help text
@@ -181,7 +181,7 @@ exports[`mg-input-date Should render with args {
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <input aria-describedby="" class="mg-input__box" id="identifier" name="identifier" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" type="date">
+          <input aria-describedby="" class="mg-input__box" id="identifier" name="identifier" type="date">
           <mg-tooltip identifier="identifier-tooltip" message="My Tooltip Message">
             <mg-icon icon="info-circle"></mg-icon>
           </mg-tooltip>
@@ -211,7 +211,7 @@ exports[`mg-input-date Should render with args {
       </div>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <input aria-describedby="" class="mg-input__box" id="identifier" name="identifier" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" type="date">
+          <input aria-describedby="" class="mg-input__box" id="identifier" name="identifier" type="date">
         </div>
       </div>
     </div>
@@ -228,7 +228,7 @@ exports[`mg-input-date Should render with args { label: 'label', identifier: 'id
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <input aria-describedby="" class="mg-input__box" id="identifier" name="identifier" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" type="date">
+          <input aria-describedby="" class="mg-input__box" id="identifier" name="identifier" type="date">
         </div>
       </div>
     </div>
@@ -245,7 +245,7 @@ exports[`mg-input-date Should render with args { label: 'label', identifier: 'id
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <input aria-describedby="" class="mg-input__box" id="identifier" name="identifier" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" type="date">
+          <input aria-describedby="" class="mg-input__box" id="identifier" name="identifier" type="date">
         </div>
       </div>
     </div>
@@ -264,7 +264,7 @@ exports[`mg-input-date Should render with args { label: 'label', identifier: 'id
       </div>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <input aria-describedby="" class="mg-input__box" id="identifier" name="identifier" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" type="date">
+          <input aria-describedby="" class="mg-input__box" id="identifier" name="identifier" type="date">
         </div>
       </div>
     </div>
@@ -296,7 +296,7 @@ exports[`mg-input-date Should trigger events 1`] = `
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <input aria-describedby="identifier-help-text" class="mg-input__box" id="identifier" name="identifier" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" type="date">
+          <input aria-describedby="identifier-help-text" class="mg-input__box" id="identifier" name="identifier" type="date">
         </div>
         <div class="mg-input__help-text" id="identifier-help-text">
           My help text
@@ -316,7 +316,7 @@ exports[`mg-input-date display error message with locale: fr 1`] = `
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input mg-input__input--has-error">
-          <input aria-describedby="identifier-error" class="mg-input__box" id="identifier" name="identifier" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required="" type="date">
+          <input aria-describedby="identifier-error" class="mg-input__box" id="identifier" name="identifier" required="" type="date">
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
           Ce champ est obligatoire.
@@ -336,7 +336,7 @@ exports[`mg-input-date display error message with locale: xx 1`] = `
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input mg-input__input--has-error">
-          <input aria-describedby="identifier-error" class="mg-input__box" id="identifier" name="identifier" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required="" type="date">
+          <input aria-describedby="identifier-error" class="mg-input__box" id="identifier" name="identifier" required="" type="date">
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
           This field is required.
@@ -356,7 +356,7 @@ exports[`mg-input-date display error with displayError component's public method
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <input aria-describedby="" class="mg-input__box" id="identifier" name="identifier" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required="" type="date">
+          <input aria-describedby="" class="mg-input__box" id="identifier" name="identifier" required="" type="date">
         </div>
       </div>
     </div>
@@ -373,7 +373,7 @@ exports[`mg-input-date display error with displayError component's public method
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input mg-input__input--has-error">
-          <input aria-describedby="identifier-error" class="mg-input__box" id="identifier" name="identifier" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required="" type="date">
+          <input aria-describedby="identifier-error" class="mg-input__box" id="identifier" name="identifier" required="" type="date">
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
           This field is required.
@@ -393,7 +393,7 @@ exports[`mg-input-date validity, case next state is disabled validity ({ validit
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input mg-input__input--has-error">
-          <input aria-describedby="identifier-error" class="mg-input__box" id="identifier" name="identifier" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" type="date">
+          <input aria-describedby="identifier-error" class="mg-input__box" id="identifier" name="identifier" type="date">
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
           This field is required.
@@ -413,7 +413,7 @@ exports[`mg-input-date validity, case next state is disabled validity ({ validit
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input">
-          <input aria-describedby="" class="mg-input__box" disabled="" id="identifier" name="identifier" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" type="date">
+          <input aria-describedby="" class="mg-input__box" disabled="" id="identifier" name="identifier" type="date">
         </div>
       </div>
     </div>
@@ -430,7 +430,7 @@ exports[`mg-input-date validity, case next state is readonly validity ({ validit
       </mg-input-title>
       <div class="mg-input__input-container">
         <div class="mg-input__input mg-input__input--has-error">
-          <input aria-describedby="identifier-error" class="mg-input__box" id="identifier" name="identifier" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" type="date">
+          <input aria-describedby="identifier-error" class="mg-input__box" id="identifier" name="identifier" type="date">
         </div>
         <div aria-live="assertive" class="mg-input__error" id="identifier-error">
           This field is required.

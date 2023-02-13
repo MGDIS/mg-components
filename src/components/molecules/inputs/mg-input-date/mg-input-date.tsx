@@ -319,7 +319,6 @@ export class MgInputDate {
           required={this.required}
           onInput={this.handleInput}
           onBlur={this.handleBlur}
-          pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"
           ref={el => {
             if (el !== null) this.input = el as HTMLInputElement;
           }}
