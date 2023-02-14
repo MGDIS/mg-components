@@ -70,6 +70,10 @@ const inputsScriptRequiredSome = `<script>
   mgInputText.required = true;
 </script>`;
 
+const inputsScriptRequiredSingle = `<script>
+  mgInputCheckbox.required = true;
+</script>`;
+
 const inputsScriptReadonlyAll = `<script>
   mgInputCheckbox.readonly = true;
   mgInputDate.readonly = true;
@@ -128,7 +132,7 @@ describe('mg-form', () => {
   });
 
   describe.each(['<mg-form>', '<mg-form lang="fr">'])('With different locale', startTag => {
-    describe.each([inputsScriptRequiredAll, inputsScriptRequiredSome])('Should render required and errors', inputsScriptRequired => {
+    describe.each([inputsScriptRequiredAll, inputsScriptRequiredSome, inputsScriptRequiredSingle])('Should render required and errors', inputsScriptRequired => {
       test('Should render errors', async () => {
         const page = await createPage(`${startTag}
         ${inputs}
@@ -148,6 +152,26 @@ describe('mg-form', () => {
         const screenshotErrors = await page.screenshot();
         expect(screenshotErrors).toMatchImageSnapshot();
       });
+    });
+    test('Should render single required input in form', async () => {
+      const page = await createPage(`${startTag}
+        <mg-input-date identifier="mg-input-date" label="mg-input-date label"></mg-input-date>
+      </mg-form>
+      <script>
+        const mgInputDate = document.querySelector('mg-input-date');
+        mgInputDate.required = true;
+      </script>`);
+      const element = await page.find('mg-form');
+      expect(element).toHaveClass('hydrated');
+
+      const screenshot = await page.screenshot();
+      expect(screenshot).toMatchImageSnapshot();
+
+      await element.callMethod('displayError');
+      await page.waitForChanges();
+
+      const screenshotErrors = await page.screenshot();
+      expect(screenshotErrors).toMatchImageSnapshot();
     });
   });
 

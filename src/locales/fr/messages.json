@@ -21,7 +21,9 @@
   },
   "form": {
     "required": "Les champs marqués d'un <strong class=\"is-asterisk\">*</strong> sont obligatoires",
-    "allRequired": "Tous les champs sont obligatoires"
+    "requiredSingle": "Le champ marqué d'un <strong class=\"is-asterisk\">*</strong> est obligatoire",
+    "allRequired": "Tous les champs sont obligatoires",
+    "allRequiredSingle": "Le champ est obligatoire"
   },
   "message": {
     "closeButton": "Fermer le message"

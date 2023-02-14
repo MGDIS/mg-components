@@ -126,12 +126,12 @@ export class MgForm {
       // All fields are required
       // mg-input-toggle can not be required
       if (requiredInputs.length > 0 && requiredInputs.length === this.mgInputs.filter(input => input.nodeName !== 'MG-INPUT-TOGGLE').length) {
-        this.requiredMessage = this.messages.form.allRequired;
+        this.requiredMessage = requiredInputs.length === 1 ? this.messages.form.allRequiredSingle : this.messages.form.allRequired;
         this.classList.add(this.classAllRequired);
       }
       // Some fields are required
       else if (requiredInputs.length > 0) {
-        this.requiredMessage = this.messages.form.required;
+        this.requiredMessage = requiredInputs.length === 1 ? this.messages.form.requiredSingle : this.messages.form.required;
       }
     }
   };
