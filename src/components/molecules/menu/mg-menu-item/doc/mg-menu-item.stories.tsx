@@ -73,7 +73,7 @@ MgMenuItemWhithSubmenu.args = {
       <mg-menu-item>
         <span slot="label">Subitem 3</span>
         <mg-icon icon="user" slot="image"></mg-icon>
-        <mg-badge value="2" label="hello" slot="information"></mg-badge>
+        <mg-badge value="2" label="hello" variant="text-color" slot="information"></mg-badge>
       </mg-menu-item>
     </mg-menu>,
   ],

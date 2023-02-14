@@ -78,7 +78,7 @@ const menuItem = (args: ItemFormatedArgs): HTMLMgMenuItemElement => (
     {args.slot?.metadata && <span slot="metadata">{args.slot?.metadata}</span>}
     {args.slot?.icon && <mg-icon slot="image" icon="user"></mg-icon>}
     {args.slot?.badge && (
-      <mg-badge slot="information" label="information" value="1">
+      <mg-badge slot="information" label="information" value="1" variant="text-color">
         {args.slot?.icon}
       </mg-badge>
     )}
