@@ -105,6 +105,11 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props: MgInputProps, 
   }
 
   /**
+   * Set readonly value
+   */
+  if (props.readonlyValue === undefined) props.readonlyValue = props.value;
+
+  /**
    * Component classes
    */
   manageClasses(props);
@@ -184,7 +189,7 @@ export const MgInput: FunctionalComponent<MgInputProps> = (props: MgInputProps, 
       )}
       {props.readonly ? (
         <div class="mg-input__input-container">
-          <strong>{props.readonlyValue || props.value}</strong>
+          <strong>{props.readonlyValue}</strong>
           {children.filter(child => child.$name$ === 'append-input')}
         </div>
       ) : (
