@@ -132,7 +132,7 @@ export class MgActionMore {
    * @returns {void}
    */
   componentWillLoad(): void {
-    this.messages = (initLocales(this.element).messages as { actionMore: MgActionMoreMessageType }).actionMore;
+    this.messages = initLocales(this.element).messages.actionMore as MgActionMoreMessageType;
     this.validateItems(this.items);
     this.validateButton(this.button);
     this.validateIcon(this.icon);
@@ -171,8 +171,8 @@ export class MgActionMore {
           </mg-button>
           <div slot="content">
             <mg-menu direction={Direction.VERTICAL} label={this.messages.label}>
-              {this.items.map((item, index) => (
-                <mg-menu-item key={index} status={item.status || Status.VISIBLE} onClick={item.mouseEventHandler}>
+              {this.items.map(item => (
+                <mg-menu-item key={item.label} status={item.status || Status.VISIBLE} onClick={item.mouseEventHandler}>
                   {item.icon && <mg-icon icon={item.icon} slot="image"></mg-icon>}
                   <span slot="label">{item.label}</span>
                   {item.badge?.label && <mg-badge label={item.badge.label} value={item.badge.value} slot="information" variant="text-color"></mg-badge>}

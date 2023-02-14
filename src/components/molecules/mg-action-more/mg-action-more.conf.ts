@@ -17,7 +17,6 @@ export type MgActionMoreButtonType = {
   isIcon: MgButton['isIcon'];
   variant: MgButton['variant'];
   label?: MgButton['label'];
-  identifier?: MgButton['identifier'];
 };
 
 /**

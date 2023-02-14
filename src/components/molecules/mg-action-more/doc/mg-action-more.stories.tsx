@@ -4,10 +4,11 @@ import { filterArgs } from '../../../../../.storybook/utils';
 export default {
   component: 'mg-action-more',
   title: 'Molecules/mg-action-more',
+  parameters: { actions: { handles: ['click'] } },
 };
 
-const mouseEventHandler = event => {
-  console.log(event);
+const mouseEventHandler = () => {
+  window.alert('This alert comme from the clicked item method "mouseEventHandler".');
 };
 
 /**
@@ -17,7 +18,7 @@ const mouseEventHandler = event => {
  * @returns {HTMLElement} HTMLElement
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Template = (args: any): HTMLElement => <mg-action-more {...filterArgs(args)}></mg-action-more>;
+const Template = (args: any): HTMLElement => <mg-action-more {...filterArgs(args)} style={{ 'margin-left': '1rem' }}></mg-action-more>;
 
 export const MgActionMore = Template.bind({});
 
@@ -50,7 +51,6 @@ MgActionMoreCustom.args = {
   button: {
     variant: 'flat',
     isIcon: false,
-    identifier: 'identifier',
     label: 'mon user',
   },
   icon: {

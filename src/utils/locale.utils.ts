@@ -47,9 +47,9 @@ export const localeDate = (date: string, locale: string): string => {
  * @param {HTMLElement} element element we need to get the language
  * @param {unknown} messages messages to use
  * @param {string} defaultLocale default messages locale
- * @returns {{ locale: string; messages: unknown }} messages object
+ * @returns {{ locale: string; messages: Record<string, unknown> }} messages object
  */
-export const getLocaleMessages = (element: HTMLElement, messages: unknown, defaultLocale: string): { locale: string; messages: unknown } => {
+export const getLocaleMessages = (element: HTMLElement, messages: unknown, defaultLocale: string): { locale: string; messages: Record<string, unknown> } => {
   // Get local
   const closestLangAttribute: HTMLElement = element.closest('[lang]');
   const closestLang: string[] = Intl.NumberFormat.supportedLocalesOf(closestLangAttribute?.lang);

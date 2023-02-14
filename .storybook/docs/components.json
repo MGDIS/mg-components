@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-02-13T16:24:03",
+  "timestamp": "2023-02-14T08:48:59",
   "compiler": {
     "name": "@stencil/core",
     "version": "3.0.0",
@@ -10,14 +10,14 @@
       "filePath": "./src/components/molecules/mg-action-more/mg-action-more.tsx",
       "encapsulation": "shadow",
       "tag": "mg-action-more",
-      "readme": "## Anatomy\n\n![](./mg-action-more/doc/img/mg-action-more-anatomy.png) \n\n## Specifications\n\n![](./mg-action-more/doc/img/mg-action-more-popover-spacing.png) \n\n### Spacing\nPopover padding should be 10 up/down, 0 left/right.\n\n## Behavior\n\n### Action\n\nIn addition of the standard popover's behavior, when an item of the menu is clicked the popover closes itself.\n\n## Options\n\n### Button's variant\n\n![](./mg-action-more/doc/img/mg-action-more-options-variant.png) \n\nBy default, button variant is \"flat\".\nIt is possible to set another variant (see [mg-button](http://core.pages.mgdis.fr/core-ui/mg-components/?path=/story/atoms-mg-button--mg-button)).\n\n### Icon\n\n![](./mg-action-more/doc/img/mg-action-more-options-icon.png)\n\nBy default, icon is *ellipsis*. \nIt is possible to set another icon\n\n\n### Label\n\n![](./mg-action-more/doc/img/mg-action-more-options-label.png) \n\nBy default, label is *Actions* and hidden. \nIt is possible to set another label.\n\n### Chevron\n\n![](./mg-action-more/doc/img/mg-action-more-options-chevron.png) \n\nIt is possible to display a chevron on the label right side, it make a 180 degree rotation on click.\n",
+      "readme": "## Anatomy\n\n![](./mg-action-more/doc/img/mg-action-more-anatomy.png) \n\n## Specifications\n\n![](./mg-action-more/doc/img/mg-action-more-popover-spacing.png) \n\n### Spacing\nPopover padding should be 10px up/down, 0px left/right.\n\n## Behavior\n\n### Action\n\nIn addition of the standard popover's behavior, when an item of the menu is clicked the popover closes itself.\n\n## Options\n\n### Button's variant\n\n![](./mg-action-more/doc/img/mg-action-more-options-variant.png) \n\nBy default, button variant is \"flat\".\nIt is possible to set another variant (see [mg-button](http://core.pages.mgdis.fr/core-ui/mg-components/?path=/story/atoms-mg-button--mg-button)).\n\n### Icon\n\n![](./mg-action-more/doc/img/mg-action-more-options-icon.png)\n\nBy default, icon is *ellipsis*. \nIt is possible to set another icon\n\n\n### Label\n\n![](./mg-action-more/doc/img/mg-action-more-options-label.png) \n\nBy default, label is *Actions* and hidden. \nIt is possible to set another label.\n\n### Chevron\n\n![](./mg-action-more/doc/img/mg-action-more-options-chevron.png) \n\nIt is possible to display a chevron on the label right side, it make a 180 degree rotation on click.\n",
       "docs": "![](./mg-action-more/doc/img/mg-action-more-anatomy.png)",
       "docsTags": [],
       "usage": {},
       "props": [
         {
           "name": "button",
-          "type": "{ isIcon: boolean; variant: \"flat\" | \"info\" | \"success\" | \"link\" | \"primary\" | \"secondary\" | \"danger\" | \"danger-alt\"; label?: string; identifier?: string; }",
+          "type": "{ isIcon: boolean; variant: \"flat\" | \"info\" | \"success\" | \"link\" | \"primary\" | \"secondary\" | \"danger\" | \"danger-alt\"; label?: string; }",
           "mutable": false,
           "reflectToAttr": false,
           "docs": "Define button properties\nDefault: {variant: 'flat', isIcon: true}.",
@@ -52,7 +52,7 @@
               "type": "string"
             },
             {
-              "type": "\"danger-alt\"; label?: string; identifier?: string; }"
+              "type": "\"danger-alt\"; label?: string; }"
             }
           ],
           "optional": false,

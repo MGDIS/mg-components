@@ -11,7 +11,7 @@ mgActionMore${index}.items = ${JSON.stringify(args.items)};
 mgActionMore${index}.button = ${JSON.stringify(args.button)};
 mgActionMore${index}.icon = ${JSON.stringify(args.icon)};
 </script>`;
-  return `<mg-action-more ${renderAttributes(args)}" id=${id}></mg-action-more>${script}`;
+  return `<mg-action-more ${renderAttributes(args)}" id=${id} style="margin-left: 2rem;"></mg-action-more>${script}`;
 };
 
 const mouseEventHandler = () => 'hello batman';
