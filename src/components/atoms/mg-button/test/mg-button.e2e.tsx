@@ -5,8 +5,17 @@ const buttonHeight = 35;
 
 describe('mg-button', () => {
   test('Should render', async () => {
-    const html = variants.map(variant => `<div><mg-button variant="${variant}">${variant}</mg-button></div>`).join('');
-    const page = await createPage(html, { width: 100, height: variants.length * buttonHeight });
+    const html = variants
+      .map(
+        variant => `<div>
+      <mg-button variant="${variant}">${variant}</mg-button>
+      <mg-button variant="${variant}" is-icon><mg-icon icon="check-circle"></mg-icon></mg-button>
+      <mg-button variant="${variant}" disabled>disabled</mg-button>
+      <mg-button variant="${variant}" is-icon disabled label="disabled"><mg-icon icon="check-circle"></mg-icon></mg-button>
+    </div>`,
+      )
+      .join('');
+    const page = await createPage(html, { width: 250, height: variants.length * buttonHeight });
 
     const screenshot = await page.screenshot();
     expect(screenshot).toMatchImageSnapshot();
