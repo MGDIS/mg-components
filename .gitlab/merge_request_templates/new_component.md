@@ -1,4 +1,6 @@
-# Component name
+# Component name here
+
+CORE-NUMBER
 
 ## Checklist
 
