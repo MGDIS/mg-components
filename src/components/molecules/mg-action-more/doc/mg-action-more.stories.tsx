@@ -41,6 +41,11 @@ MgActionMore.args = {
       mouseEventHandler,
       icon: 'user',
     },
+    {
+      label: 'element 4',
+      mouseEventHandler,
+      href: '#',
+    },
   ],
 };
 

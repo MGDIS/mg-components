@@ -4,8 +4,7 @@ import { MgMenu } from '../mg-menu';
 import { Direction } from '../mg-menu.conf';
 import { MgMenuItem } from '../../mg-menu-item/mg-menu-item';
 import { MgPopover } from '../../../mg-popover/mg-popover';
-import { mockPopperArrowError } from '../../../mg-popover/test/mg-popover.spec';
-import { forcePopoverId, setupMutationObserverMock, setupResizeObserverMock } from '../../../../../utils/unit.test.utils';
+import { forcePopoverId, mockPopperArrowError, setupMutationObserverMock, setupResizeObserverMock } from '../../../../../utils/unit.test.utils';
 import { OverflowBehaviorElements } from '../../../../../utils/behaviors.utils';
 import { Status } from '../../mg-menu-item/mg-menu-item.conf';
 

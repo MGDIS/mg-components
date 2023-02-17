@@ -1,18 +1,10 @@
 import { KeyInput } from 'puppeteer';
-import { createPage, renderAttributes } from '../../../../utils/e2e.test.utils';
+import { createPage, renderAttributes, renderProperties } from '../../../../utils/e2e.test.utils';
 import { createID } from '../../../../utils/components.utils';
 import { Status } from '../../menu/mg-menu-item/mg-menu-item.conf';
 
-const createHTML = (args, index = 0) => {
-  const id = createID();
-  const script = `<script>
-const mgActionMore${index} = document.getElementById('${id}');
-mgActionMore${index}.items = ${JSON.stringify(args.items)};
-mgActionMore${index}.button = ${JSON.stringify(args.button)};
-mgActionMore${index}.icon = ${JSON.stringify(args.icon)};
-</script>`;
-  return `<mg-action-more ${renderAttributes(args)}" id=${id} style="margin-left: 2rem;"></mg-action-more>${script}`;
-};
+const createHTML = (args, id = `mg-action-more-${createID()}`) =>
+  `<mg-action-more ${renderAttributes(args)} id="${id}" style="margin-left: 2rem;"></mg-action-more><script>${renderProperties(args, `#${id}`)}</script>`;
 
 const mouseEventHandler = () => 'hello batman';
 
@@ -38,6 +30,7 @@ const items = [
     label: 'bane',
     mouseEventHandler,
     icon: 'user',
+    href: '#',
   },
 ];
 
@@ -68,7 +61,7 @@ describe('mg-action-more', () => {
           },
         },
       ]
-        .map((args, index) => `<div>${createHTML(args, index)}</div>`)
+        .map(args => `<div>${createHTML(args)}</div>`)
         .join('');
 
       const page = await createPage(`<h1>mg-action-more</h1>${html}`);
@@ -79,33 +72,31 @@ describe('mg-action-more', () => {
   });
 
   describe('navigation', () => {
-    test.each(['mouse', 'keyboard'])('should toggle button menu, case %s', async naviqation => {
-      const page = await createPage(
-        `${createHTML({
-          items,
-        })}`,
-      );
+    test.each(['mouse', 'keyboard'])('should toggle button menu, case %s', async navigation => {
+      const page = await createPage(createHTML({ items }), { width: 150, height: 250 });
 
       let screenshot = await page.screenshot();
       expect(screenshot).toMatchImageSnapshot();
 
-      await page.setViewport({ width: 150, height: 250 });
-
-      if (naviqation === 'mouse') {
+      if (navigation === 'mouse') {
         const mgButton = await page.find('mg-action-more >>> mg-button');
         await mgButton.click();
+        await page.waitForChanges();
 
         screenshot = await page.screenshot();
         expect(screenshot).toMatchImageSnapshot();
 
         const mgMenuItem = await page.find('mg-action-more >>> mg-menu-item');
-        await mgMenuItem.click();
+        await mgMenuItem.triggerEvent('click');
+        await page.waitForChanges();
 
         screenshot = await page.screenshot();
         expect(screenshot).toMatchImageSnapshot();
       } else {
         for await (const key of ['Tab', 'Enter', 'Tab', 'Enter']) {
-          await page.keyboard.press(key as KeyInput);
+          await page.keyboard.press(key as unknown as KeyInput);
+          await page.waitForChanges();
+
           screenshot = await page.screenshot();
           expect(screenshot).toMatchImageSnapshot();
         }
@@ -122,16 +113,16 @@ describe('mg-action-more', () => {
             variant: 'secondary',
           },
         })}`,
+        { width: 150, height: 250 },
       );
 
       let screenshot = await page.screenshot();
       expect(screenshot).toMatchImageSnapshot();
 
-      await page.setViewport({ width: 150, height: 250 });
-
       const mgButton = await page.find('mg-action-more >>> mg-button');
       await mgButton.click();
 
+      await page.waitForChanges();
       await page.waitForTimeout(300); // wait chevron animation ended
 
       screenshot = await page.screenshot();

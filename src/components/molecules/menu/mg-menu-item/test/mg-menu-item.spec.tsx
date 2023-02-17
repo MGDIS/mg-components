@@ -7,8 +7,7 @@ import { MgMenu } from '../../mg-menu/mg-menu';
 import { Status } from '../mg-menu-item.conf';
 import { Direction } from '../../mg-menu/mg-menu.conf';
 import { MgPopover } from '../../../mg-popover/mg-popover';
-import { mockPopperArrowError } from '../../../mg-popover/test/mg-popover.spec';
-import { forcePopoverId, setupMutationObserverMock, setupResizeObserverMock } from '../../../../../utils/unit.test.utils';
+import { forcePopoverId, mockPopperArrowError, setupMutationObserverMock, setupResizeObserverMock } from '../../../../../utils/unit.test.utils';
 
 mockPopperArrowError();
 

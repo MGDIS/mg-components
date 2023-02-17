@@ -2,6 +2,7 @@ import { h } from '@stencil/core';
 import { filterArgs } from '../../../../../../.storybook/utils';
 import { Direction, MenuSizeType } from '../mg-menu.conf';
 import { Status } from '../../mg-menu-item/mg-menu-item.conf';
+import { MgMenuItem } from '../../mg-menu-item/mg-menu-item';
 
 export default {
   component: 'mg-menu',
@@ -30,6 +31,7 @@ type ItemArgType = {
   badge?: boolean;
   content?: boolean;
   submenu?: number;
+  href?: MgMenuItem['href'];
 };
 
 type ItemFormatedArgs = Pick<ItemArgType, 'status'> & { slot: Pick<ItemArgType, 'label' | 'metadata' | 'icon' | 'badge' | 'content' | 'submenu'> };
@@ -54,8 +56,9 @@ interface IGetMenuItemArgs {
  * @param {ItemArgType} itemArgs - item arguments
  * @returns {ItemFormatedArgs} items formated args object
  */
-const getItemArgs: IGetMenuItemArgs = ({ label, status, metadata, icon, badge, content, submenu }) => ({
+const getItemArgs: IGetMenuItemArgs = ({ label, status, metadata, icon, badge, content, submenu, href }) => ({
   status,
+  href,
   slot: {
     label,
     metadata,
@@ -118,6 +121,7 @@ const getMenuArgs: IGetMenuArgs = (direction, level = 0, size = 'regular') => ({
       getItemArgs({
         label: 'label 1',
         direction,
+        href: '#',
       }),
       getItemArgs({
         label: 'label 2',

@@ -1,34 +1,112 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`mg-action-more navigation Should run item mouseEventHandler by clicking on menu-item 1`] = `
-<mg-action-more>
+<mg-action-more data-mg-popover-guard="mg-popover-test_0">
   <mock:shadow-root>
     <span class="mg-action-more">
       <mg-popover>
-        <mg-button isicon="" label="Actions" type="button" variant="flat">
+        <mock:shadow-root>
+          <slot></slot>
+          <div class="mg-popover" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
+            <div class="mg-popover__arrow" data-popper-arrow style="position: absolute;"></div>
+          </div>
+        </mock:shadow-root>
+        <mg-button aria-controls="mg-popover-test_0" aria-expanded="false" aria-label="Actions" role="button" tabindex="0" type="button">
+          <mock:shadow-root>
+            <div class="mg-button mg-button--flat mg-button--icon">
+              <div class="mg-button__content">
+                <slot></slot>
+              </div>
+            </div>
+          </mock:shadow-root>
           <mg-icon icon="ellipsis"></mg-icon>
         </mg-button>
         <div slot="content">
-          <mg-menu direction="vertical" label="Actions">
-            <mg-menu-item status="visible">
-              <span slot="label">
+          <mg-menu aria-label="Actions" direction="vertical" role="menubar">
+            <mock:shadow-root>
+              <slot></slot>
+            </mock:shadow-root>
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="visible">
+              <mock:shadow-root>
+                <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </button>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
+              <span slot="label" title="batman">
                 batman
               </span>
             </mg-menu-item>
-            <mg-menu-item status="hidden">
-              <span slot="label">
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="hidden">
+              <mock:shadow-root>
+                <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--hidden mg-menu-item__navigation-button--size-regular" hidden="" tabindex="-1">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </button>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
+              <span slot="label" title="robin">
                 robin
               </span>
             </mg-menu-item>
-            <mg-menu-item status="visible">
-              <span slot="label">
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="visible">
+              <mock:shadow-root>
+                <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </button>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
+              <span slot="label" title="joker">
                 joker
               </span>
               <mg-badge label="badge" slot="information" value="2" variant="text-color"></mg-badge>
             </mg-menu-item>
-            <mg-menu-item status="visible">
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="visible">
+              <mock:shadow-root>
+                <a class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" href="#" tabindex="0">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </a>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
               <mg-icon icon="user" slot="image"></mg-icon>
-              <span slot="label">
+              <span slot="label" title="bane">
                 bane
               </span>
             </mg-menu-item>
@@ -41,34 +119,112 @@ exports[`mg-action-more navigation Should run item mouseEventHandler by clicking
 `;
 
 exports[`mg-action-more navigation Should run item mouseEventHandler by clicking on menu-item 2`] = `
-<mg-action-more>
+<mg-action-more data-mg-popover-guard="mg-popover-test_0">
   <mock:shadow-root>
     <span class="mg-action-more">
       <mg-popover>
-        <mg-button isicon="" label="Actions" type="button" variant="flat">
+        <mock:shadow-root>
+          <slot></slot>
+          <div class="mg-popover" data-show id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
+            <div class="mg-popover__arrow" data-popper-arrow style="position: absolute;"></div>
+          </div>
+        </mock:shadow-root>
+        <mg-button aria-controls="mg-popover-test_0" aria-expanded="false" aria-label="Actions" role="button" tabindex="0" type="button">
+          <mock:shadow-root>
+            <div class="mg-button mg-button--flat mg-button--icon">
+              <div class="mg-button__content">
+                <slot></slot>
+              </div>
+            </div>
+          </mock:shadow-root>
           <mg-icon icon="ellipsis"></mg-icon>
         </mg-button>
         <div slot="content">
-          <mg-menu direction="vertical" label="Actions">
-            <mg-menu-item status="visible">
-              <span slot="label">
+          <mg-menu aria-label="Actions" direction="vertical" role="menubar">
+            <mock:shadow-root>
+              <slot></slot>
+            </mock:shadow-root>
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="visible">
+              <mock:shadow-root>
+                <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </button>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
+              <span slot="label" title="batman">
                 batman
               </span>
             </mg-menu-item>
-            <mg-menu-item status="hidden">
-              <span slot="label">
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="hidden">
+              <mock:shadow-root>
+                <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--hidden mg-menu-item__navigation-button--size-regular" hidden="" tabindex="-1">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </button>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
+              <span slot="label" title="robin">
                 robin
               </span>
             </mg-menu-item>
-            <mg-menu-item status="visible">
-              <span slot="label">
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="visible">
+              <mock:shadow-root>
+                <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </button>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
+              <span slot="label" title="joker">
                 joker
               </span>
               <mg-badge label="badge" slot="information" value="2" variant="text-color"></mg-badge>
             </mg-menu-item>
-            <mg-menu-item status="visible">
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="visible">
+              <mock:shadow-root>
+                <a class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" href="#" tabindex="0">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </a>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
               <mg-icon icon="user" slot="image"></mg-icon>
-              <span slot="label">
+              <span slot="label" title="bane">
                 bane
               </span>
             </mg-menu-item>
@@ -81,34 +237,112 @@ exports[`mg-action-more navigation Should run item mouseEventHandler by clicking
 `;
 
 exports[`mg-action-more navigation Should run item mouseEventHandler by clicking on menu-item 3`] = `
-<mg-action-more>
+<mg-action-more data-mg-popover-guard="mg-popover-test_0">
   <mock:shadow-root>
     <span class="mg-action-more">
       <mg-popover>
-        <mg-button isicon="" label="Actions" type="button" variant="flat">
+        <mock:shadow-root>
+          <slot></slot>
+          <div class="mg-popover" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
+            <div class="mg-popover__arrow" data-popper-arrow style="position: absolute;"></div>
+          </div>
+        </mock:shadow-root>
+        <mg-button aria-controls="mg-popover-test_0" aria-expanded="false" aria-label="Actions" role="button" tabindex="0" type="button">
+          <mock:shadow-root>
+            <div class="mg-button mg-button--flat mg-button--icon">
+              <div class="mg-button__content">
+                <slot></slot>
+              </div>
+            </div>
+          </mock:shadow-root>
           <mg-icon icon="ellipsis"></mg-icon>
         </mg-button>
         <div slot="content">
-          <mg-menu direction="vertical" label="Actions">
-            <mg-menu-item status="visible">
-              <span slot="label">
+          <mg-menu aria-label="Actions" direction="vertical" role="menubar">
+            <mock:shadow-root>
+              <slot></slot>
+            </mock:shadow-root>
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="visible">
+              <mock:shadow-root>
+                <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </button>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
+              <span slot="label" title="batman">
                 batman
               </span>
             </mg-menu-item>
-            <mg-menu-item status="hidden">
-              <span slot="label">
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="hidden">
+              <mock:shadow-root>
+                <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--hidden mg-menu-item__navigation-button--size-regular" hidden="" tabindex="-1">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </button>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
+              <span slot="label" title="robin">
                 robin
               </span>
             </mg-menu-item>
-            <mg-menu-item status="visible">
-              <span slot="label">
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="visible">
+              <mock:shadow-root>
+                <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </button>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
+              <span slot="label" title="joker">
                 joker
               </span>
               <mg-badge label="badge" slot="information" value="2" variant="text-color"></mg-badge>
             </mg-menu-item>
-            <mg-menu-item status="visible">
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="visible">
+              <mock:shadow-root>
+                <a class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" href="#" tabindex="0">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </a>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
               <mg-icon icon="user" slot="image"></mg-icon>
-              <span slot="label">
+              <span slot="label" title="bane">
                 bane
               </span>
             </mg-menu-item>
@@ -121,34 +355,112 @@ exports[`mg-action-more navigation Should run item mouseEventHandler by clicking
 `;
 
 exports[`mg-action-more render Should render with args [object Object] 1`] = `
-<mg-action-more>
+<mg-action-more data-mg-popover-guard="mg-popover-test_0">
   <mock:shadow-root>
     <span class="mg-action-more">
       <mg-popover>
-        <mg-button isicon="" label="Actions" type="button" variant="flat">
+        <mock:shadow-root>
+          <slot></slot>
+          <div class="mg-popover" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
+            <div class="mg-popover__arrow" data-popper-arrow style="position: absolute;"></div>
+          </div>
+        </mock:shadow-root>
+        <mg-button aria-controls="mg-popover-test_0" aria-expanded="false" aria-label="Actions" role="button" tabindex="0" type="button">
+          <mock:shadow-root>
+            <div class="mg-button mg-button--flat mg-button--icon">
+              <div class="mg-button__content">
+                <slot></slot>
+              </div>
+            </div>
+          </mock:shadow-root>
           <mg-icon icon="ellipsis"></mg-icon>
         </mg-button>
         <div slot="content">
-          <mg-menu direction="vertical" label="Actions">
-            <mg-menu-item status="visible">
-              <span slot="label">
+          <mg-menu aria-label="Actions" direction="vertical" role="menubar">
+            <mock:shadow-root>
+              <slot></slot>
+            </mock:shadow-root>
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="visible">
+              <mock:shadow-root>
+                <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </button>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
+              <span slot="label" title="batman">
                 batman
               </span>
             </mg-menu-item>
-            <mg-menu-item status="hidden">
-              <span slot="label">
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="hidden">
+              <mock:shadow-root>
+                <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--hidden mg-menu-item__navigation-button--size-regular" hidden="" tabindex="-1">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </button>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
+              <span slot="label" title="robin">
                 robin
               </span>
             </mg-menu-item>
-            <mg-menu-item status="visible">
-              <span slot="label">
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="visible">
+              <mock:shadow-root>
+                <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </button>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
+              <span slot="label" title="joker">
                 joker
               </span>
               <mg-badge label="badge" slot="information" value="2" variant="text-color"></mg-badge>
             </mg-menu-item>
-            <mg-menu-item status="visible">
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="visible">
+              <mock:shadow-root>
+                <a class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" href="#" tabindex="0">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </a>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
               <mg-icon icon="user" slot="image"></mg-icon>
-              <span slot="label">
+              <span slot="label" title="bane">
                 bane
               </span>
             </mg-menu-item>
@@ -161,35 +473,113 @@ exports[`mg-action-more render Should render with args [object Object] 1`] = `
 `;
 
 exports[`mg-action-more render Should render with args [object Object] 2`] = `
-<mg-action-more>
+<mg-action-more data-mg-popover-guard="mg-popover-test_0">
   <mock:shadow-root>
     <span class="mg-action-more">
       <mg-popover>
-        <mg-button label="dc-comics" type="button" variant="primary">
+        <mock:shadow-root>
+          <slot></slot>
+          <div class="mg-popover" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
+            <div class="mg-popover__arrow" data-popper-arrow style="position: absolute;"></div>
+          </div>
+        </mock:shadow-root>
+        <mg-button aria-controls="mg-popover-test_0" aria-expanded="false" aria-label="dc-comics" role="button" tabindex="0" type="button">
+          <mock:shadow-root>
+            <div class="mg-button mg-button--primary">
+              <div class="mg-button__content">
+                <slot></slot>
+              </div>
+            </div>
+          </mock:shadow-root>
           <mg-icon icon="ellipsis"></mg-icon>
           dc-comics
         </mg-button>
         <div slot="content">
-          <mg-menu direction="vertical" label="Actions">
-            <mg-menu-item status="visible">
-              <span slot="label">
+          <mg-menu aria-label="Actions" direction="vertical" role="menubar">
+            <mock:shadow-root>
+              <slot></slot>
+            </mock:shadow-root>
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="visible">
+              <mock:shadow-root>
+                <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </button>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
+              <span slot="label" title="batman">
                 batman
               </span>
             </mg-menu-item>
-            <mg-menu-item status="hidden">
-              <span slot="label">
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="hidden">
+              <mock:shadow-root>
+                <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--hidden mg-menu-item__navigation-button--size-regular" hidden="" tabindex="-1">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </button>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
+              <span slot="label" title="robin">
                 robin
               </span>
             </mg-menu-item>
-            <mg-menu-item status="visible">
-              <span slot="label">
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="visible">
+              <mock:shadow-root>
+                <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </button>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
+              <span slot="label" title="joker">
                 joker
               </span>
               <mg-badge label="badge" slot="information" value="2" variant="text-color"></mg-badge>
             </mg-menu-item>
-            <mg-menu-item status="visible">
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="visible">
+              <mock:shadow-root>
+                <a class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" href="#" tabindex="0">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </a>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
               <mg-icon icon="user" slot="image"></mg-icon>
-              <span slot="label">
+              <span slot="label" title="bane">
                 bane
               </span>
             </mg-menu-item>
@@ -202,11 +592,30 @@ exports[`mg-action-more render Should render with args [object Object] 2`] = `
 `;
 
 exports[`mg-action-more render Should render with args [object Object] 3`] = `
-<mg-action-more>
+<mg-action-more data-mg-popover-guard="mg-popover-test_0">
   <mock:shadow-root>
     <span class="mg-action-more">
       <mg-popover>
-        <mg-button label="Actions" type="button" variant="flat">
+        <mock:shadow-root>
+          <slot></slot>
+          <div class="mg-popover" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
+            <div class="mg-popover__arrow" data-popper-arrow style="position: absolute;"></div>
+          </div>
+        </mock:shadow-root>
+        <mg-button aria-controls="mg-popover-test_0" aria-expanded="false" aria-label="Actions" role="button" tabindex="0" type="button">
+          <mock:shadow-root>
+            <div class="mg-button mg-button--flat">
+              <div class="mg-button__content">
+                <slot></slot>
+              </div>
+            </div>
+          </mock:shadow-root>
           <mg-icon icon="ellipsis"></mg-icon>
           Actions
           <span class="mg-a11y-animation mg-action-more__chevron">
@@ -214,26 +623,85 @@ exports[`mg-action-more render Should render with args [object Object] 3`] = `
           </span>
         </mg-button>
         <div slot="content">
-          <mg-menu direction="vertical" label="Actions">
-            <mg-menu-item status="visible">
-              <span slot="label">
+          <mg-menu aria-label="Actions" direction="vertical" role="menubar">
+            <mock:shadow-root>
+              <slot></slot>
+            </mock:shadow-root>
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="visible">
+              <mock:shadow-root>
+                <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </button>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
+              <span slot="label" title="batman">
                 batman
               </span>
             </mg-menu-item>
-            <mg-menu-item status="hidden">
-              <span slot="label">
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="hidden">
+              <mock:shadow-root>
+                <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--hidden mg-menu-item__navigation-button--size-regular" hidden="" tabindex="-1">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </button>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
+              <span slot="label" title="robin">
                 robin
               </span>
             </mg-menu-item>
-            <mg-menu-item status="visible">
-              <span slot="label">
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="visible">
+              <mock:shadow-root>
+                <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </button>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
+              <span slot="label" title="joker">
                 joker
               </span>
               <mg-badge label="badge" slot="information" value="2" variant="text-color"></mg-badge>
             </mg-menu-item>
-            <mg-menu-item status="visible">
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="visible">
+              <mock:shadow-root>
+                <a class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" href="#" tabindex="0">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </a>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
               <mg-icon icon="user" slot="image"></mg-icon>
-              <span slot="label">
+              <span slot="label" title="bane">
                 bane
               </span>
             </mg-menu-item>
@@ -246,34 +714,112 @@ exports[`mg-action-more render Should render with args [object Object] 3`] = `
 `;
 
 exports[`mg-action-more render Should toggle menu on click 1`] = `
-<mg-action-more>
+<mg-action-more data-mg-popover-guard="mg-popover-test_0">
   <mock:shadow-root>
     <span class="mg-action-more">
       <mg-popover>
-        <mg-button isicon="" label="Actions" type="button" variant="flat">
+        <mock:shadow-root>
+          <slot></slot>
+          <div class="mg-popover" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
+            <div class="mg-popover__arrow" data-popper-arrow style="position: absolute;"></div>
+          </div>
+        </mock:shadow-root>
+        <mg-button aria-controls="mg-popover-test_0" aria-expanded="false" aria-label="Actions" role="button" tabindex="0" type="button">
+          <mock:shadow-root>
+            <div class="mg-button mg-button--flat mg-button--icon">
+              <div class="mg-button__content">
+                <slot></slot>
+              </div>
+            </div>
+          </mock:shadow-root>
           <mg-icon icon="ellipsis"></mg-icon>
         </mg-button>
         <div slot="content">
-          <mg-menu direction="vertical" label="Actions">
-            <mg-menu-item status="visible">
-              <span slot="label">
+          <mg-menu aria-label="Actions" direction="vertical" role="menubar">
+            <mock:shadow-root>
+              <slot></slot>
+            </mock:shadow-root>
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="visible">
+              <mock:shadow-root>
+                <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </button>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
+              <span slot="label" title="batman">
                 batman
               </span>
             </mg-menu-item>
-            <mg-menu-item status="hidden">
-              <span slot="label">
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="hidden">
+              <mock:shadow-root>
+                <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--hidden mg-menu-item__navigation-button--size-regular" hidden="" tabindex="-1">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </button>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
+              <span slot="label" title="robin">
                 robin
               </span>
             </mg-menu-item>
-            <mg-menu-item status="visible">
-              <span slot="label">
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="visible">
+              <mock:shadow-root>
+                <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </button>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
+              <span slot="label" title="joker">
                 joker
               </span>
               <mg-badge label="badge" slot="information" value="2" variant="text-color"></mg-badge>
             </mg-menu-item>
-            <mg-menu-item status="visible">
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="visible">
+              <mock:shadow-root>
+                <a class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" href="#" tabindex="0">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </a>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
               <mg-icon icon="user" slot="image"></mg-icon>
-              <span slot="label">
+              <span slot="label" title="bane">
                 bane
               </span>
             </mg-menu-item>
@@ -286,34 +832,112 @@ exports[`mg-action-more render Should toggle menu on click 1`] = `
 `;
 
 exports[`mg-action-more render Should toggle menu on click 2`] = `
-<mg-action-more>
+<mg-action-more data-mg-popover-guard="mg-popover-test_0">
   <mock:shadow-root>
     <span class="mg-action-more">
       <mg-popover>
-        <mg-button isicon="" label="Actions" type="button" variant="flat">
+        <mock:shadow-root>
+          <slot></slot>
+          <div class="mg-popover" data-show id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
+            <div class="mg-popover__arrow" data-popper-arrow style="position: absolute;"></div>
+          </div>
+        </mock:shadow-root>
+        <mg-button aria-controls="mg-popover-test_0" aria-expanded="false" aria-label="Actions" role="button" tabindex="0" type="button">
+          <mock:shadow-root>
+            <div class="mg-button mg-button--flat mg-button--icon">
+              <div class="mg-button__content">
+                <slot></slot>
+              </div>
+            </div>
+          </mock:shadow-root>
           <mg-icon icon="ellipsis"></mg-icon>
         </mg-button>
         <div slot="content">
-          <mg-menu direction="vertical" label="Actions">
-            <mg-menu-item status="visible">
-              <span slot="label">
+          <mg-menu aria-label="Actions" direction="vertical" role="menubar">
+            <mock:shadow-root>
+              <slot></slot>
+            </mock:shadow-root>
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="visible">
+              <mock:shadow-root>
+                <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </button>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
+              <span slot="label" title="batman">
                 batman
               </span>
             </mg-menu-item>
-            <mg-menu-item status="hidden">
-              <span slot="label">
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="hidden">
+              <mock:shadow-root>
+                <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--hidden mg-menu-item__navigation-button--size-regular" hidden="" tabindex="-1">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </button>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
+              <span slot="label" title="robin">
                 robin
               </span>
             </mg-menu-item>
-            <mg-menu-item status="visible">
-              <span slot="label">
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="visible">
+              <mock:shadow-root>
+                <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </button>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
+              <span slot="label" title="joker">
                 joker
               </span>
               <mg-badge label="badge" slot="information" value="2" variant="text-color"></mg-badge>
             </mg-menu-item>
-            <mg-menu-item status="visible">
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="visible">
+              <mock:shadow-root>
+                <a class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" href="#" tabindex="0">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </a>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
               <mg-icon icon="user" slot="image"></mg-icon>
-              <span slot="label">
+              <span slot="label" title="bane">
                 bane
               </span>
             </mg-menu-item>
@@ -326,35 +950,113 @@ exports[`mg-action-more render Should toggle menu on click 2`] = `
 `;
 
 exports[`mg-action-more render Should toggle menu on click 3`] = `
-<mg-action-more>
+<mg-action-more data-mg-popover-guard="mg-popover-test_0">
   <mock:shadow-root>
     <span class="mg-action-more">
       <mg-popover>
-        <mg-button label="dc-comics" type="button" variant="primary">
+        <mock:shadow-root>
+          <slot></slot>
+          <div class="mg-popover" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
+            <div class="mg-popover__arrow" data-popper-arrow style="position: absolute;"></div>
+          </div>
+        </mock:shadow-root>
+        <mg-button aria-controls="mg-popover-test_0" aria-expanded="false" aria-label="dc-comics" role="button" tabindex="0" type="button">
+          <mock:shadow-root>
+            <div class="mg-button mg-button--primary">
+              <div class="mg-button__content">
+                <slot></slot>
+              </div>
+            </div>
+          </mock:shadow-root>
           <mg-icon icon="ellipsis"></mg-icon>
           dc-comics
         </mg-button>
         <div slot="content">
-          <mg-menu direction="vertical" label="Actions">
-            <mg-menu-item status="visible">
-              <span slot="label">
+          <mg-menu aria-label="Actions" direction="vertical" role="menubar">
+            <mock:shadow-root>
+              <slot></slot>
+            </mock:shadow-root>
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="visible">
+              <mock:shadow-root>
+                <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </button>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
+              <span slot="label" title="batman">
                 batman
               </span>
             </mg-menu-item>
-            <mg-menu-item status="hidden">
-              <span slot="label">
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="hidden">
+              <mock:shadow-root>
+                <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--hidden mg-menu-item__navigation-button--size-regular" hidden="" tabindex="-1">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </button>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
+              <span slot="label" title="robin">
                 robin
               </span>
             </mg-menu-item>
-            <mg-menu-item status="visible">
-              <span slot="label">
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="visible">
+              <mock:shadow-root>
+                <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </button>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
+              <span slot="label" title="joker">
                 joker
               </span>
               <mg-badge label="badge" slot="information" value="2" variant="text-color"></mg-badge>
             </mg-menu-item>
-            <mg-menu-item status="visible">
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="visible">
+              <mock:shadow-root>
+                <a class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" href="#" tabindex="0">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </a>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
               <mg-icon icon="user" slot="image"></mg-icon>
-              <span slot="label">
+              <span slot="label" title="bane">
                 bane
               </span>
             </mg-menu-item>
@@ -367,35 +1069,113 @@ exports[`mg-action-more render Should toggle menu on click 3`] = `
 `;
 
 exports[`mg-action-more render Should toggle menu on click 4`] = `
-<mg-action-more>
+<mg-action-more data-mg-popover-guard="mg-popover-test_0">
   <mock:shadow-root>
     <span class="mg-action-more">
       <mg-popover>
-        <mg-button label="dc-comics" type="button" variant="primary">
+        <mock:shadow-root>
+          <slot></slot>
+          <div class="mg-popover" data-show id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
+            <div class="mg-popover__arrow" data-popper-arrow style="position: absolute;"></div>
+          </div>
+        </mock:shadow-root>
+        <mg-button aria-controls="mg-popover-test_0" aria-expanded="false" aria-label="dc-comics" role="button" tabindex="0" type="button">
+          <mock:shadow-root>
+            <div class="mg-button mg-button--primary">
+              <div class="mg-button__content">
+                <slot></slot>
+              </div>
+            </div>
+          </mock:shadow-root>
           <mg-icon icon="ellipsis"></mg-icon>
           dc-comics
         </mg-button>
         <div slot="content">
-          <mg-menu direction="vertical" label="Actions">
-            <mg-menu-item status="visible">
-              <span slot="label">
+          <mg-menu aria-label="Actions" direction="vertical" role="menubar">
+            <mock:shadow-root>
+              <slot></slot>
+            </mock:shadow-root>
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="visible">
+              <mock:shadow-root>
+                <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </button>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
+              <span slot="label" title="batman">
                 batman
               </span>
             </mg-menu-item>
-            <mg-menu-item status="hidden">
-              <span slot="label">
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="hidden">
+              <mock:shadow-root>
+                <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--hidden mg-menu-item__navigation-button--size-regular" hidden="" tabindex="-1">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </button>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
+              <span slot="label" title="robin">
                 robin
               </span>
             </mg-menu-item>
-            <mg-menu-item status="visible">
-              <span slot="label">
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="visible">
+              <mock:shadow-root>
+                <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </button>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
+              <span slot="label" title="joker">
                 joker
               </span>
               <mg-badge label="badge" slot="information" value="2" variant="text-color"></mg-badge>
             </mg-menu-item>
-            <mg-menu-item status="visible">
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="visible">
+              <mock:shadow-root>
+                <a class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" href="#" tabindex="0">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </a>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
               <mg-icon icon="user" slot="image"></mg-icon>
-              <span slot="label">
+              <span slot="label" title="bane">
                 bane
               </span>
             </mg-menu-item>
@@ -408,11 +1188,30 @@ exports[`mg-action-more render Should toggle menu on click 4`] = `
 `;
 
 exports[`mg-action-more render Should toggle menu on click 5`] = `
-<mg-action-more>
+<mg-action-more data-mg-popover-guard="mg-popover-test_0">
   <mock:shadow-root>
     <span class="mg-action-more">
       <mg-popover>
-        <mg-button label="Actions" type="button" variant="flat">
+        <mock:shadow-root>
+          <slot></slot>
+          <div class="mg-popover" id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
+            <div class="mg-popover__arrow" data-popper-arrow style="position: absolute;"></div>
+          </div>
+        </mock:shadow-root>
+        <mg-button aria-controls="mg-popover-test_0" aria-expanded="false" aria-label="Actions" role="button" tabindex="0" type="button">
+          <mock:shadow-root>
+            <div class="mg-button mg-button--flat">
+              <div class="mg-button__content">
+                <slot></slot>
+              </div>
+            </div>
+          </mock:shadow-root>
           <mg-icon icon="ellipsis"></mg-icon>
           Actions
           <span class="mg-a11y-animation mg-action-more__chevron">
@@ -420,26 +1219,85 @@ exports[`mg-action-more render Should toggle menu on click 5`] = `
           </span>
         </mg-button>
         <div slot="content">
-          <mg-menu direction="vertical" label="Actions">
-            <mg-menu-item status="visible">
-              <span slot="label">
+          <mg-menu aria-label="Actions" direction="vertical" role="menubar">
+            <mock:shadow-root>
+              <slot></slot>
+            </mock:shadow-root>
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="visible">
+              <mock:shadow-root>
+                <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </button>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
+              <span slot="label" title="batman">
                 batman
               </span>
             </mg-menu-item>
-            <mg-menu-item status="hidden">
-              <span slot="label">
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="hidden">
+              <mock:shadow-root>
+                <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--hidden mg-menu-item__navigation-button--size-regular" hidden="" tabindex="-1">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </button>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
+              <span slot="label" title="robin">
                 robin
               </span>
             </mg-menu-item>
-            <mg-menu-item status="visible">
-              <span slot="label">
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="visible">
+              <mock:shadow-root>
+                <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </button>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
+              <span slot="label" title="joker">
                 joker
               </span>
               <mg-badge label="badge" slot="information" value="2" variant="text-color"></mg-badge>
             </mg-menu-item>
-            <mg-menu-item status="visible">
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="visible">
+              <mock:shadow-root>
+                <a class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" href="#" tabindex="0">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </a>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
               <mg-icon icon="user" slot="image"></mg-icon>
-              <span slot="label">
+              <span slot="label" title="bane">
                 bane
               </span>
             </mg-menu-item>
@@ -452,11 +1310,30 @@ exports[`mg-action-more render Should toggle menu on click 5`] = `
 `;
 
 exports[`mg-action-more render Should toggle menu on click 6`] = `
-<mg-action-more>
+<mg-action-more data-mg-popover-guard="mg-popover-test_0">
   <mock:shadow-root>
     <span class="mg-action-more">
       <mg-popover>
-        <mg-button label="Actions" type="button" variant="flat">
+        <mock:shadow-root>
+          <slot></slot>
+          <div class="mg-popover" data-show id="mg-popover-test_0" style="position: fixed; left: 0; top: 0; margin: 0;">
+            <mg-card>
+              <div class="mg-popover__title">
+                <slot name="title"></slot>
+              </div>
+              <slot name="content"></slot>
+            </mg-card>
+            <div class="mg-popover__arrow" data-popper-arrow style="position: absolute;"></div>
+          </div>
+        </mock:shadow-root>
+        <mg-button aria-controls="mg-popover-test_0" aria-expanded="false" aria-label="Actions" role="button" tabindex="0" type="button">
+          <mock:shadow-root>
+            <div class="mg-button mg-button--flat">
+              <div class="mg-button__content">
+                <slot></slot>
+              </div>
+            </div>
+          </mock:shadow-root>
           <mg-icon icon="ellipsis"></mg-icon>
           Actions
           <span class="mg-a11y-animation mg-action-more__chevron mg-action-more__chevron--rotate">
@@ -464,26 +1341,85 @@ exports[`mg-action-more render Should toggle menu on click 6`] = `
           </span>
         </mg-button>
         <div slot="content">
-          <mg-menu direction="vertical" label="Actions">
-            <mg-menu-item status="visible">
-              <span slot="label">
+          <mg-menu aria-label="Actions" direction="vertical" role="menubar">
+            <mock:shadow-root>
+              <slot></slot>
+            </mock:shadow-root>
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="visible">
+              <mock:shadow-root>
+                <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </button>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
+              <span slot="label" title="batman">
                 batman
               </span>
             </mg-menu-item>
-            <mg-menu-item status="hidden">
-              <span slot="label">
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="hidden">
+              <mock:shadow-root>
+                <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--hidden mg-menu-item__navigation-button--size-regular" hidden="" tabindex="-1">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </button>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
+              <span slot="label" title="robin">
                 robin
               </span>
             </mg-menu-item>
-            <mg-menu-item status="visible">
-              <span slot="label">
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="visible">
+              <mock:shadow-root>
+                <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </button>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
+              <span slot="label" title="joker">
                 joker
               </span>
               <mg-badge label="badge" slot="information" value="2" variant="text-color"></mg-badge>
             </mg-menu-item>
-            <mg-menu-item status="visible">
+            <mg-menu-item aria-haspopup="false" role="menuitem" status="visible">
+              <mock:shadow-root>
+                <a class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" href="#" tabindex="0">
+                  <slot name="image"></slot>
+                  <div class="mg-menu-item__navigation-button-center">
+                    <div class="mg-menu-item__navigation-button-text-content">
+                      <slot name="label"></slot>
+                      <slot name="information"></slot>
+                    </div>
+                  </div>
+                </a>
+                <div class="mg-menu-item__collapse-container" hidden="">
+                  <slot></slot>
+                </div>
+              </mock:shadow-root>
               <mg-icon icon="user" slot="image"></mg-icon>
-              <span slot="label">
+              <span slot="label" title="bane">
                 bane
               </span>
             </mg-menu-item>

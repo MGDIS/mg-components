@@ -106,14 +106,30 @@ export const setupResizeObserverMock = ({ disconnect, observe }: setupResizeObse
 /**
  * force popover id when component use randomed identifier
  *
- * @param {Element} item element wich include mg-popover
+ * @param {Element} component element wich include mg-popover
  * @param {string} id new fixed id
+ * @param {string} interactiveElement element where attribute 'aria-controls' is set
  * @returns {void}
  */
-export const forcePopoverId = (item: Element, id: string): void => {
-  const popover = item.shadowRoot.querySelector('mg-popover');
+export const forcePopoverId = (component: Element, id: string, interactiveElement = 'button'): void => {
+  const popover = component.shadowRoot.querySelector('mg-popover');
   if (popover !== null) {
     popover.shadowRoot.querySelector('.mg-popover').setAttribute('id', id);
-    item.shadowRoot.querySelector('button').setAttribute('aria-controls', id);
+    component.shadowRoot.querySelector(interactiveElement).setAttribute('aria-controls', id);
   }
 };
+
+/**
+ * fix popper console.error in test
+ * it is generated in @popperjs/core/dist/cjs/popper.js l.1859
+ * this is due to internal function isHTMLElement(), so we can not mock it directly.
+ * this function check if test DOM element mockHTMLElement instance is 'instanceof HTMLElement'
+ * so we only override the console.error side effect for this error
+ *
+ * @returns {jest.SpyInstance}
+ */
+export const mockPopperArrowError = (): jest.SpyInstance =>
+  jest.spyOn(console, 'error').mockImplementation(error => {
+    const compareWith = 'Popper: "arrow" element must be an HTMLElement (not an SVGElement). To use an SVG arrow, wrap it in an HTMLElement that will be used as the arrow.';
+    if (error !== compareWith) console.error(error);
+  });

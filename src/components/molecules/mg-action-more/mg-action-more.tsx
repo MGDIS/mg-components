@@ -1,8 +1,9 @@
-import { Component, h, Element, Prop, Watch, State } from '@stencil/core';
+import { Component, h, Element, Prop, Watch, State, Host } from '@stencil/core';
 import { MgActionMoreItemType, MgActionMoreButtonType, MgActionMoreIconType, MgActionMoreMessageType } from './mg-action-more.conf';
 import { initLocales } from '../../../locales';
 import { Status } from '../menu/mg-menu-item/mg-menu-item.conf';
 import { Direction } from '../menu/mg-menu/mg-menu.conf';
+import { createID } from '../../../utils/components.utils';
 
 /**
  * MgActionMore['items'] type guard
@@ -47,6 +48,7 @@ export class MgActionMore {
    * Internal *
    ************/
   private readonly name = 'mg-action-more';
+  private readonly mgPopoverIdentifier = createID(this.name);
   private messages: MgActionMoreMessageType;
 
   /**************
@@ -89,7 +91,7 @@ export class MgActionMore {
   @Watch('items')
   validateItems(newValue: MgActionMore['items']): void {
     if (!isMgActionMoreItems(newValue)) {
-      throw new Error(`<${this.name}> prop "item" is required and all values must be the same type, MgActionMoreItemType.`);
+      throw new Error(`<${this.name}> prop "items" is required and all values must be the same type, MgActionMoreItemType.`);
     }
   }
 
@@ -114,12 +116,33 @@ export class MgActionMore {
    ***********/
 
   /**
+   * Toogle expanded props
+   *
+   * @returns {void}
+   */
+  private toggleExpanded = (): void => {
+    this.expanded = !this.expanded;
+  };
+
+  /**
    * Button click handler
    *
    * @returns {void}
    */
   private handleButton = (): void => {
-    this.expanded = !this.expanded;
+    this.toggleExpanded();
+  };
+
+  /**
+   * Item click handler
+   *
+   * @param {MouseEvent} event click event
+   * @param {MgActionMoreItemType['mouseEventHandler']} customHandler item['mouseEventHandler']
+   * @returns {void}
+   */
+  private handleItemClick = (event: MouseEvent, customHandler: MgActionMoreItemType['mouseEventHandler']) => {
+    this.expanded = false;
+    customHandler(event);
   };
 
   /*************
@@ -163,25 +186,28 @@ export class MgActionMore {
     }
 
     return (
-      <span class="mg-action-more">
-        <mg-popover>
-          <mg-button variant={this.button.variant} isIcon={this.button.isIcon} type="button" label={buttonLabel} onClick={this.handleButton}>
-            <mg-icon {...this.icon}></mg-icon>
-            {!this.button.isIcon && buttonContent}
-          </mg-button>
-          <div slot="content">
-            <mg-menu direction={Direction.VERTICAL} label={this.messages.label}>
-              {this.items.map(item => (
-                <mg-menu-item key={item.label} status={item.status || Status.VISIBLE} onClick={item.mouseEventHandler}>
-                  {item.icon && <mg-icon icon={item.icon} slot="image"></mg-icon>}
-                  <span slot="label">{item.label}</span>
-                  {item.badge?.label && <mg-badge label={item.badge.label} value={item.badge.value} slot="information" variant="text-color"></mg-badge>}
-                </mg-menu-item>
-              ))}
-            </mg-menu>
-          </div>
-        </mg-popover>
-      </span>
+      <Host data-mg-popover-guard={this.mgPopoverIdentifier}>
+        <span class="mg-action-more">
+          <mg-popover identifier={this.mgPopoverIdentifier} display={this.expanded}>
+            <mg-button variant={this.button.variant} isIcon={this.button.isIcon} type="button" label={buttonLabel} onClick={this.handleButton}>
+              <mg-icon {...this.icon}></mg-icon>
+              {!this.button.isIcon && buttonContent}
+            </mg-button>
+            <div slot="content">
+              <mg-menu direction={Direction.VERTICAL} label={this.messages.label}>
+                {this.items.map(item => (
+                  // eslint-disable-next-line react/jsx-no-bind
+                  <mg-menu-item key={item.label} status={item.status || Status.VISIBLE} onClick={e => this.handleItemClick(e, item.mouseEventHandler)} href={item.href}>
+                    {item.icon && <mg-icon icon={item.icon} slot="image"></mg-icon>}
+                    <span slot="label">{item.label}</span>
+                    {item.badge?.label && <mg-badge label={item.badge.label} value={item.badge.value} slot="information" variant="text-color"></mg-badge>}
+                  </mg-menu-item>
+                ))}
+              </mg-menu>
+            </div>
+          </mg-popover>
+        </span>
+      </Host>
     );
   }
 }

@@ -95,7 +95,11 @@ export class MgPopover {
    * @returns {void}
    */
   private clickOutside = (event: MouseEvent & { target: HTMLElement }): void => {
-    if (!this.disabled && event.target.closest(`mg-popover`) !== this.element) {
+    if (
+      !this.disabled &&
+      event.target.closest('mg-popover') !== this.element &&
+      !((event.target.closest(`[data-mg-popover-guard]`) as HTMLElement)?.dataset.mgPopoverGuard === this.identifier)
+    ) {
       this.display = false;
     }
   };
@@ -107,7 +111,7 @@ export class MgPopover {
    */
   private show = (): void => {
     // Make the popover visible
-    this.popover.setAttribute('data-show', '');
+    this.popover.dataset.show = '';
     // Enable the event listeners
     this.popper.setOptions(options => ({
       ...options,

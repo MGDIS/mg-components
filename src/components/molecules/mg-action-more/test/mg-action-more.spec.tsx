@@ -1,13 +1,29 @@
 import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
+import { forcePopoverId, mockPopperArrowError } from '../../../../utils/unit.test.utils';
 import { Status } from '../../menu/mg-menu-item/mg-menu-item.conf';
+import { MgButton } from '../../../atoms/mg-button/mg-button';
+import { MgPopover } from '../../mg-popover/mg-popover';
 import { MgActionMore } from '../mg-action-more';
+import { MgMenu } from '../../menu/mg-menu/mg-menu';
+import { MgMenuItem } from '../../menu/mg-menu-item/mg-menu-item';
 
-const getPage = args =>
-  newSpecPage({
-    components: [MgActionMore],
+mockPopperArrowError();
+
+const getPage = async args => {
+  const page = await newSpecPage({
+    components: [MgActionMore, MgPopover, MgButton, MgMenu, MgMenuItem],
     template: () => <mg-action-more {...args}></mg-action-more>,
   });
+
+  Array.from(page.doc.querySelectorAll('mg-action-more')).forEach((item, index) => {
+    const mgPopoverIdentifier = `mg-popover-test_${index}`;
+    item.dataset.mgPopoverGuard = mgPopoverIdentifier;
+    forcePopoverId(item, mgPopoverIdentifier, 'mg-button');
+  });
+
+  return page;
+};
 
 const mouseEventHandler = jest.fn();
 
@@ -33,8 +49,13 @@ const items = [
     label: 'bane',
     mouseEventHandler,
     icon: 'user',
+    href: '#',
   },
 ];
+
+Object.defineProperty(window, 'frames', {
+  value: { length: 0 },
+});
 
 describe('mg-action-more', () => {
   describe.each([
@@ -79,14 +100,14 @@ describe('mg-action-more', () => {
 
   describe('errors', () => {
     test.each([
-      { args: {}, error: `<mg-action-more> prop "item" is required and all values must be the same type, MgActionMoreItemType.` },
-      { args: { items: ['batman'] }, error: `<mg-action-more> prop "item" is required and all values must be the same type, MgActionMoreItemType.` },
-      { args: { items: [{ label: 'batman' }] }, error: `<mg-action-more> prop "item" is required and all values must be the same type, MgActionMoreItemType.` },
+      { args: {}, error: `<mg-action-more> prop "items" is required and all values must be the same type, MgActionMoreItemType.` },
+      { args: { items: ['batman'] }, error: `<mg-action-more> prop "items" is required and all values must be the same type, MgActionMoreItemType.` },
+      { args: { items: [{ label: 'batman' }] }, error: `<mg-action-more> prop "items" is required and all values must be the same type, MgActionMoreItemType.` },
       {
         args: { items: [{ label: 'batman', mouseEventHandler: 'batman' }] },
-        error: `<mg-action-more> prop "item" is required and all values must be the same type, MgActionMoreItemType.`,
+        error: `<mg-action-more> prop "items" is required and all values must be the same type, MgActionMoreItemType.`,
       },
-      { args: { items: [{ mouseEventHandler: 'batman' }] }, error: `<mg-action-more> prop "item" is required and all values must be the same type, MgActionMoreItemType.` },
+      { args: { items: [{ mouseEventHandler: 'batman' }] }, error: `<mg-action-more> prop "items" is required and all values must be the same type, MgActionMoreItemType.` },
       { args: { items: [{ label: 'batman', mouseEventHandler }], button: {} }, error: `<mg-action-more> prop button must match MgActionMoreButtonType.` },
       { args: { items: [{ label: 'batman', mouseEventHandler }], button: { variant: 'primary' } }, error: `<mg-action-more> prop button must match MgActionMoreButtonType.` },
       { args: { items: [{ label: 'batman', mouseEventHandler }], button: { isIcon: true } }, error: `<mg-action-more> prop button must match MgActionMoreButtonType.` },

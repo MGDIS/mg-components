@@ -1,7 +1,7 @@
 import { MgBadge } from '../../atoms/mg-badge/mg-badge';
 import { MgButton } from '../../atoms/mg-button/mg-button';
 import { MgIcon } from '../../atoms/mg-icon/mg-icon';
-import { Status } from '../menu/mg-menu-item/mg-menu-item.conf';
+import { MgMenuItem } from '../menu/mg-menu-item/mg-menu-item';
 
 /**
  * prop icon type
@@ -30,8 +30,9 @@ export type MgActionMoreMessageType = { label: string };
 export type MgActionMoreItemType = {
   label: string;
   mouseEventHandler: IMouseEventHandler;
-  status?: Status;
+  status?: MgMenuItem['status'];
   icon?: MgIcon['icon'];
+  href?: MgMenuItem['href'];
   badge?: Pick<MgBadge, 'value' | 'label'>;
 };
 

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-02-10T17:50:14",
+  "timestamp": "2023-02-15T16:30:39",
   "compiler": {
     "name": "@stencil/core",
     "version": "3.0.0",
@@ -85,6 +85,23 @@
           "values": [
             {
               "type": "{ icon: string; }"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "identifier",
+          "type": "string",
+          "mutable": false,
+          "attr": "identifier",
+          "reflectToAttr": false,
+          "docs": "Sets an `identifier` in child mg-popover.",
+          "docsTags": [],
+          "default": "createID(this.name)",
+          "values": [
+            {
+              "type": "string"
             }
           ],
           "optional": false,
