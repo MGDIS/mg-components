@@ -44,6 +44,7 @@ describe('mg-popover', () => {
       // display popover on click on slotted element
       mgButton.triggerEvent('click');
       await page.waitForChanges();
+      await page.waitForNetworkIdle();
 
       expect(popover).toHaveAttribute('data-show');
 
@@ -55,6 +56,7 @@ describe('mg-popover', () => {
       // hide popover on click on slotted element
       mgButton.triggerEvent('click');
       await page.waitForChanges();
+      await page.waitForNetworkIdle();
 
       expect(popover).not.toHaveAttribute('data-show');
 
@@ -62,12 +64,14 @@ describe('mg-popover', () => {
       await page.keyboard.down('Tab');
       await page.keyboard.down('Enter');
       await page.waitForChanges();
+      await page.waitForNetworkIdle();
 
       expect(popover).toHaveAttribute('data-show');
 
       // hide popover on keyboad escape key
       await page.keyboard.down('Escape');
       await page.waitForChanges();
+      await page.waitForNetworkIdle();
 
       expect(popover).not.toHaveAttribute('data-show');
     });
