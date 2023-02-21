@@ -46,11 +46,17 @@ describe('mg-button', () => {
     expect(screenshot).toMatchImageSnapshot();
   });
 
-  test('Should render a focused button link without border radius', async () => {
-    const page = await createPage(`<mg-button variant="link">button</mg-button><style>.custom-link{--mg-button-border-radius: 1rem;}</style>`);
+  test.each(variants)('Should render focused and hover %s button', async variant => {
+    const page = await createPage(`
+      <mg-button variant="${variant}">${variant}:focus</mg-button>
+      <mg-button variant="${variant}" class="hover">${variant}:hover</mg-button>
+    `);
 
     await page.keyboard.down('Tab');
     await page.waitForChanges();
+
+    const button = await page.find('mg-button.hover');
+    button.hover();
 
     const screenshot = await page.screenshot();
     expect(screenshot).toMatchImageSnapshot();

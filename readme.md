@@ -102,24 +102,6 @@ When a selector contains too many declaration it is recommended to organize them
 }
 ```
 
-### Accessibility
-
-A good pratice is to manage hover, focus and active state at the same place.
-
-```SCSS
-/* SCSS */
-button {
-  &:hover, &:focus, &:active {
-    text-decoration: underline;
-  }
-}
-
-/* CSS */
-button:hover, button:focus, button:active {
-  text-decoration: underline;
-}
-```
-
 ## Storybook
 
 The plugin [storybook-addon-docs-stencil
