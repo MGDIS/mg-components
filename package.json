@@ -33,7 +33,7 @@
     "lint:prettier": "prettier --check **/*.{ts,tsx,scss,html,mdx,json}",
     "lint:prettier:fix": "prettier --write **/*.{ts,tsx,scss,html,mdx,json}",
     "test": "TZ=UTC stencil test --spec --e2e",
-    "test:unit": "TZ=UTC stencil test --spec",
+    "test:unit": "TZ=UTC stencil test --spec --collectCoverage",
     "test:e2e": "stencil test --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
