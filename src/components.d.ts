@@ -19,20 +19,6 @@ import { Placement } from "@popperjs/core";
 import { SkipLink } from "./components/molecules/mg-skip-links/mg-skip-links.conf";
 import { SizeType, TabItem } from "./components/molecules/mg-tabs/mg-tabs.conf";
 import { TagVariantType } from "./components/atoms/mg-tag/mg-tag.conf";
-export { BadgeVariantType } from "./components/atoms/mg-badge/mg-badge.conf";
-export { ButtonType, VariantType } from "./components/atoms/mg-button/mg-button.conf";
-export { IconSizeType, IconVariantType } from "./components/atoms/mg-icon/mg-icon.conf";
-export { CheckboxValue } from "./components/molecules/inputs/mg-input-checkbox/mg-input-checkbox.conf";
-export { Width } from "./components/molecules/inputs/MgInput.conf";
-export { RadioOption } from "./components/molecules/inputs/mg-input-radio/mg-input-radio.conf";
-export { SelectOption } from "./components/molecules/inputs/mg-input-select/mg-input-select.conf";
-export { ToggleValue } from "./components/molecules/inputs/mg-input-toggle/mg-input-toggle.conf";
-export { Direction, MenuSizeType, MoreItemType } from "./components/molecules/menu/mg-menu/mg-menu.conf";
-export { Status } from "./components/molecules/menu/mg-menu-item/mg-menu-item.conf";
-export { Placement } from "@popperjs/core";
-export { SkipLink } from "./components/molecules/mg-skip-links/mg-skip-links.conf";
-export { SizeType, TabItem } from "./components/molecules/mg-tabs/mg-tabs.conf";
-export { TagVariantType } from "./components/atoms/mg-tag/mg-tag.conf";
 export namespace Components {
     interface MgBadge {
         /**
