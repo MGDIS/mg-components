@@ -4,7 +4,7 @@ exports[`mg-skip-links with args %s 1`] = `
 <mg-skip-links>
   <mock:shadow-root>
     <nav aria-label="Quick access" class="mg-skip-links" role="navigation">
-      <ul class="mg-skip-links__list">
+      <ul class="mg-skip-links__list" role="list">
         <li>
           <a class="mg-skip-links__link" href="#content">
             Content

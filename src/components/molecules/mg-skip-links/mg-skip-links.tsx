@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-redundant-roles */
 import { Component, Element, Event, EventEmitter, h, Prop, Watch } from '@stencil/core';
 import { SkipLink } from './mg-skip-links.conf';
 import { initLocales } from '../../../locales';
@@ -80,7 +81,7 @@ export class MgSkipLinks {
   render(): HTMLElement {
     return (
       <nav class="mg-skip-links" role="navigation" aria-label={this.messages.skipLinks.navLabel}>
-        <ul class="mg-skip-links__list">
+        <ul class="mg-skip-links__list" role="list">
           {this.links.map(link => (
             <li key={link.href}>
               <a class="mg-skip-links__link" href={link.href} onClick={this.handleLinkCLick}>
