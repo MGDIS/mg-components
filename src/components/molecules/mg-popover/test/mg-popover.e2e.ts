@@ -104,6 +104,34 @@ describe('mg-popover', () => {
     });
   });
 
+  describe.each(['title', 'content'])('re-position %s slot', slot => {
+    test('should re-position when slot size change', async () => {
+      const tagName = slot === 'title' ? 'h2' : 'p';
+      const page = await createPage(
+        `<style>mg-button{position:fixed;left:50%;transform:translateX(-50%)}</style>
+        <mg-popover ${renderAttributes({ placement: 'bottom-start', display: true })}>
+        <mg-button>Button</mg-button>
+        <${tagName} slot="${slot}">
+          Lorem ipsum
+        </${tagName}>
+        </mg-popover>`,
+        { width: 400, height: 100 },
+      );
+
+      let screenshot = await page.screenshot();
+      expect(screenshot).toMatchImageSnapshot();
+
+      await page.$eval('[slot]', el => {
+        el.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit';
+      });
+
+      await page.waitForChanges();
+
+      screenshot = await page.screenshot();
+      expect(screenshot).toMatchImageSnapshot();
+    });
+  });
+
   describe('style', () => {
     test('Should render with child mg-card', async () => {
       const page = await createPage(

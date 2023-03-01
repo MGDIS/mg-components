@@ -1,4 +1,7 @@
 import { createID, ClassList, allItemsAreString, isTagName, getWindows } from './components.utils';
+import { mockConsoleError } from './unit.test.utils';
+
+mockConsoleError();
 
 describe('components.utils', () => {
   describe('createID', () => {
