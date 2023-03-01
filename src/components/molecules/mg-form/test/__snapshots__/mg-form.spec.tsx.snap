@@ -19,7 +19,7 @@ exports[`mg-form Should display components errors (readonly: false) 1`] = `
         </mg-input-title>
         <div class="mg-input__input-container">
           <div class="mg-input__input mg-input__input--has-error">
-            <ul class="mg-input__input-group-container">
+            <ul class="mg-input__input-group-container" role="list">
               <li class="mg-input__input-group">
                 <input aria-describedby="mg-input-checkbox-error" checked="" id="mg-input-checkbox_0" name="mg-input-checkbox" required="" type="checkbox" value="true">
                 <label htmlfor="mg-input-checkbox_0">
@@ -101,7 +101,7 @@ exports[`mg-form Should display components errors (readonly: false) 1`] = `
         </mg-input-title>
         <div class="mg-input__input-container">
           <div class="mg-input__input mg-input__input--has-error">
-            <ul class="mg-input__input-group-container">
+            <ul class="mg-input__input-group-container" role="list">
               <li class="mg-input__input-group">
                 <input aria-describedby="mg-input-radio-error" id="mg-input-radio_0" name="mg-input-radio" required="" type="radio" value="0">
                 <label htmlfor="mg-input-radio_0">
@@ -253,7 +253,7 @@ exports[`mg-form Should display components errors (readonly: true) 1`] = `
         </mg-input-title>
         <div class="mg-input__input-container">
           <div class="mg-input__input">
-            <ul class="mg-input__input-group-container">
+            <ul class="mg-input__input-group-container" role="list">
               <li class="mg-input__input-group">
                 <input aria-describedby="" checked="" disabled="" id="mg-input-checkbox_0" name="mg-input-checkbox" required="" type="checkbox" value="true">
                 <label htmlfor="mg-input-checkbox_0">
@@ -398,7 +398,7 @@ exports[`mg-form Should render with args { args: { identifier: 'identifier' } }:
         </mg-input-title>
         <div class="mg-input__input-container">
           <div class="mg-input__input">
-            <ul class="mg-input__input-group-container">
+            <ul class="mg-input__input-group-container" role="list">
               <li class="mg-input__input-group">
                 <input aria-describedby="" checked="" id="mg-input-checkbox_0" name="mg-input-checkbox" type="checkbox" value="true">
                 <label htmlfor="mg-input-checkbox_0">
@@ -468,7 +468,7 @@ exports[`mg-form Should render with args { args: { identifier: 'identifier' } }:
         </mg-input-title>
         <div class="mg-input__input-container">
           <div class="mg-input__input">
-            <ul class="mg-input__input-group-container">
+            <ul class="mg-input__input-group-container" role="list">
               <li class="mg-input__input-group">
                 <input aria-describedby="" id="mg-input-radio_0" name="mg-input-radio" type="radio" value="0">
                 <label htmlfor="mg-input-radio_0">
@@ -609,7 +609,7 @@ exports[`mg-form Should render with args { args: { identifier: 'identifier' }, r
         </mg-input-title>
         <div class="mg-input__input-container">
           <div class="mg-input__input">
-            <ul class="mg-input__input-group-container">
+            <ul class="mg-input__input-group-container" role="list">
               <li class="mg-input__input-group">
                 <input aria-describedby="" checked="" disabled="" id="mg-input-checkbox_0" name="mg-input-checkbox" type="checkbox" value="true">
                 <label htmlfor="mg-input-checkbox_0">
@@ -757,7 +757,7 @@ exports[`mg-form Should render with args { args: { identifier: 'identifier' }, r
         </mg-input-title>
         <div class="mg-input__input-container">
           <div class="mg-input__input">
-            <ul class="mg-input__input-group-container">
+            <ul class="mg-input__input-group-container" role="list">
               <li class="mg-input__input-group">
                 <input aria-describedby="" checked="" id="mg-input-checkbox_0" name="mg-input-checkbox" required="" type="checkbox" value="true">
                 <label htmlfor="mg-input-checkbox_0">
@@ -827,7 +827,7 @@ exports[`mg-form Should render with args { args: { identifier: 'identifier' }, r
         </mg-input-title>
         <div class="mg-input__input-container">
           <div class="mg-input__input">
-            <ul class="mg-input__input-group-container">
+            <ul class="mg-input__input-group-container" role="list">
               <li class="mg-input__input-group">
                 <input aria-describedby="" id="mg-input-radio_0" name="mg-input-radio" required="" type="radio" value="0">
                 <label htmlfor="mg-input-radio_0">
@@ -975,7 +975,7 @@ exports[`mg-form Should render with args { args: { identifier: 'identifier' }, r
         </mg-input-title>
         <div class="mg-input__input-container">
           <div class="mg-input__input">
-            <ul class="mg-input__input-group-container">
+            <ul class="mg-input__input-group-container" role="list">
               <li class="mg-input__input-group">
                 <input aria-describedby="" checked="" id="mg-input-checkbox_0" name="mg-input-checkbox" required="" type="checkbox" value="true">
                 <label htmlfor="mg-input-checkbox_0">
@@ -1045,7 +1045,7 @@ exports[`mg-form Should render with args { args: { identifier: 'identifier' }, r
         </mg-input-title>
         <div class="mg-input__input-container">
           <div class="mg-input__input">
-            <ul class="mg-input__input-group-container">
+            <ul class="mg-input__input-group-container" role="list">
               <li class="mg-input__input-group">
                 <input aria-describedby="" id="mg-input-radio_0" name="mg-input-radio" type="radio" value="0">
                 <label htmlfor="mg-input-radio_0">
@@ -1193,7 +1193,7 @@ exports[`mg-form Should render with args { args: { identifier: 'identifier' }, r
         </mg-input-title>
         <div class="mg-input__input-container">
           <div class="mg-input__input">
-            <ul class="mg-input__input-group-container">
+            <ul class="mg-input__input-group-container" role="list">
               <li class="mg-input__input-group">
                 <input aria-describedby="" checked="" id="mg-input-checkbox_0" name="mg-input-checkbox" required="" type="checkbox" value="true">
                 <label htmlfor="mg-input-checkbox_0">
@@ -1263,7 +1263,7 @@ exports[`mg-form Should render with args { args: { identifier: 'identifier' }, r
         </mg-input-title>
         <div class="mg-input__input-container">
           <div class="mg-input__input">
-            <ul class="mg-input__input-group-container">
+            <ul class="mg-input__input-group-container" role="list">
               <li class="mg-input__input-group">
                 <input aria-describedby="" id="mg-input-radio_0" name="mg-input-radio" type="radio" value="0">
                 <label htmlfor="mg-input-radio_0">
@@ -1407,7 +1407,7 @@ exports[`mg-form Should render with args { args: { identifier: 'identifier' }, r
         </mg-input-title>
         <div class="mg-input__input-container">
           <div class="mg-input__input">
-            <ul class="mg-input__input-group-container">
+            <ul class="mg-input__input-group-container" role="list">
               <li class="mg-input__input-group">
                 <input aria-describedby="" checked="" id="mg-input-checkbox_0" name="mg-input-checkbox" required="" type="checkbox" value="true">
                 <label htmlfor="mg-input-checkbox_0">
@@ -1444,7 +1444,7 @@ exports[`mg-form Should render with args { args: { identifier: 'identifier', dis
         </mg-input-title>
         <div class="mg-input__input-container">
           <div class="mg-input__input">
-            <ul class="mg-input__input-group-container">
+            <ul class="mg-input__input-group-container" role="list">
               <li class="mg-input__input-group mg-input__input-group--disabled">
                 <input aria-describedby="" checked="" disabled="" id="mg-input-checkbox_0" name="mg-input-checkbox" type="checkbox" value="true">
                 <label htmlfor="mg-input-checkbox_0">
@@ -1514,7 +1514,7 @@ exports[`mg-form Should render with args { args: { identifier: 'identifier', dis
         </mg-input-title>
         <div class="mg-input__input-container">
           <div class="mg-input__input">
-            <ul class="mg-input__input-group-container">
+            <ul class="mg-input__input-group-container" role="list">
               <li class="mg-input__input-group mg-input__input-group--disabled">
                 <input aria-describedby="" disabled="" id="mg-input-radio_0" name="mg-input-radio" type="radio" value="0">
                 <label htmlfor="mg-input-radio_0">
@@ -1654,7 +1654,7 @@ exports[`mg-form Should render with args { args: { identifier: 'identifier', rea
         </mg-input-title>
         <div class="mg-input__input-container">
           <div class="mg-input__input">
-            <ul class="mg-input__input-group-container">
+            <ul class="mg-input__input-group-container" role="list">
               <li class="mg-input__input-group">
                 <input aria-describedby="" checked="" disabled="" id="mg-input-checkbox_0" name="mg-input-checkbox" type="checkbox" value="true">
                 <label htmlfor="mg-input-checkbox_0">
@@ -1802,7 +1802,7 @@ exports[`mg-form display error message with locale: fr 1`] = `
         </mg-input-title>
         <div class="mg-input__input-container">
           <div class="mg-input__input mg-input__input--has-error">
-            <ul class="mg-input__input-group-container">
+            <ul class="mg-input__input-group-container" role="list">
               <li class="mg-input__input-group">
                 <input aria-describedby="mg-input-checkbox-error" checked="" id="mg-input-checkbox_0" name="mg-input-checkbox" required="" type="checkbox" value="true">
                 <label htmlfor="mg-input-checkbox_0">
@@ -1884,7 +1884,7 @@ exports[`mg-form display error message with locale: fr 1`] = `
         </mg-input-title>
         <div class="mg-input__input-container">
           <div class="mg-input__input mg-input__input--has-error">
-            <ul class="mg-input__input-group-container">
+            <ul class="mg-input__input-group-container" role="list">
               <li class="mg-input__input-group">
                 <input aria-describedby="mg-input-radio-error" id="mg-input-radio_0" name="mg-input-radio" required="" type="radio" value="0">
                 <label htmlfor="mg-input-radio_0">
@@ -2040,7 +2040,7 @@ exports[`mg-form display error message with locale: xx 1`] = `
         </mg-input-title>
         <div class="mg-input__input-container">
           <div class="mg-input__input mg-input__input--has-error">
-            <ul class="mg-input__input-group-container">
+            <ul class="mg-input__input-group-container" role="list">
               <li class="mg-input__input-group">
                 <input aria-describedby="mg-input-checkbox-error" checked="" id="mg-input-checkbox_0" name="mg-input-checkbox" required="" type="checkbox" value="true">
                 <label htmlfor="mg-input-checkbox_0">
@@ -2122,7 +2122,7 @@ exports[`mg-form display error message with locale: xx 1`] = `
         </mg-input-title>
         <div class="mg-input__input-container">
           <div class="mg-input__input mg-input__input--has-error">
-            <ul class="mg-input__input-group-container">
+            <ul class="mg-input__input-group-container" role="list">
               <li class="mg-input__input-group">
                 <input aria-describedby="mg-input-radio-error" id="mg-input-radio_0" name="mg-input-radio" required="" type="radio" value="0">
                 <label htmlfor="mg-input-radio_0">
