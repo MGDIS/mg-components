@@ -7,10 +7,10 @@ import { MgMenu } from '../../mg-menu/mg-menu';
 import { Status } from '../mg-menu-item.conf';
 import { Direction } from '../../mg-menu/mg-menu.conf';
 import { MgPopover } from '../../../mg-popover/mg-popover';
-import { mockPopperArrowError } from '../../../mg-popover/test/mg-popover.spec';
-import { forcePopoverId, setupMutationObserverMock, setupResizeObserverMock } from '../../../../../utils/unit.test.utils';
+import { forcePopoverId, mockConsoleError, mockWindowFrames, setupMutationObserverMock, setupResizeObserverMock } from '../../../../../utils/unit.test.utils';
 
-mockPopperArrowError();
+mockConsoleError();
+mockWindowFrames();
 
 const menu = (label = 'child-menu', slots, direction?: MgMenu['direction']) => (
   <mg-menu label={label} direction={direction}>

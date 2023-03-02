@@ -17,6 +17,7 @@ export class MgPopover {
   private popover: HTMLElement;
   private closeButtonId = '';
   private windows;
+  private resizeObserver: ResizeObserver;
 
   // Locales
   private messages;
@@ -209,6 +210,18 @@ export class MgPopover {
         },
       ],
     });
+
+    if (this.resizeObserver === undefined) {
+      // add resize observer
+      this.resizeObserver = new ResizeObserver(entries => {
+        if (entries.some(entrie => entrie.target.getAttribute('slot') !== null)) {
+          this.popper.update();
+        }
+      });
+      Array.from(this.element.querySelectorAll('[slot]')).forEach(element => {
+        this.resizeObserver.observe(element);
+      });
+    }
 
     // Add events to toggle display
     interactiveElement.addEventListener('click', () => {
