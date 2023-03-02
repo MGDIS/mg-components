@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-redundant-roles */
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component, Element, Event, h, Prop, EventEmitter, State, Watch, Method } from '@stencil/core';
@@ -292,7 +293,7 @@ export class MgInputRadio {
         errorMessage={this.errorMessage}
         isFieldset={true}
       >
-        <ul class={{ 'mg-input__input-group-container': true, 'mg-input__input-group-container--vertical': this.inputVerticalList }}>
+        <ul class={{ 'mg-input__input-group-container': true, 'mg-input__input-group-container--vertical': this.inputVerticalList }} role="list">
           {this.options.map((input, index) => (
             <li key={input.title} class={{ 'mg-input__input-group': true, 'mg-input__input-group--disabled': this.disabled || input.disabled }}>
               <input

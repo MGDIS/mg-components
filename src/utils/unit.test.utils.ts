@@ -117,3 +117,31 @@ export const forcePopoverId = (item: Element, id: string): void => {
     item.shadowRoot.querySelector('button').setAttribute('aria-controls', id);
   }
 };
+
+/**
+ * fix popper console.error in test
+ * it is generated in @popperjs/core/dist/cjs/popper.js l.1859
+ * this is due to internal function isHTMLElement(), so we can not mock it directly.
+ * this function check if test DOM element mockHTMLElement instance is 'instanceof HTMLElement'
+ * so we only override the console.error side effect for this error
+ *
+ * @returns {void}
+ */
+export const mockConsoleError = (): void => {
+  jest.spyOn(console, 'error').mockImplementation(error => {
+    const compareWith = 'Popper: "arrow" element must be an HTMLElement (not an SVGElement). To use an SVG arrow, wrap it in an HTMLElement that will be used as the arrow.';
+    if (error !== compareWith) console.log(error);
+  });
+};
+
+/**
+ * Add missing window.frames property to test context
+ * usefull for component with iframe listeners, ex: mg-popover
+ *
+ * @returns {void}
+ */
+export const mockWindowFrames = (): void => {
+  Object.defineProperty(window, 'frames', {
+    value: { length: 0 },
+  });
+};

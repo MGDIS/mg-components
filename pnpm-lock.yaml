@@ -5,7 +5,7 @@ specifiers:
   '@babel/plugin-transform-react-jsx': ^7.20.13
   '@popperjs/core': ^2.11.6
   '@pxtrn/storybook-addon-docs-stencil': ^6.4.1
-  '@stencil/core': ^3.0.0
+  '@stencil/core': ^2.22.1
   '@stencil/eslint-plugin': ^0.4.0
   '@stencil/sass': ^1.5.2
   '@storybook/addon-a11y': ^6.5.16
@@ -43,12 +43,12 @@ specifiers:
   sass-loader: ^10.4.1
   style-loader: ^2.0.0
   ts-node: ^10.9.1
-  turbo: ^1.7.3
+  turbo: ^1.8.1
   typescript: ~4.4.4
 
 dependencies:
   '@popperjs/core': 2.11.6
-  '@stencil/core': 3.0.0
+  '@stencil/core': 2.22.1
   normalize.css: 8.0.1
 
 devDependencies:
@@ -56,7 +56,7 @@ devDependencies:
   '@babel/plugin-transform-react-jsx': 7.20.13_@babel+core@7.20.12
   '@pxtrn/storybook-addon-docs-stencil': 6.4.1
   '@stencil/eslint-plugin': 0.4.0_hmu6a7wtnd4l3gkpe2gunbj6xm
-  '@stencil/sass': 1.5.2_@stencil+core@3.0.0
+  '@stencil/sass': 1.5.2_@stencil+core@2.22.1
   '@storybook/addon-a11y': 6.5.16
   '@storybook/addon-actions': 6.5.16
   '@storybook/addon-docs': 6.5.16_wz5qsc2cffdftkr4kf76o2bswu
@@ -91,7 +91,7 @@ devDependencies:
   sass-loader: 10.4.1_sass@1.58.0
   style-loader: 2.0.0
   ts-node: 10.9.1_bmonpl7skdxpz35vbpcd5bwq74
-  turbo: 1.7.3
+  turbo: 1.8.1
   typescript: 4.4.4
 
 packages:
@@ -2023,9 +2023,9 @@ packages:
       lodash.values: 4.3.0
     dev: true
 
-  /@stencil/core/3.0.0:
-    resolution: {integrity: sha512-MYhrOlnzAtBUJH0FEggaP2pwm5GUvkB4wYRpZZFtUzGXAPamvrsreUf8QsGe0C4NdFdk8NlUauFxEEGE3z1+Sw==}
-    engines: {node: '>=14.10.0', npm: '>=6.0.0'}
+  /@stencil/core/2.22.1:
+    resolution: {integrity: sha512-L4EsWLXYkg24BfrR3aS1df3BSkH0RFyza+Tu84MaYoF2csiKTJxDTZuFHSnJeF8UdgzV7CBfnsIEV6r3s0+h3g==}
+    engines: {node: '>=12.10.0', npm: '>=6.0.0'}
     hasBin: true
 
   /@stencil/eslint-plugin/0.4.0_hmu6a7wtnd4l3gkpe2gunbj6xm:
@@ -2047,12 +2047,12 @@ packages:
       typescript: 4.4.4
     dev: true
 
-  /@stencil/sass/1.5.2_@stencil+core@3.0.0:
+  /@stencil/sass/1.5.2_@stencil+core@2.22.1:
     resolution: {integrity: sha512-nJ93pUSylsGsMX0eLmhxh1oEljcUjj5mYjhB9ziCdoaydAdjukrUoqDCC7tdVbOcBo2hKptQyWqCtETnBGYsXQ==}
     peerDependencies:
       '@stencil/core': '>=1.0.2'
     dependencies:
-      '@stencil/core': 3.0.0
+      '@stencil/core': 2.22.1
     dev: true
 
   /@storybook/addon-a11y/6.5.16:
@@ -12691,65 +12691,65 @@ packages:
     engines: {node: '>=0.6.11 <=0.7.0 || >=0.7.3'}
     dev: true
 
-  /turbo-darwin-64/1.7.3:
-    resolution: {integrity: sha512-7j9+j1CVztmdevnClT3rG/GRhULf3ukwmv+l48l8uwsXNI53zLso+UYMql6RsjZDbD6sESwh0CHeKNwGmOylFA==}
+  /turbo-darwin-64/1.8.1:
+    resolution: {integrity: sha512-H7pxGF/vsYG7kbY+vB8h+3r8VXn2L6hhYQi0XWA+EjZ1e2zu7+TzEMRWFYmvJPx8TRo5cV5txtg0I22/Y7bxUA==}
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-darwin-arm64/1.7.3:
-    resolution: {integrity: sha512-puS9+pqpiy4MrIvWRBTg3qfO2+JPXR7reQcXQ7qUreuyAJnSw9H9/TIHjeK6FFxUfQbmruylPtH6dNpfcML9CA==}
+  /turbo-darwin-arm64/1.8.1:
+    resolution: {integrity: sha512-zMcvplVGluR6v4oJXW7S1/R9QFsHdDkXMhPq8PIdvT3HwTb69ms0MNv7aKiQ0ZFy5D/eKCTyBRUFZvjorZmBqA==}
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-linux-64/1.7.3:
-    resolution: {integrity: sha512-BnbpgcK8Wag6fhnff7tMaecswmFHN/T56VIDnjcwcJnK9H3jdwpjwZlmcDtkoslzjPj3VuqHyqLDMvSb3ejXSg==}
+  /turbo-linux-64/1.8.1:
+    resolution: {integrity: sha512-eJNx8iWDn5Lt8d0221RFd6lBjViLiPCVWNFF5JtqOohgRYplvepY3y/THa1GivMxY4px6zjTiy2oPE/VscVP4w==}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-linux-arm64/1.7.3:
-    resolution: {integrity: sha512-+epY+0dfjmAJNZHfj7rID2hENRaeM3D0Ijqkhh/M53o46fQMwPNqI5ff9erh+f9r8sWuTpVnRlZeu7TE1P/Okw==}
+  /turbo-linux-arm64/1.8.1:
+    resolution: {integrity: sha512-hFZkm8tq9kLE8tdbOzD6EbNzftdzMR4JEuuoKC6AbTzx1ZsWRvXJ/BGTeSH9/dYYm/wfuIEUiOP7HeXWiZRx7g==}
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-windows-64/1.7.3:
-    resolution: {integrity: sha512-/2Z8WB4fASlq/diO6nhmHYuDCRPm3dkdUE6yhwQarXPOm936m4zj3xGQA2eSWMpvfst4xjVxxU7P7HOIOyWChA==}
+  /turbo-windows-64/1.8.1:
+    resolution: {integrity: sha512-o3oDg0lTYZl5KZD3Mi753On2vQT51unIiungoUmHDCeDH5JXfWPFu+6p+GAoIyRwQkZPvaEzMLuUtRgklKcBJw==}
     cpu: [x64]
     os: [win32]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-windows-arm64/1.7.3:
-    resolution: {integrity: sha512-UD9Uhop42xj1l1ba5LRdwqRq1Of+RgqQuv+QMd1xOAZ2FXn/91uhkfLv+H4Pkiw7XdUohOxpj/FcOvjCiiUxGw==}
+  /turbo-windows-arm64/1.8.1:
+    resolution: {integrity: sha512-NDYr2Mra21KOdl18BhMRoH2jQmlu+oqkpqRd+cGB8+c5P0B6LDVCM83cfcXQ+PNqX9S3Y1eZDRENZJx9I03sSw==}
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo/1.7.3:
-    resolution: {integrity: sha512-mrqo72vPQO6ykmARThaNP/KXPDuBDSqDXfkUxD8hX1ET3YSFbOWJixlHU32tPtiFIhScIKbEGShEVWBrLeM0wg==}
+  /turbo/1.8.1:
+    resolution: {integrity: sha512-g8RltmG5zd0nYbKpkBQwnTSXTWUiup9+yileQ1TETNzpjxI3TL5k7kt2WkgUHEqR947IPUV+ckIduZHVITJmIQ==}
     hasBin: true
     requiresBuild: true
     optionalDependencies:
-      turbo-darwin-64: 1.7.3
-      turbo-darwin-arm64: 1.7.3
-      turbo-linux-64: 1.7.3
-      turbo-linux-arm64: 1.7.3
-      turbo-windows-64: 1.7.3
-      turbo-windows-arm64: 1.7.3
+      turbo-darwin-64: 1.8.1
+      turbo-darwin-arm64: 1.8.1
+      turbo-linux-64: 1.8.1
+      turbo-linux-arm64: 1.8.1
+      turbo-windows-64: 1.8.1
+      turbo-windows-arm64: 1.8.1
     dev: true
 
   /type-check/0.3.2:
