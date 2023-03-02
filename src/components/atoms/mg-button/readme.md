@@ -23,6 +23,8 @@ To manage the space between two buttons you can use the helper [.mg-group-elemen
 
 ![](./mg-button/doc/img/mg-button-styles.png)
 
+Focused `mg-button` style is the one from the browser (outline).
+
 ## CSS Variables
 
 If needed some [variables](./?path=/story/css-variables--page) are available to customize the component:
