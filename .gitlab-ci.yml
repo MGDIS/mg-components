@@ -33,18 +33,7 @@ audit:
     - gitlabci-npm-audit break-build --PACKAGE_MANAGER pnpm
     - gitlabci-npm-audit-compare
 
-# outdated:
-#   stage: test
-#   rules:
-#     - if: $CI_COMMIT_TAG == null
-#   extends:
-#     - .install
-#   script:
-#     # Check the npm outdated output
-#     # break-build not yet
-#     - gitlabci-npm-outdated
-
-test:
+test:unit:
   stage: test
   rules:
     # except tags
@@ -52,7 +41,7 @@ test:
   extends:
     - .install
   script:
-    - pnpm turbo test
+    - pnpm turbo test:unit
   artifacts:
     when: always
     expire_in: 1 day
@@ -61,6 +50,16 @@ test:
     reports:
       junit:
         - coverage/junit.xml
+
+test:e2e:
+  stage: test
+  rules:
+    # except tags
+    - if: $CI_COMMIT_TAG == null
+  extends:
+    - .install
+  script:
+    - pnpm turbo test:e2e
 
 sonar:
   stage: sonar
@@ -71,7 +70,8 @@ sonar:
     - sonar-scanner -Dsonar.host.url=$SONAR_URL -Dsonar.login=$SONAR_KEY -Dsonar.projectKey=$CI_PROJECT_NAME-$CI_COMMIT_REF_SLUG -Dsonar.projectName=$CI_PROJECT_NAME-$CI_COMMIT_REF_SLUG
     - gitlabci-sonar-compare report
   needs:
-    - test
+    - test:unit
+    - test:e2e
 
 dist:
   stage: dist
