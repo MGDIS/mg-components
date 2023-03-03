@@ -1,6 +1,6 @@
 import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
-import { forcePopoverId, mockPopperArrowError } from '../../../../utils/unit.test.utils';
+import { forcePopoverId, mockConsoleError, setupResizeObserverMock } from '../../../../utils/unit.test.utils';
 import { Status } from '../../menu/mg-menu-item/mg-menu-item.conf';
 import { MgButton } from '../../../atoms/mg-button/mg-button';
 import { MgPopover } from '../../mg-popover/mg-popover';
@@ -8,7 +8,7 @@ import { MgActionMore } from '../mg-action-more';
 import { MgMenu } from '../../menu/mg-menu/mg-menu';
 import { MgMenuItem } from '../../menu/mg-menu-item/mg-menu-item';
 
-mockPopperArrowError();
+mockConsoleError();
 
 const getPage = async args => {
   const page = await newSpecPage({
@@ -58,6 +58,12 @@ Object.defineProperty(window, 'frames', {
 });
 
 describe('mg-action-more', () => {
+  beforeEach(() => {
+    setupResizeObserverMock({
+      observe: () => null,
+      disconnect: () => null,
+    });
+  });
   describe.each([
     {
       items,

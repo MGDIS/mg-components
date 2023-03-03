@@ -99,6 +99,13 @@
   & + .mg-input__error {
     margin-top: 0.5rem;
   }
+
+  /* Set custom opacity on disabled input */
+  .mg-input__box:disabled,
+  &-group--disabled label,
+  .mg-input.mg-input--toggle-disabled & .mg-input__button-toggle {
+    opacity: var(--mg-disabled-opacity);
+  }
 }
 
 .mg-input__error {

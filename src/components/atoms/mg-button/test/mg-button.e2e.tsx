@@ -5,8 +5,17 @@ const buttonHeight = 35;
 
 describe('mg-button', () => {
   test('Should render', async () => {
-    const html = variants.map(variant => `<div><mg-button variant="${variant}">${variant}</mg-button></div>`).join('');
-    const page = await createPage(html, { width: 100, height: variants.length * buttonHeight });
+    const html = variants
+      .map(
+        variant => `<div>
+      <mg-button variant="${variant}">${variant}</mg-button>
+      <mg-button variant="${variant}" is-icon><mg-icon icon="check-circle"></mg-icon></mg-button>
+      <mg-button variant="${variant}" disabled>disabled</mg-button>
+      <mg-button variant="${variant}" is-icon disabled label="disabled"><mg-icon icon="check-circle"></mg-icon></mg-button>
+    </div>`,
+      )
+      .join('');
+    const page = await createPage(html, { width: 250, height: variants.length * buttonHeight });
 
     const screenshot = await page.screenshot();
     expect(screenshot).toMatchImageSnapshot();
@@ -37,11 +46,17 @@ describe('mg-button', () => {
     expect(screenshot).toMatchImageSnapshot();
   });
 
-  test('Should render a focused button link without border radius', async () => {
-    const page = await createPage(`<mg-button variant="link">button</mg-button><style>.custom-link{--mg-button-border-radius: 1rem;}</style>`);
+  test.each(variants)('Should render focused and hover %s button', async variant => {
+    const page = await createPage(`
+      <mg-button variant="${variant}">${variant}:focus</mg-button>
+      <mg-button variant="${variant}" class="hover">${variant}:hover</mg-button>
+    `);
 
     await page.keyboard.down('Tab');
     await page.waitForChanges();
+
+    const button = await page.find('mg-button.hover');
+    button.hover();
 
     const screenshot = await page.screenshot();
     expect(screenshot).toMatchImageSnapshot();

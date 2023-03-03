@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-redundant-roles */
 import { Component, Element, Event, h, Prop, EventEmitter, State, Watch, Method } from '@stencil/core';
 import { MgInput } from '../MgInput';
 import { ClassList } from '../../../../utils/components.utils';
@@ -281,7 +282,7 @@ export class MgInputCheckbox {
         errorMessage={!this.readonly ? this.errorMessage : undefined}
         isFieldset={true}
       >
-        <ul class={{ 'mg-input__input-group-container': true, 'mg-input__input-group-container--vertical': this.inputVerticalList }}>
+        <ul class={{ 'mg-input__input-group-container': true, 'mg-input__input-group-container--vertical': this.inputVerticalList }} role="list">
           {this.checkboxItems
             .filter(item => {
               return !this.readonly || item.value;

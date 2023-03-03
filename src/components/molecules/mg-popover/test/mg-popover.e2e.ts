@@ -44,6 +44,7 @@ describe('mg-popover', () => {
       // display popover on click on slotted element
       mgButton.triggerEvent('click');
       await page.waitForChanges();
+      await page.waitForNetworkIdle();
 
       expect(popover).toHaveAttribute('data-show');
 
@@ -55,6 +56,7 @@ describe('mg-popover', () => {
       // hide popover on click on slotted element
       mgButton.triggerEvent('click');
       await page.waitForChanges();
+      await page.waitForNetworkIdle();
 
       expect(popover).not.toHaveAttribute('data-show');
 
@@ -62,12 +64,14 @@ describe('mg-popover', () => {
       await page.keyboard.down('Tab');
       await page.keyboard.down('Enter');
       await page.waitForChanges();
+      await page.waitForNetworkIdle();
 
       expect(popover).toHaveAttribute('data-show');
 
       // hide popover on keyboad escape key
       await page.keyboard.down('Escape');
       await page.waitForChanges();
+      await page.waitForNetworkIdle();
 
       expect(popover).not.toHaveAttribute('data-show');
     });
@@ -100,6 +104,34 @@ describe('mg-popover', () => {
       await page.setViewport({ width: 500, height: 350 });
 
       const screenshot = await page.screenshot();
+      expect(screenshot).toMatchImageSnapshot();
+    });
+  });
+
+  describe.each(['title', 'content'])('re-position %s slot', slot => {
+    test('should re-position when slot size change', async () => {
+      const tagName = slot === 'title' ? 'h2' : 'p';
+      const page = await createPage(
+        `<style>mg-button{position:fixed;left:50%;transform:translateX(-50%)}</style>
+        <mg-popover ${renderAttributes({ placement: 'bottom-start', display: true })}>
+        <mg-button>Button</mg-button>
+        <${tagName} slot="${slot}">
+          Lorem ipsum
+        </${tagName}>
+        </mg-popover>`,
+        { width: 400, height: 100 },
+      );
+
+      let screenshot = await page.screenshot();
+      expect(screenshot).toMatchImageSnapshot();
+
+      await page.$eval('[slot]', el => {
+        el.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit';
+      });
+
+      await page.waitForChanges();
+
+      screenshot = await page.screenshot();
       expect(screenshot).toMatchImageSnapshot();
     });
   });

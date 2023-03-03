@@ -4,11 +4,12 @@ import { MgMenu } from '../mg-menu';
 import { Direction } from '../mg-menu.conf';
 import { MgMenuItem } from '../../mg-menu-item/mg-menu-item';
 import { MgPopover } from '../../../mg-popover/mg-popover';
-import { forcePopoverId, mockPopperArrowError, setupMutationObserverMock, setupResizeObserverMock } from '../../../../../utils/unit.test.utils';
+import { forcePopoverId, mockConsoleError, mockWindowFrames, setupMutationObserverMock, setupResizeObserverMock } from '../../../../../utils/unit.test.utils';
 import { OverflowBehaviorElements } from '../../../../../utils/behaviors.utils';
 import { Status } from '../../mg-menu-item/mg-menu-item.conf';
 
-mockPopperArrowError();
+mockConsoleError();
+mockWindowFrames();
 
 const getPage = async (args, withSubmenu = true) => {
   const page = await newSpecPage({
@@ -64,12 +65,11 @@ const getPage = async (args, withSubmenu = true) => {
 };
 
 describe('mg-menu', () => {
-  let fireRo;
   beforeEach(() => {
     jest.useFakeTimers();
     setupResizeObserverMock({
       observe: function () {
-        fireRo = this.cb;
+        return null;
       },
       disconnect: function () {
         return null;
@@ -201,7 +201,8 @@ describe('mg-menu', () => {
         });
 
         // render more menu with last menu item displayed in more menu
-        fireRo([{ contentRect: { width: menuSize } }]);
+        page.rootInstance.overflowBehavior.resizeObserver.cb([{ contentRect: { width: menuSize } }]);
+
         await page.waitForChanges();
 
         expect(page.root).toMatchSnapshot();

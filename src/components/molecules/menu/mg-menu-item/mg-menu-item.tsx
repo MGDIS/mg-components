@@ -149,11 +149,11 @@ export class MgMenuItem {
   /**
    * Does an Element have given Status
    *
-   * @param {Element} element to parse
+   * @param {HTMLMgMenuItemElement} mgMenuItemElement to parse
    * @param {MgMenuItem['status']} status to check
    * @returns {boolean} true if element with status is found
    */
-  private hasStatus = (element: Element, status: MgMenuItem['status']): boolean => element.getAttribute('status') === status;
+  private hasStatus = (mgMenuItemElement: HTMLMgMenuItemElement, status: MgMenuItem['status']): boolean => mgMenuItemElement.status === status;
 
   /**
    * Is component contextual direction match the given direction
@@ -212,7 +212,9 @@ export class MgMenuItem {
    * @returns {boolean} truthy if component has active child
    */
   private hasActiveChild = (): boolean =>
-    Array.from(this.element.querySelector('mg-menu')?.children || []).some(element => this.hasStatus(element, Status.ACTIVE) && element.getAttribute('hidden') === null);
+    Array.from(this.element.querySelector('mg-menu')?.children || [])
+      .filter(element => element.nodeName === 'MG-MENU-ITEM')
+      .some((element: HTMLMgMenuItemElement) => this.hasStatus(element, Status.ACTIVE) && element.getAttribute('hidden') === null);
 
   /*************
    * Lifecycle *
@@ -287,7 +289,9 @@ export class MgMenuItem {
       const childItems = Array.from(this.element.querySelector('mg-menu')?.children || []).filter(item => item.nodeName === 'MG-MENU-ITEM');
       childItems.forEach(item => {
         const updateStatus = () => {
-          this.status = this.hasActiveChild() ? Status.ACTIVE : Status.VISIBLE;
+          if (![Status.HIDDEN, Status.DISABLED].includes(this.status)) {
+            this.status = this.hasActiveChild() ? Status.ACTIVE : Status.VISIBLE;
+          }
         };
         // manage child menu listener
         item.addEventListener('status-change', () => {
@@ -326,7 +330,7 @@ export class MgMenuItem {
             {!this.displayNotificationBadge && <slot name="information"></slot>}
             {this.displayNotificationBadge && (
               <span class="mg-menu-item__navigation-button-text-content-notification">
-                <mg-badge label={this.badgeLabel} value="!" variant="info" slot="information"></mg-badge>
+                <mg-badge label={this.badgeLabel} value="!" variant="text-color" slot="information"></mg-badge>
               </span>
             )}
           </div>

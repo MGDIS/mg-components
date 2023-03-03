@@ -2,9 +2,10 @@ import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
 import { MgPopover } from '../mg-popover';
 import { MgButton } from '../../../atoms/mg-button/mg-button';
-import { mockPopperArrowError } from '../../../../utils/unit.test.utils';
+import { mockConsoleError, mockWindowFrames, setupResizeObserverMock } from '../../../../utils/unit.test.utils';
 
-mockPopperArrowError();
+mockConsoleError();
+mockWindowFrames();
 
 const getPage = (args, slot, parent?: boolean) => {
   const popover = () => <mg-popover {...args}>{slot}</mg-popover>;
@@ -14,12 +15,18 @@ const getPage = (args, slot, parent?: boolean) => {
   });
 };
 
-Object.defineProperty(window, 'frames', {
-  value: { length: 0 },
-});
-
 describe('mg-popover', () => {
-  beforeEach(() => jest.useFakeTimers());
+  beforeEach(() => {
+    jest.useFakeTimers();
+    setupResizeObserverMock({
+      observe: function () {
+        return null;
+      },
+      disconnect: function () {
+        return null;
+      },
+    });
+  });
   afterEach(() => jest.clearAllTimers());
 
   test.each([
@@ -123,5 +130,29 @@ describe('mg-popover', () => {
     } catch (err) {
       expect(err.message).toContain('<mg-popover> Slotted title must be a heading: ');
     }
+  });
+
+  test.each(['content', 'title', null])('should update popper instance when slot %s update', async slot => {
+    const page = await getPage({ identifier: 'identifier', display: true }, [
+      <h2 slot="title">Blu bli blo bla</h2>,
+      <p slot="content">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>,
+      <mg-button identifier="identifier-btn">mg-button</mg-button>,
+    ]);
+    expect(page.root).toMatchSnapshot();
+
+    const spy = jest.spyOn(page.rootInstance.popper, 'update');
+
+    const target = page.doc.querySelector(slot === null ? 'mg-button' : `[slot="${slot}"]`);
+
+    page.rootInstance.resizeObserver.cb([{ target }]);
+
+    if (slot === null) expect(spy).not.toHaveBeenCalled();
+    else expect(spy).toHaveBeenCalled();
+
+    expect(page.root).toMatchSnapshot();
   });
 });

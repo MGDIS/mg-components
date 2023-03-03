@@ -126,10 +126,23 @@ export const forcePopoverId = (component: Element, id: string, interactiveElemen
  * this function check if test DOM element mockHTMLElement instance is 'instanceof HTMLElement'
  * so we only override the console.error side effect for this error
  *
- * @returns {jest.SpyInstance}
+ * @returns {void}
  */
-export const mockPopperArrowError = (): jest.SpyInstance =>
+export const mockConsoleError = (): void => {
   jest.spyOn(console, 'error').mockImplementation(error => {
     const compareWith = 'Popper: "arrow" element must be an HTMLElement (not an SVGElement). To use an SVG arrow, wrap it in an HTMLElement that will be used as the arrow.';
-    if (error !== compareWith) console.error(error);
+    if (error !== compareWith) console.log(error);
   });
+};
+
+/**
+ * Add missing window.frames property to test context
+ * usefull for component with iframe listeners, ex: mg-popover
+ *
+ * @returns {void}
+ */
+export const mockWindowFrames = (): void => {
+  Object.defineProperty(window, 'frames', {
+    value: { length: 0 },
+  });
+};

@@ -37,7 +37,7 @@ export const config: Config = {
     },
     {
       type: 'dist-custom-elements',
-      customElementsExportBehavior: 'auto-define-custom-elements',
+      autoDefineCustomElements: true,
     },
     {
       type: 'docs-json',
@@ -67,8 +67,6 @@ export const config: Config = {
   plugins: [sass()],
   testing: {
     timers: 'fake',
-    collectCoverage: true,
-    reporters: ['default', 'jest-junit'],
     /**
      * Gitlab CI doesn't allow sandbox, therefor this parameters must be passed to your Headless Chrome
      * before it can run your tests
