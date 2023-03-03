@@ -89,6 +89,7 @@ Please note that the mg-popover component uses the [mg-card](./?path=/docs/atoms
 
 ### Used by
 
+ - [mg-action-more](../mg-action-more)
  - [mg-menu-item](../menu/mg-menu-item)
 
 ### Depends on
@@ -104,6 +105,7 @@ graph TD;
   mg-popover --> mg-button
   mg-popover --> mg-icon
   mg-button --> mg-icon
+  mg-action-more --> mg-popover
   mg-menu-item --> mg-popover
   style mg-popover fill:#f9f,stroke:#333,stroke-width:4px
 ```

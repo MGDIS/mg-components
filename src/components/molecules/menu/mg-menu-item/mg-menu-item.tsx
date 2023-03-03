@@ -281,8 +281,7 @@ export class MgMenuItem {
       // manage all sub levels child menu-items level with data-level attribut
       if (this.isDirection(Direction.VERTICAL)) {
         Array.from(this.element.querySelectorAll('mg-menu-item')).forEach(item => {
-          const itemLevel = Number(item.getAttribute('data-level')) || 1;
-          item.setAttribute('data-level', `${itemLevel + 1}`);
+          item.dataset.level = `${(Number(item.dataset.level) || 1) + 1}`;
         });
       }
 

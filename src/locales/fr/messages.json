@@ -55,5 +55,8 @@
   "plusMenu": {
     "moreLabel": "Menu complémentaire",
     "badgeLabel": "Notification(s) incluse(s)"
+  },
+  "actionMore": {
+    "label": "Actions"
   }
 }

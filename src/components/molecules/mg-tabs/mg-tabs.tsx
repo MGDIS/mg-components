@@ -166,7 +166,7 @@ export class MgTabs {
    * @param {MouseEvent} event mouse event
    */
   private handleClick = (event: MouseEvent & { currentTarget: HTMLElement }): void => {
-    const tabId = event.currentTarget.getAttribute('data-index');
+    const tabId = event.currentTarget.dataset.index;
     const tab = this.tabs[Number(tabId) - this.startIndex];
     if (this.tabHasStatus(tab, Status.HIDDEN) || this.tabHasStatus(tab, Status.DISABLED)) {
       event.preventDefault();
@@ -193,7 +193,7 @@ export class MgTabs {
   private handleKeydown = (event: KeyboardEvent & { target: HTMLElement }): void => {
     const parent = event.target.parentElement;
     if (['ArrowRight', 'ArrowLeft'].includes(event.key)) {
-      this.tabFocus = Number(event.target.getAttribute('data-index'));
+      this.tabFocus = Number(event.target.dataset.index);
       parent.querySelector(`[data-index="${this.tabFocus}"]`).setAttribute('tabindex', '-1');
 
       // Move right

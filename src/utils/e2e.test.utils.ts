@@ -1,5 +1,6 @@
 import { newE2EPage, E2EPage } from '@stencil/core/testing';
 import { Page as PuppeteerPage } from 'puppeteer';
+import { createID } from './components.utils';
 
 export type DesignSystemE2EPage = E2EPage & Pick<PuppeteerPage, 'screenshot' | 'viewport'>;
 
@@ -67,7 +68,32 @@ export const darkBackground = (condition: boolean, html: string): string =>
 export const renderAttributes = (args: unknown): string =>
   (typeof args === 'object' &&
     Object.keys(args)
-      .filter(key => ![null, undefined, false].includes(args[key]))
+      .filter(key => ![null, undefined, false].includes(args[key]) && typeof args[key] !== 'object')
       .map(key => `${key.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()}="${args[key]}"`)
       .join(' ')) ||
   '';
+
+/**
+ * Render properties from props objects.
+ * Insert return value in <script></script> element
+ *
+ * @param {object} args argument to render as script. ex: {status: 'visible'}
+ * @param {string} selector querySelector get targetted element and bind properties on it
+ * @returns {string} stringified properties script
+ */
+export const renderProperties = (args: unknown, selector: string): string => {
+  if (typeof args === 'object') {
+    const name = `element${createID()}`;
+    return `const ${name} = document.querySelector('${selector}');
+    ${
+      Object.keys(args)
+        .filter(key => typeof args[key] === 'object')
+        .map(key => `${name}.${key} = ${JSON.stringify(args[key], (_key, val) => (typeof val === 'function' ? `<fn>${val}</fn>` : val))}`) // stringify json AND keep function values
+        .join(';\n') // create string
+        .split('"<fn>') // remove fn start decorator
+        .join('')
+        .split('</fn>"')
+        .join('') // remove fn end decorator
+    };`;
+  } else return '';
+};

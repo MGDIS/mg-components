@@ -5,6 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { MgActionMoreButtonType, MgActionMoreIconType, MgActionMoreItemType } from "./components/molecules/mg-action-more/mg-action-more.conf";
 import { BadgeVariantType } from "./components/atoms/mg-badge/mg-badge.conf";
 import { ButtonType, VariantType } from "./components/atoms/mg-button/mg-button.conf";
 import { IconSizeType, IconVariantType } from "./components/atoms/mg-icon/mg-icon.conf";
@@ -20,6 +21,24 @@ import { SkipLink } from "./components/molecules/mg-skip-links/mg-skip-links.con
 import { SizeType, TabItem } from "./components/molecules/mg-tabs/mg-tabs.conf";
 import { TagVariantType } from "./components/atoms/mg-tag/mg-tag.conf";
 export namespace Components {
+    interface MgActionMore {
+        /**
+          * Define button properties Default: {variant: 'flat', isIcon: true}.
+         */
+        "button": MgActionMoreButtonType;
+        /**
+          * Define if chevron is display
+         */
+        "displayChevron": boolean;
+        /**
+          * Define displaied icon Default: {icon: 'ellipsis'}
+         */
+        "icon": MgActionMoreIconType;
+        /**
+          * Define the menu-items elements
+         */
+        "items": MgActionMoreItemType[];
+    }
     interface MgBadge {
         /**
           * Badge label. Include short description. Required for accessibility
@@ -1157,6 +1176,12 @@ export interface MgTabsCustomEvent<T> extends CustomEvent<T> {
     target: HTMLMgTabsElement;
 }
 declare global {
+    interface HTMLMgActionMoreElement extends Components.MgActionMore, HTMLStencilElement {
+    }
+    var HTMLMgActionMoreElement: {
+        prototype: HTMLMgActionMoreElement;
+        new (): HTMLMgActionMoreElement;
+    };
     interface HTMLMgBadgeElement extends Components.MgBadge, HTMLStencilElement {
     }
     var HTMLMgBadgeElement: {
@@ -1338,6 +1363,7 @@ declare global {
         new (): HTMLMgTooltipElement;
     };
     interface HTMLElementTagNameMap {
+        "mg-action-more": HTMLMgActionMoreElement;
         "mg-badge": HTMLMgBadgeElement;
         "mg-button": HTMLMgButtonElement;
         "mg-card": HTMLMgCardElement;
@@ -1371,6 +1397,24 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface MgActionMore {
+        /**
+          * Define button properties Default: {variant: 'flat', isIcon: true}.
+         */
+        "button"?: MgActionMoreButtonType;
+        /**
+          * Define if chevron is display
+         */
+        "displayChevron"?: boolean;
+        /**
+          * Define displaied icon Default: {icon: 'ellipsis'}
+         */
+        "icon"?: MgActionMoreIconType;
+        /**
+          * Define the menu-items elements
+         */
+        "items": MgActionMoreItemType[];
+    }
     interface MgBadge {
         /**
           * Badge label. Include short description. Required for accessibility
@@ -2509,6 +2553,7 @@ declare namespace LocalJSX {
         "placement"?: Placement;
     }
     interface IntrinsicElements {
+        "mg-action-more": MgActionMore;
         "mg-badge": MgBadge;
         "mg-button": MgButton;
         "mg-card": MgCard;
@@ -2545,6 +2590,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "mg-action-more": LocalJSX.MgActionMore & JSXBase.HTMLAttributes<HTMLMgActionMoreElement>;
             "mg-badge": LocalJSX.MgBadge & JSXBase.HTMLAttributes<HTMLMgBadgeElement>;
             "mg-button": LocalJSX.MgButton & JSXBase.HTMLAttributes<HTMLMgButtonElement>;
             "mg-card": LocalJSX.MgCard & JSXBase.HTMLAttributes<HTMLMgCardElement>;

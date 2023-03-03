@@ -1,0 +1,6 @@
+@mixin rotate($selector, $duration) {
+  transition: $duration;
+  &--rotate#{$selector} {
+    transform: rotate(180deg);
+  }
+}

@@ -106,15 +106,16 @@ export const setupResizeObserverMock = ({ disconnect, observe }: setupResizeObse
 /**
  * force popover id when component use randomed identifier
  *
- * @param {Element} item element wich include mg-popover
+ * @param {Element} component element wich include mg-popover
  * @param {string} id new fixed id
+ * @param {string} interactiveElement element where attribute 'aria-controls' is set
  * @returns {void}
  */
-export const forcePopoverId = (item: Element, id: string): void => {
-  const popover = item.shadowRoot.querySelector('mg-popover');
+export const forcePopoverId = (component: Element, id: string, interactiveElement = 'button'): void => {
+  const popover = component.shadowRoot.querySelector('mg-popover');
   if (popover !== null) {
     popover.shadowRoot.querySelector('.mg-popover').setAttribute('id', id);
-    item.shadowRoot.querySelector('button').setAttribute('aria-controls', id);
+    component.shadowRoot.querySelector(interactiveElement).setAttribute('aria-controls', id);
   }
 };
 

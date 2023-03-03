@@ -76,7 +76,7 @@ export class MgTooltip {
    */
   private show = (): void => {
     // Make the tooltip visible
-    this.tooltip.setAttribute('data-show', '');
+    this.tooltip.dataset.show = '';
     // Enable the event listeners
     this.popper.setOptions(options => ({
       ...options,
