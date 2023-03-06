@@ -11,12 +11,20 @@ import { Status } from '../../mg-menu-item/mg-menu-item.conf';
 mockConsoleError();
 mockWindowFrames();
 
+let id = 0;
+const setId = (hasId: boolean) => {
+  if (hasId) {
+    id++;
+    return `test-${id}`;
+  }
+};
+
 const getPage = async (args, withSubmenu = true) => {
   const page = await newSpecPage({
     components: [MgMenu, MgMenuItem, MgPopover],
     template: () => (
       <mg-menu {...args}>
-        <mg-menu-item>
+        <mg-menu-item id={setId(args.id)}>
           <span slot="label">batman</span>
           {withSubmenu && (
             <mg-menu label="batman - submenu" direction={Direction.VERTICAL}>
@@ -37,7 +45,7 @@ const getPage = async (args, withSubmenu = true) => {
             </mg-menu>
           )}
         </mg-menu-item>
-        <mg-menu-item>
+        <mg-menu-item id={setId(args.id)}>
           <span slot="label">joker</span>
           {args.badge && <mg-badge value={1} label="bad guy"></mg-badge>}
           <div>
@@ -45,7 +53,7 @@ const getPage = async (args, withSubmenu = true) => {
             <p>If you don't know the joker, you can watch the movie.</p>
           </div>
         </mg-menu-item>
-        <mg-menu-item href="#bane">
+        <mg-menu-item href="#bane" id={setId(args.id)}>
           <span slot="label">bane</span>
         </mg-menu-item>
       </mg-menu>
@@ -66,6 +74,7 @@ const getPage = async (args, withSubmenu = true) => {
 
 describe('mg-menu', () => {
   beforeEach(() => {
+    id = 0;
     jest.useFakeTimers();
     setupResizeObserverMock({
       observe: function () {
@@ -169,64 +178,68 @@ describe('mg-menu', () => {
   });
 
   describe('overflow', () => {
-    test.each([undefined, { size: 'large' }, { mgIcon: { icon: 'user' } }, { slotLabel: { label: 'batman' } }, { slotLabel: { display: true } }])(
-      'with args %s',
-      async moreitem => {
-        const page = await getPage({ label: 'batman menu', moreitem });
-        const menuSize = 215;
-        const menu = page.doc.querySelector('mg-menu');
+    test.each([
+      { moreitem: undefined },
+      { moreitem: { size: 'large' } },
+      { moreitem: { mgIcon: { icon: 'user' } } },
+      { moreitem: { slotLabel: { label: 'batman' } } },
+      { moreitem: { slotLabel: { display: true } } },
+      { moreitem: undefined, id: true },
+    ])('with args %s', async args => {
+      const page = await getPage({ label: 'batman menu', ...args });
+      const menuSize = 215;
+      const menu = page.doc.querySelector('mg-menu');
 
-        expect(page.root).toMatchSnapshot();
+      expect(page.root).toMatchSnapshot();
 
-        Object.defineProperty(menu, 'offsetWidth', {
-          get: jest.fn(() => menuSize),
+      Object.defineProperty(menu, 'offsetWidth', {
+        get: jest.fn(() => menuSize),
+      });
+      Object.defineProperty(menu.shadowRoot.querySelector(`[${OverflowBehaviorElements.MORE}]`), 'offsetWidth', {
+        get: jest.fn(() => 50),
+      });
+      const items = Array.from(page.doc.querySelectorAll('mg-menu-item'));
+      items.forEach(item => {
+        Object.defineProperty(item, 'offsetWidth', {
+          get: jest.fn(() => 80),
         });
-        Object.defineProperty(menu.shadowRoot.querySelector(`[${OverflowBehaviorElements.MORE}]`), 'offsetWidth', {
-          get: jest.fn(() => 50),
-        });
-        const items = Array.from(page.doc.querySelectorAll('mg-menu-item'));
-        items.forEach(item => {
-          Object.defineProperty(item, 'offsetWidth', {
-            get: jest.fn(() => 80),
+
+        // has JSDom don't clone child props and label is required on mg-menu we force it
+        const newNode = item.cloneNode(true);
+        item.cloneNode = (): Node => {
+          Array.from((newNode as unknown as HTMLElement).querySelectorAll('mg-menu')).forEach(menu => {
+            menu.label = 'test override';
           });
+          return newNode;
+        };
+      });
 
-          // has JSDom don't clone child props and label is required on mg-menu we force it
-          const newNode = item.cloneNode(true);
-          item.cloneNode = (): Node => {
-            Array.from((newNode as unknown as HTMLElement).querySelectorAll('mg-menu')).forEach(menu => {
-              menu.label = 'test override';
-            });
-            return newNode;
-          };
-        });
+      // render more menu with last menu item displayed in more menu
+      page.rootInstance.overflowBehavior.resizeObserver.cb([{ contentRect: { width: menuSize } }]);
 
-        // render more menu with last menu item displayed in more menu
-        page.rootInstance.overflowBehavior.resizeObserver.cb([{ contentRect: { width: menuSize } }]);
+      await page.waitForChanges();
 
-        await page.waitForChanges();
+      expect(page.root).toMatchSnapshot();
 
-        expect(page.root).toMatchSnapshot();
+      // test click on visible more menu item
+      for await (const baseIndex of [1, 2]) {
+        const element = baseIndex === 1 ? 'button' : 'a';
+        const item = page.doc.querySelector(`[${OverflowBehaviorElements.BASE_INDEX}="${baseIndex}"]`) as HTMLMgMenuItemElement;
+        const itemInteractiveElement = item.shadowRoot.querySelector(element);
+        const spy = jest.spyOn(itemInteractiveElement, 'dispatchEvent');
 
-        // test click on visible more menu item
-        for await (const baseIndex of [1, 2]) {
-          const element = baseIndex === 1 ? 'button' : 'a';
-          const item = page.doc.querySelector(`[${OverflowBehaviorElements.BASE_INDEX}="${baseIndex}"]`) as HTMLMgMenuItemElement;
-          const itemInteractiveElement = item.shadowRoot.querySelector(element);
-          const spy = jest.spyOn(itemInteractiveElement, 'dispatchEvent');
+        const itemProxy = page.doc.querySelector(`[${OverflowBehaviorElements.PROXY_INDEX}="${baseIndex}"]`) as HTMLMgMenuItemElement;
+        itemProxy.dispatchEvent(new MouseEvent('click', { bubbles: true }));
 
-          const itemProxy = page.doc.querySelector(`[${OverflowBehaviorElements.PROXY_INDEX}="${baseIndex}"]`) as HTMLMgMenuItemElement;
-          itemProxy.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+        expect(spy).toHaveBeenCalled();
+      }
 
-          expect(spy).toHaveBeenCalled();
-        }
-
-        // test status change on visible item to active
-        const lastVisbleItem = page.doc.querySelector(`[${OverflowBehaviorElements.BASE_INDEX}="2"]`) as HTMLMgMenuItemElement;
-        const lastVisbleItemProxy = page.doc.querySelector(`[${OverflowBehaviorElements.PROXY_INDEX}="2"]`) as HTMLMgMenuItemElement;
-        lastVisbleItem.status = Status.ACTIVE;
-        expect(lastVisbleItemProxy.status).toBe(Status.ACTIVE);
-      },
-    );
+      // test status change on visible item to active
+      const lastVisbleItem = page.doc.querySelector(`[${OverflowBehaviorElements.BASE_INDEX}="2"]`) as HTMLMgMenuItemElement;
+      const lastVisbleItemProxy = page.doc.querySelector(`[${OverflowBehaviorElements.PROXY_INDEX}="2"]`) as HTMLMgMenuItemElement;
+      lastVisbleItem.status = Status.ACTIVE;
+      expect(lastVisbleItemProxy.status).toBe(Status.ACTIVE);
+    });
 
     test.each([Direction.HORIZONTAL, Direction.HORIZONTAL])('should fire disconnect callback', async direction => {
       const { rootInstance, doc } = await getPage({ label: 'batman menu', direction });

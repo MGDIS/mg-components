@@ -145,6 +145,10 @@ export class MgMenu {
         (allMenuItem[index].shadowRoot.querySelector('a') || allMenuItem[index].shadowRoot.querySelector('button')).dispatchEvent(new MouseEvent('click', { bubbles: true }));
       });
 
+      // add id suffix to prevent duplicate key
+      const proxyId = proxy.getAttribute('id');
+      if (proxyId !== null) proxy.setAttribute('id', `${proxyId}-proxy`);
+
       // manage status change miror in proxy
       allMenuItem[index].addEventListener('status-change', (event: CustomEvent) => {
         proxy.setAttribute('status', event.detail);
