@@ -11,20 +11,21 @@ import { Status } from '../../mg-menu-item/mg-menu-item.conf';
 mockConsoleError();
 mockWindowFrames();
 
-let id = 0;
-const setId = (hasId: boolean) => {
-  if (hasId) {
-    id++;
-    return `test-${id}`;
-  }
-};
+let id;
+/**
+ * set id if param is true
+ *
+ * @param {boolean} hasId true if need a generated id
+ * @returns {string} genereted id
+ */
+const setId = (hasId: boolean): string => (hasId ? `test-${id++}` : undefined);
 
 const getPage = async (args, withSubmenu = true) => {
   const page = await newSpecPage({
     components: [MgMenu, MgMenuItem, MgPopover],
     template: () => (
       <mg-menu {...args}>
-        <mg-menu-item id={setId(args.id)}>
+        <mg-menu-item id={setId(args.hasId)}>
           <span slot="label">batman</span>
           {withSubmenu && (
             <mg-menu label="batman - submenu" direction={Direction.VERTICAL}>
@@ -45,7 +46,7 @@ const getPage = async (args, withSubmenu = true) => {
             </mg-menu>
           )}
         </mg-menu-item>
-        <mg-menu-item id={setId(args.id)}>
+        <mg-menu-item id={setId(args.hasId)}>
           <span slot="label">joker</span>
           {args.badge && <mg-badge value={1} label="bad guy"></mg-badge>}
           <div>
@@ -53,7 +54,7 @@ const getPage = async (args, withSubmenu = true) => {
             <p>If you don't know the joker, you can watch the movie.</p>
           </div>
         </mg-menu-item>
-        <mg-menu-item href="#bane" id={setId(args.id)}>
+        <mg-menu-item href="#bane" id={setId(args.hasId)}>
           <span slot="label">bane</span>
         </mg-menu-item>
       </mg-menu>
@@ -74,7 +75,7 @@ const getPage = async (args, withSubmenu = true) => {
 
 describe('mg-menu', () => {
   beforeEach(() => {
-    id = 0;
+    id = 1;
     jest.useFakeTimers();
     setupResizeObserverMock({
       observe: function () {
@@ -184,7 +185,7 @@ describe('mg-menu', () => {
       { moreitem: { mgIcon: { icon: 'user' } } },
       { moreitem: { slotLabel: { label: 'batman' } } },
       { moreitem: { slotLabel: { display: true } } },
-      { moreitem: undefined, id: true },
+      { moreitem: undefined, hasId: true },
     ])('with args %s', async args => {
       const page = await getPage({ label: 'batman menu', ...args });
       const menuSize = 215;

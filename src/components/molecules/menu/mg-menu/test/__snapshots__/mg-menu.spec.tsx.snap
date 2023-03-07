@@ -3020,8 +3020,8 @@ exports[`mg-menu overflow with args { moreitem: undefined } 2`] = `
 </mg-menu>
 `;
 
-exports[`mg-menu overflow with args { moreitem: undefined, id: true } 1`] = `
-<mg-menu aria-label="batman menu" direction="horizontal" id="true" role="menubar">
+exports[`mg-menu overflow with args { moreitem: undefined, hasId: true } 1`] = `
+<mg-menu aria-label="batman menu" direction="horizontal" hasid="" role="menubar">
   <mock:shadow-root>
     <slot></slot>
     <mg-menu-item aria-haspopup="true" data-overflow-more role="menuitem" status="visible">
@@ -3242,8 +3242,8 @@ exports[`mg-menu overflow with args { moreitem: undefined, id: true } 1`] = `
 </mg-menu>
 `;
 
-exports[`mg-menu overflow with args { moreitem: undefined, id: true } 2`] = `
-<mg-menu aria-label="batman menu" direction="horizontal" id="true" role="menubar">
+exports[`mg-menu overflow with args { moreitem: undefined, hasId: true } 2`] = `
+<mg-menu aria-label="batman menu" direction="horizontal" hasid="" role="menubar">
   <mock:shadow-root>
     <slot></slot>
   </mock:shadow-root>
