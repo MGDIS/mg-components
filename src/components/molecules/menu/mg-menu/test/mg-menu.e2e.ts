@@ -1,7 +1,5 @@
 import { KeyInput } from 'puppeteer';
-import { OverflowBehaviorElements } from '../../../../../utils/behaviors.utils';
 import { createPage, DesignSystemE2EPage, renderAttributes } from '../../../../../utils/e2e.test.utils';
-import { Status } from '../../mg-menu-item/mg-menu-item.conf';
 import { Direction, MenuSizeType, sizes } from '../mg-menu.conf';
 
 enum Position {
@@ -194,40 +192,6 @@ describe('mg-menu', () => {
         await page.waitForChanges();
         await expectImageSnapshot(page);
       }
-    });
-  });
-
-  describe('overflow', () => {
-    test.each(sizes)(`should renders, case direction ${Direction.VERTICAL} size %s with small screen`, async size => {
-      const page = await createPage(createHTML({ direction: Direction.VERTICAL, size }, `${Direction.VERTICAL}-${'small'}`));
-
-      await expectImageSnapshot(page);
-    });
-
-    test.each([true, false])('should renders with overflow, case badge %s', async badge => {
-      const page = await createPage(createHTML({ direction: Direction.HORIZONTAL, badge }), getFrameSize(Direction.HORIZONTAL));
-
-      await page.setViewport({ width: 450, height: 200 });
-
-      await expectImageSnapshot(page);
-
-      await page.$eval(
-        `[${OverflowBehaviorElements.BASE_INDEX}="0"]`,
-        (elm, status) => {
-          elm.setAttribute('status', status as string);
-        },
-        Status.VISIBLE,
-      );
-
-      await page.$eval(
-        `[${OverflowBehaviorElements.BASE_INDEX}="2"]`,
-        (elm, status) => {
-          elm.setAttribute('status', status as string);
-        },
-        Status.ACTIVE,
-      );
-
-      await expectImageSnapshot(page);
     });
   });
 });

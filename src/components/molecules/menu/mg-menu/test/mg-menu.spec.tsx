@@ -5,8 +5,6 @@ import { Direction } from '../mg-menu.conf';
 import { MgMenuItem } from '../../mg-menu-item/mg-menu-item';
 import { MgPopover } from '../../../mg-popover/mg-popover';
 import { forcePopoverId, mockConsoleError, mockWindowFrames, setupMutationObserverMock, setupResizeObserverMock } from '../../../../../utils/unit.test.utils';
-import { OverflowBehaviorElements } from '../../../../../utils/behaviors.utils';
-import { Status } from '../../mg-menu-item/mg-menu-item.conf';
 
 mockConsoleError();
 mockWindowFrames();
@@ -65,6 +63,7 @@ const getPage = async (args, withSubmenu = true) => {
 };
 
 describe('mg-menu', () => {
+  let fireMo;
   beforeEach(() => {
     jest.useFakeTimers();
     setupResizeObserverMock({
@@ -76,7 +75,9 @@ describe('mg-menu', () => {
       },
     });
     setupMutationObserverMock({
-      observe: () => null,
+      observe: function () {
+        fireMo = this.cb;
+      },
       disconnect: () => null,
       takeRecords: () => [],
     });
@@ -97,10 +98,7 @@ describe('mg-menu', () => {
     test.each([
       { props: { direction: 'horizontal' }, error: '<mg-menu> prop "label" is required.' },
       { props: { ...baseProps, direction: 'test' }, error: '<mg-menu> prop "direction" must be one of: horizontal, vertical.' },
-      { props: { ...baseProps, direction: Direction.VERTICAL, moreitem: { icon: 'user' } }, error: '<mg-menu> prop "moreitem" must be paired with direction horizontal.' },
-      { props: { ...baseProps, moreitem: {} }, error: '<mg-menu> prop "moreitem" must match MoreItemType.' },
-      { props: { ...baseProps, moreitem: { mgIcon: {} } }, error: '<mg-menu> prop "moreitem" must match MoreItemType.' },
-      { props: { ...baseProps, moreitem: { slotLabel: {} } }, error: '<mg-menu> prop "moreitem" must match MoreItemType.' },
+      { props: { ...baseProps, direction: Direction.VERTICAL, itemmore: { icon: 'user' } }, error: '<mg-menu> prop "itemmore" must be paired with direction horizontal.' },
       { props: { ...baseProps, size: 'batman' }, error: '<mg-menu> prop "size" must be one of: regular, medium, large.' },
     ])('Should throw error when props are invalid, case %s', async ({ props, error }) => {
       expect.assertions(1);
@@ -168,75 +166,18 @@ describe('mg-menu', () => {
     });
   });
 
-  describe('overflow', () => {
-    test.each([undefined, { size: 'large' }, { mgIcon: { icon: 'user' } }, { slotLabel: { label: 'batman' } }, { slotLabel: { display: true } }])(
-      'with args %s',
-      async moreitem => {
-        const page = await getPage({ label: 'batman menu', moreitem });
-        const menuSize = 215;
-        const menu = page.doc.querySelector('mg-menu');
+  describe.each([Direction.VERTICAL, Direction.HORIZONTAL])('MutationObserver %s', direction => {
+    test.each([{ label: 'batman menu', direction }])('with args %s', async args => {
+      const page = await getPage(args);
 
-        expect(page.root).toMatchSnapshot();
+      const mutations = [[{ type: 'childList', removedNodes: [{ nodeName: 'MG-ITEM-MORE' }] }], [{ type: 'childList', removedNodes: [{ nodeName: 'MG-MENU-ITEM' }] }]];
 
-        Object.defineProperty(menu, 'offsetWidth', {
-          get: jest.fn(() => menuSize),
-        });
-        Object.defineProperty(menu.shadowRoot.querySelector(`[${OverflowBehaviorElements.MORE}]`), 'offsetWidth', {
-          get: jest.fn(() => 50),
-        });
-        const items = Array.from(page.doc.querySelectorAll('mg-menu-item'));
-        items.forEach(item => {
-          Object.defineProperty(item, 'offsetWidth', {
-            get: jest.fn(() => 80),
-          });
-
-          // has JSDom don't clone child props and label is required on mg-menu we force it
-          const newNode = item.cloneNode(true);
-          item.cloneNode = (): Node => {
-            Array.from((newNode as unknown as HTMLElement).querySelectorAll('mg-menu')).forEach(menu => {
-              menu.label = 'test override';
-            });
-            return newNode;
-          };
-        });
-
-        // render more menu with last menu item displayed in more menu
-        page.rootInstance.overflowBehavior.resizeObserver.cb([{ contentRect: { width: menuSize } }]);
+      for await (const mutation of mutations) {
+        fireMo(mutation);
 
         await page.waitForChanges();
 
         expect(page.root).toMatchSnapshot();
-
-        // test click on visible more menu item
-        for await (const baseIndex of [1, 2]) {
-          const element = baseIndex === 1 ? 'button' : 'a';
-          const item = page.doc.querySelector(`[${OverflowBehaviorElements.BASE_INDEX}="${baseIndex}"]`) as HTMLMgMenuItemElement;
-          const itemInteractiveElement = item.shadowRoot.querySelector(element);
-          const spy = jest.spyOn(itemInteractiveElement, 'dispatchEvent');
-
-          const itemProxy = page.doc.querySelector(`[${OverflowBehaviorElements.PROXY_INDEX}="${baseIndex}"]`) as HTMLMgMenuItemElement;
-          itemProxy.dispatchEvent(new MouseEvent('click', { bubbles: true }));
-
-          expect(spy).toHaveBeenCalled();
-        }
-
-        // test status change on visible item to active
-        const lastVisbleItem = page.doc.querySelector(`[${OverflowBehaviorElements.BASE_INDEX}="2"]`) as HTMLMgMenuItemElement;
-        const lastVisbleItemProxy = page.doc.querySelector(`[${OverflowBehaviorElements.PROXY_INDEX}="2"]`) as HTMLMgMenuItemElement;
-        lastVisbleItem.status = Status.ACTIVE;
-        expect(lastVisbleItemProxy.status).toBe(Status.ACTIVE);
-      },
-    );
-
-    test.each([Direction.HORIZONTAL, Direction.HORIZONTAL])('should fire disconnect callback', async direction => {
-      const { rootInstance, doc } = await getPage({ label: 'batman menu', direction });
-
-      if (direction === Direction.HORIZONTAL) {
-        const spy = jest.spyOn(rootInstance.overflowBehavior, 'disconnect');
-        doc.querySelector('mg-menu').remove();
-        expect(spy).toHaveBeenCalled();
-      } else {
-        expect(rootInstance.overflowBehavior).toBe(undefined);
       }
     });
   });

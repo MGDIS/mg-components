@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-03-03T09:07:00",
+  "timestamp": "2023-03-09T10:09:02",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.1",
@@ -139,6 +139,9 @@
           "mg-icon"
         ],
         "mg-menu": [
+          "mg-item-more"
+        ],
+        "mg-item-more": [
           "mg-menu-item",
           "mg-icon",
           "mg-menu"
@@ -1050,7 +1053,7 @@
         "mg-input-text",
         "mg-input-textarea",
         "mg-input-toggle",
-        "mg-menu",
+        "mg-item-more",
         "mg-menu-item",
         "mg-message",
         "mg-modal",
@@ -1097,7 +1100,7 @@
         "mg-input-toggle": [
           "mg-icon"
         ],
-        "mg-menu": [
+        "mg-item-more": [
           "mg-icon"
         ],
         "mg-menu-item": [
@@ -4498,6 +4501,111 @@
       }
     },
     {
+      "filePath": "./src/components/molecules/mg-item-more/mg-item-more.tsx",
+      "encapsulation": "shadow",
+      "tag": "mg-item-more",
+      "readme": "# mg-item-more\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "icon",
+          "type": "{ icon: string; }",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "Define icon\nDefault: {icon: 'ellipsis-vertical'}",
+          "docsTags": [],
+          "default": "{ icon: 'ellipsis-vertical' }",
+          "values": [
+            {
+              "type": "{ icon: string; }"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "\"large\" | \"medium\" | \"regular\"",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "Define component child menu size.",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "large",
+              "type": "string"
+            },
+            {
+              "value": "medium",
+              "type": "string"
+            },
+            {
+              "value": "regular",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "slotlabel",
+          "type": "{ label?: string; display?: boolean; }",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "Define slot label element\nDefault: {display: false}",
+          "docsTags": [],
+          "default": "{ display: false }",
+          "values": [
+            {
+              "type": "{ label?: string; display?: boolean; }"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "mg-menu"
+      ],
+      "dependencies": [
+        "mg-menu-item",
+        "mg-icon",
+        "mg-menu"
+      ],
+      "dependencyGraph": {
+        "mg-item-more": [
+          "mg-menu-item",
+          "mg-icon",
+          "mg-menu"
+        ],
+        "mg-menu-item": [
+          "mg-badge",
+          "mg-icon",
+          "mg-popover"
+        ],
+        "mg-popover": [
+          "mg-card",
+          "mg-button",
+          "mg-icon"
+        ],
+        "mg-button": [
+          "mg-icon"
+        ],
+        "mg-menu": [
+          "mg-item-more"
+        ]
+      }
+    },
+    {
       "filePath": "./src/components/molecules/menu/mg-menu/mg-menu.tsx",
       "encapsulation": "shadow",
       "tag": "mg-menu",
@@ -4527,6 +4635,28 @@
           "required": false
         },
         {
+          "name": "itemmore",
+          "type": "{ size: \"regular\" | \"large\" | \"medium\"; icon: IconType; slotlabel: SlotLabelType; }",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "Customize \"mg-more-item\" element\nUsed with direction: 'vertical' to manage overflow",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "{ size: \"regular\""
+            },
+            {
+              "value": "large",
+              "type": "string"
+            },
+            {
+              "type": "\"medium\"; icon: IconType; slotlabel: SlotLabelType; }"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "label",
           "type": "string",
           "mutable": false,
@@ -4541,28 +4671,6 @@
           ],
           "optional": false,
           "required": true
-        },
-        {
-          "name": "moreitem",
-          "type": "{ mgIcon?: { icon: string; }; slotLabel?: { label?: string; display?: boolean; }; size?: \"regular\" | \"large\" | \"medium\"; }",
-          "mutable": false,
-          "reflectToAttr": false,
-          "docs": "Customize mg-menu \"more element\"\nUsed with direction: 'vertical' to manage overflow",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "{ mgIcon?: { icon: string; }; slotLabel?: { label?: string; display?: boolean; }; size?: \"regular\""
-            },
-            {
-              "value": "large",
-              "type": "string"
-            },
-            {
-              "type": "\"medium\"; }"
-            }
-          ],
-          "optional": false,
-          "required": false
         },
         {
           "name": "size",
@@ -4599,15 +4707,16 @@
       "parts": [],
       "dependents": [
         "mg-action-more",
-        "mg-menu"
+        "mg-item-more"
       ],
       "dependencies": [
-        "mg-menu-item",
-        "mg-icon",
-        "mg-menu"
+        "mg-item-more"
       ],
       "dependencyGraph": {
         "mg-menu": [
+          "mg-item-more"
+        ],
+        "mg-item-more": [
           "mg-menu"
         ],
         "mg-menu-item": [
@@ -4715,7 +4824,7 @@
       "parts": [],
       "dependents": [
         "mg-action-more",
-        "mg-menu"
+        "mg-item-more"
       ],
       "dependencies": [
         "mg-badge",
@@ -4739,7 +4848,7 @@
         "mg-action-more": [
           "mg-menu-item"
         ],
-        "mg-menu": [
+        "mg-item-more": [
           "mg-menu-item"
         ]
       }

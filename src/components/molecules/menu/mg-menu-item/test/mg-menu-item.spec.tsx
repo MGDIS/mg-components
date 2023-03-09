@@ -12,11 +12,7 @@ import { forcePopoverId, mockConsoleError, mockWindowFrames, setupMutationObserv
 mockConsoleError();
 mockWindowFrames();
 
-const menu = (label = 'child-menu', slots, direction?: MgMenu['direction']) => (
-  <mg-menu label={label} direction={direction}>
-    {slots}
-  </mg-menu>
-);
+const menu = (args: Partial<MgMenu> & { slots?: unknown } & Pick<MgMenu, 'label'> = { label: 'child-menu' }) => <mg-menu {...args}>{args.slots}</mg-menu>;
 const menuItem = (args, slot?) => (
   <mg-menu-item {...args}>
     {slot}
@@ -27,9 +23,9 @@ const menuItem = (args, slot?) => (
   </mg-menu-item>
 );
 const childMenu = (args: { label: string; status?: MgMenuItem['status']; direction?: MgMenu['direction']; badge?: boolean } = { label: 'child menu item' }, slots?) =>
-  menu('child menu', menuItem(args, slots), args.direction);
-const templateDefault = (args, slots?) => menu('menu', menuItem(args, slots));
-const templateTwoMenuItems = (args, slots?) => menu('menu', [menuItem(args, slots), menuItem({ label: 'item 2' })]);
+  menu({ label: 'child menu', slots: menuItem(args, slots), direction: args.direction });
+const templateDefault = (args, slots?) => menu({ label: 'menu', slots: menuItem(args, slots) });
+const templateTwoMenuItems = (args, slots?) => menu({ label: 'menu', slots: [menuItem(args, slots), menuItem({ label: 'item 2' })] });
 
 const getPage = async template => {
   const page = await newSpecPage({
@@ -50,12 +46,13 @@ const getPage = async template => {
 };
 
 describe('mg-menu-item', () => {
-  let fireMo;
+  let fireMo = [];
   beforeEach(() => {
+    fireMo = [];
     jest.useFakeTimers();
     setupMutationObserverMock({
       observe: function () {
-        fireMo = this.cb;
+        fireMo.push(this.cb);
       },
       disconnect: function () {
         return null;
@@ -73,6 +70,15 @@ describe('mg-menu-item', () => {
       'with args %s',
       async args => {
         const { root } = await getPage(templateDefault(args));
+
+        expect(root).toMatchSnapshot();
+      },
+    );
+
+    test.each([{ label: 'Batman' }, { label: 'Batman', icon: true }, { label: 'Batman', badge: true }, { label: 'Batman', metadata: true }, { label: 'Batman', href: '#link' }])(
+      'with size large, %s',
+      async args => {
+        const { root } = await getPage(menu({ label: 'Batman', size: 'large', slots: menuItem(args) }));
 
         expect(root).toMatchSnapshot();
       },
@@ -303,17 +309,66 @@ describe('mg-menu-item', () => {
 
       expect(page.rootInstance.updateDisplayNotificationBadge).not.toHaveBeenCalled();
 
-      fireMo([]);
+      fireMo[2]([]);
       await page.waitForChanges();
 
       expect(page.rootInstance.updateDisplayNotificationBadge).toHaveBeenCalledTimes(1);
       expect(page.root).toMatchSnapshot();
     });
 
-    test.each([Status.ACTIVE, Status.VISIBLE])('Should update status with child attribute mutation, from status %s', async status => {
-      const page = await getPage(menuItem({ label: 'Batman', status: status === Status.ACTIVE ? Status.VISIBLE : Status.ACTIVE }, childMenu({ label: 'child menu', status })));
+    test.each([
+      { from: Status.ACTIVE, to: Status.VISIBLE },
+      { from: Status.VISIBLE, to: Status.ACTIVE },
+    ])('Should update status with child title "attribute" mutation, from status %s', async ({ from, to }) => {
+      const page = await getPage(menuItem({ label: 'Batman', status: from }, childMenu({ label: 'child menu', status: to })));
 
-      fireMo([{ attributeName: 'hidden' }]);
+      const menuItemElement = page.doc.querySelector('mg-menu-item');
+      const childMenuItemElement = page.doc.querySelector('mg-menu-item mg-menu mg-menu-item') as HTMLMgMenuItemElement;
+
+      expect(menuItemElement).toHaveProperty('status', to === Status.ACTIVE ? to : from);
+      expect(childMenuItemElement).toHaveProperty('status', to);
+
+      childMenuItemElement.setAttribute('hidden', '');
+      fireMo[0]([{ attributeName: 'hidden' }]);
+
+      await page.waitForChanges();
+
+      expect(menuItemElement).toHaveProperty('status', from);
+      expect(page.root).toMatchSnapshot();
+    });
+
+    test.each(['label', 'metadata'])('Should update status with child "characterData" mutation, from status %s', async slot => {
+      const to = 'joker';
+      const from = name => `my ${name}`;
+      const page = await getPage(menuItem({ label: slot === 'label' ? from(slot) : 'Label', metadata: slot === 'metadata' }));
+
+      const menuItemSlotElement = page.doc.querySelector(`mg-menu-item [slot="${slot}"]`);
+
+      expect(menuItemSlotElement).toHaveProperty('title', from(slot));
+
+      menuItemSlotElement.textContent = to;
+      fireMo[0]([{ type: 'characterData' }]);
+
+      await page.waitForChanges();
+
+      expect(menuItemSlotElement).toHaveProperty('title', to);
+      expect(page.root).toMatchSnapshot();
+    });
+
+    test('Should update display notifiaction badge with "attribute" mutation, from status %s', async () => {
+      const page = await getPage(menuItem({ label: 'batman' }, childMenu({ label: 'submenu', badge: true })));
+
+      const mgMenuItem = page.doc.querySelector(`mg-menu-item`);
+      const badgeNotification = mgMenuItem.querySelector('[slot="information"]');
+
+      expect(mgMenuItem).toHaveProperty('hidden', false);
+      expect(badgeNotification).not.toBe(null);
+      expect(page.root).toMatchSnapshot();
+
+      const childMenuItem = page.doc.querySelector('mg-menu-item mg-menu mg-menu-item');
+      childMenuItem.setAttribute('hidden', 'true');
+      fireMo[2]([{ type: 'attributes' }]);
+
       await page.waitForChanges();
 
       expect(page.root).toMatchSnapshot();

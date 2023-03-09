@@ -14,7 +14,9 @@ import { Width } from "./components/molecules/inputs/MgInput.conf";
 import { RadioOption } from "./components/molecules/inputs/mg-input-radio/mg-input-radio.conf";
 import { SelectOption } from "./components/molecules/inputs/mg-input-select/mg-input-select.conf";
 import { ToggleValue } from "./components/molecules/inputs/mg-input-toggle/mg-input-toggle.conf";
-import { Direction, MenuSizeType, MoreItemType } from "./components/molecules/menu/mg-menu/mg-menu.conf";
+import { IconType, SlotLabelType } from "./components/molecules/mg-item-more/mg-item-more.conf";
+import { MgMenu } from "./components/molecules/menu/mg-menu/mg-menu";
+import { Direction, ItemMoreType, MenuSizeType } from "./components/molecules/menu/mg-menu/mg-menu.conf";
 import { Status } from "./components/molecules/menu/mg-menu-item/mg-menu-item.conf";
 import { Placement } from "@popperjs/core";
 import { SkipLink } from "./components/molecules/mg-skip-links/mg-skip-links.conf";
@@ -884,19 +886,33 @@ export namespace Components {
          */
         "value": any;
     }
+    interface MgItemMore {
+        /**
+          * Define icon Default: {icon: 'ellipsis-vertical'}
+         */
+        "icon": IconType;
+        /**
+          * Define component child menu size.
+         */
+        "size": MgMenu['size'];
+        /**
+          * Define slot label element Default: {display: false}
+         */
+        "slotlabel": SlotLabelType;
+    }
     interface MgMenu {
         /**
           * Component display direction. Default: "horizontal"
          */
         "direction": Direction;
         /**
+          * Customize "mg-more-item" element Used with direction: 'vertical' to manage overflow
+         */
+        "itemmore": ItemMoreType;
+        /**
           * Menu label. Include short menu description. Required for accessibility
          */
         "label": string;
-        /**
-          * Customize mg-menu "more element" Used with direction: 'vertical' to manage overflow
-         */
-        "moreitem": MoreItemType;
         /**
           * Define mg-menu size Default: 'regular'
          */
@@ -1296,6 +1312,12 @@ declare global {
         prototype: HTMLMgInputToggleElement;
         new (): HTMLMgInputToggleElement;
     };
+    interface HTMLMgItemMoreElement extends Components.MgItemMore, HTMLStencilElement {
+    }
+    var HTMLMgItemMoreElement: {
+        prototype: HTMLMgItemMoreElement;
+        new (): HTMLMgItemMoreElement;
+    };
     interface HTMLMgMenuElement extends Components.MgMenu, HTMLStencilElement {
     }
     var HTMLMgMenuElement: {
@@ -1383,6 +1405,7 @@ declare global {
         "mg-input-textarea": HTMLMgInputTextareaElement;
         "mg-input-title": HTMLMgInputTitleElement;
         "mg-input-toggle": HTMLMgInputToggleElement;
+        "mg-item-more": HTMLMgItemMoreElement;
         "mg-menu": HTMLMgMenuElement;
         "mg-menu-item": HTMLMgMenuItemElement;
         "mg-message": HTMLMgMessageElement;
@@ -2294,19 +2317,33 @@ declare namespace LocalJSX {
          */
         "value"?: any;
     }
+    interface MgItemMore {
+        /**
+          * Define icon Default: {icon: 'ellipsis-vertical'}
+         */
+        "icon"?: IconType;
+        /**
+          * Define component child menu size.
+         */
+        "size"?: MgMenu['size'];
+        /**
+          * Define slot label element Default: {display: false}
+         */
+        "slotlabel"?: SlotLabelType;
+    }
     interface MgMenu {
         /**
           * Component display direction. Default: "horizontal"
          */
         "direction"?: Direction;
         /**
+          * Customize "mg-more-item" element Used with direction: 'vertical' to manage overflow
+         */
+        "itemmore"?: ItemMoreType;
+        /**
           * Menu label. Include short menu description. Required for accessibility
          */
         "label": string;
-        /**
-          * Customize mg-menu "more element" Used with direction: 'vertical' to manage overflow
-         */
-        "moreitem"?: MoreItemType;
         /**
           * Define mg-menu size Default: 'regular'
          */
@@ -2573,6 +2610,7 @@ declare namespace LocalJSX {
         "mg-input-textarea": MgInputTextarea;
         "mg-input-title": MgInputTitle;
         "mg-input-toggle": MgInputToggle;
+        "mg-item-more": MgItemMore;
         "mg-menu": MgMenu;
         "mg-menu-item": MgMenuItem;
         "mg-message": MgMessage;
@@ -2610,6 +2648,7 @@ declare module "@stencil/core" {
             "mg-input-textarea": LocalJSX.MgInputTextarea & JSXBase.HTMLAttributes<HTMLMgInputTextareaElement>;
             "mg-input-title": LocalJSX.MgInputTitle & JSXBase.HTMLAttributes<HTMLMgInputTitleElement>;
             "mg-input-toggle": LocalJSX.MgInputToggle & JSXBase.HTMLAttributes<HTMLMgInputToggleElement>;
+            "mg-item-more": LocalJSX.MgItemMore & JSXBase.HTMLAttributes<HTMLMgItemMoreElement>;
             "mg-menu": LocalJSX.MgMenu & JSXBase.HTMLAttributes<HTMLMgMenuElement>;
             "mg-menu-item": LocalJSX.MgMenuItem & JSXBase.HTMLAttributes<HTMLMgMenuItemElement>;
             "mg-message": LocalJSX.MgMessage & JSXBase.HTMLAttributes<HTMLMgMessageElement>;

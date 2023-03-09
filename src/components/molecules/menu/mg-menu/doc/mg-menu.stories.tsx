@@ -12,7 +12,7 @@ export default {
       options: [undefined, Direction.HORIZONTAL, Direction.VERTICAL],
       control: { type: 'select' },
     },
-    moreitem: {
+    itemmore: {
       control: { type: 'object' },
     },
   },
@@ -40,7 +40,7 @@ type MenuFormatedArgs = {
   label: string;
   size?: MenuSizeType;
   direction: Direction;
-  moreitem: unknown;
+  itemmore: unknown;
   slot: {
     items: ItemFormatedArgs[];
   };
@@ -115,7 +115,7 @@ const getMenuArgs: IGetMenuArgs = (direction, level = 0, size = 'regular') => ({
   label: 'Batman menu',
   direction,
   size,
-  moreitem: undefined,
+  itemmore: undefined,
   slot: {
     items: [
       getItemArgs({
