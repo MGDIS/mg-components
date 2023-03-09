@@ -6,18 +6,27 @@ import { MgMenuItem } from '../../menu/mg-menu-item/mg-menu-item';
 import { MgMenu } from '../../menu/mg-menu/mg-menu';
 import { Status } from '../../menu/mg-menu-item/mg-menu-item.conf';
 
+let id;
+/**
+ * set id if param is true
+ *
+ * @param {boolean} hasId true if need a generated id
+ * @returns {string} genereted id
+ */
+const setId = (hasId: boolean): string => (hasId ? `my-id-${id++}` : undefined);
+
 const getPage = async args => {
   const page = await newSpecPage({
     components: [MgMenu, MgMenuItem, MgItemMore],
     template: () => (
       <mg-menu {...args}>
-        <mg-menu-item href={args.isHref ? '#' : undefined} id={args.hasId ? 'my-id-1' : undefined}>
+        <mg-menu-item href={args.isHref ? '#' : undefined} id={setId(args.hasId)}>
           <span slot="label">Batman</span>
         </mg-menu-item>
-        <mg-menu-item id={args.hasId ? 'my-id-2' : undefined}>
+        <mg-menu-item id={setId(args.hasId)}>
           <span slot="label">Joker</span>
         </mg-menu-item>
-        <mg-menu-item id={args.hasId ? 'my-id-3' : undefined}>
+        <mg-menu-item id={setId(args.hasId)}>
           <span slot="label">Bane</span>
         </mg-menu-item>
       </mg-menu>
@@ -33,6 +42,7 @@ const getPage = async args => {
 
 describe('mg-item-more', () => {
   beforeEach(() => {
+    id = 1;
     jest.useFakeTimers();
     setupResizeObserverMock({
       observe: () => null,
