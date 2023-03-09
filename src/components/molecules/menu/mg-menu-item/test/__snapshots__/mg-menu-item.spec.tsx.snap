@@ -3126,6 +3126,35 @@ exports[`mg-menu-item render with args { label: 'Batman', metadata: true } 1`] =
 </mg-menu>
 `;
 
+exports[`mg-menu-item render with args { label: 'Batman', overflow: true } 1`] = `
+<mg-menu aria-label="menu" direction="horizontal" role="menubar">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+  <mg-menu-item data-overflow-more data-style-direction-horizontal label="Batman" overflow="" status="visible">
+    <mock:shadow-root>
+      <button class="mg-menu-item__navigation-button mg-menu-item__navigation-button--horizontal mg-menu-item__navigation-button--size-undefined mg-menu-item__navigation-button--visible" tabindex="0">
+        <slot name="image"></slot>
+        <div class="mg-menu-item__navigation-button-center">
+          <div class="mg-menu-item__navigation-button-text-content">
+            <slot name="label"></slot>
+            <slot name="information"></slot>
+          </div>
+          <slot name="metadata"></slot>
+        </div>
+      </button>
+      <div class="mg-menu-item__collapse-container mg-menu-item__collapse-container--first-level" hidden="">
+        <slot></slot>
+      </div>
+    </mock:shadow-root>
+    <span slot="label" title="Batman">
+      Batman
+    </span>
+  </mg-menu-item>
+  <mg-item-more></mg-item-more>
+</mg-menu>
+`;
+
 exports[`mg-menu-item render with expanded and sub-menu false 1`] = `
 <mg-menu aria-label="menu" direction="horizontal" role="menubar">
   <mock:shadow-root>

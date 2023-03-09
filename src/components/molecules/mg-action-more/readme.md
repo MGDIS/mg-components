@@ -82,10 +82,6 @@ graph TD;
   mg-popover --> mg-button
   mg-popover --> mg-icon
   mg-button --> mg-icon
-  mg-menu --> mg-item-more
-  mg-item-more --> mg-menu-item
-  mg-item-more --> mg-icon
-  mg-item-more --> mg-menu
   mg-menu-item --> mg-badge
   mg-menu-item --> mg-icon
   mg-menu-item --> mg-popover

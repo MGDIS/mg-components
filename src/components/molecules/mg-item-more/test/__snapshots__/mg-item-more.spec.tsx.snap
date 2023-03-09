@@ -64,7 +64,7 @@ exports[`mg-item-more events should trigger base item click event when proxy ite
   </mg-menu-item>
   <mg-item-more aria-haspopup="true" role="menuitem">
     <mock:shadow-root>
-      <mg-menu-item data-overflow-more status="visible">
+      <mg-menu-item data-overflow-more data-size="regular" status="visible">
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
             <slot name="image"></slot>
@@ -218,7 +218,7 @@ exports[`mg-item-more events should trigger base item click event when proxy ite
   </mg-menu-item>
   <mg-item-more aria-haspopup="true" role="menuitem">
     <mock:shadow-root>
-      <mg-menu-item data-overflow-more status="visible">
+      <mg-menu-item data-overflow-more data-size="regular" status="visible">
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
             <slot name="image"></slot>
@@ -372,7 +372,7 @@ exports[`mg-item-more events should update proxy status when base item status-ch
   </mg-menu-item>
   <mg-item-more aria-haspopup="true" role="menuitem">
     <mock:shadow-root>
-      <mg-menu-item data-overflow-more status="visible">
+      <mg-menu-item data-overflow-more data-size="regular" status="visible">
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
             <slot name="image"></slot>
@@ -526,7 +526,7 @@ exports[`mg-item-more events should update proxy status when base item status-ch
   </mg-menu-item>
   <mg-item-more aria-haspopup="true" role="menuitem">
     <mock:shadow-root>
-      <mg-menu-item data-overflow-more status="visible">
+      <mg-menu-item data-overflow-more data-size="regular" status="visible">
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
             <slot name="image"></slot>
@@ -680,7 +680,7 @@ exports[`mg-item-more render should manage resize with observer, case { hasId: t
   </mg-menu-item>
   <mg-item-more aria-haspopup="true" role="menuitem">
     <mock:shadow-root>
-      <mg-menu-item data-overflow-more status="visible">
+      <mg-menu-item data-overflow-more data-size="regular" status="visible">
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
             <slot name="image"></slot>
@@ -834,7 +834,7 @@ exports[`mg-item-more render should manage resize with observer, case { icon: [O
   </mg-menu-item>
   <mg-item-more aria-haspopup="true" role="menuitem">
     <mock:shadow-root>
-      <mg-menu-item data-overflow-more status="visible">
+      <mg-menu-item data-overflow-more data-size="regular" status="visible">
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
             <slot name="image"></slot>
@@ -991,7 +991,7 @@ exports[`mg-item-more render should manage resize with observer, case { size: 'l
   </mg-menu-item>
   <mg-item-more aria-haspopup="true" role="menuitem">
     <mock:shadow-root>
-      <mg-menu-item data-overflow-more status="visible">
+      <mg-menu-item data-overflow-more data-size="large" status="visible">
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
             <slot name="image"></slot>
@@ -1145,7 +1145,7 @@ exports[`mg-item-more render should manage resize with observer, case { slotlabe
   </mg-menu-item>
   <mg-item-more aria-haspopup="true" role="menuitem">
     <mock:shadow-root>
-      <mg-menu-item data-overflow-more status="visible">
+      <mg-menu-item data-overflow-more data-size="regular" status="visible">
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
             <slot name="image"></slot>
@@ -1299,7 +1299,7 @@ exports[`mg-item-more render should manage resize with observer, case undefined 
   </mg-menu-item>
   <mg-item-more aria-haspopup="true" role="menuitem">
     <mock:shadow-root>
-      <mg-menu-item data-overflow-more status="visible">
+      <mg-menu-item data-overflow-more data-size="regular" status="visible">
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
             <slot name="image"></slot>
@@ -1453,7 +1453,7 @@ exports[`mg-item-more should fire disconnect callback 1`] = `
   </mg-menu-item>
   <mg-item-more aria-haspopup="true" role="menuitem">
     <mock:shadow-root>
-      <mg-menu-item data-overflow-more status="visible">
+      <mg-menu-item data-overflow-more data-size="regular" status="visible">
         <mock:shadow-root>
           <button aria-expanded="false" class="mg-menu-item__navigation-button mg-menu-item__navigation-button--size-regular mg-menu-item__navigation-button--visible" tabindex="0">
             <slot name="image"></slot>

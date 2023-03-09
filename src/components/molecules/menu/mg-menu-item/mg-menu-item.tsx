@@ -1,9 +1,8 @@
 import { Component, h, Prop, State, Host, Watch, Element, Event, EventEmitter } from '@stencil/core';
 import { ClassList } from '../../../../utils/components.utils';
 import { initLocales } from '../../../../locales';
-import { MgMenu } from '../mg-menu/mg-menu';
 import { Direction, MenuSizeType } from '../mg-menu/mg-menu.conf';
-import { Status } from './mg-menu-item.conf';
+import { DirectionType, Status } from './mg-menu-item.conf';
 import { MessageType } from '../../mg-item-more/mg-item-more.conf';
 
 @Component({
@@ -110,9 +109,9 @@ export class MgMenuItem {
   /**
    * Parent menu direction
    */
-  @State() direction: MgMenu['direction'];
+  @State() direction: DirectionType;
   @Watch('direction')
-  validateDirection(newValue: MgMenu['direction']): void {
+  validateDirection(newValue: MgMenuItem['direction']): void {
     // manage menu items style depending to parent menu horientation
     this.element.setAttribute(`data-style-direction-${newValue}`, '');
     this.navigationButtonClassList.add(`${this.navigationButton}--${newValue}`);
@@ -324,6 +323,8 @@ export class MgMenuItem {
       this.isInMainMenu = menu !== null && this.element.parentElement.closest('mg-menu-item') === null;
       if (menu?.size !== undefined) this.size = menu.size;
 
+      if (this.isItemMore) this.size = this.element.dataset.size as MgMenuItem['size'];
+
       // when main menu item contain an active item it will get the active style
       // AND if item is in vertical menu it will be expanded
       if (this.hasActiveChild() && this.isInMainMenu) this.expanded = this.isDirection(Direction.VERTICAL);
@@ -335,9 +336,7 @@ export class MgMenuItem {
       this.initListeners();
       new MutationObserver(mutationsList => {
         if (mutationsList.some(mutation => mutation.attributeName === 'hidden')) this.updateStatus();
-        if (mutationsList.some(mutation => mutation.type === 'characterData')) {
-          this.validateSlot();
-        }
+        if (mutationsList.some(mutation => mutation.type === 'characterData')) this.validateSlot();
         this.updateDisplayNotificationBadge();
       }).observe(this.element, { attributes: true, childList: true, characterData: true, subtree: true });
     }, 0);

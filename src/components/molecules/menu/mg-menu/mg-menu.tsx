@@ -119,7 +119,10 @@ export class MgMenu {
    * @returns {void}
    */
   private renderMgItemMore = (): void => {
-    const mgItemMore = document.createElement('mg-item-more');
+    // /!\ externalise item tag name to get a string type and bypass type checking when value is used in next createElement
+    // by doing this we prevent stencil to generate a circular dependencies graph at build time with mg-item-more component.
+    const item = 'mg-item-more';
+    const mgItemMore = document.createElement(item);
     Object.assign(mgItemMore, this.itemmore);
     this.element.appendChild(mgItemMore);
   };

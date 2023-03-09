@@ -14,7 +14,7 @@ mockWindowFrames();
 
 const menu = (args: Partial<MgMenu> & { slots?: unknown } & Pick<MgMenu, 'label'> = { label: 'child-menu' }) => <mg-menu {...args}>{args.slots}</mg-menu>;
 const menuItem = (args, slot?) => (
-  <mg-menu-item {...args}>
+  <mg-menu-item {...args} data-overflow-more={args.overflow}>
     {slot}
     {args.label && <span slot="label">{args.label}</span>}
     {args.metadata && <span slot="metadata">my metadata</span>}
@@ -66,14 +66,18 @@ describe('mg-menu-item', () => {
   });
   afterEach(() => jest.clearAllTimers());
   describe('render', () => {
-    test.each([{ label: 'Batman' }, { label: 'Batman', icon: true }, { label: 'Batman', badge: true }, { label: 'Batman', metadata: true }, { label: 'Batman', href: '#link' }])(
-      'with args %s',
-      async args => {
-        const { root } = await getPage(templateDefault(args));
+    test.each([
+      { label: 'Batman' },
+      { label: 'Batman', icon: true },
+      { label: 'Batman', badge: true },
+      { label: 'Batman', metadata: true },
+      { label: 'Batman', href: '#link' },
+      { label: 'Batman', overflow: true },
+    ])('with args %s', async args => {
+      const { root } = await getPage(templateDefault(args));
 
-        expect(root).toMatchSnapshot();
-      },
-    );
+      expect(root).toMatchSnapshot();
+    });
 
     test.each([{ label: 'Batman' }, { label: 'Batman', icon: true }, { label: 'Batman', badge: true }, { label: 'Batman', metadata: true }, { label: 'Batman', href: '#link' }])(
       'with size large, %s',

@@ -14,13 +14,12 @@ import { Width } from "./components/molecules/inputs/MgInput.conf";
 import { RadioOption } from "./components/molecules/inputs/mg-input-radio/mg-input-radio.conf";
 import { SelectOption } from "./components/molecules/inputs/mg-input-select/mg-input-select.conf";
 import { ToggleValue } from "./components/molecules/inputs/mg-input-toggle/mg-input-toggle.conf";
-import { IconType, SlotLabelType } from "./components/molecules/mg-item-more/mg-item-more.conf";
-import { MgMenu } from "./components/molecules/menu/mg-menu/mg-menu";
+import { IconType, SizeType, SlotLabelType } from "./components/molecules/mg-item-more/mg-item-more.conf";
 import { Direction, ItemMoreType, MenuSizeType } from "./components/molecules/menu/mg-menu/mg-menu.conf";
 import { Status } from "./components/molecules/menu/mg-menu-item/mg-menu-item.conf";
 import { Placement } from "@popperjs/core";
 import { SkipLink } from "./components/molecules/mg-skip-links/mg-skip-links.conf";
-import { SizeType, TabItem } from "./components/molecules/mg-tabs/mg-tabs.conf";
+import { SizeType as SizeType1, TabItem } from "./components/molecules/mg-tabs/mg-tabs.conf";
 import { TagVariantType } from "./components/atoms/mg-tag/mg-tag.conf";
 export namespace Components {
     interface MgActionMore {
@@ -894,7 +893,7 @@ export namespace Components {
         /**
           * Define component child menu size.
          */
-        "size": MgMenu['size'];
+        "size": SizeType;
         /**
           * Define slot label element Default: {display: false}
          */
@@ -1076,7 +1075,7 @@ export namespace Components {
         /**
           * Define tabs size
          */
-        "size": SizeType;
+        "size": SizeType1;
     }
     interface MgTag {
         /**
@@ -2325,7 +2324,7 @@ declare namespace LocalJSX {
         /**
           * Define component child menu size.
          */
-        "size"?: MgMenu['size'];
+        "size"?: SizeType;
         /**
           * Define slot label element Default: {display: false}
          */
@@ -2551,7 +2550,7 @@ declare namespace LocalJSX {
         /**
           * Define tabs size
          */
-        "size"?: SizeType;
+        "size"?: SizeType1;
     }
     interface MgTag {
         /**

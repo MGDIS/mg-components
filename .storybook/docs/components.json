@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-03-09T12:54:02",
+  "timestamp": "2023-03-09T16:00:26",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.1",
@@ -137,14 +137,6 @@
         ],
         "mg-button": [
           "mg-icon"
-        ],
-        "mg-menu": [
-          "mg-item-more"
-        ],
-        "mg-item-more": [
-          "mg-menu-item",
-          "mg-icon",
-          "mg-menu"
         ],
         "mg-menu-item": [
           "mg-badge",
@@ -4573,9 +4565,7 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "mg-menu"
-      ],
+      "dependents": [],
       "dependencies": [
         "mg-menu-item",
         "mg-icon",
@@ -4599,9 +4589,6 @@
         ],
         "mg-button": [
           "mg-icon"
-        ],
-        "mg-menu": [
-          "mg-item-more"
         ]
       }
     },
@@ -4709,30 +4696,12 @@
         "mg-action-more",
         "mg-item-more"
       ],
-      "dependencies": [
-        "mg-item-more"
-      ],
+      "dependencies": [],
       "dependencyGraph": {
-        "mg-menu": [
-          "mg-item-more"
-        ],
-        "mg-item-more": [
+        "mg-action-more": [
           "mg-menu"
         ],
-        "mg-menu-item": [
-          "mg-badge",
-          "mg-icon",
-          "mg-popover"
-        ],
-        "mg-popover": [
-          "mg-card",
-          "mg-button",
-          "mg-icon"
-        ],
-        "mg-button": [
-          "mg-icon"
-        ],
-        "mg-action-more": [
+        "mg-item-more": [
           "mg-menu"
         ]
       }

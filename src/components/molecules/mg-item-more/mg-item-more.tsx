@@ -1,9 +1,8 @@
-import { Component, h, Prop, Element, Host, Watch } from '@stencil/core';
+import { Component, h, Prop, Element, Host, Watch, State } from '@stencil/core';
 import { initLocales } from '../../../locales';
 import { OverflowBehavior } from '../../../utils/behaviors.utils';
-import { MgMenu } from '../menu/mg-menu/mg-menu';
 import { Direction } from '../menu/mg-menu/mg-menu.conf';
-import { IconType, MessageType, SlotLabelType } from './mg-item-more.conf';
+import { IconType, MessageType, SizeType, SlotLabelType } from './mg-item-more.conf';
 
 @Component({
   tag: 'mg-item-more',
@@ -16,7 +15,6 @@ export class MgItemMore {
    ************/
   private readonly name = 'mg-item-more';
   private messages: MessageType;
-  private parentMenu: HTMLMgMenuElement;
   private menuItems: HTMLMgMenuItemElement[];
   private overflowBehavior: OverflowBehavior;
 
@@ -55,11 +53,16 @@ export class MgItemMore {
   /**
    * Define component child menu size.
    */
-  @Prop() size: MgMenu['size'];
+  @Prop() size: SizeType;
   @Watch('size')
   validateSize(newValue: MgItemMore['size']): void {
     if (newValue && typeof newValue !== 'string') throw new Error(`<${this.name}> prop "size" must match MgItemMore['size'] type.`);
   }
+
+  /**
+   * Define component parent menu.
+   */
+  @State() parentMenu: HTMLMgMenuElement;
 
   /***********
    * Methods *
@@ -144,7 +147,7 @@ export class MgItemMore {
   render(): HTMLElement {
     return (
       <Host role="menuitem" aria-haspopup="true">
-        <mg-menu-item data-overflow-more>
+        <mg-menu-item data-overflow-more data-size={this.parentMenu.size}>
           <mg-icon icon={this.icon.icon} slot="image"></mg-icon>
           <span class={{ 'sr-only': !this.slotlabel.display }} slot="label">
             {this.slotlabel.label}
