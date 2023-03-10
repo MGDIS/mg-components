@@ -9,7 +9,7 @@ $navigation-button-column-gap: 1rem;
     .#{$element}.#{$element}--size-#{$name} .#{$element}__navigation-button,
     .#{$element}__navigation-button.#{$element}__navigation-button--size-#{$name} {
       padding: #{map.get($size, 'vertical')} #{map.get($size, 'horizontal')};
-      height: calc(#{map.get($size, 'height')});
+      height: #{map.get($size, 'height')};
       &,
       ::slotted([slot='label']),
       ::slotted([slot='metadata']) {
