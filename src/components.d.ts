@@ -905,7 +905,7 @@ export namespace Components {
          */
         "direction": Direction;
         /**
-          * Customize "mg-more-item" element Used with direction: 'vertical' to manage overflow
+          * Customize "mg-item-more" element Used with direction: 'vertical' to manage overflow
          */
         "itemmore": ItemMoreType;
         /**
@@ -2336,7 +2336,7 @@ declare namespace LocalJSX {
          */
         "direction"?: Direction;
         /**
-          * Customize "mg-more-item" element Used with direction: 'vertical' to manage overflow
+          * Customize "mg-item-more" element Used with direction: 'vertical' to manage overflow
          */
         "itemmore"?: ItemMoreType;
         /**
