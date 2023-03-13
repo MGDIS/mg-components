@@ -251,10 +251,13 @@ export class MgTooltip {
 
     // Check if slotted element is a disabled mg-button
     // In this case we wrap the mg-button into a div to enable the tooltip
-    if (slotElement.tagName === 'MG-BUTTON') {
+    if (['MG-BUTTON', 'BUTTON'].includes(slotElement.tagName)) {
       new MutationObserver(mutationList => {
-        if (mutationList.some(mutation => mutation.attributeName === 'aria-disabled')) {
+        if (mutationList.some(mutation => ['aria-disabled', 'disabled'].includes(mutation.attributeName))) {
           this.setMgButtonWrapper(slotElement as HTMLMgButtonElement);
+          // as firefox doesn't trigger a blur event when disable attribute is add/remove on button
+          // we nedd to unlock guard manualy as tooltipedElement's "blur" handler does
+          this.resetGuard();
           this.initTooltip(slotElement, interactiveElement);
         }
       }).observe(slotElement, { attributes: true });
