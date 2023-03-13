@@ -2,7 +2,7 @@ import { Component, h, Prop, State, Host, Watch, Element, Event, EventEmitter } 
 import { ClassList } from '../../../../utils/components.utils';
 import { initLocales } from '../../../../locales';
 import { Direction, MenuSizeType } from '../mg-menu/mg-menu.conf';
-import { DirectionType, Status } from './mg-menu-item.conf';
+import { type DirectionType, Status } from './mg-menu-item.conf';
 import { MessageType } from '../../mg-item-more/mg-item-more.conf';
 
 @Component({
