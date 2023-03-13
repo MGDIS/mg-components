@@ -1,4 +1,4 @@
-import { Component, Element, h, Prop, State, Watch, Host } from '@stencil/core';
+import { Component, Element, h, Prop, State, Watch, Host, EventEmitter, Event } from '@stencil/core';
 import { variants, VariantType, ButtonType } from './mg-button.conf';
 import { ClassList } from '../../../utils/components.utils';
 
@@ -99,6 +99,9 @@ export class MgButton {
     } else {
       this.classList.delete(this.classDisabled);
     }
+
+    // emit value update
+    this.disabledChange.emit(isDisabled);
   }
   /**
    * Define if button is round.
@@ -132,6 +135,11 @@ export class MgButton {
    * Component classes
    */
   @State() classList: ClassList = new ClassList(['mg-button']);
+
+  /**
+   * Emmited event when disabled change
+   */
+  @Event({ eventName: 'disabled-change' }) disabledChange: EventEmitter<MgButton['disabled']>;
 
   /**
    * Trigger actions onClick event

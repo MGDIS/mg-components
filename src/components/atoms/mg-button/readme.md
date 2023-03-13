@@ -5,7 +5,7 @@ Ex: Validation, Save
 
 A tooltip must be displayed on hover when the button only displays a non-explicit icon, and has no label. The tooltip must indicate the action of the button.
 
-A button that launches a potentially long process is disabled and displays a loader for the duration of the process.
+A button that launches a potentially long process is disabled and displays a loader for the duration of the process need to use the "disable-on-click" attribute.
 
 A button with undefined type in a form will natively have a [submit type](https://developer.mozilla.org/fr/docs/Web/HTML/Element/Button#attributs) and trigger form submission. So on non-submission buttons you need to explicitely set the type attribute as "button".
 
@@ -55,6 +55,16 @@ Variants `danger`, `danger-alt`, `info` and `success` can be customized by chang
 - `--mg-button-secondary-color-l`: define lightness color value for secondary button, default: `--color-neutral-l`
 - `--mg-button-secondary-font-color`: define font color for secondary button, default: `--color-dark`
 
+### Special attributes
+
+#### `disable-on-click`
+
+When a click is trigger the component set the disabled prop to true.
+
+To benefit from a reactive "disabled" prop you need to handle "disabled-change" event.
+
+To reset loader after process you need to set the disabled prop by an asynchronous way.
+
 <!-- Auto Generated Below -->
 
 
@@ -71,6 +81,13 @@ Variants `danger`, `danger-alt`, `info` and `success` can be customized by chang
 | `label`          | `label`            | aria-label In case button text is not explicit enough                                                                                                  | `string`                                                                                          | `undefined`   |
 | `type`           | `type`             | Define button type                                                                                                                                     | `"button" \| "reset" \| "submit"`                                                                 | `undefined`   |
 | `variant`        | `variant`          | Define button variant                                                                                                                                  | `"danger" \| "danger-alt" \| "flat" \| "info" \| "link" \| "primary" \| "secondary" \| "success"` | `variants[0]` |
+
+
+## Events
+
+| Event             | Description                        | Type                   |
+| ----------------- | ---------------------------------- | ---------------------- |
+| `disabled-change` | Emmited event when disabled change | `CustomEvent<boolean>` |
 
 
 ## Dependencies
