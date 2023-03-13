@@ -48,7 +48,7 @@ export class MgMenu {
   }
 
   /**
-   * Customize "mg-more-item" element
+   * Customize "mg-item-more" element
    * Used with direction: 'vertical' to manage overflow
    */
   @Prop() itemmore: ItemMoreType;
