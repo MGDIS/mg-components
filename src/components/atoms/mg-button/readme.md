@@ -61,7 +61,7 @@ Variants `danger`, `danger-alt`, `info` and `success` can be customized by chang
 
 When a click is triggered, the component sets the `disabled` prop to true.
 
-To benefit from a reactive "disabled" prop you need to handle "disabled-change" event.
+To benefit from a reactive `disabled` prop, you need to handle the `disabled-change` event.
 
 To reset loader after process you need to set the disabled prop by an asynchronous way.
 
