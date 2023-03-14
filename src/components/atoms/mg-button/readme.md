@@ -25,6 +25,15 @@ To manage the space between two buttons you can use the helper [.mg-group-elemen
 
 Focused `mg-button` style is the one from the browser (outline).
 
+## Attributes combinaison: `disable-on-click` and `disabled`
+
+When a click is triggered, the component sets the `disabled` prop to true.
+
+To benefit from a reactive `disabled` prop, you need to handle the `disabled-change` event.
+
+To reset the loader after the process has completed, you need to set the `disabled` prop asynchronously.
+
+
 ## CSS Variables
 
 If needed some [variables](./?path=/story/css-variables--page) are available to customize the component:
@@ -54,16 +63,6 @@ Variants `danger`, `danger-alt`, `info` and `success` can be customized by chang
 - `--mg-button-secondary-color-s`: define saturation color value for secondary button, default: `--color-neutral-s`
 - `--mg-button-secondary-color-l`: define lightness color value for secondary button, default: `--color-neutral-l`
 - `--mg-button-secondary-font-color`: define font color for secondary button, default: `--color-dark`
-
-### Special attributes
-
-#### `disable-on-click`
-
-When a click is triggered, the component sets the `disabled` prop to true.
-
-To benefit from a reactive `disabled` prop, you need to handle the `disabled-change` event.
-
-To reset the loader after the process has completed, you need to set the `disabled` prop asynchronously.
 
 <!-- Auto Generated Below -->
 
