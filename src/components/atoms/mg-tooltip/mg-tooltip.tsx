@@ -261,10 +261,10 @@ export class MgTooltip {
       this.setMgButtonWrapper(slotElement as HTMLMgButtonElement);
     }
 
-    // add resize observer
+    // add resize observer on the element with role="tooltip"
     new ResizeObserver(() => {
       this.popper.update();
-    }).observe(this.element.shadowRoot.querySelector('[role="tooltip"]'));
+    }).observe(this.element.shadowRoot.getElementById(this.identifier));
 
     // Init Tooltip
     this.initTooltip(slotElement, interactiveElement);

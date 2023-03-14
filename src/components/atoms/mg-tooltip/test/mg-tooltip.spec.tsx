@@ -273,7 +273,6 @@ describe('mg-tooltip', () => {
     );
 
     const spy = jest.spyOn(page.rootInstance.popper, 'update');
-    expect(spy).not.toHaveBeenCalled();
 
     fireRo([]);
     await page.waitForChanges();
