@@ -59,7 +59,7 @@ Variants `danger`, `danger-alt`, `info` and `success` can be customized by chang
 
 #### `disable-on-click`
 
-When a click is trigger the component set the disabled prop to true.
+When a click is triggered, the component sets the `disabled` prop to true.
 
 To benefit from a reactive "disabled" prop you need to handle "disabled-change" event.
 
