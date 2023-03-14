@@ -377,7 +377,7 @@ exports[`mg-tooltip Should update button wrapper dynamically 1`] = `
     </div>
   </mock:shadow-root>
   <button aria-describedby="identifier" disabled="" identifier="identifier">
-    mg-button.disabled
+    button.disabled
   </button>
 </mg-tooltip>
 `;
@@ -394,7 +394,7 @@ exports[`mg-tooltip Should update button wrapper dynamically 2`] = `
     </div>
   </mock:shadow-root>
   <button aria-describedby="identifier" disabled="" identifier="identifier">
-    mg-button.disabled
+    button.disabled
   </button>
 </mg-tooltip>
 `;
