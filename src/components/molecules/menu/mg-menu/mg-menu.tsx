@@ -52,11 +52,11 @@ export class MgMenu {
    * Customize "mg-item-more" element
    * Used with direction: 'vertical' to manage overflow
    */
-  @Prop() itemmore: ItemMoreType;
-  @Watch('itemmore')
-  validateItemMore(newValue: MgMenu['itemmore']): void {
+  @Prop() itemMore: ItemMoreType;
+  @Watch('itemMore')
+  validateItemMore(newValue: MgMenu['itemMore']): void {
     if (newValue !== undefined && this.direction !== Direction.HORIZONTAL) {
-      throw new Error(`<${this.name}> prop "itemmore" must be paired with direction ${Direction.HORIZONTAL}.`);
+      throw new Error(`<${this.name}> prop "itemMore" must be paired with direction ${Direction.HORIZONTAL}.`);
     }
   }
 
@@ -124,7 +124,7 @@ export class MgMenu {
     // by doing this we prevent stencil to generate a circular dependencies graph at build time with mg-item-more component.
     const item = 'mg-item-more';
     const mgItemMore = document.createElement(item);
-    Object.assign(mgItemMore, this.itemmore);
+    Object.assign(mgItemMore, this.itemMore);
     this.element.appendChild(mgItemMore);
   };
 
@@ -140,7 +140,7 @@ export class MgMenu {
   componentWillLoad(): void {
     this.validateDirection(this.direction);
     this.validateLabel(this.label);
-    this.validateItemMore(this.itemmore);
+    this.validateItemMore(this.itemMore);
     this.validateSize(this.size);
   }
 

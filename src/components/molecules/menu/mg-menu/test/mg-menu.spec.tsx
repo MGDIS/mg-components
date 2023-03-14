@@ -108,7 +108,7 @@ describe('mg-menu', () => {
     test.each([
       { props: { direction: 'horizontal' }, error: '<mg-menu> prop "label" is required.' },
       { props: { ...baseProps, direction: 'test' }, error: '<mg-menu> prop "direction" must be one of: horizontal, vertical.' },
-      { props: { ...baseProps, direction: Direction.VERTICAL, itemmore: { icon: 'user' } }, error: '<mg-menu> prop "itemmore" must be paired with direction horizontal.' },
+      { props: { ...baseProps, direction: Direction.VERTICAL, itemMore: { icon: 'user' } }, error: '<mg-menu> prop "itemMore" must be paired with direction horizontal.' },
       { props: { ...baseProps, size: 'batman' }, error: '<mg-menu> prop "size" must be one of: regular, medium, large.' },
     ])('Should throw error when props are invalid, case %s', async ({ props, error }) => {
       expect.assertions(1);
