@@ -168,7 +168,7 @@ describe('mg-tooltip', () => {
     expect(screenshot).toMatchImageSnapshot();
   });
 
-  test('Should keep tooltip center when update content', async () => {
+  test('Should keep tooltip center when update "message" prop', async () => {
     const page = await createPage(`${style}<mg-tooltip identifier="identifier" message="short tooltip" display><mg-icon icon="user"></mg-icon></mg-tooltip>`);
 
     await page.setViewport({ width: 400, height: 400 });

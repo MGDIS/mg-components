@@ -44,6 +44,7 @@ export class MgTooltip {
     if (typeof newValue !== 'string' || newValue.trim() === '') {
       throw new Error('<mg-tooltip> prop "message" is required.');
     }
+    this.popper.update();
   }
 
   /**
@@ -263,11 +264,6 @@ export class MgTooltip {
       }).observe(slotElement, { attributes: true });
       this.setMgButtonWrapper(slotElement as HTMLMgButtonElement);
     }
-
-    // add resize observer on the element with role="tooltip"
-    new ResizeObserver(() => {
-      this.popper.update();
-    }).observe(this.element.shadowRoot.getElementById(this.identifier));
 
     // Init Tooltip
     this.initTooltip(slotElement, interactiveElement);
