@@ -3,7 +3,7 @@ import { newSpecPage } from '@stencil/core/testing';
 import { MgTooltip } from '../mg-tooltip';
 import { MgButton } from '../../mg-button/mg-button';
 import { MgIcon } from '../../mg-icon/mg-icon';
-import { setupMutationObserverMock } from '../../../../utils/unit.test.utils';
+import { setupMutationObserverMock, setupResizeObserverMock } from '../../../../utils/unit.test.utils';
 
 // fix popper console.error in test
 // it is generated in @popperjs/core/dist/cjs/popper.js l.1859
@@ -27,6 +27,7 @@ const getPage = (args, element) =>
 
 describe('mg-tooltip', () => {
   let fireMo;
+  let fireRo;
 
   beforeEach(() => {
     jest.useFakeTimers();
@@ -38,6 +39,14 @@ describe('mg-tooltip', () => {
         return null;
       },
       takeRecords: () => [],
+    });
+    setupResizeObserverMock({
+      observe: function () {
+        fireRo = this.cb;
+      },
+      disconnect: function () {
+        return null;
+      },
     });
   });
 
@@ -253,5 +262,22 @@ describe('mg-tooltip', () => {
     await page.waitForChanges();
 
     expect(page.root).toMatchSnapshot();
+  });
+
+  test('Should update popper instance [role="tooltip"] element size change', async () => {
+    const page = await getPage(
+      { identifier: 'identifier', message: 'My tooltip message' },
+      <mg-button identifier="identifier" disabled>
+        mg-button.disabled
+      </mg-button>,
+    );
+
+    const spy = jest.spyOn(page.rootInstance.popper, 'update');
+    expect(spy).not.toHaveBeenCalled();
+
+    fireRo([]);
+    await page.waitForChanges();
+
+    expect(spy).toHaveBeenCalled();
   });
 });

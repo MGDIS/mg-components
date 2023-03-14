@@ -1,5 +1,7 @@
 import { createPage } from '../../../../utils/e2e.test.utils';
 
+const style = '<style>mg-icon{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%)}</style>';
+
 describe('mg-tooltip', () => {
   describe.each([
     'auto',
@@ -19,9 +21,7 @@ describe('mg-tooltip', () => {
     'left-end',
   ])('placement %s', placement => {
     test('Should render', async () => {
-      const page = await createPage(
-        `<style>mg-icon{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%)}</style><mg-tooltip message="this is a tooltip message" placement="${placement}"><mg-icon icon="info-circle"></mg-icon></mg-tooltip>`,
-      );
+      const page = await createPage(`${style}<mg-tooltip message="this is a tooltip message" placement="${placement}"><mg-icon icon="info-circle"></mg-icon></mg-tooltip>`);
 
       const mgTooltip = await page.find('mg-tooltip');
       const mgIcon = await page.find('mg-icon');
@@ -165,6 +165,24 @@ describe('mg-tooltip', () => {
     await page.waitForChanges();
 
     const screenshot = await page.screenshot();
+    expect(screenshot).toMatchImageSnapshot();
+  });
+
+  test('Should keep tooltip center when update content', async () => {
+    const page = await createPage(`${style}<mg-tooltip identifier="identifier" message="short tooltip" display><mg-icon icon="user"></mg-icon></mg-tooltip>`);
+
+    await page.setViewport({ width: 400, height: 400 });
+
+    let screenshot = await page.screenshot();
+    expect(screenshot).toMatchImageSnapshot();
+
+    await page.$eval('mg-tooltip', (mgTooltip: HTMLMgTooltipElement) => {
+      mgTooltip.message = 'my very long content should return to line because of the max-width set to 400px in the design specification';
+    });
+
+    await page.waitForChanges();
+
+    screenshot = await page.screenshot();
     expect(screenshot).toMatchImageSnapshot();
   });
 });
