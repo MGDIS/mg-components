@@ -239,13 +239,12 @@ describe('mg-tooltip', () => {
     expect(tooltip).not.toHaveAttribute('data-show');
   });
 
-  test('Should update mg-button wrapper dynamically', async () => {
-    const args = { identifier: 'identifier', message: 'My tooltip message' };
+  test.each(['button', 'mg-button'])('Should update %s wrapper dynamically', async TagName => {
     const page = await getPage(
-      args,
-      <mg-button identifier="identifier" disabled>
-        mg-button.disabled
-      </mg-button>,
+      { identifier: 'identifier', message: 'My tooltip message' },
+      <TagName identifier="identifier" disabled>
+        {TagName}.disabled
+      </TagName>,
     );
 
     expect(page.root).toMatchSnapshot();
@@ -256,9 +255,9 @@ describe('mg-tooltip', () => {
       mgTooltip.innerHTML = (element as Node).parentElement.innerHTML;
     });
 
-    const mgButton = page.doc.querySelector('mg-button');
+    const mgButton: HTMLButtonElement | HTMLMgButtonElement = page.doc.querySelector(TagName);
     mgButton.disabled = false;
-    fireMo([{ attributeName: 'aria-disabled' }]);
+    fireMo([{ attributeName: TagName === 'MG-BUTTON' ? 'aria-disabled' : 'disabled' }]);
     await page.waitForChanges();
 
     expect(page.root).toMatchSnapshot();
