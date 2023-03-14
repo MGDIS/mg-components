@@ -1,5 +1,6 @@
 import { Component, h, Prop, State, Element, Watch, Host } from '@stencil/core';
-import { Direction, MenuSizeType, ItemMoreType, sizes } from './mg-menu.conf';
+import { Direction, sizes } from './mg-menu.conf';
+import type { MenuSizeType, ItemMoreType } from './mg-menu.conf';
 
 @Component({
   tag: 'mg-menu',

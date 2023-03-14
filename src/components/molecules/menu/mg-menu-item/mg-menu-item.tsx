@@ -1,10 +1,11 @@
 import { Component, h, Prop, State, Host, Watch, Element, Event, EventEmitter } from '@stencil/core';
 import { ClassList } from '../../../../utils/components.utils';
 import { initLocales } from '../../../../locales';
-import { Direction, MenuSizeType } from '../mg-menu/mg-menu.conf';
-import type { DirectionType } from './mg-menu-item.conf';
+import { Direction } from '../mg-menu/mg-menu.conf';
 import { Status } from './mg-menu-item.conf';
-import { MessageType } from '../../mg-item-more/mg-item-more.conf';
+import type { MessageType } from '../../mg-item-more/mg-item-more.conf';
+import type { MenuSizeType } from '../mg-menu/mg-menu.conf';
+import type { DirectionType } from './mg-menu-item.conf';
 
 @Component({
   tag: 'mg-menu-item',

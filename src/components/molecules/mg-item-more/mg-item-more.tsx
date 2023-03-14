@@ -2,7 +2,7 @@ import { Component, h, Prop, Element, Host, Watch, State } from '@stencil/core';
 import { initLocales } from '../../../locales';
 import { OverflowBehavior } from '../../../utils/behaviors.utils';
 import { Direction } from '../menu/mg-menu/mg-menu.conf';
-import { IconType, MessageType, SizeType, SlotLabelType } from './mg-item-more.conf';
+import type { IconType, MessageType, SizeType, SlotLabelType } from './mg-item-more.conf';
 
 @Component({
   tag: 'mg-item-more',
