@@ -255,8 +255,8 @@ export class MgTooltip {
       new MutationObserver(mutationList => {
         if (mutationList.some(mutation => ['aria-disabled', 'disabled'].includes(mutation.attributeName))) {
           this.setMgButtonWrapper(slotElement as HTMLMgButtonElement);
-          // as firefox doesn't trigger a blur event when disable attribute is add/remove on button
-          // we nedd to unlock guard manualy as tooltipedElement's "blur" handler does
+          // Since Firefox doesn't trigger a "blur" event when the "disabled" attribute is added or removed from a button
+          // we have to manually unlock the guard because the "blur" handler of the tooltipedElement won't do it.
           this.resetGuard();
           this.initTooltip(slotElement, interactiveElement);
         }
