@@ -253,4 +253,21 @@ describe('mg-tooltip', () => {
 
     expect(page.root).toMatchSnapshot();
   });
+
+  test('Should update popper instance when "message" prop change', async () => {
+    const page = await getPage(
+      { identifier: 'identifier', message: 'My tooltip message' },
+      <mg-button identifier="identifier" disabled>
+        mg-button.disabled
+      </mg-button>,
+    );
+
+    const spy = jest.spyOn(page.rootInstance.popper, 'update');
+    const mgTooltip = page.doc.querySelector('mg-tooltip');
+    mgTooltip.message = 'my new message';
+
+    await page.waitForChanges();
+
+    expect(spy).toHaveBeenCalled();
+  });
 });
