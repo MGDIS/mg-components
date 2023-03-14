@@ -5,7 +5,7 @@ Ex: Validation, Save
 
 A tooltip must be displayed on hover when the button only displays a non-explicit icon, and has no label. The tooltip must indicate the action of the button.
 
-A button that launches a potentially long process is disabled and displays a loader for the duration of the process need to use the "disable-on-click" attribute.
+A button that launches a potentially long process is disabled and displays a loader for the duration of the process needs to use the `disable-on-click` attribute to ensure that the button is disabled when clicked.
 
 A button with undefined type in a form will natively have a [submit type](https://developer.mozilla.org/fr/docs/Web/HTML/Element/Button#attributs) and trigger form submission. So on non-submission buttons you need to explicitely set the type attribute as "button".
 
