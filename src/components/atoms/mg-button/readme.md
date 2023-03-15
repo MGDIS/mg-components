@@ -25,7 +25,7 @@ To manage the space between two buttons you can use the helper [.mg-group-elemen
 
 Focused `mg-button` style is the one from the browser (outline).
 
-## Attributes combinaison: `disable-on-click` and `disabled`
+## Attributes combination: `disable-on-click` and `disabled`
 
 When a click is triggered, the component sets the `disabled` prop to true.
 
