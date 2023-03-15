@@ -1,10 +1,11 @@
 import { Component, h, Prop, State, Host, Watch, Element, Event, EventEmitter } from '@stencil/core';
-import { OverflowBehaviorElements } from '../../../../utils/behaviors.utils';
 import { ClassList } from '../../../../utils/components.utils';
 import { initLocales } from '../../../../locales';
-import { MgMenu } from '../mg-menu/mg-menu';
-import { Direction, MenuSizeType, MessageType } from '../mg-menu/mg-menu.conf';
+import { Direction } from '../mg-menu/mg-menu.conf';
 import { Status } from './mg-menu-item.conf';
+import type { MessageType } from '../../mg-item-more/mg-item-more.conf';
+import type { MenuSizeType } from '../mg-menu/mg-menu.conf';
+import type { DirectionType } from './mg-menu-item.conf';
 
 @Component({
   tag: 'mg-menu-item',
@@ -110,12 +111,29 @@ export class MgMenuItem {
   /**
    * Parent menu direction
    */
-  @State() direction: MgMenu['direction'];
+  @State() direction: DirectionType;
+  @Watch('direction')
+  validateDirection(newValue: MgMenuItem['direction']): void {
+    // manage menu items style depending to parent menu horientation
+    this.element.setAttribute(`data-style-direction-${newValue}`, '');
+    this.navigationButtonClassList.add(`${this.navigationButton}--${newValue}`);
+    // manage all sub levels child menu-items level with data-level attribut
+    if (this.isDirection(Direction.VERTICAL, newValue)) {
+      Array.from(this.element.querySelectorAll('mg-menu-item')).forEach(item => {
+        item.dataset.level = `${(Number(item.dataset.level) || 1) + 1}`;
+      });
+    }
+  }
 
   /**
    * Does component is in main menu
    */
   @State() isInMainMenu: boolean;
+
+  /**
+   * Does element is item-more
+   */
+  @State() isItemMore: boolean;
 
   /**
    * Does component have children. Default: false.
@@ -159,9 +177,80 @@ export class MgMenuItem {
    * Is component contextual direction match the given direction
    *
    * @param {MgMenuItem['direction']} direction in parent menu
+   * @param {MgMenuItem['direction']} compareWith direction to compare with. Default: `this.direction`
    * @returns {boolean} true is direction match the direction propertie
    */
-  private isDirection = (direction: MgMenuItem['direction']): boolean => this.direction === direction;
+  private isDirection = (direction: MgMenuItem['direction'], compareWith = this.direction): boolean => direction === compareWith;
+
+  /**
+   * Update displayNotificationBadge
+   * current component notification badge have priority over the slot badge when submenu contain badge
+   *
+   * @returns {void} update displayNotificationBadge value
+   */
+  private updateDisplayNotificationBadge = (): void => {
+    const childMenu = this.element.querySelector('mg-menu');
+    this.displayNotificationBadge =
+      childMenu !== null &&
+      Array.from(childMenu.children).some((subItem: HTMLMgMenuItemElement) => subItem.querySelector('mg-badge') !== null && subItem.getAttribute('hidden') === null);
+  };
+
+  /**
+   * Method to control if one of component children have active status
+   *
+   * @returns {boolean} truthy if component has active child
+   */
+  private hasActiveChild = (): boolean =>
+    Array.from(this.element.querySelector('mg-menu')?.children || []).some(
+      (element: HTMLMgMenuItemElement) => element.nodeName === 'MG-MENU-ITEM' && this.hasStatus(element, Status.ACTIVE) && element.getAttribute('hidden') === null,
+    );
+
+  /**
+   * Validate slots
+   *
+   * @param {boolean} guard prevent action whith guard. Default: false.
+   * @returns {void}
+   */
+  private validateSlot = (guard = false): void => {
+    // slot title AND metadata validation
+    // add title on label AND metada slots due to text-overflow on these element
+    if (Array.from(this.element.children).find(child => child.getAttribute('slot') === 'label') === undefined) throw new Error(`<${this.name}> slot "label" is required.`);
+    ['label', 'metadata'].forEach(slot => {
+      Array.from(this.element.querySelectorAll(`[slot="${slot}"]`)).forEach(element => {
+        if (element.textContent.trim().length < 1) throw new Error(`<${this.name}> slot "${slot}" must have text content.`);
+        if ((guard && element.getAttribute('title') === null) || !guard) element.setAttribute('title', element.textContent);
+      });
+    });
+  };
+
+  /**
+   * Update status
+   *
+   * @param {Status[]} guard status to exclude from process in addition to [Status.HIDDEN, Status.DISABLED] . Default: [].
+   * @returns {void}
+   */
+  private updateStatus = (guard = []): void => {
+    if (![Status.HIDDEN, Status.DISABLED, ...guard].includes(this.status)) {
+      this.status = this.hasActiveChild() ? Status.ACTIVE : Status.VISIBLE;
+    }
+  };
+
+  /**
+   * Init event-listeners
+   *
+   * @returns {void}
+   */
+  private initListeners = (): void => {
+    // manage first sub-level menu-items
+    Array.from(this.element.querySelector('mg-menu')?.children || []).forEach(item => {
+      if (item.nodeName === 'MG-MENU-ITEM') {
+        // manage child menu listener
+        item.addEventListener('status-change', () => {
+          this.updateStatus();
+        });
+      }
+    });
+  };
 
   /************
    * Handlers *
@@ -193,29 +282,6 @@ export class MgMenuItem {
     this.expanded = event.detail;
   };
 
-  /**
-   * Update displayNotificationBadge
-   * current component notification badge have priority over the slot badge when submenu contain badge
-   *
-   * @returns {void} update displayNotificationBadge value
-   */
-  private updateDisplayNotificationBadge = (): void => {
-    const childMenu = this.element.querySelector('mg-menu');
-    this.displayNotificationBadge =
-      childMenu !== null &&
-      Array.from(childMenu.children).some((subItem: HTMLMgMenuItemElement) => subItem.querySelector('mg-badge') !== null && subItem.getAttribute('hidden') === null);
-  };
-
-  /**
-   * Method to control if one of component children have active status
-   *
-   * @returns {boolean} truthy if component has active child
-   */
-  private hasActiveChild = (): boolean =>
-    Array.from(this.element.querySelector('mg-menu')?.children || [])
-      .filter(element => element.nodeName === 'MG-MENU-ITEM')
-      .some((element: HTMLMgMenuItemElement) => this.hasStatus(element, Status.ACTIVE) && element.getAttribute('hidden') === null);
-
   /*************
    * Lifecycle *
    *************/
@@ -229,12 +295,15 @@ export class MgMenuItem {
     // has children items that is NOT [slot='image' | 'information' | 'label' | 'metadata'] element
     // we store only matching elements
     this.hasChildren = Array.from(this.element.children).some(child => !['image', 'information', 'label', 'metadata'].includes(child.getAttribute('slot')));
+    this.badgeLabel = (initLocales(this.element).messages as { plusMenu: MessageType }).plusMenu.badgeLabel;
+    this.isItemMore = this.element.dataset.overflowMore !== undefined;
 
     // Validate props
-    this.validateSize(this.size);
     this.validateStatus(this.status);
     this.validateExpanded(this.expanded);
-    this.badgeLabel = (initLocales(this.element).messages as { plusMenu: MessageType }).plusMenu.badgeLabel;
+
+    // Validate states
+    this.validateSize(this.size);
   }
 
   /**
@@ -243,16 +312,8 @@ export class MgMenuItem {
    * @returns {ReturnType<typeof setTimeout>} timeout
    */
   componentDidLoad(): ReturnType<typeof setTimeout> {
-    // slot title AND metadata validation
-    // add title on label AND metada slots due to text-overflow on these element
-    if (Array.from(this.element.children).find(child => child.getAttribute('slot') === 'label') === undefined) throw new Error(`<${this.name}> slot "label" is required.`);
-
-    ['label', 'metadata'].forEach(slot => {
-      Array.from(this.element.querySelectorAll(`[slot="${slot}"]`)).forEach(element => {
-        if (element.textContent.trim().length < 1) throw new Error(`<${this.name}> slot "${slot}" must have text content.`);
-        if (element.getAttribute('title') === null) element.setAttribute('title', element.textContent);
-      });
-    });
+    // validation
+    this.validateSlot(true);
 
     // update props and states after componentDidLoad hook
     // return a promise to process action only in the FIRST render().
@@ -260,48 +321,26 @@ export class MgMenuItem {
     return setTimeout(() => {
       // define menu-item context states
       const menu = this.element.closest('mg-menu');
-      this.direction = this.element.getAttribute(OverflowBehaviorElements.MORE) !== null || menu === null ? Direction.HORIZONTAL : menu.direction;
-      this.size = menu?.size;
+      this.direction = this.isItemMore || menu === null ? Direction.HORIZONTAL : menu.direction;
+      this.isInMainMenu = menu !== null && this.element.parentElement.closest('mg-menu-item') === null;
+      if (menu?.size !== undefined) this.size = menu.size;
 
-      this.isInMainMenu = this.element.parentElement.closest('mg-menu-item') === null;
+      if (this.isItemMore) this.size = this.element.dataset.size as MgMenuItem['size'];
 
       // when main menu item contain an active item it will get the active style
       // AND if item is in vertical menu it will be expanded
-      if (this.hasActiveChild()) {
-        this.status = Status.ACTIVE;
-        if (this.isInMainMenu) this.expanded = this.isDirection(Direction.VERTICAL);
-      }
+      if (this.hasActiveChild() && this.isInMainMenu) this.expanded = this.isDirection(Direction.VERTICAL);
 
-      // manage menu items style depending to parent menu horientation
-      this.element.setAttribute(`data-style-direction-${this.direction}`, '');
-      this.navigationButtonClassList.add(`${this.navigationButton}--${this.direction}`);
-
+      this.updateStatus([Status.ACTIVE]);
       this.updateDisplayNotificationBadge();
 
-      // manage all sub levels child menu-items level with data-level attribut
-      if (this.isDirection(Direction.VERTICAL)) {
-        Array.from(this.element.querySelectorAll('mg-menu-item')).forEach(item => {
-          item.dataset.level = `${(Number(item.dataset.level) || 1) + 1}`;
-        });
-      }
-
-      // manage first sub-level menu-items
-      const childItems = Array.from(this.element.querySelector('mg-menu')?.children || []).filter(item => item.nodeName === 'MG-MENU-ITEM');
-      childItems.forEach(item => {
-        const updateStatus = () => {
-          if (![Status.HIDDEN, Status.DISABLED].includes(this.status)) {
-            this.status = this.hasActiveChild() ? Status.ACTIVE : Status.VISIBLE;
-          }
-        };
-        // manage child menu listener
-        item.addEventListener('status-change', () => {
-          updateStatus();
-        });
-        new MutationObserver(mutationsList => {
-          if (mutationsList.some(mutation => mutation.attributeName === 'hidden')) updateStatus();
-          this.updateDisplayNotificationBadge();
-        }).observe(item, { attributes: true });
-      });
+      // manage child dom changes with mutationObserver and listzners
+      this.initListeners();
+      new MutationObserver(mutationsList => {
+        if (mutationsList.some(mutation => mutation.attributeName === 'hidden')) this.updateStatus();
+        if (mutationsList.some(mutation => mutation.type === 'characterData')) this.validateSlot();
+        this.updateDisplayNotificationBadge();
+      }).observe(this.element, { attributes: true, childList: true, characterData: true, subtree: true });
     }, 0);
   }
 
@@ -370,7 +409,7 @@ export class MgMenuItem {
     });
 
     return (
-      <Host role="menuitem" aria-haspopup={this.hasChildren.toString()}>
+      <Host role={!this.isItemMore && 'menuitem'} aria-haspopup={!this.isItemMore && this.hasChildren.toString()}>
         {this.isDirection(Direction.HORIZONTAL) && this.hasChildren && this.href === undefined ? (
           <mg-popover display={this.expanded} placement="bottom-start" arrowHide={true} onDisplay-change={this.handlePopoverDisplay}>
             {this.renderInteractiveElement()}

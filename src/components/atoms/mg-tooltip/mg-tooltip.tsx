@@ -44,6 +44,7 @@ export class MgTooltip {
     if (typeof newValue !== 'string' || newValue.trim() === '') {
       throw new Error('<mg-tooltip> prop "message" is required.');
     }
+    this.popper.update();
   }
 
   /**
@@ -251,10 +252,13 @@ export class MgTooltip {
 
     // Check if slotted element is a disabled mg-button
     // In this case we wrap the mg-button into a div to enable the tooltip
-    if (slotElement.tagName === 'MG-BUTTON') {
+    if (['MG-BUTTON', 'BUTTON'].includes(slotElement.tagName)) {
       new MutationObserver(mutationList => {
-        if (mutationList.some(mutation => mutation.attributeName === 'aria-disabled')) {
+        if (mutationList.some(mutation => ['aria-disabled', 'disabled'].includes(mutation.attributeName))) {
           this.setMgButtonWrapper(slotElement as HTMLMgButtonElement);
+          // Since Firefox doesn't trigger a "blur" event when the "disabled" attribute is added or removed from a button
+          // we have to manually unlock the guard because the "blur" handler of the tooltipedElement won't do it.
+          this.resetGuard();
           this.initTooltip(slotElement, interactiveElement);
         }
       }).observe(slotElement, { attributes: true });

@@ -365,6 +365,40 @@ exports[`mg-tooltip Should toogle tooltip from prop display, case display true 2
 </mg-tooltip>
 `;
 
+exports[`mg-tooltip Should update button wrapper dynamically 1`] = `
+<mg-tooltip>
+  <mock:shadow-root>
+    <slot></slot>
+    <div class="mg-tooltip" id="identifier" role="tooltip" style="position: fixed; left: 0; top: 0; margin: 0;">
+      <span>
+        My tooltip message
+      </span>
+      <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
+    </div>
+  </mock:shadow-root>
+  <button aria-describedby="identifier" disabled="" identifier="identifier">
+    button.disabled
+  </button>
+</mg-tooltip>
+`;
+
+exports[`mg-tooltip Should update button wrapper dynamically 2`] = `
+<mg-tooltip>
+  <mock:shadow-root>
+    <slot></slot>
+    <div class="mg-tooltip" id="identifier" role="tooltip" style="position: fixed; left: 0; top: 0; margin: 0;">
+      <span>
+        My tooltip message
+      </span>
+      <div class="mg-tooltip__arrow" data-popper-arrow style="position: absolute;"></div>
+    </div>
+  </mock:shadow-root>
+  <button aria-describedby="identifier" disabled="" identifier="identifier">
+    button.disabled
+  </button>
+</mg-tooltip>
+`;
+
 exports[`mg-tooltip Should update mg-button wrapper dynamically 1`] = `
 <mg-tooltip>
   <mock:shadow-root>
