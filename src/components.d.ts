@@ -927,6 +927,10 @@ export namespace Components {
          */
         "href": string;
         /**
+          * Identifier is used to control mg-popover Default: createID('mg-menu-item');
+         */
+        "identifier": string;
+        /**
           * Define menu-item status. Default: "visible"
          */
         "status": Status;
@@ -2365,6 +2369,10 @@ declare namespace LocalJSX {
           * Define menu-item href when defined menu-item contain an anchor instead of button
          */
         "href"?: string;
+        /**
+          * Identifier is used to control mg-popover Default: createID('mg-menu-item');
+         */
+        "identifier"?: string;
         /**
           * Emited event when status change
          */

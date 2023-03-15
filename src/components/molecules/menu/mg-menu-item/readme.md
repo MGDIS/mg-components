@@ -191,11 +191,12 @@ Child content is displayed via an **mg-tray** component.
 
 ## Properties
 
-| Property   | Attribute  | Description                                                                      | Type                                                                  | Default          |
-| ---------- | ---------- | -------------------------------------------------------------------------------- | --------------------------------------------------------------------- | ---------------- |
-| `expanded` | `expanded` | Define menu-item content expanded. Default: false.                               | `boolean`                                                             | `false`          |
-| `href`     | `href`     | Define menu-item href when defined menu-item contain an anchor instead of button | `string`                                                              | `undefined`      |
-| `status`   | `status`   | Define menu-item status. Default: "visible"                                      | `Status.ACTIVE \| Status.DISABLED \| Status.HIDDEN \| Status.VISIBLE` | `Status.VISIBLE` |
+| Property     | Attribute    | Description                                                                      | Type                                                                  | Default                    |
+| ------------ | ------------ | -------------------------------------------------------------------------------- | --------------------------------------------------------------------- | -------------------------- |
+| `expanded`   | `expanded`   | Define menu-item content expanded. Default: false.                               | `boolean`                                                             | `false`                    |
+| `href`       | `href`       | Define menu-item href when defined menu-item contain an anchor instead of button | `string`                                                              | `undefined`                |
+| `identifier` | `identifier` | Identifier is used to control mg-popover Default: createID('mg-menu-item');      | `string`                                                              | `createID('mg-menu-item')` |
+| `status`     | `status`     | Define menu-item status. Default: "visible"                                      | `Status.ACTIVE \| Status.DISABLED \| Status.HIDDEN \| Status.VISIBLE` | `Status.VISIBLE`           |
 
 
 ## Events
