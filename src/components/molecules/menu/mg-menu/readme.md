@@ -129,12 +129,12 @@ With a mg-badge/mg-tag/mg-icon, **you must set the component using HTML attribut
 
 ## Properties
 
-| Property             | Attribute   | Description                                                                         | Type                                                                                                                           | Default                |
-| -------------------- | ----------- | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | ---------------------- |
-| `direction`          | `direction` | Component display direction. Default: "horizontal"                                  | `Direction.HORIZONTAL \| Direction.VERTICAL`                                                                                   | `Direction.HORIZONTAL` |
-| `label` _(required)_ | `label`     | Menu label. Include short menu description. Required for accessibility              | `string`                                                                                                                       | `undefined`            |
-| `moreitem`           | --          | Customize mg-menu "more element" Used with direction: 'vertical' to manage overflow | `{ mgIcon?: { icon: string; }; slotLabel?: { label?: string; display?: boolean; }; size?: "regular" \| "large" \| "medium"; }` | `undefined`            |
-| `size`               | `size`      | Define mg-menu size Default: 'regular'                                              | `"large" \| "medium" \| "regular"`                                                                                             | `'regular'`            |
+| Property             | Attribute   | Description                                                                         | Type                                                                                    | Default                |
+| -------------------- | ----------- | ----------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | ---------------------- |
+| `direction`          | `direction` | Component display direction. Default: "horizontal"                                  | `Direction.HORIZONTAL \| Direction.VERTICAL`                                            | `Direction.HORIZONTAL` |
+| `itemMore`           | --          | Customize "mg-item-more" element Used with direction: 'vertical' to manage overflow | `{ size: "regular" \| "large" \| "medium"; icon: IconType; slotlabel: SlotLabelType; }` | `undefined`            |
+| `label` _(required)_ | `label`     | Menu label. Include short menu description. Required for accessibility              | `string`                                                                                | `undefined`            |
+| `size`               | `size`      | Define mg-menu size Default: 'regular'                                              | `"large" \| "medium" \| "regular"`                                                      | `'regular'`            |
 
 
 ## Dependencies
@@ -142,26 +142,13 @@ With a mg-badge/mg-tag/mg-icon, **you must set the component using HTML attribut
 ### Used by
 
  - [mg-action-more](../../mg-action-more)
- - [mg-menu](.)
-
-### Depends on
-
-- [mg-menu-item](../mg-menu-item)
-- [mg-icon](../../../atoms/mg-icon)
-- [mg-menu](.)
+ - [mg-item-more](../../mg-item-more)
 
 ### Graph
 ```mermaid
 graph TD;
-  mg-menu --> mg-menu
-  mg-menu-item --> mg-badge
-  mg-menu-item --> mg-icon
-  mg-menu-item --> mg-popover
-  mg-popover --> mg-card
-  mg-popover --> mg-button
-  mg-popover --> mg-icon
-  mg-button --> mg-icon
   mg-action-more --> mg-menu
+  mg-item-more --> mg-menu
   style mg-menu fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

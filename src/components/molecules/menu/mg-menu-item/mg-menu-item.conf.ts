@@ -1,3 +1,5 @@
+import { MgMenu } from '../mg-menu/mg-menu';
+
 /**
  * Available menu-item positions
  */
@@ -15,3 +17,8 @@ export enum Status {
   DISABLED = 'disabled',
   ACTIVE = 'active',
 }
+
+/**
+ * Direction type
+ */
+export type DirectionType = MgMenu['direction'];
