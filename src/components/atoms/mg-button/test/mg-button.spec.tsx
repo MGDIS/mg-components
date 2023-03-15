@@ -81,16 +81,19 @@ describe('mg-button', () => {
     test('should NOT disable button after click', async () => {
       const page = await getPage({ identifier: 'identifier' });
       const button = page.doc.querySelector('mg-button');
+      const spy = jest.spyOn(page.rootInstance.disabledChange, 'emit');
 
       expect(page.root).toMatchSnapshot();
 
       button.dispatchEvent(new CustomEvent('click', { bubbles: true }));
       await page.waitForChanges();
 
+      expect(spy).not.toHaveBeenCalled();
       expect(page.root).toMatchSnapshot();
 
       button.disabled = true;
       await page.waitForChanges();
+      expect(spy).toHaveBeenCalledWith(true);
 
       expect(page.root).toMatchSnapshot();
     });
@@ -98,17 +101,20 @@ describe('mg-button', () => {
     test('should disable button after click', async () => {
       const page = await getPage({ disableOnClick: true });
       const button = page.doc.querySelector('mg-button');
+      const spy = jest.spyOn(page.rootInstance.disabledChange, 'emit');
 
       expect(page.root).toMatchSnapshot();
 
       button.dispatchEvent(new CustomEvent('click', { bubbles: true }));
       await page.waitForChanges();
 
+      expect(spy).toHaveBeenCalledWith(true);
       expect(page.root).toMatchSnapshot();
 
       button.disabled = false;
       await page.waitForChanges();
 
+      expect(spy).toHaveBeenCalledWith(false);
       expect(page.root).toMatchSnapshot();
     });
 
@@ -117,13 +123,15 @@ describe('mg-button', () => {
         disabled: true,
         disableOnCLick: true,
       });
+      const button = page.doc.querySelector('mg-button');
+      const spy = jest.spyOn(page.rootInstance.disabledChange, 'emit');
 
       expect(page.root).toMatchSnapshot();
 
-      const button = page.doc.querySelector('mg-button');
       button.dispatchEvent(new CustomEvent('click', { bubbles: true }));
       await page.waitForChanges();
 
+      expect(spy).not.toHaveBeenCalled();
       expect(page.root).toMatchSnapshot();
     });
 

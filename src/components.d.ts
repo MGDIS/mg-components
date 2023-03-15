@@ -1114,6 +1114,10 @@ export namespace Components {
         "placement": Placement;
     }
 }
+export interface MgButtonCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMgButtonElement;
+}
 export interface MgDetailsCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLMgDetailsElement;
@@ -1484,6 +1488,10 @@ declare namespace LocalJSX {
           * aria-label In case button text is not explicit enough
          */
         "label"?: string;
+        /**
+          * Emmited event when disabled change
+         */
+        "onDisabled-change"?: (event: MgButtonCustomEvent<MgButton['disabled']>) => void;
         /**
           * Define button type
          */
