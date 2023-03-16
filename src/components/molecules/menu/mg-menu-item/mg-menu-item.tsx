@@ -1,11 +1,12 @@
 import { Component, h, Prop, State, Host, Watch, Element, Event, EventEmitter } from '@stencil/core';
-import { ClassList } from '../../../../utils/components.utils';
+import { ClassList, createID } from '../../../../utils/components.utils';
 import { initLocales } from '../../../../locales';
 import { Direction } from '../mg-menu/mg-menu.conf';
 import { Status } from './mg-menu-item.conf';
 import type { MessageType } from '../../mg-item-more/mg-item-more.conf';
 import type { MenuSizeType } from '../mg-menu/mg-menu.conf';
 import type { DirectionType } from './mg-menu-item.conf';
+import type { MgPopover } from '../../mg-popover/mg-popover';
 
 @Component({
   tag: 'mg-menu-item',
@@ -33,6 +34,12 @@ export class MgMenuItem {
   /************
    * Props *
    ************/
+
+  /**
+   * Identifier is used to control mg-popover
+   * Default: createID('mg-menu-item');
+   */
+  @Prop() identifier = createID('mg-menu-item');
 
   /**
    * Define menu-item href
@@ -252,6 +259,32 @@ export class MgMenuItem {
     });
   };
 
+  /**
+   * Get mg-popover identifier
+   *
+   * @returns {MgPopover['identifier']} generated mg-popover identifier
+   */
+  private getPopoverIdentifier = (): MgPopover['identifier'] => `${this.identifier}-popover`;
+
+  /**
+   * Render popover clickoutside guard for content slot
+   *
+   * @returns {void}
+   */
+  private updatePopoverGuard(): void {
+    if (this.displayPopover())
+      Array.from(this.element.children)
+        .filter((child: HTMLElement) => child.getAttribute('slot') === null && child.nodeName !== 'MG-MENU' && Boolean(child.dataset))
+        .forEach((slot: HTMLElement) => (slot.dataset.mgPopoverGuard = this.getPopoverIdentifier()));
+  }
+
+  /**
+   * Condition to know if component should display a mg-popover
+   *
+   * @returns {boolean} truthy if component display popover
+   */
+  private displayPopover = (): boolean => this.isDirection(Direction.HORIZONTAL) && this.hasChildren && this.href === undefined;
+
   /************
    * Handlers *
    ************/
@@ -333,6 +366,7 @@ export class MgMenuItem {
 
       this.updateStatus([Status.ACTIVE]);
       this.updateDisplayNotificationBadge();
+      this.updatePopoverGuard();
 
       // manage child dom changes with mutationObserver and listzners
       this.initListeners();
@@ -410,8 +444,8 @@ export class MgMenuItem {
 
     return (
       <Host role={!this.isItemMore && 'menuitem'} aria-haspopup={!this.isItemMore && this.hasChildren.toString()}>
-        {this.isDirection(Direction.HORIZONTAL) && this.hasChildren && this.href === undefined ? (
-          <mg-popover display={this.expanded} placement="bottom-start" arrowHide={true} onDisplay-change={this.handlePopoverDisplay}>
+        {this.displayPopover() ? (
+          <mg-popover display={this.expanded} placement="bottom-start" arrowHide={true} onDisplay-change={this.handlePopoverDisplay} identifier={this.getPopoverIdentifier()}>
             {this.renderInteractiveElement()}
             <div class={getContainerClasses()} slot="content">
               {this.renderSlot()}

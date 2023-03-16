@@ -163,7 +163,7 @@ exports[`mg-menu MutationObserver horizontal with args { label: 'batman menu', d
     <span slot="label" title="joker">
       joker
     </span>
-    <div>
+    <div data-mg-popover-guard="identifier-2-popover">
       <h2>
         This is a joker card
       </h2>
@@ -358,7 +358,7 @@ exports[`mg-menu MutationObserver horizontal with args { label: 'batman menu', d
     <span slot="label" title="joker">
       joker
     </span>
-    <div>
+    <div data-mg-popover-guard="identifier-2-popover">
       <h2>
         This is a joker card
       </h2>
@@ -889,7 +889,7 @@ exports[`mg-menu render with args { label: 'batman menu' } 1`] = `
     <span slot="label" title="joker">
       joker
     </span>
-    <div>
+    <div data-mg-popover-guard="identifier-2-popover">
       <h2>
         This is a joker card
       </h2>
@@ -1084,7 +1084,7 @@ exports[`mg-menu render with args { label: 'batman menu', direction: 'horizontal
     <span slot="label" title="joker">
       joker
     </span>
-    <div>
+    <div data-mg-popover-guard="identifier-2-popover">
       <h2>
         This is a joker card
       </h2>

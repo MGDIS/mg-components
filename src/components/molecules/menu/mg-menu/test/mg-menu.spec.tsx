@@ -23,7 +23,7 @@ const getPage = async (args, withSubmenu = true) => {
     components: [MgMenu, MgMenuItem, MgPopover],
     template: () => (
       <mg-menu {...args}>
-        <mg-menu-item id={setId(args.hasId)}>
+        <mg-menu-item id={setId(args.hasId)} identifier="identifier-1">
           <span slot="label">batman</span>
           {withSubmenu && (
             <mg-menu label="batman - submenu" direction={Direction.VERTICAL}>
@@ -44,7 +44,7 @@ const getPage = async (args, withSubmenu = true) => {
             </mg-menu>
           )}
         </mg-menu-item>
-        <mg-menu-item id={setId(args.hasId)}>
+        <mg-menu-item id={setId(args.hasId)} identifier="identifier-2">
           <span slot="label">joker</span>
           {args.badge && <mg-badge value={1} label="bad guy"></mg-badge>}
           <div>
@@ -52,7 +52,7 @@ const getPage = async (args, withSubmenu = true) => {
             <p>If you don't know the joker, you can watch the movie.</p>
           </div>
         </mg-menu-item>
-        <mg-menu-item href="#bane" id={setId(args.hasId)}>
+        <mg-menu-item href="#bane" id={setId(args.hasId)} identifier="identifier-3">
           <span slot="label">bane</span>
         </mg-menu-item>
       </mg-menu>
