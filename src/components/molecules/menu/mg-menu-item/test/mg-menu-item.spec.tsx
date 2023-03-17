@@ -14,7 +14,7 @@ mockWindowFrames();
 
 const menu = (args: Partial<MgMenu> & { slots?: unknown } & Pick<MgMenu, 'label'> = { label: 'child-menu' }) => <mg-menu {...args}>{args.slots}</mg-menu>;
 const menuItem = (args, slot?) => (
-  <mg-menu-item {...args} data-overflow-more={args.overflow}>
+  <mg-menu-item {...args} identifier={args.identifier === undefined ? 'identifier' : args.identifier} data-overflow-more={args.overflow}>
     {slot}
     {args.label && <span slot="label">{args.label}</span>}
     {args.metadata && <span slot="metadata">my metadata</span>}
@@ -261,15 +261,40 @@ describe('mg-menu-item', () => {
       test.each([true, false])('should toggle expanded from popover display-change event', async display => {
         const page = await getPage(templateDefault({ label: 'Batman', expanded: !display }, childMenu()));
 
-        const event = new CustomEvent('display-change', { detail: display });
-
         const element = page.doc.querySelector('[title="Batman"]').closest('mg-menu-item');
 
         const popover = element.shadowRoot.querySelector('mg-popover');
 
-        popover.dispatchEvent(event);
+        popover.dispatchEvent(new CustomEvent('display-change', { detail: display }));
+        await page.waitForChanges();
 
         expect(element.expanded).toBe(display);
+      });
+
+      test('should prevent "expanded" to be update to "false" when click inside content slot', async () => {
+        const page = await getPage(
+          menu({
+            label: 'main menu',
+            slots: menuItem(
+              { label: 'Batman', expanded: true },
+              <div>
+                <button>Hello batman</button>
+              </div>,
+            ),
+          }),
+        );
+
+        expect(page.root).toMatchSnapshot();
+
+        jest.runAllTimers();
+
+        const mgMenuItem = page.doc.querySelector('[title="Batman"]').closest('mg-menu-item');
+        const contentButton = mgMenuItem.querySelector('button');
+
+        contentButton.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+        await page.waitForChanges();
+
+        expect(mgMenuItem.expanded).toBe(true);
       });
     });
 

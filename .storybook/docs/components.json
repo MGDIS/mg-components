@@ -4762,6 +4762,23 @@
           "required": false
         },
         {
+          "name": "identifier",
+          "type": "string",
+          "mutable": false,
+          "attr": "identifier",
+          "reflectToAttr": false,
+          "docs": "Identifier is used to control mg-popover\nDefault: createID('mg-menu-item');",
+          "docsTags": [],
+          "default": "createID('mg-menu-item')",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "status",
           "type": "Status.ACTIVE | Status.DISABLED | Status.HIDDEN | Status.VISIBLE",
           "mutable": true,
