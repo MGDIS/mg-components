@@ -42,6 +42,18 @@ describe('mg-input-select', () => {
         { title: 'bla', value: 'a' },
       ],
     },
+    {
+      label: 'label',
+      identifier: 'identifier',
+      items: [
+        { title: 'blu', value: 'u' },
+        { title: 'bli', value: 'i' },
+        { title: 'blo', value: 'o' },
+        { title: 'bla', value: 'a' },
+      ],
+      readonly: true,
+      value: 'o',
+    },
     { label: 'label', identifier: 'identifier', items: ['blu', 'bli', 'blo', 'bla'], labelOnTop: true },
     { label: 'label', identifier: 'identifier', items: ['blu', 'bli', 'blo', 'bla'], readonly: true },
     { label: 'label', identifier: 'identifier', items: ['blu', 'bli', 'blo', 'bla'], readonly: true, labelOnTop: true, tooltip: 'Tooltip message' },
@@ -346,5 +358,22 @@ describe('mg-input-select', () => {
     // If back on required the message is still not displayed
     expect(page.rootInstance.hasDisplayedError).toEqual(false);
     expect(page.rootInstance.errorMessage).toBeUndefined();
+  });
+
+  test.each([[['batman']], [[{ title: 'batman', value: 'b' }]]])('Should not update value with invalid input value: %s', async items => {
+    const page = await getPage({ identifier: 'identifier', label: 'batman', items });
+    const element = page.doc.querySelector('mg-input-select');
+    const input = element.shadowRoot.querySelector('select');
+
+    input.checkValidity = jest.fn().mockReturnValueOnce(true);
+    jest.spyOn(page.rootInstance.inputValid, 'emit');
+
+    input.value = 'hello';
+    input.dispatchEvent(new CustomEvent('input', { bubbles: true }));
+
+    await page.waitForChanges();
+
+    expect(element.value).toBe('hello');
+    expect(page.rootInstance.inputValid.emit).toHaveBeenCalledWith(false);
   });
 });

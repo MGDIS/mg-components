@@ -627,7 +627,7 @@ export namespace Components {
         /**
           * Component value
          */
-        "value": any;
+        "value": string | SelectOption;
     }
     interface MgInputText {
         /**
@@ -2025,7 +2025,7 @@ declare namespace LocalJSX {
         /**
           * Emited event when value change
          */
-        "onValue-change"?: (event: MgInputSelectCustomEvent<any>) => void;
+        "onValue-change"?: (event: MgInputSelectCustomEvent<MgInputSelect['value']>) => void;
         /**
           * Input placeholder. It should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text.
          */
@@ -2057,7 +2057,7 @@ declare namespace LocalJSX {
         /**
           * Component value
          */
-        "value"?: any;
+        "value"?: string | SelectOption;
     }
     interface MgInputText {
         /**

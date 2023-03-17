@@ -74,12 +74,10 @@ export class ClassList {
 /**
  * Check if all items are string
  *
- * @param {string[]} items items to check
+ * @param {unknown} items items to check
  * @returns {boolean} all items are string
  */
-export const allItemsAreString = (items: string[]): boolean => {
-  return items && items.every(item => typeof item === 'string');
-};
+export const allItemsAreString = (items: unknown): items is string[] => Array.isArray(items) && items.every(item => typeof item === 'string');
 
 /**
  * Check if element is a heading
