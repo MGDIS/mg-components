@@ -8,11 +8,12 @@ import { CheckboxItem, CheckboxValue } from './mg-input-checkbox.conf';
 /**
  * type CheckboxItem validation function
  *
- * @param {CheckboxItem} item Checkbox item
- * @returns {boolean} match item expectations
+ * @param {unknown} items Checkbox item
+ * @returns {boolean} match item type
  */
-const isCheckboxItem = (item: CheckboxItem): boolean =>
-  typeof item === 'object' && typeof item.title === 'string' && (item.value === null || typeof item.value === 'boolean') && item.value !== undefined;
+const isCheckboxItems = (items: unknown): items is CheckboxItem[] =>
+  Array.isArray(items) &&
+  items.every(item => typeof item === 'object' && typeof item.title === 'string' && (item.value === null || typeof item.value === 'boolean') && item.value !== undefined);
 
 @Component({
   tag: 'mg-input-checkbox',
@@ -49,8 +50,8 @@ export class MgInputCheckbox {
    */
   @Prop({ mutable: true }) value!: CheckboxValue[];
   @Watch('value')
-  validateValue(newValue: CheckboxValue[]): void {
-    if (newValue && (newValue as CheckboxItem[]).every(item => isCheckboxItem(item))) {
+  validateValue(newValue: MgInputCheckbox['value']): void {
+    if (isCheckboxItems(newValue)) {
       this.checkboxItems = newValue.map((item, index) => ({
         id: `${this.identifier}_${index.toString()}`,
         title: item.title,
@@ -72,7 +73,7 @@ export class MgInputCheckbox {
    * Input name
    * If not set the value equals the identifier
    */
-  @Prop() name: string = this.identifier;
+  @Prop() name = this.identifier;
 
   /**
    * Input label
@@ -160,12 +161,12 @@ export class MgInputCheckbox {
   /**
    * Emitted event when value change
    */
-  @Event({ eventName: 'value-change' }) valueChange: EventEmitter<CheckboxValue[]>;
+  @Event({ eventName: 'value-change' }) valueChange: EventEmitter<MgInputCheckbox['value']>;
 
   /**
    * Emited event when checking validity
    */
-  @Event({ eventName: 'input-valid' }) inputValid: EventEmitter<boolean>;
+  @Event({ eventName: 'input-valid' }) inputValid: EventEmitter<MgInputCheckbox['valid']>;
 
   /**
    * Public method to display errors
