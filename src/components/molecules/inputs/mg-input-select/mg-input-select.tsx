@@ -92,7 +92,7 @@ export class MgInputSelect {
   /**
    * Component value
    */
-  @Prop({ mutable: true }) value: string | SelectOption;
+  @Prop({ mutable: true }) value: any;
   @Watch('value')
   validateValue(newValue: MgInputSelect['value']): void {
     if (allItemsAreString(this.items) && typeof newValue === 'string') {
@@ -108,7 +108,7 @@ export class MgInputSelect {
   /**
    * Items are the possible options to select
    */
-  @Prop() items!: string[] | SelectOption[];
+  @Prop() items!: (string | SelectOption)[];
   @Watch('items')
   validateItems(newValue: MgInputSelect['items']): void {
     // Empty options
@@ -299,10 +299,10 @@ export class MgInputSelect {
   /**
    * value props setter
    *
-   * @param {string | SelectOption} newValue value to update with
+   * @param {MgInputSelect['value']} newValue value to update with
    * @returns {void}
    */
-  private setValue = (newValue: string | SelectOption): void => {
+  private setValue = (newValue: MgInputSelect['value']): void => {
     this.checkValidity();
     this.value = newValue;
   };
@@ -318,7 +318,7 @@ export class MgInputSelect {
     } else if (allItemsAreString(this.items) && this.items.includes(this.input.value)) {
       this.setValue(this.input.value);
     } else if (allItemsAreOptions(this.items) && typeof this.input.value === 'string' && this.items.some(this.isInputValue)) {
-      this.setValue(this.items.find(this.isInputValue).value as any);
+      this.setValue(this.items.find(this.isInputValue).value);
     } else {
       // before set newValue with push to options[] the unknown input.value with a disable satus
       this.options.push({ title: this.input.value, value: this.input.value, disabled: true });
@@ -391,7 +391,7 @@ export class MgInputSelect {
   /**
    * Render option
    *
-   * @param {SelectOption} option
+   * @param {SelectOption} option to render
    * @returns {HTMLElement} render option
    */
   private renderOption = (option: SelectOption): HTMLElement => (
@@ -418,7 +418,7 @@ export class MgInputSelect {
         readonly={this.readonly}
         mgWidth={this.mgWidth}
         disabled={this.disabled}
-        value={this.value as string}
+        value={undefined}
         readonlyValue={this.readonlyValue}
         tooltip={this.tooltip}
         helpText={this.helpText}

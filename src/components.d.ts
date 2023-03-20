@@ -575,7 +575,7 @@ export namespace Components {
         /**
           * Items are the possible options to select
          */
-        "items": string[] | SelectOption[];
+        "items": (string | SelectOption)[];
         /**
           * Input label
          */
@@ -627,7 +627,7 @@ export namespace Components {
         /**
           * Component value
          */
-        "value": string | SelectOption;
+        "value": any;
     }
     interface MgInputText {
         /**
@@ -2001,7 +2001,7 @@ declare namespace LocalJSX {
         /**
           * Items are the possible options to select
          */
-        "items": string[] | SelectOption[];
+        "items": (string | SelectOption)[];
         /**
           * Input label
          */
@@ -2061,7 +2061,7 @@ declare namespace LocalJSX {
         /**
           * Component value
          */
-        "value"?: string | SelectOption;
+        "value"?: any;
     }
     interface MgInputText {
         /**
