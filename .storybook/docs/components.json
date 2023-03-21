@@ -2933,17 +2933,17 @@
         },
         {
           "name": "items",
-          "type": "SelectOption[] | string[]",
+          "type": "(string | SelectOption)[]",
           "mutable": false,
           "reflectToAttr": false,
           "docs": "Items are the possible options to select",
           "docsTags": [],
           "values": [
             {
-              "type": "SelectOption[]"
+              "type": "(string"
             },
             {
-              "type": "string[]"
+              "type": "SelectOption)[]"
             }
           ],
           "optional": false,
