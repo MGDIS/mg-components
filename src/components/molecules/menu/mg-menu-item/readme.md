@@ -201,9 +201,10 @@ Child content is displayed via an **mg-tray** component.
 
 ## Events
 
-| Event           | Description                     | Type                                                                               |
-| --------------- | ------------------------------- | ---------------------------------------------------------------------------------- |
-| `status-change` | Emited event when status change | `CustomEvent<Status.ACTIVE \| Status.DISABLED \| Status.HIDDEN \| Status.VISIBLE>` |
+| Event           | Description                      | Type                                                                               |
+| --------------- | -------------------------------- | ---------------------------------------------------------------------------------- |
+| `item-loaded`   | Emited event when item is loaded | `CustomEvent<void>`                                                                |
+| `status-change` | Emited event when status change  | `CustomEvent<Status.ACTIVE \| Status.DISABLED \| Status.HIDDEN \| Status.VISIBLE>` |
 
 
 ## Dependencies

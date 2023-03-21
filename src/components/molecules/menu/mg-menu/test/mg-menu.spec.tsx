@@ -5,6 +5,7 @@ import { Direction } from '../mg-menu.conf';
 import { MgMenuItem } from '../../mg-menu-item/mg-menu-item';
 import { MgPopover } from '../../../mg-popover/mg-popover';
 import { forcePopoverId, mockConsoleError, mockWindowFrames, setupMutationObserverMock, setupResizeObserverMock } from '../../../../../utils/unit.test.utils';
+import { MgItemMore } from '../../../mg-item-more/mg-item-more';
 
 mockConsoleError();
 mockWindowFrames();
@@ -18,14 +19,16 @@ let id;
  */
 const setId = (hasId: boolean): string => (hasId ? `test-${id++}` : undefined);
 
-const getPage = async (args, withSubmenu = true) => {
+const getPage = async (args, options = { submenu: true, itemMore: false }) => {
+  const components: unknown[] = [MgMenu, MgMenuItem, MgPopover];
+  if (!options.submenu && options.itemMore) components.push(MgItemMore);
   const page = await newSpecPage({
-    components: [MgMenu, MgMenuItem, MgPopover],
+    components,
     template: () => (
       <mg-menu {...args}>
         <mg-menu-item id={setId(args.hasId)} identifier="identifier-1">
           <span slot="label">batman</span>
-          {withSubmenu && (
+          {options.submenu && (
             <mg-menu label="batman - submenu" direction={Direction.VERTICAL}>
               <mg-menu-item>
                 <span slot="label">batman begins</span>
@@ -108,7 +111,7 @@ describe('mg-menu', () => {
     test.each([
       { props: { direction: 'horizontal' }, error: '<mg-menu> prop "label" is required.' },
       { props: { ...baseProps, direction: 'test' }, error: '<mg-menu> prop "direction" must be one of: horizontal, vertical.' },
-      { props: { ...baseProps, direction: Direction.VERTICAL, itemMore: { icon: 'user' } }, error: '<mg-menu> prop "itemMore" must be paired with direction horizontal.' },
+      { props: { ...baseProps, direction: Direction.VERTICAL, itemmore: { icon: 'user' } }, error: '<mg-menu> prop "itemmore" must be paired with direction horizontal.' },
       { props: { ...baseProps, size: 'batman' }, error: '<mg-menu> prop "size" must be one of: regular, medium, large.' },
     ])('Should throw error when props are invalid, case %s', async ({ props, error }) => {
       expect.assertions(1);
@@ -189,6 +192,31 @@ describe('mg-menu', () => {
 
         expect(page.root).toMatchSnapshot();
       }
+    });
+  });
+
+  describe('mg-item-more', () => {
+    test.each(['click', 'focus'])('should manage "mg-item-more" event %s', async event => {
+      const page = await getPage({ label: 'batman menu' }, { submenu: false, itemMore: true });
+
+      const mgItemMore = page.doc.querySelector('mg-item-more');
+      mgItemMore.dispatchEvent(new CustomEvent('item-loaded', { bubbles: true }));
+
+      await page.flushQueue();
+      await page.waitForChanges();
+
+      const moreMenuItem = mgItemMore.shadowRoot.querySelector('mg-menu-item');
+
+      forcePopoverId(moreMenuItem, `mg-popover-test_more-item`);
+      expect(page.root).toMatchSnapshot();
+
+      moreMenuItem.shadowRoot.querySelector('button').dispatchEvent(new CustomEvent(event, { bubbles: true }));
+
+      await page.flushQueue();
+      await page.waitForChanges();
+
+      expect(moreMenuItem.expanded).toBe(event === 'click');
+      expect(page.root).toMatchSnapshot();
     });
   });
 });

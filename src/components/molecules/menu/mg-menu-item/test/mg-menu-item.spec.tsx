@@ -33,6 +33,8 @@ const getPage = async template => {
     template: () => template,
   });
 
+  if (Boolean(page.rootInstance.itemLoaded?.emit)) page.rootInstance.itemLoaded.emit = jest.fn();
+
   jest.runAllTimers();
   await page.waitForChanges();
 
@@ -326,6 +328,14 @@ describe('mg-menu-item', () => {
 
         expect(item).toHaveProperty('status', nextStatus);
         expect(childItem).toHaveProperty('status', nextStatus);
+      });
+    });
+
+    describe('item-loaded', () => {
+      test('Should emit "item-loaded" event at the end of the render process', async () => {
+        const page = await getPage(menuItem({ label: 'Batman' }));
+
+        expect(page.rootInstance.itemLoaded.emit).toHaveBeenCalled();
       });
     });
   });
