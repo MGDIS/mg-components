@@ -13,7 +13,7 @@ import { MgInputText } from '../../inputs/mg-input-text/mg-input-text';
 import { MgInputTextarea } from '../../inputs/mg-input-textarea/mg-input-textarea';
 import { MgInputToggle } from '../../inputs/mg-input-toggle/mg-input-toggle';
 import { HTMLMgInputsElement } from '../../inputs/MgInput.conf';
-import { setupMutationObserverMock } from '../../../../utils/unit.test.utils';
+import { setupMutationObserverMock, setupSubmitEventMock } from '../../../../utils/unit.test.utils';
 
 const getPage = (args, content?) => {
   const page = newSpecPage({
@@ -70,6 +70,7 @@ describe('mg-form', () => {
       },
       takeRecords: () => [],
     });
+    setupSubmitEventMock();
   });
 
   afterEach(() => jest.runOnlyPendingTimers());
