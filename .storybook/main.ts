@@ -80,6 +80,7 @@ module.exports = {
         'v5.5.0': 'https://626149b307606d003ada26b4-bidcqvzbyy.chromatic.com',
         'v5.6.0': 'https://626149b307606d003ada26b4-mfqwykjipt.chromatic.com',
         'v5.7.0': 'https://626149b307606d003ada26b4-yejrgaetka.chromatic.com/',
+        'v5.8.0': 'https://626149b307606d003ada26b4-pcrpbesovl.chromatic.com/',
       },
     },
   },
