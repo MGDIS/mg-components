@@ -15,6 +15,9 @@ export default {
       options: [undefined, 2, 4, 16, 'full'],
       control: { type: 'select' },
     },
+    value: {
+      control: 'object',
+    },
   },
   parameters: { actions: { handles: ['value-change', 'input-valid'] } },
 };

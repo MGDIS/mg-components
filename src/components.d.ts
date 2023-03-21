@@ -575,7 +575,7 @@ export namespace Components {
         /**
           * Items are the possible options to select
          */
-        "items": string[] | SelectOption[];
+        "items": (string | SelectOption)[];
         /**
           * Input label
          */
@@ -2001,7 +2001,7 @@ declare namespace LocalJSX {
         /**
           * Items are the possible options to select
          */
-        "items": string[] | SelectOption[];
+        "items": (string | SelectOption)[];
         /**
           * Input label
          */
@@ -2029,7 +2029,7 @@ declare namespace LocalJSX {
         /**
           * Emited event when value change
          */
-        "onValue-change"?: (event: MgInputSelectCustomEvent<any>) => void;
+        "onValue-change"?: (event: MgInputSelectCustomEvent<MgInputSelect['value']>) => void;
         /**
           * Input placeholder. It should be a word or short phrase that demonstrates the expected type of data, not a replacement for labels or help text.
          */
