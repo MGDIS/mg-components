@@ -1651,11 +1651,11 @@ declare namespace LocalJSX {
         /**
           * Emited event when checking validity
          */
-        "onInput-valid"?: (event: MgInputCheckboxCustomEvent<boolean>) => void;
+        "onInput-valid"?: (event: MgInputCheckboxCustomEvent<MgInputCheckbox['valid']>) => void;
         /**
           * Emitted event when value change
          */
-        "onValue-change"?: (event: MgInputCheckboxCustomEvent<CheckboxValue[]>) => void;
+        "onValue-change"?: (event: MgInputCheckboxCustomEvent<MgInputCheckbox['value']>) => void;
         /**
           * Define if input is readonly
          */
