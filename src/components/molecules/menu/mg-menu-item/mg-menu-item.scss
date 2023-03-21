@@ -71,10 +71,13 @@ $navigation-button-sizes: (
 }
 
 // horizontal item style
-:host([data-style-direction-horizontal]) .mg-menu-item__collapse-container.mg-menu-item__collapse-container--first-level {
-  background-color: hsl(var(--color-light));
-  ::slotted(mg-menu) {
-    padding: 1rem 0;
+:host([data-style-direction-horizontal]),
+:host([data-overflow-more]) {
+  .mg-menu-item__collapse-container.mg-menu-item__collapse-container--first-level {
+    background-color: hsl(var(--color-light));
+    ::slotted(mg-menu) {
+      padding: 1rem 0;
+    }
   }
 }
 

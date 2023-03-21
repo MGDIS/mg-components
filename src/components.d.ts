@@ -907,7 +907,7 @@ export namespace Components {
         /**
           * Customize "mg-item-more" element Used with direction: 'vertical' to manage overflow
          */
-        "itemMore": ItemMoreType;
+        "itemmore": ItemMoreType;
         /**
           * Menu label. Include short menu description. Required for accessibility
          */
@@ -2350,7 +2350,7 @@ declare namespace LocalJSX {
         /**
           * Customize "mg-item-more" element Used with direction: 'vertical' to manage overflow
          */
-        "itemMore"?: ItemMoreType;
+        "itemmore"?: ItemMoreType;
         /**
           * Menu label. Include short menu description. Required for accessibility
          */
@@ -2373,6 +2373,10 @@ declare namespace LocalJSX {
           * Identifier is used to control mg-popover Default: createID('mg-menu-item');
          */
         "identifier"?: string;
+        /**
+          * Emited event when item is loaded
+         */
+        "onItem-loaded"?: (event: MgMenuItemCustomEvent<void>) => void;
         /**
           * Emited event when status change
          */
