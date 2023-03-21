@@ -96,6 +96,11 @@ export class MgMenuItem {
    */
   @Event({ eventName: 'status-change' }) statusChange: EventEmitter<MgMenuItem['status']>;
 
+  /**
+   * Emited event when item is loaded
+   */
+  @Event({ eventName: 'item-loaded' }) itemLoaded: EventEmitter<void>;
+
   /**********
    * States *
    *********/
@@ -370,6 +375,10 @@ export class MgMenuItem {
 
       // manage child dom changes with mutationObserver and listzners
       this.initListeners();
+
+      // emit loaded event when component is fully loaded
+      this.itemLoaded.emit();
+
       new MutationObserver(mutationsList => {
         if (mutationsList.some(mutation => mutation.attributeName === 'hidden')) this.updateStatus();
         if (mutationsList.some(mutation => mutation.type === 'characterData')) this.validateSlot();
@@ -439,7 +448,7 @@ export class MgMenuItem {
   render(): HTMLElement {
     const getContainerClasses = () => ({
       [`${this.name}__collapse-container`]: true,
-      [`${this.name}__collapse-container--first-level`]: this.isInMainMenu && this.isDirection(Direction.HORIZONTAL),
+      [`${this.name}__collapse-container--first-level`]: (this.isInMainMenu || this.isItemMore) && this.isDirection(Direction.HORIZONTAL),
     });
 
     return (
