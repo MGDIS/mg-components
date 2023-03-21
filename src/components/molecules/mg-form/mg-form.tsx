@@ -228,7 +228,7 @@ export class MgForm {
       // submit buttons should trigger form submition;
       if (['submit', null].includes(mgButton.getAttribute('type'))) {
         mgButton.addEventListener('click', () => {
-          this.form.dispatchEvent(new CustomEvent('submit', { bubbles: true }));
+          this.form.dispatchEvent(new SubmitEvent('submit', { bubbles: true }));
         });
       }
     });

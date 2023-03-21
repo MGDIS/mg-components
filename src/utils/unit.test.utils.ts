@@ -1,3 +1,5 @@
+import { MockCustomEvent } from '@stencil/core/mock-doc';
+
 /**
  * Clone Deep function
  *
@@ -101,6 +103,33 @@ export const setupResizeObserverMock = ({ disconnect, observe }: setupResizeObse
   });
 
   return MockResizeObserver;
+};
+
+/**
+ * Utility function that mocks the `SubmitEvent` API. Recommended to execute inside `beforeEach`.
+ *
+ * @returns {void}
+ * @example
+ * ```
+ * setupSubmitEventMock();
+ * ```
+ */
+export const setupSubmitEventMock = (): typeof MockCustomEvent => {
+  class SubmitEvent extends MockCustomEvent {
+    constructor(type: string, eventInitDict?: SubmitEventInit) {
+      super(type, eventInitDict);
+    }
+  }
+
+  [window, global].forEach(element => {
+    Object.defineProperty(element, 'SubmitEvent', {
+      writable: true,
+      configurable: true,
+      value: SubmitEvent,
+    });
+  });
+
+  return SubmitEvent;
 };
 
 /**
